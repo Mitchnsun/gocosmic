@@ -1,0 +1,420 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`About Page > should render the about page correctly 1`] = `
+<div>
+  <div
+    class="text-ghost relative bg-gray-900 pt-10"
+  >
+    <main
+      class="m-auto flex max-w-7xl flex-col items-center gap-10 px-4 pb-4"
+    >
+      <div
+        class="text-center"
+      >
+        <h1
+          class="mb-4 text-2xl font-extrabold sm:text-4xl"
+        >
+          About Go Cosmic
+        </h1>
+        <p
+          class="text-lg text-gray-400"
+        >
+          Discover our mission, our team, and our commitment to excellence
+        </p>
+      </div>
+      <section
+        aria-labelledby="go-cosmic-heading"
+        class="w-full"
+      >
+        <div
+          class="relative rounded-lg bg-gray-800 px-6 py-8 lg:p-8"
+        >
+          <div
+            class="mb-6 flex items-center gap-4"
+          >
+            <svg
+              aria-hidden="true"
+              class="h-8 w-8 shrink-0 text-blue-400"
+              data-slot="icon"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            <h2
+              class="text-xl font-bold sm:text-2xl lg:text-3xl"
+              id="go-cosmic-heading"
+            >
+              Go Cosmic — Building Cosmic Applications with AI
+            </h2>
+          </div>
+          <div
+            class="space-y-4 text-gray-300"
+          >
+            <p
+              class="text-lg"
+            >
+              Go Cosmic transforms your ideas into groundbreaking applications by combining modern development expertise with the power of artificial intelligence.
+            </p>
+            <div
+              class="my-6"
+            >
+              <h3
+                class="mb-4 text-lg font-semibold text-white sm:text-xl"
+              >
+                We specialize in
+                :
+              </h3>
+              <ul
+                class="grid gap-3 md:grid-cols-2"
+              >
+                <li
+                  class="flex items-center gap-3"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-400"
+                  />
+                  <span>
+                    Next-generation web and mobile application development
+                  </span>
+                </li>
+                <li
+                  class="flex items-center gap-3"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-500"
+                  />
+                  <span>
+                    Advanced AI integration for intelligent user experiences
+                  </span>
+                </li>
+                <li
+                  class="flex items-center gap-3"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-600"
+                  />
+                  <span>
+                    Immersive UI/UX design with a unique cosmic approach
+                  </span>
+                </li>
+                <li
+                  class="flex items-center gap-3"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-700"
+                  />
+                  <span>
+                    Tailor-made solutions using modern technologies (React, React-Native, Next.js, Expo, TypeScript, Tailwind CSS)
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <p
+              class="text-lg font-medium text-blue-300"
+            >
+              Our mission: to propel your projects to new technological horizons with creativity, innovation, and technical excellence.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
+        aria-labelledby="developer-heading"
+        class="w-full"
+      >
+        <div
+          class="rounded-lg bg-gray-800 px-6 py-8 lg:p-8"
+        >
+          <div
+            class="mb-6 flex items-center gap-4"
+          >
+            <svg
+              aria-hidden="true"
+              class="h-8 w-8 shrink-0 text-yellow-400"
+              data-slot="icon"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            <h2
+              class="text-xl font-bold sm:text-2xl lg:text-3xl"
+              id="developer-heading"
+            >
+              Meet the Developer
+               — 
+              Matthieu Compérat
+            </h2>
+          </div>
+          <div
+            class="space-y-4 text-gray-300"
+          >
+            <p
+              class="text-lg"
+            >
+              <strong
+                class="text-white"
+              >
+                Matthieu Compérat
+                 — 
+                Digital Experience Architect
+              </strong>
+            </p>
+            <p>
+              Passionate developer with expertise in modern web and mobile technologies.
+            </p>
+            <ul
+              class="grid gap-3 md:grid-cols-2"
+            >
+              <li
+                class="flex items-center gap-3"
+              >
+                <span
+                  aria-hidden="true"
+                  class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-400"
+                />
+                <span>
+                  Modern web application development (React, React-Native, Next.js, Expo, TypeScript, Tailwind CSS)
+                </span>
+              </li>
+              <li
+                class="flex items-center gap-3"
+              >
+                <span
+                  aria-hidden="true"
+                  class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-500"
+                />
+                <span>
+                  Software architecture and development best practices
+                </span>
+              </li>
+              <li
+                class="flex items-center gap-3"
+              >
+                <span
+                  aria-hidden="true"
+                  class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-600"
+                />
+                <span>
+                  AI integration and emerging technologies
+                </span>
+              </li>
+              <li
+                class="flex items-center gap-3"
+              >
+                <span
+                  aria-hidden="true"
+                  class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-700"
+                />
+                <span>
+                  Technical leadership and team mentorship
+                </span>
+              </li>
+            </ul>
+            <p>
+              Matthieu combines deep technical expertise with a creative vision to design digital solutions that push the limits of what's possible. His "cosmic" approach to development aims to create user experiences that are performant, beautiful, and innovative.
+            </p>
+            <div
+              class="mt-6 border-t border-gray-700 pt-4"
+            >
+              <a
+                aria-label="Matthieu Compérat’s LinkedIn profile (opens in a new tab)"
+                class="inline-flex items-center gap-2 rounded px-1 text-blue-400 underline transition-colors hover:text-blue-300 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                href="https://www.linkedin.com/in/matthieucomperat/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                View LinkedIn profile
+                <svg
+                  aria-hidden="true"
+                  class="h-4 w-4"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        aria-labelledby="legal-heading"
+        class="w-full"
+      >
+        <div
+          class="rounded-lg bg-gray-800 px-6 py-8 lg:p-8"
+        >
+          <div
+            class="mb-6 flex items-center gap-4"
+          >
+            <svg
+              aria-hidden="true"
+              class="h-8 w-8 shrink-0 text-green-400"
+              data-slot="icon"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M12.516 2.17a.75.75 0 0 0-1.032 0 11.209 11.209 0 0 1-7.877 3.08.75.75 0 0 0-.722.515A12.74 12.74 0 0 0 2.25 9.75c0 5.942 4.064 10.933 9.563 12.348a.749.749 0 0 0 .374 0c5.499-1.415 9.563-6.406 9.563-12.348 0-1.39-.223-2.73-.635-3.985a.75.75 0 0 0-.722-.516l-.143.001c-2.996 0-5.717-1.17-7.734-3.08Zm3.094 8.016a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                fill-rule="evenodd"
+              />
+            </svg>
+            <h2
+              class="text-xl font-bold sm:text-2xl lg:text-3xl"
+              id="legal-heading"
+            >
+              Legal Notices and AI Usage
+            </h2>
+          </div>
+          <div
+            class="space-y-6 text-gray-300"
+          >
+            <p>
+              Go Cosmic is an application development agency that uses artificial intelligence technologies to enhance user experience and optimize performance.
+            </p>
+            <div>
+              <h3
+                class="mb-3 text-lg font-semibold text-white sm:text-xl"
+              >
+                AI Usage
+                :
+              </h3>
+              <ul
+                class="space-y-2"
+              >
+                <li
+                  class="flex items-center gap-3"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-400"
+                  />
+                  <span>
+                    Solutions may integrate AI models to enable advanced features
+                  </span>
+                </li>
+                <li
+                  class="flex items-center gap-3"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-500"
+                  />
+                  <span>
+                    We are committed to ethical and transparent use of artificial intelligence
+                  </span>
+                </li>
+                <li
+                  class="flex items-center gap-3"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-600"
+                  />
+                  <span>
+                    User data is processed in compliance with applicable regulations (GDPR)
+                  </span>
+                </li>
+                <li
+                  class="flex items-center gap-3"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-700"
+                  />
+                  <span>
+                    No sensitive data is shared with third parties without explicit consent
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3
+                class="mb-3 text-lg font-semibold text-white sm:text-xl"
+              >
+                Responsibility
+                :
+              </h3>
+              <ul
+                class="space-y-2"
+              >
+                <li
+                  class="flex items-center gap-3"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-400"
+                  />
+                  <span>
+                    Applications are tested according to industry best practices
+                  </span>
+                </li>
+                <li
+                  class="flex items-center gap-3"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-500"
+                  />
+                  <span>
+                    AI-powered recommendations are for informational purposes and do not replace human judgment
+                  </span>
+                </li>
+                <li
+                  class="flex items-center gap-3"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-600"
+                  />
+                  <span>
+                    Go Cosmic is committed to maintaining the highest standards of security and confidentiality
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="mt-6 border-t border-gray-700 pt-4"
+            >
+              <p
+                class="font-medium text-blue-300"
+              >
+                For any questions about our practices or the use of AI in our solutions,
+                <a
+                  aria-label="Contact us (opens in a new tab)"
+                  class="ml-1 rounded px-1 text-blue-400 underline transition-colors hover:text-blue-300 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                  href="https://mcomper.at/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  contact us
+                </a>
+                .
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+`;

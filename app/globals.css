@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-aerospace: #FF4F00;
+  --color-chocolate: #58111A;
+  --color-cosmic-latte: #FFF8E7;
+  --color-ghost: #F8F8FF;
+  --color-jungle: #29AB87;
+  --color-misty-rose: #FFE4E1;
+  --color-outer-space: #414A4C;
+  --color-royal: #7851A9;
+  --color-space: #1E2952;
+}
+
+:root {
+  --header-footer-height: 120px;
+}
