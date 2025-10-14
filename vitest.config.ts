@@ -16,6 +16,7 @@ export default defineConfig({
         'node_modules/',
         '__tests__/',
         '.next/',
+        '.yarn/',
         'dist/',
         '**/*.d.ts',
         '**/*.config.*',
