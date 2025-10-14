@@ -1,5 +1,6 @@
-import { cn } from '@/design-system/lib/utils';
 import { useTranslations } from 'next-intl';
+
+import { cn } from '@/design-system/lib/utils';
 
 interface LoaderProps {
   className?: string;

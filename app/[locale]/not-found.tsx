@@ -1,6 +1,6 @@
-import { Button } from '@/design-system/button';
 import { useTranslations } from 'next-intl';
 
+import { Button } from '@/design-system/button';
 import { Link } from '@/i18n/navigation';
 
 export default function NotFound() {

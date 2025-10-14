@@ -1,4 +1,5 @@
 import About from '@/app/[locale]/about/page';
+
 import { render } from '../test-utils';
 
 describe('About Page', () => {

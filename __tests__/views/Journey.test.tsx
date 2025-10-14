@@ -1,7 +1,8 @@
 import { vi } from 'vitest';
 
-import { render } from '../test-utils';
 import JourneyContent from '@/views/Journey';
+
+import { render } from '../test-utils';
 
 // Mock @react-three/fiber
 vi.mock('@react-three/fiber', () => ({

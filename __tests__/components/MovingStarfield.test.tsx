@@ -1,6 +1,7 @@
 import { vi } from 'vitest';
 
 import MovingStarfield from '@/components/Journey/MovingStarfield';
+
 import { render } from '../test-utils';
 
 // Mock @react-three/drei

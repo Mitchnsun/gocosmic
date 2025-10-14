@@ -2,6 +2,7 @@ import { screen } from '@testing-library/react';
 import { vi } from 'vitest';
 
 import JourneyPage from '@/app/[locale]/journey/page';
+
 import { render } from '../test-utils';
 
 // Mock the dynamic import and components

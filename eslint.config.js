@@ -1,26 +1,26 @@
-import eslintConfigPrettier from 'eslint-config-prettier';
-import globals from 'globals';
-import importPlugin from 'eslint-plugin-import';
 import js from '@eslint/js';
-import onlyWarn from 'eslint-plugin-only-warn';
-import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
 import pluginNext from '@next/eslint-plugin-next';
+import eslintConfigPrettier from 'eslint-config-prettier';
+import importPlugin from 'eslint-plugin-import';
+import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
+import onlyWarn from 'eslint-plugin-only-warn';
+import prettierPlugin from 'eslint-plugin-prettier';
 import pluginReact from 'eslint-plugin-react';
 import pluginReactHooks from 'eslint-plugin-react-hooks';
-import prettierPlugin from 'eslint-plugin-prettier';
 import securityPlugin from 'eslint-plugin-security';
 import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort';
 import sonarjsPlugin from 'eslint-plugin-sonarjs';
-import tseslint from 'typescript-eslint';
 import unicornPlugin from 'eslint-plugin-unicorn';
 import unusedImportsPlugin from 'eslint-plugin-unused-imports';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 /**
  * A shared ESLint configuration for the repository.
  *
  * @type {import("eslint").Linter.Config[]}
  * */
-export const config = [
+const config = [
   js.configs.recommended,
   eslintConfigPrettier,
   ...tseslint.configs.recommended,
@@ -82,6 +82,8 @@ export const config = [
     },
   },
   {
-    ignores: ['dist/**'],
+    ignores: ['dist/**', '.next/**', 'node_modules/**', 'coverage/**'],
   },
 ];
+
+export default config;

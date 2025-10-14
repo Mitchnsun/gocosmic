@@ -279,7 +279,6 @@ All UI components should evoke a sense of exploration and wonder while maintaini
    - Test browser back/forward navigation
 7. Run web app tests: `yarn test` -- comprehensive unit tests for components, pages, and views
 
-
 ## Repository Structure
 
 ### Key Files and Directories

@@ -1,8 +1,8 @@
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import { CodeBracketIcon, PuzzlePieceIcon, RocketLaunchIcon, SparklesIcon, StarIcon } from '@heroicons/react/24/solid';
-import { Button } from '@/design-system/button';
 import { useTranslations } from 'next-intl';
 
+import { Button } from '@/design-system/button';
 import { Link } from '@/i18n/navigation';
 
 export default function Home() {

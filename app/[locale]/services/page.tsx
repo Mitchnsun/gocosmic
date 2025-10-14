@@ -8,10 +8,11 @@ import {
   ShieldCheckIcon,
   SparklesIcon,
 } from '@heroicons/react/24/solid';
-import { Button } from '@/design-system/button';
 import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
+
+import { Button } from '@/design-system/button';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
