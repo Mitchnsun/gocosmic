@@ -82,7 +82,19 @@ const config = [
     },
   },
   {
-    ignores: ['dist/**', '.next/**', 'node_modules/**', 'coverage/**'],
+    files: ['__tests__/**/*', '**/*.test.*', '**/*.spec.*'],
+    rules: {
+      '@next/next/no-html-link-for-pages': 'off',
+    },
+  },
+  {
+    files: ['next-env.d.ts'],
+    rules: {
+      '@typescript-eslint/triple-slash-reference': 'off',
+    },
+  },
+  {
+    ignores: ['dist/**', '.next/**', 'node_modules/**', 'coverage/**', '**/__snapshots__/**'],
   },
 ];
 
