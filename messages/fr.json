@@ -124,6 +124,102 @@
     "services_label": "Nos Services Cosmiques",
     "switch_locale": "Changer de langue"
   },
+  "offers": {
+    "title": "Nos Offres Cosmiques",
+    "subtitle": "Choisissez la solution parfaite adaptée aux besoins de votre projet",
+    "solo_developer": {
+      "title": "Développeur Cosmique Solo",
+      "subtitle": "Parfait pour les Startups et Petits Projets",
+      "description": "Bénéficiez d'un développeur expert dédié pour votre application mobile ou site web. Idéal pour donner vie à votre vision avec une qualité professionnelle et une créativité cosmique.",
+      "features": {
+        "title": "Ce qui est inclus",
+        "items": {
+          "dedication": "Développeur dédié concentré sur votre projet",
+          "technologies": "Stack technologique moderne : React, React Native, Next.js, TypeScript",
+          "deployment": "Développement complet du concept au déploiement",
+          "responsive": "Design responsive pour tous les appareils (mobile, tablette, ordinateur)",
+          "testing": "Assurance qualité avec tests complets",
+          "support": "Support et maintenance après le lancement",
+          "communication": "Mises à jour régulières et communication directe",
+          "optimization": "Optimisation des performances et meilleures pratiques"
+        }
+      },
+      "ideal_for": {
+        "title": "Idéal pour",
+        "items": {
+          "startups": "Startups lançant leur premier produit digital",
+          "mvp": "Développement MVP pour valider votre idée",
+          "apps": "Projets d'application mobile ou site web unique",
+          "redesign": "Refonte ou modernisation d'applications existantes"
+        }
+      }
+    },
+    "team_developers": {
+      "title": "Équipe Cosmique Complète",
+      "subtitle": "Solutions Full-Stack pour Projets Complexes",
+      "description": "Une équipe de développeurs experts pour gérer votre architecture complète incluant bases de données, applications et sites web. Parfait pour construire des solutions évolutives de niveau entreprise.",
+      "features": {
+        "title": "Ce qui est inclus",
+        "items": {
+          "team": "Équipe multidisciplinaire de développeurs spécialisés",
+          "fullstack": "Développement full-stack : Frontend, Backend, Base de données",
+          "architecture": "Conception et implémentation d'architecture évolutive",
+          "databases": "Conception et optimisation de bases de données (SQL, NoSQL)",
+          "apis": "Développement d'API RESTful et GraphQL",
+          "infrastructure": "Configuration et gestion d'infrastructure cloud (AWS, Azure, GCP)",
+          "security": "Implémentation de sécurité avancée et conformité",
+          "cicd": "Pipelines CI/CD avec déploiement automatisé",
+          "monitoring": "Monitoring en temps réel et analytics de performance",
+          "documentation": "Documentation technique complète"
+        }
+      },
+      "ideal_for": {
+        "title": "Idéal pour",
+        "items": {
+          "enterprise": "Applications de niveau entreprise nécessitant une architecture robuste",
+          "platforms": "Solutions multi-plateformes (web, iOS, Android)",
+          "complex": "Logique métier complexe et traitement de données",
+          "scaling": "Projets nécessitant haute évolutivité et performance"
+        }
+      }
+    },
+    "developer_designer": {
+      "title": "Duo Développeur + Designer",
+      "subtitle": "Package Expérience Digitale Complète",
+      "description": "La combinaison parfaite d'excellence technique et de design époustouflant. Bénéficiez d'un développeur et d'un designer travaillant ensemble pour créer des applications belles et fonctionnelles.",
+      "features": {
+        "title": "Ce qui est inclus",
+        "items": {
+          "collaboration": "Collaboration fluide développeur-designer",
+          "ux_research": "Recherche UX et cartographie du parcours utilisateur",
+          "design_system": "Design system personnalisé et identité de marque",
+          "prototyping": "Prototypes interactifs et maquettes",
+          "development": "Développement complet d'application avec technologies modernes",
+          "animations": "Animations fluides et micro-interactions",
+          "accessibility": "Design accessible conforme WCAG",
+          "testing": "Tests d'utilisabilité et validation du design",
+          "assets": "Assets de design complets et guide de style",
+          "iterations": "Itérations de design basées sur les retours"
+        }
+      },
+      "ideal_for": {
+        "title": "Idéal pour",
+        "items": {
+          "brands": "Marques recherchant une identité visuelle unique",
+          "consumer": "Applications grand public nécessitant une UX soignée",
+          "ecommerce": "Plateformes e-commerce nécessitant optimisation de conversion",
+          "saas": "Produits SaaS priorisant l'expérience utilisateur"
+        }
+      }
+    },
+    "cta": {
+      "title": "Prêt à démarrer votre projet cosmique ?",
+      "description": "Discutons de l'offre qui correspond le mieux à vos besoins et comment nous pouvons transformer votre vision en réalité.",
+      "primary_button": "Commencer",
+      "secondary_button": "Planifier une consultation",
+      "contact_info": "Contactez-nous pour discuter des besoins de votre projet"
+    }
+  },
   "services": {
     "title": "Nos Services Cosmiques",
     "subtitle": "Solutions techniques complètes pour propulser vos projets dans la stratosphère",

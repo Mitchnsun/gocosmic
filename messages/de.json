@@ -124,6 +124,102 @@
     "services_label": "Unsere Kosmischen Dienstleistungen",
     "switch_locale": "Sprache wechseln"
   },
+  "offers": {
+    "title": "Unsere Kosmischen Angebote",
+    "subtitle": "Wählen Sie die perfekte Lösung für Ihre Projektanforderungen",
+    "solo_developer": {
+      "title": "Solo Kosmischer Entwickler",
+      "subtitle": "Perfekt für Startups und Kleine Projekte",
+      "description": "Erhalten Sie einen dedizierten Experten-Entwickler für Ihre mobile App oder Website. Ideal, um Ihre Vision mit professioneller Qualität und kosmischer Kreativität zum Leben zu erwecken.",
+      "features": {
+        "title": "Was ist enthalten",
+        "items": {
+          "dedication": "Dedizierter Entwickler konzentriert auf Ihr Projekt",
+          "technologies": "Moderner Tech-Stack: React, React Native, Next.js, TypeScript",
+          "deployment": "Komplette Entwicklung vom Konzept bis zum Deployment",
+          "responsive": "Responsive Design für alle Geräte (Mobil, Tablet, Desktop)",
+          "testing": "Qualitätssicherung mit umfassenden Tests",
+          "support": "Support und Wartung nach dem Launch",
+          "communication": "Regelmäßige Fortschrittsupdates und direkte Kommunikation",
+          "optimization": "Performance-Optimierung und Best Practices"
+        }
+      },
+      "ideal_for": {
+        "title": "Ideal für",
+        "items": {
+          "startups": "Startups, die ihr erstes digitales Produkt launchen",
+          "mvp": "MVP-Entwicklung zur Validierung Ihrer Idee",
+          "apps": "Einzelne mobile App oder Website-Projekte",
+          "redesign": "Neugestaltung oder Modernisierung bestehender Anwendungen"
+        }
+      }
+    },
+    "team_developers": {
+      "title": "Komplettes Kosmisches Team",
+      "subtitle": "Full-Stack-Lösungen für Komplexe Projekte",
+      "description": "Ein Team von Experten-Entwicklern zur Verwaltung Ihrer kompletten Architektur einschließlich Datenbanken, Anwendungen und Websites. Perfekt für den Aufbau skalierbarer Enterprise-Lösungen.",
+      "features": {
+        "title": "Was ist enthalten",
+        "items": {
+          "team": "Multidisziplinäres Team spezialisierter Entwickler",
+          "fullstack": "Full-Stack-Entwicklung: Frontend, Backend, Datenbank",
+          "architecture": "Skalierbare Architektur-Design und Implementierung",
+          "databases": "Datenbank-Design und Optimierung (SQL, NoSQL)",
+          "apis": "RESTful und GraphQL API-Entwicklung",
+          "infrastructure": "Cloud-Infrastruktur-Setup und Management (AWS, Azure, GCP)",
+          "security": "Erweiterte Sicherheitsimplementierung und Compliance",
+          "cicd": "CI/CD-Pipelines mit automatisiertem Deployment",
+          "monitoring": "Echtzeit-Monitoring und Performance-Analytics",
+          "documentation": "Umfassende technische Dokumentation"
+        }
+      },
+      "ideal_for": {
+        "title": "Ideal für",
+        "items": {
+          "enterprise": "Enterprise-Anwendungen, die robuste Architektur erfordern",
+          "platforms": "Multi-Plattform-Lösungen (Web, iOS, Android)",
+          "complex": "Komplexe Geschäftslogik und Datenverarbeitung",
+          "scaling": "Projekte mit hohen Anforderungen an Skalierbarkeit und Performance"
+        }
+      }
+    },
+    "developer_designer": {
+      "title": "Entwickler + Designer Duo",
+      "subtitle": "Komplettes Digital Experience Package",
+      "description": "Die perfekte Kombination aus technischer Exzellenz und beeindruckendem Design. Erhalten Sie sowohl einen Entwickler als auch einen Designer, die zusammenarbeiten, um schöne und funktionale Anwendungen zu erstellen.",
+      "features": {
+        "title": "Was ist enthalten",
+        "items": {
+          "collaboration": "Nahtlose Entwickler-Designer-Zusammenarbeit",
+          "ux_research": "UX-Forschung und User-Journey-Mapping",
+          "design_system": "Benutzerdefiniertes Design System und Markenidentität",
+          "prototyping": "Interaktive Prototypen und Mockups",
+          "development": "Vollständige Anwendungsentwicklung mit modernen Technologien",
+          "animations": "Flüssige Animationen und Micro-Interactions",
+          "accessibility": "WCAG-konformes barrierefreies Design",
+          "testing": "Usability-Testing und Design-Validierung",
+          "assets": "Komplette Design-Assets und Style Guide",
+          "iterations": "Design-Iterationen basierend auf Feedback"
+        }
+      },
+      "ideal_for": {
+        "title": "Ideal für",
+        "items": {
+          "brands": "Marken, die eine einzigartige visuelle Identität suchen",
+          "consumer": "Verbraucherorientierte Anwendungen, die polierte UX erfordern",
+          "ecommerce": "E-Commerce-Plattformen mit Bedarf an Conversion-Optimierung",
+          "saas": "SaaS-Produkte mit Fokus auf Benutzererfahrung"
+        }
+      }
+    },
+    "cta": {
+      "title": "Bereit, Ihr kosmisches Projekt zu starten?",
+      "description": "Lassen Sie uns besprechen, welches Angebot am besten zu Ihren Bedürfnissen passt und wie wir Ihre Vision in die Realität umsetzen können.",
+      "primary_button": "Loslegen",
+      "secondary_button": "Beratung planen",
+      "contact_info": "Kontaktieren Sie uns, um Ihre Projektanforderungen zu besprechen"
+    }
+  },
   "services": {
     "title": "Unsere Kosmischen Dienstleistungen",
     "subtitle": "Umfassende technische Lösungen, um Ihre Projekte in die Stratosphäre zu katapultieren",
