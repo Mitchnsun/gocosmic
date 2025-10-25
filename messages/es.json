@@ -74,7 +74,8 @@
     "cta": {
       "button": "Contáctanos",
       "description": "Hablemos de cómo podemos dar vida a tu proyecto web o móvil, creando algo realmente fuera de este mundo.",
-      "title": "¿Listo para Go Cosmic?"
+      "title": "¿Listo para Go Cosmic?",
+      "viewOffers": "Consultar nuestras ofertas"
     },
     "hero": {
       "cta": "Comienza tu viaje",
@@ -123,6 +124,101 @@
     "services": "Servicios",
     "services_label": "Nuestros Servicios Cósmicos",
     "switch_locale": "Cambiar idioma"
+  },
+  "offers": {
+    "title": "Nuestras Ofertas Cósmicas",
+    "subtitle": "Elige la solución perfecta adaptada a las necesidades de tu proyecto",
+    "solo_developer": {
+      "title": "Desarrollador Cósmico Solo",
+      "subtitle": "Perfecto para Startups y Proyectos Pequeños",
+      "description": "Obtén un desarrollador experto dedicado para tu aplicación móvil o sitio web. Ideal para dar vida a tu visión con calidad profesional y creatividad cósmica.",
+      "features": {
+        "title": "Qué está incluido",
+        "items": {
+          "dedication": "Desarrollador dedicado enfocado en tu proyecto",
+          "technologies": "Stack tecnológico moderno: React, React Native, Next.js, TypeScript",
+          "deployment": "Desarrollo completo desde el concepto hasta el despliegue",
+          "responsive": "Diseño responsive para todos los dispositivos (móvil, tablet, escritorio)",
+          "testing": "Garantía de calidad con pruebas completas",
+          "support": "Soporte y mantenimiento post-lanzamiento",
+          "communication": "Actualizaciones regulares de progreso y comunicación directa",
+          "optimization": "Optimización de rendimiento y mejores prácticas"
+        }
+      },
+      "ideal_for": {
+        "title": "Ideal para",
+        "items": {
+          "startups": "Startups lanzando su primer producto digital",
+          "mvp": "Desarrollo MVP para validar tu idea",
+          "apps": "Proyectos de aplicación móvil o sitio web único",
+          "redesign": "Rediseñar o modernizar aplicaciones existentes"
+        }
+      }
+    },
+    "team_developers": {
+      "title": "Equipo Cósmico Completo",
+      "subtitle": "Soluciones Full-Stack para Proyectos Complejos",
+      "description": "Un equipo de desarrolladores expertos para gestionar tu arquitectura completa incluyendo bases de datos, aplicaciones y sitios web. Perfecto para construir soluciones escalables de nivel empresarial.",
+      "features": {
+        "title": "Qué está incluido",
+        "items": {
+          "team": "Equipo multidisciplinario de desarrolladores especializados",
+          "fullstack": "Desarrollo full-stack: Frontend, Backend, Base de datos",
+          "architecture": "Diseño e implementación de arquitectura escalable",
+          "databases": "Diseño y optimización de bases de datos (SQL, NoSQL)",
+          "apis": "Desarrollo de API RESTful y GraphQL",
+          "infrastructure": "Configuración y gestión de infraestructura cloud (AWS, Azure, GCP)",
+          "security": "Implementación de seguridad avanzada y cumplimiento normativo",
+          "cicd": "Pipelines CI/CD con despliegue automatizado",
+          "monitoring": "Monitoreo en tiempo real y analíticas de rendimiento",
+          "documentation": "Documentación técnica completa"
+        }
+      },
+      "ideal_for": {
+        "title": "Ideal para",
+        "items": {
+          "enterprise": "Aplicaciones de nivel empresarial que requieren arquitectura robusta",
+          "platforms": "Soluciones multiplataforma (web, iOS, Android)",
+          "complex": "Lógica de negocio compleja y procesamiento de datos",
+          "scaling": "Proyectos que requieren alta escalabilidad y rendimiento"
+        }
+      }
+    },
+    "developer_designer": {
+      "title": "Dúo Desarrollador + Diseñador",
+      "subtitle": "Paquete Completo de Experiencia Digital",
+      "description": "La combinación perfecta de excelencia técnica y diseño impresionante. Obtén tanto un desarrollador como un diseñador trabajando juntos para crear aplicaciones hermosas y funcionales.",
+      "features": {
+        "title": "Qué está incluido",
+        "items": {
+          "collaboration": "Colaboración fluida desarrollador-diseñador",
+          "ux_research": "Investigación UX y mapeo del recorrido del usuario",
+          "design_system": "Design system personalizado e identidad de marca",
+          "prototyping": "Prototipos interactivos y maquetas",
+          "development": "Desarrollo completo de aplicación con tecnologías modernas",
+          "animations": "Animaciones suaves y micro-interacciones",
+          "accessibility": "Diseño accesible conforme a WCAG",
+          "testing": "Pruebas de usabilidad y validación de diseño",
+          "assets": "Assets de diseño completos y guía de estilo",
+          "iterations": "Iteraciones de diseño basadas en retroalimentación"
+        }
+      },
+      "ideal_for": {
+        "title": "Ideal para",
+        "items": {
+          "brands": "Marcas que buscan identidad visual única",
+          "consumer": "Aplicaciones de cara al consumidor que requieren UX pulida",
+          "ecommerce": "Plataformas de e-commerce que necesitan optimización de conversión",
+          "saas": "Productos SaaS que priorizan la experiencia del usuario"
+        }
+      }
+    },
+    "cta": {
+      "title": "¿Listo para comenzar tu proyecto cósmico?",
+      "description": "Hablemos de qué oferta se adapta mejor a tus necesidades y cómo podemos transformar tu visión en realidad.",
+      "button": "Programar una consulta",
+      "contact_info": "Contáctanos para discutir los requisitos de tu proyecto"
+    }
   },
   "services": {
     "title": "Nuestros Servicios Cósmicos",

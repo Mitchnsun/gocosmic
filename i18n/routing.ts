@@ -37,5 +37,14 @@ export const routing = defineRouting({
       de: '/reise',
       it: '/viaggio',
     },
+
+    // Offers page
+    '/offers': {
+      en: '/offers',
+      fr: '/nos-offres',
+      es: '/nuestras-ofertas',
+      de: '/unsere-angebote',
+      it: '/le-nostre-offerte',
+    },
   },
 });

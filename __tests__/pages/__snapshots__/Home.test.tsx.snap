@@ -213,28 +213,11 @@ exports[`Home Page > should render the home page correctly 1`] = `
         Let's discuss how we can bring your mobile or web app vision to life, creating something truly out of this world.
       </p>
       <a
-        class="justify-center cursor-pointer rounded-full transition-colors disabled:pointer-events-none disabled:opacity-50 bg-jungle text-white hover:bg-jungle/90 font-normal text-base px-6 py-2 mt-2 flex w-fit items-center gap-2"
-        href="https://mcomper.at/"
-        rel="noopener noreferrer"
-        target="_blank"
+        aria-label="View our offers"
+        class="bg-jungle hover:bg-jungle/90 mt-2 flex w-fit items-center gap-2 rounded-full px-6 py-2 text-base font-normal text-neutral-50 transition-colors"
+        href="/offers"
       >
-        Contact us
-        <svg
-          aria-hidden="true"
-          class="h-4 w-4"
-          data-slot="icon"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
+        View our offers
       </a>
     </div>
   </div>
