@@ -2,7 +2,6 @@ import {
   ArrowTopRightOnSquareIcon,
   CheckCircleIcon,
   CodeBracketIcon,
-  RocketLaunchIcon,
   SparklesIcon,
   UserGroupIcon,
 } from '@heroicons/react/24/solid';
@@ -295,21 +294,12 @@ export default function Offers() {
               {t('cta.title')}
             </h2>
             <p className="text-center text-lg text-gray-400 sm:text-xl lg:text-lg">{t('cta.description')}</p>
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <Button variant="royal" className="flex items-center gap-2" asChild>
-                <a href="https://mcomper.at/" rel="noopener noreferrer" target="_blank">
-                  <RocketLaunchIcon className="h-5 w-5" aria-hidden="true" />
-                  {t('cta.primary_button')}
-                  <ArrowTopRightOnSquareIcon className="h-4 w-4" aria-hidden="true" />
-                </a>
-              </Button>
-              <Button variant="jungle" className="flex items-center gap-2" asChild>
-                <a href="https://mcomper.at/" rel="noopener noreferrer" target="_blank">
-                  {t('cta.secondary_button')}
-                  <ArrowTopRightOnSquareIcon className="h-4 w-4" aria-hidden="true" />
-                </a>
-              </Button>
-            </div>
+            <Button variant="jungle" className="flex items-center gap-2" asChild>
+              <a href="https://mcomper.at/" rel="noopener noreferrer" target="_blank">
+                {t('cta.button')}
+                <ArrowTopRightOnSquareIcon className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </Button>
             <p className="text-center text-sm text-gray-500">{t('cta.contact_info')}</p>
           </div>
         </section>

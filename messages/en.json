@@ -74,7 +74,8 @@
     "cta": {
       "button": "Contact us",
       "description": "Let's discuss how we can bring your mobile or web app vision to life, creating something truly out of this world.",
-      "title": "Ready to Go Cosmic?"
+      "title": "Ready to Go Cosmic?",
+      "viewOffers": "View our offers"
     },
     "hero": {
       "cta": "Start your journey",
@@ -215,8 +216,7 @@
     "cta": {
       "title": "Ready to start your Cosmic project?",
       "description": "Let's discuss which offer best suits your needs and how we can transform your vision into reality.",
-      "primary_button": "Get started",
-      "secondary_button": "Schedule a consultation",
+      "button": "Schedule a consultation",
       "contact_info": "Contact us to discuss your project requirements"
     }
   },

@@ -74,7 +74,8 @@
     "cta": {
       "button": "Contattaci",
       "description": "Parliamo di come possiamo dare vita al tuo progetto web o mobile, creando qualcosa di davvero fuori dal comune.",
-      "title": "Pronto per Go Cosmic?"
+      "title": "Pronto per Go Cosmic?",
+      "viewOffers": "Consulta le nostre offerte"
     },
     "hero": {
       "cta": "Inizia il tuo viaggio",
@@ -215,8 +216,7 @@
     "cta": {
       "title": "Pronto per iniziare il tuo progetto cosmico?",
       "description": "Parliamo di quale offerta si adatta meglio alle tue esigenze e di come possiamo trasformare la tua visione in realtà.",
-      "primary_button": "Inizia",
-      "secondary_button": "Pianifica una consultazione",
+      "button": "Pianifica una consultazione",
       "contact_info": "Contattaci per discutere i requisiti del tuo progetto"
     }
   },

@@ -16,7 +16,6 @@ describe('Offers Page', () => {
 
     // Check CTA section
     expect(getByRole('heading', { name: /ready to start your cosmic project/i })).toBeInTheDocument();
-    expect(getByText(/get started/i)).toBeInTheDocument();
     expect(getByText(/schedule a consultation/i)).toBeInTheDocument();
 
     // Check some key content from each offer

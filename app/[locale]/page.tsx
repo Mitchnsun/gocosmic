@@ -1,8 +1,6 @@
-import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import { CodeBracketIcon, PuzzlePieceIcon, RocketLaunchIcon, SparklesIcon, StarIcon } from '@heroicons/react/24/solid';
 import { useTranslations } from 'next-intl';
 
-import { Button } from '@/design-system/button';
 import { Link } from '@/i18n/navigation';
 
 export default function Home() {
@@ -55,12 +53,12 @@ export default function Home() {
       <div className="m-auto flex max-w-7xl flex-col items-center gap-2 rounded-lg bg-gray-800 px-4 py-12">
         <h3 className="py-2 text-center text-xl font-bold sm:text-3xl">{t('cta.title')}</h3>
         <p className="text-center font-light text-gray-400">{t('cta.description')}</p>
-        <Button variant="jungle" className="mt-2 flex w-fit items-center gap-2" asChild>
-          <a href="https://mcomper.at/" rel="noopener noreferrer" target="_blank">
-            {t('cta.button')}
-            <ArrowTopRightOnSquareIcon className="h-4 w-4" aria-hidden="true" />
-          </a>
-        </Button>
+        <Link
+          href="/offers"
+          className="bg-jungle hover:bg-jungle/90 mt-2 flex w-fit items-center gap-2 rounded-full px-6 py-2 text-base font-normal text-neutral-50 transition-colors"
+          aria-label={t('cta.viewOffers')}>
+          {t('cta.viewOffers')}
+        </Link>
       </div>
     </div>
   );
