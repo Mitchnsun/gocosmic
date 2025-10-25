@@ -4,6 +4,43 @@
     "link": "Volver al inicio",
     "title": "Parece que te has perdido en el espacio"
   },
+  "dailyFortune": {
+    "title": "Daily Fortune",
+    "subtitle": "Tu dosis diaria de sabiduría cósmica para desarrolladores",
+    "overview": {
+      "title": "Acerca de Daily Fortune",
+      "description": "Daily Fortune es una encantadora aplicación web que aporta un toque de magia cósmica a tu rutina diaria de codificación. Cada día, recibe una fortuna personalizada diseñada específicamente para desarrolladores navegando el universo del código.",
+      "motivation": "Creada para añadir una pizca de diversión e inspiración al viaje del desarrollador, Daily Fortune combina sabiduría mística con humor tecnológico para alegrar tu día y mantenerte motivado."
+    },
+    "features": {
+      "title": "Características clave",
+      "items": {
+        "daily": "Nuevas fortunas cósmicas entregadas cada día",
+        "developer": "Predicciones e insights enfocados en desarrolladores",
+        "modern": "Interfaz limpia y responsiva con animaciones fluidas",
+        "cosmic": "Diseño inspirado en el espacio que captura la maravilla del universo"
+      }
+    },
+    "technology": {
+      "title": "Stack tecnológico",
+      "description": "Construida con tecnologías web modernas para ofrecer una experiencia rápida, hermosa y confiable:",
+      "stack": {
+        "nextjs": "Next.js - Framework React para aplicaciones listas para producción",
+        "typescript": "TypeScript - Desarrollo type-safe para confiabilidad",
+        "tailwind": "Tailwind CSS - Estilización utilitaria para estética cósmica",
+        "prisma": "Prisma y PostgreSQL - Capa de base de datos robusta para almacenamiento de fortunas"
+      }
+    },
+    "ai": {
+      "title": "Impulsado por inteligencia",
+      "description": "Daily Fortune aprovecha las capacidades modernas de IA para generar fortunas únicas, atractivas y contextualmente relevantes que resuenan con las experiencias diarias y aspiraciones de los desarrolladores."
+    },
+    "cta": {
+      "title": "Explora Daily Fortune",
+      "description": "Descubre tu fortuna cósmica y deja que las estrellas guíen tu viaje de codificación.",
+      "button": "Visitar el repositorio"
+    }
+  },
   "about": {
     "developer": {
       "bio": "Matthieu combina una profunda experiencia técnica con una visión creativa para diseñar soluciones digitales que superan los límites de lo posible. Su enfoque 'cósmico' busca crear experiencias de usuario que sean eficientes, bellas e innovadoras.",

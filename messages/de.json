@@ -4,6 +4,43 @@
     "link": "Zurück zur Startseite",
     "title": "Sie scheinen im Weltraum verloren zu sein"
   },
+  "dailyFortune": {
+    "title": "Daily Fortune",
+    "subtitle": "Ihre tägliche Dosis kosmischer Entwickler-Weisheit",
+    "overview": {
+      "title": "Über Daily Fortune",
+      "description": "Daily Fortune ist eine entzückende Webanwendung, die einen Hauch von kosmischer Magie in Ihre tägliche Programmierroutine bringt. Jeden Tag erhalten Sie ein personalisiertes Schicksal, das speziell für Entwickler entwickelt wurde, die das Code-Universum durchqueren.",
+      "motivation": "Erstellt, um dem Entwicklerweg eine Prise Spaß und Inspiration hinzuzufügen, kombiniert Daily Fortune mystische Weisheit mit technischem Humor, um Ihren Tag aufzuhellen und Sie motiviert zu halten."
+    },
+    "features": {
+      "title": "Hauptmerkmale",
+      "items": {
+        "daily": "Jeden Tag neue kosmische Schicksale",
+        "developer": "Entwickler-fokussierte Vorhersagen und Einblicke",
+        "modern": "Saubere, responsive Oberfläche mit flüssigen Animationen",
+        "cosmic": "Weltraum-inspiriertes Design, das die Wunder des Universums einfängt"
+      }
+    },
+    "technology": {
+      "title": "Technologie-Stack",
+      "description": "Gebaut mit modernen Web-Technologien für ein schnelles, schönes und zuverlässiges Erlebnis:",
+      "stack": {
+        "nextjs": "Next.js - React-Framework für produktionsreife Anwendungen",
+        "typescript": "TypeScript - Typsichere Entwicklung für Zuverlässigkeit",
+        "tailwind": "Tailwind CSS - Utility-First-Styling für kosmische Ästhetik",
+        "prisma": "Prisma & PostgreSQL - Robuste Datenbankschicht für Schicksalsspeicherung"
+      }
+    },
+    "ai": {
+      "title": "Angetrieben von Intelligenz",
+      "description": "Daily Fortune nutzt moderne KI-Fähigkeiten, um einzigartige, ansprechende und kontextuell relevante Schicksale zu generieren, die mit den täglichen Erfahrungen und Bestrebungen der Entwickler in Resonanz stehen."
+    },
+    "cta": {
+      "title": "Erkunden Sie Daily Fortune",
+      "description": "Entdecken Sie Ihr kosmisches Schicksal und lassen Sie die Sterne Ihre Programmierreise leiten.",
+      "button": "Repository besuchen"
+    }
+  },
   "about": {
     "developer": {
       "bio": "Matthieu verbindet tiefgehende technische Expertise mit einer kreativen Vision, um digitale Lösungen zu gestalten, die die Grenzen des Möglichen erweitern. Sein 'kosmischer' Ansatz zielt darauf ab, Nutzererlebnisse zu schaffen, die leistungsstark, schön und innovativ sind.",

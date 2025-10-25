@@ -4,6 +4,43 @@
     "link": "Go back home",
     "title": "You seem to be lost in space"
   },
+  "dailyFortune": {
+    "title": "Daily Fortune",
+    "subtitle": "Your daily dose of cosmic developer wisdom",
+    "overview": {
+      "title": "About Daily Fortune",
+      "description": "Daily Fortune is a delightful web application that brings a touch of cosmic magic to your daily coding routine. Each day, receive a personalized fortune designed specifically for developers navigating the universe of code.",
+      "motivation": "Created to add a sprinkle of fun and inspiration to the developer's journey, Daily Fortune combines mystical wisdom with tech-savvy humor to brighten your day and keep you motivated."
+    },
+    "features": {
+      "title": "Key Features",
+      "items": {
+        "daily": "Fresh cosmic fortunes delivered every day",
+        "developer": "Developer-focused predictions and insights",
+        "modern": "Clean, responsive interface with smooth animations",
+        "cosmic": "Space-inspired design that captures the wonder of the universe"
+      }
+    },
+    "technology": {
+      "title": "Technology Stack",
+      "description": "Built with modern web technologies to deliver a fast, beautiful, and reliable experience:",
+      "stack": {
+        "nextjs": "Next.js - React framework for production-ready applications",
+        "typescript": "TypeScript - Type-safe development for reliability",
+        "tailwind": "Tailwind CSS - Utility-first styling for cosmic aesthetics",
+        "prisma": "Prisma & PostgreSQL - Robust database layer for fortune storage"
+      }
+    },
+    "ai": {
+      "title": "Powered by Intelligence",
+      "description": "Daily Fortune leverages modern AI capabilities to generate unique, engaging, and contextually relevant fortunes that resonate with developers' daily experiences and aspirations."
+    },
+    "cta": {
+      "title": "Explore Daily Fortune",
+      "description": "Discover your cosmic fortune and let the stars guide your coding journey.",
+      "button": "Visit the repository"
+    }
+  },
   "about": {
     "developer": {
       "bio": "Matthieu combines deep technical expertise with a creative vision to design digital solutions that push the limits of what's possible. His \"cosmic\" approach to development aims to create user experiences that are performant, beautiful, and innovative.",
