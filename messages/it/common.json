@@ -1,0 +1,18 @@
+{
+  "404": {
+    "description": "Forse le stelle non si sono ancora allineate.",
+    "link": "Torna alla home",
+    "title": "Sembra che tu ti sia perso nello spazio"
+  },
+  "common": {
+    "loading": "Caricamento del tuo viaggio cosmico..."
+  },
+  "meta": {
+    "description": "Go Cosmic Dev: Un Viaggio Cosmico nel Futuro dello Sviluppo",
+    "title": "Go Cosmic"
+  },
+  "language": {
+    "current": "Lingua attuale: {language}",
+    "switchTo": "Passa a {language}"
+  }
+}

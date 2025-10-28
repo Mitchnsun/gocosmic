@@ -1,0 +1,18 @@
+{
+  "404": {
+    "description": "Vielleicht haben sich die Sterne einfach noch nicht ausgerichtet.",
+    "link": "Zurück zur Startseite",
+    "title": "Sie scheinen im Weltraum verloren zu sein"
+  },
+  "common": {
+    "loading": "Ihr kosmisches Abenteuer wird geladen..."
+  },
+  "meta": {
+    "description": "Go Cosmic Dev: Eine Kosmische Reise in die Zukunft der Entwicklung",
+    "title": "Go Cosmic"
+  },
+  "language": {
+    "current": "Aktuelle Sprache: {language}",
+    "switchTo": "Wechseln zu {language}"
+  }
+}

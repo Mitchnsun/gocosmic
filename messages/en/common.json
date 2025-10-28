@@ -1,0 +1,18 @@
+{
+  "404": {
+    "description": "Maybe the stars just haven't aligned yet.",
+    "link": "Go back home",
+    "title": "You seem to be lost in space"
+  },
+  "common": {
+    "loading": "Loading your Cosmic journey..."
+  },
+  "meta": {
+    "description": "Go Cosmic Dev: A Cosmic Journey into the Future of Development",
+    "title": "Go Cosmic"
+  },
+  "language": {
+    "current": "Current language: {language}",
+    "switchTo": "Switch to {language}"
+  }
+}

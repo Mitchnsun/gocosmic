@@ -1,0 +1,141 @@
+{
+  "services": {
+    "title": "I Nostri Servizi Cosmici",
+    "subtitle": "Soluzioni tecniche complete per spingere i tuoi progetti nella stratosfera",
+    "stellar_development": {
+      "title": "Sviluppo Stellare",
+      "subtitle": "Eccellenza Web Moderna con Tecnologie all'Avanguardia",
+      "description": "La nostra esperienza nello sviluppo sfrutta le ultime tecnologie per creare applicazioni robuste, scalabili e performanti. Padroneggiamo l'intero stack di sviluppo dal frontend al backend.",
+      "technologies": {
+        "title": "Tecnologie che Padroneggiamo",
+        "items": {
+          "frontend": "Frontend Moderno: React 19, Next.js 15, TypeScript, TailwindCSS 4.x",
+          "architecture": "Architettura Scalabile: Monorepo con Turborepo, Librerie di Componenti, Design Systems",
+          "quality": "Qualità del Codice: ESLint 9.x, Prettier, Husky, 100% Copertura Test con Vitest",
+          "performance": "Performance: Server-Side Rendering, Generazione Statica, Ottimizzazione Immagini"
+        }
+      },
+      "expertise": {
+        "title": "La Nostra Esperienza di Sviluppo",
+        "items": {
+          "workflow": "Workflow CI/CD avanzati con test automatizzati e deployment",
+          "scalability": "Architettura a microservizi e soluzioni cloud-native",
+          "security": "Best practice di sicurezza con scansione vulnerabilità e monitoraggio conformità",
+          "apis": "API RESTful e GraphQL con documentazione completa"
+        }
+      },
+      "features": {
+        "title": "Cosa Consegniamo",
+        "items": {
+          "quality": "Codice pronto per la produzione con copertura test 100% e documentazione completa",
+          "performance": "Applicazioni ultra-veloci ottimizzate per i Core Web Vitals",
+          "maintainability": "Architettura pulita e modulare che scala con le esigenze del tuo business",
+          "reliability": "Applicazioni robuste con gestione errori e integrazione monitoring"
+        }
+      }
+    },
+    "mystical_design": {
+      "title": "Design UI/UX Mistico",
+      "subtitle": "Esperienze Immersive che Catturano e Convertono",
+      "description": "Creiamo esperienze digitali che sono non solo visivamente mozzafiato ma anche intuitive, accessibili e orientate alla conversione. La nostra filosofia di design combina estetica cosmica con principi UX collaudati.",
+      "approach": {
+        "title": "Il Nostro Approccio al Design",
+        "items": {
+          "systems": "Design Systems: Librerie di componenti coerenti e scalabili con pattern documentati",
+          "accessibility": "Accessibilità Universale: Conformità WCAG con HTML semantico e standard ARIA",
+          "responsive": "Responsive Mobile-First: Layout fluidi che funzionano perfettamente su tutti i dispositivi",
+          "performance": "Focalizzato sulle Performance: Asset ottimizzati e animazioni fluide"
+        }
+      },
+      "tools": {
+        "title": "Strumenti di Design e Sviluppo",
+        "items": {
+          "components": "Primitive Radix UI con Class Variance Authority per styling type-safe",
+          "styling": "TailwindCSS con token di design personalizzati e approccio utility-first",
+          "testing": "Storybook per documentazione componenti e test visivi",
+          "prototyping": "Prototipi interattivi con dati reali e componenti pronti per la produzione"
+        }
+      },
+      "outcomes": {
+        "title": "Risultati del Design",
+        "items": {
+          "engagement": "Maggiore coinvolgimento utente attraverso interazioni intuitive e piacevoli",
+          "conversion": "Tassi di conversione più alti con CTA strategicamente posizionati e flussi utente",
+          "brand": "Identità di brand forte che si distingue nel paesaggio digitale cosmico",
+          "satisfaction": "Soddisfazione utente eccezionale attraverso ricerca UX e test approfonditi"
+        }
+      }
+    },
+    "ai_powered": {
+      "title": "Soluzioni Potenziate dall'IA",
+      "subtitle": "Funzionalità Intelligenti che Trasformano l'Esperienza Utente",
+      "description": "Integriamo tecnologie IA all'avanguardia per creare applicazioni più intelligenti e adattive. Le nostre soluzioni IA migliorano l'esperienza utente mantenendo privacy e standard etici.",
+      "capabilities": {
+        "title": "Capacità di Integrazione IA",
+        "items": {
+          "recommendations": "Motori di raccomandazione intelligenti alimentati da algoritmi di machine learning",
+          "automation": "Automazione dei processi e ottimizzazione dei workflow usando insight guidati dall'IA",
+          "analytics": "Analytics avanzati e modellazione predittiva per decisioni data-driven",
+          "nlp": "Natural Language Processing per chatbot e analisi contenuti"
+        }
+      },
+      "implementation": {
+        "title": "Implementazione Tecnica",
+        "items": {
+          "apis": "Integrazione fluida con piattaforme IA leader (OpenAI, Google AI, Azure Cognitive Services)",
+          "privacy": "Approccio privacy-first con elaborazione on-device quando possibile",
+          "scalability": "Servizi IA cloud che scalano con la tua base utenti",
+          "monitoring": "Monitoraggio completo e ottimizzazione performance per funzionalità IA"
+        }
+      },
+      "use_cases": {
+        "title": "Casi d'Uso IA",
+        "items": {
+          "personalization": "Esperienze utente personalizzate basate su comportamento e preferenze",
+          "support": "Supporto clienti intelligente con risposte automatizzate ed escalation",
+          "optimization": "Ottimizzazione performance attraverso allocazione predittiva delle risorse",
+          "insights": "Business intelligence attraverso analisi automatizzata dei dati e reporting"
+        }
+      }
+    },
+    "cosmic_launch": {
+      "title": "Lancio Cosmico",
+      "subtitle": "Supporto Completo al Lancio dallo Sviluppo alla Produzione",
+      "description": "Forniamo supporto completo al lancio per assicurare che la tua applicazione raggiunga con successo la produzione e continui a performare in modo ottimale. La nostra expertise DevOps garantisce un viaggio fluido dal codice al cosmo.",
+      "process": {
+        "title": "Processo di Lancio",
+        "items": {
+          "testing": "Test completi inclusi test unitari, di integrazione ed end-to-end",
+          "staging": "Setup ambiente di staging con configurazioni simili alla produzione",
+          "deployment": "Pipeline di deployment automatizzate con capacità di rollback",
+          "monitoring": "Sistemi di monitoraggio in tempo reale e alerting"
+        }
+      },
+      "infrastructure": {
+        "title": "Infrastruttura e DevOps",
+        "items": {
+          "cloud": "Strategie di deployment multi-cloud (AWS, Vercel, Azure, Google Cloud)",
+          "cicd": "Pipeline CI/CD avanzate con test automatizzati e deployment",
+          "security": "Scansione sicurezza, valutazioni vulnerabilità e monitoraggio conformità",
+          "scaling": "Infrastruttura auto-scaling che cresce con il tuo successo"
+        }
+      },
+      "support": {
+        "title": "Supporto Continuo",
+        "items": {
+          "monitoring": "Monitoraggio applicazione 24/7 con alerting intelligente",
+          "optimization": "Ottimizzazione performance continua e gestione risorse",
+          "updates": "Aggiornamenti di sicurezza regolari e miglioramenti funzionalità",
+          "consultation": "Consulenza tecnica strategica per crescita futura"
+        }
+      }
+    },
+    "cta": {
+      "title": "Pronto a lanciare il tuo prossimo progetto cosmico?",
+      "description": "Parliamo di come i nostri servizi completi possono trasformare la tua visione in realtà. Dallo sviluppo stellare al lancio cosmico, siamo qui per guidare il tuo progetto al successo.",
+      "primary_button": "Inizia il tuo viaggio cosmico",
+      "secondary_button": "Ottieni un preventivo personalizzato",
+      "contact_info": "Connettiti con il nostro team tecnico per esplorare le possibilità"
+    }
+  }
+}

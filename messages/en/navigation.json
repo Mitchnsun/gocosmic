@@ -1,0 +1,13 @@
+{
+  "navigation": {
+    "about": "About",
+    "about_label": "About Go Cosmic",
+    "contact": "Contact",
+    "contact_label": "Contact Matthieu Compérat (opens in new tab)",
+    "home": "Go to homepage",
+    "label": "Main navigation",
+    "services": "Services",
+    "services_label": "Our Cosmic Services",
+    "switch_locale": "Switch Language"
+  }
+}

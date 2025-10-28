@@ -1,0 +1,34 @@
+{
+  "homepage": {
+    "cta": {
+      "button": "Contáctanos",
+      "description": "Hablemos de cómo podemos dar vida a tu proyecto web o móvil, creando algo realmente fuera de este mundo.",
+      "title": "¿Listo para Go Cosmic?",
+      "viewOffers": "Consultar nuestras ofertas"
+    },
+    "hero": {
+      "cta": "Comienza tu viaje",
+      "subtitle": "Permítenos lanzar tus ideas a la estratosfera con diseño místico y funcionalidad cósmica",
+      "title": "Construimos aplicaciones estelares que brillan"
+    },
+    "services": {
+      "ai": {
+        "description": "Integrando características avanzadas de IA para hacer tus aplicaciones más inteligentes, adaptativas y verdaderamente de nueva generación.",
+        "title": "Impulsado por IA"
+      },
+      "design": {
+        "description": "Creando experiencias de usuario intuitivas y encantadoras que cautivan y deleitan.",
+        "title": "Diseño UI/UX Místico"
+      },
+      "development": {
+        "description": "Construyendo aplicaciones móviles robustas y escalables para plataformas iOS y Android.",
+        "title": "Desarrollo Estelar"
+      },
+      "launch": {
+        "description": "Guiando tu aplicación a través del proceso de lanzamiento y más allá, asegurando un despegue exitoso.",
+        "title": "Lanzamiento Cósmico"
+      },
+      "title": "Nuestros Servicios Cósmicos"
+    }
+  }
+}

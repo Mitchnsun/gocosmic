@@ -1,0 +1,141 @@
+{
+  "services": {
+    "title": "Our Cosmic Services",
+    "subtitle": "Comprehensive technical solutions to propel your projects into the stratosphere",
+    "stellar_development": {
+      "title": "Stellar Development",
+      "subtitle": "Modern Web Excellence with Cutting-Edge Technologies",
+      "description": "Our development expertise leverages the latest technologies to create robust, scalable, and performant applications. We master the complete development stack from frontend to backend.",
+      "technologies": {
+        "title": "Technologies we master",
+        "items": {
+          "frontend": "Modern Frontend: React 19, Next.js 15, TypeScript, TailwindCSS 4.x",
+          "architecture": "Scalable Architecture: Monorepo with Turborepo, Component Libraries, Design Systems",
+          "quality": "Code Quality: ESLint 9.x, Prettier, Husky, 100% Test Coverage with Vitest",
+          "performance": "Performance: Server-Side Rendering, Static Generation, Image Optimization"
+        }
+      },
+      "expertise": {
+        "title": "Our Development Expertise",
+        "items": {
+          "workflow": "Advanced CI/CD workflows with automated testing and deployment",
+          "scalability": "Microservices architecture and cloud-native solutions",
+          "security": "Security best practices with vulnerability scanning and compliance",
+          "apis": "RESTful and GraphQL APIs with comprehensive documentation"
+        }
+      },
+      "features": {
+        "title": "What we deliver",
+        "items": {
+          "quality": "Production-ready code with 100% test coverage and comprehensive documentation",
+          "performance": "Lightning-fast applications optimized for Core Web Vitals",
+          "maintainability": "Clean, modular architecture that scales with your business needs",
+          "reliability": "Robust applications with error handling and monitoring integration"
+        }
+      }
+    },
+    "mystical_design": {
+      "title": "Mystical UI/UX Design",
+      "subtitle": "Immersive experiences that captivate and convert",
+      "description": "We create digital experiences that are not only visually stunning but also intuitive, accessible, and conversion-focused. Our design philosophy combines cosmic aesthetics with proven UX principles.",
+      "approach": {
+        "title": "Our design approach",
+        "items": {
+          "systems": "Design Systems: Consistent, scalable component libraries with documented patterns",
+          "accessibility": "Universal Accessibility: WCAG compliance with semantic HTML and ARIA standards",
+          "responsive": "Mobile-First Responsive: Fluid layouts that work perfectly on all devices",
+          "performance": "Performance-Focused: Optimized assets and smooth animations"
+        }
+      },
+      "tools": {
+        "title": "Design & Development Tools",
+        "items": {
+          "components": "Radix UI primitives with Class Variance Authority for type-safe styling",
+          "styling": "TailwindCSS with custom design tokens and utility-first approach",
+          "testing": "Storybook for component documentation and visual testing",
+          "prototyping": "Interactive prototypes with real data and production-ready components"
+        }
+      },
+      "outcomes": {
+        "title": "Design Outcomes",
+        "items": {
+          "engagement": "Increased user engagement through intuitive and delightful interactions",
+          "conversion": "Higher conversion rates with strategically placed CTAs and user flows",
+          "brand": "Strong brand identity that stands out in the cosmic digital landscape",
+          "satisfaction": "Exceptional user satisfaction through thoughtful UX research and testing"
+        }
+      }
+    },
+    "ai_powered": {
+      "title": "AI Powered Solutions",
+      "subtitle": "Intelligent features that transform user experience",
+      "description": "We integrate cutting-edge AI technologies to create smarter, more adaptive applications. Our AI solutions enhance user experience while maintaining privacy and ethical standards.",
+      "capabilities": {
+        "title": "AI Integration capabilities",
+        "items": {
+          "recommendations": "Intelligent recommendation engines powered by machine learning algorithms",
+          "automation": "Process automation and workflow optimization using AI-driven insights",
+          "analytics": "Advanced analytics and predictive modeling for data-driven decisions",
+          "nlp": "Natural Language Processing for chatbots and content analysis"
+        }
+      },
+      "implementation": {
+        "title": "Technical Implementation",
+        "items": {
+          "apis": "Seamless integration with leading AI platforms (OpenAI, Google AI, Azure Cognitive Services)",
+          "privacy": "Privacy-first approach with on-device processing when possible",
+          "scalability": "Cloud-based AI services that scale with your user base",
+          "monitoring": "Comprehensive monitoring and performance optimization for AI features"
+        }
+      },
+      "use_cases": {
+        "title": "AI Use Cases",
+        "items": {
+          "personalization": "Personalized user experiences based on behavior and preferences",
+          "support": "Intelligent customer support with automated responses and escalation",
+          "optimization": "Performance optimization through predictive resource allocation",
+          "insights": "Business intelligence through automated data analysis and reporting"
+        }
+      }
+    },
+    "cosmic_launch": {
+      "title": "Cosmic Launch",
+      "subtitle": "Complete Launch support from development to production",
+      "description": "We provide comprehensive launch support to ensure your application reaches production successfully and continues to perform optimally. Our DevOps expertise guarantees a smooth journey from code to cosmos.",
+      "process": {
+        "title": "Launch Process",
+        "items": {
+          "testing": "Comprehensive testing including unit, integration, and end-to-end tests",
+          "staging": "Staging environment setup with production-like configurations",
+          "deployment": "Automated deployment pipelines with rollback capabilities",
+          "monitoring": "Real-time monitoring and alerting systems"
+        }
+      },
+      "infrastructure": {
+        "title": "Infrastructure & DevOps",
+        "items": {
+          "cloud": "Multi-cloud deployment strategies (AWS, Vercel, Azure, Google Cloud)",
+          "cicd": "Advanced CI/CD pipelines with automated testing and deployment",
+          "security": "Security scanning, vulnerability assessments, and compliance monitoring",
+          "scaling": "Auto-scaling infrastructure that grows with your success"
+        }
+      },
+      "support": {
+        "title": "Ongoing Support",
+        "items": {
+          "monitoring": "24/7 application monitoring with intelligent alerting",
+          "optimization": "Continuous performance optimization and resource management",
+          "updates": "Regular security updates and feature enhancements",
+          "consultation": "Strategic technical consultation for future growth"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to launch your next Cosmic project?",
+      "description": "Let's discuss how our comprehensive services can transform your vision into reality. From stellar development to cosmic launch, we're here to guide your project to success.",
+      "primary_button": "Start your Cosmic journey",
+      "secondary_button": "Get a custom quote",
+      "contact_info": "Connect with our technical team to explore the possibilities"
+    }
+  }
+}
