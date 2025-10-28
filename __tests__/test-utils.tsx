@@ -2,8 +2,8 @@ import { render, RenderOptions } from '@testing-library/react';
 import { NextIntlClientProvider } from 'next-intl';
 import { ReactElement } from 'react';
 
-import about from '../messages/en/about.json';
 // Import English messages from all namespaces for testing
+import about from '../messages/en/about.json';
 import common from '../messages/en/common.json';
 import footer from '../messages/en/footer.json';
 import home from '../messages/en/home.json';
