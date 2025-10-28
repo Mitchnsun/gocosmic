@@ -7,7 +7,7 @@ export default function About() {
   const t = useTranslations('about');
 
   return (
-    <div className="text-ghost relative bg-gray-900 pt-10">
+    <div className="text-ghost relative pt-10">
       <main className="m-auto flex max-w-7xl flex-col items-center gap-10 px-4 pb-4">
         {/* Page Header */}
         <div className="text-center">

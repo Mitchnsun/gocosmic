@@ -277,7 +277,13 @@ All UI components should evoke a sense of exploration and wonder while maintaini
    - Verify URLs change to locale-prefixed format (/en/, /fr/, etc.)
    - Verify content is properly translated
    - Test browser back/forward navigation
-7. Run web app tests: `yarn test` -- comprehensive unit tests for components, pages, and views
+7. Test page navigation:
+   - Navigate to About page (/about) - verify company overview and developer profile
+   - Navigate to Services page (/services) - verify all services sections render
+   - Navigate to Offers page (/offers) - verify all offers packages display
+   - Navigate to Journey page (/journey) - verify 3D cosmic experience loads
+   - Navigate to Daily Fortune project page (/projects/daily-fortune) - verify project showcase renders correctly
+8. Run web app tests: `yarn test` -- comprehensive unit tests for components, pages, and views
 
 ## Repository Structure
 

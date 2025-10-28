@@ -4,6 +4,43 @@
     "link": "Volver al inicio",
     "title": "Parece que te has perdido en el espacio"
   },
+  "dailyFortune": {
+    "title": "Daily Fortune",
+    "subtitle": "Tu dosis diaria de inspiración y sabiduría cósmica",
+    "overview": {
+      "title": "Acerca de Daily Fortune",
+      "description": "Daily Fortune es una encantadora aplicación móvil que aporta un toque de magia cósmica a tu rutina. Cada día, recibe una fortuna personalizada para alegrar tu día.",
+      "motivation": "Ya sea que busques un impulso por la mañana, una frase para mantenerte en el camino, o un mensaje para compartir, Daily Fortune se integra en tu rutina para difundir positividad y claridad."
+    },
+    "features": {
+      "title": "Características clave",
+      "items": {
+        "daily": "Nuevas fortunas cósmicas entregadas cada día",
+        "motivation": "Un mensaje escogido para alegrar tu día: galleta de la fortuna, cita motivacional o afirmación positiva",
+        "modern": "Interfaz limpia y responsiva con animaciones fluidas",
+        "cosmic": "Diseño inspirado en el espacio que captura la maravilla del universo"
+      }
+    },
+    "technology": {
+      "title": "Stack tecnológico",
+      "description": "Construida con tecnologías web modernas para ofrecer una experiencia rápida, hermosa y confiable:",
+      "stack": {
+        "nextjs": "Next.js - Framework React para aplicaciones listas para producción",
+        "typescript": "TypeScript - Desarrollo type-safe para confiabilidad",
+        "tailwind": "Tailwind CSS - Estilización utilitaria para estética cósmica",
+        "native": "React Native - Experiencia móvil nativa para iOS y Android"
+      }
+    },
+    "ai": {
+      "title": "Impulsado por inteligencia",
+      "description": "Daily Fortune aprovecha las capacidades modernas de IA para generar fortunas únicas, atractivas y contextualmente relevantes que resuenan con las experiencias diarias y aspiraciones de todos."
+    },
+    "cta": {
+      "title": "Explora Daily Fortune",
+      "description": "Descubre tu fortuna cósmica y deja que las estrellas guíen tu viaje.",
+      "button": "Visitar el repositorio"
+    }
+  },
   "about": {
     "developer": {
       "bio": "Matthieu combina una profunda experiencia técnica con una visión creativa para diseñar soluciones digitales que superan los límites de lo posible. Su enfoque 'cósmico' busca crear experiencias de usuario que sean eficientes, bellas e innovadoras.",

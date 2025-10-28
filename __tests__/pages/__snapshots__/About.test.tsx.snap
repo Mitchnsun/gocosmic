@@ -3,7 +3,7 @@
 exports[`About Page > should render the about page correctly 1`] = `
 <div>
   <div
-    class="text-ghost relative bg-gray-900 pt-10"
+    class="text-ghost relative pt-10"
   >
     <main
       class="m-auto flex max-w-7xl flex-col items-center gap-10 px-4 pb-4"

@@ -46,5 +46,14 @@ export const routing = defineRouting({
       de: '/unsere-angebote',
       it: '/le-nostre-offerte',
     },
+
+    // Projects - Daily Fortune
+    '/projects/daily-fortune': {
+      en: '/projects/daily-fortune',
+      fr: '/projets/daily-fortune',
+      es: '/proyectos/daily-fortune',
+      de: '/projekte/daily-fortune',
+      it: '/progetti/daily-fortune',
+    },
   },
 });

@@ -3,7 +3,6 @@
 exports[`JourneyContent Component > should render the journey content with cosmic theme 1`] = `
 <div>
   <div
-    class="bg-gray-900"
     style="min-height: calc(100vh - var(--header-footer-height));"
   >
     <div
