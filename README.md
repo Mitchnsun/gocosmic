@@ -55,6 +55,7 @@ messages/
 ```
 
 **Benefits of namespace organization:**
+
 - **Better maintainability**: Each namespace is self-contained and easier to manage
 - **Improved scalability**: Adding new pages requires only creating/updating specific namespace files
 - **Clear separation**: Shared components (navigation, footer) have dedicated namespaces
