@@ -171,6 +171,60 @@ WIP: Working on new feature
 7. Commit your changes using Conventional Commits format
 8. Push to your fork and submit a pull request
 
+### Working with Translations
+
+The project uses next-intl for internationalization with translations organized by namespace for better maintainability.
+
+#### Translation File Structure
+
+Translations are organized in namespace-based files:
+
+```
+messages/
+  ├── [locale]/
+  │   ├── common.json      # Shared strings (404, meta, language switcher)
+  │   ├── navigation.json  # Header navigation labels
+  │   ├── footer.json      # Footer content
+  │   ├── home.json        # Homepage content
+  │   ├── about.json       # About page content
+  │   ├── services.json    # Services page content
+  │   ├── offers.json      # Offers page content
+  │   ├── journey.json     # Journey page content
+  │   └── projects.json    # Project pages content
+```
+
+#### Adding New Translations
+
+1. **Identify the appropriate namespace**: Determine which namespace file should contain your new translation keys
+2. **Update English first**: Always add new keys to `messages/en/[namespace].json` first (English is the base language)
+3. **Translate to all locales**: Add the same keys to all other locale files (fr, es, de, it)
+4. **Use in components**: Import and use with `useTranslations` hook:
+
+```tsx
+import { useTranslations } from 'next-intl';
+
+export default function MyComponent() {
+  const t = useTranslations('namespace');
+  return <div>{t('key')}</div>;
+}
+```
+
+#### Adding New Routes
+
+When adding new routes that require translations:
+
+1. Create or update the appropriate namespace file for all locales
+2. Update `i18n/routing.ts` to add translated pathnames
+3. Update `i18n/request.ts` to include the new namespace in the `loadMessages` function
+4. Update test utilities in `__tests__/test-utils.tsx` to import the new namespace
+
+#### Guidelines
+
+- **Keep namespaces focused**: Each namespace should correspond to a specific section or page
+- **Maintain consistency**: Use the same structure across all locale files
+- **Avoid duplication**: Shared strings should go in `common.json`, `navigation.json`, or `footer.json`
+- **Test thoroughly**: Ensure all locales have complete translations (no missing keys)
+
 ### Code Style
 
 This project uses:

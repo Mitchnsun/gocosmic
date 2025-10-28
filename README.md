@@ -30,6 +30,55 @@ The Go Cosmic website serves as the primary business interface with the followin
 - **Translated Pathnames**: Route paths are localized for better SEO and UX (e.g., `/en/about` → `/fr/a-propos`, `/en/journey` → `/de/reise`)
 - **Browser Detection**: Automatic locale detection based on user preferences
 - **Language Switcher**: Intuitive dropdown component with flag icons and current language indication
+- **Namespace Organization**: Translation files are organized by namespace for better maintainability and scalability
+
+#### Translation File Structure
+
+Translations are organized into namespace-based files for improved organization and maintainability:
+
+```
+messages/
+  ├── en/              # English translations
+  │   ├── common.json      # Shared strings (404, meta, language switcher)
+  │   ├── navigation.json  # Header navigation labels
+  │   ├── footer.json      # Footer content
+  │   ├── home.json        # Homepage content
+  │   ├── about.json       # About page content
+  │   ├── services.json    # Services page content
+  │   ├── offers.json      # Offers page content
+  │   ├── journey.json     # Journey page content
+  │   └── projects.json    # Project pages content
+  ├── fr/              # French (same structure)
+  ├── es/              # Spanish (same structure)
+  ├── de/              # German (same structure)
+  └── it/              # Italian (same structure)
+```
+
+**Benefits of namespace organization:**
+- **Better maintainability**: Each namespace is self-contained and easier to manage
+- **Improved scalability**: Adding new pages requires only creating/updating specific namespace files
+- **Clear separation**: Shared components (navigation, footer) have dedicated namespaces
+- **Easier collaboration**: Multiple developers can work on different namespaces without conflicts
+
+**Usage in components:**
+
+Components use the `useTranslations` hook with the appropriate namespace:
+
+```tsx
+import { useTranslations } from 'next-intl';
+
+// In a page component
+export default function HomePage() {
+  const t = useTranslations('homepage');
+  return <h1>{t('hero.title')}</h1>;
+}
+
+// In a shared component
+export default function Header() {
+  const t = useTranslations('navigation');
+  return <nav>{t('label')}</nav>;
+}
+```
 
 ### Homepage
 
@@ -195,12 +244,25 @@ __tests__/
 
 ### Test Utils with Internationalization
 
-The `test-utils.tsx` file provides a custom render function that includes next-intl context for testing components that use translations:
+The `test-utils.tsx` file provides a custom render function that includes next-intl context for testing components that use translations. It merges all namespace files into a single messages object:
 
 ```tsx
 import { render } from '@testing-library/react';
 import { NextIntlClientProvider } from 'next-intl';
-import messages from '../messages/en.json';
+
+// Import all namespace files
+import common from '../messages/en/common.json';
+import navigation from '../messages/en/navigation.json';
+import footer from '../messages/en/footer.json';
+// ... other namespaces
+
+// Merge all namespaces
+const messages = {
+  ...common,
+  ...navigation,
+  ...footer,
+  // ... other namespaces
+};
 
 // Custom render with i18n context
 const customRender = (ui, options) =>
@@ -257,12 +319,21 @@ apps/web/
 ├── components/       # App-specific components
 │   ├── LanguageSwitcher/ # Multilingual navigation component
 │   └── icons/        # Reusable SVG icons (e.g., LinkedInIcon)
-├── messages/         # Translation files
-│   ├── en.json       # English (base language)
-│   ├── fr.json       # French translations
-│   ├── es.json       # Spanish translations
-│   ├── de.json       # German translations
-│   └── it.json       # Italian translations
+├── messages/         # Translation files organized by namespace
+│   ├── en/           # English translations
+│   │   ├── common.json     # Common UI strings (404, meta, language)
+│   │   ├── navigation.json # Header navigation
+│   │   ├── footer.json     # Footer content
+│   │   ├── home.json       # Homepage content
+│   │   ├── about.json      # About page content
+│   │   ├── services.json   # Services page content
+│   │   ├── offers.json     # Offers page content
+│   │   ├── journey.json    # Journey page content
+│   │   └── projects.json   # Project pages content
+│   ├── fr/           # French translations (same structure)
+│   ├── es/           # Spanish translations (same structure)
+│   ├── de/           # German translations (same structure)
+│   └── it/           # Italian translations (same structure)
 ├── i18n/            # Internationalization configuration
 │   ├── routing.ts    # Locale routing setup with translated pathnames
 │   ├── request.ts    # Server-side i18n configuration
