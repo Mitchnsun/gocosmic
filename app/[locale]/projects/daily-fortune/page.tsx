@@ -6,6 +6,7 @@ import {
   SparklesIcon,
 } from '@heroicons/react/24/solid';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
@@ -23,12 +24,21 @@ export default function DailyFortune() {
   const t = useTranslations('dailyFortune');
 
   return (
-    <div className="text-ghost relative bg-gray-900 pt-10">
+    <div className="text-ghost relativept-10">
       <main className="m-auto flex max-w-7xl flex-col items-center gap-10 px-4 pb-4">
         {/* Page Header */}
-        <div className="text-center">
-          <h1 className="mb-4 text-2xl font-extrabold sm:text-4xl">{t('title')}</h1>
-          <p className="text-lg text-gray-400">{t('subtitle')}</p>
+        <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
+          <Image
+            src="/projects/daily-fortune/app-icon.png"
+            className="overflow-hidden rounded-2xl"
+            alt="Daily Fortune Logo"
+            width={100}
+            height={100}
+          />
+          <div className="text-center">
+            <h1 className="mb-4 text-2xl font-extrabold sm:text-4xl">{t('title')}</h1>
+            <p className="text-lg text-gray-400">{t('subtitle')}</p>
+          </div>
         </div>
 
         {/* Overview Section */}
@@ -64,7 +74,7 @@ export default function DailyFortune() {
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-500" aria-hidden="true"></span>
-                  <span>{t('features.items.developer')}</span>
+                  <span>{t('features.items.motivation')}</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-600" aria-hidden="true"></span>
@@ -105,7 +115,7 @@ export default function DailyFortune() {
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-700" aria-hidden="true"></span>
-                  <span>{t('technology.stack.prisma')}</span>
+                  <span>{t('technology.stack.native')}</span>
                 </li>
               </ul>
             </div>
@@ -128,8 +138,17 @@ export default function DailyFortune() {
         </section>
 
         {/* CTA Section */}
-        <section className="w-full" aria-labelledby="cta-heading">
-          <div className="m-auto flex max-w-5xl flex-col items-center gap-6 rounded-lg bg-gray-800 px-6 py-12 lg:p-12">
+        <section
+          className="flex w-full flex-col items-center justify-center gap-8 lg:flex-row"
+          aria-labelledby="cta-heading">
+          <Image
+            src="/projects/daily-fortune/splashscreen.png"
+            className="overflow-hidden rounded-lg"
+            alt="Daily Fortune Illustration"
+            width={250}
+            height={250}
+          />
+          <div className="flex max-w-5xl flex-col items-center gap-6 rounded-lg bg-gray-800 px-6 py-12 lg:p-12">
             <h2 id="cta-heading" className="text-center text-3xl font-bold lg:text-4xl">
               {t('cta.title')}
             </h2>
@@ -138,7 +157,7 @@ export default function DailyFortune() {
               href="https://github.com/Mitchnsun/daily-fortune"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded bg-purple-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-purple-700 focus:ring-2 focus:ring-purple-400 focus:outline-none"
+              className="bg-royal hover:bg-royal/90 inline-flex items-center gap-2 rounded-full px-6 py-2 text-base font-normal text-neutral-50 transition-colors"
               aria-label="Visit Daily Fortune repository (opens in a new tab)">
               {t('cta.button')}
               <ArrowTopRightOnSquareIcon className="h-5 w-5" aria-hidden="true" />

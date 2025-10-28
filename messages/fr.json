@@ -6,17 +6,17 @@
   },
   "dailyFortune": {
     "title": "Daily Fortune",
-    "subtitle": "Votre dose quotidienne de sagesse cosmique pour développeurs",
+    "subtitle": "Votre dose quotidienne d'inspiration et de sagesse cosmique",
     "overview": {
       "title": "À propos de Daily Fortune",
-      "description": "Daily Fortune est une application web délicieuse qui apporte une touche de magie cosmique à votre routine de codage quotidienne. Chaque jour, recevez une fortune personnalisée conçue spécifiquement pour les développeurs naviguant dans l'univers du code.",
-      "motivation": "Créée pour ajouter une pincée de plaisir et d'inspiration au parcours du développeur, Daily Fortune combine la sagesse mystique avec l'humour tech pour égayer votre journée et vous garder motivé."
+      "description": "Daily Fortune est une application mobile délicieuse qui apporte une touche de magie cosmique à votre routine. Chaque jour, recevez une fortune personnalisée pour éclairer votre journée.",
+      "motivation": "Que vous cherchiez un petit boost le matin, une phrase pour garder le cap, ou un message à partager, Daily Fortune s’invite dans votre routine pour semer positivité et clarté."
     },
     "features": {
       "title": "Fonctionnalités clés",
       "items": {
         "daily": "De nouvelles fortunes cosmiques livrées chaque jour",
-        "developer": "Prédictions et insights axés développeur",
+        "motivation": "Un message choisi pour éclairer votre journée : fortune cookie, citation motivante ou affirmation positive",
         "modern": "Interface épurée et réactive avec animations fluides",
         "cosmic": "Design inspiré de l'espace capturant l'émerveillement de l'univers"
       }
@@ -28,16 +28,16 @@
         "nextjs": "Next.js - Framework React pour applications prêtes pour la production",
         "typescript": "TypeScript - Développement type-safe pour la fiabilité",
         "tailwind": "Tailwind CSS - Styling utilitaire pour une esthétique cosmique",
-        "prisma": "Prisma & PostgreSQL - Couche de base de données robuste pour le stockage des fortunes"
+        "native": "React Native - Expérience mobile native pour iOS et Android"
       }
     },
     "ai": {
       "title": "Propulsé par l'intelligence",
-      "description": "Daily Fortune exploite les capacités modernes de l'IA pour générer des fortunes uniques, engageantes et contextuellement pertinentes qui résonnent avec les expériences quotidiennes et les aspirations des développeurs."
+      "description": "Daily Fortune exploite les capacités modernes de l'IA pour générer des fortunes uniques, engageantes et contextuellement pertinentes qui résonnent avec les expériences quotidiennes et les aspirations de chacun."
     },
     "cta": {
       "title": "Explorez Daily Fortune",
-      "description": "Découvrez votre fortune cosmique et laissez les étoiles guider votre voyage de codage.",
+      "description": "Découvrez votre fortune cosmique et laissez les étoiles guider votre voyage.",
       "button": "Visiter le dépôt"
     }
   },

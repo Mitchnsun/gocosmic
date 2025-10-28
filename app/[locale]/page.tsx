@@ -7,7 +7,7 @@ export default function Home() {
   const t = useTranslations('homepage');
 
   return (
-    <div className="text-ghost relative bg-gray-900 p-4">
+    <div className="text-ghost relative p-4">
       <main className="m-auto flex max-w-7xl flex-col items-center py-16 md:px-4">
         <div className="mb-4 flex flex-col items-center gap-3 md:flex-row">
           <RocketLaunchIcon className="h-10 w-10 text-blue-400" aria-hidden="true" />

@@ -50,11 +50,35 @@ The Go Cosmic website serves as the primary business interface with the followin
 
 ### About Page (`/about`)
 
-- **Company Overview**: Presents Go Cosmic’s mission and areas of specialization
-- **Developer Profile**: Highlights Matthieu Compérat’s expertise and experience
+- **Company Overview**: Presents Go Cosmic's mission and areas of specialization
+- **Developer Profile**: Highlights Matthieu Compérat's expertise and experience
 - **Legal & AI Usage**: Transparent statements about AI usage, privacy, and responsibility
 - **Accessibility**: Semantic headings, descriptive aria-labels, and keyboard focus styles
-- **SEO Ready**: Metadata and Open Graph descriptions optimized in the page’s `metadata`
+- **SEO Ready**: Metadata and Open Graph descriptions optimized in the page's `metadata`
+
+### Services Page (`/services`)
+
+- **Stellar Development**: Modern web development expertise with cutting-edge technologies
+- **Mystical UI/UX Design**: Immersive, accessible, and conversion-focused design approach
+- **AI Powered Solutions**: Intelligent features leveraging modern AI capabilities
+- **Cosmic Launch**: Complete launch support from development to production
+
+### Offers Page (`/offers`)
+
+- **Solo Cosmic Developer**: Dedicated developer for startups and small projects
+- **Complete Cosmic Team**: Full-stack solutions for complex, enterprise-grade projects
+- **Developer + Designer Duo**: Combined technical excellence and stunning design
+
+### Projects Section
+
+#### Daily Fortune (`/projects/daily-fortune`)
+
+- **Project Showcase**: Comprehensive presentation of the Daily Fortune mobile application
+- **Features Overview**: Key features including daily fortunes, motivational content, and cosmic design
+- **Technology Stack**: Details about modern technologies used (Next.js, TypeScript, React Native, TailwindCSS)
+- **AI Integration**: Information about AI-powered fortune generation
+- **Multilingual Support**: Complete translation coverage in 5 languages
+- **Call-to-Action**: Repository link for exploring the project
 
 ### Technical Features
 
@@ -65,8 +89,7 @@ The Go Cosmic website serves as the primary business interface with the followin
 
 ## Future Enhancements
 
-- **Portfolio Section**: Detailed showcase of Go Cosmic's completed projects
-- **Services Page**: Comprehensive listing of development services offered
+- **More Projects**: Additional project showcases beyond Daily Fortune
 - **Team Profiles**: Individual developer profiles with skills and experience
 - **Contact System**: Professional contact forms and consultation booking
 - **Case Studies**: In-depth presentation of successful client projects
@@ -224,6 +247,10 @@ apps/web/
 │   ├── [locale]/     # Internationalized routes
 │   │   ├── about/    # About page (mission, profile, legal & AI usage)
 │   │   ├── journey/  # 3D cosmic experience page
+│   │   ├── services/ # Services page (development, design, AI, launch)
+│   │   ├── offers/   # Offers page (solo, team, duo packages)
+│   │   ├── projects/ # Projects showcase
+│   │   │   └── daily-fortune/ # Daily Fortune project page
 │   │   └── page.tsx  # Homepage
 │   ├── layout.tsx    # Root layout with i18n provider
 │   └── ...

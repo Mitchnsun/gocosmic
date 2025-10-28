@@ -1,4 +1,4 @@
-import DailyFortune from '@/app/[locale]/applications/daily-fortune/page';
+import DailyFortune from '@/app/[locale]/projects/daily-fortune/page';
 
 import { render } from '../test-utils';
 

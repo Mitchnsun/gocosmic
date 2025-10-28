@@ -20,7 +20,7 @@ export default function JourneyContent() {
   const t = useTranslations('journey');
 
   return (
-    <div className="bg-gray-900" style={{ minHeight: 'calc(100vh - var(--header-footer-height))' }}>
+    <div style={{ minHeight: 'calc(100vh - var(--header-footer-height))' }}>
       <div className="fixed inset-0 w-full">
         <Canvas camera={{ position: [0, 0, 1] }}>
           <MovingStarfield />

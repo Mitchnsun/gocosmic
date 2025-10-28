@@ -3,24 +3,40 @@
 exports[`DailyFortune Page > should render the daily fortune page correctly 1`] = `
 <div>
   <div
-    class="text-ghost relative bg-gray-900 pt-10"
+    class="text-ghost relativept-10"
   >
     <main
       class="m-auto flex max-w-7xl flex-col items-center gap-10 px-4 pb-4"
     >
       <div
-        class="text-center"
+        class="flex flex-col items-center justify-between gap-8 lg:flex-row"
       >
-        <h1
-          class="mb-4 text-2xl font-extrabold sm:text-4xl"
+        <img
+          alt="Daily Fortune Logo"
+          class="overflow-hidden rounded-2xl"
+          data-nimg="1"
+          decoding="async"
+          height="100"
+          loading="lazy"
+          src="/_next/image?url=%2Fprojects%2Fdaily-fortune%2Fapp-icon.png&w=256&q=75"
+          srcset="/_next/image?url=%2Fprojects%2Fdaily-fortune%2Fapp-icon.png&w=128&q=75 1x, /_next/image?url=%2Fprojects%2Fdaily-fortune%2Fapp-icon.png&w=256&q=75 2x"
+          style="color: transparent;"
+          width="100"
+        />
+        <div
+          class="text-center"
         >
-          Daily Fortune
-        </h1>
-        <p
-          class="text-lg text-gray-400"
-        >
-          Your daily dose of cosmic developer wisdom
-        </p>
+          <h1
+            class="mb-4 text-2xl font-extrabold sm:text-4xl"
+          >
+            Daily Fortune
+          </h1>
+          <p
+            class="text-lg text-gray-400"
+          >
+            Your daily dose of inspiration and cosmic wisdom
+          </p>
+        </div>
       </div>
       <section
         aria-labelledby="overview-heading"
@@ -62,10 +78,10 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
             <p
               class="text-lg"
             >
-              Daily Fortune is a delightful web application that brings a touch of cosmic magic to your daily coding routine. Each day, receive a personalized fortune designed specifically for developers navigating the universe of code.
+              Daily Fortune is a delightful mobile application that brings a touch of cosmic magic to your routine. Each day, receive a personalized fortune to brighten your day.
             </p>
             <p>
-              Created to add a sprinkle of fun and inspiration to the developer's journey, Daily Fortune combines mystical wisdom with tech-savvy humor to brighten your day and keep you motivated.
+              Whether you're looking for a morning boost, a phrase to keep you on track, or a message to share, Daily Fortune fits into your routine to spread positivity and clarity.
             </p>
           </div>
         </div>
@@ -115,7 +131,7 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
                   class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-400"
                 />
                 <span>
-                  Fresh cosmic fortunes delivered every day
+                  New cosmic fortunes delivered every day
                 </span>
               </li>
               <li
@@ -126,7 +142,7 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
                   class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-500"
                 />
                 <span>
-                  Developer-focused predictions and insights
+                  A chosen message to brighten your day: fortune cookie, motivational quote, or positive affirmation
                 </span>
               </li>
               <li
@@ -238,7 +254,7 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
                   class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-700"
                 />
                 <span>
-                  Prisma & PostgreSQL - Robust database layer for fortune storage
+                  React Native - Native mobile experience for iOS and Android
                 </span>
               </li>
             </ul>
@@ -285,17 +301,29 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
             <p
               class="text-lg"
             >
-              Daily Fortune leverages modern AI capabilities to generate unique, engaging, and contextually relevant fortunes that resonate with developers' daily experiences and aspirations.
+              Daily Fortune leverages modern AI capabilities to generate unique, engaging, and contextually relevant fortunes that resonate with everyone's daily experiences and aspirations.
             </p>
           </div>
         </div>
       </section>
       <section
         aria-labelledby="cta-heading"
-        class="w-full"
+        class="flex w-full flex-col items-center justify-center gap-8 lg:flex-row"
       >
+        <img
+          alt="Daily Fortune Illustration"
+          class="overflow-hidden rounded-lg"
+          data-nimg="1"
+          decoding="async"
+          height="250"
+          loading="lazy"
+          src="/_next/image?url=%2Fprojects%2Fdaily-fortune%2Fsplashscreen.png&w=640&q=75"
+          srcset="/_next/image?url=%2Fprojects%2Fdaily-fortune%2Fsplashscreen.png&w=256&q=75 1x, /_next/image?url=%2Fprojects%2Fdaily-fortune%2Fsplashscreen.png&w=640&q=75 2x"
+          style="color: transparent;"
+          width="250"
+        />
         <div
-          class="m-auto flex max-w-5xl flex-col items-center gap-6 rounded-lg bg-gray-800 px-6 py-12 lg:p-12"
+          class="flex max-w-5xl flex-col items-center gap-6 rounded-lg bg-gray-800 px-6 py-12 lg:p-12"
         >
           <h2
             class="text-center text-3xl font-bold lg:text-4xl"
@@ -306,11 +334,11 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
           <p
             class="text-center text-lg text-gray-400"
           >
-            Discover your cosmic fortune and let the stars guide your coding journey.
+            Discover your cosmic fortune and let the stars guide your journey.
           </p>
           <a
             aria-label="Visit Daily Fortune repository (opens in a new tab)"
-            class="inline-flex items-center gap-2 rounded bg-purple-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-purple-700 focus:ring-2 focus:ring-purple-400 focus:outline-none"
+            class="bg-royal hover:bg-royal/90 inline-flex items-center gap-2 rounded-full px-6 py-2 text-base font-normal text-neutral-50 transition-colors"
             href="https://github.com/Mitchnsun/daily-fortune"
             rel="noopener noreferrer"
             target="_blank"

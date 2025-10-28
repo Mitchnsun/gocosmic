@@ -47,13 +47,13 @@ export const routing = defineRouting({
       it: '/le-nostre-offerte',
     },
 
-    // Applications - Daily Fortune
-    '/applications/daily-fortune': {
-      en: '/applications/daily-fortune',
-      fr: '/applications/daily-fortune',
-      es: '/aplicaciones/daily-fortune',
-      de: '/anwendungen/daily-fortune',
-      it: '/applicazioni/daily-fortune',
+    // Projects - Daily Fortune
+    '/projects/daily-fortune': {
+      en: '/projects/daily-fortune',
+      fr: '/projets/daily-fortune',
+      es: '/proyectos/daily-fortune',
+      de: '/projekte/daily-fortune',
+      it: '/progetti/daily-fortune',
     },
   },
 });

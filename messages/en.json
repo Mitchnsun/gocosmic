@@ -6,17 +6,17 @@
   },
   "dailyFortune": {
     "title": "Daily Fortune",
-    "subtitle": "Your daily dose of cosmic developer wisdom",
+    "subtitle": "Your daily dose of inspiration and cosmic wisdom",
     "overview": {
       "title": "About Daily Fortune",
-      "description": "Daily Fortune is a delightful web application that brings a touch of cosmic magic to your daily coding routine. Each day, receive a personalized fortune designed specifically for developers navigating the universe of code.",
-      "motivation": "Created to add a sprinkle of fun and inspiration to the developer's journey, Daily Fortune combines mystical wisdom with tech-savvy humor to brighten your day and keep you motivated."
+      "description": "Daily Fortune is a delightful mobile application that brings a touch of cosmic magic to your routine. Each day, receive a personalized fortune to brighten your day.",
+      "motivation": "Whether you're looking for a morning boost, a phrase to keep you on track, or a message to share, Daily Fortune fits into your routine to spread positivity and clarity."
     },
     "features": {
       "title": "Key Features",
       "items": {
-        "daily": "Fresh cosmic fortunes delivered every day",
-        "developer": "Developer-focused predictions and insights",
+        "daily": "New cosmic fortunes delivered every day",
+        "motivation": "A chosen message to brighten your day: fortune cookie, motivational quote, or positive affirmation",
         "modern": "Clean, responsive interface with smooth animations",
         "cosmic": "Space-inspired design that captures the wonder of the universe"
       }
@@ -28,16 +28,16 @@
         "nextjs": "Next.js - React framework for production-ready applications",
         "typescript": "TypeScript - Type-safe development for reliability",
         "tailwind": "Tailwind CSS - Utility-first styling for cosmic aesthetics",
-        "prisma": "Prisma & PostgreSQL - Robust database layer for fortune storage"
+        "native": "React Native - Native mobile experience for iOS and Android"
       }
     },
     "ai": {
       "title": "Powered by Intelligence",
-      "description": "Daily Fortune leverages modern AI capabilities to generate unique, engaging, and contextually relevant fortunes that resonate with developers' daily experiences and aspirations."
+      "description": "Daily Fortune leverages modern AI capabilities to generate unique, engaging, and contextually relevant fortunes that resonate with everyone's daily experiences and aspirations."
     },
     "cta": {
       "title": "Explore Daily Fortune",
-      "description": "Discover your cosmic fortune and let the stars guide your coding journey.",
+      "description": "Discover your cosmic fortune and let the stars guide your journey.",
       "button": "Visit the repository"
     }
   },

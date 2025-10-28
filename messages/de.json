@@ -6,17 +6,17 @@
   },
   "dailyFortune": {
     "title": "Daily Fortune",
-    "subtitle": "Ihre tägliche Dosis kosmischer Entwickler-Weisheit",
+    "subtitle": "Ihre tägliche Dosis Inspiration und kosmischer Weisheit",
     "overview": {
       "title": "Über Daily Fortune",
-      "description": "Daily Fortune ist eine entzückende Webanwendung, die einen Hauch von kosmischer Magie in Ihre tägliche Programmierroutine bringt. Jeden Tag erhalten Sie ein personalisiertes Schicksal, das speziell für Entwickler entwickelt wurde, die das Code-Universum durchqueren.",
-      "motivation": "Erstellt, um dem Entwicklerweg eine Prise Spaß und Inspiration hinzuzufügen, kombiniert Daily Fortune mystische Weisheit mit technischem Humor, um Ihren Tag aufzuhellen und Sie motiviert zu halten."
+      "description": "Daily Fortune ist eine entzückende mobile Anwendung, die einen Hauch von kosmischer Magie in Ihre Routine bringt. Jeden Tag erhalten Sie ein personalisiertes Schicksal, um Ihren Tag aufzuhellen.",
+      "motivation": "Ob Sie einen morgendlichen Motivationsschub, einen Spruch zur Orientierung oder eine Botschaft zum Teilen suchen - Daily Fortune passt sich Ihrer Routine an, um Positivität und Klarheit zu verbreiten."
     },
     "features": {
       "title": "Hauptmerkmale",
       "items": {
         "daily": "Jeden Tag neue kosmische Schicksale",
-        "developer": "Entwickler-fokussierte Vorhersagen und Einblicke",
+        "motivation": "Eine ausgewählte Botschaft, um Ihren Tag aufzuhellen: Glückskeks, Motivationszitat oder positive Affirmation",
         "modern": "Saubere, responsive Oberfläche mit flüssigen Animationen",
         "cosmic": "Weltraum-inspiriertes Design, das die Wunder des Universums einfängt"
       }
@@ -28,16 +28,16 @@
         "nextjs": "Next.js - React-Framework für produktionsreife Anwendungen",
         "typescript": "TypeScript - Typsichere Entwicklung für Zuverlässigkeit",
         "tailwind": "Tailwind CSS - Utility-First-Styling für kosmische Ästhetik",
-        "prisma": "Prisma & PostgreSQL - Robuste Datenbankschicht für Schicksalsspeicherung"
+        "native": "React Native - Native mobile Erfahrung für iOS und Android"
       }
     },
     "ai": {
       "title": "Angetrieben von Intelligenz",
-      "description": "Daily Fortune nutzt moderne KI-Fähigkeiten, um einzigartige, ansprechende und kontextuell relevante Schicksale zu generieren, die mit den täglichen Erfahrungen und Bestrebungen der Entwickler in Resonanz stehen."
+      "description": "Daily Fortune nutzt moderne KI-Fähigkeiten, um einzigartige, ansprechende und kontextuell relevante Schicksale zu generieren, die mit den täglichen Erfahrungen und Bestrebungen aller in Resonanz stehen."
     },
     "cta": {
       "title": "Erkunden Sie Daily Fortune",
-      "description": "Entdecken Sie Ihr kosmisches Schicksal und lassen Sie die Sterne Ihre Programmierreise leiten.",
+      "description": "Entdecken Sie Ihr kosmisches Schicksal und lassen Sie die Sterne Ihre Reise leiten.",
       "button": "Repository besuchen"
     }
   },
