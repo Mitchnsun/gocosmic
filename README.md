@@ -60,6 +60,15 @@ messages/
 - **Improved scalability**: Adding new pages requires only creating/updating specific namespace files
 - **Clear separation**: Shared components (navigation, footer) have dedicated namespaces
 - **Easier collaboration**: Multiple developers can work on different namespaces without conflicts
+- **Optimized loading**: Only necessary namespaces are loaded per route for better performance
+
+**Dynamic Loading:**
+
+The application uses intelligent on-demand loading:
+
+- **Shared namespaces** (`common`, `navigation`, `footer`) are loaded on every page
+- **Page-specific namespaces** are loaded only when needed based on the current route
+- This reduces bundle size and improves initial load times
 
 **Usage in components:**
 
