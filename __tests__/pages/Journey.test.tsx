@@ -8,12 +8,16 @@ import { render } from '../test-utils';
 // Mock the dynamic import and components
 vi.mock('next/dynamic', () => ({
   default: vi.fn((importFn, options) => {
-    // Create a mock component that renders the loading state
-    const MockDynamicComponent = () => {
+    // Create a mock component that accepts props and renders the loading state
+    const MockDynamicComponent = (props: Record<string, unknown>) => {
       if (options?.loading) {
         return options.loading();
       }
-      return <div data-testid="journey-content">Journey Content</div>;
+      return (
+        <div data-testid="journey-content" data-props={JSON.stringify(props)}>
+          Journey Content
+        </div>
+      );
     };
     return MockDynamicComponent;
   }),
