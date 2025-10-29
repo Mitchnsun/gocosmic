@@ -1,0 +1,97 @@
+{
+  "offers": {
+    "title": "Our Cosmic Offers",
+    "subtitle": "Choose the perfect solution tailored to your project needs",
+    "solo_developer": {
+      "title": "Solo Cosmic Developer",
+      "subtitle": "Perfect for Startups and Small Projects",
+      "description": "Get a dedicated expert developer for your mobile app or website. Ideal for bringing your vision to life with professional quality and cosmic creativity.",
+      "features": {
+        "title": "What's included",
+        "items": {
+          "dedication": "Dedicated developer focused on your project",
+          "technologies": "Modern tech stack: React, React Native, Next.js, TypeScript",
+          "deployment": "Complete development from concept to deployment",
+          "responsive": "Responsive design for all devices (mobile, tablet, desktop)",
+          "testing": "Quality assurance with comprehensive testing",
+          "support": "Post-launch support and maintenance",
+          "communication": "Regular progress updates and direct communication",
+          "optimization": "Performance optimization and best practices"
+        }
+      },
+      "ideal_for": {
+        "title": "Ideal for",
+        "items": {
+          "startups": "Startups launching their first digital product",
+          "mvp": "MVP development to validate your idea",
+          "apps": "Single mobile app or website projects",
+          "redesign": "Redesigning or modernizing existing applications"
+        }
+      }
+    },
+    "team_developers": {
+      "title": "Complete Cosmic Team",
+      "subtitle": "Full-Stack Solutions for Complex Projects",
+      "description": "A team of expert developers to manage your complete architecture including databases, applications, and websites. Perfect for building scalable, enterprise-grade solutions.",
+      "features": {
+        "title": "What's included",
+        "items": {
+          "team": "Multi-disciplinary team of specialized developers",
+          "fullstack": "Full-stack development: Frontend, Backend, Database",
+          "architecture": "Scalable architecture design and implementation",
+          "databases": "Database design and optimization (SQL, NoSQL)",
+          "apis": "RESTful and GraphQL API development",
+          "infrastructure": "Cloud infrastructure setup and management (AWS, Azure, GCP)",
+          "security": "Advanced security implementation and compliance",
+          "cicd": "CI/CD pipelines with automated deployment",
+          "monitoring": "Real-time monitoring and performance analytics",
+          "documentation": "Comprehensive technical documentation"
+        }
+      },
+      "ideal_for": {
+        "title": "Ideal for",
+        "items": {
+          "enterprise": "Enterprise-level applications requiring robust architecture",
+          "platforms": "Multi-platform solutions (web, iOS, Android)",
+          "complex": "Complex business logic and data processing",
+          "scaling": "Projects requiring high scalability and performance"
+        }
+      }
+    },
+    "developer_designer": {
+      "title": "Developer + Designer Duo",
+      "subtitle": "Complete Digital Experience Package",
+      "description": "The perfect combination of technical excellence and stunning design. Get both a developer and a designer working together to create beautiful, functional applications.",
+      "features": {
+        "title": "What's included",
+        "items": {
+          "collaboration": "Seamless developer-designer collaboration",
+          "ux_research": "UX research and user journey mapping",
+          "design_system": "Custom design system and brand identity",
+          "prototyping": "Interactive prototypes and mockups",
+          "development": "Full application development with modern technologies",
+          "animations": "Smooth animations and micro-interactions",
+          "accessibility": "WCAG-compliant accessible design",
+          "testing": "Usability testing and design validation",
+          "assets": "Complete design assets and style guide",
+          "iterations": "Design iterations based on feedback"
+        }
+      },
+      "ideal_for": {
+        "title": "Ideal for",
+        "items": {
+          "brands": "Brands seeking unique visual identity",
+          "consumer": "Consumer-facing applications requiring polished UX",
+          "ecommerce": "E-commerce platforms needing conversion optimization",
+          "saas": "SaaS products prioritizing user experience"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to start your Cosmic project?",
+      "description": "Let's discuss which offer best suits your needs and how we can transform your vision into reality.",
+      "button": "Schedule a consultation",
+      "contact_info": "Contact us to discuss your project requirements"
+    }
+  }
+}

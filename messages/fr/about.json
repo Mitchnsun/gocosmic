@@ -1,0 +1,62 @@
+{
+  "about": {
+    "developer": {
+      "bio": "Matthieu allie une expertise technique approfondie à une vision créative pour concevoir des solutions numériques qui repoussent les limites du possible. Son approche \"cosmique\" vise à créer des expériences utilisateurs performantes, esthétiques et innovantes.",
+      "description": "Développeur passionné avec une expertise dans les technologies web et mobiles modernes.",
+      "expertise": {
+        "items": {
+          "aiTech": "Intégration de l'IA et technologies émergentes",
+          "architecture": "Architecture logicielle et bonnes pratiques de développement",
+          "leadership": "Leadership technique et mentorat d'équipe",
+          "modernDev": "Développement web moderne (React, React-Native, Next.js, Expo, TypeScript, Tailwind CSS)"
+        }
+      },
+      "linkedin": "Voir le profil LinkedIn",
+      "linkedin_aria": "Profil LinkedIn de Matthieu Compérat (s'ouvre dans un nouvel onglet)",
+      "name": "Matthieu Compérat",
+      "subtitle": "Architecte d'Expériences Digitales",
+      "title": "Rencontrez le Développeur"
+    },
+    "legal": {
+      "ai": {
+        "items": {
+          "compliance": "Les données des utilisateurs sont traitées conformément à la réglementation en vigueur (RGPD)",
+          "ethics": "Nous nous engageons à une utilisation éthique et transparente de l'intelligence artificielle",
+          "integration": "Nos solutions peuvent intégrer des modèles d'IA pour des fonctionnalités avancées",
+          "privacy": "Aucune donnée sensible n'est partagée avec des tiers sans consentement explicite"
+        },
+        "title": "Utilisation de l'IA"
+      },
+      "contact": {
+        "link": "nous contacter",
+        "text": "Pour toute question sur nos pratiques ou l'utilisation de l'IA dans nos solutions,"
+      },
+      "intro": "Go Cosmic est une agence de développement d'applications qui utilise l'intelligence artificielle pour améliorer l'expérience utilisateur et optimiser les performances.",
+      "responsibility": {
+        "items": {
+          "recommendations": "Les recommandations basées sur l'IA sont informatives et ne remplacent pas le jugement humain",
+          "security": "Go Cosmic s'engage à maintenir les plus hauts standards de sécurité et de confidentialité",
+          "testing": "Les applications sont testées selon les meilleures pratiques du secteur"
+        },
+        "title": "Responsabilité"
+      },
+      "title": "Mentions légales et usage de l'IA"
+    },
+    "mission": {
+      "conclusion": "Notre mission : propulser vos projets vers de nouveaux horizons technologiques avec créativité, innovation et excellence technique.",
+      "description": "Go Cosmic transforme vos idées en applications innovantes en combinant expertise moderne et intelligence artificielle.",
+      "specialization": {
+        "items": {
+          "aiIntegration": "Intégration avancée de l'IA pour des expériences utilisateurs intelligentes",
+          "customSolutions": "Solutions sur-mesure avec les technologies modernes (React, React-Native, Next.js, Expo, TypeScript, Tailwind CSS)",
+          "uiUxDesign": "Design UI/UX immersif avec une approche cosmique unique",
+          "webMobile": "Développement d'applications web et mobiles de nouvelle génération"
+        },
+        "title": "Nous sommes spécialisés dans"
+      },
+      "title": "Go Cosmic — Créer des applications cosmiques avec l'IA"
+    },
+    "subtitle": "Découvrez notre mission, notre équipe et notre engagement pour l'excellence",
+    "title": "À propos de Go Cosmic"
+  }
+}

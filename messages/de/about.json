@@ -1,0 +1,62 @@
+{
+  "about": {
+    "developer": {
+      "bio": "Matthieu verbindet tiefgehende technische Expertise mit einer kreativen Vision, um digitale Lösungen zu gestalten, die die Grenzen des Möglichen erweitern. Sein 'kosmischer' Ansatz zielt darauf ab, Nutzererlebnisse zu schaffen, die leistungsstark, schön und innovativ sind.",
+      "description": "Leidenschaftlicher Entwickler mit Expertise in modernen Web- und mobilen Technologien.",
+      "expertise": {
+        "items": {
+          "aiTech": "KI-Integration und neue Technologien",
+          "architecture": "Softwarearchitektur und Best Practices der Entwicklung",
+          "leadership": "Technische Führung und Team-Mentoring",
+          "modernDev": "Moderne Webentwicklung (React, React-Native, Next.js, Expo, TypeScript, Tailwind CSS)"
+        }
+      },
+      "linkedin": "LinkedIn-Profil ansehen",
+      "linkedin_aria": "LinkedIn-Profil von Matthieu Compérat (öffnet in neuem Tab)",
+      "name": "Matthieu Compérat",
+      "subtitle": "Architekt für digitale Erlebnisse",
+      "title": "Lernen Sie den Entwickler kennen"
+    },
+    "legal": {
+      "ai": {
+        "items": {
+          "compliance": "Nutzerdaten werden gemäß geltender Vorschriften (DSGVO) verarbeitet",
+          "ethics": "Wir verpflichten uns zu einem ethischen und transparenten Einsatz von KI",
+          "integration": "Unsere Lösungen können KI-Modelle für fortschrittliche Funktionen integrieren",
+          "privacy": "Keine sensiblen Daten werden ohne ausdrückliche Zustimmung an Dritte weitergegeben"
+        },
+        "title": "KI-Nutzung"
+      },
+      "contact": {
+        "link": "kontaktieren Sie uns",
+        "text": "Für Fragen zu unseren Praktiken oder zum Einsatz von KI in unseren Lösungen,"
+      },
+      "intro": "Go Cosmic ist eine Entwicklungsagentur, die KI-Technologien einsetzt, um das Nutzererlebnis zu verbessern und die Leistung zu optimieren.",
+      "responsibility": {
+        "items": {
+          "recommendations": "KI-basierte Empfehlungen sind informativ und ersetzen nicht das menschliche Urteilsvermögen",
+          "security": "Go Cosmic verpflichtet sich zu höchsten Standards in Sachen Sicherheit und Vertraulichkeit",
+          "testing": "Anwendungen werden nach den besten Branchenstandards getestet"
+        },
+        "title": "Verantwortung"
+      },
+      "title": "Rechtliche Hinweise und KI-Nutzung"
+    },
+    "mission": {
+      "conclusion": "Unsere Mission: Ihre Projekte mit Kreativität, Innovation und technischer Exzellenz in neue technologische Sphären zu bringen.",
+      "description": "Go Cosmic verwandelt Ihre Ideen in innovative Anwendungen, indem moderne Expertise mit künstlicher Intelligenz kombiniert wird.",
+      "specialization": {
+        "items": {
+          "aiIntegration": "Fortschrittliche KI-Integration für intelligente Nutzererlebnisse",
+          "customSolutions": "Maßgeschneiderte Lösungen mit modernen Technologien (React, React-Native, Next.js, Expo, TypeScript, Tailwind CSS)",
+          "uiUxDesign": "Immersives UI/UX-Design mit einem einzigartigen kosmischen Ansatz",
+          "webMobile": "Entwicklung von Web- und Mobile-Anwendungen der nächsten Generation"
+        },
+        "title": "Wir sind spezialisiert auf"
+      },
+      "title": "Go Cosmic — Kosmische Anwendungen mit KI erschaffen"
+    },
+    "subtitle": "Entdecken Sie unsere Mission, unser Team und unser Engagement für Exzellenz",
+    "title": "Über Go Cosmic"
+  }
+}

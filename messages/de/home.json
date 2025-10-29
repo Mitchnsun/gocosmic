@@ -1,0 +1,34 @@
+{
+  "homepage": {
+    "cta": {
+      "button": "Kontaktieren Sie uns",
+      "description": "Lassen Sie uns besprechen, wie wir Ihr Web- oder Mobile-Projekt zum Leben erwecken und etwas wirklich Außergewöhnliches schaffen können.",
+      "title": "Bereit für Go Cosmic?",
+      "viewOffers": "Unsere Angebote ansehen"
+    },
+    "hero": {
+      "cta": "Beginnen Sie Ihre Reise",
+      "subtitle": "Lassen Sie uns Ihre Ideen in die Stratosphäre starten mit mystischem Design und kosmischer Funktionalität",
+      "title": "Wir entwickeln stellare Anwendungen, die glänzen"
+    },
+    "services": {
+      "ai": {
+        "description": "Integration fortschrittlicher KI-Funktionen, um Ihre Anwendungen intelligenter, anpassungsfähiger und wirklich zukunftsweisend zu machen.",
+        "title": "KI-gesteuert"
+      },
+      "design": {
+        "description": "Gestaltung intuitiver und bezaubernder Benutzererfahrungen, die fesseln und begeistern.",
+        "title": "Mystisches UI/UX Design"
+      },
+      "development": {
+        "description": "Entwicklung robuster und skalierbarer mobiler Anwendungen für iOS- und Android-Plattformen.",
+        "title": "Stellare Entwicklung"
+      },
+      "launch": {
+        "description": "Begleitung Ihrer App durch den Startprozess und darüber hinaus, um einen erfolgreichen Start zu gewährleisten.",
+        "title": "Kosmischer Start"
+      },
+      "title": "Unsere Kosmischen Dienstleistungen"
+    }
+  }
+}

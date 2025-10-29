@@ -1,0 +1,141 @@
+{
+  "services": {
+    "title": "Nuestros Servicios Cósmicos",
+    "subtitle": "Soluciones técnicas integrales para impulsar tus proyectos a la estratosfera",
+    "stellar_development": {
+      "title": "Desarrollo Estelar",
+      "subtitle": "Excelencia Web Moderna con Tecnologías de Vanguardia",
+      "description": "Nuestra experiencia en desarrollo aprovecha las últimas tecnologías para crear aplicaciones robustas, escalables y de alto rendimiento. Dominamos todo el stack de desarrollo desde frontend hasta backend.",
+      "technologies": {
+        "title": "Tecnologías que Dominamos",
+        "items": {
+          "frontend": "Frontend Moderno: React 19, Next.js 15, TypeScript, TailwindCSS 4.x",
+          "architecture": "Arquitectura Escalable: Monorepo con Turborepo, Librerías de Componentes, Design Systems",
+          "quality": "Calidad de Código: ESLint 9.x, Prettier, Husky, 100% Cobertura de Pruebas con Vitest",
+          "performance": "Rendimiento: Server-Side Rendering, Generación Estática, Optimización de Imágenes"
+        }
+      },
+      "expertise": {
+        "title": "Nuestra Experiencia en Desarrollo",
+        "items": {
+          "workflow": "Flujos CI/CD avanzados con pruebas automatizadas y despliegue",
+          "scalability": "Arquitectura de microservicios y soluciones cloud-native",
+          "security": "Mejores prácticas de seguridad con escaneo de vulnerabilidades y monitoreo de cumplimiento",
+          "apis": "APIs RESTful y GraphQL con documentación completa"
+        }
+      },
+      "features": {
+        "title": "Lo que Entregamos",
+        "items": {
+          "quality": "Código listo para producción con 100% cobertura de pruebas y documentación completa",
+          "performance": "Aplicaciones ultrarrápidas optimizadas para Core Web Vitals",
+          "maintainability": "Arquitectura limpia y modular que escala con las necesidades de tu negocio",
+          "reliability": "Aplicaciones robustas con manejo de errores e integración de monitoreo"
+        }
+      }
+    },
+    "mystical_design": {
+      "title": "Diseño UI/UX Místico",
+      "subtitle": "Experiencias Inmersivas que Cautivan y Convierten",
+      "description": "Creamos experiencias digitales que son no solo visualmente impresionantes sino también intuitivas, accesibles y orientadas a la conversión. Nuestra filosofía de diseño combina estética cósmica con principios UX probados.",
+      "approach": {
+        "title": "Nuestro Enfoque de Diseño",
+        "items": {
+          "systems": "Design Systems: Librerías de componentes consistentes y escalables con patrones documentados",
+          "accessibility": "Accesibilidad Universal: Cumplimiento WCAG con HTML semántico y estándares ARIA",
+          "responsive": "Responsive Mobile-First: Layouts fluidos que funcionan perfectamente en todos los dispositivos",
+          "performance": "Enfocado en Rendimiento: Assets optimizados y animaciones suaves"
+        }
+      },
+      "tools": {
+        "title": "Herramientas de Diseño y Desarrollo",
+        "items": {
+          "components": "Primitivas Radix UI con Class Variance Authority para estilado type-safe",
+          "styling": "TailwindCSS con tokens de diseño personalizados y enfoque utility-first",
+          "testing": "Storybook para documentación de componentes y pruebas visuales",
+          "prototyping": "Prototipos interactivos con datos reales y componentes listos para producción"
+        }
+      },
+      "outcomes": {
+        "title": "Resultados de Diseño",
+        "items": {
+          "engagement": "Mayor engagement del usuario a través de interacciones intuitivas y placenteras",
+          "conversion": "Tasas de conversión más altas con CTAs estratégicamente ubicados y flujos de usuario",
+          "brand": "Identidad de marca fuerte que destaca en el paisaje digital cósmico",
+          "satisfaction": "Satisfacción excepcional del usuario a través de investigación UX y pruebas consideradas"
+        }
+      }
+    },
+    "ai_powered": {
+      "title": "Soluciones Potenciadas por IA",
+      "subtitle": "Características Inteligentes que Transforman la Experiencia del Usuario",
+      "description": "Integramos tecnologías de IA de vanguardia para crear aplicaciones más inteligentes y adaptativas. Nuestras soluciones de IA mejoran la experiencia del usuario mientras mantienen la privacidad y estándares éticos.",
+      "capabilities": {
+        "title": "Capacidades de Integración de IA",
+        "items": {
+          "recommendations": "Motores de recomendación inteligentes potenciados por algoritmos de machine learning",
+          "automation": "Automatización de procesos y optimización de flujos de trabajo usando insights impulsados por IA",
+          "analytics": "Analytics avanzados y modelado predictivo para decisiones basadas en datos",
+          "nlp": "Procesamiento de Lenguaje Natural para chatbots y análisis de contenido"
+        }
+      },
+      "implementation": {
+        "title": "Implementación Técnica",
+        "items": {
+          "apis": "Integración perfecta con plataformas de IA líderes (OpenAI, Google AI, Azure Cognitive Services)",
+          "privacy": "Enfoque privacy-first con procesamiento en dispositivo cuando es posible",
+          "scalability": "Servicios de IA en la nube que escalan con tu base de usuarios",
+          "monitoring": "Monitoreo integral y optimización de rendimiento para características de IA"
+        }
+      },
+      "use_cases": {
+        "title": "Casos de Uso de IA",
+        "items": {
+          "personalization": "Experiencias de usuario personalizadas basadas en comportamiento y preferencias",
+          "support": "Soporte al cliente inteligente con respuestas automatizadas y escalación",
+          "optimization": "Optimización de rendimiento a través de asignación predictiva de recursos",
+          "insights": "Business intelligence a través de análisis automatizado de datos y reportes"
+        }
+      }
+    },
+    "cosmic_launch": {
+      "title": "Lanzamiento Cósmico",
+      "subtitle": "Soporte Completo de Lanzamiento desde Desarrollo hasta Producción",
+      "description": "Proporcionamos soporte integral de lanzamiento para asegurar que tu aplicación llegue a producción exitosamente y continúe funcionando de manera óptima. Nuestra experiencia en DevOps garantiza un viaje fluido del código al cosmos.",
+      "process": {
+        "title": "Proceso de Lanzamiento",
+        "items": {
+          "testing": "Pruebas integrales incluyendo pruebas unitarias, de integración y end-to-end",
+          "staging": "Configuración de entorno de staging con configuraciones similares a producción",
+          "deployment": "Pipelines de despliegue automatizados con capacidades de rollback",
+          "monitoring": "Sistemas de monitoreo en tiempo real y alertas"
+        }
+      },
+      "infrastructure": {
+        "title": "Infraestructura y DevOps",
+        "items": {
+          "cloud": "Estrategias de despliegue multi-cloud (AWS, Vercel, Azure, Google Cloud)",
+          "cicd": "Pipelines CI/CD avanzados con pruebas automatizadas y despliegue",
+          "security": "Escaneo de seguridad, evaluaciones de vulnerabilidades y monitoreo de cumplimiento",
+          "scaling": "Infraestructura de auto-escalado que crece con tu éxito"
+        }
+      },
+      "support": {
+        "title": "Soporte Continuo",
+        "items": {
+          "monitoring": "Monitoreo de aplicación 24/7 con alertas inteligentes",
+          "optimization": "Optimización continua de rendimiento y gestión de recursos",
+          "updates": "Actualizaciones de seguridad regulares y mejoras de características",
+          "consultation": "Consultoría técnica estratégica para crecimiento futuro"
+        }
+      }
+    },
+    "cta": {
+      "title": "¿Listo para lanzar tu próximo proyecto cósmico?",
+      "description": "Hablemos de cómo nuestros servicios integrales pueden transformar tu visión en realidad. Desde desarrollo estelar hasta lanzamiento cósmico, estamos aquí para guiar tu proyecto hacia el éxito.",
+      "primary_button": "Comienza tu viaje cósmico",
+      "secondary_button": "Obtén una cotización personalizada",
+      "contact_info": "Conéctate con nuestro equipo técnico para explorar las posibilidades"
+    }
+  }
+}

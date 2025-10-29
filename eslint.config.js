@@ -27,6 +27,15 @@ const config = [
   sonarjsPlugin.configs.recommended,
   securityPlugin.configs.recommended,
   {
+    files: ['**/*.ts', '**/*.tsx'],
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  },
+  {
     plugins: {
       prettier: prettierPlugin,
       import: importPlugin,
@@ -44,6 +53,9 @@ const config = [
       'import/no-duplicates': 'error',
       'unicorn/prevent-abbreviations': 'off',
       'unicorn/filename-case': 'off',
+      'sonarjs/prefer-read-only-props': 'off',
+      'sonarjs/function-return-type': 'off',
+      'sonarjs/prefer-regexp-exec': 'off',
     },
   },
   {
@@ -85,6 +97,7 @@ const config = [
     files: ['__tests__/**/*', '**/*.test.*', '**/*.spec.*'],
     rules: {
       '@next/next/no-html-link-for-pages': 'off',
+      'sonarjs/assertions-in-tests': 'off',
     },
   },
   {
@@ -94,7 +107,15 @@ const config = [
     },
   },
   {
-    ignores: ['dist/**', '.next/**', 'node_modules/**', 'coverage/**', '**/__snapshots__/**'],
+    ignores: [
+      'dist/**',
+      '.next/**',
+      'node_modules/**',
+      'coverage/**',
+      '**/__snapshots__/**',
+      'messages/**',
+      'public/**',
+    ],
   },
 ];
 

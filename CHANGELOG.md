@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.1.0] - 2025-10-29
+
+### Added
+
+- Namespace-based organization for translation files (common, navigation, footer, home, about, services, offers, journey, projects)
+- Dynamic namespace loading based on current route for optimized performance
+- README_TLDR.md quick reference guide for developers
+- Version and changelog management instructions in CONTRIBUTING.md and copilot-instructions.md
+
+### Changed
+
+- Translation files reorganized from single files per locale to namespace-based structure
+- i18n configuration updated to support namespace-based loading
+- Test utilities updated to merge all namespace files for testing
+
+### Removed
+
+- Legacy single-file translation structure
+
 ## [1.0.3] - 2025-10-28
 
 ### Added

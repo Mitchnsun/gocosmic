@@ -118,6 +118,10 @@ Breaking changes should be indicated in the commit message:
 - Include tests for new features and bug fixes
 - Ensure all tests pass and linting is clean
 - Update documentation as needed
+- **Update version and changelog**: Before opening a PR, you must:
+  1. Increment the version number in `package.json` following [Semantic Versioning](https://semver.org/)
+  2. Add a new entry in `CHANGELOG.md` with the version number and current date
+  3. List all features, fixes, and changes under the appropriate sections (Added, Changed, Fixed, Removed)
 
 ### PR Title Format
 
@@ -168,8 +172,108 @@ WIP: Working on new feature
 4. Write or update tests as needed
 5. Ensure all tests pass: `npm run test`
 6. Ensure linting passes: `npm run lint`
-7. Commit your changes using Conventional Commits format
-8. Push to your fork and submit a pull request
+7. **Update version and changelog**:
+   - Increment the version number in `package.json` following [Semantic Versioning](https://semver.org/):
+     - **MAJOR** version for incompatible API changes
+     - **MINOR** version for new functionality in a backwards compatible manner
+     - **PATCH** version for backwards compatible bug fixes
+   - Add a new entry in `CHANGELOG.md` with the format:
+
+     ```markdown
+     ## [X.Y.Z] - YYYY-MM-DD
+
+     ### Added
+
+     - New feature descriptions
+
+     ### Changed
+
+     - Changes in existing functionality
+
+     ### Fixed
+
+     - Bug fixes
+
+     ### Removed
+
+     - Removed features
+     ```
+
+8. Commit your changes using Conventional Commits format
+9. Push to your fork and submit a pull request
+
+### First Time Setup
+
+If this is your first time working on the project:
+
+```bash
+# Enable Corepack for yarn (first time only)
+corepack enable
+
+# Install dependencies
+yarn
+```
+
+### Working with Translations
+
+The project uses next-intl for internationalization with translations organized by namespace for better maintainability and on-demand loading for optimal performance.
+
+#### Translation File Structure
+
+Translations are organized in namespace-based files:
+
+```
+messages/
+  ├── [locale]/
+  │   ├── common.json      # Shared strings (404, meta, language switcher)
+  │   ├── navigation.json  # Header navigation labels
+  │   ├── footer.json      # Footer content
+  │   ├── home.json        # Homepage content
+  │   ├── about.json       # About page content
+  │   ├── services.json    # Services page content
+  │   ├── offers.json      # Offers page content
+  │   ├── journey.json     # Journey page content
+  │   └── projects.json    # Project pages content
+```
+
+**Dynamic Loading**: The application intelligently loads only the necessary namespaces for each route:
+
+- Shared namespaces (`common`, `navigation`, `footer`) are always loaded
+- Page-specific namespaces are loaded on-demand based on the current route
+- This approach reduces bundle size and improves performance
+
+#### Adding New Translations
+
+1. **Identify the appropriate namespace**: Determine which namespace file should contain your new translation keys
+2. **Update English first**: Always add new keys to `messages/en/[namespace].json` first (English is the base language)
+3. **Translate to all locales**: Add the same keys to all other locale files (fr, es, de, it)
+4. **Use in components**: Import and use with `useTranslations` hook:
+
+```tsx
+import { useTranslations } from 'next-intl';
+
+export default function MyComponent() {
+  const t = useTranslations('namespace');
+  return <div>{t('key')}</div>;
+}
+```
+
+#### Adding New Routes
+
+When adding new routes that require translations:
+
+1. Create or update the appropriate namespace file for all locales
+2. Update `i18n/routing.ts` to add translated pathnames
+3. Update `i18n/request.ts` in the `getNamespacesForPath` function to map the new route to its namespace
+4. Update test utilities in `__tests__/test-utils.tsx` to import the new namespace
+
+#### Guidelines
+
+- **Keep namespaces focused**: Each namespace should correspond to a specific section or page
+- **Maintain consistency**: Use the same structure across all locale files
+- **Avoid duplication**: Shared strings should go in `common.json`, `navigation.json`, or `footer.json`
+- **Test thoroughly**: Ensure all locales have complete translations (no missing keys)
+- **Update route mapping**: When adding new pages, update `getNamespacesForPath` in `i18n/request.ts` for optimal loading
 
 ### Code Style
 
