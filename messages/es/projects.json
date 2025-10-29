@@ -35,5 +35,49 @@
       "description": "Descubre tu fortuna cósmica y deja que las estrellas guíen tu viaje.",
       "button": "Visitar el repositorio"
     }
+  },
+  "mcomperat": {
+    "title": "mcomper.at",
+    "subtitle": "CV web moderno y responsivo de Matthieu Compérat",
+    "overview": {
+      "title": "Acerca del proyecto",
+      "description": "CV web moderno y responsivo de Matthieu Compérat, diseñado con Next.js (App Router) para páginas rápidas, accesibles y SEO-friendly.",
+      "architecture": "Arquitectura clara y mantenible: componentes reutilizables, Server Components por defecto, y tipos estrictos para confiabilidad en producción. Internacionalización integrada en francés (por defecto) e inglés, con redirección de inicio a /fr."
+    },
+    "features": {
+      "title": "Características clave",
+      "items": {
+        "i18n": "Internacionalización: rutas /fr y /en con contenidos JSON dedicados",
+        "seo": "SEO: metadatos gestionados vía API Next.js (generateMetadata) para mejor posicionamiento",
+        "performance": "Rendimiento: Server Components, streaming, y React 19 para carga rápida",
+        "accessibility": "Accesibilidad: respeto de buenas prácticas (jsx-a11y) y HTML semántico",
+        "quality": "Calidad de código: ESLint (flat config), Prettier (ordenamiento Tailwind), hooks Husky, imports ordenados, cero errores en lint"
+      }
+    },
+    "technology": {
+      "title": "Stack tecnológico",
+      "description": "Construido con tecnologías web de vanguardia para una experiencia rápida, mantenible y lista para producción:",
+      "stack": {
+        "nextjs": "Next.js 15.5+ (App Router) - Framework React moderno",
+        "typescript": "TypeScript 5.9+ (modo estricto) - Seguridad de tipos y confiabilidad",
+        "tailwind": "Tailwind CSS 4.1+ - Estilización utilitaria con tema personalizado",
+        "yarn": "Yarn 4+ (Corepack) y Node.js 22+ - Herramientas modernas"
+      }
+    },
+    "ai": {
+      "title": "Impulsado por IA",
+      "description": "Flujo de desarrollo mejorado por asistencia IA para resultados más rápidos, más consistentes y de mayor calidad:",
+      "features": {
+        "development": "Desarrollo asistido: uso recomendado de GitHub Copilot para acelerar la redacción de componentes y reducir errores",
+        "quality": "Calidad y coherencia: sugerencias automáticas para corrección de imports, conformidad ESLint/TypeScript y ordenamiento de clases Tailwind",
+        "content": "Contenido y SEO: asistencia en redacción de microcopias, etiquetas meta/OG y textos alternativos accesibles",
+        "i18n": "Internacionalización: ayuda en la pre-generación de cadenas FR/EN coherentes desde plantillas, con revisión humana obligatoria"
+      }
+    },
+    "cta": {
+      "title": "Explora mcomper.at",
+      "description": "Descubre el CV web profesional de Matthieu Compérat y explora su experiencia.",
+      "button": "Visitar el sitio web"
+    }
   }
 }
