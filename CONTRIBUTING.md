@@ -118,6 +118,10 @@ Breaking changes should be indicated in the commit message:
 - Include tests for new features and bug fixes
 - Ensure all tests pass and linting is clean
 - Update documentation as needed
+- **Update version and changelog**: Before opening a PR, you must:
+  1. Increment the version number in `package.json` following [Semantic Versioning](https://semver.org/)
+  2. Add a new entry in `CHANGELOG.md` with the version number and current date
+  3. List all features, fixes, and changes under the appropriate sections (Added, Changed, Fixed, Removed)
 
 ### PR Title Format
 
@@ -168,8 +172,47 @@ WIP: Working on new feature
 4. Write or update tests as needed
 5. Ensure all tests pass: `npm run test`
 6. Ensure linting passes: `npm run lint`
-7. Commit your changes using Conventional Commits format
-8. Push to your fork and submit a pull request
+7. **Update version and changelog**:
+   - Increment the version number in `package.json` following [Semantic Versioning](https://semver.org/):
+     - **MAJOR** version for incompatible API changes
+     - **MINOR** version for new functionality in a backwards compatible manner
+     - **PATCH** version for backwards compatible bug fixes
+   - Add a new entry in `CHANGELOG.md` with the format:
+
+     ```markdown
+     ## [X.Y.Z] - YYYY-MM-DD
+
+     ### Added
+
+     - New feature descriptions
+
+     ### Changed
+
+     - Changes in existing functionality
+
+     ### Fixed
+
+     - Bug fixes
+
+     ### Removed
+
+     - Removed features
+     ```
+
+8. Commit your changes using Conventional Commits format
+9. Push to your fork and submit a pull request
+
+### First Time Setup
+
+If this is your first time working on the project:
+
+```bash
+# Enable Corepack for yarn (first time only)
+corepack enable
+
+# Install dependencies
+yarn
+```
 
 ### Working with Translations
 

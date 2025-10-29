@@ -227,8 +227,9 @@ All UI components should evoke a sense of exploration and wonder while maintaini
 ### Bootstrap and Setup
 
 1. Clone repository and navigate to root directory
-2. **Install dependencies**: `yarn install` -- takes approximately 3.5 minutes. NEVER CANCEL. Set timeout to 15 minutes.
-3. **UI package TypeScript configuration**: The UI package uses a dual TypeScript configuration:
+2. **Enable Corepack**: `corepack enable` -- enables yarn package manager (first time only)
+3. **Install dependencies**: `yarn install` -- takes approximately 3.5 minutes. NEVER CANCEL. Set timeout to 15 minutes.
+4. **UI package TypeScript configuration**: The UI package uses a dual TypeScript configuration:
    - `tsconfig.json`: Compiles only `src/` to `dist/` for clean library output
    - `tsconfig.check.json`: Type-checks both `src/` and `__tests__` with `noEmit: true`
 
@@ -258,6 +259,51 @@ All UI components should evoke a sense of exploration and wonder while maintaini
 3. `yarn check-types`
 4. `yarn test`
 5. `yarn coverage` -- ensures coverage thresholds are met
+
+### Version and Changelog Management
+
+**CRITICAL**: Before opening a Pull Request, you must:
+
+1. **Increment version in `package.json`** following [Semantic Versioning](https://semver.org/):
+   - **MAJOR** (X.0.0) - Incompatible API changes or breaking changes
+   - **MINOR** (x.Y.0) - New functionality in a backwards compatible manner
+   - **PATCH** (x.y.Z) - Backwards compatible bug fixes
+
+2. **Update `CHANGELOG.md`** with a new entry:
+
+   ```markdown
+   ## [X.Y.Z] - YYYY-MM-DD
+
+   ### Added
+
+   - New features and functionality
+
+   ### Changed
+
+   - Changes in existing functionality
+
+   ### Fixed
+
+   - Bug fixes
+
+   ### Removed
+
+   - Removed features or deprecated functionality
+   ```
+
+3. **Use current date** in YYYY-MM-DD format (e.g., 2025-10-29)
+
+4. **Categorize changes appropriately**:
+   - `Added` for new features
+   - `Changed` for changes in existing functionality
+   - `Fixed` for bug fixes
+   - `Removed` for removed features
+
+Example:
+
+- Version 1.0.3 → 1.0.4 (patch: bug fix)
+- Version 1.0.3 → 1.1.0 (minor: new feature)
+- Version 1.0.3 → 2.0.0 (major: breaking change)
 
 ## Manual Validation Scenarios
 

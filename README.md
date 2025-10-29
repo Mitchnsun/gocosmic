@@ -160,11 +160,14 @@ export default function Header() {
 ### Prerequisites
 
 - Node.js >= 22
-- yarn
+- yarn (via Corepack)
 
 ### Installation and Launch
 
 ```bash
+# Enable Corepack for yarn (first time only)
+corepack enable
+
 # Install dependencies (if not already done)
 yarn
 
