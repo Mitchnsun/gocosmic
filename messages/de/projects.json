@@ -35,5 +35,49 @@
       "description": "Entdecken Sie Ihr kosmisches Schicksal und lassen Sie die Sterne Ihre Reise leiten.",
       "button": "Repository besuchen"
     }
+  },
+  "mcomperat": {
+    "title": "mcomper.at",
+    "subtitle": "Moderner, responsiver Web-Lebenslauf von Matthieu Compérat",
+    "overview": {
+      "title": "Über das Projekt",
+      "description": "Moderner und responsiver Web-Lebenslauf von Matthieu Compérat, entworfen mit Next.js (App Router) für schnelle, barrierefreie und SEO-freundliche Seiten.",
+      "architecture": "Klare und wartbare Architektur: wiederverwendbare Komponenten, Server Components standardmäßig und strikte Typen für Produktionszuverlässigkeit. Integrierte Internationalisierung auf Französisch (Standard) und Englisch, mit Weiterleitung der Startseite zu /fr."
+    },
+    "features": {
+      "title": "Hauptmerkmale",
+      "items": {
+        "i18n": "Internationalisierung: /fr und /en Routen mit dedizierten JSON-Inhalten",
+        "seo": "SEO: Metadaten verwaltet über Next.js API (generateMetadata) für besseres Ranking",
+        "performance": "Performance: Server Components, Streaming und React 19 für schnelles Laden",
+        "accessibility": "Barrierefreiheit: Einhaltung bewährter Praktiken (jsx-a11y) und semantisches HTML",
+        "quality": "Code-Qualität: ESLint (flat config), Prettier (Tailwind-Sortierung), Husky-Hooks, sortierte Imports, null Lint-Fehler"
+      }
+    },
+    "technology": {
+      "title": "Technologie-Stack",
+      "description": "Gebaut mit modernsten Web-Technologien für ein schnelles, wartbares und produktionsreifes Erlebnis:",
+      "stack": {
+        "nextjs": "Next.js 15.5+ (App Router) - Modernes React-Framework",
+        "typescript": "TypeScript 5.9+ (strikter Modus) - Typsicherheit und Zuverlässigkeit",
+        "tailwind": "Tailwind CSS 4.1+ - Utility-First-Styling mit benutzerdefiniertem Theme",
+        "yarn": "Yarn 4+ (Corepack) und Node.js 22+ - Moderne Werkzeuge"
+      }
+    },
+    "ai": {
+      "title": "Angetrieben von KI",
+      "description": "Entwicklungs-Workflow verbessert durch KI-Unterstützung für schnellere, konsistentere und qualitativ hochwertigere Ergebnisse:",
+      "features": {
+        "development": "Unterstützte Entwicklung: empfohlene Verwendung von GitHub Copilot zur Beschleunigung der Komponentenerstellung und Fehlerreduzierung",
+        "quality": "Qualität und Konsistenz: automatische Vorschläge für Import-Korrekturen, ESLint/TypeScript-Konformität und Tailwind-Klassenordnung",
+        "content": "Inhalt und SEO: Unterstützung beim Verfassen von Mikrotexten, Meta/OG-Tags und barrierefreien Alt-Texten",
+        "i18n": "Internationalisierung: Hilfe bei der Vorgenerierung konsistenter FR/EN-Zeichenfolgen aus Vorlagen, mit obligatorischer menschlicher Überprüfung"
+      }
+    },
+    "cta": {
+      "title": "Erkunden Sie mcomper.at",
+      "description": "Entdecken Sie den professionellen Web-Lebenslauf von Matthieu Compérat und erkunden Sie sein Fachwissen.",
+      "button": "Website besuchen"
+    }
   }
 }
