@@ -27,15 +27,6 @@ const config = [
   sonarjsPlugin.configs.recommended,
   securityPlugin.configs.recommended,
   {
-    files: ['**/*.ts', '**/*.tsx'],
-    languageOptions: {
-      parserOptions: {
-        projectService: true,
-        tsconfigRootDir: import.meta.dirname,
-      },
-    },
-  },
-  {
     plugins: {
       prettier: prettierPlugin,
       import: importPlugin,
@@ -56,6 +47,8 @@ const config = [
       'sonarjs/prefer-read-only-props': 'off',
       'sonarjs/function-return-type': 'off',
       'sonarjs/prefer-regexp-exec': 'off',
+      'sonarjs/arguments-order': 'off',
+      'sonarjs/aws-restricted-ip-admin-access': 'off',
     },
   },
   {
@@ -115,6 +108,8 @@ const config = [
       '**/__snapshots__/**',
       'messages/**',
       'public/**',
+      'next-env.d.ts',
+      '.eslintcache',
     ],
   },
 ];

@@ -13,7 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Changed
 
-- About page: replace external contact link with mailto link to support@gocosmic.dev with localized subject
+- About, Services, and Offers pages: replace external contact links with mailto links and localized subjects
+- Services page: add journey link to interactive experience
 - About page: use i18n key for LinkedIn link aria-label for accessibility
 - Update translations texts for offers and contact across multiple languages
 

@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default function Services() {
   const t = useTranslations('services');
-  const subject = encodeURIComponent(t('cta.secondary_button'));
+  const subject = encodeURIComponent(t('cta.email_subject'));
 
   return (
     <div className="text-ghost relative pt-10">
@@ -396,7 +396,7 @@ export default function Services() {
                 {t('cta.primary_button')}
               </Link>
               <Button variant="jungle" className="flex items-center gap-2" asChild>
-                <a href={`mailto:prospect@gocosmic.dev?subject=${subject}`}>
+                <a href={`mailto:prospect@gocosmic.dev?subject=${subject}`} aria-label={t('cta.secondary_button')}>
                   {t('cta.secondary_button')}
                   <EnvelopeIcon className="h-4 w-4" aria-hidden="true" />
                 </a>

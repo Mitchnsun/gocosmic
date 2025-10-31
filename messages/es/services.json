@@ -135,7 +135,8 @@
       "description": "Hablemos de cómo nuestros servicios integrales pueden transformar tu visión en realidad. Desde desarrollo estelar hasta lanzamiento cósmico, estamos aquí para guiar tu proyecto hacia el éxito.",
       "primary_button": "Comienza tu viaje cósmico",
       "secondary_button": "Obtén una cotización personalizada",
-      "contact_info": "Conéctate con nuestro equipo técnico para explorar las posibilidades"
+      "contact_info": "Conéctate con nuestro equipo técnico para explorar las posibilidades",
+      "email_subject": "Consulta sobre servicios Cósmicos"
     }
   }
 }
