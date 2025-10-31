@@ -1,8 +1,8 @@
 import {
-  ArrowTopRightOnSquareIcon,
   CloudIcon,
   CodeBracketIcon,
   CpuChipIcon,
+  EnvelopeIcon,
   PuzzlePieceIcon,
   RocketLaunchIcon,
   ShieldCheckIcon,
@@ -13,6 +13,7 @@ import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
 import { Button } from '@/design-system/button';
+import { Link } from '@/i18n/navigation';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -26,6 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default function Services() {
   const t = useTranslations('services');
+  const subject = encodeURIComponent(t('cta.secondary_button'));
 
   return (
     <div className="text-ghost relative pt-10">
@@ -386,17 +388,17 @@ export default function Services() {
             </h2>
             <p className="text-center text-lg text-gray-400 sm:text-xl lg:text-lg">{t('cta.description')}</p>
             <div className="flex flex-col gap-4 sm:flex-row">
-              <Button variant="royal" className="flex items-center gap-2" asChild>
-                <a href="https://mcomper.at/" rel="noopener noreferrer" target="_blank">
-                  <RocketLaunchIcon className="h-5 w-5" aria-hidden="true" />
-                  {t('cta.primary_button')}
-                  <ArrowTopRightOnSquareIcon className="h-4 w-4" aria-hidden="true" />
-                </a>
-              </Button>
+              <Link
+                href="/journey"
+                className="bg-royal hover:bg-royal/90 flex w-fit items-center gap-2 rounded-full px-6 py-2 text-base font-normal text-neutral-50 transition-colors"
+                aria-label={t('cta.primary_button')}>
+                <RocketLaunchIcon className="h-5 w-5" aria-hidden="true" />
+                {t('cta.primary_button')}
+              </Link>
               <Button variant="jungle" className="flex items-center gap-2" asChild>
-                <a href="https://mcomper.at/" rel="noopener noreferrer" target="_blank">
+                <a href={`mailto:prospect@gocosmic.dev?subject=${subject}`}>
                   {t('cta.secondary_button')}
-                  <ArrowTopRightOnSquareIcon className="h-4 w-4" aria-hidden="true" />
+                  <EnvelopeIcon className="h-4 w-4" aria-hidden="true" />
                 </a>
               </Button>
             </div>

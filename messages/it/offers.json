@@ -90,8 +90,9 @@
     "cta": {
       "title": "Pronto per iniziare il tuo progetto cosmico?",
       "description": "Parliamo di quale offerta si adatta meglio alle tue esigenze e di come possiamo trasformare la tua visione in realtà.",
-      "button": "Pianifica una consultazione",
-      "contact_info": "Contattaci per discutere i requisiti del tuo progetto"
+      "button": "Parliamo del tuo progetto",
+      "contact_info": "Contattaci per discutere i requisiti del tuo progetto",
+      "email_subject": "Richiesta di contatto per lo sviluppo del progetto"
     }
   }
 }

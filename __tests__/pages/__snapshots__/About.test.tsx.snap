@@ -400,11 +400,9 @@ exports[`About Page > should render the about page correctly 1`] = `
               >
                 For any questions about our practices or the use of AI in our solutions,
                 <a
-                  aria-label="Contact us (opens in a new tab)"
+                  aria-label="Send an email to support@gocosmic.dev"
                   class="ml-1 rounded px-1 text-blue-400 underline transition-colors hover:text-blue-300 focus:ring-2 focus:ring-blue-400 focus:outline-none"
-                  href="https://mcomper.at/"
-                  rel="noopener noreferrer"
-                  target="_blank"
+                  href="mailto:support@gocosmic.dev?subject=Questions%20about%20our%20practices%20and%20AI%20usage"
                 >
                   contact us
                 </a>

@@ -1,19 +1,6 @@
-import type { AnchorHTMLAttributes, ReactNode } from 'react';
-import { vi } from 'vitest';
-
 import NotFound from '@/app/[locale]/not-found';
 
 import { render, screen } from '../test-utils';
-
-type MockLinkProps = { href: string; children: ReactNode } & AnchorHTMLAttributes<HTMLAnchorElement>;
-
-vi.mock('@/i18n/navigation', () => ({
-  Link: ({ children, href, ...props }: MockLinkProps) => (
-    <a href={href} {...props}>
-      {children}
-    </a>
-  ),
-}));
 
 describe('NotFound (Locale)', () => {
   it('should render 404 page', () => {

@@ -29,7 +29,9 @@
       },
       "contact": {
         "link": "kontaktieren Sie uns",
-        "text": "Für Fragen zu unseren Praktiken oder zum Einsatz von KI in unseren Lösungen,"
+        "text": "Für Fragen zu unseren Praktiken oder zum Einsatz von KI in unseren Lösungen,",
+        "subject": "Fragen zu unseren Praktiken und der KI-Nutzung",
+        "ariaLabel": "Eine E-Mail an support@gocosmic.dev senden"
       },
       "intro": "Go Cosmic ist eine Entwicklungsagentur, die KI-Technologien einsetzt, um das Nutzererlebnis zu verbessern und die Leistung zu optimieren.",
       "responsibility": {

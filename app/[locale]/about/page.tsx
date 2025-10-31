@@ -101,7 +101,7 @@ export default function About() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded px-1 text-blue-400 underline transition-colors hover:text-blue-300 focus:ring-2 focus:ring-blue-400 focus:outline-none"
-                  aria-label="Matthieu Compérat’s LinkedIn profile (opens in a new tab)">
+                  aria-label={t('developer.linkedin_aria')}>
                   {t('developer.linkedin')}
                   <LinkedInIcon className="h-4 w-4" />
                 </a>
@@ -166,11 +166,9 @@ export default function About() {
                 <p className="font-medium text-blue-300">
                   {t('legal.contact.text')}
                   <a
-                    href="https://mcomper.at/"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={`mailto:support@gocosmic.dev?subject=${encodeURIComponent(t('legal.contact.subject'))}`}
                     className="ml-1 rounded px-1 text-blue-400 underline transition-colors hover:text-blue-300 focus:ring-2 focus:ring-blue-400 focus:outline-none"
-                    aria-label="Contact us (opens in a new tab)">
+                    aria-label={t('legal.contact.ariaLabel')}>
                     {t('legal.contact.link')}
                   </a>
                   .

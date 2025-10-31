@@ -90,8 +90,9 @@
     "cta": {
       "title": "Ready to start your Cosmic project?",
       "description": "Let's discuss which offer best suits your needs and how we can transform your vision into reality.",
-      "button": "Schedule a consultation",
-      "contact_info": "Contact us to discuss your project requirements"
+      "button": "Let's talk about your project",
+      "contact_info": "Contact us to discuss your project requirements",
+      "email_subject": "Contact request for project development"
     }
   }
 }
