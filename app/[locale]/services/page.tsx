@@ -13,6 +13,8 @@ import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
 import { Button } from '@/design-system/button';
+import { buttonVariants } from '@/design-system/button.variants';
+import { cn } from '@/design-system/lib/utils';
 import { Link } from '@/i18n/navigation';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -390,7 +392,7 @@ export default function Services() {
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/journey"
-                className="bg-royal hover:bg-royal/90 flex w-fit items-center gap-2 rounded-full px-6 py-2 text-base font-normal text-neutral-50 transition-colors"
+                className={cn(buttonVariants({ variant: 'royal' }), 'w-fit gap-2')}
                 aria-label={t('cta.primary_button')}>
                 <RocketLaunchIcon className="h-5 w-5" aria-hidden="true" />
                 {t('cta.primary_button')}

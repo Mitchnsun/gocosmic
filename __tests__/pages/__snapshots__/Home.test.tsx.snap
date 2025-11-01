@@ -55,7 +55,7 @@ exports[`Home Page > should render the home page correctly 1`] = `
       </p>
       <a
         aria-label="Start your journey"
-        class="bg-royal hover:bg-royal/90 flex items-center gap-2 rounded-full px-6 py-2 text-base font-normal text-neutral-50 transition-colors"
+        class="inline-flex items-center justify-center cursor-pointer rounded-full transition-colors disabled:pointer-events-none disabled:opacity-50 bg-royal text-neutral-50 hover:bg-royal/90 font-normal text-base px-6 py-2 gap-2"
         href="/journey"
       >
         <svg
@@ -214,7 +214,7 @@ exports[`Home Page > should render the home page correctly 1`] = `
       </p>
       <a
         aria-label="View our offers"
-        class="bg-jungle hover:bg-jungle/90 mt-2 flex w-fit items-center gap-2 rounded-full px-6 py-2 text-base font-normal text-neutral-50 transition-colors"
+        class="inline-flex items-center justify-center cursor-pointer rounded-full transition-colors disabled:pointer-events-none disabled:opacity-50 bg-jungle text-white hover:bg-jungle/90 font-normal text-base px-6 py-2 mt-2 w-fit gap-2"
         href="/offers"
       >
         View our offers
