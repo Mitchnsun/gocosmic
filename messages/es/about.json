@@ -29,7 +29,9 @@
       },
       "contact": {
         "link": "contáctanos",
-        "text": "Para cualquier pregunta sobre nuestras prácticas o el uso de IA en nuestras soluciones,"
+        "text": "Para cualquier pregunta sobre nuestras prácticas o el uso de IA en nuestras soluciones,",
+        "subject": "Preguntas sobre nuestras prácticas y el uso de la IA",
+        "ariaLabel": "Enviar un correo a support@gocosmic.dev"
       },
       "intro": "Go Cosmic es una agencia de desarrollo de aplicaciones que utiliza inteligencia artificial para mejorar la experiencia del usuario y optimizar el rendimiento.",
       "responsibility": {

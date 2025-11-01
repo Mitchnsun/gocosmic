@@ -1,10 +1,4 @@
-import {
-  ArrowTopRightOnSquareIcon,
-  CheckCircleIcon,
-  CodeBracketIcon,
-  SparklesIcon,
-  UserGroupIcon,
-} from '@heroicons/react/24/solid';
+import { CheckCircleIcon, CodeBracketIcon, EnvelopeIcon, SparklesIcon, UserGroupIcon } from '@heroicons/react/24/solid';
 import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
@@ -23,6 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default function Offers() {
   const t = useTranslations('offers');
+  const subject = encodeURIComponent(t('cta.email_subject'));
 
   return (
     <div className="text-ghost relative pt-10">
@@ -295,9 +290,9 @@ export default function Offers() {
             </h2>
             <p className="text-center text-lg text-gray-400 sm:text-xl lg:text-lg">{t('cta.description')}</p>
             <Button variant="jungle" className="flex items-center gap-2" asChild>
-              <a href="https://mcomper.at/" rel="noopener noreferrer" target="_blank">
+              <a href={`mailto:prospect@gocosmic.dev?subject=${subject}`}>
                 {t('cta.button')}
-                <ArrowTopRightOnSquareIcon className="h-4 w-4" aria-hidden="true" />
+                <EnvelopeIcon className="h-4 w-4" aria-hidden="true" />
               </a>
             </Button>
             <p className="text-center text-sm text-gray-500">{t('cta.contact_info')}</p>

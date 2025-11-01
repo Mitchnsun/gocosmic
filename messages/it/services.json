@@ -135,7 +135,8 @@
       "description": "Parliamo di come i nostri servizi completi possono trasformare la tua visione in realtà. Dallo sviluppo stellare al lancio cosmico, siamo qui per guidare il tuo progetto al successo.",
       "primary_button": "Inizia il tuo viaggio cosmico",
       "secondary_button": "Ottieni un preventivo personalizzato",
-      "contact_info": "Connettiti con il nostro team tecnico per esplorare le possibilità"
+      "contact_info": "Connettiti con il nostro team tecnico per esplorare le possibilità",
+      "email_subject": "Richiesta informazioni sui servizi Cosmici"
     }
   }
 }

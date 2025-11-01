@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.1.1] - 2025-10-31
+
+### Added
+
+- New localized keys for email contact subject and aria-label in About page translations (EN, FR, ES, DE, IT)
+
+### Changed
+
+- About, Services, and Offers pages: replace external contact links with mailto links and localized subjects
+- Services page: add journey link to interactive experience
+- About page: use i18n key for LinkedIn link aria-label for accessibility
+- Update translations texts for offers and contact across multiple languages
+
 ## [1.1.0] - 2025-10-29
 
 ### Added

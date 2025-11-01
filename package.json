@@ -1,6 +1,6 @@
 {
   "name": "gocosmic",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "type": "module",
   "private": true,
   "scripts": {
@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --cache --cache-location .eslintcache --cache-strategy content --max-warnings 0",
+    "lint:staged": "eslint --cache --cache-location .eslintcache --cache-strategy content --max-warnings 0",
     "lint:timing": "TIMING=1 eslint . --cache --cache-location .eslintcache --cache-strategy content --max-warnings 0",
     "check-types": "tsc --project tsconfig.check.json",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",

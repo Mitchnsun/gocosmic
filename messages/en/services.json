@@ -135,7 +135,8 @@
       "description": "Let's discuss how our comprehensive services can transform your vision into reality. From stellar development to cosmic launch, we're here to guide your project to success.",
       "primary_button": "Start your Cosmic journey",
       "secondary_button": "Get a custom quote",
-      "contact_info": "Connect with our technical team to explore the possibilities"
+      "contact_info": "Connect with our technical team to explore the possibilities",
+      "email_subject": "Inquiry about Cosmic services"
     }
   }
 }

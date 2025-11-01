@@ -36,7 +36,7 @@ apps/web/__tests__/
 ├── components/          # Component tests
 ├── pages/              # Page tests
 ├── views/              # View component tests
-├── test-setup.ts       # Global test configuration
+├── test-setup.tsx      # Global test configuration
 └── tsconfig.json       # TypeScript configuration for tests
 ```
 

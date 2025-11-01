@@ -135,7 +135,8 @@
       "description": "Discutons de la façon dont nos services complets peuvent transformer votre vision en réalité. Du développement stellaire au lancement cosmique, nous sommes là pour guider votre projet vers le succès.",
       "primary_button": "Commencez votre voyage cosmique",
       "secondary_button": "Obtenez un devis personnalisé",
-      "contact_info": "Connectez-vous avec notre équipe technique pour explorer les possibilités"
+      "contact_info": "Connectez-vous avec notre équipe technique pour explorer les possibilités",
+      "email_subject": "Demande de renseignements sur les services Cosmiques"
     }
   }
 }

@@ -90,8 +90,9 @@
     "cta": {
       "title": "Prêt à démarrer votre projet cosmique ?",
       "description": "Discutons de l'offre qui correspond le mieux à vos besoins et comment nous pouvons transformer votre vision en réalité.",
-      "button": "Planifier une consultation",
-      "contact_info": "Contactez-nous pour discuter des besoins de votre projet"
+      "button": "Échangeons sur votre projet",
+      "contact_info": "Contactez-nous pour discuter des besoins de votre projet",
+      "email_subject": "Demande de contact pour le développement du projet"
     }
   }
 }

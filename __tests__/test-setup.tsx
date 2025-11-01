@@ -9,6 +9,25 @@ afterEach(() => {
   cleanup();
 });
 
+vi.mock('@/i18n/navigation', () => ({
+  useRouter: () => ({
+    push: vi.fn(),
+    replace: vi.fn(),
+    prefetch: vi.fn(),
+    back: vi.fn(),
+    forward: vi.fn(),
+    refresh: vi.fn(),
+  }),
+  usePathname: () => '/en',
+  Link: ({ children, href, ...props }: { children: React.ReactNode; href: string; [key: string]: unknown }) => (
+    <a href={href} {...props}>
+      {children}
+    </a>
+  ),
+  redirect: vi.fn(),
+  getPathname: vi.fn(() => '/en'),
+}));
+
 // Mock ResizeObserver for @react-three/fiber Canvas component
 global.ResizeObserver = class ResizeObserver {
   observe() {

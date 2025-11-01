@@ -90,8 +90,9 @@
     "cta": {
       "title": "Bereit, Ihr kosmisches Projekt zu starten?",
       "description": "Lassen Sie uns besprechen, welches Angebot am besten zu Ihren Bedürfnissen passt und wie wir Ihre Vision in die Realität umsetzen können.",
-      "button": "Beratung planen",
-      "contact_info": "Kontaktieren Sie uns, um Ihre Projektanforderungen zu besprechen"
+      "button": "Sprechen wir über Ihr Projekt",
+      "contact_info": "Kontaktieren Sie uns, um Ihre Projektanforderungen zu besprechen",
+      "email_subject": "Kontaktanfrage für die Projektentwicklung"
     }
   }
 }

@@ -29,7 +29,9 @@
       },
       "contact": {
         "link": "contact us",
-        "text": "For any questions about our practices or the use of AI in our solutions,"
+        "text": "For any questions about our practices or the use of AI in our solutions,",
+        "subject": "Questions about our practices and AI usage",
+        "ariaLabel": "Send an email to support@gocosmic.dev"
       },
       "intro": "Go Cosmic is an application development agency that uses artificial intelligence technologies to enhance user experience and optimize performance.",
       "responsibility": {

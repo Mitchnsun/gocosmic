@@ -251,7 +251,7 @@ __tests__/
 ├── design-system/   # Components from design-system unit tests
 ├── pages/           # Page component tests
 ├── views/           # View component tests
-├── test-setup.ts    # Global test configuration
+├── test-setup.tsx   # Global test configuration
 └── test-utils.tsx   # Custom render utilities with i18n context
 ```
 
