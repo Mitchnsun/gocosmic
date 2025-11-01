@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 
-import { Button } from '@/design-system/button';
+import { buttonVariants } from '@/design-system/button.variants';
+import { cn } from '@/design-system/lib/utils';
 import { Link } from '@/i18n/navigation';
 
 export default function NotFound() {
@@ -12,9 +13,9 @@ export default function NotFound() {
       style={{ minHeight: 'calc(100vh - var(--header-footer-height))' }}>
       <h2 className="text-center text-2xl font-extrabold sm:text-4xl">{t('title')}</h2>
       <p className="my-8 text-center">{t('description')}</p>
-      <Button variant="ghost" className="flex items-center gap-2" asChild>
-        <Link href="/">{t('link')}</Link>
-      </Button>
+      <Link className={cn(buttonVariants({ variant: 'ghost' }), 'gap-2')} href="/">
+        {t('link')}
+      </Link>
     </div>
   );
 }

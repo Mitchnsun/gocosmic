@@ -1,6 +1,8 @@
 import { CodeBracketIcon, PuzzlePieceIcon, RocketLaunchIcon, SparklesIcon, StarIcon } from '@heroicons/react/24/solid';
 import { useTranslations } from 'next-intl';
 
+import { buttonVariants } from '@/design-system/button.variants';
+import { cn } from '@/design-system/lib/utils';
 import { Link } from '@/i18n/navigation';
 
 export default function Home() {
@@ -15,10 +17,7 @@ export default function Home() {
           <SparklesIcon className="h-8 w-8 text-yellow-400" aria-hidden="true" />
         </div>
         <p className="mb-8 text-center">{t('hero.subtitle')}</p>
-        <Link
-          href="/journey"
-          className="bg-royal hover:bg-royal/90 flex items-center gap-2 rounded-full px-6 py-2 text-base font-normal text-neutral-50 transition-colors"
-          aria-label={t('hero.cta')}>
+        <Link href="/journey" className={cn(buttonVariants({ variant: 'royal' }), 'gap-2')} aria-label={t('hero.cta')}>
           <StarIcon className="h-5 w-5" aria-hidden="true" />
           {t('hero.cta')}
         </Link>
@@ -55,7 +54,7 @@ export default function Home() {
         <p className="text-center font-light text-gray-400">{t('cta.description')}</p>
         <Link
           href="/offers"
-          className="bg-jungle hover:bg-jungle/90 mt-2 flex w-fit items-center gap-2 rounded-full px-6 py-2 text-base font-normal text-neutral-50 transition-colors"
+          className={cn(buttonVariants({ variant: 'jungle' }), 'mt-2 w-fit gap-2')}
           aria-label={t('cta.viewOffers')}>
           {t('cta.viewOffers')}
         </Link>
