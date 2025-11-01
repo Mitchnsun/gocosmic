@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import { notFound } from 'next/navigation';
@@ -44,6 +45,7 @@ export default async function LocaleLayout({
           <Header />
           <div className="mt-16">{children}</div>
           <Footer />
+          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>

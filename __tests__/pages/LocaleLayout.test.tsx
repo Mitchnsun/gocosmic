@@ -194,7 +194,7 @@ describe('LocaleLayout', () => {
       // Check that the structure contains Header, content wrapper, and Footer
       expect(provider.props.children).toBeDefined();
       expect(Array.isArray(provider.props.children)).toBe(true);
-      expect(provider.props.children).toHaveLength(3); // Header, content div, Footer
+      expect(provider.props.children).toHaveLength(4); // Header, content div, Footer
     });
 
     it('should validate routing configuration', () => {
