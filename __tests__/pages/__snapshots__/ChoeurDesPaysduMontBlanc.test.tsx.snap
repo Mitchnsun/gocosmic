@@ -13,15 +13,14 @@ exports[`ChoeurDesPaysduMontBlanc Page > should render the choeur des pays du mo
       >
         <img
           alt="Choeur des Pays du Mont Blanc Logo"
-          class="overflow-hidden rounded-2xl"
           data-nimg="1"
           decoding="async"
-          height="100"
+          height="55"
           loading="lazy"
-          src="/_next/image?url=%2Fprojects%2Fchoeurdespaysdumontblanc%2Fapp-icon.png&w=256&q=75"
-          srcset="/_next/image?url=%2Fprojects%2Fchoeurdespaysdumontblanc%2Fapp-icon.png&w=128&q=75 1x, /_next/image?url=%2Fprojects%2Fchoeurdespaysdumontblanc%2Fapp-icon.png&w=256&q=75 2x"
+          src="/_next/image?url=%2Fprojects%2Fchoeurdespaysdumontblanc%2FCPMB-logo-blanc.png&w=384&q=75"
+          srcset="/_next/image?url=%2Fprojects%2Fchoeurdespaysdumontblanc%2FCPMB-logo-blanc.png&w=256&q=75 1x, /_next/image?url=%2Fprojects%2Fchoeurdespaysdumontblanc%2FCPMB-logo-blanc.png&w=384&q=75 2x"
           style="color: transparent;"
-          width="100"
+          width="160"
         />
         <div
           class="text-center"
@@ -305,61 +304,45 @@ exports[`ChoeurDesPaysduMontBlanc Page > should render the choeur des pays du mo
       </section>
       <section
         aria-labelledby="cta-heading"
-        class="flex w-full flex-col items-center justify-center gap-8 lg:flex-row"
+        class="flex max-w-5xl flex-col items-center gap-6 rounded-lg bg-gray-800 px-6 py-12 lg:p-12"
       >
-        <img
-          alt="Choeur des Pays du Mont Blanc Illustration"
-          class="overflow-hidden rounded-lg"
-          data-nimg="1"
-          decoding="async"
-          height="250"
-          loading="lazy"
-          src="/_next/image?url=%2Fprojects%2Fchoeurdespaysdumontblanc%2Fchoir-illustration.png&w=640&q=75"
-          srcset="/_next/image?url=%2Fprojects%2Fchoeurdespaysdumontblanc%2Fchoir-illustration.png&w=256&q=75 1x, /_next/image?url=%2Fprojects%2Fchoeurdespaysdumontblanc%2Fchoir-illustration.png&w=640&q=75 2x"
-          style="color: transparent;"
-          width="250"
-        />
-        <div
-          class="flex max-w-5xl flex-col items-center gap-6 rounded-lg bg-gray-800 px-6 py-12 lg:p-12"
+        <h2
+          class="text-center text-3xl font-bold lg:text-4xl"
+          id="cta-heading"
         >
-          <h2
-            class="text-center text-3xl font-bold lg:text-4xl"
-            id="cta-heading"
+          Discover the Choir
+        </h2>
+        <p
+          class="text-center text-lg text-gray-400"
+        >
+          Visit the website to learn more about upcoming concerts and join the musical journey.
+        </p>
+        <a
+          aria-label="Visit Chœur des Pays du Mont Blanc website (opens in a new tab)"
+          href="https://choeurdespaysdumontblanc.vercel.app/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <button
+            class="inline-flex items-center justify-center cursor-pointer rounded-full transition-colors disabled:pointer-events-none disabled:opacity-50 bg-royal text-neutral-50 hover:bg-royal/90 font-normal text-base px-6 py-2 gap-2"
           >
-            Discover the Choir
-          </h2>
-          <p
-            class="text-center text-lg text-gray-400"
-          >
-            Visit the website to learn more about upcoming concerts and join the musical journey.
-          </p>
-          <a
-            aria-label="Visit Chœur des Pays du Mont Blanc website (opens in a new tab)"
-            href="https://choeurdespaysdumontblanc.vercel.app/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <button
-              class="inline-flex items-center justify-center cursor-pointer rounded-full transition-colors disabled:pointer-events-none disabled:opacity-50 bg-royal text-neutral-50 hover:bg-royal/90 font-normal text-base px-6 py-2 gap-2"
+            Visit the website
+            <svg
+              aria-hidden="true"
+              class="h-5 w-5"
+              data-slot="icon"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              Visit the website
-              <svg
-                aria-hidden="true"
-                class="h-5 w-5"
-                data-slot="icon"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  clip-rule="evenodd"
-                  d="M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z"
-                  fill-rule="evenodd"
-                />
-              </svg>
-            </button>
-          </a>
-        </div>
+              <path
+                clip-rule="evenodd"
+                d="M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </a>
       </section>
     </main>
   </div>

@@ -31,11 +31,10 @@ export default function ChoeurDesPaysduMontBlanc() {
         {/* Page Header */}
         <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
           <Image
-            src="/projects/choeurdespaysdumontblanc/app-icon.png"
-            className="overflow-hidden rounded-2xl"
+            src="/projects/choeurdespaysdumontblanc/CPMB-logo-blanc.png"
             alt="Choeur des Pays du Mont Blanc Logo"
-            width={100}
-            height={100}
+            width={160}
+            height={55}
           />
           <div className="text-center">
             <h1 className="mb-4 text-2xl font-extrabold sm:text-4xl">{t('title')}</h1>
@@ -141,31 +140,22 @@ export default function ChoeurDesPaysduMontBlanc() {
 
         {/* CTA Section */}
         <section
-          className="flex w-full flex-col items-center justify-center gap-8 lg:flex-row"
+          className="flex max-w-5xl flex-col items-center gap-6 rounded-lg bg-gray-800 px-6 py-12 lg:p-12"
           aria-labelledby="cta-heading">
-          <Image
-            src="/projects/choeurdespaysdumontblanc/choir-illustration.png"
-            className="overflow-hidden rounded-lg"
-            alt="Choeur des Pays du Mont Blanc Illustration"
-            width={250}
-            height={250}
-          />
-          <div className="flex max-w-5xl flex-col items-center gap-6 rounded-lg bg-gray-800 px-6 py-12 lg:p-12">
-            <h2 id="cta-heading" className="text-center text-3xl font-bold lg:text-4xl">
-              {t('cta.title')}
-            </h2>
-            <p className="text-center text-lg text-gray-400">{t('cta.description')}</p>
-            <a
-              href="https://choeurdespaysdumontblanc.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={t('cta.ariaLabel')}>
-              <Button variant="royal" className="gap-2">
-                {t('cta.button')}
-                <ArrowTopRightOnSquareIcon className="h-5 w-5" aria-hidden="true" />
-              </Button>
-            </a>
-          </div>
+          <h2 id="cta-heading" className="text-center text-3xl font-bold lg:text-4xl">
+            {t('cta.title')}
+          </h2>
+          <p className="text-center text-lg text-gray-400">{t('cta.description')}</p>
+          <a
+            href="https://choeurdespaysdumontblanc.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={t('cta.ariaLabel')}>
+            <Button variant="royal" className="gap-2">
+              {t('cta.button')}
+              <ArrowTopRightOnSquareIcon className="h-5 w-5" aria-hidden="true" />
+            </Button>
+          </a>
         </section>
       </main>
     </div>
