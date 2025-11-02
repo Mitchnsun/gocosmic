@@ -292,7 +292,7 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
               class="text-xl font-bold sm:text-2xl lg:text-3xl"
               id="ai-heading"
             >
-              Powered by Intelligence
+              Powered by AI
             </h2>
           </div>
           <div
@@ -334,16 +334,14 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
           <p
             class="text-center text-lg text-gray-400"
           >
-            Discover your cosmic fortune and let the stars guide your journey.
+            Discover your cosmic fortune soon and let the stars guide your journey.
           </p>
-          <a
-            aria-label="Visit Daily Fortune repository (opens in a new tab)"
-            class="bg-royal hover:bg-royal/90 inline-flex items-center gap-2 rounded-full px-6 py-2 text-base font-normal text-neutral-50 transition-colors"
-            href="https://github.com/Mitchnsun/daily-fortune"
-            rel="noopener noreferrer"
-            target="_blank"
+          <button
+            aria-label="Download Daily Fortune (opens in a new tab)"
+            class="inline-flex items-center justify-center cursor-pointer rounded-full transition-colors disabled:pointer-events-none disabled:opacity-50 bg-royal text-neutral-50 hover:bg-royal/90 font-normal text-base px-6 py-2 gap-2"
+            disabled=""
           >
-            Visit the repository
+            Download the app
             <svg
               aria-hidden="true"
               class="h-5 w-5"
@@ -358,7 +356,7 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
                 fill-rule="evenodd"
               />
             </svg>
-          </a>
+          </button>
         </div>
       </section>
     </main>

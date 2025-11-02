@@ -10,6 +10,8 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
+import { Button } from '@/design-system/button';
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'dailyFortune' });
@@ -153,15 +155,10 @@ export default function DailyFortune() {
               {t('cta.title')}
             </h2>
             <p className="text-center text-lg text-gray-400">{t('cta.description')}</p>
-            <a
-              href="https://github.com/Mitchnsun/daily-fortune"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-royal hover:bg-royal/90 inline-flex items-center gap-2 rounded-full px-6 py-2 text-base font-normal text-neutral-50 transition-colors"
-              aria-label="Visit Daily Fortune repository (opens in a new tab)">
+            <Button variant="royal" className="gap-2" disabled aria-label={t('cta.ariaLabel')}>
               {t('cta.button')}
               <ArrowTopRightOnSquareIcon className="h-5 w-5" aria-hidden="true" />
-            </a>
+            </Button>
           </div>
         </section>
       </main>

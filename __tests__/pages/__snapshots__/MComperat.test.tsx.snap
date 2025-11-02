@@ -368,7 +368,7 @@ exports[`MComperat Page > should render the mcomperat page correctly 1`] = `
           </p>
           <a
             aria-label="Visit mcomper.at website (opens in a new tab)"
-            class="bg-royal hover:bg-royal/90 inline-flex items-center gap-2 rounded-full px-6 py-2 text-base font-normal text-neutral-50 transition-colors"
+            class="inline-flex items-center justify-center cursor-pointer rounded-full transition-colors disabled:pointer-events-none disabled:opacity-50 bg-royal text-neutral-50 hover:bg-royal/90 font-normal text-base px-6 py-2"
             href="https://www.mcomper.at/"
             rel="noopener noreferrer"
             target="_blank"

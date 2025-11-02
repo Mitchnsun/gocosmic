@@ -9,6 +9,8 @@ import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
+import { Button } from '@/design-system/button';
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'mcomperat' });
@@ -160,15 +162,16 @@ export default function MComperat() {
               {t('cta.title')}
             </h2>
             <p className="text-center text-lg text-gray-400">{t('cta.description')}</p>
-            <a
-              href="https://www.mcomper.at/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-royal hover:bg-royal/90 inline-flex items-center gap-2 rounded-full px-6 py-2 text-base font-normal text-neutral-50 transition-colors"
-              aria-label="Visit mcomper.at website (opens in a new tab)">
-              {t('cta.button')}
-              <ArrowTopRightOnSquareIcon className="h-5 w-5" aria-hidden="true" />
-            </a>
+            <Button variant="royal" asChild>
+              <a
+                href="https://www.mcomper.at/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t('cta.ariaLabel')}>
+                {t('cta.button')}
+                <ArrowTopRightOnSquareIcon className="h-5 w-5" aria-hidden="true" />
+              </a>
+            </Button>
           </div>
         </section>
       </main>

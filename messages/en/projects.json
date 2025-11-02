@@ -27,13 +27,14 @@
       }
     },
     "ai": {
-      "title": "Powered by Intelligence",
+      "title": "Powered by AI",
       "description": "Daily Fortune leverages modern AI capabilities to generate unique, engaging, and contextually relevant fortunes that resonate with everyone's daily experiences and aspirations."
     },
     "cta": {
       "title": "Explore Daily Fortune",
-      "description": "Discover your cosmic fortune and let the stars guide your journey.",
-      "button": "Visit the repository"
+      "description": "Discover your cosmic fortune soon and let the stars guide your journey.",
+      "button": "Download the app",
+      "ariaLabel": "Download Daily Fortune (opens in a new tab)"
     }
   },
   "mcomperat": {
@@ -77,7 +78,8 @@
     "cta": {
       "title": "Explore mcomper.at",
       "description": "Discover Matthieu Compérat's professional web CV and explore his expertise.",
-      "button": "Visit the website"
+      "button": "Visit the website",
+      "ariaLabel": "Visit mcomper.at website (opens in a new tab)"
     }
   }
 }

@@ -325,7 +325,6 @@ apps/web/
 │   │   ├── services/ # Services page (development, design, AI, launch)
 │   │   ├── offers/   # Offers page (solo, team, duo packages)
 │   │   ├── projects/ # Projects showcase
-│   │   │   └── daily-fortune/ # Daily Fortune project page
 │   │   └── page.tsx  # Homepage
 │   ├── layout.tsx    # Root layout with i18n provider
 │   └── ...
