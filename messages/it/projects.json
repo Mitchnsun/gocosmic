@@ -81,5 +81,43 @@
       "button": "Visita il sito web",
       "ariaLabel": "Visita il sito web mcomper.at (si apre in una nuova scheda)"
     }
+  },
+  "choeurDesPaysduMontBlanc": {
+    "title": "Chœur des Pays du Mont Blanc",
+    "subtitle": "Sito web del coro amatoriale con sede in Alta Savoia, Francia",
+    "overview": {
+      "title": "Informazioni sul progetto",
+      "description": "Il sito web del Chœur des Pays du Mont Blanc è una moderna piattaforma web progettata per mostrare le attività del coro, i concerti in programma e fornire informazioni ai membri e al pubblico.",
+      "mission": "Questo sito web funge da hub di comunicazione principale per i membri del coro e gli appassionati di musica nella regione del Monte Bianco, facilitando l'organizzazione di eventi e il coinvolgimento della comunità."
+    },
+    "features": {
+      "title": "Caratteristiche principali",
+      "items": {
+        "concerts": "Calendario concerti con date, luoghi e dettagli del programma",
+        "repertoire": "Repertorio diversificato dalla musica barocca a quella classica contemporanea",
+        "community": "Informazioni sul reclutamento dei membri e orari delle prove",
+        "events": "Aggiornamenti sugli eventi e notizie sulle attività del coro"
+      }
+    },
+    "technology": {
+      "title": "Stack tecnologico",
+      "description": "Costruito con tecnologie web moderne per offrire un'esperienza elegante e responsive:",
+      "stack": {
+        "nextjs": "Next.js - Framework React per pagine veloci e SEO-friendly",
+        "typescript": "TypeScript - Sviluppo type-safe per affidabilità",
+        "tailwind": "Tailwind CSS - Styling moderno per presentazione elegante",
+        "responsive": "Design responsive - Ottimizzato per tutti i dispositivi"
+      }
+    },
+    "purpose": {
+      "title": "Scopo",
+      "description": "Questo sito web è progettato principalmente per presentare il progetto Chœur des Pays du Mont Blanc ai membri del coro, agli appassionati di musica e al pubblico in generale. Fornisce informazioni essenziali su concerti, prove e opportunità per unirsi a questa appassionata comunità musicale nella regione dell'Alta Savoia."
+    },
+    "cta": {
+      "title": "Scopri il coro",
+      "description": "Visita il sito web per saperne di più sui prossimi concerti e unirti al viaggio musicale.",
+      "button": "Visita il sito web",
+      "ariaLabel": "Visita il sito web del Chœur des Pays du Mont Blanc (si apre in una nuova scheda)"
+    }
   }
 }

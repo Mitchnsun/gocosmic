@@ -64,5 +64,14 @@ export const routing = defineRouting({
       de: '/projekte/mcomperat',
       it: '/progetti/mcomperat',
     },
+
+    // Projects - Choeur des Pays du Mont Blanc
+    '/projects/choeurdespaysdumontblanc': {
+      en: '/projects/choeurdespaysdumontblanc',
+      fr: '/projets/choeurdespaysdumontblanc',
+      es: '/proyectos/choeurdespaysdumontblanc',
+      de: '/projekte/choeurdespaysdumontblanc',
+      it: '/progetti/choeurdespaysdumontblanc',
+    },
   },
 });

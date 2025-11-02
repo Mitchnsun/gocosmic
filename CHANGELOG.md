@@ -9,7 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Added
 
-- Page project mcomper.at
+- Added mcomper.at project page
+- Vercel Analytics
 
 ## [1.1.1] - 2025-10-31
 
