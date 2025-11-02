@@ -30,15 +30,13 @@ const Header = () => {
           <InformationCircleIcon className="h-5 w-5 md:hidden" aria-hidden="true" />
           <span className="hidden md:inline">{t('about')}</span>
         </Link>
-        <a
-          href="https://mcomper.at/"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href="/contact"
           className="rounded px-2 py-1 transition-colors hover:text-blue-400"
           aria-label={t('contact_label')}>
           <EnvelopeIcon className="h-5 w-5 md:hidden" aria-hidden="true" />
           <span className="hidden md:inline">{t('contact')}</span>
-        </a>
+        </Link>
         <LanguageSwitcher />
       </nav>
     </header>

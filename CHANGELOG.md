@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.2.0] - 2025-11-03
+
+### Added
+
+- Contact page with 4 distinct blocks for different email addresses (contact, support, technique, prospect)
+- Translation files for contact page in all 5 supported languages (EN, FR, ES, DE, IT)
+- Internationalized routing for `/contact` path with localized URLs
+- Contact namespace loading in i18n configuration
+- Test coverage for the new contact page
+- Added Choeur des Pays du Mont Blanc project page
+
+### Changed
+
+- Header navigation: Contact link now redirects to the new contact page instead of external link
+- Updated navigation translations across all languages to reflect internal contact page
+
 ## [1.1.2] - 2025-11-02
 
 ### Added

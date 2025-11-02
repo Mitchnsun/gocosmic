@@ -22,7 +22,7 @@ describe('Header Component', () => {
 
     const contactLink = screen.getByRole('link', { name: /contact/i });
     expect(contactLink).toBeInTheDocument();
-    expect(contactLink).toHaveAttribute('href', 'https://mcomper.at/');
+    expect(contactLink).toHaveAttribute('href', '/contact');
 
     const servicesLink = screen.getByRole('link', { name: /services/i });
     expect(servicesLink).toBeInTheDocument();

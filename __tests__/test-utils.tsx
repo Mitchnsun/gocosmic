@@ -5,6 +5,7 @@ import { ReactElement } from 'react';
 // Import English messages from all namespaces for testing
 import about from '../messages/en/about.json';
 import common from '../messages/en/common.json';
+import contact from '../messages/en/contact.json';
 import footer from '../messages/en/footer.json';
 import home from '../messages/en/home.json';
 import journey from '../messages/en/journey.json';
@@ -24,6 +25,7 @@ const messages = {
   ...offers,
   ...journey,
   ...projects,
+  ...contact,
 };
 
 interface AllTheProvidersProps {
