@@ -81,5 +81,43 @@
       "button": "Visit the website",
       "ariaLabel": "Visit mcomper.at website (opens in a new tab)"
     }
+  },
+  "choeurDesPaysduMontBlanc": {
+    "title": "Chœur des Pays du Mont Blanc",
+    "subtitle": "Website for the amateur choir based in Haute-Savoie, France",
+    "overview": {
+      "title": "About the Project",
+      "description": "The Chœur des Pays du Mont Blanc website is a modern web platform designed to showcase the choir's activities, upcoming concerts, and provide information to members and the public.",
+      "mission": "This website serves as a primary communication hub for choir members and music enthusiasts in the Mont Blanc region, facilitating event organization and community engagement."
+    },
+    "features": {
+      "title": "Key Features",
+      "items": {
+        "concerts": "Concert schedule with dates, locations, and program details",
+        "repertoire": "Diverse repertoire from baroque to contemporary classical music",
+        "community": "Member recruitment information and rehearsal schedules",
+        "events": "Event updates and news about choir activities"
+      }
+    },
+    "technology": {
+      "title": "Technology Stack",
+      "description": "Built with modern web technologies to deliver an elegant and responsive experience:",
+      "stack": {
+        "nextjs": "Next.js - React framework for fast, SEO-friendly pages",
+        "typescript": "TypeScript - Type-safe development for reliability",
+        "tailwind": "Tailwind CSS - Modern styling for elegant presentation",
+        "responsive": "Responsive design - Optimized for all devices"
+      }
+    },
+    "purpose": {
+      "title": "Purpose",
+      "description": "This website is primarily designed to present the Chœur des Pays du Mont Blanc project to choir members, music enthusiasts, and the general public. It provides essential information about concerts, rehearsals, and opportunities to join this passionate musical community in the Haute-Savoie region."
+    },
+    "cta": {
+      "title": "Discover the Choir",
+      "description": "Visit the website to learn more about upcoming concerts and join the musical journey.",
+      "button": "Visit the website",
+      "ariaLabel": "Visit Chœur des Pays du Mont Blanc website (opens in a new tab)"
+    }
   }
 }

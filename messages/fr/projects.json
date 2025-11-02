@@ -81,5 +81,43 @@
       "button": "Visiter le site web",
       "ariaLabel": "Visiter le site web mcomper.at (s'ouvre dans un nouvel onglet)"
     }
+  },
+  "choeurDesPaysduMontBlanc": {
+    "title": "Chœur des Pays du Mont Blanc",
+    "subtitle": "Site web du chœur amateur basé en Haute-Savoie, France",
+    "overview": {
+      "title": "Présentation du projet",
+      "description": "Le site web du Chœur des Pays du Mont Blanc est une plateforme web moderne conçue pour mettre en valeur les activités du chœur, les concerts à venir et fournir des informations aux membres et au public.",
+      "mission": "Ce site web sert de hub de communication principal pour les membres du chœur et les passionnés de musique dans la région du Mont Blanc, facilitant l'organisation d'événements et l'engagement communautaire."
+    },
+    "features": {
+      "title": "Fonctionnalités clés",
+      "items": {
+        "concerts": "Calendrier des concerts avec dates, lieux et détails du programme",
+        "repertoire": "Répertoire varié allant du baroque à la musique classique contemporaine",
+        "community": "Informations de recrutement des membres et horaires des répétitions",
+        "events": "Mises à jour des événements et actualités des activités du chœur"
+      }
+    },
+    "technology": {
+      "title": "Stack technique",
+      "description": "Construit avec des technologies web modernes pour offrir une expérience élégante et responsive :",
+      "stack": {
+        "nextjs": "Next.js - Framework React pour des pages rapides et SEO-friendly",
+        "typescript": "TypeScript - Développement type-safe pour la fiabilité",
+        "tailwind": "Tailwind CSS - Styling moderne pour une présentation élégante",
+        "responsive": "Design responsive - Optimisé pour tous les appareils"
+      }
+    },
+    "purpose": {
+      "title": "Objectif",
+      "description": "Ce site web est principalement conçu pour présenter le projet Chœur des Pays du Mont Blanc aux membres du chœur, aux passionnés de musique et au grand public. Il fournit des informations essentielles sur les concerts, les répétitions et les opportunités de rejoindre cette communauté musicale passionnée en Haute-Savoie."
+    },
+    "cta": {
+      "title": "Découvrez le chœur",
+      "description": "Visitez le site web pour en savoir plus sur les prochains concerts et rejoindre l'aventure musicale.",
+      "button": "Visiter le site web",
+      "ariaLabel": "Visiter le site web du Chœur des Pays du Mont Blanc (s'ouvre dans un nouvel onglet)"
+    }
   }
 }
