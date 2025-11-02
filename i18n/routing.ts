@@ -55,5 +55,14 @@ export const routing = defineRouting({
       de: '/projekte/daily-fortune',
       it: '/progetti/daily-fortune',
     },
+
+    // Projects - mcomperat
+    '/projects/mcomperat': {
+      en: '/projects/mcomperat',
+      fr: '/projets/mcomperat',
+      es: '/proyectos/mcomperat',
+      de: '/projekte/mcomperat',
+      it: '/progetti/mcomperat',
+    },
   },
 });

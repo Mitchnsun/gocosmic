@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`DailyFortune Page > should render the daily fortune page correctly 1`] = `
+exports[`MComperat Page > should render the mcomperat page correctly 1`] = `
 <div>
   <div
     class="text-ghost relative pt-10"
@@ -9,32 +9,20 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
       class="m-auto flex max-w-7xl flex-col items-center gap-10 px-4 pb-4"
     >
       <div
-        class="flex flex-col items-center justify-between gap-8 lg:flex-row"
+        class="flex flex-col items-center justify-between gap-8"
       >
-        <img
-          alt="Daily Fortune Logo"
-          class="overflow-hidden rounded-2xl"
-          data-nimg="1"
-          decoding="async"
-          height="100"
-          loading="lazy"
-          src="/_next/image?url=%2Fprojects%2Fdaily-fortune%2Fapp-icon.png&w=256&q=75"
-          srcset="/_next/image?url=%2Fprojects%2Fdaily-fortune%2Fapp-icon.png&w=128&q=75 1x, /_next/image?url=%2Fprojects%2Fdaily-fortune%2Fapp-icon.png&w=256&q=75 2x"
-          style="color: transparent;"
-          width="100"
-        />
         <div
           class="text-center"
         >
           <h1
             class="mb-4 text-2xl font-extrabold sm:text-4xl"
           >
-            Daily Fortune
+            mcomper.at
           </h1>
           <p
             class="text-lg text-gray-400"
           >
-            Your daily dose of inspiration and cosmic wisdom
+            Modern, responsive web CV of Matthieu Compérat
           </p>
         </div>
       </div>
@@ -57,19 +45,14 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M12.75 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM7.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM8.25 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM9.75 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM10.5 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM12.75 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM14.25 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
-              />
-              <path
-                clip-rule="evenodd"
-                d="M6.75 2.25A.75.75 0 0 1 7.5 3v1.5h9V3A.75.75 0 0 1 18 3v1.5h.75a3 3 0 0 1 3 3v11.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3H6V3a.75.75 0 0 1 .75-.75Zm13.5 9a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5Z"
-                fill-rule="evenodd"
+                d="M21.721 12.752a9.711 9.711 0 0 0-.945-5.003 12.754 12.754 0 0 1-4.339 2.708 18.991 18.991 0 0 1-.214 4.772 17.165 17.165 0 0 0 5.498-2.477ZM14.634 15.55a17.324 17.324 0 0 0 .332-4.647c-.952.227-1.945.347-2.966.347-1.021 0-2.014-.12-2.966-.347a17.515 17.515 0 0 0 .332 4.647 17.385 17.385 0 0 0 5.268 0ZM9.772 17.119a18.963 18.963 0 0 0 4.456 0A17.182 17.182 0 0 1 12 21.724a17.18 17.18 0 0 1-2.228-4.605ZM7.777 15.23a18.87 18.87 0 0 1-.214-4.774 12.753 12.753 0 0 1-4.34-2.708 9.711 9.711 0 0 0-.944 5.004 17.165 17.165 0 0 0 5.498 2.477ZM21.356 14.752a9.765 9.765 0 0 1-7.478 6.817 18.64 18.64 0 0 0 1.988-4.718 18.627 18.627 0 0 0 5.49-2.098ZM2.644 14.752c1.682.971 3.53 1.688 5.49 2.099a18.64 18.64 0 0 0 1.988 4.718 9.765 9.765 0 0 1-7.478-6.816ZM13.878 2.43a9.755 9.755 0 0 1 6.116 3.986 11.267 11.267 0 0 1-3.746 2.504 18.63 18.63 0 0 0-2.37-6.49ZM12 2.276a17.152 17.152 0 0 1 2.805 7.121c-.897.23-1.837.353-2.805.353-.968 0-1.908-.122-2.805-.353A17.151 17.151 0 0 1 12 2.276ZM10.122 2.43a18.629 18.629 0 0 0-2.37 6.49 11.266 11.266 0 0 1-3.746-2.504 9.754 9.754 0 0 1 6.116-3.985Z"
               />
             </svg>
             <h2
               class="text-xl font-bold sm:text-2xl lg:text-3xl"
               id="overview-heading"
             >
-              About Daily Fortune
+              About the Project
             </h2>
           </div>
           <div
@@ -78,10 +61,10 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
             <p
               class="text-lg"
             >
-              Daily Fortune is a delightful mobile application that brings a touch of cosmic magic to your routine. Each day, receive a personalized fortune to brighten your day.
+              Modern and responsive web CV of Matthieu Compérat, designed with Next.js (App Router) for fast, accessible, and SEO-friendly pages.
             </p>
             <p>
-              Whether you're looking for a morning boost, a phrase to keep you on track, or a message to share, Daily Fortune fits into your routine to spread positivity and clarity.
+              Clear and maintainable architecture: reusable components, Server Components by default, and strict types for production reliability. Integrated internationalization in French (default) and English, with homepage redirection to /fr.
             </p>
           </div>
         </div>
@@ -131,7 +114,7 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
                   class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-400"
                 />
                 <span>
-                  New cosmic fortunes delivered every day
+                  Internationalization: /fr and /en routes with dedicated JSON content
                 </span>
               </li>
               <li
@@ -142,7 +125,7 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
                   class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-500"
                 />
                 <span>
-                  A chosen message to brighten your day: fortune cookie, motivational quote, or positive affirmation
+                  SEO: metadata managed via Next.js API (generateMetadata) for better ranking
                 </span>
               </li>
               <li
@@ -153,7 +136,7 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
                   class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-600"
                 />
                 <span>
-                  Clean, responsive interface with smooth animations
+                  Performance: Server Components, streaming, and React 19 for fast loading
                 </span>
               </li>
               <li
@@ -164,7 +147,18 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
                   class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-700"
                 />
                 <span>
-                  Space-inspired design that captures the wonder of the universe
+                  Accessibility: best practices (jsx-a11y) and semantic HTML
+                </span>
+              </li>
+              <li
+                class="flex items-center gap-3"
+              >
+                <span
+                  aria-hidden="true"
+                  class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-800"
+                />
+                <span>
+                  Code quality: ESLint (flat config), Prettier (Tailwind sort), Husky hooks, sorted imports, zero lint errors
                 </span>
               </li>
             </ul>
@@ -208,7 +202,7 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
             <p
               class="text-lg"
             >
-              Built with modern web technologies to deliver a fast, beautiful, and reliable experience:
+              Built with cutting-edge web technologies for a fast, maintainable, and production-ready experience:
             </p>
             <ul
               class="grid gap-3 md:grid-cols-2"
@@ -221,7 +215,7 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
                   class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-400"
                 />
                 <span>
-                  Next.js - React framework for production-ready applications
+                  Next.js 15.5+ (App Router) - Modern React framework
                 </span>
               </li>
               <li
@@ -232,7 +226,7 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
                   class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-500"
                 />
                 <span>
-                  TypeScript - Type-safe development for reliability
+                  TypeScript 5.9+ (strict mode) - Type safety and reliability
                 </span>
               </li>
               <li
@@ -243,7 +237,7 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
                   class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-600"
                 />
                 <span>
-                  Tailwind CSS - Utility-first styling for cosmic aesthetics
+                  Tailwind CSS 4.1+ - Utility-first styling with custom theme
                 </span>
               </li>
               <li
@@ -254,7 +248,7 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
                   class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-700"
                 />
                 <span>
-                  React Native - Native mobile experience for iOS and Android
+                  Yarn 4+ (Corepack) and Node.js 22+ - Modern tooling
                 </span>
               </li>
             </ul>
@@ -301,8 +295,56 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
             <p
               class="text-lg"
             >
-              Daily Fortune leverages modern AI capabilities to generate unique, engaging, and contextually relevant fortunes that resonate with everyone's daily experiences and aspirations.
+              Development workflow enhanced by AI assistance for faster, more consistent, and higher quality results:
             </p>
+            <ul
+              class="grid gap-3 md:grid-cols-2"
+            >
+              <li
+                class="flex items-center gap-3"
+              >
+                <span
+                  aria-hidden="true"
+                  class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-400"
+                />
+                <span>
+                  Assisted development: recommended use of GitHub Copilot to accelerate component writing and reduce errors
+                </span>
+              </li>
+              <li
+                class="flex items-center gap-3"
+              >
+                <span
+                  aria-hidden="true"
+                  class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-500"
+                />
+                <span>
+                  Quality and consistency: automatic suggestions for import fixes, ESLint/TypeScript compliance, and Tailwind class ordering
+                </span>
+              </li>
+              <li
+                class="flex items-center gap-3"
+              >
+                <span
+                  aria-hidden="true"
+                  class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-600"
+                />
+                <span>
+                  Content and SEO: assistance with microcopy, meta/OG tags, and accessible alt text
+                </span>
+              </li>
+              <li
+                class="flex items-center gap-3"
+              >
+                <span
+                  aria-hidden="true"
+                  class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-700"
+                />
+                <span>
+                  Internationalization: help pre-generating consistent FR/EN strings from templates, with mandatory human review
+                </span>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
@@ -310,18 +352,6 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
         aria-labelledby="cta-heading"
         class="flex w-full flex-col items-center justify-center gap-8 lg:flex-row"
       >
-        <img
-          alt="Daily Fortune Illustration"
-          class="overflow-hidden rounded-lg"
-          data-nimg="1"
-          decoding="async"
-          height="250"
-          loading="lazy"
-          src="/_next/image?url=%2Fprojects%2Fdaily-fortune%2Fsplashscreen.png&w=640&q=75"
-          srcset="/_next/image?url=%2Fprojects%2Fdaily-fortune%2Fsplashscreen.png&w=256&q=75 1x, /_next/image?url=%2Fprojects%2Fdaily-fortune%2Fsplashscreen.png&w=640&q=75 2x"
-          style="color: transparent;"
-          width="250"
-        />
         <div
           class="flex max-w-5xl flex-col items-center gap-6 rounded-lg bg-gray-800 px-6 py-12 lg:p-12"
         >
@@ -329,19 +359,21 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
             class="text-center text-3xl font-bold lg:text-4xl"
             id="cta-heading"
           >
-            Explore Daily Fortune
+            Explore mcomper.at
           </h2>
           <p
             class="text-center text-lg text-gray-400"
           >
-            Discover your cosmic fortune soon and let the stars guide your journey.
+            Discover Matthieu Compérat's professional web CV and explore his expertise.
           </p>
-          <button
-            aria-label="Download Daily Fortune (opens in a new tab)"
-            class="inline-flex items-center justify-center cursor-pointer rounded-full transition-colors disabled:pointer-events-none disabled:opacity-50 bg-royal text-neutral-50 hover:bg-royal/90 font-normal text-base px-6 py-2 gap-2"
-            disabled=""
+          <a
+            aria-label="Visit mcomper.at website (opens in a new tab)"
+            class="inline-flex items-center justify-center cursor-pointer rounded-full transition-colors disabled:pointer-events-none disabled:opacity-50 bg-royal text-neutral-50 hover:bg-royal/90 font-normal text-base px-6 py-2"
+            href="https://www.mcomper.at/"
+            rel="noopener noreferrer"
+            target="_blank"
           >
-            Download the app
+            Visit the website
             <svg
               aria-hidden="true"
               class="h-5 w-5"
@@ -356,7 +388,7 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
                 fill-rule="evenodd"
               />
             </svg>
-          </button>
+          </a>
         </div>
       </section>
     </main>

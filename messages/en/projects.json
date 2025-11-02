@@ -27,13 +27,59 @@
       }
     },
     "ai": {
-      "title": "Powered by Intelligence",
+      "title": "Powered by AI",
       "description": "Daily Fortune leverages modern AI capabilities to generate unique, engaging, and contextually relevant fortunes that resonate with everyone's daily experiences and aspirations."
     },
     "cta": {
       "title": "Explore Daily Fortune",
-      "description": "Discover your cosmic fortune and let the stars guide your journey.",
-      "button": "Visit the repository"
+      "description": "Discover your cosmic fortune soon and let the stars guide your journey.",
+      "button": "Download the app",
+      "ariaLabel": "Download Daily Fortune (opens in a new tab)"
+    }
+  },
+  "mcomperat": {
+    "title": "mcomper.at",
+    "subtitle": "Modern, responsive web CV of Matthieu Compérat",
+    "overview": {
+      "title": "About the Project",
+      "description": "Modern and responsive web CV of Matthieu Compérat, designed with Next.js (App Router) for fast, accessible, and SEO-friendly pages.",
+      "architecture": "Clear and maintainable architecture: reusable components, Server Components by default, and strict types for production reliability. Integrated internationalization in French (default) and English, with homepage redirection to /fr."
+    },
+    "features": {
+      "title": "Key Features",
+      "items": {
+        "i18n": "Internationalization: /fr and /en routes with dedicated JSON content",
+        "seo": "SEO: metadata managed via Next.js API (generateMetadata) for better ranking",
+        "performance": "Performance: Server Components, streaming, and React 19 for fast loading",
+        "accessibility": "Accessibility: best practices (jsx-a11y) and semantic HTML",
+        "quality": "Code quality: ESLint (flat config), Prettier (Tailwind sort), Husky hooks, sorted imports, zero lint errors"
+      }
+    },
+    "technology": {
+      "title": "Technology Stack",
+      "description": "Built with cutting-edge web technologies for a fast, maintainable, and production-ready experience:",
+      "stack": {
+        "nextjs": "Next.js 15.5+ (App Router) - Modern React framework",
+        "typescript": "TypeScript 5.9+ (strict mode) - Type safety and reliability",
+        "tailwind": "Tailwind CSS 4.1+ - Utility-first styling with custom theme",
+        "yarn": "Yarn 4+ (Corepack) and Node.js 22+ - Modern tooling"
+      }
+    },
+    "ai": {
+      "title": "Powered by AI",
+      "description": "Development workflow enhanced by AI assistance for faster, more consistent, and higher quality results:",
+      "features": {
+        "development": "Assisted development: recommended use of GitHub Copilot to accelerate component writing and reduce errors",
+        "quality": "Quality and consistency: automatic suggestions for import fixes, ESLint/TypeScript compliance, and Tailwind class ordering",
+        "content": "Content and SEO: assistance with microcopy, meta/OG tags, and accessible alt text",
+        "i18n": "Internationalization: help pre-generating consistent FR/EN strings from templates, with mandatory human review"
+      }
+    },
+    "cta": {
+      "title": "Explore mcomper.at",
+      "description": "Discover Matthieu Compérat's professional web CV and explore his expertise.",
+      "button": "Visit the website",
+      "ariaLabel": "Visit mcomper.at website (opens in a new tab)"
     }
   }
 }
