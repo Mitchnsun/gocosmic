@@ -31,6 +31,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - ESLint warnings: removed unused imports in test files (middleware, pages tests)
 - Type safety: proper async handling of `params` prop in all `generateMetadata` functions
 
+### Removed
+
+- eslint-plugin-sonarjs: removed plugin and all its rules from ESLint configuration to streamline linting setup
+
 ## [1.1.2] - 2025-11-02
 
 ### Added
