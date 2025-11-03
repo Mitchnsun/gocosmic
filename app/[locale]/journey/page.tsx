@@ -1,7 +1,18 @@
 import dynamic from 'next/dynamic';
-import { useTranslations } from 'next-intl';
+import { createTranslator, useTranslations } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 
 import { Loader } from '@/components/Loader';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const messages = await getMessages();
+  const t = createTranslator({ messages, namespace: 'journey', locale });
+  return {
+    title: t('meta.title'),
+    description: t('meta.description'),
+  };
+}
 
 // Dynamically import the JourneyContent to avoid SSR issues with Three.js
 const JourneyContent = dynamic(() => import('@/views/Journey'), {

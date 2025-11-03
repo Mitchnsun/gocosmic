@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "Über Go Cosmic - Unsere Mission und Team",
+    "description": "Entdecken Sie die Mission von Go Cosmic, kosmische Anwendungen mit KI zu erstellen. Lernen Sie Matthieu Compérat, unseren Entwickler, kennen und erfahren Sie mehr über unser Engagement für Exzellenz und Innovation."
+  },
   "about": {
     "developer": {
       "bio": "Matthieu verbindet tiefgehende technische Expertise mit einer kreativen Vision, um digitale Lösungen zu gestalten, die die Grenzen des Möglichen erweitern. Sein 'kosmischer' Ansatz zielt darauf ab, Nutzererlebnisse zu schaffen, die leistungsstark, schön und innovativ sind.",

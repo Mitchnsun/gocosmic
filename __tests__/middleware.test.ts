@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from 'vitest';
+import { vi } from 'vitest';
 
 import { routing } from '@/i18n/routing';
 

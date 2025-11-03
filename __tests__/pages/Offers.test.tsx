@@ -1,6 +1,21 @@
-import Offers from '@/app/[locale]/offers/page';
+import { vi } from 'vitest';
+
+import Offers, { generateMetadata } from '@/app/[locale]/offers/page';
 
 import { render } from '../test-utils';
+
+// Mock next-intl/server
+vi.mock('next-intl/server', async () => {
+  const actual = await vi.importActual('next-intl/server');
+  return {
+    ...actual,
+    getTranslations: vi.fn().mockResolvedValue((key: string) => {
+      if (key === 'title') return 'Our Cosmic Offers';
+      if (key === 'subtitle') return 'Choose the perfect solution tailored to your project needs';
+      return key;
+    }),
+  };
+});
 
 describe('Offers Page', () => {
   it('should render the offers page with all three offers', () => {
@@ -22,5 +37,17 @@ describe('Offers Page', () => {
     expect(getByText(/perfect for startups and small projects/i)).toBeInTheDocument();
     expect(getByText(/full-stack solutions for complex projects/i)).toBeInTheDocument();
     expect(getByText(/complete digital experience package/i)).toBeInTheDocument();
+  });
+
+  describe('generateMetadata', () => {
+    it('should generate metadata with correct title and description', async () => {
+      const params = Promise.resolve({ locale: 'en' });
+      const metadata = await generateMetadata({ params });
+
+      expect(metadata).toEqual({
+        title: 'Our Cosmic Offers',
+        description: 'Choose the perfect solution tailored to your project needs',
+      });
+    });
   });
 });

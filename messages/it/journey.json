@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "Viaggio Cosmico - Esplora le Stelle con Go Cosmic",
+    "description": "Intraprendi un viaggio cosmico immersivo in 3D attraverso le stelle. Vivi l'approccio unico di Go Cosmic con esplorazione spaziale interattiva."
+  },
   "journey": {
     "subtitle": "Ora viaggi tra le stelle",
     "title": "Benvenuto nel tuo Viaggio Cosmico"

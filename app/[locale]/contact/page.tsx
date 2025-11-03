@@ -4,12 +4,15 @@ import {
   ShoppingBagIcon,
   WrenchScrewdriverIcon,
 } from '@heroicons/react/24/solid';
-import { useTranslations, createTranslator } from 'next-intl';
+import { createTranslator, useTranslations } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 
-export async function generateMetadata({ params }: { params: { locale: string } }) {
+import { cn } from '@/design-system/lib/utils';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const messages = await getMessages();
-  const t = createTranslator({ messages, namespace: 'contact', locale: params.locale });
+  const t = createTranslator({ messages, namespace: 'contact', locale });
   return {
     title: t('meta.title'),
     description: t('meta.description'),
@@ -101,7 +104,7 @@ export default function Contact() {
                 aria-labelledby={`${block.id}-heading`}>
                 {/* Block Header */}
                 <div className="mb-6 flex items-center gap-4">
-                  <Icon className={`h-8 w-8 shrink-0 ${colors.icon}`} aria-hidden="true" />
+                  <Icon className={cn('h-8 w-8 shrink-0', colors.icon)} aria-hidden="true" />
                   <h2 id={`${block.id}-heading`} className="text-xl font-bold sm:text-2xl">
                     {t(`blocks.${block.id}.title`)}
                   </h2>
@@ -121,7 +124,7 @@ export default function Contact() {
                     {reasonKeys[block.id].map((reasonKey) => (
                       <li key={reasonKey} className="flex items-start gap-3">
                         <span
-                          className={`mt-1.5 h-2 w-2 flex-shrink-0 rounded-full ${colors.bullet}`}
+                          className={cn('mt-1.5 h-2 w-2 flex-shrink-0 rounded-full', colors.bullet)}
                           aria-hidden="true"></span>
                         <span className="text-gray-300">{t(`blocks.${block.id}.reasons.items.${reasonKey}`)}</span>
                       </li>
@@ -133,7 +136,10 @@ export default function Contact() {
                 <div className="border-t border-gray-700 pt-6">
                   <a
                     href={mailtoLink}
-                    className={`inline-flex items-center gap-2 rounded px-4 py-2 font-semibold transition-colors focus:ring-2 focus:outline-none ${colors.link}`}
+                    className={cn(
+                      'inline-flex items-center gap-2 rounded px-4 py-2 font-semibold ring-2 transition-colors focus:outline-none',
+                      colors.link
+                    )}
                     aria-label={t(`blocks.${block.id}.aria_label`)}>
                     {t(`blocks.${block.id}.cta`)}
                     <EnvelopeIcon className="h-5 w-5" aria-hidden="true" />

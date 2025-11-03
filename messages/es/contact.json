@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "Contáctenos - Póngase en Contacto con Go Cosmic",
+    "description": "Contacte con Go Cosmic para consultas generales, soporte, preguntas técnicas o solicitudes comerciales. Elija el correo adecuado para sus necesidades y obtenga asistencia personalizada."
+  },
   "contact": {
     "title": "Contáctenos",
     "subtitle": "Elija el correo electrónico adecuado para su solicitud",

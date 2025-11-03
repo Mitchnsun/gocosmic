@@ -1,7 +1,18 @@
 import { CodeBracketIcon, ShieldCheckIcon, UserIcon } from '@heroicons/react/24/solid';
-import { useTranslations } from 'next-intl';
+import { createTranslator, useTranslations } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 
 import LinkedInIcon from '@/components/icons/LinkedInIcon';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const messages = await getMessages();
+  const t = createTranslator({ messages, namespace: 'about', locale });
+  return {
+    title: t('meta.title'),
+    description: t('meta.description'),
+  };
+}
 
 export default function About() {
   const t = useTranslations('about');

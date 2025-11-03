@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "Contattaci - Mettiti in Contatto con Go Cosmic",
+    "description": "Contatta Go Cosmic per richieste generali, supporto, domande tecniche o richieste commerciali. Scegli l'email giusta per le tue esigenze e ricevi assistenza personalizzata."
+  },
   "contact": {
     "title": "Contattaci",
     "subtitle": "Scegli l'email giusta per la tua richiesta",

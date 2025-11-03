@@ -15,11 +15,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Contact namespace loading in i18n configuration
 - Test coverage for the new contact page
 - Added Choeur des Pays du Mont Blanc project page
+- SEO metadata (title and description) for About, Contact, Journey, Services, and Offers pages
+- `generateMetadata` functions in all main pages for dynamic SEO optimization
+- Meta translations in all namespace files (about, contact, journey) across all 5 languages
 
 ### Changed
 
 - Header navigation: Contact link now redirects to the new contact page instead of external link
 - Updated navigation translations across all languages to reflect internal contact page
+- Contact page: improved styling consistency using `cn()` utility for className management
+- Page components: async params handling updated to comply with Next.js 15 requirements
+
+### Fixed
+
+- ESLint warnings: removed unused imports in test files (middleware, pages tests)
+- Type safety: proper async handling of `params` prop in all `generateMetadata` functions
 
 ## [1.1.2] - 2025-11-02
 

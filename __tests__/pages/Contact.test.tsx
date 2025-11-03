@@ -1,8 +1,21 @@
-import { describe, expect, it } from 'vitest';
+import { vi } from 'vitest';
 
-import Contact from '@/app/[locale]/contact/page';
+import Contact, { generateMetadata } from '@/app/[locale]/contact/page';
 
 import { render, screen } from '../test-utils';
+
+// Mock next-intl/server
+vi.mock('next-intl/server', () => ({
+  getMessages: vi.fn().mockResolvedValue({
+    contact: {
+      meta: {
+        title: 'Contact Us - Get in Touch with Go Cosmic',
+        description:
+          'Contact Go Cosmic for general inquiries, support, technical questions, or commercial requests. Choose the right email for your specific needs and get personalized assistance.',
+      },
+    },
+  }),
+}));
 
 describe('Contact Page', () => {
   it('should render all four contact blocks with correct titles', () => {
@@ -64,6 +77,19 @@ describe('Contact Page', () => {
     sections.forEach((section) => {
       const heading = section.querySelector('h2');
       expect(heading).toBeInTheDocument();
+    });
+  });
+
+  describe('generateMetadata', () => {
+    it('should generate metadata with correct title and description', async () => {
+      const params = Promise.resolve({ locale: 'en' });
+      const metadata = await generateMetadata({ params });
+
+      expect(metadata).toEqual({
+        title: 'Contact Us - Get in Touch with Go Cosmic',
+        description:
+          'Contact Go Cosmic for general inquiries, support, technical questions, or commercial requests. Choose the right email for your specific needs and get personalized assistance.',
+      });
     });
   });
 });
