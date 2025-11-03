@@ -73,5 +73,14 @@ export const routing = defineRouting({
       de: '/projekte/choeurdespaysdumontblanc',
       it: '/progetti/choeurdespaysdumontblanc',
     },
+
+    // Contact page
+    '/contact': {
+      en: '/contact',
+      fr: '/contact',
+      es: '/contacto',
+      de: '/kontakt',
+      it: '/contatto',
+    },
   },
 });

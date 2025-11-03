@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "Kosmische Reise - Erkunden Sie die Sterne mit Go Cosmic",
+    "description": "Begeben Sie sich auf eine immersive 3D-Reise durch die Sterne. Erleben Sie den einzigartigen Ansatz von Go Cosmic mit interaktiver Weltraumexploration."
+  },
   "journey": {
     "subtitle": "Sie reisen jetzt zwischen den Sternen",
     "title": "Willkommen zu Ihrer kosmischen Reise"

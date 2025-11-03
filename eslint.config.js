@@ -9,7 +9,6 @@ import pluginReact from 'eslint-plugin-react';
 import pluginReactHooks from 'eslint-plugin-react-hooks';
 import securityPlugin from 'eslint-plugin-security';
 import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort';
-import sonarjsPlugin from 'eslint-plugin-sonarjs';
 import unicornPlugin from 'eslint-plugin-unicorn';
 import unusedImportsPlugin from 'eslint-plugin-unused-imports';
 import globals from 'globals';
@@ -24,7 +23,6 @@ const config = [
   js.configs.recommended,
   eslintConfigPrettier,
   ...tseslint.configs.recommended,
-  sonarjsPlugin.configs.recommended,
   securityPlugin.configs.recommended,
   {
     plugins: {
@@ -44,11 +42,6 @@ const config = [
       'import/no-duplicates': 'error',
       'unicorn/prevent-abbreviations': 'off',
       'unicorn/filename-case': 'off',
-      'sonarjs/prefer-read-only-props': 'off',
-      'sonarjs/function-return-type': 'off',
-      'sonarjs/prefer-regexp-exec': 'off',
-      'sonarjs/arguments-order': 'off',
-      'sonarjs/aws-restricted-ip-admin-access': 'off',
     },
   },
   {
@@ -90,7 +83,6 @@ const config = [
     files: ['__tests__/**/*', '**/*.test.*', '**/*.spec.*'],
     rules: {
       '@next/next/no-html-link-for-pages': 'off',
-      'sonarjs/assertions-in-tests': 'off',
     },
   },
   {

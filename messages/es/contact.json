@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "title": "Contáctenos - Póngase en Contacto con Go Cosmic",
+    "description": "Contacte con Go Cosmic para consultas generales, soporte, preguntas técnicas o solicitudes comerciales. Elija el correo adecuado para sus necesidades y obtenga asistencia personalizada."
+  },
+  "contact": {
+    "title": "Contáctenos",
+    "subtitle": "Elija el correo electrónico adecuado para su solicitud",
+    "blocks": {
+      "general": {
+        "title": "Consultas Generales",
+        "email": "contact@gocosmic.dev",
+        "subject": "Consulta general",
+        "reasons": {
+          "title": "Contáctenos para:",
+          "items": {
+            "generalQuestion": "Preguntas generales sobre el proyecto o la empresa",
+            "partnership": "Propuestas de asociación",
+            "feedback": "Comentarios y experiencia del usuario",
+            "suggestions": "Sugerencias de mejora",
+            "mission": "Preguntas sobre la misión y los valores de Go Cosmic"
+          }
+        },
+        "cta": "Enviar un correo",
+        "aria_label": "Enviar un correo electrónico a contact@gocosmic.dev con asunto: Consulta general"
+      },
+      "support": {
+        "title": "Soporte y Asistencia",
+        "email": "support@gocosmic.dev",
+        "subject": "Solicitud de soporte",
+        "reasons": {
+          "title": "Contáctenos para:",
+          "items": {
+            "help": "Ayuda con una aplicación o servicio",
+            "bugs": "Reporte de errores o fallos",
+            "access": "Problemas de conexión o acceso",
+            "technical": "Solicitudes de asistencia técnica",
+            "troubleshooting": "Preguntas sobre resolución de problemas"
+          }
+        },
+        "cta": "Solicitar soporte",
+        "aria_label": "Enviar un correo electrónico a support@gocosmic.dev con asunto: Solicitud de soporte"
+      },
+      "technical": {
+        "title": "Consultas Técnicas",
+        "email": "technique@gocosmic.dev",
+        "subject": "Pregunta técnica",
+        "reasons": {
+          "title": "Contáctenos para:",
+          "items": {
+            "architecture": "Preguntas detalladas sobre arquitectura o integración",
+            "documentation": "Solicitudes de documentación técnica",
+            "evolution": "Sugerencias para la evolución técnica del producto",
+            "collaboration": "Colaboración o contribución al código",
+            "api": "Discusiones sobre APIs o integraciones"
+          }
+        },
+        "cta": "Hacer una pregunta técnica",
+        "aria_label": "Enviar un correo electrónico a technique@gocosmic.dev con asunto: Pregunta técnica"
+      },
+      "commercial": {
+        "title": "Consultas Comerciales",
+        "email": "prospect@gocosmic.dev",
+        "subject": "Consulta comercial",
+        "reasons": {
+          "title": "Contáctenos para:",
+          "items": {
+            "quote": "Solicitudes comerciales o presupuestos",
+            "pricing": "Información sobre ofertas y precios",
+            "demo": "Solicitudes de demostración del producto",
+            "meeting": "Solicitudes de reunión con el equipo comercial",
+            "purchase": "Preguntas antes de la compra o suscripción"
+          }
+        },
+        "cta": "Ponerse en contacto",
+        "aria_label": "Enviar un correo electrónico a prospect@gocosmic.dev con asunto: Consulta comercial"
+      }
+    }
+  }
+}

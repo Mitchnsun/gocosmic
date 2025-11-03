@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "title": "Contact Us - Get in Touch with Go Cosmic",
+    "description": "Contact Go Cosmic for general inquiries, support, technical questions, or commercial requests. Choose the right email for your specific needs and get personalized assistance."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Choose the right email for your request",
+    "blocks": {
+      "general": {
+        "title": "General Inquiries",
+        "email": "contact@gocosmic.dev",
+        "subject": "General Inquiry",
+        "reasons": {
+          "title": "Contact us for:",
+          "items": {
+            "generalQuestion": "General questions about the project or company",
+            "partnership": "Partnership proposals",
+            "feedback": "User feedback and experience",
+            "suggestions": "Improvement suggestions",
+            "mission": "Questions about Go Cosmic's mission and values"
+          }
+        },
+        "cta": "Send an email",
+        "aria_label": "Send an email to contact@gocosmic.dev with subject: General Inquiry"
+      },
+      "support": {
+        "title": "Support & Assistance",
+        "email": "support@gocosmic.dev",
+        "subject": "Support Request",
+        "reasons": {
+          "title": "Contact us for:",
+          "items": {
+            "help": "Help with an application or service",
+            "bugs": "Bug or error reporting",
+            "access": "Connection or access issues",
+            "technical": "Technical assistance requests",
+            "troubleshooting": "Questions about problem resolution"
+          }
+        },
+        "cta": "Request support",
+        "aria_label": "Send an email to support@gocosmic.dev with subject: Support Request"
+      },
+      "technical": {
+        "title": "Technical Inquiries",
+        "email": "technique@gocosmic.dev",
+        "subject": "Technical Question",
+        "reasons": {
+          "title": "Contact us for:",
+          "items": {
+            "architecture": "Detailed questions about architecture or integration",
+            "documentation": "Technical documentation requests",
+            "evolution": "Suggestions for technical product evolution",
+            "collaboration": "Collaboration or code contribution",
+            "api": "Discussions about APIs or integrations"
+          }
+        },
+        "cta": "Ask a technical question",
+        "aria_label": "Send an email to technique@gocosmic.dev with subject: Technical Question"
+      },
+      "commercial": {
+        "title": "Commercial Inquiries",
+        "email": "prospect@gocosmic.dev",
+        "subject": "Commercial Inquiry",
+        "reasons": {
+          "title": "Contact us for:",
+          "items": {
+            "quote": "Commercial requests or quotes",
+            "pricing": "Information about offers and pricing",
+            "demo": "Product demonstration requests",
+            "meeting": "Meeting requests with the sales team",
+            "purchase": "Pre-purchase or subscription questions"
+          }
+        },
+        "cta": "Get in touch",
+        "aria_label": "Send an email to prospect@gocosmic.dev with subject: Commercial Inquiry"
+      }
+    }
+  }
+}

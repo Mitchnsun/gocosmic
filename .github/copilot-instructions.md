@@ -38,7 +38,6 @@ This project is a **modern React repo** built with cutting-edge technologies:
 - **ESLint 9.x** - Code linting with modern flat config and enhanced plugins:
   - `@eslint/js` - Core JavaScript rules
   - `typescript-eslint` - TypeScript-specific linting
-  - `eslint-plugin-sonarjs` - Code smell detection and complexity analysis
   - `eslint-plugin-security` - Security vulnerability detection
   - `eslint-plugin-unicorn` - Modern JavaScript/TypeScript best practices
   - `eslint-plugin-import` - Import/export validation
@@ -69,7 +68,7 @@ The project enforces **strict coding standards** to ensure code quality and cons
 
 - **TypeScript-first approach** with strict type checking across all packages
 - **ESLint 9.x** with flat config, enhanced plugins, and zero warnings policy (`--max-warnings 0`)
-- **Enhanced ESLint plugins** including SonarJS (code quality), Security (vulnerability detection), and Unicorn (modern practices)
+- **Enhanced ESLint plugins** including Security (vulnerability detection) and Unicorn (modern practices)
 - **Prettier** for automatic code formatting with consistent styling
 - **Import management** with `eslint-plugin-simple-import-sort` and automatic unused import removal
 - **Conventional Commits** enforced via commitlint with custom types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `tech`, `chore`
