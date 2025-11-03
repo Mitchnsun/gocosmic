@@ -4,8 +4,17 @@ import {
   ShoppingBagIcon,
   WrenchScrewdriverIcon,
 } from '@heroicons/react/24/solid';
-import { useTranslations } from 'next-intl';
+import { useTranslations, createTranslator } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 
+export async function generateMetadata({ params }: { params: { locale: string } }) {
+  const messages = await getMessages();
+  const t = createTranslator({ messages, namespace: 'contact', locale: params.locale });
+  return {
+    title: t('meta.title'),
+    description: t('meta.description'),
+  };
+}
 type BlockId = 'general' | 'support' | 'technical' | 'commercial';
 
 export default function Contact() {
