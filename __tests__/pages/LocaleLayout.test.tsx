@@ -102,7 +102,7 @@ describe('LocaleLayout', () => {
       const body = layout.props.children;
       expect(body.type).toBe('body');
       expect(body.props.className).toContain('mocked-poppins-font');
-      expect(body.props.className).toContain('bg-gray-900');
+      expect(body.props.className).toContain('bg-slate-950');
     });
 
     it('should call notFound for invalid locale', async () => {
@@ -136,7 +136,7 @@ describe('LocaleLayout', () => {
       const body = layout.props.children;
       expect(body.type).toBe('body');
       expect(body.props.className).toContain('mocked-poppins-font');
-      expect(body.props.className).toContain('bg-gray-900');
+      expect(body.props.className).toContain('bg-slate-950');
     });
 
     it('should handle different locales in HTML lang attribute', async () => {

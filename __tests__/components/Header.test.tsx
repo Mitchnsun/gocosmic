@@ -8,7 +8,7 @@ describe('Header Component', () => {
 
     const header = screen.getByRole('banner');
     expect(header).toBeInTheDocument();
-    expect(header).toHaveClass('text-ghost', 'flex', 'items-center', 'justify-between', 'bg-gray-900', 'p-4');
+    expect(header).toHaveClass('text-ghost', 'flex', 'items-center', 'justify-between', 'bg-slate-950', 'p-4');
 
     const heading = screen.getByRole('heading', { level: 1 });
     expect(heading).toBeInTheDocument();

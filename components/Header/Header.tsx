@@ -9,7 +9,7 @@ const Header = () => {
   const t = useTranslations('navigation');
 
   return (
-    <header className="text-ghost fixed top-0 z-50 flex w-full items-center justify-between bg-gray-900 p-4">
+    <header className="text-ghost fixed top-0 z-50 flex w-full items-center justify-between bg-slate-950 p-4">
       <h1 className="shrink-0 text-xl font-bold transition-colors hover:text-blue-400 sm:text-2xl">
         <Link href="/" aria-label={t('home')}>
           Go Cosmic
