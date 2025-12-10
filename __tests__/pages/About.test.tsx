@@ -7,12 +7,10 @@ import { render } from '../test-utils';
 // Mock next-intl/server
 vi.mock('next-intl/server', () => ({
   getMessages: vi.fn().mockResolvedValue({
-    about: {
-      meta: {
-        title: 'About Go Cosmic - Our Mission and Team',
-        description:
-          "Discover Go Cosmic's mission to create stellar applications with AI. Meet Matthieu Compérat, our developer, and learn about our commitment to excellence and innovation.",
-      },
+    meta: {
+      title: 'About Go Cosmic - Our Mission and Team',
+      description:
+        "Discover Go Cosmic's mission to create stellar applications with AI. Meet Matthieu Compérat, our developer, and learn about our commitment to excellence and innovation.",
     },
   }),
 }));

@@ -12,7 +12,7 @@ import { cn } from '@/design-system/lib/utils';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const messages = await getMessages();
-  const t = createTranslator({ messages, namespace: 'contact', locale });
+  const t = createTranslator({ messages, locale });
   return {
     title: t('meta.title'),
     description: t('meta.description'),
@@ -100,7 +100,7 @@ export default function Contact() {
             return (
               <section
                 key={block.id}
-                className="rounded-lg bg-gray-800 px-6 py-8"
+                className="rounded-lg bg-slate-800 px-6 py-8"
                 aria-labelledby={`${block.id}-heading`}>
                 {/* Block Header */}
                 <div className="mb-6 flex items-center gap-4">

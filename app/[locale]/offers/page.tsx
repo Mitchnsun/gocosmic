@@ -30,7 +30,7 @@ export default function Offers() {
 
         {/* Solo Developer Offer */}
         <section className="w-full" aria-labelledby="solo-developer-heading">
-          <div className="relative rounded-lg bg-gray-800 px-6 py-8 lg:p-8">
+          <div className="relative rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
             <div className="mb-6 flex items-center gap-4">
               <CodeBracketIcon className="h-8 w-8 shrink-0 text-blue-400" aria-hidden="true" />
               <h2 id="solo-developer-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
@@ -108,7 +108,7 @@ export default function Offers() {
 
         {/* Team Developers Offer */}
         <section className="w-full" aria-labelledby="team-developers-heading">
-          <div className="rounded-lg bg-gray-800 px-6 py-8 lg:p-8">
+          <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
             <div className="mb-6 flex items-center gap-4">
               <UserGroupIcon className="h-8 w-8 shrink-0 text-green-400" aria-hidden="true" />
               <h2 id="team-developers-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
@@ -196,7 +196,7 @@ export default function Offers() {
 
         {/* Developer + Designer Offer */}
         <section className="w-full" aria-labelledby="developer-designer-heading">
-          <div className="rounded-lg bg-gray-800 px-6 py-8 lg:p-8">
+          <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
             <div className="mb-6 flex items-center gap-4">
               <SparklesIcon className="h-8 w-8 shrink-0 text-purple-400" aria-hidden="true" />
               <h2 id="developer-designer-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
@@ -284,7 +284,7 @@ export default function Offers() {
 
         {/* CTA Section */}
         <section className="w-full" aria-labelledby="cta-heading">
-          <div className="m-auto flex max-w-5xl flex-col items-center gap-6 rounded-lg bg-gray-800 px-6 py-12 lg:p-12">
+          <div className="m-auto flex max-w-5xl flex-col items-center gap-6 rounded-lg bg-slate-800 px-6 py-12 lg:p-12">
             <h2 id="cta-heading" className="text-center text-3xl font-bold lg:text-4xl">
               {t('cta.title')}
             </h2>

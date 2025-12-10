@@ -43,7 +43,7 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
         class="w-full"
       >
         <div
-          class="relative rounded-lg bg-gray-800 px-6 py-8 lg:p-8"
+          class="relative rounded-lg bg-slate-800 px-6 py-8 lg:p-8"
         >
           <div
             class="mb-6 flex items-center gap-4"
@@ -91,7 +91,7 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
         class="w-full"
       >
         <div
-          class="rounded-lg bg-gray-800 px-6 py-8 lg:p-8"
+          class="rounded-lg bg-slate-800 px-6 py-8 lg:p-8"
         >
           <div
             class="mb-6 flex items-center gap-4"
@@ -176,7 +176,7 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
         class="w-full"
       >
         <div
-          class="rounded-lg bg-gray-800 px-6 py-8 lg:p-8"
+          class="rounded-lg bg-slate-800 px-6 py-8 lg:p-8"
         >
           <div
             class="mb-6 flex items-center gap-4"
@@ -266,7 +266,7 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
         class="w-full"
       >
         <div
-          class="rounded-lg bg-gray-800 px-6 py-8 lg:p-8"
+          class="rounded-lg bg-slate-800 px-6 py-8 lg:p-8"
         >
           <div
             class="mb-6 flex items-center gap-4"
@@ -323,7 +323,7 @@ exports[`DailyFortune Page > should render the daily fortune page correctly 1`] 
           width="250"
         />
         <div
-          class="flex max-w-5xl flex-col items-center gap-6 rounded-lg bg-gray-800 px-6 py-12 lg:p-12"
+          class="flex max-w-5xl flex-col items-center gap-6 rounded-lg bg-slate-800 px-6 py-12 lg:p-12"
         >
           <h2
             class="text-center text-3xl font-bold lg:text-4xl"

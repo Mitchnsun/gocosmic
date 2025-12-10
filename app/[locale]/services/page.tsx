@@ -42,7 +42,7 @@ export default function Services() {
 
         {/* Stellar Development Section */}
         <section className="w-full" aria-labelledby="stellar-development-heading">
-          <div className="relative rounded-lg bg-gray-800 px-6 py-8 lg:p-8">
+          <div className="relative rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
             <div className="mb-6 flex items-center gap-4">
               <CodeBracketIcon className="h-8 w-8 shrink-0 text-green-400" aria-hidden="true" />
               <h2 id="stellar-development-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
@@ -130,7 +130,7 @@ export default function Services() {
 
         {/* Mystical Design Section */}
         <section className="w-full" aria-labelledby="mystical-design-heading">
-          <div className="rounded-lg bg-gray-800 px-6 py-8 lg:p-8">
+          <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
             <div className="mb-6 flex items-center gap-4">
               <SparklesIcon className="h-8 w-8 shrink-0 text-purple-400" aria-hidden="true" />
               <h2 id="mystical-design-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
@@ -216,7 +216,7 @@ export default function Services() {
 
         {/* AI Powered Section */}
         <section className="w-full" aria-labelledby="ai-powered-heading">
-          <div className="rounded-lg bg-gray-800 px-6 py-8 lg:p-8">
+          <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
             <div className="mb-6 flex items-center gap-4">
               <CpuChipIcon className="h-8 w-8 shrink-0 text-yellow-400" aria-hidden="true" />
               <h2 id="ai-powered-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
@@ -300,7 +300,7 @@ export default function Services() {
 
         {/* Cosmic Launch Section */}
         <section className="w-full" aria-labelledby="cosmic-launch-heading">
-          <div className="rounded-lg bg-gray-800 px-6 py-8 lg:p-8">
+          <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
             <div className="mb-6 flex items-center gap-4">
               <RocketLaunchIcon className="h-8 w-8 shrink-0 text-blue-400" aria-hidden="true" />
               <h2 id="cosmic-launch-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
@@ -384,7 +384,7 @@ export default function Services() {
 
         {/* CTA Section */}
         <section className="w-full" aria-labelledby="cta-heading">
-          <div className="m-auto flex max-w-5xl flex-col items-center gap-6 rounded-lg bg-gray-800 px-6 py-12 lg:p-12">
+          <div className="m-auto flex max-w-5xl flex-col items-center gap-6 rounded-lg bg-slate-800 px-6 py-12 lg:p-12">
             <h2 id="cta-heading" className="text-center text-3xl font-bold lg:text-4xl">
               {t('cta.title')}
             </h2>

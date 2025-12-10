@@ -68,15 +68,15 @@ const LanguageSwitcher = () => {
       </button>
 
       {isOpen && (
-        <div className="ring-opacity-5 absolute top-full right-0 mt-2 w-48 rounded-md bg-gray-800 shadow-lg ring-1 ring-black">
+        <div className="ring-opacity-5 absolute top-full right-0 mt-2 w-48 rounded-md bg-slate-800 shadow-lg ring-1 ring-black">
           <div className="py-1" role="menu" aria-orientation="vertical">
             {Object.entries(languages).map(([code, { name, flag }]) => (
               <button
                 key={code}
                 onClick={() => handleLanguageChange(code)}
                 className={clsx(
-                  'flex w-full items-center gap-3 px-4 py-2 text-sm transition-colors hover:bg-gray-700',
-                  { 'bg-gray-700 text-blue-400': locale === code, 'text-gray-300': locale !== code }
+                  'flex w-full items-center gap-3 px-4 py-2 text-sm transition-colors hover:bg-slate-700',
+                  { 'bg-slate-700 text-blue-400': locale === code, 'text-slate-300': locale !== code }
                 )}
                 role="menuitem"
                 disabled={isPending}>

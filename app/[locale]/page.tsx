@@ -27,29 +27,29 @@ export default function Home() {
         {t('services.title')}
       </h3>
       <div className="m-auto grid max-w-7xl grid-cols-1 items-stretch justify-center gap-8 py-8 md:grid-cols-2 xl:grid-cols-4">
-        <div className="flex flex-col items-center justify-around rounded-lg bg-gray-800 px-2 py-4">
+        <div className="flex flex-col items-center justify-around rounded-lg bg-slate-800 px-2 py-4">
           <CodeBracketIcon className="text-jungle h-6 w-6" aria-hidden="true" />
           <h4 className="my-2 text-center text-xl font-semibold sm:text-2xl">{t('services.development.title')}</h4>
           <p className="text-center font-light text-gray-400">{t('services.development.description')}</p>
         </div>
-        <div className="flex flex-col items-center justify-around rounded-lg bg-gray-800 px-2 py-4">
+        <div className="flex flex-col items-center justify-around rounded-lg bg-slate-800 px-2 py-4">
           <SparklesIcon className="text-royal h-6 w-6" aria-hidden="true" />
           <h4 className="my-2 text-center text-xl font-semibold sm:text-2xl">{t('services.design.title')}</h4>
           <p className="text-center font-light text-gray-400">{t('services.design.description')}</p>
         </div>
-        <div className="flex flex-col items-center justify-around rounded-lg bg-gray-800 px-2 py-4">
+        <div className="flex flex-col items-center justify-around rounded-lg bg-slate-800 px-2 py-4">
           <PuzzlePieceIcon className="h-6 w-6 text-yellow-400" aria-hidden="true" />
           <h4 className="my-2 text-center text-xl font-semibold sm:text-2xl">{t('services.ai.title')}</h4>
           <p className="text-center font-light text-gray-400">{t('services.ai.description')}</p>
         </div>
-        <div className="flex flex-col items-center justify-around rounded-lg bg-gray-800 px-2 py-4">
+        <div className="flex flex-col items-center justify-around rounded-lg bg-slate-800 px-2 py-4">
           <RocketLaunchIcon className="text-aerospace h-6 w-6" aria-hidden="true" />
           <h4 className="my-2 text-center text-xl font-semibold sm:text-2xl">{t('services.launch.title')}</h4>
           <p className="text-center font-light text-gray-400">{t('services.launch.description')}</p>
         </div>
       </div>
 
-      <div className="m-auto flex max-w-7xl flex-col items-center gap-2 rounded-lg bg-gray-800 px-4 py-12">
+      <div className="m-auto flex max-w-7xl flex-col items-center gap-2 rounded-lg bg-slate-800 px-4 py-12">
         <h3 className="py-2 text-center text-xl font-bold sm:text-3xl">{t('cta.title')}</h3>
         <p className="text-center font-light text-gray-400">{t('cta.description')}</p>
         <Link

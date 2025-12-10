@@ -7,12 +7,10 @@ import { render, screen } from '../test-utils';
 // Mock next-intl/server
 vi.mock('next-intl/server', () => ({
   getMessages: vi.fn().mockResolvedValue({
-    contact: {
-      meta: {
-        title: 'Contact Us - Get in Touch with Go Cosmic',
-        description:
-          'Contact Go Cosmic for general inquiries, support, technical questions, or commercial requests. Choose the right email for your specific needs and get personalized assistance.',
-      },
+    meta: {
+      title: 'Contact Us - Get in Touch with Go Cosmic',
+      description:
+        'Contact Go Cosmic for general inquiries, support, technical questions, or commercial requests. Choose the right email for your specific needs and get personalized assistance.',
     },
   }),
 }));
