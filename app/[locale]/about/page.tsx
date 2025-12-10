@@ -7,7 +7,7 @@ import LinkedInIcon from '@/components/icons/LinkedInIcon';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const messages = await getMessages();
-  const t = createTranslator({ messages, namespace: 'about', locale });
+  const t = createTranslator({ messages, locale });
   return {
     title: t('meta.title'),
     description: t('meta.description'),
@@ -28,7 +28,7 @@ export default function About() {
 
         {/* Go Cosmic Presentation Section */}
         <section className="w-full" aria-labelledby="go-cosmic-heading">
-          <div className="relative rounded-lg bg-gray-800 px-6 py-8 lg:p-8">
+          <div className="relative rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
             <div className="mb-6 flex items-center gap-4">
               <CodeBracketIcon className="h-8 w-8 shrink-0 text-blue-400" aria-hidden="true" />
               <h2 id="go-cosmic-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
@@ -69,7 +69,7 @@ export default function About() {
 
         {/* Matthieu Compérat Section */}
         <section className="w-full" aria-labelledby="developer-heading">
-          <div className="rounded-lg bg-gray-800 px-6 py-8 lg:p-8">
+          <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
             <div className="mb-6 flex items-center gap-4">
               <UserIcon className="h-8 w-8 shrink-0 text-yellow-400" aria-hidden="true" />
               <h2 id="developer-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
@@ -123,7 +123,7 @@ export default function About() {
 
         {/* Legal Mentions Section */}
         <section className="w-full" aria-labelledby="legal-heading">
-          <div className="rounded-lg bg-gray-800 px-6 py-8 lg:p-8">
+          <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
             <div className="mb-6 flex items-center gap-4">
               <ShieldCheckIcon className="h-8 w-8 shrink-0 text-green-400" aria-hidden="true" />
               <h2 id="legal-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">

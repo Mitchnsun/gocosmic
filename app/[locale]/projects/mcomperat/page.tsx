@@ -37,7 +37,7 @@ export default function MComperat() {
 
         {/* Overview Section */}
         <section className="w-full" aria-labelledby="overview-heading">
-          <div className="relative rounded-lg bg-gray-800 px-6 py-8 lg:p-8">
+          <div className="relative rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
             <div className="mb-6 flex items-center gap-4">
               <GlobeAltIcon className="h-8 w-8 shrink-0 text-purple-400" aria-hidden="true" />
               <h2 id="overview-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
@@ -53,7 +53,7 @@ export default function MComperat() {
 
         {/* Features Section */}
         <section className="w-full" aria-labelledby="features-heading">
-          <div className="rounded-lg bg-gray-800 px-6 py-8 lg:p-8">
+          <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
             <div className="mb-6 flex items-center gap-4">
               <SparklesIcon className="h-8 w-8 shrink-0 text-yellow-400" aria-hidden="true" />
               <h2 id="features-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
@@ -89,7 +89,7 @@ export default function MComperat() {
 
         {/* Technology Section */}
         <section className="w-full" aria-labelledby="technology-heading">
-          <div className="rounded-lg bg-gray-800 px-6 py-8 lg:p-8">
+          <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
             <div className="mb-6 flex items-center gap-4">
               <CodeBracketIcon className="h-8 w-8 shrink-0 text-blue-400" aria-hidden="true" />
               <h2 id="technology-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
@@ -122,7 +122,7 @@ export default function MComperat() {
 
         {/* AI Integration Section */}
         <section className="w-full" aria-labelledby="ai-heading">
-          <div className="rounded-lg bg-gray-800 px-6 py-8 lg:p-8">
+          <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
             <div className="mb-6 flex items-center gap-4">
               <CpuChipIcon className="h-8 w-8 shrink-0 text-green-400" aria-hidden="true" />
               <h2 id="ai-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
@@ -157,7 +157,7 @@ export default function MComperat() {
         <section
           className="flex w-full flex-col items-center justify-center gap-8 lg:flex-row"
           aria-labelledby="cta-heading">
-          <div className="flex max-w-5xl flex-col items-center gap-6 rounded-lg bg-gray-800 px-6 py-12 lg:p-12">
+          <div className="flex max-w-5xl flex-col items-center gap-6 rounded-lg bg-slate-800 px-6 py-12 lg:p-12">
             <h2 id="cta-heading" className="text-center text-3xl font-bold lg:text-4xl">
               {t('cta.title')}
             </h2>

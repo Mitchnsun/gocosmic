@@ -44,7 +44,7 @@ export default function ChoeurDesPaysduMontBlanc() {
 
         {/* Overview Section */}
         <section className="w-full" aria-labelledby="overview-heading">
-          <div className="relative rounded-lg bg-gray-800 px-6 py-8 lg:p-8">
+          <div className="relative rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
             <div className="mb-6 flex items-center gap-4">
               <CalendarDaysIcon className="h-8 w-8 shrink-0 text-purple-400" aria-hidden="true" />
               <h2 id="overview-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
@@ -60,7 +60,7 @@ export default function ChoeurDesPaysduMontBlanc() {
 
         {/* Features Section */}
         <section className="w-full" aria-labelledby="features-heading">
-          <div className="rounded-lg bg-gray-800 px-6 py-8 lg:p-8">
+          <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
             <div className="mb-6 flex items-center gap-4">
               <SparklesIcon className="h-8 w-8 shrink-0 text-yellow-400" aria-hidden="true" />
               <h2 id="features-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
@@ -92,7 +92,7 @@ export default function ChoeurDesPaysduMontBlanc() {
 
         {/* Technology Section */}
         <section className="w-full" aria-labelledby="technology-heading">
-          <div className="rounded-lg bg-gray-800 px-6 py-8 lg:p-8">
+          <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
             <div className="mb-6 flex items-center gap-4">
               <CodeBracketIcon className="h-8 w-8 shrink-0 text-blue-400" aria-hidden="true" />
               <h2 id="technology-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
@@ -125,7 +125,7 @@ export default function ChoeurDesPaysduMontBlanc() {
 
         {/* Purpose Section */}
         <section className="w-full" aria-labelledby="purpose-heading">
-          <div className="rounded-lg bg-gray-800 px-6 py-8 lg:p-8">
+          <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
             <div className="mb-6 flex items-center gap-4">
               <MusicalNoteIcon className="h-8 w-8 shrink-0 text-green-400" aria-hidden="true" />
               <h2 id="purpose-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
@@ -140,7 +140,7 @@ export default function ChoeurDesPaysduMontBlanc() {
 
         {/* CTA Section */}
         <section
-          className="flex max-w-5xl flex-col items-center gap-6 rounded-lg bg-gray-800 px-6 py-12 lg:p-12"
+          className="flex max-w-5xl flex-col items-center gap-6 rounded-lg bg-slate-800 px-6 py-12 lg:p-12"
           aria-labelledby="cta-heading">
           <h2 id="cta-heading" className="text-center text-3xl font-bold lg:text-4xl">
             {t('cta.title')}

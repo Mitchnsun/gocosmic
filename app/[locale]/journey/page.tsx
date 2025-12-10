@@ -7,7 +7,7 @@ import { Loader } from '@/components/Loader';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const messages = await getMessages();
-  const t = createTranslator({ messages, namespace: 'journey', locale });
+  const t = createTranslator({ messages, locale });
   return {
     title: t('meta.title'),
     description: t('meta.description'),
@@ -16,16 +16,16 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 // Dynamically import the JourneyContent to avoid SSR issues with Three.js
 const JourneyContent = dynamic(() => import('@/views/Journey'), {
-  loading: () => <Loader className="bg-gray-900" fullScreen />,
+  loading: () => <Loader className="bg-slate-950" fullScreen />,
 });
 
 export default function JourneyPage() {
-  const t = useTranslations('journey');
+  const t = useTranslations();
 
   // Pass translations as props to the dynamically loaded component
   const translations = {
-    title: t('title'),
-    subtitle: t('subtitle'),
+    title: t('journey.title'),
+    subtitle: t('journey.subtitle'),
   };
 
   return <JourneyContent translations={translations} />;

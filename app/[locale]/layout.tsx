@@ -40,7 +40,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale || 'en'}>
-      <body className={`${poppins.className} bg-gray-900`}>
+      <body className={`${poppins.className} bg-slate-950`}>
         <NextIntlClientProvider>
           <Header />
           <div className="mt-16">{children}</div>

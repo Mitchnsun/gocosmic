@@ -8,12 +8,14 @@ import { render } from '../test-utils';
 // Mock next-intl/server
 vi.mock('next-intl/server', () => ({
   getMessages: vi.fn().mockResolvedValue({
+    meta: {
+      title: 'Cosmic Journey - Explore the Stars with Go Cosmic',
+      description:
+        'Embark on an immersive 3D cosmic journey through the stars. Experience the unique approach of Go Cosmic with interactive space exploration.',
+    },
     journey: {
-      meta: {
-        title: 'Cosmic Journey - Explore the Stars with Go Cosmic',
-        description:
-          'Embark on an immersive 3D cosmic journey through the stars. Experience the unique approach of Go Cosmic with interactive space exploration.',
-      },
+      title: 'Welcome to your Cosmic Journey',
+      subtitle: 'You are now traveling through the stars',
     },
   }),
 }));
