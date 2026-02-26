@@ -65,6 +65,15 @@ export const routing = defineRouting({
       it: '/progetti/mcomperat',
     },
 
+    // Projects - PSC Supersprint
+    '/projects/psc-supersprint': {
+      en: '/projects/psc-supersprint',
+      fr: '/projets/psc-supersprint',
+      es: '/proyectos/psc-supersprint',
+      de: '/projekte/psc-supersprint',
+      it: '/progetti/psc-supersprint',
+    },
+
     // Projects - Choeur des Pays du Mont Blanc
     '/projects/choeurdespaysdumontblanc': {
       en: '/projects/choeurdespaysdumontblanc',
