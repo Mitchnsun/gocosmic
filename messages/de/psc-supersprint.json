@@ -1,0 +1,44 @@
+{
+  "pscSupersprint": {
+    "title": "PSC Supersprint",
+    "subtitle": "Webanwendung zur Verwaltung der Triathlon-Supersprint-Ergebnisse des PSC",
+    "overview": {
+      "title": "Über das Projekt",
+      "description": "PSC Supersprint ist eine moderne Webanwendung zur Verwaltung und Echtzeitanzeige der Ergebnisse eines Supersprint-Triathlons. Sie bietet detaillierte Ranglisten nach Kategorie, Geschlecht und Scratch sowie individuelle Athletenprofile.",
+      "mission": "Diese Anwendung richtet sich hauptsächlich an Athleten, Organisatoren und Zuschauer des PSC Supersprint und ermöglicht es ihnen, Ergebnisse, Podien und Leistungen der Wettkämpfe einfach nachzuverfolgen."
+    },
+    "features": {
+      "title": "Hauptfunktionen",
+      "items": {
+        "results": "Echtzeit-Ergebnisanzeige",
+        "rankings": "Ranglisten nach Kategorie, Geschlecht und Scratch",
+        "podiums": "Podiumsvisualisierung nach Jahr",
+        "athletes": "Individuelle Athletenprofile",
+        "responsive": "Responsive Interface, optimiert für Mobilgeräte",
+        "admin": "Administrationsoberfläche zur Ergebniseingabe"
+      }
+    },
+    "technology": {
+      "title": "Technologie-Stack",
+      "description": "Entwickelt mit modernen Web-Technologien für eine schnelle und zuverlässige Erfahrung:",
+      "stack": {
+        "nextjs": "Next.js 16 (App Router) - React-Framework für leistungsstarke Apps",
+        "typescript": "TypeScript 5.1+ - Type-sichere Entwicklung für Zuverlässigkeit",
+        "tailwind": "Tailwind CSS v4 - Modernes und responsives Styling",
+        "firebase": "Firebase Realtime Database - Echtzeitdaten und Administration",
+        "radix": "Radix UI + shadcn/ui - Zugängliche und stilisierte Komponenten",
+        "testing": "Vitest + Testing Library - Codequalität und Zuverlässigkeit"
+      }
+    },
+    "purpose": {
+      "title": "Zweck",
+      "description": "Diese Anwendung ist hauptsächlich dafür konzipiert, die Ergebnisse des vom PSC organisierten Supersprint-Triathlons zu präsentieren und zu verteilen. Sie ermöglicht es Athleten, ihre Leistungen nachzuschlagen, Organisatoren, Wettkampfdaten einfach zu verwalten, und Zuschauern, die Ranglisten live zu verfolgen."
+    },
+    "cta": {
+      "title": "Zur Anwendung",
+      "description": "Sehen Sie sich die Ergebnisse, Ranglisten und Podien des PSC Supersprint online an.",
+      "button": "Anwendung ansehen",
+      "ariaLabel": "PSC Supersprint Anwendung ansehen (öffnet in einem neuen Tab)"
+    }
+  }
+}

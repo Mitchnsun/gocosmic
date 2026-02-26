@@ -1,0 +1,44 @@
+{
+  "pscSupersprint": {
+    "title": "PSC Supersprint",
+    "subtitle": "Aplicación web para gestionar los resultados del triatlón supersprint del PSC",
+    "overview": {
+      "title": "Acerca del Proyecto",
+      "description": "PSC Supersprint es una aplicación web moderna para gestionar y mostrar en tiempo real los resultados de una competición de triatlón supersprint. Ofrece clasificaciones detalladas por categoría, género y scratch, así como fichas individuales de cada atleta.",
+      "mission": "Esta aplicación está principalmente diseñada para los atletas, organizadores y espectadores del PSC Supersprint, permitiéndoles seguir fácilmente los resultados, podios y rendimientos de la competición."
+    },
+    "features": {
+      "title": "Características principales",
+      "items": {
+        "results": "Visualización de resultados en tiempo real",
+        "rankings": "Clasificaciones por categoría, género y scratch",
+        "podiums": "Visualización de podios por año",
+        "athletes": "Fichas individuales de atletas",
+        "responsive": "Interfaz responsive optimizada para móvil",
+        "admin": "Interfaz de administración para introducir resultados"
+      }
+    },
+    "technology": {
+      "title": "Stack tecnológico",
+      "description": "Construido con tecnologías web modernas para ofrecer una experiencia rápida y fiable:",
+      "stack": {
+        "nextjs": "Next.js 16 (App Router) - Framework React para apps de alto rendimiento",
+        "typescript": "TypeScript 5.1+ - Desarrollo type-safe para mayor fiabilidad",
+        "tailwind": "Tailwind CSS v4 - Estilizado moderno y responsive",
+        "firebase": "Firebase Realtime Database - Datos en tiempo real y administración",
+        "radix": "Radix UI + shadcn/ui - Componentes accesibles y estilizados",
+        "testing": "Vitest + Testing Library - Calidad y fiabilidad del código"
+      }
+    },
+    "purpose": {
+      "title": "Objetivo",
+      "description": "Esta aplicación está diseñada principalmente para presentar y distribuir los resultados del triatlón supersprint organizado por el PSC. Permite a los atletas encontrar sus resultados, a los organizadores gestionar fácilmente los datos de la competición y a los espectadores seguir las clasificaciones en directo."
+    },
+    "cta": {
+      "title": "Acceder a la aplicación",
+      "description": "Consulta los resultados, clasificaciones y podios del PSC Supersprint en línea.",
+      "button": "Ver la aplicación",
+      "ariaLabel": "Ver la aplicación PSC Supersprint (se abre en una nueva pestaña)"
+    }
+  }
+}

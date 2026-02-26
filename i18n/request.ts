@@ -47,6 +47,14 @@ const getNamespacesForPath = (pathname: string): string[] => {
   ) {
     return ['journey'];
   } else if (
+    pathWithoutLocale.startsWith('/projects/psc-supersprint') ||
+    pathWithoutLocale.startsWith('/projets/psc-supersprint') ||
+    pathWithoutLocale.startsWith('/proyectos/psc-supersprint') ||
+    pathWithoutLocale.startsWith('/projekte/psc-supersprint') ||
+    pathWithoutLocale.startsWith('/progetti/psc-supersprint')
+  ) {
+    return ['psc-supersprint'];
+  } else if (
     pathWithoutLocale.startsWith('/projects') ||
     pathWithoutLocale.startsWith('/projets') ||
     pathWithoutLocale.startsWith('/proyectos') ||
