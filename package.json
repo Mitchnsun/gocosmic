@@ -1,6 +1,6 @@
 {
   "name": "gocosmic",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "type": "module",
   "private": true,
   "scripts": {
@@ -61,7 +61,6 @@
     "autoprefixer": "^10.4.21",
     "baseline-browser-mapping": "^2.9.6",
     "eslint": "^9.34.0",
-    "eslint-config-expo": "~9.2.0",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
