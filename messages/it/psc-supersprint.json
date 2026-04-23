@@ -1,0 +1,44 @@
+{
+  "pscSupersprint": {
+    "title": "PSC Supersprint",
+    "subtitle": "Applicazione web per la gestione dei risultati del triathlon supersprint del PSC",
+    "overview": {
+      "title": "Presentazione del Progetto",
+      "description": "PSC Supersprint è un'applicazione web moderna per gestire e visualizzare in tempo reale i risultati di una competizione di triathlon supersprint. Offre classifiche dettagliate per categoria, genere e scratch, nonché schede individuali per ogni atleta.",
+      "mission": "Questa applicazione è principalmente destinata agli atleti, agli organizzatori e agli spettatori del PSC Supersprint, permettendo loro di seguire facilmente i risultati, i podi e le prestazioni della competizione."
+    },
+    "features": {
+      "title": "Funzionalità principali",
+      "items": {
+        "results": "Visualizzazione dei risultati in tempo reale",
+        "rankings": "Classifiche per categoria, genere e scratch",
+        "podiums": "Visualizzazione dei podi per anno",
+        "athletes": "Schede individuali degli atleti",
+        "responsive": "Interfaccia responsive ottimizzata per mobile",
+        "admin": "Interfaccia di amministrazione per l'inserimento dei risultati"
+      }
+    },
+    "technology": {
+      "title": "Stack tecnologico",
+      "description": "Costruito con tecnologie web moderne per offrire un'esperienza rapida e affidabile:",
+      "stack": {
+        "nextjs": "Next.js 16 (App Router) - Framework React per app ad alte prestazioni",
+        "typescript": "TypeScript 5.1+ - Sviluppo type-safe per l'affidabilità",
+        "tailwind": "Tailwind CSS v4 - Styling moderno e responsive",
+        "firebase": "Firebase Realtime Database - Dati in tempo reale e amministrazione",
+        "radix": "Radix UI + shadcn/ui - Componenti accessibili e stilizzati",
+        "testing": "Vitest + Testing Library - Qualità e affidabilità del codice"
+      }
+    },
+    "purpose": {
+      "title": "Obiettivo",
+      "description": "Questa applicazione è principalmente progettata per presentare e distribuire i risultati del triathlon supersprint organizzato dal PSC. Permette agli atleti di trovare le proprie prestazioni, agli organizzatori di gestire facilmente i dati della competizione e agli spettatori di seguire le classifiche in diretta."
+    },
+    "cta": {
+      "title": "Accedi all'applicazione",
+      "description": "Consulta i risultati, le classifiche e i podi del PSC Supersprint online.",
+      "button": "Vedere l'applicazione",
+      "ariaLabel": "Vedere l'applicazione PSC Supersprint (si apre in una nuova scheda)"
+    }
+  }
+}
