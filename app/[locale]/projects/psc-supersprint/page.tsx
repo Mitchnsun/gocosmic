@@ -153,16 +153,16 @@ export default function PscSupersprint() {
             {t('cta.title')}
           </h2>
           <p className="text-center text-lg text-gray-400">{t('cta.description')}</p>
-          <a
-            href="https://psc-supersprint.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={t('cta.ariaLabel')}>
-            <Button variant="royal" className="gap-2">
+          <Button variant="royal" className="gap-2" asChild>
+            <a
+              href="https://psc-supersprint.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t('cta.ariaLabel')}>
               {t('cta.button')}
               <ArrowTopRightOnSquareIcon className="h-5 w-5" aria-hidden="true" />
-            </Button>
-          </a>
+            </a>
+          </Button>
         </section>
       </main>
     </div>

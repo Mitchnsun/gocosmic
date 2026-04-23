@@ -23,7 +23,7 @@
       "description": "Costruito con tecnologie web moderne per offrire un'esperienza rapida e affidabile:",
       "stack": {
         "nextjs": "Next.js 16 (App Router) - Framework React per app ad alte prestazioni",
-        "typescript": "TypeScript 5.1+ - Sviluppo type-safe per la affidabilità",
+        "typescript": "TypeScript 5.1+ - Sviluppo type-safe per l'affidabilità",
         "tailwind": "Tailwind CSS v4 - Styling moderno e responsive",
         "firebase": "Firebase Realtime Database - Dati in tempo reale e amministrazione",
         "radix": "Radix UI + shadcn/ui - Componenti accessibili e stilizzati",
