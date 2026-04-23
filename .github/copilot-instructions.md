@@ -454,7 +454,9 @@ yarn coverage        # Generate test coverage reports (HTML + JSON)
 
 > This section is a **complementary reference** for AI agents working on this codebase. It does **not** override any rule defined above; it provides an additional action framework to improve AI-driven development quality and consistency.
 >
-> **Note on `tasks/` files**: The paths `tasks/todo.md` and `tasks/lessons.md` referenced below are optional helper files that the AI agent can create in the repository root whenever useful for tracking tasks or capturing lessons. They are not required to exist upfront.
+> **Note on helper files**:
+> - `tasks/todo.md` — ephemeral planning scratch-pad. The `/tasks/` directory is listed in `.gitignore` so these files are **never committed**.
+> - `docs/lessons.md` — persistent lessons log that **must be committed**. It lives under `docs/` so it is tracked and survives across sessions.
 
 ### Workflow Orchestration
 
@@ -474,7 +476,7 @@ yarn coverage        # Generate test coverage reports (HTML + JSON)
 
 #### 3. Self-Improvement Loop
 
-- After ANY correction from the user: update `tasks/lessons.md` with the pattern
+- After ANY correction from the user: update `docs/lessons.md` with the pattern
 - Write rules for yourself that prevent the same mistake
 - Ruthlessly iterate on these lessons until mistake rate drops
 - Review lessons at session start for relevant project
@@ -507,7 +509,7 @@ yarn coverage        # Generate test coverage reports (HTML + JSON)
 3. **Track Progress**: Mark items complete as you go
 4. **Explain Changes**: High-level summary at each step
 5. **Document Results**: Add review section to `tasks/todo.md`
-6. **Capture Lessons**: Update `tasks/lessons.md` after corrections
+6. **Capture Lessons**: Update `docs/lessons.md` after corrections (commit this file)
 
 ### Core Principles
 
