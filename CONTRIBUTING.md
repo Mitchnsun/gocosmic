@@ -275,6 +275,110 @@ When adding new routes that require translations:
 - **Test thoroughly**: Ensure all locales have complete translations (no missing keys)
 - **Update route mapping**: When adding new pages, update `getNamespacesForPath` in `i18n/request.ts` for optimal loading
 
+### Adding a New Project
+
+Each project has its own dedicated showcase page and appears automatically on the `/projects` index page. Follow these steps to add a new project:
+
+#### 1. Register the project in the data file
+
+Add a new entry to `data/projects.json`:
+
+```json
+{
+  "id": "your-project-id",
+  "slug": "/projects/your-project-id",
+  "icon": "RocketLaunchIcon",
+  "i18nKey": "yourProjectKey"
+}
+```
+
+- **`id`**: Unique kebab-case identifier (must match the route folder name)
+- **`slug`**: Internal route path to the project page
+- **`icon`**: A [Heroicons](https://heroicons.com/) component name (`SparklesIcon`, `UserIcon`, `TrophyIcon`, `MusicalNoteIcon`, `RocketLaunchIcon`, etc.)
+- **`i18nKey`**: The key used in `messages/{locale}/projects.json` for the card translations (camelCase)
+
+> **Note**: The project card on `/projects` is automatically rendered from this JSON — no page code changes are needed.
+
+#### 2. Add card translations for all locales
+
+In each `messages/{locale}/projects.json`, add your project's card content under the `projectsList.items` key:
+
+```json
+{
+  "projectsList": {
+    "items": {
+      "yourProjectKey": {
+        "title": "Your Project Title",
+        "description": "A short description of your project for the card."
+      }
+    }
+  }
+}
+```
+
+Do this for all 5 supported locales: `en`, `fr`, `es`, `de`, `it`.
+
+#### 3. Add full page translations
+
+Add a top-level key with the full project content in each `messages/{locale}/projects.json`:
+
+```json
+{
+  "yourProjectKey": {
+    "title": "Your Project Title",
+    "subtitle": "Short tagline"
+    // ... full page sections
+  }
+}
+```
+
+#### 4. Create the project showcase page
+
+- Create the folder `app/[locale]/projects/your-project-id/`
+- Add a `page.tsx` following the same structure as existing project pages (e.g., `daily-fortune/page.tsx`)
+
+#### 5. Register the route
+
+Add localized pathnames to `i18n/routing.ts`:
+
+```typescript
+'/projects/your-project-id': {
+  en: '/projects/your-project-id',
+  fr: '/projets/your-project-id',
+  es: '/proyectos/your-project-id',
+  de: '/projekte/your-project-id',
+  it: '/progetti/your-project-id',
+},
+```
+
+#### 6. Write tests and update coverage
+
+- Add a test file `__tests__/pages/YourProject.test.tsx`
+- Add the new namespace import to `__tests__/test-utils.tsx` if needed
+- Run `yarn test` to ensure everything passes
+
+#### 7. If using a new Heroicons icon on the projects page
+
+If the icon name is not already in `iconMap` in `app/[locale]/projects/page.tsx`, import and register it:
+
+```typescript
+import { YourNewIcon } from '@heroicons/react/24/solid';
+
+const iconMap = {
+  // existing icons...
+  YourNewIcon,
+};
+```
+
+Also add the icon color in `iconColorMap`:
+
+```typescript
+const iconColorMap = {
+  // existing entries...
+  'your-project-id': 'text-green-400',
+};
+```
+
 ### Code Style
 
 This project uses:

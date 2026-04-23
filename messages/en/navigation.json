@@ -6,6 +6,8 @@
     "contact_label": "Contact Go Cosmic",
     "home": "Go to homepage",
     "label": "Main navigation",
+    "projects": "Projects",
+    "projects_label": "Our Projects",
     "services": "Services",
     "services_label": "Our Cosmic Services",
     "switch_locale": "Switch Language"

@@ -91,5 +91,14 @@ export const routing = defineRouting({
       de: '/kontakt',
       it: '/contatto',
     },
+
+    // Projects index page
+    '/projects': {
+      en: '/projects',
+      fr: '/projets',
+      es: '/proyectos',
+      de: '/projekte',
+      it: '/progetti',
+    },
   },
 });

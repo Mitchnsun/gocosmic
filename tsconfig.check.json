@@ -22,6 +22,7 @@
     "paths": {
       "@/app/*": ["./app/*"],
       "@/components/*": ["./components/*"],
+      "@/data/*": ["./data/*"],
       "@/design-system/*": ["./design-system/*"],
       "@/i18n/*": ["./i18n/*"],
       "@/tests/*": ["./__tests__/*"],
