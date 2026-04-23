@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.3.0] - 2026-04-29
+
+### Added
+
+- Projects index page (`/projects`) listing all projects as clickable cards with icon and short description
+- `data/projects.json` file to centrally register projects (id, slug, icon, i18nKey) — add a new entry here to have it appear on the projects page automatically
+- `projectsList` translation namespace in all 5 locale files (en, fr, es, de, it) for the projects index page title, subtitle, meta, and card content
+- "Projects" navigation link in the Header with translations in all locales
+- Localized `/projects` route in `i18n/routing.ts` (e.g. `/projets` in French)
+- `@/data/*` TypeScript path alias for clean imports from the `data/` directory
+- Documentation in `CONTRIBUTING.md` with step-by-step instructions for adding a new project
+
+### Changed
+
+- Header now includes a Projects navigation link with `FolderOpenIcon` icon
+
 ## [1.2.3] - 2026-04-26
 
 ### Added

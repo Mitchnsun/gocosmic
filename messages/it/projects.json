@@ -1,4 +1,30 @@
 {
+  "projectsList": {
+    "meta": {
+      "title": "I Nostri Progetti",
+      "description": "Scopri i progetti creati da Go Cosmic — da app mobili a piattaforme web, ognuno costruito con precisione e un tocco cosmico."
+    },
+    "title": "I Nostri Progetti",
+    "subtitle": "Esplora la costellazione di esperienze digitali create da Go Cosmic.",
+    "items": {
+      "dailyFortune": {
+        "title": "Daily Fortune",
+        "description": "Un'app mobile che ogni giorno consegna fortune cosmiche e messaggi motivazionali grazie all'IA."
+      },
+      "mcomperat": {
+        "title": "mcomper.at",
+        "description": "Un CV web moderno e responsivo realizzato con Next.js, TypeScript e internazionalizzazione completa."
+      },
+      "pscSupersprint": {
+        "title": "PSC Supersprint",
+        "description": "Un'applicazione web per gestire e visualizzare in tempo reale i risultati di competizioni di triathlon."
+      },
+      "choeurDesPaysduMontBlanc": {
+        "title": "Chœur des Pays du Mont Blanc",
+        "description": "Un sito web che presenta le attività, i concerti e il repertorio del coro in Haute-Savoie."
+      }
+    }
+  },
   "dailyFortune": {
     "title": "Daily Fortune",
     "subtitle": "La tua dose quotidiana di ispirazione e saggezza cosmica",

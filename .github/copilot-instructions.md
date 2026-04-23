@@ -455,6 +455,7 @@ yarn coverage        # Generate test coverage reports (HTML + JSON)
 > This section is a **complementary reference** for AI agents working on this codebase. It does **not** override any rule defined above; it provides an additional action framework to improve AI-driven development quality and consistency.
 >
 > **Note on helper files**:
+>
 > - `tasks/todo.md` — ephemeral planning scratch-pad. The `/tasks/` directory is listed in `.gitignore` so these files are **never committed**.
 > - `docs/lessons.md` — persistent lessons log that **must be committed**. It lives under `docs/` so it is tracked and survives across sessions.
 
