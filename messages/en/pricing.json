@@ -1,0 +1,123 @@
+{
+  "pricing": {
+    "meta": {
+      "title": "Pricing Simulator - Go Cosmic",
+      "description": "Estimate the cost of your web or mobile project with our interactive pricing simulator. Get a personalised quote for your website or mobile application."
+    },
+    "title": "Pricing Simulator",
+    "subtitle": "Answer a few questions to get an estimate for your project",
+    "step1": {
+      "question": "What would you like to create?",
+      "options": {
+        "website": "A website",
+        "mobile": "A mobile application",
+        "both": "Both (website + mobile app)"
+      }
+    },
+    "step2": {
+      "question": "What type of website do you need?",
+      "options": {
+        "showcase": "A showcase website",
+        "accounts": "A website with client accounts",
+        "ecommerce": "An e-commerce website"
+      }
+    },
+    "step3": {
+      "question": "How often would you like to update the content?",
+      "options": {
+        "few_per_year": "2 to 3 times per year",
+        "monthly": "Once a month",
+        "weekly": "Once a week",
+        "self_managed": "I want to manage it myself, whenever I want"
+      }
+    },
+    "results": {
+      "mobile": {
+        "title": "Mobile Application",
+        "rate": "600€ excl. tax / day",
+        "rate_note": "*",
+        "disclaimer": "* Indicative price, to be negotiated according to your needs and timeline.",
+        "description": "Mobile application development is billed at a daily rate. The final cost depends on the complexity, the number of features, and the targeted platforms (iOS, Android)."
+      },
+      "complex_website": {
+        "title": "Custom Website",
+        "rate": "600€ excl. tax / day",
+        "rate_note": "*",
+        "disclaimer": "* Indicative price based on needs and timeline. No fixed price for a fully customisable website.",
+        "description": "This type of project (with client accounts or e-commerce) is complex and fully customisable. The final cost depends on your specific requirements.",
+        "no_fixed_price": "No fixed price for a fully customisable website — each project is unique."
+      },
+      "subscription": {
+        "few_per_year": {
+          "title": "Essential Subscription",
+          "price": "75€ / month",
+          "duration": "Annual commitment",
+          "includes": {
+            "title": "Included:",
+            "items": {
+              "site": "Showcase website creation",
+              "seo": "SEO optimisation",
+              "updates": "Regular technical updates",
+              "domain": "Domain name management",
+              "hosting": "Web hosting",
+              "ssl": "SSL certificate",
+              "email": "1 professional email address"
+            }
+          }
+        },
+        "monthly": {
+          "title": "Standard Subscription",
+          "price": "100€ / month",
+          "duration": "Annual commitment",
+          "includes": {
+            "title": "Included:",
+            "items": {
+              "site": "Showcase website creation",
+              "seo": "SEO optimisation",
+              "updates": "Regular technical updates",
+              "domain": "Domain name management",
+              "hosting": "Web hosting",
+              "ssl": "SSL certificate",
+              "email": "1 professional email address",
+              "content_update": "Up to 1 content update per month"
+            }
+          }
+        },
+        "weekly": {
+          "title": "Premium Subscription",
+          "price": "150€ / month",
+          "duration": "Annual commitment",
+          "includes": {
+            "title": "Included:",
+            "items": {
+              "site": "Showcase website creation",
+              "seo": "SEO optimisation",
+              "updates": "Regular technical updates",
+              "domain": "Domain name management",
+              "hosting": "Web hosting",
+              "ssl": "SSL certificate",
+              "email": "1 professional email address",
+              "content_update": "Up to 1 content update per week"
+            }
+          }
+        },
+        "self_managed": {
+          "title": "Self-Managed CMS",
+          "rate": "600€ excl. tax / day",
+          "rate_note": "*",
+          "disclaimer": "* Base daily rate — final price to be discussed based on your CMS requirements.",
+          "description": "A custom CMS will be developed so you can manage your content independently, whenever you want. The development cost is based on the daily rate and will be agreed according to your needs."
+        }
+      }
+    },
+    "contact": {
+      "title": "Let's discuss your project",
+      "description": "Contact us to get a personalised quote and discuss your project in detail.",
+      "email": "prospect@gocosmic.dev",
+      "cta": "Request a quote",
+      "subject": "Pricing inquiry — Project quote",
+      "aria_label": "Send an email to prospect@gocosmic.dev for a project quote"
+    },
+    "reset": "Start over"
+  }
+}

@@ -109,5 +109,14 @@ export const routing = defineRouting({
       de: '/projekte',
       it: '/progetti',
     },
+
+    // Pricing page
+    '/pricing': {
+      en: '/pricing',
+      fr: '/tarifs',
+      es: '/precios',
+      de: '/preise',
+      it: '/prezzi',
+    },
   },
 });

@@ -1,15 +1,17 @@
 {
   "navigation": {
-    "about": "Über uns",
     "about_label": "Über Go Cosmic",
-    "contact": "Kontakt",
+    "about": "Über uns",
     "contact_label": "Go Cosmic kontaktieren",
+    "contact": "Kontakt",
     "home": "Startseite",
     "label": "Hauptnavigation",
-    "projects": "Projekte",
+    "pricing_label": "Preisrechner",
+    "pricing": "Preise",
     "projects_label": "Unsere Projekte",
-    "services": "Dienstleistungen",
+    "projects": "Projekte",
     "services_label": "Unsere Kosmischen Dienstleistungen",
+    "services": "Dienstleistungen",
     "switch_locale": "Sprache wechseln"
   }
 }

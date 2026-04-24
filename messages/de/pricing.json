@@ -1,0 +1,123 @@
+{
+  "pricing": {
+    "meta": {
+      "title": "Preisrechner - Go Cosmic",
+      "description": "Schätzen Sie die Kosten Ihres Web- oder Mobilprojekts mit unserem interaktiven Preisrechner. Erhalten Sie ein personalisiertes Angebot für Ihre Website oder mobile Anwendung."
+    },
+    "title": "Preisrechner",
+    "subtitle": "Beantworten Sie einige Fragen, um eine Schätzung für Ihr Projekt zu erhalten",
+    "step1": {
+      "question": "Was möchten Sie erstellen?",
+      "options": {
+        "website": "Eine Website",
+        "mobile": "Eine mobile Anwendung",
+        "both": "Beides (Website + mobile App)"
+      }
+    },
+    "step2": {
+      "question": "Welche Art von Website benötigen Sie?",
+      "options": {
+        "showcase": "Eine Präsentationswebsite",
+        "accounts": "Eine Website mit Kundenkonten",
+        "ecommerce": "Eine E-Commerce-Website"
+      }
+    },
+    "step3": {
+      "question": "Wie oft möchten Sie den Inhalt aktualisieren?",
+      "options": {
+        "few_per_year": "2 bis 3 Mal pro Jahr",
+        "monthly": "Einmal im Monat",
+        "weekly": "Einmal pro Woche",
+        "self_managed": "Ich möchte es selbst verwalten, wann immer ich will"
+      }
+    },
+    "results": {
+      "mobile": {
+        "title": "Mobile Anwendung",
+        "rate": "600€ netto / Tag",
+        "rate_note": "*",
+        "disclaimer": "* Richtpreis, zu verhandeln je nach Ihren Anforderungen und Zeitplan.",
+        "description": "Die Entwicklung mobiler Anwendungen wird nach Tagessatz abgerechnet. Die Endkosten hängen von der Komplexität, der Anzahl der Funktionen und den Zielplattformen (iOS, Android) ab."
+      },
+      "complex_website": {
+        "title": "Individuelle Website",
+        "rate": "600€ netto / Tag",
+        "rate_note": "*",
+        "disclaimer": "* Richtpreis je nach Anforderungen und Zeitplan. Kein Pauschalpreis für eine vollständig anpassbare Website.",
+        "description": "Dieses Projekttyp (mit Kundenkonten oder E-Commerce) ist komplex und vollständig individuell anpassbar. Die Endkosten hängen von Ihren spezifischen Anforderungen ab.",
+        "no_fixed_price": "Kein Pauschalpreis für eine vollständig anpassbare Website — jedes Projekt ist einzigartig."
+      },
+      "subscription": {
+        "few_per_year": {
+          "title": "Essential-Abo",
+          "price": "75€ / Monat",
+          "duration": "Jahresbindung",
+          "includes": {
+            "title": "Inklusive:",
+            "items": {
+              "site": "Erstellung der Präsentationswebsite",
+              "seo": "SEO-Optimierung",
+              "updates": "Regelmäßige technische Updates",
+              "domain": "Domainverwaltung",
+              "hosting": "Webhosting",
+              "ssl": "SSL-Zertifikat",
+              "email": "1 professionelle E-Mail-Adresse"
+            }
+          }
+        },
+        "monthly": {
+          "title": "Standard-Abo",
+          "price": "100€ / Monat",
+          "duration": "Jahresbindung",
+          "includes": {
+            "title": "Inklusive:",
+            "items": {
+              "site": "Erstellung der Präsentationswebsite",
+              "seo": "SEO-Optimierung",
+              "updates": "Regelmäßige technische Updates",
+              "domain": "Domainverwaltung",
+              "hosting": "Webhosting",
+              "ssl": "SSL-Zertifikat",
+              "email": "1 professionelle E-Mail-Adresse",
+              "content_update": "Bis zu 1 Inhaltsaktualisierung pro Monat"
+            }
+          }
+        },
+        "weekly": {
+          "title": "Premium-Abo",
+          "price": "150€ / Monat",
+          "duration": "Jahresbindung",
+          "includes": {
+            "title": "Inklusive:",
+            "items": {
+              "site": "Erstellung der Präsentationswebsite",
+              "seo": "SEO-Optimierung",
+              "updates": "Regelmäßige technische Updates",
+              "domain": "Domainverwaltung",
+              "hosting": "Webhosting",
+              "ssl": "SSL-Zertifikat",
+              "email": "1 professionelle E-Mail-Adresse",
+              "content_update": "Bis zu 1 Inhaltsaktualisierung pro Woche"
+            }
+          }
+        },
+        "self_managed": {
+          "title": "Selbstverwaltetes CMS",
+          "rate": "600€ netto / Tag",
+          "rate_note": "*",
+          "disclaimer": "* Basis-Tagessatz — endgültiger Preis nach Absprache je nach Ihren CMS-Anforderungen.",
+          "description": "Ein individuelles CMS wird entwickelt, damit Sie Ihre Inhalte selbständig verwalten können, wann immer Sie möchten. Die Entwicklungskosten basieren auf dem Tagessatz und werden entsprechend Ihren Anforderungen vereinbart."
+        }
+      }
+    },
+    "contact": {
+      "title": "Lassen Sie uns über Ihr Projekt sprechen",
+      "description": "Kontaktieren Sie uns für ein personalisiertes Angebot und um Ihr Projekt im Detail zu besprechen.",
+      "email": "prospect@gocosmic.dev",
+      "cta": "Angebot anfordern",
+      "subject": "Preisanfrage — Projektangebot",
+      "aria_label": "E-Mail an prospect@gocosmic.dev für ein Projektangebot senden"
+    },
+    "reset": "Neu starten"
+  }
+}

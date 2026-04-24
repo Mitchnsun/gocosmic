@@ -12,6 +12,7 @@ import journey from '../messages/en/journey.json';
 import local from '../messages/en/local.json';
 import navigation from '../messages/en/navigation.json';
 import offers from '../messages/en/offers.json';
+import pricing from '../messages/en/pricing.json';
 import projects from '../messages/en/projects.json';
 import pscSupersprint from '../messages/en/psc-supersprint.json';
 import services from '../messages/en/services.json';
@@ -30,6 +31,7 @@ const messages = {
   ...projects,
   ...pscSupersprint,
   ...contact,
+  ...pricing,
 };
 
 interface AllTheProvidersProps {

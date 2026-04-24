@@ -1,0 +1,123 @@
+{
+  "pricing": {
+    "meta": {
+      "title": "Simulateur de Tarifs - Go Cosmic",
+      "description": "Estimez le coût de votre projet web ou mobile avec notre simulateur de tarifs interactif. Obtenez un devis personnalisé pour votre site web ou application mobile."
+    },
+    "title": "Simulateur de Tarifs",
+    "subtitle": "Répondez à quelques questions pour obtenir une estimation de votre projet",
+    "step1": {
+      "question": "Qu'est-ce que vous souhaitez créer ?",
+      "options": {
+        "website": "Un site web",
+        "mobile": "Une application mobile",
+        "both": "Les deux (site web + application mobile)"
+      }
+    },
+    "step2": {
+      "question": "Quel type de site web souhaitez-vous ?",
+      "options": {
+        "showcase": "Un site vitrine",
+        "accounts": "Un site avec des comptes clients",
+        "ecommerce": "Un site de vente en ligne"
+      }
+    },
+    "step3": {
+      "question": "À quelle fréquence souhaitez-vous modifier le contenu ?",
+      "options": {
+        "few_per_year": "2 à 3 fois par an",
+        "monthly": "1 fois par mois",
+        "weekly": "1 fois par semaine",
+        "self_managed": "Je veux pouvoir le faire moi-même, n'importe quand"
+      }
+    },
+    "results": {
+      "mobile": {
+        "title": "Application Mobile",
+        "rate": "600€ HT / jour",
+        "rate_note": "*",
+        "disclaimer": "* Prix indicatif, à négocier en fonction de vos besoins et des délais.",
+        "description": "Le développement d'application mobile est facturé à la journée. Le coût total dépend de la complexité, du nombre de fonctionnalités et des plateformes ciblées (iOS, Android)."
+      },
+      "complex_website": {
+        "title": "Site Web Personnalisé",
+        "rate": "600€ HT / jour",
+        "rate_note": "*",
+        "disclaimer": "* Prix indicatif, en fonction du besoin et des délais. Pas de tarif au forfait pour un site entièrement personnalisable.",
+        "description": "Ce type de projet (avec comptes clients ou vente en ligne) est complexe et entièrement personnalisable. Le coût final dépend de vos besoins spécifiques.",
+        "no_fixed_price": "Pas de tarif au forfait pour un site entièrement personnalisable — chaque projet est unique."
+      },
+      "subscription": {
+        "few_per_year": {
+          "title": "Abonnement Essentiel",
+          "price": "75€ / mois",
+          "duration": "Engagement annuel",
+          "includes": {
+            "title": "Inclus :",
+            "items": {
+              "site": "Création du site vitrine",
+              "seo": "Optimisations SEO",
+              "updates": "Mises à jour techniques régulières",
+              "domain": "Gestion du nom de domaine",
+              "hosting": "Hébergement web",
+              "ssl": "Certificat SSL",
+              "email": "1 adresse e-mail professionnelle"
+            }
+          }
+        },
+        "monthly": {
+          "title": "Abonnement Standard",
+          "price": "100€ / mois",
+          "duration": "Engagement annuel",
+          "includes": {
+            "title": "Inclus :",
+            "items": {
+              "site": "Création du site vitrine",
+              "seo": "Optimisations SEO",
+              "updates": "Mises à jour techniques régulières",
+              "domain": "Gestion du nom de domaine",
+              "hosting": "Hébergement web",
+              "ssl": "Certificat SSL",
+              "email": "1 adresse e-mail professionnelle",
+              "content_update": "Jusqu'à 1 mise à jour de contenu par mois"
+            }
+          }
+        },
+        "weekly": {
+          "title": "Abonnement Premium",
+          "price": "150€ / mois",
+          "duration": "Engagement annuel",
+          "includes": {
+            "title": "Inclus :",
+            "items": {
+              "site": "Création du site vitrine",
+              "seo": "Optimisations SEO",
+              "updates": "Mises à jour techniques régulières",
+              "domain": "Gestion du nom de domaine",
+              "hosting": "Hébergement web",
+              "ssl": "Certificat SSL",
+              "email": "1 adresse e-mail professionnelle",
+              "content_update": "Jusqu'à 1 mise à jour de contenu par semaine"
+            }
+          }
+        },
+        "self_managed": {
+          "title": "CMS Auto-Géré",
+          "rate": "600€ HT / jour",
+          "rate_note": "*",
+          "disclaimer": "* Tarif journalier de base — prix définitif à débattre en fonction de vos besoins CMS.",
+          "description": "Un CMS personnalisé sera développé pour vous permettre de gérer votre contenu de façon autonome, quand vous le souhaitez. Le coût de développement est basé sur le tarif journalier et sera défini selon vos besoins."
+        }
+      }
+    },
+    "contact": {
+      "title": "Discutons de votre projet",
+      "description": "Contactez-nous pour obtenir un devis personnalisé et discuter de votre projet en détail.",
+      "email": "prospect@gocosmic.dev",
+      "cta": "Demander un devis",
+      "subject": "Demande de tarif — Devis projet",
+      "aria_label": "Envoyer un email à prospect@gocosmic.dev pour un devis projet"
+    },
+    "reset": "Recommencer"
+  }
+}
