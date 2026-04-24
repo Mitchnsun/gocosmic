@@ -1,0 +1,123 @@
+{
+  "pricing": {
+    "meta": {
+      "title": "Simulador de Precios - Go Cosmic",
+      "description": "Estime el coste de su proyecto web o móvil con nuestro simulador de precios interactivo. Obtenga un presupuesto personalizado para su sitio web o aplicación móvil."
+    },
+    "title": "Simulador de Precios",
+    "subtitle": "Responda algunas preguntas para obtener una estimación de su proyecto",
+    "step1": {
+      "question": "¿Qué le gustaría crear?",
+      "options": {
+        "website": "Un sitio web",
+        "mobile": "Una aplicación móvil",
+        "both": "Ambos (sitio web + aplicación móvil)"
+      }
+    },
+    "step2": {
+      "question": "¿Qué tipo de sitio web necesita?",
+      "options": {
+        "showcase": "Un sitio web de presentación",
+        "accounts": "Un sitio web con cuentas de clientes",
+        "ecommerce": "Un sitio web de comercio electrónico"
+      }
+    },
+    "step3": {
+      "question": "¿Con qué frecuencia le gustaría actualizar el contenido?",
+      "options": {
+        "few_per_year": "2 a 3 veces al año",
+        "monthly": "Una vez al mes",
+        "weekly": "Una vez a la semana",
+        "self_managed": "Quiero gestionarlo yo mismo, cuando quiera"
+      }
+    },
+    "results": {
+      "mobile": {
+        "title": "Aplicación Móvil",
+        "rate": "600€ s/IVA / día",
+        "rate_note": "*",
+        "disclaimer": "* Precio indicativo, a negociar según sus necesidades y plazos.",
+        "description": "El desarrollo de aplicaciones móviles se factura por día. El coste final depende de la complejidad, el número de funcionalidades y las plataformas objetivo (iOS, Android)."
+      },
+      "complex_website": {
+        "title": "Sitio Web Personalizado",
+        "rate": "600€ s/IVA / día",
+        "rate_note": "*",
+        "disclaimer": "* Precio indicativo según necesidades y plazos. Sin precio fijo para un sitio web totalmente personalizable.",
+        "description": "Este tipo de proyecto (con cuentas de clientes o comercio electrónico) es complejo y totalmente personalizable. El coste final depende de sus requisitos específicos.",
+        "no_fixed_price": "Sin precio fijo para un sitio web totalmente personalizable — cada proyecto es único."
+      },
+      "subscription": {
+        "few_per_year": {
+          "title": "Suscripción Esencial",
+          "price": "75€ / mes",
+          "duration": "Compromiso anual",
+          "includes": {
+            "title": "Incluido:",
+            "items": {
+              "site": "Creación del sitio web de presentación",
+              "seo": "Optimización SEO",
+              "updates": "Actualizaciones técnicas regulares",
+              "domain": "Gestión del nombre de dominio",
+              "hosting": "Alojamiento web",
+              "ssl": "Certificado SSL",
+              "email": "1 dirección de correo profesional"
+            }
+          }
+        },
+        "monthly": {
+          "title": "Suscripción Estándar",
+          "price": "100€ / mes",
+          "duration": "Compromiso anual",
+          "includes": {
+            "title": "Incluido:",
+            "items": {
+              "site": "Creación del sitio web de presentación",
+              "seo": "Optimización SEO",
+              "updates": "Actualizaciones técnicas regulares",
+              "domain": "Gestión del nombre de dominio",
+              "hosting": "Alojamiento web",
+              "ssl": "Certificado SSL",
+              "email": "1 dirección de correo profesional",
+              "content_update": "Hasta 1 actualización de contenido al mes"
+            }
+          }
+        },
+        "weekly": {
+          "title": "Suscripción Premium",
+          "price": "150€ / mes",
+          "duration": "Compromiso anual",
+          "includes": {
+            "title": "Incluido:",
+            "items": {
+              "site": "Creación del sitio web de presentación",
+              "seo": "Optimización SEO",
+              "updates": "Actualizaciones técnicas regulares",
+              "domain": "Gestión del nombre de dominio",
+              "hosting": "Alojamiento web",
+              "ssl": "Certificado SSL",
+              "email": "1 dirección de correo profesional",
+              "content_update": "Hasta 1 actualización de contenido a la semana"
+            }
+          }
+        },
+        "self_managed": {
+          "title": "CMS Autogestionado",
+          "rate": "600€ s/IVA / día",
+          "rate_note": "*",
+          "disclaimer": "* Tarifa diaria base — precio definitivo a discutir según sus necesidades de CMS.",
+          "description": "Se desarrollará un CMS personalizado para que pueda gestionar su contenido de forma autónoma, cuando lo desee. El coste de desarrollo se basa en la tarifa diaria y se acordará según sus necesidades."
+        }
+      }
+    },
+    "contact": {
+      "title": "Hablemos de su proyecto",
+      "description": "Contáctenos para obtener un presupuesto personalizado y discutir su proyecto en detalle.",
+      "email": "prospect@gocosmic.dev",
+      "cta": "Solicitar un presupuesto",
+      "subject": "Consulta de precios — Presupuesto de proyecto",
+      "aria_label": "Enviar un correo a prospect@gocosmic.dev para un presupuesto de proyecto"
+    },
+    "reset": "Empezar de nuevo"
+  }
+}
