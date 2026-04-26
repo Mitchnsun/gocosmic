@@ -1,4 +1,4 @@
-import { EnvelopeIcon, InformationCircleIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/solid';
+import { CalculatorIcon, EnvelopeIcon, InformationCircleIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/solid';
 import { useTranslations } from 'next-intl';
 
 import { Link } from '@/i18n/navigation';
@@ -22,6 +22,13 @@ const Header = () => {
           aria-label={t('services_label')}>
           <WrenchScrewdriverIcon className="h-5 w-5 md:hidden" aria-hidden="true" />
           <span className="hidden md:inline">{t('services')}</span>
+        </Link>
+        <Link
+          href="/pricing"
+          className="rounded px-2 py-1 transition-colors hover:text-blue-400"
+          aria-label={t('pricing_label')}>
+          <CalculatorIcon className="h-5 w-5 md:hidden" aria-hidden="true" />
+          <span className="hidden md:inline">{t('pricing')}</span>
         </Link>
         <Link
           href="/about"

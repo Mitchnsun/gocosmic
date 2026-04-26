@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.3.0] - 2026-04-26
+
+### Added
+
+- New interactive pricing simulator page with an animated multi-step flow to estimate project needs (website, mobile app, or both)
+- Detailed pricing logic with subscription plans and 600 EUR HT/day daily-rate options depending on project complexity and maintenance frequency
+- Product integration completed with reset action, dedicated SEO metadata, and pricing entry in the main navigation
+- Full internationalization support for the pricing page across EN, FR, ES, DE, and IT, including localized routes
+- 19 new unit tests covering simulator interactions and decision branches
+
 ## [1.2.3] - 2026-04-26
 
 ### Added

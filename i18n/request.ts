@@ -69,6 +69,14 @@ const getNamespacesForPath = (pathname: string): string[] => {
     pathWithoutLocale.startsWith('/contatto')
   ) {
     return ['contact'];
+  } else if (
+    pathWithoutLocale.startsWith('/pricing') ||
+    pathWithoutLocale.startsWith('/tarifs') ||
+    pathWithoutLocale.startsWith('/precios') ||
+    pathWithoutLocale.startsWith('/preise') ||
+    pathWithoutLocale.startsWith('/prezzi')
+  ) {
+    return ['pricing'];
   }
 
   // Default to home for unknown routes
