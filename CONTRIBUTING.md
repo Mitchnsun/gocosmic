@@ -297,7 +297,7 @@ Add a new entry to `data/projects.json`:
 - **`icon`**: A [Heroicons](https://heroicons.com/) component name (`SparklesIcon`, `UserIcon`, `TrophyIcon`, `MusicalNoteIcon`, `RocketLaunchIcon`, etc.)
 - **`i18nKey`**: The key used in `messages/{locale}/projects.json` for the card translations (camelCase)
 
-> **Note**: The project card on `/projects` is automatically rendered from this JSON — no page code changes are needed.
+> **Note**: The project card on `/projects` is automatically rendered from this JSON, so no page code changes are needed as long as you reuse existing mapped values. If you introduce a new icon (or any other value that depends on a page-side mapping), also update the corresponding mappings in `app/[locale]/projects/page.tsx`.
 
 #### 2. Add card translations for all locales
 
