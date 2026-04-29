@@ -286,14 +286,12 @@ Add a new entry to `data/projects.json`:
 ```json
 {
   "id": "your-project-id",
-  "slug": "/projects/your-project-id",
   "icon": "RocketLaunchIcon",
   "i18nKey": "yourProjectKey"
 }
 ```
 
-- **`id`**: Unique kebab-case identifier (must match the route folder name)
-- **`slug`**: Internal route path to the project page
+- **`id`**: Unique kebab-case identifier (must match the route folder name). The project slug (`/projects/{id}`) is derived from this value at render time and validated against the registered routes in `i18n/routing.ts`.
 - **`icon`**: A [Heroicons](https://heroicons.com/) component name (`SparklesIcon`, `UserIcon`, `TrophyIcon`, `MusicalNoteIcon`, `RocketLaunchIcon`, etc.)
 - **`i18nKey`**: The key used in `messages/{locale}/projects.json` for the card translations (camelCase)
 
@@ -322,7 +320,7 @@ Do this for all 5 supported locales: `en`, `fr`, `es`, `de`, `it`.
 
 Add a top-level key with the full project content in each `messages/{locale}/projects.json`:
 
-```json
+```jsonc
 {
   "yourProjectKey": {
     "title": "Your Project Title",

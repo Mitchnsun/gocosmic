@@ -1,25 +1,21 @@
 [
   {
     "id": "daily-fortune",
-    "slug": "/projects/daily-fortune",
     "icon": "SparklesIcon",
     "i18nKey": "dailyFortune"
   },
   {
     "id": "mcomperat",
-    "slug": "/projects/mcomperat",
     "icon": "UserIcon",
     "i18nKey": "mcomperat"
   },
   {
     "id": "psc-supersprint",
-    "slug": "/projects/psc-supersprint",
     "icon": "TrophyIcon",
     "i18nKey": "pscSupersprint"
   },
   {
     "id": "choeurdespaysdumontblanc",
-    "slug": "/projects/choeurdespaysdumontblanc",
     "icon": "MusicalNoteIcon",
     "i18nKey": "choeurDesPaysduMontBlanc"
   }

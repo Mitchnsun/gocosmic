@@ -6,6 +6,9 @@ import type { ComponentType, SVGProps } from 'react';
 
 import projectsData from '@/data/projects.json';
 import { Link } from '@/i18n/navigation';
+import { routing } from '@/i18n/routing';
+
+type RoutingPathname = keyof typeof routing.pathnames;
 
 type IconName = 'SparklesIcon' | 'UserIcon' | 'TrophyIcon' | 'MusicalNoteIcon' | 'RocketLaunchIcon';
 
@@ -67,6 +70,10 @@ export default function Projects() {
         <section className="w-full" aria-label={t('title')}>
           <ul className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
             {projectsData.map((project) => {
+              const slug = `/projects/${project.id}`;
+              if (!(slug in routing.pathnames)) return null;
+
+              const href = slug as RoutingPathname;
               const Icon = iconMap[project.icon as IconName] ?? RocketLaunchIcon;
               const iconColor = iconColorMap[project.id] ?? 'text-blue-400';
               const item = items[project.i18nKey];
@@ -76,7 +83,7 @@ export default function Projects() {
               return (
                 <li key={project.id}>
                   <Link
-                    href={project.slug as '/projects'}
+                    href={href}
                     className="flex h-full flex-col items-center gap-4 rounded-lg bg-slate-800 px-6 py-8 transition-colors hover:bg-slate-700 focus:ring-2 focus:ring-blue-400 focus:outline-none"
                     aria-label={item.title}>
                     <Icon className={`h-10 w-10 shrink-0 ${iconColor}`} aria-hidden="true" />
