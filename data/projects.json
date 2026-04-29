@@ -1,0 +1,22 @@
+[
+  {
+    "id": "daily-fortune",
+    "icon": "SparklesIcon",
+    "i18nKey": "dailyFortune"
+  },
+  {
+    "id": "mcomperat",
+    "icon": "UserIcon",
+    "i18nKey": "mcomperat"
+  },
+  {
+    "id": "psc-supersprint",
+    "icon": "TrophyIcon",
+    "i18nKey": "pscSupersprint"
+  },
+  {
+    "id": "choeurdespaysdumontblanc",
+    "icon": "MusicalNoteIcon",
+    "i18nKey": "choeurDesPaysduMontBlanc"
+  }
+]
