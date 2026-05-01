@@ -10,8 +10,11 @@ vi.mock('next-intl/server', async () => {
   return {
     ...actual,
     getTranslations: vi.fn().mockResolvedValue((key: string) => {
+      if (key === 'meta.title') return 'Web & Mobile Development Services | Annecy · Geneva | Go Cosmic';
+      if (key === 'meta.description')
+        return 'Comprehensive web and mobile development services based in Annecy, serving Geneva and Haute-Savoie. React, React Native, Next.js, AI integration.';
       if (key === 'title') return 'Our Cosmic Services';
-      if (key === 'subtitle') return 'Comprehensive solutions to launch your projects into orbit';
+      if (key === 'subtitle') return 'Comprehensive technical solutions to propel your projects into the stratosphere';
       return key;
     }),
   };
@@ -47,8 +50,9 @@ describe('Services Page', () => {
       const metadata = await generateMetadata({ params });
 
       expect(metadata).toEqual({
-        title: 'Our Cosmic Services',
-        description: 'Comprehensive solutions to launch your projects into orbit',
+        title: 'Web & Mobile Development Services | Annecy · Geneva | Go Cosmic',
+        description:
+          'Comprehensive web and mobile development services based in Annecy, serving Geneva and Haute-Savoie. React, React Native, Next.js, AI integration.',
       });
     });
   });

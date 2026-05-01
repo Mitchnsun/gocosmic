@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.5.0] - 2026-05-01
+
+### Changed
+
+- Enriched all page metadata (title/description) with local geo-targeting keywords: Annecy, Genève/Geneva, Haute-Savoie
+- Added dedicated `meta` blocks to `services.json` and `offers.json` to decouple SEO metadata from visible page headings
+- Updated `services/page.tsx` and `offers/page.tsx` to use `meta.title`/`meta.description` translation keys
+- Updated metadata for all 5 locales (EN, FR, ES, DE, IT) across: home, about, services, offers, journey, projects pages
+
 ## [1.4.0] - 2026-05-01
 
 ### Changed

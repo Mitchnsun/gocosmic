@@ -1,5 +1,9 @@
 {
   "offers": {
+    "meta": {
+      "title": "Le Nostre Offerte | Sviluppo Web & Mobile | Annecy · Ginevra | Go Cosmic",
+      "description": "Offerte di sviluppo web e mobile su misura per le aziende ad Annecy, Ginevra e Alta Savoia. Scegli il tuo pacchetto di sviluppo ideale."
+    },
     "title": "Le Nostre Offerte Cosmiche",
     "subtitle": "Scegli la soluzione perfetta adattata alle esigenze del tuo progetto",
     "solo_developer": {

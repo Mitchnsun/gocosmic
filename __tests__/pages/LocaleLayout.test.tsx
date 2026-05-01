@@ -49,8 +49,10 @@ describe('LocaleLayout', () => {
     it('should generate correct metadata for valid locale', async () => {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const mockT = vi.fn() as any;
-      mockT.mockReturnValueOnce('Go Cosmic');
-      mockT.mockReturnValueOnce('Go Cosmic Dev: A Cosmic Journey into the Future of Development');
+      mockT.mockReturnValueOnce('Web & Mobile Development | Annecy · Geneva | Go Cosmic');
+      mockT.mockReturnValueOnce(
+        'Web and mobile app development agency based in Annecy, serving Geneva and Haute-Savoie. React, React Native, Next.js.'
+      );
 
       mockGetTranslations.mockResolvedValue(mockT);
 
@@ -61,8 +63,9 @@ describe('LocaleLayout', () => {
       expect(mockT).toHaveBeenCalledWith('title');
       expect(mockT).toHaveBeenCalledWith('description');
       expect(metadata).toEqual({
-        title: 'Go Cosmic',
-        description: 'Go Cosmic Dev: A Cosmic Journey into the Future of Development',
+        title: 'Web & Mobile Development | Annecy · Geneva | Go Cosmic',
+        description:
+          'Web and mobile app development agency based in Annecy, serving Geneva and Haute-Savoie. React, React Native, Next.js.',
       });
     });
 

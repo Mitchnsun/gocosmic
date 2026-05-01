@@ -8,9 +8,9 @@ import { render } from '../test-utils';
 vi.mock('next-intl/server', () => ({
   getMessages: vi.fn().mockResolvedValue({
     meta: {
-      title: 'About Go Cosmic - Our Mission and Team',
+      title: 'About Go Cosmic - Web Agency in Annecy & Geneva',
       description:
-        "Discover Go Cosmic's mission to create stellar applications with AI. Meet Matthieu Compérat, our developer, and learn about our commitment to excellence and innovation.",
+        'Discover Go Cosmic, a web and mobile development agency based in Annecy, serving Geneva and Haute-Savoie. Meet Matthieu Compérat, our developer.',
     },
   }),
 }));
@@ -28,9 +28,9 @@ describe('About Page', () => {
       const metadata = await generateMetadata({ params });
 
       expect(metadata).toEqual({
-        title: 'About Go Cosmic - Our Mission and Team',
+        title: 'About Go Cosmic - Web Agency in Annecy & Geneva',
         description:
-          "Discover Go Cosmic's mission to create stellar applications with AI. Meet Matthieu Compérat, our developer, and learn about our commitment to excellence and innovation.",
+          'Discover Go Cosmic, a web and mobile development agency based in Annecy, serving Geneva and Haute-Savoie. Meet Matthieu Compérat, our developer.',
       });
     });
   });
