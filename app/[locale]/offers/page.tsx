@@ -11,8 +11,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const t = await getTranslations({ locale, namespace: 'offers' });
 
   return {
-    title: t('title'),
-    description: t('subtitle'),
+    title: t('meta.title'),
+    description: t('meta.description'),
     alternates: {
       canonical: getCanonicalUrl(locale, '/offers'),
     },
@@ -89,19 +89,19 @@ export default function Offers() {
                 <h4 className="mb-4 text-lg font-semibold text-white">{t('solo_developer.ideal_for.title')}:</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-400" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-400" aria-hidden="true"></span>
                     <span>{t('solo_developer.ideal_for.items.startups')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-500" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-500" aria-hidden="true"></span>
                     <span>{t('solo_developer.ideal_for.items.mvp')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-600" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-600" aria-hidden="true"></span>
                     <span>{t('solo_developer.ideal_for.items.apps')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-700" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-700" aria-hidden="true"></span>
                     <span>{t('solo_developer.ideal_for.items.redesign')}</span>
                   </li>
                 </ul>
@@ -177,19 +177,19 @@ export default function Offers() {
                 <h4 className="mb-4 text-lg font-semibold text-white">{t('team_developers.ideal_for.title')}:</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-400" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-400" aria-hidden="true"></span>
                     <span>{t('team_developers.ideal_for.items.enterprise')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-500" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-500" aria-hidden="true"></span>
                     <span>{t('team_developers.ideal_for.items.platforms')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-600" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-600" aria-hidden="true"></span>
                     <span>{t('team_developers.ideal_for.items.complex')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-700" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-700" aria-hidden="true"></span>
                     <span>{t('team_developers.ideal_for.items.scaling')}</span>
                   </li>
                 </ul>
@@ -265,19 +265,19 @@ export default function Offers() {
                 <h4 className="mb-4 text-lg font-semibold text-white">{t('developer_designer.ideal_for.title')}:</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-purple-400" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-400" aria-hidden="true"></span>
                     <span>{t('developer_designer.ideal_for.items.brands')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-purple-500" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-500" aria-hidden="true"></span>
                     <span>{t('developer_designer.ideal_for.items.consumer')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-purple-600" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-600" aria-hidden="true"></span>
                     <span>{t('developer_designer.ideal_for.items.ecommerce')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-purple-700" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-700" aria-hidden="true"></span>
                     <span>{t('developer_designer.ideal_for.items.saas')}</span>
                   </li>
                 </ul>
