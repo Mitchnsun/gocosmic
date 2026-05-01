@@ -50,6 +50,9 @@ describe('Projects Page', () => {
       expect(metadata).toEqual({
         title: 'Our Projects',
         description: 'Discover the projects crafted by Go Cosmic.',
+        alternates: {
+          canonical: 'https://www.gocosmic.dev/en/projects',
+        },
       });
     });
   });

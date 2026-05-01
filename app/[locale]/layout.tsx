@@ -7,6 +7,7 @@ import { getTranslations } from 'next-intl/server';
 
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
+import { getCanonicalUrl } from '@/i18n/canonical';
 import { routing } from '@/i18n/routing';
 
 const poppins = Poppins({
@@ -21,6 +22,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: t('title'),
     description: t('description'),
+    alternates: {
+      canonical: getCanonicalUrl(locale, '/'),
+    },
   };
 }
 

@@ -31,6 +31,9 @@ describe('About Page', () => {
         title: 'About Go Cosmic - Our Mission and Team',
         description:
           "Discover Go Cosmic's mission to create stellar applications with AI. Meet Matthieu Compérat, our developer, and learn about our commitment to excellence and innovation.",
+        alternates: {
+          canonical: 'https://www.gocosmic.dev/en/about',
+        },
       });
     });
   });

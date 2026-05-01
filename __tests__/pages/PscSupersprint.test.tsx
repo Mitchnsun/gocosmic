@@ -39,6 +39,9 @@ describe('PscSupersprint Page', () => {
     expect(metadata).toEqual({
       title: 'PSC Supersprint',
       description: 'Web application for managing PSC triathlon supersprint competition results',
+      alternates: {
+        canonical: 'https://www.gocosmic.dev/en/projects/psc-supersprint',
+      },
     });
   });
 });

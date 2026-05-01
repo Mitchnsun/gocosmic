@@ -15,6 +15,7 @@ import { getTranslations } from 'next-intl/server';
 import { Button } from '@/design-system/button';
 import { buttonVariants } from '@/design-system/button.variants';
 import { cn } from '@/design-system/lib/utils';
+import { getCanonicalUrl } from '@/i18n/canonical';
 import { Link } from '@/i18n/navigation';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -24,6 +25,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: t('title'),
     description: t('subtitle'),
+    alternates: {
+      canonical: getCanonicalUrl(locale, '/services'),
+    },
   };
 }
 

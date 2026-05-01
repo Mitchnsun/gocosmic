@@ -39,6 +39,9 @@ describe('DailyFortune Page', () => {
     expect(metadata).toEqual({
       title: 'Daily Fortune',
       description: 'Your daily dose of inspiration and cosmic wisdom',
+      alternates: {
+        canonical: 'https://www.gocosmic.dev/en/projects/daily-fortune',
+      },
     });
   });
 });

@@ -63,6 +63,9 @@ describe('LocaleLayout', () => {
       expect(metadata).toEqual({
         title: 'Go Cosmic',
         description: 'Go Cosmic Dev: A Cosmic Journey into the Future of Development',
+        alternates: {
+          canonical: 'https://www.gocosmic.dev/en/',
+        },
       });
     });
 
