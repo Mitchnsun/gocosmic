@@ -8,14 +8,14 @@ vi.mock('next-intl/middleware', () => ({
   default: mockCreateMiddleware,
 }));
 
-describe('middleware', () => {
+describe('proxy', () => {
   beforeEach(() => {
     vi.clearAllMocks();
   });
 
-  it('should create middleware with routing configuration', async () => {
-    // Import the middleware after mocking
-    await import('../middleware');
+  it('should create proxy with routing configuration', async () => {
+    // Import the proxy after mocking
+    await import('../proxy');
 
     expect(mockCreateMiddleware).toHaveBeenCalledWith(routing);
     expect(mockCreateMiddleware).toHaveBeenCalledTimes(1);
@@ -27,16 +27,16 @@ describe('middleware', () => {
   });
 
   it('should have correct matcher configuration', async () => {
-    const middlewareModule = await import('../middleware');
+    const proxyModule = await import('../proxy');
 
-    expect(middlewareModule.config).toBeDefined();
-    expect(middlewareModule.config.matcher).toBe('/((?!api|_next|_vercel|.*\\..*).*)');
+    expect(proxyModule.config).toBeDefined();
+    expect(proxyModule.config.matcher).toBe('/((?!api|_next|_vercel|.*\\..*).*)');
   });
 
-  it('should exclude api routes from middleware', async () => {
-    const middlewareModule = await import('../middleware');
+  it('should exclude api routes from proxy', async () => {
+    const proxyModule = await import('../proxy');
 
-    expect(middlewareModule.config.matcher).toContain('(?!api|_next|_vercel');
+    expect(proxyModule.config.matcher).toContain('(?!api|_next|_vercel');
 
     // Test specific paths that should be excluded
     expect('/api/test'.match(/^\/api/)).toBeTruthy();

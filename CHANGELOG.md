@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Upgraded Next.js from 15.5.7 to **16.2.4**
 - Upgraded `next-intl` from 4.3.5 to 4.11.0 (adds Next.js 16 peer dependency support)
 - Upgraded `@next/eslint-plugin-next` from 15.3.0 to 16.2.4
+- Renamed `middleware.ts` to `proxy.ts` and updated the exported function name from `middleware` to `proxy` to comply with Next.js 16 file convention deprecation
 
 ## [1.3.0] - 2026-04-29
 
