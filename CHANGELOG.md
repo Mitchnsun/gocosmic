@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.4.0] - 2026-05-01
+
+### Changed
+
+- Upgraded Next.js from 15.5.7 to **16.2.4**
+- Upgraded `next-intl` from 4.3.5 to 4.11.0 (adds Next.js 16 peer dependency support)
+- Upgraded `@next/eslint-plugin-next` from 15.3.0 to 16.2.4
+
 ## [1.3.0] - 2026-04-29
 
 ### Added

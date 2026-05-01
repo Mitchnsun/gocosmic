@@ -142,7 +142,7 @@ export default function Header() {
 ### Technical Features
 
 - **Optimal Performance**: Server-side rendering and automatic optimizations
-- **Modern Architecture**: Built with Next.js 15 and React 19
+- **Modern Architecture**: Built with Next.js 16 and React 19
 - **Type Safety**: Full TypeScript implementation
 - **Component System**: Reusable UI components with proper JSDoc documentation
 
@@ -228,7 +228,7 @@ This approach ensures SEO-friendly URLs and consistent user experience across al
 
 ## Technologies Used
 
-- **[Next.js 15](https://nextjs.org/)** - React framework with App Router and Turbopack
+- **[Next.js 16](https://nextjs.org/)** - React framework with App Router and Turbopack
 - **[React 19](https://react.dev/)** - Latest React with server components
 - **[TypeScript 5.8](https://www.typescriptlang.org/)** - Type safety and robust development
 - **[next-intl](https://next-intl.dev/)** - Type-safe internationalization with 5 language support
@@ -318,7 +318,7 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 
 ```
 apps/web/
-├── app/              # App Router (Next.js 15+)
+├── app/              # App Router (Next.js 16+)
 │   ├── [locale]/     # Internationalized routes
 │   │   ├── about/    # About page (mission, profile, legal & AI usage)
 │   │   ├── journey/  # 3D cosmic experience page
