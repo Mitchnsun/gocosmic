@@ -8,8 +8,9 @@ vi.mock('next-intl/server', () => ({
   getMessages: vi.fn().mockResolvedValue({
     projectsList: {
       meta: {
-        title: 'Our Projects',
-        description: 'Discover the projects crafted by Go Cosmic.',
+        title: 'Our Projects | Go Cosmic — Annecy · Geneva',
+        description:
+          'Explore Go Cosmic projects — web and mobile apps crafted in Annecy, serving clients in Geneva and Haute-Savoie.',
       },
       title: 'Our Projects',
       subtitle: 'Explore the constellation of digital experiences crafted by Go Cosmic.',
@@ -48,8 +49,9 @@ describe('Projects Page', () => {
       const metadata = await generateMetadata({ params });
 
       expect(metadata).toEqual({
-        title: 'Our Projects',
-        description: 'Discover the projects crafted by Go Cosmic.',
+        title: 'Our Projects | Go Cosmic — Annecy · Geneva',
+        description:
+          'Explore Go Cosmic projects — web and mobile apps crafted in Annecy, serving clients in Geneva and Haute-Savoie.',
       });
     });
   });

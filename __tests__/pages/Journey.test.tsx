@@ -9,9 +9,9 @@ import { render } from '../test-utils';
 vi.mock('next-intl/server', () => ({
   getMessages: vi.fn().mockResolvedValue({
     meta: {
-      title: 'Cosmic Journey - Explore the Stars with Go Cosmic',
+      title: 'Cosmic Journey - Go Cosmic | Annecy · Geneva',
       description:
-        'Embark on an immersive 3D cosmic journey through the stars. Experience the unique approach of Go Cosmic with interactive space exploration.',
+        'Embark on an immersive 3D cosmic journey through the stars. Experience the unique approach of Go Cosmic, your web development partner in Annecy and Geneva.',
     },
     journey: {
       title: 'Welcome to your Cosmic Journey',
@@ -64,9 +64,9 @@ describe('Journey Page', () => {
       const metadata = await generateMetadata({ params });
 
       expect(metadata).toEqual({
-        title: 'Cosmic Journey - Explore the Stars with Go Cosmic',
+        title: 'Cosmic Journey - Go Cosmic | Annecy · Geneva',
         description:
-          'Embark on an immersive 3D cosmic journey through the stars. Experience the unique approach of Go Cosmic with interactive space exploration.',
+          'Embark on an immersive 3D cosmic journey through the stars. Experience the unique approach of Go Cosmic, your web development partner in Annecy and Geneva.',
       });
     });
   });

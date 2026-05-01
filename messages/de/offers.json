@@ -1,5 +1,9 @@
 {
   "offers": {
+    "meta": {
+      "title": "Unsere Angebote | Web- & Mobile-Entwicklung | Annecy · Genf | Go Cosmic",
+      "description": "Maßgeschneiderte Web- und Mobile-Entwicklungsangebote für Unternehmen in Annecy, Genf und Haute-Savoie. Wählen Sie Ihr ideales Entwicklungspaket."
+    },
     "title": "Unsere Kosmischen Angebote",
     "subtitle": "Wählen Sie die perfekte Lösung für Ihre Projektanforderungen",
     "solo_developer": {

@@ -324,9 +324,9 @@ Add a top-level key with the full project content in each `messages/{locale}/pro
 {
   "yourProjectKey": {
     "title": "Your Project Title",
-    "subtitle": "Short tagline"
+    "subtitle": "Short tagline",
     // ... full page sections
-  }
+  },
 }
 ```
 

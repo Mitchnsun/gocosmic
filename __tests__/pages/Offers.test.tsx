@@ -10,6 +10,9 @@ vi.mock('next-intl/server', async () => {
   return {
     ...actual,
     getTranslations: vi.fn().mockResolvedValue((key: string) => {
+      if (key === 'meta.title') return 'Our Offers | Web & Mobile Development | Annecy · Geneva | Go Cosmic';
+      if (key === 'meta.description')
+        return 'Tailored web and mobile development offers for businesses in Annecy, Geneva, and Haute-Savoie. Choose your perfect development package.';
       if (key === 'title') return 'Our Cosmic Offers';
       if (key === 'subtitle') return 'Choose the perfect solution tailored to your project needs';
       return key;
@@ -45,8 +48,9 @@ describe('Offers Page', () => {
       const metadata = await generateMetadata({ params });
 
       expect(metadata).toEqual({
-        title: 'Our Cosmic Offers',
-        description: 'Choose the perfect solution tailored to your project needs',
+        title: 'Our Offers | Web & Mobile Development | Annecy · Geneva | Go Cosmic',
+        description:
+          'Tailored web and mobile development offers for businesses in Annecy, Geneva, and Haute-Savoie. Choose your perfect development package.',
       });
     });
   });
