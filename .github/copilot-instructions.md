@@ -18,10 +18,9 @@ This project is a **modern React repo** built with cutting-edge technologies:
 
 ### Core Framework & Build Tools
 
-- **Next.js 15.3.0** - React framework with App Router and Turbopack for fast development
-- **React 19.1.0** - Latest React with server components and concurrent features
-- **TypeScript 5.8.2** - Strict type checking across all packages
-- **Vite** - Lightning-fast bundler for Storybook
+- **Next.js 16.2.4** - React framework with App Router and Turbopack for fast development
+- **React 19.1.1** - Latest React with server components and concurrent features
+- **TypeScript 5.8.3** - Strict type checking across all packages
 - **next-intl** - Type-safe internationalization with 5 language support (EN, FR, ES, DE, IT)
 
 ### UI & Styling
@@ -56,8 +55,8 @@ This project is a **modern React repo** built with cutting-edge technologies:
 
 ### Architecture Patterns
 
-- **Component-driven development** with isolated testing in Storybook
-- **Design system approach** with reusable UI components
+- **Component-driven development** with reusable UI components
+- **Design system approach** with consistent tokens across all interfaces
 - **100% test coverage** enforcement for reliability
 - **Dual TypeScript configs** for clean builds and comprehensive type checking
 - **Internationalization-first** with type-safe translations and locale-specific routing
@@ -74,7 +73,7 @@ The project enforces **strict coding standards** to ensure code quality and cons
 - **Conventional Commits** enforced via commitlint with custom types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `tech`, `chore`
 - **Pre-commit hooks** via Husky + lint-staged that automatically format code and run linting
 - **Accessibility enforcement** with jsx-a11y plugin for React components
-- **100% test coverage** requirement on UI package with comprehensive Vitest testing
+- **100% test coverage** requirement with comprehensive Vitest testing
 - **Component patterns** following React best practices with proper TypeScript interfaces and JSDoc documentation
 
 All code changes must pass formatting, linting, type checking, and testing before being committed. The CI will fail if any standard is not met.
@@ -206,7 +205,7 @@ The project follows **modern, clean design principles** with a distinctive **cos
 - **Modern & Minimalist** - Clean layouts with generous whitespace, subtle shadows, and smooth transitions
 - **Cosmic Theme** - Space-inspired color palette with deep blacks, cosmic blues, and stellar accents
 - **Accessibility First** - All components must meet WCAG standards using Radix UI primitives
-- **Component-driven Design** - Reusable, composable components documented in Storybook
+- **Component-driven Design** - Reusable, composable components with isolated Vitest tests
 - **Design System Approach** - Consistent spacing, typography, and color tokens across all interfaces
 - **Responsive Design** - Mobile-first approach with fluid layouts and adaptive components
 - **Smooth Interactions** - Thoughtful micro-interactions and animations that enhance the cosmic experience
@@ -228,9 +227,9 @@ All UI components should evoke a sense of exploration and wonder while maintaini
 1. Clone repository and navigate to root directory
 2. **Enable Corepack**: `corepack enable` -- enables yarn package manager (first time only)
 3. **Install dependencies**: `yarn install` -- takes approximately 3.5 minutes. NEVER CANCEL. Set timeout to 15 minutes.
-4. **UI package TypeScript configuration**: The UI package uses a dual TypeScript configuration:
-   - `tsconfig.json`: Compiles only `src/` to `dist/` for clean library output
-   - `tsconfig.check.json`: Type-checks both `src/` and `__tests__` with `noEmit: true`
+4. **TypeScript configuration**: The project uses a dual TypeScript configuration:
+   - `tsconfig.json`: Full project type-checking with `noEmit: true`
+   - `tsconfig.check.json`: Stricter type-checking configuration for CI validation
 
 ### Build Process
 
@@ -242,9 +241,9 @@ All UI components should evoke a sense of exploration and wonder while maintaini
 
 ### Testing and Quality
 
-- **Run all tests**: `yarn test` -- takes approximately 4 seconds (48 tests). NEVER CANCEL. Set timeout to 10 minutes.
+- **Run all tests**: `yarn test` -- takes approximately 4 seconds (98 tests across 26 files). NEVER CANCEL. Set timeout to 10 minutes.
 - **Web app testing**: Web app has comprehensive unit tests for components, pages, and views using Vitest and React Testing Library
-- **Test coverage**: `yarn coverage` -- generates coverage reports for all packages. Coverage should meet thresholds (100% for UI package, 80% for apps). NEVER CANCEL. Set timeout to 15 minutes.
+- **Test coverage**: `yarn coverage` -- generates coverage reports. Coverage must meet 80% thresholds on all metrics. NEVER CANCEL. Set timeout to 15 minutes.
 - **Type checking**: `yarn check-types` -- takes approximately 9 seconds. NEVER CANCEL. Set timeout to 10 minutes.
 - **Linting**: `yarn lint` -- takes approximately 7 seconds. NEVER CANCEL. Set timeout to 10 minutes.
 - **Code formatting**: `yarn format` -- takes approximately 2 seconds
@@ -334,7 +333,7 @@ Example:
 
 ### Key Files and Directories
 
-- **`package.json`** - Root package with npm scripts and workspaces
+- **`package.json`** - Root package with npm scripts
 - **`.husky/`** - Git hooks for pre-commit validation
 - **`commitlint.config.js`** - Commit message validation (Conventional Commits)
 
@@ -380,22 +379,35 @@ When adding new routes to the application, follow this procedure:
      },
    }
    ```
-3. **Add translations**: Include any new translation keys in all locale files (`messages/`)
-4. **Update navigation**: If the route needs navigation links, add them to navigation components
-5. **Test thoroughly**: Ensure the route works correctly in all locales and test the functionality
+3. **Add canonical URL**: Export metadata with a canonical URL in the page component to avoid duplicate content issues:
+   ```typescript
+   export const metadata: Metadata = {
+     alternates: {
+       canonical: '/your-route',
+     },
+   };
+   ```
+   Use the locale-agnostic path (without the `/[locale]` prefix). Next.js and next-intl will resolve the correct absolute URL per locale.
+4. **Add translations**: Include any new translation keys in all locale files (`messages/`)
+5. **Update navigation**: If the route needs navigation links, add them to navigation components
+6. **Test thoroughly**: Ensure the route works correctly in all locales and test the functionality
 
 #### Translation File Structure
 
 ```
 messages/
-├── en.json    # English (base/reference)
-├── fr.json    # French translations
-├── es.json    # Spanish translations
-├── de.json    # German translations
-└── it.json    # Italian translations
+├── en/         # English (base/reference)
+│   ├── about.json
+│   ├── common.json
+│   ├── contact.json
+│   └── ...
+├── fr/         # French translations
+├── es/         # Spanish translations
+├── de/         # German translations
+└── it/         # Italian translations
 ```
 
-All translation files maintain the same nested structure for consistency and type safety.
+All locale directories maintain the same file structure for consistency and type safety.
 
 ### Build Failures
 
@@ -423,11 +435,12 @@ All translation files maintain the same nested structure for consistency and typ
     - **Branches**: 80% (every conditional branch must be tested)
     - **Statements**: 80% (every statement must be executed)
 - **Coverage exclusions** configured in `vitest.config.ts`:
-  - `index.ts` - Export-only files
-  - `turbo/generators/**` - Configuration files
+  - `node_modules/` and `.next/` and `.yarn/` - Build artifacts
   - `__tests__/` - Test files themselves
-  - `**/*.test.*` and `**/*.spec.*` - Test files
-  - `dist/` and `node_modules/` - Build artifacts
+  - `**/*.test.*` and `**/*.spec.*` and `**/*.d.ts` - Test and declaration files
+  - `**/*.config.*` - Configuration files (`next.config.ts`, `postcss.config.mjs`, `eslint.config.js`)
+  - `i18n/*.ts` - i18n routing configuration files
+  - `dist/` - Build output
 
 **CRITICAL**: `coverage` will fail CI if any threshold drops below 80%. This ensures every new feature or change is properly tested.
 
@@ -436,13 +449,13 @@ All translation files maintain the same nested structure for consistency and typ
 ### Root Level Commands
 
 ```bash
-npm install              # 3.5 min - Install all dependencies
+yarn install             # 3.5 min - Install all dependencies
 yarn build           # 34 sec - Build all packages
 yarn dev             # Start all dev servers (use individual commands if hanging)
 yarn lint            # 7 sec - Lint all packages
 yarn format          # 2 sec - Format all code
 yarn check-types     # 9 sec - Type check all packages
-yarn test            # 4 sec - Run all tests (48 tests total)
+yarn test            # 4 sec - Run all tests (98 tests across 26 files)
 yarn coverage        # Generate test coverage reports (HTML + JSON)
 ```
 
