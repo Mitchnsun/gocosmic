@@ -19,12 +19,27 @@ describe('sitemap', () => {
 
   it('should include all locales for each route', () => {
     const result = sitemap();
-    const { locales } = routing;
+    const { locales, pathnames } = routing;
 
-    for (const locale of locales) {
-      const localeEntries = result.filter((entry) => entry.url.includes(`/${locale}/`));
+    for (const [routeKey, localePaths] of Object.entries(pathnames)) {
+      for (const locale of locales) {
+        let localizedPath: string;
 
-      expect(localeEntries.length).toBeGreaterThan(0);
+        if (typeof localePaths === 'string') {
+          localizedPath = localePaths;
+        } else {
+          const entry = Object.entries(localePaths as Record<string, string>).find(([key]) => key === locale);
+          expect(entry, `Route "${routeKey}" is missing locale "${locale}" in i18n/routing.ts`).toBeDefined();
+          localizedPath = entry![1];
+        }
+
+        const expectedUrl =
+          localizedPath === '/'
+            ? `https://www.gocosmic.dev/${locale}/`
+            : `https://www.gocosmic.dev/${locale}${localizedPath}`;
+
+        expect(result.some((entry) => entry.url === expectedUrl)).toBe(true);
+      }
     }
   });
 
