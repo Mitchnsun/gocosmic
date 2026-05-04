@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.4.1] - 2026-05-03
+
+### Added
+
+- Canonical tags (`<link rel="canonical">`) for all pages via Next.js `alternates.canonical` metadata
+- `i18n/canonical.ts` utility module with `getCanonicalUrl(locale, routeKey)` helper that resolves localized paths from the routing configuration
+- Canonical URLs use the localized pathname for each locale (e.g. `/fr/a-propos` for the About page in French)
+
 ## [1.4.0] - 2026-05-01
 
 ### Changed

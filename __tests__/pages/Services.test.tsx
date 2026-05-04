@@ -49,6 +49,9 @@ describe('Services Page', () => {
       expect(metadata).toEqual({
         title: 'Our Cosmic Services',
         description: 'Comprehensive solutions to launch your projects into orbit',
+        alternates: {
+          canonical: 'https://www.gocosmic.dev/en/services',
+        },
       });
     });
   });

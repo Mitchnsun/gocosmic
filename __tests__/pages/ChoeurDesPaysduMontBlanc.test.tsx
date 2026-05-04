@@ -39,6 +39,9 @@ describe('ChoeurDesPaysduMontBlanc Page', () => {
     expect(metadata).toEqual({
       title: 'Chœur des Pays du Mont Blanc',
       description: 'Website for the amateur choir based in Haute-Savoie, France',
+      alternates: {
+        canonical: 'https://www.gocosmic.dev/en/projects/choeurdespaysdumontblanc',
+      },
     });
   });
 });

@@ -67,6 +67,9 @@ describe('Journey Page', () => {
         title: 'Cosmic Journey - Explore the Stars with Go Cosmic',
         description:
           'Embark on an immersive 3D cosmic journey through the stars. Experience the unique approach of Go Cosmic with interactive space exploration.',
+        alternates: {
+          canonical: 'https://www.gocosmic.dev/en/journey',
+        },
       });
     });
   });

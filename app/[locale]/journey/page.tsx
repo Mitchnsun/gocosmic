@@ -3,6 +3,7 @@ import { createTranslator, useTranslations } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 
 import { Loader } from '@/components/Loader';
+import { getCanonicalUrl } from '@/i18n/canonical';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -11,6 +12,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: t('meta.title'),
     description: t('meta.description'),
+    alternates: {
+      canonical: getCanonicalUrl(locale, '/journey'),
+    },
   };
 }
 

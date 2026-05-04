@@ -87,6 +87,9 @@ describe('Contact Page', () => {
         title: 'Contact Us - Get in Touch with Go Cosmic',
         description:
           'Contact Go Cosmic for general inquiries, support, technical questions, or commercial requests. Choose the right email for your specific needs and get personalized assistance.',
+        alternates: {
+          canonical: 'https://www.gocosmic.dev/en/contact',
+        },
       });
     });
   });

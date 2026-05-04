@@ -39,6 +39,9 @@ describe('MComperat Page', () => {
     expect(metadata).toEqual({
       title: 'mcomper.at',
       description: 'Modern, responsive web CV of Matthieu Compérat',
+      alternates: {
+        canonical: 'https://www.gocosmic.dev/en/projects/mcomperat',
+      },
     });
   });
 });

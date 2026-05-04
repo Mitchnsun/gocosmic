@@ -5,6 +5,7 @@ import { getMessages } from 'next-intl/server';
 import type { ComponentType, SVGProps } from 'react';
 
 import projectsData from '@/data/projects.json';
+import { getCanonicalUrl } from '@/i18n/canonical';
 import { Link } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
 
@@ -49,6 +50,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: t('projectsList.meta.title'),
     description: t('projectsList.meta.description'),
+    alternates: {
+      canonical: getCanonicalUrl(locale, '/projects'),
+    },
   };
 }
 

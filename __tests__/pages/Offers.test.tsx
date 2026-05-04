@@ -47,6 +47,9 @@ describe('Offers Page', () => {
       expect(metadata).toEqual({
         title: 'Our Cosmic Offers',
         description: 'Choose the perfect solution tailored to your project needs',
+        alternates: {
+          canonical: 'https://www.gocosmic.dev/en/offers',
+        },
       });
     });
   });
