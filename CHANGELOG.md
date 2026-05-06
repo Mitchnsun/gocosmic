@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.5.0] - 2026-05-06
+
+### Added
+
+- `components/Starfield/Starfield.tsx` — reusable canvas-based 2D starfield component with perspective warp-speed effect, zero external dependencies, 60fps via `requestAnimationFrame`, fully configurable (`starCount`, `speed`, `className`), auto-resizes with the viewport
+- `components/Starfield/index.ts` — barrel export for the Starfield component
+- Animated Starfield background integrated into the homepage hero section, replacing the static gradient
+
 ## [1.4.1] - 2026-05-03
 
 ### Added
