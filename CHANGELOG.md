@@ -5,13 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [1.4.1] - 2026-05-03
+## [1.4.1] - 2026-05-04
 
 ### Added
 
 - Canonical tags (`<link rel="canonical">`) for all pages via Next.js `alternates.canonical` metadata
 - `i18n/canonical.ts` utility module with `getCanonicalUrl(locale, routeKey)` helper that resolves localized paths from the routing configuration
 - Canonical URLs use the localized pathname for each locale (e.g. `/fr/a-propos` for the About page in French)
+- Dynamic `sitemap.xml` generation via `app/sitemap.ts` covering all routes and all 5 locales (en, fr, es, de, it) using `MetadataRoute.Sitemap`
 
 ## [1.4.0] - 2026-05-01
 
