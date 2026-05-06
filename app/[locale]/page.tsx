@@ -1,6 +1,7 @@
 import { CodeBracketIcon, PuzzlePieceIcon, RocketLaunchIcon, SparklesIcon, StarIcon } from '@heroicons/react/24/solid';
 import { useTranslations } from 'next-intl';
 
+import Starfield from '@/components/Starfield';
 import { buttonVariants } from '@/design-system/button.variants';
 import { cn } from '@/design-system/lib/utils';
 import { Link } from '@/i18n/navigation';
@@ -10,18 +11,24 @@ export default function Home() {
 
   return (
     <div className="text-ghost relative p-4">
-      <main className="m-auto flex max-w-7xl flex-col items-center py-16 md:px-4">
-        <div className="mb-4 flex flex-col items-center gap-3 md:flex-row">
-          <RocketLaunchIcon className="h-10 w-10 text-blue-400" aria-hidden="true" />
-          <h2 className="text-center text-2xl font-extrabold sm:text-4xl">{t('hero.title')}</h2>
-          <SparklesIcon className="h-8 w-8 text-yellow-400" aria-hidden="true" />
-        </div>
-        <p className="mb-8 text-center">{t('hero.subtitle')}</p>
-        <Link href="/journey" className={cn(buttonVariants({ variant: 'royal' }), 'gap-2')} aria-label={t('hero.cta')}>
-          <StarIcon className="h-5 w-5" aria-hidden="true" />
-          {t('hero.cta')}
-        </Link>
-      </main>
+      <div className="relative overflow-hidden rounded-xl">
+        <Starfield className="absolute inset-0 h-full w-full" />
+        <main className="relative z-10 m-auto flex max-w-7xl flex-col items-center py-16 md:px-4">
+          <div className="mb-4 flex flex-col items-center gap-3 md:flex-row">
+            <RocketLaunchIcon className="h-10 w-10 text-blue-400" aria-hidden="true" />
+            <h2 className="text-center text-2xl font-extrabold sm:text-4xl">{t('hero.title')}</h2>
+            <SparklesIcon className="h-8 w-8 text-yellow-400" aria-hidden="true" />
+          </div>
+          <p className="mb-8 text-center">{t('hero.subtitle')}</p>
+          <Link
+            href="/journey"
+            className={cn(buttonVariants({ variant: 'royal' }), 'gap-2')}
+            aria-label={t('hero.cta')}>
+            <StarIcon className="h-5 w-5" aria-hidden="true" />
+            {t('hero.cta')}
+          </Link>
+        </main>
+      </div>
       <br />
       <h3 id="services" className="text-center text-2xl font-bold sm:text-3xl">
         {t('services.title')}

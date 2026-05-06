@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+
 ## [1.5.0] - 2026-05-14
 
 ### Added
@@ -18,6 +19,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - HTTP security headers on all routes via `next.config.ts`: `Content-Security-Policy`, `X-Content-Type-Options`, `X-Frame-Options: DENY`, `Referrer-Policy`, and `Permissions-Policy`
 - `SECURITY.md` — security best practices section covering HTTP headers, API route requirements (input validation, auth, CSRF, CORS, rate limiting), and guidance for Server Actions and env variables
 - `GUIDELINES.md` — Security section with a quick-reference table directing developers to `SECURITY.md` before adding API routes, Server Actions, env variables, or third-party scripts
+- `components/Starfield/Starfield.tsx` — reusable canvas-based 2D starfield component with perspective warp-speed effect, zero external dependencies, 60fps via `requestAnimationFrame`, fully configurable (`starCount`, `speed`, `className`), auto-resizes with the viewport
+- `components/Starfield/index.ts` — barrel export for the Starfield component
+- Animated Starfield background integrated into the homepage hero section, replacing the static gradient
 
 ### Changed
 
