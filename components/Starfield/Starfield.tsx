@@ -20,8 +20,8 @@ export interface StarfieldProps {
   className?: string;
 }
 
-const DEFAULT_STAR_COUNT = 150;
-const DEFAULT_SPEED = 3;
+const DEFAULT_STAR_COUNT = 500;
+const DEFAULT_SPEED = 2;
 
 /**
  * Starfield component that renders an animated 2D canvas-based starfield.
