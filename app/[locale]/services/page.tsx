@@ -23,8 +23,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const t = await getTranslations({ locale, namespace: 'services' });
 
   return {
-    title: t('title'),
-    description: t('subtitle'),
+    title: t('meta.title'),
+    description: t('meta.description'),
     alternates: {
       canonical: getCanonicalUrl(locale, '/services'),
     },
@@ -67,19 +67,19 @@ export default function Services() {
                 </h4>
                 <ul className="grid gap-3 md:grid-cols-2">
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-400" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-400" aria-hidden="true"></span>
                     <span>{t('stellar_development.technologies.items.frontend')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-500" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-500" aria-hidden="true"></span>
                     <span>{t('stellar_development.technologies.items.architecture')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-600" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-600" aria-hidden="true"></span>
                     <span>{t('stellar_development.technologies.items.quality')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-700" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-700" aria-hidden="true"></span>
                     <span>{t('stellar_development.technologies.items.performance')}</span>
                   </li>
                 </ul>
@@ -89,19 +89,19 @@ export default function Services() {
                 <h4 className="mb-4 text-lg font-semibold text-white">{t('stellar_development.expertise.title')}:</h4>
                 <ul className="grid gap-3 md:grid-cols-2">
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-400" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-400" aria-hidden="true"></span>
                     <span>{t('stellar_development.expertise.items.workflow')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-500" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-500" aria-hidden="true"></span>
                     <span>{t('stellar_development.expertise.items.scalability')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-600" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-600" aria-hidden="true"></span>
                     <span>{t('stellar_development.expertise.items.security')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-700" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-700" aria-hidden="true"></span>
                     <span>{t('stellar_development.expertise.items.apis')}</span>
                   </li>
                 </ul>
@@ -111,19 +111,19 @@ export default function Services() {
                 <h4 className="mb-4 text-lg font-semibold text-white">{t('stellar_development.features.title')}:</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-400" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-400" aria-hidden="true"></span>
                     <span>{t('stellar_development.features.items.quality')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-500" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-500" aria-hidden="true"></span>
                     <span>{t('stellar_development.features.items.performance')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-600" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-600" aria-hidden="true"></span>
                     <span>{t('stellar_development.features.items.maintainability')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-700" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-700" aria-hidden="true"></span>
                     <span>{t('stellar_development.features.items.reliability')}</span>
                   </li>
                 </ul>
@@ -153,19 +153,19 @@ export default function Services() {
                 <h4 className="mb-4 text-lg font-semibold text-white">{t('mystical_design.approach.title')}:</h4>
                 <ul className="grid gap-3 md:grid-cols-2">
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-purple-400" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-400" aria-hidden="true"></span>
                     <span>{t('mystical_design.approach.items.systems')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-purple-500" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-500" aria-hidden="true"></span>
                     <span>{t('mystical_design.approach.items.accessibility')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-purple-600" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-600" aria-hidden="true"></span>
                     <span>{t('mystical_design.approach.items.responsive')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-purple-700" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-700" aria-hidden="true"></span>
                     <span>{t('mystical_design.approach.items.performance')}</span>
                   </li>
                 </ul>
@@ -175,19 +175,19 @@ export default function Services() {
                 <h4 className="mb-4 text-lg font-semibold text-white">{t('mystical_design.tools.title')}:</h4>
                 <ul className="grid gap-3 md:grid-cols-2">
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-pink-400" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-pink-400" aria-hidden="true"></span>
                     <span>{t('mystical_design.tools.items.components')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-pink-500" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-pink-500" aria-hidden="true"></span>
                     <span>{t('mystical_design.tools.items.styling')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-pink-600" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-pink-600" aria-hidden="true"></span>
                     <span>{t('mystical_design.tools.items.testing')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-pink-700" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-pink-700" aria-hidden="true"></span>
                     <span>{t('mystical_design.tools.items.prototyping')}</span>
                   </li>
                 </ul>
@@ -197,19 +197,19 @@ export default function Services() {
                 <h4 className="mb-4 text-lg font-semibold text-white">{t('mystical_design.outcomes.title')}:</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-purple-400" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-400" aria-hidden="true"></span>
                     <span>{t('mystical_design.outcomes.items.engagement')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-purple-500" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-500" aria-hidden="true"></span>
                     <span>{t('mystical_design.outcomes.items.conversion')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-purple-600" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-600" aria-hidden="true"></span>
                     <span>{t('mystical_design.outcomes.items.brand')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-purple-700" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-700" aria-hidden="true"></span>
                     <span>{t('mystical_design.outcomes.items.satisfaction')}</span>
                   </li>
                 </ul>
@@ -237,19 +237,19 @@ export default function Services() {
                 <h4 className="mb-4 text-lg font-semibold text-white">{t('ai_powered.capabilities.title')}:</h4>
                 <ul className="grid gap-3 md:grid-cols-2">
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-400" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-yellow-400" aria-hidden="true"></span>
                     <span>{t('ai_powered.capabilities.items.recommendations')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-500" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-yellow-500" aria-hidden="true"></span>
                     <span>{t('ai_powered.capabilities.items.automation')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-600" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-yellow-600" aria-hidden="true"></span>
                     <span>{t('ai_powered.capabilities.items.analytics')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-700" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-yellow-700" aria-hidden="true"></span>
                     <span>{t('ai_powered.capabilities.items.nlp')}</span>
                   </li>
                 </ul>
@@ -259,19 +259,19 @@ export default function Services() {
                 <h4 className="mb-4 text-lg font-semibold text-white">{t('ai_powered.implementation.title')}:</h4>
                 <ul className="grid gap-3 md:grid-cols-2">
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-orange-400" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-400" aria-hidden="true"></span>
                     <span>{t('ai_powered.implementation.items.apis')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-orange-500" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-500" aria-hidden="true"></span>
                     <span>{t('ai_powered.implementation.items.privacy')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-orange-600" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-600" aria-hidden="true"></span>
                     <span>{t('ai_powered.implementation.items.scalability')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-orange-700" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-700" aria-hidden="true"></span>
                     <span>{t('ai_powered.implementation.items.monitoring')}</span>
                   </li>
                 </ul>
@@ -281,19 +281,19 @@ export default function Services() {
                 <h4 className="mb-4 text-lg font-semibold text-white">{t('ai_powered.use_cases.title')}:</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-400" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-yellow-400" aria-hidden="true"></span>
                     <span>{t('ai_powered.use_cases.items.personalization')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-500" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-yellow-500" aria-hidden="true"></span>
                     <span>{t('ai_powered.use_cases.items.support')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-600" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-yellow-600" aria-hidden="true"></span>
                     <span>{t('ai_powered.use_cases.items.optimization')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-700" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-yellow-700" aria-hidden="true"></span>
                     <span>{t('ai_powered.use_cases.items.insights')}</span>
                   </li>
                 </ul>
@@ -333,7 +333,7 @@ export default function Services() {
                     <span>{t('cosmic_launch.process.items.deployment')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-700" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-700" aria-hidden="true"></span>
                     <span>{t('cosmic_launch.process.items.monitoring')}</span>
                   </li>
                 </ul>
@@ -347,7 +347,7 @@ export default function Services() {
                     <span>{t('cosmic_launch.infrastructure.items.cloud')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-sky-500" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-sky-500" aria-hidden="true"></span>
                     <span>{t('cosmic_launch.infrastructure.items.cicd')}</span>
                   </li>
                   <li className="flex items-center gap-3">
@@ -355,7 +355,7 @@ export default function Services() {
                     <span>{t('cosmic_launch.infrastructure.items.security')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-sky-700" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-sky-700" aria-hidden="true"></span>
                     <span>{t('cosmic_launch.infrastructure.items.scaling')}</span>
                   </li>
                 </ul>
@@ -365,19 +365,19 @@ export default function Services() {
                 <h4 className="mb-4 text-lg font-semibold text-white">{t('cosmic_launch.support.title')}:</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-400" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-400" aria-hidden="true"></span>
                     <span>{t('cosmic_launch.support.items.monitoring')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-500" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-500" aria-hidden="true"></span>
                     <span>{t('cosmic_launch.support.items.optimization')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-600" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-600" aria-hidden="true"></span>
                     <span>{t('cosmic_launch.support.items.updates')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-700" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-700" aria-hidden="true"></span>
                     <span>{t('cosmic_launch.support.items.consultation')}</span>
                   </li>
                 </ul>

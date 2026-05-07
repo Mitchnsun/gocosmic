@@ -1,5 +1,9 @@
 {
   "services": {
+    "meta": {
+      "title": "Web- & Mobile-Entwicklungsleistungen | Annecy · Genf | Go Cosmic",
+      "description": "Umfassende Web- und Mobile-Entwicklungsleistungen mit Sitz in Annecy, tätig in Genf und Haute-Savoie. React, React Native, Next.js, KI-Integration."
+    },
     "title": "Unsere Kosmischen Dienstleistungen",
     "subtitle": "Umfassende technische Lösungen, um Ihre Projekte in die Stratosphäre zu katapultieren",
     "stellar_development": {

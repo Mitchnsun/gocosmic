@@ -1,5 +1,9 @@
 {
   "services": {
+    "meta": {
+      "title": "Servicios de Desarrollo Web y Móvil | Annecy · Ginebra | Go Cosmic",
+      "description": "Soluciones completas de desarrollo web y móvil con sede en Annecy, con proyectos en Ginebra y Alta Saboya. React, React Native, Next.js, integración IA."
+    },
     "title": "Nuestros Servicios Cósmicos",
     "subtitle": "Soluciones técnicas integrales para impulsar tus proyectos a la estratosfera",
     "stellar_development": {

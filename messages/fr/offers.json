@@ -1,5 +1,9 @@
 {
   "offers": {
+    "meta": {
+      "title": "Nos Offres | Développement Web & Mobile | Annecy · Genève | Go Cosmic",
+      "description": "Offres de développement web et mobile adaptées aux entreprises d'Annecy, Genève et Haute-Savoie. Choisissez votre formule idéale."
+    },
     "title": "Nos Offres Cosmiques",
     "subtitle": "Choisissez la solution parfaite adaptée aux besoins de votre projet",
     "solo_developer": {
