@@ -4,6 +4,7 @@ import { getTranslations } from 'next-intl/server';
 import { vi } from 'vitest';
 
 import LocaleLayout, { generateMetadata } from '@/app/[locale]/layout';
+import WebsiteSeo from '@/components/JsonLd/WebsiteSeo';
 import { routing } from '@/i18n/routing';
 
 // Mock Next.js modules
@@ -205,7 +206,7 @@ describe('LocaleLayout', () => {
       expect(provider.props.children).toBeDefined();
       expect(Array.isArray(provider.props.children)).toBe(true);
       expect(provider.props.children).toHaveLength(5); // Header, content div, Footer, WebsiteSeo, Analytics
-      expect(provider.props.children[3].type).toBeTruthy();
+      expect(provider.props.children[3].type).toBe(WebsiteSeo);
     });
 
     it('should validate routing configuration', () => {

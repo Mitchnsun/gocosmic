@@ -3,6 +3,10 @@
 import { JsonLdScript } from 'next-seo';
 
 export default function WebsiteSeo() {
+  if (process.env.NEXT_PUBLIC_ENABLE_SITE_SEARCH !== 'true') {
+    return null;
+  }
+
   return (
     <JsonLdScript
       scriptKey="website-sitelinks-searchbox"
