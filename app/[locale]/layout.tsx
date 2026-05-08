@@ -43,6 +43,8 @@ export default async function LocaleLayout({
     notFound();
   }
 
+  const isSiteSearchEnabled = process.env.NEXT_PUBLIC_ENABLE_SITE_SEARCH?.toLowerCase() === 'true';
+
   return (
     <html lang={locale || 'en'}>
       <body className={`${poppins.className} bg-slate-950`}>
@@ -50,7 +52,7 @@ export default async function LocaleLayout({
           <Header />
           <div className="mt-16">{children}</div>
           <Footer />
-          <WebsiteSeo isSearchEnabled={process.env.NEXT_PUBLIC_ENABLE_SITE_SEARCH === 'true'} />
+          <WebsiteSeo isSearchEnabled={isSiteSearchEnabled} />
           <Analytics />
         </NextIntlClientProvider>
       </body>

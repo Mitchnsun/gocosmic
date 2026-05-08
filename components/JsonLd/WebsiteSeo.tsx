@@ -1,5 +1,7 @@
 import { JsonLdScript } from 'next-seo';
 
+import { SITE_URL } from '@/i18n/canonical';
+
 type WebsiteSeoProps = {
   isSearchEnabled: boolean;
 };
@@ -15,10 +17,10 @@ export default function WebsiteSeo({ isSearchEnabled }: WebsiteSeoProps) {
       data={{
         '@context': 'https://schema.org',
         '@type': 'WebSite',
-        url: 'https://www.gocosmic.dev',
+        url: SITE_URL,
         potentialAction: {
           '@type': 'SearchAction',
-          target: 'https://www.gocosmic.dev/search?q={search_term_string}',
+          target: `${SITE_URL}/search?q={search_term_string}`,
           'query-input': 'required name=search_term_string',
         },
       }}
