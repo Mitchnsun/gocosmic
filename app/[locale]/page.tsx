@@ -49,6 +49,16 @@ export default function Home() {
         </div>
       </div>
 
+      <section className="m-auto max-w-7xl px-4 py-8 text-center">
+        <h2 className="text-2xl font-bold">{t('zone.title')}</h2>
+        <p className="mt-2 text-gray-400">{t('zone.description')}</p>
+        <ul className="mt-4 flex justify-center gap-6 text-blue-300">
+          <li>📍 Annecy</li>
+          <li>📍 Genève</li>
+          <li>📍 Haute-Savoie</li>
+        </ul>
+      </section>
+
       <div className="m-auto flex max-w-7xl flex-col items-center gap-2 rounded-lg bg-slate-800 px-4 py-12">
         <h3 className="py-2 text-center text-xl font-bold sm:text-3xl">{t('cta.title')}</h3>
         <p className="text-center font-light text-gray-400">{t('cta.description')}</p>

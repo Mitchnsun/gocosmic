@@ -112,7 +112,10 @@ export default function About() {
                   </li>
                 </ul>
 
-                <p>{t('developer.bio')}</p>
+                <p className="text-lg font-medium text-blue-300">{t('mission.conclusion')}</p>
+                <div className="mt-4 rounded border border-blue-700 bg-slate-900 p-4 text-sm text-blue-300">
+                  {t('mission.location')}
+                </div>
 
                 <div className="mt-6 border-t border-gray-700 pt-4">
                   <a

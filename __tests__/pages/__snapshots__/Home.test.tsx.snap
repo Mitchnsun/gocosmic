@@ -199,6 +199,33 @@ exports[`Home Page > should render the home page correctly 1`] = `
         </p>
       </div>
     </div>
+    <section
+      class="m-auto max-w-7xl px-4 py-8 text-center"
+    >
+      <h2
+        class="text-2xl font-bold"
+      >
+        Our service area
+      </h2>
+      <p
+        class="mt-2 text-gray-400"
+      >
+        Available in Annecy, Geneva, and Haute-Savoie.
+      </p>
+      <ul
+        class="mt-4 flex justify-center gap-6 text-blue-300"
+      >
+        <li>
+          📍 Annecy
+        </li>
+        <li>
+          📍 Genève
+        </li>
+        <li>
+          📍 Haute-Savoie
+        </li>
+      </ul>
+    </section>
     <div
       class="m-auto flex max-w-7xl flex-col items-center gap-2 rounded-lg bg-slate-800 px-4 py-12"
     >

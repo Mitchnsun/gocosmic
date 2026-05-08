@@ -29,6 +29,10 @@
         "title": "Cosmic Launch"
       },
       "title": "Our Cosmic Services"
+    },
+    "zone": {
+      "title": "Our service area",
+      "description": "Available in Annecy, Geneva, and Haute-Savoie."
     }
   }
 }

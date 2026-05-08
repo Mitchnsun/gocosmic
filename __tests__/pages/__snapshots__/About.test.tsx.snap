@@ -130,6 +130,11 @@ exports[`About Page > should render the about page correctly 1`] = `
             >
               Our mission: to propel your projects to new technological horizons with creativity, innovation, and technical excellence.
             </p>
+            <div
+              class="mt-4 rounded border border-blue-700 bg-slate-900 p-4 text-sm text-blue-300"
+            >
+              Based in Annecy, we work across Geneva and Haute-Savoie — on-site or remotely.
+            </div>
           </div>
         </div>
       </section>

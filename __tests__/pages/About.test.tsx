@@ -17,8 +17,11 @@ vi.mock('next-intl/server', () => ({
 
 describe('About Page', () => {
   it('should render the about page correctly', () => {
-    const { container } = render(<About />);
+    const { container, getByText } = render(<About />);
 
+    expect(
+      getByText(/based in annecy, we work across geneva and haute-savoie — on-site or remotely/i)
+    ).toBeInTheDocument();
     expect(container).toMatchSnapshot();
   });
 
