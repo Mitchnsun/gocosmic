@@ -22,6 +22,20 @@ describe('About Page', () => {
     expect(container).toMatchSnapshot();
   });
 
+  it('should render person json-ld for matthieu comperat', () => {
+    const { container } = render(<About />);
+    const personJsonLdScript = container.querySelector('script#person-jsonld');
+
+    expect(personJsonLdScript).toBeInTheDocument();
+    expect(personJsonLdScript).toHaveAttribute('type', 'application/ld+json');
+
+    const parsedJsonLd = JSON.parse(personJsonLdScript?.textContent ?? '{}') as Record<string, unknown>;
+
+    expect(parsedJsonLd['@type']).toBe('Person');
+    expect(parsedJsonLd.name).toBe('Matthieu Compérat');
+    expect(parsedJsonLd.url).toBe('https://www.gocosmic.dev/fr/a-propos');
+  });
+
   describe('generateMetadata', () => {
     it('should generate metadata with correct title and description', async () => {
       const params = Promise.resolve({ locale: 'en' });
