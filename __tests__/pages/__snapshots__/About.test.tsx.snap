@@ -2,6 +2,12 @@
 
 exports[`About Page > should render the about page correctly 1`] = `
 <div>
+  <script
+    id="person-jsonld"
+    type="application/ld+json"
+  >
+    {"@context":"https://schema.org","@type":"Person","name":"Matthieu Compérat","url":"https://www.gocosmic.dev/en/about","jobTitle":"Freelance Web & Mobile Developer","sameAs":["https://www.linkedin.com/in/matthieucomperat/"],"worksFor":[{"@type":"Organization","name":"Go Cosmic","url":"https://www.gocosmic.dev"}],"address":{"@type":"PostalAddress","addressLocality":"Annecy","addressCountry":"FR"}}
+  </script>
   <div
     class="text-ghost relative pt-10"
   >
