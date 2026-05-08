@@ -4,6 +4,7 @@ import { getTranslations } from 'next-intl/server';
 import { vi } from 'vitest';
 
 import LocaleLayout, { generateMetadata } from '@/app/[locale]/layout';
+import WebsiteSeo from '@/components/JsonLd/WebsiteSeo';
 import { routing } from '@/i18n/routing';
 
 // Mock Next.js modules
@@ -34,6 +35,10 @@ vi.mock('@/components/Header', () => ({
 
 vi.mock('@/components/Footer', () => ({
   Footer: () => <footer data-testid="footer">Footer</footer>,
+}));
+
+vi.mock('@/components/JsonLd/WebsiteSeo', () => ({
+  default: () => <script data-testid="website-seo" />,
 }));
 
 const mockHasLocale = vi.mocked(hasLocale);
@@ -200,7 +205,8 @@ describe('LocaleLayout', () => {
       // Check that the structure contains Header, content wrapper, and Footer
       expect(provider.props.children).toBeDefined();
       expect(Array.isArray(provider.props.children)).toBe(true);
-      expect(provider.props.children).toHaveLength(4); // Header, content div, Footer
+      expect(provider.props.children).toHaveLength(5); // Header, content div, Footer, WebsiteSeo, Analytics
+      expect(provider.props.children[3].type).toBe(WebsiteSeo);
     });
 
     it('should validate routing configuration', () => {

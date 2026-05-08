@@ -4886,6 +4886,7 @@ __metadata:
     lint-staged: "npm:^16.1.5"
     next: "npm:16.2.4"
     next-intl: "npm:^4.11.0"
+    next-seo: "npm:7.2.0"
     postcss: "npm:^8.5.6"
     prettier: "npm:^3.6.2"
     prettier-plugin-tailwindcss: "npm:^0.6.14"
@@ -6357,6 +6358,16 @@ __metadata:
     typescript:
       optional: true
   checksum: 10c0/fe7b28948b66de2683f8a5888ae25e078b09627c8cc4e01a6f5cad7ec4dc53e678157202cedb441c00eb106b2fe19d4f77a52088164a6edc180ee27ada0c4773
+  languageName: node
+  linkType: hard
+
+"next-seo@npm:7.2.0":
+  version: 7.2.0
+  resolution: "next-seo@npm:7.2.0"
+  peerDependencies:
+    next: ">=13.4.0"
+    react: ">=18.2.0"
+  checksum: 10c0/0d747cc8e5503eeae4ed2ee375382d4c1fa541e84370b69404111f84d496b704f8b7d8c7b28057a2a7dae5bf17162afd317b38701b6a3cb80e2e6f5d0c983574
   languageName: node
   linkType: hard
 
