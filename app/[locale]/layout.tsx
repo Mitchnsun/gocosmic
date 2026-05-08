@@ -7,6 +7,7 @@ import { getTranslations } from 'next-intl/server';
 
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
+import WebsiteSeo from '@/components/JsonLd/WebsiteSeo';
 import { getCanonicalUrl } from '@/i18n/canonical';
 import { routing } from '@/i18n/routing';
 
@@ -49,6 +50,7 @@ export default async function LocaleLayout({
           <Header />
           <div className="mt-16">{children}</div>
           <Footer />
+          <WebsiteSeo />
           <Analytics />
         </NextIntlClientProvider>
       </body>
