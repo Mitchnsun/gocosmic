@@ -25,6 +25,7 @@
       "@/data/*": ["./data/*"],
       "@/design-system/*": ["./design-system/*"],
       "@/i18n/*": ["./i18n/*"],
+      "@/lib/*": ["./lib/*"],
       "@/tests/*": ["./__tests__/*"],
       "@/views/*": ["./views/*"]
     },

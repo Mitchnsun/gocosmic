@@ -8,8 +8,8 @@ import { getTranslations } from 'next-intl/server';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import WebsiteSeo from '@/components/JsonLd/WebsiteSeo';
-import { getCanonicalUrl } from '@/i18n/canonical';
 import { routing } from '@/i18n/routing';
+import { SITE_URL } from '@/lib/config';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -19,12 +19,18 @@ const poppins = Poppins({
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta' });
+  const languages = Object.fromEntries(routing.locales.map((localeCode) => [localeCode, `${SITE_URL}/${localeCode}/`]));
 
   return {
     title: t('title'),
     description: t('description'),
+    metadataBase: new URL(SITE_URL),
     alternates: {
-      canonical: getCanonicalUrl(locale, '/'),
+      canonical: `/${locale}/`,
+      languages: {
+        ...languages,
+        'x-default': `${SITE_URL}/${routing.defaultLocale}/`,
+      },
     },
   };
 }
