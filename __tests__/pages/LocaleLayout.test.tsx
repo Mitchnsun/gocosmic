@@ -64,7 +64,9 @@ describe('LocaleLayout', () => {
 
       const params = Promise.resolve({ locale: 'en' });
       const metadata = await generateMetadata({ params });
-      const expectedLanguages = Object.fromEntries(routing.locales.map((localeCode) => [localeCode, `${SITE_URL}/${localeCode}/`]));
+      const expectedLanguages = Object.fromEntries(
+        routing.locales.map((localeCode) => [localeCode, `${SITE_URL}/${localeCode}/`])
+      );
 
       expect(mockGetTranslations).toHaveBeenCalledWith({ locale: 'en', namespace: 'meta' });
       expect(mockT).toHaveBeenCalledWith('title');

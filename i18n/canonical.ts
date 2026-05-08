@@ -1,5 +1,6 @@
 import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/config';
+
 export { SITE_URL };
 
 export type Locale = (typeof routing.locales)[number];
