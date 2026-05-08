@@ -16,28 +16,16 @@ describe('WebsiteSeo', () => {
     vi.clearAllMocks();
   });
 
-  it('should not render JSON-LD when site search is disabled', () => {
-    const { container } = render(<WebsiteSeo isSearchEnabled={false} />);
-
-    expect(container.firstChild).toBeNull();
-    expect(jsonLdScriptMock).not.toHaveBeenCalled();
-  });
-
-  it('should render WebSite and SearchAction JSON-LD when site search is enabled', () => {
-    render(<WebsiteSeo isSearchEnabled />);
+  it('should render WebSite JSON-LD', () => {
+    render(<WebsiteSeo />);
 
     expect(screen.getByTestId('website-json-ld')).toBeInTheDocument();
     expect(jsonLdScriptMock).toHaveBeenCalledWith({
-      scriptKey: 'website-sitelinks-searchbox',
+      scriptKey: 'website-json-ld',
       data: {
         '@context': 'https://schema.org',
         '@type': 'WebSite',
         url: 'https://www.gocosmic.dev',
-        potentialAction: {
-          '@type': 'SearchAction',
-          target: 'https://www.gocosmic.dev/search?q={search_term_string}',
-          'query-input': 'required name=search_term_string',
-        },
       },
     });
   });

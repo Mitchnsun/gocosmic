@@ -207,7 +207,6 @@ describe('LocaleLayout', () => {
       expect(Array.isArray(provider.props.children)).toBe(true);
       expect(provider.props.children).toHaveLength(5); // Header, content div, Footer, WebsiteSeo, Analytics
       expect(provider.props.children[3].type).toBe(WebsiteSeo);
-      expect(provider.props.children[3].props.isSearchEnabled).toBe(false);
     });
 
     it('should validate routing configuration', () => {
