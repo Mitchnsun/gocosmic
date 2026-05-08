@@ -1,9 +1,11 @@
-'use client';
-
 import { JsonLdScript } from 'next-seo';
 
-export default function WebsiteSeo() {
-  if (process.env.NEXT_PUBLIC_ENABLE_SITE_SEARCH !== 'true') {
+type WebsiteSeoProps = {
+  isSearchEnabled: boolean;
+};
+
+export default function WebsiteSeo({ isSearchEnabled }: WebsiteSeoProps) {
+  if (!isSearchEnabled) {
     return null;
   }
 

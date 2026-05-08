@@ -50,7 +50,7 @@ export default async function LocaleLayout({
           <Header />
           <div className="mt-16">{children}</div>
           <Footer />
-          <WebsiteSeo />
+          <WebsiteSeo isSearchEnabled={process.env.NEXT_PUBLIC_ENABLE_SITE_SEARCH === 'true'} />
           <Analytics />
         </NextIntlClientProvider>
       </body>

@@ -12,26 +12,19 @@ vi.mock('next-seo', () => ({
 }));
 
 describe('WebsiteSeo', () => {
-  const originalEnableSiteSearch = process.env.NEXT_PUBLIC_ENABLE_SITE_SEARCH;
-
   afterEach(() => {
-    process.env.NEXT_PUBLIC_ENABLE_SITE_SEARCH = originalEnableSiteSearch;
     vi.clearAllMocks();
   });
 
   it('should not render JSON-LD when site search is disabled', () => {
-    process.env.NEXT_PUBLIC_ENABLE_SITE_SEARCH = 'false';
-
-    const { container } = render(<WebsiteSeo />);
+    const { container } = render(<WebsiteSeo isSearchEnabled={false} />);
 
     expect(container.firstChild).toBeNull();
     expect(jsonLdScriptMock).not.toHaveBeenCalled();
   });
 
   it('should render WebSite and SearchAction JSON-LD when site search is enabled', () => {
-    process.env.NEXT_PUBLIC_ENABLE_SITE_SEARCH = 'true';
-
-    render(<WebsiteSeo />);
+    render(<WebsiteSeo isSearchEnabled />);
 
     expect(screen.getByTestId('website-json-ld')).toBeInTheDocument();
     expect(jsonLdScriptMock).toHaveBeenCalledWith({
