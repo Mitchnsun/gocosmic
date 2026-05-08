@@ -16,11 +16,25 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'pscSupersprint' });
 
+  const title = t('title');
+  const description = t('subtitle');
+
   return {
-    title: t('title'),
-    description: t('subtitle'),
+    title,
+    description,
     alternates: {
       canonical: getCanonicalUrl(locale, '/projects/psc-supersprint'),
+    },
+    openGraph: {
+      title,
+      description,
+      images: ['/og-default.jpg'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['/twitter-card.jpg'],
     },
   };
 }

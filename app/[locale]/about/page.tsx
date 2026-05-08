@@ -10,11 +10,25 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const messages = await getMessages();
   const t = createTranslator({ messages, locale });
+  const title = t('meta.title');
+  const description = t('meta.description');
+
   return {
-    title: t('meta.title'),
-    description: t('meta.description'),
+    title,
+    description,
     alternates: {
       canonical: getCanonicalUrl(locale, '/about'),
+    },
+    openGraph: {
+      title,
+      description,
+      images: ['/og-default.jpg'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['/twitter-card.jpg'],
     },
   };
 }

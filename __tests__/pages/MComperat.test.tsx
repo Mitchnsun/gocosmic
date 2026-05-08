@@ -42,6 +42,17 @@ describe('MComperat Page', () => {
       alternates: {
         canonical: 'https://www.gocosmic.dev/en/projects/mcomperat',
       },
+      openGraph: {
+        title: 'mcomper.at',
+        description: 'Modern, responsive web CV of Matthieu Compérat',
+        images: ['/og-default.jpg'],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: 'mcomper.at',
+        description: 'Modern, responsive web CV of Matthieu Compérat',
+        images: ['/twitter-card.jpg'],
+      },
     });
   });
 });

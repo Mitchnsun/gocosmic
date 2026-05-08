@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Locale layout metadata now publishes hreflang alternates for all supported locales (`en`, `fr`, `es`, `de`, `it`) plus `x-default`
 - Added `LocalBusinessSeo` component to publish `ProfessionalService` JSON-LD for Go Cosmic
 - Injected local business JSON-LD in `app/[locale]/layout.tsx` so it is rendered site-wide
+- Open Graph (`og:title`, `og:description`, `og:image`) and Twitter Card (`twitter:card`, `twitter:title`, `twitter:description`, `twitter:image`) meta tags via `generateMetadata` across all pages (layout, about, services, offers, journey, contact, projects, and all project sub-pages)
+- Default OG image `/og-default.jpg` and Twitter card image `/twitter-card.jpg` used as fallback images site-wide
+- `summary_large_image` Twitter card type on all pages for rich social sharing previews
 
 ### Changed
 

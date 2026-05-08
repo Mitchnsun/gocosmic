@@ -42,6 +42,17 @@ describe('ChoeurDesPaysduMontBlanc Page', () => {
       alternates: {
         canonical: 'https://www.gocosmic.dev/en/projects/choeurdespaysdumontblanc',
       },
+      openGraph: {
+        title: 'Chœur des Pays du Mont Blanc',
+        description: 'Website for the amateur choir based in Haute-Savoie, France',
+        images: ['/og-default.jpg'],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: 'Chœur des Pays du Mont Blanc',
+        description: 'Website for the amateur choir based in Haute-Savoie, France',
+        images: ['/twitter-card.jpg'],
+      },
     });
   });
 });

@@ -55,6 +55,19 @@ describe('Projects Page', () => {
         alternates: {
           canonical: 'https://www.gocosmic.dev/en/projects',
         },
+        openGraph: {
+          title: 'Our Projects | Go Cosmic — Annecy · Geneva',
+          description:
+            'Explore Go Cosmic projects — web and mobile apps crafted in Annecy, serving clients in Geneva and Haute-Savoie.',
+          images: ['/og-default.jpg'],
+        },
+        twitter: {
+          card: 'summary_large_image',
+          title: 'Our Projects | Go Cosmic — Annecy · Geneva',
+          description:
+            'Explore Go Cosmic projects — web and mobile apps crafted in Annecy, serving clients in Geneva and Haute-Savoie.',
+          images: ['/twitter-card.jpg'],
+        },
       });
     });
   });

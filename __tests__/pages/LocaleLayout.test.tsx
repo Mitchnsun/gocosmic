@@ -88,6 +88,19 @@ describe('LocaleLayout', () => {
             'x-default': `${SITE_URL}/en/`,
           },
         },
+        openGraph: {
+          title: 'Web & Mobile Development | Annecy · Geneva | Go Cosmic',
+          description:
+            'Web and mobile app development agency based in Annecy, serving Geneva and Haute-Savoie. React, React Native, Next.js.',
+          images: ['/og-default.jpg'],
+        },
+        twitter: {
+          card: 'summary_large_image',
+          title: 'Web & Mobile Development | Annecy · Geneva | Go Cosmic',
+          description:
+            'Web and mobile app development agency based in Annecy, serving Geneva and Haute-Savoie. React, React Native, Next.js.',
+          images: ['/twitter-card.jpg'],
+        },
       });
     });
 
