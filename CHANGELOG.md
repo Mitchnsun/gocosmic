@@ -10,6 +10,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Added
 
 - Website structured data to publish a `WebSite` JSON-LD block
+- Person JSON-LD structured data on the About page for Matthieu Compérat via `next-seo`
+- Dedicated `components/JsonLd/PersonSeo.tsx` component injected in `app/[locale]/about/page.tsx`
+- About page test assertions and snapshot coverage for rendered `person-jsonld` script
+
+### Changed
+
+- Person schema URL now resolves from locale-aware canonical routing (`getCanonicalUrl(locale, '/about')`)
+- Person schema job title is localized for all supported locales (en, fr, es, de, it)
 
 ## [1.4.2] - 2026-05-06
 
