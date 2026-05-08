@@ -199,14 +199,35 @@ exports[`Home Page > should render the home page correctly 1`] = `
         </p>
       </div>
     </div>
+    <div
+      class="m-auto flex max-w-7xl flex-col items-center gap-2 rounded-lg bg-slate-800 px-4 py-12"
+    >
+      <h3
+        class="py-2 text-center text-xl font-bold sm:text-3xl"
+      >
+        Ready to Go Cosmic?
+      </h3>
+      <p
+        class="text-center font-light text-gray-400"
+      >
+        Let's discuss how we can bring your mobile or web app vision to life, creating something truly out of this world.
+      </p>
+      <a
+        aria-label="View our offers"
+        class="inline-flex items-center justify-center cursor-pointer rounded-full transition-colors disabled:pointer-events-none disabled:opacity-50 bg-jungle text-white hover:bg-jungle/90 font-normal text-base px-6 py-2 mt-2 w-fit gap-2"
+        href="/offers"
+      >
+        View our offers
+      </a>
+    </div>
     <section
       class="m-auto max-w-7xl px-4 py-8 text-center"
     >
-      <h2
+      <h3
         class="text-2xl font-bold"
       >
         Our service area
-      </h2>
+      </h3>
       <p
         class="mt-2 text-gray-400"
       >
@@ -229,27 +250,6 @@ exports[`Home Page > should render the home page correctly 1`] = `
         </li>
       </ul>
     </section>
-    <div
-      class="m-auto flex max-w-7xl flex-col items-center gap-2 rounded-lg bg-slate-800 px-4 py-12"
-    >
-      <h3
-        class="py-2 text-center text-xl font-bold sm:text-3xl"
-      >
-        Ready to Go Cosmic?
-      </h3>
-      <p
-        class="text-center font-light text-gray-400"
-      >
-        Let's discuss how we can bring your mobile or web app vision to life, creating something truly out of this world.
-      </p>
-      <a
-        aria-label="View our offers"
-        class="inline-flex items-center justify-center cursor-pointer rounded-full transition-colors disabled:pointer-events-none disabled:opacity-50 bg-jungle text-white hover:bg-jungle/90 font-normal text-base px-6 py-2 mt-2 w-fit gap-2"
-        href="/offers"
-      >
-        View our offers
-      </a>
-    </div>
   </div>
 </div>
 `;
