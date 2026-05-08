@@ -242,6 +242,32 @@ messages/
 - Page-specific namespaces are loaded on-demand based on the current route
 - This approach reduces bundle size and improves performance
 
+#### Client Components and useTranslations
+
+`i18n/request.ts` uses per-route lazy-loading: only the namespaces required for the current route are loaded. On client-side navigation, Next.js preserves the layout and does **not** re-run `getRequestConfig` — so the global `NextIntlClientProvider` in `app/[locale]/layout.tsx` retains only the messages from the initial page request.
+
+**Rule**: Any page that renders a `'use client'` component calling `useTranslations` for a page-specific namespace **must** add its own `NextIntlClientProvider` in the page server component:
+
+```tsx
+// app/[locale]/your-page/page.tsx
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getMessages } from 'next-intl/server';
+import { YourClientComponent } from '@/components/YourClientComponent';
+
+export default async function YourPage() {
+  const locale = await getLocale();
+  const messages = await getMessages();
+
+  return (
+    <NextIntlClientProvider locale={locale} messages={messages}>
+      <YourClientComponent />
+    </NextIntlClientProvider>
+  );
+}
+```
+
+The client component calls `useTranslations('namespace')` normally — no translation props needed. Namespaces shared across all pages (`common`, `navigation`, `footer`) are always available and do not require a per-page provider.
+
 #### Adding New Translations
 
 1. **Identify the appropriate namespace**: Determine which namespace file should contain your new translation keys

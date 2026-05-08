@@ -8,8 +8,11 @@ import { fireEvent, render, screen } from '../test-utils';
 // Mock next-intl/server
 vi.mock('next-intl/server', async () => {
   const actual = await vi.importActual('next-intl/server');
+  const { default: pricingMessages } = await import('../../messages/en/pricing.json');
   return {
     ...actual,
+    getLocale: vi.fn().mockResolvedValue('en'),
+    getMessages: vi.fn().mockResolvedValue(pricingMessages),
     getTranslations: vi.fn().mockResolvedValue((key: string) => {
       if (key === 'meta.title') return 'Pricing Simulator - Go Cosmic';
       if (key === 'meta.description')
@@ -22,8 +25,8 @@ vi.mock('next-intl/server', async () => {
 });
 
 describe('Pricing Page', () => {
-  it('should render the page with title and subtitle', () => {
-    render(<Pricing />);
+  it('should render the page with title and subtitle', async () => {
+    render(await Pricing());
     expect(screen.getByRole('heading', { level: 1, name: /pricing simulator/i })).toBeInTheDocument();
     expect(screen.getByText(/answer a few questions to get an estimate/i)).toBeInTheDocument();
   });

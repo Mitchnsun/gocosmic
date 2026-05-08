@@ -7,6 +7,7 @@ import { render } from '../test-utils';
 
 // Mock next-intl/server
 vi.mock('next-intl/server', () => ({
+  getLocale: vi.fn().mockResolvedValue('en'),
   getMessages: vi.fn().mockResolvedValue({
     meta: {
       title: 'Cosmic Journey - Go Cosmic | Annecy · Geneva',
@@ -17,6 +18,15 @@ vi.mock('next-intl/server', () => ({
       title: 'Welcome to your Cosmic Journey',
       subtitle: 'You are now traveling through the stars',
     },
+  }),
+  getTranslations: vi.fn().mockResolvedValue((key: string) => {
+    const map: Record<string, string> = {
+      'meta.title': 'Cosmic Journey - Go Cosmic | Annecy · Geneva',
+      'meta.description':
+        'Embark on an immersive 3D cosmic journey through the stars. Experience the unique approach of Go Cosmic, your web development partner in Annecy and Geneva.',
+    };
+    // eslint-disable-next-line security/detect-object-injection
+    return map[key] ?? key;
   }),
 }));
 
@@ -50,8 +60,8 @@ describe('Journey Page', () => {
     vi.clearAllMocks();
   });
 
-  it('should display loading message with proper accessibility', () => {
-    render(<JourneyPage />);
+  it('should display loading message with proper accessibility', async () => {
+    render(await JourneyPage());
 
     // Verify status role for loading indicator
     const statusElement = screen.getByRole('status');
