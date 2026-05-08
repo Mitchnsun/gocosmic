@@ -33,7 +33,7 @@ describe('About Page', () => {
 
     expect(parsedJsonLd['@type']).toBe('Person');
     expect(parsedJsonLd.name).toBe('Matthieu Compérat');
-    expect(parsedJsonLd.url).toBe('https://www.gocosmic.dev/fr/a-propos');
+    expect(parsedJsonLd.url).toBe('https://www.gocosmic.dev/en/about');
   });
 
   describe('generateMetadata', () => {

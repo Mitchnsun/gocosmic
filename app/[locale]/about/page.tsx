@@ -24,6 +24,7 @@ export default function About() {
 
   return (
     <>
+      {/* Person JSON-LD structured data */}
       <PersonSeo />
       <div className="text-ghost relative pt-10">
         <main className="m-auto flex max-w-7xl flex-col items-center gap-10 px-4 pb-4">
