@@ -53,9 +53,9 @@ export default function Home() {
         <h2 className="text-2xl font-bold">{t('zone.title')}</h2>
         <p className="mt-2 text-gray-400">{t('zone.description')}</p>
         <ul className="mt-4 flex justify-center gap-6 text-blue-300">
-          <li>📍 Annecy</li>
-          <li>📍 Genève</li>
-          <li>📍 Haute-Savoie</li>
+          <li>📍 {t('zone.locations.annecy')}</li>
+          <li>📍 {t('zone.locations.geneva')}</li>
+          <li>📍 {t('zone.locations.haute_savoie')}</li>
         </ul>
       </section>
 

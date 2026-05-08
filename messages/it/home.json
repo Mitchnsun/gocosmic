@@ -32,7 +32,12 @@
     },
     "zone": {
       "title": "Area di intervento",
-      "description": "Disponibile ad Annecy, Ginevra e in Alta Savoia."
+      "description": "Disponibile ad Annecy, Ginevra e in Alta Savoia.",
+      "locations": {
+        "annecy": "Annecy",
+        "geneva": "Ginevra",
+        "haute_savoie": "Alta Savoia"
+      }
     }
   }
 }

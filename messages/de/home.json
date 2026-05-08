@@ -32,7 +32,12 @@
     },
     "zone": {
       "title": "Einsatzgebiet",
-      "description": "Verfügbar in Annecy, Genf und Haute-Savoie."
+      "description": "Verfügbar in Annecy, Genf und Haute-Savoie.",
+      "locations": {
+        "annecy": "Annecy",
+        "geneva": "Genf",
+        "haute_savoie": "Haute-Savoie"
+      }
     }
   }
 }

@@ -216,13 +216,16 @@ exports[`Home Page > should render the home page correctly 1`] = `
         class="mt-4 flex justify-center gap-6 text-blue-300"
       >
         <li>
-          📍 Annecy
+          📍 
+          Annecy
         </li>
         <li>
-          📍 Genève
+          📍 
+          Geneva
         </li>
         <li>
-          📍 Haute-Savoie
+          📍 
+          Haute-Savoie
         </li>
       </ul>
     </section>

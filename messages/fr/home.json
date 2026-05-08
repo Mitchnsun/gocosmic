@@ -32,7 +32,12 @@
     },
     "zone": {
       "title": "Zone d'intervention",
-      "description": "Disponible à Annecy, Genève et en Haute-Savoie."
+      "description": "Disponible à Annecy, Genève et en Haute-Savoie.",
+      "locations": {
+        "annecy": "Annecy",
+        "geneva": "Genève",
+        "haute_savoie": "Haute-Savoie"
+      }
     }
   }
 }
