@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Home: new localized "service area" section with locale-specific location labels
 - About: new localized mission location callout under mission conclusion
 - Services: new localized geo-availability text in CTA section
+- Dynamic `robots.txt` metadata route via `app/robots.ts` allowing all crawlers (`User-agent: *`, `Allow: /`)
+- Sitemap declaration in robots metadata pointing to `https://www.gocosmic.dev/sitemap.xml`
+- Unit coverage for robots metadata generation in `__tests__/pages/Robots.test.ts`
 
 ## [1.4.3] - 2026-05-08
 
