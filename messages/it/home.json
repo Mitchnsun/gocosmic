@@ -29,6 +29,15 @@
         "title": "Lancio Cosmico"
       },
       "title": "I Nostri Servizi Cosmici"
+    },
+    "zone": {
+      "title": "Area di intervento",
+      "description": "Disponibile ad Annecy, Ginevra e in Alta Savoia.",
+      "locations": {
+        "annecy": "Annecy",
+        "geneva": "Ginevra",
+        "haute_savoie": "Alta Savoia"
+      }
     }
   }
 }

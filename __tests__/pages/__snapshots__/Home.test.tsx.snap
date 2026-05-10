@@ -220,6 +220,36 @@ exports[`Home Page > should render the home page correctly 1`] = `
         View our offers
       </a>
     </div>
+    <section
+      class="m-auto max-w-7xl px-4 py-8 text-center"
+    >
+      <h3
+        class="text-2xl font-bold"
+      >
+        Our service area
+      </h3>
+      <p
+        class="mt-2 text-gray-400"
+      >
+        Available in Annecy, Geneva, and Haute-Savoie.
+      </p>
+      <ul
+        class="mt-4 flex justify-center gap-6 text-blue-300"
+      >
+        <li>
+          📍 
+          Annecy
+        </li>
+        <li>
+          📍 
+          Geneva
+        </li>
+        <li>
+          📍 
+          Haute-Savoie
+        </li>
+      </ul>
+    </section>
   </div>
 </div>
 `;

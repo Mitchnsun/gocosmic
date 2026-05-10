@@ -29,6 +29,15 @@
         "title": "Lanzamiento Cósmico"
       },
       "title": "Nuestros Servicios Cósmicos"
+    },
+    "zone": {
+      "title": "Zona de intervención",
+      "description": "Disponible en Annecy, Ginebra y Alta Saboya.",
+      "locations": {
+        "annecy": "Annecy",
+        "geneva": "Ginebra",
+        "haute_savoie": "Alta Saboya"
+      }
     }
   }
 }

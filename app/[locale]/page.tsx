@@ -48,7 +48,6 @@ export default function Home() {
           <p className="text-center font-light text-gray-400">{t('services.launch.description')}</p>
         </div>
       </div>
-
       <div className="m-auto flex max-w-7xl flex-col items-center gap-2 rounded-lg bg-slate-800 px-4 py-12">
         <h3 className="py-2 text-center text-xl font-bold sm:text-3xl">{t('cta.title')}</h3>
         <p className="text-center font-light text-gray-400">{t('cta.description')}</p>
@@ -59,6 +58,16 @@ export default function Home() {
           {t('cta.viewOffers')}
         </Link>
       </div>
+
+      <section className="m-auto max-w-7xl px-4 py-8 text-center">
+        <h3 className="text-2xl font-bold">{t('zone.title')}</h3>
+        <p className="mt-2 text-gray-400">{t('zone.description')}</p>
+        <ul className="mt-4 flex justify-center gap-6 text-blue-300">
+          <li>📍 {t('zone.locations.annecy')}</li>
+          <li>📍 {t('zone.locations.geneva')}</li>
+          <li>📍 {t('zone.locations.haute_savoie')}</li>
+        </ul>
+      </section>
     </div>
   );
 }

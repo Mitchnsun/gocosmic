@@ -37,6 +37,7 @@ describe('Services Page', () => {
     expect(getByRole('heading', { name: /ready to launch your next cosmic project/i })).toBeInTheDocument();
     expect(getByText(/start your cosmic journey/i)).toBeInTheDocument();
     expect(getByText(/get a custom quote/i)).toBeInTheDocument();
+    expect(getByText(/available in annecy, geneva, haute-savoie and remotely/i)).toBeInTheDocument();
 
     // Check some key technical content (using getAllByText since there are multiple occurrences)
     expect(getByText(/react 19, next\.js 15, typescript/i)).toBeInTheDocument();

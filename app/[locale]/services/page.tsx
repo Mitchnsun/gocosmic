@@ -409,6 +409,7 @@ export default function Services() {
               </Button>
             </div>
             <p className="text-center text-sm text-gray-500">{t('cta.contact_info')}</p>
+            <p className="text-center text-sm text-gray-500">{t('cta.geo_availability')}</p>
           </div>
         </section>
       </main>
