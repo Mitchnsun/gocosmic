@@ -1,11 +1,13 @@
 import { type MetadataRoute } from 'next';
 
+const SITE_URL = 'https://www.gocosmic.dev';
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://www.gocosmic.dev/sitemap.xml',
+    sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }
