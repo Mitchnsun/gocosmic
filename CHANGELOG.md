@@ -5,9 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.4.5] - 2026-05-12
+
+### Added
+
+- Locale layout metadata now publishes hreflang alternates for all supported locales (`en`, `fr`, `es`, `de`, `it`) plus `x-default`
+
+### Changed
+
+- Main locale `generateMetadata` now sets `metadataBase` and locale-root canonical alternates in `app/[locale]/layout.tsx`
+- Introduced shared `SITE_URL` config in `lib/config.ts` and reused it in canonical metadata helpers
+
 ## [1.4.4] - 2026-05-10
 
 ### Added
+
 - Added localized geo-content on Home, About, and Services pages for all 5 locales (EN, FR, ES, DE, IT)
 - Home: new localized "service area" section with locale-specific location labels
 - About: new localized mission location callout under mission conclusion

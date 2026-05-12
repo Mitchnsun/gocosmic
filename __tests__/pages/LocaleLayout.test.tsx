@@ -6,6 +6,7 @@ import { vi } from 'vitest';
 import LocaleLayout, { generateMetadata } from '@/app/[locale]/layout';
 import WebsiteSeo from '@/components/JsonLd/WebsiteSeo';
 import { routing } from '@/i18n/routing';
+import { SITE_URL } from '@/lib/config';
 
 // Mock Next.js modules
 vi.mock('next/font/google', () => ({
@@ -63,6 +64,9 @@ describe('LocaleLayout', () => {
 
       const params = Promise.resolve({ locale: 'en' });
       const metadata = await generateMetadata({ params });
+      const expectedLanguages = Object.fromEntries(
+        routing.locales.map((localeCode) => [localeCode, `${SITE_URL}/${localeCode}/`])
+      );
 
       expect(mockGetTranslations).toHaveBeenCalledWith({ locale: 'en', namespace: 'meta' });
       expect(mockT).toHaveBeenCalledWith('title');
@@ -71,8 +75,13 @@ describe('LocaleLayout', () => {
         title: 'Web & Mobile Development | Annecy · Geneva | Go Cosmic',
         description:
           'Web and mobile app development agency based in Annecy, serving Geneva and Haute-Savoie. React, React Native, Next.js.',
+        metadataBase: new URL(SITE_URL),
         alternates: {
-          canonical: 'https://www.gocosmic.dev/en/',
+          canonical: '/en/',
+          languages: {
+            ...expectedLanguages,
+            'x-default': `${SITE_URL}/en/`,
+          },
         },
       });
     });

@@ -1,6 +1,7 @@
 import { routing } from '@/i18n/routing';
+import { SITE_URL } from '@/lib/config';
 
-export const SITE_URL = 'https://www.gocosmic.dev';
+export { SITE_URL };
 
 export type Locale = (typeof routing.locales)[number];
 type PathKey = keyof typeof routing.pathnames;
