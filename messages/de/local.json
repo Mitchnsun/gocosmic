@@ -1,0 +1,19 @@
+{
+  "local": {
+    "hero": {
+      "title": "Web- & Mobile-Entwickler in Annecy und Genf",
+      "description": "Matthieu Compérat, freiberuflicher Entwickler mit Sitz in Annecy. Ich entwickle moderne Web- und Mobile-Apps für Unternehmen in Annecy, Genf und Haute-Savoie."
+    },
+    "services": {
+      "title": "Web- und Mobile-Entwicklung für lokale Unternehmen"
+    },
+    "zone": {
+      "title": "Einsatzgebiet",
+      "remote": "Remote-Zusammenarbeit in ganz Frankreich und der Schweiz möglich"
+    },
+    "projects": {
+      "title": "Aktuelle Projekte aus Annecy"
+    },
+    "cta": "Kontakt zu Ihrem lokalen Webentwickler"
+  }
+}

@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 
 const ColumnHeading = ({ children }: { children: React.ReactNode }) => (
-  <h4 className="mb-2 flex items-center gap-2 text-xs font-semibold tracking-widest text-white uppercase">
+  <h4 className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-white">
     <span className="text-aerospace text-lg drop-shadow-[0_0_6px_rgba(249,115,22,0.8)]" aria-hidden="true">
       •
     </span>
@@ -55,6 +55,11 @@ const Footer = () => {
             <li>
               <Link className="transition-colors hover:text-white" href="/contact">
                 {t('link_contact')}
+              </Link>
+            </li>
+            <li>
+              <Link href="/local" className="transition-colors hover:text-white">
+                {t('local_page')}
               </Link>
             </li>
           </ul>

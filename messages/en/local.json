@@ -1,0 +1,19 @@
+{
+  "local": {
+    "hero": {
+      "title": "Web & Mobile Developer in Annecy and Geneva",
+      "description": "Matthieu Compérat, freelance developer based in Annecy. I design and build modern web and mobile apps for companies in Annecy, Geneva, and Haute-Savoie."
+    },
+    "services": {
+      "title": "Web and mobile development services for local businesses"
+    },
+    "zone": {
+      "title": "Coverage area",
+      "remote": "Remote collaboration available everywhere in France and Switzerland"
+    },
+    "projects": {
+      "title": "Recent projects delivered from Annecy"
+    },
+    "cta": "Contact your local web developer"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "local": {
+    "hero": {
+      "title": "Desarrollador Web y Móvil en Annecy y Ginebra",
+      "description": "Matthieu Compérat, desarrollador freelance con base en Annecy. Diseño y desarrollo aplicaciones web y móviles modernas para empresas de Annecy, Ginebra y Alta Saboya."
+    },
+    "services": {
+      "title": "Servicios de desarrollo web y móvil para empresas locales"
+    },
+    "zone": {
+      "title": "Zona de cobertura",
+      "remote": "Colaboración remota disponible en toda Francia y Suiza"
+    },
+    "projects": {
+      "title": "Proyectos recientes realizados desde Annecy"
+    },
+    "cta": "Contactar a tu desarrollador web local"
+  }
+}

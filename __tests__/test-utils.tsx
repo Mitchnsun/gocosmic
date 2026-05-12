@@ -9,6 +9,7 @@ import contact from '../messages/en/contact.json';
 import footer from '../messages/en/footer.json';
 import home from '../messages/en/home.json';
 import journey from '../messages/en/journey.json';
+import local from '../messages/en/local.json';
 import navigation from '../messages/en/navigation.json';
 import offers from '../messages/en/offers.json';
 import projects from '../messages/en/projects.json';
@@ -25,6 +26,7 @@ const messages = {
   ...services,
   ...offers,
   ...journey,
+  ...local,
   ...projects,
   ...pscSupersprint,
   ...contact,

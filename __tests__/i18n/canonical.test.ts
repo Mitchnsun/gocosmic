@@ -69,6 +69,16 @@ describe('getCanonicalUrl', () => {
     });
   });
 
+  describe('local seo page (localized pathnames)', () => {
+    it('resolves French localized pathname', () => {
+      expect(getCanonicalUrl('fr', '/local')).toBe(`${SITE_URL}/fr/developpeur-web-mobile-annecy-geneve`);
+    });
+
+    it('resolves German localized pathname', () => {
+      expect(getCanonicalUrl('de', '/local')).toBe(`${SITE_URL}/de/webentwickler-annecy-genf`);
+    });
+  });
+
   describe('project sub-pages', () => {
     it('resolves French daily-fortune pathname', () => {
       expect(getCanonicalUrl('fr', '/projects/daily-fortune')).toBe(`${SITE_URL}/fr/projets/daily-fortune`);

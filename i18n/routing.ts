@@ -92,6 +92,15 @@ export const routing = defineRouting({
       it: '/contatto',
     },
 
+    // Local SEO page
+    '/local': {
+      en: '/web-mobile-developer-annecy-geneva',
+      fr: '/developpeur-web-mobile-annecy-geneve',
+      es: '/desarrollador-web-movil-annecy-ginebra',
+      de: '/webentwickler-annecy-genf',
+      it: '/sviluppatore-web-mobile-annecy-ginevra',
+    },
+
     // Projects index page
     '/projects': {
       en: '/projects',

@@ -47,6 +47,14 @@ const getNamespacesForPath = (pathname: string): string[] => {
   ) {
     return ['journey'];
   } else if (
+    pathWithoutLocale.startsWith('/web-mobile-developer-annecy-geneva') ||
+    pathWithoutLocale.startsWith('/developpeur-web-mobile-annecy-geneve') ||
+    pathWithoutLocale.startsWith('/desarrollador-web-movil-annecy-ginebra') ||
+    pathWithoutLocale.startsWith('/webentwickler-annecy-genf') ||
+    pathWithoutLocale.startsWith('/sviluppatore-web-mobile-annecy-ginevra')
+  ) {
+    return ['local'];
+  } else if (
     pathWithoutLocale.startsWith('/projects/psc-supersprint') ||
     pathWithoutLocale.startsWith('/projets/psc-supersprint') ||
     pathWithoutLocale.startsWith('/proyectos/psc-supersprint') ||
