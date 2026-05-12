@@ -42,6 +42,17 @@ describe('DailyFortune Page', () => {
       alternates: {
         canonical: 'https://www.gocosmic.dev/en/projects/daily-fortune',
       },
+      openGraph: {
+        title: 'Daily Fortune',
+        description: 'Your daily dose of inspiration and cosmic wisdom',
+        images: ['/og-default-en.jpg'],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: 'Daily Fortune',
+        description: 'Your daily dose of inspiration and cosmic wisdom',
+        images: ['/twitter-card-en.jpg'],
+      },
     });
   });
 });

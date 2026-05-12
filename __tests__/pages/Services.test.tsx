@@ -57,6 +57,19 @@ describe('Services Page', () => {
         alternates: {
           canonical: 'https://www.gocosmic.dev/en/services',
         },
+        openGraph: {
+          title: 'Web & Mobile Development Services | Annecy · Geneva | Go Cosmic',
+          description:
+            'Comprehensive web and mobile development services based in Annecy, serving Geneva and Haute-Savoie. React, React Native, Next.js, AI integration.',
+          images: ['/og-default-en.jpg'],
+        },
+        twitter: {
+          card: 'summary_large_image',
+          title: 'Web & Mobile Development Services | Annecy · Geneva | Go Cosmic',
+          description:
+            'Comprehensive web and mobile development services based in Annecy, serving Geneva and Haute-Savoie. React, React Native, Next.js, AI integration.',
+          images: ['/twitter-card-en.jpg'],
+        },
       });
     });
   });

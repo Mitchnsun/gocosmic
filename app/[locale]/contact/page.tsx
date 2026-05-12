@@ -9,16 +9,32 @@ import { getMessages } from 'next-intl/server';
 
 import { cn } from '@/design-system/lib/utils';
 import { getCanonicalUrl } from '@/i18n/canonical';
+import { getOgImages } from '@/lib/og';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const messages = await getMessages();
   const t = createTranslator({ messages, locale });
+  const title = t('meta.title');
+  const description = t('meta.description');
+  const { og, twitter } = getOgImages(locale);
+
   return {
-    title: t('meta.title'),
-    description: t('meta.description'),
+    title,
+    description,
     alternates: {
       canonical: getCanonicalUrl(locale, '/contact'),
+    },
+    openGraph: {
+      title,
+      description,
+      images: [og],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [twitter],
     },
   };
 }

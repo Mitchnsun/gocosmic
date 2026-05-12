@@ -8,6 +8,7 @@ import projectsData from '@/data/projects.json';
 import { getCanonicalUrl } from '@/i18n/canonical';
 import { Link } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
+import { getOgImages } from '@/lib/og';
 
 type RoutingPathname = keyof typeof routing.pathnames;
 
@@ -47,11 +48,26 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const messages = await getMessages();
   const t = createTranslator({ messages, locale });
 
+  const title = t('projectsList.meta.title');
+  const description = t('projectsList.meta.description');
+  const { og, twitter } = getOgImages(locale);
+
   return {
-    title: t('projectsList.meta.title'),
-    description: t('projectsList.meta.description'),
+    title,
+    description,
     alternates: {
       canonical: getCanonicalUrl(locale, '/projects'),
+    },
+    openGraph: {
+      title,
+      description,
+      images: [og],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [twitter],
     },
   };
 }

@@ -5,16 +5,32 @@ import { getTranslations } from 'next-intl/server';
 
 import { Button } from '@/design-system/button';
 import { getCanonicalUrl } from '@/i18n/canonical';
+import { getOgImages } from '@/lib/og';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'offers' });
 
+  const title = t('meta.title');
+  const description = t('meta.description');
+  const { og, twitter } = getOgImages(locale);
+
   return {
-    title: t('meta.title'),
-    description: t('meta.description'),
+    title,
+    description,
     alternates: {
       canonical: getCanonicalUrl(locale, '/offers'),
+    },
+    openGraph: {
+      title,
+      description,
+      images: [og],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [twitter],
     },
   };
 }

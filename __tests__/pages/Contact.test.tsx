@@ -90,6 +90,19 @@ describe('Contact Page', () => {
         alternates: {
           canonical: 'https://www.gocosmic.dev/en/contact',
         },
+        openGraph: {
+          title: 'Contact Us - Get in Touch with Go Cosmic',
+          description:
+            'Contact Go Cosmic for general inquiries, support, technical questions, or commercial requests. Choose the right email for your specific needs and get personalized assistance.',
+          images: ['/og-default-en.jpg'],
+        },
+        twitter: {
+          card: 'summary_large_image',
+          title: 'Contact Us - Get in Touch with Go Cosmic',
+          description:
+            'Contact Go Cosmic for general inquiries, support, technical questions, or commercial requests. Choose the right email for your specific needs and get personalized assistance.',
+          images: ['/twitter-card-en.jpg'],
+        },
       });
     });
   });

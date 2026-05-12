@@ -42,6 +42,17 @@ describe('PscSupersprint Page', () => {
       alternates: {
         canonical: 'https://www.gocosmic.dev/en/projects/psc-supersprint',
       },
+      openGraph: {
+        title: 'PSC Supersprint',
+        description: 'Web application for managing PSC triathlon supersprint competition results',
+        images: ['/og-default-en.jpg'],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: 'PSC Supersprint',
+        description: 'Web application for managing PSC triathlon supersprint competition results',
+        images: ['/twitter-card-en.jpg'],
+      },
     });
   });
 });

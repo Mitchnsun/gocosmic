@@ -52,6 +52,19 @@ describe('About Page', () => {
         alternates: {
           canonical: 'https://www.gocosmic.dev/en/about',
         },
+        openGraph: {
+          title: 'About Go Cosmic - Web Agency in Annecy & Geneva',
+          description:
+            'Discover Go Cosmic, a web and mobile development agency based in Annecy, serving Geneva and Haute-Savoie. Meet Matthieu Compérat, our developer.',
+          images: ['/og-default-en.jpg'],
+        },
+        twitter: {
+          card: 'summary_large_image',
+          title: 'About Go Cosmic - Web Agency in Annecy & Geneva',
+          description:
+            'Discover Go Cosmic, a web and mobile development agency based in Annecy, serving Geneva and Haute-Savoie. Meet Matthieu Compérat, our developer.',
+          images: ['/twitter-card-en.jpg'],
+        },
       });
     });
   });

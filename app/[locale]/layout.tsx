@@ -11,6 +11,7 @@ import LocalBusinessSeo from '@/components/JsonLd/LocalBusinessSeo';
 import WebsiteSeo from '@/components/JsonLd/WebsiteSeo';
 import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/config';
+import { getOgImages } from '@/lib/og';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -22,9 +23,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const t = await getTranslations({ locale, namespace: 'meta' });
   const languages = Object.fromEntries(routing.locales.map((localeCode) => [localeCode, `${SITE_URL}/${localeCode}/`]));
 
+  const title = t('title');
+  const description = t('description');
+  const { og, twitter } = getOgImages(locale);
+
   return {
-    title: t('title'),
-    description: t('description'),
+    title,
+    description,
     metadataBase: new URL(SITE_URL),
     alternates: {
       canonical: `/${locale}/`,
@@ -32,6 +37,17 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
         ...languages,
         'x-default': `${SITE_URL}/${routing.defaultLocale}/`,
       },
+    },
+    openGraph: {
+      title,
+      description,
+      images: [og],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [twitter],
     },
   };
 }
