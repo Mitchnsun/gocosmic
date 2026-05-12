@@ -11,6 +11,7 @@ import LocalBusinessSeo from '@/components/JsonLd/LocalBusinessSeo';
 import WebsiteSeo from '@/components/JsonLd/WebsiteSeo';
 import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/config';
+import { getOgImages } from '@/lib/og';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -24,6 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
   const title = t('title');
   const description = t('description');
+  const { og, twitter } = getOgImages(locale);
 
   return {
     title,
@@ -39,13 +41,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     openGraph: {
       title,
       description,
-      images: ['/og-default.jpg'],
+      images: [og],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: ['/twitter-card.jpg'],
+      images: [twitter],
     },
   };
 }

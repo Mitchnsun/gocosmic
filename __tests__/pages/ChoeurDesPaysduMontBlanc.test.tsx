@@ -45,13 +45,13 @@ describe('ChoeurDesPaysduMontBlanc Page', () => {
       openGraph: {
         title: 'Chœur des Pays du Mont Blanc',
         description: 'Website for the amateur choir based in Haute-Savoie, France',
-        images: ['/og-default.jpg'],
+        images: ['/og-default-en.jpg'],
       },
       twitter: {
         card: 'summary_large_image',
         title: 'Chœur des Pays du Mont Blanc',
         description: 'Website for the amateur choir based in Haute-Savoie, France',
-        images: ['/twitter-card.jpg'],
+        images: ['/twitter-card-en.jpg'],
       },
     });
   });

@@ -45,13 +45,13 @@ describe('MComperat Page', () => {
       openGraph: {
         title: 'mcomper.at',
         description: 'Modern, responsive web CV of Matthieu Compérat',
-        images: ['/og-default.jpg'],
+        images: ['/og-default-en.jpg'],
       },
       twitter: {
         card: 'summary_large_image',
         title: 'mcomper.at',
         description: 'Modern, responsive web CV of Matthieu Compérat',
-        images: ['/twitter-card.jpg'],
+        images: ['/twitter-card-en.jpg'],
       },
     });
   });

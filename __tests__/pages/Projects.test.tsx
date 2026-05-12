@@ -59,14 +59,14 @@ describe('Projects Page', () => {
           title: 'Our Projects | Go Cosmic — Annecy · Geneva',
           description:
             'Explore Go Cosmic projects — web and mobile apps crafted in Annecy, serving clients in Geneva and Haute-Savoie.',
-          images: ['/og-default.jpg'],
+          images: ['/og-default-en.jpg'],
         },
         twitter: {
           card: 'summary_large_image',
           title: 'Our Projects | Go Cosmic — Annecy · Geneva',
           description:
             'Explore Go Cosmic projects — web and mobile apps crafted in Annecy, serving clients in Geneva and Haute-Savoie.',
-          images: ['/twitter-card.jpg'],
+          images: ['/twitter-card-en.jpg'],
         },
       });
     });

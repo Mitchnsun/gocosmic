@@ -17,6 +17,7 @@ import { buttonVariants } from '@/design-system/button.variants';
 import { cn } from '@/design-system/lib/utils';
 import { getCanonicalUrl } from '@/i18n/canonical';
 import { Link } from '@/i18n/navigation';
+import { getOgImages } from '@/lib/og';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -24,6 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
   const title = t('meta.title');
   const description = t('meta.description');
+  const { og, twitter } = getOgImages(locale);
 
   return {
     title,
@@ -34,13 +36,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     openGraph: {
       title,
       description,
-      images: ['/og-default.jpg'],
+      images: [og],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: ['/twitter-card.jpg'],
+      images: [twitter],
     },
   };
 }

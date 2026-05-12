@@ -45,13 +45,13 @@ describe('PscSupersprint Page', () => {
       openGraph: {
         title: 'PSC Supersprint',
         description: 'Web application for managing PSC triathlon supersprint competition results',
-        images: ['/og-default.jpg'],
+        images: ['/og-default-en.jpg'],
       },
       twitter: {
         card: 'summary_large_image',
         title: 'PSC Supersprint',
         description: 'Web application for managing PSC triathlon supersprint competition results',
-        images: ['/twitter-card.jpg'],
+        images: ['/twitter-card-en.jpg'],
       },
     });
   });

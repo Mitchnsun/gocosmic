@@ -45,13 +45,13 @@ describe('DailyFortune Page', () => {
       openGraph: {
         title: 'Daily Fortune',
         description: 'Your daily dose of inspiration and cosmic wisdom',
-        images: ['/og-default.jpg'],
+        images: ['/og-default-en.jpg'],
       },
       twitter: {
         card: 'summary_large_image',
         title: 'Daily Fortune',
         description: 'Your daily dose of inspiration and cosmic wisdom',
-        images: ['/twitter-card.jpg'],
+        images: ['/twitter-card-en.jpg'],
       },
     });
   });

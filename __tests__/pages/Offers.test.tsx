@@ -58,14 +58,14 @@ describe('Offers Page', () => {
           title: 'Our Offers | Web & Mobile Development | Annecy · Geneva | Go Cosmic',
           description:
             'Tailored web and mobile development offers for businesses in Annecy, Geneva, and Haute-Savoie. Choose your perfect development package.',
-          images: ['/og-default.jpg'],
+          images: ['/og-default-en.jpg'],
         },
         twitter: {
           card: 'summary_large_image',
           title: 'Our Offers | Web & Mobile Development | Annecy · Geneva | Go Cosmic',
           description:
             'Tailored web and mobile development offers for businesses in Annecy, Geneva, and Haute-Savoie. Choose your perfect development package.',
-          images: ['/twitter-card.jpg'],
+          images: ['/twitter-card-en.jpg'],
         },
       });
     });

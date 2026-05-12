@@ -74,14 +74,14 @@ describe('Journey Page', () => {
           title: 'Cosmic Journey - Go Cosmic | Annecy · Geneva',
           description:
             'Embark on an immersive 3D cosmic journey through the stars. Experience the unique approach of Go Cosmic, your web development partner in Annecy and Geneva.',
-          images: ['/og-default.jpg'],
+          images: ['/og-default-en.jpg'],
         },
         twitter: {
           card: 'summary_large_image',
           title: 'Cosmic Journey - Go Cosmic | Annecy · Geneva',
           description:
             'Embark on an immersive 3D cosmic journey through the stars. Experience the unique approach of Go Cosmic, your web development partner in Annecy and Geneva.',
-          images: ['/twitter-card.jpg'],
+          images: ['/twitter-card-en.jpg'],
         },
       });
     });
