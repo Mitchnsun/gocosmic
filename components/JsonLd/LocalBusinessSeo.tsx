@@ -11,8 +11,7 @@ export default function LocalBusinessSeo() {
         '@type': 'ProfessionalService',
         '@id': `${SITE_URL}/#company`,
         name: 'Go Cosmic',
-        description:
-          'Agence de développement web & mobile basée à Annecy, intervenant à Genève et en Haute-Savoie.',
+        description: 'Agence de développement web & mobile basée à Annecy, intervenant à Genève et en Haute-Savoie.',
         url: SITE_URL,
         telephone: '+33-6-XX-XX-XX-XX',
         address: {

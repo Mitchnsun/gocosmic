@@ -27,8 +27,7 @@ describe('LocalBusinessSeo', () => {
         '@type': 'ProfessionalService',
         '@id': 'https://www.gocosmic.dev/#company',
         name: 'Go Cosmic',
-        description:
-          'Agence de développement web & mobile basée à Annecy, intervenant à Genève et en Haute-Savoie.',
+        description: 'Agence de développement web & mobile basée à Annecy, intervenant à Genève et en Haute-Savoie.',
         url: 'https://www.gocosmic.dev',
         telephone: '+33-6-XX-XX-XX-XX',
         address: {
