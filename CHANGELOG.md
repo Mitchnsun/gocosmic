@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.4.6] - 2026-05-13
+
+### Added
+- Enriched the footer with localized service-area details, phone, legal mention, and localized links to Services, Offers, and Contact pages
+
 ## [1.4.5] - 2026-05-12
 
 ### Added

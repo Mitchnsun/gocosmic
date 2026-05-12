@@ -1,5 +1,6 @@
-import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
+
+import { Link } from '@/i18n/navigation';
 
 const Footer = () => {
   const t = useTranslations('footer');
@@ -9,13 +10,13 @@ const Footer = () => {
     <footer className="w-full bg-slate-950 px-4 py-8 text-gray-400">
       <div className="m-auto grid max-w-7xl grid-cols-1 gap-6 md:grid-cols-3">
         <address className="not-italic">
-          <strong className="text-white">{t('zone_title')}</strong>
+          <h2 className="text-white">{t('zone_title')}</h2>
           <p>{t('zone_desc')}</p>
           <p>{t('phone')}</p>
           <p className="text-xs">{t('legal')}</p>
         </address>
         <nav aria-label={t('nav_aria')}>
-          <strong className="text-white">{t('nav_title')}</strong>
+          <h2 className="text-white">{t('nav_title')}</h2>
           <ul className="mt-2 space-y-1">
             <li>
               <Link href="/services">{t('link_services')}</Link>
