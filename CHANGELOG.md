@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Added
 
 - Locale layout metadata now publishes hreflang alternates for all supported locales (`en`, `fr`, `es`, `de`, `it`) plus `x-default`
+- Added `LocalBusinessSeo` component to publish `ProfessionalService` JSON-LD for Go Cosmic
+- Injected local business JSON-LD in `app/[locale]/layout.tsx` so it is rendered site-wide
 
 ### Changed
 
