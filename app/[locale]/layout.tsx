@@ -7,6 +7,7 @@ import { getTranslations } from 'next-intl/server';
 
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
+import LocalBusinessSeo from '@/components/JsonLd/LocalBusinessSeo';
 import WebsiteSeo from '@/components/JsonLd/WebsiteSeo';
 import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/config';
@@ -58,6 +59,7 @@ export default async function LocaleLayout({
           <Footer />
           <WebsiteSeo />
           <Analytics />
+          <LocalBusinessSeo locale={locale} />
         </NextIntlClientProvider>
       </body>
     </html>

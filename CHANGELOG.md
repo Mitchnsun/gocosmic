@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Added
 
 - Locale layout metadata now publishes hreflang alternates for all supported locales (`en`, `fr`, `es`, `de`, `it`) plus `x-default`
+- Added `LocalBusinessSeo` component to publish `ProfessionalService` JSON-LD for Go Cosmic
+- Injected local business JSON-LD in `app/[locale]/layout.tsx` so it is rendered site-wide
 
 ### Changed
 
@@ -18,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Migrated Next.js routing entry from `middleware.ts` to `proxy.ts` to align with Next.js 16 file convention deprecation
 - Renamed default export from `middleware` to `proxy` while preserving `next-intl` i18n routing and `x-pathname` header behavior
 - Updated related references in tests and documentation to use `proxy.ts`
+- Local business JSON-LD now localizes `description`, `areaServed`, and `inLanguage` based on the active locale
 
 ## [1.4.4] - 2026-05-10
 
