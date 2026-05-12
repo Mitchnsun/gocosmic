@@ -356,7 +356,7 @@ apps/web/
 │   ├── pages/       # Page tests
 │   ├── views/       # View tests
 │   └── test-utils.tsx # Custom render with i18n context
-├── middleware.ts    # Locale detection and routing
+├── proxy.ts         # Locale detection and routing
 ├── public/          # Static assets and icons
 └── ...
 ```

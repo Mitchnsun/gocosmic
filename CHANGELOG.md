@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - Main locale `generateMetadata` now sets `metadataBase` and locale-root canonical alternates in `app/[locale]/layout.tsx`
 - Introduced shared `SITE_URL` config in `lib/config.ts` and reused it in canonical metadata helpers
+- Migrated Next.js routing entry from `middleware.ts` to `proxy.ts` to align with Next.js 16 file convention deprecation
+- Renamed default export from `middleware` to `proxy` while preserving `next-intl` i18n routing and `x-pathname` header behavior
+- Updated related references in tests and documentation to use `proxy.ts`
 
 ## [1.4.4] - 2026-05-10
 

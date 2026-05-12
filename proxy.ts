@@ -5,7 +5,7 @@ import { routing } from './i18n/routing';
 
 const handleI18nRouting = createMiddleware(routing);
 
-export default function middleware(request: NextRequest) {
+export default function proxy(request: NextRequest) {
   const response = handleI18nRouting(request);
 
   // Add the pathname to the response headers for use in i18n/request.ts
