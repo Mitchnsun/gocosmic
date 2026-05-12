@@ -1,5 +1,14 @@
 {
   "footer": {
+    "zone_title": "Go Cosmic",
+    "zone_desc": "Con sede en Annecy, disponible en Ginebra y Haute-Savoie.",
+    "phone": "Teléfono: +33 6 00 00 00 00",
+    "legal": "Aviso legal y uso de IA disponibles en la página Acerca de.",
+    "nav_title": "Navegación",
+    "nav_aria": "Navegación del pie de página",
+    "link_services": "Servicios",
+    "link_offers": "Ofertas",
+    "link_contact": "Contacto",
     "copyright": "© {year} Go Cosmic. Todos los derechos reservados."
   }
 }

@@ -1,5 +1,14 @@
 {
   "footer": {
+    "zone_title": "Go Cosmic",
+    "zone_desc": "Based in Annecy, serving Geneva and Haute-Savoie.",
+    "phone": "Phone: +33 6 00 00 00 00",
+    "legal": "Legal notices and AI usage available on the About page.",
+    "nav_title": "Explore",
+    "nav_aria": "Footer navigation",
+    "link_services": "Services",
+    "link_offers": "Offers",
+    "link_contact": "Contact",
     "copyright": "© {year} Go Cosmic. All rights reserved."
   }
 }
