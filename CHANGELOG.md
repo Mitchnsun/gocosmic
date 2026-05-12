@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Migrated Next.js routing entry from `middleware.ts` to `proxy.ts` to align with Next.js 16 file convention deprecation
 - Renamed default export from `middleware` to `proxy` while preserving `next-intl` i18n routing and `x-pathname` header behavior
 - Updated related references in tests and documentation to use `proxy.ts`
+- Local business JSON-LD now localizes `description`, `areaServed`, and `inLanguage` based on the active locale
 
 ## [1.4.4] - 2026-05-10
 

@@ -222,6 +222,7 @@ describe('LocaleLayout', () => {
       expect(provider.props.children).toHaveLength(6); // Header, content div, Footer, WebsiteSeo, Analytics, LocalBusinessSeo
       expect(provider.props.children[3].type).toBe(WebsiteSeo);
       expect(provider.props.children[5].type).toBe(LocalBusinessSeo);
+      expect(provider.props.children[5].props.locale).toBe('en');
     });
 
     it('should validate routing configuration', () => {

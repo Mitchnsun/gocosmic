@@ -59,7 +59,7 @@ export default async function LocaleLayout({
           <Footer />
           <WebsiteSeo />
           <Analytics />
-          <LocalBusinessSeo />
+          <LocalBusinessSeo locale={locale} />
         </NextIntlClientProvider>
       </body>
     </html>
