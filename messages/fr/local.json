@@ -14,6 +14,10 @@
     "projects": {
       "title": "Projets récents réalisés depuis Annecy"
     },
-    "cta": "Contacter votre développeur web local"
+    "cta": "Contacter votre développeur web local",
+    "meta": {
+      "title": "Développeur Web & Mobile Annecy • Genève | Go Cosmic",
+      "description": "Matthieu Compérat, développeur freelance basé à Annecy. Création d'applications web et mobiles pour Annecy, Genève et la Haute-Savoie."
+    }
   }
 }

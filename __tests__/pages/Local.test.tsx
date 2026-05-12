@@ -1,6 +1,17 @@
+import { vi } from 'vitest';
+
 import LocalPage, { generateMetadata } from '@/app/[locale]/local/page';
 
 import { render, screen } from '../test-utils';
+
+vi.mock('next-intl/server', () => ({
+  getTranslations: vi.fn().mockResolvedValue((key: string) => {
+    if (key === 'meta.title') return 'Web & Mobile Developer Annecy • Geneva | Go Cosmic';
+    if (key === 'meta.description')
+      return 'Matthieu Compérat, freelance developer based in Annecy. Web and mobile app development for Annecy, Geneva, and Haute-Savoie businesses.';
+    return key;
+  }),
+}));
 
 describe('Local Page', () => {
   it('should render the local seo page content', () => {
@@ -19,9 +30,9 @@ describe('Local Page', () => {
       const metadata = await generateMetadata({ params });
 
       expect(metadata).toEqual({
-        title: 'Développeur Web & Mobile Annecy • Genève | Go Cosmic',
+        title: 'Web & Mobile Developer Annecy • Geneva | Go Cosmic',
         description:
-          "Matthieu Compérat, développeur freelance basé à Annecy. Création d'applications web et mobiles pour Annecy, Genève et la Haute-Savoie.",
+          'Matthieu Compérat, freelance developer based in Annecy. Web and mobile app development for Annecy, Geneva, and Haute-Savoie businesses.',
         alternates: {
           canonical: 'https://www.gocosmic.dev/en/web-mobile-developer-annecy-geneva',
         },

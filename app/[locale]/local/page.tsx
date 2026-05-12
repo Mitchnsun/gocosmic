@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
 import { buttonVariants } from '@/design-system/button.variants';
 import { cn } from '@/design-system/lib/utils';
@@ -8,11 +9,11 @@ import { Link } from '@/i18n/navigation';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'local' });
 
   return {
-    title: 'Développeur Web & Mobile Annecy • Genève | Go Cosmic',
-    description:
-      "Matthieu Compérat, développeur freelance basé à Annecy. Création d'applications web et mobiles pour Annecy, Genève et la Haute-Savoie.",
+    title: t('meta.title'),
+    description: t('meta.description'),
     alternates: {
       canonical: getCanonicalUrl(locale, '/local'),
     },

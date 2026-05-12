@@ -14,6 +14,10 @@
     "projects": {
       "title": "Proyectos recientes realizados desde Annecy"
     },
-    "cta": "Contactar a tu desarrollador web local"
+    "cta": "Contactar a tu desarrollador web local",
+    "meta": {
+      "title": "Desarrollador web y móvil Annecy • Ginebra | Go Cosmic",
+      "description": "Matthieu Compérat, desarrollador freelance con base en Annecy. Desarrollo de aplicaciones web y móviles para Annecy, Ginebra y Alta Saboya."
+    }
   }
 }

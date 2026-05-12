@@ -14,6 +14,10 @@
     "projects": {
       "title": "Aktuelle Projekte aus Annecy"
     },
-    "cta": "Kontakt zu Ihrem lokalen Webentwickler"
+    "cta": "Kontakt zu Ihrem lokalen Webentwickler",
+    "meta": {
+      "title": "Web- & Mobile-Entwickler Annecy • Genf | Go Cosmic",
+      "description": "Matthieu Compérat, freiberuflicher Entwickler mit Sitz in Annecy. Entwicklung von Web- und Mobile-Apps für Annecy, Genf und Haute-Savoie."
+    }
   }
 }
