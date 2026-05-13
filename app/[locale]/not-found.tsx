@@ -10,7 +10,7 @@ export default function NotFound() {
   return (
     <div
       className="text-ghost m-auto flex max-w-7xl flex-col items-center px-4 py-16"
-      style={{ minHeight: 'calc(100vh - var(--header-footer-height))' }}>
+      style={{ minHeight: 'calc(100vh - var(--header-height))' }}>
       <h2 className="text-center text-2xl font-extrabold sm:text-4xl">{t('title')}</h2>
       <p className="my-8 text-center">{t('description')}</p>
       <Link className={cn(buttonVariants({ variant: 'ghost' }), 'gap-2')} href="/">

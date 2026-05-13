@@ -39,7 +39,7 @@ describe('Loader Component', () => {
 
     const loader = container.firstChild as HTMLElement;
     expect(loader).toHaveStyle({
-      minHeight: 'calc(100vh - var(--header-footer-height))',
+      minHeight: 'calc(100vh - var(--header-height))',
     });
   });
 

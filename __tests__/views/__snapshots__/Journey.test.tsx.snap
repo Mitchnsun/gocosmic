@@ -3,7 +3,7 @@
 exports[`JourneyContent Component > should render the journey content with cosmic theme 1`] = `
 <div>
   <div
-    style="min-height: calc(100vh - var(--header-footer-height));"
+    style="min-height: calc(100vh - var(--header-height));"
   >
     <div
       class="fixed inset-0 w-full"

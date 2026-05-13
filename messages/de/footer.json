@@ -1,5 +1,19 @@
 {
   "footer": {
-    "copyright": "© {year} Go Cosmic. Alle Rechte vorbehalten."
+    "brand_title": "Go Cosmic",
+    "brand_desc": "Ein Entwicklungs- & Design-Studio, das kosmische Apps aus den Französischen Alpen baut.",
+    "nav_title": "Studio",
+    "nav_aria": "Footer-Navigation",
+    "link_services": "Services",
+    "link_projects": "Projekte",
+    "link_offers": "Angebote",
+    "link_about": "Über uns",
+    "link_contact": "Kontakt",
+    "offers_title": "Angebote",
+    "offer_solo": "Solo Kosmischer Entwickler",
+    "offer_team": "Komplettes Kosmisches Team",
+    "offer_duo": "Entwickler + Designer Duo",
+    "legal": "Impressum und KI-Hinweise auf der Über-uns-Seite verfügbar.",
+    "copyright": "© {year} Go Cosmic. Alle Systeme nominal."
   }
 }

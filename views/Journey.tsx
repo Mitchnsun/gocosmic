@@ -27,7 +27,7 @@ export default function JourneyContent({ translations }: JourneyContentProps) {
   const { title, subtitle } = translations;
 
   return (
-    <div style={{ minHeight: 'calc(100vh - var(--header-footer-height))' }}>
+    <div style={{ minHeight: 'calc(100vh - var(--header-height))' }}>
       <div className="fixed inset-0 w-full">
         <Canvas camera={{ position: [0, 0, 1] }}>
           <MovingStarfield />
