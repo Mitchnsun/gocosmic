@@ -1,0 +1,27 @@
+{
+  "local": {
+    "hero": {
+      "title": "Sviluppatore Web & Mobile ad Annecy e Ginevra",
+      "description": "Matthieu Compérat, sviluppatore freelance con base ad Annecy. Progetto e sviluppo app web e mobile moderne per aziende ad Annecy, Ginevra e Alta Savoia."
+    },
+    "services": {
+      "title": "Servizi di sviluppo web e mobile per aziende locali"
+    },
+    "zone": {
+      "title": "Area di intervento",
+      "remote": "Collaborazione da remoto disponibile in tutta Francia e Svizzera",
+      "locations": {
+        "annecy": "Annecy e Alta Savoia",
+        "geneva": "Ginevra e area del Lemano"
+      }
+    },
+    "projects": {
+      "title": "Progetti recenti realizzati da Annecy"
+    },
+    "cta": "Contatta il tuo sviluppatore web locale",
+    "meta": {
+      "title": "Sviluppatore web e mobile Annecy • Ginevra | Go Cosmic",
+      "description": "Matthieu Compérat, sviluppatore freelance con base ad Annecy. Sviluppo di applicazioni web e mobile per Annecy, Ginevra e Alta Savoia."
+    }
+  }
+}

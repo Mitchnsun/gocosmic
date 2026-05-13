@@ -1,0 +1,27 @@
+{
+  "local": {
+    "hero": {
+      "title": "Desarrollador Web y Móvil en Annecy y Ginebra",
+      "description": "Matthieu Compérat, desarrollador freelance con base en Annecy. Diseño y desarrollo aplicaciones web y móviles modernas para empresas de Annecy, Ginebra y Alta Saboya."
+    },
+    "services": {
+      "title": "Servicios de desarrollo web y móvil para empresas locales"
+    },
+    "zone": {
+      "title": "Zona de cobertura",
+      "remote": "Colaboración remota disponible en toda Francia y Suiza",
+      "locations": {
+        "annecy": "Annecy y Alta Saboya",
+        "geneva": "Ginebra y arco del lago Lemán"
+      }
+    },
+    "projects": {
+      "title": "Proyectos recientes realizados desde Annecy"
+    },
+    "cta": "Contactar a tu desarrollador web local",
+    "meta": {
+      "title": "Desarrollador web y móvil Annecy • Ginebra | Go Cosmic",
+      "description": "Matthieu Compérat, desarrollador freelance con base en Annecy. Desarrollo de aplicaciones web y móviles para Annecy, Ginebra y Alta Saboya."
+    }
+  }
+}

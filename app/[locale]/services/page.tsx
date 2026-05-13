@@ -424,6 +424,9 @@ export default function Services() {
                 </a>
               </Button>
             </div>
+            <Link href="/local" className={cn(buttonVariants({ variant: 'space' }), 'w-fit border border-blue-400/40')}>
+              {t('cta.local_page')}
+            </Link>
             <p className="text-center text-sm text-gray-500">{t('cta.contact_info')}</p>
             <p className="text-center text-sm text-gray-500">{t('cta.geo_availability')}</p>
           </div>

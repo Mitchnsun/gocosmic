@@ -32,5 +32,9 @@ describe('Footer Component', () => {
     // Copyright
     expect(screen.getByText(`© ${year} Go Cosmic. All systems nominal.`)).toBeInTheDocument();
     expect(screen.getByText('Legal notices and AI usage available on the About page.')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /web & mobile developer annecy \/ geneva/i })).toHaveAttribute(
+      'href',
+      '/local'
+    );
   });
 });
