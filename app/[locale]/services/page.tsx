@@ -426,7 +426,7 @@ export default function Services() {
             </div>
             <Link
               href="/local"
-              className={cn(buttonVariants({ variant: 'ghost' }), 'w-fit border border-blue-400/40')}
+              className={cn(buttonVariants({ variant: 'space' }), 'w-fit border border-blue-400/40')}
               aria-label={t('cta.local_page')}>
               {t('cta.local_page')}
             </Link>

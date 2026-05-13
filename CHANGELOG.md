@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## [1.4.6] - 2026-05-13
 
 ### Added
+
 - Dedicated localized SEO landing page at `/local` for "Développeur Web & Mobile Annecy / Genève"
 - New localized route mapping for the page across all supported locales
 - New `local` translation namespace in EN, FR, ES, DE, and IT

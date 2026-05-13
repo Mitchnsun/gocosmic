@@ -1,3 +1,4 @@
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
@@ -24,16 +25,21 @@ export default function LocalPage() {
   const t = useTranslations('local');
 
   return (
-    <main className="m-auto max-w-7xl px-4 py-10">
-      <h1 className="text-4xl font-extrabold">{t('hero.title')}</h1>
-      <p className="mt-4 text-lg text-gray-400">{t('hero.description')}</p>
+    <main className="relative m-auto my-6 max-w-7xl rounded-lg bg-slate-800 px-6 py-8 text-white lg:p-8">
+      <h1 className="text-4xl font-bold">{t('hero.title')}</h1>
+      <p className="text-lg text-gray-400">{t('hero.description')}</p>
 
-      <section className="mt-10">
-        <h2 className="text-2xl font-bold">{t('services.title')}</h2>
+      <section className="my-8">
+        <h2 className="text-2xl font-medium">
+          <Link href="/services" className="flex items-center gap-2 transition-colors hover:text-blue-400">
+            {t('services.title')}
+            <ArrowTopRightOnSquareIcon className="size-5" aria-hidden="true" />
+          </Link>
+        </h2>
       </section>
 
-      <section className="mt-10">
-        <h2 className="text-2xl font-bold">{t('zone.title')}</h2>
+      <section>
+        <h2 className="text-2xl font-medium">{t('zone.title')}</h2>
         <ul className="mt-4 list-disc space-y-2 pl-5 text-gray-300">
           <li>{t('zone.locations.annecy')}</li>
           <li>{t('zone.locations.geneva')}</li>
@@ -41,11 +47,16 @@ export default function LocalPage() {
         </ul>
       </section>
 
-      <section className="mt-10">
-        <h2 className="text-2xl font-bold">{t('projects.title')}</h2>
+      <section className="my-8">
+        <h2 className="text-2xl font-medium">
+          <Link href="/projects" className="flex items-center gap-2 transition-colors hover:text-blue-400">
+            {t('projects.title')}
+            <ArrowTopRightOnSquareIcon className="size-5" aria-hidden="true" />
+          </Link>
+        </h2>
       </section>
 
-      <Link href="/contact" className={cn(buttonVariants({ variant: 'jungle' }), 'mt-10 inline-flex')}>
+      <Link href="/contact" className={cn(buttonVariants({ variant: 'jungle' }), 'inline-flex')}>
         {t('cta')}
       </Link>
     </main>
