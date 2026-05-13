@@ -75,7 +75,7 @@ describe('getCanonicalUrl', () => {
     });
 
     it('resolves German localized pathname', () => {
-      expect(getCanonicalUrl('de', '/local')).toBe(`${SITE_URL}/de/webentwickler-annecy-genf`);
+      expect(getCanonicalUrl('de', '/local')).toBe(`${SITE_URL}/de/web-mobile-entwickler-annecy-genf`);
     });
   });
 

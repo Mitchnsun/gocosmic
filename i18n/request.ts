@@ -50,7 +50,7 @@ const getNamespacesForPath = (pathname: string): string[] => {
     pathWithoutLocale.startsWith('/web-mobile-developer-annecy-geneva') ||
     pathWithoutLocale.startsWith('/developpeur-web-mobile-annecy-geneve') ||
     pathWithoutLocale.startsWith('/desarrollador-web-movil-annecy-ginebra') ||
-    pathWithoutLocale.startsWith('/webentwickler-annecy-genf') ||
+    pathWithoutLocale.startsWith('/web-mobile-entwickler-annecy-genf') ||
     pathWithoutLocale.startsWith('/sviluppatore-web-mobile-annecy-ginevra')
   ) {
     return ['local'];

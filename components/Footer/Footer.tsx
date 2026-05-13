@@ -25,10 +25,10 @@ const Footer = () => {
             <span className="text-aerospace">.</span>
           </h4>
           <p className="text-sm leading-relaxed">{t('brand_desc')}</p>
-          <Link href="/local" className="text-sm text-white transition hover:text-blue-400">
+          <Link href="/local" className="my-2 block text-sm text-white transition hover:text-blue-400">
             {t('local_page')}
           </Link>
-          <p className="mt-1 text-xs text-gray-500">{t('legal')}</p>
+          <p className="text-xs text-gray-500">{t('legal')}</p>
         </div>
 
         {/* Column 2 — Studio navigation */}
