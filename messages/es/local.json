@@ -9,7 +9,11 @@
     },
     "zone": {
       "title": "Zona de cobertura",
-      "remote": "Colaboración remota disponible en toda Francia y Suiza"
+      "remote": "Colaboración remota disponible en toda Francia y Suiza",
+      "locations": {
+        "annecy": "Annecy y Alta Saboya",
+        "geneva": "Ginebra y arco del lago Lemán"
+      }
     },
     "projects": {
       "title": "Proyectos recientes realizados desde Annecy"

@@ -9,7 +9,11 @@
     },
     "zone": {
       "title": "Einsatzgebiet",
-      "remote": "Remote-Zusammenarbeit in ganz Frankreich und der Schweiz möglich"
+      "remote": "Remote-Zusammenarbeit in ganz Frankreich und der Schweiz möglich",
+      "locations": {
+        "annecy": "Annecy & Haute-Savoie",
+        "geneva": "Genf & Genferseeregion"
+      }
     },
     "projects": {
       "title": "Aktuelle Projekte aus Annecy"

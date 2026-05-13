@@ -21,6 +21,8 @@ describe('Local Page', () => {
       screen.getByRole('heading', { level: 1, name: /web & mobile developer in annecy and geneva/i })
     ).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 2, name: /coverage area/i })).toBeInTheDocument();
+    expect(screen.getByText(/annecy & haute-savoie/i)).toBeInTheDocument();
+    expect(screen.getByText(/geneva & lake geneva region/i)).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /contact your local web developer/i })).toHaveAttribute('href', '/contact');
   });
 

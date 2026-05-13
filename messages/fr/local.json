@@ -9,7 +9,11 @@
     },
     "zone": {
       "title": "Zone d'intervention",
-      "remote": "Collaboration à distance possible partout en France et en Suisse"
+      "remote": "Collaboration à distance possible partout en France et en Suisse",
+      "locations": {
+        "annecy": "Annecy & Haute-Savoie",
+        "geneva": "Genève & Arc lémanique"
+      }
     },
     "projects": {
       "title": "Projets récents réalisés depuis Annecy"

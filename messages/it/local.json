@@ -9,7 +9,11 @@
     },
     "zone": {
       "title": "Area di intervento",
-      "remote": "Collaborazione da remoto disponibile in tutta Francia e Svizzera"
+      "remote": "Collaborazione da remoto disponibile in tutta Francia e Svizzera",
+      "locations": {
+        "annecy": "Annecy e Alta Savoia",
+        "geneva": "Ginevra e area del Lemano"
+      }
     },
     "projects": {
       "title": "Progetti recenti realizzati da Annecy"

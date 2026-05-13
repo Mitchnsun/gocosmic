@@ -35,8 +35,8 @@ export default function LocalPage() {
       <section className="mt-10">
         <h2 className="text-2xl font-bold">{t('zone.title')}</h2>
         <ul className="mt-4 list-disc space-y-2 pl-5 text-gray-300">
-          <li>Annecy & Haute-Savoie</li>
-          <li>Genève & Arc lémanique</li>
+          <li>{t('zone.locations.annecy')}</li>
+          <li>{t('zone.locations.geneva')}</li>
           <li>{t('zone.remote')}</li>
         </ul>
       </section>

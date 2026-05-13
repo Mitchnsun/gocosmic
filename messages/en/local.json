@@ -9,7 +9,11 @@
     },
     "zone": {
       "title": "Coverage area",
-      "remote": "Remote collaboration available everywhere in France and Switzerland"
+      "remote": "Remote collaboration available everywhere in France and Switzerland",
+      "locations": {
+        "annecy": "Annecy & Haute-Savoie",
+        "geneva": "Geneva & Lake Geneva region"
+      }
     },
     "projects": {
       "title": "Recent projects delivered from Annecy"

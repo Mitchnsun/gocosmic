@@ -1,10 +1,6 @@
 {
   "name": "gocosmic",
-<<<<<<< HEAD
   "version": "1.4.6",
-=======
-  "version": "1.4.5",
->>>>>>> 99413a7 (feat(web): add localized annecy geneva seo page)
   "type": "module",
   "private": true,
   "scripts": {
