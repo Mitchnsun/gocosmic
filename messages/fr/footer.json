@@ -1,14 +1,19 @@
 {
   "footer": {
-    "zone_title": "Go Cosmic",
-    "zone_desc": "Basé à Annecy, interventions à Genève et en Haute-Savoie.",
-    "phone": "Téléphone : +33 6 00 00 00 00",
-    "legal": "Mentions légales et usage de l’IA disponibles sur la page À propos.",
-    "nav_title": "Navigation",
+    "brand_title": "Go Cosmic",
+    "brand_desc": "Un studio de développement & design qui construit des applications cosmiques depuis les Alpes françaises.",
+    "nav_title": "Studio",
     "nav_aria": "Navigation du pied de page",
     "link_services": "Services",
+    "link_projects": "Projets",
     "link_offers": "Offres",
+    "link_about": "À propos",
     "link_contact": "Contact",
-    "copyright": "© {year} Go Cosmic. Tous droits réservés."
+    "offers_title": "Offres",
+    "offer_solo": "Développeur Cosmique Solo",
+    "offer_team": "Équipe Cosmique Complète",
+    "offer_duo": "Duo Développeur + Designer",
+    "legal": "Mentions légales et usage de l'IA disponibles sur la page À propos.",
+    "copyright": "© {year} Go Cosmic. Tous systèmes nominaux."
   }
 }

@@ -9,14 +9,28 @@ describe('Footer Component', () => {
     render(<Footer />);
 
     expect(screen.getByRole('contentinfo')).toBeInTheDocument();
-    expect(screen.getByText('Go Cosmic')).toBeInTheDocument();
-    expect(screen.getByText('Based in Annecy, serving Geneva and Haute-Savoie.')).toBeInTheDocument();
-    expect(screen.getByText('Phone: +33 6 00 00 00 00')).toBeInTheDocument();
-    expect(screen.getByText('Legal notices and AI usage available on the About page.')).toBeInTheDocument();
+
+    // Brand column
+    expect(screen.getByText(/^Go Cosmic/)).toBeInTheDocument();
+    expect(
+      screen.getByText('A development & design studio building cosmic apps from the French Alps.')
+    ).toBeInTheDocument();
+
+    // Studio navigation
     expect(screen.getByRole('navigation', { name: 'Footer navigation' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Services' })).toHaveAttribute('href', '/services');
-    expect(screen.getByRole('link', { name: 'Offers' })).toHaveAttribute('href', '/offers');
+    expect(screen.getByRole('link', { name: 'Projects' })).toHaveAttribute('href', '/projects');
+    expect(screen.getAllByRole('link', { name: 'Offers' })[0]).toHaveAttribute('href', '/offers');
+    expect(screen.getByRole('link', { name: 'About' })).toHaveAttribute('href', '/about');
     expect(screen.getByRole('link', { name: 'Contact' })).toHaveAttribute('href', '/contact');
-    expect(screen.getByText(`© ${year} Go Cosmic. All rights reserved.`)).toBeInTheDocument();
+
+    // Offers column
+    expect(screen.getByText('Solo Cosmic Developer')).toBeInTheDocument();
+    expect(screen.getByText('Complete Cosmic Team')).toBeInTheDocument();
+    expect(screen.getByText('Developer + Designer Duo')).toBeInTheDocument();
+
+    // Copyright
+    expect(screen.getByText(`© ${year} Go Cosmic. All systems nominal.`)).toBeInTheDocument();
+    expect(screen.getByText('Legal notices and AI usage available on the About page.')).toBeInTheDocument();
   });
 });

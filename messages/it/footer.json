@@ -1,14 +1,19 @@
 {
   "footer": {
-    "zone_title": "Go Cosmic",
-    "zone_desc": "Con sede ad Annecy, operiamo a Ginevra e in Haute-Savoie.",
-    "phone": "Telefono: +33 6 00 00 00 00",
-    "legal": "Note legali e uso dell'IA disponibili nella pagina Chi siamo.",
-    "nav_title": "Navigazione",
+    "brand_title": "Go Cosmic",
+    "brand_desc": "Uno studio di sviluppo e design che costruisce app cosmiche dalle Alpi francesi.",
+    "nav_title": "Studio",
     "nav_aria": "Navigazione del footer",
     "link_services": "Servizi",
+    "link_projects": "Progetti",
     "link_offers": "Offerte",
+    "link_about": "Chi siamo",
     "link_contact": "Contatto",
-    "copyright": "© {year} Go Cosmic. Tutti i diritti riservati."
+    "offers_title": "Offerte",
+    "offer_solo": "Sviluppatore Cosmico Solo",
+    "offer_team": "Team Cosmico Completo",
+    "offer_duo": "Duo Sviluppatore + Designer",
+    "legal": "Note legali e uso dell'IA disponibili nella pagina Chi siamo.",
+    "copyright": "© {year} Go Cosmic. Tutti i sistemi nominali."
   }
 }

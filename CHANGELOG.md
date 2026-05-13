@@ -7,8 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [1.4.6] - 2026-05-13
 
-### Added
-- Enriched the footer with localized service-area details, phone, legal mention, and localized links to Services, Offers, and Contact pages
+### Changed
+
+- Redesigned footer to a 3-column layout: Brand (title + studio tagline translated in 5 languages), Studio (navigation links to Services, Projects, Offers, About, Contact), and Offers (3 offer packages linking to /offers page)
 
 ## [1.4.5] - 2026-05-12
 

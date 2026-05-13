@@ -126,94 +126,6 @@ export default function Offers() {
           </div>
         </section>
 
-        {/* Team Developers Offer */}
-        <section className="w-full" aria-labelledby="team-developers-heading">
-          <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
-            <div className="mb-6 flex items-center gap-4">
-              <UserGroupIcon className="h-8 w-8 shrink-0 text-green-400" aria-hidden="true" />
-              <h2 id="team-developers-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
-                {t('team_developers.title')}
-              </h2>
-            </div>
-            <div className="space-y-6 text-gray-300">
-              <div>
-                <h3 className="mb-2 text-lg font-semibold text-green-300 sm:text-xl">
-                  {t('team_developers.subtitle')}
-                </h3>
-                <p className="text-lg">{t('team_developers.description')}</p>
-              </div>
-
-              <div>
-                <h4 className="mb-4 text-lg font-semibold text-white">{t('team_developers.features.title')}:</h4>
-                <ul className="grid gap-3 md:grid-cols-2">
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
-                    <span>{t('team_developers.features.items.team')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
-                    <span>{t('team_developers.features.items.fullstack')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
-                    <span>{t('team_developers.features.items.architecture')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
-                    <span>{t('team_developers.features.items.databases')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
-                    <span>{t('team_developers.features.items.apis')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
-                    <span>{t('team_developers.features.items.infrastructure')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
-                    <span>{t('team_developers.features.items.security')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
-                    <span>{t('team_developers.features.items.cicd')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
-                    <span>{t('team_developers.features.items.monitoring')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
-                    <span>{t('team_developers.features.items.documentation')}</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="mb-4 text-lg font-semibold text-white">{t('team_developers.ideal_for.title')}:</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-400" aria-hidden="true"></span>
-                    <span>{t('team_developers.ideal_for.items.enterprise')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-500" aria-hidden="true"></span>
-                    <span>{t('team_developers.ideal_for.items.platforms')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-600" aria-hidden="true"></span>
-                    <span>{t('team_developers.ideal_for.items.complex')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-700" aria-hidden="true"></span>
-                    <span>{t('team_developers.ideal_for.items.scaling')}</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Developer + Designer Offer */}
         <section className="w-full" aria-labelledby="developer-designer-heading">
           <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
@@ -295,6 +207,94 @@ export default function Offers() {
                   <li className="flex items-center gap-3">
                     <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-700" aria-hidden="true"></span>
                     <span>{t('developer_designer.ideal_for.items.saas')}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Team Developers Offer */}
+        <section className="w-full" aria-labelledby="team-developers-heading">
+          <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
+            <div className="mb-6 flex items-center gap-4">
+              <UserGroupIcon className="h-8 w-8 shrink-0 text-green-400" aria-hidden="true" />
+              <h2 id="team-developers-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
+                {t('team_developers.title')}
+              </h2>
+            </div>
+            <div className="space-y-6 text-gray-300">
+              <div>
+                <h3 className="mb-2 text-lg font-semibold text-green-300 sm:text-xl">
+                  {t('team_developers.subtitle')}
+                </h3>
+                <p className="text-lg">{t('team_developers.description')}</p>
+              </div>
+
+              <div>
+                <h4 className="mb-4 text-lg font-semibold text-white">{t('team_developers.features.title')}:</h4>
+                <ul className="grid gap-3 md:grid-cols-2">
+                  <li className="flex items-center gap-3">
+                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
+                    <span>{t('team_developers.features.items.team')}</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
+                    <span>{t('team_developers.features.items.fullstack')}</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
+                    <span>{t('team_developers.features.items.architecture')}</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
+                    <span>{t('team_developers.features.items.databases')}</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
+                    <span>{t('team_developers.features.items.apis')}</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
+                    <span>{t('team_developers.features.items.infrastructure')}</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
+                    <span>{t('team_developers.features.items.security')}</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
+                    <span>{t('team_developers.features.items.cicd')}</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
+                    <span>{t('team_developers.features.items.monitoring')}</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
+                    <span>{t('team_developers.features.items.documentation')}</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="mb-4 text-lg font-semibold text-white">{t('team_developers.ideal_for.title')}:</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-3">
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-400" aria-hidden="true"></span>
+                    <span>{t('team_developers.ideal_for.items.enterprise')}</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-500" aria-hidden="true"></span>
+                    <span>{t('team_developers.ideal_for.items.platforms')}</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-600" aria-hidden="true"></span>
+                    <span>{t('team_developers.ideal_for.items.complex')}</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-700" aria-hidden="true"></span>
+                    <span>{t('team_developers.ideal_for.items.scaling')}</span>
                   </li>
                 </ul>
               </div>
