@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.5.0] - 2026-05-14
+
+### Added
+
+- `CLAUDE.md` — authoritative guide for AI-agent behavior: commands, architecture, commit conventions, PR checklist, and autonomous workflow instructions
+- `GUIDELINES.md` — UI principles (cosmic theme, WCAG requirements), coding standards, ESLint plugin roles, manual validation checklist, and coverage thresholds
+- `AGENTS.md` — Codex-specific operating notes, project shortcuts, and development rules that complement `CLAUDE.md`
+- Updated `README.md` with full project overview, setup instructions, architecture summary, and contributing guidelines
+- Updated `__tests__/TESTING.md` with latest test patterns and custom render utility notes
+- Condensed `.github/copilot-instructions.md` to reference `CLAUDE.md` and `GUIDELINES.md` as primary sources of truth
+
+### Changed
+
+- Upgraded Yarn from 4.10.3 to 4.14.1
+- Upgraded `next` 16.2.4 → 16.2.6
+- Upgraded `react` / `react-dom` ^19.1.1 → ^19.2.6
+- Upgraded `typescript` 5.8.3 → 5.9.3
+- Upgraded `tailwindcss` ^4.1.11 → ^4.3.0 and `@tailwindcss/postcss` ^4.1.11 → ^4.3.0
+- Upgraded `next-intl` ^4.11.0 → ^4.12.0
+- Upgraded `three` ^0.179.1 → ~0.182.0, `@react-three/fiber` ^9.3.0 → 9.6.1, `@react-three/drei` ^10.7.2 → 10.7.7
+- Upgraded `eslint` ^9.34.0 → ^9.39.4 and `typescript-eslint` ^8.35.0 → ^8.59.3
+- Upgraded `prettier` ^3.6.2 → ^3.8.3 and `prettier-plugin-tailwindcss` ^0.6.14 → ^0.8.0
+- Upgraded `@types/react` 19.1.11 → 19.2.14 and `@types/react-dom` 19.1.7 → 19.2.3
+- Upgraded `@testing-library/react` ^16.1.0 → ^16.3.2 and `@testing-library/jest-dom` ^6.6.3 → ^6.9.1
+- Various other minor dev-dependency bumps (`autoprefixer`, `baseline-browser-mapping`, `eslint-plugin-*`, `globals`, `lint-staged`, `postcss`, `@types/node`, `@types/three`, `@radix-ui/react-slot`, `@vercel/analytics`, `tailwind-merge`)
+
 ## [1.4.6] - 2026-05-13
 
 ### Added

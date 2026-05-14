@@ -13,7 +13,7 @@
 
 - **Next.js 16** — App Router + Turbopack
 - **React 19** — Server components and concurrent features
-- **TypeScript 5.8** — Strict mode; dual tsconfig (build vs. type-check)
+- **TypeScript 5.9** — Strict mode; dual tsconfig (build vs. type-check)
 - **next-intl** — Type-safe i18n, 5 locales (EN, FR, ES, DE, IT)
 - **TailwindCSS 4** — Utility classes + custom design tokens
 - **Radix UI + CVA** — Accessible primitives with typed component variants
