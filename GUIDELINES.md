@@ -44,6 +44,19 @@ Active plugins and their roles:
 - Use `@radix-ui/react-slot` for polymorphic element composition
 - Use `clsx` + `tailwind-merge` for conditional class merging
 
+## Security
+
+`eslint-plugin-security` catches common patterns at lint time. For anything beyond that, consult [`SECURITY.md`](./SECURITY.md) — it documents every decision and constraint for this project.
+
+**Check SECURITY.md before:**
+
+| Situation                               | What to check                                 |
+| --------------------------------------- | --------------------------------------------- |
+| Adding an API route (`app/**/route.ts`) | Input validation, auth, CORS, rate limiting   |
+| Adding a Server Action (`"use server"`) | Input schema (zod), privilege scope           |
+| Adding an env variable                  | Never prefix secrets with `NEXT_PUBLIC_`      |
+| Adding a third-party script             | Update `script-src` in `next.config.ts` + CSP |
+
 ## Commit Message Reference
 
 Format: `<type>(<scope>): <description>`

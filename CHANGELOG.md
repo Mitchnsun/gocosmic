@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Updated `README.md` with full project overview, setup instructions, architecture summary, and contributing guidelines
 - Updated `__tests__/TESTING.md` with latest test patterns and custom render utility notes
 - Condensed `.github/copilot-instructions.md` to reference `CLAUDE.md` and `GUIDELINES.md` as primary sources of truth
+- HTTP security headers on all routes via `next.config.ts`: `Content-Security-Policy`, `X-Content-Type-Options`, `X-Frame-Options: DENY`, `Referrer-Policy`, and `Permissions-Policy`
+- `SECURITY.md` — security best practices section covering HTTP headers, API route requirements (input validation, auth, CSRF, CORS, rate limiting), and guidance for Server Actions and env variables
+- `GUIDELINES.md` — Security section with a quick-reference table directing developers to `SECURITY.md` before adding API routes, Server Actions, env variables, or third-party scripts
 
 ### Changed
 
