@@ -113,7 +113,13 @@ After making changes, validate the app manually:
    - `/services` — all four service sections
    - `/offers` — all three offer packages
    - `/journey` — 3D starfield loads (WebGL)
-   - `/projects/daily-fortune` — project showcase
+   - `/contact` — contact form renders
+   - `/local` (locale-specific slug, e.g. `/en/web-mobile-developer-annecy-geneva`) — local SEO page
+   - `/projects` — project index renders
+   - `/projects/daily-fortune` — Daily Fortune showcase
+   - `/projects/mcomperat` — mcomperat showcase
+   - `/projects/psc-supersprint` — PSC Supersprint showcase
+   - `/projects/choeurdespaysdumontblanc` — Choeur des Pays du Mont Blanc showcase
 7. `yarn test` — all tests must pass
 
 ## Coverage System

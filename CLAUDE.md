@@ -15,7 +15,7 @@ yarn build            # Production build (~34s)
 yarn lint             # ESLint with zero-warnings policy (~7s)
 yarn format           # Prettier write on all .ts/.tsx/.md
 yarn check-types      # TypeScript type check via tsconfig.check.json (~9s)
-yarn test             # Run all Vitest tests (~4s, ~98 tests)
+yarn test             # Run all Vitest tests (~4s, ~138 tests / 33 files)
 yarn test:watch       # Vitest in watch mode
 yarn coverage         # Generate coverage report (must stay ≥80% on all metrics)
 ```
@@ -37,10 +37,10 @@ This is a single Next.js 16 app (App Router) with full internationalization via 
 ### Key directories
 
 - `app/[locale]/` — All routes are under the dynamic `[locale]` segment. Pages export metadata and use server components by default.
-- `components/` — App-specific components (e.g., `LanguageSwitcher`, icons).
+- `components/` — App-specific components: `Header`, `Footer`, `LanguageSwitcher`, `Loader`, `JsonLd`, `Journey`, icons.
 - `design-system/` — Reusable UI primitives: `button.tsx` + `button.variants.ts` using CVA. Components use `@radix-ui/react-slot` for polymorphism.
 - `views/` — View-layer components for complex pages (e.g., Journey 3D canvas).
-- `messages/<locale>/` — Translation files split by namespace: `common`, `navigation`, `footer`, `home`, `about`, `services`, `offers`, `journey`, `projects`.
+- `messages/<locale>/` — Translation files split by namespace: `common`, `navigation`, `footer`, `home`, `about`, `services`, `offers`, `journey`, `projects`, `contact`, `local`, `psc-supersprint`.
 - `i18n/routing.ts` — Defines supported locales (`en`, `fr`, `es`, `de`, `it`) and all translated pathnames.
 - `i18n/request.ts` — Server-side i18n setup (namespace loading per route).
 - `__tests__/` — Mirrors source structure (`components/`, `pages/`, `views/`). `test-utils.tsx` provides a custom `render` that wraps with `NextIntlClientProvider`.

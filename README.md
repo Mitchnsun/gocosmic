@@ -39,15 +39,18 @@ Translations are organized into namespace-based files for improved organization 
 ```
 messages/
   ├── en/              # English translations
-  │   ├── common.json      # Shared strings (404, meta, language switcher)
-  │   ├── navigation.json  # Header navigation labels
-  │   ├── footer.json      # Footer content
-  │   ├── home.json        # Homepage content
-  │   ├── about.json       # About page content
-  │   ├── services.json    # Services page content
-  │   ├── offers.json      # Offers page content
-  │   ├── journey.json     # Journey page content
-  │   └── projects.json    # Project pages content
+  │   ├── common.json        # Shared strings (404, meta, language switcher)
+  │   ├── navigation.json    # Header navigation labels
+  │   ├── footer.json        # Footer content
+  │   ├── home.json          # Homepage content
+  │   ├── about.json         # About page content
+  │   ├── services.json      # Services page content
+  │   ├── offers.json        # Offers page content
+  │   ├── journey.json       # Journey page content
+  │   ├── projects.json      # Project pages content
+  │   ├── contact.json       # Contact page content
+  │   ├── local.json         # Local SEO page content
+  │   └── psc-supersprint.json # PSC Supersprint project content
   ├── fr/              # French (same structure)
   ├── es/              # Spanish (same structure)
   ├── de/              # German (same structure)
@@ -128,6 +131,14 @@ export default function Header() {
 - **Complete Cosmic Team**: Full-stack solutions for complex, enterprise-grade projects
 - **Developer + Designer Duo**: Combined technical excellence and stunning design
 
+### Contact Page (`/contact`)
+
+Professional contact form for client inquiries and consultations.
+
+### Local SEO Page (`/local`)
+
+Locale-specific landing page targeting local searches (e.g., `/en/web-mobile-developer-annecy-geneva`, `/fr/developpeur-web-mobile-annecy-geneve`).
+
 ### Projects Section
 
 #### Daily Fortune (`/projects/daily-fortune`)
@@ -139,6 +150,18 @@ export default function Header() {
 - **Multilingual Support**: Complete translation coverage in 5 languages
 - **Call-to-Action**: Repository link for exploring the project
 
+#### mcomperat (`/projects/mcomperat`)
+
+Personal developer portfolio project showcase.
+
+#### PSC Supersprint (`/projects/psc-supersprint`)
+
+PSC Supersprint project showcase with dedicated translation namespace.
+
+#### Choeur des Pays du Mont Blanc (`/projects/choeurdespaysdumontblanc`)
+
+Choeur des Pays du Mont Blanc project showcase.
+
 ### Technical Features
 
 - **Optimal Performance**: Server-side rendering and automatic optimizations
@@ -148,9 +171,7 @@ export default function Header() {
 
 ## Future Enhancements
 
-- **More Projects**: Additional project showcases beyond Daily Fortune
 - **Team Profiles**: Individual developer profiles with skills and experience
-- **Contact System**: Professional contact forms and consultation booking
 - **Case Studies**: In-depth presentation of successful client projects
 - **Testimonials**: Client feedback and success stories
 - **Blog/Articles**: Technical insights and company updates
@@ -317,48 +338,59 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 ## Architecture
 
 ```
-apps/web/
 ├── app/              # App Router (Next.js 16+)
 │   ├── [locale]/     # Internationalized routes
 │   │   ├── about/    # About page (mission, profile, legal & AI usage)
+│   │   ├── contact/  # Contact page
 │   │   ├── journey/  # 3D cosmic experience page
-│   │   ├── services/ # Services page (development, design, AI, launch)
+│   │   ├── local/    # Local SEO landing page
 │   │   ├── offers/   # Offers page (solo, team, duo packages)
-│   │   ├── projects/ # Projects showcase
+│   │   ├── projects/ # Projects index + sub-pages (daily-fortune, mcomperat, psc-supersprint, choeurdespaysdumontblanc)
+│   │   ├── services/ # Services page (development, design, AI, launch)
 │   │   └── page.tsx  # Homepage
 │   ├── layout.tsx    # Root layout with i18n provider
 │   └── ...
 ├── components/       # App-specific components
+│   ├── Footer/       # Site footer
+│   ├── Header/       # Site header and navigation
+│   ├── Journey/      # 3D canvas wrapper
+│   ├── JsonLd/       # Structured data (JSON-LD)
 │   ├── LanguageSwitcher/ # Multilingual navigation component
-│   └── icons/        # Reusable SVG icons (e.g., LinkedInIcon)
+│   ├── Loader/       # Loading states
+│   └── icons/        # Reusable SVG icons
+├── design-system/    # Reusable UI primitives (Button with CVA variants)
 ├── messages/         # Translation files organized by namespace
 │   ├── en/           # English translations
-│   │   ├── common.json     # Common UI strings (404, meta, language)
-│   │   ├── navigation.json # Header navigation
-│   │   ├── footer.json     # Footer content
-│   │   ├── home.json       # Homepage content
-│   │   ├── about.json      # About page content
-│   │   ├── services.json   # Services page content
-│   │   ├── offers.json     # Offers page content
-│   │   ├── journey.json    # Journey page content
-│   │   └── projects.json   # Project pages content
+│   │   ├── common.json        # Common UI strings (404, meta, language)
+│   │   ├── navigation.json    # Header navigation
+│   │   ├── footer.json        # Footer content
+│   │   ├── home.json          # Homepage content
+│   │   ├── about.json         # About page content
+│   │   ├── services.json      # Services page content
+│   │   ├── offers.json        # Offers page content
+│   │   ├── journey.json       # Journey page content
+│   │   ├── projects.json      # Project pages content
+│   │   ├── contact.json       # Contact page content
+│   │   ├── local.json         # Local SEO page content
+│   │   └── psc-supersprint.json # PSC Supersprint project
 │   ├── fr/           # French translations (same structure)
 │   ├── es/           # Spanish translations (same structure)
 │   ├── de/           # German translations (same structure)
 │   └── it/           # Italian translations (same structure)
-├── i18n/            # Internationalization configuration
+├── i18n/             # Internationalization configuration
 │   ├── routing.ts    # Locale routing setup with translated pathnames
 │   ├── request.ts    # Server-side i18n configuration
-│   └── navigation.ts # Client-side navigation utilities
-├── views/           # View components (e.g., Journey content)
-├── __tests__/       # Comprehensive unit tests
-│   ├── components/  # Component tests
-│   ├── pages/       # Page tests
-│   ├── views/       # View tests
+│   ├── navigation.ts # Client-side navigation utilities
+│   └── canonical.ts  # Canonical URL helpers
+├── views/            # View components (e.g., Journey content)
+├── __tests__/        # Comprehensive unit tests
+│   ├── components/   # Component tests
+│   ├── i18n/         # i18n utility tests (canonical)
+│   ├── pages/        # Page tests
+│   ├── views/        # View tests
+│   ├── proxy.test.ts # Middleware/proxy tests
 │   └── test-utils.tsx # Custom render with i18n context
-├── proxy.ts         # Locale detection and routing
-├── public/          # Static assets and icons
+├── proxy.ts          # Locale detection and routing middleware
+├── public/           # Static assets and icons
 └── ...
 ```
-
-For more information about the project's general architecture, see the [main README](../../README.md).
