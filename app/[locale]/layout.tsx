@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
-import { Poppins } from 'next/font/google';
+import { Space_Grotesk } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
@@ -13,9 +13,9 @@ import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/config';
 import { getOgImages } from '@/lib/og';
 
-const poppins = Poppins({
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
-  weight: ['100', '300', '400', '500', '700', '800'],
+  weight: ['300', '400', '500', '600', '700'],
 });
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -68,7 +68,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale || 'en'}>
-      <body className={`${poppins.className} bg-slate-950`}>
+      <body className={`${spaceGrotesk.className} bg-slate-950`}>
         <NextIntlClientProvider>
           <Header />
           <div className="mt-16">{children}</div>

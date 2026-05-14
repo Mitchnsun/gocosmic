@@ -11,8 +11,8 @@ import { SITE_URL } from '@/lib/config';
 
 // Mock Next.js modules
 vi.mock('next/font/google', () => ({
-  Poppins: () => ({
-    className: 'mocked-poppins-font',
+  Space_Grotesk: () => ({
+    className: 'mocked-space-grotesk-font',
   }),
 }));
 
@@ -139,7 +139,7 @@ describe('LocaleLayout', () => {
       // Check body styling
       const body = layout.props.children;
       expect(body.type).toBe('body');
-      expect(body.props.className).toContain('mocked-poppins-font');
+      expect(body.props.className).toContain('mocked-space-grotesk-font');
       expect(body.props.className).toContain('bg-slate-950');
     });
 
@@ -173,7 +173,7 @@ describe('LocaleLayout', () => {
       // Check body styling
       const body = layout.props.children;
       expect(body.type).toBe('body');
-      expect(body.props.className).toContain('mocked-poppins-font');
+      expect(body.props.className).toContain('mocked-space-grotesk-font');
       expect(body.props.className).toContain('bg-slate-950');
     });
 
