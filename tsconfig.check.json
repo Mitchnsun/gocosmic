@@ -2,7 +2,6 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "allowJs": true,
-    "baseUrl": ".",
     "declaration": true,
     "declarationMap": true,
     "esModuleInterop": true,
@@ -32,12 +31,6 @@
     "plugins": [{ "name": "next" }],
     "types": ["vitest/globals", "@testing-library/jest-dom"]
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "__tests__/**/*",
-    "next-env.d.ts",
-    "next.config.ts"
-  ],
+  "include": ["**/*.ts", "**/*.tsx", "__tests__/**/*", "next-env.d.ts", "next.config.ts"],
   "exclude": ["node_modules", ".next"]
 }

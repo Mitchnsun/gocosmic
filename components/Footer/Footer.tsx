@@ -66,7 +66,7 @@ const Footer = () => {
         {/* Column 3 — Offers */}
         <div>
           <ColumnHeading>{t('offers_title')}</ColumnHeading>
-          <ul className="space-y-2 text-sm">
+          <ul className="space-y-2 pl-4 text-sm">
             <li>
               <Link className="transition-colors hover:text-white" href="/offers">
                 {t('offer_solo')}

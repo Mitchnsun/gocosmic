@@ -1,532 +1,90 @@
-# Go Cosmic - GitHub Copilot Instructions
+# Go Cosmic — GitHub Copilot Instructions
 
-Always reference these instructions first and fallback to search or bash commands only when you encounter unexpected information that does not match the info here.
-
-**IMPORTANT**: Before making any changes or answering development questions, always read the `README.md` and `CONTRIBUTING.md` files at the root of the project to understand the project structure, development workflow, and contribution guidelines. These files contain essential context for working effectively on this codebase.
+> **Primary references**: [`CLAUDE.md`](../CLAUDE.md) is the authoritative guide for commands, architecture, and workflows. [`GUIDELINES.md`](../GUIDELINES.md) covers UI principles, coding standards, commit examples, manual validation, and coverage details. Read both before making changes.
 
 ## Critical Requirements
 
-**NEVER CANCEL BUILDS OR LONG-RUNNING COMMANDS** - Wait for all operations to complete. If a command appears to hang, wait at least 15 minutes before considering alternatives.
+**NEVER CANCEL BUILDS OR LONG-RUNNING COMMANDS.** If a command appears to hang, wait at least 15 minutes before considering alternatives.
 
-- Node.js >= 22 required (project specifies v22 in .nvmrc)
-- Current system may run on Node v20.19.4 with warnings but works correctly
-- yarn recommended
+- Node.js ≥ 22 required (`.nvmrc` specifies v22; v20 works with warnings)
+- Package manager: `yarn` via Corepack (`corepack enable` on first use)
 
 ## Technology Stack
 
-This project is a **modern React repo** built with cutting-edge technologies:
+- **Next.js 16** — App Router + Turbopack
+- **React 19** — Server components and concurrent features
+- **TypeScript 5.9** — Strict mode; dual tsconfig (build vs. type-check)
+- **next-intl** — Type-safe i18n, 5 locales (EN, FR, ES, DE, IT)
+- **TailwindCSS 4** — Utility classes + custom design tokens
+- **Radix UI + CVA** — Accessible primitives with typed component variants
+- **Vitest + Testing Library** — Unit tests, ≥80% coverage enforced
 
-### Core Framework & Build Tools
+## Key Commands
 
-- **Next.js 16.2.4** - React framework with App Router and Turbopack for fast development
-- **React 19.1.1** - Latest React with server components and concurrent features
-- **TypeScript 5.8.3** - Strict type checking across all packages
-- **next-intl** - Type-safe internationalization with 5 language support (EN, FR, ES, DE, IT)
-
-### UI & Styling
-
-- **TailwindCSS 4.x** - Utility-first CSS framework with custom design tokens
-- **Radix UI** - Unstyled, accessible UI primitives (`@radix-ui/react-slot`)
-- **Class Variance Authority (CVA)** - Type-safe component variants
-- **clsx + tailwind-merge** - Intelligent CSS class merging and conditional styling
-
-### Testing & Quality
-
-- **Vitest** - Fast unit testing framework with 100% coverage enforcement
-- **Testing Library** - React testing utilities (`@testing-library/react`, `@testing-library/user-event`)
-- **ESLint 9.x** - Code linting with modern flat config and enhanced plugins:
-  - `@eslint/js` - Core JavaScript rules
-  - `typescript-eslint` - TypeScript-specific linting
-  - `eslint-plugin-security` - Security vulnerability detection
-  - `eslint-plugin-unicorn` - Modern JavaScript/TypeScript best practices
-  - `eslint-plugin-import` - Import/export validation
-  - `eslint-plugin-simple-import-sort` - Automatic import sorting
-  - `eslint-plugin-unused-imports` - Automatic unused import removal
-  - `eslint-plugin-jsx-a11y` - Accessibility enforcement for React
-  - `eslint-plugin-prettier` - Prettier integration
-- **Prettier** - Code formatting with Tailwind plugin
-- **Husky + lint-staged** - Git hooks for pre-commit validation
-
-### Development Tools
-
-- **JSDOM** - DOM simulation for testing
-- **Commitlint** - Conventional commit message validation
-- **Autoprefixer** - CSS vendor prefixing
-
-### Architecture Patterns
-
-- **Component-driven development** with reusable UI components
-- **Design system approach** with consistent tokens across all interfaces
-- **100% test coverage** enforcement for reliability
-- **Dual TypeScript configs** for clean builds and comprehensive type checking
-- **Internationalization-first** with type-safe translations and locale-specific routing
-
-## Coding Standards
-
-The project enforces **strict coding standards** to ensure code quality and consistency:
-
-- **TypeScript-first approach** with strict type checking across all packages
-- **ESLint 9.x** with flat config, enhanced plugins, and zero warnings policy (`--max-warnings 0`)
-- **Enhanced ESLint plugins** including Security (vulnerability detection) and Unicorn (modern practices)
-- **Prettier** for automatic code formatting with consistent styling
-- **Import management** with `eslint-plugin-simple-import-sort` and automatic unused import removal
-- **Conventional Commits** enforced via commitlint with custom types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `tech`, `chore`
-- **Pre-commit hooks** via Husky + lint-staged that automatically format code and run linting
-- **Accessibility enforcement** with jsx-a11y plugin for React components
-- **100% test coverage** requirement with comprehensive Vitest testing
-- **Component patterns** following React best practices with proper TypeScript interfaces and JSDoc documentation
-
-All code changes must pass formatting, linting, type checking, and testing before being committed. The CI will fail if any standard is not met.
-
-## Commit Message Convention
-
-The project strictly enforces **Conventional Commits** specification for all commit messages. This ensures consistency, improves readability of the git history, and enables automated tooling for changelog generation and versioning.
-
-### Format Structure
-
-```
-<type>[optional scope]: <description>
-
-[optional body]
-
-[optional footer(s)]
-```
-
-### Commit Types
-
-The following commit types are enforced via commitlint:
-
-- **feat** - A new feature for the user
-- **fix** - A bug fix for the user
-- **docs** - Documentation only changes
-- **style** - Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-- **refactor** - A code change that neither fixes a bug nor adds a feature
-- **perf** - A code change that improves performance
-- **test** - Adding missing tests or correcting existing tests
-- **tech** - Upgrade or update dependencies and improve the codebase
-- **chore** - Changes to the build process or auxiliary tools and libraries such as documentation generation
-
-### Description Rules
-
-- **Imperative mood** - Use "add feature" not "added feature" or "adds feature"
-- **Lowercase** - Start with lowercase letter
-- **No period** - Do not end with a period
-- **Max 69 characters** - Keep it concise and scannable
-- **English only** - All commit messages must be in English
-
-### Scope Guidelines
-
-The scope is optional but **highly recommended** for clarity:
-
-- `ui` - Changes to the UI components in design-system folder (`design-system/`)
-- `config` - Changes to configuration files (ESLint, TypeScript, etc.)
-- `deps` - Dependency updates and package management
-- `docs` - Documentation changes
-
-### Body Format
-
-When adding a body (optional):
-
-- **Blank line** after the description
-- **Wrap at 72 characters** for readability
-- **Explain what and why** - not how
-- **Multiple paragraphs** allowed, separated by blank lines
-
-### Footer Format
-
-Use the footer for:
-
-- **Issue references**: `Fixes #123`, `Closes #456`, `Refs #789`
-- **Breaking changes**: `BREAKING CHANGE: remove deprecated API`
-- **Co-authored commits**: `Co-authored-by: Name <email@example.com>`
-
-### Examples
-
-#### ✅ Good Commit Messages
+See [`CLAUDE.md § Commands`](../CLAUDE.md) for the full list with runtimes.
 
 ```bash
-feat(ui): add cosmic Button component with variants
-
-refactor(web): simplify navigation state management
-
-docs: update README installation instructions
-
-fix(ui): resolve button focus styles in dark mode
-
-test(web): add unit tests for user authentication flow
-
-tech(deps): update Next.js to version 15
-
-perf(ui): optimize component rendering with memo
-
-feat(web): add user dashboard with data visualization
-
-The dashboard includes charts for usage analytics and
-provides real-time updates through WebSocket connections.
-
-Fixes #42
+yarn dev          # Dev server on :3000
+yarn build        # Production build
+yarn lint         # ESLint — zero warnings policy
+yarn format       # Prettier
+yarn check-types  # TypeScript via tsconfig.check.json
+yarn test         # Vitest run
+yarn coverage     # Coverage report + threshold validation
 ```
 
-#### ❌ Bad Commit Messages
+**Before committing**: `yarn format && yarn lint && yarn check-types && yarn test && yarn coverage`
 
-```bash
-Added new feature
-Fixed bug
-Update
-WIP
-Minor changes
-feat: Adding a new component (wrong tense)
-fix(ui): Fix the button. (period at end, not imperative)
-FEAT(ui): Add button (wrong case)
-feat(ui): add a very long description that exceeds fifty characters (too long)
-```
+## Architecture
 
-### Breaking Changes
+See [`CLAUDE.md § Architecture`](../CLAUDE.md) for the full directory map.
 
-Indicate breaking changes in two ways:
+Key points for Copilot:
 
-1. **Add `!` after type/scope**: `feat(ui)!: remove deprecated Button props`
-2. **Use footer**: `BREAKING CHANGE: remove deprecated Button API`
+- All routes live under `app/[locale]/` — every page is internationalised by default
+- `i18n/routing.ts` maps canonical paths to localised slugs; update it when adding routes
+- `design-system/` uses CVA for typed variants; `components/` holds app-specific pieces
+- Custom test `render` is in `__tests__/test-utils.tsx` — use it for any component that calls `useTranslations`
 
-### Validation
+## Adding a New Route
 
-All commits are automatically validated by:
+1. Create `app/[locale]/your-route/page.tsx`
+2. Add translated pathnames in `i18n/routing.ts`
+3. Export `metadata` with `alternates.canonical: '/your-route'` (locale-agnostic path)
+4. Add translation keys to all 5 locale files under `messages/`
+5. Update navigation components if the route needs a nav link
 
-- **Husky pre-commit hooks** - Run before each commit
-- **Commitlint** - Enforces conventional format and rules
-- **CI/CD pipeline** - Fails build if conventions not followed
+## Commit Conventions
 
-For detailed contribution guidelines, see [`CONTRIBUTING.md`](../CONTRIBUTING.md).
+Enforced by commitlint + Husky. Full examples in [`GUIDELINES.md § Commit Message Reference`](../GUIDELINES.md).
 
-## UI Guidelines
+Format: `<type>(<scope>): <description>` — imperative, lowercase, no period, max 69 chars.
 
-The project follows **modern, clean design principles** with a distinctive **cosmic theme**:
+Types: `feat` `fix` `docs` `style` `refactor` `perf` `test` `tech` `chore`
+Scopes: `ui` `web` `config` `deps`
 
-- **Modern & Minimalist** - Clean layouts with generous whitespace, subtle shadows, and smooth transitions
-- **Cosmic Theme** - Space-inspired color palette with deep blacks, cosmic blues, and stellar accents
-- **Accessibility First** - All components must meet WCAG standards using Radix UI primitives
-- **Component-driven Design** - Reusable, composable components with isolated Vitest tests
-- **Design System Approach** - Consistent spacing, typography, and color tokens across all interfaces
-- **Responsive Design** - Mobile-first approach with fluid layouts and adaptive components
-- **Smooth Interactions** - Thoughtful micro-interactions and animations that enhance the cosmic experience
-- **Dark Mode Ready** - Components designed with both light and dark themes in mind
+## Before Opening a PR
 
-All UI components should evoke a sense of exploration and wonder while maintaining professional usability and performance.
+1. Bump `version` in `package.json` (semver)
+2. Add entry to `CHANGELOG.md` under `## [X.Y.Z] - YYYY-MM-DD`
+3. All CI checks must pass: lint, types, tests, coverage ≥ 80%
 
-## Working Effectively
+## UI & Coding Standards
 
-### Essential Reading
+See [`GUIDELINES.md`](../GUIDELINES.md) for:
 
-**Before starting development, read these files to understand the project:**
+- Cosmic theme principles and WCAG requirements
+- ESLint plugin roles and component patterns
+- Manual validation checklist (browser smoke tests for all routes and locales)
+- Coverage thresholds and exclusion list
 
-- **`README.md`** - Project overview, setup instructions, and architecture
-- **`CONTRIBUTING.md`** - Development workflow, coding standards, and contribution guidelines
+## AI Agent Workflow
 
-### Bootstrap and Setup
+See [`CLAUDE.md § AI agent workflow`](../CLAUDE.md) for the full planning, execution, and self-improvement loop.
 
-1. Clone repository and navigate to root directory
-2. **Enable Corepack**: `corepack enable` -- enables yarn package manager (first time only)
-3. **Install dependencies**: `yarn install` -- takes approximately 3.5 minutes. NEVER CANCEL. Set timeout to 15 minutes.
-4. **TypeScript configuration**: The project uses a dual TypeScript configuration:
-   - `tsconfig.json`: Full project type-checking with `noEmit: true`
-   - `tsconfig.check.json`: Stricter type-checking configuration for CI validation
+Core rules:
 
-### Build Process
-
-- **Full build**: `yarn build` -- takes approximately 34 seconds. NEVER CANCEL. Set timeout to 10 minutes.
-
-### Development Workflow
-
-- **Start development server**: `yarn dev`
-
-### Testing and Quality
-
-- **Run all tests**: `yarn test` -- takes approximately 4 seconds (98 tests across 26 files). NEVER CANCEL. Set timeout to 10 minutes.
-- **Web app testing**: Web app has comprehensive unit tests for components, pages, and views using Vitest and React Testing Library
-- **Test coverage**: `yarn coverage` -- generates coverage reports. Coverage must meet 80% thresholds on all metrics. NEVER CANCEL. Set timeout to 15 minutes.
-- **Type checking**: `yarn check-types` -- takes approximately 9 seconds. NEVER CANCEL. Set timeout to 10 minutes.
-- **Linting**: `yarn lint` -- takes approximately 7 seconds. NEVER CANCEL. Set timeout to 10 minutes.
-- **Code formatting**: `yarn format` -- takes approximately 2 seconds
-
-### Pre-commit Validation
-
-**ALWAYS run these commands before committing or the CI will fail:**
-
-1. `yarn format`
-2. `yarn lint`
-3. `yarn check-types`
-4. `yarn test`
-5. `yarn coverage` -- ensures coverage thresholds are met
-
-### Version and Changelog Management
-
-**CRITICAL**: Before opening a Pull Request, you must:
-
-1. **Increment version in `package.json`** following [Semantic Versioning](https://semver.org/):
-   - **MAJOR** (X.0.0) - Incompatible API changes or breaking changes
-   - **MINOR** (x.Y.0) - New functionality in a backwards compatible manner
-   - **PATCH** (x.y.Z) - Backwards compatible bug fixes
-
-2. **Update `CHANGELOG.md`** with a new entry:
-
-   ```markdown
-   ## [X.Y.Z] - YYYY-MM-DD
-
-   ### Added
-
-   - New features and functionality
-
-   ### Changed
-
-   - Changes in existing functionality
-
-   ### Fixed
-
-   - Bug fixes
-
-   ### Removed
-
-   - Removed features or deprecated functionality
-   ```
-
-3. **Use current date** in YYYY-MM-DD format (e.g., 2025-10-29)
-
-4. **Categorize changes appropriately**:
-   - `Added` for new features
-   - `Changed` for changes in existing functionality
-   - `Fixed` for bug fixes
-   - `Removed` for removed features
-
-Example:
-
-- Version 1.0.3 → 1.0.4 (patch: bug fix)
-- Version 1.0.3 → 1.1.0 (minor: new feature)
-- Version 1.0.3 → 2.0.0 (major: breaking change)
-
-## Manual Validation Scenarios
-
-**CRITICAL**: After making changes, always test actual functionality:
-
-### Web Application Testing
-
-1. Build and start web app: `yarn dev`
-2. Access http://localhost:3000
-3. Verify page loads with "Go Cosmic" heading
-4. Test button interactions:
-   - Click "Try me" button - should show alert
-   - Click "Cosmic developer" link - should open external link
-5. Verify styles and layout render correctly
-6. Test language switching:
-   - Use language switcher to change between EN, FR, ES, DE, IT
-   - Verify URLs change to locale-prefixed format (/en/, /fr/, etc.)
-   - Verify content is properly translated
-   - Test browser back/forward navigation
-7. Test page navigation:
-   - Navigate to About page (/about) - verify company overview and developer profile
-   - Navigate to Services page (/services) - verify all services sections render
-   - Navigate to Offers page (/offers) - verify all offers packages display
-   - Navigate to Journey page (/journey) - verify 3D cosmic experience loads
-   - Navigate to Daily Fortune project page (/projects/daily-fortune) - verify project showcase renders correctly
-8. Run web app tests: `yarn test` -- comprehensive unit tests for components, pages, and views
-
-## Repository Structure
-
-### Key Files and Directories
-
-- **`package.json`** - Root package with npm scripts
-- **`.husky/`** - Git hooks for pre-commit validation
-- **`commitlint.config.js`** - Commit message validation (Conventional Commits)
-
-## Common Patterns and Troubleshooting
-
-### Development Server Issues
-
-- If `yarn dev` hangs, use individual package dev commands instead
-- Web app uses Next.js with Turbopack for fast development
-
-### Internationalization (i18n)
-
-The web application uses next-intl for comprehensive multilingual support:
-
-- **Supported Languages**: English (en), French (fr), Spanish (es), German (de), Italian (it)
-- **Translation Files**: Located in `messages/` with complete message structure per locale
-- **URL Structure**: Locale-prefixed routes (`/en/`, `/fr/`, `/es/`, `/de/`, `/it/`)
-- **Translated Pathnames**: Route paths are localized for SEO and UX (e.g., `/en/about` → `/fr/a-propos`)
-- **Type Safety**: Full TypeScript integration with compile-time validation of translation keys
-- **Testing**: Custom test utilities provide next-intl context for component testing
-
-#### Working with Translations
-
-- **Reference Language**: English (`en.json`) is the base language with complete message structure
-- **Adding Keys**: Add new translation keys to `en.json` first, then translate to other locales
-- **Testing i18n Components**: Use custom render from `__tests__/test-utils.tsx` for components using translations
-- **Navigation Mocking**: Global mocks for `next/navigation` are configured in test setup
-
-#### Adding New Routes
-
-When adding new routes to the application, follow this procedure:
-
-1. **Create the route**: Add the new page component in `app/[locale]/your-route/page.tsx`
-2. **Configure pathnames**: Update `i18n/routing.ts` to add translated pathnames:
-   ```typescript
-   pathnames: {
-     '/your-route': {
-       en: '/your-route',
-       fr: '/votre-route',
-       es: '/tu-ruta',
-       de: '/ihre-route',
-       it: '/la-tua-route',
-     },
-   }
-   ```
-3. **Add canonical URL**: Export metadata with a canonical URL in the page component to avoid duplicate content issues:
-   ```typescript
-   export const metadata: Metadata = {
-     alternates: {
-       canonical: '/your-route',
-     },
-   };
-   ```
-   Use the locale-agnostic path (without the `/[locale]` prefix). Next.js and next-intl will resolve the correct absolute URL per locale.
-4. **Add translations**: Include any new translation keys in all locale files (`messages/`)
-5. **Update navigation**: If the route needs navigation links, add them to navigation components
-6. **Test thoroughly**: Ensure the route works correctly in all locales and test the functionality
-
-#### Translation File Structure
-
-```
-messages/
-├── en/         # English (base/reference)
-│   ├── about.json
-│   ├── common.json
-│   ├── contact.json
-│   └── ...
-├── fr/         # French translations
-├── es/         # Spanish translations
-├── de/         # German translations
-└── it/         # Italian translations
-```
-
-All locale directories maintain the same file structure for consistency and type safety.
-
-### Build Failures
-
-- Build failures usually indicate missing UI package build or TypeScript errors
-- Run `yarn check-types` to isolate TypeScript issues
-- Ensure all dependencies are installed with `yarn`
-
-### Git Workflow
-
-- All commits must follow Conventional Commits format (enforced by git hooks)
-- Pre-commit hooks run lint-staged and validate commit messages
-- **See detailed commit guidelines above** for comprehensive formatting rules
-- Types: feat, fix, docs, style, refactor, perf, test, tech, chore
-
-### Coverage System
-
-- **Testing**: All components are thoroughly tested with Vitest and React Testing Library
-- **`yarn coverage`** - Generates comprehensive coverage reports in multiple formats:
-  - Terminal output with coverage percentages
-  - HTML report at `coverage/index.html` for detailed visualization
-  - JSON report for CI/CD integration
-  - Validates that coverage meets the 80% thresholds:
-    - **Lines**: 80% (every line must be executed)
-    - **Functions**: 80% (every function must be called)
-    - **Branches**: 80% (every conditional branch must be tested)
-    - **Statements**: 80% (every statement must be executed)
-- **Coverage exclusions** configured in `vitest.config.ts`:
-  - `node_modules/` and `.next/` and `.yarn/` - Build artifacts
-  - `__tests__/` - Test files themselves
-  - `**/*.test.*` and `**/*.spec.*` and `**/*.d.ts` - Test and declaration files
-  - `**/*.config.*` - Configuration files (`next.config.ts`, `postcss.config.mjs`, `eslint.config.js`)
-  - `i18n/*.ts` - i18n routing configuration files
-  - `dist/` - Build output
-
-**CRITICAL**: `coverage` will fail CI if any threshold drops below 80%. This ensures every new feature or change is properly tested.
-
-## Commands Reference
-
-### Root Level Commands
-
-```bash
-yarn install             # 3.5 min - Install all dependencies
-yarn build           # 34 sec - Build all packages
-yarn dev             # Start all dev servers (use individual commands if hanging)
-yarn lint            # 7 sec - Lint all packages
-yarn format          # 2 sec - Format all code
-yarn check-types     # 9 sec - Type check all packages
-yarn test            # 4 sec - Run all tests (98 tests across 26 files)
-yarn coverage        # Generate test coverage reports (HTML + JSON)
-```
-
-**Remember**: Always wait for commands to complete. Build times of 15+ minutes are normal for some projects. NEVER CANCEL operations prematurely.
-
----
-
-## Annex — AI Orchestration Workflow
-
-> This section is a **complementary reference** for AI agents working on this codebase. It does **not** override any rule defined above; it provides an additional action framework to improve AI-driven development quality and consistency.
->
-> **Note on helper files**:
->
-> - `tasks/todo.md` — ephemeral planning scratch-pad. The `/tasks/` directory is listed in `.gitignore` so these files are **never committed**.
-> - `docs/lessons.md` — persistent lessons log that **must be committed**. It lives under `docs/` so it is tracked and survives across sessions.
-
-### Workflow Orchestration
-
-#### 1. Plan Node Default
-
-- Enter plan mode for ANY non-trivial task (3+ steps or architectural decisions)
-- If something goes sideways, STOP and re-plan immediately — don't keep pushing
-- Use plan mode for verification steps, not just building
-- Write detailed specs upfront to reduce ambiguity
-
-#### 2. Subagent Strategy
-
-- Use subagents liberally to keep main context window clean
-- Offload research, exploration, and parallel analysis to subagents
-- For complex problems, throw more compute at it via subagents
-- One task per subagent for focused execution
-
-#### 3. Self-Improvement Loop
-
-- After ANY correction from the user: update `docs/lessons.md` with the pattern
-- Write rules for yourself that prevent the same mistake
-- Ruthlessly iterate on these lessons until mistake rate drops
-- Review lessons at session start for relevant project
-
-#### 4. Verification Before Done
-
-- Never mark a task complete without proving it works
-- Diff behavior between main and your changes when relevant
-- Ask yourself: "Would a staff engineer approve this?"
-- Run tests, check logs, demonstrate correctness
-
-#### 5. Demand Elegance (Balanced)
-
-- For non-trivial changes: pause and ask "is there a more elegant way?"
-- If a fix feels hacky: "Knowing everything I know now, implement the elegant solution"
-- Skip this for simple, obvious fixes — don't over-engineer
-- Challenge your own work before presenting it
-
-#### 6. Autonomous Bug Fixing
-
-- When given a bug report: just fix it. Don't ask for hand-holding
-- Point at logs, errors, failing tests — then resolve them
-- Zero context switching required from the user
-- Go fix failing CI tests without being told how
-
-### Task Management
-
-1. **Plan First**: Write plan to `tasks/todo.md` with checkable items
-2. **Verify Plan**: Check in before starting implementation
-3. **Track Progress**: Mark items complete as you go
-4. **Explain Changes**: High-level summary at each step
-5. **Document Results**: Add review section to `tasks/todo.md`
-6. **Capture Lessons**: Update `docs/lessons.md` after corrections (commit this file)
-
-### Core Principles
-
-- **Simplicity First**: Make every change as simple as possible. Impact minimal code.
-- **No Laziness**: Find root causes. No temporary fixes. Senior developer standards.
-- **Minimal Impact**: Changes should only touch what's necessary. Avoid introducing bugs.
+- Plan before implementing any non-trivial task; use `tasks/todo.md` as scratch-pad (gitignored)
+- After corrections, update and commit `docs/lessons.md`
+- Never mark work done without running verification commands
+- Autonomous bug fixing: find root cause, fix it, prove it works — no hand-holding

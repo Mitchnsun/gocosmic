@@ -32,11 +32,14 @@ The web app now includes a comprehensive test suite using:
 Follow the same folder structure as the project:
 
 ```
-apps/web/__tests__/
+__tests__/
 ├── components/          # Component tests
+├── i18n/               # i18n utility tests (canonical URLs)
 ├── pages/              # Page tests
 ├── views/              # View component tests
+├── proxy.test.ts       # Middleware/proxy tests
 ├── test-setup.tsx      # Global test configuration
+├── test-utils.tsx      # Custom render with NextIntlClientProvider
 └── tsconfig.json       # TypeScript configuration for tests
 ```
 
