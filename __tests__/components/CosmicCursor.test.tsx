@@ -108,7 +108,6 @@ describe('CosmicCursor', () => {
       render(
         <CosmicCursor
           trailLength={12}
-          trailDelay={20}
           orbitRadius={32}
           orbitCount={4}
           magneticRange={100}

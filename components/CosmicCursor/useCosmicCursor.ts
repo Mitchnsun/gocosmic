@@ -128,6 +128,7 @@ export function useCosmicCursor({
       // Magnetic detection
       let closestDist = Infinity;
       let closestEl: Element | null = null;
+      let closestRect: DOMRect | null = null;
 
       for (const el of magneticElementsRef.current) {
         const rect = el.getBoundingClientRect();
@@ -137,14 +138,14 @@ export function useCosmicCursor({
         if (dist < closestDist) {
           closestDist = dist;
           closestEl = el;
+          closestRect = rect;
         }
       }
 
-      if (closestEl && closestDist < magneticRange) {
+      if (closestEl && closestRect && closestDist < magneticRange) {
         state.isMagnetic = true;
-        const rect = closestEl.getBoundingClientRect();
-        const cx = rect.left + rect.width / 2;
-        const cy = rect.top + rect.height / 2;
+        const cx = closestRect.left + closestRect.width / 2;
+        const cy = closestRect.top + closestRect.height / 2;
         // Ease cursor toward element center
         state.mouse.x += (cx - e.clientX) * magneticEase;
         state.mouse.y += (cy - e.clientY) * magneticEase;

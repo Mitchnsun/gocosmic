@@ -8,8 +8,6 @@ import { useCosmicCursor } from './useCosmicCursor';
 export interface CosmicCursorProps {
   /** Number of trailing dots. Defaults to 8. */
   trailLength?: number;
-  /** Delay between each trailing dot (ms). Defaults to 30. */
-  trailDelay?: number;
   /** Orbit radius at rest (px). Defaults to 24. */
   orbitRadius?: number;
   /** Number of orbital dots. Defaults to 3. */
@@ -88,7 +86,7 @@ const CosmicCursor = ({
     let smoothY = state.mouse.y;
 
     const draw = (now: number) => {
-      const dt = Math.min(now - lastFrameTime, 50); // cap at 50ms
+      const dt = Math.min(now - lastFrameTime, 50); // cap delta to 50ms to avoid large jumps when the tab is backgrounded
       lastFrameTime = now;
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
