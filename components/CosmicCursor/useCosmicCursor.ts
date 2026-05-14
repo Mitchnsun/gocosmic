@@ -99,8 +99,8 @@ export function useCosmicCursor({
     const observer = new MutationObserver(scanMagnetic);
     observer.observe(document.body, { childList: true, subtree: true });
 
-    // Trail initialisation
-    state.trail = Array.from({ length: trailLength }, () => ({ ...state.mouse }));
+    // Trail initialization
+    state.trail = Array.from({ length: trailLength }, () => ({ x: -200, y: -200 }));
 
     let lastX = state.mouse.x;
     let lastY = state.mouse.y;

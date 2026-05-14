@@ -116,7 +116,7 @@ const CosmicCursor = ({
           const alpha = t * 0.6;
           const radius = trailSize * (0.4 + t * 0.6);
 
-          // Colour: interpolate cosmicLatte → aerospace
+          // Color: interpolate cosmicLatte → aerospace
           const r = Math.round(latteRgb.r + (accentRgb.r - latteRgb.r) * t);
           const g = Math.round(latteRgb.g + (accentRgb.g - latteRgb.g) * t);
           const b = Math.round(latteRgb.b + (accentRgb.b - latteRgb.b) * t);
