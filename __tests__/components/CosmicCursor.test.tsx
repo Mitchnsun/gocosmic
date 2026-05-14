@@ -39,8 +39,9 @@ const mockCtx = {
   lineWidth: 0,
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-(HTMLCanvasElement.prototype as any).getContext = vi.fn(() => mockCtx);
+HTMLCanvasElement.prototype.getContext = vi.fn(
+  () => mockCtx
+) as unknown as typeof HTMLCanvasElement.prototype.getContext;
 
 vi.stubGlobal(
   'requestAnimationFrame',
@@ -76,6 +77,18 @@ describe('CosmicCursor', () => {
   it('requests 2d context on mount', () => {
     render(<CosmicCursor />);
     expect(HTMLCanvasElement.prototype.getContext).toHaveBeenCalledWith('2d');
+  });
+
+  it('does not start animation loop when getContext returns null', () => {
+    HTMLCanvasElement.prototype.getContext = vi.fn(
+      () => null
+    ) as unknown as typeof HTMLCanvasElement.prototype.getContext;
+    render(<CosmicCursor />);
+    expect(requestAnimationFrame).not.toHaveBeenCalled();
+    // Restore mock for subsequent tests
+    HTMLCanvasElement.prototype.getContext = vi.fn(
+      () => mockCtx
+    ) as unknown as typeof HTMLCanvasElement.prototype.getContext;
   });
 
   it('starts the animation loop via requestAnimationFrame', () => {
@@ -126,5 +139,37 @@ describe('useMagneticElements', () => {
   it('returns a ref object', () => {
     const { result } = renderHook(() => useMagneticElements([{ selector: 'button', accent: 'aerospace' }]));
     expect(result.current).toHaveProperty('current');
+  });
+
+  it('adds data-magnetic and data-accent to matched elements in the document', () => {
+    const btn = document.createElement('button');
+    btn.className = 'magnetic-test';
+    document.body.appendChild(btn);
+
+    const { unmount } = renderHook(() => useMagneticElements([{ selector: 'button.magnetic-test', accent: 'royal' }]));
+
+    expect(btn).toHaveAttribute('data-magnetic');
+    expect(btn).toHaveAttribute('data-accent', 'royal');
+
+    unmount();
+
+    expect(btn).not.toHaveAttribute('data-magnetic');
+    expect(btn).not.toHaveAttribute('data-accent');
+
+    document.body.removeChild(btn);
+  });
+
+  it('adds data-magnetic without data-accent when no accent is provided', () => {
+    const link = document.createElement('a');
+    link.className = 'magnetic-link-test';
+    document.body.appendChild(link);
+
+    const { unmount } = renderHook(() => useMagneticElements([{ selector: 'a.magnetic-link-test' }]));
+
+    expect(link).toHaveAttribute('data-magnetic');
+    expect(link).not.toHaveAttribute('data-accent');
+
+    unmount();
+    document.body.removeChild(link);
   });
 });

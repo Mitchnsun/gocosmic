@@ -86,8 +86,20 @@ const CosmicCursor = ({
     let smoothY = state.mouse.y;
 
     const draw = (now: number) => {
-      const dt = Math.min(now - lastFrameTime, 50); // cap delta to 50ms to avoid large jumps when the tab is backgrounded
+      const rawDt = now - lastFrameTime;
       lastFrameTime = now;
+
+      // Skip animation updates for large deltas (tab was backgrounded) to avoid jumps;
+      // just re-schedule and wait for the next normal frame
+      if (rawDt > 100) {
+        animationId = requestAnimationFrame(draw);
+        return;
+      }
+
+      const dt = rawDt;
+
+      // Decay velocity every frame so it falls to zero when the mouse is stationary
+      state.velocity *= 0.95;
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 

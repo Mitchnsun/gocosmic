@@ -49,6 +49,23 @@ function resolveAccent(key: string | null): string {
   return COLORS.aerospace;
 }
 
+/** Apply magnetic snapping toward an element center */
+function applySnap(
+  state: CosmicCursorState,
+  rect: DOMRect,
+  rawX: number,
+  rawY: number,
+  ease: number,
+  accent: string | null
+) {
+  const cx = rect.left + rect.width / 2;
+  const cy = rect.top + rect.height / 2;
+  state.mouse.x += (cx - rawX) * ease;
+  state.mouse.y += (cy - rawY) * ease;
+  state.accentColor = resolveAccent(accent);
+  state.isMagnetic = true;
+}
+
 /**
  * Hook that tracks mouse position, velocity, accent color, and magnetic snapping.
  * Returns a ref to the mutable state object so the canvas render loop can read it
@@ -102,16 +119,23 @@ export function useCosmicCursor({
     // Trail initialization
     state.trail = Array.from({ length: trailLength }, () => ({ x: -200, y: -200 }));
 
-    let lastX = state.mouse.x;
-    let lastY = state.mouse.y;
-    let lastTime = performance.now();
+    let lastX = -200;
+    let lastY = -200;
+    // Use null sentinel so the first event skips velocity calculation to avoid spikes
+    let lastTime: number | null = null;
 
     const onMouseMove = (e: MouseEvent) => {
       const now = performance.now();
-      const dt = now - lastTime || 16;
-      const dx = e.clientX - lastX;
-      const dy = e.clientY - lastY;
-      state.velocity = (Math.sqrt(dx * dx + dy * dy) / dt) * 1000;
+
+      if (lastTime !== null) {
+        const dt = Math.max(now - lastTime, 1); // at least 1ms to avoid division by zero
+        const dx = e.clientX - lastX;
+        const dy = e.clientY - lastY;
+        // Decay velocity toward the current measurement to smooth out spikes
+        const measured = (Math.sqrt(dx * dx + dy * dy) / dt) * 1000;
+        state.velocity = state.velocity * 0.6 + measured * 0.4;
+      }
+
       lastX = e.clientX;
       lastY = e.clientY;
       lastTime = now;
@@ -125,7 +149,7 @@ export function useCosmicCursor({
       const tag = target?.tagName?.toLowerCase();
       state.isTextInput = tag === 'input' || tag === 'textarea' || target?.getAttribute('contenteditable') === 'true';
 
-      // Magnetic detection
+      // Magnetic detection — scan [data-magnetic] elements and find the closest
       let closestDist = Infinity;
       let closestEl: Element | null = null;
       let closestRect: DOMRect | null = null;
@@ -143,30 +167,26 @@ export function useCosmicCursor({
       }
 
       if (closestEl && closestRect && closestDist < magneticRange) {
-        state.isMagnetic = true;
-        const cx = closestRect.left + closestRect.width / 2;
-        const cy = closestRect.top + closestRect.height / 2;
-        // Ease cursor toward element center
-        state.mouse.x += (cx - e.clientX) * magneticEase;
-        state.mouse.y += (cy - e.clientY) * magneticEase;
-        state.accentColor = resolveAccent(closestEl.getAttribute('data-accent'));
+        // Explicit [data-magnetic] element: snap and change accent
+        applySnap(state, closestRect, e.clientX, e.clientY, magneticEase, closestEl.getAttribute('data-accent'));
       } else {
         state.isMagnetic = false;
         state.accentColor = COLORS.aerospace;
-      }
 
-      // Auto-magnetic for <a> and <button> without data-magnetic
-      if (!state.isMagnetic && target) {
-        const closest = target.closest('a, button');
-        if (closest) {
-          state.isMagnetic = true;
-          state.accentColor = resolveAccent(closest.getAttribute('data-accent'));
+        // Auto-magnetic for <a> and <button> — apply snapping for consistency
+        if (target) {
+          const closest = target.closest('a, button');
+          if (closest) {
+            const rect = closest.getBoundingClientRect();
+            applySnap(state, rect, e.clientX, e.clientY, magneticEase, closest.getAttribute('data-accent'));
+          }
         }
       }
     };
 
     const onMouseLeave = () => {
       state.isVisible = false;
+      state.velocity = 0;
     };
     const onMouseEnter = () => {
       state.isVisible = true;

@@ -29,6 +29,9 @@ export function useMagneticElements(selectors: MagneticSelector[]): RefObject<HT
   const containerRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
+    // When the ref is not attached to a container element, the hook falls back to
+    // querying the entire document. This is intentional: it allows callers to use
+    // useMagneticElements without a container ref when they want global magnetic marking.
     const container = containerRef.current ?? document;
     const applied: Element[] = [];
 
