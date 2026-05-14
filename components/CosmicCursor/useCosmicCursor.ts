@@ -106,11 +106,20 @@ export function useCosmicCursor({
     };
     mq.addEventListener('change', onMqChange);
 
+    // Cache of element → last measured bounding rect, invalidated on scroll/resize/DOM change
+    const rectCache = new Map<Element, DOMRect>();
+    const invalidateRectCache = () => rectCache.clear();
+
     // Scan magnetic elements
     const scanMagnetic = () => {
       magneticElementsRef.current = Array.from(document.querySelectorAll('[data-magnetic]'));
+      // Invalidate rect cache when the element list changes
+      rectCache.clear();
     };
     scanMagnetic();
+
+    window.addEventListener('scroll', invalidateRectCache, { passive: true });
+    window.addEventListener('resize', invalidateRectCache, { passive: true });
 
     // Observe DOM mutations to keep the magnetic list fresh
     const observer = new MutationObserver(scanMagnetic);
@@ -150,12 +159,17 @@ export function useCosmicCursor({
       state.isTextInput = tag === 'input' || tag === 'textarea' || target?.getAttribute('contenteditable') === 'true';
 
       // Magnetic detection — scan [data-magnetic] elements and find the closest
+      // Use cached rects (invalidated on scroll/resize) to avoid layout thrashing
       let closestDist = Infinity;
       let closestEl: Element | null = null;
       let closestRect: DOMRect | null = null;
 
       for (const el of magneticElementsRef.current) {
-        const rect = el.getBoundingClientRect();
+        let rect = rectCache.get(el);
+        if (!rect) {
+          rect = el.getBoundingClientRect();
+          rectCache.set(el, rect);
+        }
         const cx = rect.left + rect.width / 2;
         const cy = rect.top + rect.height / 2;
         const dist = Math.sqrt((e.clientX - cx) ** 2 + (e.clientY - cy) ** 2);
@@ -200,6 +214,8 @@ export function useCosmicCursor({
       document.removeEventListener('mousemove', onMouseMove);
       document.removeEventListener('mouseleave', onMouseLeave);
       document.removeEventListener('mouseenter', onMouseEnter);
+      window.removeEventListener('scroll', invalidateRectCache);
+      window.removeEventListener('resize', invalidateRectCache);
       mq.removeEventListener('change', onMqChange);
       observer.disconnect();
     };
