@@ -49,12 +49,15 @@ respected when adding features to this project.
 
 ### HTTP Security Headers
 
-**Current state:** `next.config.ts` defines no `headers()` export. No CSP,
-`X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, or
-`Permissions-Policy` is explicitly configured.
+**Current state:** `next.config.ts` defines security headers for every route:
+`Content-Security-Policy`, `X-Content-Type-Options`, `X-Frame-Options`,
+`Referrer-Policy`, and `Permissions-Policy`.
 
-**Action required for any new deployment target (non-Vercel in particular):**
-Add a `headers()` function in `next.config.ts`:
+The CSP keeps `eval()` disabled in production. In development only,
+`script-src` includes `'unsafe-eval'` because React development mode requires
+it for debugging features such as reconstructing call stacks.
+
+**Reference configuration:**
 
 ```ts
 async headers() {
@@ -75,7 +78,9 @@ async headers() {
           // unsafe-inline is required for Next.js inline styles.
           value: [
             "default-src 'self'",
-            "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com",
+            process.env.NODE_ENV === 'development'
+              ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com"
+              : "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com",
             "style-src 'self' 'unsafe-inline'",
             "img-src 'self' data: blob:",
             "font-src 'self'",

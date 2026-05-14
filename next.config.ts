@@ -3,10 +3,19 @@ import createNextIntlPlugin from 'next-intl/plugin';
 
 // Build the CSP as an array so each directive stays readable.
 // unsafe-inline is required by Next.js App Router (inline hydration scripts + Tailwind styles).
+// unsafe-eval is required only by React development tooling for debugging features.
 // To tighten this further, implement nonce-based CSP via middleware (see SECURITY.md).
+const isDevelopment = process.env.NODE_ENV === 'development';
+const scriptSrcDirective = [
+  "script-src 'self'",
+  "'unsafe-inline'",
+  ...(isDevelopment ? ["'unsafe-eval'"] : []),
+  'https://va.vercel-scripts.com',
+].join(' ');
+
 const cspDirectives = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com",
+  scriptSrcDirective,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob:",
   "font-src 'self'",
