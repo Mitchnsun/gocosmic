@@ -241,10 +241,10 @@ describe('LocaleLayout', () => {
       // Check that the structure contains Header, content wrapper, and Footer
       expect(provider.props.children).toBeDefined();
       expect(Array.isArray(provider.props.children)).toBe(true);
-      expect(provider.props.children).toHaveLength(6); // Header, content div, Footer, WebsiteSeo, Analytics, LocalBusinessSeo
-      expect(provider.props.children[3].type).toBe(WebsiteSeo);
-      expect(provider.props.children[5].type).toBe(LocalBusinessSeo);
-      expect(provider.props.children[5].props.locale).toBe('en');
+      expect(provider.props.children).toHaveLength(7); // CosmicCursor, Header, content div, Footer, WebsiteSeo, Analytics, LocalBusinessSeo
+      expect(provider.props.children[4].type).toBe(WebsiteSeo);
+      expect(provider.props.children[6].type).toBe(LocalBusinessSeo);
+      expect(provider.props.children[6].props.locale).toBe('en');
     });
 
     it('should validate routing configuration', () => {
