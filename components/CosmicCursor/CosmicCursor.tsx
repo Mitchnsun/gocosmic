@@ -152,7 +152,7 @@ const CosmicCursor = ({
         const orbitOpacity = restTimer / 200;
 
         if (orbitOpacity > 0) {
-          // 2 RPM → 1 rotation per 30 000ms → angle/ms = (2π / 30 000)
+          // 2 RPM = 1 rotation per 30 s = 1 rotation per 30 000ms → angle increment per ms = (2π / 30 000)
           orbitAngle += (Math.PI * 2 * dt) / 30_000;
 
           for (let i = 0; i < orbitCount; i++) {

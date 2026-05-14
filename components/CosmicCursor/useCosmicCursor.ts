@@ -137,7 +137,7 @@ export function useCosmicCursor({
       const now = performance.now();
 
       if (lastTime !== null) {
-        const dt = Math.max(now - lastTime, 1); // at least 1ms to avoid division by zero
+        const dt = Math.max(now - lastTime, 1); // clamp to ≥1ms to prevent division by zero in the velocity formula below
         const dx = e.clientX - lastX;
         const dy = e.clientY - lastY;
         // Decay velocity toward the current measurement to smooth out spikes
