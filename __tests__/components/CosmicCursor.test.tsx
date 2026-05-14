@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react';
+import { act } from 'react';
 import { vi } from 'vitest';
 
 import CosmicCursor from '@/components/CosmicCursor';
@@ -91,6 +92,43 @@ describe('CosmicCursor', () => {
     ) as unknown as typeof HTMLCanvasElement.prototype.getContext;
   });
 
+  it('returns null and renders no canvas on touch devices', async () => {
+    // Override matchMedia to report a touch device
+    Object.defineProperty(window, 'matchMedia', {
+      writable: true,
+      value: vi.fn().mockImplementation((query: string) => ({
+        matches: query === '(hover: none) and (pointer: coarse)',
+        media: query,
+        onchange: null,
+        addListener: vi.fn(),
+        removeListener: vi.fn(),
+        addEventListener: vi.fn(),
+        removeEventListener: vi.fn(),
+        dispatchEvent: vi.fn(),
+      })),
+    });
+
+    const { container } = render(<CosmicCursor />);
+    // After mount the state update fires; the canvas should be removed
+    await act(async () => {});
+    expect(container.querySelector('canvas')).toBeNull();
+
+    // Restore matchMedia for subsequent tests
+    Object.defineProperty(window, 'matchMedia', {
+      writable: true,
+      value: vi.fn().mockImplementation((query: string) => ({
+        matches: false,
+        media: query,
+        onchange: null,
+        addListener: vi.fn(),
+        removeListener: vi.fn(),
+        addEventListener: vi.fn(),
+        removeEventListener: vi.fn(),
+        dispatchEvent: vi.fn(),
+      })),
+    });
+  });
+
   it('starts the animation loop via requestAnimationFrame', () => {
     render(<CosmicCursor />);
     expect(requestAnimationFrame).toHaveBeenCalled();
@@ -102,11 +140,13 @@ describe('CosmicCursor', () => {
     expect(cancelAnimationFrame).toHaveBeenCalledWith(1);
   });
 
-  it('restores cursor style on unmount', () => {
+  it('injects a cursor style tag on mount and removes it on unmount', () => {
     const { unmount } = render(<CosmicCursor />);
-    // After unmount the cursor should be reset to empty string
+    const styleEl = document.head.querySelector('style[data-cosmic-cursor]');
+    expect(styleEl).not.toBeNull();
+    expect(styleEl?.textContent).toContain('cursor: none');
     unmount();
-    expect(document.documentElement.style.cursor).toBe('');
+    expect(document.head.querySelector('style[data-cosmic-cursor]')).toBeNull();
   });
 
   it('removes the resize event listener on unmount', () => {
@@ -130,6 +170,152 @@ describe('CosmicCursor', () => {
         />
       )
     ).not.toThrow();
+  });
+});
+
+// ─── Render loop ─────────────────────────────────────────────────────────────
+
+describe('CosmicCursor render loop', () => {
+  let capturedFrame: FrameRequestCallback | null = null;
+
+  beforeEach(() => {
+    capturedFrame = null;
+    vi.clearAllMocks();
+    // Override global RAF so tests can drive individual frames without recursion
+    vi.mocked(requestAnimationFrame).mockImplementation((cb) => {
+      capturedFrame = cb;
+      return 1;
+    });
+  });
+
+  afterEach(() => {
+    // Restore to simple no-call implementation for other test suites
+    vi.mocked(requestAnimationFrame).mockImplementation(() => 1);
+    capturedFrame = null;
+    // Clean up any injected style tags
+    document.head.querySelector('style[data-cosmic-cursor]')?.remove();
+  });
+
+  it('calls clearRect on each animation frame', () => {
+    render(<CosmicCursor />);
+    expect(capturedFrame).not.toBeNull();
+    act(() => {
+      capturedFrame!(performance.now() + 16);
+    });
+    expect(mockCtx.clearRect).toHaveBeenCalled();
+  });
+
+  it('draws the core arc when the cursor is visible', () => {
+    render(<CosmicCursor />);
+    // Make cursor visible by firing a mousemove event
+    act(() => {
+      document.dispatchEvent(new MouseEvent('mousemove', { clientX: 200, clientY: 200, bubbles: true }));
+    });
+    act(() => {
+      capturedFrame!(performance.now() + 16);
+    });
+    expect(mockCtx.arc).toHaveBeenCalled();
+  });
+
+  it('skips the render body when dt exceeds 100ms (tab backgrounded)', () => {
+    render(<CosmicCursor />);
+    act(() => {
+      document.dispatchEvent(new MouseEvent('mousemove', { clientX: 50, clientY: 50, bubbles: true }));
+    });
+    // Drive a frame with a dt > 100ms — should re-schedule without drawing
+    act(() => {
+      capturedFrame!(performance.now() + 150);
+    });
+    expect(mockCtx.clearRect).not.toHaveBeenCalled();
+    // A new frame should have been scheduled
+    expect(requestAnimationFrame).toHaveBeenCalledTimes(2); // initial + retry
+  });
+
+  it('calculates velocity on the second mousemove event', () => {
+    render(<CosmicCursor />);
+    // First event sets lastTime (velocity skipped)
+    act(() => {
+      document.dispatchEvent(new MouseEvent('mousemove', { clientX: 100, clientY: 100, bubbles: true }));
+    });
+    // Second event calculates velocity from the delta
+    act(() => {
+      document.dispatchEvent(new MouseEvent('mousemove', { clientX: 200, clientY: 200, bubbles: true }));
+    });
+    // Drive a frame to confirm the draw proceeds with updated state
+    act(() => {
+      capturedFrame!(performance.now() + 16);
+    });
+    expect(mockCtx.clearRect).toHaveBeenCalled();
+  });
+
+  it('hides the cursor and resets velocity on mouseleave', () => {
+    render(<CosmicCursor />);
+    act(() => {
+      document.dispatchEvent(new MouseEvent('mousemove', { clientX: 100, clientY: 100, bubbles: true }));
+    });
+    act(() => {
+      document.dispatchEvent(new MouseEvent('mouseleave', { bubbles: true }));
+    });
+    // After mouseleave the canvas should be cleared (cursor hidden)
+    act(() => {
+      capturedFrame!(performance.now() + 16);
+    });
+    expect(mockCtx.clearRect).toHaveBeenCalled();
+    // arc should NOT have been called (cursor not visible)
+    expect(mockCtx.arc).not.toHaveBeenCalled();
+  });
+
+  it('makes cursor visible again on mouseenter', () => {
+    render(<CosmicCursor />);
+    act(() => {
+      document.dispatchEvent(new MouseEvent('mousemove', { clientX: 100, clientY: 100, bubbles: true }));
+    });
+    act(() => {
+      document.dispatchEvent(new MouseEvent('mouseleave', { bubbles: true }));
+    });
+    act(() => {
+      document.dispatchEvent(new MouseEvent('mouseenter', { bubbles: true }));
+    });
+    act(() => {
+      document.dispatchEvent(new MouseEvent('mousemove', { clientX: 100, clientY: 100, bubbles: true }));
+    });
+    act(() => {
+      capturedFrame!(performance.now() + 16);
+    });
+    expect(mockCtx.arc).toHaveBeenCalled();
+  });
+
+  it('applies magnetic snap when a [data-magnetic] element is within range', () => {
+    // Place a magnetic element somewhere in the document
+    const btn = document.createElement('button');
+    btn.setAttribute('data-magnetic', '');
+    btn.setAttribute('data-accent', 'royal');
+    document.body.appendChild(btn);
+
+    // Mock getBoundingClientRect so jsdom returns a usable rect
+    vi.spyOn(btn, 'getBoundingClientRect').mockReturnValue({
+      left: 50,
+      top: 50,
+      width: 100,
+      height: 40,
+      right: 150,
+      bottom: 90,
+      x: 50,
+      y: 50,
+      toJSON: () => ({}),
+    } as DOMRect);
+
+    render(<CosmicCursor magneticRange={200} />);
+
+    act(() => {
+      document.dispatchEvent(new MouseEvent('mousemove', { clientX: 90, clientY: 70, bubbles: true }));
+    });
+    act(() => {
+      capturedFrame!(performance.now() + 16);
+    });
+    expect(mockCtx.arc).toHaveBeenCalled();
+
+    document.body.removeChild(btn);
   });
 });
 
@@ -171,5 +357,29 @@ describe('useMagneticElements', () => {
 
     unmount();
     document.body.removeChild(link);
+  });
+
+  it('preserves pre-existing data-magnetic and restores data-accent on unmount', () => {
+    const btn = document.createElement('button');
+    btn.className = 'pre-existing-magnetic';
+    btn.setAttribute('data-magnetic', '');
+    btn.setAttribute('data-accent', 'royal');
+    document.body.appendChild(btn);
+
+    const { unmount } = renderHook(() =>
+      useMagneticElements([{ selector: 'button.pre-existing-magnetic', accent: 'aerospace' }])
+    );
+
+    // The hook overwrites data-accent while active
+    expect(btn).toHaveAttribute('data-accent', 'aerospace');
+
+    unmount();
+
+    // data-magnetic was there before — must still be there
+    expect(btn).toHaveAttribute('data-magnetic');
+    // data-accent must be restored to the original value
+    expect(btn).toHaveAttribute('data-accent', 'royal');
+
+    document.body.removeChild(btn);
   });
 });

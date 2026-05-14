@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { useCosmicCursor } from './useCosmicCursor';
 
@@ -16,9 +16,12 @@ export interface CosmicCursorProps {
   magneticRange?: number;
   /** Magnetic easing factor (0–1). Defaults to 0.15. */
   magneticEase?: number;
-  /** Core cursor radius (px). Defaults to 6. */
+  /**
+   * Core cursor size in pixels (diameter). The arc is drawn at `coreSize / 2` radius,
+   * so `coreSize={6}` renders a 6px-wide dot. Defaults to 6.
+   */
   coreSize?: number;
-  /** Trailing dot radius (px). Defaults to 3. */
+  /** Trailing dot size in pixels (diameter). Defaults to 3. */
   trailSize?: number;
 }
 
@@ -39,8 +42,10 @@ function hexToRgb(hex: string): { r: number; g: number; b: number } {
  * - Canvas fullscreen overlay, pointer-events: none
  * - 60fps RAF loop — no DOM queries per frame
  * - Respects `prefers-reduced-motion` (static dot only)
- * - Disabled on touch devices
- * - Hides the native cursor on desktop
+ * - Returns `null` on touch devices so no canvas is added to the DOM
+ * - Hides the native cursor on all elements via an injected `<style>` tag using `!important`,
+ *   which overrides utility classes such as `cursor-pointer` on interactive elements.
+ *   Text inputs are excluded so the native text cursor remains visible.
  *
  * @component
  */
@@ -55,13 +60,19 @@ const CosmicCursor = ({
 }: CosmicCursorProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { stateRef, updateTrail } = useCosmicCursor({ trailLength, magneticRange, magneticEase });
+  // Tracks touch-device detection; updated after mount to avoid SSR hydration mismatches.
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     const state = stateRef.current;
-    if (state.isTouchDevice) return;
+    // Touch devices don't have a visible cursor — remove the canvas from the DOM
+    if (state.isTouchDevice) {
+      setIsTouchDevice(true);
+      return;
+    }
 
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
@@ -74,8 +85,16 @@ const CosmicCursor = ({
     resize();
     window.addEventListener('resize', resize);
 
-    // Hide native cursor on the document body
-    document.documentElement.style.cursor = 'none';
+    // Inject a global style to hide the native cursor on all elements.
+    // `!important` is required to override utility classes like `cursor-pointer` on buttons.
+    // Text inputs are excluded so the native text cursor remains visible there.
+    const styleEl = document.createElement('style');
+    styleEl.setAttribute('data-cosmic-cursor', '');
+    styleEl.textContent =
+      '* { cursor: none !important; } ' +
+      'input, textarea, select, [contenteditable="true"] { cursor: text !important; }';
+
+    document.head.appendChild(styleEl);
 
     let animationId: number;
     let orbitAngle = 0;
@@ -204,11 +223,13 @@ const CosmicCursor = ({
     return () => {
       cancelAnimationFrame(animationId);
       window.removeEventListener('resize', resize);
-      document.documentElement.style.cursor = '';
+      styleEl.remove();
     };
   }, [stateRef, updateTrail, coreSize, trailSize, orbitCount, orbitRadius]);
 
-  // Don't render on touch devices (detected server-side safely as false)
+  // On touch devices, return null after mount detection so no canvas is present in the DOM
+  if (isTouchDevice) return null;
+
   return (
     <canvas
       ref={canvasRef}

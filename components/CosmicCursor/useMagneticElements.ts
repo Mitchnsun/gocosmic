@@ -9,14 +9,26 @@ export interface MagneticSelector {
   accent?: string;
 }
 
+/** Per-element record of the original attribute state before this hook modified it */
+interface ElementRecord {
+  hadMagnetic: boolean;
+  prevAccent: string | null;
+}
+
 /**
  * Hook that marks elements inside a container as magnetic for the CosmicCursor.
  *
  * Adds `data-magnetic` and optionally `data-accent` to matched elements on mount.
- * Attributes are removed on cleanup.
+ * On cleanup the hook restores each element's original attribute state — if an element
+ * already had `data-magnetic` or `data-accent` before this hook ran, those values are
+ * preserved rather than unconditionally removed.
  *
  * The `selectors` array is intentionally read only on mount — marking elements as
  * magnetic is a one-time setup operation and does not need to re-run on every render.
+ *
+ * When the ref is not attached to a container element, the hook falls back to
+ * querying the entire document. This is intentional: it allows callers to use
+ * useMagneticElements without a container ref when they want global magnetic marking.
  *
  * @param selectors - Array of { selector, accent } config objects
  * @returns A React ref to attach to the container element
@@ -29,24 +41,41 @@ export function useMagneticElements(selectors: MagneticSelector[]): RefObject<HT
   const containerRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    // When the ref is not attached to a container element, the hook falls back to
-    // querying the entire document. This is intentional: it allows callers to use
-    // useMagneticElements without a container ref when they want global magnetic marking.
     const container = containerRef.current ?? document;
-    const applied: Element[] = [];
+
+    // Capture each element's original attribute state before we make any changes.
+    // We only record an element once (its state before the first selector matches it).
+    const records = new Map<Element, ElementRecord>();
 
     for (const { selector, accent } of selectors) {
       for (const el of container.querySelectorAll(selector)) {
+        if (!records.has(el)) {
+          records.set(el, {
+            hadMagnetic: el.hasAttribute('data-magnetic'),
+            prevAccent: el.getAttribute('data-accent'),
+          });
+        }
         el.setAttribute('data-magnetic', '');
         if (accent) el.setAttribute('data-accent', accent);
-        applied.push(el);
       }
     }
 
     return () => {
-      for (const el of applied) {
-        el.removeAttribute('data-magnetic');
-        el.removeAttribute('data-accent');
+      for (const [el, { hadMagnetic, prevAccent }] of records) {
+        // Only remove data-magnetic if this hook added it
+        if (!hadMagnetic) {
+          el.removeAttribute('data-magnetic');
+        }
+        // Restore data-accent to original value; only touch it when the current
+        // value differs from what was there before
+        const currentAccent = el.getAttribute('data-accent');
+        if (currentAccent !== prevAccent) {
+          if (prevAccent !== null) {
+            el.setAttribute('data-accent', prevAccent);
+          } else {
+            el.removeAttribute('data-accent');
+          }
+        }
       }
     };
     // selectors is intentionally excluded — magnetic marking is a one-time mount operation

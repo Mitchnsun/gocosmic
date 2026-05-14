@@ -121,9 +121,16 @@ export function useCosmicCursor({
     window.addEventListener('scroll', invalidateRectCache, { passive: true });
     window.addEventListener('resize', invalidateRectCache, { passive: true });
 
-    // Observe DOM mutations to keep the magnetic list fresh
+    // Observe DOM mutations to keep the magnetic list fresh.
+    // Also watch attribute changes so that elements marked by useMagneticElements
+    // (or declaratively via data-magnetic) are picked up without a full DOM insertion.
     const observer = new MutationObserver(scanMagnetic);
-    observer.observe(document.body, { childList: true, subtree: true });
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['data-magnetic', 'data-accent'],
+    });
 
     // Trail initialization
     state.trail = Array.from({ length: trailLength }, () => ({ x: -200, y: -200 }));
@@ -153,10 +160,17 @@ export function useCosmicCursor({
       state.mouse.y = e.clientY;
       state.isVisible = true;
 
+      // Guard: EventTarget is not guaranteed to be an Element (could be a text node or Document).
+      // All Element-only APIs below are safe only after this check.
+      const target = e.target;
+      const isElement = target instanceof Element;
+
       // Detect text inputs
-      const target = e.target as Element | null;
-      const tag = target?.tagName?.toLowerCase();
-      state.isTextInput = tag === 'input' || tag === 'textarea' || target?.getAttribute('contenteditable') === 'true';
+      state.isTextInput =
+        isElement &&
+        (target.tagName.toLowerCase() === 'input' ||
+          target.tagName.toLowerCase() === 'textarea' ||
+          target.getAttribute('contenteditable') === 'true');
 
       // Magnetic detection — scan [data-magnetic] elements and find the closest
       // Use cached rects (invalidated on scroll/resize) to avoid layout thrashing
@@ -188,7 +202,7 @@ export function useCosmicCursor({
         state.accentColor = COLORS.aerospace;
 
         // Auto-magnetic for <a> and <button> — apply snapping for consistency
-        if (target) {
+        if (isElement) {
           const closest = target.closest('a, button');
           if (closest) {
             const rect = closest.getBoundingClientRect();
