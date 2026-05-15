@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
+import { CosmicCursor } from '@/components/CosmicCursor';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import LocalBusinessSeo from '@/components/JsonLd/LocalBusinessSeo';
@@ -77,6 +78,7 @@ export default async function LocaleLayout({
     <html lang={locale || 'en'} className={`${spaceGrotesk.variable} ${inter.variable}`}>
       <body className="bg-slate-950">
         <NextIntlClientProvider>
+          <CosmicCursor />
           <Header />
           <div className="mt-16">{children}</div>
           <Footer />

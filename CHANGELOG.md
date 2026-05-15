@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [1.5.1] - 2026-05-15
+## [1.6.0] - 2026-05-15
+
+### Added
+
+- `components/CosmicCursor/CosmicCursor.tsx` — canvas-based custom cursor with trailing dots, orbital animation, magnetic snap, and dynamic accent colors. Respects `prefers-reduced-motion` (static dot only) and is disabled on touch devices. Renders at 60fps via RAF; `pointer-events: none` canvas overlays the page at `z-index: 9999`.
+- `components/CosmicCursor/useCosmicCursor.ts` — hook that tracks mouse position, velocity, magnetic elements (`[data-magnetic]` / `data-accent`), auto-magnetic `<a>`/`<button>` detection, and `prefers-reduced-motion` media query changes.
+- `components/CosmicCursor/useMagneticElements.ts` — `useMagneticElements` hook to programmatically mark elements as magnetic by CSS selector with optional accent color.
+- `components/CosmicCursor/index.ts` — barrel export for the CosmicCursor component and hooks.
+- Integrated `CosmicCursor` into `app/[locale]/layout.tsx` so it is active on every page.
+- `__tests__/components/CosmicCursor.test.tsx` — unit tests for component mounting, prop handling, event listener cleanup, and `useMagneticElements` hook.
 
 ### Changed
 
