@@ -10,8 +10,28 @@
   --color-outer-space: #414A4C;
   --color-royal: #7851A9;
   --color-space: #1E2952;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
 }
 
 :root {
   --header-height: 64px;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+}
+
+header nav a,
+footer a {
+  font-family: var(--font-display);
 }

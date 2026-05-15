@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Changed
 
-- Replace Poppins font with Space Grotesk across the app
+- Split typography into two font roles: Space Grotesk (headings, header and footer links) and Inter (body text)
 
 ## [1.5.0] - 2026-05-14
 

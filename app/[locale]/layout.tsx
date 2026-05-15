@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
-import { Space_Grotesk } from 'next/font/google';
+import { Inter, Space_Grotesk } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
@@ -16,6 +16,13 @@ import { getOgImages } from '@/lib/og';
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-display',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-body',
 });
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -67,8 +74,8 @@ export default async function LocaleLayout({
   }
 
   return (
-    <html lang={locale || 'en'}>
-      <body className={`${spaceGrotesk.className} bg-slate-950`}>
+    <html lang={locale || 'en'} className={`${spaceGrotesk.variable} ${inter.variable}`}>
+      <body className="bg-slate-950">
         <NextIntlClientProvider>
           <Header />
           <div className="mt-16">{children}</div>

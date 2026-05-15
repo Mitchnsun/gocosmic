@@ -12,7 +12,10 @@ import { SITE_URL } from '@/lib/config';
 // Mock Next.js modules
 vi.mock('next/font/google', () => ({
   Space_Grotesk: () => ({
-    className: 'mocked-space-grotesk-font',
+    variable: 'mock-font-display',
+  }),
+  Inter: () => ({
+    variable: 'mock-font-body',
   }),
 }));
 
@@ -136,11 +139,14 @@ describe('LocaleLayout', () => {
       expect(layout.type).toBe('html');
       expect(layout.props.lang).toBe('en');
 
-      // Check body styling
+      // html carries the font variables
+      expect(layout.props.className).toContain('mock-font-display');
+      expect(layout.props.className).toContain('mock-font-body');
+
+      // body only carries the background
       const body = layout.props.children;
       expect(body.type).toBe('body');
-      expect(body.props.className).toContain('mocked-space-grotesk-font');
-      expect(body.props.className).toContain('bg-slate-950');
+      expect(body.props.className).toBe('bg-slate-950');
     });
 
     it('should call notFound for invalid locale', async () => {
@@ -170,11 +176,14 @@ describe('LocaleLayout', () => {
       expect(layout.type).toBe('html');
       expect(layout.props.lang).toBe('en');
 
-      // Check body styling
+      // html carries the font variables
+      expect(layout.props.className).toContain('mock-font-display');
+      expect(layout.props.className).toContain('mock-font-body');
+
+      // body only carries the background
       const body = layout.props.children;
       expect(body.type).toBe('body');
-      expect(body.props.className).toContain('mocked-space-grotesk-font');
-      expect(body.props.className).toContain('bg-slate-950');
+      expect(body.props.className).toBe('bg-slate-950');
     });
 
     it('should handle different locales in HTML lang attribute', async () => {
