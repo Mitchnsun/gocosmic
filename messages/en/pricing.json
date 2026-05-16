@@ -32,6 +32,13 @@
       }
     },
     "results": {
+      "both": {
+        "title": "Website + Mobile Application",
+        "rate": "600€ excl. tax / day",
+        "rate_note": "*",
+        "description": "For a project combining a website and a mobile application, development is billed at a daily rate. The total cost depends on complexity, functional scope, and targeted platforms.",
+        "disclaimer": "* Indicative price, to be negotiated according to your needs and timeline."
+      },
       "mobile": {
         "title": "Mobile Application",
         "rate": "600€ excl. tax / day",

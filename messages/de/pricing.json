@@ -32,6 +32,13 @@
       }
     },
     "results": {
+      "both": {
+        "title": "Website + Mobile Anwendung",
+        "rate": "600€ netto / Tag",
+        "rate_note": "*",
+        "description": "Für ein Projekt, das eine Website und eine mobile Anwendung kombiniert, wird die Entwicklung nach Tagessatz abgerechnet. Die Gesamtkosten hängen von der Komplexität, dem Funktionsumfang und den Zielplattformen ab.",
+        "disclaimer": "* Richtpreis, zu verhandeln je nach Ihren Anforderungen und Zeitplan."
+      },
       "mobile": {
         "title": "Mobile Anwendung",
         "rate": "600€ netto / Tag",

@@ -32,6 +32,13 @@
       }
     },
     "results": {
+      "both": {
+        "title": "Sito Web + Applicazione Mobile",
+        "rate": "600€ IVA escl. / giorno",
+        "rate_note": "*",
+        "description": "Per un progetto che combina un sito web e un'applicazione mobile, lo sviluppo viene fatturato a giornata. Il costo totale dipende dalla complessità, dall'ambito funzionale e dalle piattaforme target.",
+        "disclaimer": "* Prezzo indicativo, da negoziare in base alle tue esigenze e tempi."
+      },
       "mobile": {
         "title": "Applicazione Mobile",
         "rate": "600€ IVA escl. / giorno",

@@ -22,7 +22,6 @@ Despite a PR review suggesting that hardcoding `--font-display` and `--font-body
 
 **Correct pattern:** Keep the literal `font-family` strings in `@theme` so Tailwind can generate its utilities. Optionally add fallbacks at the consumption site (`font-family: var(--font-body, system-ui, sans-serif)`), but do **not** remove the `@theme` declarations.
 
-
 ## Internationalization (next-intl)
 
 ### Client components and useTranslations — per-page NextIntlClientProvider pattern

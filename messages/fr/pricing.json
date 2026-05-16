@@ -32,6 +32,13 @@
       }
     },
     "results": {
+      "both": {
+        "title": "Site Web + Application Mobile",
+        "rate": "600€ HT / jour",
+        "rate_note": "*",
+        "description": "Pour un projet combinant site web et application mobile, le développement est facturé à la journée. Le coût total dépend de la complexité, du périmètre fonctionnel et des plateformes ciblées.",
+        "disclaimer": "* Prix indicatif, à négocier en fonction de vos besoins et des délais."
+      },
       "mobile": {
         "title": "Application Mobile",
         "rate": "600€ HT / jour",
@@ -50,7 +57,7 @@
       "subscription": {
         "few_per_year": {
           "title": "Abonnement Essentiel",
-          "price": "75€ / mois",
+          "price": "60€ / mois",
           "duration": "Engagement annuel",
           "includes": {
             "title": "Inclus :",
@@ -67,7 +74,7 @@
         },
         "monthly": {
           "title": "Abonnement Standard",
-          "price": "100€ / mois",
+          "price": "90€ / mois",
           "duration": "Engagement annuel",
           "includes": {
             "title": "Inclus :",

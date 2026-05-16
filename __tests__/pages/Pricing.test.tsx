@@ -65,12 +65,12 @@ describe('PricingSimulator', () => {
     expect(screen.getByRole('button', { name: /an e-commerce website/i })).toBeInTheDocument();
   });
 
-  it('should show step 2 when "both" is selected', () => {
+  it('should NOT show step 2 when "both" is selected', () => {
     render(<PricingSimulator />);
 
     fireEvent.click(screen.getByRole('button', { name: /both/i }));
 
-    expect(screen.getByText(/what type of website do you need/i)).toBeInTheDocument();
+    expect(screen.queryByText(/what type of website do you need/i)).not.toBeInTheDocument();
   });
 
   it('should show mobile result when "mobile" is selected', () => {
@@ -82,12 +82,14 @@ describe('PricingSimulator', () => {
     expect(screen.getByText(/mobile application development is billed at a daily rate/i)).toBeInTheDocument();
   });
 
-  it('should show mobile result when "both" is selected', () => {
+  it('should show a single combined daily rate card when "both" is selected', () => {
     render(<PricingSimulator />);
 
     fireEvent.click(screen.getByRole('button', { name: /both/i }));
 
-    expect(screen.getByText(/mobile application development is billed at a daily rate/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/website \+ mobile application/i).length).toBeGreaterThan(0);
+    expect(screen.getByText(/for a project combining a website and a mobile application/i)).toBeInTheDocument();
+    expect(screen.queryByText(/mobile application development is billed at a daily rate/i)).not.toBeInTheDocument();
   });
 
   it('should show complex website result for "accounts" website type', () => {
