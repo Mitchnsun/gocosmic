@@ -1,8 +1,9 @@
 import { CheckCircleIcon, CodeBracketIcon, EnvelopeIcon, SparklesIcon, UserGroupIcon } from '@heroicons/react/24/solid';
 import type { Metadata } from 'next';
-import { useTranslations } from 'next-intl';
-import { getTranslations } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getMessages, getTranslations } from 'next-intl/server';
 
+import { PricingTeaser } from '@/components/PricingTeaser';
 import { Button } from '@/design-system/button';
 import { getCanonicalUrl } from '@/i18n/canonical';
 import { getOgImages } from '@/lib/og';
@@ -35,9 +36,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export default function Offers() {
-  const t = useTranslations('offers');
+export default async function Offers() {
+  const t = await getTranslations('offers');
   const subject = encodeURIComponent(t('cta.email_subject'));
+  const locale = await getLocale();
+  const messages = await getMessages();
 
   return (
     <div className="text-ghost relative pt-10">
@@ -300,6 +303,13 @@ export default function Offers() {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* Pricing Teaser */}
+        <section className="w-full">
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <PricingTeaser />
+          </NextIntlClientProvider>
         </section>
 
         {/* CTA Section */}

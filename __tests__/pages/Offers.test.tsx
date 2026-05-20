@@ -7,22 +7,34 @@ import { render } from '../test-utils';
 // Mock next-intl/server
 vi.mock('next-intl/server', async () => {
   const actual = await vi.importActual('next-intl/server');
+  const { default: commonMessages } = await import('../../messages/en/common.json');
+  const { default: offersMessages } = await import('../../messages/en/offers.json');
+
+  const allMessages = { ...commonMessages, ...offersMessages };
+
+  function getNestedValue(obj: Record<string, unknown>, path: string): string {
+    return (
+      (path.split('.').reduce((acc: unknown, key) => {
+        // eslint-disable-next-line security/detect-object-injection
+        if (acc && typeof acc === 'object') return (acc as Record<string, unknown>)[key];
+        return undefined;
+      }, obj) as string) ?? path
+    );
+  }
+
   return {
     ...actual,
-    getTranslations: vi.fn().mockResolvedValue((key: string) => {
-      if (key === 'meta.title') return 'Our Offers | Web & Mobile Development | Annecy · Geneva | Go Cosmic';
-      if (key === 'meta.description')
-        return 'Tailored web and mobile development offers for businesses in Annecy, Geneva, and Haute-Savoie. Choose your perfect development package.';
-      if (key === 'title') return 'Our Cosmic Offers';
-      if (key === 'subtitle') return 'Choose the perfect solution tailored to your project needs';
-      return key;
-    }),
+    getLocale: vi.fn().mockResolvedValue('en'),
+    getMessages: vi.fn().mockResolvedValue(allMessages),
+    getTranslations: vi
+      .fn()
+      .mockResolvedValue((key: string) => getNestedValue(allMessages.offers as Record<string, unknown>, key)),
   };
 });
 
 describe('Offers Page', () => {
-  it('should render the offers page with all three offers', () => {
-    const { getByRole, getByText } = render(<Offers />);
+  it('should render the offers page with all three offers', async () => {
+    const { getByRole, getByText } = render(await Offers());
 
     // Check main heading
     expect(getByRole('heading', { name: /our cosmic offers/i, level: 1 })).toBeInTheDocument();

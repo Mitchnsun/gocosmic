@@ -14,5 +14,26 @@
   "language": {
     "current": "Lingua attuale: {language}",
     "switchTo": "Passa a {language}"
+  },
+  "pricing_teaser": {
+    "eyebrow": "Sito web vetrina",
+    "price": "da 50€",
+    "price_period": "/ mese",
+    "tagline": "Tutto incluso, nessuna sorpresa",
+    "scope_note": "Ideale per presentare la sua attività, i servizi e i recapiti online — senza gestione ordini né portale clienti.",
+    "features": {
+      "redesign": "Ridisegno grafico del sito web vetrina",
+      "seo": "Ottimizzazione SEO",
+      "updates": "Aggiornamenti tecnici regolari",
+      "hosting": "Hosting web",
+      "ssl": "Certificato SSL",
+      "domain": "Nome di dominio",
+      "email": "1 indirizzo email professionale"
+    },
+    "footnote": "* A seconda del nome di dominio scelto, potrebbero applicarsi costi aggiuntivi.",
+    "footnote_scope": "Per un e-commerce o un portale clienti, contattaci per un preventivo su misura.",
+    "mockup_mention": "Richiedi il tuo mockup senza impegno",
+    "cta_simulate": "Simula il mio prezzo",
+    "cta_contact": "Richiedi un preventivo"
   }
 }
