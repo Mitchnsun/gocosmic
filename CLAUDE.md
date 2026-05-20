@@ -76,9 +76,10 @@ This is a single Next.js 16 app (App Router) with full internationalization via 
 
 ### Testing patterns
 
+- Write tests for components, utils, and design-system primitives — these are the primary targets for unit coverage.
+- Do **not** write snapshot tests for pages or views; page-level snapshots add maintenance burden without meaningful coverage.
 - Use `render` from `__tests__/test-utils.tsx` (not from `@testing-library/react` directly) for any component that uses translations — it includes the `NextIntlClientProvider`.
 - Global mocks for `next/navigation` are configured in `test-setup.tsx`.
-- Avoid snapshot tests for components; snapshots are tolerated only for pages/views.
 - Test behavior and accessibility attributes, not implementation details.
 
 ## Commit conventions
