@@ -61,6 +61,19 @@ This is a single Next.js 16 app (App Router) with full internationalization via 
   4. Add translation keys to all 5 locale namespace files under `messages/`
 - `proxy.ts` handles locale detection and redirects at the middleware level.
 
+### Component architecture
+
+- **Keep components light** — a component file should do one thing. If it exports more than one visual unit, split it.
+- **Preferred file layout for a feature component `Foo`:**
+  - `Foo/Foo.tsx` — the orchestrator (state, logic, composition). No inline sub-component definitions.
+  - `Foo/Foo.types.ts` — shared TypeScript types and enums.
+  - `Foo/Foo.utils.ts` — pure helper functions (color maps, item lists, formatters).
+  - `Foo/Foo.hooks.ts` — custom React hooks if any.
+  - `Foo/SubBar.tsx`, `Foo/SubBaz.tsx` — each named visual sub-component in its own file.
+  - `Foo/index.ts` — re-export surface (`export { Foo } from './Foo'`).
+- **When a file grows past ~100 lines**, treat it as a signal to extract: identify one cohesive unit and move it to its own file before adding more code.
+- **Inline sub-component definitions** (functions returning JSX inside another component file) are only acceptable for anonymous wrappers of 5 lines or fewer that are not reused. Anything named and larger than trivial belongs in its own file.
+
 ### Testing patterns
 
 - Use `render` from `__tests__/test-utils.tsx` (not from `@testing-library/react` directly) for any component that uses translations — it includes the `NextIntlClientProvider`.
@@ -72,7 +85,7 @@ This is a single Next.js 16 app (App Router) with full internationalization via 
 
 Conventional Commits are enforced via `commitlint` and Husky pre-commit hooks.
 
-Format: `<type>(<scope>): <description>` — imperative, lowercase, no period, max 69 chars.
+Format: `<type>(<scope>): <description>` — imperative, lowercase, no period (subject length ≤ 69 chars recommended).
 
 Types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `tech`, `chore`
 Common scopes: `ui`, `web`, `config`, `deps`

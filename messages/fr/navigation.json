@@ -1,15 +1,17 @@
 {
   "navigation": {
-    "about": "À propos",
     "about_label": "À propos de Go Cosmic",
-    "contact": "Contact",
+    "about": "À propos",
     "contact_label": "Contacter Go Cosmic",
+    "contact": "Contact",
     "home": "Accueil",
     "label": "Navigation principale",
-    "projects": "Projets",
+    "pricing_label": "Simulateur de tarifs",
+    "pricing": "Tarifs",
     "projects_label": "Nos Projets",
-    "services": "Services",
+    "projects": "Projets",
     "services_label": "Nos Services Cosmiques",
+    "services": "Services",
     "switch_locale": "Changer de langue"
   }
 }

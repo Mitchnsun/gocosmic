@@ -21,17 +21,12 @@ vi.mock('@/components/Journey/MovingStarfield', () => {
 });
 
 describe('JourneyContent Component', () => {
-  const mockTranslations = {
-    title: 'Welcome to your Cosmic Journey',
-    subtitle: 'You are now traveling through the stars',
-  };
-
   beforeEach(() => {
     vi.clearAllMocks();
   });
 
   it('should render the journey content with cosmic theme', () => {
-    const { container } = render(<JourneyContent translations={mockTranslations} />);
+    const { container } = render(<JourneyContent />);
 
     expect(container).toMatchSnapshot();
   });

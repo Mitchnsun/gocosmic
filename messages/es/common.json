@@ -14,5 +14,26 @@
   "language": {
     "current": "Idioma actual: {language}",
     "switchTo": "Cambiar a {language}"
+  },
+  "pricing_teaser": {
+    "eyebrow": "Sitio web vitrina",
+    "price": "desde 50€",
+    "price_period": "/ mes",
+    "tagline": "Todo incluido, sin sorpresas",
+    "scope_note": "Ideal para presentar su negocio, servicios y datos de contacto en línea — sin gestión de pedidos ni portal de clientes.",
+    "features": {
+      "redesign": "Rediseño gráfico de su sitio web vitrina",
+      "seo": "Optimización SEO",
+      "updates": "Actualizaciones técnicas regulares",
+      "hosting": "Alojamiento web",
+      "ssl": "Certificado SSL",
+      "domain": "Nombre de dominio",
+      "email": "1 dirección de correo profesional"
+    },
+    "footnote": "* Según el nombre de dominio elegido, pueden aplicarse cargos adicionales.",
+    "footnote_scope": "Para una tienda e-commerce o portal de clientes, contáctenos para un presupuesto personalizado.",
+    "mockup_mention": "Solicite su maqueta sin compromiso",
+    "cta_simulate": "Simular mi tarifa",
+    "cta_contact": "Solicitar un presupuesto"
   }
 }

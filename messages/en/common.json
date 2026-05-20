@@ -14,5 +14,26 @@
   "language": {
     "current": "Current language: {language}",
     "switchTo": "Switch to {language}"
+  },
+  "pricing_teaser": {
+    "eyebrow": "Showcase website",
+    "price": "from 50€",
+    "price_period": "/ month",
+    "tagline": "All-inclusive, no surprises",
+    "scope_note": "Ideal for presenting your business, services and contact details online — without order management or client portal.",
+    "features": {
+      "redesign": "Graphic redesign of your showcase website",
+      "seo": "SEO optimisation",
+      "updates": "Regular technical updates",
+      "hosting": "Web hosting",
+      "ssl": "SSL certificate",
+      "domain": "Domain name",
+      "email": "1 professional email address"
+    },
+    "footnote": "* Depending on the chosen domain name, additional fees may apply.",
+    "footnote_scope": "For an e-commerce shop or client portal, contact us for a tailored quote.",
+    "mockup_mention": "Request your mockup with no commitment",
+    "cta_simulate": "Simulate my pricing",
+    "cta_contact": "Request a quote"
   }
 }

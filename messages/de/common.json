@@ -14,5 +14,26 @@
   "language": {
     "current": "Aktuelle Sprache: {language}",
     "switchTo": "Wechseln zu {language}"
+  },
+  "pricing_teaser": {
+    "eyebrow": "Präsentationswebsite",
+    "price": "ab 50€",
+    "price_period": "/ Monat",
+    "tagline": "Alles inklusive, keine Überraschungen",
+    "scope_note": "Ideal zur Online-Präsentation Ihres Unternehmens, Ihrer Leistungen und Kontaktdaten — ohne Bestellverwaltung oder Kundenbereich.",
+    "features": {
+      "redesign": "Grafische Neugestaltung Ihrer Präsentationswebsite",
+      "seo": "SEO-Optimierung",
+      "updates": "Regelmäßige technische Updates",
+      "hosting": "Webhosting",
+      "ssl": "SSL-Zertifikat",
+      "domain": "Domainname",
+      "email": "1 professionelle E-Mail-Adresse"
+    },
+    "footnote": "* Je nach gewähltem Domainnamen können zusätzliche Kosten anfallen.",
+    "footnote_scope": "Für einen Online-Shop oder Kundenbereich kontaktieren Sie uns für ein individuelles Angebot.",
+    "mockup_mention": "Fordern Sie Ihr Mockup unverbindlich an",
+    "cta_simulate": "Meinen Tarif simulieren",
+    "cta_contact": "Angebot anfordern"
   }
 }

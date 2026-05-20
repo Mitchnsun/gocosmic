@@ -14,5 +14,26 @@
   "language": {
     "current": "Langue actuelle : {language}",
     "switchTo": "Passer au {language}"
+  },
+  "pricing_teaser": {
+    "eyebrow": "Site vitrine",
+    "price": "à partir de 50€",
+    "price_period": "/ mois",
+    "tagline": "Tout compris, sans surprise",
+    "scope_note": "Idéal pour présenter votre activité, vos services et vos coordonnées en ligne — sans gestion de commandes ni espace client.",
+    "features": {
+      "redesign": "Refonte graphique du site vitrine",
+      "seo": "Optimisations SEO",
+      "updates": "Mises à jour techniques régulières",
+      "hosting": "Hébergement web",
+      "ssl": "Certificat SSL",
+      "domain": "Nom de domaine",
+      "email": "1 adresse e-mail professionnelle"
+    },
+    "footnote": "* Selon le nom de domaine choisi, des frais supplémentaires peuvent s'appliquer.",
+    "footnote_scope": "Pour une boutique e-commerce ou un espace client, contactez-nous pour un devis sur mesure.",
+    "mockup_mention": "Demandez votre maquette sans engagement",
+    "cta_simulate": "Simuler mon tarif",
+    "cta_contact": "Demander un devis"
   }
 }
