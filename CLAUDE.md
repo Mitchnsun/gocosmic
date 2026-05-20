@@ -85,7 +85,7 @@ This is a single Next.js 16 app (App Router) with full internationalization via 
 
 Conventional Commits are enforced via `commitlint` and Husky pre-commit hooks.
 
-Format: `<type>(<scope>): <description>` — imperative, lowercase, no period, max 69 chars.
+Format: `<type>(<scope>): <description>` — imperative, lowercase, no period (subject length ≤ 69 chars recommended).
 
 Types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `tech`, `chore`
 Common scopes: `ui`, `web`, `config`, `deps`

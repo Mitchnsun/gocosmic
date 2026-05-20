@@ -97,7 +97,7 @@ State lives entirely in `PricingSimulator.tsx` (3 `useState` values). All child 
    └──── "few_per_year"
                │
                ▼
-      ┌───────────────���──────────┐
+      ┌──────────────────────────┐
       │ RESULT                   │
       │ SubscriptionCard         │
       │ Abonnement Essentiel     │
