@@ -17,7 +17,7 @@ const LogoOrbitalDot = ({ reduceMotion }: LogoOrbitalDotProps) => {
       transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}>
       <motion.span
         className="bg-aerospace/60 h-2 w-2 rounded-full"
-        style={{ x: 18 }}
+        style={{ x: 18 /* orbit radius in px, sized for text-2xl glyph */ }}
         animate={{ scale: [1.3, 0.6, 1.3], opacity: [1, 0.2, 1] }}
         transition={{ duration: 4, repeat: Infinity, ease: 'linear', times: [0, 0.5, 1] }}
       />

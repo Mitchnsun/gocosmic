@@ -106,12 +106,12 @@ describe('Header Component', () => {
   it('renders the orbital dot by default', () => {
     const { getByRole } = render(<Header />);
     const heading = getByRole('heading', { level: 1 });
-    expect(heading.querySelector('.pointer-events-none.absolute.inset-0')).toBeInTheDocument();
+    expect(heading.querySelector('[aria-hidden="true"]')).toBeInTheDocument();
   });
 
   it('hides the orbital dot when logoOrbitalEnabled is false', () => {
     const { getByRole } = render(<Header logoOrbitalEnabled={false} />);
     const heading = getByRole('heading', { level: 1 });
-    expect(heading.querySelector('.pointer-events-none.absolute.inset-0')).toBeNull();
+    expect(heading.querySelector('[aria-hidden="true"]')).toBeNull();
   });
 });
