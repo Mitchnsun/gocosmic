@@ -78,6 +78,10 @@ See [`GUIDELINES.md`](../GUIDELINES.md) for:
 - Manual validation checklist (browser smoke tests for all routes and locales)
 - Coverage thresholds and exclusion list
 
+## Documentation Language
+
+All documentation must be written in **English**: README files, code comments, JSDoc, inline documentation, and any Markdown files added to the repository. This applies to AI-generated content as well.
+
 ## AI Agent Workflow
 
 See [`CLAUDE.md § AI agent workflow`](../CLAUDE.md) for the full planning, execution, and self-improvement loop.

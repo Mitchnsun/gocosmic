@@ -98,6 +98,10 @@ Before opening a PR:
 1. Bump `version` in `package.json` (semver: patch/minor/major)
 2. Add a `CHANGELOG.md` entry under `## [X.Y.Z] - YYYY-MM-DD`
 
+## Documentation language
+
+All documentation must be written in **English**: README files, code comments, JSDoc, inline documentation, and any Markdown files added to the repository. This applies to AI-generated content as well.
+
 ## AI agent workflow
 
 ### Helper files

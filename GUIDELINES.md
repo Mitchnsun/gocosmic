@@ -44,6 +44,10 @@ Active plugins and their roles:
 - Use `@radix-ui/react-slot` for polymorphic element composition
 - Use `clsx` + `tailwind-merge` for conditional class merging
 
+## Documentation Language
+
+All documentation must be written in **English**: README files, code comments, JSDoc, inline documentation, and any Markdown files added to the repository. This applies to AI-generated content as well.
+
 ## Security
 
 `eslint-plugin-security` catches common patterns at lint time. For anything beyond that, consult [`SECURITY.md`](./SECURITY.md) — it documents every decision and constraint for this project.

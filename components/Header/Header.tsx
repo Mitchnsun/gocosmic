@@ -9,56 +9,19 @@ import {
 } from '@heroicons/react/24/solid';
 import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useMemo } from 'react';
 
 import { Link, usePathname } from '@/i18n/navigation';
 
 import LanguageSwitcher from '../LanguageSwitcher';
+import { DEFAULT_LOGO, HeaderNavItem, HeaderProps } from './constants';
+import { useHeader } from './Header.hook';
 
-type HeaderNavItem = {
-  label: string;
-  href: '/services' | '/projects' | '/pricing' | '/about' | '/contact';
-  ariaLabel: string;
-  icon: typeof WrenchScrewdriverIcon;
-  isActive?: boolean;
-};
-
-interface HeaderProps {
-  logo?: string;
-  navItems?: HeaderNavItem[];
-  adaptiveHeight?: boolean;
-  minHeight?: number;
-  maxHeight?: number;
-  logoOrbitalEnabled?: boolean;
-  respectReducedMotion?: boolean;
-  className?: string;
-  id?: string;
-}
-
-const SCROLL_COMPACT_THRESHOLD = 8;
-const MOBILE_MAX_WIDTH = 600;
-const TABLET_MAX_WIDTH = 1023;
-const MOBILE_HEIGHT = 64;
-const TABLET_EXPANDED_HEIGHT = 80;
-const TABLET_COMPACT_HEIGHT = 56;
-
-const Header = ({
-  logo = 'Go Cosmic',
-  navItems,
-  adaptiveHeight = true,
-  minHeight = 64,
-  maxHeight = 96,
-  logoOrbitalEnabled = true,
-  respectReducedMotion = true,
-  className,
-  id,
-}: HeaderProps = {}) => {
+const Header = (props: HeaderProps = {}) => {
+  const { logo = DEFAULT_LOGO, navItems, logoOrbitalEnabled = true, className, id } = props;
   const t = useTranslations('navigation');
   const pathname = usePathname();
-  const [headerHeight, setHeaderHeight] = useState(maxHeight);
-  const [reduceMotion, setReduceMotion] = useState(false);
-  const lastScrollY = useRef(0);
-  const isCompactRef = useRef(false);
+  const { reduceMotion, headerHeight } = useHeader(props);
 
   const items = useMemo<HeaderNavItem[]>(
     () =>
@@ -72,68 +35,13 @@ const Header = ({
     [navItems, t]
   );
 
-  useEffect(() => {
-    if (!respectReducedMotion || typeof window === 'undefined') {
-      return;
-    }
-
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const updateReducedMotion = () => setReduceMotion(mediaQuery.matches);
-    updateReducedMotion();
-    mediaQuery.addEventListener('change', updateReducedMotion);
-
-    return () => mediaQuery.removeEventListener('change', updateReducedMotion);
-  }, [respectReducedMotion]);
-
-  useEffect(() => {
-    if (!adaptiveHeight || typeof window === 'undefined') {
-      return;
-    }
-
-    const getHeights = () => {
-      if (window.innerWidth <= MOBILE_MAX_WIDTH) {
-        return { expandedHeight: MOBILE_HEIGHT, compactHeight: MOBILE_HEIGHT };
-      }
-      if (window.innerWidth <= TABLET_MAX_WIDTH) {
-        return { expandedHeight: TABLET_EXPANDED_HEIGHT, compactHeight: TABLET_COMPACT_HEIGHT };
-      }
-
-      return { expandedHeight: maxHeight, compactHeight: minHeight };
-    };
-
-    const updateHeightOnScroll = () => {
-      const currentScrollY = window.scrollY;
-      const isScrollingDown = currentScrollY > lastScrollY.current;
-      const { expandedHeight, compactHeight } = getHeights();
-      const shouldCompact = isScrollingDown && currentScrollY > SCROLL_COMPACT_THRESHOLD;
-
-      isCompactRef.current = shouldCompact;
-      setHeaderHeight(shouldCompact ? compactHeight : expandedHeight);
-      lastScrollY.current = currentScrollY;
-    };
-
-    const handleResize = () => {
-      const { expandedHeight, compactHeight } = getHeights();
-      setHeaderHeight(isCompactRef.current ? compactHeight : expandedHeight);
-    };
-
-    updateHeightOnScroll();
-    window.addEventListener('scroll', updateHeightOnScroll, { passive: true });
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('scroll', updateHeightOnScroll);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [adaptiveHeight, maxHeight, minHeight]);
-
   const transitionClass = reduceMotion ? 'duration-0' : 'duration-300';
 
   return (
     <>
       <a
         href="#main-content"
-        className="focus:text-ghost focus:ring-aerospace sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:rounded-md focus:bg-slate-950 focus:px-4 focus:py-2 focus:ring-2 focus:outline-none">
+        className="focus:text-ghost focus:ring-aerospace sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-60 focus:rounded-md focus:bg-slate-950 focus:px-4 focus:py-2 focus:ring-2 focus:outline-none">
         {t('skip_to_content')}
       </a>
       <header

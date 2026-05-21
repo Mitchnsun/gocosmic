@@ -22,7 +22,7 @@ Each commit message should be structured as follows:
 
 - **Description**: Use imperative mood, lowercase, no period, max 69 characters
 - **Body**: Wrap at 72 characters, explain what and why (not how)
-- **Language**: All commit messages must be written in English
+- **Language**: All commit messages and documentation must be written in English (README files, code comments, JSDoc, inline docs, and any Markdown files added to the repository)
 - **Line breaks**: Use blank lines to separate description, body, and footer sections
 
 ### Types
