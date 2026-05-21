@@ -80,7 +80,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <CosmicCursor />
           <Header />
-          <div className="mt-16">{children}</div>
+          <main id="main-content">{children}</main>
           <Footer />
           <WebsiteSeo />
           <Analytics />
