@@ -35,6 +35,13 @@ interface HeaderProps {
   id?: string;
 }
 
+const SCROLL_COMPACT_THRESHOLD = 8;
+const MOBILE_MAX_WIDTH = 600;
+const TABLET_MAX_WIDTH = 1023;
+const MOBILE_HEIGHT = 64;
+const TABLET_EXPANDED_HEIGHT = 80;
+const TABLET_COMPACT_HEIGHT = 56;
+
 const Header = ({
   logo = 'Go Cosmic',
   navItems,
@@ -84,11 +91,11 @@ const Header = ({
     }
 
     const getHeights = () => {
-      if (window.innerWidth <= 600) {
-        return { expandedHeight: 64, compactHeight: 64 };
+      if (window.innerWidth <= MOBILE_MAX_WIDTH) {
+        return { expandedHeight: MOBILE_HEIGHT, compactHeight: MOBILE_HEIGHT };
       }
-      if (window.innerWidth < 1024) {
-        return { expandedHeight: 80, compactHeight: 56 };
+      if (window.innerWidth <= TABLET_MAX_WIDTH) {
+        return { expandedHeight: TABLET_EXPANDED_HEIGHT, compactHeight: TABLET_COMPACT_HEIGHT };
       }
 
       return { expandedHeight: maxHeight, compactHeight: minHeight };
@@ -98,7 +105,7 @@ const Header = ({
       const currentScrollY = window.scrollY;
       const isScrollingDown = currentScrollY > lastScrollY.current;
       const { expandedHeight, compactHeight } = getHeights();
-      const shouldCompact = isScrollingDown && currentScrollY > 8;
+      const shouldCompact = isScrollingDown && currentScrollY > SCROLL_COMPACT_THRESHOLD;
 
       isCompactRef.current = shouldCompact;
       setHeaderHeight(shouldCompact ? compactHeight : expandedHeight);
