@@ -12,6 +12,31 @@
       "subtitle": "Permítenos lanzar tus ideas a la estratosfera con diseño místico y funcionalidad cósmica",
       "title": "Construimos aplicaciones estelares que"
     },
+    "process": {
+      "eyebrow": "[ PROCESO ]",
+      "title": "Cuatro fases. <em>Sin drama.</em>",
+      "subtitle": "De la idea a la realidad en 4 fases",
+      "discovery": {
+        "label": "T-30",
+        "title": "Descubrimiento",
+        "description": "Auditoría, objetivos, restricciones. Mapeamos el territorio antes de dibujar el mapa."
+      },
+      "design": {
+        "label": "T-20",
+        "title": "Diseño",
+        "description": "Wireframes, prototipos, alta fidelidad. Iteraciones rápidas hasta el «sí»."
+      },
+      "build": {
+        "label": "T-10",
+        "title": "Desarrollo",
+        "description": "TypeScript, pruebas, revisiones de código. Tratamos el código como infraestructura."
+      },
+      "launch": {
+        "label": "T-0",
+        "title": "Lanzamiento",
+        "description": "Ignición. Monitoreo, rendimiento, analíticas y soporte post-lanzamiento."
+      }
+    },
     "services": {
       "ai": {
         "description": "Integrando características avanzadas de IA para hacer tus aplicaciones más inteligentes, adaptativas y verdaderamente de nueva generación.",

@@ -2,12 +2,44 @@ import { CodeBracketIcon, PuzzlePieceIcon, RocketLaunchIcon, SparklesIcon } from
 import { useTranslations } from 'next-intl';
 
 import HeroSection from '@/components/HeroSection';
+import { ProcessTimeline } from '@/components/ProcessTimeline';
 import { buttonVariants } from '@/design-system/button.variants';
 import { cn } from '@/design-system/lib/utils';
 import { Link } from '@/i18n/navigation';
 
 export default function Home() {
   const t = useTranslations('homepage');
+
+  const processSteps = [
+    {
+      id: 'discovery',
+      label: t('process.discovery.label'),
+      title: t('process.discovery.title'),
+      description: t('process.discovery.description'),
+      color: 'aerospace' as const,
+    },
+    {
+      id: 'design',
+      label: t('process.design.label'),
+      title: t('process.design.title'),
+      description: t('process.design.description'),
+      color: 'aerospace' as const,
+    },
+    {
+      id: 'build',
+      label: t('process.build.label'),
+      title: t('process.build.title'),
+      description: t('process.build.description'),
+      color: 'aerospace' as const,
+    },
+    {
+      id: 'launch',
+      label: t('process.launch.label'),
+      title: t('process.launch.title'),
+      description: t('process.launch.description'),
+      color: 'aerospace' as const,
+    },
+  ];
 
   return (
     <div className="text-ghost bg-void relative p-4">
@@ -19,6 +51,19 @@ export default function Home() {
         ctaHref="/journey"
         className="-m-4 mb-4"
       />
+
+      <div className="relative z-10">
+        <ProcessTimeline
+          id="process"
+          eyebrow={t('process.eyebrow')}
+          title={t('process.title')}
+          subtitle={t('process.subtitle')}
+          steps={processSteps}
+          layout="horizontal"
+          pathDuration={2000}
+          staggerDelay={200}
+        />
+      </div>
       <section className="relative z-10 m-auto mt-4 flex max-w-7xl flex-col items-center">
         <h3 id="services" className="text-center text-2xl font-bold sm:text-3xl">
           {t('services.title')}

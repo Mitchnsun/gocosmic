@@ -71,6 +71,29 @@ global.ResizeObserver = class ResizeObserver {
   }
 };
 
+// Mock IntersectionObserver for scroll-based components
+global.IntersectionObserver = class MockIntersectionObserver {
+  private callback: IntersectionObserverCallback;
+
+  constructor(callback: IntersectionObserverCallback) {
+    this.callback = callback;
+  }
+
+  observe(target: Element) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    this.callback([{ isIntersecting: true, target } as IntersectionObserverEntry], null as any);
+  }
+
+  unobserve() {
+    // Mock implementation
+  }
+
+  disconnect() {
+    // Mock implementation
+  }
+} as unknown as typeof IntersectionObserver;
+
+// Mock window.matchMedia for components that use prefers-reduced-motion
 if (!window.matchMedia) {
   Object.defineProperty(window, 'matchMedia', {
     writable: true,

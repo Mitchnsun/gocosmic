@@ -12,6 +12,31 @@
       "subtitle": "Laissez-nous propulser vos idées dans la stratosphère avec un design mystique et une fonctionnalité cosmique",
       "title": "Nous créons des applications stellaires qui"
     },
+    "process": {
+      "eyebrow": "[ PROCESSUS ]",
+      "title": "Quatre phases. <em>Sans drama.</em>",
+      "subtitle": "De l'idée à la réalité en 4 phases",
+      "discovery": {
+        "label": "T-30",
+        "title": "Découverte",
+        "description": "Audit, objectifs, contraintes. Nous cartographions le territoire avant de dessiner la carte."
+      },
+      "design": {
+        "label": "T-20",
+        "title": "Design",
+        "description": "Maquettes, prototypes, haute-fidélité. Des itérations rapides jusqu'au « oui »."
+      },
+      "build": {
+        "label": "T-10",
+        "title": "Développement",
+        "description": "TypeScript, tests, revues de code. Nous traitons le code comme une infrastructure."
+      },
+      "launch": {
+        "label": "T-0",
+        "title": "Lancement",
+        "description": "Ignition. Monitoring, performance, analytics et support post-lancement."
+      }
+    },
     "services": {
       "ai": {
         "description": "Intégration de fonctionnalités IA avancées pour rendre vos applications plus intelligentes et plus adaptatives.",

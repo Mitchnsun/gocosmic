@@ -12,6 +12,31 @@
       "subtitle": "Lascia che lanciamo le tue idee nella stratosfera con design mistico e funzionalità cosmica",
       "title": "Costruiamo applicazioni stellari che"
     },
+    "process": {
+      "eyebrow": "[ PROCESSO ]",
+      "title": "Quattro fasi. <em>Nessun dramma.</em>",
+      "subtitle": "Dall'idea alla realtà in 4 fasi",
+      "discovery": {
+        "label": "T-30",
+        "title": "Scoperta",
+        "description": "Audit, obiettivi, vincoli. Mappiamo il territorio prima di disegnare la mappa."
+      },
+      "design": {
+        "label": "T-20",
+        "title": "Design",
+        "description": "Wireframe, prototipi, alta fedeltà. Iterazioni rapide fino al «sì»."
+      },
+      "build": {
+        "label": "T-10",
+        "title": "Sviluppo",
+        "description": "TypeScript, test, revisioni del codice. Trattiamo il codice come infrastruttura."
+      },
+      "launch": {
+        "label": "T-0",
+        "title": "Lancio",
+        "description": "Ignizione. Monitoraggio, performance, analytics e supporto post-lancio."
+      }
+    },
     "services": {
       "ai": {
         "description": "Integrazione di funzionalità IA avanzate per rendere le tue applicazioni più intelligenti, adattive e veramente di nuova generazione.",

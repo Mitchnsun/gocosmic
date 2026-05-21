@@ -12,6 +12,31 @@
       "subtitle": "Lassen Sie uns Ihre Ideen in die Stratosphäre starten mit mystischem Design und kosmischer Funktionalität",
       "title": "Wir entwickeln stellare Anwendungen, die"
     },
+    "process": {
+      "eyebrow": "[ PROZESS ]",
+      "title": "Vier Phasen. <em>Kein Drama.</em>",
+      "subtitle": "Von der Idee zur Realität in 4 Phasen",
+      "discovery": {
+        "label": "T-30",
+        "title": "Entdeckung",
+        "description": "Audit, Ziele, Einschränkungen. Wir kartieren das Gebiet, bevor wir die Karte zeichnen."
+      },
+      "design": {
+        "label": "T-20",
+        "title": "Design",
+        "description": "Wireframes, Prototypen, High-Fidelity. Schnelle Iterationen bis zum „Ja"."
+      },
+      "build": {
+        "label": "T-10",
+        "title": "Entwicklung",
+        "description": "TypeScript, Tests, Code-Reviews. Wir behandeln Code wie Infrastruktur."
+      },
+      "launch": {
+        "label": "T-0",
+        "title": "Launch",
+        "description": "Zündung. Monitoring, Performance, Analytics und Support nach dem Launch."
+      }
+    },
     "services": {
       "ai": {
         "description": "Integration fortschrittlicher KI-Funktionen, um Ihre Anwendungen intelligenter, anpassungsfähiger und wirklich zukunftsweisend zu machen.",
