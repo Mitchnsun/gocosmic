@@ -126,13 +126,13 @@ const Header = ({
     <>
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:rounded-md focus:bg-slate-950 focus:px-4 focus:py-2 focus:text-ghost focus:outline-none focus:ring-2 focus:ring-aerospace">
+        className="focus:text-ghost focus:ring-aerospace sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:rounded-md focus:bg-slate-950 focus:px-4 focus:py-2 focus:ring-2 focus:outline-none">
         {t('skip_to_content')}
       </a>
       <header
         id={id}
         className={clsx(
-          'text-ghost sticky top-0 z-50 border-b border-ghost/10 bg-slate-950/80 backdrop-blur-md transition-[height,background-color,box-shadow] ease-out',
+          'text-ghost border-ghost/10 sticky top-0 z-50 border-b bg-slate-950/80 backdrop-blur-md transition-[height,background-color,box-shadow] ease-out',
           transitionClass,
           className
         )}
@@ -143,7 +143,7 @@ const Header = ({
               href="/"
               aria-label={t('home')}
               className={clsx(
-                'group relative inline-flex items-center text-xl font-bold transition-colors sm:text-2xl hover:text-ghost/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aerospace/70',
+                'group hover:text-ghost/90 focus-visible:ring-aerospace/70 relative inline-flex items-center text-xl font-bold transition-colors focus-visible:ring-2 focus-visible:outline-none sm:text-2xl',
                 transitionClass
               )}>
               <span>{logo}</span>
@@ -151,7 +151,7 @@ const Header = ({
               <span
                 aria-hidden="true"
                 className={clsx(
-                  'pointer-events-none absolute -top-1 -left-2 h-2 w-2 rounded-full bg-aerospace/60',
+                  'bg-aerospace/60 pointer-events-none absolute -top-1 -left-2 h-2 w-2 rounded-full',
                   logoOrbitalEnabled && !reduceMotion && 'animate-orbital-dot'
                 )}
               />
@@ -166,7 +166,7 @@ const Header = ({
                   key={href}
                   href={href}
                   className={clsx(
-                    'group relative rounded px-2 py-1 opacity-80 transition-opacity hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aerospace/70',
+                    'group focus-visible:ring-aerospace/70 relative rounded px-2 py-1 opacity-80 transition-opacity hover:opacity-100 focus-visible:opacity-100 focus-visible:ring-2 focus-visible:outline-none',
                     transitionClass,
                     active && 'opacity-100'
                   )}
@@ -177,7 +177,7 @@ const Header = ({
                   <span
                     aria-hidden="true"
                     className={clsx(
-                      'absolute inset-x-2 bottom-0 h-0.5 origin-left scale-x-0 bg-aerospace transition-transform duration-200 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100',
+                      'bg-aerospace absolute inset-x-2 bottom-0 h-0.5 origin-left scale-x-0 transition-transform duration-200 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100',
                       active && 'scale-x-100',
                       reduceMotion && 'duration-0'
                     )}

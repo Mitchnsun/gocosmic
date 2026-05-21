@@ -51,4 +51,55 @@ describe('Header Component', () => {
 
     expect(header).toHaveStyle({ height: '64px' });
   });
+
+  it('keeps max height when adaptiveHeight is disabled', () => {
+    let mockScrollY = 0;
+    Object.defineProperty(window, 'scrollY', {
+      configurable: true,
+      get: () => mockScrollY,
+    });
+
+    const { getByRole } = render(<Header adaptiveHeight={false} />);
+    const header = getByRole('banner');
+
+    mockScrollY = 300;
+    act(() => {
+      window.dispatchEvent(new Event('scroll'));
+    });
+
+    expect(header).toHaveStyle({ height: '96px' });
+  });
+
+  it('uses tablet and mobile adaptive heights', () => {
+    let mockScrollY = 0;
+    Object.defineProperty(window, 'scrollY', {
+      configurable: true,
+      get: () => mockScrollY,
+    });
+
+    Object.defineProperty(window, 'innerWidth', { writable: true, value: 800 });
+    const { getByRole } = render(<Header />);
+    const header = getByRole('banner');
+    expect(header).toHaveStyle({ height: '80px' });
+
+    mockScrollY = 100;
+    act(() => {
+      window.dispatchEvent(new Event('scroll'));
+    });
+    expect(header).toHaveStyle({ height: '56px' });
+
+    Object.defineProperty(window, 'innerWidth', { writable: true, value: 500 });
+    act(() => {
+      window.dispatchEvent(new Event('resize'));
+    });
+    expect(header).toHaveStyle({ height: '64px' });
+  });
+
+  it('supports disabling reduced-motion detection', () => {
+    const matchMediaSpy = vi.spyOn(window, 'matchMedia');
+
+    const { getByRole } = render(<Header respectReducedMotion={false} />);
+    expect(getByRole('banner')).toBeInTheDocument();
+    expect(matchMediaSpy).not.toHaveBeenCalled();
+  });
 });
