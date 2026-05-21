@@ -1,4 +1,4 @@
-# Mini Glossary (FR -> EN)
+# Business Glossary (FR -> EN)
 
 | Français (terme métier) | English (canonical term)   | Usage note                                    |
 | ----------------------- | -------------------------- | --------------------------------------------- |
