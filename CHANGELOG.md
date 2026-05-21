@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.7.0] - 2026-05-21
+
+### Added
+
+- Orbital dot in the GoCosmic header logo now truly orbits around the "G" character using a planetary animation powered by `motion/react` — the dot grows and brightens as it passes in front, shrinks and fades as it passes behind, completing one orbit every 4 seconds
+- New `LogoOrbitalDot` component isolated in `components/Header/` with full `logoOrbitalEnabled` and `reduceMotion` guards
+
+### Removed
+
+- Legacy `@keyframes orbital-dot` and `.animate-orbital-dot` CSS replaced by `motion` animation
+
 ## [1.6.1] - 2026-05-20
 
 ### Added
