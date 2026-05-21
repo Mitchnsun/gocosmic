@@ -44,3 +44,8 @@ next-env.d.ts
 
 # AI agent ephemeral planning files (lessons go to docs/lessons.md instead)
 /tasks
+.superpowers/*
+/docs/superpowers/*
+
+# IDE
+.vscode/
