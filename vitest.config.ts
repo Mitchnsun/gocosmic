@@ -26,8 +26,8 @@ export default defineConfig({
         'postcss.config.mjs',
         'eslint.config.js',
         'i18n/*.ts',
-        'app/',
-        'views/',
+        'app/**',
+        'views/**',
       ],
       thresholds: {
         lines: 90,

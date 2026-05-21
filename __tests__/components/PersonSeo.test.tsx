@@ -1,8 +1,9 @@
-import { render, screen } from '@testing-library/react';
 import { useLocale } from 'next-intl';
 import { vi } from 'vitest';
 
 import PersonSeo from '@/components/JsonLd/PersonSeo';
+
+import { render } from '../test-utils';
 
 const jsonLdScriptMock = vi.fn((props: unknown) => (
   <script data-testid="person-json-ld" data-props={JSON.stringify(props)} />
@@ -12,23 +13,31 @@ vi.mock('next-seo', () => ({
   JsonLdScript: (props: unknown) => jsonLdScriptMock(props),
 }));
 
-vi.mock('next-intl', () => ({
-  useLocale: vi.fn().mockReturnValue('en'),
-}));
+vi.mock('next-intl', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('next-intl')>();
+  return {
+    ...actual,
+    useLocale: vi.fn().mockReturnValue('en'),
+  };
+});
 
 vi.mock('@/i18n/canonical', () => ({
   getCanonicalUrl: (locale: string, path: string) => `https://www.gocosmic.dev/${locale}${path}`,
 }));
 
 describe('PersonSeo', () => {
+  beforeEach(() => {
+    vi.mocked(useLocale).mockReturnValue('en');
+  });
+
   afterEach(() => {
     vi.clearAllMocks();
   });
 
   it('should render Person JSON-LD script', () => {
-    render(<PersonSeo />);
+    const { getByTestId } = render(<PersonSeo />);
 
-    expect(screen.getByTestId('person-json-ld')).toBeInTheDocument();
+    expect(getByTestId('person-json-ld')).toBeInTheDocument();
     expect(jsonLdScriptMock).toHaveBeenCalledWith(
       expect.objectContaining({
         scriptKey: 'person-jsonld',

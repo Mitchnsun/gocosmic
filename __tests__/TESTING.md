@@ -18,7 +18,7 @@ The web app now includes a comprehensive test suite using:
 
 - **Environment**: jsdom for DOM testing
 - **Setup**: Automatic cleanup after each test
-- **Coverage**: 80% minimum threshold (currently achieving 100%)
+- **Coverage**: 90% minimum threshold (currently achieving 100%)
 - **Path Mapping**: Supports `@/` alias for imports
 - **Excludes**: Configuration files, build artifacts, and test files themselves
 
@@ -56,18 +56,45 @@ __tests__/
 Example:
 
 ```typescript
-import { render, screen } from '@testing-library/react';
+import { render } from '../test-utils';
 import { Header } from '@/components/Header';
 
 describe('Header Component', () => {
   it('should render the "Go Cosmic" title', () => {
-    render(<Header />);
+    const { getByRole } = render(<Header />);
 
-    const title = screen.getByRole('heading', { name: /go cosmic/i });
+    const title = getByRole('heading', { name: /go cosmic/i });
     expect(title).toBeInTheDocument();
-    expect(title).toHaveClass('text-2xl', 'font-bold');
   });
 });
+```
+
+### Query Methods
+
+Destructure `get*` and `query*` helpers directly from the return value of `render()` rather than importing and using `screen`:
+
+```typescript
+// ✅ preferred
+const { getByRole, queryByText } = render(<MyComponent />);
+
+// ❌ avoid
+import { screen } from '@testing-library/react';
+render(<MyComponent />);
+screen.getByRole(...);
+```
+
+This keeps each test self-contained and avoids implicit global state.
+
+### Imports — always use `test-utils`
+
+Always import `render` and `fireEvent` (and other Testing Library utilities) from `../test-utils`, **never** directly from `@testing-library/react`. The custom `render` in `test-utils.tsx` wraps the component with `NextIntlClientProvider`, which is required for any component that calls `useTranslations` or `useLocale`.
+
+```typescript
+// ✅ correct
+import { render, fireEvent } from '../test-utils';
+
+// ❌ incorrect — misses the i18n provider
+import { render, fireEvent } from '@testing-library/react';
 ```
 
 ### Accessibility Testing
@@ -103,7 +130,7 @@ vi.mock('next/font/google', () => ({
 
 ## Coverage Requirements
 
-- **Minimum**: 80% coverage on lines, functions, branches, and statements
+- **Minimum**: 90% coverage on lines, functions, branches, and statements
 - **Exclusions**: Configuration files, build artifacts, and test files
 
 ## Integration with Monorepo
@@ -130,7 +157,7 @@ The tests specifically validate:
 3. **Isolation** - Mock dependencies to test components in isolation
 4. **Cosmic Context** - Validate space-themed content and styling
 5. **Consistent Patterns** - Follow the same testing patterns as the UI package
-6. **Avoid Snapshots** - Snapshots are discouraged for components; they are tolerated for pages and views but should be used sparingly
+6. **Avoid Snapshots** - Snapshots are discouraged for components;
 
 ## Future Considerations
 

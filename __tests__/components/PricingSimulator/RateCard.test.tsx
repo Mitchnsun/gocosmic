@@ -1,6 +1,6 @@
-import { render, screen } from '@testing-library/react';
-
 import { RateCard } from '@/components/PricingSimulator/RateCard';
+
+import { render } from '../../test-utils';
 
 const defaultProps = {
   title: 'Mobile Application',
@@ -13,43 +13,45 @@ const defaultProps = {
 
 describe('RateCard', () => {
   it('renders the title', () => {
-    render(<RateCard {...defaultProps} />);
-    expect(screen.getByText('Mobile Application')).toBeInTheDocument();
+    const { getByText } = render(<RateCard {...defaultProps} />);
+    expect(getByText('Mobile Application')).toBeInTheDocument();
   });
 
   it('renders the rate', () => {
-    render(<RateCard {...defaultProps} />);
-    expect(screen.getByText('600€ excl. tax / day')).toBeInTheDocument();
+    const { getByText } = render(<RateCard {...defaultProps} />);
+    expect(getByText('600€ excl. tax / day')).toBeInTheDocument();
   });
 
   it('renders the rate note', () => {
-    render(<RateCard {...defaultProps} />);
-    expect(screen.getByText('*')).toBeInTheDocument();
+    const { getByText } = render(<RateCard {...defaultProps} />);
+    expect(getByText('*')).toBeInTheDocument();
   });
 
   it('renders the description', () => {
-    render(<RateCard {...defaultProps} />);
-    expect(screen.getByText('Billed at a daily rate.')).toBeInTheDocument();
+    const { getByText } = render(<RateCard {...defaultProps} />);
+    expect(getByText('Billed at a daily rate.')).toBeInTheDocument();
   });
 
   it('renders the disclaimer', () => {
-    render(<RateCard {...defaultProps} />);
-    expect(screen.getByText('* Indicative price.')).toBeInTheDocument();
+    const { getByText } = render(<RateCard {...defaultProps} />);
+    expect(getByText('* Indicative price.')).toBeInTheDocument();
   });
 
   it('does not render noFixedPrice when not provided', () => {
-    render(<RateCard {...defaultProps} />);
-    expect(screen.queryByText(/no fixed price/i)).not.toBeInTheDocument();
+    const { queryByText } = render(<RateCard {...defaultProps} />);
+    expect(queryByText(/no fixed price/i)).not.toBeInTheDocument();
   });
 
   it('renders noFixedPrice when provided', () => {
-    render(<RateCard {...defaultProps} noFixedPrice="No fixed price for a fully customisable website." />);
-    expect(screen.getByText('No fixed price for a fully customisable website.')).toBeInTheDocument();
+    const { getByText } = render(
+      <RateCard {...defaultProps} noFixedPrice="No fixed price for a fully customisable website." />
+    );
+    expect(getByText('No fixed price for a fully customisable website.')).toBeInTheDocument();
   });
 
   it('applies the accent color class to the title', () => {
-    render(<RateCard {...defaultProps} accentColor="purple" />);
-    const title = screen.getByText('Mobile Application');
+    const { getByText } = render(<RateCard {...defaultProps} accentColor="purple" />);
+    const title = getByText('Mobile Application');
     expect(title).toHaveClass('text-purple-400');
   });
 });

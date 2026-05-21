@@ -1,7 +1,8 @@
-import { render, screen } from '@testing-library/react';
 import { vi } from 'vitest';
 
 import LocalBusinessSeo from '@/components/JsonLd/LocalBusinessSeo';
+
+import { render } from '../test-utils';
 
 const jsonLdScriptMock = vi.fn((props: unknown) => (
   <script data-testid="local-business-json-ld" data-props={JSON.stringify(props)} />
@@ -17,9 +18,9 @@ describe('LocalBusinessSeo', () => {
   });
 
   it('should render ProfessionalService JSON-LD for english locale', () => {
-    render(<LocalBusinessSeo locale="en" />);
+    const { getByTestId } = render(<LocalBusinessSeo locale="en" />);
 
-    expect(screen.getByTestId('local-business-json-ld')).toBeInTheDocument();
+    expect(getByTestId('local-business-json-ld')).toBeInTheDocument();
     expect(jsonLdScriptMock).toHaveBeenCalledWith({
       scriptKey: 'local-business-json-ld',
       data: {

@@ -17,7 +17,7 @@ yarn format           # Prettier write on all .ts/.tsx/.md
 yarn check-types      # TypeScript type check via tsconfig.check.json (~9s)
 yarn test             # Run all Vitest tests (~4s, ~138 tests / 33 files)
 yarn test:watch       # Vitest in watch mode
-yarn coverage         # Generate coverage report (must stay ≥80% on all metrics)
+yarn coverage         # Generate coverage report (must stay ≥90% on all metrics)
 ```
 
 **Before committing**, always run: `yarn format && yarn lint && yarn check-types && yarn test && yarn coverage`
@@ -28,7 +28,7 @@ To run a single test file: `yarn test __tests__/components/MyComponent.test.tsx`
 
 - Build failures → run `yarn check-types` first to isolate TypeScript errors
 - `yarn dev` hanging → stop and restart the process
-- Coverage below 80% → the CI will fail; add tests before opening a PR
+- Coverage below 90% → the CI will fail; add tests before opening a PR
 
 ## Architecture
 

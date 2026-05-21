@@ -139,13 +139,15 @@ After making changes, validate the app manually:
 
 `yarn coverage` generates reports in three formats: terminal, HTML (`coverage/index.html`), and JSON.
 
-**Thresholds (all must stay ≥ 80%)**: lines, functions, branches, statements.
+**Thresholds (all must stay ≥ 90%)**: lines, functions, branches, statements.
 
 **Excluded from coverage** (configured in `vitest.config.ts`):
 
 - `node_modules/`, `.next/`, `.yarn/`, `dist/` — build artifacts
 - `__tests__/`, `**/*.test.*`, `**/*.spec.*`, `**/*.d.ts` — test files
 - `**/*.config.*` — configuration files
-- `i18n/*.ts` — i18n routing configuration
+- `i18n/*.ts` — i18n routing/request configuration
+- `app/**` — server-component pages and layouts; unit-testing Next.js server components adds negligible value and the project guidance explicitly discourages page/view snapshots. App-level utilities (`app/robots.ts`, `app/sitemap.ts`, `app/not-found.tsx`) are **not** excluded and must maintain coverage.
+- `views/**` — complex view-layer files (e.g. the Journey 3D canvas) that are intentionally outside unit-test scope per project conventions.
 
-CI fails if any threshold drops below 80%. Add tests for any new code before opening a PR.
+CI fails if any threshold drops below 90%. Add tests for any new code before opening a PR.

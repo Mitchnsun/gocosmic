@@ -17,7 +17,7 @@
 - **next-intl** — Type-safe i18n, 5 locales (EN, FR, ES, DE, IT)
 - **TailwindCSS 4** — Utility classes + custom design tokens
 - **Radix UI + CVA** — Accessible primitives with typed component variants
-- **Vitest + Testing Library** — Unit tests, ≥80% coverage enforced
+- **Vitest + Testing Library** — Unit tests, ≥90% coverage enforced
 
 ## Key Commands
 
@@ -67,7 +67,7 @@ Scopes: `ui` `web` `config` `deps`
 
 1. Bump `version` in `package.json` (semver)
 2. Add entry to `CHANGELOG.md` under `## [X.Y.Z] - YYYY-MM-DD`
-3. All CI checks must pass: lint, types, tests, coverage ≥ 80%
+3. All CI checks must pass: lint, types, tests, coverage ≥ 90%
 
 ## UI & Coding Standards
 
