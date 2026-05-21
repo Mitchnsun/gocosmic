@@ -28,6 +28,25 @@ vi.mock('@/i18n/navigation', () => ({
   getPathname: vi.fn(() => '/en'),
 }));
 
+// Mock motion/react so JSDOM doesn't process animation props
+vi.mock('motion/react', () => ({
+  motion: {
+    span: ({
+      children,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      animate,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      transition,
+      ...rest
+    }: {
+      children: React.ReactNode;
+      animate?: unknown;
+      transition?: unknown;
+      [key: string]: unknown;
+    }) => <span {...(rest as React.HTMLAttributes<HTMLSpanElement>)}>{children}</span>,
+  },
+}));
+
 // Mock ResizeObserver for @react-three/fiber Canvas component
 global.ResizeObserver = class ResizeObserver {
   observe() {
