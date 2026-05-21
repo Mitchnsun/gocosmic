@@ -7,7 +7,7 @@ The main web application of the Go Cosmic ecosystem, serving as the public showc
 - **Legal & AI Usage**: Transparent statements about AI usage, privacy, and responsibility
 - **Accessibility**: Semantic headings, descriptive aria-labels, and keyboard focus styles
 - **SEO Ready**: Metadata and Open Graph descriptions optimized per locale
-- **Multilingual Support**: Complete translation coverage for professional presentationapplication of the Go Cosmic ecosystem, serving as the public showcase and business platform for the Go Cosmic development team. This platform is designed to **present Go Cosmic's work, showcase their applications, introduce the team, and promote their development services** to potential clients and collaborators.
+- **Multilingual Support**: Complete translation coverage for professional presentation
 
 ## Primary Objectives
 
