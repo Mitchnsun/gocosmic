@@ -47,24 +47,8 @@ footer a {
   }
 }
 
-@keyframes orbital-dot {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-    opacity: 0.3;
-  }
-  50% {
-    transform: translate(4px, -2px) scale(1.2);
-    opacity: 0.6;
-  }
-}
-
 @layer utilities {
   .animate-fade-in-up {
     animation: fadeSlideIn 0.5s ease-out forwards;
-  }
-
-  .animate-orbital-dot {
-    animation: orbital-dot 2.4s ease-in-out infinite;
   }
 }

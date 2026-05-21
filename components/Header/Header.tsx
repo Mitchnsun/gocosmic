@@ -16,6 +16,7 @@ import { Link, usePathname } from '@/i18n/navigation';
 import LanguageSwitcher from '../LanguageSwitcher';
 import { DEFAULT_LOGO, HeaderNavItem, HeaderProps } from './constants';
 import { useHeader } from './Header.hook';
+import LogoOrbitalDot from './LogoOrbitalDot';
 
 const Header = (props: HeaderProps = {}) => {
   const { logo = DEFAULT_LOGO, navItems, logoOrbitalEnabled = true, className, id } = props;
@@ -61,15 +62,12 @@ const Header = (props: HeaderProps = {}) => {
                 'group hover:text-ghost/90 focus-visible:ring-aerospace/70 relative inline-flex items-center text-xl font-bold transition-colors focus-visible:ring-2 focus-visible:outline-none sm:text-2xl',
                 transitionClass
               )}>
-              <span>{logo}</span>
+              <span className="relative inline-block">
+                {logo.charAt(0)}
+                {logoOrbitalEnabled && <LogoOrbitalDot reduceMotion={reduceMotion} />}
+              </span>
+              {logo.slice(1)}
               <span className="text-aerospace">.</span>
-              <span
-                aria-hidden="true"
-                className={clsx(
-                  'bg-aerospace/60 pointer-events-none absolute -top-1 -left-2 h-2 w-2 rounded-full',
-                  logoOrbitalEnabled && !reduceMotion && 'animate-orbital-dot'
-                )}
-              />
             </Link>
           </h1>
           <nav className="flex items-center gap-3 sm:gap-4 lg:gap-8" aria-label={t('label')}>
