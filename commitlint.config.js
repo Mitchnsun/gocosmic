@@ -6,6 +6,7 @@ export default {
     'subject-empty': [2, 'never'],
     'subject-full-stop': [0],
     'subject-max-length': [1, 'always', 69],
+    'body-max-line-length': [1, 'always', 150],
     'body-leading-blank': [0],
     'footer-leading-blank': [0],
   },

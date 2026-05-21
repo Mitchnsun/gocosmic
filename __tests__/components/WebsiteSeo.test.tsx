@@ -1,7 +1,8 @@
-import { render, screen } from '@testing-library/react';
 import { vi } from 'vitest';
 
 import WebsiteSeo from '@/components/JsonLd/WebsiteSeo';
+
+import { render } from '../test-utils';
 
 const jsonLdScriptMock = vi.fn((props: unknown) => (
   <script data-testid="website-json-ld" data-props={JSON.stringify(props)} />
@@ -17,9 +18,9 @@ describe('WebsiteSeo', () => {
   });
 
   it('should render WebSite JSON-LD', () => {
-    render(<WebsiteSeo />);
+    const { getByTestId } = render(<WebsiteSeo />);
 
-    expect(screen.getByTestId('website-json-ld')).toBeInTheDocument();
+    expect(getByTestId('website-json-ld')).toBeInTheDocument();
     expect(jsonLdScriptMock).toHaveBeenCalledWith({
       scriptKey: 'website-json-ld',
       data: {

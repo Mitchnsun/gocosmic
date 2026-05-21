@@ -185,7 +185,7 @@ export default function MyPage() {
 - Use custom render from `__tests__/test-utils.tsx`
 - Focus on behavior, not implementation
 - Validate accessibility (ARIA attributes)
-- 80% coverage threshold enforced
+- 90% coverage threshold enforced
 
 ## Key Pages
 
@@ -203,7 +203,7 @@ export default function MyPage() {
 - **Prettier** for formatting
 - **Conventional Commits** enforced
 - **Pre-commit hooks** via Husky + lint-staged
-- **80% test coverage** requirement
+- **90% test coverage** requirement
 
 ## Important Notes
 
@@ -211,7 +211,7 @@ export default function MyPage() {
 - Node.js >= 22 recommended (works on v20 with warnings)
 - All commands listed above must complete successfully before PR
 - English is the base language for translations
-- Coverage threshold is 80% (lines, functions, branches, statements)
+- Coverage threshold is 90% (lines, functions, branches, statements)
 
 ## Documentation
 

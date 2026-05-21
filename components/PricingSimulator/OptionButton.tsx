@@ -12,6 +12,7 @@ export function OptionButton({ label, selected, onClick }: OptionButtonProps) {
   return (
     <button
       type="button"
+      aria-pressed={selected}
       onClick={onClick}
       className={cn(
         'rounded-lg border-2 px-6 py-4 text-left text-base font-medium transition-all duration-200 focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-slate-900 focus:outline-none',
