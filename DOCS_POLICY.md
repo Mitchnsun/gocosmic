@@ -25,7 +25,7 @@ Use the following structure:
 
 ```text
 /
-├── README.md                 # Bilingual entry page only (navigation)
+├── README.md                 # Bilingual entry point only (navigation)
 ├── README.en.md              # English project entry (technical)
 ├── README.fr.md              # French project entry (onboarding/product)
 ├── DOCS_POLICY.md            # This policy
