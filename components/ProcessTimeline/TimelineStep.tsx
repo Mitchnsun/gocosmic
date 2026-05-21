@@ -18,20 +18,6 @@ const dotColorMap: Record<NonNullable<TimelineStep['color']>, string> = {
   default: 'bg-slate-400 shadow-slate-400/40',
 };
 
-function getLabelColor(color: NonNullable<TimelineStep['color']>): string {
-  if (color === 'aerospace') return colorMap.aerospace;
-  if (color === 'royal') return colorMap.royal;
-  if (color === 'jungle') return colorMap.jungle;
-  return colorMap.default;
-}
-
-function getDotColor(color: NonNullable<TimelineStep['color']>): string {
-  if (color === 'aerospace') return dotColorMap.aerospace;
-  if (color === 'royal') return dotColorMap.royal;
-  if (color === 'jungle') return dotColorMap.jungle;
-  return dotColorMap.default;
-}
-
 interface TimelineStepProps {
   step: TimelineStep;
   index: number;
@@ -50,9 +36,12 @@ export function TimelineStepItem({
   layout,
 }: TimelineStepProps) {
   const stepRef = useRef<HTMLDivElement>(null);
+  const lineRef = useRef<HTMLDivElement>(null);
   const color = step.color ?? 'default';
-  const labelColor = getLabelColor(color);
-  const dotColor = getDotColor(color);
+  // eslint-disable-next-line security/detect-object-injection
+  const labelColor = colorMap[color];
+  // eslint-disable-next-line security/detect-object-injection
+  const dotColor = dotColorMap[color];
   const delay = reducedMotion ? 0 : index * staggerDelay;
 
   useEffect(() => {
@@ -83,6 +72,28 @@ export function TimelineStepItem({
     observer.observe(el);
     return () => observer.disconnect();
   }, [delay, reducedMotion, layout]);
+
+  useEffect(() => {
+    const line = lineRef.current;
+    if (!line || reducedMotion) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              line.style.transform = 'scaleX(1)';
+            }, delay);
+            observer.unobserve(line);
+          }
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(line);
+    return () => observer.disconnect();
+  }, [delay, reducedMotion]);
 
   if (layout === 'vertical') {
     return (
@@ -153,29 +164,13 @@ export function TimelineStepItem({
           style={{ animationDelay: `${delay}ms` }}
         />
         <div
+          ref={lineRef}
           className="h-px flex-1 origin-left bg-slate-600"
           aria-hidden="true"
           style={{
             transform: reducedMotion ? 'scaleX(1)' : 'scaleX(0)',
             transition: `transform ${reducedMotion ? 0 : 600}ms ease-out`,
             transitionDelay: `${delay}ms`,
-          }}
-          ref={(el) => {
-            if (!el || reducedMotion) return;
-            const observer = new IntersectionObserver(
-              (entries) => {
-                for (const entry of entries) {
-                  if (entry.isIntersecting) {
-                    setTimeout(() => {
-                      el.style.transform = 'scaleX(1)';
-                    }, delay);
-                    observer.unobserve(el);
-                  }
-                }
-              },
-              { threshold: 0.1 }
-            );
-            observer.observe(el);
           }}
         />
       </div>
