@@ -8,8 +8,9 @@
     },
     "hero": {
       "cta": "Start your journey",
+      "endWord": "shine",
       "subtitle": "Let us launch your ideas into the stratosphere with mystical design and cosmic functionality",
-      "title": "We build stellar applications that shine"
+      "title": "We build stellar applications that"
     },
     "services": {
       "ai": {
