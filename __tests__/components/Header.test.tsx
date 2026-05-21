@@ -11,7 +11,7 @@ describe('Header Component', () => {
     const header = getByRole('banner');
     expect(header).toBeInTheDocument();
     expect(header).toHaveClass('text-ghost', 'sticky', 'top-0', 'backdrop-blur-md');
-    expect(header).toHaveStyle({ height: '96px' });
+    expect(header).toHaveStyle({ height: '85px' });
 
     const heading = getByRole('heading', { level: 1 });
     expect(heading).toBeInTheDocument();
@@ -42,7 +42,7 @@ describe('Header Component', () => {
 
     const { getByRole } = render(<Header />);
     const header = getByRole('banner');
-    expect(header).toHaveStyle({ height: '96px' });
+    expect(header).toHaveStyle({ height: '85px' });
 
     mockScrollY = 120;
     act(() => {
@@ -67,7 +67,7 @@ describe('Header Component', () => {
       window.dispatchEvent(new Event('scroll'));
     });
 
-    expect(header).toHaveStyle({ height: '96px' });
+    expect(header).toHaveStyle({ height: '85px' });
   });
 
   it('uses tablet and mobile adaptive heights', () => {
@@ -80,7 +80,7 @@ describe('Header Component', () => {
     Object.defineProperty(window, 'innerWidth', { writable: true, value: 800 });
     const { getByRole } = render(<Header />);
     const header = getByRole('banner');
-    expect(header).toHaveStyle({ height: '80px' });
+    expect(header).toHaveStyle({ height: '85px' });
 
     mockScrollY = 100;
     act(() => {
