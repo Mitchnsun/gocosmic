@@ -1,27 +1,27 @@
-import { render, screen } from '@testing-library/react';
-
 import { StepCard } from '@/components/PricingSimulator/StepCard';
+
+import { render } from '../../test-utils';
 
 describe('StepCard', () => {
   it('renders its children', () => {
-    render(
+    const { getByText } = render(
       <StepCard>
         <p>Step content</p>
       </StepCard>
     );
 
-    expect(screen.getByText('Step content')).toBeInTheDocument();
+    expect(getByText('Step content')).toBeInTheDocument();
   });
 
   it('renders multiple children', () => {
-    render(
+    const { getByText } = render(
       <StepCard>
         <p>First</p>
         <p>Second</p>
       </StepCard>
     );
 
-    expect(screen.getByText('First')).toBeInTheDocument();
-    expect(screen.getByText('Second')).toBeInTheDocument();
+    expect(getByText('First')).toBeInTheDocument();
+    expect(getByText('Second')).toBeInTheDocument();
   });
 });
