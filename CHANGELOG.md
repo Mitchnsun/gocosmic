@@ -9,12 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Added
 
-- Orbital dot in the GoCosmic header logo now truly orbits around the "G" character using a planetary animation powered by `motion/react` — the dot grows and brightens as it passes in front, shrinks and fades as it passes behind, completing one orbit every 4 seconds
-- New `LogoOrbitalDot` component isolated in `components/Header/` with full `logoOrbitalEnabled` and `reduceMotion` guards
+- Localized keyboard skip-link in the header (`navigation.skip_to_content`) targeting a real `<main id="main-content">` region in locale layout
+- New `LogoOrbitalDot` component in `components/Header/` with `logoOrbitalEnabled` and `reduceMotion` guards
 
-### Removed
+### Changed
 
-- Legacy `@keyframes orbital-dot` and `.animate-orbital-dot` CSS replaced by `motion` animation
+- Refactored the header into a sticky adaptive navigation bar with scroll-based compact height behavior, responsive height mapping, and backdrop blur treatment
+- Replaced the header orbital-dot visual effect implementation with `motion/react` animation in `LogoOrbitalDot`
+- Expanded header tests to cover sticky/adaptive height behavior, reduced-motion handling, and viewport resize paths
 
 ## [1.6.1] - 2026-05-20
 
