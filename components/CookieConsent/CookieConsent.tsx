@@ -61,18 +61,19 @@ export function CookieConsent() {
             </div>
 
             {isCustomizing && (
-              <label className="flex items-start gap-3 rounded border border-slate-700 bg-slate-900 p-3 text-sm">
+              <div className="flex items-start gap-3 rounded border border-slate-700 bg-slate-900 p-3 text-sm">
                 <input
+                  id="analytics-consent"
                   type="checkbox"
                   className="mt-1"
                   checked={analyticsEnabled}
                   onChange={(event) => setAnalyticsEnabled(event.target.checked)}
                 />
-                <span>
+                <label htmlFor="analytics-consent">
                   <span className="block font-semibold text-white">{t('analyticsTitle')}</span>
                   <span className="text-gray-400">{t('analyticsDescription')}</span>
-                </span>
-              </label>
+                </label>
+              </div>
             )}
 
             <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">

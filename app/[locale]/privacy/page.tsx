@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
-import { Link } from '@/i18n/navigation';
 import { getCanonicalUrl } from '@/i18n/canonical';
+import { Link } from '@/i18n/navigation';
 
 type LegalSection = {
   title: string;

@@ -39,4 +39,30 @@ describe('CookieConsent', () => {
     expect(screen.queryByTestId('vercel-analytics')).not.toBeInTheDocument();
     expect(window.localStorage.getItem('gocosmic.analytics-consent')).toBe('refused');
   });
+
+  it('loads stored accepted consent and lets the user refuse later', async () => {
+    window.localStorage.setItem('gocosmic.analytics-consent', 'accepted');
+
+    render(<CookieConsent />);
+
+    await waitFor(() => expect(screen.getByTestId('vercel-analytics')).toBeInTheDocument());
+
+    fireEvent.click(screen.getByRole('button', { name: 'Privacy settings' }));
+    fireEvent.click(screen.getByRole('checkbox', { name: /Audience measurement/ }));
+    fireEvent.click(screen.getByRole('button', { name: 'Save my choice' }));
+
+    await waitFor(() => expect(screen.queryByTestId('vercel-analytics')).not.toBeInTheDocument());
+    expect(window.localStorage.getItem('gocosmic.analytics-consent')).toBe('refused');
+  });
+
+  it('saves a customized analytics opt-in', async () => {
+    render(<CookieConsent />);
+
+    fireEvent.click(await screen.findByRole('button', { name: 'Customize' }));
+    fireEvent.click(screen.getByRole('checkbox', { name: /Audience measurement/ }));
+    fireEvent.click(screen.getByRole('button', { name: 'Save my choice' }));
+
+    await waitFor(() => expect(screen.getByTestId('vercel-analytics')).toBeInTheDocument());
+    expect(window.localStorage.getItem('gocosmic.analytics-consent')).toBe('accepted');
+  });
 });

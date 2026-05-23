@@ -4,8 +4,8 @@ import { getMessages } from 'next-intl/server';
 
 import LinkedInIcon from '@/components/icons/LinkedInIcon';
 import PersonSeo from '@/components/JsonLd/PersonSeo';
-import { Link } from '@/i18n/navigation';
 import { getCanonicalUrl } from '@/i18n/canonical';
+import { Link } from '@/i18n/navigation';
 import { getOgImages } from '@/lib/og';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
