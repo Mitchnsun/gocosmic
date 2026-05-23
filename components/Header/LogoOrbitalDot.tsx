@@ -12,7 +12,7 @@ const LogoOrbitalDot = ({ reduceMotion }: LogoOrbitalDotProps) => {
   return (
     <motion.span
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 flex items-center justify-center"
+      className="pointer-events-none absolute inset-0 flex items-center justify-center motion-reduce:hidden"
       animate={{ rotate: 360 }}
       transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}>
       <motion.span

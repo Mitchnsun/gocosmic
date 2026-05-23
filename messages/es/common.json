@@ -35,5 +35,12 @@
     "mockup_mention": "Solicite su maqueta sin compromiso",
     "cta_simulate": "Simular mi tarifa",
     "cta_contact": "Solicitar un presupuesto"
+  },
+  "status_bar": {
+    "signal_acquired": "SEÑAL ADQUIRIDA",
+    "mission_control": "CONTROL DE MISIÓN",
+    "location": "ANNECY · ALT. 447M",
+    "aria_label": "Estado del control de misión",
+    "aria_signal": "Señal activa"
   }
 }

@@ -35,7 +35,7 @@ describe('LanguageSwitcher Component', () => {
 
     const button = getByRole('button', { name: /switch language/i });
     expect(button).toBeInTheDocument();
-    expect(button).toHaveTextContent('🇬🇧');
+    expect(button).toHaveTextContent('en');
   });
 
   it('should open dropdown when clicked', () => {

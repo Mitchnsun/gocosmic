@@ -5,6 +5,7 @@ import {
   MOBILE_HEIGHT,
   MOBILE_MAX_WIDTH,
   SCROLL_COMPACT_THRESHOLD,
+  SCROLL_DIRECTION_THRESHOLD,
   TABLET_COMPACT_HEIGHT,
   TABLET_EXPANDED_HEIGHT,
   TABLET_MAX_WIDTH,
@@ -55,13 +56,20 @@ export const useHeader = ({
 
     const updateHeightOnScroll = () => {
       const currentScrollY = window.scrollY;
-      const isScrollingDown = currentScrollY > lastScrollY.current;
+      const delta = currentScrollY - lastScrollY.current;
+      lastScrollY.current = currentScrollY;
+
+      // Ignore sub-pixel noise to prevent header oscillation during anchor navigation
+      if (Math.abs(delta) < SCROLL_DIRECTION_THRESHOLD) return;
+
+      const isScrollingDown = delta > 0;
       const { expandedHeight, compactHeight } = getHeights();
       const shouldCompact = isScrollingDown && currentScrollY > SCROLL_COMPACT_THRESHOLD;
 
-      isCompactRef.current = shouldCompact;
-      setHeaderHeight(shouldCompact ? compactHeight : expandedHeight);
-      lastScrollY.current = currentScrollY;
+      if (shouldCompact !== isCompactRef.current) {
+        isCompactRef.current = shouldCompact;
+        setHeaderHeight(shouldCompact ? compactHeight : expandedHeight);
+      }
     };
 
     const handleResize = () => {

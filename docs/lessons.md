@@ -52,6 +52,36 @@ export default async function YourPage() {
 
 The client component itself just calls `useTranslations('namespace')` normally — no props needed.
 
+## Animations / Reduced Motion
+
+### Prefer Tailwind `motion-reduce:` variants over `useEffect` + JS state for reduced-motion guards
+
+**Mistake**: Initialising a `reduceMotion` state to `false` and updating it via `useEffect` with `window.matchMedia('(prefers-reduced-motion: reduce)')` to drive CSS transition durations and component visibility. Because effects run after hydration, users with `prefers-reduced-motion: reduce` see a brief flash of animation before the JS state catches up.
+
+**Root cause**: React effects are post-paint. Any animation that is visible in the initial render — including CSS transitions triggered by interaction and `motion/react` JS animations mounted on first render — can fire during the hydration window before the effect sets the state.
+
+**Correct pattern**: Use Tailwind's `motion-reduce:` variant as a **CSS-first guard**. CSS media queries are applied by the browser before any JS executes, so there is no flash.
+
+```tsx
+// ✅ CSS-first — no flash, no JS needed for transitions
+<header className="transition-[height] duration-300 motion-reduce:duration-0" />
+
+// For JS-animated elements (e.g. motion/react), add motion-reduce:hidden on the wrapper
+<motion.span className="... motion-reduce:hidden" animate={{ rotate: 360 }} />
+```
+
+**Two-layer pattern for `motion/react` components:**
+
+1. **CSS layer** — add `motion-reduce:hidden` to the outermost element. This hides the component immediately, before JS hydration.
+2. **JS layer** — keep `if (reduceMotion) return null` (driven by the `useEffect` listener) to fully unmount the element after hydration, stopping the animation loop and freeing memory.
+
+The `useEffect`-based listener is still useful for **reacting to mid-session changes** to the OS preference, and for the JS unmount optimization — but it must never be the sole guard against the initial flash.
+
+**Do NOT**:
+
+- Use `const [reduceMotion, setReduceMotion] = useState(false)` as the only guard for CSS transition durations or initial animation visibility.
+- Replace `duration-300` with `duration-0` purely via JS state — the state won't be set until after the first render.
+
 **Do NOT**:
 
 - Pass translations as props to client components (verbose, fragile, misses the root cause)

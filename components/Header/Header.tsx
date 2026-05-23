@@ -36,8 +36,6 @@ const Header = (props: HeaderProps = {}) => {
     [navItems, t]
   );
 
-  const transitionClass = reduceMotion ? 'duration-0' : 'duration-300';
-
   return (
     <>
       <a
@@ -48,8 +46,7 @@ const Header = (props: HeaderProps = {}) => {
       <header
         id={id}
         className={clsx(
-          'text-ghost border-ghost/10 sticky top-0 z-50 border-b bg-slate-950/80 backdrop-blur-md transition-[height,background-color,box-shadow] ease-out',
-          transitionClass,
+          'text-ghost border-ghost/10 sticky top-0 z-50 border-b bg-slate-950/80 backdrop-blur-md transition-[height,background-color,box-shadow] duration-300 ease-out motion-reduce:duration-0',
           className
         )}
         style={{ height: `${headerHeight}px` }}>
@@ -59,8 +56,7 @@ const Header = (props: HeaderProps = {}) => {
               href="/"
               aria-label={t('home')}
               className={clsx(
-                'group hover:text-ghost/90 focus-visible:ring-aerospace/70 relative inline-flex items-center text-xl font-bold transition-colors focus-visible:ring-2 focus-visible:outline-none sm:text-2xl',
-                transitionClass
+                'group hover:text-ghost/90 focus-visible:ring-aerospace/70 relative inline-flex items-center text-xl font-bold transition-colors duration-300 focus-visible:ring-2 focus-visible:outline-none motion-reduce:duration-0 sm:text-2xl'
               )}>
               <span className="relative inline-block">
                 {logo.charAt(0)}
@@ -79,8 +75,7 @@ const Header = (props: HeaderProps = {}) => {
                   key={href}
                   href={href}
                   className={clsx(
-                    'group focus-visible:ring-aerospace/70 relative rounded px-2 py-1 opacity-80 transition-opacity hover:opacity-100 focus-visible:opacity-100 focus-visible:ring-2 focus-visible:outline-none',
-                    transitionClass,
+                    'group focus-visible:ring-aerospace/70 relative rounded px-2 py-1 opacity-80 transition-opacity duration-300 hover:opacity-100 focus-visible:opacity-100 focus-visible:ring-2 focus-visible:outline-none motion-reduce:duration-0',
                     active && 'opacity-100'
                   )}
                   aria-label={ariaLabel}
@@ -90,9 +85,8 @@ const Header = (props: HeaderProps = {}) => {
                   <span
                     aria-hidden="true"
                     className={clsx(
-                      'bg-aerospace absolute inset-x-2 bottom-0 h-0.5 origin-left scale-x-0 transition-transform duration-200 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100',
-                      active && 'scale-x-100',
-                      reduceMotion && 'duration-0'
+                      'bg-aerospace absolute inset-x-2 bottom-0 h-0.5 origin-left scale-x-0 transition-transform duration-200 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100 motion-reduce:duration-0',
+                      active && 'scale-x-100'
                     )}
                   />
                 </Link>

@@ -1,19 +1,18 @@
 'use client';
 
 import { CheckIcon } from '@heroicons/react/24/outline';
-import { GlobeAltIcon } from '@heroicons/react/24/solid';
-import clsx from 'clsx';
 import { useLocale, useTranslations } from 'next-intl';
 import { useEffect, useRef, useState, useTransition } from 'react';
 
+import { cn } from '@/design-system/lib/utils';
 import { usePathname, useRouter } from '@/i18n/navigation';
 
 const languages = {
-  en: { name: 'English', flag: '🇬🇧' },
-  fr: { name: 'Français', flag: '🇫🇷' },
-  es: { name: 'Español', flag: '🇪🇸' },
-  de: { name: 'Deutsch', flag: '🇩🇪' },
-  it: { name: 'Italiano', flag: '🇮🇹' },
+  en: { name: 'English', flag: '🇬🇧', color: 'bg-red-600/80' },
+  fr: { name: 'Français', flag: '🇫🇷', color: 'bg-blue-600/80' },
+  es: { name: 'Español', flag: '🇪🇸', color: 'bg-yellow-600' },
+  de: { name: 'Deutsch', flag: '🇩🇪', color: 'bg-black' },
+  it: { name: 'Italiano', flag: '🇮🇹', color: 'bg-green-600/80' },
 } as const;
 
 const LanguageSwitcher = () => {
@@ -58,13 +57,14 @@ const LanguageSwitcher = () => {
     <div className="relative" ref={menuRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 rounded px-2 py-1 transition-colors hover:text-blue-400"
+        className="flex items-center gap-2 rounded-full border border-gray-600 px-2 py-1 transition-colors hover:border-gray-400 hover:text-blue-400"
         aria-label={t('switch_locale')}
         disabled={isPending}>
-        <span className="relative">
-          <GlobeAltIcon className="h-5 w-5" aria-hidden="true" />
-          <span className="absolute top-1 left-3">{languages[locale as keyof typeof languages]?.flag}</span>
-        </span>
+        <span
+          className={cn('h-2 w-2 rounded-full', languages[locale as keyof typeof languages]?.color || 'bg-jungle')}
+          aria-hidden="true"
+        />
+        <span className="text-[10px] uppercase">{locale}</span>
       </button>
 
       {isOpen && (
@@ -74,10 +74,10 @@ const LanguageSwitcher = () => {
               <button
                 key={code}
                 onClick={() => handleLanguageChange(code)}
-                className={clsx(
-                  'flex w-full items-center gap-3 px-4 py-2 text-sm transition-colors hover:bg-slate-700',
-                  { 'bg-slate-700 text-blue-400': locale === code, 'text-slate-300': locale !== code }
-                )}
+                className={cn('flex w-full items-center gap-3 px-4 py-2 text-sm transition-colors hover:bg-slate-700', {
+                  'bg-slate-700 text-blue-400': locale === code,
+                  'text-slate-300': locale !== code,
+                })}
                 role="menuitem"
                 disabled={isPending}>
                 <span className="text-lg">{flag}</span>

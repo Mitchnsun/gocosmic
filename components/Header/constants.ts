@@ -20,7 +20,8 @@ export interface HeaderProps {
   id?: string;
 }
 
-export const SCROLL_COMPACT_THRESHOLD = 8;
+export const SCROLL_COMPACT_THRESHOLD = 10;
+export const SCROLL_DIRECTION_THRESHOLD = 10;
 export const MOBILE_MAX_WIDTH = 600;
 export const TABLET_MAX_WIDTH = 1023;
 export const MOBILE_HEIGHT = 64;

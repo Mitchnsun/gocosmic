@@ -35,5 +35,12 @@
     "mockup_mention": "Fordern Sie Ihr Mockup unverbindlich an",
     "cta_simulate": "Meinen Tarif simulieren",
     "cta_contact": "Angebot anfordern"
+  },
+  "status_bar": {
+    "signal_acquired": "SIGNAL EMPFANGEN",
+    "mission_control": "MISSIONSKONTROLLE",
+    "location": "ANNECY · ALT. 447M",
+    "aria_label": "Missionskontrolle Status",
+    "aria_signal": "Signal aktiv"
   }
 }

@@ -6,10 +6,11 @@ Main navigation bar, sticky at the top of every page. It shrinks when the user s
 
 ```
 Header/
-├── Header.tsx        # React component (rendering only)
-├── Header.hook.ts    # useHeader — all state and effect logic
-├── constants.ts      # Shared types, interfaces, and numeric values
-├── index.ts          # Public re-export
+├── Header.tsx           # React component (rendering only)
+├── Header.hook.ts       # useHeader — all state and effect logic
+├── LogoOrbitalDot.tsx   # Animated orbital dot rendered next to the logo
+├── constants.ts         # Shared types, interfaces, and numeric values
+├── index.ts             # Public re-export
 └── README.md
 ```
 
@@ -21,7 +22,7 @@ The `Header.tsx` / `Header.hook.ts` split is intentional: the component only han
 
 ### Logo with orbital dot
 
-The logo is an `<h1>` link pointing to `/`. A small `bg-aerospace` dot orbits around it via `animate-orbital-dot`. The animation is removed when `reduceMotion` is `true` or when `logoOrbitalEnabled={false}`.
+The logo is an `<h1>` link pointing to `/`. A small `bg-royal` dot orbits around it, implemented in `LogoOrbitalDot.tsx` using `motion/react`. An outer `motion.span` continuously rotates 360° (`animate={{ rotate: 360 }}`), while the inner `motion.span` pulses in scale and opacity. When `reduceMotion` is `true`, `LogoOrbitalDot` returns `null` (no element is mounted at all). The dot is also omitted when `logoOrbitalEnabled={false}`.
 
 ### Skip-to-content link (keyboard accessibility)
 
@@ -53,7 +54,7 @@ The header height is not managed by Tailwind classes but by a `style={{ height: 
 
 ### Effect 1 — `prefers-reduced-motion` detection
 
-On mount, the hook listens to the `(prefers-reduced-motion: reduce)` media query. If it matches, `reduceMotion` becomes `true`. The component then replaces `duration-300` with `duration-0` on all transitions and removes `animate-orbital-dot` from the logo. The listener is reactive: if the user changes their system setting mid-session, the header adapts immediately.
+On mount, the hook listens to the `(prefers-reduced-motion: reduce)` media query. If it matches, `reduceMotion` becomes `true`. Transition durations and the orbital dot visibility are controlled at the CSS layer via Tailwind's `motion-reduce:duration-0` and `motion-reduce:hidden` variants, so these guards take effect before JavaScript hydration runs — no first-frame flash. Once the effect fires and `reduceMotion` is `true`, `LogoOrbitalDot` returns `null` to fully unmount the animated element and stop its animation loop. The listener is reactive: if the user changes their system setting mid-session, the header adapts immediately.
 
 This behaviour can be disabled by passing `respectReducedMotion={false}`, for example in tests or Storybook stories.
 

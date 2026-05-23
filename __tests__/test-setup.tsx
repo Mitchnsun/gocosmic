@@ -19,11 +19,22 @@ vi.mock('@/i18n/navigation', () => ({
     refresh: vi.fn(),
   }),
   usePathname: () => '/en',
-  Link: ({ children, href, ...props }: { children: React.ReactNode; href: string; [key: string]: unknown }) => (
-    <a href={href} {...props}>
-      {children}
-    </a>
-  ),
+  Link: ({
+    children,
+    href,
+    ...props
+  }: {
+    children: React.ReactNode;
+    href: string | { pathname: string; hash?: string };
+    [key: string]: unknown;
+  }) => {
+    const resolvedHref = typeof href === 'string' ? href : `${href.pathname}${href.hash ? `#${href.hash}` : ''}`;
+    return (
+      <a href={resolvedHref} {...props}>
+        {children}
+      </a>
+    );
+  },
   redirect: vi.fn(),
   getPathname: vi.fn(() => '/en'),
 }));

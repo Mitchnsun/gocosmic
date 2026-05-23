@@ -10,6 +10,7 @@ import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import LocalBusinessSeo from '@/components/JsonLd/LocalBusinessSeo';
 import WebsiteSeo from '@/components/JsonLd/WebsiteSeo';
+import { StatusBar } from '@/components/StatusBar';
 import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/config';
 import { getOgImages } from '@/lib/og';
@@ -79,6 +80,7 @@ export default async function LocaleLayout({
       <body className="bg-slate-950">
         <NextIntlClientProvider>
           <CosmicCursor />
+          <StatusBar />
           <Header />
           <main id="main-content">{children}</main>
           <Footer />
