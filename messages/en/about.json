@@ -24,20 +24,22 @@
     "legal": {
       "ai": {
         "items": {
-          "compliance": "User data is processed in compliance with applicable regulations (GDPR)",
+          "compliance": "Personal data practices are detailed in the privacy policy rather than handled as a generic statement here.",
           "ethics": "We are committed to ethical and transparent use of artificial intelligence",
           "integration": "Solutions may integrate AI models to enable advanced features",
-          "privacy": "No sensitive data is shared with third parties without explicit consent"
+          "privacy": "Sensitive data must not be shared with third parties without a documented legal basis or explicit consent when required."
         },
         "title": "AI Usage"
       },
       "contact": {
         "link": "contact us",
-        "text": "For any questions about our practices or the use of AI in our solutions,",
-        "subject": "Questions about our practices and AI usage",
-        "ariaLabel": "Send an email to support@gocosmic.dev"
+        "text": "For questions about privacy, legal notices, or AI usage,",
+        "subject": "Questions about privacy, legal notices, and AI usage",
+        "ariaLabel": "Send an email to support@gocosmic.dev",
+        "privacyLink": "Privacy policy",
+        "legalNoticeLink": "Legal notice"
       },
-      "intro": "Go Cosmic is an application development agency that uses artificial intelligence technologies to enhance user experience and optimize performance.",
+      "intro": "Go Cosmic may integrate AI-assisted features into client projects while keeping human review and transparency central to delivery.",
       "responsibility": {
         "items": {
           "recommendations": "AI-powered recommendations are for informational purposes and do not replace human judgment",

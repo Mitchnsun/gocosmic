@@ -75,6 +75,8 @@
         "cta": "Mettersi in contatto",
         "aria_label": "Invia un'email a prospect@gocosmic.dev con oggetto: Richiesta commerciale"
       }
-    }
+    },
+    "privacyNotice": "I dati personali inviati via email sono usati solo per rispondere alla richiesta, gestire il seguito e conservare prova degli scambi per i periodi indicati nella privacy policy.",
+    "privacyLink": "Informativa privacy"
   }
 }

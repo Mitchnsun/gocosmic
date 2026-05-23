@@ -42,5 +42,17 @@
     "location": "ANNECY · ALT. 447M",
     "aria_label": "Stato del controllo missione",
     "aria_signal": "Segnale attivo"
+  },
+  "cookieConsent": {
+    "title": "Preferenze privacy",
+    "description": "Usiamo Vercel Analytics per misurare l'audience solo dopo il tuo consenso. Il rifiuto non influisce sul sito.",
+    "analyticsTitle": "Misurazione dell'audience",
+    "analyticsDescription": "Statistiche anonime sulle pagine viste usate per migliorare il sito. Go Cosmic non carica tracker pubblicitari.",
+    "accept": "Accetta analytics",
+    "refuse": "Rifiuta",
+    "customize": "Personalizza",
+    "save": "Salva la scelta",
+    "privacyLink": "Leggi la privacy policy",
+    "manage": "Impostazioni privacy"
   }
 }

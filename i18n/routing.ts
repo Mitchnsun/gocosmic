@@ -92,6 +92,24 @@ export const routing = defineRouting({
       it: '/contatto',
     },
 
+    // Privacy policy
+    '/privacy': {
+      en: '/privacy',
+      fr: '/confidentialite',
+      es: '/privacidad',
+      de: '/datenschutz',
+      it: '/privacy',
+    },
+
+    // Legal notice
+    '/legal-notice': {
+      en: '/legal-notice',
+      fr: '/mentions-legales',
+      es: '/aviso-legal',
+      de: '/impressum',
+      it: '/note-legali',
+    },
+
     // Local SEO page
     '/local': {
       en: '/web-mobile-developer-annecy-geneva',

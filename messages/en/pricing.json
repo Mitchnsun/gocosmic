@@ -123,7 +123,9 @@
       "email": "prospect@gocosmic.dev",
       "cta": "Request a quote",
       "subject": "Pricing inquiry — Project quote",
-      "aria_label": "Send an email to prospect@gocosmic.dev for a project quote"
+      "aria_label": "Send an email to prospect@gocosmic.dev for a project quote",
+      "privacy_notice": "By sending an email, you agree that your message and contact details are processed to prepare a quote and follow up on your project.",
+      "privacy_link": "Privacy policy"
     },
     "reset": "Start over"
   }

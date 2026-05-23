@@ -37,4 +37,11 @@ describe('ContactBanner', () => {
     render(<TestContactBanner />);
     expect(screen.getByText('Request a quote')).toBeInTheDocument();
   });
+
+  it('renders the privacy notice link', () => {
+    render(<TestContactBanner />);
+
+    expect(screen.getByText(/processed to prepare a quote/i)).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Privacy policy' })).toHaveAttribute('href', '/privacy');
+  });
 });

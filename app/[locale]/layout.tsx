@@ -1,10 +1,10 @@
-import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import { Inter, Space_Grotesk } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
+import { CookieConsent } from '@/components/CookieConsent';
 import { CosmicCursor } from '@/components/CosmicCursor';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
@@ -85,7 +85,7 @@ export default async function LocaleLayout({
           <main id="main-content">{children}</main>
           <Footer />
           <WebsiteSeo />
-          <Analytics />
+          <CookieConsent />
           <LocalBusinessSeo locale={locale} />
         </NextIntlClientProvider>
       </body>

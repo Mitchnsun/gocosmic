@@ -24,20 +24,22 @@
     "legal": {
       "ai": {
         "items": {
-          "compliance": "Nutzerdaten werden gemäß geltender Vorschriften (DSGVO) verarbeitet",
+          "compliance": "Praktiken zum Umgang mit personenbezogenen Daten werden in der Datenschutzerklärung erläutert, statt hier pauschal erwähnt zu werden.",
           "ethics": "Wir verpflichten uns zu einem ethischen und transparenten Einsatz von KI",
           "integration": "Unsere Lösungen können KI-Modelle für fortschrittliche Funktionen integrieren",
-          "privacy": "Keine sensiblen Daten werden ohne ausdrückliche Zustimmung an Dritte weitergegeben"
+          "privacy": "Sensible Daten dürfen ohne dokumentierte Rechtsgrundlage oder erforderliche ausdrückliche Einwilligung nicht an Dritte weitergegeben werden."
         },
         "title": "KI-Nutzung"
       },
       "contact": {
         "link": "kontaktieren Sie uns",
-        "text": "Für Fragen zu unseren Praktiken oder zum Einsatz von KI in unseren Lösungen,",
-        "subject": "Fragen zu unseren Praktiken und der KI-Nutzung",
-        "ariaLabel": "Eine E-Mail an support@gocosmic.dev senden"
+        "text": "Bei Fragen zu Datenschutz, Impressum oder KI-Nutzung,",
+        "subject": "Fragen zu Datenschutz, Impressum und KI-Nutzung",
+        "ariaLabel": "Eine E-Mail an support@gocosmic.dev senden",
+        "privacyLink": "Datenschutzerklärung",
+        "legalNoticeLink": "Impressum"
       },
-      "intro": "Go Cosmic ist eine Entwicklungsagentur, die KI-Technologien einsetzt, um das Nutzererlebnis zu verbessern und die Leistung zu optimieren.",
+      "intro": "Go Cosmic kann KI-gestützte Funktionen in Kundenprojekte integrieren und stellt dabei menschliche Prüfung und Transparenz in den Mittelpunkt.",
       "responsibility": {
         "items": {
           "recommendations": "KI-basierte Empfehlungen sind informativ und ersetzen nicht das menschliche Urteilsvermögen",

@@ -4,6 +4,7 @@ import { getMessages } from 'next-intl/server';
 
 import LinkedInIcon from '@/components/icons/LinkedInIcon';
 import PersonSeo from '@/components/JsonLd/PersonSeo';
+import { Link } from '@/i18n/navigation';
 import { getCanonicalUrl } from '@/i18n/canonical';
 import { getOgImages } from '@/lib/og';
 
@@ -213,6 +214,18 @@ export default function About() {
                       aria-label={t('legal.contact.ariaLabel')}>
                       {t('legal.contact.link')}
                     </a>
+                    ,{' '}
+                    <Link
+                      href="/privacy"
+                      className="rounded px-1 text-blue-400 underline transition-colors hover:text-blue-300 focus:ring-2 focus:ring-blue-400 focus:outline-none">
+                      {t('legal.contact.privacyLink')}
+                    </Link>
+                    ,{' '}
+                    <Link
+                      href="/legal-notice"
+                      className="rounded px-1 text-blue-400 underline transition-colors hover:text-blue-300 focus:ring-2 focus:ring-blue-400 focus:outline-none">
+                      {t('legal.contact.legalNoticeLink')}
+                    </Link>
                     .
                   </p>
                 </div>

@@ -96,7 +96,9 @@
       "description": "Discutons de l'offre qui correspond le mieux à vos besoins et comment nous pouvons transformer votre vision en réalité.",
       "button": "Échangeons sur votre projet",
       "contact_info": "Contactez-nous pour discuter des besoins de votre projet",
-      "email_subject": "Demande de contact pour le développement du projet"
+      "email_subject": "Demande de contact pour le développement du projet",
+      "privacy_notice": "En envoyant un email, vous acceptez que votre message et vos coordonnées soient traités pour préparer un devis et suivre votre projet.",
+      "privacy_link": "Politique de confidentialité"
     }
   }
 }

@@ -13,8 +13,10 @@
     "offer_solo": "Sviluppatore Cosmico Solo",
     "offer_team": "Team Cosmico Completo",
     "offer_duo": "Duo Sviluppatore + Designer",
-    "legal": "Note legali e uso dell'IA disponibili nella pagina Chi siamo.",
+    "legal": "Note legali, informativa privacy e informazioni sull'IA sono disponibili online.",
     "copyright": "© {year} Go Cosmic. Tutti i sistemi nominali.",
-    "local_page": "Sviluppatore web e mobile Annecy / Ginevra"
+    "local_page": "Sviluppatore web e mobile Annecy / Ginevra",
+    "privacy": "Informativa privacy",
+    "legal_notice": "Note legali"
   }
 }

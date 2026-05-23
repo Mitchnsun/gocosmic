@@ -123,7 +123,9 @@
       "email": "prospect@gocosmic.dev",
       "cta": "Demander un devis",
       "subject": "Demande de tarif — Devis projet",
-      "aria_label": "Envoyer un email à prospect@gocosmic.dev pour un devis projet"
+      "aria_label": "Envoyer un email à prospect@gocosmic.dev pour un devis projet",
+      "privacy_notice": "En envoyant un email, vous acceptez que votre message et vos coordonnées soient traités pour préparer un devis et suivre votre projet.",
+      "privacy_link": "Politique de confidentialité"
     },
     "reset": "Recommencer"
   }

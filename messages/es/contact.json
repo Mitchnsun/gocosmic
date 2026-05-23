@@ -75,6 +75,8 @@
         "cta": "Ponerse en contacto",
         "aria_label": "Enviar un correo electrónico a prospect@gocosmic.dev con asunto: Consulta comercial"
       }
-    }
+    },
+    "privacyNotice": "Los datos personales enviados por email se usan solo para responder a tu solicitud, gestionar el seguimiento y conservar prueba de los intercambios durante los plazos indicados en la política de privacidad.",
+    "privacyLink": "Política de privacidad"
   }
 }

@@ -3,6 +3,8 @@
 import { EnvelopeIcon } from '@heroicons/react/24/solid';
 import { useTranslations } from 'next-intl';
 
+import { Link } from '@/i18n/navigation';
+
 interface ContactBannerProps {
   t: ReturnType<typeof useTranslations<'pricing'>>;
 }
@@ -23,6 +25,13 @@ export function ContactBanner({ t }: ContactBannerProps) {
         <EnvelopeIcon className="h-4 w-4" aria-hidden="true" />
       </a>
       <p className="mt-3 text-sm text-gray-500">{email}</p>
+      <p className="mt-3 text-sm text-gray-500">
+        {t('contact.privacy_notice')}{' '}
+        <Link href="/privacy" className="underline transition hover:text-gray-300">
+          {t('contact.privacy_link')}
+        </Link>
+        .
+      </p>
     </div>
   );
 }

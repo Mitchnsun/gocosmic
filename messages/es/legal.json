@@ -1,0 +1,116 @@
+{
+  "legal": {
+    "privacy": {
+      "meta": {
+        "title": "Política de privacidad - Go Cosmic",
+        "description": "How Go Cosmic processes personal data, audience measurement, email contacts, retention periods, rights, and CNIL complaints."
+      },
+      "eyebrow": "RGPD / GDPR",
+      "title": "Política de privacidad",
+      "updated": "Last updated: 23 May 2026",
+      "intro": "This page explains how Go Cosmic handles personal data on this website and when you contact the studio by email. It is informational and should be validated legally before publication.",
+      "legalNoticePrefix": "For publisher and hosting details, see the",
+      "legalNoticeLink": "aviso legal",
+      "sections": [
+        {
+          "title": "Data controller",
+          "body": [
+            "The data controller is Go Cosmic, represented by Matthieu Compérat. The studio can be contacted at support@gocosmic.dev for privacy requests."
+          ]
+        },
+        {
+          "title": "Data collected",
+          "body": [
+            "The website does not provide an account area, checkout, server-side contact form, CAPTCHA, or advertising pixel. Messages are sent through mailto links and are processed by your email client and the recipient mailbox.",
+            "Technical data may be processed by the hosting provider for security and delivery logs. Vercel Analytics is loaded only after consent to measure page views."
+          ]
+        },
+        {
+          "title": "Purposes and legal bases",
+          "body": [
+            "Email messages are processed to answer requests, prepare quotes, provide support, and keep evidence of exchanges. This processing is based on legitimate interest and, where applicable, pre-contractual steps requested by you.",
+            "Audience measurement is used to understand aggregate traffic and improve the website. Go Cosmic loads Vercel Analytics only after your consent. Security logs are processed for legitimate interest in protecting the service."
+          ]
+        },
+        {
+          "title": "Recipients and processors",
+          "body": [
+            "Data may be accessed by Go Cosmic, the email service provider, the hosting provider, and Vercel for hosting and analytics. LinkedIn is an external website and may process data under its own policy after you click an outbound link."
+          ]
+        },
+        {
+          "title": "Retention periods",
+          "body": [
+            "Email exchanges are kept only for the time needed to handle the request and follow-up, then archived or deleted according to legal, accounting, or dispute limitation needs. Audience consent is stored in your browser until you clear local storage or change browsers. Hosting logs are retained according to the provider configuration."
+          ]
+        },
+        {
+          "title": "International transfers",
+          "body": [
+            "Some processors, including Vercel or email providers, may involve processing outside the European Economic Area. Go Cosmic should verify and document the applicable contractual safeguards before publication."
+          ]
+        },
+        {
+          "title": "Your rights",
+          "body": [
+            "You may request access, rectification, erasure, restriction, objection, and portability when applicable by writing to support@gocosmic.dev. You may also lodge a complaint with the CNIL: https://www.cnil.fr/."
+          ]
+        },
+        {
+          "title": "Cookies and audience measurement",
+          "body": [
+            "No advertising cookies are intentionally loaded by Go Cosmic. Vercel Analytics is treated as a non-essential audience measurement tool on this site and is not loaded before your consent."
+          ]
+        }
+      ]
+    },
+    "legalNotice": {
+      "meta": {
+        "title": "Aviso legal - Go Cosmic",
+        "description": "Publisher, hosting, intellectual property, responsibility, and contact information for Go Cosmic."
+      },
+      "eyebrow": "Legal information",
+      "title": "Aviso legal",
+      "updated": "Last updated: 23 May 2026",
+      "intro": "This legal notice identifies the website publisher and the main responsibilities linked to using www.gocosmic.dev.",
+      "sections": [
+        {
+          "title": "Publisher",
+          "body": [
+            "Website: www.gocosmic.dev. Publisher: Go Cosmic, represented by Matthieu Compérat. Contact: support@gocosmic.dev. Business registration details should be completed when applicable before publication."
+          ]
+        },
+        {
+          "title": "Publication director",
+          "body": [
+            "Publication director: Matthieu Compérat."
+          ]
+        },
+        {
+          "title": "Hosting",
+          "body": [
+            "The website is hosted by Vercel Inc. The exact contractual hosting entity and address should be confirmed from the active Vercel account before publication."
+          ]
+        },
+        {
+          "title": "Intellectual property",
+          "body": [
+            "Texts, visuals, source code, design elements, and the Go Cosmic identity are protected unless otherwise stated. Any reproduction or reuse requires prior written permission."
+          ]
+        },
+        {
+          "title": "Responsibility",
+          "body": [
+            "Go Cosmic aims to keep information accurate and available but cannot guarantee that the website is free from interruptions, errors, or outdated content. External links lead to third-party services governed by their own terms and policies."
+          ]
+        },
+        {
+          "title": "Contact",
+          "body": [
+            "For legal, privacy, or security questions, contact support@gocosmic.dev."
+          ]
+        }
+      ]
+    }
+  }
+}

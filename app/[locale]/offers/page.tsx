@@ -6,6 +6,7 @@ import { getLocale, getMessages, getTranslations } from 'next-intl/server';
 import { PricingTeaser } from '@/components/PricingTeaser';
 import { Button } from '@/design-system/button';
 import { getCanonicalUrl } from '@/i18n/canonical';
+import { Link } from '@/i18n/navigation';
 import { getOgImages } from '@/lib/og';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -335,6 +336,13 @@ export default async function Offers() {
               </a>
             </Button>
             <p className="text-center text-sm text-gray-500">{t('cta.contact_info')}</p>
+            <p className="max-w-2xl text-center text-sm text-gray-500">
+              {t('cta.privacy_notice')}{' '}
+              <Link href="/privacy" className="underline transition hover:text-gray-300">
+                {t('cta.privacy_link')}
+              </Link>
+              .
+            </p>
           </div>
         </section>
       </main>

@@ -9,6 +9,7 @@ import { getMessages } from 'next-intl/server';
 
 import { cn } from '@/design-system/lib/utils';
 import { getCanonicalUrl } from '@/i18n/canonical';
+import { Link } from '@/i18n/navigation';
 import { getOgImages } from '@/lib/og';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -168,6 +169,16 @@ export default function Contact() {
               </section>
             );
           })}
+        </div>
+
+        <div className="w-full rounded-lg border border-blue-700 bg-slate-900 px-6 py-5 text-sm text-blue-200">
+          <p>
+            {t('privacyNotice')}{' '}
+            <Link href="/privacy" className="font-semibold underline transition hover:text-blue-100">
+              {t('privacyLink')}
+            </Link>
+            .
+          </p>
         </div>
       </main>
     </div>

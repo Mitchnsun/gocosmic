@@ -123,7 +123,9 @@
       "email": "prospect@gocosmic.dev",
       "cta": "Richiedi un preventivo",
       "subject": "Richiesta prezzi — Preventivo progetto",
-      "aria_label": "Invia un'email a prospect@gocosmic.dev per un preventivo progetto"
+      "aria_label": "Invia un'email a prospect@gocosmic.dev per un preventivo progetto",
+      "privacy_notice": "Inviando un email accetti che il messaggio e i dati di contatto siano trattati per preparare un preventivo e seguire il progetto.",
+      "privacy_link": "Informativa privacy"
     },
     "reset": "Ricominciare"
   }

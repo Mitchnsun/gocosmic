@@ -1,0 +1,116 @@
+{
+  "legal": {
+    "privacy": {
+      "meta": {
+        "title": "Politique de confidentialité - Go Cosmic",
+        "description": "Traitement des données personnelles par Go Cosmic : contacts email, mesure audience, durées de conservation, droits et CNIL."
+      },
+      "eyebrow": "RGPD",
+      "title": "Politique de confidentialité",
+      "updated": "Dernière mise à jour : 23 mai 2026",
+      "intro": "Cette page explique comment Go Cosmic traite les données personnelles sur ce site et lors des contacts par email. Elle est informative et doit être validée juridiquement avant publication.",
+      "legalNoticePrefix": "Pour les informations éditeur et hébergement, consultez les",
+      "legalNoticeLink": "mentions légales",
+      "sections": [
+        {
+          "title": "Responsable de traitement",
+          "body": [
+            "Le responsable de traitement est Go Cosmic, représenté par Matthieu Compérat. Le studio peut être contacté à support@gocosmic.dev pour les demandes relatives aux données personnelles."
+          ]
+        },
+        {
+          "title": "Données collectées",
+          "body": [
+            "Le site ne propose pas d’espace client, paiement, formulaire serveur, CAPTCHA ni pixel publicitaire. Les messages passent par des liens mailto et sont traités par votre client email et la boîte de réception destinataire.",
+            "Des données techniques peuvent être traitées par l’hébergeur pour les journaux de sécurité et de diffusion. Vercel Analytics n’est chargé qu’après consentement pour mesurer les pages vues."
+          ]
+        },
+        {
+          "title": "Finalités et bases légales",
+          "body": [
+            "Les emails sont traités pour répondre aux demandes, préparer des devis, fournir du support et conserver une preuve des échanges. Ce traitement repose sur l’intérêt légitime et, le cas échéant, sur des mesures précontractuelles demandées par vous.",
+            "La mesure d’audience sert à comprendre le trafic agrégé et améliorer le site. Go Cosmic charge Vercel Analytics uniquement après votre consentement. Les journaux de sécurité reposent sur l’intérêt légitime de protection du service."
+          ]
+        },
+        {
+          "title": "Destinataires et sous-traitants",
+          "body": [
+            "Les données peuvent être accessibles à Go Cosmic, au fournisseur email, à l’hébergeur et à Vercel pour l’hébergement et l’analytics. LinkedIn est un site externe qui peut traiter des données selon sa propre politique après clic sur un lien sortant."
+          ]
+        },
+        {
+          "title": "Durées de conservation",
+          "body": [
+            "Les échanges email sont conservés le temps nécessaire au traitement et au suivi, puis archivés ou supprimés selon les besoins légaux, comptables ou contentieux. Le consentement analytics est stocké dans votre navigateur jusqu’à suppression du stockage local ou changement de navigateur. Les logs d’hébergement suivent la configuration du prestataire."
+          ]
+        },
+        {
+          "title": "Transferts internationaux",
+          "body": [
+            "Certains sous-traitants, dont Vercel ou les fournisseurs email, peuvent impliquer des traitements hors Espace économique européen. Go Cosmic doit vérifier et documenter les garanties contractuelles applicables avant publication."
+          ]
+        },
+        {
+          "title": "Vos droits",
+          "body": [
+            "Vous pouvez demander l’accès, la rectification, l’effacement, la limitation, l’opposition et la portabilité lorsque applicable en écrivant à support@gocosmic.dev. Vous pouvez aussi déposer une réclamation auprès de la CNIL : https://www.cnil.fr/."
+          ]
+        },
+        {
+          "title": "Cookies et mesure d’audience",
+          "body": [
+            "Aucun cookie publicitaire n’est volontairement chargé par Go Cosmic. Vercel Analytics est traité sur ce site comme un outil de mesure d’audience non essentiel et n’est pas chargé avant votre consentement."
+          ]
+        }
+      ]
+    },
+    "legalNotice": {
+      "meta": {
+        "title": "Mentions légales - Go Cosmic",
+        "description": "Éditeur, hébergement, propriété intellectuelle, responsabilité et contact de Go Cosmic."
+      },
+      "eyebrow": "Informations légales",
+      "title": "Mentions légales",
+      "updated": "Dernière mise à jour : 23 mai 2026",
+      "intro": "Ces mentions légales identifient l’éditeur du site et les principales responsabilités liées à l’utilisation de www.gocosmic.dev.",
+      "sections": [
+        {
+          "title": "Éditeur",
+          "body": [
+            "Site : www.gocosmic.dev. Éditeur : Go Cosmic, représenté par Matthieu Compérat. Contact : support@gocosmic.dev. Les informations d’immatriculation doivent être complétées si applicable avant publication."
+          ]
+        },
+        {
+          "title": "Directeur de publication",
+          "body": [
+            "Directeur de publication : Matthieu Compérat."
+          ]
+        },
+        {
+          "title": "Hébergement",
+          "body": [
+            "Le site est hébergé par Vercel Inc. L’entité contractuelle et l’adresse exactes doivent être confirmées depuis le compte Vercel actif avant publication."
+          ]
+        },
+        {
+          "title": "Propriété intellectuelle",
+          "body": [
+            "Les textes, visuels, codes sources, éléments de design et l’identité Go Cosmic sont protégés sauf mention contraire. Toute reproduction ou réutilisation nécessite une autorisation écrite préalable."
+          ]
+        },
+        {
+          "title": "Responsabilité",
+          "body": [
+            "Go Cosmic cherche à maintenir des informations exactes et disponibles, sans garantir l’absence d’interruptions, d’erreurs ou de contenus obsolètes. Les liens externes mènent vers des services tiers régis par leurs propres conditions et politiques."
+          ]
+        },
+        {
+          "title": "Contact",
+          "body": [
+            "Pour toute question légale, confidentialité ou sécurité, contactez support@gocosmic.dev."
+          ]
+        }
+      ]
+    }
+  }
+}
