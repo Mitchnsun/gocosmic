@@ -40,7 +40,7 @@ export function CookieConsent() {
       {choice !== null && (
         <button
           type="button"
-          className="fixed right-4 bottom-4 z-[10000] rounded-full border border-slate-700 bg-slate-950 px-4 py-2 text-xs font-semibold text-gray-200 shadow-lg transition hover:bg-slate-900 focus:ring-2 focus:ring-blue-300 focus:outline-none"
+          className="fixed right-4 bottom-4 z-50 rounded-full border border-slate-700 bg-slate-950 px-4 py-2 text-xs font-semibold text-gray-200 shadow-lg transition hover:bg-slate-900 focus:ring-2 focus:ring-blue-300 focus:outline-none"
           onClick={() => {
             setIsCustomizing(true);
             setChoice(null);
@@ -50,7 +50,7 @@ export function CookieConsent() {
       )}
       {choice === null && (
         <section
-          className="fixed right-4 bottom-4 left-4 z-[10000] m-auto max-w-2xl rounded-lg border border-slate-700 bg-slate-950 p-5 text-gray-200 shadow-2xl md:left-auto"
+          className="fixed right-4 bottom-4 left-4 z-50 m-auto max-w-2xl rounded-lg border border-slate-700 bg-slate-950 p-5 text-gray-200 shadow-2xl md:left-auto"
           aria-labelledby="cookie-consent-title">
           <div className="space-y-4">
             <div>

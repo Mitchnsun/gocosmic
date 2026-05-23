@@ -3,63 +3,63 @@
     "privacy": {
       "meta": {
         "title": "Datenschutzerklärung - Go Cosmic",
-        "description": "How Go Cosmic processes personal data, audience measurement, email contacts, retention periods, rights, and CNIL complaints."
+        "description": "Wie Go Cosmic personenbezogene Daten, Reichweitenmessung, E-Mail-Kontakte, Aufbewahrungsfristen, Rechte und CNIL-Beschwerden verarbeitet."
       },
-      "eyebrow": "RGPD / GDPR",
+      "eyebrow": "DSGVO",
       "title": "Datenschutzerklärung",
-      "updated": "Last updated: 23 May 2026",
-      "intro": "This page explains how Go Cosmic handles personal data on this website and when you contact the studio by email. It is informational and should be validated legally before publication.",
-      "legalNoticePrefix": "For publisher and hosting details, see the",
-      "legalNoticeLink": "impressum",
+      "updated": "Zuletzt aktualisiert: 23. Mai 2026",
+      "intro": "Diese Seite erklärt, wie Go Cosmic personenbezogene Daten auf dieser Website und bei Kontaktaufnahme per E-Mail verarbeitet. Sie dient der Information und sollte vor Veröffentlichung rechtlich geprüft werden.",
+      "legalNoticePrefix": "Angaben zum Anbieter und Hosting findest du im",
+      "legalNoticeLink": "Impressum",
       "sections": [
         {
-          "title": "Data controller",
+          "title": "Verantwortlicher",
           "body": [
-            "The data controller is Go Cosmic, represented by Matthieu Compérat. The studio can be contacted at support@gocosmic.dev for privacy requests."
+            "Verantwortlicher ist Go Cosmic, vertreten durch Matthieu Compérat. Für Datenschutzanfragen ist das Studio unter support@gocosmic.dev erreichbar."
           ]
         },
         {
-          "title": "Data collected",
+          "title": "Erhobene Daten",
           "body": [
-            "The website does not provide an account area, checkout, server-side contact form, CAPTCHA, or advertising pixel. Messages are sent through mailto links and are processed by your email client and the recipient mailbox.",
-            "Technical data may be processed by the hosting provider for security and delivery logs. Vercel Analytics is loaded only after consent to measure page views."
+            "Die Website bietet keinen Kundenbereich, keine Zahlung, kein serverseitiges Kontaktformular, kein CAPTCHA und keinen Werbepixel. Nachrichten werden über mailto-Links versendet und durch dein E-Mail-Programm sowie das Empfängerpostfach verarbeitet.",
+            "Technische Daten können vom Hosting-Anbieter für Sicherheits- und Bereitstellungsprotokolle verarbeitet werden. Vercel Analytics wird nur nach Einwilligung geladen, um Seitenaufrufe zu messen."
           ]
         },
         {
-          "title": "Purposes and legal bases",
+          "title": "Zwecke und Rechtsgrundlagen",
           "body": [
-            "Email messages are processed to answer requests, prepare quotes, provide support, and keep evidence of exchanges. This processing is based on legitimate interest and, where applicable, pre-contractual steps requested by you.",
-            "Audience measurement is used to understand aggregate traffic and improve the website. Go Cosmic loads Vercel Analytics only after your consent. Security logs are processed for legitimate interest in protecting the service."
+            "E-Mails werden verarbeitet, um Anfragen zu beantworten, Angebote zu erstellen, Support zu leisten und Nachweise der Korrespondenz aufzubewahren. Die Verarbeitung beruht auf berechtigtem Interesse und gegebenenfalls auf von dir angefragten vorvertraglichen Maßnahmen.",
+            "Die Reichweitenmessung dient dazu, aggregierten Traffic zu verstehen und die Website zu verbessern. Go Cosmic lädt Vercel Analytics nur nach deiner Einwilligung. Sicherheitslogs werden auf Grundlage des berechtigten Interesses am Schutz des Dienstes verarbeitet."
           ]
         },
         {
-          "title": "Recipients and processors",
+          "title": "Empfänger und Auftragsverarbeiter",
           "body": [
-            "Data may be accessed by Go Cosmic, the email service provider, the hosting provider, and Vercel for hosting and analytics. LinkedIn is an external website and may process data under its own policy after you click an outbound link."
+            "Daten können für Go Cosmic, den E-Mail-Anbieter, den Hosting-Anbieter und Vercel für Hosting und Analytics zugänglich sein. LinkedIn ist eine externe Website und kann nach einem Klick auf einen ausgehenden Link Daten nach eigener Richtlinie verarbeiten."
           ]
         },
         {
-          "title": "Retention periods",
+          "title": "Aufbewahrungsfristen",
           "body": [
-            "Email exchanges are kept only for the time needed to handle the request and follow-up, then archived or deleted according to legal, accounting, or dispute limitation needs. Audience consent is stored in your browser until you clear local storage or change browsers. Hosting logs are retained according to the provider configuration."
+            "E-Mail-Korrespondenz wird nur so lange aufbewahrt, wie es für Bearbeitung und Nachverfolgung erforderlich ist, und danach je nach gesetzlichen, buchhalterischen oder streitbezogenen Anforderungen archiviert oder gelöscht. Die Analytics-Einwilligung wird in deinem Browser gespeichert, bis du den lokalen Speicher löschst oder den Browser wechselst. Hosting-Logs richten sich nach der Konfiguration des Anbieters."
           ]
         },
         {
-          "title": "International transfers",
+          "title": "Internationale Übermittlungen",
           "body": [
-            "Some processors, including Vercel or email providers, may involve processing outside the European Economic Area. Go Cosmic should verify and document the applicable contractual safeguards before publication."
+            "Einige Auftragsverarbeiter, darunter Vercel oder E-Mail-Anbieter, können Verarbeitungen außerhalb des Europäischen Wirtschaftsraums einbeziehen. Go Cosmic sollte die anwendbaren vertraglichen Garantien vor Veröffentlichung prüfen und dokumentieren."
           ]
         },
         {
-          "title": "Your rights",
+          "title": "Deine Rechte",
           "body": [
-            "You may request access, rectification, erasure, restriction, objection, and portability when applicable by writing to support@gocosmic.dev. You may also lodge a complaint with the CNIL: https://www.cnil.fr/."
+            "Du kannst Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und Datenübertragbarkeit verlangen, soweit anwendbar, indem du an support@gocosmic.dev schreibst. Außerdem kannst du eine Beschwerde bei der CNIL einreichen: https://www.cnil.fr/."
           ]
         },
         {
-          "title": "Cookies and audience measurement",
+          "title": "Cookies und Reichweitenmessung",
           "body": [
-            "No advertising cookies are intentionally loaded by Go Cosmic. Vercel Analytics is treated as a non-essential audience measurement tool on this site and is not loaded before your consent."
+            "Go Cosmic lädt bewusst keine Werbe-Cookies. Vercel Analytics wird auf dieser Website als nicht notwendiges Reichweitenmessungswerkzeug behandelt und nicht vor deiner Einwilligung geladen."
           ]
         }
       ]
@@ -67,47 +67,47 @@
     "legalNotice": {
       "meta": {
         "title": "Impressum - Go Cosmic",
-        "description": "Publisher, hosting, intellectual property, responsibility, and contact information for Go Cosmic."
+        "description": "Anbieter, Hosting, geistiges Eigentum, Haftung und Kontaktinformationen von Go Cosmic."
       },
-      "eyebrow": "Legal information",
+      "eyebrow": "Rechtliche Informationen",
       "title": "Impressum",
-      "updated": "Last updated: 23 May 2026",
-      "intro": "This legal notice identifies the website publisher and the main responsibilities linked to using www.gocosmic.dev.",
+      "updated": "Zuletzt aktualisiert: 23. Mai 2026",
+      "intro": "Dieses Impressum nennt den Anbieter der Website und die wichtigsten Verantwortlichkeiten im Zusammenhang mit der Nutzung von www.gocosmic.dev.",
       "sections": [
         {
-          "title": "Publisher",
+          "title": "Anbieter",
           "body": [
-            "Website: www.gocosmic.dev. Publisher: Go Cosmic, represented by Matthieu Compérat. Contact: support@gocosmic.dev. Business registration details should be completed when applicable before publication."
+            "Website: www.gocosmic.dev. Anbieter: Go Cosmic, vertreten durch Matthieu Compérat. Kontakt: support@gocosmic.dev. Unternehmensregistrierungsdaten sollten vor Veröffentlichung ergänzt werden, soweit anwendbar."
           ]
         },
         {
-          "title": "Publication director",
+          "title": "Verantwortlich für die Veröffentlichung",
           "body": [
-            "Publication director: Matthieu Compérat."
+            "Verantwortlich für die Veröffentlichung: Matthieu Compérat."
           ]
         },
         {
           "title": "Hosting",
           "body": [
-            "The website is hosted by Vercel Inc. The exact contractual hosting entity and address should be confirmed from the active Vercel account before publication."
+            "Die Website wird von Vercel Inc. gehostet. Die genaue Vertragseinheit und Adresse sollten vor Veröffentlichung im aktiven Vercel-Konto bestätigt werden."
           ]
         },
         {
-          "title": "Intellectual property",
+          "title": "Geistiges Eigentum",
           "body": [
-            "Texts, visuals, source code, design elements, and the Go Cosmic identity are protected unless otherwise stated. Any reproduction or reuse requires prior written permission."
+            "Texte, Bilder, Quellcode, Designelemente und die Identität von Go Cosmic sind geschützt, sofern nicht anders angegeben. Jede Vervielfältigung oder Wiederverwendung erfordert vorherige schriftliche Genehmigung."
           ]
         },
         {
-          "title": "Responsibility",
+          "title": "Haftung",
           "body": [
-            "Go Cosmic aims to keep information accurate and available but cannot guarantee that the website is free from interruptions, errors, or outdated content. External links lead to third-party services governed by their own terms and policies."
+            "Go Cosmic bemüht sich um genaue und verfügbare Informationen, kann jedoch nicht garantieren, dass die Website frei von Unterbrechungen, Fehlern oder veralteten Inhalten ist. Externe Links führen zu Diensten Dritter, die ihren eigenen Bedingungen und Richtlinien unterliegen."
           ]
         },
         {
-          "title": "Contact",
+          "title": "Kontakt",
           "body": [
-            "For legal, privacy, or security questions, contact support@gocosmic.dev."
+            "Für rechtliche, Datenschutz- oder Sicherheitsfragen kontaktiere support@gocosmic.dev."
           ]
         }
       ]
