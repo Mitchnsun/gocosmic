@@ -41,6 +41,7 @@ Codex instructions for working in this repository.
 - Avoid component snapshots. Page and view snapshots are tolerated, but update them only when the rendered output intentionally changes.
 - Keep accessibility visible in implementation and tests: semantic headings, roles, ARIA labels, focus states, and keyboard behavior where relevant.
 - Use existing design-system patterns: CVA variants, `@radix-ui/react-slot` for polymorphic composition, and `clsx` + `tailwind-merge` for class merging.
+- Write all documentation in **English**: README files, code comments, JSDoc, inline documentation, and any Markdown files. This applies to AI-generated content as well.
 
 ## Verification
 

@@ -26,6 +26,12 @@ describe('Footer Component', () => {
     expect(getByText('Solo Cosmic Developer')).toBeInTheDocument();
     expect(getByText('Complete Cosmic Team')).toBeInTheDocument();
     expect(getByText('Developer + Designer Duo')).toBeInTheDocument();
+    expect(getByRole('link', { name: 'Solo Cosmic Developer' })).toHaveAttribute('href', '/offers#solo-developer');
+    expect(getByRole('link', { name: 'Developer + Designer Duo' })).toHaveAttribute(
+      'href',
+      '/offers#developer-designer'
+    );
+    expect(getByRole('link', { name: 'Complete Cosmic Team' })).toHaveAttribute('href', '/offers#team-developers');
 
     // Copyright
     expect(getByText(`© ${year} Go Cosmic. All systems nominal.`)).toBeInTheDocument();

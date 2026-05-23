@@ -35,5 +35,12 @@
     "mockup_mention": "Richiedi il tuo mockup senza impegno",
     "cta_simulate": "Simula il mio prezzo",
     "cta_contact": "Richiedi un preventivo"
+  },
+  "status_bar": {
+    "signal_acquired": "SEGNALE ACQUISITO",
+    "mission_control": "CONTROLLO MISSIONE",
+    "location": "ANNECY · ALT. 447M",
+    "aria_label": "Stato del controllo missione",
+    "aria_signal": "Segnale attivo"
   }
 }

@@ -35,5 +35,12 @@
     "mockup_mention": "Request your mockup with no commitment",
     "cta_simulate": "Simulate my pricing",
     "cta_contact": "Request a quote"
+  },
+  "status_bar": {
+    "signal_acquired": "SIGNAL ACQUIRED",
+    "mission_control": "MISSION CONTROL",
+    "location": "ANNECY · ALT. 447M",
+    "aria_label": "Mission control status",
+    "aria_signal": "Signal active"
   }
 }

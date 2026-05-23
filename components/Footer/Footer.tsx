@@ -68,17 +68,23 @@ const Footer = () => {
           <ColumnHeading>{t('offers_title')}</ColumnHeading>
           <ul className="space-y-2 pl-4 text-sm">
             <li>
-              <Link className="transition-colors hover:text-white" href="/offers">
+              <Link
+                className="transition-colors hover:text-white"
+                href={{ pathname: '/offers', hash: 'solo-developer' }}>
                 {t('offer_solo')}
               </Link>
             </li>
             <li>
-              <Link className="transition-colors hover:text-white" href="/offers">
+              <Link
+                className="transition-colors hover:text-white"
+                href={{ pathname: '/offers', hash: 'developer-designer' }}>
                 {t('offer_duo')}
               </Link>
             </li>
             <li>
-              <Link className="transition-colors hover:text-white" href="/offers">
+              <Link
+                className="transition-colors hover:text-white"
+                href={{ pathname: '/offers', hash: 'team-developers' }}>
                 {t('offer_team')}
               </Link>
             </li>

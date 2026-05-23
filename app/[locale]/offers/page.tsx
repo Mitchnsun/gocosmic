@@ -52,7 +52,10 @@ export default async function Offers() {
         </div>
 
         {/* Solo Developer Offer */}
-        <section className="w-full" aria-labelledby="solo-developer-heading">
+        <section
+          id="solo-developer"
+          className="w-full scroll-mt-20 md:scroll-mt-24"
+          aria-labelledby="solo-developer-heading">
           <div className="relative rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
             <div className="mb-6 flex items-center gap-4">
               <CodeBracketIcon className="h-8 w-8 shrink-0 text-blue-400" aria-hidden="true" />
@@ -130,7 +133,10 @@ export default async function Offers() {
         </section>
 
         {/* Developer + Designer Offer */}
-        <section className="w-full" aria-labelledby="developer-designer-heading">
+        <section
+          id="developer-designer"
+          className="w-full scroll-mt-20 md:scroll-mt-24"
+          aria-labelledby="developer-designer-heading">
           <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
             <div className="mb-6 flex items-center gap-4">
               <SparklesIcon className="h-8 w-8 shrink-0 text-purple-400" aria-hidden="true" />
@@ -218,7 +224,10 @@ export default async function Offers() {
         </section>
 
         {/* Team Developers Offer */}
-        <section className="w-full" aria-labelledby="team-developers-heading">
+        <section
+          id="team-developers"
+          className="w-full scroll-mt-20 md:scroll-mt-24"
+          aria-labelledby="team-developers-heading">
           <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
             <div className="mb-6 flex items-center gap-4">
               <UserGroupIcon className="h-8 w-8 shrink-0 text-green-400" aria-hidden="true" />

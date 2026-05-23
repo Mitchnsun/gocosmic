@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.6.2] - 2026-05-23
+
+### Added
+
+- Localized keyboard skip-link in the header (`navigation.skip_to_content`) targeting a real `<main id="main-content">` region in `app/[locale]/layout.tsx`
+- New `LogoOrbitalDot` component in `components/Header/` with `logoOrbitalEnabled` and `reduceMotion` guards
+
+### Changed
+
+- Refactored the header into a sticky adaptive navigation bar with scroll-based compact height behavior, responsive height mapping, and backdrop blur treatment
+- Replaced the header orbital-dot visual effect implementation with `motion/react` animation in `LogoOrbitalDot`
+- Expanded header tests to cover sticky/adaptive height behavior, reduced-motion handling, and viewport resize paths
+
 ## [1.6.1] - 2026-05-20
 
 ### Added
