@@ -5,7 +5,7 @@
         "title": "Privacy policy - Go Cosmic",
         "description": "How Go Cosmic processes personal data, audience measurement, email contacts, retention periods, rights, and CNIL complaints."
       },
-      "eyebrow": "RGPD / GDPR",
+      "eyebrow": "GDPR",
       "title": "Privacy policy",
       "updated": "Last updated: 23 May 2026",
       "intro": "This page explains how Go Cosmic handles personal data on this website and when you contact the studio by email. It is informational and should be validated legally before publication.",
@@ -82,9 +82,7 @@
         },
         {
           "title": "Publication director",
-          "body": [
-            "Publication director: Matthieu Compérat."
-          ]
+          "body": ["Publication director: Matthieu Compérat."]
         },
         {
           "title": "Hosting",
@@ -106,9 +104,7 @@
         },
         {
           "title": "Contact",
-          "body": [
-            "For legal, privacy, or security questions, contact support@gocosmic.dev."
-          ]
+          "body": ["For legal, privacy, or security questions, contact support@gocosmic.dev."]
         }
       ]
     }
