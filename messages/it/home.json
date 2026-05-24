@@ -8,7 +8,7 @@
     },
     "hero": {
       "cta": "Inizia il tuo viaggio",
-      "endWord": "brillano",
+      "endWords": ["brillano", "svettano", "ispirano", "trasformano", "eccellono"],
       "subtitle": "Lascia che lanciamo le tue idee nella stratosfera con design mistico e funzionalità cosmica",
       "title": "Costruiamo applicazioni stellari che"
     },

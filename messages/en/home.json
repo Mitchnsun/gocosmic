@@ -8,7 +8,7 @@
     },
     "hero": {
       "cta": "Start your journey",
-      "endWord": "shine",
+      "endWords": ["shine", "soar", "inspire", "transform", "elevate"],
       "subtitle": "Let us launch your ideas into the stratosphere with mystical design and cosmic functionality",
       "title": "We build stellar applications that"
     },

@@ -8,7 +8,7 @@
     },
     "hero": {
       "cta": "Comienza tu viaje",
-      "endWord": "brillan",
+      "endWords": ["brillan", "vuelan", "inspiran", "transforman", "elevan"],
       "subtitle": "Permítenos lanzar tus ideas a la estratosfera con diseño místico y funcionalidad cósmica",
       "title": "Construimos aplicaciones estelares que"
     },

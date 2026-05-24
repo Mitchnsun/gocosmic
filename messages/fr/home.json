@@ -8,7 +8,7 @@
     },
     "hero": {
       "cta": "Commencez votre voyage",
-      "endWord": "rayonnent",
+      "endWords": ["rayonnent", "s'envolent", "inspirent", "transforment", "élèvent"],
       "subtitle": "Laissez-nous propulser vos idées dans la stratosphère avec un design mystique et une fonctionnalité cosmique",
       "title": "Nous créons des applications stellaires qui"
     },

@@ -13,7 +13,7 @@ export default function Home() {
     <div className="text-ghost bg-void relative p-4">
       <HeroSection
         title={t('hero.title')}
-        endWord={t('hero.endWord')}
+        endWords={t.raw('hero.endWords') as string[]}
         subtitle={t('hero.subtitle')}
         ctaText={t('hero.cta')}
         ctaHref="/journey"
