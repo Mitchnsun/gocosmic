@@ -53,4 +53,9 @@ describe('useWordCycler', () => {
     unmount();
     expect(clearSpy).toHaveBeenCalled();
   });
+
+  it('returns empty string for an empty words array', () => {
+    const { result } = renderHook(() => useWordCycler([], 5000, false));
+    expect(result.current).toBe('');
+  });
 });
