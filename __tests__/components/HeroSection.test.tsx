@@ -110,9 +110,9 @@ describe('HeroSection', () => {
   });
 
   it('should support medium starfield density and royal accent styling', () => {
-    renderHero({ accentColor: 'royal', starfieldDensity: 'medium' });
+    const { container } = renderHero({ accentColor: 'royal', starfieldDensity: 'medium' });
 
-    expect(screen.getByText('shine')).toHaveClass('text-royal');
+    expect(container.querySelector('[data-end-word]')).toHaveClass('text-royal');
     expect(starfieldMock).toHaveBeenCalledWith(expect.objectContaining({ starCount: 340 }), undefined);
   });
 

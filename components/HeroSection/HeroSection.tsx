@@ -4,6 +4,8 @@ import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import type { ComponentProps, CSSProperties, PointerEvent } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
+import AnimatedEndWord from '@/components/HeroSection/AnimatedEndWord';
+import { useWordCycler } from '@/components/HeroSection/HeroSection.hooks';
 import Starfield from '@/components/Starfield';
 import { buttonVariants } from '@/design-system/button.variants';
 import { cn } from '@/design-system/lib/utils';
@@ -32,6 +34,10 @@ export interface HeroSectionProps {
   subtitle: string;
   /** Animated final word. Defaults to "shine". */
   endWord?: string;
+  /** Ordered list of words to cycle through. Takes priority over endWord. */
+  endWords?: string[];
+  /** Milliseconds between word changes. Defaults to 5000. */
+  wordInterval?: number;
   /** Label for the primary call-to-action link. */
   ctaText: string;
   /** Destination for the primary call-to-action link. */
@@ -116,6 +122,8 @@ const HeroSection = ({
   title,
   subtitle,
   endWord = 'shine',
+  endWords,
+  wordInterval = 5000,
   ctaText,
   ctaHref,
   starfieldDensity = 'high',
@@ -135,6 +143,8 @@ const HeroSection = ({
   const accent = getAccent(accentColor);
   const intensity = clamp(parallaxIntensity, 0, 1);
   const speed = clamp(starfieldSpeed, 0.1, 1) * 5;
+  const words = endWords ?? [endWord];
+  const currentWord = useWordCycler(words, wordInterval, words.length <= 1);
 
   const style = useMemo<HeroCssProperties>(
     () => ({
@@ -218,13 +228,13 @@ const HeroSection = ({
       onPointerMove={handlePointerMove}>
       <div
         className={cn(
-          'absolute inset-0 -z-20 translate-x-[var(--hero-parallax-x)] translate-y-[var(--hero-parallax-y)] transition-transform duration-500 ease-out',
+          'absolute inset-0 -z-20 translate-x-(--hero-parallax-x) translate-y-(--hero-parallax-y) transition-transform duration-500 ease-out',
           starfieldWarp && !prefersReducedMotion && 'group-hover:scale-[1.03]'
         )}
         aria-hidden="true">
         <Starfield className="h-full w-full opacity-75" starCount={getStarCount(starfieldDensity)} speed={speed} />
       </div>
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_72%_42%,rgba(var(--hero-accent-rgb),0.3),transparent_30%),linear-gradient(rgba(248,248,255,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(248,248,255,0.055)_1px,transparent_1px)] bg-[size:auto,112px_112px,112px_112px]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_72%_42%,rgba(var(--hero-accent-rgb),0.3),transparent_30%),linear-gradient(rgba(248,248,255,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(248,248,255,0.055)_1px,transparent_1px)] bg-size-[auto,112px_112px,112px_112px]" />
 
       <div
         className="relative z-10 m-auto flex max-w-7xl flex-col items-center gap-6 text-center sm:gap-8"
@@ -232,22 +242,18 @@ const HeroSection = ({
           opacity: 'var(--hero-opacity)',
           transform: 'translate3d(0, var(--hero-scroll-offset), 0)',
         }}>
-        <p className="hero-reveal-line text-ghost/60 text-xs tracking-[0.32em] uppercase [animation-delay:80ms]">
-          Studio · Est 2024 · Annecy / Remote
-        </p>
         <h1
-          className="font-display max-w-[12ch] text-[clamp(2.5rem,11vw,10.5rem)] leading-[0.9] font-bold tracking-[-0.08em] text-balance sm:max-w-[13ch]"
-          aria-label={`${title} ${endWord}`}>
-          <span className="hero-reveal-line from-ghost via-ghost to-ghost/55 block bg-gradient-to-r bg-clip-text text-transparent [animation-delay:120ms]">
+          className="font-display text-[clamp(2.5rem,9vw,5rem)] leading-[0.9] font-bold tracking-[-0.08em] text-balance"
+          aria-label={`${title} ${currentWord}`}>
+          <span className="hero-reveal-line from-ghost via-ghost to-ghost/55 inline bg-gradient-to-r bg-clip-text text-transparent [animation-delay:120ms]">
             {title}
           </span>{' '}
-          <span
-            data-end-word
-            className={cn(
-              'hero-end-word from-aerospace via-royal to-ghost inline-block bg-gradient-to-r bg-clip-text',
-              accent.text
-            )}>
-            {endWord}
+          <span data-end-word className={cn('hero-end-word relative inline-block', accent.text)}>
+            <AnimatedEndWord
+              word={currentWord}
+              className="from-aerospace via-royal to-ghost inline bg-gradient-to-r bg-clip-text"
+              prefersReducedMotion={prefersReducedMotion}
+            />
           </span>
         </h1>
         <p className="hero-reveal-line text-ghost/80 max-w-2xl text-lg leading-8 [animation-delay:400ms] sm:text-xl lg:text-2xl">
