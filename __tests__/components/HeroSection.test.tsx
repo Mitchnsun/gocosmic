@@ -4,7 +4,8 @@ import HeroSection from '@/components/HeroSection';
 
 import { fireEvent, render, screen } from '../test-utils';
 
-const { starfieldMock } = vi.hoisted(() => ({
+const { planetMock, starfieldMock } = vi.hoisted(() => ({
+  planetMock: vi.fn((props: Record<string, unknown>) => <div data-size={String(props.size)} data-testid="planet" />),
   starfieldMock: vi.fn(
     ({ className, speed, starCount }: { className?: string; speed?: number; starCount?: number }) => (
       <canvas aria-hidden="true" className={className} data-speed={speed} data-star-count={starCount} />
@@ -14,6 +15,10 @@ const { starfieldMock } = vi.hoisted(() => ({
 
 vi.mock('@/components/Starfield', () => ({
   default: starfieldMock,
+}));
+
+vi.mock('@/components/Planet', () => ({
+  default: planetMock,
 }));
 
 const renderHero = (props = {}) =>
@@ -39,6 +44,7 @@ const dispatchPointerMove = (element: Element, clientX: number, clientY: number)
 
 describe('HeroSection', () => {
   beforeEach(() => {
+    planetMock.mockClear();
     starfieldMock.mockClear();
     vi.stubGlobal(
       'requestAnimationFrame',
@@ -67,6 +73,30 @@ describe('HeroSection', () => {
 
     expect(screen.getByText('Test subtitle')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /Start your journey/ })).toHaveAttribute('href', '/journey');
+  });
+
+  it('should render desktop and mobile planets with shared reduced-motion state', () => {
+    renderHero();
+
+    expect(screen.getAllByTestId('planet')).toHaveLength(2);
+    expect(planetMock.mock.calls.map(([props]) => props)).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          size: 480,
+          parallaxMode: 'pointer',
+          useHeroParallax: true,
+          scrollFactor: 0.3,
+          reducedMotion: false,
+        }),
+        expect.objectContaining({
+          size: 240,
+          parallaxMode: 'gyro',
+          gyroAmplitude: 15,
+          scrollFactor: 0.3,
+          reducedMotion: false,
+        }),
+      ])
+    );
   });
 
   it('should respect prefers-reduced-motion', () => {

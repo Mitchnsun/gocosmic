@@ -6,6 +6,7 @@ import { useEffect, useRef } from 'react';
 
 import AnimatedEndWord from '@/components/HeroSection/AnimatedEndWord';
 import { usePrefersReducedMotion, useWordCycler } from '@/components/HeroSection/HeroSection.hooks';
+import Planet from '@/components/Planet';
 import Starfield from '@/components/Starfield';
 import { buttonVariants } from '@/design-system/button.variants';
 import { cn } from '@/design-system/lib/utils';
@@ -148,6 +149,17 @@ const HeroSection = ({
         <Starfield className="h-full w-full opacity-75" starCount={500} speed={speed} />
       </div>
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_72%_42%,rgba(var(--hero-accent-rgb),0.3),transparent_30%),linear-gradient(rgba(248,248,255,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(248,248,255,0.055)_1px,transparent_1px)] bg-size-[auto,112px_112px,112px_112px]" />
+      <div
+        className="pointer-events-none absolute top-1/2 right-[-120px] hidden -translate-y-1/2 lg:block"
+        aria-hidden="true">
+        <Planet
+          size={480}
+          parallaxMode="pointer"
+          useHeroParallax
+          scrollFactor={0.3}
+          reducedMotion={prefersReducedMotion}
+        />
+      </div>
 
       <div
         className="relative z-10 m-auto flex max-w-7xl flex-col items-center gap-6 text-center sm:gap-8"
@@ -172,6 +184,15 @@ const HeroSection = ({
         <p className="hero-reveal-line text-ghost/80 max-w-2xl text-lg leading-8 [animation-delay:400ms] sm:text-xl lg:text-2xl">
           {subtitle}
         </p>
+        <div className="my-1 flex justify-center lg:hidden" aria-hidden="true">
+          <Planet
+            size={240}
+            parallaxMode="gyro"
+            gyroAmplitude={15}
+            scrollFactor={0.3}
+            reducedMotion={prefersReducedMotion}
+          />
+        </div>
         <span
           ref={ctaRef}
           className="hero-cta-magnetic hero-reveal-line inline-flex [animation-delay:600ms]"
