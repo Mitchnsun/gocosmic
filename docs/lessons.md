@@ -106,3 +106,13 @@ it('renders correctly', async () => {
   // ...
 });
 ```
+
+## Documentation
+
+### Keep policy docs aligned with actual repository entry points and package metadata
+
+**Mistake**: Writing documentation rules too generically caused `DOCS_POLICY.md` to conflict with the repository's real entry-point files (`README.md`, `README.en.md`, `README.fr.md`, `DOCS_POLICY.md`) and allowed duplicated version/script details in README files to drift from `package.json`.
+
+**Root cause**: Repository-level policy documents need explicit exceptions for established root files, and any duplicated technical metadata becomes stale unless it is checked against the source of truth.
+
+**Correct pattern**: When documenting naming or language rules, explicitly carve out root-level documentation entry points if they intentionally break the general convention. When listing scripts or dependency versions in README files, verify them against `package.json` (or reference the canonical source directly) before merging.
