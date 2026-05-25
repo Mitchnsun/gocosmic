@@ -6,7 +6,7 @@
 
 - **Canonical language is English** for any document tied to code, configuration, DevOps, CI/CD, architecture, troubleshooting, and AI prompts.
 - **French is prioritized** for user onboarding guides, product presentations, and internal non-technical alignment.
-- **No mixed-language pages**: one page, one language.
+- **No mixed-language pages**: one page, one language, except the root `README.md` which is the repository's bilingual navigation entry point.
 
 ### Language matrix
 
@@ -42,9 +42,10 @@ Use the following structure:
 
 Naming conventions:
 
-- Use lowercase kebab-case for file names.
+- Use lowercase kebab-case for file names under `docs/`.
 - Keep mirrored paths when a document exists in both languages.
 - Suffix bilingual twins by directory (`docs/en/...` and `docs/fr/...`) rather than mixing in one file.
+- Root-level documentation entry points may keep established names such as `README.md`, `README.en.md`, `README.fr.md`, and `DOCS_POLICY.md`.
 
 ## 3) Human docs vs agent/system docs coherence
 

@@ -203,8 +203,14 @@ yarn build
 # Production launch
 yarn start
 
+# Formatting
+yarn format
+
 # Linting
 yarn lint
+
+# Type checking
+yarn check-types
 
 # Testing
 yarn test           # Run unit tests
@@ -244,7 +250,7 @@ This approach ensures SEO-friendly URLs and consistent user experience across al
 
 - **[Next.js 16](https://nextjs.org/)** - React framework with App Router and Turbopack
 - **[React 19](https://react.dev/)** - Latest React with server components
-- **[TypeScript 5.8](https://www.typescriptlang.org/)** - Type safety and robust development
+- **[TypeScript 5.9](https://www.typescriptlang.org/)** - Type safety and robust development
 - **[next-intl](https://next-intl.dev/)** - Type-safe internationalization with 5 language support
 - **[TailwindCSS 4.x](https://tailwindcss.com/)** - Styling with cosmic design system
 - **[Three.js](https://threejs.org/)** - 3D graphics and interactive experiences

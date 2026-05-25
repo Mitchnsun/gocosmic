@@ -248,7 +248,7 @@ Cette approche garantit des URLs SEO-friendly et une expérience utilisateur coh
 
 - **[Next.js 16](https://nextjs.org/)** — Framework React avec App Router et Turbopack
 - **[React 19](https://react.dev/)** — Dernière version React avec Server Components
-- **[TypeScript 5.8](https://www.typescriptlang.org/)** — Typage statique et développement robuste
+- **[TypeScript 5.9](https://www.typescriptlang.org/)** — Typage statique et développement robuste
 - **[next-intl](https://next-intl.dev/)** — Internationalisation typée avec support 5 langues
 - **[TailwindCSS 4.x](https://tailwindcss.com/)** — Styles avec système de design cosmique
 - **[Three.js](https://threejs.org/)** — Graphiques 3D et expériences interactives
