@@ -8,8 +8,10 @@ const GYRO_GAMMA_SENSITIVITY = 0.4;
 const GYRO_BETA_OFFSET = 30;
 const GYRO_BETA_SENSITIVITY = 0.3;
 const GYRO_LERP_FACTOR = 0.08;
+const GYRO_SNAP_EPSILON = 0.01;
 const PLANET_ROTATION_INCREMENT = 0.003;
 const PLANET_ROTATION_MULTIPLIER = 12;
+const ROTATION_TIME_RESET = Math.PI * 2;
 const FALLBACK_DELAY_MS = 1500;
 const FALLBACK_TIME_INCREMENT = 0.008;
 const FALLBACK_X_AMPLITUDE = 8;
@@ -46,7 +48,7 @@ export const usePlanetAnimation = ({
     let time = 0;
 
     const tick = () => {
-      time += PLANET_ROTATION_INCREMENT;
+      time = (time + PLANET_ROTATION_INCREMENT) % ROTATION_TIME_RESET;
       element.style.transform = `rotate(${time * PLANET_ROTATION_MULTIPLIER}deg)`;
       frame = requestAnimationFrame(tick);
     };
@@ -100,8 +102,10 @@ export const usePlanetAnimation = ({
     const target = { x: 0, y: 0 };
 
     const commit = () => {
-      currentX += (target.x - currentX) * GYRO_LERP_FACTOR;
-      currentY += (target.y - currentY) * GYRO_LERP_FACTOR;
+      const distanceX = target.x - currentX;
+      const distanceY = target.y - currentY;
+      currentX = Math.abs(distanceX) < GYRO_SNAP_EPSILON ? target.x : currentX + distanceX * GYRO_LERP_FACTOR;
+      currentY = Math.abs(distanceY) < GYRO_SNAP_EPSILON ? target.y : currentY + distanceY * GYRO_LERP_FACTOR;
       element.style.setProperty('--planet-tilt-x', `${currentX}px`);
       element.style.setProperty('--planet-tilt-y', `${currentY}px`);
       frame = requestAnimationFrame(commit);

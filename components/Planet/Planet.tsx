@@ -1,6 +1,7 @@
 'use client';
 
 import type { CSSProperties } from 'react';
+import { useMemo } from 'react';
 
 import { cn } from '@/design-system/lib/utils';
 
@@ -12,6 +13,12 @@ const ORBIT_SECONDARY_RATIO = 1.5;
 const ORBIT_DECORATIVE_RATIO = 1.125;
 const MOON_SIZE_RATIO = 0.025;
 const GLOW_INSET_RATIO = 0.0625;
+
+const getMoonStyle = (size: number, glowColor: string): CSSProperties => ({
+  width: size,
+  height: size,
+  boxShadow: `0 0 ${size * 1.3}px ${glowColor}`,
+});
 
 interface PlanetCssProperties extends CSSProperties {
   '--planet-reveal-scale': string;
@@ -53,31 +60,46 @@ const Planet = ({
     reducedMotion,
   });
 
-  const bodyInset = Math.round(size * BODY_INSET_RATIO);
-  const orbit1Size = Math.round(size * ORBIT_PRIMARY_RATIO);
-  const orbit2Size = Math.round(size * ORBIT_SECONDARY_RATIO);
-  const orbit3Size = Math.round(size * ORBIT_DECORATIVE_RATIO);
-  const moonSize = Math.round(size * MOON_SIZE_RATIO);
+  const {
+    bodyInset,
+    glowInset,
+    moonStyleAerospace,
+    moonStyleJungle,
+    orbit1Size,
+    orbit2Size,
+    orbit3Size,
+    wrapperStyle,
+  } = useMemo(() => {
+    const transform = useHeroParallax
+      ? `translate(
+            calc(var(--planet-tilt-x, 0px) + var(--hero-parallax-x, 0px)),
+            calc(var(--planet-tilt-y, 0px) + var(--hero-parallax-y, 0px) + var(--planet-scroll-y, 0px))
+          ) scale(var(--planet-reveal-scale, 1))`
+      : `translate(
+            var(--planet-tilt-x, 0px),
+            calc(var(--planet-tilt-y, 0px) + var(--planet-scroll-y, 0px))
+          ) scale(var(--planet-reveal-scale, 1))`;
+    const moonSize = Math.round(size * MOON_SIZE_RATIO);
 
-  const transform = useHeroParallax
-    ? `translate(
-        calc(var(--planet-tilt-x, 0px) + var(--hero-parallax-x, 0px)),
-        calc(var(--planet-tilt-y, 0px) + var(--hero-parallax-y, 0px) + var(--planet-scroll-y, 0px))
-      ) scale(var(--planet-reveal-scale, 1))`
-    : `translate(
-        var(--planet-tilt-x, 0px),
-        calc(var(--planet-tilt-y, 0px) + var(--planet-scroll-y, 0px))
-      ) scale(var(--planet-reveal-scale, 1))`;
-
-  const wrapperStyle: PlanetCssProperties = {
-    width: size,
-    height: size,
-    '--planet-reveal-scale': '1',
-    '--planet-scroll-y': '0px',
-    '--planet-tilt-x': '0px',
-    '--planet-tilt-y': '0px',
-    transform,
-  };
+    return {
+      bodyInset: Math.round(size * BODY_INSET_RATIO),
+      glowInset: -Math.round(size * GLOW_INSET_RATIO),
+      moonStyleAerospace: getMoonStyle(moonSize, '#ff4f00'),
+      moonStyleJungle: getMoonStyle(moonSize, '#29ab87'),
+      orbit1Size: Math.round(size * ORBIT_PRIMARY_RATIO),
+      orbit2Size: Math.round(size * ORBIT_SECONDARY_RATIO),
+      orbit3Size: Math.round(size * ORBIT_DECORATIVE_RATIO),
+      wrapperStyle: {
+        width: size,
+        height: size,
+        '--planet-reveal-scale': '1',
+        '--planet-scroll-y': '0px',
+        '--planet-tilt-x': '0px',
+        '--planet-tilt-y': '0px',
+        transform,
+      } satisfies PlanetCssProperties,
+    };
+  }, [size, useHeroParallax]);
 
   return (
     <div
@@ -85,10 +107,7 @@ const Planet = ({
       style={wrapperStyle}
       className={cn('relative will-change-transform', className)}
       aria-hidden="true">
-      <div
-        className="animate-planet-glow planet-glow absolute rounded-full blur-2xl"
-        style={{ inset: -Math.round(size * GLOW_INSET_RATIO) }}
-      />
+      <div className="animate-planet-glow planet-glow absolute rounded-full blur-2xl" style={{ inset: glowInset }} />
 
       <div
         ref={planetRef}
@@ -107,7 +126,7 @@ const Planet = ({
         style={{ width: orbit1Size, height: orbit1Size }}>
         <span
           className="bg-aerospace absolute -top-[6px] left-1/2 -translate-x-1/2 rounded-full"
-          style={{ width: moonSize, height: moonSize, boxShadow: `0 0 ${moonSize * 1.3}px #ff4f00` }}
+          style={moonStyleAerospace}
         />
       </div>
 
@@ -116,7 +135,7 @@ const Planet = ({
         style={{ width: orbit2Size, height: orbit2Size }}>
         <span
           className="bg-jungle absolute -top-[6px] left-1/2 -translate-x-1/2 rounded-full"
-          style={{ width: moonSize, height: moonSize, boxShadow: `0 0 ${moonSize * 1.3}px #29ab87` }}
+          style={moonStyleJungle}
         />
       </div>
 
