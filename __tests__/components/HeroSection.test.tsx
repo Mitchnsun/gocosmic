@@ -69,53 +69,6 @@ describe('HeroSection', () => {
     expect(screen.getByRole('link', { name: /Start your journey/ })).toHaveAttribute('href', '/journey');
   });
 
-  it('should apply accent color class to endWord', () => {
-    const { container } = renderHero({ accentColor: 'royal' });
-
-    expect(container.querySelector('[data-end-word]')).toHaveClass('text-royal');
-  });
-
-  it('should render Starfield component with correct props', () => {
-    renderHero({ starfieldDensity: 'high', starfieldSpeed: 0.4 });
-
-    expect(starfieldMock).toHaveBeenCalledWith(
-      expect.objectContaining({
-        speed: 2,
-        starCount: 520,
-      }),
-      undefined
-    );
-  });
-
-  it('should apply alternate accent, density, speed, id, className, and compact variant props', () => {
-    const { container } = renderHero({
-      accentColor: 'jungle',
-      className: 'custom-hero',
-      id: 'hero',
-      starfieldDensity: 'low',
-      starfieldSpeed: 2,
-      variant: 'compact',
-    });
-
-    expect(container.querySelector('section')).toHaveAttribute('id', 'hero');
-    expect(container.querySelector('section')).toHaveClass('custom-hero', 'py-8');
-    expect(container.querySelector('[data-end-word]')).toHaveClass('text-jungle');
-    expect(starfieldMock).toHaveBeenCalledWith(
-      expect.objectContaining({
-        speed: 5,
-        starCount: 180,
-      }),
-      undefined
-    );
-  });
-
-  it('should support medium starfield density and royal accent styling', () => {
-    const { container } = renderHero({ accentColor: 'royal', starfieldDensity: 'medium' });
-
-    expect(container.querySelector('[data-end-word]')).toHaveClass('text-royal');
-    expect(starfieldMock).toHaveBeenCalledWith(expect.objectContaining({ starCount: 340 }), undefined);
-  });
-
   it('should respect prefers-reduced-motion', () => {
     window.matchMedia = vi.fn().mockReturnValue({
       addEventListener: vi.fn(),
@@ -126,18 +79,6 @@ describe('HeroSection', () => {
     const { container } = renderHero();
 
     expect(container.querySelector('section')).toHaveAttribute('data-reduced-motion', 'true');
-  });
-
-  it('should allow motion when reduced-motion handling is disabled', () => {
-    window.matchMedia = vi.fn().mockReturnValue({
-      addEventListener: vi.fn(),
-      matches: true,
-      removeEventListener: vi.fn(),
-    });
-
-    const { container } = renderHero({ respectReducedMotion: false });
-
-    expect(container.querySelector('section')).toHaveAttribute('data-reduced-motion', 'false');
   });
 
   it('should update scroll parallax variables', () => {

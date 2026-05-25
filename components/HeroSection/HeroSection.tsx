@@ -2,18 +2,16 @@
 
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import type { ComponentProps, CSSProperties, PointerEvent } from 'react';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 import AnimatedEndWord from '@/components/HeroSection/AnimatedEndWord';
-import { useWordCycler } from '@/components/HeroSection/HeroSection.hooks';
+import { usePrefersReducedMotion, useWordCycler } from '@/components/HeroSection/HeroSection.hooks';
 import Starfield from '@/components/Starfield';
 import { buttonVariants } from '@/design-system/button.variants';
 import { cn } from '@/design-system/lib/utils';
 import { Link } from '@/i18n/navigation';
+import { clamp } from '@/lib/clamp';
 
-type AccentColor = 'aerospace' | 'royal' | 'jungle';
-type HeroVariant = 'default' | 'compact';
-type StarfieldDensity = 'low' | 'medium' | 'high';
 type LocalizedHref = ComponentProps<typeof Link>['href'];
 
 interface HeroCssProperties extends CSSProperties {
@@ -42,81 +40,11 @@ export interface HeroSectionProps {
   ctaText: string;
   /** Destination for the primary call-to-action link. */
   ctaHref: LocalizedHref;
-  /** Density of stars in the canvas background. Defaults to "high". */
-  starfieldDensity?: StarfieldDensity;
-  /** Normalized starfield speed from 0.1 to 1.0. Defaults to 0.4. */
-  starfieldSpeed?: number;
-  /** Adds a subtle warp scale to the starfield on hover. Defaults to false. */
-  starfieldWarp?: boolean;
-  /** Accent used by the end word and CTA glow. Defaults to "aerospace". */
-  accentColor?: AccentColor;
-  /** Layout density. Defaults to "default". */
-  variant?: HeroVariant;
-  /** Normalized parallax strength from 0 to 1. Defaults to 0.5. */
-  parallaxIntensity?: number;
-  /** Disable motion when the user prefers reduced motion. Defaults to true. */
-  respectReducedMotion?: boolean;
   /** Additional classes for the section wrapper. */
   className?: string;
   /** Optional section id. */
   id?: string;
 }
-
-const accentClasses: Record<AccentColor, { cta: string; rgb: string; text: string }> = {
-  aerospace: { cta: 'shadow-aerospace/35 hover:shadow-aerospace/55', rgb: '255 79 0', text: 'text-aerospace' },
-  jungle: { cta: 'shadow-jungle/35 hover:shadow-jungle/55', rgb: '41 171 135', text: 'text-jungle' },
-  royal: { cta: 'shadow-royal/35 hover:shadow-royal/55', rgb: '120 81 169', text: 'text-royal' },
-};
-
-const densityToStarCount: Record<StarfieldDensity, number> = {
-  high: 520,
-  low: 180,
-  medium: 340,
-};
-
-const clamp = (value: number, min: number, max: number) => Math.min(Math.max(value, min), max);
-
-const getAccent = (accentColor: AccentColor) => {
-  switch (accentColor) {
-    case 'jungle':
-      return accentClasses.jungle;
-    case 'royal':
-      return accentClasses.royal;
-    case 'aerospace':
-    default:
-      return accentClasses.aerospace;
-  }
-};
-
-const getStarCount = (density: StarfieldDensity) => {
-  switch (density) {
-    case 'low':
-      return densityToStarCount.low;
-    case 'medium':
-      return densityToStarCount.medium;
-    case 'high':
-    default:
-      return densityToStarCount.high;
-  }
-};
-
-const usePrefersReducedMotion = (enabled: boolean) => {
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-
-  useEffect(() => {
-    if (!enabled || !window.matchMedia) return;
-
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setPrefersReducedMotion(mediaQuery.matches);
-
-    const handleChange = () => setPrefersReducedMotion(mediaQuery.matches);
-    mediaQuery.addEventListener('change', handleChange);
-
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, [enabled]);
-
-  return enabled && prefersReducedMotion;
-};
 
 const HeroSection = ({
   title,
@@ -126,38 +54,27 @@ const HeroSection = ({
   wordInterval = 5000,
   ctaText,
   ctaHref,
-  starfieldDensity = 'high',
-  starfieldSpeed = 0.4,
-  starfieldWarp = false,
-  accentColor = 'aerospace',
-  variant = 'default',
-  parallaxIntensity = 0.5,
-  respectReducedMotion = true,
   className,
   id,
 }: HeroSectionProps) => {
   const sectionRef = useRef<HTMLElement>(null);
   const ctaRef = useRef<HTMLSpanElement>(null);
   const frameRef = useRef<number | null>(null);
-  const prefersReducedMotion = usePrefersReducedMotion(respectReducedMotion);
-  const accent = getAccent(accentColor);
-  const intensity = clamp(parallaxIntensity, 0, 1);
-  const speed = clamp(starfieldSpeed, 0.1, 1) * 5;
+  const prefersReducedMotion = usePrefersReducedMotion(true);
+  const intensity = 0.5;
+  const speed = 0.4 * 5;
   const words = endWords ?? [endWord];
   const currentWord = useWordCycler(words, wordInterval, words.length <= 1);
 
-  const style = useMemo<HeroCssProperties>(
-    () => ({
-      '--hero-accent-rgb': accent.rgb,
-      '--hero-cta-x': '0px',
-      '--hero-cta-y': '0px',
-      '--hero-opacity': '1',
-      '--hero-parallax-x': '0px',
-      '--hero-parallax-y': '0px',
-      '--hero-scroll-offset': '0px',
-    }),
-    [accent.rgb]
-  );
+  const style: HeroCssProperties = {
+    '--hero-accent-rgb': '255 79 0',
+    '--hero-cta-x': '0px',
+    '--hero-cta-y': '0px',
+    '--hero-opacity': '1',
+    '--hero-parallax-x': '0px',
+    '--hero-parallax-y': '0px',
+    '--hero-scroll-offset': '0px',
+  };
 
   useEffect(() => {
     if (prefersReducedMotion) return;
@@ -186,7 +103,7 @@ const HeroSection = ({
   );
 
   const handlePointerMove = (event: PointerEvent<HTMLElement>) => {
-    if (prefersReducedMotion || intensity === 0 || frameRef.current !== null) return;
+    if (prefersReducedMotion || frameRef.current !== null) return;
 
     const { currentTarget, clientX, clientY } = event;
     frameRef.current = requestAnimationFrame(() => {
@@ -220,19 +137,15 @@ const HeroSection = ({
       id={id}
       style={style}
       className={cn(
-        'group bg-void text-ghost relative isolate overflow-hidden px-4',
-        variant === 'compact' ? 'py-8 sm:py-12 lg:py-14' : 'py-10 sm:py-12 lg:py-16',
+        'group bg-void text-ghost relative isolate overflow-hidden px-4 py-10 sm:py-12 lg:py-16',
         className
       )}
       data-reduced-motion={prefersReducedMotion ? 'true' : 'false'}
       onPointerMove={handlePointerMove}>
       <div
-        className={cn(
-          'absolute inset-0 -z-20 translate-x-(--hero-parallax-x) translate-y-(--hero-parallax-y) transition-transform duration-500 ease-out',
-          starfieldWarp && !prefersReducedMotion && 'group-hover:scale-[1.03]'
-        )}
+        className="absolute inset-0 -z-20 translate-x-(--hero-parallax-x) translate-y-(--hero-parallax-y) transition-transform duration-500 ease-out"
         aria-hidden="true">
-        <Starfield className="h-full w-full opacity-75" starCount={getStarCount(starfieldDensity)} speed={speed} />
+        <Starfield className="h-full w-full opacity-75" starCount={500} speed={speed} />
       </div>
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_72%_42%,rgba(var(--hero-accent-rgb),0.3),transparent_30%),linear-gradient(rgba(248,248,255,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(248,248,255,0.055)_1px,transparent_1px)] bg-size-[auto,112px_112px,112px_112px]" />
 
@@ -248,7 +161,7 @@ const HeroSection = ({
           <span className="hero-reveal-line text-ghost inline bg-clip-text [animation-delay:120ms]">
             {title}&nbsp;&nbsp;
           </span>
-          <span data-end-word className={cn('hero-end-word relative inline-block', accent.text)}>
+          <span data-end-word className={cn('hero-end-word text-aerospace relative inline-block')}>
             <AnimatedEndWord
               word={currentWord}
               className="text-aerospace inline"
@@ -268,8 +181,7 @@ const HeroSection = ({
             href={ctaHref}
             className={cn(
               buttonVariants({ variant: 'aerospace', size: 'lg' }),
-              'focus-visible:ring-ghost focus-visible:ring-offset-void gap-3 shadow-2xl transition-[opacity,transform,box-shadow] duration-300 hover:scale-105 hover:opacity-100 focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-[0.98]',
-              accent.cta
+              'focus-visible:ring-ghost focus-visible:ring-offset-void shadow-aerospace/35 hover:shadow-aerospace/55 gap-3 shadow-2xl transition-[opacity,transform,box-shadow] duration-300 hover:scale-105 hover:opacity-100 focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-[0.98]'
             )}
             aria-label={ctaText}>
             {ctaText}

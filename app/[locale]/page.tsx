@@ -17,9 +17,6 @@ export default function Home() {
         subtitle={t('hero.subtitle')}
         ctaText={t('hero.cta')}
         ctaHref="/journey"
-        accentColor="aerospace"
-        starfieldDensity="high"
-        parallaxIntensity={0.5}
         className="-m-4 mb-4"
       />
       <section className="relative z-10 m-auto mt-4 flex max-w-7xl flex-col items-center">
