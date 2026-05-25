@@ -6,6 +6,13 @@ import { cn } from '@/design-system/lib/utils';
 
 import { type ParallaxMode, usePlanetAnimation } from './usePlanetAnimation';
 
+const BODY_INSET_RATIO = 0.1;
+const ORBIT_PRIMARY_RATIO = 1.25;
+const ORBIT_SECONDARY_RATIO = 1.5;
+const ORBIT_DECORATIVE_RATIO = 1.125;
+const MOON_SIZE_RATIO = 0.025;
+const GLOW_INSET_RATIO = 0.0625;
+
 interface PlanetCssProperties extends CSSProperties {
   '--planet-reveal-scale': string;
   '--planet-scroll-y': string;
@@ -46,11 +53,11 @@ const Planet = ({
     reducedMotion,
   });
 
-  const bodyInset = Math.round(size * 0.1);
-  const orbit1Size = Math.round(size * 1.25);
-  const orbit2Size = Math.round(size * 1.5);
-  const orbit3Size = Math.round(size * 1.125);
-  const moonSize = Math.round(size * 0.025);
+  const bodyInset = Math.round(size * BODY_INSET_RATIO);
+  const orbit1Size = Math.round(size * ORBIT_PRIMARY_RATIO);
+  const orbit2Size = Math.round(size * ORBIT_SECONDARY_RATIO);
+  const orbit3Size = Math.round(size * ORBIT_DECORATIVE_RATIO);
+  const moonSize = Math.round(size * MOON_SIZE_RATIO);
 
   const transform = useHeroParallax
     ? `translate(
@@ -80,7 +87,7 @@ const Planet = ({
       aria-hidden="true">
       <div
         className="animate-planet-glow planet-glow absolute rounded-full blur-2xl"
-        style={{ inset: -Math.round(size * 0.0625) }}
+        style={{ inset: -Math.round(size * GLOW_INSET_RATIO) }}
       />
 
       <div

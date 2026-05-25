@@ -4,6 +4,18 @@ import { useEffect, useRef } from 'react';
 
 export type ParallaxMode = 'pointer' | 'gyro' | 'auto';
 
+const GYRO_GAMMA_SENSITIVITY = 0.4;
+const GYRO_BETA_OFFSET = 30;
+const GYRO_BETA_SENSITIVITY = 0.3;
+const GYRO_LERP_FACTOR = 0.08;
+const PLANET_ROTATION_INCREMENT = 0.003;
+const PLANET_ROTATION_MULTIPLIER = 12;
+const FALLBACK_DELAY_MS = 1500;
+const FALLBACK_TIME_INCREMENT = 0.008;
+const FALLBACK_X_AMPLITUDE = 8;
+const FALLBACK_Y_AMPLITUDE = 5;
+const FALLBACK_Y_FREQUENCY = 0.7;
+
 export interface UsePlanetAnimationOptions {
   /** Parallax source. */
   parallaxMode?: ParallaxMode;
@@ -23,8 +35,6 @@ export const usePlanetAnimation = ({
 }: UsePlanetAnimationOptions = {}) => {
   const planetRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const isMobile =
-    parallaxMode === 'gyro' || (parallaxMode === 'auto' && typeof window !== 'undefined' && 'ontouchstart' in window);
 
   useEffect(() => {
     if (reducedMotion) return;
@@ -36,8 +46,8 @@ export const usePlanetAnimation = ({
     let time = 0;
 
     const tick = () => {
-      time += 0.003;
-      element.style.transform = `rotate(${time * 12}deg)`;
+      time += PLANET_ROTATION_INCREMENT;
+      element.style.transform = `rotate(${time * PLANET_ROTATION_MULTIPLIER}deg)`;
       frame = requestAnimationFrame(tick);
     };
 
@@ -77,7 +87,8 @@ export const usePlanetAnimation = ({
   }, [reducedMotion]);
 
   useEffect(() => {
-    if (!isMobile || reducedMotion) return;
+    const shouldUseGyro = parallaxMode === 'gyro' || (parallaxMode === 'auto' && 'ontouchstart' in window);
+    if (!shouldUseGyro || reducedMotion) return;
 
     const element = wrapperRef.current;
     if (!element) return;
@@ -89,8 +100,8 @@ export const usePlanetAnimation = ({
     const target = { x: 0, y: 0 };
 
     const commit = () => {
-      currentX += (target.x - currentX) * 0.08;
-      currentY += (target.y - currentY) * 0.08;
+      currentX += (target.x - currentX) * GYRO_LERP_FACTOR;
+      currentY += (target.y - currentY) * GYRO_LERP_FACTOR;
       element.style.setProperty('--planet-tilt-x', `${currentX}px`);
       element.style.setProperty('--planet-tilt-y', `${currentY}px`);
       frame = requestAnimationFrame(commit);
@@ -101,33 +112,36 @@ export const usePlanetAnimation = ({
     let hasGyro = false;
     const handleOrientation = (event: DeviceOrientationEvent) => {
       hasGyro = true;
-      target.x = Math.max(-gyroAmplitude, Math.min(gyroAmplitude, (event.gamma ?? 0) * 0.4));
-      target.y = Math.max(-gyroAmplitude, Math.min(gyroAmplitude, ((event.beta ?? 0) - 30) * 0.3));
+      target.x = Math.max(-gyroAmplitude, Math.min(gyroAmplitude, (event.gamma ?? 0) * GYRO_GAMMA_SENSITIVITY));
+      target.y = Math.max(
+        -gyroAmplitude,
+        Math.min(gyroAmplitude, ((event.beta ?? 0) - GYRO_BETA_OFFSET) * GYRO_BETA_SENSITIVITY)
+      );
     };
 
     window.addEventListener('deviceorientation', handleOrientation);
 
-    const fallbackTimer = window.setTimeout(() => {
+    const fallbackTimerId = window.setTimeout(() => {
       if (hasGyro) return;
 
       let time = 0;
       const floatLoop = () => {
-        time += 0.008;
-        target.x = Math.sin(time) * 8;
-        target.y = Math.cos(time * 0.7) * 5;
+        time += FALLBACK_TIME_INCREMENT;
+        target.x = Math.sin(time) * FALLBACK_X_AMPLITUDE;
+        target.y = Math.cos(time * FALLBACK_Y_FREQUENCY) * FALLBACK_Y_AMPLITUDE;
         fallbackFrame = requestAnimationFrame(floatLoop);
       };
 
       fallbackFrame = requestAnimationFrame(floatLoop);
-    }, 1500);
+    }, FALLBACK_DELAY_MS);
 
     return () => {
       cancelAnimationFrame(frame);
       if (fallbackFrame !== null) cancelAnimationFrame(fallbackFrame);
-      window.clearTimeout(fallbackTimer);
+      window.clearTimeout(fallbackTimerId);
       window.removeEventListener('deviceorientation', handleOrientation);
     };
-  }, [gyroAmplitude, isMobile, reducedMotion]);
+  }, [gyroAmplitude, parallaxMode, reducedMotion]);
 
   useEffect(() => {
     if (reducedMotion || scrollFactor === 0) return;
