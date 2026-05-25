@@ -13,6 +13,26 @@ const RefLessPlanet = () => {
 
 describe('Planet', () => {
   let frameCallbacks: Map<number, FrameRequestCallback>;
+  let nextFrame: number;
+
+  const setupAnimationFrameMock = (startFrame = 1) => {
+    nextFrame = startFrame;
+    frameCallbacks = new Map();
+    vi.stubGlobal(
+      'requestAnimationFrame',
+      vi.fn((callback: FrameRequestCallback) => {
+        const frame = nextFrame++;
+        frameCallbacks.set(frame, callback);
+        return frame;
+      })
+    );
+  };
+
+  const getRotationAngle = (element: HTMLElement) => {
+    const match = /rotate\(([\d.]+)deg\)/.exec(element.style.transform);
+
+    return Number.parseFloat(match?.[1] ?? '0');
+  };
 
   const runAnimationFrames = (count: number) => {
     for (let index = 0; index < count; index++) {
@@ -26,16 +46,7 @@ describe('Planet', () => {
   };
 
   beforeEach(() => {
-    frameCallbacks = new Map();
-    let nextFrame = 1;
-    vi.stubGlobal(
-      'requestAnimationFrame',
-      vi.fn((callback: FrameRequestCallback) => {
-        const frame = nextFrame++;
-        frameCallbacks.set(frame, callback);
-        return frame;
-      })
-    );
+    setupAnimationFrameMock();
     vi.stubGlobal('cancelAnimationFrame', vi.fn());
   });
 
@@ -66,11 +77,19 @@ describe('Planet', () => {
     expect(wrapper.style.opacity).toBe('0');
     expect(wrapper.style.getPropertyValue('--planet-reveal-scale')).toBe('0.72');
 
+    runAnimationFrames(1);
+    const firstAngle = getRotationAngle(body);
     runAnimationFrames(2);
+    const secondAngle = getRotationAngle(body);
 
     expect(body.style.transform).toContain('rotate(');
+    expect(secondAngle).toBeGreaterThan(firstAngle);
     expect(wrapper.style.opacity).toBe('1');
     expect(wrapper.style.getPropertyValue('--planet-reveal-scale')).toBe('1');
+
+    runAnimationFrames(2100);
+
+    expect(getRotationAngle(body)).toBeLessThan(1);
 
     fireEvent.transitionEnd(wrapper);
 
@@ -131,15 +150,7 @@ describe('Planet', () => {
 
   it('should handle empty orientation values and skip fallback after gyro input', () => {
     vi.useFakeTimers();
-    let nextFrame = 200;
-    vi.stubGlobal(
-      'requestAnimationFrame',
-      vi.fn((callback: FrameRequestCallback) => {
-        const frame = nextFrame++;
-        frameCallbacks.set(frame, callback);
-        return frame;
-      })
-    );
+    setupAnimationFrameMock(200);
     const { container } = render(<Planet size={240} parallaxMode="gyro" />);
     const wrapper = container.firstElementChild as HTMLElement;
     const event = new Event('deviceorientation') as DeviceOrientationEvent;
@@ -162,15 +173,7 @@ describe('Planet', () => {
 
   it('should use auto-float fallback when gyroscope is unavailable', () => {
     vi.useFakeTimers();
-    let nextFrame = 100;
-    vi.stubGlobal(
-      'requestAnimationFrame',
-      vi.fn((callback: FrameRequestCallback) => {
-        const frame = nextFrame++;
-        frameCallbacks.set(frame, callback);
-        return frame;
-      })
-    );
+    setupAnimationFrameMock(100);
     const { container } = render(<Planet size={240} parallaxMode="gyro" />);
     const wrapper = container.firstElementChild as HTMLElement;
 

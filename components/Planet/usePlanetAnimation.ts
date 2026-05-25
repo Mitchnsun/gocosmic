@@ -145,7 +145,7 @@ export const usePlanetAnimation = ({
       window.clearTimeout(fallbackTimerId);
       window.removeEventListener('deviceorientation', handleOrientation);
     };
-  }, [gyroAmplitude, parallaxMode, reducedMotion]);
+  }, [gyroAmplitude, parallaxMode, reducedMotion, scrollFactor]);
 
   useEffect(() => {
     if (reducedMotion || scrollFactor === 0) return;
