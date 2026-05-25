@@ -1,10 +1,46 @@
+import { WrenchScrewdriverIcon } from '@heroicons/react/24/solid';
 import { act } from '@testing-library/react';
 
 import { Header } from '@/components/Header';
 
 import { render } from '../test-utils';
 
+let mockPathname = '/en';
+vi.mock('@/i18n/navigation', () => ({
+  useRouter: () => ({
+    push: vi.fn(),
+    replace: vi.fn(),
+    prefetch: vi.fn(),
+    back: vi.fn(),
+    forward: vi.fn(),
+    refresh: vi.fn(),
+  }),
+  usePathname: () => mockPathname,
+  Link: ({
+    children,
+    href,
+    ...props
+  }: {
+    children: React.ReactNode;
+    href: string | { pathname: string; hash?: string };
+    [key: string]: unknown;
+  }) => {
+    const resolvedHref = typeof href === 'string' ? href : `${href.pathname}${href.hash ? `#${href.hash}` : ''}`;
+    return (
+      <a href={resolvedHref} {...props}>
+        {children}
+      </a>
+    );
+  },
+  redirect: vi.fn(),
+  getPathname: vi.fn(() => '/en'),
+}));
+
 describe('Header Component', () => {
+  beforeEach(() => {
+    mockPathname = '/en';
+  });
+
   it('should render the header correctly', () => {
     const { getByRole } = render(<Header />);
 
@@ -113,5 +149,36 @@ describe('Header Component', () => {
     const { getByRole } = render(<Header logoOrbitalEnabled={false} />);
     const heading = getByRole('heading', { level: 1 });
     expect(heading.querySelector('[aria-hidden="true"]')).toBeNull();
+  });
+
+  it('marks a nav item active when isActive is explicitly true', () => {
+    const { getByRole } = render(
+      <Header
+        navItems={[
+          {
+            label: 'Services',
+            href: '/services',
+            ariaLabel: 'Services',
+            icon: WrenchScrewdriverIcon,
+            isActive: true,
+          },
+        ]}
+      />
+    );
+    const link = getByRole('link', { name: 'Services' });
+    expect(link).toHaveAttribute('aria-current', 'page');
+    expect(link).toHaveClass('opacity-100');
+  });
+
+  it('marks a nav item active when pathname equals the href', () => {
+    mockPathname = '/services';
+    const { getByRole } = render(<Header />);
+    expect(getByRole('link', { name: /our cosmic services/i })).toHaveAttribute('aria-current', 'page');
+  });
+
+  it('marks a nav item active when pathname starts with the href', () => {
+    mockPathname = '/services/sub-page';
+    const { getByRole } = render(<Header />);
+    expect(getByRole('link', { name: /our cosmic services/i })).toHaveAttribute('aria-current', 'page');
   });
 });

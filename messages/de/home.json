@@ -8,8 +8,9 @@
     },
     "hero": {
       "cta": "Beginnen Sie Ihre Reise",
+      "endWords": ["glänzen", "aufsteigen", "inspirieren", "transformieren", "erheben"],
       "subtitle": "Lassen Sie uns Ihre Ideen in die Stratosphäre starten mit mystischem Design und kosmischer Funktionalität",
-      "title": "Wir entwickeln stellare Anwendungen, die glänzen"
+      "title": "Wir entwickeln stellare Anwendungen, die"
     },
     "services": {
       "ai": {

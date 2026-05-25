@@ -17,7 +17,7 @@ describe('StatusBar', () => {
 
   it('renders the signal acquired label', () => {
     const { getByText } = render(<StatusBar />);
-    expect(getByText('SIGNAL ACQUIRED')).toBeInTheDocument();
+    expect(getByText('SIGNAL STABLE')).toBeInTheDocument();
   });
 
   it('renders the mission control and location text', () => {

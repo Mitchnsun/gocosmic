@@ -37,7 +37,7 @@
     "cta_contact": "Demander un devis"
   },
   "status_bar": {
-    "signal_acquired": "SIGNAL ACQUIS",
+    "signal_stable": "SIGNAL STABLE",
     "mission_control": "CENTRE DE CONTRÔLE",
     "location": "ANNECY · ALT. 447M",
     "aria_label": "Statut du centre de contrôle",
