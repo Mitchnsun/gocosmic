@@ -1,5 +1,5 @@
 import { act, renderHook } from '@testing-library/react';
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { vi } from 'vitest';
 
 import { useWordCycler } from '@/components/HeroSection/HeroSection.hooks';
 

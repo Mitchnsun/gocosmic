@@ -37,7 +37,7 @@
     "cta_contact": "Request a quote"
   },
   "status_bar": {
-    "signal_acquired": "SIGNAL ACQUIRED",
+    "signal_stable": "SIGNAL STABLE",
     "mission_control": "MISSION CONTROL",
     "location": "ANNECY · ALT. 447M",
     "aria_label": "Mission control status",

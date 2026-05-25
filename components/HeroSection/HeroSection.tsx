@@ -220,7 +220,7 @@ const HeroSection = ({
       id={id}
       style={style}
       className={cn(
-        'group bg-void text-ghost relative isolate min-h-[calc(100vh-var(--header-height))] overflow-hidden px-4',
+        'group bg-void text-ghost relative isolate overflow-hidden px-4',
         variant === 'compact' ? 'py-8 sm:py-12 lg:py-14' : 'py-10 sm:py-12 lg:py-16',
         className
       )}
@@ -243,15 +243,15 @@ const HeroSection = ({
           transform: 'translate3d(0, var(--hero-scroll-offset), 0)',
         }}>
         <h1
-          className="font-display text-[clamp(2.5rem,9vw,5rem)] leading-[0.9] font-bold tracking-[-0.08em] text-balance"
+          className="font-display text-[clamp(2.5rem,9vw,5rem)] leading-none font-bold tracking-[-0.08em] text-balance"
           aria-label={`${title} ${currentWord}`}>
-          <span className="hero-reveal-line from-ghost via-ghost to-ghost/55 inline bg-gradient-to-r bg-clip-text text-transparent [animation-delay:120ms]">
-            {title}
-          </span>{' '}
+          <span className="hero-reveal-line text-ghost inline bg-clip-text [animation-delay:120ms]">
+            {title}&nbsp;&nbsp;
+          </span>
           <span data-end-word className={cn('hero-end-word relative inline-block', accent.text)}>
             <AnimatedEndWord
               word={currentWord}
-              className="from-aerospace via-royal to-ghost inline bg-gradient-to-r bg-clip-text"
+              className="text-aerospace inline"
               prefersReducedMotion={prefersReducedMotion}
             />
           </span>

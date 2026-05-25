@@ -1,5 +1,5 @@
 import { act } from '@testing-library/react';
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { vi } from 'vitest';
 
 import AnimatedEndWord from '@/components/HeroSection/AnimatedEndWord';
 

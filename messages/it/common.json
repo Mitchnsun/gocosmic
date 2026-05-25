@@ -37,7 +37,7 @@
     "cta_contact": "Richiedi un preventivo"
   },
   "status_bar": {
-    "signal_acquired": "SEGNALE ACQUISITO",
+    "signal_stable": "SEGNALE STABILE",
     "mission_control": "CONTROLLO MISSIONE",
     "location": "ANNECY · ALT. 447M",
     "aria_label": "Stato del controllo missione",
