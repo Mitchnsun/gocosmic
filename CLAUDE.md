@@ -98,6 +98,13 @@ Before opening a PR:
 1. Bump `version` in `package.json` (semver: patch/minor/major)
 2. Add a `CHANGELOG.md` entry under `## [X.Y.Z] - YYYY-MM-DD`
 
+### Changelog style
+
+Keep entries **brief and user-facing** — describe the observable change, not the implementation. Avoid listing file paths, component names, or hook names. Aim for 1–3 bullets per section (`Added`, `Changed`, `Fixed`), each a single sentence.
+
+Good: `Animated word cycling in the homepage hero with reduced-motion support`
+Avoid: `Added AnimatedEndWord sub-component in components/Hero/ with useWordCycler hook`
+
 ## Documentation language
 
 All documentation must be written in **English**: README files, code comments, JSDoc, inline documentation, and any Markdown files added to the repository. This applies to AI-generated content as well.

@@ -5,7 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [1.6.2] - 2026-05-25
+## [1.6.3] - 2026-05-25
+
+### Added
+
+- Animated word cycling in the homepage hero headline, with per-locale word lists and reduced-motion support
+- Bilingual documentation policy and terminology glossary establishing English as the single source of truth for all repository docs
+
+### Changed
+
+- Refactored the hero section into a composed architecture with dedicated sub-components and hooks
+- Status bar label localized across all 5 locales
+
+## [1.6.2] - 2026-05-23
 
 ### Added
 
