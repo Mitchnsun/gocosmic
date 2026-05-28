@@ -38,7 +38,7 @@ This is a single Next.js 16 app (App Router) with full internationalization via 
 
 - `app/[locale]/` — All routes are under the dynamic `[locale]` segment. Pages export metadata and use server components by default.
 - `components/` — App-specific components: `Header`, `Footer`, `LanguageSwitcher`, `Loader`, `JsonLd`, `Journey`, icons.
-- `design-system/` — Reusable UI primitives: `button.tsx` + `button.variants.ts` using CVA. Components use `@radix-ui/react-slot` for polymorphism.
+- `design-system/` — Reusable UI primitives: `button.tsx` + `button.variants.ts` using CVA. Components use `@radix-ui/react-slot` for polymorphism. `lib/utils.ts` exports `cn` (clsx + tailwind-merge) — **always use `cn` for conditional Tailwind classes**, never string interpolation.
 - `views/` — View-layer components for complex pages (e.g., Journey 3D canvas).
 - `messages/<locale>/` — Translation files split by namespace: `common`, `navigation`, `footer`, `home`, `about`, `services`, `offers`, `journey`, `projects`, `contact`, `local`, `psc-supersprint`.
 - `i18n/routing.ts` — Defines supported locales (`en`, `fr`, `es`, `de`, `it`) and all translated pathnames.

@@ -9,8 +9,33 @@
     "hero": {
       "cta": "Beginnen Sie Ihre Reise",
       "endWords": ["glänzen", "aufsteigen", "inspirieren", "transformieren", "erheben"],
-      "subtitle": "Lassen Sie uns Ihre Ideen in die Stratosphäre starten mit mystischem Design und kosmischer Funktionalität",
+      "subtitle": "Lassen Sie uns Ihre Ideen in die Stratosphäre starten mit mystischem Design und kosmischen Funktionalitäten",
       "title": "Wir entwickeln stellare Anwendungen, die"
+    },
+    "process": {
+      "eyebrow": "[ PROZESS ]",
+      "title": "Vier Phasen. <em>Kein Drama.</em>",
+      "subtitle": "Von der Idee zur Realität in 4 Phasen",
+      "discovery": {
+        "label": "T-45",
+        "title": "Entdeckung",
+        "description": "Audit, Ziele, Einschränkungen. Wir kartieren das Gebiet, bevor wir die Karte zeichnen."
+      },
+      "design": {
+        "label": "T-30",
+        "title": "Design",
+        "description": "Wireframes, Prototypen, High-Fidelity. Schnelle Iterationen bis zum \"Ja\"."
+      },
+      "build": {
+        "label": "T-15",
+        "title": "Entwicklung",
+        "description": "TypeScript, Tests, Code-Reviews. Wir behandeln Code wie Infrastruktur."
+      },
+      "launch": {
+        "label": "T-0",
+        "title": "Launch",
+        "description": "In der Umlaufbahn. Monitoring, Performance, Analytics und Support nach dem Launch."
+      }
     },
     "services": {
       "ai": {

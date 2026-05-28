@@ -107,6 +107,18 @@ footer a {
   }
 }
 
+@keyframes dot-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 79, 0, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(255, 79, 0, 0);
+    transform: scale(1.1);
+  }
+}
+
 @layer utilities {
   @keyframes planet-glow-pulse {
     0%,
@@ -129,6 +141,16 @@ footer a {
   @keyframes planet-orbit-reverse {
     to {
       transform: translate(-50%, -50%) rotateX(72deg) rotateZ(-360deg);
+    }
+  }
+
+  .timeline-dot {
+    animation: dot-glow 2s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .timeline-dot {
+      animation: none;
     }
   }
 

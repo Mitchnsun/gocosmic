@@ -9,8 +9,33 @@
     "hero": {
       "cta": "Start your journey",
       "endWords": ["shine", "soar", "inspire", "transform", "elevate"],
-      "subtitle": "Let us launch your ideas into the stratosphere with mystical design and cosmic functionality",
+      "subtitle": "Let us launch your ideas into the stratosphere with mystical design and cosmic functionalities",
       "title": "We build stellar applications that"
+    },
+    "process": {
+      "eyebrow": "[ PROCESS ]",
+      "title": "Four phases. <em>No drama.</em>",
+      "subtitle": "From idea to reality in 4 phases",
+      "discovery": {
+        "label": "T-45",
+        "title": "Discover",
+        "description": "Audit, goals, constraints. We map the territory before drawing the map."
+      },
+      "design": {
+        "label": "T-30",
+        "title": "Design",
+        "description": "Wireframes, prototypes, high-fidelity. Fast iterations until \"yes\"."
+      },
+      "build": {
+        "label": "T-15",
+        "title": "Build",
+        "description": "TypeScript, tests, code reviews. We treat code like infrastructure."
+      },
+      "launch": {
+        "label": "T-0",
+        "title": "Launch",
+        "description": "In orbit. Monitoring, performance, analytics, and post-launch support."
+      }
     },
     "services": {
       "ai": {

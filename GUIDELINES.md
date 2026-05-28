@@ -42,7 +42,7 @@ Active plugins and their roles:
 
 - Use CVA (`class-variance-authority`) for variant-based components (see `design-system/button.variants.ts`)
 - Use `@radix-ui/react-slot` for polymorphic element composition
-- Use `clsx` + `tailwind-merge` for conditional class merging
+- Use `cn` from `@/design-system/lib/utils` for all conditional class merging — **never** use template literals or string concatenation for conditional Tailwind classes; `cn` wraps `clsx` + `tailwind-merge` and is the single authoritative helper
 
 ## Documentation Language
 

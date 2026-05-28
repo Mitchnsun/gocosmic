@@ -13,6 +13,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Consent-gated Vercel Analytics banner with accept, refuse, customize, and manage flows
 - RGPD/GDPR privacy notices near email contact CTAs and pricing/offers mailto actions
 - Animated hero planet with rotating surface bands, orbital moons, and pointer/gyroscope parallax
+- New `ProcessTimeline` component (`components/ProcessTimeline/`) — animated horizontal timeline section visualizing the 4-phase development process (T-30 Discovery → T-20 Design → T-10 Build → T-0 Launch)
+- `TimelineStep.tsx` — individual step card with dot glow animation, label, title, description, and optional feature list; supports `aerospace`, `royal`, `jungle`, and `default` color variants
+- `TimelineSVG.tsx` — SVG path with stroke-dashoffset draw animation for vertical layout
+- Three responsive layouts: `horizontal` (desktop grid, default), `vertical` (stacked with SVG path), and `compact` (mobile-friendly list)
+- Scroll-triggered reveal animations via IntersectionObserver with stagger delay; respects `prefers-reduced-motion`
+- `dot-glow` CSS keyframe animation in `app/globals.css` for pulsing milestone dots
+- Full i18n support: `process.*` translation keys added to all 5 locale `home.json` files (EN, FR, ES, DE, IT)
+- `ProcessTimeline` integrated on the homepage (`app/[locale]/page.tsx`) between the hero section and services section
+- 37 unit tests covering rendering, layouts, color variants, accessibility, reduced motion, and feature lists (>94% branch coverage)
+- `IntersectionObserver` and `window.matchMedia` global mocks added to `__tests__/test-setup.tsx`
 
 ### Changed
 

@@ -2,12 +2,21 @@ import { CodeBracketIcon, PuzzlePieceIcon, RocketLaunchIcon, SparklesIcon } from
 import { useTranslations } from 'next-intl';
 
 import HeroSection from '@/components/HeroSection';
+import { ProcessTimeline } from '@/components/ProcessTimeline';
+import { homepageSteps } from '@/components/ProcessTimeline/constants';
 import { buttonVariants } from '@/design-system/button.variants';
 import { cn } from '@/design-system/lib/utils';
 import { Link } from '@/i18n/navigation';
 
 export default function Home() {
   const t = useTranslations('homepage');
+
+  const processSteps = homepageSteps.map((step) => ({
+    ...step,
+    label: t(`process.${step.id}.label`),
+    title: t(`process.${step.id}.title`),
+    description: t(`process.${step.id}.description`),
+  }));
 
   return (
     <div className="text-ghost bg-void relative p-4">
@@ -19,6 +28,19 @@ export default function Home() {
         ctaHref="/journey"
         className="-m-4 mb-4"
       />
+
+      <div className="relative z-10 m-auto max-w-7xl">
+        <ProcessTimeline
+          id="process"
+          eyebrow={t('process.eyebrow')}
+          title={t.rich('process.title', { em: (chunks) => <em>{chunks}</em> })}
+          subtitle={t('process.subtitle')}
+          steps={processSteps}
+          layout="horizontal"
+          pathDuration={2000}
+          staggerDelay={200}
+        />
+      </div>
       <section className="relative z-10 m-auto mt-4 flex max-w-7xl flex-col items-center">
         <h3 id="services" className="text-center text-2xl font-bold sm:text-3xl">
           {t('services.title')}
