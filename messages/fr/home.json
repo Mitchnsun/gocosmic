@@ -9,7 +9,7 @@
     "hero": {
       "cta": "Commencez votre voyage",
       "endWords": ["rayonnent", "s'envolent", "inspirent", "transforment", "élèvent"],
-      "subtitle": "Laissez-nous propulser vos idées dans la stratosphère avec un design mystique et une fonctionnalité cosmique",
+      "subtitle": "Laissez-nous propulser vos idées dans la stratosphère avec un design mystique et des fonctionnalités cosmiques",
       "title": "Nous créons des applications stellaires qui"
     },
     "process": {
@@ -17,24 +17,24 @@
       "title": "Quatre phases. <em>Sans drama.</em>",
       "subtitle": "De l'idée à la réalité en 4 phases",
       "discovery": {
-        "label": "T-30",
+        "label": "T-45",
         "title": "Découverte",
         "description": "Audit, objectifs, contraintes. Nous cartographions le territoire avant de dessiner la carte."
       },
       "design": {
-        "label": "T-20",
+        "label": "T-30",
         "title": "Design",
         "description": "Maquettes, prototypes, haute-fidélité. Des itérations rapides jusqu'au « oui »."
       },
       "build": {
-        "label": "T-10",
+        "label": "T-15",
         "title": "Développement",
         "description": "TypeScript, tests, revues de code. Nous traitons le code comme une infrastructure."
       },
       "launch": {
         "label": "T-0",
         "title": "Lancement",
-        "description": "Mise à feu. Surveillance, performances, statistiques et accompagnement après lancement."
+        "description": "Mise en orbite. Surveillance, performances, statistiques et accompagnement après lancement."
       }
     },
     "services": {

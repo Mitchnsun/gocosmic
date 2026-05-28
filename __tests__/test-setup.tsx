@@ -74,12 +74,16 @@ global.ResizeObserver = class ResizeObserver {
 // Mock IntersectionObserver for scroll-based components
 global.IntersectionObserver = class MockIntersectionObserver {
   private callback: IntersectionObserverCallback;
-  readonly root: Element | null = null;
+  readonly root: Element | Document | null = null;
   readonly rootMargin: string = '';
   readonly thresholds: ReadonlyArray<number> = [];
 
-  constructor(callback: IntersectionObserverCallback) {
+  constructor(callback: IntersectionObserverCallback, options?: IntersectionObserverInit) {
     this.callback = callback;
+    this.root = options?.root ?? null;
+    this.rootMargin = options?.rootMargin ?? '';
+    this.thresholds =
+      options?.threshold == null ? [] : Array.isArray(options.threshold) ? options.threshold : [options.threshold];
   }
 
   observe(target: Element) {

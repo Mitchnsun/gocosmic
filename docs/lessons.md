@@ -117,6 +117,30 @@ it('renders correctly', async () => {
 });
 ```
 
+## CSS / TailwindCSS 4 — Conditional Classes
+
+### Always use `cn` for conditional Tailwind class application
+
+**Mistake**: Applying Tailwind classes conditionally with template literals or ternary string concatenation (e.g. `` `base-class ${condition ? 'foo' : ''}` ``) instead of the `cn` utility.
+
+**Root cause**: Inline string interpolation bypasses `tailwind-merge`, which means conflicting utilities (e.g. `bg-blue-500` vs `bg-red-500`) are not resolved correctly, and falsy values can leave trailing whitespace or empty strings in the class attribute. It also makes the intent harder to read.
+
+**Correct pattern**: Always import `cn` from `@/design-system/lib/utils` and pass conditional classes as additional arguments:
+
+```tsx
+import { cn } from '@/design-system/lib/utils';
+
+// ✅ correct
+<div className={cn('base-class other-class', condition && 'conditional-class')} />
+
+// ❌ wrong — bypasses tailwind-merge, fragile string building
+<div className={`base-class other-class ${condition ? 'conditional-class' : ''}`} />
+```
+
+**This applies everywhere**: component files, view files, design-system primitives. There are no exceptions — even single conditional classes must go through `cn`.
+
+---
+
 ## Documentation
 
 ### Keep policy docs aligned with actual repository entry points and package metadata

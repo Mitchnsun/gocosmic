@@ -149,11 +149,13 @@ export function TimelineStepItem({
       <div className="flex items-center gap-4 py-3" role="listitem">
         <div
           data-testid={`dot-${step.id}`}
-          className={`h-2.5 w-2.5 shrink-0 rounded-full ${dotColor}`}
+          className={cn('h-2.5 w-2.5 shrink-0 rounded-full', dotColor)}
           aria-hidden="true"
         />
         <div>
-          <span className={`font-mono text-xs font-medium tracking-widest uppercase ${labelColor}`}>{step.label}</span>
+          <span className={cn('font-mono text-xs font-medium tracking-widest uppercase', labelColor)}>
+            {step.label}
+          </span>
           <p className="text-ghost text-sm font-semibold">{step.title}</p>
         </div>
       </div>

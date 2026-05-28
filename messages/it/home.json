@@ -9,7 +9,7 @@
     "hero": {
       "cta": "Inizia il tuo viaggio",
       "endWords": ["brillano", "svettano", "ispirano", "trasformano", "eccellono"],
-      "subtitle": "Lascia che lanciamo le tue idee nella stratosfera con design mistico e funzionalità cosmica",
+      "subtitle": "Lascia che lanciamo le tue idee nella stratosfera con design mistico e funzionalità cosmiche",
       "title": "Costruiamo applicazioni stellari che"
     },
     "process": {
@@ -17,24 +17,24 @@
       "title": "Quattro fasi. <em>Nessun dramma.</em>",
       "subtitle": "Dall'idea alla realtà in 4 fasi",
       "discovery": {
-        "label": "T-30",
+        "label": "T-45",
         "title": "Scoperta",
         "description": "Audit, obiettivi, vincoli. Mappiamo il territorio prima di disegnare la mappa."
       },
       "design": {
-        "label": "T-20",
+        "label": "T-30",
         "title": "Design",
         "description": "Wireframe, prototipi, alta fedeltà. Iterazioni rapide fino al «sì»."
       },
       "build": {
-        "label": "T-10",
+        "label": "T-15",
         "title": "Sviluppo",
         "description": "TypeScript, test, revisioni del codice. Trattiamo il codice come infrastruttura."
       },
       "launch": {
         "label": "T-0",
         "title": "Lancio",
-        "description": "Ignizione. Monitoraggio, performance, analytics e supporto post-lancio."
+        "description": "In orbita. Monitoraggio, performance, analytics e supporto post-lancio."
       }
     },
     "services": {
