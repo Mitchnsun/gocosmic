@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Localized privacy policy and legal notice pages across EN, FR, ES, DE, and IT, including footer access and canonical URLs
 - Consent-gated Vercel Analytics banner with accept, refuse, customize, and manage flows
 - RGPD/GDPR privacy notices near email contact CTAs and pricing/offers mailto actions
+- Animated hero planet with rotating surface bands, orbital moons, and pointer/gyroscope parallax
 
 ### Changed
 
