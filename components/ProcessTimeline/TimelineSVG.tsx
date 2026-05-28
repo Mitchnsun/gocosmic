@@ -14,7 +14,14 @@ export function TimelineSVG({ steps, duration, reducedMotion }: TimelineSVGProps
 
   useEffect(() => {
     const line = lineRef.current;
-    if (!line || reducedMotion) return;
+    if (!line) return;
+
+    if (reducedMotion) {
+      line.style.strokeDasharray = '';
+      line.style.strokeDashoffset = '';
+      line.style.transition = '';
+      return;
+    }
 
     line.style.strokeDasharray = String(totalHeight);
     line.style.strokeDashoffset = String(totalHeight);
@@ -33,7 +40,7 @@ export function TimelineSVG({ steps, duration, reducedMotion }: TimelineSVGProps
       height={totalHeight}
       viewBox={`0 0 2 ${totalHeight}`}
       aria-hidden="true"
-      className="text-muted absolute top-0 left-1/2 -translate-x-1/2 overflow-visible text-slate-600">
+      className="absolute top-0 left-1/2 -translate-x-1/2 overflow-visible text-slate-600">
       <line
         ref={lineRef}
         x1="1"

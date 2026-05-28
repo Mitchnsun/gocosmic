@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from 'react';
 
+import { cn } from '@/design-system/lib/utils';
+
 import type { TimelineStep } from './ProcessTimeline.types';
 
 const colorMap: Record<NonNullable<TimelineStep['color']>, string> = {
@@ -54,11 +56,12 @@ export function TimelineStepItem({
       return;
     }
 
+    let timer: ReturnType<typeof setTimeout>;
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            setTimeout(() => {
+            timer = setTimeout(() => {
               el.style.opacity = '1';
               el.style.transform = layout === 'vertical' ? 'translateX(0)' : 'translateY(0)';
             }, delay);
@@ -70,18 +73,22 @@ export function TimelineStepItem({
     );
 
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      clearTimeout(timer);
+      observer.disconnect();
+    };
   }, [delay, reducedMotion, layout]);
 
   useEffect(() => {
     const line = lineRef.current;
     if (!line || reducedMotion) return;
 
+    let timer: ReturnType<typeof setTimeout>;
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            setTimeout(() => {
+            timer = setTimeout(() => {
               line.style.transform = 'scaleX(1)';
             }, delay);
             observer.unobserve(line);
@@ -92,7 +99,10 @@ export function TimelineStepItem({
     );
 
     observer.observe(line);
-    return () => observer.disconnect();
+    return () => {
+      clearTimeout(timer);
+      observer.disconnect();
+    };
   }, [delay, reducedMotion]);
 
   if (layout === 'vertical') {
@@ -102,7 +112,7 @@ export function TimelineStepItem({
         <div className="relative z-10 flex shrink-0 flex-col items-center">
           <div
             data-testid={`dot-${step.id}`}
-            className={`h-3 w-3 rounded-full border-2 border-slate-700 ${dotColor} timeline-dot`}
+            className={cn('h-3 w-3 rounded-full border-2 border-slate-700', dotColor, !reducedMotion && 'timeline-dot')}
             aria-hidden="true"
             style={{ animationDelay: `${delay}ms` }}
           />
@@ -159,7 +169,7 @@ export function TimelineStepItem({
       <div className="mt-2 flex items-center gap-0">
         <div
           data-testid={`dot-${step.id}`}
-          className={`timeline-dot z-10 h-3 w-3 shrink-0 rounded-full ${dotColor}`}
+          className={cn('z-10 h-3 w-3 shrink-0 rounded-full', dotColor, !reducedMotion && 'timeline-dot')}
           aria-hidden="true"
           style={{ animationDelay: `${delay}ms` }}
         />

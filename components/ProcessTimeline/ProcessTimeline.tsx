@@ -15,7 +15,6 @@ export function ProcessTimeline({
   steps,
   layout = 'horizontal',
   staggerDelay = 200,
-  animationDuration = 1000,
   pathDuration = 2000,
   respectReducedMotion = true,
   showDescription = true,
@@ -65,8 +64,7 @@ export function ProcessTimeline({
           <ol
             aria-labelledby={title ? `${id ?? 'process-timeline'}-heading` : undefined}
             aria-label={title ? undefined : 'Process timeline'}
-            className="relative pl-8"
-            style={{ animationDuration: `${animationDuration}ms` }}>
+            className="relative pl-8">
             {steps.map((step, index) => (
               <TimelineStepItem
                 key={step.id}

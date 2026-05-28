@@ -74,14 +74,16 @@ global.ResizeObserver = class ResizeObserver {
 // Mock IntersectionObserver for scroll-based components
 global.IntersectionObserver = class MockIntersectionObserver {
   private callback: IntersectionObserverCallback;
+  readonly root: Element | null = null;
+  readonly rootMargin: string = '';
+  readonly thresholds: ReadonlyArray<number> = [];
 
   constructor(callback: IntersectionObserverCallback) {
     this.callback = callback;
   }
 
   observe(target: Element) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    this.callback([{ isIntersecting: true, target } as IntersectionObserverEntry], null as any);
+    this.callback([{ isIntersecting: true, target } as IntersectionObserverEntry], this);
   }
 
   unobserve() {
@@ -90,6 +92,10 @@ global.IntersectionObserver = class MockIntersectionObserver {
 
   disconnect() {
     // Mock implementation
+  }
+
+  takeRecords(): IntersectionObserverEntry[] {
+    return [];
   }
 } as unknown as typeof IntersectionObserver;
 

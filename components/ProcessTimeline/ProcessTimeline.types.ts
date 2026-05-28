@@ -7,7 +7,6 @@ export interface TimelineStep {
   description?: string;
   features?: string[];
   color?: 'aerospace' | 'royal' | 'jungle' | 'default';
-  accent?: boolean;
 }
 
 export interface ProcessTimelineProps {
@@ -18,16 +17,13 @@ export interface ProcessTimelineProps {
 
   // Layout
   layout?: 'vertical' | 'horizontal' | 'compact';
-  direction?: 'top-to-bottom' | 'bottom-to-top' | 'left-to-right';
 
   // Animation
   staggerDelay?: number;
-  animationDuration?: number;
   pathDuration?: number;
   respectReducedMotion?: boolean;
 
   // Behavior
-  stickyLabels?: boolean;
   showDescription?: boolean;
 
   // Styling

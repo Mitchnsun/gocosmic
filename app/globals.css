@@ -148,6 +148,12 @@ footer a {
     animation: dot-glow 2s ease-in-out infinite;
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    .timeline-dot {
+      animation: none;
+    }
+  }
+
   .animate-fade-in-up {
     animation: fadeSlideIn 0.5s ease-out forwards;
   }
