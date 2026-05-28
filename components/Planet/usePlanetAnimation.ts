@@ -9,9 +9,7 @@ const GYRO_BETA_OFFSET = 30;
 const GYRO_BETA_SENSITIVITY = 0.3;
 const GYRO_LERP_FACTOR = 0.08;
 const GYRO_SNAP_EPSILON = 0.01;
-const PLANET_ROTATION_INCREMENT = 0.003;
-const PLANET_ROTATION_MULTIPLIER = 12;
-const ROTATION_TIME_RESET = Math.PI * 2;
+const PLANET_ROTATION_DEG_PER_FRAME = 0.036;
 const FALLBACK_DELAY_MS = 1500;
 const FALLBACK_TIME_INCREMENT = 0.008;
 const FALLBACK_X_AMPLITUDE = 8;
@@ -45,11 +43,11 @@ export const usePlanetAnimation = ({
     if (!element) return;
 
     let frame: number;
-    let time = 0;
+    let angle = 0;
 
     const tick = () => {
-      time = (time + PLANET_ROTATION_INCREMENT) % ROTATION_TIME_RESET;
-      element.style.transform = `rotate(${time * PLANET_ROTATION_MULTIPLIER}deg)`;
+      angle = (angle + PLANET_ROTATION_DEG_PER_FRAME) % 360;
+      element.style.transform = `rotate(${angle}deg)`;
       frame = requestAnimationFrame(tick);
     };
 
@@ -64,8 +62,6 @@ export const usePlanetAnimation = ({
     const element = wrapperRef.current;
     if (!element) return;
 
-    element.style.opacity = '0';
-    element.style.setProperty('--planet-reveal-scale', '0.72');
     element.style.transition =
       'opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1)';
 
@@ -145,7 +141,7 @@ export const usePlanetAnimation = ({
       window.clearTimeout(fallbackTimerId);
       window.removeEventListener('deviceorientation', handleOrientation);
     };
-  }, [gyroAmplitude, parallaxMode, reducedMotion, scrollFactor]);
+  }, [gyroAmplitude, parallaxMode, reducedMotion]);
 
   useEffect(() => {
     if (reducedMotion || scrollFactor === 0) return;

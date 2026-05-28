@@ -92,14 +92,15 @@ const Planet = ({
       wrapperStyle: {
         width: size,
         height: size,
-        '--planet-reveal-scale': '1',
+        '--planet-reveal-scale': reducedMotion ? '1' : '0.72',
         '--planet-scroll-y': '0px',
         '--planet-tilt-x': '0px',
         '--planet-tilt-y': '0px',
+        opacity: reducedMotion ? undefined : 0,
         transform,
       } satisfies PlanetCssProperties,
     };
-  }, [size, useHeroParallax]);
+  }, [size, useHeroParallax, reducedMotion]);
 
   return (
     <div
@@ -113,9 +114,9 @@ const Planet = ({
         ref={planetRef}
         className="planet-body-surface absolute overflow-hidden rounded-full will-change-transform"
         style={{ inset: bodyInset }}>
-        <div className="planet-band-warm absolute top-[25%] -right-[10%] -left-[10%] h-[14%] rounded-[50%] opacity-35" />
-        <div className="planet-band-shadow absolute top-1/2 -right-[10%] -left-[10%] h-[8%] rounded-[50%] opacity-80" />
-        <div className="planet-band-royal absolute top-[70%] -right-[10%] -left-[10%] h-[10%] rounded-[50%] opacity-35" />
+        <div className="planet-band-warm absolute top-[25%] right-[-10%] left-[-10%] h-[14%] rounded-[50%] opacity-35" />
+        <div className="planet-band-shadow absolute top-1/2 right-[-10%] left-[-10%] h-[8%] rounded-[50%] opacity-80" />
+        <div className="planet-band-royal absolute top-[70%] right-[-10%] left-[-10%] h-[10%] rounded-[50%] opacity-35" />
 
         <div className="planet-surface-spot absolute top-[30%] left-[20%] h-[30%] w-[40%] rounded-full opacity-35" />
         <div className="planet-surface-spot absolute top-[55%] left-[55%] h-[20%] w-[25%] rounded-full opacity-50" />
@@ -125,7 +126,7 @@ const Planet = ({
         className="animate-orbit planet-orbit-plane absolute rounded-full border border-white/10"
         style={{ width: orbit1Size, height: orbit1Size }}>
         <span
-          className="bg-aerospace absolute -top-[6px] left-1/2 -translate-x-1/2 rounded-full"
+          className="bg-aerospace absolute -top-1.5 left-1/2 -translate-x-1/2 rounded-full"
           style={moonStyleAerospace}
         />
       </div>
@@ -133,10 +134,7 @@ const Planet = ({
       <div
         className="animate-orbit-slow planet-orbit-plane absolute rounded-full border border-white/10"
         style={{ width: orbit2Size, height: orbit2Size }}>
-        <span
-          className="bg-jungle absolute -top-[6px] left-1/2 -translate-x-1/2 rounded-full"
-          style={moonStyleJungle}
-        />
+        <span className="bg-jungle absolute -top-1.5 left-1/2 -translate-x-1/2 rounded-full" style={moonStyleJungle} />
       </div>
 
       <div

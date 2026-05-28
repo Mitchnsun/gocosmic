@@ -89,7 +89,8 @@ describe('Planet', () => {
 
     runAnimationFrames(2100);
 
-    expect(getRotationAngle(body)).toBeLessThan(1);
+    expect(getRotationAngle(body)).toBeGreaterThanOrEqual(0);
+    expect(getRotationAngle(body)).toBeLessThan(360);
 
     fireEvent.transitionEnd(wrapper);
 
