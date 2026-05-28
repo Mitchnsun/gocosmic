@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 
 import HeroSection from '@/components/HeroSection';
 import { ProcessTimeline } from '@/components/ProcessTimeline';
+import { homepageSteps } from '@/components/ProcessTimeline/constants';
 import { buttonVariants } from '@/design-system/button.variants';
 import { cn } from '@/design-system/lib/utils';
 import { Link } from '@/i18n/navigation';
@@ -10,36 +11,12 @@ import { Link } from '@/i18n/navigation';
 export default function Home() {
   const t = useTranslations('homepage');
 
-  const processSteps = [
-    {
-      id: 'discovery',
-      label: t('process.discovery.label'),
-      title: t('process.discovery.title'),
-      description: t('process.discovery.description'),
-      color: 'aerospace' as const,
-    },
-    {
-      id: 'design',
-      label: t('process.design.label'),
-      title: t('process.design.title'),
-      description: t('process.design.description'),
-      color: 'aerospace' as const,
-    },
-    {
-      id: 'build',
-      label: t('process.build.label'),
-      title: t('process.build.title'),
-      description: t('process.build.description'),
-      color: 'aerospace' as const,
-    },
-    {
-      id: 'launch',
-      label: t('process.launch.label'),
-      title: t('process.launch.title'),
-      description: t('process.launch.description'),
-      color: 'aerospace' as const,
-    },
-  ];
+  const processSteps = homepageSteps.map((step) => ({
+    ...step,
+    label: t(`process.${step.id}.label`),
+    title: t(`process.${step.id}.title`),
+    description: t(`process.${step.id}.description`),
+  }));
 
   return (
     <div className="text-ghost bg-void relative p-4">
