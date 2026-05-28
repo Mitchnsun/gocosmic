@@ -53,6 +53,7 @@
     "customize": "Anpassen",
     "save": "Auswahl speichern",
     "privacyLink": "Datenschutzerklärung lesen",
-    "manage": "Datenschutzeinstellungen"
+    "manage": "Datenschutzeinstellungen",
+    "close": "Schließen"
   }
 }

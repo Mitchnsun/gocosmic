@@ -7,8 +7,8 @@
       },
       "eyebrow": "GDPR",
       "title": "Privacy policy",
-      "updated": "Last updated: 23 May 2026",
-      "intro": "This page explains how Go Cosmic handles personal data on this website and when you contact the studio by email. It is informational and should be validated legally before publication.",
+      "updated": "Last updated: 26 May 2026",
+      "intro": "This page explains how Go Cosmic handles personal data on this website and when you contact the studio by email.",
       "legalNoticePrefix": "For publisher and hosting details, see the",
       "legalNoticeLink": "legal notice",
       "sections": [
@@ -47,7 +47,8 @@
         {
           "title": "International transfers",
           "body": [
-            "Some processors, including Vercel or email providers, may involve processing outside the European Economic Area. Go Cosmic should verify and document the applicable contractual safeguards before publication."
+            "Some processors, including Vercel and email providers, may involve processing outside the European Economic Area.",
+            "Vercel frames these transfers using Standard Contractual Clauses approved by the European Commission. For questions about the applicable safeguards, contact support@gocosmic.dev."
           ]
         },
         {
@@ -59,7 +60,8 @@
         {
           "title": "Cookies and audience measurement",
           "body": [
-            "No advertising cookies are intentionally loaded by Go Cosmic. Vercel Analytics is treated as a non-essential audience measurement tool on this site and is not loaded before your consent."
+            "No advertising cookies are intentionally loaded by Go Cosmic. Vercel Analytics is treated as a non-essential audience measurement tool on this site and is loaded only after your consent.",
+            "You can modify or withdraw your consent at any time using the preference management button displayed at the bottom of every page."
           ]
         }
       ]
@@ -71,13 +73,13 @@
       },
       "eyebrow": "Legal information",
       "title": "Legal notice",
-      "updated": "Last updated: 23 May 2026",
+      "updated": "Last updated: 26 May 2026",
       "intro": "This legal notice identifies the website publisher and the main responsibilities linked to using www.gocosmic.dev.",
       "sections": [
         {
           "title": "Publisher",
           "body": [
-            "Website: www.gocosmic.dev. Publisher: Go Cosmic, represented by Matthieu Compérat. Contact: support@gocosmic.dev. Business registration details should be completed when applicable before publication."
+            "Website: www.gocosmic.dev. Publisher: Matthieu Compérat, trading as Go Cosmic — sole trader (Entreprise individuelle) registered since 17 October 2016. SIRET: 823 200 365 00026. Registered address: 485 route de la champanaise, 74410 Duingt, France. Contact: support@gocosmic.dev."
           ]
         },
         {
@@ -87,7 +89,7 @@
         {
           "title": "Hosting",
           "body": [
-            "The website is hosted by Vercel Inc. The exact contractual hosting entity and address should be confirmed from the active Vercel account before publication."
+            "The website is hosted by Vercel Inc., San Francisco, California, United States. Legal information available at https://vercel.com/legal."
           ]
         },
         {

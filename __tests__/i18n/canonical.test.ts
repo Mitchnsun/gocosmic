@@ -54,18 +54,18 @@ describe('getCanonicalUrl', () => {
       expect(getCanonicalUrl('fr', '/offers')).toBe(`${SITE_URL}/fr/nos-offres`);
     });
 
-    describe('legal pages (localized pathnames)', () => {
-      it('resolves French privacy pathname', () => {
-        expect(getCanonicalUrl('fr', '/privacy')).toBe(`${SITE_URL}/fr/confidentialite`);
-      });
-
-      it('resolves German legal notice pathname', () => {
-        expect(getCanonicalUrl('de', '/legal-notice')).toBe(`${SITE_URL}/de/impressum`);
-      });
-    });
-
     it('resolves German localized pathname /unsere-angebote', () => {
       expect(getCanonicalUrl('de', '/offers')).toBe(`${SITE_URL}/de/unsere-angebote`);
+    });
+  });
+
+  describe('legal pages (localized pathnames)', () => {
+    it('resolves French privacy pathname', () => {
+      expect(getCanonicalUrl('fr', '/privacy')).toBe(`${SITE_URL}/fr/confidentialite`);
+    });
+
+    it('resolves German legal notice pathname', () => {
+      expect(getCanonicalUrl('de', '/legal-notice')).toBe(`${SITE_URL}/de/impressum`);
     });
   });
 

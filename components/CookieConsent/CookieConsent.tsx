@@ -2,62 +2,64 @@
 
 import { Analytics } from '@vercel/analytics/next';
 import { useTranslations } from 'next-intl';
-import { useEffect, useState } from 'react';
 
 import { Link } from '@/i18n/navigation';
 
-const STORAGE_KEY = 'gocosmic.analytics-consent';
-
-type ConsentChoice = 'accepted' | 'refused';
+import { useCookieConsent } from './CookieConsentContext';
 
 export function CookieConsent() {
   const t = useTranslations('cookieConsent');
-  const [choice, setChoice] = useState<ConsentChoice | null>(null);
-  const [isReady, setIsReady] = useState(false);
-  const [isCustomizing, setIsCustomizing] = useState(false);
-  const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
-
-  useEffect(() => {
-    const storedChoice = window.localStorage.getItem(STORAGE_KEY) as ConsentChoice | null;
-    if (storedChoice === 'accepted' || storedChoice === 'refused') {
-      setChoice(storedChoice);
-      setAnalyticsEnabled(storedChoice === 'accepted');
-    }
-    setIsReady(true);
-  }, []);
-
-  const saveChoice = (nextChoice: ConsentChoice) => {
-    window.localStorage.setItem(STORAGE_KEY, nextChoice);
-    setChoice(nextChoice);
-    setAnalyticsEnabled(nextChoice === 'accepted');
-  };
+  const {
+    isReady,
+    choice,
+    isCustomizing,
+    isDismissable,
+    analyticsEnabled,
+    closeManage,
+    saveChoice,
+    setIsCustomizing,
+    setAnalyticsEnabled,
+  } = useCookieConsent();
 
   if (!isReady) return null;
 
   return (
     <>
       {choice === 'accepted' && <Analytics />}
-      {choice !== null && (
-        <button
-          type="button"
-          className="fixed right-4 bottom-4 z-50 rounded-full border border-slate-700 bg-slate-950 px-4 py-2 text-xs font-semibold text-gray-200 shadow-lg transition hover:bg-slate-900 focus:ring-2 focus:ring-blue-300 focus:outline-none"
-          onClick={() => {
-            setIsCustomizing(true);
-            setChoice(null);
-          }}>
-          {t('manage')}
-        </button>
-      )}
       {choice === null && (
         <section
           className="fixed right-4 bottom-4 left-4 z-50 m-auto max-w-2xl rounded-lg border border-slate-700 bg-slate-950 p-5 text-gray-200 shadow-2xl md:left-auto"
           aria-labelledby="cookie-consent-title">
           <div className="space-y-4">
-            <div>
-              <h2 id="cookie-consent-title" className="text-lg font-bold text-white">
-                {t('title')}
-              </h2>
-              <p className="mt-2 text-sm text-gray-300">{t('description')}</p>
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <h2 id="cookie-consent-title" className="text-lg font-bold text-white">
+                  {t('title')}
+                </h2>
+                <p className="mt-2 text-sm text-gray-300">{t('description')}</p>
+              </div>
+              {isDismissable && (
+                <button
+                  type="button"
+                  aria-label={t('close')}
+                  className="shrink-0 rounded p-1 text-gray-500 transition hover:text-gray-200 focus:ring-2 focus:ring-blue-300 focus:outline-none"
+                  onClick={closeManage}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </button>
+              )}
             </div>
 
             {isCustomizing && (

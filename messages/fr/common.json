@@ -53,6 +53,7 @@
     "customize": "Personnaliser",
     "save": "Enregistrer mon choix",
     "privacyLink": "Lire la politique de confidentialité",
-    "manage": "Paramètres de confidentialité"
+    "manage": "Paramètres de confidentialité",
+    "close": "Fermer"
   }
 }

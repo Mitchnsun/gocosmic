@@ -1,3 +1,4 @@
+import { CookieConsentProvider } from '@/components/CookieConsent';
 import { Footer } from '@/components/Footer';
 
 import { render } from '../test-utils';
@@ -6,7 +7,11 @@ describe('Footer Component', () => {
   it('should render the footer correctly', () => {
     const year = new Date().getFullYear();
 
-    const { getByRole, getByText, getAllByRole } = render(<Footer />);
+    const { getByRole, getByText, getAllByRole } = render(
+      <CookieConsentProvider>
+        <Footer />
+      </CookieConsentProvider>
+    );
 
     expect(getByRole('contentinfo')).toBeInTheDocument();
 

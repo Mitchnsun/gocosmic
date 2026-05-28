@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 
+import { CookieManageButton } from '@/components/CookieConsent';
 import { Link } from '@/i18n/navigation';
 
 const ColumnHeading = ({ children }: { children: React.ReactNode }) => (
@@ -36,6 +37,7 @@ const Footer = () => {
             <Link className="text-gray-300 underline transition hover:text-white" href="/legal-notice">
               {t('legal_notice')}
             </Link>
+            <CookieManageButton />
           </div>
         </div>
 

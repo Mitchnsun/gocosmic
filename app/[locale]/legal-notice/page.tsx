@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
 import { getCanonicalUrl } from '@/i18n/canonical';
+import { renderWithLinks } from '@/lib/renderWithLinks';
 
 type LegalSection = {
   title: string;
@@ -40,8 +41,8 @@ export default async function LegalNoticePage() {
             <section key={section.title} className="rounded-lg bg-slate-800 px-6 py-6">
               <h2 className="mb-4 text-xl font-bold text-white">{section.title}</h2>
               <div className="space-y-3 text-gray-300">
-                {section.body.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+                {section.body.map((paragraph, index) => (
+                  <p key={`${section.title}-${index}`}>{renderWithLinks(paragraph)}</p>
                 ))}
               </div>
             </section>

@@ -7,8 +7,8 @@
       },
       "eyebrow": "GDPR",
       "title": "Informativa privacy",
-      "updated": "Ultimo aggiornamento: 23 maggio 2026",
-      "intro": "Questa pagina spiega come Go Cosmic tratta i dati personali su questo sito e quando contatti lo studio via email. Ha scopo informativo e deve essere validata legalmente prima della pubblicazione.",
+      "updated": "Ultimo aggiornamento: 26 maggio 2026",
+      "intro": "Questa pagina spiega come Go Cosmic tratta i dati personali su questo sito e quando contatti lo studio via email.",
       "legalNoticePrefix": "Per i dettagli su editore e hosting, consulta le",
       "legalNoticeLink": "note legali",
       "sections": [
@@ -47,7 +47,8 @@
         {
           "title": "Trasferimenti internazionali",
           "body": [
-            "Alcuni responsabili, inclusi Vercel o provider email, possono comportare trattamenti fuori dallo Spazio Economico Europeo. Go Cosmic deve verificare e documentare le garanzie contrattuali applicabili prima della pubblicazione."
+            "Alcuni responsabili, inclusi Vercel e provider email, possono comportare trattamenti fuori dallo Spazio Economico Europeo.",
+            "Vercel disciplina questi trasferimenti tramite clausole contrattuali standard approvate dalla Commissione europea. Per domande sulle garanzie applicabili, contatta support@gocosmic.dev."
           ]
         },
         {
@@ -59,7 +60,8 @@
         {
           "title": "Cookie e misurazione audience",
           "body": [
-            "Go Cosmic non carica intenzionalmente cookie pubblicitari. Vercel Analytics è trattato su questo sito come strumento di misurazione audience non essenziale e non viene caricato prima del tuo consenso."
+            "Go Cosmic non carica intenzionalmente cookie pubblicitari. Vercel Analytics è trattato su questo sito come strumento di misurazione audience non essenziale e viene caricato solo dopo il tuo consenso.",
+            "Puoi modificare o revocare il tuo consenso in qualsiasi momento tramite il pulsante di gestione delle preferenze in fondo a ogni pagina."
           ]
         }
       ]
@@ -71,25 +73,23 @@
       },
       "eyebrow": "Informazioni legali",
       "title": "Note legali",
-      "updated": "Ultimo aggiornamento: 23 maggio 2026",
+      "updated": "Ultimo aggiornamento: 26 maggio 2026",
       "intro": "Queste note legali identificano l’editore del sito e le principali responsabilità legate all’uso di www.gocosmic.dev.",
       "sections": [
         {
           "title": "Editore",
           "body": [
-            "Sito: www.gocosmic.dev. Editore: Go Cosmic, rappresentato da Matthieu Compérat. Contatto: support@gocosmic.dev. I dati di registrazione dell’attività devono essere completati, se applicabile, prima della pubblicazione."
+            "Sito: www.gocosmic.dev. Editore: Matthieu Compérat, che opera con il nome commerciale Go Cosmic — impresa individuale (Entreprise individuelle) registrata dal 17 ottobre 2016. SIRET: 823 200 365 00026. Indirizzo registrato: 485 route de la champanaise, 74410 Duingt, Francia. Contatto: support@gocosmic.dev."
           ]
         },
         {
           "title": "Direttore della pubblicazione",
-          "body": [
-            "Direttore della pubblicazione: Matthieu Compérat."
-          ]
+          "body": ["Direttore della pubblicazione: Matthieu Compérat."]
         },
         {
           "title": "Hosting",
           "body": [
-            "Il sito è ospitato da Vercel Inc. L’entità contrattuale e l’indirizzo esatti devono essere confermati dall’account Vercel attivo prima della pubblicazione."
+            "Il sito è ospitato da Vercel Inc., San Francisco, California, Stati Uniti. Informazioni legali disponibili su https://vercel.com/legal."
           ]
         },
         {
@@ -106,9 +106,7 @@
         },
         {
           "title": "Contatto",
-          "body": [
-            "Per domande legali, privacy o sicurezza, contatta support@gocosmic.dev."
-          ]
+          "body": ["Per domande legali, privacy o sicurezza, contatta support@gocosmic.dev."]
         }
       ]
     }
