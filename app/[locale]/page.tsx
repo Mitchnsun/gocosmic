@@ -52,11 +52,11 @@ export default function Home() {
         className="-m-4 mb-4"
       />
 
-      <div className="relative z-10">
+      <div className="relative z-10 m-auto max-w-7xl">
         <ProcessTimeline
           id="process"
           eyebrow={t('process.eyebrow')}
-          title={t('process.title')}
+          title={t.rich('process.title', { em: (chunks) => <em>{chunks}</em> })}
           subtitle={t('process.subtitle')}
           steps={processSteps}
           layout="horizontal"

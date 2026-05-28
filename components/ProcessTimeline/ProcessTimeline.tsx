@@ -50,9 +50,9 @@ export function ProcessTimeline({
           {title && (
             <h2
               id={`${id ?? 'process-timeline'}-heading`}
-              className="text-ghost text-4xl font-extrabold sm:text-5xl lg:text-6xl"
-              dangerouslySetInnerHTML={{ __html: title }}
-            />
+              className="text-ghost text-4xl font-extrabold sm:text-5xl lg:text-6xl">
+              {title}
+            </h2>
           )}
           {subtitle && <p className="mt-4 max-w-2xl text-lg text-slate-400">{subtitle}</p>}
         </div>
@@ -63,7 +63,8 @@ export function ProcessTimeline({
         <div className="relative max-w-7xl px-4 md:px-8">
           <TimelineSVG steps={steps.length} duration={pathDuration} reducedMotion={reducedMotion} />
           <ol
-            aria-label={title ?? 'Process timeline'}
+            aria-labelledby={title ? `${id ?? 'process-timeline'}-heading` : undefined}
+            aria-label={title ? undefined : 'Process timeline'}
             className="relative pl-8"
             style={{ animationDuration: `${animationDuration}ms` }}>
             {steps.map((step, index) => (
@@ -81,7 +82,9 @@ export function ProcessTimeline({
         </div>
       ) : layout === 'compact' ? (
         <div className="max-w-7xl px-4 md:px-8">
-          <ol aria-label={title ?? 'Process timeline'}>
+          <ol
+            aria-labelledby={title ? `${id ?? 'process-timeline'}-heading` : undefined}
+            aria-label={title ? undefined : 'Process timeline'}>
             {steps.map((step, index) => (
               <TimelineStepItem
                 key={step.id}
@@ -98,7 +101,10 @@ export function ProcessTimeline({
       ) : (
         /* horizontal layout */
         <div className="max-w-7xl px-4 md:px-8">
-          <ol aria-label={title ?? 'Process timeline'} className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <ol
+            aria-labelledby={title ? `${id ?? 'process-timeline'}-heading` : undefined}
+            aria-label={title ? undefined : 'Process timeline'}
+            className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((step, index) => (
               <TimelineStepItem
                 key={step.id}

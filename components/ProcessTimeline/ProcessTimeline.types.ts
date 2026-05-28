@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 export interface TimelineStep {
   id: string;
   label: string;
@@ -9,7 +11,7 @@ export interface TimelineStep {
 }
 
 export interface ProcessTimelineProps {
-  title?: string;
+  title?: ReactNode;
   subtitle?: string;
   eyebrow?: string;
   steps: TimelineStep[];
