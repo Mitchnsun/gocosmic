@@ -8,7 +8,13 @@
     },
     "hero": {
       "cta": "Beginnen Sie Ihre Reise",
-      "endWords": ["glänzen", "aufsteigen", "inspirieren", "transformieren", "erheben"],
+      "endWords": [
+        "glänzen",
+        "aufsteigen",
+        "inspirieren",
+        "transformieren",
+        "erheben"
+      ],
       "subtitle": "Lassen Sie uns Ihre Ideen in die Stratosphäre starten mit mystischem Design und kosmischen Funktionalitäten",
       "title": "Wir entwickeln stellare Anwendungen, die"
     },
@@ -40,21 +46,48 @@
     "services": {
       "ai": {
         "description": "Integration fortschrittlicher KI-Funktionen, um Ihre Anwendungen intelligenter, anpassungsfähiger und wirklich zukunftsweisend zu machen.",
-        "title": "KI-gesteuert"
+        "title": "KI-gesteuert",
+        "features": [
+          "LLMs",
+          "Embeddings",
+          "Agents",
+          "RAG"
+        ]
       },
       "design": {
         "description": "Gestaltung intuitiver und bezaubernder Benutzererfahrungen, die fesseln und begeistern.",
-        "title": "Mystisches UI/UX Design"
+        "title": "Mystisches UI/UX Design",
+        "features": [
+          "Figma",
+          "Design Systems",
+          "Motion",
+          "Barrierefreiheit"
+        ]
       },
       "development": {
         "description": "Entwicklung robuster und skalierbarer mobiler Anwendungen für iOS- und Android-Plattformen.",
-        "title": "Stellare Entwicklung"
+        "title": "Stellare Entwicklung",
+        "features": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Expo"
+        ]
       },
       "launch": {
         "description": "Begleitung Ihrer App durch den Startprozess und darüber hinaus, um einen erfolgreichen Start zu gewährleisten.",
-        "title": "Kosmischer Start"
+        "title": "Kosmischer Start",
+        "features": [
+          "Vercel",
+          "AWS",
+          "Docker",
+          "Sentry"
+        ]
       },
-      "title": "Unsere Kosmischen Dienstleistungen"
+      "title": "Unsere Kosmischen Dienstleistungen",
+      "eyebrow": "[ SERVICES · 04 ]",
+      "subtitle": "Vier Säulen, um Ihr Produkt in die Umlaufbahn zu bringen — entwerfen, bauen, ausliefern, wachsen.",
+      "learnMore": "Mehr erfahren"
     },
     "zone": {
       "title": "Einsatzgebiet",

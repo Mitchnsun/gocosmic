@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import HeroSection from '@/components/HeroSection';
 import { ProcessTimeline } from '@/components/ProcessTimeline';
 import { homepageSteps } from '@/components/ProcessTimeline/constants';
+import { ServicesGrid } from '@/components/ServicesGrid';
 import { buttonVariants } from '@/design-system/button.variants';
 import { cn } from '@/design-system/lib/utils';
 import { Link } from '@/i18n/navigation';
@@ -42,31 +43,52 @@ export default function Home() {
         />
       </div>
       <section className="relative z-10 m-auto mt-4 flex max-w-7xl flex-col items-center">
-        <h3 id="services" className="text-center text-2xl font-bold sm:text-3xl">
-          {t('services.title')}
-        </h3>
-        <div className="grid grid-cols-1 items-stretch justify-center gap-8 py-8 md:grid-cols-2 xl:grid-cols-4">
-          <div className="flex flex-col items-center justify-around rounded-lg bg-slate-800 px-2 py-4">
-            <CodeBracketIcon className="text-jungle h-6 w-6" aria-hidden="true" />
-            <h4 className="my-2 text-center text-xl font-semibold sm:text-2xl">{t('services.development.title')}</h4>
-            <p className="text-center font-light text-gray-400">{t('services.development.description')}</p>
-          </div>
-          <div className="flex flex-col items-center justify-around rounded-lg bg-slate-800 px-2 py-4">
-            <SparklesIcon className="text-royal h-6 w-6" aria-hidden="true" />
-            <h4 className="my-2 text-center text-xl font-semibold sm:text-2xl">{t('services.design.title')}</h4>
-            <p className="text-center font-light text-gray-400">{t('services.design.description')}</p>
-          </div>
-          <div className="flex flex-col items-center justify-around rounded-lg bg-slate-800 px-2 py-4">
-            <PuzzlePieceIcon className="h-6 w-6 text-yellow-400" aria-hidden="true" />
-            <h4 className="my-2 text-center text-xl font-semibold sm:text-2xl">{t('services.ai.title')}</h4>
-            <p className="text-center font-light text-gray-400">{t('services.ai.description')}</p>
-          </div>
-          <div className="flex flex-col items-center justify-around rounded-lg bg-slate-800 px-2 py-4">
-            <RocketLaunchIcon className="text-aerospace h-6 w-6" aria-hidden="true" />
-            <h4 className="my-2 text-center text-xl font-semibold sm:text-2xl">{t('services.launch.title')}</h4>
-            <p className="text-center font-light text-gray-400">{t('services.launch.description')}</p>
-          </div>
-        </div>
+        <ServicesGrid
+          id="services"
+          eyebrow={t('services.eyebrow')}
+          title={t('services.title')}
+          subtitle={t('services.subtitle')}
+          services={[
+            {
+              id: 'development',
+              title: t('services.development.title'),
+              description: t('services.development.description'),
+              icon: <CodeBracketIcon className="h-7 w-7" />,
+              color: 'aerospace',
+              features: t.raw('services.development.features') as string[],
+              link: { href: '/services#development', label: t('services.learnMore') },
+            },
+            {
+              id: 'design',
+              title: t('services.design.title'),
+              description: t('services.design.description'),
+              icon: <SparklesIcon className="h-7 w-7" />,
+              color: 'royal',
+              features: t.raw('services.design.features') as string[],
+              link: { href: '/services#design', label: t('services.learnMore') },
+            },
+            {
+              id: 'ai',
+              title: t('services.ai.title'),
+              description: t('services.ai.description'),
+              icon: <PuzzlePieceIcon className="h-7 w-7" />,
+              color: 'jungle',
+              features: t.raw('services.ai.features') as string[],
+              link: { href: '/services#ai', label: t('services.learnMore') },
+            },
+            {
+              id: 'launch',
+              title: t('services.launch.title'),
+              description: t('services.launch.description'),
+              icon: <RocketLaunchIcon className="h-7 w-7" />,
+              color: 'aerospace',
+              features: t.raw('services.launch.features') as string[],
+              link: { href: '/services#launch', label: t('services.learnMore') },
+            },
+          ]}
+          columns={4}
+          staggerDelay={100}
+        />
 
         <div className="flex w-full flex-col items-center gap-2 rounded-lg bg-slate-800 px-4 py-12">
           <h3 className="py-2 text-center text-xl font-bold sm:text-3xl">{t('cta.title')}</h3>
