@@ -76,6 +76,7 @@ global.IntersectionObserver = class MockIntersectionObserver {
   private callback: IntersectionObserverCallback;
   readonly root: Element | Document | null = null;
   readonly rootMargin: string = '';
+  readonly scrollMargin: string = '';
   readonly thresholds: ReadonlyArray<number> = [];
 
   constructor(callback: IntersectionObserverCallback, options?: IntersectionObserverInit) {

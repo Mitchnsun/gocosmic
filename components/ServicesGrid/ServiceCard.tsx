@@ -1,6 +1,7 @@
 'use client';
 
 import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
 import { cn } from '@/design-system/lib/utils';
@@ -13,6 +14,8 @@ const iconColorMap: Record<ServiceColor, string> = {
   aerospace: 'text-aerospace',
   royal: 'text-royal',
   jungle: 'text-jungle',
+  solar: 'text-yellow-400',
+  azure: 'text-blue-400',
   default: 'text-slate-300',
 };
 
@@ -20,6 +23,8 @@ const borderColorMap: Record<ServiceColor, string> = {
   aerospace: 'border-l-aerospace',
   royal: 'border-l-royal',
   jungle: 'border-l-jungle',
+  solar: 'border-l-yellow-400',
+  azure: 'border-l-blue-400',
   default: 'border-l-slate-500',
 };
 
@@ -27,6 +32,8 @@ const hoverBorderColorMap: Record<ServiceColor, string> = {
   aerospace: 'hover:border-aerospace focus-within:border-aerospace',
   royal: 'hover:border-royal focus-within:border-royal',
   jungle: 'hover:border-jungle focus-within:border-jungle',
+  solar: 'hover:border-yellow-400 focus-within:border-yellow-400',
+  azure: 'hover:border-blue-400 focus-within:border-blue-400',
   default: 'hover:border-slate-300 focus-within:border-slate-300',
 };
 
@@ -34,6 +41,8 @@ const glowShadowMap: Record<ServiceColor, string> = {
   aerospace: 'hover:shadow-[0_0_20px_rgba(255,79,0,0.3)]',
   royal: 'hover:shadow-[0_0_20px_rgba(120,81,169,0.3)]',
   jungle: 'hover:shadow-[0_0_20px_rgba(41,171,135,0.3)]',
+  solar: 'hover:shadow-[0_0_20px_rgba(250,204,21,0.3)]',
+  azure: 'hover:shadow-[0_0_20px_rgba(96,165,250,0.3)]',
   default: 'hover:shadow-[0_0_20px_rgba(148,163,184,0.25)]',
 };
 
@@ -41,6 +50,8 @@ const bulletColorMap: Record<ServiceColor, string> = {
   aerospace: 'bg-aerospace',
   royal: 'bg-royal',
   jungle: 'bg-jungle',
+  solar: 'bg-yellow-400',
+  azure: 'bg-blue-400',
   default: 'bg-slate-400',
 };
 
@@ -54,6 +65,7 @@ interface ServiceCardProps {
 
 export function ServiceCard({ service, index, staggerDelay, animationDuration, reducedMotion }: ServiceCardProps) {
   const cardRef = useRef<HTMLLIElement>(null);
+  const hasIntersected = useRef(false);
   const [visible, setVisible] = useState(false);
   const color = service.color ?? 'default';
   // eslint-disable-next-line security/detect-object-injection
@@ -71,7 +83,7 @@ export function ServiceCard({ service, index, staggerDelay, animationDuration, r
   useEffect(() => {
     const el = cardRef.current;
     if (!el) return;
-    if (reducedMotion) {
+    if (reducedMotion || hasIntersected.current) {
       setVisible(true);
       return;
     }
@@ -81,6 +93,7 @@ export function ServiceCard({ service, index, staggerDelay, animationDuration, r
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
+            hasIntersected.current = true;
             timer = setTimeout(() => setVisible(true), delay);
             observer.unobserve(el);
           }
@@ -107,8 +120,7 @@ export function ServiceCard({ service, index, staggerDelay, animationDuration, r
         hoverBorder,
         glow,
         'transition-all duration-300 ease-in-out',
-        'hover:scale-105 hover:bg-slate-700/80',
-        'focus-within:outline-aerospace focus-within:outline-2 focus-within:outline-offset-2'
+        'hover:scale-105 hover:bg-slate-700/80'
       )}
       style={{
         opacity: visible ? 1 : 0,
@@ -142,16 +154,17 @@ export function ServiceCard({ service, index, staggerDelay, animationDuration, r
       )}
 
       {service.link && (
-        <a
+        <Link
           href={service.link.href}
           className={cn(
             'mt-6 inline-flex w-fit items-center gap-1.5 text-sm font-medium underline-offset-4 hover:underline focus:underline focus:outline-none',
+            'after:absolute after:inset-0',
             iconColor
           )}
           aria-label={`${service.link.label} — ${service.title}`}>
           {service.link.label}
           <ArrowUpRightIcon className="h-4 w-4" aria-hidden="true" />
-        </a>
+        </Link>
       )}
     </li>
   );

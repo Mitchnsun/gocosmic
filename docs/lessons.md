@@ -141,6 +141,60 @@ import { cn } from '@/design-system/lib/utils';
 
 ---
 
+## Next.js Navigation
+
+### Use `<Link>` for all internal navigation — plain `<a href>` triggers bfcache and breaks animations on back navigation
+
+**Mistake**: Using a plain `<a href="/internal-path">` for internal navigation inside a client component (e.g. a card with a stretched-link pattern).
+
+**Root cause**: A native `<a>` tag causes a full-page (hard) navigation. When the user presses the browser back button after a hard navigation, the browser restores the previous page from the **Back-Forward Cache (bfcache)**: the JavaScript is frozen in its pre-navigation state, React effects do not re-run, and all IntersectionObserver-based animations (planet, timeline, service cards, etc.) remain invisible because `setVisible(true)` is never called.
+
+This does **not** affect links created with Next.js `<Link>` because those trigger client-side navigation; the back button returns through the Next.js router, effects re-run, and animations work normally.
+
+**Correct pattern**: Every internal link — including those inside design-system or generic components — must use `<Link>` from `next/link` (or `@/i18n/navigation` when i18n-aware routing is needed):
+
+```tsx
+// ✅ client-side navigation — bfcache not involved, animations survive back navigation
+import Link from 'next/link';
+<Link href="/services#development">En savoir plus</Link>
+
+// ❌ hard navigation — bfcache freezes the page on back, all animations break
+<a href="/services#development">En savoir plus</a>
+```
+
+**Audit rule**: When reviewing a component that renders links, grep for `<a href` and verify every internal path (starting with `/`) is converted to `<Link>`. `mailto:`, `tel:`, and external `http` links are the only legitimate uses of a raw `<a>` tag.
+
+**Companion fix — React StrictMode + IntersectionObserver**: In dev mode, StrictMode double-invokes effects (setup → cleanup → setup). If the IntersectionObserver fires and sets a `setTimeout` in the first setup, the cleanup cancels the timer before it fires. Guard against this with a `useRef` that tracks whether the element has already intersected within the current mount:
+
+```tsx
+const hasIntersected = useRef(false);
+
+useEffect(() => {
+  if (reducedMotion || hasIntersected.current) {
+    setVisible(true);
+    return;
+  }
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          hasIntersected.current = true;
+          setTimeout(() => setVisible(true), delay);
+          observer.unobserve(entry.target);
+        }
+      }
+    },
+    { threshold: 0.1 }
+  );
+  observer.observe(el);
+  return () => observer.disconnect();
+}, [delay, reducedMotion]);
+```
+
+The `useRef` persists across StrictMode's simulated unmount/remount but resets on a real unmount, so the animation re-plays correctly on full page reload.
+
+---
+
 ## Documentation
 
 ### Keep policy docs aligned with actual repository entry points and package metadata

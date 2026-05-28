@@ -61,17 +61,17 @@ export default function Services() {
         </div>
 
         {/* Stellar Development Section */}
-        <section className="w-full" aria-labelledby="stellar-development-heading">
+        <section id="development" className="w-full scroll-mt-24" aria-labelledby="stellar-development-heading">
           <div className="relative rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
             <div className="mb-6 flex items-center gap-4">
-              <CodeBracketIcon className="h-8 w-8 shrink-0 text-green-400" aria-hidden="true" />
+              <CodeBracketIcon className="text-jungle h-8 w-8 shrink-0" aria-hidden="true" />
               <h2 id="stellar-development-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
                 {t('stellar_development.title')}
               </h2>
             </div>
             <div className="space-y-6 text-gray-300">
               <div>
-                <h3 className="mb-2 text-lg font-semibold text-green-300 sm:text-xl">
+                <h3 className="text-jungle mb-2 text-lg font-semibold sm:text-xl">
                   {t('stellar_development.subtitle')}
                 </h3>
                 <p className="text-lg">{t('stellar_development.description')}</p>
@@ -105,19 +105,19 @@ export default function Services() {
                 <h4 className="mb-4 text-lg font-semibold text-white">{t('stellar_development.expertise.title')}:</h4>
                 <ul className="grid gap-3 md:grid-cols-2">
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-400" aria-hidden="true"></span>
+                    <span className="bg-jungle mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
                     <span>{t('stellar_development.expertise.items.workflow')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-500" aria-hidden="true"></span>
+                    <span className="bg-jungle/90 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
                     <span>{t('stellar_development.expertise.items.scalability')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-600" aria-hidden="true"></span>
+                    <span className="bg-jungle/75 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
                     <span>{t('stellar_development.expertise.items.security')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-700" aria-hidden="true"></span>
+                    <span className="bg-jungle/60 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
                     <span>{t('stellar_development.expertise.items.apis')}</span>
                   </li>
                 </ul>
@@ -127,19 +127,19 @@ export default function Services() {
                 <h4 className="mb-4 text-lg font-semibold text-white">{t('stellar_development.features.title')}:</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-400" aria-hidden="true"></span>
+                    <span className="bg-jungle/90 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
                     <span>{t('stellar_development.features.items.quality')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-500" aria-hidden="true"></span>
+                    <span className="bg-jungle/75 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
                     <span>{t('stellar_development.features.items.performance')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-600" aria-hidden="true"></span>
+                    <span className="bg-jungle/60 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
                     <span>{t('stellar_development.features.items.maintainability')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-700" aria-hidden="true"></span>
+                    <span className="bg-jungle/45 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
                     <span>{t('stellar_development.features.items.reliability')}</span>
                   </li>
                 </ul>
@@ -149,19 +149,17 @@ export default function Services() {
         </section>
 
         {/* Mystical Design Section */}
-        <section className="w-full" aria-labelledby="mystical-design-heading">
+        <section id="design" className="w-full scroll-mt-24" aria-labelledby="mystical-design-heading">
           <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
             <div className="mb-6 flex items-center gap-4">
-              <SparklesIcon className="h-8 w-8 shrink-0 text-purple-400" aria-hidden="true" />
+              <SparklesIcon className="text-royal h-8 w-8 shrink-0" aria-hidden="true" />
               <h2 id="mystical-design-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
                 {t('mystical_design.title')}
               </h2>
             </div>
             <div className="space-y-6 text-gray-300">
               <div>
-                <h3 className="mb-2 text-lg font-semibold text-purple-300 sm:text-xl">
-                  {t('mystical_design.subtitle')}
-                </h3>
+                <h3 className="text-royal mb-2 text-lg font-semibold sm:text-xl">{t('mystical_design.subtitle')}</h3>
                 <p className="text-lg">{t('mystical_design.description')}</p>
               </div>
 
@@ -169,19 +167,19 @@ export default function Services() {
                 <h4 className="mb-4 text-lg font-semibold text-white">{t('mystical_design.approach.title')}:</h4>
                 <ul className="grid gap-3 md:grid-cols-2">
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-400" aria-hidden="true"></span>
+                    <span className="bg-royal mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
                     <span>{t('mystical_design.approach.items.systems')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-500" aria-hidden="true"></span>
+                    <span className="bg-royal/90 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
                     <span>{t('mystical_design.approach.items.accessibility')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-600" aria-hidden="true"></span>
+                    <span className="bg-royal/75 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
                     <span>{t('mystical_design.approach.items.responsive')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-700" aria-hidden="true"></span>
+                    <span className="bg-royal/60 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
                     <span>{t('mystical_design.approach.items.performance')}</span>
                   </li>
                 </ul>
@@ -191,19 +189,19 @@ export default function Services() {
                 <h4 className="mb-4 text-lg font-semibold text-white">{t('mystical_design.tools.title')}:</h4>
                 <ul className="grid gap-3 md:grid-cols-2">
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-pink-400" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-400" aria-hidden="true"></span>
                     <span>{t('mystical_design.tools.items.components')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-pink-500" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-500" aria-hidden="true"></span>
                     <span>{t('mystical_design.tools.items.styling')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-pink-600" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-600" aria-hidden="true"></span>
                     <span>{t('mystical_design.tools.items.testing')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-pink-700" aria-hidden="true"></span>
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-700" aria-hidden="true"></span>
                     <span>{t('mystical_design.tools.items.prototyping')}</span>
                   </li>
                 </ul>
@@ -213,19 +211,19 @@ export default function Services() {
                 <h4 className="mb-4 text-lg font-semibold text-white">{t('mystical_design.outcomes.title')}:</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-400" aria-hidden="true"></span>
+                    <span className="bg-royal mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
                     <span>{t('mystical_design.outcomes.items.engagement')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-500" aria-hidden="true"></span>
+                    <span className="bg-royal/90 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
                     <span>{t('mystical_design.outcomes.items.conversion')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-600" aria-hidden="true"></span>
+                    <span className="bg-royal/75 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
                     <span>{t('mystical_design.outcomes.items.brand')}</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-700" aria-hidden="true"></span>
+                    <span className="bg-royal/60 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
                     <span>{t('mystical_design.outcomes.items.satisfaction')}</span>
                   </li>
                 </ul>
@@ -235,7 +233,7 @@ export default function Services() {
         </section>
 
         {/* AI Powered Section */}
-        <section className="w-full" aria-labelledby="ai-powered-heading">
+        <section id="ai" className="w-full scroll-mt-24" aria-labelledby="ai-powered-heading">
           <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
             <div className="mb-6 flex items-center gap-4">
               <CpuChipIcon className="h-8 w-8 shrink-0 text-yellow-400" aria-hidden="true" />
@@ -319,7 +317,7 @@ export default function Services() {
         </section>
 
         {/* Cosmic Launch Section */}
-        <section className="w-full" aria-labelledby="cosmic-launch-heading">
+        <section id="launch" className="w-full scroll-mt-24" aria-labelledby="cosmic-launch-heading">
           <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
             <div className="mb-6 flex items-center gap-4">
               <RocketLaunchIcon className="h-8 w-8 shrink-0 text-blue-400" aria-hidden="true" />
