@@ -59,6 +59,16 @@ describe('getCanonicalUrl', () => {
     });
   });
 
+  describe('legal pages (localized pathnames)', () => {
+    it('resolves French privacy pathname', () => {
+      expect(getCanonicalUrl('fr', '/privacy')).toBe(`${SITE_URL}/fr/confidentialite`);
+    });
+
+    it('resolves German legal notice pathname', () => {
+      expect(getCanonicalUrl('de', '/legal-notice')).toBe(`${SITE_URL}/de/impressum`);
+    });
+  });
+
   describe('projects index (localized pathnames)', () => {
     it('resolves French localized pathname /projets', () => {
       expect(getCanonicalUrl('fr', '/projects')).toBe(`${SITE_URL}/fr/projets`);

@@ -13,8 +13,10 @@
     "offer_solo": "Solo Kosmischer Entwickler",
     "offer_team": "Komplettes Kosmisches Team",
     "offer_duo": "Entwickler + Designer Duo",
-    "legal": "Impressum und KI-Hinweise auf der Über-uns-Seite verfügbar.",
+    "legal": "Impressum, Datenschutzerklärung und KI-Hinweise sind online verfügbar.",
     "copyright": "© {year} Go Cosmic. Alle Systeme nominal.",
-    "local_page": "Web- und Mobile-Entwickler Annecy / Genf"
+    "local_page": "Web- und Mobile-Entwickler Annecy / Genf",
+    "privacy": "Datenschutzerklärung",
+    "legal_notice": "Impressum"
   }
 }

@@ -1,3 +1,4 @@
+import { CookieConsentProvider } from '@/components/CookieConsent';
 import { Footer } from '@/components/Footer';
 
 import { render } from '../test-utils';
@@ -6,7 +7,11 @@ describe('Footer Component', () => {
   it('should render the footer correctly', () => {
     const year = new Date().getFullYear();
 
-    const { getByRole, getByText, getAllByRole } = render(<Footer />);
+    const { getByRole, getByText, getAllByRole } = render(
+      <CookieConsentProvider>
+        <Footer />
+      </CookieConsentProvider>
+    );
 
     expect(getByRole('contentinfo')).toBeInTheDocument();
 
@@ -35,7 +40,11 @@ describe('Footer Component', () => {
 
     // Copyright
     expect(getByText(`© ${year} Go Cosmic. All systems nominal.`)).toBeInTheDocument();
-    expect(getByText('Legal notices and AI usage available on the About page.')).toBeInTheDocument();
+    expect(
+      getByText('Legal notice, privacy policy, and AI usage information are available online.')
+    ).toBeInTheDocument();
+    expect(getByRole('link', { name: 'Privacy policy' })).toHaveAttribute('href', '/privacy');
+    expect(getByRole('link', { name: 'Legal notice' })).toHaveAttribute('href', '/legal-notice');
     expect(getByRole('link', { name: /web & mobile developer annecy \/ geneva/i })).toHaveAttribute('href', '/local');
   });
 });

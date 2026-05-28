@@ -96,7 +96,9 @@
       "description": "Let's discuss which offer best suits your needs and how we can transform your vision into reality.",
       "button": "Let's talk about your project",
       "contact_info": "Contact us to discuss your project requirements",
-      "email_subject": "Contact request for project development"
+      "email_subject": "Contact request for project development",
+      "privacy_notice": "By sending an email, you agree that your message and contact details are processed to prepare a quote and follow up on your project.",
+      "privacy_link": "Privacy policy"
     }
   }
 }

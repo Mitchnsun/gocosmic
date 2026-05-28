@@ -96,7 +96,9 @@
       "description": "Hablemos de qué oferta se adapta mejor a tus necesidades y cómo podemos transformar tu visión en realidad.",
       "button": "Hablemos de tu proyecto",
       "contact_info": "Contáctanos para discutir los requisitos de tu proyecto",
-      "email_subject": "Solicitud de contacto para el desarrollo del proyecto"
+      "email_subject": "Solicitud de contacto para el desarrollo del proyecto",
+      "privacy_notice": "Al enviar un email, aceptas que tu mensaje y tus datos de contacto se traten para preparar un presupuesto y hacer seguimiento del proyecto.",
+      "privacy_link": "Política de privacidad"
     }
   }
 }

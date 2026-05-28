@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 
+import { CookieManageButton } from '@/components/CookieConsent';
 import { Link } from '@/i18n/navigation';
 
 const ColumnHeading = ({ children }: { children: React.ReactNode }) => (
@@ -29,6 +30,15 @@ const Footer = () => {
             {t('local_page')}
           </Link>
           <p className="text-xs text-gray-500">{t('legal')}</p>
+          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-xs">
+            <Link className="text-gray-300 underline transition hover:text-white" href="/privacy">
+              {t('privacy')}
+            </Link>
+            <Link className="text-gray-300 underline transition hover:text-white" href="/legal-notice">
+              {t('legal_notice')}
+            </Link>
+            <CookieManageButton />
+          </div>
         </div>
 
         {/* Column 2 — Studio navigation */}

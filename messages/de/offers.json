@@ -96,7 +96,9 @@
       "description": "Lassen Sie uns besprechen, welches Angebot am besten zu Ihren Bedürfnissen passt und wie wir Ihre Vision in die Realität umsetzen können.",
       "button": "Sprechen wir über Ihr Projekt",
       "contact_info": "Kontaktieren Sie uns, um Ihre Projektanforderungen zu besprechen",
-      "email_subject": "Kontaktanfrage für die Projektentwicklung"
+      "email_subject": "Kontaktanfrage für die Projektentwicklung",
+      "privacy_notice": "Mit dem Versand einer E-Mail erklärst du dich damit einverstanden, dass deine Nachricht und Kontaktdaten zur Angebotserstellung und Projektbetreuung verarbeitet werden.",
+      "privacy_link": "Datenschutzerklärung"
     }
   }
 }

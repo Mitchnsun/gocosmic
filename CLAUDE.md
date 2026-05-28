@@ -97,6 +97,7 @@ Before opening a PR:
 
 1. Bump `version` in `package.json` (semver: patch/minor/major)
 2. Add a `CHANGELOG.md` entry under `## [X.Y.Z] - YYYY-MM-DD`
+3. For every PR-bound change, including review follow-ups after the PR exists, keep the version bump and changelog entry updated before marking the work complete
 
 ### Changelog style
 

@@ -123,7 +123,9 @@
       "email": "prospect@gocosmic.dev",
       "cta": "Angebot anfordern",
       "subject": "Preisanfrage — Projektangebot",
-      "aria_label": "E-Mail an prospect@gocosmic.dev für ein Projektangebot senden"
+      "aria_label": "E-Mail an prospect@gocosmic.dev für ein Projektangebot senden",
+      "privacy_notice": "Mit dem Versand einer E-Mail erklärst du dich damit einverstanden, dass deine Nachricht und Kontaktdaten zur Angebotserstellung und Projektbetreuung verarbeitet werden.",
+      "privacy_link": "Datenschutzerklärung"
     },
     "reset": "Neu starten"
   }

@@ -75,6 +75,8 @@
         "cta": "Kontakt aufnehmen",
         "aria_label": "E-Mail an prospect@gocosmic.dev mit Betreff: Geschäftsanfrage senden"
       }
-    }
+    },
+    "privacyNotice": "Per E-Mail übermittelte personenbezogene Daten werden nur zur Beantwortung deiner Anfrage, zur Nachverfolgung und als Nachweis der Korrespondenz für die in der Datenschutzerklärung genannten Fristen verwendet.",
+    "privacyLink": "Datenschutzerklärung"
   }
 }

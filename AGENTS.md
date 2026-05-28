@@ -69,4 +69,5 @@ For documentation-only edits, at minimum ensure Markdown formatting is clean. If
 
 - Conventional commits are enforced. Use the format documented in `CLAUDE.md` and `GUIDELINES.md`.
 - Before opening a PR, bump `package.json` version and add a `CHANGELOG.md` entry under the new version heading.
+- If changes are made for an existing PR, including review feedback, update the `CHANGELOG.md` entry and package version as part of the same PR-bound work before completion.
 - Do not bump versions or edit the changelog for ordinary local work unless the user asks to prepare a PR or release.

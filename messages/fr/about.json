@@ -24,20 +24,22 @@
     "legal": {
       "ai": {
         "items": {
-          "compliance": "Les données des utilisateurs sont traitées conformément à la réglementation en vigueur (RGPD)",
+          "compliance": "Les pratiques liées aux données personnelles sont détaillées dans la politique de confidentialité plutôt que résumées par une mention générique ici.",
           "ethics": "Nous nous engageons à une utilisation éthique et transparente de l'intelligence artificielle",
           "integration": "Nos solutions peuvent intégrer des modèles d'IA pour des fonctionnalités avancées",
-          "privacy": "Aucune donnée sensible n'est partagée avec des tiers sans consentement explicite"
+          "privacy": "Les données sensibles ne doivent pas être partagées avec des tiers sans base légale documentée ou consentement explicite lorsque celui-ci est requis."
         },
         "title": "Utilisation de l'IA"
       },
       "contact": {
         "link": "nous contacter",
-        "text": "Pour toute question sur nos pratiques ou l'utilisation de l'IA dans nos solutions,",
-        "subject": "Questions sur nos pratiques et l’utilisation de l’IA",
-        "ariaLabel": "Envoyer un e-mail à support@gocosmic.dev"
+        "text": "Pour toute question sur la confidentialité, les mentions légales ou l'utilisation de l'IA,",
+        "subject": "Questions sur la confidentialité, les mentions légales et l’utilisation de l’IA",
+        "ariaLabel": "Envoyer un e-mail à support@gocosmic.dev",
+        "privacyLink": "Politique de confidentialité",
+        "legalNoticeLink": "Mentions légales"
       },
-      "intro": "Go Cosmic est une agence de développement d'applications qui utilise l'intelligence artificielle pour améliorer l'expérience utilisateur et optimiser les performances.",
+      "intro": "Go Cosmic peut intégrer des fonctionnalités assistées par IA dans les projets clients, avec revue humaine et transparence au cœur de la livraison.",
       "responsibility": {
         "items": {
           "recommendations": "Les recommandations basées sur l'IA sont informatives et ne remplacent pas le jugement humain",

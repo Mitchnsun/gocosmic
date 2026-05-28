@@ -67,7 +67,8 @@ Scopes: `ui` `web` `config` `deps`
 
 1. Bump `version` in `package.json` (semver)
 2. Add entry to `CHANGELOG.md` under `## [X.Y.Z] - YYYY-MM-DD`
-3. All CI checks must pass: lint, types, tests, coverage ≥ 90%
+3. For every PR-bound change, including follow-up commits after review, keep the changelog and package version updated before finishing
+4. All CI checks must pass: lint, types, tests, coverage ≥ 90%
 
 ## UI & Coding Standards
 

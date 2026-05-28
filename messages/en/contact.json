@@ -75,6 +75,8 @@
         "cta": "Get in touch",
         "aria_label": "Send an email to prospect@gocosmic.dev with subject: Commercial Inquiry"
       }
-    }
+    },
+    "privacyNotice": "Personal data sent by email is used only to answer your request, manage follow-up, and keep evidence of exchanges for the periods stated in the privacy policy.",
+    "privacyLink": "Privacy policy"
   }
 }

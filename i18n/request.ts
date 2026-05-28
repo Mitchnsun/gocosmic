@@ -78,6 +78,21 @@ const getNamespacesForPath = (pathname: string): string[] => {
   ) {
     return ['contact'];
   } else if (
+    pathWithoutLocale.startsWith('/privacy') ||
+    pathWithoutLocale.startsWith('/confidentialite') ||
+    pathWithoutLocale.startsWith('/privacidad') ||
+    pathWithoutLocale.startsWith('/datenschutz')
+  ) {
+    return ['legal'];
+  } else if (
+    pathWithoutLocale.startsWith('/legal-notice') ||
+    pathWithoutLocale.startsWith('/mentions-legales') ||
+    pathWithoutLocale.startsWith('/aviso-legal') ||
+    pathWithoutLocale.startsWith('/impressum') ||
+    pathWithoutLocale.startsWith('/note-legali')
+  ) {
+    return ['legal'];
+  } else if (
     pathWithoutLocale.startsWith('/pricing') ||
     pathWithoutLocale.startsWith('/tarifs') ||
     pathWithoutLocale.startsWith('/precios') ||

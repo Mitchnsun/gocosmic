@@ -123,7 +123,9 @@
       "email": "prospect@gocosmic.dev",
       "cta": "Solicitar un presupuesto",
       "subject": "Consulta de precios — Presupuesto de proyecto",
-      "aria_label": "Enviar un correo a prospect@gocosmic.dev para un presupuesto de proyecto"
+      "aria_label": "Enviar un correo a prospect@gocosmic.dev para un presupuesto de proyecto",
+      "privacy_notice": "Al enviar un email, aceptas que tu mensaje y tus datos de contacto se traten para preparar un presupuesto y hacer seguimiento del proyecto.",
+      "privacy_link": "Política de privacidad"
     },
     "reset": "Empezar de nuevo"
   }

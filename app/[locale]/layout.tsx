@@ -1,10 +1,10 @@
-import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import { Inter, Space_Grotesk } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
+import { CookieConsent, CookieConsentProvider } from '@/components/CookieConsent';
 import { CosmicCursor } from '@/components/CosmicCursor';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
@@ -79,14 +79,16 @@ export default async function LocaleLayout({
     <html lang={locale || 'en'} className={`${spaceGrotesk.variable} ${inter.variable}`}>
       <body className="bg-slate-950">
         <NextIntlClientProvider>
-          <CosmicCursor />
-          <StatusBar />
-          <Header />
-          <main id="main-content">{children}</main>
-          <Footer />
-          <WebsiteSeo />
-          <Analytics />
-          <LocalBusinessSeo locale={locale} />
+          <CookieConsentProvider>
+            <CosmicCursor />
+            <StatusBar />
+            <Header />
+            <main id="main-content">{children}</main>
+            <Footer />
+            <WebsiteSeo />
+            <CookieConsent />
+            <LocalBusinessSeo locale={locale} />
+          </CookieConsentProvider>
         </NextIntlClientProvider>
       </body>
     </html>

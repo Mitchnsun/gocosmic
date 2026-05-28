@@ -12,6 +12,16 @@ This file records lessons learned from past mistakes and corrections made during
 
 <!-- Add new lessons below, grouped by topic -->
 
+## Release Process
+
+### PR-bound changes must update the changelog
+
+**Mistake**: A PR with implementation commits was submitted without the matching `CHANGELOG.md` entry.
+
+**Root cause**: The release checklist was treated as only a pre-opening step, so follow-up work and review-fix commits did not re-check the changelog requirement.
+
+**Correct pattern**: Any change that is intended to land through a PR, including review feedback after the PR already exists, must include a package version bump and a dated `CHANGELOG.md` entry before the work is marked complete.
+
 ## CSS / TailwindCSS 4
 
 ### `--font-display` and `--font-body` must be declared in `@theme`
