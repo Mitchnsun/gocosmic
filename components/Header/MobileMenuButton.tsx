@@ -4,6 +4,8 @@ import { motion, useReducedMotion } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import { RefObject } from 'react';
 
+import { MOBILE_MENU_BURGER_DURATION_MS } from '@/components/Header/constants';
+
 interface MobileMenuButtonProps {
   isOpen: boolean;
   onToggle: () => void;
@@ -15,7 +17,9 @@ const MobileMenuButton = ({ isOpen, onToggle, buttonRef, className }: MobileMenu
   const t = useTranslations('navigation');
   const reduceMotion = useReducedMotion();
 
-  const transition = reduceMotion ? { duration: 0 } : { duration: 0.3, ease: 'easeOut' as const };
+  const transition = reduceMotion
+    ? { duration: 0 }
+    : { duration: MOBILE_MENU_BURGER_DURATION_MS / 1000, ease: 'easeOut' as const };
 
   return (
     <button

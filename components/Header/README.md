@@ -84,8 +84,9 @@ const { isOpen, open, close, toggle, buttonRef } = useMobileMenu();
 
 ```ts
 // constants.ts
-export const MOBILE_MENU_DURATION_MS = 420;  // drawer slide duration
-export const MOBILE_MENU_STAGGER_MS   = 50;  // per-link stagger delay
+export const MOBILE_MENU_DURATION_MS        = 420; // drawer slide duration
+export const MOBILE_MENU_BURGER_DURATION_MS = 300; // burger → ✕ transition
+export const MOBILE_MENU_STAGGER_MS         = 50;  // per-link stagger delay
 ```
 
 ---
@@ -143,8 +144,9 @@ export const TABLET_MAX_WIDTH           = 1023;
 export const MOBILE_HEIGHT              = 64;
 export const TABLET_EXPANDED_HEIGHT     = 85;
 export const TABLET_COMPACT_HEIGHT      = 56;
-export const MOBILE_MENU_DURATION_MS    = 420; // drawer slide duration (ms)
-export const MOBILE_MENU_STAGGER_MS     = 50;  // per-link stagger delay (ms)
+export const MOBILE_MENU_DURATION_MS        = 420; // drawer slide duration (ms)
+export const MOBILE_MENU_BURGER_DURATION_MS = 300; // burger → ✕ transition (ms)
+export const MOBILE_MENU_STAGGER_MS         = 50;  // per-link stagger delay (ms)
 ```
 
 ---
