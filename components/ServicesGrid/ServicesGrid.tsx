@@ -28,7 +28,7 @@ export function ServicesGrid() {
 
   return (
     <section id="services" aria-labelledby="services-heading" className="w-full py-16">
-      <div className="mb-12 max-w-7xl px-4 md:px-8">
+      <div className="mb-12 max-w-7xl md:px-8">
         <p className="text-aerospace mb-4 flex items-center gap-2 font-mono text-sm font-medium tracking-widest uppercase">
           <span className="bg-aerospace h-2 w-2 rounded-full" aria-hidden="true" />
           {t('services.eyebrow')}
@@ -39,7 +39,7 @@ export function ServicesGrid() {
         <p className="mt-4 max-w-2xl text-lg text-slate-400">{t('services.subtitle')}</p>
       </div>
 
-      <div className="max-w-7xl px-4 md:px-8">
+      <div className="max-w-7xl md:px-8">
         <ul className="grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:gap-8">
           {services.map((service, index) => (
             <ServiceCard
