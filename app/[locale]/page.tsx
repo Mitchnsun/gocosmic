@@ -1,12 +1,10 @@
 import { useTranslations } from 'next-intl';
 
+import CTAFinal from '@/components/CTAFinal';
 import HeroSection from '@/components/HeroSection';
 import { ProcessTimeline } from '@/components/ProcessTimeline';
 import { homepageSteps } from '@/components/ProcessTimeline/constants';
 import { ServicesGrid } from '@/components/ServicesGrid';
-import { buttonVariants } from '@/design-system/button.variants';
-import { cn } from '@/design-system/lib/utils';
-import { Link } from '@/i18n/navigation';
 
 export default function Home() {
   const t = useTranslations('homepage');
@@ -43,16 +41,6 @@ export default function Home() {
       </div>
       <section className="relative z-10 m-auto mt-4 flex max-w-7xl flex-col items-center">
         <ServicesGrid />
-        <div className="flex w-full flex-col items-center gap-2 rounded-lg bg-slate-800 px-4 py-12">
-          <h3 className="py-2 text-center text-xl font-bold sm:text-3xl">{t('cta.title')}</h3>
-          <p className="text-center font-light text-gray-400">{t('cta.description')}</p>
-          <Link
-            href="/offers"
-            className={cn(buttonVariants({ variant: 'jungle' }), 'mt-2 w-fit gap-2')}
-            aria-label={t('cta.viewOffers')}>
-            {t('cta.viewOffers')}
-          </Link>
-        </div>
       </section>
       <section className="relative z-10 m-auto max-w-7xl px-4 py-8 text-center">
         <h3 className="text-2xl font-bold">{t('zone.title')}</h3>
@@ -63,6 +51,17 @@ export default function Home() {
           <li>📍 {t('zone.locations.haute_savoie')}</li>
         </ul>
       </section>
+      <CTAFinal
+        id="cta"
+        headline={t('cta.title')}
+        description={t('cta.description')}
+        ctaText={t('cta.button')}
+        ctaHref="/contact"
+        accentColor="aerospace"
+        starfieldWarpSpeed={0.8}
+        warpOnHover
+        className="-m-4 mt-4"
+      />
     </div>
   );
 }

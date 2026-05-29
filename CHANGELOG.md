@@ -5,7 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [1.6.6] - 2026-06-01
+## [1.6.7] - 2026-06-04
+
+### Added
+
+- New `CTAFinal` component (`components/CTAFinal/`) — immersive final homepage call-to-action with an animated starfield background that enters "warp speed" on CTA hover/focus
+- `useWarpEffect.ts` hook managing the warp interaction state (disabled when the user prefers reduced motion)
+- Animated gradient headline (`cta-final-headline`) and pulsing glow CTA button (`cta-final-glow`), with `aerospace`/`royal`/`jungle` accent colors and `dark`/`light`/`gradient` variants
+- Configurable starfield density (`low`/`medium`/`high`), rest/warp speeds, parallax intensity, and `prefers-reduced-motion` handling
+- `cta-gradient-shift` and `cta-glow-pulse` CSS keyframes plus reduced-motion overrides in `app/globals.css`
+- `CTAFinal` integrated on the homepage (`app/[locale]/page.tsx`) as the final section, linking to `/contact`
+- 12 unit tests covering rendering, starfield density/speed mapping, warp on hover/focus, reduced-motion handling, accent variants, and CTA click callback
+
+### Changed
+
+- Replaced the homepage's inline "Ready to Go Cosmic?" teaser block with the new `CTAFinal` section
+
+## [1.6.6] - 2026-06-02
 
 ### Added
 
