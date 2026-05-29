@@ -6,6 +6,8 @@
     "contact": "Contact",
     "home": "Go to homepage",
     "label": "Main navigation",
+    "menu_close": "Close menu",
+    "menu_open": "Open menu",
     "pricing_label": "Pricing Simulator",
     "pricing": "Pricing",
     "projects_label": "Our Projects",

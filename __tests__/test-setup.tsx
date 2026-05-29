@@ -47,15 +47,104 @@ vi.mock('motion/react', () => ({
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       animate,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      initial,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      exit,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       transition,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      variants,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      custom,
       ...rest
     }: {
-      children: React.ReactNode;
+      children?: React.ReactNode;
       animate?: unknown;
+      initial?: unknown;
+      exit?: unknown;
       transition?: unknown;
+      variants?: unknown;
+      custom?: unknown;
       [key: string]: unknown;
     }) => <span {...(rest as React.HTMLAttributes<HTMLSpanElement>)}>{children}</span>,
+    div: ({
+      children,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      animate,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      initial,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      exit,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      transition,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      variants,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      custom,
+      ...rest
+    }: {
+      children?: React.ReactNode;
+      animate?: unknown;
+      initial?: unknown;
+      exit?: unknown;
+      transition?: unknown;
+      variants?: unknown;
+      custom?: unknown;
+      [key: string]: unknown;
+    }) => <div {...(rest as React.HTMLAttributes<HTMLDivElement>)}>{children}</div>,
+    li: ({
+      children,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      animate,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      initial,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      exit,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      transition,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      variants,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      custom,
+      ...rest
+    }: {
+      children?: React.ReactNode;
+      animate?: unknown;
+      initial?: unknown;
+      exit?: unknown;
+      transition?: unknown;
+      variants?: unknown;
+      custom?: unknown;
+      [key: string]: unknown;
+    }) => <li {...(rest as React.HTMLAttributes<HTMLLIElement>)}>{children}</li>,
+    ul: ({
+      children,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      animate,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      initial,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      exit,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      transition,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      variants,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      custom,
+      ...rest
+    }: {
+      children?: React.ReactNode;
+      animate?: unknown;
+      initial?: unknown;
+      exit?: unknown;
+      transition?: unknown;
+      variants?: unknown;
+      custom?: unknown;
+      [key: string]: unknown;
+    }) => <ul {...(rest as React.HTMLAttributes<HTMLUListElement>)}>{children}</ul>,
   },
+  AnimatePresence: ({ children }: { children: React.ReactNode }) => <>{children}</>,
+  useReducedMotion: (): boolean => false,
 }));
 
 // Mock ResizeObserver for @react-three/fiber Canvas component

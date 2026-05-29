@@ -68,6 +68,20 @@ describe('Header Component', () => {
     expect(servicesLink).toBeInTheDocument();
   });
 
+  it('renders the MobileMenuButton', () => {
+    const { getByRole } = render(<Header />);
+    const burgerButton = getByRole('button', { name: /open menu/i });
+    expect(burgerButton).toBeInTheDocument();
+    expect(burgerButton).toHaveAttribute('aria-controls', 'mobile-menu');
+    expect(burgerButton).toHaveAttribute('aria-expanded', 'false');
+  });
+
+  it('desktop nav has hidden class', () => {
+    const { getByRole } = render(<Header />);
+    const nav = getByRole('navigation', { name: /main navigation/i });
+    expect(nav).toHaveClass('hidden');
+  });
+
   it('compacts the header while scrolling down', () => {
     Object.defineProperty(window, 'innerWidth', { writable: true, value: 1280 });
     let mockScrollY = 0;

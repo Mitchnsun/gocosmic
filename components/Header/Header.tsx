@@ -8,6 +8,7 @@ import {
   WrenchScrewdriverIcon,
 } from '@heroicons/react/24/solid';
 import clsx from 'clsx';
+import { AnimatePresence } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import { useMemo } from 'react';
 
@@ -17,12 +18,16 @@ import LanguageSwitcher from '../LanguageSwitcher';
 import { DEFAULT_LOGO, HeaderNavItem, HeaderProps } from './constants';
 import { useHeader } from './Header.hook';
 import LogoOrbitalDot from './LogoOrbitalDot';
+import MobileMenu from './MobileMenu';
+import MobileMenuButton from './MobileMenuButton';
+import { useMobileMenu } from './useMobileMenu';
 
 const Header = (props: HeaderProps = {}) => {
   const { logo = DEFAULT_LOGO, navItems, logoOrbitalEnabled = true, className, id } = props;
   const t = useTranslations('navigation');
   const pathname = usePathname();
   const { reduceMotion, headerHeight } = useHeader(props);
+  const { isOpen, toggle, buttonRef } = useMobileMenu();
 
   const items = useMemo<HeaderNavItem[]>(
     () =>
@@ -66,7 +71,7 @@ const Header = (props: HeaderProps = {}) => {
               <span className="text-aerospace">.</span>
             </Link>
           </h1>
-          <nav className="flex items-center gap-3 sm:gap-4 lg:gap-8" aria-label={t('label')}>
+          <nav className="hidden items-center gap-3 sm:gap-4 md:flex lg:gap-8" aria-label={t('label')}>
             {items.map(({ label, href, ariaLabel, icon: Icon, isActive }) => {
               const active = isActive ?? (pathname === href || pathname.startsWith(`${href}/`));
 
@@ -94,8 +99,10 @@ const Header = (props: HeaderProps = {}) => {
             })}
             <LanguageSwitcher />
           </nav>
+          <MobileMenuButton isOpen={isOpen} onToggle={toggle} buttonRef={buttonRef} className="md:hidden" />
         </div>
       </header>
+      <AnimatePresence>{isOpen && <MobileMenu onClose={toggle} items={items} />}</AnimatePresence>
     </>
   );
 };
