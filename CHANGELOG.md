@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.7.0] - 2026-05-28
+
+### Added
+
+- New `ServicesGrid` component (`components/ServicesGrid/`) — interactive 4-column services grid with hover effects, optional features bullet list, and optional per-service links
+- `ServiceCard.tsx` — individual card with HeroIcon + token color (aerospace/royal/jungle/default), border glow, scale, and background shift on hover; keyboard focus-within ring
+- Responsive layout: 1 column (mobile), 2 columns (tablet), 4 columns (desktop); configurable via `columns` prop (1/2/3/4) and `layout` (grid/horizontal)
+- Scroll-triggered stagger reveal via `IntersectionObserver`, with `respectReducedMotion` and `prefers-reduced-motion` handling
+- Optional `features` (string[]) and `link` ({ href, label }) per service
+- Full i18n support: `services.eyebrow`, `services.subtitle`, `services.learnMore`, and per-service `features` arrays added to EN, FR, ES, DE, IT `home.json` files
+- `ServicesGrid` integrated on the homepage (`app/[locale]/page.tsx`) replacing the previous ad-hoc services grid
+- 16 unit tests covering rendering, content, layout columns, link/features rendering, color tokens, stagger reveal timing, and reduced-motion handling
+
 ## [1.6.4] - 2026-05-28
 
 ### Added

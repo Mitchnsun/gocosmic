@@ -8,7 +8,13 @@
     },
     "hero": {
       "cta": "Comienza tu viaje",
-      "endWords": ["brillan", "vuelan", "inspiran", "transforman", "elevan"],
+      "endWords": [
+        "brillan",
+        "vuelan",
+        "inspiran",
+        "transforman",
+        "elevan"
+      ],
       "subtitle": "Permítenos lanzar tus ideas a la estratosfera con diseño místico y funcionalidades cósmicas",
       "title": "Construimos aplicaciones estelares que"
     },
@@ -40,21 +46,48 @@
     "services": {
       "ai": {
         "description": "Integrando características avanzadas de IA para hacer tus aplicaciones más inteligentes, adaptativas y verdaderamente de nueva generación.",
-        "title": "Impulsado por IA"
+        "title": "Impulsado por IA",
+        "features": [
+          "LLMs",
+          "Embeddings",
+          "Agentes",
+          "RAG"
+        ]
       },
       "design": {
         "description": "Creando experiencias de usuario intuitivas y encantadoras que cautivan y deleitan.",
-        "title": "Diseño UI/UX Místico"
+        "title": "Diseño UI/UX Místico",
+        "features": [
+          "Figma",
+          "Design Systems",
+          "Motion",
+          "Accesibilidad"
+        ]
       },
       "development": {
         "description": "Construyendo aplicaciones móviles robustas y escalables para plataformas iOS y Android.",
-        "title": "Desarrollo Estelar"
+        "title": "Desarrollo Estelar",
+        "features": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Expo"
+        ]
       },
       "launch": {
         "description": "Guiando tu aplicación a través del proceso de lanzamiento y más allá, asegurando un despegue exitoso.",
-        "title": "Lanzamiento Cósmico"
+        "title": "Lanzamiento Cósmico",
+        "features": [
+          "Vercel",
+          "AWS",
+          "Docker",
+          "Sentry"
+        ]
       },
-      "title": "Nuestros Servicios Cósmicos"
+      "title": "Nuestros Servicios Cósmicos",
+      "eyebrow": "[ SERVICIOS · 04 ]",
+      "subtitle": "Cuatro pilares para poner tu producto en órbita — diseñar, construir, lanzar, crecer.",
+      "learnMore": "Saber más"
     },
     "zone": {
       "title": "Zona de intervención",

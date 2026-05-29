@@ -1,8 +1,11 @@
 {
   "name": "gocosmic",
-  "version": "1.6.4",
+  "version": "1.7.0",
   "type": "module",
   "private": true,
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "next dev --turbopack --port 3000",
     "build": "next build",

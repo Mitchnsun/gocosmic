@@ -39,7 +39,7 @@ export function ProcessTimeline({
       className={cn('w-full py-16', className)}>
       {/* Header */}
       {(eyebrow || title || subtitle) && (
-        <div className="mb-12 max-w-7xl px-4 md:px-8">
+        <div className="mb-12 max-w-7xl md:px-8">
           {eyebrow && (
             <p className="text-aerospace mb-4 flex items-center gap-2 font-mono text-sm font-medium tracking-widest uppercase">
               <span className="bg-aerospace h-2 w-2 rounded-full" aria-hidden="true" />
