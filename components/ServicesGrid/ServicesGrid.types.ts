@@ -14,23 +14,3 @@ export interface Service {
     label: string;
   };
 }
-
-export interface ServicesGridProps {
-  title?: ReactNode;
-  subtitle?: string;
-  eyebrow?: string;
-  services: Service[];
-
-  // Layout
-  columns?: 1 | 2 | 3 | 4;
-  layout?: 'grid' | 'horizontal';
-
-  // Animation
-  staggerDelay?: number;
-  animationDuration?: number;
-  respectReducedMotion?: boolean;
-
-  // Styling
-  className?: string;
-  id?: string;
-}

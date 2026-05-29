@@ -1,44 +1,9 @@
-import { CodeBracketIcon, PuzzlePieceIcon, RocketLaunchIcon, SparklesIcon } from '@heroicons/react/24/solid';
 import { act } from 'react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import type { Service } from '@/components/ServicesGrid';
 import { ServicesGrid } from '@/components/ServicesGrid';
 
 import { render } from '../test-utils';
-
-const defaultServices: Service[] = [
-  {
-    id: 'development',
-    title: 'Stellar Development',
-    description: 'Building robust and scalable apps.',
-    icon: <CodeBracketIcon className="h-7 w-7" />,
-    color: 'aerospace',
-    features: ['React', 'Next.js', 'TypeScript'],
-    link: { href: '/services#development', label: 'Learn more' },
-  },
-  {
-    id: 'design',
-    title: 'Mystical UI/UX',
-    description: 'Crafting enchanting experiences.',
-    icon: <SparklesIcon className="h-7 w-7" />,
-    color: 'royal',
-  },
-  {
-    id: 'ai',
-    title: 'AI Powered',
-    description: 'Integrating advanced AI features.',
-    icon: <PuzzlePieceIcon className="h-7 w-7" />,
-    color: 'jungle',
-  },
-  {
-    id: 'launch',
-    title: 'Cosmic Launch',
-    description: 'Guiding your app to liftoff.',
-    icon: <RocketLaunchIcon className="h-7 w-7" />,
-    color: 'aerospace',
-  },
-];
 
 describe('ServicesGrid', () => {
   beforeEach(() => {
@@ -51,103 +16,84 @@ describe('ServicesGrid', () => {
 
   describe('rendering', () => {
     it('renders without crashing', () => {
-      const { container } = render(<ServicesGrid services={defaultServices} />);
+      const { container } = render(<ServicesGrid />);
       expect(container).toBeInTheDocument();
     });
 
-    it('renders all provided service cards', () => {
-      const { getByTestId } = render(<ServicesGrid services={defaultServices} />);
-      for (const s of defaultServices) {
-        expect(getByTestId(`service-card-${s.id}`)).toBeInTheDocument();
+    it('renders all four service cards', () => {
+      const { getByTestId } = render(<ServicesGrid />);
+      for (const id of ['development', 'design', 'ai', 'launch']) {
+        expect(getByTestId(`service-card-${id}`)).toBeInTheDocument();
       }
     });
 
-    it('renders the section with a labelled region when a title is provided', () => {
-      const { getByRole } = render(<ServicesGrid services={defaultServices} title="Our Services" />);
-      expect(getByRole('region', { name: 'Our Services' })).toBeInTheDocument();
+    it('renders the section as a labelled region', () => {
+      const { getByRole } = render(<ServicesGrid />);
+      expect(getByRole('region', { name: 'Our Cosmic Services' })).toBeInTheDocument();
     });
 
-    it('renders subtitle and eyebrow when provided', () => {
-      const { getByText } = render(
-        <ServicesGrid services={defaultServices} eyebrow="[ SERVICES · 04 ]" subtitle="Four pillars" />
-      );
+    it('renders the eyebrow and subtitle from translations', () => {
+      const { getByText } = render(<ServicesGrid />);
       expect(getByText('[ SERVICES · 04 ]')).toBeInTheDocument();
-      expect(getByText('Four pillars')).toBeInTheDocument();
+      expect(
+        getByText('Four pillars to launch your product into orbit — design, build, ship, grow.')
+      ).toBeInTheDocument();
     });
 
-    it('applies the id prop on the section element', () => {
-      const { container } = render(<ServicesGrid id="services" services={defaultServices} />);
+    it('renders with the hardcoded section id', () => {
+      const { container } = render(<ServicesGrid />);
       expect(container.querySelector('#services')).toBeInTheDocument();
     });
   });
 
   describe('service content', () => {
     it('renders title and description for each service', () => {
-      const { getByText } = render(<ServicesGrid services={defaultServices} />);
+      const { getByText } = render(<ServicesGrid />);
       expect(getByText('Stellar Development')).toBeInTheDocument();
-      expect(getByText('Building robust and scalable apps.')).toBeInTheDocument();
-      expect(getByText('Mystical UI/UX')).toBeInTheDocument();
+      expect(getByText('Mystical UI/UX Design')).toBeInTheDocument();
+      expect(getByText('AI Powered')).toBeInTheDocument();
+      expect(getByText('Cosmic Launch')).toBeInTheDocument();
     });
 
-    it('renders the optional features list', () => {
-      const { getByText, getByLabelText } = render(<ServicesGrid services={defaultServices} />);
-      const list = getByLabelText('Stellar Development features');
-      expect(list).toBeInTheDocument();
-      expect(getByText('React')).toBeInTheDocument();
-      expect(getByText('Next.js')).toBeInTheDocument();
-      expect(getByText('TypeScript')).toBeInTheDocument();
+    it('renders the features list for each service', () => {
+      const { getByLabelText } = render(<ServicesGrid />);
+      expect(getByLabelText('Stellar Development features')).toBeInTheDocument();
+      expect(getByLabelText('Mystical UI/UX Design features')).toBeInTheDocument();
+      expect(getByLabelText('AI Powered features')).toBeInTheDocument();
+      expect(getByLabelText('Cosmic Launch features')).toBeInTheDocument();
     });
 
-    it('does not render a features list when features are omitted', () => {
-      const { queryByLabelText } = render(<ServicesGrid services={defaultServices} />);
-      expect(queryByLabelText('AI Powered features')).not.toBeInTheDocument();
+    it('renders links to the services page for each card', () => {
+      const { getAllByRole } = render(<ServicesGrid />);
+      const links = getAllByRole('link');
+      expect(links).toHaveLength(4);
+      expect(links[0]).toHaveAttribute('href', '/services#development');
+      expect(links[1]).toHaveAttribute('href', '/services#design');
+      expect(links[2]).toHaveAttribute('href', '/services#ai');
+      expect(links[3]).toHaveAttribute('href', '/services#launch');
     });
 
-    it('renders the optional link with an accessible label', () => {
-      const { getByRole } = render(<ServicesGrid services={defaultServices} />);
-      const link = getByRole('link', { name: /Learn more — Stellar Development/i });
-      expect(link).toHaveAttribute('href', '/services#development');
-    });
-
-    it('does not render a link when not provided', () => {
-      const { queryAllByRole } = render(<ServicesGrid services={defaultServices} />);
-      expect(queryAllByRole('link')).toHaveLength(1);
-    });
-
-    it('applies the color token class on the icon wrapper', () => {
-      const { getByTestId } = render(<ServicesGrid services={defaultServices} />);
-      expect(getByTestId('service-icon-development').className).toContain('text-aerospace');
+    it('applies the color token class on each icon wrapper', () => {
+      const { getByTestId } = render(<ServicesGrid />);
+      expect(getByTestId('service-icon-development').className).toContain('text-jungle');
       expect(getByTestId('service-icon-design').className).toContain('text-royal');
-      expect(getByTestId('service-icon-ai').className).toContain('text-jungle');
+      expect(getByTestId('service-icon-ai').className).toContain('text-yellow-400');
+      expect(getByTestId('service-icon-launch').className).toContain('text-blue-400');
     });
   });
 
   describe('layout', () => {
-    it('uses 4-column responsive grid by default', () => {
-      const { container } = render(<ServicesGrid services={defaultServices} />);
+    it('uses a 4-column responsive grid', () => {
+      const { container } = render(<ServicesGrid />);
       const list = container.querySelector('ul');
       expect(list?.className).toContain('lg:grid-cols-4');
-    });
-
-    it('honors a custom columns prop', () => {
-      const { container } = render(<ServicesGrid services={defaultServices} columns={2} />);
-      const list = container.querySelector('ul');
-      expect(list?.className).toContain('sm:grid-cols-2');
-      expect(list?.className).not.toContain('grid-cols-4');
-    });
-
-    it('supports a horizontal layout variant', () => {
-      const { container } = render(<ServicesGrid services={defaultServices} layout="horizontal" />);
-      const list = container.querySelector('ul');
-      expect(list?.className).toContain('flex');
     });
   });
 
   describe('animation', () => {
     it('reveals cards after the IntersectionObserver fires with stagger delay', () => {
-      const { getByTestId } = render(<ServicesGrid services={defaultServices} staggerDelay={100} />);
+      const { getByTestId } = render(<ServicesGrid />);
 
-      // Cards start hidden (opacity 0)
       const first = getByTestId('service-card-development');
       expect(first).toHaveStyle({ opacity: '0' });
 
@@ -180,7 +126,7 @@ describe('ServicesGrid', () => {
       }));
       Object.defineProperty(window, 'matchMedia', { writable: true, value: mockMatchMedia });
 
-      const { getByTestId } = render(<ServicesGrid services={defaultServices} />);
+      const { getByTestId } = render(<ServicesGrid />);
       expect(getByTestId('service-card-development')).toHaveStyle({ opacity: '1' });
       expect(getByTestId('service-card-launch')).toHaveStyle({ opacity: '1' });
     });

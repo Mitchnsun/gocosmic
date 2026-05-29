@@ -1,4 +1,3 @@
-import { CodeBracketIcon, PuzzlePieceIcon, RocketLaunchIcon, SparklesIcon } from '@heroicons/react/24/solid';
 import { useTranslations } from 'next-intl';
 
 import HeroSection from '@/components/HeroSection';
@@ -43,53 +42,7 @@ export default function Home() {
         />
       </div>
       <section className="relative z-10 m-auto mt-4 flex max-w-7xl flex-col items-center">
-        <ServicesGrid
-          id="services"
-          eyebrow={t('services.eyebrow')}
-          title={t('services.title')}
-          subtitle={t('services.subtitle')}
-          services={[
-            {
-              id: 'development',
-              title: t('services.development.title'),
-              description: t('services.development.description'),
-              icon: <CodeBracketIcon className="h-7 w-7" />,
-              color: 'jungle',
-              features: t.raw('services.development.features') as string[],
-              link: { href: '/services#development', label: t('services.learnMore') },
-            },
-            {
-              id: 'design',
-              title: t('services.design.title'),
-              description: t('services.design.description'),
-              icon: <SparklesIcon className="h-7 w-7" />,
-              color: 'royal',
-              features: t.raw('services.design.features') as string[],
-              link: { href: '/services#design', label: t('services.learnMore') },
-            },
-            {
-              id: 'ai',
-              title: t('services.ai.title'),
-              description: t('services.ai.description'),
-              icon: <PuzzlePieceIcon className="h-7 w-7" />,
-              color: 'solar',
-              features: t.raw('services.ai.features') as string[],
-              link: { href: '/services#ai', label: t('services.learnMore') },
-            },
-            {
-              id: 'launch',
-              title: t('services.launch.title'),
-              description: t('services.launch.description'),
-              icon: <RocketLaunchIcon className="h-7 w-7" />,
-              color: 'azure',
-              features: t.raw('services.launch.features') as string[],
-              link: { href: '/services#launch', label: t('services.learnMore') },
-            },
-          ]}
-          columns={4}
-          staggerDelay={100}
-        />
-
+        <ServicesGrid />
         <div className="flex w-full flex-col items-center gap-2 rounded-lg bg-slate-800 px-4 py-12">
           <h3 className="py-2 text-center text-xl font-bold sm:text-3xl">{t('cta.title')}</h3>
           <p className="text-center font-light text-gray-400">{t('cta.description')}</p>
