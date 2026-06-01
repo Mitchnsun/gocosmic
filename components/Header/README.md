@@ -10,6 +10,8 @@ Header/
 ├── Header.hook.ts          # useHeader — adaptive height and reduced-motion logic
 ├── MobileMenu.tsx          # Full-screen mobile drawer (rendering only)
 ├── MobileMenuButton.tsx    # Burger → ✕ toggle button (rendering only)
+├── MobileLangDrawer.tsx    # Full-screen language selection drawer for mobile
+├── MountainSkyline.tsx     # Decorative SVG mountain skyline rendered inside MobileMenu
 ├── LogoOrbitalDot.tsx      # Animated orbital dot rendered next to the logo
 ├── useMobileMenu.ts        # Hook: open/close state, scroll lock, Escape, route change
 ├── constants.ts            # Shared types, interfaces, and numeric values
@@ -49,7 +51,10 @@ Labels, `ariaLabel` values, and the skip link text come from the `navigation` na
 
 ### Overview
 
-Below `md` (768 px), the desktop nav is hidden and a **burger button** (`MobileMenuButton`) appears at the right of the header. Clicking it opens a **full-screen animated drawer** (`MobileMenu`) that slides in from the top.
+Below `md` (768 px), the desktop nav is hidden and two buttons appear in a flex row at the right of the header: a **language globe button** (`LanguageSwitcher` with `onOpen` prop) and a **burger button** (`MobileMenuButton`). They are mutually exclusive — opening one closes the other.
+
+- The language button opens `MobileLangDrawer`, a full-screen drawer for locale selection.
+- The burger button opens `MobileMenu`, a full-screen animated drawer that slides in from the top.
 
 ### `MobileMenuButton`
 
@@ -64,9 +69,27 @@ Below `md` (768 px), the desktop nav is hidden and a **burger button** (`MobileM
 - Props: `onClose`, `items`
 - `role="dialog"`, `aria-modal="true"`, `id="mobile-menu"`.
 - Slide animation: `y: "-100%" → 0`, ease `[0.16, 1, 0.3, 1]`, duration `MOBILE_MENU_DURATION_MS / 1000` s.
+- Top spacer: 112 px area with a `MountainSkyline` SVG decoration anchored to its bottom edge.
+- Metadata row: `menu_title` i18n key on the left, `ALT. 2351m` on the right.
 - Navigation links stagger in: each `motion.li` with `opacity 0→1 + y 16→0`, delay `index × MOBILE_MENU_STAGGER_MS / 1000` s.
-- Footer: `LanguageSwitcher` + `contact@gocosmic.dev` email in monospace.
+- Footer: `contact@gocosmic.dev` email in monospace (no `LanguageSwitcher` — language switching is handled by `MobileLangDrawer`).
 - `AnimatePresence` is managed in `Header.tsx` so exit animations work correctly.
+
+### `MobileLangDrawer`
+
+- Props: `onClose`, `headerHeight` (defaults to `MOBILE_HEIGHT`)
+- `role="dialog"`, `aria-modal="true"`, `id="lang-drawer"`.
+- Same slide animation as `MobileMenu` (y: "-100%" → 0).
+- Top spacer accounts for `STATUS_BAR_HEIGHT + safe-area-inset-top + headerHeight`.
+- Lists all 5 supported locales; clicking one switches the locale via `next-intl`'s router and closes the drawer.
+- Scroll lock and Escape key handler mirror `useMobileMenu` behaviour.
+- `AnimatePresence` is managed in `Header.tsx`, mutually exclusive with `MobileMenu`.
+
+### `MountainSkyline`
+
+- Decorative, `aria-hidden="true" role="presentation"`.
+- SVG polyline rendered at `viewBox="0 0 400 48"`, `preserveAspectRatio="none"` so it stretches full-width.
+- Accepts a `className` prop for positioning.
 
 ### `useMobileMenu` hook
 
@@ -74,19 +97,19 @@ Below `md` (768 px), the desktop nav is hidden and a **burger button** (`MobileM
 const { isOpen, open, close, toggle, buttonRef } = useMobileMenu();
 ```
 
-| Behaviour       | Implementation                                                   |
-| --------------- | ---------------------------------------------------------------- |
-| Scroll lock     | `document.body.style.overflow = 'hidden'` while open, reset on close/unmount |
-| Escape key      | `keydown` listener on `window`; also returns focus to `buttonRef` |
-| Route change    | `useEffect` on `usePathname()` calls `close()`                   |
+| Behaviour    | Implementation                                                               |
+| ------------ | ---------------------------------------------------------------------------- |
+| Scroll lock  | `document.body.style.overflow = 'hidden'` while open, reset on close/unmount |
+| Escape key   | `keydown` listener on `window`; also returns focus to `buttonRef`            |
+| Route change | `useEffect` on `usePathname()` calls `close()`                               |
 
 ### Constants
 
 ```ts
 // constants.ts
-export const MOBILE_MENU_DURATION_MS        = 420; // drawer slide duration
+export const MOBILE_MENU_DURATION_MS = 420; // drawer slide duration
 export const MOBILE_MENU_BURGER_DURATION_MS = 300; // burger → ✕ transition
-export const MOBILE_MENU_STAGGER_MS         = 50;  // per-link stagger delay
+export const MOBILE_MENU_STAGGER_MS = 50; // per-link stagger delay
 ```
 
 ---
@@ -99,7 +122,13 @@ const { headerHeight, reduceMotion } = useHeader(props);
 
 ### Height driven by inline style
 
-The header height is not managed by Tailwind classes but by a `style={{ height: \`${headerHeight}px\` }}`. This allows smooth transitions between precise numeric values. The Tailwind class `transition-[height]` handles the CSS animation.
+The header height is not managed by Tailwind classes but by an inline `style` object that sets three values simultaneously:
+
+- `height`: `calc(${headerHeight}px + env(safe-area-inset-top, 0px))` — extends into the iOS status bar notch area.
+- `paddingTop`: `env(safe-area-inset-top, 0px)` — pushes content below the notch.
+- `--header-h`: same computed value, exposed as a CSS custom property consumed by `LanguageSwitcher`'s desktop dropdown to anchor its `top` position.
+
+The Tailwind class `transition-[height]` handles the CSS animation for smooth transitions between precise numeric values.
 
 ### Effect 1 — `prefers-reduced-motion` detection
 
@@ -138,15 +167,16 @@ All numeric values are centralised in `constants.ts`. To change a threshold, edi
 
 ```ts
 // constants.ts
-export const SCROLL_COMPACT_THRESHOLD   = 10; // px before switching to compact
-export const MOBILE_MAX_WIDTH           = 600;
-export const TABLET_MAX_WIDTH           = 1023;
-export const MOBILE_HEIGHT              = 64;
-export const TABLET_EXPANDED_HEIGHT     = 85;
-export const TABLET_COMPACT_HEIGHT      = 56;
-export const MOBILE_MENU_DURATION_MS        = 420; // drawer slide duration (ms)
+export const SCROLL_COMPACT_THRESHOLD = 10; // px before switching to compact
+export const MOBILE_MAX_WIDTH = 600;
+export const TABLET_MAX_WIDTH = 1023;
+export const STATUS_BAR_HEIGHT = 32; // iOS status bar height used by MobileLangDrawer spacer
+export const MOBILE_HEIGHT = 64;
+export const TABLET_EXPANDED_HEIGHT = 85;
+export const TABLET_COMPACT_HEIGHT = 56;
+export const MOBILE_MENU_DURATION_MS = 420; // drawer slide duration (ms)
 export const MOBILE_MENU_BURGER_DURATION_MS = 300; // burger → ✕ transition (ms)
-export const MOBILE_MENU_STAGGER_MS         = 50;  // per-link stagger delay (ms)
+export const MOBILE_MENU_STAGGER_MS = 50; // per-link stagger delay (ms)
 ```
 
 ---
@@ -161,10 +191,12 @@ export const MOBILE_MENU_STAGGER_MS         = 50;  // per-link stagger delay (ms
 
 ## Tests
 
-| File | Coverage |
-| ---- | -------- |
-| [`__tests__/components/Header.test.tsx`](../../__tests__/components/Header.test.tsx) | Rendering, active link, skip link, MobileMenuButton presence, desktop nav `hidden` class |
-| [`__tests__/components/Header/MobileMenuButton.test.tsx`](../../__tests__/components/Header/MobileMenuButton.test.tsx) | Aria labels, aria-expanded, aria-controls, onClick, span count |
-| [`__tests__/components/Header/MobileMenu.test.tsx`](../../__tests__/components/Header/MobileMenu.test.tsx) | Dialog role, aria-modal, nav links, onClose on click, footer |
-| [`__tests__/components/Header/useMobileMenu.test.tsx`](../../__tests__/components/Header/useMobileMenu.test.tsx) | open/close/toggle, scroll lock, Escape key, route change |
-| [`__tests__/components/Header/LogoOrbitalDot.test.tsx`](../../__tests__/components/Header/LogoOrbitalDot.test.tsx) | Orbital dot visibility |
+| File                                                                                                                   | Coverage                                                                                 |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| [`__tests__/components/Header.test.tsx`](../../__tests__/components/Header.test.tsx)                                   | Rendering, active link, skip link, MobileMenuButton presence, desktop nav `hidden` class |
+| [`__tests__/components/Header/MobileMenuButton.test.tsx`](../../__tests__/components/Header/MobileMenuButton.test.tsx) | Aria labels, aria-expanded, aria-controls, onClick, span count                           |
+| [`__tests__/components/Header/MobileMenu.test.tsx`](../../__tests__/components/Header/MobileMenu.test.tsx)             | Dialog role, aria-modal, nav links, onClose on click, footer                             |
+| [`__tests__/components/Header/MobileLangDrawer.test.tsx`](../../__tests__/components/Header/MobileLangDrawer.test.tsx) | Dialog role, aria-modal, language list, locale selection, Escape key, close button       |
+| [`__tests__/components/Header/MountainSkyline.test.tsx`](../../__tests__/components/Header/MountainSkyline.test.tsx)   | SVG rendering, aria-hidden                                                               |
+| [`__tests__/components/Header/useMobileMenu.test.tsx`](../../__tests__/components/Header/useMobileMenu.test.tsx)       | open/close/toggle, scroll lock, Escape key, route change                                 |
+| [`__tests__/components/Header/LogoOrbitalDot.test.tsx`](../../__tests__/components/Header/LogoOrbitalDot.test.tsx)     | Orbital dot visibility                                                                   |

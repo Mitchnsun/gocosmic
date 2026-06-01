@@ -5,9 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [1.6.6] - 2026-05-30
+## [1.6.6] - 2026-06-01
 
 ### Added
+
 - Mobile menu with morphing burger → ✕ button and animated full-screen drawer
 - `MobileMenuButton` component: two `motion.span` bars animate to a ✕ on open; full aria (`aria-label`, `aria-expanded`, `aria-controls`); respects `prefers-reduced-motion` via `useReducedMotion()`
 - `MobileMenu` component: fixed full-screen overlay (`role="dialog"`, `aria-modal`), slide-from-top animation (`y: -100% → 0`, ease `[0.16, 1, 0.3, 1]`, 420 ms), per-link stagger (50 ms), footer with `LanguageSwitcher` and contact email

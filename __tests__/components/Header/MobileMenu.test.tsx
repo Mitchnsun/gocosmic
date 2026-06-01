@@ -50,9 +50,8 @@ describe('MobileMenu', () => {
     expect(screen.getByRole('link', { name: /contact@gocosmic\.dev/i })).toBeInTheDocument();
   });
 
-  it('renders the LanguageSwitcher', () => {
+  it('does not render the LanguageSwitcher (moved to header next to burger)', () => {
     render(<MobileMenu onClose={onClose} items={items} />);
-    // LanguageSwitcher renders a button with accessible name for locale switching
-    expect(screen.getByRole('button', { name: /switch language/i })).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /switch language/i })).not.toBeInTheDocument();
   });
 });

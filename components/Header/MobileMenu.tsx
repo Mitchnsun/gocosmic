@@ -6,8 +6,8 @@ import { useEffect, useRef } from 'react';
 
 import { Link } from '@/i18n/navigation';
 
-import LanguageSwitcher from '../LanguageSwitcher';
 import { HeaderNavItem, MOBILE_MENU_DURATION_MS, MOBILE_MENU_STAGGER_MS } from './constants';
+import MountainSkyline from './MountainSkyline';
 
 interface MobileMenuProps {
   onClose: () => void;
@@ -34,13 +34,15 @@ const MobileMenu = ({ onClose, items }: MobileMenuProps) => {
       animate={{ y: 0 }}
       exit={{ y: '-100%' }}
       transition={{ ease: [0.16, 1, 0.3, 1], duration: MOBILE_MENU_DURATION_MS / 1000 }}>
-      {/* Top spacer for header height */}
-      <div className="h-16 shrink-0" />
+      {/* Top spacer for header height — mountain skyline decoration */}
+      <div className="relative h-28 shrink-0 overflow-hidden">
+        <MountainSkyline className="absolute inset-x-0 bottom-0" />
+      </div>
 
       {/* Metadata row */}
       <div className="border-ghost/10 flex items-center justify-between border-b px-4 py-3 text-[10px] tracking-widest text-slate-500 uppercase sm:px-6">
-        <span>MENU · V2026.05</span>
-        <span>48.7°N · 6.2°E</span>
+        <span>{t('menu_title')}</span>
+        <span>ALT. 2351m</span>
       </div>
 
       {/* Navigation links */}
@@ -67,8 +69,7 @@ const MobileMenu = ({ onClose, items }: MobileMenuProps) => {
       </nav>
 
       {/* Footer */}
-      <div className="border-ghost/10 flex items-center justify-between border-t px-4 py-5 sm:px-6">
-        <LanguageSwitcher />
+      <div className="border-ghost/10 flex items-center justify-end border-t px-4 py-5 sm:px-6">
         <a
           href="mailto:contact@gocosmic.dev"
           className="font-mono text-xs text-slate-500 transition-colors hover:text-slate-300">

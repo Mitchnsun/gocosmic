@@ -1,9 +1,13 @@
 import { WrenchScrewdriverIcon } from '@heroicons/react/24/solid';
-import { act } from '@testing-library/react';
+import { act, fireEvent } from '@testing-library/react';
 
 import { Header } from '@/components/Header';
 
 import { render } from '../test-utils';
+
+const expectHeaderHeight = (element: HTMLElement, height: number) => {
+  expect(element).toHaveStyle({ height: `calc(${height}px + env(safe-area-inset-top, 0px))` });
+};
 
 let mockPathname = '/en';
 vi.mock('@/i18n/navigation', () => ({
@@ -47,7 +51,7 @@ describe('Header Component', () => {
     const header = getByRole('banner');
     expect(header).toBeInTheDocument();
     expect(header).toHaveClass('text-ghost', 'sticky', 'top-0', 'backdrop-blur-md');
-    expect(header).toHaveStyle({ height: '85px' });
+    expectHeaderHeight(header, 85);
 
     const heading = getByRole('heading', { level: 1 });
     expect(heading).toBeInTheDocument();
@@ -92,14 +96,14 @@ describe('Header Component', () => {
 
     const { getByRole } = render(<Header />);
     const header = getByRole('banner');
-    expect(header).toHaveStyle({ height: '85px' });
+    expectHeaderHeight(header, 85);
 
     mockScrollY = 120;
     act(() => {
       window.dispatchEvent(new Event('scroll'));
     });
 
-    expect(header).toHaveStyle({ height: '64px' });
+    expectHeaderHeight(header, 64);
   });
 
   it('keeps max height when adaptiveHeight is disabled', () => {
@@ -117,7 +121,7 @@ describe('Header Component', () => {
       window.dispatchEvent(new Event('scroll'));
     });
 
-    expect(header).toHaveStyle({ height: '85px' });
+    expectHeaderHeight(header, 85);
   });
 
   it('uses tablet and mobile adaptive heights', () => {
@@ -130,19 +134,19 @@ describe('Header Component', () => {
     Object.defineProperty(window, 'innerWidth', { writable: true, value: 800 });
     const { getByRole } = render(<Header />);
     const header = getByRole('banner');
-    expect(header).toHaveStyle({ height: '85px' });
+    expectHeaderHeight(header, 85);
 
     mockScrollY = 100;
     act(() => {
       window.dispatchEvent(new Event('scroll'));
     });
-    expect(header).toHaveStyle({ height: '56px' });
+    expectHeaderHeight(header, 56);
 
     Object.defineProperty(window, 'innerWidth', { writable: true, value: 500 });
     act(() => {
       window.dispatchEvent(new Event('resize'));
     });
-    expect(header).toHaveStyle({ height: '64px' });
+    expectHeaderHeight(header, 64);
   });
 
   it('supports disabling reduced-motion detection', () => {
@@ -194,5 +198,98 @@ describe('Header Component', () => {
     mockPathname = '/services/sub-page';
     const { getByRole } = render(<Header />);
     expect(getByRole('link', { name: /our cosmic services/i })).toHaveAttribute('aria-current', 'page');
+  });
+
+  it('opens the mobile menu when the burger button is clicked', () => {
+    const { getByRole } = render(<Header />);
+
+    act(() => {
+      fireEvent.click(getByRole('button', { name: /open menu/i }));
+    });
+
+    expect(getByRole('dialog', { name: /close menu/i })).toBeInTheDocument();
+  });
+
+  it('opens the lang drawer when the mobile language switcher is clicked', () => {
+    const { getAllByRole, getByRole } = render(<Header />);
+
+    act(() => {
+      fireEvent.click(getAllByRole('button', { name: /switch language/i })[1]!);
+    });
+
+    expect(getByRole('dialog', { name: /switch language/i })).toBeInTheDocument();
+  });
+
+  it('closes the lang drawer after selecting a language', () => {
+    const { getAllByRole, getByRole, queryByRole } = render(<Header />);
+
+    act(() => {
+      fireEvent.click(getAllByRole('button', { name: /switch language/i })[1]!);
+    });
+    expect(getByRole('dialog', { name: /switch language/i })).toBeInTheDocument();
+
+    act(() => {
+      fireEvent.click(getByRole('button', { name: 'Français' }));
+    });
+
+    expect(queryByRole('dialog')).not.toBeInTheDocument();
+  });
+
+  it('closes the mobile menu when Escape is pressed', () => {
+    const { getByRole, queryByRole } = render(<Header />);
+
+    act(() => {
+      fireEvent.click(getByRole('button', { name: /open menu/i }));
+    });
+    expect(getByRole('dialog', { name: /close menu/i })).toBeInTheDocument();
+
+    act(() => {
+      window.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
+    });
+
+    expect(queryByRole('dialog')).not.toBeInTheDocument();
+  });
+
+  it('expands the header when scrolling back up after compact', () => {
+    Object.defineProperty(window, 'innerWidth', { writable: true, value: 1280 });
+    let mockScrollY = 0;
+    Object.defineProperty(window, 'scrollY', {
+      configurable: true,
+      get: () => mockScrollY,
+    });
+
+    const { getByRole } = render(<Header />);
+    const header = getByRole('banner');
+
+    mockScrollY = 120;
+    act(() => {
+      window.dispatchEvent(new Event('scroll'));
+    });
+    expectHeaderHeight(header, 64);
+
+    mockScrollY = 20;
+    act(() => {
+      window.dispatchEvent(new Event('scroll'));
+    });
+    expectHeaderHeight(header, 85);
+  });
+
+  it('reapplies expanded height on resize when not compact', () => {
+    Object.defineProperty(window, 'innerWidth', { writable: true, value: 1280 });
+    const mockScrollY = 0;
+    Object.defineProperty(window, 'scrollY', {
+      configurable: true,
+      get: () => mockScrollY,
+    });
+
+    const { getByRole } = render(<Header />);
+    const header = getByRole('banner');
+    expectHeaderHeight(header, 85);
+
+    Object.defineProperty(window, 'innerWidth', { writable: true, value: 800 });
+    act(() => {
+      window.dispatchEvent(new Event('resize'));
+    });
+    expectHeaderHeight(header, 85);
   });
 });

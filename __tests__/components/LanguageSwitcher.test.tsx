@@ -139,4 +139,28 @@ describe('LanguageSwitcher Component', () => {
     // Dropdown should remain open
     expect(getAllByRole('menuitem')).toHaveLength(5);
   });
+
+  it('should close dropdown when the close button is clicked', async () => {
+    const { getByRole, getAllByRole, queryAllByRole } = render(<LanguageSwitcher />);
+
+    fireEvent.click(getByRole('button', { name: /switch language/i }));
+    expect(getAllByRole('menuitem')).toHaveLength(5);
+
+    fireEvent.click(getByRole('button', { name: /close menu/i }));
+
+    await waitFor(() => {
+      expect(queryAllByRole('menuitem')).toHaveLength(0);
+    });
+  });
+
+  it('should call onOpen instead of opening dropdown when onOpen is provided', () => {
+    const onOpen = vi.fn();
+    const { getByRole, queryAllByRole } = render(<LanguageSwitcher onOpen={onOpen} />);
+
+    const button = getByRole('button', { name: /switch language/i });
+    fireEvent.click(button);
+
+    expect(onOpen).toHaveBeenCalledTimes(1);
+    expect(queryAllByRole('menuitem')).toHaveLength(0);
+  });
 });

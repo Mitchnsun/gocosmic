@@ -24,6 +24,7 @@ export const SCROLL_COMPACT_THRESHOLD = 10;
 export const SCROLL_DIRECTION_THRESHOLD = 10;
 export const MOBILE_MAX_WIDTH = 600;
 export const TABLET_MAX_WIDTH = 1023;
+export const STATUS_BAR_HEIGHT = 32;
 export const MOBILE_HEIGHT = 64;
 export const TABLET_EXPANDED_HEIGHT = 85;
 export const TABLET_COMPACT_HEIGHT = 56;
