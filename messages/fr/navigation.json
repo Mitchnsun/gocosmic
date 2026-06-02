@@ -6,6 +6,8 @@
     "contact": "Contact",
     "home": "Accueil",
     "label": "Navigation principale",
+    "menu_close": "Fermer le menu",
+    "menu_open": "Ouvrir le menu",
     "pricing_label": "Simulateur de tarifs",
     "pricing": "Tarifs",
     "projects_label": "Nos Projets",
@@ -13,6 +15,8 @@
     "services_label": "Nos Services Cosmiques",
     "services": "Services",
     "skip_to_content": "Aller au contenu principal",
-    "switch_locale": "Changer de langue"
+    "switch_locale": "Changer de langue",
+    "lang_drawer_title": "LANGUE · SÉLECTION",
+    "menu_title": "MENU"
   }
 }

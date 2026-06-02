@@ -6,6 +6,8 @@
     "contact": "Kontakt",
     "home": "Startseite",
     "label": "Hauptnavigation",
+    "menu_close": "Menü schließen",
+    "menu_open": "Menü öffnen",
     "pricing_label": "Preisrechner",
     "pricing": "Preise",
     "projects_label": "Unsere Projekte",
@@ -13,6 +15,8 @@
     "services_label": "Unsere Kosmischen Dienstleistungen",
     "services": "Dienstleistungen",
     "skip_to_content": "Zum Hauptinhalt springen",
-    "switch_locale": "Sprache wechseln"
+    "switch_locale": "Sprache wechseln",
+    "lang_drawer_title": "SPRACHE · AUSWÄHLEN",
+    "menu_title": "MENÜ"
   }
 }
