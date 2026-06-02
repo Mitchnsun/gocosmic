@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - Mobile menu with morphing burger → ✕ button and animated full-screen drawer
 - `MobileMenuButton` component: two `motion.span` bars animate to a ✕ on open; full aria (`aria-label`, `aria-expanded`, `aria-controls`); respects `prefers-reduced-motion` via `useReducedMotion()`
-- `MobileMenu` component: fixed full-screen overlay (`role="dialog"`, `aria-modal`), slide-from-top animation (`y: -100% → 0`, ease `[0.16, 1, 0.3, 1]`, 420 ms), per-link stagger (50 ms), footer with `LanguageSwitcher` and contact email
+- `MobileMenu` component: fixed full-screen overlay (`role="dialog"`, `aria-modal`), slide-from-top animation (`y: -100% → 0`, ease `[0.16, 1, 0.3, 1]`, 420 ms), per-link stagger (50 ms), footer with contact email
 - `useMobileMenu` hook: `open/close/toggle`, body scroll lock, Escape key close (with focus restore), route-change close
 - `MOBILE_MENU_DURATION_MS = 420` and `MOBILE_MENU_STAGGER_MS = 50` constants in `constants.ts`
 - `menu_open` / `menu_close` i18n keys added to all 5 locales (EN, FR, DE, ES, IT)
