@@ -2,7 +2,7 @@ import { vi } from 'vitest';
 
 import CTAFinal from '@/components/CTAFinal';
 
-import { fireEvent, render, screen } from '../test-utils';
+import { fireEvent, render } from '../test-utils';
 
 const { starfieldMock } = vi.hoisted(() => ({
   starfieldMock: vi.fn(
@@ -40,11 +40,11 @@ describe('CTAFinal', () => {
   });
 
   it('should render headline, description and CTA button', () => {
-    renderCTA();
+    const { getByRole, getByText } = renderCTA();
 
-    expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('Ready to Go Cosmic?');
-    expect(screen.getByText("Let's discuss how we can bring your vision to life.")).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /Contact us/ })).toHaveAttribute('href', '/contact');
+    expect(getByRole('heading', { level: 2 })).toHaveTextContent('Ready to Go Cosmic?');
+    expect(getByText("Let's discuss how we can bring your vision to life.")).toBeInTheDocument();
+    expect(getByRole('link', { name: /Contact us/ })).toHaveAttribute('href', '/contact');
   });
 
   it('should render the starfield background', () => {
@@ -71,8 +71,8 @@ describe('CTAFinal', () => {
   });
 
   it('should warp the starfield on CTA hover and reset on leave', () => {
-    renderCTA({ starfieldDensity: 'high', starfieldSpeed: 0.2, starfieldWarpSpeed: 0.8 });
-    const cta = screen.getByRole('link', { name: /Contact us/ });
+    const { getByRole } = renderCTA({ starfieldDensity: 'high', starfieldSpeed: 0.2, starfieldWarpSpeed: 0.8 });
+    const cta = getByRole('link', { name: /Contact us/ });
 
     fireEvent.pointerEnter(cta);
     expect(lastStarfieldProps().speed).toBe(8);
@@ -84,8 +84,8 @@ describe('CTAFinal', () => {
   });
 
   it('should warp the starfield on CTA focus and reset on blur', () => {
-    renderCTA();
-    const cta = screen.getByRole('link', { name: /Contact us/ });
+    const { getByRole } = renderCTA();
+    const cta = getByRole('link', { name: /Contact us/ });
 
     fireEvent.focus(cta);
     expect(lastStarfieldProps().speed).toBe(8);
@@ -95,8 +95,8 @@ describe('CTAFinal', () => {
   });
 
   it('should not warp when warpOnHover is disabled', () => {
-    renderCTA({ warpOnHover: false });
-    const cta = screen.getByRole('link', { name: /Contact us/ });
+    const { getByRole } = renderCTA({ warpOnHover: false });
+    const cta = getByRole('link', { name: /Contact us/ });
 
     fireEvent.pointerEnter(cta);
     expect(lastStarfieldProps().speed).toBe(2);
@@ -109,9 +109,9 @@ describe('CTAFinal', () => {
       removeEventListener: vi.fn(),
     });
 
-    const { container } = renderCTA();
+    const { container, getByRole } = renderCTA();
     const section = container.querySelector('section');
-    const cta = screen.getByRole('link', { name: /Contact us/ });
+    const cta = getByRole('link', { name: /Contact us/ });
 
     expect(section).toHaveAttribute('data-reduced-motion', 'true');
 
@@ -121,19 +121,19 @@ describe('CTAFinal', () => {
 
   it('should call onCtaClick when the button is clicked', () => {
     const onCtaClick = vi.fn();
-    renderCTA({ onCtaClick });
+    const { getByRole } = renderCTA({ onCtaClick });
 
-    fireEvent.click(screen.getByRole('link', { name: /Contact us/ }));
+    fireEvent.click(getByRole('link', { name: /Contact us/ }));
     expect(onCtaClick).toHaveBeenCalledTimes(1);
   });
 
   it('should apply the accent variant to the CTA button and headline gradient', () => {
-    renderCTA({ accentColor: 'jungle' });
+    const { getByRole, getByText } = renderCTA({ accentColor: 'jungle' });
 
-    const cta = screen.getByRole('link', { name: /Contact us/ });
+    const cta = getByRole('link', { name: /Contact us/ });
     expect(cta).toHaveClass('bg-jungle', 'cta-final-glow');
 
-    const headline = screen.getByText('Ready to Go Cosmic?');
+    const headline = getByText('Ready to Go Cosmic?');
     expect(headline).toHaveClass('cta-final-headline', 'from-jungle');
   });
 
