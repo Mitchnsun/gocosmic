@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 /**
  * Hook that manages the "warp speed" interaction state for the CTA starfield.
@@ -22,6 +22,10 @@ export const useWarpEffect = (enabled: boolean) => {
   const stopWarp = useCallback(() => {
     setIsWarping(false);
   }, []);
+
+  useEffect(() => {
+    if (!enabled) setIsWarping(false);
+  }, [enabled]);
 
   return { isWarping, startWarp, stopWarp };
 };
