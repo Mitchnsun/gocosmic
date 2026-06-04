@@ -3,12 +3,12 @@
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import type { ComponentProps, CSSProperties, ReactNode } from 'react';
 
-import { usePrefersReducedMotion } from '@/components/HeroSection/HeroSection.hooks';
 import Starfield from '@/components/Starfield';
 import { buttonVariants } from '@/design-system/button.variants';
 import { cn } from '@/design-system/lib/utils';
 import { Link } from '@/i18n/navigation';
 import { clamp } from '@/lib/clamp';
+import { usePrefersReducedMotion } from '@/lib/hooks/usePrefersReducedMotion';
 
 import { useWarpEffect } from './useWarpEffect';
 
@@ -166,7 +166,7 @@ const CTAFinal = ({
 
       <div className="relative z-10 m-auto flex max-w-2xl flex-col items-center gap-6 text-center">
         <h2 className="font-display text-[clamp(2.25rem,8vw,6rem)] leading-[1.05] font-bold tracking-[-0.04em] text-balance">
-          <span className={cn('cta-final-headline bg-gradient-to-r bg-clip-text text-transparent', accentGradient)}>
+          <span className={cn('cta-final-headline bg-linear-to-r bg-clip-text text-transparent', accentGradient)}>
             {headline}
           </span>
         </h2>
