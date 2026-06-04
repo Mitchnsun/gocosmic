@@ -74,7 +74,8 @@ export function ProjectsShowcase({
             layout === 'alternating' && 'divide-ghost/8 divide-y',
             layout === 'list' && 'divide-y-0'
           )}
-          aria-label={title ?? 'Projects'}>
+          aria-labelledby={title ? headingId : undefined}
+          aria-label={title ? undefined : 'Projects'}>
           {visibleProjects.map((project, index) => (
             <ProjectCard
               key={project.id}

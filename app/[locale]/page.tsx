@@ -27,10 +27,7 @@ export default async function Home() {
     ...def,
     title: t(`projects.${def.id}.title`),
     description: t(`projects.${def.id}.description`),
-    image: {
-      ...def.image,
-      alt: t(`projects.${def.id}.title`),
-    },
+    // image.alt is already set to a descriptive string in PROJECT_DEFINITIONS
   }));
 
   return (
@@ -66,7 +63,7 @@ export default async function Home() {
         <ProjectsShowcase
           id="projects"
           eyebrow={t('projects.eyebrow')}
-          title={t('projects.title')}
+          title={t.rich('projects.title', { em: (chunks) => <em>{chunks}</em> })}
           projects={projects}
           layout="list"
           staggerDelay={150}

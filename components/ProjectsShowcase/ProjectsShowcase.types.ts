@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 export interface ProjectImage {
   src: string;
   alt: string;
@@ -23,8 +25,8 @@ export interface Project {
 export interface ProjectsShowcaseProps {
   /** Section label rendered as a mono eyebrow. */
   eyebrow?: string;
-  /** Section heading — supports rich text (ReactNode). */
-  title?: string;
+  /** Section heading — supports rich text (ReactNode) for inline formatting such as &lt;em&gt;. */
+  title?: ReactNode;
   /** Supporting description below the heading. */
   subtitle?: string;
   /** Array of projects to display. */
