@@ -19,7 +19,15 @@ interface ProjectCardProps {
   learnMoreLabel: string;
 }
 
-/* ── List layout row ───────────────────────────────────────────────────── */
+/** Returns true for absolute URLs that open outside the current origin. */
+function isExternalHref(href: string): boolean {
+  return href.startsWith('http://') || href.startsWith('https://');
+}
+
+/** Extra anchor props for links that navigate away from the site. */
+function externalLinkProps(href: string) {
+  return isExternalHref(href) ? { target: '_blank' as const, rel: 'noopener noreferrer' } : {};
+}
 
 function ProjectListRow({
   project,
@@ -34,9 +42,6 @@ function ProjectListRow({
     reducedMotion,
   });
 
-  const isExternal = project.href.startsWith('http');
-  const linkProps = isExternal ? { target: '_blank' as const, rel: 'noopener noreferrer' } : {};
-
   return (
     <li
       ref={ref as React.RefObject<HTMLLIElement>}
@@ -49,7 +54,7 @@ function ProjectListRow({
       }}>
       <Link
         href={project.href}
-        {...linkProps}
+        {...externalLinkProps(project.href)}
         aria-label={`${project.title} — ${learnMoreLabel}`}
         className={cn(
           'flex w-full items-center gap-4 px-0 py-6',
@@ -119,8 +124,6 @@ function ProjectAlternatingCard({
   });
 
   const isEven = index % 2 === 0;
-  const isExternal = project.href.startsWith('http');
-  const linkProps = isExternal ? { target: '_blank' as const, rel: 'noopener noreferrer' } : {};
 
   return (
     <li
@@ -175,7 +178,7 @@ function ProjectAlternatingCard({
 
         <Link
           href={project.href}
-          {...linkProps}
+          {...externalLinkProps(project.href)}
           className={cn(
             'text-aerospace mt-2 inline-flex w-fit items-center gap-2 text-sm font-medium',
             'underline-offset-4 hover:underline focus:underline focus:outline-none',
@@ -203,9 +206,6 @@ function ProjectGridCard({
     delay: reducedMotion ? 0 : index * staggerDelay,
     reducedMotion,
   });
-
-  const isExternal = project.href.startsWith('http');
-  const linkProps = isExternal ? { target: '_blank' as const, rel: 'noopener noreferrer' } : {};
 
   return (
     <li
@@ -255,7 +255,7 @@ function ProjectGridCard({
 
         <Link
           href={project.href}
-          {...linkProps}
+          {...externalLinkProps(project.href)}
           aria-label={`${project.title} — ${learnMoreLabel}`}
           className={cn(
             'text-aerospace mt-3 inline-flex w-fit items-center gap-1.5 text-sm font-medium',
