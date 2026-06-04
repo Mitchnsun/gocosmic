@@ -166,7 +166,7 @@ const CTAFinal = ({
 
       <div className="relative z-10 m-auto flex max-w-2xl flex-col items-center gap-6 text-center">
         <h2 className="font-display text-[clamp(2.25rem,8vw,6rem)] leading-[1.05] font-bold tracking-[-0.04em] text-balance">
-          <span className={cn('cta-final-headline bg-linear-to-r bg-clip-text text-transparent', accentGradient)}>
+          <span className={cn('cta-final-headline bg-gradient-to-r bg-clip-text text-transparent', accentGradient)}>
             {headline}
           </span>
         </h2>
