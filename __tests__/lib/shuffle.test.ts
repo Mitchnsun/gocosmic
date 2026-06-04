@@ -14,7 +14,6 @@ describe('shuffle', () => {
     const result = shuffle(source);
     expect(result).toEqual(['TypeScript', 'Tailwind CSS', 'Next.js']);
     expect(source).toEqual(['Next.js', 'TypeScript', 'Tailwind CSS']);
-    expect(source).toEqual(['Next.js', 'TypeScript', 'Tailwind CSS']);
   });
 
   it('returns an empty array unchanged', () => {
