@@ -25,7 +25,7 @@ export interface Project {
 export interface ProjectsShowcaseProps {
   /** Section label rendered as a mono eyebrow. */
   eyebrow?: string;
-  /** Section heading — supports rich text (ReactNode) for inline formatting such as &lt;em&gt;. */
+  /** Section heading — supports rich text (ReactNode) for inline formatting such as <em>. */
   title?: ReactNode;
   /** Supporting description below the heading. */
   subtitle?: string;

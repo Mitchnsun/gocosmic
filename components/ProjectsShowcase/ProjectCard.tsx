@@ -19,9 +19,9 @@ interface ProjectCardProps {
   learnMoreLabel: string;
 }
 
-/** Returns true for absolute URLs that open outside the current origin. */
+/** Returns true for absolute or protocol-relative URLs that open outside the current origin. */
 function isExternalHref(href: string): boolean {
-  return href.startsWith('http://') || href.startsWith('https://');
+  return href.startsWith('http://') || href.startsWith('https://') || href.startsWith('//');
 }
 
 /** Extra anchor props for links that navigate away from the site. */
