@@ -7,6 +7,7 @@ Codex instructions for working in this repository.
 - Read and follow `CLAUDE.md` first. Treat it as the shared source of truth for AI-agent behavior in this project.
 - This file adds Codex-specific operating notes and project shortcuts. If anything here conflicts with `CLAUDE.md`, prefer `CLAUDE.md`.
 - Also consult `GUIDELINES.md` for UI, coding, security, commit, and manual validation rules, `__tests__/TESTING.md` for test patterns, and `docs/lessons.md` for persistent agent lessons.
+- **Before implementing any UI component or page section**, read `DESIGN_GUIDELINE.md`. It defines all visual tokens, signature patterns, component architecture, and anti-patterns for the Go Cosmic design system.
 - Consult `SECURITY.md` before adding or changing API routes, Server Actions, environment variables, third-party scripts, CSP/security headers, or dependency policy.
 
 ## Project Snapshot

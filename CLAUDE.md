@@ -35,6 +35,7 @@ To run a single test file: `yarn test __tests__/components/MyComponent.test.tsx`
 These hold binding rules — consult them alongside this file:
 
 - `GUIDELINES.md` — UI, ESLint (zero-warnings), security, and the manual validation checklist.
+- `DESIGN_GUIDELINE.md` — **Read before implementing any UI component or page section.** Defines the visual tokens (colors, typography, spacing), signature patterns (eyebrow, signal dot, starfield, buttons, cards), component architecture, and anti-patterns. Summary: dark `void` background, rare `aerospace` orange accent, mono labels for HUD texture, pill buttons via `buttonVariants()`, `prefers-reduced-motion` mandatory.
 - `__tests__/TESTING.md` — test patterns and conventions.
 - `docs/lessons.md` — persistent lessons log (commit after each correction).
 - `AGENTS.md` — Codex-specific notes (defers to this file).
