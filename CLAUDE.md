@@ -112,10 +112,21 @@ Before opening a PR:
 
 ### Changelog style
 
-Keep entries **brief and user-facing** — describe the observable change, not the implementation. Avoid listing file paths, component names, or hook names. Aim for 1–3 bullets per section (`Added`, `Changed`, `Fixed`), each a single sentence.
+Write for a **non-technical reader** — a client, a stakeholder, or someone outside the project should understand every entry without any coding background.
+
+Rules:
+
+- Describe **what the user sees or experiences**, never what was implemented internally.
+- **No file paths, component names, hook names, CSS class names, or technical jargon** of any kind.
+- **No unit-test counts**, coverage numbers, or internal tooling changes unless they directly affect the user experience.
+- Aim for **1–3 bullets per section** (`Added`, `Changed`, `Fixed`), each a single sentence.
+- If a change is purely internal (refactor, test, tooling), omit it or fold it into a higher-level sentence.
 
 Good: `Animated word cycling in the homepage hero with reduced-motion support`
 Avoid: `Added AnimatedEndWord sub-component in components/Hero/ with useWordCycler hook`
+
+Good: `New immersive closing section on the homepage with a star-field that accelerates on hover`
+Avoid: `New CTAFinal component with useWarpEffect hook, cta-final-headline animation, and prefers-reduced-motion handling`
 
 ## Documentation language
 

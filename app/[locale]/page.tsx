@@ -42,15 +42,6 @@ export default function Home() {
       <section className="relative z-10 m-auto mt-4 flex max-w-7xl flex-col items-center">
         <ServicesGrid />
       </section>
-      <section className="relative z-10 m-auto max-w-7xl px-4 py-8 text-center">
-        <h3 className="text-2xl font-bold">{t('zone.title')}</h3>
-        <p className="mt-2 text-gray-400">{t('zone.description')}</p>
-        <ul className="mt-4 flex justify-center gap-6 text-blue-300">
-          <li>📍 {t('zone.locations.annecy')}</li>
-          <li>📍 {t('zone.locations.geneva')}</li>
-          <li>📍 {t('zone.locations.haute_savoie')}</li>
-        </ul>
-      </section>
       <CTAFinal
         id="cta"
         headline={t('cta.title')}
@@ -60,8 +51,17 @@ export default function Home() {
         accentColor="aerospace"
         starfieldWarpSpeed={0.8}
         warpOnHover
-        className="-m-4 mt-4"
-      />
+        className="-m-4 mt-4">
+        <div className="px-4 py-8 text-center">
+          <h3 className="text-2xl font-bold">{t('zone.title')}</h3>
+          <p className="mt-2 text-gray-400">{t('zone.description')}</p>
+          <ul className="mt-4 flex justify-center gap-6 text-blue-300">
+            <li>📍 {t('zone.locations.annecy')}</li>
+            <li>📍 {t('zone.locations.geneva')}</li>
+            <li>📍 {t('zone.locations.haute_savoie')}</li>
+          </ul>
+        </div>
+      </CTAFinal>
     </div>
   );
 }

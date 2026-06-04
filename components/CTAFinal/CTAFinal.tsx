@@ -1,7 +1,7 @@
 'use client';
 
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
-import type { ComponentProps, CSSProperties } from 'react';
+import type { ComponentProps, CSSProperties, ReactNode } from 'react';
 
 import { usePrefersReducedMotion } from '@/components/HeroSection/HeroSection.hooks';
 import Starfield from '@/components/Starfield';
@@ -86,6 +86,8 @@ export interface CTAFinalProps {
   className?: string;
   /** Optional section id. */
   id?: string;
+  /** Optional content rendered below the CTA button, inside the starfield. */
+  children?: ReactNode;
 }
 
 /**
@@ -115,6 +117,7 @@ const CTAFinal = ({
   onCtaClick,
   className,
   id,
+  children,
 }: CTAFinalProps) => {
   const prefersReducedMotion = usePrefersReducedMotion(respectReducedMotion);
   const warpEnabled = warpOnHover && !prefersReducedMotion;
@@ -168,7 +171,7 @@ const CTAFinal = ({
         className="relative z-10 m-auto flex max-w-2xl flex-col items-center gap-6 text-center"
         data-parallax-intensity={parallaxIntensity}>
         <h2 className="font-display text-[clamp(2.25rem,8vw,6rem)] leading-[1.05] font-bold tracking-[-0.04em] text-balance">
-          <span className={cn('cta-final-headline bg-gradient-to-r bg-clip-text text-transparent', accentGradient)}>
+          <span className={cn('cta-final-headline bg-linear-to-r bg-clip-text text-transparent', accentGradient)}>
             {headline}
           </span>
         </h2>
@@ -189,6 +192,7 @@ const CTAFinal = ({
           <ArrowRightIcon className="size-5" aria-hidden="true" />
         </Link>
       </div>
+      {children && <div className="relative z-10 m-auto mt-12 max-w-7xl pt-10">{children}</div>}
     </section>
   );
 };
