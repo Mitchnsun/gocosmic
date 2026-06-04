@@ -84,10 +84,16 @@
     "zone": {
       "title": "Area di intervento",
       "description": "Disponibile ad Annecy, Ginevra e in Alta Savoia.",
+      "availability": "Disponibile",
       "locations": {
         "annecy": "Annecy",
         "geneva": "Ginevra",
         "haute_savoie": "Alta Savoia"
+      },
+      "stations": {
+        "annecy": { "meta": "Base · 74" },
+        "geneva": { "meta": "Lago di Ginevra" },
+        "haute_savoie": { "meta": "Francia" }
       }
     }
   }

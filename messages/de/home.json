@@ -84,10 +84,16 @@
     "zone": {
       "title": "Einsatzgebiet",
       "description": "Verfügbar in Annecy, Genf und Haute-Savoie.",
+      "availability": "Verfügbar",
       "locations": {
         "annecy": "Annecy",
         "geneva": "Genf",
         "haute_savoie": "Haute-Savoie"
+      },
+      "stations": {
+        "annecy": { "meta": "Basis · 74" },
+        "geneva": { "meta": "Genfersee" },
+        "haute_savoie": { "meta": "Frankreich" }
       }
     }
   }

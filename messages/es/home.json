@@ -84,10 +84,16 @@
     "zone": {
       "title": "Zona de intervención",
       "description": "Disponible en Annecy, Ginebra y Alta Saboya.",
+      "availability": "Disponible",
       "locations": {
         "annecy": "Annecy",
         "geneva": "Ginebra",
         "haute_savoie": "Alta Saboya"
+      },
+      "stations": {
+        "annecy": { "meta": "Base · 74" },
+        "geneva": { "meta": "Lago Lemán" },
+        "haute_savoie": { "meta": "Francia" }
       }
     }
   }

@@ -84,10 +84,16 @@
     "zone": {
       "title": "Zone d'intervention",
       "description": "Disponible à Annecy, Genève et en Haute-Savoie.",
+      "availability": "Disponible",
       "locations": {
         "annecy": "Annecy",
         "geneva": "Genève",
         "haute_savoie": "Haute-Savoie"
+      },
+      "stations": {
+        "annecy": { "meta": "Base · 74" },
+        "geneva": { "meta": "Arc lémanique" },
+        "haute_savoie": { "meta": "France" }
       }
     }
   }

@@ -84,10 +84,16 @@
     "zone": {
       "title": "Our service area",
       "description": "Available in Annecy, Geneva, and Haute-Savoie.",
+      "availability": "Available",
       "locations": {
         "annecy": "Annecy",
         "geneva": "Geneva",
         "haute_savoie": "Haute-Savoie"
+      },
+      "stations": {
+        "annecy": { "meta": "Base · 74" },
+        "geneva": { "meta": "Lake Geneva" },
+        "haute_savoie": { "meta": "France" }
       }
     }
   }
