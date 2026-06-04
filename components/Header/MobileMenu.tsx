@@ -28,7 +28,7 @@ const MobileMenu = ({ onClose, items }: MobileMenuProps) => {
       id="mobile-menu"
       role="dialog"
       aria-modal="true"
-      aria-label={t('menu_close')}
+      aria-label={t('menu_title')}
       className="fixed inset-0 z-40 flex flex-col bg-slate-950/95 backdrop-blur-xl"
       initial={{ y: '-100%' }}
       animate={{ y: 0 }}

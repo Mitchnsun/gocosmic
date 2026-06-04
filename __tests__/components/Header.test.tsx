@@ -207,7 +207,7 @@ describe('Header Component', () => {
       fireEvent.click(getByRole('button', { name: /open menu/i }));
     });
 
-    expect(getByRole('dialog', { name: /close menu/i })).toBeInTheDocument();
+    expect(getByRole('dialog', { name: /^menu$/i })).toBeInTheDocument();
   });
 
   it('opens the lang drawer when the mobile language switcher is clicked', () => {
@@ -241,7 +241,7 @@ describe('Header Component', () => {
     act(() => {
       fireEvent.click(getByRole('button', { name: /open menu/i }));
     });
-    expect(getByRole('dialog', { name: /close menu/i })).toBeInTheDocument();
+    expect(getByRole('dialog', { name: /^menu$/i })).toBeInTheDocument();
 
     act(() => {
       window.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));

@@ -5,7 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [1.6.6] - 2026-06-01
+## [1.6.7] - 2026-06-04
+
+### Added
+
+- New closing section at the bottom of the homepage with an animated star background and a highlighted contact button
+
+### Changed
+
+- Replaced the previous "Ready to Go Cosmic?" teaser with the new closing section
+
+## [1.6.6] - 2026-06-02
 
 ### Added
 
