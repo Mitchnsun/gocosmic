@@ -2,7 +2,28 @@
 
 import { useEffect, useState } from 'react';
 
-const shuffle = (arr: string[]): string[] => [...arr].sort(() => Math.random() - 0.5);
+const shuffle = (arr: string[]): string[] => {
+  const shuffled = [...arr];
+
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const randomIndex = Math.floor(Math.random() * (index + 1));
+    // eslint-disable-next-line security/detect-object-injection
+    const currentItem = shuffled[index];
+    // eslint-disable-next-line security/detect-object-injection
+    const randomItem = shuffled[randomIndex];
+
+    if (currentItem === undefined || randomItem === undefined) {
+      continue;
+    }
+
+    // eslint-disable-next-line security/detect-object-injection
+    shuffled[index] = randomItem;
+    // eslint-disable-next-line security/detect-object-injection
+    shuffled[randomIndex] = currentItem;
+  }
+
+  return shuffled;
+};
 
 export function AsciiMarquee({ labels }: { labels: string[] }) {
   const [items, setItems] = useState(labels);
@@ -19,7 +40,7 @@ export function AsciiMarquee({ labels }: { labels: string[] }) {
         {[0, 1].map((copyIndex) => (
           <div key={copyIndex} className="flex items-center">
             {items.map((label, labelIndex) => (
-              <div key={`${copyIndex}-${label}`} className="flex items-center">
+              <div key={`${copyIndex}-${labelIndex}-${label}`} className="flex items-center">
                 <span className="text-gray-100">{label}</span>
                 {labelIndex < items.length - 1 ? <span className="text-aerospace mx-4">✦</span> : null}
               </div>
