@@ -1,5 +1,23 @@
 {
   "homepage": {
+    "ascii_labels": [
+      "Remoto",
+      "Go Cosmic",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "App che decollano",
+      "Codice che consegna",
+      "Annecy",
+      "Tournette",
+      "Aravis",
+      "React",
+      "Expo",
+      "Zero bug in prod",
+      "Orbita stabile",
+      "T-0. Decollo.",
+      "Houston, abbiamo un problema."
+    ],
     "cta": {
       "button": "Contattaci",
       "description": "Parliamo di come possiamo dare vita al tuo progetto web o mobile, creando qualcosa di davvero fuori dal comune.",
@@ -8,13 +26,7 @@
     },
     "hero": {
       "cta": "Inizia il tuo viaggio",
-      "endWords": [
-        "brillano",
-        "svettano",
-        "ispirano",
-        "trasformano",
-        "eccellono"
-      ],
+      "endWords": ["brillano", "svettano", "ispirano", "trasformano", "eccellono"],
       "subtitle": "Lascia che lanciamo le tue idee nella stratosfera con design mistico e funzionalità cosmiche",
       "title": "Costruiamo applicazioni stellari che"
     },
@@ -47,42 +59,22 @@
       "ai": {
         "description": "Integrazione di funzionalità IA avanzate per rendere le tue applicazioni più intelligenti, adattive e veramente di nuova generazione.",
         "title": "Alimentato dall'IA",
-        "features": [
-          "LLMs",
-          "Embeddings",
-          "Agenti",
-          "RAG"
-        ]
+        "features": ["LLMs", "Embeddings", "Agenti", "RAG"]
       },
       "design": {
         "description": "Creazione di esperienze utente intuitive e incantevoli che catturano e deliziano.",
         "title": "Design UI/UX Mistico",
-        "features": [
-          "Figma",
-          "Design Systems",
-          "Motion",
-          "Accessibilità"
-        ]
+        "features": ["Figma", "Design Systems", "Motion", "Accessibilità"]
       },
       "development": {
         "description": "Costruzione di applicazioni mobili robuste e scalabili per piattaforme iOS e Android.",
         "title": "Sviluppo Stellare",
-        "features": [
-          "React",
-          "Next.js",
-          "TypeScript",
-          "Expo"
-        ]
+        "features": ["React", "Next.js", "TypeScript", "Expo"]
       },
       "launch": {
         "description": "Guidare la tua app attraverso il processo di lancio e oltre, assicurando un decollo di successo.",
         "title": "Lancio Cosmico",
-        "features": [
-          "Vercel",
-          "AWS",
-          "Docker",
-          "Sentry"
-        ]
+        "features": ["Vercel", "AWS", "Docker", "Sentry"]
       },
       "title": "I Nostri Servizi Cosmici",
       "eyebrow": "[ SERVIZI · 04 ]",

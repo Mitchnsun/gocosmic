@@ -119,6 +119,15 @@ footer a {
   }
 }
 
+@keyframes footer-ascii-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @layer utilities {
   @keyframes planet-glow-pulse {
     0%,
@@ -148,8 +157,16 @@ footer a {
     animation: dot-glow 2s ease-in-out infinite;
   }
 
+  .animate-footer-ascii-marquee {
+    animation: footer-ascii-marquee 100s linear infinite;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .timeline-dot {
+      animation: none;
+    }
+
+    .animate-footer-ascii-marquee {
       animation: none;
     }
   }

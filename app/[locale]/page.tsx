@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 
+import { AsciiMarquee } from '@/components/AsciiMarquee';
 import CTAFinal from '@/components/CTAFinal';
 import HeroSection from '@/components/HeroSection';
 import { ProcessTimeline } from '@/components/ProcessTimeline';
@@ -8,6 +9,7 @@ import { ServicesGrid } from '@/components/ServicesGrid';
 
 export default function Home() {
   const t = useTranslations('homepage');
+  const asciiLabels = t.raw('ascii_labels') as string[];
 
   const processSteps = homepageSteps.map((step) => ({
     ...step,
@@ -17,7 +19,7 @@ export default function Home() {
   }));
 
   return (
-    <div className="text-ghost bg-void relative p-4">
+    <div className="text-ghost bg-void relative px-4 pt-4">
       <HeroSection
         title={t('hero.title')}
         endWords={t.raw('hero.endWords') as string[]}
@@ -62,6 +64,7 @@ export default function Home() {
           </ul>
         </div>
       </CTAFinal>
+      <AsciiMarquee labels={asciiLabels} />
     </div>
   );
 }
