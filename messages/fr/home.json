@@ -97,6 +97,29 @@
         "haute_savoie": { "meta": "France" },
         "leman": { "meta": "Léman · CH/FR" }
       }
+    },
+    "projects": {
+      "eyebrow": "[ TRAVAUX RÉCENTS · 04 ]",
+      "title": "Récemment <em>en orbite.</em>",
+      "subtitle": "Une sélection de nos derniers projets",
+      "learnMore": "Voir le projet",
+      "loadMore": "Voir plus de projets",
+      "dailyFortune": {
+        "title": "Daily Fortune",
+        "description": "Une application mobile mystique délivrant des fortunes quotidiennes et des messages de motivation générés par l'IA."
+      },
+      "mcomperat": {
+        "title": "mcomper.at",
+        "description": "Un CV web moderne et responsive, conçu avec Next.js, TypeScript et une internationalisation complète."
+      },
+      "pscSupersprint": {
+        "title": "PSC Supersprint",
+        "description": "Une application web pour la gestion et l'affichage en temps réel des résultats de compétitions de triathlon."
+      },
+      "choeurDesPaysduMontBlanc": {
+        "title": "Chœur des Pays du Mont Blanc",
+        "description": "Un site web présentant les activités, concerts et répertoire du chœur en Haute-Savoie."
+      }
     }
   }
 }

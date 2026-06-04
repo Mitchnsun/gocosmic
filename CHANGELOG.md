@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [1.6.8] - 2026-09-07
 
+### Added
+
+- New `ProjectsShowcase` component (`components/ProjectsShowcase/`) with list, alternating, and grid layout variants
+- `ProjectCard` sub-component rendering list rows, alternating image-text cards, and grid cards
+- `useProjectsAnimation` hook — IntersectionObserver-based stagger reveal with `prefers-reduced-motion` support and StrictMode-safe `hasIntersected` guard
+- `PROJECT_DEFINITIONS` constant with static data for all four showcase projects (Daily Fortune, mcomper.at, PSC Supersprint, Chœur des Pays du Mont Blanc)
+- `projects` i18n section added to `homepage` namespace across all five locales (EN, FR, DE, ES, IT)
+- ProjectsShowcase integrated on the homepage between ServicesGrid and CTAFinal
+- Load-more pagination via `displayCount` + `showLoadMore` props
+- 28 new unit tests (rendering, animation, a11y, load more, layout variants) — full coverage
+- WCAG AA accessibility: semantic `<section>`, labelled `<ul>`, focus-visible rings, descriptive alt text, `aria-label` on tag lists
+
 ### Changed
 
 - Upgraded the site's hosting runtime to a newer, actively-supported version to keep deployments secure and reliable

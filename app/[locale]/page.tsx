@@ -6,6 +6,7 @@ import CTAFinal from '@/components/CTAFinal';
 import HeroSection from '@/components/HeroSection';
 import { ProcessTimeline } from '@/components/ProcessTimeline';
 import { homepageSteps } from '@/components/ProcessTimeline/constants';
+import { PROJECT_DEFINITIONS, ProjectsShowcase } from '@/components/ProjectsShowcase';
 import { ServicesGrid } from '@/components/ServicesGrid';
 import { ZoneIntervention } from '@/components/ZoneIntervention';
 
@@ -20,6 +21,16 @@ export default async function Home() {
     label: t(`process.${step.id}.label`),
     title: t(`process.${step.id}.title`),
     description: t(`process.${step.id}.description`),
+  }));
+
+  const projects = PROJECT_DEFINITIONS.map((def) => ({
+    ...def,
+    title: t(`projects.${def.id}.title`),
+    description: t(`projects.${def.id}.description`),
+    image: {
+      ...def.image,
+      alt: t(`projects.${def.id}.title`),
+    },
   }));
 
   return (
@@ -50,6 +61,19 @@ export default async function Home() {
           <ServicesGrid />
         </NextIntlClientProvider>
       </section>
+
+      <div className="relative z-10 m-auto max-w-7xl">
+        <ProjectsShowcase
+          id="projects"
+          eyebrow={t('projects.eyebrow')}
+          title={t('projects.title')}
+          projects={projects}
+          layout="list"
+          staggerDelay={150}
+          loadMoreLabel={t('projects.loadMore')}
+        />
+      </div>
+
       <CTAFinal
         id="cta"
         headline={t('cta.title')}

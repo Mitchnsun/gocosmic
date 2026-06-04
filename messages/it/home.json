@@ -97,6 +97,29 @@
         "haute_savoie": { "meta": "Francia" },
         "leman": { "meta": "Léman · CH/FR" }
       }
+    },
+    "projects": {
+      "eyebrow": "[ LAVORI RECENTI · 04 ]",
+      "title": "Recentemente <em>in orbita.</em>",
+      "subtitle": "Una selezione dei nostri ultimi lavori",
+      "learnMore": "Visualizza progetto",
+      "loadMore": "Carica altri progetti",
+      "dailyFortune": {
+        "title": "Daily Fortune",
+        "description": "Un'app mobile mistica che fornisce fortune quotidiane e messaggi motivazionali basati su IA."
+      },
+      "mcomperat": {
+        "title": "mcomper.at",
+        "description": "Un CV web moderno e responsivo realizzato con Next.js, TypeScript e internazionalizzazione completa."
+      },
+      "pscSupersprint": {
+        "title": "PSC Supersprint",
+        "description": "Un'applicazione web per gestire e visualizzare in tempo reale i risultati delle competizioni di triathlon."
+      },
+      "choeurDesPaysduMontBlanc": {
+        "title": "Chœur des Pays du Mont Blanc",
+        "description": "Un sito web che presenta le attività, i concerti e il repertorio del coro in Alta Savoia."
+      }
     }
   }
 }
