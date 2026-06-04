@@ -13,7 +13,7 @@ describe('shuffle', () => {
     const result = shuffle(source);
 
     expect(result).not.toBe(source);
-    expect([...result].sort()).toEqual([...source].sort());
+    expect(result.slice().sort()).toEqual(source.slice().sort());
     expect(source).toEqual(['Next.js', 'TypeScript', 'Tailwind CSS']);
   });
 
