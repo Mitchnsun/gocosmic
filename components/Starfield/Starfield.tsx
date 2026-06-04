@@ -79,12 +79,11 @@ const Starfield = ({ starCount = DEFAULT_STAR_COUNT, speed = DEFAULT_SPEED, clas
       const cy = height / 2;
       const focalLength = width * 0.8;
 
-      while (stars.length < starCountRef.current) {
-        stars.push(createStar());
-      }
-
-      if (stars.length > starCountRef.current) {
-        stars.length = starCountRef.current;
+      const starDelta = starCountRef.current - stars.length;
+      if (starDelta > 0) {
+        stars.push(...Array.from({ length: starDelta }, createStar));
+      } else if (starDelta < 0) {
+        stars.splice(starCountRef.current);
       }
 
       for (const star of stars) {
