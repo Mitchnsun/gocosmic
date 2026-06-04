@@ -86,4 +86,16 @@ describe('Starfield Component', () => {
   it('should accept custom starCount and speed props', () => {
     expect(() => render(<Starfield starCount={50} speed={5} />)).not.toThrow();
   });
+
+  it('should keep one animation instance when speed and starCount props change', () => {
+    const addSpy = vi.spyOn(window, 'addEventListener');
+    const { rerender, unmount } = render(<Starfield starCount={50} speed={2} />);
+
+    rerender(<Starfield starCount={90} speed={8} />);
+
+    expect(addSpy).toHaveBeenCalledTimes(1);
+    expect(cancelAnimationFrame).not.toHaveBeenCalled();
+
+    unmount();
+  });
 });

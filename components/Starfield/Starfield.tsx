@@ -36,6 +36,16 @@ const DEFAULT_SPEED = 2;
  */
 const Starfield = ({ starCount = DEFAULT_STAR_COUNT, speed = DEFAULT_SPEED, className }: StarfieldProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const speedRef = useRef(speed);
+  const starCountRef = useRef(starCount);
+
+  useEffect(() => {
+    speedRef.current = speed;
+  }, [speed]);
+
+  useEffect(() => {
+    starCountRef.current = starCount;
+  }, [starCount]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -56,7 +66,7 @@ const Starfield = ({ starCount = DEFAULT_STAR_COUNT, speed = DEFAULT_SPEED, clas
       prevZ: width,
     });
 
-    const stars: Star[] = Array.from({ length: starCount }, createStar);
+    const stars: Star[] = Array.from({ length: starCountRef.current }, createStar);
 
     let animationId: number;
 
@@ -69,9 +79,17 @@ const Starfield = ({ starCount = DEFAULT_STAR_COUNT, speed = DEFAULT_SPEED, clas
       const cy = height / 2;
       const focalLength = width * 0.8;
 
+      while (stars.length < starCountRef.current) {
+        stars.push(createStar());
+      }
+
+      if (stars.length > starCountRef.current) {
+        stars.length = starCountRef.current;
+      }
+
       for (const star of stars) {
         star.prevZ = star.z;
-        star.z -= speed;
+        star.z -= speedRef.current;
 
         if (star.z <= 0) {
           star.x = Math.random() * width - cx;
@@ -127,7 +145,7 @@ const Starfield = ({ starCount = DEFAULT_STAR_COUNT, speed = DEFAULT_SPEED, clas
       if (resizeTimer !== null) clearTimeout(resizeTimer);
       window.removeEventListener('resize', handleResize);
     };
-  }, [starCount, speed]);
+  }, []);
 
   return <canvas ref={canvasRef} className={className} aria-hidden="true" />;
 };

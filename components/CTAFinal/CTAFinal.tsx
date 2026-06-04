@@ -76,8 +76,6 @@ export interface CTAFinalProps {
   accentColor?: AccentColor;
   /** Visual variant controlling the base background. Defaults to `'dark'`. */
   variant?: Variant;
-  /** Pointer parallax intensity (0–1). Defaults to `0.3`. */
-  parallaxIntensity?: number;
   /** Whether to honour `prefers-reduced-motion`. Defaults to `true`. */
   respectReducedMotion?: boolean;
   /** Optional callback fired when the CTA is clicked. */
@@ -112,7 +110,6 @@ const CTAFinal = ({
   warpOnHover = true,
   accentColor = 'aerospace',
   variant = 'dark',
-  parallaxIntensity = 0.3,
   respectReducedMotion = true,
   onCtaClick,
   className,
@@ -167,9 +164,7 @@ const CTAFinal = ({
         aria-hidden="true"
       />
 
-      <div
-        className="relative z-10 m-auto flex max-w-2xl flex-col items-center gap-6 text-center"
-        data-parallax-intensity={parallaxIntensity}>
+      <div className="relative z-10 m-auto flex max-w-2xl flex-col items-center gap-6 text-center">
         <h2 className="font-display text-[clamp(2.25rem,8vw,6rem)] leading-[1.05] font-bold tracking-[-0.04em] text-balance">
           <span className={cn('cta-final-headline bg-linear-to-r bg-clip-text text-transparent', accentGradient)}>
             {headline}

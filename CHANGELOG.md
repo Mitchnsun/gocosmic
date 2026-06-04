@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Added
 
-- New immersive closing section at the bottom of the homepage: an animated star-field accelerates to warp speed when hovering the call-to-action button, inviting visitors to get in touch
+- New closing section at the bottom of the homepage with an animated star background and a highlighted contact button
 
 ### Changed
 
