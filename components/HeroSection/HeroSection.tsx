@@ -5,13 +5,14 @@ import type { ComponentProps, CSSProperties, PointerEvent } from 'react';
 import { useEffect, useRef } from 'react';
 
 import AnimatedEndWord from '@/components/HeroSection/AnimatedEndWord';
-import { usePrefersReducedMotion, useWordCycler } from '@/components/HeroSection/HeroSection.hooks';
+import { useWordCycler } from '@/components/HeroSection/HeroSection.hooks';
 import Planet from '@/components/Planet';
 import Starfield from '@/components/Starfield';
 import { buttonVariants } from '@/design-system/button.variants';
 import { cn } from '@/design-system/lib/utils';
 import { Link } from '@/i18n/navigation';
 import { clamp } from '@/lib/clamp';
+import { usePrefersReducedMotion } from '@/lib/hooks/usePrefersReducedMotion';
 
 type LocalizedHref = ComponentProps<typeof Link>['href'];
 
