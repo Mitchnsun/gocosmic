@@ -1,6 +1,7 @@
 'use client';
 
-import { usePrefersReducedMotion } from '@/components/HeroSection/HeroSection.hooks';
+import { useEffect, useState } from 'react';
+
 import { cn } from '@/design-system/lib/utils';
 
 interface Station {
@@ -45,7 +46,16 @@ export const ZoneIntervention = ({
   respectReducedMotion = true,
   className,
 }: ZoneInterventionProps) => {
-  const reducedMotion = usePrefersReducedMotion(respectReducedMotion);
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    if (!respectReducedMotion) return;
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setReducedMotion(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, [respectReducedMotion]);
 
   return (
     <section aria-labelledby="zone-heading" className={cn('mx-auto w-full max-w-2xl', className)}>
