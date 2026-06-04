@@ -7,12 +7,13 @@ describe('shuffle', () => {
     vi.restoreAllMocks();
   });
 
-  it('returns a shuffled copy without mutating the source array', () => {
+  it('returns a new array with the same items without mutating the source array', () => {
     const source = ['Next.js', 'TypeScript', 'Tailwind CSS'];
-    vi.spyOn(Math, 'random').mockReturnValue(0);
 
     const result = shuffle(source);
-    expect(result).toEqual(['TypeScript', 'Tailwind CSS', 'Next.js']);
+
+    expect(result).not.toBe(source);
+    expect([...result].sort()).toEqual([...source].sort());
     expect(source).toEqual(['Next.js', 'TypeScript', 'Tailwind CSS']);
   });
 

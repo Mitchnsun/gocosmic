@@ -8,14 +8,10 @@ export const shuffle = (arr: string[]): string[] => {
     // eslint-disable-next-line security/detect-object-injection
     const randomItem = shuffled[randomIndex];
 
-    if (currentItem === undefined || randomItem === undefined) {
-      continue;
-    }
-
     // eslint-disable-next-line security/detect-object-injection
-    shuffled[index] = randomItem;
+    shuffled[index] = randomItem!;
     // eslint-disable-next-line security/detect-object-injection
-    shuffled[randomIndex] = currentItem;
+    shuffled[randomIndex] = currentItem!;
   }
 
   return shuffled;
