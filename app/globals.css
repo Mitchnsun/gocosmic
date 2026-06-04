@@ -276,6 +276,13 @@ footer a {
   [data-reduced-motion='true'] .cta-final-glow {
     animation: none;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta-final-headline,
+    .cta-final-glow {
+      animation: none;
+    }
+  }
 }
 
 [data-reduced-motion='true'] .hero-reveal-line,
