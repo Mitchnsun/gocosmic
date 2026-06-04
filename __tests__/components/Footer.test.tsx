@@ -7,19 +7,22 @@ describe('Footer Component', () => {
   it('should render the footer correctly', () => {
     const year = new Date().getFullYear();
 
-    const { getByRole, getByText, getAllByRole } = render(
+    const { getByRole, getByText, getAllByRole, getAllByText, queryByText } = render(
       <CookieConsentProvider>
         <Footer />
       </CookieConsentProvider>
     );
 
     expect(getByRole('contentinfo')).toBeInTheDocument();
-    expect(
-      getByText('• Remote ✦ Est. 2024 ✦ Go Cosmic ✦ Apps that launch ✦ Code that ships ✦ Annecy • Remote ✦ Est. 2024')
-    ).toBeInTheDocument();
+    expect(getAllByText('Next.js')[0]).toBeInTheDocument();
+    expect(getAllByText('TypeScript')[0]).toBeInTheDocument();
+    expect(getAllByText('Tailwind CSS')[0]).toBeInTheDocument();
+    expect(getAllByText('Apps that launch')[0]).toBeInTheDocument();
+    expect(getAllByText('Code that ships')[0]).toBeInTheDocument();
+    expect(queryByText(/Est\. 2024/i)).not.toBeInTheDocument();
 
     // Brand column
-    expect(getByText(/^Go Cosmic/)).toBeInTheDocument();
+    expect(getByRole('heading', { name: /^Go Cosmic\s*\.$/ })).toBeInTheDocument();
     expect(getByText('A development & design studio building cosmic apps from the French Alps.')).toBeInTheDocument();
 
     // Studio navigation
