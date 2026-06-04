@@ -15,28 +15,9 @@ const ColumnHeading = ({ children }: { children: React.ReactNode }) => (
 const Footer = () => {
   const t = useTranslations('footer');
   const year = new Date().getFullYear();
-  const asciiLabels = t.raw('ascii_labels') as string[];
 
   return (
     <footer className="w-full bg-slate-900 pt-12 text-gray-400">
-      <div
-        aria-hidden="true"
-        className="mb-10 overflow-hidden border-y border-slate-800/70 bg-slate-950/40 py-3 font-mono text-sm tracking-wide">
-        <div className="animate-footer-ascii-marquee flex w-max whitespace-nowrap motion-reduce:animate-none">
-          {[0, 1].map((copyIndex) => (
-            <div key={copyIndex} className="flex items-center">
-              {asciiLabels.map((label, labelIndex) => (
-                <div key={`${copyIndex}-${label}`} className="flex items-center">
-                  <span className="mx-3 text-gray-200">•</span>
-                  <span className="text-gray-100">{label}</span>
-                  {labelIndex < asciiLabels.length - 1 ? <span className="text-aerospace mx-4">✦</span> : null}
-                </div>
-              ))}
-              <span className="text-aerospace mx-4">✦</span>
-            </div>
-          ))}
-        </div>
-      </div>
       <div className="m-auto grid max-w-7xl grid-cols-2 gap-12 px-6 md:grid-cols-4">
         {/* Column 1 — Brand */}
         <div className="col-span-2">

@@ -158,7 +158,7 @@ footer a {
   }
 
   .animate-footer-ascii-marquee {
-    animation: footer-ascii-marquee 28s linear infinite;
+    animation: footer-ascii-marquee 100s linear infinite;
   }
 
   @media (prefers-reduced-motion: reduce) {

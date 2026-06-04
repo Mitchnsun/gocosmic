@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Added
 
 - New closing section at the bottom of the homepage with an animated star background and a highlighted contact button
+- Animated scrolling banner on the homepage displaying a mix of technologies, local landmarks (Tournette, Aravis, Annecy), and playful nods to space launches and software projects — order reshuffled on every visit
 
 ### Changed
 

@@ -7,18 +7,13 @@ describe('Footer Component', () => {
   it('should render the footer correctly', () => {
     const year = new Date().getFullYear();
 
-    const { getByRole, getByText, getAllByRole, getAllByText, queryByText } = render(
+    const { getByRole, getByText, getAllByRole, queryByText } = render(
       <CookieConsentProvider>
         <Footer />
       </CookieConsentProvider>
     );
 
     expect(getByRole('contentinfo')).toBeInTheDocument();
-    expect(getAllByText('Next.js')[0]).toBeInTheDocument();
-    expect(getAllByText('TypeScript')[0]).toBeInTheDocument();
-    expect(getAllByText('Tailwind CSS')[0]).toBeInTheDocument();
-    expect(getAllByText('Apps that launch')[0]).toBeInTheDocument();
-    expect(getAllByText('Code that ships')[0]).toBeInTheDocument();
     expect(queryByText(/Est\. 2024/i)).not.toBeInTheDocument();
 
     // Brand column

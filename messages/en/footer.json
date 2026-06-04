@@ -15,16 +15,6 @@
     "offer_duo": "Developer + Designer Duo",
     "legal": "Legal notice, privacy policy, and AI usage information are available online.",
     "copyright": "© {year} Go Cosmic. All systems nominal.",
-    "ascii_labels": [
-      "Remote",
-      "Go Cosmic",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Apps that launch",
-      "Code that ships",
-      "Annecy"
-    ],
     "local_page": "Web & Mobile Developer Annecy / Geneva",
     "privacy": "Privacy policy",
     "legal_notice": "Legal notice"
