@@ -14,6 +14,9 @@ describe('Footer Component', () => {
     );
 
     expect(getByRole('contentinfo')).toBeInTheDocument();
+    expect(
+      getByText('• Remote ✦ Est. 2024 ✦ Go Cosmic ✦ Apps that launch ✦ Code that ships ✦ Annecy • Remote ✦ Est. 2024')
+    ).toBeInTheDocument();
 
     // Brand column
     expect(getByText(/^Go Cosmic/)).toBeInTheDocument();

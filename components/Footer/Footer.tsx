@@ -15,9 +15,16 @@ const ColumnHeading = ({ children }: { children: React.ReactNode }) => (
 const Footer = () => {
   const t = useTranslations('footer');
   const year = new Date().getFullYear();
+  const asciiBanner =
+    '• Remote ✦ Est. 2024 ✦ Go Cosmic ✦ Apps that launch ✦ Code that ships ✦ Annecy • Remote ✦ Est. 2024';
 
   return (
     <footer className="w-full bg-slate-900 pt-12 text-gray-400">
+      <div
+        aria-hidden="true"
+        className="mb-10 border-y border-slate-800/70 bg-slate-950/40 py-3 text-center font-mono text-sm tracking-wide text-gray-300">
+        {asciiBanner}
+      </div>
       <div className="m-auto grid max-w-7xl grid-cols-2 gap-12 px-6 md:grid-cols-4">
         {/* Column 1 — Brand */}
         <div className="col-span-2">
