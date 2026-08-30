@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { buttonVariants } from '@/design-system/button.variants';
 import { cn } from '@/design-system/lib/utils';
 import { Link } from '@/i18n/navigation';
+import type { Currency } from '@/lib/region';
 
 const features = [
   { key: 'redesign', asterisk: false },
@@ -16,7 +17,11 @@ const features = [
   { key: 'domain', asterisk: true },
 ] as const;
 
-export function PricingTeaser() {
+interface PricingTeaserProps {
+  currency: Currency;
+}
+
+export function PricingTeaser({ currency }: PricingTeaserProps) {
   const t = useTranslations('pricing_teaser');
 
   return (
@@ -24,7 +29,7 @@ export function PricingTeaser() {
       {/* Price */}
       <p className="mb-1 text-sm font-medium tracking-wide text-gray-400 uppercase">{t('eyebrow')}</p>
       <div className="flex items-baseline gap-1">
-        <span className="text-jungle text-4xl font-extrabold">{t('price')}</span>
+        <span className="text-jungle text-4xl font-extrabold">{t(`price.${currency}`)}</span>
         <span className="text-jungle text-sm font-medium">{t('price_period')}</span>
       </div>
       <p className="mt-1 mb-3 text-gray-400">{t('tagline')}</p>

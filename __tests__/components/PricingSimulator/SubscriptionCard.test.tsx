@@ -2,14 +2,15 @@ import { useTranslations } from 'next-intl';
 
 import type { UpdateFrequency } from '@/components/PricingSimulator/PricingSimulator.types';
 import { SubscriptionCard } from '@/components/PricingSimulator/SubscriptionCard';
+import type { Currency } from '@/lib/region';
 
 import { render, screen } from '../../test-utils';
 
 type SubscriptionFreq = Exclude<UpdateFrequency, 'self_managed'>;
 
-function TestSubscriptionCard({ freq }: { freq: SubscriptionFreq }) {
+function TestSubscriptionCard({ freq, currency = 'eur' }: { freq: SubscriptionFreq; currency?: Currency }) {
   const t = useTranslations('pricing');
-  return <SubscriptionCard freq={freq} t={t} />;
+  return <SubscriptionCard freq={freq} t={t} currency={currency} />;
 }
 
 describe('SubscriptionCard', () => {
@@ -64,6 +65,14 @@ describe('SubscriptionCard', () => {
     it('includes weekly content_update item', () => {
       render(<TestSubscriptionCard freq="weekly" />);
       expect(screen.getByText('Up to 1 content update per week')).toBeInTheDocument();
+    });
+  });
+
+  describe('Swiss francs', () => {
+    it('renders franc prices instead of euro prices', () => {
+      render(<TestSubscriptionCard freq="monthly" currency="chf" />);
+      expect(screen.getByText('140 CHF / month')).toBeInTheDocument();
+      expect(screen.queryByText('100€ / month')).not.toBeInTheDocument();
     });
   });
 });

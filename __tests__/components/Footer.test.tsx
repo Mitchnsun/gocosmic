@@ -9,7 +9,7 @@ describe('Footer Component', () => {
 
     const { getByRole, getByText, getAllByRole, queryByText } = render(
       <CookieConsentProvider>
-        <Footer />
+        <Footer region="fr" />
       </CookieConsentProvider>
     );
 
@@ -47,5 +47,17 @@ describe('Footer Component', () => {
     expect(getByRole('link', { name: 'Privacy policy' })).toHaveAttribute('href', '/privacy');
     expect(getByRole('link', { name: 'Legal notice' })).toHaveAttribute('href', '/legal-notice');
     expect(getByRole('link', { name: /web & mobile developer annecy \/ geneva/i })).toHaveAttribute('href', '/local');
+  });
+
+  it('should claim the Geneva base for Swiss visitors', () => {
+    const { getByText } = render(
+      <CookieConsentProvider>
+        <Footer region="ch" />
+      </CookieConsentProvider>
+    );
+
+    expect(
+      getByText('A development & design studio building cosmic apps from Geneva and the Alps.')
+    ).toBeInTheDocument();
   });
 });

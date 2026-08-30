@@ -9,11 +9,13 @@ import { homepageSteps } from '@/components/ProcessTimeline/constants';
 import { PROJECT_DEFINITIONS, ProjectsShowcase } from '@/components/ProjectsShowcase';
 import { ServicesGrid } from '@/components/ServicesGrid';
 import { ZoneIntervention } from '@/components/ZoneIntervention';
+import { getRegion } from '@/lib/region.server';
 
 export default async function Home() {
   const t = await getTranslations('homepage');
   const locale = await getLocale();
   const messages = await getMessages();
+  const region = await getRegion();
   const asciiLabels = t.raw('ascii_labels') as string[];
 
   const processSteps = homepageSteps.map((step) => ({
@@ -88,10 +90,10 @@ export default async function Home() {
           label={t('zone.title')}
           availability={t('zone.availability')}
           stations={[
-            { name: t('zone.locations.annecy'), meta: t('zone.stations.annecy.meta') },
-            { name: t('zone.locations.geneva'), meta: t('zone.stations.geneva.meta') },
-            { name: t('zone.locations.haute_savoie'), meta: t('zone.stations.haute_savoie.meta') },
-            { name: t('zone.locations.leman'), meta: t('zone.stations.leman.meta') },
+            { name: t('zone.locations.annecy'), meta: t(`zone.stations.annecy.meta.${region}`) },
+            { name: t('zone.locations.geneva'), meta: t(`zone.stations.geneva.meta.${region}`) },
+            { name: t('zone.locations.haute_savoie'), meta: t(`zone.stations.haute_savoie.meta.${region}`) },
+            { name: t('zone.locations.suisse_romande'), meta: t(`zone.stations.suisse_romande.meta.${region}`) },
           ]}
         />
       </CTAFinal>

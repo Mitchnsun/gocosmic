@@ -3,6 +3,8 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages, getTranslations } from 'next-intl/server';
 
 import { PricingSimulator } from '@/components/PricingSimulator';
+import { getCurrency } from '@/lib/region';
+import { getRegion } from '@/lib/region.server';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -18,6 +20,7 @@ export default async function Pricing() {
   const t = await getTranslations('pricing');
   const locale = await getLocale();
   const messages = await getMessages();
+  const currency = getCurrency(await getRegion());
 
   return (
     <div className="text-ghost relative pt-10" style={{ minHeight: 'calc(100vh - var(--header-height))' }}>
@@ -31,7 +34,7 @@ export default async function Pricing() {
         {/* Simulator */}
         <div className="w-full">
           <NextIntlClientProvider locale={locale} messages={messages}>
-            <PricingSimulator />
+            <PricingSimulator currency={currency} />
           </NextIntlClientProvider>
         </div>
       </main>

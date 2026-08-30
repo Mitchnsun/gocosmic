@@ -1,7 +1,10 @@
 {
   "footer": {
     "brand_title": "Go Cosmic",
-    "brand_desc": "A development & design studio building cosmic apps from the French Alps.",
+    "brand_desc": {
+      "fr": "A development & design studio building cosmic apps from the French Alps.",
+      "ch": "A development & design studio building cosmic apps from Geneva and the Alps."
+    },
     "nav_title": "Studio",
     "nav_aria": "Footer navigation",
     "link_services": "Services",

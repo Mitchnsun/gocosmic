@@ -9,7 +9,7 @@
   },
   "meta": {
     "title": "Développement Web & Mobile | Annecy · Genève | Go Cosmic",
-    "description": "Agence de développement d'applications web et mobiles basée à Annecy, intervenant à Genève et en Haute-Savoie. React, React Native, Next.js."
+    "description": "Agence de développement d'applications web et mobiles basée à Annecy, intervenant à Genève, en Suisse romande et en Haute-Savoie. React, React Native, Next.js."
   },
   "language": {
     "current": "Langue actuelle : {language}",
@@ -17,7 +17,10 @@
   },
   "pricing_teaser": {
     "eyebrow": "Site vitrine",
-    "price": "à partir de 50€",
+    "price": {
+      "eur": "à partir de 50€",
+      "chf": "à partir de 80 CHF"
+    },
     "price_period": "/ mois",
     "tagline": "Tout compris, sans surprise",
     "scope_note": "Idéal pour présenter votre activité, vos services et vos coordonnées en ligne — sans gestion de commandes ni espace client.",
@@ -39,7 +42,10 @@
   "status_bar": {
     "signal_stable": "SIGNAL STABLE",
     "mission_control": "CENTRE DE CONTRÔLE",
-    "location": "ANNECY · ALT. 447M",
+    "location": {
+      "fr": "ANNECY · ALT. 447M",
+      "ch": "CHÊNE-BOUGERIES · ALT. 424M"
+    },
     "aria_label": "Statut du centre de contrôle",
     "aria_signal": "Signal actif"
   },

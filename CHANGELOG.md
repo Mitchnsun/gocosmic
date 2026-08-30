@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.7.0] - 2026-09-07
+
+### Added
+
+- Visitors browsing from Switzerland now see the Geneva base (Chêne-Bougeries) and every price in Swiss francs, set for the Swiss market rather than converted from euros
+- Coverage now states across the site that we work around Annecy, in Geneva and throughout French-speaking Switzerland
+
+### Changed
+
+- Visitors outside Switzerland keep the Annecy base and unchanged euro prices
+
 ## [1.6.8] - 2026-09-07
 
 ### Added

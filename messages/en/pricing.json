@@ -34,21 +34,30 @@
     "results": {
       "both": {
         "title": "Website + Mobile Application",
-        "rate": "600€ excl. tax / day",
+        "rate": {
+          "eur": "600€ excl. tax / day",
+          "chf": "900 CHF excl. tax / day"
+        },
         "rate_note": "*",
         "description": "For a project combining a website and a mobile application, development is billed at a daily rate. The total cost depends on complexity, functional scope, and targeted platforms.",
         "disclaimer": "* Indicative price, to be negotiated according to your needs and timeline."
       },
       "mobile": {
         "title": "Mobile Application",
-        "rate": "600€ excl. tax / day",
+        "rate": {
+          "eur": "600€ excl. tax / day",
+          "chf": "900 CHF excl. tax / day"
+        },
         "rate_note": "*",
         "disclaimer": "* Indicative price, to be negotiated according to your needs and timeline.",
         "description": "Mobile application development is billed at a daily rate. The final cost depends on the complexity, the number of features, and the targeted platforms (iOS, Android)."
       },
       "complex_website": {
         "title": "Custom Website",
-        "rate": "600€ excl. tax / day",
+        "rate": {
+          "eur": "600€ excl. tax / day",
+          "chf": "900 CHF excl. tax / day"
+        },
         "rate_note": "*",
         "disclaimer": "* Indicative price based on needs and timeline. No fixed price for a fully customisable website.",
         "description": "This type of project (with client accounts or e-commerce) is complex and fully customisable. The final cost depends on your specific requirements.",
@@ -57,7 +66,10 @@
       "subscription": {
         "few_per_year": {
           "title": "Essential Subscription",
-          "price": "75€ / month",
+          "price": {
+            "eur": "75€ / month",
+            "chf": "90 CHF / month"
+          },
           "duration": "Annual commitment",
           "includes": {
             "title": "Included:",
@@ -74,7 +86,10 @@
         },
         "monthly": {
           "title": "Standard Subscription",
-          "price": "100€ / month",
+          "price": {
+            "eur": "100€ / month",
+            "chf": "140 CHF / month"
+          },
           "duration": "Annual commitment",
           "includes": {
             "title": "Included:",
@@ -92,7 +107,10 @@
         },
         "weekly": {
           "title": "Premium Subscription",
-          "price": "150€ / month",
+          "price": {
+            "eur": "150€ / month",
+            "chf": "220 CHF / month"
+          },
           "duration": "Annual commitment",
           "includes": {
             "title": "Included:",
@@ -110,7 +128,10 @@
         },
         "self_managed": {
           "title": "Self-Managed CMS",
-          "rate": "600€ excl. tax / day",
+          "rate": {
+            "eur": "600€ excl. tax / day",
+            "chf": "900 CHF excl. tax / day"
+          },
           "rate_note": "*",
           "disclaimer": "* Base daily rate — final price to be discussed based on your CMS requirements.",
           "description": "A custom CMS will be developed so you can manage your content independently, whenever you want. The development cost is based on the daily rate and will be agreed according to your needs."

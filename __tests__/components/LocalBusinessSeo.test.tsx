@@ -28,7 +28,8 @@ describe('LocalBusinessSeo', () => {
         '@type': 'ProfessionalService',
         '@id': 'https://www.gocosmic.dev/#company',
         name: 'Go Cosmic',
-        description: 'Web and mobile development agency based in Annecy, serving Geneva and Haute-Savoie.',
+        description:
+          'Web and mobile development agency based in Annecy, serving Geneva, French-speaking Switzerland and Haute-Savoie.',
         url: 'https://www.gocosmic.dev',
         inLanguage: 'en',
         address: {
@@ -43,7 +44,7 @@ describe('LocalBusinessSeo', () => {
           latitude: 45.8992,
           longitude: 6.1294,
         },
-        areaServed: ['Annecy', 'Geneva', 'Haute-Savoie', 'Lake Geneva region'],
+        areaServed: ['Annecy', 'Geneva', 'Haute-Savoie', 'Lake Geneva region', 'French-speaking Switzerland'],
         sameAs: ['https://www.linkedin.com/in/matthieucomperat/'],
       },
     });
@@ -55,9 +56,10 @@ describe('LocalBusinessSeo', () => {
     expect(jsonLdScriptMock).toHaveBeenCalledWith(
       expect.objectContaining({
         data: expect.objectContaining({
-          description: 'Agence de développement web et mobile basée à Annecy, intervenant à Genève et en Haute-Savoie.',
+          description:
+            'Agence de développement web et mobile basée à Annecy, intervenant à Genève, en Suisse romande et en Haute-Savoie.',
           inLanguage: 'fr',
-          areaServed: ['Annecy', 'Genève', 'Haute-Savoie', 'Arc lémanique'],
+          areaServed: ['Annecy', 'Genève', 'Haute-Savoie', 'Arc lémanique', 'Suisse romande'],
         }),
       })
     );

@@ -53,7 +53,10 @@
     "mission": {
       "conclusion": "Notre mission : propulser vos projets vers de nouveaux horizons technologiques avec créativité, innovation et excellence technique.",
       "description": "Go Cosmic transforme vos idées en applications innovantes en combinant expertise moderne et intelligence artificielle.",
-      "location": "Basé à Annecy, nous intervenons à Genève et en Haute-Savoie — en présentiel ou à distance.",
+      "location": {
+        "fr": "Basé à Annecy, nous intervenons à Genève, en Suisse romande et en Haute-Savoie — en présentiel ou à distance.",
+        "ch": "Basé à Chêne-Bougeries, à Genève, nous intervenons dans toute la Suisse romande et dans le bassin annécien — en présentiel ou à distance."
+      },
       "specialization": {
         "items": {
           "aiIntegration": "Intégration avancée de l'IA pour des expériences utilisateurs intelligentes",

@@ -34,21 +34,30 @@
     "results": {
       "both": {
         "title": "Website + Mobile Anwendung",
-        "rate": "600€ netto / Tag",
+        "rate": {
+          "eur": "600€ netto / Tag",
+          "chf": "900 CHF netto / Tag"
+        },
         "rate_note": "*",
         "description": "Für ein Projekt, das eine Website und eine mobile Anwendung kombiniert, wird die Entwicklung nach Tagessatz abgerechnet. Die Gesamtkosten hängen von der Komplexität, dem Funktionsumfang und den Zielplattformen ab.",
         "disclaimer": "* Richtpreis, zu verhandeln je nach Ihren Anforderungen und Zeitplan."
       },
       "mobile": {
         "title": "Mobile Anwendung",
-        "rate": "600€ netto / Tag",
+        "rate": {
+          "eur": "600€ netto / Tag",
+          "chf": "900 CHF netto / Tag"
+        },
         "rate_note": "*",
         "disclaimer": "* Richtpreis, zu verhandeln je nach Ihren Anforderungen und Zeitplan.",
         "description": "Die Entwicklung mobiler Anwendungen wird nach Tagessatz abgerechnet. Die Endkosten hängen von der Komplexität, der Anzahl der Funktionen und den Zielplattformen (iOS, Android) ab."
       },
       "complex_website": {
         "title": "Individuelle Website",
-        "rate": "600€ netto / Tag",
+        "rate": {
+          "eur": "600€ netto / Tag",
+          "chf": "900 CHF netto / Tag"
+        },
         "rate_note": "*",
         "disclaimer": "* Richtpreis je nach Anforderungen und Zeitplan. Kein Pauschalpreis für eine vollständig anpassbare Website.",
         "description": "Dieses Projekttyp (mit Kundenkonten oder E-Commerce) ist komplex und vollständig individuell anpassbar. Die Endkosten hängen von Ihren spezifischen Anforderungen ab.",
@@ -57,7 +66,10 @@
       "subscription": {
         "few_per_year": {
           "title": "Essential-Abo",
-          "price": "75€ / Monat",
+          "price": {
+            "eur": "75€ / Monat",
+            "chf": "90 CHF / Monat"
+          },
           "duration": "Jahresbindung",
           "includes": {
             "title": "Inklusive:",
@@ -74,7 +86,10 @@
         },
         "monthly": {
           "title": "Standard-Abo",
-          "price": "100€ / Monat",
+          "price": {
+            "eur": "100€ / Monat",
+            "chf": "140 CHF / Monat"
+          },
           "duration": "Jahresbindung",
           "includes": {
             "title": "Inklusive:",
@@ -92,7 +107,10 @@
         },
         "weekly": {
           "title": "Premium-Abo",
-          "price": "150€ / Monat",
+          "price": {
+            "eur": "150€ / Monat",
+            "chf": "220 CHF / Monat"
+          },
           "duration": "Jahresbindung",
           "includes": {
             "title": "Inklusive:",
@@ -110,7 +128,10 @@
         },
         "self_managed": {
           "title": "Selbstverwaltetes CMS",
-          "rate": "600€ netto / Tag",
+          "rate": {
+            "eur": "600€ netto / Tag",
+            "chf": "900 CHF netto / Tag"
+          },
           "rate_note": "*",
           "disclaimer": "* Basis-Tagessatz — endgültiger Preis nach Absprache je nach Ihren CMS-Anforderungen.",
           "description": "Ein individuelles CMS wird entwickelt, damit Sie Ihre Inhalte selbständig verwalten können, wann immer Sie möchten. Die Entwicklungskosten basieren auf dem Tagessatz und werden entsprechend Ihren Anforderungen vereinbart."

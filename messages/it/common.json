@@ -9,7 +9,7 @@
   },
   "meta": {
     "title": "Sviluppo Web & Mobile | Annecy · Ginevra | Go Cosmic",
-    "description": "Agenzia di sviluppo app web e mobile con sede ad Annecy, operante a Ginevra e in Alta Savoia. React, React Native, Next.js."
+    "description": "Agenzia di sviluppo app web e mobile con sede ad Annecy, operante a Ginevra, nella Svizzera romanda e in Alta Savoia. React, React Native, Next.js."
   },
   "language": {
     "current": "Lingua attuale: {language}",
@@ -17,7 +17,10 @@
   },
   "pricing_teaser": {
     "eyebrow": "Sito web vetrina",
-    "price": "da 50€",
+    "price": {
+      "eur": "da 50€",
+      "chf": "da 80 CHF"
+    },
     "price_period": "/ mese",
     "tagline": "Tutto incluso, nessuna sorpresa",
     "scope_note": "Ideale per presentare la sua attività, i servizi e i recapiti online — senza gestione ordini né portale clienti.",
@@ -39,7 +42,10 @@
   "status_bar": {
     "signal_stable": "SEGNALE STABILE",
     "mission_control": "CONTROLLO MISSIONE",
-    "location": "ANNECY · ALT. 447M",
+    "location": {
+      "fr": "ANNECY · ALT. 447M",
+      "ch": "CHÊNE-BOUGERIES · ALT. 424M"
+    },
     "aria_label": "Stato del controllo missione",
     "aria_signal": "Segnale attivo"
   },

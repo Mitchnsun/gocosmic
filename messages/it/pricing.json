@@ -34,21 +34,30 @@
     "results": {
       "both": {
         "title": "Sito Web + Applicazione Mobile",
-        "rate": "600€ IVA escl. / giorno",
+        "rate": {
+          "eur": "600€ IVA escl. / giorno",
+          "chf": "900 CHF IVA escl. / giorno"
+        },
         "rate_note": "*",
         "description": "Per un progetto che combina un sito web e un'applicazione mobile, lo sviluppo viene fatturato a giornata. Il costo totale dipende dalla complessità, dall'ambito funzionale e dalle piattaforme target.",
         "disclaimer": "* Prezzo indicativo, da negoziare in base alle tue esigenze e tempi."
       },
       "mobile": {
         "title": "Applicazione Mobile",
-        "rate": "600€ IVA escl. / giorno",
+        "rate": {
+          "eur": "600€ IVA escl. / giorno",
+          "chf": "900 CHF IVA escl. / giorno"
+        },
         "rate_note": "*",
         "disclaimer": "* Prezzo indicativo, da negoziare in base alle tue esigenze e tempi.",
         "description": "Lo sviluppo di applicazioni mobile viene fatturato a giornata. Il costo finale dipende dalla complessità, dal numero di funzionalità e dalle piattaforme target (iOS, Android)."
       },
       "complex_website": {
         "title": "Sito Web Personalizzato",
-        "rate": "600€ IVA escl. / giorno",
+        "rate": {
+          "eur": "600€ IVA escl. / giorno",
+          "chf": "900 CHF IVA escl. / giorno"
+        },
         "rate_note": "*",
         "disclaimer": "* Prezzo indicativo in base alle esigenze e ai tempi. Nessun prezzo fisso per un sito web completamente personalizzabile.",
         "description": "Questo tipo di progetto (con account clienti o e-commerce) è complesso e completamente personalizzabile. Il costo finale dipende dalle tue esigenze specifiche.",
@@ -57,7 +66,10 @@
       "subscription": {
         "few_per_year": {
           "title": "Abbonamento Essenziale",
-          "price": "75€ / mese",
+          "price": {
+            "eur": "75€ / mese",
+            "chf": "90 CHF / mese"
+          },
           "duration": "Impegno annuale",
           "includes": {
             "title": "Incluso:",
@@ -74,7 +86,10 @@
         },
         "monthly": {
           "title": "Abbonamento Standard",
-          "price": "100€ / mese",
+          "price": {
+            "eur": "100€ / mese",
+            "chf": "140 CHF / mese"
+          },
           "duration": "Impegno annuale",
           "includes": {
             "title": "Incluso:",
@@ -92,7 +107,10 @@
         },
         "weekly": {
           "title": "Abbonamento Premium",
-          "price": "150€ / mese",
+          "price": {
+            "eur": "150€ / mese",
+            "chf": "220 CHF / mese"
+          },
           "duration": "Impegno annuale",
           "includes": {
             "title": "Incluso:",
@@ -110,7 +128,10 @@
         },
         "self_managed": {
           "title": "CMS Autogestito",
-          "rate": "600€ IVA escl. / giorno",
+          "rate": {
+            "eur": "600€ IVA escl. / giorno",
+            "chf": "900 CHF IVA escl. / giorno"
+          },
           "rate_note": "*",
           "disclaimer": "* Tariffa giornaliera base — prezzo definitivo da concordare in base alle tue esigenze CMS.",
           "description": "Un CMS personalizzato verrà sviluppato per permetterti di gestire i tuoi contenuti in autonomia, quando vuoi. Il costo di sviluppo si basa sulla tariffa giornaliera e verrà concordato secondo le tue esigenze."

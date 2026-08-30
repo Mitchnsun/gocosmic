@@ -8,6 +8,8 @@ import { Button } from '@/design-system/button';
 import { getCanonicalUrl } from '@/i18n/canonical';
 import { Link } from '@/i18n/navigation';
 import { getOgImages } from '@/lib/og';
+import { getCurrency } from '@/lib/region';
+import { getRegion } from '@/lib/region.server';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -42,6 +44,7 @@ export default async function Offers() {
   const subject = encodeURIComponent(t('cta.email_subject'));
   const locale = await getLocale();
   const messages = await getMessages();
+  const currency = getCurrency(await getRegion());
 
   return (
     <div className="text-ghost relative pt-10">
@@ -318,7 +321,7 @@ export default async function Offers() {
         {/* Pricing Teaser */}
         <section className="w-full">
           <NextIntlClientProvider locale={locale} messages={messages}>
-            <PricingTeaser />
+            <PricingTeaser currency={currency} />
           </NextIntlClientProvider>
         </section>
 

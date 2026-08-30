@@ -4,6 +4,7 @@ import { CheckCircleIcon } from '@heroicons/react/24/solid';
 import { useTranslations } from 'next-intl';
 
 import { cn } from '@/design-system/lib/utils';
+import type { Currency } from '@/lib/region';
 
 import type { UpdateFrequency } from './PricingSimulator.types';
 import { getSubscriptionColor, getSubscriptionItems } from './PricingSimulator.utils';
@@ -13,9 +14,10 @@ type SubscriptionFreq = Exclude<UpdateFrequency, 'self_managed'>;
 interface SubscriptionCardProps {
   freq: SubscriptionFreq;
   t: ReturnType<typeof useTranslations<'pricing'>>;
+  currency: Currency;
 }
 
-export function SubscriptionCard({ freq, t }: SubscriptionCardProps) {
+export function SubscriptionCard({ freq, t, currency }: SubscriptionCardProps) {
   const color = getSubscriptionColor(freq);
   const items = getSubscriptionItems(freq);
 
@@ -23,7 +25,9 @@ export function SubscriptionCard({ freq, t }: SubscriptionCardProps) {
     <div className="space-y-4">
       <h3 className={cn('text-xl font-bold sm:text-2xl', color)}>{t(`results.subscription.${freq}.title`)}</h3>
       <div className="flex items-baseline gap-2">
-        <span className={cn('text-4xl font-extrabold', color)}>{t(`results.subscription.${freq}.price`)}</span>
+        <span className={cn('text-4xl font-extrabold', color)}>
+          {t(`results.subscription.${freq}.price.${currency}`)}
+        </span>
         <span className="text-sm text-gray-400">{t(`results.subscription.${freq}.duration`)}</span>
       </div>
       <div>

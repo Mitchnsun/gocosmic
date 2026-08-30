@@ -26,7 +26,13 @@
     },
     "hero": {
       "cta": "Start your journey",
-      "endWords": ["shine", "soar", "inspire", "transform", "elevate"],
+      "endWords": [
+        "shine",
+        "soar",
+        "inspire",
+        "transform",
+        "elevate"
+      ],
       "subtitle": "Let us launch your ideas into the stratosphere with mystical design and cosmic functionalities",
       "title": "We build stellar applications that"
     },
@@ -59,22 +65,42 @@
       "ai": {
         "description": "Integrating advanced AI features to make your applications smarter, more adaptive, and truly next-gen.",
         "title": "AI Powered",
-        "features": ["LLMs", "Embeddings", "Agents", "RAG"]
+        "features": [
+          "LLMs",
+          "Embeddings",
+          "Agents",
+          "RAG"
+        ]
       },
       "design": {
         "description": "Crafting intuitive and enchanting user experiences that captivate and delight.",
         "title": "Mystical UI/UX Design",
-        "features": ["Figma", "Design Systems", "Motion", "A11y"]
+        "features": [
+          "Figma",
+          "Design Systems",
+          "Motion",
+          "A11y"
+        ]
       },
       "development": {
         "description": "Building robust and scalable mobile applications for both iOS and Android platforms.",
         "title": "Stellar Development",
-        "features": ["React", "Next.js", "TypeScript", "Expo"]
+        "features": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Expo"
+        ]
       },
       "launch": {
         "description": "Guiding your app through the launch process and beyond, ensuring a successful liftoff.",
         "title": "Cosmic Launch",
-        "features": ["Vercel", "AWS", "Docker", "Sentry"]
+        "features": [
+          "Vercel",
+          "AWS",
+          "Docker",
+          "Sentry"
+        ]
       },
       "title": "Our Cosmic Services",
       "eyebrow": "[ SERVICES · 04 ]",
@@ -83,19 +109,39 @@
     },
     "zone": {
       "title": "Our service area",
-      "description": "Available in Annecy, Geneva, Haute-Savoie, and the Lake Geneva region.",
+      "description": "Available in Annecy, Geneva, Haute-Savoie, and across French-speaking Switzerland.",
       "availability": "Available",
       "locations": {
         "annecy": "Annecy",
         "geneva": "Geneva",
         "haute_savoie": "Haute-Savoie",
-        "leman": "Lake Geneva region"
+        "suisse_romande": "Romandy"
       },
       "stations": {
-        "annecy": { "meta": "Base · 74" },
-        "geneva": { "meta": "Switzerland" },
-        "haute_savoie": { "meta": "France" },
-        "leman": { "meta": "Léman · CH/FR" }
+        "annecy": {
+          "meta": {
+            "fr": "Base · 74",
+            "ch": "France"
+          }
+        },
+        "geneva": {
+          "meta": {
+            "fr": "Switzerland",
+            "ch": "Base · GE"
+          }
+        },
+        "haute_savoie": {
+          "meta": {
+            "fr": "France",
+            "ch": "France"
+          }
+        },
+        "suisse_romande": {
+          "meta": {
+            "fr": "Switzerland",
+            "ch": "Switzerland"
+          }
+        }
       }
     },
     "projects": {
@@ -108,28 +154,38 @@
         "title": "Daily Fortune",
         "tagline": "Mobile · iOS / Android",
         "description": "A mystical mobile app delivering AI-powered daily fortunes and motivational messages.",
-        "tags": ["AI", "Wellness"],
+        "tags": [
+          "AI",
+          "Wellness"
+        ],
         "imageAlt": "Daily Fortune app preview"
       },
       "mcomperat": {
         "title": "mcomper.at",
         "tagline": "Web · Next.js",
         "description": "A modern, responsive web CV built with Next.js, TypeScript, and full internationalization.",
-        "tags": ["Personal CV"],
+        "tags": [
+          "Personal CV"
+        ],
         "imageAlt": "mcomper.at website preview"
       },
       "pscSupersprint": {
         "title": "PSC Supersprint",
         "tagline": "Web · Real-time",
         "description": "A web application for managing and displaying real-time triathlon competition results.",
-        "tags": ["Sport", "Live"],
+        "tags": [
+          "Sport",
+          "Live"
+        ],
         "imageAlt": "PSC Supersprint results board preview"
       },
       "choeurDesPaysduMontBlanc": {
         "title": "Chœur des Pays du Mont Blanc",
         "tagline": "Web · Editorial",
         "description": "A website showcasing the choir's activities, concerts, and repertoire in Haute-Savoie.",
-        "tags": ["Culture"],
+        "tags": [
+          "Culture"
+        ],
         "imageAlt": "Chœur des Pays du Mont Blanc website preview"
       }
     }

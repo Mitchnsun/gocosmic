@@ -9,7 +9,7 @@
   },
   "meta": {
     "title": "Web & Mobile Development | Annecy · Geneva | Go Cosmic",
-    "description": "Web and mobile app development agency based in Annecy, serving Geneva and Haute-Savoie. React, React Native, Next.js."
+    "description": "Web and mobile app development agency based in Annecy, serving Geneva, French-speaking Switzerland and Haute-Savoie. React, React Native, Next.js."
   },
   "language": {
     "current": "Current language: {language}",
@@ -17,7 +17,10 @@
   },
   "pricing_teaser": {
     "eyebrow": "Showcase website",
-    "price": "from 50€",
+    "price": {
+      "eur": "from 50€",
+      "chf": "from 80 CHF"
+    },
     "price_period": "/ month",
     "tagline": "All-inclusive, no surprises",
     "scope_note": "Ideal for presenting your business, services and contact details online — without order management or client portal.",
@@ -39,7 +42,10 @@
   "status_bar": {
     "signal_stable": "SIGNAL STABLE",
     "mission_control": "MISSION CONTROL",
-    "location": "ANNECY · ALT. 447M",
+    "location": {
+      "fr": "ANNECY · ALT. 447M",
+      "ch": "CHÊNE-BOUGERIES · ALT. 424M"
+    },
     "aria_label": "Mission control status",
     "aria_signal": "Signal active"
   },

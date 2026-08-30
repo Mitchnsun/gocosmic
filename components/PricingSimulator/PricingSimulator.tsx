@@ -3,6 +3,8 @@
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
+import type { Currency } from '@/lib/region';
+
 import { ContactBanner } from './ContactBanner';
 import { OptionButton } from './OptionButton';
 import type { ProjectType, UpdateFrequency, WebsiteType } from './PricingSimulator.types';
@@ -10,7 +12,11 @@ import { RateCard } from './RateCard';
 import { StepCard } from './StepCard';
 import { SubscriptionCard } from './SubscriptionCard';
 
-export function PricingSimulator() {
+interface PricingSimulatorProps {
+  currency: Currency;
+}
+
+export function PricingSimulator({ currency }: PricingSimulatorProps) {
   const t = useTranslations('pricing');
 
   const [projectType, setProjectType] = useState<ProjectType | null>(null);
@@ -103,7 +109,7 @@ export function PricingSimulator() {
             </h2>
             <RateCard
               title={t('results.both.title')}
-              rate={t('results.both.rate')}
+              rate={t(`results.both.rate.${currency}`)}
               rateNote={t('results.both.rate_note')}
               description={t('results.both.description')}
               disclaimer={t('results.both.disclaimer')}
@@ -122,7 +128,7 @@ export function PricingSimulator() {
             </h2>
             <RateCard
               title={t('results.complex_website.title')}
-              rate={t('results.complex_website.rate')}
+              rate={t(`results.complex_website.rate.${currency}`)}
               rateNote={t('results.complex_website.rate_note')}
               description={t('results.complex_website.description')}
               disclaimer={t('results.complex_website.disclaimer')}
@@ -140,7 +146,11 @@ export function PricingSimulator() {
             <h2 id="subscription-result-heading" className="sr-only">
               {t(`results.subscription.${updateFrequency as 'few_per_year' | 'monthly' | 'weekly'}.title`)}
             </h2>
-            <SubscriptionCard freq={updateFrequency as 'few_per_year' | 'monthly' | 'weekly'} t={t} />
+            <SubscriptionCard
+              freq={updateFrequency as 'few_per_year' | 'monthly' | 'weekly'}
+              t={t}
+              currency={currency}
+            />
             <ContactBanner t={t} />
           </section>
         </div>
@@ -155,7 +165,7 @@ export function PricingSimulator() {
             </h2>
             <RateCard
               title={t('results.subscription.self_managed.title')}
-              rate={t('results.subscription.self_managed.rate')}
+              rate={t(`results.subscription.self_managed.rate.${currency}`)}
               rateNote={t('results.subscription.self_managed.rate_note')}
               description={t('results.subscription.self_managed.description')}
               disclaimer={t('results.subscription.self_managed.disclaimer')}
@@ -174,7 +184,7 @@ export function PricingSimulator() {
             </h2>
             <RateCard
               title={t('results.mobile.title')}
-              rate={t('results.mobile.rate')}
+              rate={t(`results.mobile.rate.${currency}`)}
               rateNote={t('results.mobile.rate_note')}
               description={t('results.mobile.description')}
               disclaimer={t('results.mobile.disclaimer')}
