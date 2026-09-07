@@ -26,8 +26,10 @@ export default async function Home() {
   const projects = PROJECT_DEFINITIONS.map((def) => ({
     ...def,
     title: t(`projects.${def.id}.title`),
+    tagline: t(`projects.${def.id}.tagline`),
     description: t(`projects.${def.id}.description`),
-    // image.alt is already set to a descriptive string in PROJECT_DEFINITIONS
+    tags: t.raw(`projects.${def.id}.tags`) as string[],
+    image: { ...def.image, alt: t(`projects.${def.id}.imageAlt`) },
   }));
 
   return (
@@ -64,10 +66,11 @@ export default async function Home() {
           id="projects"
           eyebrow={t('projects.eyebrow')}
           title={t.rich('projects.title', { em: (chunks) => <em>{chunks}</em> })}
+          subtitle={t('projects.subtitle')}
           projects={projects}
           layout="list"
           staggerDelay={150}
-          loadMoreLabel={t('projects.loadMore')}
+          learnMoreLabel={t('projects.learnMore')}
         />
       </div>
 

@@ -66,10 +66,27 @@ describe('ZoneIntervention', () => {
     });
   });
 
-  it('renders a section with aria-labelledby="zone-heading"', () => {
+  it('associates the section with its label via aria-labelledby', () => {
     const { container } = render(<ZoneIntervention {...defaultProps} />);
-    const section = container.querySelector('section[aria-labelledby="zone-heading"]');
-    expect(section).toBeInTheDocument();
+    const section = container.querySelector('section');
+    const headingId = section?.getAttribute('aria-labelledby');
+    expect(headingId).toBeTruthy();
+    expect(container.querySelector(`#${CSS.escape(headingId!)}`)).toHaveTextContent(defaultProps.label);
+  });
+
+  it('generates unique heading ids so two instances do not collide', () => {
+    const { container } = render(
+      <>
+        <ZoneIntervention {...defaultProps} />
+        <ZoneIntervention {...defaultProps} />
+      </>
+    );
+    const sections = container.querySelectorAll('section');
+    expect(sections).toHaveLength(2);
+    const [firstId, secondId] = Array.from(sections).map((section) => section.getAttribute('aria-labelledby'));
+    expect(firstId).toBeTruthy();
+    expect(secondId).toBeTruthy();
+    expect(firstId).not.toBe(secondId);
   });
 
   it('renders exactly 4 list items', () => {

@@ -23,7 +23,7 @@ export function useProjectsAnimation({
   delay,
   reducedMotion,
 }: UseProjectsAnimationOptions): UseProjectsAnimationReturn {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLElement | null>(null);
   const hasIntersected = useRef(false);
   const [visible, setVisible] = useState(reducedMotion);
 

@@ -50,7 +50,7 @@ No Tailwind `blue-*`, `gray-*`, or arbitrary hex values are used. All colours re
 
 ## Accessibility
 
-- The root element is a `<section aria-labelledby="zone-heading">`. The `id="zone-heading"` is set on the label `<p>` so screen readers announce the section name.
+- The root `<section>` is labelled via `aria-labelledby`, pointing at a `useId()`-generated id set on the label `<p>`. This keeps the label association unique even when the component is rendered more than once on the same page, so screen readers always announce the correct section name.
 - Stations are rendered as a semantic `<ul>` / `<li>` list, giving screen readers list context and item count.
 - The signal dot (`<span aria-hidden="true">`) and crosshair SVG (`aria-hidden="true"`) are decorative and excluded from the accessibility tree.
 - No emoji are used — the crosshair is a hand-drawn inline SVG using `currentColor`.

@@ -2,10 +2,10 @@
 
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import { cn } from '@/design-system/lib/utils';
 
+import { ProjectLink } from './ProjectLink';
 import type { Project } from './ProjectsShowcase.types';
 import { useProjectsAnimation } from './useProjectsAnimation';
 
@@ -17,16 +17,6 @@ interface ProjectCardProps {
   reducedMotion: boolean;
   layout: 'list' | 'alternating' | 'grid';
   learnMoreLabel: string;
-}
-
-/** Returns true for absolute or protocol-relative URLs that open outside the current origin. */
-function isExternalHref(href: string): boolean {
-  return href.startsWith('http://') || href.startsWith('https://') || href.startsWith('//');
-}
-
-/** Extra anchor props for links that navigate away from the site. */
-function externalLinkProps(href: string) {
-  return isExternalHref(href) ? { target: '_blank' as const, rel: 'noopener noreferrer' } : {};
 }
 
 function ProjectListRow({
@@ -52,9 +42,8 @@ function ProjectListRow({
         transform: visible ? 'translateY(0)' : 'translateY(16px)',
         transition: `opacity ${reducedMotion ? 0 : animationDuration}ms ease-out, transform ${reducedMotion ? 0 : animationDuration}ms ease-out`,
       }}>
-      <Link
+      <ProjectLink
         href={project.href}
-        {...externalLinkProps(project.href)}
         aria-label={`${project.title} — ${learnMoreLabel}`}
         className={cn(
           'flex w-full items-center gap-4 px-0 py-6',
@@ -103,7 +92,7 @@ function ProjectListRow({
           className="text-ghost/35 group-hover:text-aerospace h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1"
           aria-hidden="true"
         />
-      </Link>
+      </ProjectLink>
     </li>
   );
 }
@@ -176,9 +165,8 @@ function ProjectAlternatingCard({
           </ul>
         )}
 
-        <Link
+        <ProjectLink
           href={project.href}
-          {...externalLinkProps(project.href)}
           className={cn(
             'text-aerospace mt-2 inline-flex w-fit items-center gap-2 text-sm font-medium',
             'underline-offset-4 hover:underline focus:underline focus:outline-none',
@@ -186,7 +174,7 @@ function ProjectAlternatingCard({
           )}>
           {learnMoreLabel}
           <ArrowRightIcon className="h-4 w-4" aria-hidden="true" />
-        </Link>
+        </ProjectLink>
       </div>
     </li>
   );
@@ -253,9 +241,8 @@ function ProjectGridCard({
           </ul>
         )}
 
-        <Link
+        <ProjectLink
           href={project.href}
-          {...externalLinkProps(project.href)}
           aria-label={`${project.title} — ${learnMoreLabel}`}
           className={cn(
             'text-aerospace mt-3 inline-flex w-fit items-center gap-1.5 text-sm font-medium',
@@ -265,7 +252,7 @@ function ProjectGridCard({
           )}>
           {learnMoreLabel}
           <ArrowRightIcon className="h-4 w-4" aria-hidden="true" />
-        </Link>
+        </ProjectLink>
       </div>
     </li>
   );

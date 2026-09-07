@@ -106,19 +106,31 @@
       "loadMore": "Carica altri progetti",
       "dailyFortune": {
         "title": "Daily Fortune",
-        "description": "Un'app mobile mistica che fornisce fortune quotidiane e messaggi motivazionali basati su IA."
+        "tagline": "Mobile · iOS / Android",
+        "description": "Un'app mobile mistica che fornisce fortune quotidiane e messaggi motivazionali basati su IA.",
+        "tags": ["IA", "Benessere"],
+        "imageAlt": "Anteprima dell'app Daily Fortune"
       },
       "mcomperat": {
         "title": "mcomper.at",
-        "description": "Un CV web moderno e responsivo realizzato con Next.js, TypeScript e internazionalizzazione completa."
+        "tagline": "Web · Next.js",
+        "description": "Un CV web moderno e responsivo realizzato con Next.js, TypeScript e internazionalizzazione completa.",
+        "tags": ["CV personale"],
+        "imageAlt": "Anteprima del sito web mcomper.at"
       },
       "pscSupersprint": {
         "title": "PSC Supersprint",
-        "description": "Un'applicazione web per gestire e visualizzare in tempo reale i risultati delle competizioni di triathlon."
+        "tagline": "Web · Tempo reale",
+        "description": "Un'applicazione web per gestire e visualizzare in tempo reale i risultati delle competizioni di triathlon.",
+        "tags": ["Sport", "Diretta"],
+        "imageAlt": "Anteprima del tabellone risultati PSC Supersprint"
       },
       "choeurDesPaysduMontBlanc": {
         "title": "Chœur des Pays du Mont Blanc",
-        "description": "Un sito web che presenta le attività, i concerti e il repertorio del coro in Alta Savoia."
+        "tagline": "Web · Editoriale",
+        "description": "Un sito web che presenta le attività, i concerti e il repertorio del coro in Alta Savoia.",
+        "tags": ["Cultura"],
+        "imageAlt": "Anteprima del sito web del Chœur des Pays du Mont Blanc"
       }
     }
   }

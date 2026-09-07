@@ -49,19 +49,31 @@ function resolveAccent(key: string | null): string {
   return COLORS.aerospace;
 }
 
-/** Apply magnetic snapping toward an element center */
+/**
+ * Apply magnetic snapping toward an element center.
+ *
+ * The positional pull is only applied when the pointer is within `range` of the element's
+ * center. Without this guard, a wide element (e.g. a full-row link) would drag the drawn
+ * cursor far from the pointer toward its center — the accent color and magnetic ring still
+ * activate outside `range` so hovering the element remains visible, just without moving the
+ * cursor away from what the user is actually pointing at.
+ */
 function applySnap(
   state: CosmicCursorState,
   rect: DOMRect,
   rawX: number,
   rawY: number,
   ease: number,
+  range: number,
   accent: string | null
 ) {
   const cx = rect.left + rect.width / 2;
   const cy = rect.top + rect.height / 2;
-  state.mouse.x += (cx - rawX) * ease;
-  state.mouse.y += (cy - rawY) * ease;
+  const dist = Math.sqrt((cx - rawX) ** 2 + (cy - rawY) ** 2);
+  if (dist < range) {
+    state.mouse.x += (cx - rawX) * ease;
+    state.mouse.y += (cy - rawY) * ease;
+  }
   state.accentColor = resolveAccent(accent);
   state.isMagnetic = true;
 }
@@ -196,7 +208,15 @@ export function useCosmicCursor({
 
       if (closestEl && closestRect && closestDist < magneticRange) {
         // Explicit [data-magnetic] element: snap and change accent
-        applySnap(state, closestRect, e.clientX, e.clientY, magneticEase, closestEl.getAttribute('data-accent'));
+        applySnap(
+          state,
+          closestRect,
+          e.clientX,
+          e.clientY,
+          magneticEase,
+          magneticRange,
+          closestEl.getAttribute('data-accent')
+        );
       } else {
         state.isMagnetic = false;
         state.accentColor = COLORS.aerospace;
@@ -206,7 +226,15 @@ export function useCosmicCursor({
           const closest = target.closest('a, button');
           if (closest) {
             const rect = closest.getBoundingClientRect();
-            applySnap(state, rect, e.clientX, e.clientY, magneticEase, closest.getAttribute('data-accent'));
+            applySnap(
+              state,
+              rect,
+              e.clientX,
+              e.clientY,
+              magneticEase,
+              magneticRange,
+              closest.getAttribute('data-accent')
+            );
           }
         }
       }

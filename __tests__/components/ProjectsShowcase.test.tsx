@@ -135,6 +135,36 @@ describe('ProjectsShowcase', () => {
       expect(years.length).toBeGreaterThan(0);
     });
 
+    it('does not open internal project links in a new tab', () => {
+      render(<ProjectsShowcase projects={mockProjects} />);
+      const links = screen.getAllByRole('link');
+      expect(links[0]).not.toHaveAttribute('target');
+      expect(links[0]).not.toHaveAttribute('rel');
+    });
+
+    it('renders the default learn-more label when none is provided', () => {
+      render(<ProjectsShowcase projects={mockProjects} layout="grid" />);
+      const links = screen.getAllByText('View project');
+      expect(links.length).toBeGreaterThan(0);
+    });
+
+    it('renders a custom learnMoreLabel in the CTA (grid layout)', () => {
+      render(<ProjectsShowcase projects={mockProjects} layout="grid" learnMoreLabel="Voir le projet" />);
+      const links = screen.getAllByText('Voir le projet');
+      expect(links.length).toBeGreaterThan(0);
+    });
+
+    it('renders a custom learnMoreLabel in the CTA (alternating layout)', () => {
+      render(<ProjectsShowcase projects={mockProjects} layout="alternating" learnMoreLabel="Voir le projet" />);
+      const links = screen.getAllByText('Voir le projet');
+      expect(links.length).toBeGreaterThan(0);
+    });
+
+    it('includes a custom learnMoreLabel in the aria-label (list layout)', () => {
+      render(<ProjectsShowcase projects={mockProjects} layout="list" learnMoreLabel="Voir le projet" />);
+      expect(screen.getByRole('link', { name: 'Project One — Voir le projet' })).toBeInTheDocument();
+    });
+
     it('opens external links in a new tab', () => {
       const externalProjects: Project[] = [
         {
@@ -272,6 +302,20 @@ describe('ProjectsShowcase', () => {
       // The focus ring is on the <Link> inside the <li>, not the <li> itself
       const links = screen.getAllByRole('link');
       expect(links[0]!.className).toContain('focus-visible:ring');
+    });
+
+    it('generates a unique heading id when no id is provided, avoiding duplicates when rendered twice', () => {
+      render(
+        <>
+          <ProjectsShowcase projects={mockProjects} title="Our Projects" />
+          <ProjectsShowcase projects={mockProjects} title="Our Projects" />
+        </>
+      );
+      const headings = screen.getAllByRole('heading', { level: 2, name: 'Our Projects' });
+      expect(headings).toHaveLength(2);
+      expect(headings[0]!.id).not.toBe(headings[1]!.id);
+      expect(headings[0]!.id).not.toBe('');
+      expect(headings[1]!.id).not.toBe('');
     });
   });
 });

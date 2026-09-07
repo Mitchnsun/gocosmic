@@ -106,19 +106,31 @@
       "loadMore": "Mehr Projekte laden",
       "dailyFortune": {
         "title": "Daily Fortune",
-        "description": "Eine mystische mobile App, die täglich KI-gestützte Horoskope und motivierende Nachrichten liefert."
+        "tagline": "Mobil · iOS / Android",
+        "description": "Eine mystische mobile App, die täglich KI-gestützte Horoskope und motivierende Nachrichten liefert.",
+        "tags": ["KI", "Wellness"],
+        "imageAlt": "Vorschau der Daily Fortune App"
       },
       "mcomperat": {
         "title": "mcomper.at",
-        "description": "Ein moderner, responsiver Web-Lebenslauf, erstellt mit Next.js, TypeScript und vollständiger Internationalisierung."
+        "tagline": "Web · Next.js",
+        "description": "Ein moderner, responsiver Web-Lebenslauf, erstellt mit Next.js, TypeScript und vollständiger Internationalisierung.",
+        "tags": ["Persönlicher Lebenslauf"],
+        "imageAlt": "Vorschau der Website mcomper.at"
       },
       "pscSupersprint": {
         "title": "PSC Supersprint",
-        "description": "Eine Webanwendung zur Verwaltung und Echtzeitanzeige von Triathlonwettkampfergebnissen."
+        "tagline": "Web · Echtzeit",
+        "description": "Eine Webanwendung zur Verwaltung und Echtzeitanzeige von Triathlonwettkampfergebnissen.",
+        "tags": ["Sport", "Live"],
+        "imageAlt": "Vorschau der PSC Supersprint Ergebnistafel"
       },
       "choeurDesPaysduMontBlanc": {
         "title": "Chœur des Pays du Mont Blanc",
-        "description": "Eine Website, die die Aktivitäten, Konzerte und das Repertoire des Chors in Haute-Savoie präsentiert."
+        "tagline": "Web · Redaktionell",
+        "description": "Eine Website, die die Aktivitäten, Konzerte und das Repertoire des Chors in Haute-Savoie präsentiert.",
+        "tags": ["Kultur"],
+        "imageAlt": "Vorschau der Website des Chœur des Pays du Mont Blanc"
       }
     }
   }

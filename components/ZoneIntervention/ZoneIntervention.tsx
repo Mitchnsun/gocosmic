@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useId, useState } from 'react';
 
 import { cn } from '@/design-system/lib/utils';
 
@@ -27,6 +27,7 @@ export const ZoneIntervention = ({
   respectReducedMotion = true,
   className,
 }: ZoneInterventionProps) => {
+  const headingId = useId();
   const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
@@ -39,10 +40,10 @@ export const ZoneIntervention = ({
   }, [respectReducedMotion]);
 
   return (
-    <section aria-labelledby="zone-heading" className={cn('mx-auto w-full max-w-2xl', className)}>
+    <section aria-labelledby={headingId} className={cn('mx-auto w-full max-w-2xl', className)}>
       {/* Header row */}
       <div className="flex items-center gap-4">
-        <p id="zone-heading" className="text-ghost/45 font-mono text-[11px] tracking-[0.24em] uppercase">
+        <p id={headingId} className="text-ghost/45 font-mono text-[11px] tracking-[0.24em] uppercase">
           {label}
         </p>
         <span className="bg-ghost/10 h-px flex-1" aria-hidden="true" />

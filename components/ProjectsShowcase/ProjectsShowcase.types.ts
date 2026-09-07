@@ -35,8 +35,6 @@ export interface ProjectsShowcaseProps {
   // Layout
   /** Visual layout variant. Default: 'list'. */
   layout?: 'alternating' | 'grid' | 'list';
-  /** Force a fixed image position (alternating layout only). */
-  imagePosition?: 'left' | 'right' | 'top';
 
   // Animation
   /** Milliseconds between successive reveals. Default: 150. */
@@ -53,6 +51,8 @@ export interface ProjectsShowcaseProps {
   showLoadMore?: boolean;
   /** Label for the load-more button. */
   loadMoreLabel?: string;
+  /** Label for each project's call-to-action link. Default: 'View project'. */
+  learnMoreLabel?: string;
 
   // Styling
   className?: string;

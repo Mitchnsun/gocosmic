@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useId, useState } from 'react';
 
 import { cn } from '@/design-system/lib/utils';
 
@@ -19,9 +19,11 @@ export function ProjectsShowcase({
   displayCount,
   showLoadMore = false,
   loadMoreLabel = 'Load more',
+  learnMoreLabel = 'View project',
   className,
   id,
 }: ProjectsShowcaseProps) {
+  const generatedId = useId();
   const [reducedMotion, setReducedMotion] = useState(false);
   const [visibleCount, setVisibleCount] = useState(displayCount ?? projects.length);
 
@@ -42,7 +44,7 @@ export function ProjectsShowcase({
   const visibleProjects = projects.slice(0, visibleCount);
   const hasMore = visibleCount < projects.length;
 
-  const headingId = id ? `${id}-heading` : 'projects-showcase-heading';
+  const headingId = id ? `${id}-heading` : generatedId;
 
   return (
     <section id={id} aria-labelledby={title ? headingId : undefined} className={cn('w-full py-16', className)}>
@@ -85,7 +87,7 @@ export function ProjectsShowcase({
               animationDuration={animationDuration}
               reducedMotion={reducedMotion}
               layout={layout}
-              learnMoreLabel="View project"
+              learnMoreLabel={learnMoreLabel}
             />
           ))}
         </ul>

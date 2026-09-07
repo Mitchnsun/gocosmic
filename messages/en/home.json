@@ -106,19 +106,31 @@
       "loadMore": "Load more projects",
       "dailyFortune": {
         "title": "Daily Fortune",
-        "description": "A mystical mobile app delivering AI-powered daily fortunes and motivational messages."
+        "tagline": "Mobile · iOS / Android",
+        "description": "A mystical mobile app delivering AI-powered daily fortunes and motivational messages.",
+        "tags": ["AI", "Wellness"],
+        "imageAlt": "Daily Fortune app preview"
       },
       "mcomperat": {
         "title": "mcomper.at",
-        "description": "A modern, responsive web CV built with Next.js, TypeScript, and full internationalization."
+        "tagline": "Web · Next.js",
+        "description": "A modern, responsive web CV built with Next.js, TypeScript, and full internationalization.",
+        "tags": ["Personal CV"],
+        "imageAlt": "mcomper.at website preview"
       },
       "pscSupersprint": {
         "title": "PSC Supersprint",
-        "description": "A web application for managing and displaying real-time triathlon competition results."
+        "tagline": "Web · Real-time",
+        "description": "A web application for managing and displaying real-time triathlon competition results.",
+        "tags": ["Sport", "Live"],
+        "imageAlt": "PSC Supersprint results board preview"
       },
       "choeurDesPaysduMontBlanc": {
         "title": "Chœur des Pays du Mont Blanc",
-        "description": "A website showcasing the choir's activities, concerts, and repertoire in Haute-Savoie."
+        "tagline": "Web · Editorial",
+        "description": "A website showcasing the choir's activities, concerts, and repertoire in Haute-Savoie.",
+        "tags": ["Culture"],
+        "imageAlt": "Chœur des Pays du Mont Blanc website preview"
       }
     }
   }
