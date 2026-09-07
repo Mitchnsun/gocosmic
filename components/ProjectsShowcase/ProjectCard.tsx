@@ -129,7 +129,7 @@ function ProjectAlternatingCard({
         transition: `opacity ${reducedMotion ? 0 : animationDuration}ms ease-out, transform ${reducedMotion ? 0 : animationDuration}ms ease-out`,
       }}>
       {/* Image */}
-      <div className="relative w-full overflow-hidden rounded-xl lg:w-[600px] lg:shrink-0">
+      <div className="relative w-full overflow-hidden rounded-xl lg:w-150 lg:shrink-0">
         <Image
           src={project.image.src}
           alt={project.image.alt}

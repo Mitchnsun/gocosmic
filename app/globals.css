@@ -13,6 +13,8 @@
   --color-void: #020617;
   --font-display: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
+  --text-2xs: 11px;
+  --text-3xs: 10px;
 }
 
 :root {

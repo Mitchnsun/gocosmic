@@ -40,7 +40,7 @@ const MobileMenu = ({ onClose, items }: MobileMenuProps) => {
       </div>
 
       {/* Metadata row */}
-      <div className="border-ghost/10 flex items-center justify-between border-b px-4 py-3 text-[10px] tracking-widest text-slate-500 uppercase sm:px-6">
+      <div className="border-ghost/10 text-3xs flex items-center justify-between border-b px-4 py-3 tracking-widest text-slate-500 uppercase sm:px-6">
         <span>{t('menu_title')}</span>
         <span>ALT. 2351m</span>
       </div>
@@ -60,7 +60,7 @@ const MobileMenu = ({ onClose, items }: MobileMenuProps) => {
                 aria-label={ariaLabel}
                 onClick={onClose}
                 className="group flex items-center justify-between px-4 py-6 sm:px-6">
-                <span className="font-display text-ghost text-[2rem] leading-none font-medium">{label}</span>
+                <span className="font-display text-ghost text-3xl leading-none font-medium">{label}</span>
                 <span className="text-sm text-slate-500">/{String(index + 1).padStart(2, '0')}</span>
               </Link>
             </motion.li>
