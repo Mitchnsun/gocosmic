@@ -5,11 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [1.6.8] - 2026-08-20
+## [1.6.8] - 2026-09-07
 
 ### Changed
 
 - Upgraded the site's hosting runtime to a newer, actively-supported version to keep deployments secure and reliable
+
+### Fixed
+
+- Fixed the homepage services section failing to load its text when arriving from another page of the site
 
 ## [1.6.7] - 2026-06-04
 

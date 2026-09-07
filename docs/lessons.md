@@ -62,6 +62,8 @@ export default async function YourPage() {
 
 The client component itself just calls `useTranslations('namespace')` normally — no props needed.
 
+**Recurrence (2026-09-07)**: `app/[locale]/page.tsx` rendered `<ServicesGrid />` (a `'use client'` component using `useTranslations('homepage')`) without this wrapper, even though `journey/page.tsx`, `pricing/page.tsx` and `offers/page.tsx` already followed the pattern correctly. Reported by the user as a `MISSING_MESSAGE: homepage` console error that only appeared after client-side navigation (a hard reload masked it). Fixed by converting `Home` to an async server component and wrapping `<ServicesGrid />` in its own `NextIntlClientProvider`, per the pattern above. When adding a new `'use client'` component that calls `useTranslations` with a route-scoped namespace, always check it against this pattern before merging — it will not fail in a fresh dev server load, only on client-side navigation from another route.
+
 ## Animations / Reduced Motion
 
 ### Prefer Tailwind `motion-reduce:` variants over `useEffect` + JS state for reduced-motion guards

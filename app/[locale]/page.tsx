@@ -1,4 +1,5 @@
-import { useTranslations } from 'next-intl';
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getMessages, getTranslations } from 'next-intl/server';
 
 import { AsciiMarquee } from '@/components/AsciiMarquee';
 import CTAFinal from '@/components/CTAFinal';
@@ -7,8 +8,10 @@ import { ProcessTimeline } from '@/components/ProcessTimeline';
 import { homepageSteps } from '@/components/ProcessTimeline/constants';
 import { ServicesGrid } from '@/components/ServicesGrid';
 
-export default function Home() {
-  const t = useTranslations('homepage');
+export default async function Home() {
+  const t = await getTranslations('homepage');
+  const locale = await getLocale();
+  const messages = await getMessages();
   const asciiLabels = t.raw('ascii_labels') as string[];
 
   const processSteps = homepageSteps.map((step) => ({
@@ -42,7 +45,9 @@ export default function Home() {
         />
       </div>
       <section className="relative z-10 m-auto mt-4 flex max-w-7xl flex-col items-center">
-        <ServicesGrid />
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <ServicesGrid />
+        </NextIntlClientProvider>
       </section>
       <CTAFinal
         id="cta"
