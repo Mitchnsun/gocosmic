@@ -26,7 +26,7 @@ export default async function LocalPage() {
   const region = await getRegion();
 
   return (
-    <main className="relative m-auto my-6 max-w-7xl rounded-lg bg-slate-800 px-6 py-8 text-white lg:p-8">
+    <div className="relative m-auto my-6 max-w-7xl rounded-lg bg-slate-800 px-6 py-8 text-white lg:p-8">
       <h1 className="text-4xl font-bold">{t('hero.title')}</h1>
       <p className="text-lg text-gray-400">{t(`hero.description.${region}`)}</p>
 
@@ -61,6 +61,6 @@ export default async function LocalPage() {
       <Link href="/contact" className={cn(buttonVariants({ variant: 'jungle' }), 'inline-flex')}>
         {t('cta')}
       </Link>
-    </main>
+    </div>
   );
 }

@@ -17,6 +17,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Custom projects — mobile apps, customer accounts, online shops, sites the owner edits themselves — now lead straight to a personal conversation instead of a daily rate
 - Pricing wording rewritten for readers with no web background, and the page redesigned to match the homepage
 
+### Fixed
+
+- Screen readers now announce a single main content area on every page, instead of two nested ones
+
 ## [1.7.0] - 2026-09-07
 
 ### Added

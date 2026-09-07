@@ -48,7 +48,7 @@ export default async function Offers() {
 
   return (
     <div className="text-ghost relative pt-10">
-      <main className="m-auto flex max-w-7xl flex-col items-center gap-10 px-4 pb-4">
+      <div className="m-auto flex max-w-7xl flex-col items-center gap-10 px-4 pb-4">
         {/* Page Header */}
         <div className="text-center">
           <h1 className="mb-4 text-2xl font-extrabold sm:text-4xl">{t('title')}</h1>
@@ -348,7 +348,7 @@ export default async function Offers() {
             </p>
           </div>
         </section>
-      </main>
+      </div>
     </div>
   );
 }

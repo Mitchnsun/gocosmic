@@ -29,7 +29,7 @@ export default async function PrivacyPage() {
 
   return (
     <div className="text-ghost relative pt-10">
-      <main className="m-auto flex max-w-4xl flex-col gap-8 px-4 pb-12">
+      <div className="m-auto flex max-w-4xl flex-col gap-8 px-4 pb-12">
         <div className="space-y-4">
           <p className="text-aerospace text-sm font-semibold tracking-wide uppercase">{t('privacy.eyebrow')}</p>
           <h1 className="text-3xl font-extrabold sm:text-4xl">{t('privacy.title')}</h1>
@@ -57,7 +57,7 @@ export default async function PrivacyPage() {
           </Link>
           .
         </p>
-      </main>
+      </div>
     </div>
   );
 }
