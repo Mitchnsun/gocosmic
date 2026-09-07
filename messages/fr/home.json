@@ -97,6 +97,41 @@
         "haute_savoie": { "meta": "France" },
         "leman": { "meta": "Léman · CH/FR" }
       }
+    },
+    "projects": {
+      "eyebrow": "[ TRAVAUX RÉCENTS · 04 ]",
+      "title": "Récemment <em>en orbite.</em>",
+      "subtitle": "Une sélection de nos derniers projets",
+      "learnMore": "Voir le projet",
+      "loadMore": "Voir plus de projets",
+      "dailyFortune": {
+        "title": "Daily Fortune",
+        "tagline": "Mobile · iOS / Android",
+        "description": "Une application mobile mystique délivrant des fortunes quotidiennes et des messages de motivation générés par l'IA.",
+        "tags": ["IA", "Bien-être"],
+        "imageAlt": "Aperçu de l'application Daily Fortune"
+      },
+      "mcomperat": {
+        "title": "mcomper.at",
+        "tagline": "Web · Next.js",
+        "description": "Un CV web moderne et responsive, conçu avec Next.js, TypeScript et une internationalisation complète.",
+        "tags": ["CV personnel"],
+        "imageAlt": "Aperçu du site mcomper.at"
+      },
+      "pscSupersprint": {
+        "title": "PSC Supersprint",
+        "tagline": "Web · Temps réel",
+        "description": "Une application web pour la gestion et l'affichage en temps réel des résultats de compétitions de triathlon.",
+        "tags": ["Sport", "Direct"],
+        "imageAlt": "Aperçu du tableau des résultats PSC Supersprint"
+      },
+      "choeurDesPaysduMontBlanc": {
+        "title": "Chœur des Pays du Mont Blanc",
+        "tagline": "Web · Éditorial",
+        "description": "Un site web présentant les activités, concerts et répertoire du chœur en Haute-Savoie.",
+        "tags": ["Culture"],
+        "imageAlt": "Aperçu du site du Chœur des Pays du Mont Blanc"
+      }
     }
   }
 }

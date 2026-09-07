@@ -25,7 +25,7 @@ const StatusBar = () => {
       role="status"
       aria-label={t('aria_label')}
       aria-live="off"
-      className="border-ghost/10 text-ghost/60 relative z-50 flex h-8 w-full items-center border-b bg-slate-900 px-4 text-[10px] tracking-widest uppercase sm:px-6 lg:px-8">
+      className="border-ghost/10 text-ghost/60 text-3xs relative z-50 flex h-8 w-full items-center border-b bg-slate-900 px-4 tracking-widest uppercase sm:px-6 lg:px-8">
       <div className="mx-auto flex w-full items-center justify-between">
         <div className="flex items-center gap-2 sm:gap-3">
           <span className="relative flex h-2 w-2 shrink-0" aria-label={t('aria_signal')} role="img">

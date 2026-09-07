@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useId, useState } from 'react';
 
 import { cn } from '@/design-system/lib/utils';
 
@@ -27,6 +27,7 @@ export const ZoneIntervention = ({
   respectReducedMotion = true,
   className,
 }: ZoneInterventionProps) => {
+  const headingId = useId();
   const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
@@ -39,14 +40,14 @@ export const ZoneIntervention = ({
   }, [respectReducedMotion]);
 
   return (
-    <section aria-labelledby="zone-heading" className={cn('mx-auto w-full max-w-2xl', className)}>
+    <section aria-labelledby={headingId} className={cn('mx-auto w-full max-w-2xl', className)}>
       {/* Header row */}
       <div className="flex items-center gap-4">
-        <p id="zone-heading" className="text-ghost/45 font-mono text-[11px] tracking-[0.24em] uppercase">
+        <p id={headingId} className="text-ghost/45 text-2xs font-mono tracking-[0.24em] uppercase">
           {label}
         </p>
         <span className="bg-ghost/10 h-px flex-1" aria-hidden="true" />
-        <div className="text-jungle flex items-center gap-2 font-mono text-[11px] tracking-[0.24em] uppercase">
+        <div className="text-jungle text-2xs flex items-center gap-2 font-mono tracking-[0.24em] uppercase">
           <span className="relative flex h-2 w-2 shrink-0" aria-hidden="true">
             <span
               className={cn('bg-jungle absolute inline-flex h-full w-full rounded-full opacity-75', {
@@ -64,7 +65,7 @@ export const ZoneIntervention = ({
         {stations.map((station, index) => (
           <li
             key={station.name}
-            className={cn('border-ghost/8 flex flex-col items-center gap-[7px] p-4', getStationBorderClass(index))}>
+            className={cn('border-ghost/8 flex flex-col items-center gap-1.5 p-4', getStationBorderClass(index))}>
             <CrosshairIcon />
             <span className="font-display text-ghost text-base font-semibold">{station.name}</span>
             <span className="text-ghost/32 font-mono text-[9.5px] tracking-[0.14em] uppercase">{station.meta}</span>

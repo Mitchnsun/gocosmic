@@ -75,7 +75,7 @@ Real CTA pattern: `radial-gradient(circle at 50% 60%, rgb(var(--cta-accent-rgb) 
 
 - Headings: weight 500–700, tight negative `tracking` (`-0.02em` to `-0.04em`), `line-height` ~0.95–1.05, `text-wrap: balance` / `pretty`.
 - Light italic (weight 300, `font-style: italic`, often `text-ghost/55`) serves as **editorial emphasis** in headings ("Apps _that_ launch").
-- Mono: `text-[10px]`–`text-[11px]`, `uppercase`, `tracking-widest` (≈ `.12em`–`.28em`).
+- Mono: `text-3xs`–`text-2xs`, `uppercase`, `tracking-widest` (≈ `.12em`–`.28em`).
 
 **Indicative scale (clamp, responsive):**
 

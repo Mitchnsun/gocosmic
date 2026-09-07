@@ -317,6 +317,50 @@ describe('CosmicCursor render loop', () => {
 
     document.body.removeChild(btn);
   });
+
+  it('does not snap the cursor toward the center of a wide link', () => {
+    // A full-row link far wider than the magnetic range — its center sits well away
+    // from where the pointer actually hovers (e.g. the trailing arrow icon).
+    const link = document.createElement('a');
+    link.setAttribute('data-magnetic', '');
+    document.body.appendChild(link);
+
+    vi.spyOn(link, 'getBoundingClientRect').mockReturnValue({
+      left: 0,
+      top: 400,
+      width: 1200,
+      height: 80,
+      right: 1200,
+      bottom: 480,
+      x: 0,
+      y: 400,
+      toJSON: () => ({}),
+    } as DOMRect);
+
+    const coreSize = 20; // radius 10 — distinct from trail/orbit dot radii so it's identifiable
+    render(<CosmicCursor coreSize={coreSize} />);
+
+    const pointerX = 1150;
+    const pointerY = 440;
+
+    act(() => {
+      link.dispatchEvent(new MouseEvent('mousemove', { clientX: pointerX, clientY: pointerY, bubbles: true }));
+    });
+    // Drive several frames so the smoothed position converges
+    for (let i = 0; i < 25; i++) {
+      act(() => {
+        capturedFrame!(performance.now() + 16);
+      });
+    }
+
+    const coreCalls = mockCtx.arc.mock.calls.filter((call) => call[2] === coreSize / 2);
+    expect(coreCalls.length).toBeGreaterThan(0);
+    const [lastX, lastY] = coreCalls[coreCalls.length - 1] as [number, number, number];
+    expect(lastX).toBeGreaterThan(pointerX - 5);
+    expect(lastY).toBeGreaterThan(pointerY - 5);
+
+    document.body.removeChild(link);
+  });
 });
 
 // ─── useMagneticElements ─────────────────────────────────────────────────────

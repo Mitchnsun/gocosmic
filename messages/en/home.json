@@ -97,6 +97,41 @@
         "haute_savoie": { "meta": "France" },
         "leman": { "meta": "Léman · CH/FR" }
       }
+    },
+    "projects": {
+      "eyebrow": "[ SELECTED WORK · 04 ]",
+      "title": "Recently <em>in orbit.</em>",
+      "subtitle": "A selection of our latest work",
+      "learnMore": "View project",
+      "loadMore": "Load more projects",
+      "dailyFortune": {
+        "title": "Daily Fortune",
+        "tagline": "Mobile · iOS / Android",
+        "description": "A mystical mobile app delivering AI-powered daily fortunes and motivational messages.",
+        "tags": ["AI", "Wellness"],
+        "imageAlt": "Daily Fortune app preview"
+      },
+      "mcomperat": {
+        "title": "mcomper.at",
+        "tagline": "Web · Next.js",
+        "description": "A modern, responsive web CV built with Next.js, TypeScript, and full internationalization.",
+        "tags": ["Personal CV"],
+        "imageAlt": "mcomper.at website preview"
+      },
+      "pscSupersprint": {
+        "title": "PSC Supersprint",
+        "tagline": "Web · Real-time",
+        "description": "A web application for managing and displaying real-time triathlon competition results.",
+        "tags": ["Sport", "Live"],
+        "imageAlt": "PSC Supersprint results board preview"
+      },
+      "choeurDesPaysduMontBlanc": {
+        "title": "Chœur des Pays du Mont Blanc",
+        "tagline": "Web · Editorial",
+        "description": "A website showcasing the choir's activities, concerts, and repertoire in Haute-Savoie.",
+        "tags": ["Culture"],
+        "imageAlt": "Chœur des Pays du Mont Blanc website preview"
+      }
     }
   }
 }

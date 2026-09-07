@@ -70,7 +70,7 @@ const LanguageSwitcher = ({ onOpen }: LanguageSwitcherProps = {}) => {
           className={cn('h-2 w-2 rounded-full', languages[locale as keyof typeof languages]?.color || 'bg-jungle')}
           aria-hidden="true"
         />
-        <span className="text-[10px] uppercase">{locale}</span>
+        <span className="text-3xs uppercase">{locale}</span>
       </button>
 
       {!onOpen && (
@@ -88,7 +88,7 @@ const LanguageSwitcher = ({ onOpen }: LanguageSwitcherProps = {}) => {
                 style={{ top: 'var(--header-h, 64px)' }}
                 className="border-ghost/10 fixed right-0 z-40 flex w-80 flex-col rounded-bl-2xl border-b border-l bg-slate-950/95 shadow-2xl backdrop-blur-xl">
                 {/* Metadata row */}
-                <div className="border-ghost/10 flex items-center justify-between border-b px-6 py-3 text-[10px] tracking-widest text-slate-500 uppercase">
+                <div className="border-ghost/10 text-3xs flex items-center justify-between border-b px-6 py-3 tracking-widest text-slate-500 uppercase">
                   <span>{t('lang_drawer_title')}</span>
                   <button
                     onClick={() => setIsOpen(false)}
