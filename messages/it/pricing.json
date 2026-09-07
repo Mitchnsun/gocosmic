@@ -36,7 +36,7 @@
         "title": "Sito Web + Applicazione Mobile",
         "rate": {
           "eur": "600€ IVA escl. / giorno",
-          "chf": "900 CHF IVA escl. / giorno"
+          "chf": "600 CHF IVA escl. / giorno"
         },
         "rate_note": "*",
         "description": "Per un progetto che combina un sito web e un'applicazione mobile, lo sviluppo viene fatturato a giornata. Il costo totale dipende dalla complessità, dall'ambito funzionale e dalle piattaforme target.",
@@ -46,7 +46,7 @@
         "title": "Applicazione Mobile",
         "rate": {
           "eur": "600€ IVA escl. / giorno",
-          "chf": "900 CHF IVA escl. / giorno"
+          "chf": "600 CHF IVA escl. / giorno"
         },
         "rate_note": "*",
         "disclaimer": "* Prezzo indicativo, da negoziare in base alle tue esigenze e tempi.",
@@ -56,7 +56,7 @@
         "title": "Sito Web Personalizzato",
         "rate": {
           "eur": "600€ IVA escl. / giorno",
-          "chf": "900 CHF IVA escl. / giorno"
+          "chf": "600 CHF IVA escl. / giorno"
         },
         "rate_note": "*",
         "disclaimer": "* Prezzo indicativo in base alle esigenze e ai tempi. Nessun prezzo fisso per un sito web completamente personalizzabile.",
@@ -67,8 +67,8 @@
         "few_per_year": {
           "title": "Abbonamento Essenziale",
           "price": {
-            "eur": "75€ / mese",
-            "chf": "90 CHF / mese"
+            "eur": "50€ / mese",
+            "chf": "50 CHF / mese"
           },
           "duration": "Impegno annuale",
           "includes": {
@@ -87,8 +87,8 @@
         "monthly": {
           "title": "Abbonamento Standard",
           "price": {
-            "eur": "100€ / mese",
-            "chf": "140 CHF / mese"
+            "eur": "90€ / mese",
+            "chf": "90 CHF / mese"
           },
           "duration": "Impegno annuale",
           "includes": {
@@ -109,7 +109,7 @@
           "title": "Abbonamento Premium",
           "price": {
             "eur": "150€ / mese",
-            "chf": "220 CHF / mese"
+            "chf": "150 CHF / mese"
           },
           "duration": "Impegno annuale",
           "includes": {
@@ -130,7 +130,7 @@
           "title": "CMS Autogestito",
           "rate": {
             "eur": "600€ IVA escl. / giorno",
-            "chf": "900 CHF IVA escl. / giorno"
+            "chf": "600 CHF IVA escl. / giorno"
           },
           "rate_note": "*",
           "disclaimer": "* Tariffa giornaliera base — prezzo definitivo da concordare in base alle tue esigenze CMS.",

@@ -117,7 +117,7 @@ describe('PricingSimulator', () => {
       fireEvent.click(getByRole('button', { name: '2 to 3 times per year' }));
 
       expect(getByRole('heading', { level: 3, name: 'Essential Subscription' })).toBeInTheDocument();
-      expect(getByText('75€ / month')).toBeInTheDocument();
+      expect(getByText('50€ / month')).toBeInTheDocument();
     });
   });
 
@@ -189,7 +189,7 @@ describe('PricingSimulator', () => {
       const { getByRole, getByText, queryByText } = render(<PricingSimulator currency="chf" />);
       fireEvent.click(getByRole('button', { name: 'A mobile application' }));
 
-      expect(getByText('900 CHF excl. tax / day')).toBeInTheDocument();
+      expect(getByText('600 CHF excl. tax / day')).toBeInTheDocument();
       expect(queryByText('600€ excl. tax / day')).not.toBeInTheDocument();
     });
 
@@ -199,7 +199,7 @@ describe('PricingSimulator', () => {
       fireEvent.click(getByRole('button', { name: 'A showcase website' }));
       fireEvent.click(getByRole('button', { name: '2 to 3 times per year' }));
 
-      expect(getByText('90 CHF / month')).toBeInTheDocument();
+      expect(getByText('50 CHF / month')).toBeInTheDocument();
     });
   });
 });

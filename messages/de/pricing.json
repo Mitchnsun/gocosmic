@@ -36,7 +36,7 @@
         "title": "Website + Mobile Anwendung",
         "rate": {
           "eur": "600€ netto / Tag",
-          "chf": "900 CHF netto / Tag"
+          "chf": "600 CHF netto / Tag"
         },
         "rate_note": "*",
         "description": "Für ein Projekt, das eine Website und eine mobile Anwendung kombiniert, wird die Entwicklung nach Tagessatz abgerechnet. Die Gesamtkosten hängen von der Komplexität, dem Funktionsumfang und den Zielplattformen ab.",
@@ -46,7 +46,7 @@
         "title": "Mobile Anwendung",
         "rate": {
           "eur": "600€ netto / Tag",
-          "chf": "900 CHF netto / Tag"
+          "chf": "600 CHF netto / Tag"
         },
         "rate_note": "*",
         "disclaimer": "* Richtpreis, zu verhandeln je nach Ihren Anforderungen und Zeitplan.",
@@ -56,7 +56,7 @@
         "title": "Individuelle Website",
         "rate": {
           "eur": "600€ netto / Tag",
-          "chf": "900 CHF netto / Tag"
+          "chf": "600 CHF netto / Tag"
         },
         "rate_note": "*",
         "disclaimer": "* Richtpreis je nach Anforderungen und Zeitplan. Kein Pauschalpreis für eine vollständig anpassbare Website.",
@@ -67,8 +67,8 @@
         "few_per_year": {
           "title": "Essential-Abo",
           "price": {
-            "eur": "75€ / Monat",
-            "chf": "90 CHF / Monat"
+            "eur": "50€ / Monat",
+            "chf": "50 CHF / Monat"
           },
           "duration": "Jahresbindung",
           "includes": {
@@ -87,8 +87,8 @@
         "monthly": {
           "title": "Standard-Abo",
           "price": {
-            "eur": "100€ / Monat",
-            "chf": "140 CHF / Monat"
+            "eur": "90€ / Monat",
+            "chf": "90 CHF / Monat"
           },
           "duration": "Jahresbindung",
           "includes": {
@@ -109,7 +109,7 @@
           "title": "Premium-Abo",
           "price": {
             "eur": "150€ / Monat",
-            "chf": "220 CHF / Monat"
+            "chf": "150 CHF / Monat"
           },
           "duration": "Jahresbindung",
           "includes": {
@@ -130,7 +130,7 @@
           "title": "Selbstverwaltetes CMS",
           "rate": {
             "eur": "600€ netto / Tag",
-            "chf": "900 CHF netto / Tag"
+            "chf": "600 CHF netto / Tag"
           },
           "rate_note": "*",
           "disclaimer": "* Basis-Tagessatz — endgültiger Preis nach Absprache je nach Ihren CMS-Anforderungen.",

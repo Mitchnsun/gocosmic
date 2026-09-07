@@ -36,7 +36,7 @@
         "title": "Website + Mobile Application",
         "rate": {
           "eur": "600€ excl. tax / day",
-          "chf": "900 CHF excl. tax / day"
+          "chf": "600 CHF excl. tax / day"
         },
         "rate_note": "*",
         "description": "For a project combining a website and a mobile application, development is billed at a daily rate. The total cost depends on complexity, functional scope, and targeted platforms.",
@@ -46,7 +46,7 @@
         "title": "Mobile Application",
         "rate": {
           "eur": "600€ excl. tax / day",
-          "chf": "900 CHF excl. tax / day"
+          "chf": "600 CHF excl. tax / day"
         },
         "rate_note": "*",
         "disclaimer": "* Indicative price, to be negotiated according to your needs and timeline.",
@@ -56,7 +56,7 @@
         "title": "Custom Website",
         "rate": {
           "eur": "600€ excl. tax / day",
-          "chf": "900 CHF excl. tax / day"
+          "chf": "600 CHF excl. tax / day"
         },
         "rate_note": "*",
         "disclaimer": "* Indicative price based on needs and timeline. No fixed price for a fully customisable website.",
@@ -67,8 +67,8 @@
         "few_per_year": {
           "title": "Essential Subscription",
           "price": {
-            "eur": "75€ / month",
-            "chf": "90 CHF / month"
+            "eur": "50€ / month",
+            "chf": "50 CHF / month"
           },
           "duration": "Annual commitment",
           "includes": {
@@ -87,8 +87,8 @@
         "monthly": {
           "title": "Standard Subscription",
           "price": {
-            "eur": "100€ / month",
-            "chf": "140 CHF / month"
+            "eur": "90€ / month",
+            "chf": "90 CHF / month"
           },
           "duration": "Annual commitment",
           "includes": {
@@ -109,7 +109,7 @@
           "title": "Premium Subscription",
           "price": {
             "eur": "150€ / month",
-            "chf": "220 CHF / month"
+            "chf": "150 CHF / month"
           },
           "duration": "Annual commitment",
           "includes": {
@@ -130,7 +130,7 @@
           "title": "Self-Managed CMS",
           "rate": {
             "eur": "600€ excl. tax / day",
-            "chf": "900 CHF excl. tax / day"
+            "chf": "600 CHF excl. tax / day"
           },
           "rate_note": "*",
           "disclaimer": "* Base daily rate — final price to be discussed based on your CMS requirements.",

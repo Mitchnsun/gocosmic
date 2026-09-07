@@ -54,7 +54,7 @@ describe('PricingTeaser', () => {
   it('should render the franc price for Swiss visitors', () => {
     render(<PricingTeaser currency="chf" />);
 
-    expect(screen.getByText(/from 80 CHF/i)).toBeInTheDocument();
+    expect(screen.getByText(/from 50 CHF/i)).toBeInTheDocument();
     expect(screen.queryByText(/50€/)).not.toBeInTheDocument();
   });
 });

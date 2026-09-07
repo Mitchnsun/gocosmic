@@ -36,7 +36,7 @@
         "title": "Site Web + Application Mobile",
         "rate": {
           "eur": "600€ HT / jour",
-          "chf": "900 CHF HT / jour"
+          "chf": "600 CHF HT / jour"
         },
         "rate_note": "*",
         "description": "Pour un projet combinant site web et application mobile, le développement est facturé à la journée. Le coût total dépend de la complexité, du périmètre fonctionnel et des plateformes ciblées.",
@@ -46,7 +46,7 @@
         "title": "Application Mobile",
         "rate": {
           "eur": "600€ HT / jour",
-          "chf": "900 CHF HT / jour"
+          "chf": "600 CHF HT / jour"
         },
         "rate_note": "*",
         "disclaimer": "* Prix indicatif, à négocier en fonction de vos besoins et des délais.",
@@ -56,7 +56,7 @@
         "title": "Site Web Personnalisé",
         "rate": {
           "eur": "600€ HT / jour",
-          "chf": "900 CHF HT / jour"
+          "chf": "600 CHF HT / jour"
         },
         "rate_note": "*",
         "disclaimer": "* Prix indicatif, en fonction du besoin et des délais. Pas de tarif au forfait pour un site entièrement personnalisable.",
@@ -67,8 +67,8 @@
         "few_per_year": {
           "title": "Abonnement Essentiel",
           "price": {
-            "eur": "60€ / mois",
-            "chf": "90 CHF / mois"
+            "eur": "50€ / mois",
+            "chf": "50 CHF / mois"
           },
           "duration": "Engagement annuel",
           "includes": {
@@ -88,7 +88,7 @@
           "title": "Abonnement Standard",
           "price": {
             "eur": "90€ / mois",
-            "chf": "140 CHF / mois"
+            "chf": "90 CHF / mois"
           },
           "duration": "Engagement annuel",
           "includes": {
@@ -109,7 +109,7 @@
           "title": "Abonnement Premium",
           "price": {
             "eur": "150€ / mois",
-            "chf": "220 CHF / mois"
+            "chf": "150 CHF / mois"
           },
           "duration": "Engagement annuel",
           "includes": {
@@ -130,7 +130,7 @@
           "title": "CMS Auto-Géré",
           "rate": {
             "eur": "600€ HT / jour",
-            "chf": "900 CHF HT / jour"
+            "chf": "600 CHF HT / jour"
           },
           "rate_note": "*",
           "disclaimer": "* Tarif journalier de base — prix définitif à débattre en fonction de vos besoins CMS.",

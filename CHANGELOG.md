@@ -9,8 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Added
 
-- Visitors browsing from Switzerland now see the Geneva base (Chêne-Bougeries) and every price in Swiss francs, set for the Swiss market rather than converted from euros
+- Visitors browsing from Switzerland now see the Geneva base (Chêne-Bougeries) and every price in Swiss francs
 - Coverage now states across the site that we work around Annecy, in Geneva and throughout French-speaking Switzerland
+
+### Fixed
+
+- Subscription prices are now the same in all five languages of the site, starting at 50€ as advertised
 
 ### Changed
 

@@ -36,7 +36,7 @@
         "title": "Sitio Web + Aplicación Móvil",
         "rate": {
           "eur": "600€ s/IVA / día",
-          "chf": "900 CHF s/IVA / día"
+          "chf": "600 CHF s/IVA / día"
         },
         "rate_note": "*",
         "description": "Para un proyecto que combine un sitio web y una aplicación móvil, el desarrollo se factura por día. El coste total depende de la complejidad, el alcance funcional y las plataformas objetivo.",
@@ -46,7 +46,7 @@
         "title": "Aplicación Móvil",
         "rate": {
           "eur": "600€ s/IVA / día",
-          "chf": "900 CHF s/IVA / día"
+          "chf": "600 CHF s/IVA / día"
         },
         "rate_note": "*",
         "disclaimer": "* Precio indicativo, a negociar según sus necesidades y plazos.",
@@ -56,7 +56,7 @@
         "title": "Sitio Web Personalizado",
         "rate": {
           "eur": "600€ s/IVA / día",
-          "chf": "900 CHF s/IVA / día"
+          "chf": "600 CHF s/IVA / día"
         },
         "rate_note": "*",
         "disclaimer": "* Precio indicativo según necesidades y plazos. Sin precio fijo para un sitio web totalmente personalizable.",
@@ -67,8 +67,8 @@
         "few_per_year": {
           "title": "Suscripción Esencial",
           "price": {
-            "eur": "75€ / mes",
-            "chf": "90 CHF / mes"
+            "eur": "50€ / mes",
+            "chf": "50 CHF / mes"
           },
           "duration": "Compromiso anual",
           "includes": {
@@ -87,8 +87,8 @@
         "monthly": {
           "title": "Suscripción Estándar",
           "price": {
-            "eur": "100€ / mes",
-            "chf": "140 CHF / mes"
+            "eur": "90€ / mes",
+            "chf": "90 CHF / mes"
           },
           "duration": "Compromiso anual",
           "includes": {
@@ -109,7 +109,7 @@
           "title": "Suscripción Premium",
           "price": {
             "eur": "150€ / mes",
-            "chf": "220 CHF / mes"
+            "chf": "150 CHF / mes"
           },
           "duration": "Compromiso anual",
           "includes": {
@@ -130,7 +130,7 @@
           "title": "CMS Autogestionado",
           "rate": {
             "eur": "600€ s/IVA / día",
-            "chf": "900 CHF s/IVA / día"
+            "chf": "600 CHF s/IVA / día"
           },
           "rate_note": "*",
           "disclaimer": "* Tarifa diaria base — precio definitivo a discutir según sus necesidades de CMS.",

@@ -22,7 +22,7 @@ describe('SubscriptionCard', () => {
 
     it('renders the price and duration', () => {
       render(<TestSubscriptionCard freq="few_per_year" />);
-      expect(screen.getByText('75€ / month')).toBeInTheDocument();
+      expect(screen.getByText('50€ / month')).toBeInTheDocument();
       expect(screen.getByText('Annual commitment')).toBeInTheDocument();
     });
 
@@ -42,7 +42,7 @@ describe('SubscriptionCard', () => {
 
     it('renders the price', () => {
       render(<TestSubscriptionCard freq="monthly" />);
-      expect(screen.getByText('100€ / month')).toBeInTheDocument();
+      expect(screen.getByText('90€ / month')).toBeInTheDocument();
     });
 
     it('includes content_update item', () => {
@@ -71,8 +71,8 @@ describe('SubscriptionCard', () => {
   describe('Swiss francs', () => {
     it('renders franc prices instead of euro prices', () => {
       render(<TestSubscriptionCard freq="monthly" currency="chf" />);
-      expect(screen.getByText('140 CHF / month')).toBeInTheDocument();
-      expect(screen.queryByText('100€ / month')).not.toBeInTheDocument();
+      expect(screen.getByText('90 CHF / month')).toBeInTheDocument();
+      expect(screen.queryByText('90€ / month')).not.toBeInTheDocument();
     });
   });
 });

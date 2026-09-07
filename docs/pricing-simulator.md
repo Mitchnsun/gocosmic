@@ -88,7 +88,7 @@ State lives entirely in `PricingSimulator.tsx` (3 `useState` values). All child 
    │     │ RESULT                   │
    │     │ SubscriptionCard         │
    │     │ Abonnement Standard      │
-   │     │ 90€/mois (FR)            │
+   │     │ 90€/mois                 │
    │     │ (color: blue-400)        │
    │     └──────────────────────────┘
    │                    │
@@ -101,7 +101,7 @@ State lives entirely in `PricingSimulator.tsx` (3 `useState` values). All child 
       │ RESULT                   │
       │ SubscriptionCard         │
       │ Abonnement Essentiel     │
-      │ 60€/mois (FR)            │
+      │ 50€/mois                 │
       │ (color: jungle)          │
       └──────────────────────────┘
                     │
@@ -142,6 +142,8 @@ Keys live under `pricing.results.*` in `messages/<locale>/pricing.json` (5 local
 | `results.subscription.monthly.*`      | `showSubscriptionResult` (monthly)      |
 | `results.subscription.weekly.*`       | `showSubscriptionResult` (weekly)       |
 | `results.subscription.self_managed.*` | `showCmsResult` path                    |
+
+Every price/rate key holds two variants, `eur` and `chf`, both quoting the same numeric amount — only the currency label differs. `getCurrency()` in `lib/region.ts` picks which one to render based on the visitor's resolved region (see `lib/region.server.ts`).
 
 ---
 
