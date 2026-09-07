@@ -112,7 +112,9 @@ export function TimelineStepItem({
         <div className="relative z-10 flex shrink-0 flex-col items-center">
           <div
             data-testid={`dot-${step.id}`}
-            className={cn('h-3 w-3 rounded-full border-2 border-slate-700', dotColor, !reducedMotion && 'timeline-dot')}
+            className={cn('h-3 w-3 rounded-full border-2 border-slate-700', dotColor, {
+              'timeline-dot': !reducedMotion,
+            })}
             aria-hidden="true"
             style={{ animationDelay: `${delay}ms` }}
           />
@@ -171,7 +173,9 @@ export function TimelineStepItem({
       <div className="mt-2 flex items-center gap-0">
         <div
           data-testid={`dot-${step.id}`}
-          className={cn('z-10 h-3 w-3 shrink-0 rounded-full', dotColor, !reducedMotion && 'timeline-dot')}
+          className={cn('z-10 h-3 w-3 shrink-0 rounded-full', dotColor, {
+            'timeline-dot': !reducedMotion,
+          })}
           aria-hidden="true"
           style={{ animationDelay: `${delay}ms` }}
         />

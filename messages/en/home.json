@@ -83,11 +83,19 @@
     },
     "zone": {
       "title": "Our service area",
-      "description": "Available in Annecy, Geneva, and Haute-Savoie.",
+      "description": "Available in Annecy, Geneva, Haute-Savoie, and the Lake Geneva region.",
+      "availability": "Available",
       "locations": {
         "annecy": "Annecy",
         "geneva": "Geneva",
-        "haute_savoie": "Haute-Savoie"
+        "haute_savoie": "Haute-Savoie",
+        "leman": "Lake Geneva region"
+      },
+      "stations": {
+        "annecy": { "meta": "Base · 74" },
+        "geneva": { "meta": "Switzerland" },
+        "haute_savoie": { "meta": "France" },
+        "leman": { "meta": "Léman · CH/FR" }
       }
     }
   }

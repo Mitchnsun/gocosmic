@@ -7,6 +7,7 @@ import HeroSection from '@/components/HeroSection';
 import { ProcessTimeline } from '@/components/ProcessTimeline';
 import { homepageSteps } from '@/components/ProcessTimeline/constants';
 import { ServicesGrid } from '@/components/ServicesGrid';
+import { ZoneIntervention } from '@/components/ZoneIntervention';
 
 export default async function Home() {
   const t = await getTranslations('homepage');
@@ -59,15 +60,16 @@ export default async function Home() {
         starfieldWarpSpeed={0.8}
         warpOnHover
         className="-m-4 mt-4">
-        <div className="px-4 py-8 text-center">
-          <h3 className="text-2xl font-bold">{t('zone.title')}</h3>
-          <p className="mt-2 text-gray-400">{t('zone.description')}</p>
-          <ul className="mt-4 flex justify-center gap-6 text-blue-300">
-            <li>📍 {t('zone.locations.annecy')}</li>
-            <li>📍 {t('zone.locations.geneva')}</li>
-            <li>📍 {t('zone.locations.haute_savoie')}</li>
-          </ul>
-        </div>
+        <ZoneIntervention
+          label={t('zone.title')}
+          availability={t('zone.availability')}
+          stations={[
+            { name: t('zone.locations.annecy'), meta: t('zone.stations.annecy.meta') },
+            { name: t('zone.locations.geneva'), meta: t('zone.stations.geneva.meta') },
+            { name: t('zone.locations.haute_savoie'), meta: t('zone.stations.haute_savoie.meta') },
+            { name: t('zone.locations.leman'), meta: t('zone.stations.leman.meta') },
+          ]}
+        />
       </CTAFinal>
       <AsciiMarquee labels={asciiLabels} />
     </div>

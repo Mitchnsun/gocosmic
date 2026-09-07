@@ -1,8 +1,9 @@
 'use client';
 
-import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
+
+import { cn } from '@/design-system/lib/utils';
 
 import { useClock } from './useClock';
 
@@ -29,10 +30,9 @@ const StatusBar = () => {
         <div className="flex items-center gap-2 sm:gap-3">
           <span className="relative flex h-2 w-2 shrink-0" aria-label={t('aria_signal')} role="img">
             <span
-              className={clsx(
-                'bg-jungle absolute inline-flex h-full w-full rounded-full opacity-75',
-                !reduceMotion && 'animate-ping'
-              )}
+              className={cn('bg-jungle absolute inline-flex h-full w-full rounded-full opacity-75', {
+                'animate-ping': !reduceMotion,
+              })}
             />
             <span className="bg-jungle relative inline-flex h-2 w-2 rounded-full" />
           </span>
