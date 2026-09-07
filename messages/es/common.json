@@ -18,8 +18,8 @@
   "pricing_teaser": {
     "eyebrow": "Sitio web vitrina",
     "price": {
-      "eur": "desde 50€",
-      "chf": "desde 50 CHF"
+      "eur": "desde 10€",
+      "chf": "desde 10 CHF"
     },
     "price_period": "/ mes",
     "tagline": "Todo incluido, sin sorpresas",
@@ -29,11 +29,10 @@
       "seo": "Optimización SEO",
       "updates": "Actualizaciones técnicas regulares",
       "hosting": "Alojamiento web",
-      "ssl": "Certificado SSL",
-      "domain": "Nombre de dominio",
+      "ssl": "Conexión segura (el candado del navegador)",
       "email": "1 dirección de correo profesional"
     },
-    "footnote": "* Según el nombre de dominio elegido, pueden aplicarse cargos adicionales.",
+    "footnote": "Nombre de dominio, dirección de correo y páginas adicionales son opcionales, desde +5€ al mes.",
     "footnote_scope": "Para una tienda e-commerce o portal de clientes, contáctenos para un presupuesto personalizado.",
     "mockup_mention": "Solicite su maqueta sin compromiso",
     "cta_simulate": "Simular mi tarifa",

@@ -18,8 +18,8 @@
   "pricing_teaser": {
     "eyebrow": "Site vitrine",
     "price": {
-      "eur": "à partir de 50€",
-      "chf": "à partir de 50 CHF"
+      "eur": "à partir de 10€",
+      "chf": "à partir de 10 CHF"
     },
     "price_period": "/ mois",
     "tagline": "Tout compris, sans surprise",
@@ -29,11 +29,10 @@
       "seo": "Optimisations SEO",
       "updates": "Mises à jour techniques régulières",
       "hosting": "Hébergement web",
-      "ssl": "Certificat SSL",
-      "domain": "Nom de domaine",
+      "ssl": "Connexion sécurisée (le cadenas dans le navigateur)",
       "email": "1 adresse e-mail professionnelle"
     },
-    "footnote": "* Selon le nom de domaine choisi, des frais supplémentaires peuvent s'appliquer.",
+    "footnote": "Nom de domaine, adresse e-mail et pages supplémentaires en option, à partir de +5€ par mois.",
     "footnote_scope": "Pour une boutique e-commerce ou un espace client, contactez-nous pour un devis sur mesure.",
     "mockup_mention": "Demandez votre maquette sans engagement",
     "cta_simulate": "Simuler mon tarif",

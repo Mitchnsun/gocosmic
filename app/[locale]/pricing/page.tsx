@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages, getTranslations } from 'next-intl/server';
 
-import { PricingSimulator } from '@/components/PricingSimulator';
+import { FreeOffers, PricingSimulator } from '@/components/PricingSimulator';
 import { getCurrency } from '@/lib/region';
 import { getRegion } from '@/lib/region.server';
 
@@ -23,21 +23,28 @@ export default async function Pricing() {
   const currency = getCurrency(await getRegion());
 
   return (
-    <div className="text-ghost relative pt-10" style={{ minHeight: 'calc(100vh - var(--header-height))' }}>
-      <main className="m-auto flex max-w-5xl flex-col items-center gap-10 px-4 pb-12">
-        {/* Page Header */}
-        <div className="text-center">
-          <h1 className="mb-4 text-2xl font-extrabold sm:text-4xl">{t('title')}</h1>
-          <p className="text-lg text-gray-400">{t('subtitle')}</p>
+    <div className="bg-void text-ghost relative pt-10" style={{ minHeight: 'calc(100vh - var(--header-height))' }}>
+      <div className="m-auto flex max-w-5xl flex-col items-center gap-10 px-4 pb-16 sm:px-6 lg:px-8">
+        {/* Page header */}
+        <div className="w-full">
+          <p className="text-aerospace text-2xs flex items-center gap-2 font-mono tracking-[0.24em] uppercase">
+            <span className="bg-aerospace h-1.5 w-1.5 rounded-full" aria-hidden="true" />
+            {t('eyebrow')}
+          </p>
+          <h1 className="font-display mt-4 text-3xl font-bold tracking-[-0.03em] sm:text-5xl">{t('title')}</h1>
+          <p className="text-ghost/55 mt-4 max-w-2xl text-lg">{t('subtitle')}</p>
         </div>
 
-        {/* Simulator */}
-        <div className="w-full">
-          <NextIntlClientProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          {/* Free, no-commitment offers */}
+          <FreeOffers />
+
+          {/* Simulator */}
+          <div className="w-full">
             <PricingSimulator currency={currency} />
-          </NextIntlClientProvider>
-        </div>
-      </main>
+          </div>
+        </NextIntlClientProvider>
+      </div>
     </div>
   );
 }

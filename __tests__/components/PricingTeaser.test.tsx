@@ -6,7 +6,7 @@ describe('PricingTeaser', () => {
   it('should render the euro price, tagline and scope note', () => {
     render(<PricingTeaser currency="eur" />);
 
-    expect(screen.getByText(/from 50€/i)).toBeInTheDocument();
+    expect(screen.getByText(/from 10€/i)).toBeInTheDocument();
     expect(screen.getByText(/all-inclusive, no surprises/i)).toBeInTheDocument();
     expect(screen.getByText(/without order management or client portal/i)).toBeInTheDocument();
   });
@@ -18,14 +18,13 @@ describe('PricingTeaser', () => {
     expect(screen.getByText(/seo optimisation/i)).toBeInTheDocument();
     expect(screen.getByText(/regular technical updates/i)).toBeInTheDocument();
     expect(screen.getByText(/web hosting/i)).toBeInTheDocument();
-    expect(screen.getByText(/ssl certificate/i)).toBeInTheDocument();
-    expect(screen.getAllByText(/domain name/i).length).toBeGreaterThan(0);
+    expect(screen.getByText(/secure connection/i)).toBeInTheDocument();
   });
 
-  it('should render the domain/email footnote and scope footnote', () => {
+  it('should present the domain and email as paid options, not bundled features', () => {
     render(<PricingTeaser currency="eur" />);
 
-    expect(screen.getByText(/depending on the chosen domain name/i)).toBeInTheDocument();
+    expect(screen.getByText(/domain name, email address and extra pages are optional/i)).toBeInTheDocument();
     expect(screen.getByText(/e-commerce shop or client portal/i)).toBeInTheDocument();
   });
 
@@ -54,7 +53,7 @@ describe('PricingTeaser', () => {
   it('should render the franc price for Swiss visitors', () => {
     render(<PricingTeaser currency="chf" />);
 
-    expect(screen.getByText(/from 50 CHF/i)).toBeInTheDocument();
-    expect(screen.queryByText(/50€/)).not.toBeInTheDocument();
+    expect(screen.getByText(/from 10 CHF/i)).toBeInTheDocument();
+    expect(screen.queryByText(/10€/)).not.toBeInTheDocument();
   });
 });

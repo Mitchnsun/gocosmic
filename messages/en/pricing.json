@@ -1,146 +1,108 @@
 {
   "pricing": {
     "meta": {
-      "title": "Pricing Simulator - Go Cosmic",
-      "description": "Estimate the cost of your web or mobile project with our interactive pricing simulator. Get a personalised quote for your website or mobile application."
+      "title": "Pricing - Go Cosmic",
+      "description": "Build your website from 10€ a month: you choose how many pages and which options. Free mockup and website review, no strings attached."
     },
-    "title": "Pricing Simulator",
-    "subtitle": "Answer a few questions to get an estimate for your project",
+    "eyebrow": "[ PRICING ]",
+    "title": "Build your plan",
+    "subtitle": "A clear starting price, then you add only what you actually need. The total updates as you go.",
+    "free_offers": {
+      "eyebrow": "Free, no commitment",
+      "title": "Before we even talk budget",
+      "items": {
+        "mockup": {
+          "title": "A mockup of your future website",
+          "description": "See what your site could look like before deciding anything."
+        },
+        "audit": {
+          "title": "A review of your current website",
+          "description": "What works, what loses you visitors, and whether people find you on Google."
+        }
+      },
+      "note": "Both are free and commit you to nothing."
+    },
     "step1": {
       "question": "What would you like to create?",
       "options": {
         "website": "A website",
-        "mobile": "A mobile application",
-        "both": "Both (website + mobile app)"
+        "mobile": "A mobile app",
+        "both": "Both"
       }
     },
     "step2": {
-      "question": "What type of website do you need?",
+      "question": "What kind of website do you need?",
       "options": {
-        "showcase": "A showcase website",
-        "accounts": "A website with client accounts",
-        "ecommerce": "An e-commerce website"
+        "showcase": "A site that presents my business",
+        "self_managed": "A site I want to edit myself",
+        "accounts": "A site with an area for my customers",
+        "ecommerce": "A site to sell online"
       }
     },
-    "step3": {
-      "question": "How often would you like to update the content?",
+    "builder": {
+      "period": "/ month",
+      "base": {
+        "title": "Base plan",
+        "includes": {
+          "page": "One page presenting your business",
+          "hosting": "Online around the clock, publishing included",
+          "security": "Secure connection (the padlock in the browser)"
+        }
+      },
       "options": {
-        "few_per_year": "2 to 3 times per year",
-        "monthly": "Once a month",
-        "weekly": "Once a week",
-        "self_managed": "I want to manage it myself, whenever I want"
+        "title": "Add what you need",
+        "domain": {
+          "label": "Managing your web address",
+          "hint": "Your domain name, for example my-business.com — registered and renewed for you."
+        },
+        "swiss_hosting": {
+          "label": "Website hosted in Switzerland",
+          "hint": "Your data stays on a server located in Switzerland."
+        },
+        "email": {
+          "label": "An email address in your own name",
+          "hint": "For example contact@my-business.com, instead of a free address."
+        }
+      },
+      "pages": {
+        "label": "Number of pages",
+        "tiers": {
+          "one": "1 page (included)",
+          "two_three": "2 to 3 pages",
+          "four_five": "4 to 5 pages",
+          "six_eight": "6 to 8 pages",
+          "nine_ten": "9 to 10 pages"
+        }
+      },
+      "updates": {
+        "label": "Content changes included",
+        "hint": "Your text, photos and opening hours updated by me, with nothing extra to pay each time.",
+        "off": "Not included",
+        "slider_label": "Changes per year",
+        "tiers": {
+          "few_per_year": "2 to 3 times a year",
+          "monthly": "Once a month",
+          "twice_monthly": "Twice a month",
+          "weekly": "Once a week",
+          "unlimited": "As often as needed"
+        }
+      },
+      "total": {
+        "label": "Your plan",
+        "note": "You can change these options at any time.",
+        "beyond": "Beyond these volumes, let's talk it through: I'll put together a proposal that fits."
       }
     },
     "results": {
-      "both": {
-        "title": "Website + Mobile Application",
-        "rate": {
-          "eur": "600€ excl. tax / day",
-          "chf": "600 CHF excl. tax / day"
-        },
-        "rate_note": "*",
-        "description": "For a project combining a website and a mobile application, development is billed at a daily rate. The total cost depends on complexity, functional scope, and targeted platforms.",
-        "disclaimer": "* Indicative price, to be negotiated according to your needs and timeline."
-      },
-      "mobile": {
-        "title": "Mobile Application",
-        "rate": {
-          "eur": "600€ excl. tax / day",
-          "chf": "600 CHF excl. tax / day"
-        },
-        "rate_note": "*",
-        "disclaimer": "* Indicative price, to be negotiated according to your needs and timeline.",
-        "description": "Mobile application development is billed at a daily rate. The final cost depends on the complexity, the number of features, and the targeted platforms (iOS, Android)."
-      },
-      "complex_website": {
-        "title": "Custom Website",
-        "rate": {
-          "eur": "600€ excl. tax / day",
-          "chf": "600 CHF excl. tax / day"
-        },
-        "rate_note": "*",
-        "disclaimer": "* Indicative price based on needs and timeline. No fixed price for a fully customisable website.",
-        "description": "This type of project (with client accounts or e-commerce) is complex and fully customisable. The final cost depends on your specific requirements.",
-        "no_fixed_price": "No fixed price for a fully customisable website — each project is unique."
-      },
-      "subscription": {
-        "few_per_year": {
-          "title": "Essential Subscription",
-          "price": {
-            "eur": "50€ / month",
-            "chf": "50 CHF / month"
-          },
-          "duration": "Annual commitment",
-          "includes": {
-            "title": "Included:",
-            "items": {
-              "site": "Showcase website creation",
-              "seo": "SEO optimisation",
-              "updates": "Regular technical updates",
-              "domain": "Domain name management",
-              "hosting": "Web hosting",
-              "ssl": "SSL certificate",
-              "email": "1 professional email address"
-            }
-          }
-        },
-        "monthly": {
-          "title": "Standard Subscription",
-          "price": {
-            "eur": "90€ / month",
-            "chf": "90 CHF / month"
-          },
-          "duration": "Annual commitment",
-          "includes": {
-            "title": "Included:",
-            "items": {
-              "site": "Showcase website creation",
-              "seo": "SEO optimisation",
-              "updates": "Regular technical updates",
-              "domain": "Domain name management",
-              "hosting": "Web hosting",
-              "ssl": "SSL certificate",
-              "email": "1 professional email address",
-              "content_update": "Up to 1 content update per month"
-            }
-          }
-        },
-        "weekly": {
-          "title": "Premium Subscription",
-          "price": {
-            "eur": "150€ / month",
-            "chf": "150 CHF / month"
-          },
-          "duration": "Annual commitment",
-          "includes": {
-            "title": "Included:",
-            "items": {
-              "site": "Showcase website creation",
-              "seo": "SEO optimisation",
-              "updates": "Regular technical updates",
-              "domain": "Domain name management",
-              "hosting": "Web hosting",
-              "ssl": "SSL certificate",
-              "email": "1 professional email address",
-              "content_update": "Up to 1 content update per week"
-            }
-          }
-        },
-        "self_managed": {
-          "title": "Self-Managed CMS",
-          "rate": {
-            "eur": "600€ excl. tax / day",
-            "chf": "600 CHF excl. tax / day"
-          },
-          "rate_note": "*",
-          "disclaimer": "* Base daily rate — final price to be discussed based on your CMS requirements.",
-          "description": "A custom CMS will be developed so you can manage your content independently, whenever you want. The development cost is based on the daily rate and will be agreed according to your needs."
-        }
+      "custom": {
+        "note": "Custom project",
+        "title": "Let's talk it through",
+        "description": "This kind of project is priced case by case — what you need has little in common with a simple presentation site. Tell me about it and I will send you a detailed proposal, with no commitment."
       }
     },
     "contact": {
       "title": "Let's discuss your project",
-      "description": "Contact us to get a personalised quote and discuss your project in detail.",
+      "description": "Write me a few lines and I'll come back with a clear proposal.",
       "email": "prospect@gocosmic.dev",
       "cta": "Request a quote",
       "subject": "Pricing inquiry — Project quote",

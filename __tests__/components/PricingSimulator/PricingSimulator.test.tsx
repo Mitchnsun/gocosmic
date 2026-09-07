@@ -1,205 +1,168 @@
 import { PricingSimulator } from '@/components/PricingSimulator/PricingSimulator';
 
-import { fireEvent, render } from '../../test-utils';
+import { fireEvent, render, screen } from '../../test-utils';
+
+/** Walk the simulator down to the composable showcase plan. */
+const openPlanBuilder = () => {
+  fireEvent.click(screen.getByRole('button', { name: 'A website' }));
+  fireEvent.click(screen.getByRole('button', { name: 'A site that presents my business' }));
+};
 
 describe('PricingSimulator', () => {
-  it('renders step 1 question on initial load', () => {
-    const { getByText } = render(<PricingSimulator currency="eur" />);
-    expect(getByText('What would you like to create?')).toBeInTheDocument();
+  it('renders step 1 on initial load and nothing else', () => {
+    render(<PricingSimulator currency="eur" />);
+
+    expect(screen.getByText('What would you like to create?')).toBeInTheDocument();
+    expect(screen.queryByText('What kind of website do you need?')).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Start over' })).not.toBeInTheDocument();
   });
 
   it('renders the three project type options', () => {
-    const { getByRole } = render(<PricingSimulator currency="eur" />);
-    expect(getByRole('button', { name: 'A website' })).toBeInTheDocument();
-    expect(getByRole('button', { name: 'A mobile application' })).toBeInTheDocument();
-    expect(getByRole('button', { name: 'Both (website + mobile app)' })).toBeInTheDocument();
+    render(<PricingSimulator currency="eur" />);
+
+    expect(screen.getByRole('button', { name: 'A website' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'A mobile app' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Both' })).toBeInTheDocument();
   });
 
-  it('does not show step 2 or results initially', () => {
-    const { queryByText, queryByRole } = render(<PricingSimulator currency="eur" />);
-    expect(queryByText('What type of website do you need?')).not.toBeInTheDocument();
-    expect(queryByRole('button', { name: 'Start over' })).not.toBeInTheDocument();
+  it('shows the four website types once "a website" is picked', () => {
+    render(<PricingSimulator currency="eur" />);
+    fireEvent.click(screen.getByRole('button', { name: 'A website' }));
+
+    expect(screen.getByText('What kind of website do you need?')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'A site that presents my business' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'A site I want to edit myself' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'A site with an area for my customers' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'A site to sell online' })).toBeInTheDocument();
   });
 
-  describe('when "website" is selected', () => {
-    it('shows step 2 with website type options', () => {
-      const { getByRole, getByText } = render(<PricingSimulator currency="eur" />);
-      fireEvent.click(getByRole('button', { name: 'A website' }));
+  describe('showcase plan builder', () => {
+    it('opens on the advertised base price', () => {
+      render(<PricingSimulator currency="eur" />);
+      openPlanBuilder();
 
-      expect(getByText('What type of website do you need?')).toBeInTheDocument();
-      expect(getByRole('button', { name: 'A showcase website' })).toBeInTheDocument();
-      expect(getByRole('button', { name: 'A website with client accounts' })).toBeInTheDocument();
-      expect(getByRole('button', { name: 'An e-commerce website' })).toBeInTheDocument();
+      expect(screen.getByText('Base plan')).toBeInTheDocument();
+      expect(screen.getByRole('status', { name: /your plan/i })).toHaveTextContent('10€');
     });
 
-    it('shows the reset button', () => {
-      const { getByRole } = render(<PricingSimulator currency="eur" />);
-      fireEvent.click(getByRole('button', { name: 'A website' }));
+    it('adds an add-on to the live total when ticked', () => {
+      render(<PricingSimulator currency="eur" />);
+      openPlanBuilder();
 
-      expect(getByRole('button', { name: 'Start over' })).toBeInTheDocument();
-    });
-  });
+      fireEvent.click(screen.getByRole('checkbox', { name: /managing your web address/i }));
 
-  describe('when "mobile" is selected', () => {
-    it('shows the Mobile Application result heading', () => {
-      const { getByRole } = render(<PricingSimulator currency="eur" />);
-      fireEvent.click(getByRole('button', { name: 'A mobile application' }));
-
-      expect(getByRole('heading', { level: 3, name: 'Mobile Application' })).toBeInTheDocument();
+      expect(screen.getByRole('status', { name: /your plan/i })).toHaveTextContent('15€');
     });
 
-    it('shows the contact banner link', () => {
-      const { getByRole } = render(<PricingSimulator currency="eur" />);
-      fireEvent.click(getByRole('button', { name: 'A mobile application' }));
+    it('accumulates several add-ons', () => {
+      render(<PricingSimulator currency="eur" />);
+      openPlanBuilder();
 
-      expect(getByRole('link', { name: /send an email/i })).toBeInTheDocument();
-    });
-  });
+      fireEvent.click(screen.getByRole('checkbox', { name: /managing your web address/i }));
+      fireEvent.click(screen.getByRole('checkbox', { name: /email address in your own name/i }));
 
-  describe('when "both" is selected', () => {
-    it('shows the Website + Mobile Application result heading', () => {
-      const { getByRole } = render(<PricingSimulator currency="eur" />);
-      fireEvent.click(getByRole('button', { name: 'Both (website + mobile app)' }));
-
-      expect(getByRole('heading', { level: 3, name: 'Website + Mobile Application' })).toBeInTheDocument();
+      expect(screen.getByRole('status', { name: /your plan/i })).toHaveTextContent('25€');
     });
 
-    it('shows the contact banner link', () => {
-      const { getByRole } = render(<PricingSimulator currency="eur" />);
-      fireEvent.click(getByRole('button', { name: 'Both (website + mobile app)' }));
+    it('raises the total when the pages slider moves', () => {
+      render(<PricingSimulator currency="eur" />);
+      openPlanBuilder();
 
-      expect(getByRole('link', { name: /send an email/i })).toBeInTheDocument();
+      fireEvent.change(screen.getByRole('slider', { name: /number of pages/i }), { target: { value: '2' } });
+
+      expect(screen.getByRole('status', { name: /your plan/i })).toHaveTextContent('20€');
     });
-  });
 
-  describe('when "website" → "accounts" is selected', () => {
-    it('shows the Custom Website result', () => {
-      const { getByRole, getByText } = render(<PricingSimulator currency="eur" />);
-      fireEvent.click(getByRole('button', { name: 'A website' }));
-      fireEvent.click(getByRole('button', { name: 'A website with client accounts' }));
+    it('leaves the update slider out of the total until its option is ticked', () => {
+      render(<PricingSimulator currency="eur" />);
+      openPlanBuilder();
 
-      expect(getByRole('heading', { level: 3, name: 'Custom Website' })).toBeInTheDocument();
-      expect(
-        getByText('No fixed price for a fully customisable website — each project is unique.')
-      ).toBeInTheDocument();
+      const slider = screen.getByRole('slider', { name: /changes per year/i });
+      expect(slider).toBeDisabled();
+      expect(screen.getByRole('status', { name: /your plan/i })).toHaveTextContent('10€');
+
+      fireEvent.click(screen.getByRole('checkbox', { name: /content changes included/i }));
+
+      expect(screen.getByRole('slider', { name: /changes per year/i })).toBeEnabled();
+      expect(screen.getByRole('status', { name: /your plan/i })).toHaveTextContent('15€');
     });
-  });
 
-  describe('when "website" → "ecommerce" is selected', () => {
-    it('shows the Custom Website result', () => {
-      const { getByRole } = render(<PricingSimulator currency="eur" />);
-      fireEvent.click(getByRole('button', { name: 'A website' }));
-      fireEvent.click(getByRole('button', { name: 'An e-commerce website' }));
+    it('prices the chosen update frequency', () => {
+      render(<PricingSimulator currency="eur" />);
+      openPlanBuilder();
 
-      expect(getByRole('heading', { level: 3, name: 'Custom Website' })).toBeInTheDocument();
+      fireEvent.click(screen.getByRole('checkbox', { name: /content changes included/i }));
+      fireEvent.change(screen.getByRole('slider', { name: /changes per year/i }), { target: { value: '3' } });
+
+      expect(screen.getByRole('status', { name: /your plan/i })).toHaveTextContent('60€');
     });
-  });
 
-  describe('when "website" → "showcase" is selected', () => {
-    it('shows step 3 with update frequency options', () => {
-      const { getByRole, getByText } = render(<PricingSimulator currency="eur" />);
-      fireEvent.click(getByRole('button', { name: 'A website' }));
-      fireEvent.click(getByRole('button', { name: 'A showcase website' }));
+    it('invites a conversation once a slider hits its top position', () => {
+      render(<PricingSimulator currency="eur" />);
+      openPlanBuilder();
 
-      expect(getByText('How often would you like to update the content?')).toBeInTheDocument();
-      expect(getByRole('button', { name: '2 to 3 times per year' })).toBeInTheDocument();
-      expect(getByRole('button', { name: 'Once a month' })).toBeInTheDocument();
-      expect(getByRole('button', { name: 'Once a week' })).toBeInTheDocument();
-      expect(getByRole('button', { name: /manage it myself/i })).toBeInTheDocument();
+      expect(screen.queryByText(/beyond these volumes/i)).not.toBeInTheDocument();
+
+      fireEvent.change(screen.getByRole('slider', { name: /number of pages/i }), { target: { value: '4' } });
+
+      expect(screen.getByText(/beyond these volumes/i)).toBeInTheDocument();
     });
-  });
 
-  describe('when "website" → "showcase" → "few_per_year" is selected', () => {
-    it('shows the Essential Subscription', () => {
-      const { getByRole, getByText } = render(<PricingSimulator currency="eur" />);
-      fireEvent.click(getByRole('button', { name: 'A website' }));
-      fireEvent.click(getByRole('button', { name: 'A showcase website' }));
-      fireEvent.click(getByRole('button', { name: '2 to 3 times per year' }));
+    it('quotes the plan in francs for Swiss visitors', () => {
+      render(<PricingSimulator currency="chf" />);
+      openPlanBuilder();
 
-      expect(getByRole('heading', { level: 3, name: 'Essential Subscription' })).toBeInTheDocument();
-      expect(getByText('50€ / month')).toBeInTheDocument();
+      expect(screen.getByRole('status', { name: /your plan/i })).toHaveTextContent('10 CHF');
+      expect(screen.getByRole('status', { name: /your plan/i })).not.toHaveTextContent('10€');
     });
   });
 
-  describe('when "website" → "showcase" → "monthly" is selected', () => {
-    it('shows the Standard Subscription', () => {
-      const { getByRole } = render(<PricingSimulator currency="eur" />);
-      fireEvent.click(getByRole('button', { name: 'A website' }));
-      fireEvent.click(getByRole('button', { name: 'A showcase website' }));
-      fireEvent.click(getByRole('button', { name: 'Once a month' }));
+  describe('custom quote paths', () => {
+    it.each([
+      ['A mobile app', undefined],
+      ['Both', undefined],
+      ['A website', 'A site I want to edit myself'],
+      ['A website', 'A site with an area for my customers'],
+      ['A website', 'A site to sell online'],
+    ])('replaces the figure with a conversation for %s / %s', (projectType, websiteType) => {
+      render(<PricingSimulator currency="eur" />);
+      fireEvent.click(screen.getByRole('button', { name: projectType }));
+      if (websiteType) fireEvent.click(screen.getByRole('button', { name: websiteType }));
 
-      expect(getByRole('heading', { level: 3, name: 'Standard Subscription' })).toBeInTheDocument();
+      expect(screen.getByRole('heading', { level: 3, name: /let's talk it through/i })).toBeInTheDocument();
+      expect(screen.getByRole('link', { name: /send an email/i })).toBeInTheDocument();
     });
-  });
 
-  describe('when "website" → "showcase" → "weekly" is selected', () => {
-    it('shows the Premium Subscription', () => {
-      const { getByRole } = render(<PricingSimulator currency="eur" />);
-      fireEvent.click(getByRole('button', { name: 'A website' }));
-      fireEvent.click(getByRole('button', { name: 'A showcase website' }));
-      fireEvent.click(getByRole('button', { name: 'Once a week' }));
+    it('never shows a daily rate', () => {
+      render(<PricingSimulator currency="eur" />);
+      fireEvent.click(screen.getByRole('button', { name: 'A mobile app' }));
 
-      expect(getByRole('heading', { level: 3, name: 'Premium Subscription' })).toBeInTheDocument();
-    });
-  });
-
-  describe('when "website" → "showcase" → "self_managed" is selected', () => {
-    it('shows the Self-Managed CMS result', () => {
-      const { getByRole } = render(<PricingSimulator currency="eur" />);
-      fireEvent.click(getByRole('button', { name: 'A website' }));
-      fireEvent.click(getByRole('button', { name: 'A showcase website' }));
-      fireEvent.click(getByRole('button', { name: /manage it myself/i }));
-
-      expect(getByRole('heading', { level: 3, name: 'Self-Managed CMS' })).toBeInTheDocument();
+      expect(screen.queryByText(/per day/i)).not.toBeInTheDocument();
+      expect(screen.queryByText(/600/)).not.toBeInTheDocument();
     });
   });
 
   describe('reset behaviour', () => {
-    it('resets to initial state when reset button is clicked', () => {
-      const { getByRole, queryByRole } = render(<PricingSimulator currency="eur" />);
-      fireEvent.click(getByRole('button', { name: 'A mobile application' }));
-      expect(getByRole('heading', { level: 3, name: 'Mobile Application' })).toBeInTheDocument();
+    it('returns to the first step', () => {
+      render(<PricingSimulator currency="eur" />);
+      fireEvent.click(screen.getByRole('button', { name: 'A mobile app' }));
 
-      fireEvent.click(getByRole('button', { name: 'Start over' }));
+      fireEvent.click(screen.getByRole('button', { name: 'Start over' }));
 
-      expect(queryByRole('heading', { level: 3, name: 'Mobile Application' })).not.toBeInTheDocument();
-      expect(queryByRole('button', { name: 'Start over' })).not.toBeInTheDocument();
+      expect(screen.queryByRole('heading', { level: 3, name: /let's talk it through/i })).not.toBeInTheDocument();
+      expect(screen.queryByRole('button', { name: 'Start over' })).not.toBeInTheDocument();
     });
 
-    it('clears website type when project type changes', () => {
-      const { getByRole, queryByText } = render(<PricingSimulator currency="eur" />);
-      fireEvent.click(getByRole('button', { name: 'A website' }));
-      fireEvent.click(getByRole('button', { name: 'A showcase website' }));
+    it('clears a composed plan when the project type changes', () => {
+      render(<PricingSimulator currency="eur" />);
+      openPlanBuilder();
+      fireEvent.click(screen.getByRole('checkbox', { name: /managing your web address/i }));
+      expect(screen.getByRole('status', { name: /your plan/i })).toHaveTextContent('15€');
 
-      fireEvent.click(getByRole('button', { name: 'A mobile application' }));
+      fireEvent.click(screen.getByRole('button', { name: 'A website' }));
+      fireEvent.click(screen.getByRole('button', { name: 'A site that presents my business' }));
 
-      expect(queryByText('What type of website do you need?')).not.toBeInTheDocument();
-    });
-  });
-
-  describe('currency', () => {
-    it('quotes the daily rate in euros outside Switzerland', () => {
-      const { getByRole, getByText } = render(<PricingSimulator currency="eur" />);
-      fireEvent.click(getByRole('button', { name: 'A mobile application' }));
-
-      expect(getByText('600€ excl. tax / day')).toBeInTheDocument();
-    });
-
-    it('quotes the daily rate in francs for Swiss visitors', () => {
-      const { getByRole, getByText, queryByText } = render(<PricingSimulator currency="chf" />);
-      fireEvent.click(getByRole('button', { name: 'A mobile application' }));
-
-      expect(getByText('600 CHF excl. tax / day')).toBeInTheDocument();
-      expect(queryByText('600€ excl. tax / day')).not.toBeInTheDocument();
-    });
-
-    it('quotes subscriptions in francs for Swiss visitors', () => {
-      const { getByRole, getByText } = render(<PricingSimulator currency="chf" />);
-      fireEvent.click(getByRole('button', { name: 'A website' }));
-      fireEvent.click(getByRole('button', { name: 'A showcase website' }));
-      fireEvent.click(getByRole('button', { name: '2 to 3 times per year' }));
-
-      expect(getByText('50 CHF / month')).toBeInTheDocument();
+      expect(screen.getByRole('status', { name: /your plan/i })).toHaveTextContent('10€');
     });
   });
 });

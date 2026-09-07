@@ -18,8 +18,8 @@
   "pricing_teaser": {
     "eyebrow": "Showcase website",
     "price": {
-      "eur": "from 50€",
-      "chf": "from 50 CHF"
+      "eur": "from 10€",
+      "chf": "from 10 CHF"
     },
     "price_period": "/ month",
     "tagline": "All-inclusive, no surprises",
@@ -29,11 +29,10 @@
       "seo": "SEO optimisation",
       "updates": "Regular technical updates",
       "hosting": "Web hosting",
-      "ssl": "SSL certificate",
-      "domain": "Domain name",
+      "ssl": "Secure connection (the padlock in the browser)",
       "email": "1 professional email address"
     },
-    "footnote": "* Depending on the chosen domain name, additional fees may apply.",
+    "footnote": "Domain name, email address and extra pages are optional, from +5€ a month.",
     "footnote_scope": "For an e-commerce shop or client portal, contact us for a tailored quote.",
     "mockup_mention": "Request your mockup with no commitment",
     "cta_simulate": "Simulate my pricing",

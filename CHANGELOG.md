@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.8.0] - 2026-09-07
+
+### Added
+
+- The showcase website is now composed by the visitor: a 10€ base plan they extend with a domain name, a Swiss server, an email address, extra pages and a content-update package, with the monthly price updating as they go
+- The pricing page now offers a free mockup of the future site and a free review of the visitor's current one, with no commitment
+
+### Changed
+
+- Custom projects — mobile apps, customer accounts, online shops, sites the owner edits themselves — now lead straight to a personal conversation instead of a daily rate
+- Pricing wording rewritten for readers with no web background, and the page redesigned to match the homepage
+
 ## [1.7.0] - 2026-09-07
 
 ### Added

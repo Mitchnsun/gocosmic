@@ -18,8 +18,8 @@
   "pricing_teaser": {
     "eyebrow": "Sito web vetrina",
     "price": {
-      "eur": "da 50€",
-      "chf": "da 50 CHF"
+      "eur": "da 10€",
+      "chf": "da 10 CHF"
     },
     "price_period": "/ mese",
     "tagline": "Tutto incluso, nessuna sorpresa",
@@ -29,11 +29,10 @@
       "seo": "Ottimizzazione SEO",
       "updates": "Aggiornamenti tecnici regolari",
       "hosting": "Hosting web",
-      "ssl": "Certificato SSL",
-      "domain": "Nome di dominio",
+      "ssl": "Connessione sicura (il lucchetto nel browser)",
       "email": "1 indirizzo email professionale"
     },
-    "footnote": "* A seconda del nome di dominio scelto, potrebbero applicarsi costi aggiuntivi.",
+    "footnote": "Nome a dominio, indirizzo e-mail e pagine aggiuntive sono opzionali, da +5€ al mese.",
     "footnote_scope": "Per un e-commerce o un portale clienti, contattaci per un preventivo su misura.",
     "mockup_mention": "Richiedi il tuo mockup senza impegno",
     "cta_simulate": "Simula il mio prezzo",
