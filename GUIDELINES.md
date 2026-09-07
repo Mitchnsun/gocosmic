@@ -43,6 +43,8 @@ Active plugins and their roles:
 - Use CVA (`class-variance-authority`) for variant-based components (see `design-system/button.variants.ts`)
 - Use `@radix-ui/react-slot` for polymorphic element composition
 - Use `cn` from `@/design-system/lib/utils` for all conditional class merging — **never** use template literals or string concatenation for conditional Tailwind classes; `cn` wraps `clsx` + `tailwind-merge` and is the single authoritative helper
+- **Never import `clsx` directly** — always go through `cn`, even when no `tailwind-merge` conflict resolution is needed. This is enforced by an ESLint `no-restricted-imports` rule (the only exempt file is `design-system/lib/utils.ts`, where `cn` is defined)
+- Inside `cn()`, prefer the object form for conditional classes — `cn({ 'border-t': index >= 1 })` — over the `condition && 'class'` idiom; only fall back to `&&` when the class itself must be built from an expression that can't live as an object key
 
 ## Documentation Language
 

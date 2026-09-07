@@ -40,7 +40,7 @@ const AnimatedEndWord = ({ word, className, prefersReducedMotion }: AnimatedEndW
           {previous}
         </span>
       )}
-      <span className={cn(previous !== null && 'word-enter', className)}>{displayed}</span>
+      <span className={cn({ 'word-enter': previous !== null }, className)}>{displayed}</span>
     </span>
   );
 };

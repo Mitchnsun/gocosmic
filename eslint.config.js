@@ -42,6 +42,23 @@ const config = [
       'import/no-duplicates': 'error',
       'unicorn/prevent-abbreviations': 'off',
       'unicorn/filename-case': 'off',
+      'no-restricted-imports': [
+        'error',
+        {
+          paths: [
+            {
+              name: 'clsx',
+              message: "Use `cn` from '@/design-system/lib/utils' instead of importing clsx directly.",
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    files: ['design-system/lib/utils.ts'],
+    rules: {
+      'no-restricted-imports': 'off',
     },
   },
   {

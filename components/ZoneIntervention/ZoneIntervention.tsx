@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 import { cn } from '@/design-system/lib/utils';
 
+import { CrosshairIcon } from './CrosshairIcon';
 import { getStationBorderClass } from './ZoneIntervention.utils';
 
 interface Station {
@@ -18,28 +19,6 @@ export interface ZoneInterventionProps {
   respectReducedMotion?: boolean;
   className?: string;
 }
-
-const CrosshairIcon = () => (
-  <svg
-    width={15}
-    height={15}
-    viewBox="0 0 15 15"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth={1.25}
-    className="text-aerospace"
-    aria-hidden="true">
-    <circle cx={7.5} cy={7.5} r={3.5} />
-    {/* top tick */}
-    <line x1={7.5} y1={0.5} x2={7.5} y2={2.5} />
-    {/* bottom tick */}
-    <line x1={7.5} y1={12.5} x2={7.5} y2={14.5} />
-    {/* left tick */}
-    <line x1={0.5} y1={7.5} x2={2.5} y2={7.5} />
-    {/* right tick */}
-    <line x1={12.5} y1={7.5} x2={14.5} y2={7.5} />
-  </svg>
-);
 
 export const ZoneIntervention = ({
   label,
@@ -70,10 +49,9 @@ export const ZoneIntervention = ({
         <div className="text-jungle flex items-center gap-2 font-mono text-[11px] tracking-[0.24em] uppercase">
           <span className="relative flex h-2 w-2 shrink-0" aria-hidden="true">
             <span
-              className={cn(
-                'bg-jungle absolute inline-flex h-full w-full rounded-full opacity-75',
-                !reducedMotion && 'animate-ping'
-              )}
+              className={cn('bg-jungle absolute inline-flex h-full w-full rounded-full opacity-75', {
+                'animate-ping': !reducedMotion,
+              })}
             />
             <span className="bg-jungle relative inline-flex h-2 w-2 rounded-full" />
           </span>

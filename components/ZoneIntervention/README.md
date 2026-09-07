@@ -7,6 +7,7 @@ A "mission-control readout" component that displays the agency's geographic serv
 ```
 ZoneIntervention/
 ├── ZoneIntervention.tsx        # Component (rendering + reduced-motion logic)
+├── CrosshairIcon.tsx           # Crosshair glyph (decorative SVG)
 ├── ZoneIntervention.utils.ts   # Pure helper: responsive grid border classes
 ├── index.ts                    # Public re-export
 └── README.md

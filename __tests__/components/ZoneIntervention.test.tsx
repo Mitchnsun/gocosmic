@@ -142,7 +142,11 @@ describe('getStationBorderClass', () => {
     expect(getStationBorderClass(3)).toBe('border-t sm:border-l lg:border-t-0');
   });
 
-  it('falls back to the fourth-station pattern for any index beyond 4 stations', () => {
-    expect(getStationBorderClass(4)).toBe('border-t sm:border-l lg:border-t-0');
+  it('returns only a top border for the first cell of a second row (5th station)', () => {
+    expect(getStationBorderClass(4)).toBe('border-t');
+  });
+
+  it('returns a top border and a left border from sm for a 6th station', () => {
+    expect(getStationBorderClass(5)).toBe('border-t sm:border-l');
   });
 });

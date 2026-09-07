@@ -7,11 +7,11 @@ import {
   InformationCircleIcon,
   WrenchScrewdriverIcon,
 } from '@heroicons/react/24/solid';
-import clsx from 'clsx';
 import { AnimatePresence } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import React, { useMemo, useState } from 'react';
 
+import { cn } from '@/design-system/lib/utils';
 import { Link, usePathname } from '@/i18n/navigation';
 
 import LanguageSwitcher from '../LanguageSwitcher';
@@ -62,7 +62,7 @@ const Header = (props: HeaderProps = {}) => {
       </a>
       <header
         id={id}
-        className={clsx(
+        className={cn(
           'text-ghost border-ghost/10 sticky top-0 z-50 border-b bg-slate-950/80 backdrop-blur-md transition-[height,background-color,box-shadow] duration-300 ease-out motion-reduce:duration-0',
           className
         )}
@@ -78,9 +78,7 @@ const Header = (props: HeaderProps = {}) => {
             <Link
               href="/"
               aria-label={t('home')}
-              className={clsx(
-                'group hover:text-ghost/90 focus-visible:ring-aerospace/70 relative inline-flex items-center text-xl font-bold transition-colors duration-300 focus-visible:ring-2 focus-visible:outline-none motion-reduce:duration-0 sm:text-2xl'
-              )}>
+              className="group hover:text-ghost/90 focus-visible:ring-aerospace/70 relative inline-flex items-center text-xl font-bold transition-colors duration-300 focus-visible:ring-2 focus-visible:outline-none motion-reduce:duration-0 sm:text-2xl">
               <span className="relative inline-block">
                 {logo.charAt(0)}
                 {logoOrbitalEnabled && <LogoOrbitalDot reduceMotion={reduceMotion} />}
@@ -97,9 +95,9 @@ const Header = (props: HeaderProps = {}) => {
                 <Link
                   key={href}
                   href={href}
-                  className={clsx(
+                  className={cn(
                     'group focus-visible:ring-aerospace/70 relative rounded px-2 py-1 opacity-80 transition-opacity duration-300 hover:opacity-100 focus-visible:opacity-100 focus-visible:ring-2 focus-visible:outline-none motion-reduce:duration-0',
-                    active && 'opacity-100'
+                    { 'opacity-100': active }
                   )}
                   aria-label={ariaLabel}
                   aria-current={active ? 'page' : undefined}>
@@ -107,9 +105,9 @@ const Header = (props: HeaderProps = {}) => {
                   <span className="hidden md:inline">{label}</span>
                   <span
                     aria-hidden="true"
-                    className={clsx(
+                    className={cn(
                       'bg-aerospace absolute inset-x-2 bottom-0 h-0.5 origin-left scale-x-0 transition-transform duration-200 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100 motion-reduce:duration-0',
-                      active && 'scale-x-100'
+                      { 'scale-x-100': active }
                     )}
                   />
                 </Link>
