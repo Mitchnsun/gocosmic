@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Setup
 
-- Node.js ≥ 22 required (`corepack enable` to activate yarn on first use)
+- Node.js ≥ 24 required (`corepack enable` to activate yarn on first use)
 - **Never cancel long-running commands** — `yarn install` (~3.5 min), `yarn build` (~34s), `yarn coverage` (~15 min) all take time; wait them out
 
 ## Commands
@@ -42,7 +42,7 @@ These hold binding rules — consult them alongside this file:
 
 ## Architecture
 
-This is a single Next.js 16 app (App Router) with full internationalization via `next-intl`. Node.js ≥ 22 required; package manager is `yarn` (Corepack).
+This is a single Next.js 16 app (App Router) with full internationalization via `next-intl`. Node.js ≥ 24 required; package manager is `yarn` (Corepack).
 
 ### Key directories
 

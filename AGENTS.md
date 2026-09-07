@@ -14,7 +14,7 @@ Codex instructions for working in this repository.
 
 - Single Next.js 16 App Router application using React 19, TypeScript, Tailwind CSS 4, and `next-intl`.
 - Package manager is Yarn 4 via Corepack. Use `yarn`, not `npm`, for project scripts.
-- Node.js must be `>=22`.
+- Node.js must be `>=24`.
 - Routes live under `app/[locale]/`; supported locales are `en`, `fr`, `es`, `de`, and `it`.
 - Translation namespaces live in `messages/<locale>/` and are loaded on demand by `i18n/request.ts`.
 - Reusable primitives live in `design-system/`; app-specific components live in `components/`; complex view code lives in `views/`.
