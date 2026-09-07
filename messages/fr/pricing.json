@@ -1,125 +1,108 @@
 {
   "pricing": {
     "meta": {
-      "title": "Simulateur de Tarifs - Go Cosmic",
-      "description": "Estimez le coût de votre projet web ou mobile avec notre simulateur de tarifs interactif. Obtenez un devis personnalisé pour votre site web ou application mobile."
+      "title": "Tarifs - Go Cosmic",
+      "description": "Composez votre site à partir de 10€ par mois : vous choisissez le nombre de pages et les options. Maquette et état des lieux offerts, sans engagement."
     },
-    "title": "Simulateur de Tarifs",
-    "subtitle": "Répondez à quelques questions pour obtenir une estimation de votre projet",
+    "eyebrow": "[ TARIFS ]",
+    "title": "Composez votre offre",
+    "subtitle": "Un prix de départ clair, et vous n'ajoutez que ce dont vous avez vraiment besoin. Le montant se met à jour au fur et à mesure.",
+    "free_offers": {
+      "eyebrow": "Offert, sans engagement",
+      "title": "Avant même de parler budget",
+      "items": {
+        "mockup": {
+          "title": "Une maquette de votre futur site",
+          "description": "Vous voyez à quoi ressemblerait votre site avant de décider quoi que ce soit."
+        },
+        "audit": {
+          "title": "Un état des lieux de votre site actuel",
+          "description": "Ce qui fonctionne, ce qui vous fait perdre des visiteurs, et si on vous trouve sur Google."
+        }
+      },
+      "note": "Ces deux prestations sont gratuites et ne vous engagent à rien."
+    },
     "step1": {
       "question": "Qu'est-ce que vous souhaitez créer ?",
       "options": {
-        "website": "Un site web",
+        "website": "Un site internet",
         "mobile": "Une application mobile",
-        "both": "Les deux (site web + application mobile)"
+        "both": "Les deux"
       }
     },
     "step2": {
-      "question": "Quel type de site web souhaitez-vous ?",
+      "question": "Quel type de site vous faut-il ?",
       "options": {
-        "showcase": "Un site vitrine",
-        "accounts": "Un site avec des comptes clients",
-        "ecommerce": "Un site de vente en ligne"
+        "showcase": "Un site qui présente mon activité",
+        "self_managed": "Un site que je veux modifier moi-même",
+        "accounts": "Un site avec un espace pour mes clients",
+        "ecommerce": "Un site pour vendre en ligne"
       }
     },
-    "step3": {
-      "question": "À quelle fréquence souhaitez-vous modifier le contenu ?",
+    "builder": {
+      "period": "/ mois",
+      "base": {
+        "title": "Formule de base",
+        "includes": {
+          "page": "Une page qui présente votre activité",
+          "hosting": "Site en ligne 24h/24, mise en ligne comprise",
+          "security": "Connexion sécurisée (le cadenas dans le navigateur)"
+        }
+      },
       "options": {
-        "few_per_year": "2 à 3 fois par an",
-        "monthly": "1 fois par mois",
-        "weekly": "1 fois par semaine",
-        "self_managed": "Je veux pouvoir le faire moi-même, n'importe quand"
+        "title": "Ajoutez ce dont vous avez besoin",
+        "domain": {
+          "label": "Gestion de votre adresse internet",
+          "hint": "Votre nom de domaine, par exemple mon-entreprise.fr — réservé et renouvelé pour vous."
+        },
+        "swiss_hosting": {
+          "label": "Site hébergé en Suisse",
+          "hint": "Vos données restent sur un serveur situé en Suisse."
+        },
+        "email": {
+          "label": "Une adresse e-mail à votre nom",
+          "hint": "Par exemple contact@mon-entreprise.fr, au lieu d'une adresse gratuite."
+        }
+      },
+      "pages": {
+        "label": "Nombre de pages",
+        "tiers": {
+          "one": "1 page (comprise)",
+          "two_three": "2 à 3 pages",
+          "four_five": "4 à 5 pages",
+          "six_eight": "6 à 8 pages",
+          "nine_ten": "9 à 10 pages"
+        }
+      },
+      "updates": {
+        "label": "Modifications de contenu incluses",
+        "hint": "Vos textes, photos et horaires mis à jour par mes soins, sans surcoût à chaque fois.",
+        "off": "Non inclus",
+        "slider_label": "Modifications par an",
+        "tiers": {
+          "few_per_year": "2 à 3 fois par an",
+          "monthly": "1 fois par mois",
+          "twice_monthly": "2 fois par mois",
+          "weekly": "1 fois par semaine",
+          "unlimited": "Autant que nécessaire"
+        }
+      },
+      "total": {
+        "label": "Votre offre",
+        "note": "Vous pouvez faire évoluer ces options à tout moment.",
+        "beyond": "Au-delà de ces volumes, on en discute ensemble : je vous fais une proposition adaptée."
       }
     },
     "results": {
-      "both": {
-        "title": "Site Web + Application Mobile",
-        "rate": "600€ HT / jour",
-        "rate_note": "*",
-        "description": "Pour un projet combinant site web et application mobile, le développement est facturé à la journée. Le coût total dépend de la complexité, du périmètre fonctionnel et des plateformes ciblées.",
-        "disclaimer": "* Prix indicatif, à négocier en fonction de vos besoins et des délais."
-      },
-      "mobile": {
-        "title": "Application Mobile",
-        "rate": "600€ HT / jour",
-        "rate_note": "*",
-        "disclaimer": "* Prix indicatif, à négocier en fonction de vos besoins et des délais.",
-        "description": "Le développement d'application mobile est facturé à la journée. Le coût total dépend de la complexité, du nombre de fonctionnalités et des plateformes ciblées (iOS, Android)."
-      },
-      "complex_website": {
-        "title": "Site Web Personnalisé",
-        "rate": "600€ HT / jour",
-        "rate_note": "*",
-        "disclaimer": "* Prix indicatif, en fonction du besoin et des délais. Pas de tarif au forfait pour un site entièrement personnalisable.",
-        "description": "Ce type de projet (avec comptes clients ou vente en ligne) est complexe et entièrement personnalisable. Le coût final dépend de vos besoins spécifiques.",
-        "no_fixed_price": "Pas de tarif au forfait pour un site entièrement personnalisable — chaque projet est unique."
-      },
-      "subscription": {
-        "few_per_year": {
-          "title": "Abonnement Essentiel",
-          "price": "60€ / mois",
-          "duration": "Engagement annuel",
-          "includes": {
-            "title": "Inclus :",
-            "items": {
-              "site": "Création du site vitrine",
-              "seo": "Optimisations SEO",
-              "updates": "Mises à jour techniques régulières",
-              "domain": "Gestion du nom de domaine",
-              "hosting": "Hébergement web",
-              "ssl": "Certificat SSL",
-              "email": "1 adresse e-mail professionnelle"
-            }
-          }
-        },
-        "monthly": {
-          "title": "Abonnement Standard",
-          "price": "90€ / mois",
-          "duration": "Engagement annuel",
-          "includes": {
-            "title": "Inclus :",
-            "items": {
-              "site": "Création du site vitrine",
-              "seo": "Optimisations SEO",
-              "updates": "Mises à jour techniques régulières",
-              "domain": "Gestion du nom de domaine",
-              "hosting": "Hébergement web",
-              "ssl": "Certificat SSL",
-              "email": "1 adresse e-mail professionnelle",
-              "content_update": "Jusqu'à 1 mise à jour de contenu par mois"
-            }
-          }
-        },
-        "weekly": {
-          "title": "Abonnement Premium",
-          "price": "150€ / mois",
-          "duration": "Engagement annuel",
-          "includes": {
-            "title": "Inclus :",
-            "items": {
-              "site": "Création du site vitrine",
-              "seo": "Optimisations SEO",
-              "updates": "Mises à jour techniques régulières",
-              "domain": "Gestion du nom de domaine",
-              "hosting": "Hébergement web",
-              "ssl": "Certificat SSL",
-              "email": "1 adresse e-mail professionnelle",
-              "content_update": "Jusqu'à 1 mise à jour de contenu par semaine"
-            }
-          }
-        },
-        "self_managed": {
-          "title": "CMS Auto-Géré",
-          "rate": "600€ HT / jour",
-          "rate_note": "*",
-          "disclaimer": "* Tarif journalier de base — prix définitif à débattre en fonction de vos besoins CMS.",
-          "description": "Un CMS personnalisé sera développé pour vous permettre de gérer votre contenu de façon autonome, quand vous le souhaitez. Le coût de développement est basé sur le tarif journalier et sera défini selon vos besoins."
-        }
+      "custom": {
+        "note": "Projet sur mesure",
+        "title": "Parlons-en de vive voix",
+        "description": "Ce type de projet se chiffre au cas par cas : ce qu'il vous faut n'a rien à voir avec un site de présentation. Décrivez-moi votre besoin et je vous envoie une proposition détaillée, sans engagement."
       }
     },
     "contact": {
       "title": "Discutons de votre projet",
-      "description": "Contactez-nous pour obtenir un devis personnalisé et discuter de votre projet en détail.",
+      "description": "Écrivez-moi en quelques lignes : je vous réponds avec une proposition claire.",
       "email": "prospect@gocosmic.dev",
       "cta": "Demander un devis",
       "subject": "Demande de tarif — Devis projet",

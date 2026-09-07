@@ -1,12 +1,13 @@
 import { CodeBracketIcon, ShieldCheckIcon, UserIcon } from '@heroicons/react/24/solid';
-import { createTranslator, useTranslations } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { createTranslator } from 'next-intl';
+import { getMessages, getTranslations } from 'next-intl/server';
 
 import LinkedInIcon from '@/components/icons/LinkedInIcon';
 import PersonSeo from '@/components/JsonLd/PersonSeo';
 import { getCanonicalUrl } from '@/i18n/canonical';
 import { Link } from '@/i18n/navigation';
 import { getOgImages } from '@/lib/og';
+import { getRegion } from '@/lib/region.server';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -36,15 +37,16 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export default function About() {
-  const t = useTranslations('about');
+export default async function About() {
+  const t = await getTranslations('about');
+  const region = await getRegion();
 
   return (
     <>
       {/* Person JSON-LD structured data */}
       <PersonSeo />
       <div className="text-ghost relative pt-10">
-        <main className="m-auto flex max-w-7xl flex-col items-center gap-10 px-4 pb-4">
+        <div className="m-auto flex max-w-7xl flex-col items-center gap-10 px-4 pb-4">
           {/* Page Header */}
           <div className="text-center">
             <h1 className="mb-4 text-2xl font-extrabold sm:text-4xl">{t('title')}</h1>
@@ -133,7 +135,7 @@ export default function About() {
 
                 <p className="text-lg font-medium text-blue-300">{t('mission.conclusion')}</p>
                 <div className="mt-4 rounded border border-blue-700 bg-slate-900 p-4 text-sm text-blue-300">
-                  {t('mission.location')}
+                  {t(`mission.location.${region}`)}
                 </div>
 
                 <div className="mt-6 border-t border-gray-700 pt-4">
@@ -232,7 +234,7 @@ export default function About() {
               </div>
             </div>
           </section>
-        </main>
+        </div>
       </div>
     </>
   );

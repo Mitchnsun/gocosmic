@@ -1,125 +1,108 @@
 {
   "pricing": {
     "meta": {
-      "title": "Simulador de Precios - Go Cosmic",
-      "description": "Estime el coste de su proyecto web o móvil con nuestro simulador de precios interactivo. Obtenga un presupuesto personalizado para su sitio web o aplicación móvil."
+      "title": "Tarifas - Go Cosmic",
+      "description": "Componga su sitio desde 10€ al mes: elija el número de páginas y las opciones. Maqueta y revisión de su web gratuitas, sin compromiso."
     },
-    "title": "Simulador de Precios",
-    "subtitle": "Responda algunas preguntas para obtener una estimación de su proyecto",
+    "eyebrow": "[ TARIFAS ]",
+    "title": "Componga su oferta",
+    "subtitle": "Un precio de partida claro y solo añade lo que realmente necesita. El total se actualiza sobre la marcha.",
+    "free_offers": {
+      "eyebrow": "Gratis, sin compromiso",
+      "title": "Antes incluso de hablar de presupuesto",
+      "items": {
+        "mockup": {
+          "title": "Una maqueta de su futuro sitio",
+          "description": "Vea cómo quedaría su sitio antes de decidir nada."
+        },
+        "audit": {
+          "title": "Una revisión de su sitio actual",
+          "description": "Lo que funciona, lo que le hace perder visitantes y si le encuentran en Google."
+        }
+      },
+      "note": "Ambas son gratuitas y no le comprometen a nada."
+    },
     "step1": {
-      "question": "¿Qué le gustaría crear?",
+      "question": "¿Qué desea crear?",
       "options": {
         "website": "Un sitio web",
         "mobile": "Una aplicación móvil",
-        "both": "Ambos (sitio web + aplicación móvil)"
+        "both": "Ambos"
       }
     },
     "step2": {
-      "question": "¿Qué tipo de sitio web necesita?",
+      "question": "¿Qué tipo de sitio necesita?",
       "options": {
-        "showcase": "Un sitio web de presentación",
-        "accounts": "Un sitio web con cuentas de clientes",
-        "ecommerce": "Un sitio web de comercio electrónico"
+        "showcase": "Un sitio que presente mi actividad",
+        "self_managed": "Un sitio que quiero modificar yo mismo",
+        "accounts": "Un sitio con un espacio para mis clientes",
+        "ecommerce": "Un sitio para vender en línea"
       }
     },
-    "step3": {
-      "question": "¿Con qué frecuencia le gustaría actualizar el contenido?",
+    "builder": {
+      "period": "/ mes",
+      "base": {
+        "title": "Plan base",
+        "includes": {
+          "page": "Una página que presenta su actividad",
+          "hosting": "En línea las 24 horas, publicación incluida",
+          "security": "Conexión segura (el candado del navegador)"
+        }
+      },
       "options": {
-        "few_per_year": "2 a 3 veces al año",
-        "monthly": "Una vez al mes",
-        "weekly": "Una vez a la semana",
-        "self_managed": "Quiero gestionarlo yo mismo, cuando quiera"
+        "title": "Añada lo que necesite",
+        "domain": {
+          "label": "Gestión de su dirección web",
+          "hint": "Su nombre de dominio, por ejemplo mi-empresa.es — registrado y renovado por usted."
+        },
+        "swiss_hosting": {
+          "label": "Sitio alojado en Suiza",
+          "hint": "Sus datos permanecen en un servidor situado en Suiza."
+        },
+        "email": {
+          "label": "Una dirección de correo con su nombre",
+          "hint": "Por ejemplo contacto@mi-empresa.es, en lugar de una dirección gratuita."
+        }
+      },
+      "pages": {
+        "label": "Número de páginas",
+        "tiers": {
+          "one": "1 página (incluida)",
+          "two_three": "2 a 3 páginas",
+          "four_five": "4 a 5 páginas",
+          "six_eight": "6 a 8 páginas",
+          "nine_ten": "9 a 10 páginas"
+        }
+      },
+      "updates": {
+        "label": "Cambios de contenido incluidos",
+        "hint": "Sus textos, fotos y horarios actualizados por mí, sin coste adicional cada vez.",
+        "off": "No incluido",
+        "slider_label": "Cambios al año",
+        "tiers": {
+          "few_per_year": "2 o 3 veces al año",
+          "monthly": "1 vez al mes",
+          "twice_monthly": "2 veces al mes",
+          "weekly": "1 vez por semana",
+          "unlimited": "Tantas veces como haga falta"
+        }
+      },
+      "total": {
+        "label": "Su oferta",
+        "note": "Puede cambiar estas opciones en cualquier momento.",
+        "beyond": "Por encima de estos volúmenes lo hablamos: le preparo una propuesta a medida."
       }
     },
     "results": {
-      "both": {
-        "title": "Sitio Web + Aplicación Móvil",
-        "rate": "600€ s/IVA / día",
-        "rate_note": "*",
-        "description": "Para un proyecto que combine un sitio web y una aplicación móvil, el desarrollo se factura por día. El coste total depende de la complejidad, el alcance funcional y las plataformas objetivo.",
-        "disclaimer": "* Precio indicativo, a negociar según sus necesidades y plazos."
-      },
-      "mobile": {
-        "title": "Aplicación Móvil",
-        "rate": "600€ s/IVA / día",
-        "rate_note": "*",
-        "disclaimer": "* Precio indicativo, a negociar según sus necesidades y plazos.",
-        "description": "El desarrollo de aplicaciones móviles se factura por día. El coste final depende de la complejidad, el número de funcionalidades y las plataformas objetivo (iOS, Android)."
-      },
-      "complex_website": {
-        "title": "Sitio Web Personalizado",
-        "rate": "600€ s/IVA / día",
-        "rate_note": "*",
-        "disclaimer": "* Precio indicativo según necesidades y plazos. Sin precio fijo para un sitio web totalmente personalizable.",
-        "description": "Este tipo de proyecto (con cuentas de clientes o comercio electrónico) es complejo y totalmente personalizable. El coste final depende de sus requisitos específicos.",
-        "no_fixed_price": "Sin precio fijo para un sitio web totalmente personalizable — cada proyecto es único."
-      },
-      "subscription": {
-        "few_per_year": {
-          "title": "Suscripción Esencial",
-          "price": "75€ / mes",
-          "duration": "Compromiso anual",
-          "includes": {
-            "title": "Incluido:",
-            "items": {
-              "site": "Creación del sitio web de presentación",
-              "seo": "Optimización SEO",
-              "updates": "Actualizaciones técnicas regulares",
-              "domain": "Gestión del nombre de dominio",
-              "hosting": "Alojamiento web",
-              "ssl": "Certificado SSL",
-              "email": "1 dirección de correo profesional"
-            }
-          }
-        },
-        "monthly": {
-          "title": "Suscripción Estándar",
-          "price": "100€ / mes",
-          "duration": "Compromiso anual",
-          "includes": {
-            "title": "Incluido:",
-            "items": {
-              "site": "Creación del sitio web de presentación",
-              "seo": "Optimización SEO",
-              "updates": "Actualizaciones técnicas regulares",
-              "domain": "Gestión del nombre de dominio",
-              "hosting": "Alojamiento web",
-              "ssl": "Certificado SSL",
-              "email": "1 dirección de correo profesional",
-              "content_update": "Hasta 1 actualización de contenido al mes"
-            }
-          }
-        },
-        "weekly": {
-          "title": "Suscripción Premium",
-          "price": "150€ / mes",
-          "duration": "Compromiso anual",
-          "includes": {
-            "title": "Incluido:",
-            "items": {
-              "site": "Creación del sitio web de presentación",
-              "seo": "Optimización SEO",
-              "updates": "Actualizaciones técnicas regulares",
-              "domain": "Gestión del nombre de dominio",
-              "hosting": "Alojamiento web",
-              "ssl": "Certificado SSL",
-              "email": "1 dirección de correo profesional",
-              "content_update": "Hasta 1 actualización de contenido a la semana"
-            }
-          }
-        },
-        "self_managed": {
-          "title": "CMS Autogestionado",
-          "rate": "600€ s/IVA / día",
-          "rate_note": "*",
-          "disclaimer": "* Tarifa diaria base — precio definitivo a discutir según sus necesidades de CMS.",
-          "description": "Se desarrollará un CMS personalizado para que pueda gestionar su contenido de forma autónoma, cuando lo desee. El coste de desarrollo se basa en la tarifa diaria y se acordará según sus necesidades."
-        }
+      "custom": {
+        "note": "Proyecto a medida",
+        "title": "Hablémoslo",
+        "description": "Este tipo de proyecto se presupuesta caso por caso: lo que necesita poco tiene que ver con un sitio de presentación. Cuénteme su necesidad y le envío una propuesta detallada, sin compromiso."
       }
     },
     "contact": {
       "title": "Hablemos de su proyecto",
-      "description": "Contáctenos para obtener un presupuesto personalizado y discutir su proyecto en detalle.",
+      "description": "Escríbame unas líneas y le respondo con una propuesta clara.",
       "email": "prospect@gocosmic.dev",
       "cta": "Solicitar un presupuesto",
       "subject": "Consulta de precios — Presupuesto de proyecto",

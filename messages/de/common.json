@@ -9,7 +9,7 @@
   },
   "meta": {
     "title": "Web- & Mobile-Entwicklung | Annecy · Genf | Go Cosmic",
-    "description": "Agentur für Web- und Mobile-App-Entwicklung mit Sitz in Annecy, tätig in Genf und Haute-Savoie. React, React Native, Next.js."
+    "description": "Agentur für Web- und Mobile-App-Entwicklung mit Sitz in Annecy, tätig in Genf, der Westschweiz und Haute-Savoie. React, React Native, Next.js."
   },
   "language": {
     "current": "Aktuelle Sprache: {language}",
@@ -17,7 +17,10 @@
   },
   "pricing_teaser": {
     "eyebrow": "Präsentationswebsite",
-    "price": "ab 50€",
+    "price": {
+      "eur": "ab 10€",
+      "chf": "ab 10 CHF"
+    },
     "price_period": "/ Monat",
     "tagline": "Alles inklusive, keine Überraschungen",
     "scope_note": "Ideal zur Online-Präsentation Ihres Unternehmens, Ihrer Leistungen und Kontaktdaten — ohne Bestellverwaltung oder Kundenbereich.",
@@ -26,11 +29,10 @@
       "seo": "SEO-Optimierung",
       "updates": "Regelmäßige technische Updates",
       "hosting": "Webhosting",
-      "ssl": "SSL-Zertifikat",
-      "domain": "Domainname",
+      "ssl": "Sichere Verbindung (das Schloss im Browser)",
       "email": "1 professionelle E-Mail-Adresse"
     },
-    "footnote": "* Je nach gewähltem Domainnamen können zusätzliche Kosten anfallen.",
+    "footnote": "Domainname, E-Mail-Adresse und weitere Seiten sind optional, ab +5€ im Monat.",
     "footnote_scope": "Für einen Online-Shop oder Kundenbereich kontaktieren Sie uns für ein individuelles Angebot.",
     "mockup_mention": "Fordern Sie Ihr Mockup unverbindlich an",
     "cta_simulate": "Meinen Tarif simulieren",
@@ -39,7 +41,10 @@
   "status_bar": {
     "signal_stable": "SIGNAL STABIL",
     "mission_control": "MISSIONSKONTROLLE",
-    "location": "ANNECY · ALT. 447M",
+    "location": {
+      "fr": "ANNECY · ALT. 447M",
+      "ch": "CHÊNE-BOUGERIES · ALT. 424M"
+    },
     "aria_label": "Missionskontrolle Status",
     "aria_signal": "Signal aktiv"
   },

@@ -6,6 +6,11 @@ import { useTranslations } from 'next-intl';
 
 import MovingStarfield from '@/components/Journey/MovingStarfield';
 import { PricingTeaser } from '@/components/PricingTeaser';
+import type { Currency } from '@/lib/region';
+
+interface JourneyContentProps {
+  currency: Currency;
+}
 
 /**
  * JourneyContent component that renders the 3D cosmic journey experience.
@@ -17,7 +22,7 @@ import { PricingTeaser } from '@/components/PricingTeaser';
  * @component
  * @returns JSX element representing the cosmic journey 3D scene
  */
-export default function JourneyContent() {
+export default function JourneyContent({ currency }: JourneyContentProps) {
   const t = useTranslations('journey');
 
   return (
@@ -35,7 +40,7 @@ export default function JourneyContent() {
         </p>
       </div>
       <div className="relative z-10 m-auto max-w-2xl px-4 pb-16">
-        <PricingTeaser />
+        <PricingTeaser currency={currency} />
       </div>
     </div>
   );

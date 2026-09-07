@@ -1,8 +1,11 @@
 {
   "local": {
     "hero": {
-      "title": "Web & Mobile Developer in Annecy and Geneva",
-      "description": "Matthieu Compérat, freelance developer based in Annecy. I design and build modern web and mobile apps for companies in Annecy, Geneva, and Haute-Savoie."
+      "title": "Web & Mobile Developer in Annecy, Geneva and French-speaking Switzerland",
+      "description": {
+        "fr": "Matthieu Compérat, freelance developer based in Annecy. I design and build modern web and mobile apps for companies in Annecy, Haute-Savoie, Geneva and French-speaking Switzerland (Romandy).",
+        "ch": "Matthieu Compérat, freelance developer based in Chêne-Bougeries, Geneva. I design and build modern web and mobile apps for companies across Geneva, French-speaking Switzerland (Romandy) and the Annecy area."
+      }
     },
     "services": {
       "title": "Web and mobile development services for local businesses"
@@ -12,16 +15,20 @@
       "remote": "Remote collaboration available everywhere in France and Switzerland",
       "locations": {
         "annecy": "Annecy & Haute-Savoie",
-        "geneva": "Geneva & Lake Geneva region"
+        "geneva": "Geneva & Lake Geneva region",
+        "suisse_romande": "French-speaking Switzerland (Vaud, Valais, Neuchâtel, Fribourg)"
       }
     },
     "projects": {
-      "title": "Recent projects delivered from Annecy"
+      "title": {
+        "fr": "Recent projects delivered from Annecy",
+        "ch": "Recent projects delivered from Geneva"
+      }
     },
     "cta": "Contact your local web developer",
     "meta": {
-      "title": "Web & Mobile Developer Annecy • Geneva | Go Cosmic",
-      "description": "Matthieu Compérat, freelance developer based in Annecy. Web and mobile app development for Annecy, Geneva, and Haute-Savoie businesses."
+      "title": "Web & Mobile Developer Annecy • Geneva • Romandy | Go Cosmic",
+      "description": "Matthieu Compérat, freelance developer based in Annecy and Geneva. Web and mobile app development for Annecy, Haute-Savoie, Geneva and French-speaking Switzerland."
     }
   }
 }

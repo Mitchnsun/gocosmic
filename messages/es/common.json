@@ -9,7 +9,7 @@
   },
   "meta": {
     "title": "Desarrollo Web y Móvil | Annecy · Ginebra | Go Cosmic",
-    "description": "Agencia de desarrollo de aplicaciones web y móviles con sede en Annecy, con proyectos en Ginebra y Alta Saboya. React, React Native, Next.js."
+    "description": "Agencia de desarrollo de aplicaciones web y móviles con sede en Annecy, con proyectos en Ginebra, la Suiza romanda y Alta Saboya. React, React Native, Next.js."
   },
   "language": {
     "current": "Idioma actual: {language}",
@@ -17,7 +17,10 @@
   },
   "pricing_teaser": {
     "eyebrow": "Sitio web vitrina",
-    "price": "desde 50€",
+    "price": {
+      "eur": "desde 10€",
+      "chf": "desde 10 CHF"
+    },
     "price_period": "/ mes",
     "tagline": "Todo incluido, sin sorpresas",
     "scope_note": "Ideal para presentar su negocio, servicios y datos de contacto en línea — sin gestión de pedidos ni portal de clientes.",
@@ -26,11 +29,10 @@
       "seo": "Optimización SEO",
       "updates": "Actualizaciones técnicas regulares",
       "hosting": "Alojamiento web",
-      "ssl": "Certificado SSL",
-      "domain": "Nombre de dominio",
+      "ssl": "Conexión segura (el candado del navegador)",
       "email": "1 dirección de correo profesional"
     },
-    "footnote": "* Según el nombre de dominio elegido, pueden aplicarse cargos adicionales.",
+    "footnote": "Nombre de dominio, dirección de correo y páginas adicionales son opcionales, desde +5€ al mes.",
     "footnote_scope": "Para una tienda e-commerce o portal de clientes, contáctenos para un presupuesto personalizado.",
     "mockup_mention": "Solicite su maqueta sin compromiso",
     "cta_simulate": "Simular mi tarifa",
@@ -39,7 +41,10 @@
   "status_bar": {
     "signal_stable": "SEÑAL ESTABLE",
     "mission_control": "CONTROL DE MISIÓN",
-    "location": "ANNECY · ALT. 447M",
+    "location": {
+      "fr": "ANNECY · ALT. 447M",
+      "ch": "CHÊNE-BOUGERIES · ALT. 424M"
+    },
     "aria_label": "Estado del control de misión",
     "aria_signal": "Señal activa"
   },

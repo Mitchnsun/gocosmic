@@ -47,7 +47,7 @@ export default function ChoeurDesPaysduMontBlanc() {
 
   return (
     <div className="text-ghost relative pt-10">
-      <main className="m-auto flex max-w-7xl flex-col items-center gap-10 px-4 pb-4">
+      <div className="m-auto flex max-w-7xl flex-col items-center gap-10 px-4 pb-4">
         {/* Page Header */}
         <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
           <Image
@@ -177,7 +177,7 @@ export default function ChoeurDesPaysduMontBlanc() {
             </Button>
           </a>
         </section>
-      </main>
+      </div>
     </div>
   );
 }

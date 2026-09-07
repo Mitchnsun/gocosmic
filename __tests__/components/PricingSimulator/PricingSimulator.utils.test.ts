@@ -1,63 +1,105 @@
+import { describe, expect, it } from 'vitest';
+
+import { BASE_PRICE, INITIAL_SELECTION } from '@/components/PricingSimulator/constants';
+import type { PlanSelection } from '@/components/PricingSimulator/PricingSimulator.types';
 import {
-  getRateColorClass,
-  getSubscriptionColor,
-  getSubscriptionItems,
+  formatAmount,
+  getAddOnPrice,
+  getMonthlyTotal,
+  getPageTierPrice,
+  getUpdateTierPrice,
+  needsCustomQuote,
+  toTierIndex,
 } from '@/components/PricingSimulator/PricingSimulator.utils';
 
-describe('getRateColorClass', () => {
-  it('returns amber class for amber accent', () => {
-    expect(getRateColorClass('amber')).toBe('text-amber-400');
+const plan = (overrides: Partial<PlanSelection> = {}): PlanSelection => ({
+  ...INITIAL_SELECTION,
+  ...overrides,
+  addOns: { ...INITIAL_SELECTION.addOns, ...overrides.addOns },
+});
+
+describe('toTierIndex', () => {
+  it('keeps valid positions untouched', () => {
+    expect(toTierIndex(0)).toBe(0);
+    expect(toTierIndex(4)).toBe(4);
   });
 
-  it('returns purple class for purple accent', () => {
-    expect(getRateColorClass('purple')).toBe('text-purple-400');
+  it('clamps values outside the slider range', () => {
+    expect(toTierIndex(-3)).toBe(0);
+    expect(toTierIndex(9)).toBe(4);
   });
 
-  it('returns yellow class for yellow accent', () => {
-    expect(getRateColorClass('yellow')).toBe('text-yellow-400');
+  it('snaps fractional and unparsable values onto a position', () => {
+    expect(toTierIndex(2.4)).toBe(2);
+    expect(toTierIndex(Number.NaN)).toBe(0);
   });
 });
 
-describe('getSubscriptionItems', () => {
-  it('returns 7 base items for few_per_year (no content_update)', () => {
-    const items = getSubscriptionItems('few_per_year');
-    expect(items).toEqual(['site', 'seo', 'updates', 'domain', 'hosting', 'ssl', 'email']);
-    expect(items).not.toContain('content_update');
+describe('tier prices', () => {
+  it('leaves the first page free and charges the top tier', () => {
+    expect(getPageTierPrice(0)).toBe(0);
+    expect(getPageTierPrice(4)).toBe(25);
   });
 
-  it('returns 8 items for monthly (includes content_update)', () => {
-    const items = getSubscriptionItems('monthly');
-    expect(items).toHaveLength(8);
-    expect(items).toContain('content_update');
+  it('charges from the first update tier upwards', () => {
+    expect(getUpdateTierPrice(0)).toBe(5);
+    expect(getUpdateTierPrice(4)).toBe(100);
   });
 
-  it('returns 8 items for weekly (includes content_update)', () => {
-    const items = getSubscriptionItems('weekly');
-    expect(items).toHaveLength(8);
-    expect(items).toContain('content_update');
-  });
-
-  it('always includes the 7 base items', () => {
-    const base = ['site', 'seo', 'updates', 'domain', 'hosting', 'ssl', 'email'];
-    for (const freq of ['few_per_year', 'monthly', 'weekly'] as const) {
-      const items = getSubscriptionItems(freq);
-      for (const item of base) {
-        expect(items).toContain(item);
-      }
-    }
+  it('exposes each add-on price', () => {
+    expect(getAddOnPrice('domain')).toBe(5);
+    expect(getAddOnPrice('swiss_hosting')).toBe(10);
+    expect(getAddOnPrice('email')).toBe(10);
   });
 });
 
-describe('getSubscriptionColor', () => {
-  it('returns jungle color for few_per_year', () => {
-    expect(getSubscriptionColor('few_per_year')).toBe('text-jungle');
+describe('getMonthlyTotal', () => {
+  it('charges the advertised base price for an untouched plan', () => {
+    expect(getMonthlyTotal(plan())).toBe(BASE_PRICE);
+    expect(BASE_PRICE).toBe(10);
   });
 
-  it('returns blue color for monthly', () => {
-    expect(getSubscriptionColor('monthly')).toBe('text-blue-400');
+  it('adds every ticked add-on', () => {
+    expect(getMonthlyTotal(plan({ addOns: { domain: true, swiss_hosting: true, email: true } }))).toBe(35);
   });
 
-  it('returns royal color for weekly', () => {
-    expect(getSubscriptionColor('weekly')).toBe('text-royal');
+  it('adds the page tier', () => {
+    expect(getMonthlyTotal(plan({ pages: 3 }))).toBe(30);
+  });
+
+  it('ignores the update slider until the package is enabled', () => {
+    expect(getMonthlyTotal(plan({ updates: 4 }))).toBe(BASE_PRICE);
+    expect(getMonthlyTotal(plan({ updates: 4, updatesEnabled: true }))).toBe(110);
+  });
+
+  it('sums add-ons, pages and updates together', () => {
+    const total = getMonthlyTotal(
+      plan({ addOns: { domain: true, swiss_hosting: false, email: true }, pages: 2, updatesEnabled: true, updates: 1 })
+    );
+    // 10 base + 5 domain + 10 email + 10 pages + 15 updates
+    expect(total).toBe(50);
+  });
+});
+
+describe('needsCustomQuote', () => {
+  it('stays quiet for plans the sliders cover', () => {
+    expect(needsCustomQuote(plan())).toBe(false);
+    expect(needsCustomQuote(plan({ pages: 3, updatesEnabled: true, updates: 3 }))).toBe(false);
+  });
+
+  it('flags the top page tier', () => {
+    expect(needsCustomQuote(plan({ pages: 4 }))).toBe(true);
+  });
+
+  it('flags the top update tier only when the package is enabled', () => {
+    expect(needsCustomQuote(plan({ updates: 4 }))).toBe(false);
+    expect(needsCustomQuote(plan({ updates: 4, updatesEnabled: true }))).toBe(true);
+  });
+});
+
+describe('formatAmount', () => {
+  it('labels the amount with the visitor currency', () => {
+    expect(formatAmount(10, 'eur')).toBe('10€');
+    expect(formatAmount(10, 'chf')).toBe('10 CHF');
   });
 });

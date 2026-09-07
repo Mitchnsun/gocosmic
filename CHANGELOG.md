@@ -5,6 +5,37 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.8.0] - 2026-09-07
+
+### Added
+
+- The showcase website is now composed by the visitor: a 10€ base plan they extend with a domain name, a Swiss server, an email address, extra pages and a content-update package, with the monthly price updating as they go
+- The pricing page now offers a free mockup of the future site and a free review of the visitor's current one, with no commitment
+
+### Changed
+
+- Custom projects — mobile apps, customer accounts, online shops, sites the owner edits themselves — now lead straight to a personal conversation instead of a daily rate
+- Pricing wording rewritten for readers with no web background, and the page redesigned to match the homepage
+
+### Fixed
+
+- Screen readers now announce a single main content area on every page, instead of two nested ones
+
+## [1.7.0] - 2026-09-07
+
+### Added
+
+- Visitors browsing from Switzerland now see the Geneva base (Chêne-Bougeries) and every price in Swiss francs
+- Coverage now states across the site that we work around Annecy, in Geneva and throughout French-speaking Switzerland
+
+### Fixed
+
+- Subscription prices are now the same in all five languages of the site, starting at 50€ as advertised
+
+### Changed
+
+- Visitors outside Switzerland keep the Annecy base and unchanged euro prices
+
 ## [1.6.8] - 2026-09-07
 
 ### Added

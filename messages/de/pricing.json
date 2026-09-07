@@ -1,125 +1,108 @@
 {
   "pricing": {
     "meta": {
-      "title": "Preisrechner - Go Cosmic",
-      "description": "Schätzen Sie die Kosten Ihres Web- oder Mobilprojekts mit unserem interaktiven Preisrechner. Erhalten Sie ein personalisiertes Angebot für Ihre Website oder mobile Anwendung."
+      "title": "Preise - Go Cosmic",
+      "description": "Stellen Sie Ihre Website ab 10€ im Monat zusammen: Sie wählen die Seitenzahl und die Optionen. Entwurf und Website-Check kostenlos und unverbindlich."
     },
-    "title": "Preisrechner",
-    "subtitle": "Beantworten Sie einige Fragen, um eine Schätzung für Ihr Projekt zu erhalten",
+    "eyebrow": "[ PREISE ]",
+    "title": "Stellen Sie Ihr Paket zusammen",
+    "subtitle": "Ein klarer Einstiegspreis, und Sie ergänzen nur, was Sie wirklich brauchen. Die Summe aktualisiert sich dabei laufend.",
+    "free_offers": {
+      "eyebrow": "Kostenlos und unverbindlich",
+      "title": "Noch bevor wir über Budget sprechen",
+      "items": {
+        "mockup": {
+          "title": "Ein Entwurf Ihrer künftigen Website",
+          "description": "Sie sehen, wie Ihre Website aussehen könnte, bevor Sie sich entscheiden."
+        },
+        "audit": {
+          "title": "Ein Check Ihrer bestehenden Website",
+          "description": "Was funktioniert, was Ihnen Besucher kostet und ob man Sie bei Google findet."
+        }
+      },
+      "note": "Beides ist kostenlos und verpflichtet Sie zu nichts."
+    },
     "step1": {
       "question": "Was möchten Sie erstellen?",
       "options": {
         "website": "Eine Website",
-        "mobile": "Eine mobile Anwendung",
-        "both": "Beides (Website + mobile App)"
+        "mobile": "Eine mobile App",
+        "both": "Beides"
       }
     },
     "step2": {
-      "question": "Welche Art von Website benötigen Sie?",
+      "question": "Welche Art von Website brauchen Sie?",
       "options": {
-        "showcase": "Eine Präsentationswebsite",
-        "accounts": "Eine Website mit Kundenkonten",
-        "ecommerce": "Eine E-Commerce-Website"
+        "showcase": "Eine Website, die meinen Betrieb vorstellt",
+        "self_managed": "Eine Website, die ich selbst ändern möchte",
+        "accounts": "Eine Website mit einem Bereich für meine Kunden",
+        "ecommerce": "Eine Website zum Verkaufen"
       }
     },
-    "step3": {
-      "question": "Wie oft möchten Sie den Inhalt aktualisieren?",
+    "builder": {
+      "period": "/ Monat",
+      "base": {
+        "title": "Grundpaket",
+        "includes": {
+          "page": "Eine Seite, die Ihren Betrieb vorstellt",
+          "hosting": "Rund um die Uhr online, Veröffentlichung inklusive",
+          "security": "Sichere Verbindung (das Schloss im Browser)"
+        }
+      },
       "options": {
-        "few_per_year": "2 bis 3 Mal pro Jahr",
-        "monthly": "Einmal im Monat",
-        "weekly": "Einmal pro Woche",
-        "self_managed": "Ich möchte es selbst verwalten, wann immer ich will"
+        "title": "Ergänzen Sie, was Sie brauchen",
+        "domain": {
+          "label": "Verwaltung Ihrer Internetadresse",
+          "hint": "Ihr Domainname, zum Beispiel mein-betrieb.de — für Sie registriert und verlängert."
+        },
+        "swiss_hosting": {
+          "label": "Website in der Schweiz gehostet",
+          "hint": "Ihre Daten bleiben auf einem Server in der Schweiz."
+        },
+        "email": {
+          "label": "Eine E-Mail-Adresse auf Ihren Namen",
+          "hint": "Zum Beispiel kontakt@mein-betrieb.de statt einer kostenlosen Adresse."
+        }
+      },
+      "pages": {
+        "label": "Anzahl der Seiten",
+        "tiers": {
+          "one": "1 Seite (inklusive)",
+          "two_three": "2 bis 3 Seiten",
+          "four_five": "4 bis 5 Seiten",
+          "six_eight": "6 bis 8 Seiten",
+          "nine_ten": "9 bis 10 Seiten"
+        }
+      },
+      "updates": {
+        "label": "Inhaltsänderungen inklusive",
+        "hint": "Ihre Texte, Fotos und Öffnungszeiten von mir aktualisiert, ohne jedes Mal Zusatzkosten.",
+        "off": "Nicht enthalten",
+        "slider_label": "Änderungen pro Jahr",
+        "tiers": {
+          "few_per_year": "2 bis 3 Mal im Jahr",
+          "monthly": "1 Mal im Monat",
+          "twice_monthly": "2 Mal im Monat",
+          "weekly": "1 Mal pro Woche",
+          "unlimited": "So oft wie nötig"
+        }
+      },
+      "total": {
+        "label": "Ihr Paket",
+        "note": "Sie können diese Optionen jederzeit ändern.",
+        "beyond": "Über diese Mengen hinaus sprechen wir darüber: Ich erstelle Ihnen ein passendes Angebot."
       }
     },
     "results": {
-      "both": {
-        "title": "Website + Mobile Anwendung",
-        "rate": "600€ netto / Tag",
-        "rate_note": "*",
-        "description": "Für ein Projekt, das eine Website und eine mobile Anwendung kombiniert, wird die Entwicklung nach Tagessatz abgerechnet. Die Gesamtkosten hängen von der Komplexität, dem Funktionsumfang und den Zielplattformen ab.",
-        "disclaimer": "* Richtpreis, zu verhandeln je nach Ihren Anforderungen und Zeitplan."
-      },
-      "mobile": {
-        "title": "Mobile Anwendung",
-        "rate": "600€ netto / Tag",
-        "rate_note": "*",
-        "disclaimer": "* Richtpreis, zu verhandeln je nach Ihren Anforderungen und Zeitplan.",
-        "description": "Die Entwicklung mobiler Anwendungen wird nach Tagessatz abgerechnet. Die Endkosten hängen von der Komplexität, der Anzahl der Funktionen und den Zielplattformen (iOS, Android) ab."
-      },
-      "complex_website": {
-        "title": "Individuelle Website",
-        "rate": "600€ netto / Tag",
-        "rate_note": "*",
-        "disclaimer": "* Richtpreis je nach Anforderungen und Zeitplan. Kein Pauschalpreis für eine vollständig anpassbare Website.",
-        "description": "Dieses Projekttyp (mit Kundenkonten oder E-Commerce) ist komplex und vollständig individuell anpassbar. Die Endkosten hängen von Ihren spezifischen Anforderungen ab.",
-        "no_fixed_price": "Kein Pauschalpreis für eine vollständig anpassbare Website — jedes Projekt ist einzigartig."
-      },
-      "subscription": {
-        "few_per_year": {
-          "title": "Essential-Abo",
-          "price": "75€ / Monat",
-          "duration": "Jahresbindung",
-          "includes": {
-            "title": "Inklusive:",
-            "items": {
-              "site": "Erstellung der Präsentationswebsite",
-              "seo": "SEO-Optimierung",
-              "updates": "Regelmäßige technische Updates",
-              "domain": "Domainverwaltung",
-              "hosting": "Webhosting",
-              "ssl": "SSL-Zertifikat",
-              "email": "1 professionelle E-Mail-Adresse"
-            }
-          }
-        },
-        "monthly": {
-          "title": "Standard-Abo",
-          "price": "100€ / Monat",
-          "duration": "Jahresbindung",
-          "includes": {
-            "title": "Inklusive:",
-            "items": {
-              "site": "Erstellung der Präsentationswebsite",
-              "seo": "SEO-Optimierung",
-              "updates": "Regelmäßige technische Updates",
-              "domain": "Domainverwaltung",
-              "hosting": "Webhosting",
-              "ssl": "SSL-Zertifikat",
-              "email": "1 professionelle E-Mail-Adresse",
-              "content_update": "Bis zu 1 Inhaltsaktualisierung pro Monat"
-            }
-          }
-        },
-        "weekly": {
-          "title": "Premium-Abo",
-          "price": "150€ / Monat",
-          "duration": "Jahresbindung",
-          "includes": {
-            "title": "Inklusive:",
-            "items": {
-              "site": "Erstellung der Präsentationswebsite",
-              "seo": "SEO-Optimierung",
-              "updates": "Regelmäßige technische Updates",
-              "domain": "Domainverwaltung",
-              "hosting": "Webhosting",
-              "ssl": "SSL-Zertifikat",
-              "email": "1 professionelle E-Mail-Adresse",
-              "content_update": "Bis zu 1 Inhaltsaktualisierung pro Woche"
-            }
-          }
-        },
-        "self_managed": {
-          "title": "Selbstverwaltetes CMS",
-          "rate": "600€ netto / Tag",
-          "rate_note": "*",
-          "disclaimer": "* Basis-Tagessatz — endgültiger Preis nach Absprache je nach Ihren CMS-Anforderungen.",
-          "description": "Ein individuelles CMS wird entwickelt, damit Sie Ihre Inhalte selbständig verwalten können, wann immer Sie möchten. Die Entwicklungskosten basieren auf dem Tagessatz und werden entsprechend Ihren Anforderungen vereinbart."
-        }
+      "custom": {
+        "note": "Maßgeschneidertes Projekt",
+        "title": "Sprechen wir darüber",
+        "description": "Ein solches Projekt wird im Einzelfall kalkuliert — was Sie brauchen, hat wenig mit einer einfachen Website zu tun. Beschreiben Sie mir Ihr Vorhaben, und Sie erhalten ein ausführliches Angebot, unverbindlich."
       }
     },
     "contact": {
       "title": "Lassen Sie uns über Ihr Projekt sprechen",
-      "description": "Kontaktieren Sie uns für ein personalisiertes Angebot und um Ihr Projekt im Detail zu besprechen.",
+      "description": "Schreiben Sie mir ein paar Zeilen — Sie bekommen ein klares Angebot zurück.",
       "email": "prospect@gocosmic.dev",
       "cta": "Angebot anfordern",
       "subject": "Preisanfrage — Projektangebot",

@@ -53,7 +53,10 @@
     "mission": {
       "conclusion": "Our mission: to propel your projects to new technological horizons with creativity, innovation, and technical excellence.",
       "description": "Go Cosmic transforms your ideas into groundbreaking applications by combining modern development expertise with the power of artificial intelligence.",
-      "location": "Based in Annecy, we work across Geneva and Haute-Savoie — on-site or remotely.",
+      "location": {
+        "fr": "Based in Annecy, we work across Geneva, French-speaking Switzerland and Haute-Savoie — on-site or remotely.",
+        "ch": "Based in Chêne-Bougeries, Geneva, we work across French-speaking Switzerland and the Annecy area — on-site or remotely."
+      },
       "specialization": {
         "items": {
           "aiIntegration": "Advanced AI integration for intelligent user experiences",
