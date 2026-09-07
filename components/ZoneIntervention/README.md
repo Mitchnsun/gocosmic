@@ -6,8 +6,9 @@ A "mission-control readout" component that displays the agency's geographic serv
 
 ```
 ZoneIntervention/
-├── ZoneIntervention.tsx   # Component (rendering + reduced-motion logic)
-├── index.ts               # Public re-export
+├── ZoneIntervention.tsx        # Component (rendering + reduced-motion logic)
+├── ZoneIntervention.utils.ts   # Pure helper: responsive grid border classes
+├── index.ts                    # Public re-export
 └── README.md
 ```
 
@@ -57,7 +58,11 @@ No Tailwind `blue-*`, `gray-*`, or arbitrary hex values are used. All colours re
 
 ## Reduced-motion behaviour
 
-The component reuses `usePrefersReducedMotion(enabled: boolean)` from `@/components/HeroSection/HeroSection.hooks` — the same hook already used by `CTAFinal`. When `respectReducedMotion` is `true` (the default) and the user's OS has "reduce motion" enabled, the `animate-ping` class is removed from the signal dot, leaving only the static solid dot. No other animations are present in this component.
+The component is self-contained: it watches `window.matchMedia('(prefers-reduced-motion: reduce)')` directly via a local `useState`/`useEffect` pair, with no dependency on an external hook. When `respectReducedMotion` is `true` (the default) and the user's OS has "reduce motion" enabled, the `animate-ping` class is removed from the signal dot, leaving only the static solid dot. No other animations are present in this component.
+
+## Responsive grid
+
+The stations grid is `grid-cols-1 sm:grid-cols-2 lg:grid-cols-4` — one column on mobile, two from `sm`, and all four in a single row from `lg`. Because a cell's separator can be either a left border (same row) or a top border (new row) depending on the breakpoint, the border classes for each station index are computed by `getStationBorderClass(index)` in `ZoneIntervention.utils.ts` rather than inlined in the JSX.
 
 ---
 

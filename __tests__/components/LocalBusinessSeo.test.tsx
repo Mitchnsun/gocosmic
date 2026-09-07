@@ -43,7 +43,7 @@ describe('LocalBusinessSeo', () => {
           latitude: 45.8992,
           longitude: 6.1294,
         },
-        areaServed: ['Annecy', 'Geneva', 'Haute-Savoie'],
+        areaServed: ['Annecy', 'Geneva', 'Haute-Savoie', 'Lake Geneva region'],
         sameAs: ['https://www.linkedin.com/in/matthieucomperat/'],
       },
     });
@@ -57,7 +57,7 @@ describe('LocalBusinessSeo', () => {
         data: expect.objectContaining({
           description: 'Agence de développement web et mobile basée à Annecy, intervenant à Genève et en Haute-Savoie.',
           inLanguage: 'fr',
-          areaServed: ['Annecy', 'Genève', 'Haute-Savoie'],
+          areaServed: ['Annecy', 'Genève', 'Haute-Savoie', 'Arc lémanique'],
         }),
       })
     );

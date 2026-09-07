@@ -83,17 +83,19 @@
     },
     "zone": {
       "title": "Area di intervento",
-      "description": "Disponibile ad Annecy, Ginevra e in Alta Savoia.",
+      "description": "Disponibile ad Annecy, Ginevra, in Alta Savoia e sull'arco lemanico.",
       "availability": "Disponibile",
       "locations": {
         "annecy": "Annecy",
         "geneva": "Ginevra",
-        "haute_savoie": "Alta Savoia"
+        "haute_savoie": "Alta Savoia",
+        "leman": "Arco lemanico"
       },
       "stations": {
         "annecy": { "meta": "Base · 74" },
-        "geneva": { "meta": "Lago di Ginevra" },
-        "haute_savoie": { "meta": "Francia" }
+        "geneva": { "meta": "Svizzera" },
+        "haute_savoie": { "meta": "Francia" },
+        "leman": { "meta": "Léman · CH/FR" }
       }
     }
   }

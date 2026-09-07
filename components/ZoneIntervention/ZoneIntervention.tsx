@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 
 import { cn } from '@/design-system/lib/utils';
 
+import { getStationBorderClass } from './ZoneIntervention.utils';
+
 interface Station {
   name: string;
   meta: string;
@@ -80,11 +82,11 @@ export const ZoneIntervention = ({
       </div>
 
       {/* Stations grid */}
-      <ul className="border-ghost/8 bg-ghost/[0.02] mt-6 grid grid-cols-1 overflow-hidden rounded-xl border sm:grid-cols-3">
+      <ul className="border-ghost/8 bg-ghost/[0.02] mt-6 grid grid-cols-1 overflow-hidden rounded-xl border sm:grid-cols-2 lg:grid-cols-4">
         {stations.map((station, index) => (
           <li
             key={station.name}
-            className={cn('flex flex-col items-center gap-[7px] p-4', index > 0 && 'sm:border-ghost/8 sm:border-l')}>
+            className={cn('border-ghost/8 flex flex-col items-center gap-[7px] p-4', getStationBorderClass(index))}>
             <CrosshairIcon />
             <span className="font-display text-ghost text-base font-semibold">{station.name}</span>
             <span className="text-ghost/32 font-mono text-[9.5px] tracking-[0.14em] uppercase">{station.meta}</span>

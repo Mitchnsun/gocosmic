@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - Upgraded the site's hosting runtime to a newer, actively-supported version to keep deployments secure and reliable
 - Refined the "Zone d'intervention" area below the homepage call-to-action into a discreet mission-control readout with an availability indicator and three location markers.
+- Added the Lake Geneva region ("Arc lémanique") to the homepage service-area readout, now shown as a fourth location alongside Annecy, Geneva, and Haute-Savoie.
 
 ### Fixed
 

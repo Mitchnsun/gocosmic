@@ -67,6 +67,7 @@ export default async function Home() {
             { name: t('zone.locations.annecy'), meta: t('zone.stations.annecy.meta') },
             { name: t('zone.locations.geneva'), meta: t('zone.stations.geneva.meta') },
             { name: t('zone.locations.haute_savoie'), meta: t('zone.stations.haute_savoie.meta') },
+            { name: t('zone.locations.leman'), meta: t('zone.stations.leman.meta') },
           ]}
         />
       </CTAFinal>

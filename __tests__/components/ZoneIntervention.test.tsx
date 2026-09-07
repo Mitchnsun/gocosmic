@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { ZoneIntervention } from '@/components/ZoneIntervention';
+import { getStationBorderClass } from '@/components/ZoneIntervention/ZoneIntervention.utils';
 
 import { render } from '../test-utils';
 
@@ -9,13 +10,17 @@ const defaultProps = {
   availability: 'Available',
   stations: [
     { name: 'Annecy', meta: 'Base · 74' },
-    { name: 'Geneva', meta: 'Lake Geneva' },
+    { name: 'Geneva', meta: 'Switzerland' },
     { name: 'Haute-Savoie', meta: 'France' },
+    { name: 'Lake Geneva region', meta: 'Léman · CH/FR' },
   ],
 };
 
 describe('ZoneIntervention', () => {
+  const originalMatchMedia = window.matchMedia;
+
   afterEach(() => {
+    window.matchMedia = originalMatchMedia;
     vi.restoreAllMocks();
   });
 
@@ -29,18 +34,20 @@ describe('ZoneIntervention', () => {
     expect(getByText('Available')).toBeInTheDocument();
   });
 
-  it('renders all 3 station names', () => {
+  it('renders all 4 station names', () => {
     const { getByText } = render(<ZoneIntervention {...defaultProps} />);
     expect(getByText('Annecy')).toBeInTheDocument();
     expect(getByText('Geneva')).toBeInTheDocument();
     expect(getByText('Haute-Savoie')).toBeInTheDocument();
+    expect(getByText('Lake Geneva region')).toBeInTheDocument();
   });
 
-  it('renders all 3 station meta strings', () => {
+  it('renders all 4 station meta strings', () => {
     const { getByText } = render(<ZoneIntervention {...defaultProps} />);
     expect(getByText('Base · 74')).toBeInTheDocument();
-    expect(getByText('Lake Geneva')).toBeInTheDocument();
+    expect(getByText('Switzerland')).toBeInTheDocument();
     expect(getByText('France')).toBeInTheDocument();
+    expect(getByText('Léman · CH/FR')).toBeInTheDocument();
   });
 
   it('contains no 📍 emoji in the rendered output', () => {
@@ -65,10 +72,10 @@ describe('ZoneIntervention', () => {
     expect(section).toBeInTheDocument();
   });
 
-  it('renders exactly 3 list items', () => {
+  it('renders exactly 4 list items', () => {
     const { getAllByRole } = render(<ZoneIntervention {...defaultProps} />);
     const items = getAllByRole('listitem');
-    expect(items).toHaveLength(3);
+    expect(items).toHaveLength(4);
   });
 
   it('applies a custom className to the section', () => {
@@ -115,5 +122,27 @@ describe('ZoneIntervention', () => {
       const { container } = render(<ZoneIntervention {...defaultProps} respectReducedMotion={false} />);
       expect(container.querySelector('.animate-ping')).toBeInTheDocument();
     });
+  });
+});
+
+describe('getStationBorderClass', () => {
+  it('returns no border classes for the first station', () => {
+    expect(getStationBorderClass(0)).toBe('');
+  });
+
+  it('returns a top border on mobile and a left border from sm for the second station', () => {
+    expect(getStationBorderClass(1)).toBe('border-t sm:border-t-0 sm:border-l');
+  });
+
+  it('returns a top border below lg and a left border from lg for the third station', () => {
+    expect(getStationBorderClass(2)).toBe('border-t lg:border-t-0 lg:border-l');
+  });
+
+  it('returns a top border on mobile, a left border from sm, no top border from lg for the fourth station', () => {
+    expect(getStationBorderClass(3)).toBe('border-t sm:border-l lg:border-t-0');
+  });
+
+  it('falls back to the fourth-station pattern for any index beyond 4 stations', () => {
+    expect(getStationBorderClass(4)).toBe('border-t sm:border-l lg:border-t-0');
   });
 });

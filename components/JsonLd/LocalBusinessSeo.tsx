@@ -11,7 +11,7 @@ function getLocalizedLocalBusinessData(locale: string) {
     case 'fr': {
       return {
         description: 'Agence de développement web et mobile basée à Annecy, intervenant à Genève et en Haute-Savoie.',
-        areaServed: ['Annecy', 'Genève', 'Haute-Savoie'],
+        areaServed: ['Annecy', 'Genève', 'Haute-Savoie', 'Arc lémanique'],
         inLanguage: 'fr',
       };
     }
@@ -19,21 +19,21 @@ function getLocalizedLocalBusinessData(locale: string) {
       return {
         description:
           'Agencia de desarrollo web y móvil con sede en Annecy, que presta servicios en Ginebra y Alta Saboya.',
-        areaServed: ['Annecy', 'Ginebra', 'Alta Saboya'],
+        areaServed: ['Annecy', 'Ginebra', 'Alta Saboya', 'Arco lemánico'],
         inLanguage: 'es',
       };
     }
     case 'de': {
       return {
         description: 'Agentur für Web- und Mobile-Entwicklung mit Sitz in Annecy, tätig in Genf und Hochsavoyen.',
-        areaServed: ['Annecy', 'Genf', 'Hochsavoyen'],
+        areaServed: ['Annecy', 'Genf', 'Hochsavoyen', 'Genferseeregion'],
         inLanguage: 'de',
       };
     }
     case 'it': {
       return {
         description: 'Agenzia di sviluppo web e mobile con sede ad Annecy, attiva a Ginevra e nell’Alta Savoia.',
-        areaServed: ['Annecy', 'Ginevra', 'Alta Savoia'],
+        areaServed: ['Annecy', 'Ginevra', 'Alta Savoia', 'Arco lemanico'],
         inLanguage: 'it',
       };
     }
@@ -41,7 +41,7 @@ function getLocalizedLocalBusinessData(locale: string) {
     default: {
       return {
         description: 'Web and mobile development agency based in Annecy, serving Geneva and Haute-Savoie.',
-        areaServed: ['Annecy', 'Geneva', 'Haute-Savoie'],
+        areaServed: ['Annecy', 'Geneva', 'Haute-Savoie', 'Lake Geneva region'],
         inLanguage: 'en',
       };
     }
