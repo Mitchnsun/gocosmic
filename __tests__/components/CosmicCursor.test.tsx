@@ -169,17 +169,7 @@ describe('CosmicCursor', () => {
 
   it('accepts all custom prop overrides without throwing', () => {
     expect(() =>
-      render(
-        <CosmicCursor
-          trailLength={12}
-          orbitRadius={32}
-          orbitCount={4}
-          magneticRange={100}
-          magneticEase={0.2}
-          coreSize={8}
-          trailSize={4}
-        />
-      )
+      render(<CosmicCursor trailLength={12} magneticRange={100} magneticEase={0.2} coreSize={8} trailSize={4} />)
     ).not.toThrow();
   });
 });
@@ -348,7 +338,7 @@ describe('CosmicCursor render loop', () => {
       toJSON: () => ({}),
     } as DOMRect);
 
-    const coreSize = 20; // radius 10 — distinct from trail/orbit dot radii so it's identifiable
+    const coreSize = 20; // radius 10 — distinct from trail dot radii so it's identifiable
     render(<CosmicCursor coreSize={coreSize} />);
 
     const pointerX = 1150;

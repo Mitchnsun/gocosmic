@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Swiss visitors now see a `.ch` example web address on the pricing page instead of a foreign one
 - The pricing options are easier to use: a hand cursor now shows over the tick boxes, and the sliders' handle now tracks your pointer exactly and can be moved by clicking anywhere on the bar
 - The page-count slider steps are now 1, 2 to 4, 5 to 7, 8 to 9, and 10 or more
+- The custom pointer is now calmer: the small dots that used to circle it when the mouse stopped moving have been removed
 
 ### Fixed
 

@@ -8,10 +8,6 @@ import { useCosmicCursor } from './useCosmicCursor';
 export interface CosmicCursorProps {
   /** Number of trailing dots. Defaults to 8. */
   trailLength?: number;
-  /** Orbit radius at rest (px). Defaults to 24. */
-  orbitRadius?: number;
-  /** Number of orbital dots. Defaults to 3. */
-  orbitCount?: number;
   /** Magnetic pull range (px). Defaults to 80. */
   magneticRange?: number;
   /** Magnetic easing factor (0–1). Defaults to 0.15. */
@@ -37,7 +33,7 @@ function hexToRgb(hex: string): { r: number; g: number; b: number } {
 }
 
 /**
- * CosmicCursor — canvas-based custom cursor with trailing, magnetic snap, and orbital effects.
+ * CosmicCursor — canvas-based custom cursor with trailing and magnetic snap effects.
  *
  * - Canvas fullscreen overlay, pointer-events: none
  * - 60fps RAF loop — no DOM queries per frame
@@ -52,8 +48,6 @@ function hexToRgb(hex: string): { r: number; g: number; b: number } {
  */
 const CosmicCursor = ({
   trailLength = 8,
-  orbitRadius = 24,
-  orbitCount = 3,
   magneticRange = 80,
   magneticEase = 0.15,
   coreSize = 6,
@@ -106,8 +100,6 @@ const CosmicCursor = ({
     document.head.appendChild(styleEl);
 
     let animationId: number;
-    let orbitAngle = 0;
-    let restTimer = 0;
     let lastFrameTime = performance.now();
     // Smoothed cursor position for snapping
     let smoothX = state.mouse.x;
@@ -123,11 +115,6 @@ const CosmicCursor = ({
         animationId = requestAnimationFrame(draw);
         return;
       }
-
-      const dt = rawDt;
-
-      // Decay velocity every frame so it falls to zero when the mouse is stationary
-      state.velocity *= 0.95;
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -163,36 +150,6 @@ const CosmicCursor = ({
           ctx.arc(point.x, point.y, Math.max(0.5, radius), 0, Math.PI * 2);
           ctx.fillStyle = `rgba(${r},${g},${b},${alpha})`;
           ctx.fill();
-        }
-      }
-
-      // ── Orbital dots at rest ─────────────────────────────────────────────
-      if (!reduced && !state.usesNativeCursor) {
-        const VELOCITY_THRESHOLD = 10;
-        const isAtRest = state.velocity < VELOCITY_THRESHOLD;
-
-        if (isAtRest) {
-          restTimer = Math.min(restTimer + dt, 200);
-        } else {
-          restTimer = Math.max(restTimer - dt * 2, 0);
-        }
-
-        const orbitOpacity = restTimer / 200;
-
-        if (orbitOpacity > 0) {
-          // 2 RPM = 1 rotation per 30 s = 1 rotation per 30 000ms → angle increment per ms = (2π / 30 000)
-          orbitAngle += (Math.PI * 2 * dt) / 30_000;
-
-          for (let i = 0; i < orbitCount; i++) {
-            const angle = orbitAngle + (Math.PI * 2 * i) / orbitCount;
-            const ox = smoothX + Math.cos(angle) * orbitRadius;
-            const oy = smoothY + Math.sin(angle) * orbitRadius;
-
-            ctx.beginPath();
-            ctx.arc(ox, oy, trailSize * 0.8, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(${accentRgb.r},${accentRgb.g},${accentRgb.b},${orbitOpacity * 0.7})`;
-            ctx.fill();
-          }
         }
       }
 
@@ -234,7 +191,7 @@ const CosmicCursor = ({
       window.removeEventListener('resize', resize);
       styleEl.remove();
     };
-  }, [stateRef, updateTrail, coreSize, trailSize, orbitCount, orbitRadius]);
+  }, [stateRef, updateTrail, coreSize, trailSize]);
 
   // On touch devices, return null after mount detection so no canvas is present in the DOM
   if (isTouchDevice) return null;
