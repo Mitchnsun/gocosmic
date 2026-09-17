@@ -143,6 +143,18 @@
       "geo_availability": "Available in Annecy, Geneva, French-speaking Switzerland, Haute-Savoie and remotely.",
       "email_subject": "Inquiry about Cosmic services",
       "local_page": "Discover our dedicated Annecy / Geneva page"
+    },
+    "eyebrow": "Services — Capabilities",
+    "hero": {
+      "cta": "Discuss your project",
+      "secondary": "See pricing"
+    },
+    "explore": {
+      "eyebrow": "Next step",
+      "title": "See the work, then the budget",
+      "description": "Browse the projects we have shipped, or build your own estimate in a couple of clicks.",
+      "projects": "Browse the projects",
+      "pricing": "Build my estimate"
     }
   }
 }
