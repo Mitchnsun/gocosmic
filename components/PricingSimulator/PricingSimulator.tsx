@@ -70,7 +70,7 @@ export function PricingSimulator({ currency }: PricingSimulatorProps) {
             onPagesChange={simulator.setPages}
             onUpdatesChange={simulator.setUpdates}
           />
-          <ContactBanner t={t} />
+          <ContactBanner />
         </div>
       )}
 
@@ -79,7 +79,7 @@ export function PricingSimulator({ currency }: PricingSimulatorProps) {
         <div className="animate-fade-in-up space-y-6">
           <section
             aria-labelledby="quote-result-heading"
-            className="border-ghost/8 bg-ghost/[0.02] rounded-2xl border p-6 sm:p-8">
+            className="border-ghost/8 bg-ghost/2 rounded-2xl border p-6 sm:p-8">
             <h2 id="quote-result-heading" className="sr-only">
               {t('results.custom.title')}
             </h2>
@@ -89,7 +89,7 @@ export function PricingSimulator({ currency }: PricingSimulatorProps) {
               description={t('results.custom.description')}
             />
           </section>
-          <ContactBanner t={t} />
+          <ContactBanner />
         </div>
       )}
 

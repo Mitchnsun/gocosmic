@@ -44,9 +44,9 @@
       "base": {
         "title": "Formula base",
         "includes": {
-          "page": "Una pagina che presenta la sua attività",
+          "page": "Una sola pagina vetrina statica che presenta la sua attività",
           "hosting": "Online 24 ore su 24, pubblicazione compresa",
-          "security": "Connessione sicura (il lucchetto nel browser)"
+          "security": "Connessione sicura HTTPS (il lucchetto nel browser)"
         }
       },
       "options": {

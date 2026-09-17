@@ -25,14 +25,18 @@
     "tagline": "All-inclusive, no surprises",
     "scope_note": "Ideal for presenting your business, services and contact details online — without order management or client portal.",
     "features": {
+      "page": "A single static showcase page",
       "redesign": "Graphic redesign of your showcase website",
       "seo": "SEO optimisation",
       "updates": "Regular technical updates",
       "hosting": "Web hosting",
-      "ssl": "Secure connection (the padlock in the browser)",
+      "ssl": "Secure HTTPS connection (the padlock in the browser)",
       "email": "1 professional email address"
     },
-    "footnote": "Domain name, email address and extra pages are optional, from +5€ a month.",
+    "footnote": {
+      "eur": "The domain name is not included: managing it is an option at +5€ a month, like extra pages and the email address.",
+      "chf": "The domain name is not included: managing it is an option at +5 CHF a month, like extra pages and the email address."
+    },
     "footnote_scope": "For an e-commerce shop or client portal, contact us for a tailored quote.",
     "mockup_mention": "Request your mockup with no commitment",
     "cta_simulate": "Simulate my pricing",

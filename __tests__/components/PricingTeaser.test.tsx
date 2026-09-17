@@ -14,17 +14,18 @@ describe('PricingTeaser', () => {
   it('should render all feature items', () => {
     render(<PricingTeaser currency="eur" />);
 
+    expect(screen.getByText(/a single static showcase page/i)).toBeInTheDocument();
     expect(screen.getByText(/graphic redesign of your showcase website/i)).toBeInTheDocument();
     expect(screen.getByText(/seo optimisation/i)).toBeInTheDocument();
     expect(screen.getByText(/regular technical updates/i)).toBeInTheDocument();
     expect(screen.getByText(/web hosting/i)).toBeInTheDocument();
-    expect(screen.getByText(/secure connection/i)).toBeInTheDocument();
+    expect(screen.getByText(/secure https connection/i)).toBeInTheDocument();
   });
 
-  it('should present the domain and email as paid options, not bundled features', () => {
+  it('should present the domain as a paid option, not a bundled feature', () => {
     render(<PricingTeaser currency="eur" />);
 
-    expect(screen.getByText(/domain name, email address and extra pages are optional/i)).toBeInTheDocument();
+    expect(screen.getByText(/domain name is not included/i)).toBeInTheDocument();
     expect(screen.getByText(/e-commerce shop or client portal/i)).toBeInTheDocument();
   });
 
@@ -55,5 +56,11 @@ describe('PricingTeaser', () => {
 
     expect(screen.getByText(/from 10 CHF/i)).toBeInTheDocument();
     expect(screen.queryByText(/10€/)).not.toBeInTheDocument();
+  });
+
+  it('should render the franc footnote for Swiss visitors', () => {
+    render(<PricingTeaser currency="chf" />);
+
+    expect(screen.getByText(/\+5 CHF a month/i)).toBeInTheDocument();
   });
 });

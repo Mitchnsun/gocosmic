@@ -25,14 +25,18 @@
     "tagline": "Tutto incluso, nessuna sorpresa",
     "scope_note": "Ideale per presentare la sua attività, i servizi e i recapiti online — senza gestione ordini né portale clienti.",
     "features": {
+      "page": "Una sola pagina vetrina statica",
       "redesign": "Ridisegno grafico del sito web vetrina",
       "seo": "Ottimizzazione SEO",
       "updates": "Aggiornamenti tecnici regolari",
       "hosting": "Hosting web",
-      "ssl": "Connessione sicura (il lucchetto nel browser)",
+      "ssl": "Connessione sicura HTTPS (il lucchetto nel browser)",
       "email": "1 indirizzo email professionale"
     },
-    "footnote": "Nome a dominio, indirizzo e-mail e pagine aggiuntive sono opzionali, da +5€ al mese.",
+    "footnote": {
+      "eur": "Il nome a dominio non è compreso: la sua gestione è un'opzione a +5€ al mese, come le pagine aggiuntive e l'indirizzo e-mail.",
+      "chf": "Il nome a dominio non è compreso: la sua gestione è un'opzione a +5 CHF al mese, come le pagine aggiuntive e l'indirizzo e-mail."
+    },
     "footnote_scope": "Per un e-commerce o un portale clienti, contattaci per un preventivo su misura.",
     "mockup_mention": "Richiedi il tuo mockup senza impegno",
     "cta_simulate": "Simula il mio prezzo",

@@ -8,8 +8,8 @@ import { cn } from '@/design-system/lib/utils';
 import { Link } from '@/i18n/navigation';
 import type { Currency } from '@/lib/region';
 
-/** What the base plan covers. Domain, email and extra pages are paid options. */
-const features = ['redesign', 'seo', 'updates', 'hosting', 'ssl'] as const;
+/** What the base plan covers: a single page, hosting included. Domain, email and extra pages are paid options. */
+const features = ['page', 'redesign', 'seo', 'updates', 'hosting', 'ssl'] as const;
 
 interface PricingTeaserProps {
   currency: Currency;
@@ -38,7 +38,7 @@ export function PricingTeaser({ currency }: PricingTeaserProps) {
           </li>
         ))}
       </ul>
-      <p className="mb-1 text-xs text-gray-500">{t('footnote')}</p>
+      <p className="mb-1 text-xs text-gray-500">{t(`footnote.${currency}`)}</p>
       <p className="mb-6 text-xs text-gray-500">{t('footnote_scope')}</p>
 
       {/* Mockup mention */}

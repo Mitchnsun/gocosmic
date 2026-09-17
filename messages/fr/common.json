@@ -25,14 +25,18 @@
     "tagline": "Tout compris, sans surprise",
     "scope_note": "Idéal pour présenter votre activité, vos services et vos coordonnées en ligne — sans gestion de commandes ni espace client.",
     "features": {
+      "page": "Une seule page vitrine statique",
       "redesign": "Refonte graphique du site vitrine",
       "seo": "Optimisations SEO",
       "updates": "Mises à jour techniques régulières",
       "hosting": "Hébergement web",
-      "ssl": "Connexion sécurisée (le cadenas dans le navigateur)",
+      "ssl": "Connexion sécurisée HTTPS (le cadenas dans le navigateur)",
       "email": "1 adresse e-mail professionnelle"
     },
-    "footnote": "Nom de domaine, adresse e-mail et pages supplémentaires en option, à partir de +5€ par mois.",
+    "footnote": {
+      "eur": "Le nom de domaine n'est pas compris : sa gestion est en option à +5€ par mois, comme les pages supplémentaires et l'adresse e-mail.",
+      "chf": "Le nom de domaine n'est pas compris : sa gestion est en option à +5 CHF par mois, comme les pages supplémentaires et l'adresse e-mail."
+    },
     "footnote_scope": "Pour une boutique e-commerce ou un espace client, contactez-nous pour un devis sur mesure.",
     "mockup_mention": "Demandez votre maquette sans engagement",
     "cta_simulate": "Simuler mon tarif",

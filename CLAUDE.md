@@ -105,11 +105,13 @@ Common scopes: `ui`, `web`, `config`, `deps`
 
 ## PR checklist
 
+**One version bump per PR, not per commit.** The first change on a branch bumps `version` in `package.json` (semver: patch/minor/major) and adds the matching `CHANGELOG.md` entry under `## [X.Y.Z] - YYYY-MM-DD`. Every later commit on that same branch — review follow-ups included — adds its bullets to that existing changelog entry and leaves the version untouched.
+
 Before opening a PR:
 
-1. Bump `version` in `package.json` (semver: patch/minor/major)
-2. Add a `CHANGELOG.md` entry under `## [X.Y.Z] - YYYY-MM-DD`
-3. For every PR-bound change, including review follow-ups after the PR exists, keep the version bump and changelog entry updated before marking the work complete
+1. Compare the branch's `package.json` version against `master`'s. If the branch is still at `master`'s version, this PR hasn't bumped yet — bump it now and create the changelog entry.
+2. If the branch is already ahead of `master`, this PR already bumped — do not bump again; add new bullets to the existing entry instead (update its date to today).
+3. For every PR-bound change, including review follow-ups after the PR exists, keep that single version bump and changelog entry updated before marking the work complete
 
 ### Changelog style
 

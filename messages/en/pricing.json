@@ -44,9 +44,9 @@
       "base": {
         "title": "Base plan",
         "includes": {
-          "page": "One page presenting your business",
+          "page": "A single static showcase page presenting your business",
           "hosting": "Online around the clock, publishing included",
-          "security": "Secure connection (the padlock in the browser)"
+          "security": "Secure HTTPS connection (the padlock in the browser)"
         }
       },
       "options": {

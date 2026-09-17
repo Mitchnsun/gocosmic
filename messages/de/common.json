@@ -25,14 +25,18 @@
     "tagline": "Alles inklusive, keine Überraschungen",
     "scope_note": "Ideal zur Online-Präsentation Ihres Unternehmens, Ihrer Leistungen und Kontaktdaten — ohne Bestellverwaltung oder Kundenbereich.",
     "features": {
+      "page": "Eine einzige statische Präsentationsseite",
       "redesign": "Grafische Neugestaltung Ihrer Präsentationswebsite",
       "seo": "SEO-Optimierung",
       "updates": "Regelmäßige technische Updates",
       "hosting": "Webhosting",
-      "ssl": "Sichere Verbindung (das Schloss im Browser)",
+      "ssl": "Sichere HTTPS-Verbindung (das Schloss im Browser)",
       "email": "1 professionelle E-Mail-Adresse"
     },
-    "footnote": "Domainname, E-Mail-Adresse und weitere Seiten sind optional, ab +5€ im Monat.",
+    "footnote": {
+      "eur": "Der Domainname ist nicht enthalten: Seine Verwaltung ist eine Option für +5€ im Monat, ebenso wie weitere Seiten und die E-Mail-Adresse.",
+      "chf": "Der Domainname ist nicht enthalten: Seine Verwaltung ist eine Option für +5 CHF im Monat, ebenso wie weitere Seiten und die E-Mail-Adresse."
+    },
     "footnote_scope": "Für einen Online-Shop oder Kundenbereich kontaktieren Sie uns für ein individuelles Angebot.",
     "mockup_mention": "Fordern Sie Ihr Mockup unverbindlich an",
     "cta_simulate": "Meinen Tarif simulieren",

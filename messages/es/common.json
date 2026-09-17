@@ -25,14 +25,18 @@
     "tagline": "Todo incluido, sin sorpresas",
     "scope_note": "Ideal para presentar su negocio, servicios y datos de contacto en línea — sin gestión de pedidos ni portal de clientes.",
     "features": {
+      "page": "Una única página vitrina estática",
       "redesign": "Rediseño gráfico de su sitio web vitrina",
       "seo": "Optimización SEO",
       "updates": "Actualizaciones técnicas regulares",
       "hosting": "Alojamiento web",
-      "ssl": "Conexión segura (el candado del navegador)",
+      "ssl": "Conexión segura HTTPS (el candado del navegador)",
       "email": "1 dirección de correo profesional"
     },
-    "footnote": "Nombre de dominio, dirección de correo y páginas adicionales son opcionales, desde +5€ al mes.",
+    "footnote": {
+      "eur": "El nombre de dominio no está incluido: su gestión es una opción por +5€ al mes, al igual que las páginas adicionales y la dirección de correo.",
+      "chf": "El nombre de dominio no está incluido: su gestión es una opción por +5 CHF al mes, al igual que las páginas adicionales y la dirección de correo."
+    },
     "footnote_scope": "Para una tienda e-commerce o portal de clientes, contáctenos para un presupuesto personalizado.",
     "mockup_mention": "Solicite su maqueta sin compromiso",
     "cta_simulate": "Simular mi tarifa",

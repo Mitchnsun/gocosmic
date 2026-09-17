@@ -44,9 +44,9 @@
       "base": {
         "title": "Grundpaket",
         "includes": {
-          "page": "Eine Seite, die Ihren Betrieb vorstellt",
+          "page": "Eine einzige statische Präsentationsseite für Ihren Betrieb",
           "hosting": "Rund um die Uhr online, Veröffentlichung inklusive",
-          "security": "Sichere Verbindung (das Schloss im Browser)"
+          "security": "Sichere HTTPS-Verbindung (das Schloss im Browser)"
         }
       },
       "options": {

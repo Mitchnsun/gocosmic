@@ -44,9 +44,9 @@
       "base": {
         "title": "Formule de base",
         "includes": {
-          "page": "Une page qui présente votre activité",
+          "page": "Une seule page vitrine statique qui présente votre activité",
           "hosting": "Site en ligne 24h/24, mise en ligne comprise",
-          "security": "Connexion sécurisée (le cadenas dans le navigateur)"
+          "security": "Connexion sécurisée HTTPS (le cadenas dans le navigateur)"
         }
       },
       "options": {

@@ -44,9 +44,9 @@
       "base": {
         "title": "Plan base",
         "includes": {
-          "page": "Una página que presenta su actividad",
+          "page": "Una única página vitrina estática que presenta su actividad",
           "hosting": "En línea las 24 horas, publicación incluida",
-          "security": "Conexión segura (el candado del navegador)"
+          "security": "Conexión segura HTTPS (el candado del navegador)"
         }
       },
       "options": {
