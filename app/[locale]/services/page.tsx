@@ -13,8 +13,6 @@ import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
 import { Button } from '@/design-system/button';
-import { buttonVariants } from '@/design-system/button.variants';
-import { cn } from '@/design-system/lib/utils';
 import { getCanonicalUrl } from '@/i18n/canonical';
 import { Link } from '@/i18n/navigation';
 import { getOgImages } from '@/lib/og';
@@ -408,13 +406,12 @@ export default function Services() {
             </h2>
             <p className="text-center text-lg text-gray-400 sm:text-xl lg:text-lg">{t('cta.description')}</p>
             <div className="flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="/journey"
-                className={cn(buttonVariants({ variant: 'royal' }), 'w-fit gap-2')}
-                aria-label={t('cta.primary_button')}>
-                <RocketLaunchIcon className="h-5 w-5" aria-hidden="true" />
-                {t('cta.primary_button')}
-              </Link>
+              <Button variant="royal" className="w-fit gap-2" asChild>
+                <Link href="/journey" aria-label={t('cta.primary_button')}>
+                  <RocketLaunchIcon className="h-5 w-5" aria-hidden="true" />
+                  {t('cta.primary_button')}
+                </Link>
+              </Button>
               <Button variant="jungle" className="flex items-center gap-2" asChild>
                 <a href={`mailto:prospect@gocosmic.dev?subject=${subject}`} aria-label={t('cta.secondary_button')}>
                   {t('cta.secondary_button')}
@@ -422,9 +419,9 @@ export default function Services() {
                 </a>
               </Button>
             </div>
-            <Link href="/local" className={cn(buttonVariants({ variant: 'space' }), 'w-fit border border-blue-400/40')}>
-              {t('cta.local_page')}
-            </Link>
+            <Button variant="space" className="w-fit border border-blue-400/40" asChild>
+              <Link href="/local">{t('cta.local_page')}</Link>
+            </Button>
             <p className="text-center text-sm text-gray-500">{t('cta.contact_info')}</p>
             <p className="text-center text-sm text-gray-500">{t('cta.geo_availability')}</p>
           </div>
