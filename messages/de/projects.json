@@ -23,7 +23,13 @@
         "title": "Chœur des Pays du Mont Blanc",
         "description": "Eine Website, die die Aktivitäten, Konzerte und das Repertoire des Chors in Haute-Savoie präsentiert."
       }
-    }
+    },
+    "cta": {
+      "title": "Ihr Projekt könnte das nächste sein",
+      "description": "Sagen Sie uns, was Sie bauen möchten — wir zeichnen die Route.",
+      "button": "Sprechen wir darüber"
+    },
+    "eyebrow": "Projekte — Ausgewählte Arbeiten"
   },
   "dailyFortune": {
     "title": "Daily Fortune",

@@ -61,7 +61,8 @@ const getNamespacesForPath = (pathname: string): string[] => {
     pathWithoutLocale.startsWith('/projekte/psc-supersprint') ||
     pathWithoutLocale.startsWith('/progetti/psc-supersprint')
   ) {
-    return ['psc-supersprint'];
+    // The case study template needs the project titles for its prev/next links.
+    return ['psc-supersprint', 'projects'];
   } else if (
     pathWithoutLocale.startsWith('/projects') ||
     pathWithoutLocale.startsWith('/projets') ||

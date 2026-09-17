@@ -105,8 +105,32 @@ async headers() {
 
 ### API Routes
 
-This project currently has no API routes (`app/**/route.ts`). If API routes are
-added in the future, the following must be checked before merging:
+This project exposes one public API route: `app/api/contact/route.ts`, which
+receives contact form submissions. Its protections are:
+
+1. **Same-origin check** — requests carrying an `Origin` header from another
+   host are rejected with `403`. Custom route handlers get no CSRF protection
+   from Next.js, unlike server actions.
+2. **Body size cap** — a `Content-Length` above 20 kB is rejected with `413`
+   before the JSON is parsed.
+3. **Input validation** — every field is coerced to a string, truncated, then
+   validated by `lib/contact/validation.ts` (shared with the client form).
+   Invalid payloads return `400` with the per-field error codes.
+4. **Honeypot** — a hidden `honeypot` field; a filled one is answered `200`
+   without delivery so bots cannot detect the filter.
+5. **Rate limiting** — three submissions per client IP per hour, in memory
+   (`lib/contact/rateLimit.ts`). Move this to a shared store (Vercel KV,
+   `@upstash/ratelimit`) if the deployment ever spans several long-lived
+   instances.
+6. **Delivery** — forwarded through Resend when `RESEND_API_KEY`,
+   `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL` are set; otherwise the
+   submission is logged server-side so it is not silently lost. The route never
+   echoes the submitted content back to the client.
+
+The endpoint is unauthenticated by design (public marketing form) and performs
+no mutation beyond sending that email.
+
+If further API routes are added, the following must be checked before merging:
 
 1. **Input validation** — Validate and sanitize all request body and query
    parameters. Use `zod` or similar for schema validation.

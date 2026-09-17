@@ -23,7 +23,13 @@
         "title": "Chœur des Pays du Mont Blanc",
         "description": "Un sito web che presenta le attività, i concerti e il repertorio del coro in Haute-Savoie."
       }
-    }
+    },
+    "cta": {
+      "title": "Il tuo progetto potrebbe essere il prossimo",
+      "description": "Dicci cosa vuoi costruire e tracceremo la rotta.",
+      "button": "Parliamone"
+    },
+    "eyebrow": "Progetti — Lavori selezionati"
   },
   "dailyFortune": {
     "title": "Daily Fortune",

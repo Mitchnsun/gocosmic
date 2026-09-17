@@ -1,47 +1,16 @@
-import { MusicalNoteIcon, RocketLaunchIcon, SparklesIcon, TrophyIcon, UserIcon } from '@heroicons/react/24/solid';
+import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
 import type { Metadata } from 'next';
-import { createTranslator, useMessages, useTranslations } from 'next-intl';
-import { getMessages } from 'next-intl/server';
-import type { ComponentType, SVGProps } from 'react';
+import { createTranslator } from 'next-intl';
+import { getMessages, getTranslations } from 'next-intl/server';
 
-import projectsData from '@/data/projects.json';
+import { CASE_STUDY_HREFS, CASE_STUDY_SLUGS, CASE_STUDY_TITLE_KEYS } from '@/components/CaseStudy';
+import CTAFinal from '@/components/CTAFinal';
+import PageHero from '@/components/PageHero';
+import { accentClasses } from '@/design-system/accent';
+import { cn } from '@/design-system/lib/utils';
 import { getCanonicalUrl } from '@/i18n/canonical';
 import { Link } from '@/i18n/navigation';
-import { routing } from '@/i18n/routing';
 import { getOgImages } from '@/lib/og';
-
-type RoutingPathname = keyof typeof routing.pathnames;
-
-type IconName = 'SparklesIcon' | 'UserIcon' | 'TrophyIcon' | 'MusicalNoteIcon' | 'RocketLaunchIcon';
-
-const iconMap: Record<IconName, ComponentType<SVGProps<SVGSVGElement>>> = {
-  SparklesIcon,
-  UserIcon,
-  TrophyIcon,
-  MusicalNoteIcon,
-  RocketLaunchIcon,
-};
-
-const iconColorMap: Record<string, string> = {
-  'daily-fortune': 'text-yellow-400',
-  mcomperat: 'text-blue-400',
-  'psc-supersprint': 'text-orange-400',
-  choeurdespaysdumontblanc: 'text-purple-400',
-};
-
-type ProjectItem = {
-  title: string;
-  description: string;
-};
-
-type ProjectsMessages = {
-  projectsList: {
-    meta: { title: string; description: string };
-    title: string;
-    subtitle: string;
-    items: Record<string, ProjectItem>;
-  };
-};
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -72,50 +41,67 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export default function Projects() {
-  const t = useTranslations('projectsList');
-  const messages = useMessages() as unknown as ProjectsMessages;
-  const items = messages.projectsList.items;
+/** Accent rotation across the project cards — one accent per card, never mixed. */
+const CARD_ACCENTS = ['aerospace', 'royal', 'jungle', 'ghost'] as const;
+
+export default async function Projects() {
+  const t = await getTranslations('projectsList');
+  const tCase = await getTranslations('case_study');
+  const total = String(CASE_STUDY_SLUGS.length).padStart(2, '0');
 
   return (
-    <div className="text-ghost relative pt-10">
-      <div className="m-auto flex max-w-7xl flex-col items-center gap-10 px-4 pb-4">
-        {/* Page Header */}
-        <div className="text-center">
-          <h1 className="mb-4 text-2xl font-extrabold sm:text-4xl">{t('title')}</h1>
-          <p className="text-lg text-gray-400">{t('subtitle')}</p>
-        </div>
+    <div className="bg-void text-ghost relative">
+      <PageHero id="projects-hero" eyebrow={t('eyebrow')} title={t('title')} lead={t('subtitle')} />
 
-        {/* Projects Grid */}
-        <section className="w-full" aria-label={t('title')}>
-          <ul className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-            {projectsData.map((project) => {
-              const slug = `/projects/${project.id}`;
-              if (!(slug in routing.pathnames)) return null;
+      <div className="m-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <ul className="grid gap-4 sm:grid-cols-2">
+          {CASE_STUDY_SLUGS.map((slug, position) => {
+            // eslint-disable-next-line security/detect-object-injection
+            const titleKey = CASE_STUDY_TITLE_KEYS[slug];
+            const accent = CARD_ACCENTS[position % CARD_ACCENTS.length] ?? 'aerospace';
+            const { text, bg } = accentClasses(accent);
 
-              const href = slug as RoutingPathname;
-              const Icon = iconMap[project.icon as IconName] ?? RocketLaunchIcon;
-              const iconColor = iconColorMap[project.id] ?? 'text-blue-400';
-              const item = items[project.i18nKey];
-
-              if (!item) return null;
-
-              return (
-                <li key={project.id}>
-                  <Link
-                    href={href}
-                    className="flex h-full flex-col items-center gap-4 rounded-lg bg-slate-800 px-6 py-8 transition-colors hover:bg-slate-700 focus:ring-2 focus:ring-blue-400 focus:outline-none"
-                    aria-label={item.title}>
-                    <Icon className={`h-10 w-10 shrink-0 ${iconColor}`} aria-hidden="true" />
-                    <h2 className="text-center text-xl font-bold">{item.title}</h2>
-                    <p className="text-center text-sm text-gray-400">{item.description}</p>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </section>
+            return (
+              <li key={slug}>
+                <Link
+                  // eslint-disable-next-line security/detect-object-injection
+                  href={CASE_STUDY_HREFS[slug]}
+                  className="border-ghost/8 bg-ghost/[0.02] hover:bg-ghost/[0.04] hover:border-ghost/15 focus-visible:ring-ghost group flex h-full flex-col gap-4 rounded-2xl border p-6 transition-colors focus-visible:ring-2 focus-visible:outline-none sm:p-8">
+                  <div className="flex items-baseline justify-between gap-4">
+                    <span className={cn('h-1.5 w-1.5 rounded-full', bg)} aria-hidden="true" />
+                    <span className="text-ghost/35 text-3xs font-mono tracking-[0.2em]">
+                      {String(position + 1).padStart(2, '0')} / {total}
+                    </span>
+                  </div>
+                  <h2 className="font-display text-2xl font-semibold tracking-[-0.02em]">
+                    {t(`items.${titleKey}.title`)}
+                  </h2>
+                  <p className="text-ghost/55 text-base leading-7">{t(`items.${titleKey}.description`)}</p>
+                  <span
+                    className={cn(
+                      'font-display mt-auto inline-flex items-center gap-1.5 text-sm transition-transform duration-300 ease-out group-hover:translate-x-1',
+                      text
+                    )}
+                    aria-hidden="true">
+                    {tCase('eyebrow')}
+                    <ArrowUpRightIcon className="size-4" />
+                  </span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
       </div>
+
+      <CTAFinal
+        id="projects-cta"
+        headline={t('cta.title')}
+        description={t('cta.description')}
+        ctaText={t('cta.button')}
+        ctaHref="/contact"
+        accentColor="aerospace"
+        starfieldDensity="medium"
+      />
     </div>
   );
 }
