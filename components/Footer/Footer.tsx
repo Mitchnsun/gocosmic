@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl';
 
 import { CookieManageButton } from '@/components/CookieConsent';
 import { Link } from '@/i18n/navigation';
+import type { Region } from '@/lib/region';
 
 const ColumnHeading = ({ children }: { children: React.ReactNode }) => (
   <h4 className="mb-2 flex items-center gap-2 text-xs font-semibold tracking-widest text-white uppercase">
@@ -12,7 +13,12 @@ const ColumnHeading = ({ children }: { children: React.ReactNode }) => (
   </h4>
 );
 
-const Footer = () => {
+interface FooterProps {
+  /** Drives which base the studio tagline claims. */
+  region: Region;
+}
+
+const Footer = ({ region }: FooterProps) => {
   const t = useTranslations('footer');
   const year = new Date().getFullYear();
 
@@ -25,7 +31,7 @@ const Footer = () => {
             {t('brand_title')}
             <span className="text-aerospace">.</span>
           </h4>
-          <p className="text-sm leading-relaxed">{t('brand_desc')}</p>
+          <p className="text-sm leading-relaxed">{t(`brand_desc.${region}`)}</p>
           <Link href="/local" className="my-2 block text-sm text-white transition hover:text-blue-400">
             {t('local_page')}
           </Link>

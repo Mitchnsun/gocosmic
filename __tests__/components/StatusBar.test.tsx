@@ -16,29 +16,34 @@ describe('StatusBar', () => {
   });
 
   it('renders the signal acquired label', () => {
-    const { getByText } = render(<StatusBar />);
+    const { getByText } = render(<StatusBar region="fr" />);
     expect(getByText('SIGNAL STABLE')).toBeInTheDocument();
   });
 
-  it('renders the mission control and location text', () => {
-    const { getByText } = render(<StatusBar />);
+  it('renders the mission control and the Annecy base outside Switzerland', () => {
+    const { getByText } = render(<StatusBar region="fr" />);
     expect(getByText(/MISSION CONTROL/)).toBeInTheDocument();
     expect(getByText(/ANNECY/)).toBeInTheDocument();
   });
 
+  it('renders the Geneva base for Swiss visitors', () => {
+    const { getByText } = render(<StatusBar region="ch" />);
+    expect(getByText(/CHÊNE-BOUGERIES/)).toBeInTheDocument();
+  });
+
   it('renders the status role for accessibility', () => {
-    const { getByRole } = render(<StatusBar />);
+    const { getByRole } = render(<StatusBar region="fr" />);
     expect(getByRole('status')).toBeInTheDocument();
   });
 
   it('renders the signal dot with aria-label', () => {
-    const { getByRole } = render(<StatusBar />);
+    const { getByRole } = render(<StatusBar region="fr" />);
     const dot = getByRole('img', { name: 'Signal active' });
     expect(dot).toBeInTheDocument();
   });
 
   it('shows the clock time once mounted', () => {
-    const { container } = render(<StatusBar />);
+    const { container } = render(<StatusBar region="fr" />);
     act(() => {
       vi.advanceTimersByTime(0);
     });
@@ -50,7 +55,7 @@ describe('StatusBar', () => {
   });
 
   it('ticks the clock every second', () => {
-    const { queryByText } = render(<StatusBar />);
+    const { queryByText } = render(<StatusBar region="fr" />);
     act(() => {
       vi.advanceTimersByTime(0);
     });

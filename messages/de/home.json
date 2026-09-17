@@ -26,7 +26,13 @@
     },
     "hero": {
       "cta": "Beginnen Sie Ihre Reise",
-      "endWords": ["glänzen", "aufsteigen", "inspirieren", "transformieren", "erheben"],
+      "endWords": [
+        "glänzen",
+        "aufsteigen",
+        "inspirieren",
+        "transformieren",
+        "erheben"
+      ],
       "subtitle": "Lassen Sie uns Ihre Ideen in die Stratosphäre starten mit mystischem Design und kosmischen Funktionalitäten",
       "title": "Wir entwickeln stellare Anwendungen, die"
     },
@@ -59,22 +65,42 @@
       "ai": {
         "description": "Integration fortschrittlicher KI-Funktionen, um Ihre Anwendungen intelligenter, anpassungsfähiger und wirklich zukunftsweisend zu machen.",
         "title": "KI-gesteuert",
-        "features": ["LLMs", "Embeddings", "Agents", "RAG"]
+        "features": [
+          "LLMs",
+          "Embeddings",
+          "Agents",
+          "RAG"
+        ]
       },
       "design": {
         "description": "Gestaltung intuitiver und bezaubernder Benutzererfahrungen, die fesseln und begeistern.",
         "title": "Mystisches UI/UX Design",
-        "features": ["Figma", "Design Systems", "Motion", "Barrierefreiheit"]
+        "features": [
+          "Figma",
+          "Design Systems",
+          "Motion",
+          "Barrierefreiheit"
+        ]
       },
       "development": {
         "description": "Entwicklung robuster und skalierbarer mobiler Anwendungen für iOS- und Android-Plattformen.",
         "title": "Stellare Entwicklung",
-        "features": ["React", "Next.js", "TypeScript", "Expo"]
+        "features": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Expo"
+        ]
       },
       "launch": {
         "description": "Begleitung Ihrer App durch den Startprozess und darüber hinaus, um einen erfolgreichen Start zu gewährleisten.",
         "title": "Kosmischer Start",
-        "features": ["Vercel", "AWS", "Docker", "Sentry"]
+        "features": [
+          "Vercel",
+          "AWS",
+          "Docker",
+          "Sentry"
+        ]
       },
       "title": "Unsere Kosmischen Dienstleistungen",
       "eyebrow": "[ SERVICES · 04 ]",
@@ -83,19 +109,39 @@
     },
     "zone": {
       "title": "Einsatzgebiet",
-      "description": "Verfügbar in Annecy, Genf, Haute-Savoie und der Genferseeregion.",
+      "description": "Verfügbar in Annecy, Genf, Haute-Savoie und in der Westschweiz.",
       "availability": "Verfügbar",
       "locations": {
         "annecy": "Annecy",
         "geneva": "Genf",
         "haute_savoie": "Haute-Savoie",
-        "leman": "Genferseeregion"
+        "suisse_romande": "Westschweiz"
       },
       "stations": {
-        "annecy": { "meta": "Basis · 74" },
-        "geneva": { "meta": "Schweiz" },
-        "haute_savoie": { "meta": "Frankreich" },
-        "leman": { "meta": "Léman · CH/FR" }
+        "annecy": {
+          "meta": {
+            "fr": "Basis · 74",
+            "ch": "Frankreich"
+          }
+        },
+        "geneva": {
+          "meta": {
+            "fr": "Schweiz",
+            "ch": "Basis · GE"
+          }
+        },
+        "haute_savoie": {
+          "meta": {
+            "fr": "Frankreich",
+            "ch": "Frankreich"
+          }
+        },
+        "suisse_romande": {
+          "meta": {
+            "fr": "Schweiz",
+            "ch": "Schweiz"
+          }
+        }
       }
     },
     "projects": {
@@ -108,28 +154,38 @@
         "title": "Daily Fortune",
         "tagline": "Mobil · iOS / Android",
         "description": "Eine mystische mobile App, die täglich KI-gestützte Horoskope und motivierende Nachrichten liefert.",
-        "tags": ["KI", "Wellness"],
+        "tags": [
+          "KI",
+          "Wellness"
+        ],
         "imageAlt": "Vorschau der Daily Fortune App"
       },
       "mcomperat": {
         "title": "mcomper.at",
         "tagline": "Web · Next.js",
         "description": "Ein moderner, responsiver Web-Lebenslauf, erstellt mit Next.js, TypeScript und vollständiger Internationalisierung.",
-        "tags": ["Persönlicher Lebenslauf"],
+        "tags": [
+          "Persönlicher Lebenslauf"
+        ],
         "imageAlt": "Vorschau der Website mcomper.at"
       },
       "pscSupersprint": {
         "title": "PSC Supersprint",
         "tagline": "Web · Echtzeit",
         "description": "Eine Webanwendung zur Verwaltung und Echtzeitanzeige von Triathlonwettkampfergebnissen.",
-        "tags": ["Sport", "Live"],
+        "tags": [
+          "Sport",
+          "Live"
+        ],
         "imageAlt": "Vorschau der PSC Supersprint Ergebnistafel"
       },
       "choeurDesPaysduMontBlanc": {
         "title": "Chœur des Pays du Mont Blanc",
         "tagline": "Web · Redaktionell",
         "description": "Eine Website, die die Aktivitäten, Konzerte und das Repertoire des Chors in Haute-Savoie präsentiert.",
-        "tags": ["Kultur"],
+        "tags": [
+          "Kultur"
+        ],
         "imageAlt": "Vorschau der Website des Chœur des Pays du Mont Blanc"
       }
     }

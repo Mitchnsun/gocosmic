@@ -1,8 +1,11 @@
 {
   "local": {
     "hero": {
-      "title": "Web- & Mobile-Entwickler in Annecy und Genf",
-      "description": "Matthieu Compérat, freiberuflicher Entwickler mit Sitz in Annecy. Ich entwickle moderne Web- und Mobile-Apps für Unternehmen in Annecy, Genf und Haute-Savoie."
+      "title": "Web- & Mobile-Entwickler in Annecy, Genf und der Westschweiz",
+      "description": {
+        "fr": "Matthieu Compérat, freiberuflicher Entwickler mit Sitz in Annecy. Ich entwickle moderne Web- und Mobile-Apps für Unternehmen in Annecy, Haute-Savoie, Genf und der Westschweiz.",
+        "ch": "Matthieu Compérat, freiberuflicher Entwickler mit Sitz in Chêne-Bougeries bei Genf. Ich entwickle moderne Web- und Mobile-Apps für Unternehmen in Genf, der Westschweiz und der Region Annecy."
+      }
     },
     "services": {
       "title": "Web- und Mobile-Entwicklung für lokale Unternehmen"
@@ -12,16 +15,20 @@
       "remote": "Remote-Zusammenarbeit in ganz Frankreich und der Schweiz möglich",
       "locations": {
         "annecy": "Annecy & Haute-Savoie",
-        "geneva": "Genf & Genferseeregion"
+        "geneva": "Genf & Genferseeregion",
+        "suisse_romande": "Westschweiz (Waadt, Wallis, Neuenburg, Freiburg)"
       }
     },
     "projects": {
-      "title": "Aktuelle Projekte aus Annecy"
+      "title": {
+        "fr": "Aktuelle Projekte aus Annecy",
+        "ch": "Aktuelle Projekte aus Genf"
+      }
     },
     "cta": "Kontakt zu Ihrem lokalen Webentwickler",
     "meta": {
-      "title": "Web- & Mobile-Entwickler Annecy • Genf | Go Cosmic",
-      "description": "Matthieu Compérat, freiberuflicher Entwickler mit Sitz in Annecy. Entwicklung von Web- und Mobile-Apps für Annecy, Genf und Haute-Savoie."
+      "title": "Web- & Mobile-Entwickler Annecy • Genf • Westschweiz | Go Cosmic",
+      "description": "Matthieu Compérat, freiberuflicher Entwickler mit Sitz in Annecy und Genf. Entwicklung von Web- und Mobile-Apps für Annecy, Haute-Savoie, Genf und die Westschweiz."
     }
   }
 }

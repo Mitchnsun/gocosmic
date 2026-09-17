@@ -1,7 +1,10 @@
 {
   "footer": {
     "brand_title": "Go Cosmic",
-    "brand_desc": "Un studio de développement & design qui construit des applications cosmiques depuis les Alpes françaises.",
+    "brand_desc": {
+      "fr": "Un studio de développement & design qui construit des applications cosmiques depuis les Alpes françaises.",
+      "ch": "Un studio de développement & design qui construit des applications cosmiques depuis Genève et les Alpes."
+    },
     "nav_title": "Studio",
     "nav_aria": "Navigation du pied de page",
     "link_services": "Services",

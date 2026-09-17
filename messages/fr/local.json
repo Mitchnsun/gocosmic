@@ -1,8 +1,11 @@
 {
   "local": {
     "hero": {
-      "title": "Développeur Web & Mobile à Annecy et Genève",
-      "description": "Matthieu Compérat, développeur freelance basé à Annecy. Je conçois des applications web et mobiles modernes pour les entreprises d'Annecy, Genève et de Haute-Savoie."
+      "title": "Développeur Web & Mobile à Annecy, Genève et en Suisse romande",
+      "description": {
+        "fr": "Matthieu Compérat, développeur freelance basé à Annecy. Je conçois des applications web et mobiles modernes pour les entreprises d'Annecy, de Haute-Savoie, de Genève et de Suisse romande.",
+        "ch": "Matthieu Compérat, développeur freelance basé à Chêne-Bougeries, à Genève. Je conçois des applications web et mobiles modernes pour les entreprises de Genève, de Suisse romande et du bassin annécien."
+      }
     },
     "services": {
       "title": "Services de développement web et mobile pour les entreprises locales"
@@ -12,16 +15,20 @@
       "remote": "Collaboration à distance possible partout en France et en Suisse",
       "locations": {
         "annecy": "Annecy & Haute-Savoie",
-        "geneva": "Genève & Arc lémanique"
+        "geneva": "Genève & Arc lémanique",
+        "suisse_romande": "Suisse romande (Vaud, Valais, Neuchâtel, Fribourg)"
       }
     },
     "projects": {
-      "title": "Projets récents réalisés depuis Annecy"
+      "title": {
+        "fr": "Projets récents réalisés depuis Annecy",
+        "ch": "Projets récents réalisés depuis Genève"
+      }
     },
     "cta": "Contacter votre développeur web local",
     "meta": {
-      "title": "Développeur Web & Mobile Annecy • Genève | Go Cosmic",
-      "description": "Matthieu Compérat, développeur freelance basé à Annecy. Création d'applications web et mobiles pour Annecy, Genève et la Haute-Savoie."
+      "title": "Développeur Web & Mobile Annecy • Genève • Suisse romande | Go Cosmic",
+      "description": "Matthieu Compérat, développeur freelance basé à Annecy et Genève. Création d'applications web et mobiles pour Annecy, la Haute-Savoie, Genève et la Suisse romande."
     }
   }
 }

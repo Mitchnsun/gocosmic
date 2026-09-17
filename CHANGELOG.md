@@ -5,6 +5,33 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.7.0] - 2026-09-17
+
+### Added
+
+- Visitors browsing from Switzerland now see the Geneva base (Chêne-Bougeries) and every price in Swiss francs
+- Coverage now states across the site that we work around Annecy, in Geneva and throughout French-speaking Switzerland
+- The showcase website is now composed by the visitor: a 10€ base plan they extend with a domain name, a Swiss server, an email address, extra pages and a content-update package, with the monthly price updating as they go
+- The pricing page now offers a free mockup of the future site and a free review of the visitor's current one, with no commitment
+
+### Changed
+
+- Visitors outside Switzerland keep the Annecy base and unchanged euro prices
+- Custom projects — mobile apps, customer accounts, online shops, sites the owner edits themselves — now lead straight to a personal conversation instead of a daily rate
+- Pricing wording rewritten for readers with no web background, and the page redesigned to match the homepage
+- The starting price now states clearly that it covers one static showcase page, with extra pages available as an option
+- The domain name is now presented as a paid option rather than part of the base plan, with the amount shown in francs for Swiss visitors
+- Secure connection is now named HTTPS wherever it appears
+- Swiss visitors now see a `.ch` example web address on the pricing page instead of a foreign one
+- The pricing options are easier to use: a hand cursor now shows over the tick boxes, and the sliders' handle now tracks your pointer exactly and can be moved by clicking anywhere on the bar
+- The page-count slider steps are now 1, 2 to 4, 5 to 7, 8 to 9, and 10 or more
+- The custom pointer is now calmer: the small dots that used to circle it when the mouse stopped moving have been removed
+
+### Fixed
+
+- Subscription prices are now the same in all five languages of the site, starting at 50€ as advertised
+- Screen readers now announce a single main content area on every page, instead of two nested ones
+
 ## [1.6.8] - 2026-09-07
 
 ### Added

@@ -8,10 +8,6 @@ import { useCosmicCursor } from './useCosmicCursor';
 export interface CosmicCursorProps {
   /** Number of trailing dots. Defaults to 8. */
   trailLength?: number;
-  /** Orbit radius at rest (px). Defaults to 24. */
-  orbitRadius?: number;
-  /** Number of orbital dots. Defaults to 3. */
-  orbitCount?: number;
   /** Magnetic pull range (px). Defaults to 80. */
   magneticRange?: number;
   /** Magnetic easing factor (0–1). Defaults to 0.15. */
@@ -37,22 +33,21 @@ function hexToRgb(hex: string): { r: number; g: number; b: number } {
 }
 
 /**
- * CosmicCursor — canvas-based custom cursor with trailing, magnetic snap, and orbital effects.
+ * CosmicCursor — canvas-based custom cursor with trailing and magnetic snap effects.
  *
  * - Canvas fullscreen overlay, pointer-events: none
  * - 60fps RAF loop — no DOM queries per frame
  * - Respects `prefers-reduced-motion` (static dot only)
  * - Returns `null` on touch devices so no canvas is added to the DOM
  * - Hides the native cursor on all elements via an injected `<style>` tag using `!important`,
- *   which overrides utility classes such as `cursor-pointer` on interactive elements.
- *   Text inputs are excluded so the native text cursor remains visible.
+ *   which overrides utility classes such as `cursor-pointer` on interactive elements. Text
+ *   inputs keep the native text caret, and clickable form controls (checkboxes, radios,
+ *   ranges, selects) keep the native hand/grab cursor instead of the canvas dot.
  *
  * @component
  */
 const CosmicCursor = ({
   trailLength = 8,
-  orbitRadius = 24,
-  orbitCount = 3,
   magneticRange = 80,
   magneticEase = 0.15,
   coreSize = 6,
@@ -87,18 +82,24 @@ const CosmicCursor = ({
 
     // Inject a global style to hide the native cursor on all elements.
     // `!important` is required to override utility classes like `cursor-pointer` on buttons.
-    // Text inputs are excluded so the native text cursor remains visible there.
+    // Clickable form controls keep the native hand/grab cursor; text inputs keep the native
+    // text cursor. Both are excluded from the canvas dot in useCosmicCursor's `usesNativeCursor`
+    // / native-select detection. `[role="slider"]` covers Radix Slider thumbs (e.g. the pricing
+    // page-count control), which render as a plain div rather than a native form element.
     const styleEl = document.createElement('style');
     styleEl.setAttribute('data-cosmic-cursor', '');
     styleEl.textContent =
       '* { cursor: none !important; } ' +
-      'input, textarea, select, [contenteditable="true"] { cursor: text !important; }';
+      'input:is([type="checkbox"],[type="radio"],[type="button"],[type="submit"],[type="reset"],[type="color"],[type="file"]), ' +
+      'select, label:has(input:is([type="checkbox"],[type="radio"])) { cursor: pointer !important; } ' +
+      '[role="slider"] { cursor: grab !important; } ' +
+      '[role="slider"]:active { cursor: grabbing !important; } ' +
+      'input:not([type]), input:is([type="text"],[type="email"],[type="search"],[type="tel"],[type="url"],[type="password"],[type="number"],[type="date"]), ' +
+      'textarea, [contenteditable="true"] { cursor: text !important; }';
 
     document.head.appendChild(styleEl);
 
     let animationId: number;
-    let orbitAngle = 0;
-    let restTimer = 0;
     let lastFrameTime = performance.now();
     // Smoothed cursor position for snapping
     let smoothX = state.mouse.x;
@@ -114,11 +115,6 @@ const CosmicCursor = ({
         animationId = requestAnimationFrame(draw);
         return;
       }
-
-      const dt = rawDt;
-
-      // Decay velocity every frame so it falls to zero when the mouse is stationary
-      state.velocity *= 0.95;
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -137,7 +133,7 @@ const CosmicCursor = ({
       smoothY += (state.mouse.y - smoothY) * ease;
 
       // ── Trailing dots ────────────────────────────────────────────────────
-      if (!reduced && !state.isTextInput) {
+      if (!reduced && !state.usesNativeCursor) {
         updateTrail();
         const trail = state.trail;
         for (const [i, point] of trail.entries()) {
@@ -157,38 +153,8 @@ const CosmicCursor = ({
         }
       }
 
-      // ── Orbital dots at rest ─────────────────────────────────────────────
-      if (!reduced && !state.isTextInput) {
-        const VELOCITY_THRESHOLD = 10;
-        const isAtRest = state.velocity < VELOCITY_THRESHOLD;
-
-        if (isAtRest) {
-          restTimer = Math.min(restTimer + dt, 200);
-        } else {
-          restTimer = Math.max(restTimer - dt * 2, 0);
-        }
-
-        const orbitOpacity = restTimer / 200;
-
-        if (orbitOpacity > 0) {
-          // 2 RPM = 1 rotation per 30 s = 1 rotation per 30 000ms → angle increment per ms = (2π / 30 000)
-          orbitAngle += (Math.PI * 2 * dt) / 30_000;
-
-          for (let i = 0; i < orbitCount; i++) {
-            const angle = orbitAngle + (Math.PI * 2 * i) / orbitCount;
-            const ox = smoothX + Math.cos(angle) * orbitRadius;
-            const oy = smoothY + Math.sin(angle) * orbitRadius;
-
-            ctx.beginPath();
-            ctx.arc(ox, oy, trailSize * 0.8, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(${accentRgb.r},${accentRgb.g},${accentRgb.b},${orbitOpacity * 0.7})`;
-            ctx.fill();
-          }
-        }
-      }
-
       // ── Core dot + glow ──────────────────────────────────────────────────
-      if (!state.isTextInput) {
+      if (!state.usesNativeCursor) {
         const glowSize = state.isMagnetic ? coreSize * 5 : coreSize * 3;
         const gradient = ctx.createRadialGradient(smoothX, smoothY, 0, smoothX, smoothY, glowSize);
         gradient.addColorStop(0, `rgba(${accentRgb.r},${accentRgb.g},${accentRgb.b},0.5)`);
@@ -225,7 +191,7 @@ const CosmicCursor = ({
       window.removeEventListener('resize', resize);
       styleEl.remove();
     };
-  }, [stateRef, updateTrail, coreSize, trailSize, orbitCount, orbitRadius]);
+  }, [stateRef, updateTrail, coreSize, trailSize]);
 
   // On touch devices, return null after mount detection so no canvas is present in the DOM
   if (isTouchDevice) return null;

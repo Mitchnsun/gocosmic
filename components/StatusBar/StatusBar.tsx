@@ -4,10 +4,16 @@ import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 
 import { cn } from '@/design-system/lib/utils';
+import type { Region } from '@/lib/region';
 
 import { useClock } from './useClock';
 
-const StatusBar = () => {
+interface StatusBarProps {
+  /** Drives which base is announced: Annecy for `fr`, Chêne-Bougeries for `ch`. */
+  region: Region;
+}
+
+const StatusBar = ({ region }: StatusBarProps) => {
   const t = useTranslations('status_bar');
   const { time, timeZone, mounted } = useClock();
   const [reduceMotion, setReduceMotion] = useState(false);
@@ -41,7 +47,7 @@ const StatusBar = () => {
             /
           </span>
           <span className="hidden sm:inline">
-            {t('mission_control')}&nbsp;·&nbsp;{t('location')}
+            {t('mission_control')}&nbsp;·&nbsp;{t(`location.${region}`)}
           </span>
         </div>
         <div className="tabular-nums">

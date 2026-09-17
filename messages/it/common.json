@@ -9,7 +9,7 @@
   },
   "meta": {
     "title": "Sviluppo Web & Mobile | Annecy · Ginevra | Go Cosmic",
-    "description": "Agenzia di sviluppo app web e mobile con sede ad Annecy, operante a Ginevra e in Alta Savoia. React, React Native, Next.js."
+    "description": "Agenzia di sviluppo app web e mobile con sede ad Annecy, operante a Ginevra, nella Svizzera romanda e in Alta Savoia. React, React Native, Next.js."
   },
   "language": {
     "current": "Lingua attuale: {language}",
@@ -17,29 +17,40 @@
   },
   "pricing_teaser": {
     "eyebrow": "Sito web vetrina",
-    "price": "da 50€",
+    "price": {
+      "eur": "da 10€",
+      "chf": "da 10 CHF"
+    },
     "price_period": "/ mese",
     "tagline": "Tutto incluso, nessuna sorpresa",
     "scope_note": "Ideale per presentare la sua attività, i servizi e i recapiti online — senza gestione ordini né portale clienti.",
     "features": {
+      "page": "Una sola pagina vetrina statica",
       "redesign": "Ridisegno grafico del sito web vetrina",
       "seo": "Ottimizzazione SEO",
       "updates": "Aggiornamenti tecnici regolari",
       "hosting": "Hosting web",
-      "ssl": "Certificato SSL",
-      "domain": "Nome di dominio",
+      "ssl": "Connessione sicura HTTPS (il lucchetto nel browser)",
       "email": "1 indirizzo email professionale"
     },
-    "footnote": "* A seconda del nome di dominio scelto, potrebbero applicarsi costi aggiuntivi.",
+    "footnote": {
+      "eur": "Il nome a dominio non è compreso: la sua gestione è un'opzione a +5€ al mese, come le pagine aggiuntive e l'indirizzo e-mail.",
+      "chf": "Il nome a dominio non è compreso: la sua gestione è un'opzione a +5 CHF al mese, come le pagine aggiuntive e l'indirizzo e-mail."
+    },
     "footnote_scope": "Per un e-commerce o un portale clienti, contattaci per un preventivo su misura.",
     "mockup_mention": "Richiedi il tuo mockup senza impegno",
     "cta_simulate": "Simula il mio prezzo",
-    "cta_contact": "Richiedi un preventivo"
+    "cta_contact": "Richiedi un preventivo",
+    "cta_contact_email_subject": "Richiesta di preventivo per il mio progetto",
+    "cta_contact_aria_label": "Invia un'email a prospect@gocosmic.dev per richiedere un preventivo"
   },
   "status_bar": {
     "signal_stable": "SEGNALE STABILE",
     "mission_control": "CONTROLLO MISSIONE",
-    "location": "ANNECY · ALT. 447M",
+    "location": {
+      "fr": "ANNECY · ALT. 447M",
+      "ch": "CHÊNE-BOUGERIES · ALT. 424M"
+    },
     "aria_label": "Stato del controllo missione",
     "aria_signal": "Segnale attivo"
   },

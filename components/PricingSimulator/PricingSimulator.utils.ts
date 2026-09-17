@@ -1,31 +1,53 @@
-import type { AccentColor, SubscriptionItemKey, UpdateFrequency } from './PricingSimulator.types';
+import type { Currency } from '@/lib/region';
 
-type SubscriptionFreq = Exclude<UpdateFrequency, 'self_managed'>;
+import { ADD_ON_PRICES, BASE_PRICE, MAX_TIER_INDEX, PAGE_TIER_PRICES, UPDATE_TIER_PRICES } from './constants';
+import type { AddOnKey, PlanSelection, TierIndex } from './PricingSimulator.types';
 
-export function getRateColorClass(accentColor: AccentColor): string {
-  switch (accentColor) {
-    case 'amber':
-      return 'text-amber-400';
-    case 'purple':
-      return 'text-purple-400';
-    case 'yellow':
-      return 'text-yellow-400';
-  }
+/** Clamp any number coming from a range input onto a valid slider position. */
+export function toTierIndex(value: number): TierIndex {
+  const rounded = Math.round(value);
+  if (Number.isNaN(rounded) || rounded < 0) return 0;
+  if (rounded > MAX_TIER_INDEX) return MAX_TIER_INDEX;
+  return rounded as TierIndex;
 }
 
-export function getSubscriptionItems(freq: SubscriptionFreq): SubscriptionItemKey[] {
-  const base: SubscriptionItemKey[] = ['site', 'seo', 'updates', 'domain', 'hosting', 'ssl', 'email'];
-  if (freq === 'few_per_year') return base;
-  return [...base, 'content_update'];
+// The indexes below are narrow unions (`TierIndex`, `AddOnKey`), never free-form input.
+export function getPageTierPrice(tier: TierIndex): number {
+  // eslint-disable-next-line security/detect-object-injection
+  return PAGE_TIER_PRICES[tier];
 }
 
-export function getSubscriptionColor(freq: SubscriptionFreq): string {
-  switch (freq) {
-    case 'few_per_year':
-      return 'text-jungle';
-    case 'monthly':
-      return 'text-blue-400';
-    case 'weekly':
-      return 'text-royal';
-  }
+export function getUpdateTierPrice(tier: TierIndex): number {
+  // eslint-disable-next-line security/detect-object-injection
+  return UPDATE_TIER_PRICES[tier];
+}
+
+export function getAddOnPrice(key: AddOnKey): number {
+  // eslint-disable-next-line security/detect-object-injection
+  return ADD_ON_PRICES[key];
+}
+
+/** Monthly total of a composed plan: base + ticked add-ons + both sliders. */
+export function getMonthlyTotal(selection: PlanSelection): number {
+  const addOns = (Object.keys(ADD_ON_PRICES) as AddOnKey[]).reduce(
+    // eslint-disable-next-line security/detect-object-injection
+    (sum, key) => (selection.addOns[key] ? sum + getAddOnPrice(key) : sum),
+    0
+  );
+  const updates = selection.updatesEnabled ? getUpdateTierPrice(selection.updates) : 0;
+
+  return BASE_PRICE + addOns + getPageTierPrice(selection.pages) + updates;
+}
+
+/**
+ * True once a slider sits on its top position: the plan still has a price, but
+ * anything larger has to be quoted personally.
+ */
+export function needsCustomQuote(selection: PlanSelection): boolean {
+  return selection.pages === MAX_TIER_INDEX || (selection.updatesEnabled && selection.updates === MAX_TIER_INDEX);
+}
+
+/** Amounts are identical in both currencies — only the symbol changes. */
+export function formatAmount(amount: number, currency: Currency): string {
+  return currency === 'chf' ? `${amount} CHF` : `${amount}€`;
 }

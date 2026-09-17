@@ -1,8 +1,11 @@
 {
   "local": {
     "hero": {
-      "title": "Desarrollador Web y Móvil en Annecy y Ginebra",
-      "description": "Matthieu Compérat, desarrollador freelance con base en Annecy. Diseño y desarrollo aplicaciones web y móviles modernas para empresas de Annecy, Ginebra y Alta Saboya."
+      "title": "Desarrollador Web y Móvil en Annecy, Ginebra y la Suiza romanda",
+      "description": {
+        "fr": "Matthieu Compérat, desarrollador freelance con base en Annecy. Diseño y desarrollo aplicaciones web y móviles modernas para empresas de Annecy, Alta Saboya, Ginebra y la Suiza romanda.",
+        "ch": "Matthieu Compérat, desarrollador freelance con base en Chêne-Bougeries, Ginebra. Diseño y desarrollo aplicaciones web y móviles modernas para empresas de Ginebra, la Suiza romanda y la región de Annecy."
+      }
     },
     "services": {
       "title": "Servicios de desarrollo web y móvil para empresas locales"
@@ -12,16 +15,20 @@
       "remote": "Colaboración remota disponible en toda Francia y Suiza",
       "locations": {
         "annecy": "Annecy y Alta Saboya",
-        "geneva": "Ginebra y arco del lago Lemán"
+        "geneva": "Ginebra y arco del lago Lemán",
+        "suisse_romande": "Suiza romanda (Vaud, Valais, Neuchâtel, Friburgo)"
       }
     },
     "projects": {
-      "title": "Proyectos recientes realizados desde Annecy"
+      "title": {
+        "fr": "Proyectos recientes realizados desde Annecy",
+        "ch": "Proyectos recientes realizados desde Ginebra"
+      }
     },
     "cta": "Contactar a tu desarrollador web local",
     "meta": {
-      "title": "Desarrollador web y móvil Annecy • Ginebra | Go Cosmic",
-      "description": "Matthieu Compérat, desarrollador freelance con base en Annecy. Desarrollo de aplicaciones web y móviles para Annecy, Ginebra y Alta Saboya."
+      "title": "Desarrollador web y móvil Annecy • Ginebra • Suiza romanda | Go Cosmic",
+      "description": "Matthieu Compérat, desarrollador freelance con base en Annecy y Ginebra. Desarrollo de aplicaciones web y móviles para Annecy, Alta Saboya, Ginebra y la Suiza romanda."
     }
   }
 }

@@ -5,6 +5,8 @@ import { getLocale, getMessages, getTranslations } from 'next-intl/server';
 import { Loader } from '@/components/Loader';
 import { getCanonicalUrl } from '@/i18n/canonical';
 import { getOgImages } from '@/lib/og';
+import { getCurrency } from '@/lib/region';
+import { getRegion } from '@/lib/region.server';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -41,10 +43,11 @@ const JourneyContent = dynamic(() => import('@/views/Journey'), {
 export default async function JourneyPage() {
   const locale = await getLocale();
   const messages = await getMessages();
+  const currency = getCurrency(await getRegion());
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      <JourneyContent />
+      <JourneyContent currency={currency} />
     </NextIntlClientProvider>
   );
 }

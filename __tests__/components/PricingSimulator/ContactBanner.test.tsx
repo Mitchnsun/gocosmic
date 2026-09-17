@@ -1,32 +1,25 @@
-import { useTranslations } from 'next-intl';
-
 import { ContactBanner } from '@/components/PricingSimulator/ContactBanner';
 
 import { render, screen } from '../../test-utils';
 
-function TestContactBanner() {
-  const t = useTranslations('pricing');
-  return <ContactBanner t={t} />;
-}
-
 describe('ContactBanner', () => {
   it('renders the contact title', () => {
-    render(<TestContactBanner />);
+    render(<ContactBanner />);
     expect(screen.getByText("Let's discuss your project")).toBeInTheDocument();
   });
 
   it('renders the contact description', () => {
-    render(<TestContactBanner />);
-    expect(screen.getByText(/contact us to get a personalised quote/i)).toBeInTheDocument();
+    render(<ContactBanner />);
+    expect(screen.getByText(/write me a few lines/i)).toBeInTheDocument();
   });
 
   it('renders the email address', () => {
-    render(<TestContactBanner />);
+    render(<ContactBanner />);
     expect(screen.getByText('prospect@gocosmic.dev')).toBeInTheDocument();
   });
 
   it('renders a mailto link with correct email and subject', () => {
-    render(<TestContactBanner />);
+    render(<ContactBanner />);
     const link = screen.getByRole('link', { name: /send an email/i });
     expect(link).toBeInTheDocument();
     expect(link).toHaveAttribute('href', expect.stringContaining('mailto:prospect@gocosmic.dev'));
@@ -34,12 +27,12 @@ describe('ContactBanner', () => {
   });
 
   it('renders the CTA button text', () => {
-    render(<TestContactBanner />);
+    render(<ContactBanner />);
     expect(screen.getByText('Request a quote')).toBeInTheDocument();
   });
 
   it('renders the privacy notice link', () => {
-    render(<TestContactBanner />);
+    render(<ContactBanner />);
 
     expect(screen.getByText(/processed to prepare a quote/i)).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Privacy policy' })).toHaveAttribute('href', '/privacy');

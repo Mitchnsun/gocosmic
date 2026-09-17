@@ -20,14 +20,12 @@ export interface CosmicCursorState {
   isTouchDevice: boolean;
   /** Trailing dot history */
   trail: TrailPoint[];
-  /** Velocity magnitude (px/s) */
-  velocity: number;
   /** Current accent color hex (reacts to data-accent) */
   accentColor: string;
   /** True when snapping toward a magnetic element */
   isMagnetic: boolean;
-  /** True when hovering an input/textarea (hide custom cursor) */
-  isTextInput: boolean;
+  /** True when hovering a form control that shows its own native cursor (text caret, hand, grab…) — hide the canvas dot */
+  usesNativeCursor: boolean;
 }
 
 export interface UseCosmicCursorOptions {
@@ -79,7 +77,7 @@ function applySnap(
 }
 
 /**
- * Hook that tracks mouse position, velocity, accent color, and magnetic snapping.
+ * Hook that tracks mouse position, accent color, and magnetic snapping.
  * Returns a ref to the mutable state object so the canvas render loop can read it
  * without triggering React re-renders.
  */
@@ -94,10 +92,9 @@ export function useCosmicCursor({
     reducedMotion: false,
     isTouchDevice: false,
     trail: [],
-    velocity: 0,
     accentColor: COLORS.aerospace,
     isMagnetic: false,
-    isTextInput: false,
+    usesNativeCursor: false,
   });
 
   // Ref holding magnetic element list — populated at mount and on DOM mutations
@@ -147,27 +144,7 @@ export function useCosmicCursor({
     // Trail initialization
     state.trail = Array.from({ length: trailLength }, () => ({ x: -200, y: -200 }));
 
-    let lastX = -200;
-    let lastY = -200;
-    // Use null sentinel so the first event skips velocity calculation to avoid spikes
-    let lastTime: number | null = null;
-
     const onMouseMove = (e: MouseEvent) => {
-      const now = performance.now();
-
-      if (lastTime !== null) {
-        const dt = Math.max(now - lastTime, 1); // clamp to ≥1ms to prevent division by zero in the velocity formula below
-        const dx = e.clientX - lastX;
-        const dy = e.clientY - lastY;
-        // Decay velocity toward the current measurement to smooth out spikes
-        const measured = (Math.sqrt(dx * dx + dy * dy) / dt) * 1000;
-        state.velocity = state.velocity * 0.6 + measured * 0.4;
-      }
-
-      lastX = e.clientX;
-      lastY = e.clientY;
-      lastTime = now;
-
       state.mouse.x = e.clientX;
       state.mouse.y = e.clientY;
       state.isVisible = true;
@@ -177,12 +154,17 @@ export function useCosmicCursor({
       const target = e.target;
       const isElement = target instanceof Element;
 
-      // Detect text inputs
-      state.isTextInput =
+      // Detect elements that show their own native cursor (text caret, hand, grab…) so the
+      // canvas dot doesn't draw on top of it — the CSS in CosmicCursor.tsx picks which cursor
+      // each of these actually gets. `[role="slider"]` covers Radix Slider thumbs, which render
+      // as a plain div rather than a native `input[type="range"]`.
+      state.usesNativeCursor =
         isElement &&
         (target.tagName.toLowerCase() === 'input' ||
           target.tagName.toLowerCase() === 'textarea' ||
-          target.getAttribute('contenteditable') === 'true');
+          target.tagName.toLowerCase() === 'select' ||
+          target.getAttribute('contenteditable') === 'true' ||
+          target.closest('[role="slider"]') !== null);
 
       // Magnetic detection — scan [data-magnetic] elements and find the closest
       // Use cached rects (invalidated on scroll/resize) to avoid layout thrashing
@@ -242,7 +224,6 @@ export function useCosmicCursor({
 
     const onMouseLeave = () => {
       state.isVisible = false;
-      state.velocity = 0;
     };
     const onMouseEnter = () => {
       state.isVisible = true;

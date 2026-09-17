@@ -14,6 +14,7 @@ import { StatusBar } from '@/components/StatusBar';
 import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/config';
 import { getOgImages } from '@/lib/og';
+import { getRegion } from '@/lib/region.server';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -75,16 +76,18 @@ export default async function LocaleLayout({
     notFound();
   }
 
+  const region = await getRegion();
+
   return (
     <html lang={locale || 'en'} className={`${spaceGrotesk.variable} ${inter.variable}`}>
       <body className="bg-slate-950">
         <NextIntlClientProvider>
           <CookieConsentProvider>
             <CosmicCursor />
-            <StatusBar />
+            <StatusBar region={region} />
             <Header />
             <main id="main-content">{children}</main>
-            <Footer />
+            <Footer region={region} />
             <WebsiteSeo />
             <CookieConsent />
             <LocalBusinessSeo locale={locale} />
