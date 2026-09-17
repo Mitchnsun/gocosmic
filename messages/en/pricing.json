@@ -112,7 +112,9 @@
       "subject": "Pricing inquiry — Project quote",
       "aria_label": "Send an email to prospect@gocosmic.dev for a project quote",
       "privacy_notice": "By sending an email, you agree that your message and contact details are processed to prepare a quote and follow up on your project.",
-      "privacy_link": "Privacy policy"
+      "privacy_link": "Privacy policy",
+      "free_mockup_cta_label": "Get a free mockup",
+      "free_mockup_cta_aria_label": "Go to the free mockup request page"
     },
     "reset": "Start over"
   }

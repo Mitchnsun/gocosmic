@@ -5,6 +5,11 @@
   },
   "journey": {
     "subtitle": "You are now traveling through the stars",
-    "title": "Welcome to your Cosmic Journey"
+    "title": "Welcome to your Cosmic Journey",
+    "free_mockup_cta": {
+      "title": "Want to see it first?",
+      "description": "Get a mockup of your future website before you decide anything — free, and with nothing to commit to.",
+      "cta_label": "Get my free mockup"
+    }
   }
 }

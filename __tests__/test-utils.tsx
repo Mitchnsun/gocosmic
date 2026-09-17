@@ -7,6 +7,7 @@ import about from '../messages/en/about.json';
 import common from '../messages/en/common.json';
 import contact from '../messages/en/contact.json';
 import footer from '../messages/en/footer.json';
+import freeMockup from '../messages/en/free-mockup.json';
 import home from '../messages/en/home.json';
 import journey from '../messages/en/journey.json';
 import legal from '../messages/en/legal.json';
@@ -34,6 +35,7 @@ const messages = {
   ...pscSupersprint,
   ...contact,
   ...pricing,
+  ...freeMockup,
 };
 
 interface AllTheProvidersProps {

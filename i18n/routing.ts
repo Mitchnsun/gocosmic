@@ -128,6 +128,15 @@ export const routing = defineRouting({
       it: '/progetti',
     },
 
+    // Free mockup request page
+    '/free-mockup': {
+      en: '/free-mockup',
+      fr: '/maquette-gratuite',
+      es: '/maqueta-gratuita',
+      de: '/kostenloses-mockup',
+      it: '/mockup-gratuito',
+    },
+
     // Pricing page
     '/pricing': {
       en: '/pricing',

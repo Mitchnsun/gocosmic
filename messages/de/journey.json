@@ -5,6 +5,11 @@
   },
   "journey": {
     "subtitle": "Sie reisen jetzt zwischen den Sternen",
-    "title": "Willkommen zu Ihrer kosmischen Reise"
+    "title": "Willkommen zu Ihrer kosmischen Reise",
+    "free_mockup_cta": {
+      "title": "Erst einmal sehen?",
+      "description": "Erhalten Sie ein Mockup Ihrer künftigen Website, bevor Sie irgendetwas entscheiden — kostenlos und ohne jede Verpflichtung.",
+      "cta_label": "Mein kostenloses Mockup anfordern"
+    }
   }
 }

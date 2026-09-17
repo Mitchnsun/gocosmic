@@ -133,6 +133,7 @@ After making changes, validate the app manually:
    - `/offers` — all three offer packages
    - `/journey` — 3D starfield loads (WebGL)
    - `/contact` — contact form renders
+   - `/free-mockup` (locale-specific slug, e.g. `/fr/maquette-gratuite`) — form renders, palette picker is keyboard-navigable, character counter updates, validation errors appear
    - `/local` (locale-specific slug, e.g. `/en/web-mobile-developer-annecy-geneva`) — local SEO page
    - `/projects` — project index renders
    - `/projects/daily-fortune` — Daily Fortune showcase

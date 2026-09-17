@@ -5,12 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+<<<<<<< HEAD
 ## [1.7.1] - 2026-09-18
 
 ### Changed
 
 - The call-to-action buttons at the bottom of the services page now share the exact styling of every other button on the site
 - Updated the project's build tooling to its latest stable release
+=======
+## [1.8.0] - 2026-09-17
+
+### Added
+
+- New free mockup page where visitors ask for a mockup of their future website: their email, the colour direction they like, their current site and a short description of what they have in mind
+- Requests now reach us by email straight from the page, with a confirmation shown on screen and clear messages when something is missing or mistyped
+- The page can be reached from the cosmic journey and from the end of the pricing simulator, so visitors can ask for their mockup without hunting for a contact address
+>>>>>>> 73f68f0 (feat(web): add free mockup request page)
 
 ## [1.7.0] - 2026-09-17
 

@@ -31,6 +31,14 @@ describe('ContactBanner', () => {
     expect(screen.getByText('Request a quote')).toBeInTheDocument();
   });
 
+  it('renders a link to the free mockup page', () => {
+    render(<ContactBanner />);
+
+    const link = screen.getByRole('link', { name: 'Go to the free mockup request page' });
+    expect(link).toHaveAttribute('href', '/free-mockup');
+    expect(link).toHaveTextContent('Get a free mockup');
+  });
+
   it('renders the privacy notice link', () => {
     render(<ContactBanner />);
 

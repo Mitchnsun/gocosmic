@@ -124,13 +124,23 @@ added in the future, the following must be checked before merging:
 
 ### Server Actions
 
-If `"use server"` actions are introduced:
+The project has one `"use server"` action, `app/actions/free-mockup.ts`, which
+emails a free mockup request to the studio. Rules for it and for any action
+added later:
 
 - They are CSRF-protected by Next.js (same-origin enforcement on the
   `Content-Type` header).
 - They run with full server privileges — never expose admin operations from
   server actions accessible to unauthenticated users.
 - Validate all inputs with a schema (zod) — do not trust `FormData` values.
+  The free mockup payload is validated by `lib/validation/free-mockup.schema.ts`
+  server-side; the identical client-side check is a UX shortcut, never the
+  security boundary.
+- Escape visitor input before interpolating it into an HTML email body (see
+  `lib/free-mockup-email.ts`).
+- The free mockup form carries an invisible honeypot field; a filled honeypot
+  is dropped silently. Rate limiting (Upstash, Vercel WAF) remains a future
+  improvement.
 
 ---
 
