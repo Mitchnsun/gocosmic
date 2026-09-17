@@ -15,9 +15,9 @@ describe('TierSlider', () => {
     render(<TierSlider label="Number of pages" tiers={tiers} value={0} onChange={() => {}} />);
 
     const slider = screen.getByRole('slider', { name: 'Number of pages' });
-    expect(slider).toHaveAttribute('min', '0');
-    expect(slider).toHaveAttribute('max', '4');
-    expect(slider).toHaveAttribute('step', '1');
+    expect(slider).toHaveAttribute('aria-valuemin', '0');
+    expect(slider).toHaveAttribute('aria-valuemax', '4');
+    expect(slider).toHaveAttribute('aria-valuenow', '0');
   });
 
   it('shows the wording and price of the current position', () => {
@@ -33,18 +33,24 @@ describe('TierSlider', () => {
     expect(screen.getByRole('slider')).toHaveAttribute('aria-valuetext', '6 to 8 pages — +20€');
   });
 
-  it('reports the new position as a number', () => {
+  it('reports the new position as a number when moved with the keyboard', () => {
     const onChange = vi.fn();
     render(<TierSlider label="Number of pages" tiers={tiers} value={0} onChange={onChange} />);
 
-    fireEvent.change(screen.getByRole('slider'), { target: { value: '3' } });
+    fireEvent.keyDown(screen.getByRole('slider'), { key: 'ArrowRight' });
 
-    expect(onChange).toHaveBeenCalledWith(3);
+    expect(onChange).toHaveBeenCalledWith(1);
   });
 
   it('can be disabled while its option is off', () => {
     render(<TierSlider label="Number of pages" tiers={tiers} value={0} onChange={() => {}} disabled />);
 
-    expect(screen.getByRole('slider')).toBeDisabled();
+    expect(screen.getByRole('slider')).toHaveAttribute('data-disabled');
+  });
+
+  it('reflects the selected tier as the current slider value', () => {
+    render(<TierSlider label="Number of pages" tiers={tiers} value={2} onChange={() => {}} />);
+
+    expect(screen.getByRole('slider', { name: 'Number of pages' })).toHaveAttribute('aria-valuenow', '2');
   });
 });

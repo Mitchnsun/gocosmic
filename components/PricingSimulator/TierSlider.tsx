@@ -3,6 +3,7 @@
 import { useId } from 'react';
 
 import { cn } from '@/design-system/lib/utils';
+import { Slider } from '@/design-system/slider';
 
 import { MAX_TIER_INDEX } from './constants';
 import type { TierIndex } from './PricingSimulator.types';
@@ -17,9 +18,10 @@ interface TierSliderProps {
 }
 
 /**
- * Five-position slider snapping onto fixed pricing tiers. Built on a native
- * range input so keyboard control and screen-reader support come for free;
- * `aria-valuetext` reads out the tier wording rather than the raw index.
+ * Five-position slider snapping onto fixed pricing tiers. Built on the Radix
+ * `Slider` primitive, which gives pointer-accurate dragging, click-to-seek and
+ * full keyboard support for free; `aria-valuetext` reads out the tier wording
+ * rather than the raw index.
  */
 export function TierSlider({ label, tiers, value, onChange, disabled = false }: TierSliderProps) {
   const id = useId();
@@ -30,37 +32,27 @@ export function TierSlider({ label, tiers, value, onChange, disabled = false }: 
   return (
     <div className={cn('transition-opacity duration-200', disabled && 'pointer-events-none opacity-40')}>
       <div className="flex items-baseline justify-between gap-4">
-        <label htmlFor={id} className="text-ghost/55 text-2xs font-mono tracking-[0.2em] uppercase">
+        <span id={id} className="text-ghost/55 text-2xs font-mono tracking-[0.2em] uppercase">
           {label}
-        </label>
+        </span>
         <p className="font-display text-ghost text-sm font-medium">
           {current?.label}
           <span className="text-aerospace ml-2 font-mono text-xs tabular-nums">{current?.price}</span>
         </p>
       </div>
 
-      <input
-        id={id}
-        type="range"
-        min={0}
-        max={MAX_TIER_INDEX}
-        step={1}
-        value={value}
-        disabled={disabled}
-        aria-valuetext={current ? `${current.label} — ${current.price}` : undefined}
-        onChange={(event) => onChange(Number(event.target.value))}
-        className="accent-aerospace bg-ghost/10 mt-3 h-1.5 w-full cursor-pointer appearance-none rounded-full"
-      />
-
-      {/* Position markers — the wording above already names the selected tier. */}
-      <ol aria-hidden="true" className="mt-2 flex justify-between px-0.5">
-        {tiers.map((tier, index) => (
-          <li
-            key={tier.label}
-            className={cn('h-1 w-1 rounded-full', index <= value ? 'bg-aerospace/70' : 'bg-ghost/15')}
-          />
-        ))}
-      </ol>
+      <div className="mt-4">
+        <Slider
+          value={[value]}
+          onValueChange={([next]) => next !== undefined && onChange(next)}
+          min={0}
+          max={MAX_TIER_INDEX}
+          step={1}
+          disabled={disabled}
+          aria-labelledby={id}
+          aria-valuetext={current ? `${current.label} — ${current.price}` : undefined}
+        />
+      </div>
     </div>
   );
 }

@@ -26,7 +26,7 @@ export function OptionToggle({ label, hint, price, checked, onChange, children }
           type="checkbox"
           checked={checked}
           onChange={onChange}
-          className="accent-aerospace mt-1 h-5 w-5 shrink-0 cursor-pointer"
+          className="accent-aerospace focus-visible:ring-aerospace mt-1 h-5 w-5 shrink-0 cursor-pointer rounded focus-visible:ring-2 focus-visible:outline-none"
         />
         <span className="min-w-0 flex-1">
           <span className="font-display text-ghost block text-base font-medium">{label}</span>

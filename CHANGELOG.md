@@ -22,6 +22,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - The starting price now states clearly that it covers one static showcase page, with extra pages available as an option
 - The domain name is now presented as a paid option rather than part of the base plan, with the amount shown in francs for Swiss visitors
 - Secure connection is now named HTTPS wherever it appears
+- Swiss visitors now see a `.ch` example web address on the pricing page instead of a foreign one
+- The pricing options are easier to use: a hand cursor now shows over the tick boxes, and the sliders' handle now tracks your pointer exactly and can be moved by clicking anywhere on the bar
+- The page-count slider steps are now 1, 2 to 4, 5 to 7, 8 to 9, and 10 or more
 
 ### Fixed
 

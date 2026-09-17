@@ -26,8 +26,8 @@ export interface CosmicCursorState {
   accentColor: string;
   /** True when snapping toward a magnetic element */
   isMagnetic: boolean;
-  /** True when hovering an input/textarea (hide custom cursor) */
-  isTextInput: boolean;
+  /** True when hovering a form control that shows its own native cursor (text caret, hand, grab…) — hide the canvas dot */
+  usesNativeCursor: boolean;
 }
 
 export interface UseCosmicCursorOptions {
@@ -97,7 +97,7 @@ export function useCosmicCursor({
     velocity: 0,
     accentColor: COLORS.aerospace,
     isMagnetic: false,
-    isTextInput: false,
+    usesNativeCursor: false,
   });
 
   // Ref holding magnetic element list — populated at mount and on DOM mutations
@@ -177,12 +177,17 @@ export function useCosmicCursor({
       const target = e.target;
       const isElement = target instanceof Element;
 
-      // Detect text inputs
-      state.isTextInput =
+      // Detect elements that show their own native cursor (text caret, hand, grab…) so the
+      // canvas dot doesn't draw on top of it — the CSS in CosmicCursor.tsx picks which cursor
+      // each of these actually gets. `[role="slider"]` covers Radix Slider thumbs, which render
+      // as a plain div rather than a native `input[type="range"]`.
+      state.usesNativeCursor =
         isElement &&
         (target.tagName.toLowerCase() === 'input' ||
           target.tagName.toLowerCase() === 'textarea' ||
-          target.getAttribute('contenteditable') === 'true');
+          target.tagName.toLowerCase() === 'select' ||
+          target.getAttribute('contenteditable') === 'true' ||
+          target.closest('[role="slider"]') !== null);
 
       // Magnetic detection — scan [data-magnetic] elements and find the closest
       // Use cached rects (invalidated on scroll/resize) to avoid layout thrashing

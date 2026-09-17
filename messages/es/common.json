@@ -40,7 +40,9 @@
     "footnote_scope": "Para una tienda e-commerce o portal de clientes, contáctenos para un presupuesto personalizado.",
     "mockup_mention": "Solicite su maqueta sin compromiso",
     "cta_simulate": "Simular mi tarifa",
-    "cta_contact": "Solicitar un presupuesto"
+    "cta_contact": "Solicitar un presupuesto",
+    "cta_contact_email_subject": "Solicitud de presupuesto para mi proyecto",
+    "cta_contact_aria_label": "Enviar un email a prospect@gocosmic.dev para solicitar un presupuesto"
   },
   "status_bar": {
     "signal_stable": "SEÑAL ESTABLE",

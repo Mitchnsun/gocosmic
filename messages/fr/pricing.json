@@ -51,9 +51,13 @@
       },
       "options": {
         "title": "Ajoutez ce dont vous avez besoin",
+        "example_domain": {
+          "fr": "mon-entreprise.fr",
+          "ch": "mon-entreprise.ch"
+        },
         "domain": {
           "label": "Gestion de votre adresse internet",
-          "hint": "Votre nom de domaine, par exemple mon-entreprise.fr — réservé et renouvelé pour vous."
+          "hint": "Votre nom de domaine, par exemple {domain} — réservé et renouvelé pour vous."
         },
         "swiss_hosting": {
           "label": "Site hébergé en Suisse",
@@ -61,17 +65,17 @@
         },
         "email": {
           "label": "Une adresse e-mail à votre nom",
-          "hint": "Par exemple contact@mon-entreprise.fr, au lieu d'une adresse gratuite."
+          "hint": "Par exemple contact@{domain}, au lieu d'une adresse gratuite."
         }
       },
       "pages": {
         "label": "Nombre de pages",
         "tiers": {
           "one": "1 page (comprise)",
-          "two_three": "2 à 3 pages",
-          "four_five": "4 à 5 pages",
-          "six_eight": "6 à 8 pages",
-          "nine_ten": "9 à 10 pages"
+          "two_four": "2 à 4 pages",
+          "five_seven": "5 à 7 pages",
+          "eight_nine": "8 à 9 pages",
+          "ten_plus": "10 pages ou plus"
         }
       },
       "updates": {

@@ -17,7 +17,7 @@ export const ADD_ON_KEYS: AddOnKey[] = ['domain', 'swiss_hosting', 'email'];
 export const PAGE_TIER_PRICES = [0, 5, 10, 20, 25] as const;
 
 /** Translation keys naming each position of the "number of pages" slider. */
-export const PAGE_TIER_KEYS = ['one', 'two_three', 'four_five', 'six_eight', 'nine_ten'] as const;
+export const PAGE_TIER_KEYS = ['one', 'two_four', 'five_seven', 'eight_nine', 'ten_plus'] as const;
 
 /** Monthly surcharge per position of the "content updates" slider. */
 export const UPDATE_TIER_PRICES = [5, 15, 25, 50, 100] as const;

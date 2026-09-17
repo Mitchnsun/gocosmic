@@ -40,7 +40,9 @@
     "footnote_scope": "Für einen Online-Shop oder Kundenbereich kontaktieren Sie uns für ein individuelles Angebot.",
     "mockup_mention": "Fordern Sie Ihr Mockup unverbindlich an",
     "cta_simulate": "Meinen Tarif simulieren",
-    "cta_contact": "Angebot anfordern"
+    "cta_contact": "Angebot anfordern",
+    "cta_contact_email_subject": "Angebotsanfrage für mein Projekt",
+    "cta_contact_aria_label": "E-Mail an prospect@gocosmic.dev senden, um ein Angebot anzufordern"
   },
   "status_bar": {
     "signal_stable": "SIGNAL STABIL",

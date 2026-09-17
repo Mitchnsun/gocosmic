@@ -143,6 +143,16 @@ import { cn } from '@/design-system/lib/utils';
 
 ---
 
+### `CosmicCursor`'s injected `!important` stylesheet silently overrides every `cursor-*` utility
+
+**Mistake**: The pricing page's checkbox and range input had `cursor-pointer` Tailwind classes but showed a text I-beam on hover instead of a hand — the classes looked correct, so the bug looked like it had to be elsewhere.
+
+**Root cause**: `components/CosmicCursor/CosmicCursor.tsx` injects a global `<style data-cosmic-cursor>` tag with `* { cursor: none !important; } input, textarea, select, [contenteditable] { cursor: text !important; }` to hide the native cursor everywhere except text-like fields. Because the selector matched _every_ `<input>` regardless of `type`, it also caught checkboxes, radios and ranges — and `!important` beats any Tailwind `cursor-*` utility on the element itself.
+
+**Correct pattern**: When a cursor (or any element-styling bug) doesn't respond to the classes you'd expect, check for a globally injected `<style>` tag first — `document.head.querySelector('style[data-cosmic-cursor]')` in devtools, or grep for `!important` in the repo. Fix the selector at the source (split clickable form controls from text-like ones in the injected CSS) rather than trying to out-specificity it from the component.
+
+---
+
 ## Next.js Navigation
 
 ### Use `<Link>` for all internal navigation — plain `<a href>` triggers bfcache and breaks animations on back navigation
@@ -194,6 +204,23 @@ useEffect(() => {
 ```
 
 The `useRef` persists across StrictMode's simulated unmount/remount but resets on a real unmount, so the animation re-plays correctly on full page reload.
+
+---
+
+## Custom cursor / Radix primitives
+
+### `CosmicCursor`'s injected stylesheet must be updated when a native control is replaced by a Radix primitive
+
+**Mistake**: Migrating `TierSlider` from a native `<input type="range">` to Radix `Slider` (a `div`/`span` with `role="slider"`) without noticing that `CosmicCursor.tsx` hides the OS cursor everywhere and re-enables it only on a hardcoded list of native selectors, including `input[type="range"]` for the grab/grabbing cursor. Once the range input disappears, that selector stops matching and the slider falls back to the custom canvas dot, which also doesn't get suppressed because `useCosmicCursor.ts`'s `usesNativeCursor` detection checks `tagName` (`input`/`textarea`/`select`) rather than ARIA role.
+
+**Root cause**: `CosmicCursor` couples its cursor rules to native HTML tag/type selectors, so any component that swaps a native form control for a Radix (or other ARIA-role-based) primitive silently breaks both the visible cursor icon and the "don't draw the canvas dot on top of a native cursor" logic — nothing fails loudly, the mismatch only shows up visually.
+
+**Correct pattern**: When replacing a native `input`/`select`/`textarea` with a Radix primitive that carries an ARIA role (`role="slider"`, `role="checkbox"`, `role="switch"`, …), update **both** halves of `CosmicCursor` together:
+
+1. The injected `<style data-cosmic-cursor>` carve-out (`CosmicCursor.tsx`) — add the `[role="…"]` selector alongside the native one it replaces.
+2. The `usesNativeCursor` detection in `useCosmicCursor.ts` — extend the tag check with `target.closest('[role="…"]') !== null` so the canvas dot stops drawing over the primitive's own cursor.
+
+Grep `components/CosmicCursor/` for the native selector being replaced (`input[type=`, tag names) before shipping any migration off a native form control.
 
 ---
 

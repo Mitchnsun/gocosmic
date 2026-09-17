@@ -145,8 +145,19 @@ describe('CosmicCursor', () => {
     const styleEl = document.head.querySelector('style[data-cosmic-cursor]');
     expect(styleEl).not.toBeNull();
     expect(styleEl?.textContent).toContain('cursor: none');
+    expect(styleEl?.textContent).toContain('cursor: text');
     unmount();
     expect(document.head.querySelector('style[data-cosmic-cursor]')).toBeNull();
+  });
+
+  it('gives clickable form controls the native pointer/grab cursor instead of the text caret', () => {
+    render(<CosmicCursor />);
+    const styleEl = document.head.querySelector('style[data-cosmic-cursor]');
+    expect(styleEl?.textContent).toContain('cursor: pointer');
+    expect(styleEl?.textContent).toMatch(/type="checkbox"/);
+    expect(styleEl?.textContent).toMatch(/type="range"/);
+    expect(styleEl?.textContent).toMatch(/role="slider"/);
+    expect(styleEl?.textContent).toContain('cursor: grabbing');
   });
 
   it('removes the resize event listener on unmount', () => {

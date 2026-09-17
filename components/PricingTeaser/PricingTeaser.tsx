@@ -17,6 +17,7 @@ interface PricingTeaserProps {
 
 export function PricingTeaser({ currency }: PricingTeaserProps) {
   const t = useTranslations('pricing_teaser');
+  const subject = encodeURIComponent(t('cta_contact_email_subject'));
 
   return (
     <div className="w-full rounded-lg bg-slate-800 px-6 py-8 ring-1 ring-slate-700">
@@ -52,9 +53,12 @@ export function PricingTeaser({ currency }: PricingTeaserProps) {
         <Link href="/pricing" className={cn(buttonVariants({ variant: 'jungle' }))}>
           {t('cta_simulate')}
         </Link>
-        <Link href="/contact" className={cn(buttonVariants({ variant: 'outer-space' }))}>
+        <a
+          href={`mailto:prospect@gocosmic.dev?subject=${subject}`}
+          className={cn(buttonVariants({ variant: 'outer-space' }))}
+          aria-label={t('cta_contact_aria_label')}>
           {t('cta_contact')}
-        </Link>
+        </a>
       </div>
     </div>
   );

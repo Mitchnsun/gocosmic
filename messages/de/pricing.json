@@ -51,9 +51,13 @@
       },
       "options": {
         "title": "Ergänzen Sie, was Sie brauchen",
+        "example_domain": {
+          "fr": "mein-betrieb.de",
+          "ch": "mein-betrieb.ch"
+        },
         "domain": {
           "label": "Verwaltung Ihrer Internetadresse",
-          "hint": "Ihr Domainname, zum Beispiel mein-betrieb.de — für Sie registriert und verlängert."
+          "hint": "Ihr Domainname, zum Beispiel {domain} — für Sie registriert und verlängert."
         },
         "swiss_hosting": {
           "label": "Website in der Schweiz gehostet",
@@ -61,17 +65,17 @@
         },
         "email": {
           "label": "Eine E-Mail-Adresse auf Ihren Namen",
-          "hint": "Zum Beispiel kontakt@mein-betrieb.de statt einer kostenlosen Adresse."
+          "hint": "Zum Beispiel kontakt@{domain} statt einer kostenlosen Adresse."
         }
       },
       "pages": {
         "label": "Anzahl der Seiten",
         "tiers": {
           "one": "1 Seite (inklusive)",
-          "two_three": "2 bis 3 Seiten",
-          "four_five": "4 bis 5 Seiten",
-          "six_eight": "6 bis 8 Seiten",
-          "nine_ten": "9 bis 10 Seiten"
+          "two_four": "2 bis 4 Seiten",
+          "five_seven": "5 bis 7 Seiten",
+          "eight_nine": "8 bis 9 Seiten",
+          "ten_plus": "10 Seiten oder mehr"
         }
       },
       "updates": {

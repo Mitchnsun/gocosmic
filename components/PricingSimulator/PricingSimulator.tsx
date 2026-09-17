@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 
-import type { Currency } from '@/lib/region';
+import { getCurrency, type Region } from '@/lib/region';
 
 import { ContactBanner } from './ContactBanner';
 import { OptionButton } from './OptionButton';
@@ -16,10 +16,11 @@ const PROJECT_TYPES: ProjectType[] = ['website', 'mobile', 'both'];
 const WEBSITE_TYPES: WebsiteType[] = ['showcase', 'self_managed', 'accounts', 'ecommerce'];
 
 interface PricingSimulatorProps {
-  currency: Currency;
+  region: Region;
 }
 
-export function PricingSimulator({ currency }: PricingSimulatorProps) {
+export function PricingSimulator({ region }: PricingSimulatorProps) {
+  const currency = getCurrency(region);
   const t = useTranslations('pricing');
   const simulator = usePricingSimulator();
 
@@ -62,6 +63,7 @@ export function PricingSimulator({ currency }: PricingSimulatorProps) {
         <div className="animate-fade-in-up space-y-6">
           <PlanBuilder
             currency={currency}
+            region={region}
             selection={simulator.selection}
             total={simulator.total}
             showQuoteHint={simulator.showQuoteHint}

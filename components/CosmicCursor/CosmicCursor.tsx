@@ -44,8 +44,9 @@ function hexToRgb(hex: string): { r: number; g: number; b: number } {
  * - Respects `prefers-reduced-motion` (static dot only)
  * - Returns `null` on touch devices so no canvas is added to the DOM
  * - Hides the native cursor on all elements via an injected `<style>` tag using `!important`,
- *   which overrides utility classes such as `cursor-pointer` on interactive elements.
- *   Text inputs are excluded so the native text cursor remains visible.
+ *   which overrides utility classes such as `cursor-pointer` on interactive elements. Text
+ *   inputs keep the native text caret, and clickable form controls (checkboxes, radios,
+ *   ranges, selects) keep the native hand/grab cursor instead of the canvas dot.
  *
  * @component
  */
@@ -87,12 +88,20 @@ const CosmicCursor = ({
 
     // Inject a global style to hide the native cursor on all elements.
     // `!important` is required to override utility classes like `cursor-pointer` on buttons.
-    // Text inputs are excluded so the native text cursor remains visible there.
+    // Clickable form controls keep the native hand/grab cursor; text inputs keep the native
+    // text cursor. Both are excluded from the canvas dot in useCosmicCursor's `usesNativeCursor`
+    // / native-select detection. `[role="slider"]` covers Radix Slider thumbs, which render as a
+    // plain div rather than a native `input[type="range"]`.
     const styleEl = document.createElement('style');
     styleEl.setAttribute('data-cosmic-cursor', '');
     styleEl.textContent =
       '* { cursor: none !important; } ' +
-      'input, textarea, select, [contenteditable="true"] { cursor: text !important; }';
+      'input:is([type="checkbox"],[type="radio"],[type="button"],[type="submit"],[type="reset"],[type="color"],[type="file"]), ' +
+      'select, label:has(input:is([type="checkbox"],[type="radio"])) { cursor: pointer !important; } ' +
+      'input[type="range"], [role="slider"] { cursor: grab !important; } ' +
+      'input[type="range"]:active, [role="slider"]:active { cursor: grabbing !important; } ' +
+      'input:not([type]), input:is([type="text"],[type="email"],[type="search"],[type="tel"],[type="url"],[type="password"],[type="number"],[type="date"]), ' +
+      'textarea, [contenteditable="true"] { cursor: text !important; }';
 
     document.head.appendChild(styleEl);
 
@@ -137,7 +146,7 @@ const CosmicCursor = ({
       smoothY += (state.mouse.y - smoothY) * ease;
 
       // ── Trailing dots ────────────────────────────────────────────────────
-      if (!reduced && !state.isTextInput) {
+      if (!reduced && !state.usesNativeCursor) {
         updateTrail();
         const trail = state.trail;
         for (const [i, point] of trail.entries()) {
@@ -158,7 +167,7 @@ const CosmicCursor = ({
       }
 
       // ── Orbital dots at rest ─────────────────────────────────────────────
-      if (!reduced && !state.isTextInput) {
+      if (!reduced && !state.usesNativeCursor) {
         const VELOCITY_THRESHOLD = 10;
         const isAtRest = state.velocity < VELOCITY_THRESHOLD;
 
@@ -188,7 +197,7 @@ const CosmicCursor = ({
       }
 
       // ── Core dot + glow ──────────────────────────────────────────────────
-      if (!state.isTextInput) {
+      if (!state.usesNativeCursor) {
         const glowSize = state.isMagnetic ? coreSize * 5 : coreSize * 3;
         const gradient = ctx.createRadialGradient(smoothX, smoothY, 0, smoothX, smoothY, glowSize);
         gradient.addColorStop(0, `rgba(${accentRgb.r},${accentRgb.g},${accentRgb.b},0.5)`);

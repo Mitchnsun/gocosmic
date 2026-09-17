@@ -40,7 +40,9 @@
     "footnote_scope": "Per un e-commerce o un portale clienti, contattaci per un preventivo su misura.",
     "mockup_mention": "Richiedi il tuo mockup senza impegno",
     "cta_simulate": "Simula il mio prezzo",
-    "cta_contact": "Richiedi un preventivo"
+    "cta_contact": "Richiedi un preventivo",
+    "cta_contact_email_subject": "Richiesta di preventivo per il mio progetto",
+    "cta_contact_aria_label": "Invia un'email a prospect@gocosmic.dev per richiedere un preventivo"
   },
   "status_bar": {
     "signal_stable": "SEGNALE STABILE",

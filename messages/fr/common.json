@@ -40,7 +40,9 @@
     "footnote_scope": "Pour une boutique e-commerce ou un espace client, contactez-nous pour un devis sur mesure.",
     "mockup_mention": "Demandez votre maquette sans engagement",
     "cta_simulate": "Simuler mon tarif",
-    "cta_contact": "Demander un devis"
+    "cta_contact": "Demander un devis",
+    "cta_contact_email_subject": "Demande de devis pour mon projet",
+    "cta_contact_aria_label": "Envoyer un email à prospect@gocosmic.dev pour demander un devis"
   },
   "status_bar": {
     "signal_stable": "SIGNAL STABLE",

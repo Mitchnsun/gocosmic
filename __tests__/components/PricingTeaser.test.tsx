@@ -43,12 +43,13 @@ describe('PricingTeaser', () => {
     expect(link).toHaveAttribute('href', expect.stringContaining('/pricing'));
   });
 
-  it('should render the contact link pointing to /contact', () => {
+  it('should render a mailto link for the quote request', () => {
     render(<PricingTeaser currency="eur" />);
 
     const link = screen.getByRole('link', { name: /request a quote/i });
     expect(link).toBeInTheDocument();
-    expect(link).toHaveAttribute('href', expect.stringContaining('/contact'));
+    expect(link).toHaveAttribute('href', expect.stringContaining('mailto:prospect@gocosmic.dev'));
+    expect(link).toHaveAttribute('href', expect.stringContaining('subject='));
   });
 
   it('should render the franc price for Swiss visitors', () => {

@@ -51,9 +51,13 @@
       },
       "options": {
         "title": "Add what you need",
+        "example_domain": {
+          "fr": "my-business.com",
+          "ch": "my-business.ch"
+        },
         "domain": {
           "label": "Managing your web address",
-          "hint": "Your domain name, for example my-business.com — registered and renewed for you."
+          "hint": "Your domain name, for example {domain} — registered and renewed for you."
         },
         "swiss_hosting": {
           "label": "Website hosted in Switzerland",
@@ -61,17 +65,17 @@
         },
         "email": {
           "label": "An email address in your own name",
-          "hint": "For example contact@my-business.com, instead of a free address."
+          "hint": "For example contact@{domain}, instead of a free address."
         }
       },
       "pages": {
         "label": "Number of pages",
         "tiers": {
           "one": "1 page (included)",
-          "two_three": "2 to 3 pages",
-          "four_five": "4 to 5 pages",
-          "six_eight": "6 to 8 pages",
-          "nine_ten": "9 to 10 pages"
+          "two_four": "2 to 4 pages",
+          "five_seven": "5 to 7 pages",
+          "eight_nine": "8 to 9 pages",
+          "ten_plus": "10 pages or more"
         }
       },
       "updates": {

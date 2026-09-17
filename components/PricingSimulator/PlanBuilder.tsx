@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 
-import type { Currency } from '@/lib/region';
+import type { Currency, Region } from '@/lib/region';
 
 import {
   ADD_ON_KEYS,
@@ -21,6 +21,7 @@ import { TierSlider } from './TierSlider';
 
 interface PlanBuilderProps {
   currency: Currency;
+  region: Region;
   selection: PlanSelection;
   total: number;
   showQuoteHint: boolean;
@@ -33,6 +34,7 @@ interface PlanBuilderProps {
 /** Composable showcase plan: a base price the visitor grows with add-ons and sliders. */
 export function PlanBuilder({
   currency,
+  region,
   selection,
   total,
   showQuoteHint,
@@ -43,6 +45,7 @@ export function PlanBuilder({
 }: PlanBuilderProps) {
   const t = useTranslations('pricing');
   const surcharge = (amount: number) => `+${formatAmount(amount, currency)}`;
+  const exampleDomain = t(`builder.options.example_domain.${region}`);
 
   // Indexes come from TIER_INDEXES, a fixed list of slider positions.
   /* eslint-disable security/detect-object-injection */
@@ -99,7 +102,7 @@ export function PlanBuilder({
           <OptionToggle
             key={key}
             label={t(`builder.options.${key}.label`)}
-            hint={t(`builder.options.${key}.hint`)}
+            hint={t(`builder.options.${key}.hint`, { domain: exampleDomain })}
             price={surcharge(getAddOnPrice(key))}
             // eslint-disable-next-line security/detect-object-injection -- key comes from ADD_ON_KEYS
             checked={selection.addOns[key]}
