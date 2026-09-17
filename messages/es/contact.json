@@ -5,7 +5,7 @@
   },
   "contact": {
     "title": "Contáctenos",
-    "subtitle": "Elija el correo electrónico adecuado para su solicitud",
+    "subtitle": "Envíanos un resumen o escribe directamente al buzón adecuado.",
     "blocks": {
       "general": {
         "title": "Consultas Generales",
@@ -77,6 +77,65 @@
       }
     },
     "privacyNotice": "Los datos personales enviados por email se usan solo para responder a tu solicitud, gestionar el seguimiento y conservar prueba de los intercambios durante los plazos indicados en la política de privacidad.",
-    "privacyLink": "Política de privacidad"
+    "privacyLink": "Política de privacidad",
+    "eyebrow": "Contacto — Resumen de misión",
+    "form": {
+      "eyebrow": "Resumen del proyecto",
+      "title": "Cuéntanos tu proyecto",
+      "description": "¿Prefieres el correo? Las direcciones siguientes llegan directamente al buzón adecuado. Rellena el formulario y te responderemos con los siguientes pasos.",
+      "optional": "opcional",
+      "required_hint": "Los campos marcados con un asterisco son obligatorios",
+      "submit": "Enviar el mensaje",
+      "submitting": "Enviando…",
+      "clear": "Borrar el formulario",
+      "honeypot_label": "Deja este campo vacío",
+      "fields": {
+        "name": {
+          "label": "Nombre",
+          "placeholder": "Tu nombre"
+        },
+        "email": {
+          "label": "Correo electrónico",
+          "placeholder": "tu@ejemplo.com"
+        },
+        "subject": {
+          "label": "Asunto",
+          "placeholder": "Web de presentación, app móvil, rediseño…"
+        },
+        "message": {
+          "label": "Mensaje",
+          "placeholder": "Describe tu proyecto, tu plazo y tu presupuesto si lo tienes."
+        },
+        "phone": {
+          "label": "Teléfono",
+          "placeholder": "+34 600 12 34 56"
+        },
+        "company": {
+          "label": "Empresa",
+          "placeholder": "Tu empresa u organización"
+        }
+      },
+      "errors": {
+        "name_length": "Indica un nombre de 2 a 100 caracteres.",
+        "email_invalid": "Indica una dirección de correo válida.",
+        "subject_length": "El asunto debe tener entre 5 y 200 caracteres.",
+        "message_length": "El mensaje debe tener entre 10 y 5000 caracteres.",
+        "phone_invalid": "Indica un número de teléfono válido.",
+        "company_length": "El nombre de la empresa es demasiado largo.",
+        "rate_limited": "Ya has enviado varios mensajes. Inténtalo más tarde o escríbenos por correo.",
+        "server": "No se pudo enviar el mensaje. Inténtalo de nuevo o escríbenos por correo.",
+        "network": "Conexión perdida. Comprueba tu red e inténtalo de nuevo."
+      },
+      "success": {
+        "title": "¡Gracias por escribirnos!",
+        "description": "Tu mensaje se ha enviado. Leemos todas las solicitudes y te responderemos en breve.",
+        "back": "Enviar otro mensaje"
+      }
+    },
+    "direct": {
+      "eyebrow": "Líneas directas",
+      "title": "Escribe al buzón adecuado",
+      "description": "Cada solicitud tiene su dirección — elige la que corresponda a la tuya."
+    }
   }
 }
