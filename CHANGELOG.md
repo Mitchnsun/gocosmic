@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.8.0] - 2026-09-17
+
+### Added
+
+- A contact form on the contact page: describe your project in a few fields, send it, and get an immediate on-screen confirmation — the direct email addresses stay available just below
+- Every project now has a full case study page telling what it is, what it does and what it was built with, plus links to the previous and next project
+- The services page now ends with direct routes to the projects, to the pricing simulator and to the Annecy / Geneva page
+
+### Changed
+
+- The About, Services, Projects and Contact pages have been redesigned to match the homepage: starfield headers, clearer section titles and easier-to-scan lists
+- The projects page now shows one card per project with a short summary and a direct link to its case study
+
 ## [1.7.1] - 2026-09-18
 
 ### Added
@@ -20,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Updated the project's build tooling to its latest stable release
 - The privacy policy now describes the free mockup form: which details it collects, that they are emailed to the studio rather than stored, and who handles the delivery
 - The free mockup form now accepts a website address written simply, such as my-site.com, without requiring https://
+
 
 ## [1.7.0] - 2026-09-17
 
