@@ -20,8 +20,6 @@ export interface CosmicCursorState {
   isTouchDevice: boolean;
   /** Trailing dot history */
   trail: TrailPoint[];
-  /** Velocity magnitude (px/s) */
-  velocity: number;
   /** Current accent color hex (reacts to data-accent) */
   accentColor: string;
   /** True when snapping toward a magnetic element */
@@ -79,7 +77,7 @@ function applySnap(
 }
 
 /**
- * Hook that tracks mouse position, velocity, accent color, and magnetic snapping.
+ * Hook that tracks mouse position, accent color, and magnetic snapping.
  * Returns a ref to the mutable state object so the canvas render loop can read it
  * without triggering React re-renders.
  */
@@ -94,7 +92,6 @@ export function useCosmicCursor({
     reducedMotion: false,
     isTouchDevice: false,
     trail: [],
-    velocity: 0,
     accentColor: COLORS.aerospace,
     isMagnetic: false,
     usesNativeCursor: false,
@@ -147,27 +144,7 @@ export function useCosmicCursor({
     // Trail initialization
     state.trail = Array.from({ length: trailLength }, () => ({ x: -200, y: -200 }));
 
-    let lastX = -200;
-    let lastY = -200;
-    // Use null sentinel so the first event skips velocity calculation to avoid spikes
-    let lastTime: number | null = null;
-
     const onMouseMove = (e: MouseEvent) => {
-      const now = performance.now();
-
-      if (lastTime !== null) {
-        const dt = Math.max(now - lastTime, 1); // clamp to ≥1ms to prevent division by zero in the velocity formula below
-        const dx = e.clientX - lastX;
-        const dy = e.clientY - lastY;
-        // Decay velocity toward the current measurement to smooth out spikes
-        const measured = (Math.sqrt(dx * dx + dy * dy) / dt) * 1000;
-        state.velocity = state.velocity * 0.6 + measured * 0.4;
-      }
-
-      lastX = e.clientX;
-      lastY = e.clientY;
-      lastTime = now;
-
       state.mouse.x = e.clientX;
       state.mouse.y = e.clientY;
       state.isVisible = true;
@@ -247,7 +224,6 @@ export function useCosmicCursor({
 
     const onMouseLeave = () => {
       state.isVisible = false;
-      state.velocity = 0;
     };
     const onMouseEnter = () => {
       state.isVisible = true;

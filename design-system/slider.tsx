@@ -19,7 +19,9 @@ const Slider = React.forwardRef<React.ElementRef<typeof SliderPrimitive.Root>, S
     <SliderPrimitive.Root
       ref={ref}
       className={cn(
-        'relative flex w-full touch-none items-center select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-40',
+        // Opacity for the disabled state is left to the caller (see TierSlider), which dims the
+        // slider together with its surrounding label — applying it here too would compound.
+        'relative flex w-full touch-none items-center select-none data-[disabled]:pointer-events-none',
         className
       )}
       {...props}>

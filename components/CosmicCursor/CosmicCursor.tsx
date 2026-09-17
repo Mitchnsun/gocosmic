@@ -84,16 +84,16 @@ const CosmicCursor = ({
     // `!important` is required to override utility classes like `cursor-pointer` on buttons.
     // Clickable form controls keep the native hand/grab cursor; text inputs keep the native
     // text cursor. Both are excluded from the canvas dot in useCosmicCursor's `usesNativeCursor`
-    // / native-select detection. `[role="slider"]` covers Radix Slider thumbs, which render as a
-    // plain div rather than a native `input[type="range"]`.
+    // / native-select detection. `[role="slider"]` covers Radix Slider thumbs (e.g. the pricing
+    // page-count control), which render as a plain div rather than a native form element.
     const styleEl = document.createElement('style');
     styleEl.setAttribute('data-cosmic-cursor', '');
     styleEl.textContent =
       '* { cursor: none !important; } ' +
       'input:is([type="checkbox"],[type="radio"],[type="button"],[type="submit"],[type="reset"],[type="color"],[type="file"]), ' +
       'select, label:has(input:is([type="checkbox"],[type="radio"])) { cursor: pointer !important; } ' +
-      'input[type="range"], [role="slider"] { cursor: grab !important; } ' +
-      'input[type="range"]:active, [role="slider"]:active { cursor: grabbing !important; } ' +
+      '[role="slider"] { cursor: grab !important; } ' +
+      '[role="slider"]:active { cursor: grabbing !important; } ' +
       'input:not([type]), input:is([type="text"],[type="email"],[type="search"],[type="tel"],[type="url"],[type="password"],[type="number"],[type="date"]), ' +
       'textarea, [contenteditable="true"] { cursor: text !important; }';
 

@@ -155,7 +155,6 @@ describe('CosmicCursor', () => {
     const styleEl = document.head.querySelector('style[data-cosmic-cursor]');
     expect(styleEl?.textContent).toContain('cursor: pointer');
     expect(styleEl?.textContent).toMatch(/type="checkbox"/);
-    expect(styleEl?.textContent).toMatch(/type="range"/);
     expect(styleEl?.textContent).toMatch(/role="slider"/);
     expect(styleEl?.textContent).toContain('cursor: grabbing');
   });
@@ -232,13 +231,11 @@ describe('CosmicCursor render loop', () => {
     expect(requestAnimationFrame).toHaveBeenCalledTimes(2); // initial + retry
   });
 
-  it('calculates velocity on the second mousemove event', () => {
+  it('tracks position across consecutive mousemove events', () => {
     render(<CosmicCursor />);
-    // First event sets lastTime (velocity skipped)
     act(() => {
       document.dispatchEvent(new MouseEvent('mousemove', { clientX: 100, clientY: 100, bubbles: true }));
     });
-    // Second event calculates velocity from the delta
     act(() => {
       document.dispatchEvent(new MouseEvent('mousemove', { clientX: 200, clientY: 200, bubbles: true }));
     });
@@ -249,7 +246,7 @@ describe('CosmicCursor render loop', () => {
     expect(mockCtx.clearRect).toHaveBeenCalled();
   });
 
-  it('hides the cursor and resets velocity on mouseleave', () => {
+  it('hides the cursor on mouseleave', () => {
     render(<CosmicCursor />);
     act(() => {
       document.dispatchEvent(new MouseEvent('mousemove', { clientX: 100, clientY: 100, bubbles: true }));
