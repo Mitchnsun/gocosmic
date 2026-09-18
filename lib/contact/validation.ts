@@ -24,6 +24,10 @@ export type ContactErrorCode =
 
 export type ContactErrors = Partial<Record<ContactField, ContactErrorCode>>;
 
+/** Fields in the order they appear in the form, so the first invalid one can
+ *  be focused after a failed submission. */
+export const CONTACT_FIELD_ORDER: ContactField[] = ['name', 'email', 'subject', 'message', 'phone', 'company'];
+
 /** Length boundaries enforced on both sides of the wire. */
 export const CONTACT_LIMITS = {
   name: { min: 2, max: 100 },

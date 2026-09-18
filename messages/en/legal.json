@@ -21,27 +21,29 @@
         {
           "title": "Data collected",
           "body": [
-            "The website does not provide an account area, checkout, CAPTCHA, or advertising pixel. Most messages are sent through mailto links and are processed by your email client and the recipient mailbox. The free mockup page is the one form handled server-side: it collects your email address, the colour direction you pick, the address of your current website if you provide one, your message, and the language of the page, then forwards them to the studio mailbox by email. Nothing is stored in a database.",
-            "Technical data may be processed by the hosting provider for security and delivery logs. Vercel Analytics is loaded only after consent to measure page views."
+            "The website has no account area, checkout, CAPTCHA, or advertising pixel. Two forms are handled server-side. The free mockup page collects your email address, the colour direction you pick, the address of your current website if you provide one, your message, and the language of the page. The contact form collects the name, email address and message you enter, plus the optional subject, phone number and company. In both cases the fields are forwarded to the studio mailbox by email and nothing is stored in a database. Messages sent through the mailto links are handled by your email client and the recipient mailbox instead.",
+            "Your IP address is processed transiently to limit the number of contact form submissions per hour, alongside a hidden anti-spam field. Technical data may be processed by the hosting provider for security and delivery logs. Vercel Analytics is loaded only after consent to measure page views."
           ]
         },
         {
           "title": "Purposes and legal bases",
           "body": [
             "Email messages are processed to answer requests, prepare quotes, provide support, and keep evidence of exchanges. This processing is based on legitimate interest and, where applicable, pre-contractual steps requested by you. Free mockup requests are processed to prepare and send you the mockup you asked for, and to reply to you.",
+            "Messages sent through the contact form are processed for the same purposes. Limiting submissions per IP address and filtering automated submissions rely on the legitimate interest in protecting the service from abuse.",
             "Audience measurement is used to understand aggregate traffic and improve the website. Go Cosmic loads Vercel Analytics only after your consent. Security logs are processed for legitimate interest in protecting the service."
           ]
         },
         {
           "title": "Recipients and processors",
           "body": [
-            "Data may be accessed by Go Cosmic, the email service provider, Resend (which delivers the free mockup request emails), the hosting provider, and Vercel for hosting and analytics. LinkedIn is an external website and may process data under its own policy after you click an outbound link."
+            "Data may be accessed by Go Cosmic, the email service provider, Resend (which delivers the free mockup and contact form emails), the hosting provider, and Vercel for hosting and analytics. LinkedIn is an external website and may process data under its own policy after you click an outbound link."
           ]
         },
         {
           "title": "Retention periods",
           "body": [
-            "Email exchanges are kept only for the time needed to handle the request and follow-up, then archived or deleted according to legal, accounting, or dispute limitation needs. Audience consent is stored in your browser until you clear local storage or change browsers. Hosting logs are retained according to the provider configuration."
+            "Email exchanges are kept only for the time needed to handle the request and follow-up, then archived or deleted according to legal, accounting, or dispute limitation needs. Audience consent is stored in your browser until you clear local storage or change browsers. Hosting logs are retained according to the provider configuration.",
+            "Contact form submissions are not kept in a database: they are delivered as an email, and the resulting exchange follows the retention described above."
           ]
         },
         {
@@ -84,7 +86,9 @@
         },
         {
           "title": "Publication director",
-          "body": ["Publication director: Matthieu Compérat."]
+          "body": [
+            "Publication director: Matthieu Compérat."
+          ]
         },
         {
           "title": "Hosting",
@@ -106,7 +110,9 @@
         },
         {
           "title": "Contact",
-          "body": ["For legal, privacy, or security questions, contact support@gocosmic.dev."]
+          "body": [
+            "For legal, privacy, or security questions, contact support@gocosmic.dev."
+          ]
         }
       ]
     }

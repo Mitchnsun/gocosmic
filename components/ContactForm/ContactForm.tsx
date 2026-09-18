@@ -2,6 +2,7 @@
 
 import { PaperAirplaneIcon } from '@heroicons/react/24/solid';
 import { useTranslations } from 'next-intl';
+import { useEffect } from 'react';
 
 import { buttonVariants } from '@/design-system/button.variants';
 import { cn } from '@/design-system/lib/utils';
@@ -29,10 +30,17 @@ export const ContactForm = ({
   id = 'contact-form',
 }: ContactFormProps) => {
   const t = useTranslations('contact.form');
-  const { values, errors, status, formError, handleChange, handleSubmit, reset } = useContactForm({
+  const { values, errors, status, formError, invalidFocus, handleChange, handleSubmit, reset } = useContactForm({
     endpoint,
     onSuccess,
   });
+
+  // Move focus to the first invalid field so screen-reader and keyboard users
+  // hear why the submission did not go through.
+  useEffect(() => {
+    if (!invalidFocus) return;
+    document.getElementById(invalidFocus.field)?.focus();
+  }, [invalidFocus]);
 
   const wrapperClassName = cn(
     'w-full',
@@ -158,7 +166,7 @@ export const ContactForm = ({
             disabled={status === 'submitting'}
             className={cn(
               buttonVariants({ variant: 'aerospace' }),
-              'focus-visible:ring-ghost focus-visible:ring-offset-void w-fit gap-2 py-3 transition-transform duration-300 ease-out hover:scale-105 focus-visible:ring-2 focus-visible:ring-offset-2'
+              'focus-visible:ring-ghost focus-visible:ring-offset-void w-fit gap-2 py-3 transition-transform duration-300 ease-out hover:scale-105 focus-visible:ring-2 focus-visible:ring-offset-2 motion-reduce:scale-100! motion-reduce:transition-none!'
             )}>
             {status === 'submitting' ? t('submitting') : t('submit')}
             <PaperAirplaneIcon className="size-4" aria-hidden="true" />
@@ -166,7 +174,8 @@ export const ContactForm = ({
           <button
             type="button"
             onClick={reset}
-            className="text-ghost/55 hover:text-ghost focus-visible:ring-ghost font-display w-fit cursor-pointer rounded-full px-4 py-3 text-sm transition-colors focus-visible:ring-2 focus-visible:outline-none">
+            disabled={status === 'submitting'}
+            className="text-ghost/55 hover:text-ghost focus-visible:ring-ghost font-display w-fit cursor-pointer rounded-full px-4 py-3 text-sm transition-colors focus-visible:ring-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50">
             {t('clear')}
           </button>
         </div>

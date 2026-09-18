@@ -76,7 +76,7 @@
         "aria_label": "Envoyer un email à prospect@gocosmic.dev avec le sujet : Demande commerciale"
       }
     },
-    "privacyNotice": "Les données personnelles transmises par email sont utilisées uniquement pour répondre à votre demande, assurer le suivi et conserver une preuve des échanges pendant les durées indiquées dans la politique de confidentialité.",
+    "privacyNotice": "Les données personnelles transmises via le formulaire de contact ou par email sont utilisées uniquement pour répondre à votre demande, assurer le suivi et conserver une preuve des échanges pendant les durées indiquées dans la politique de confidentialité.",
     "privacyLink": "Politique de confidentialité",
     "eyebrow": "Contact — Brief de mission",
     "form": {

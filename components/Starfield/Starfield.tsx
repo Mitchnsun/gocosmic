@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from 'react';
 
+import { usePrefersReducedMotion } from '@/lib/hooks/usePrefersReducedMotion';
+
 /** Properties for a single star in the starfield */
 interface Star {
   x: number;
@@ -18,6 +20,9 @@ export interface StarfieldProps {
   speed?: number;
   /** Additional CSS class names applied to the canvas element. */
   className?: string;
+  /** Freezes the stars when the visitor prefers reduced motion. Defaults to `false`,
+   *  leaving the caller in charge of the preference. */
+  respectReducedMotion?: boolean;
 }
 
 const DEFAULT_STAR_COUNT = 500;
@@ -30,18 +35,29 @@ const DEFAULT_SPEED = 2;
  * Canvas 2D API. Zero external dependencies, targets 60fps via requestAnimationFrame.
  * Fully configurable and resizes automatically with the viewport.
  *
+ * With {@link StarfieldProps.respectReducedMotion} enabled and a visitor who
+ * asks for reduced motion, a single static frame of still stars is drawn and
+ * no animation loop is started.
+ *
  * @component
  * @param {StarfieldProps} props - Component configuration
  * @returns Canvas element with animated stars, hidden from assistive technologies
  */
-const Starfield = ({ starCount = DEFAULT_STAR_COUNT, speed = DEFAULT_SPEED, className }: StarfieldProps) => {
+const Starfield = ({
+  starCount = DEFAULT_STAR_COUNT,
+  speed = DEFAULT_SPEED,
+  className,
+  respectReducedMotion = false,
+}: StarfieldProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const speedRef = useRef(speed);
+  const frozen = usePrefersReducedMotion(respectReducedMotion);
+  const effectiveSpeed = frozen ? 0 : speed;
+  const speedRef = useRef(effectiveSpeed);
   const starCountRef = useRef(starCount);
 
   useEffect(() => {
-    speedRef.current = speed;
-  }, [speed]);
+    speedRef.current = effectiveSpeed;
+  }, [effectiveSpeed]);
 
   useEffect(() => {
     starCountRef.current = starCount;
@@ -68,7 +84,7 @@ const Starfield = ({ starCount = DEFAULT_STAR_COUNT, speed = DEFAULT_SPEED, clas
 
     const stars: Star[] = Array.from({ length: starCountRef.current }, createStar);
 
-    let animationId: number;
+    let animationId: number | null = null;
 
     const draw = () => {
       // Deep space background — matches bg-slate-950
@@ -105,15 +121,24 @@ const Starfield = ({ starCount = DEFAULT_STAR_COUNT, speed = DEFAULT_SPEED, clas
         const opacity = Math.min(1, 1 - star.z / width);
         const lineWidth = Math.max(0.5, (1 - star.z / width) * 2.5);
 
-        ctx.beginPath();
-        ctx.moveTo(prevSx, prevSy);
-        ctx.lineTo(sx, sy);
-        ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
-        ctx.lineWidth = lineWidth;
-        ctx.stroke();
+        if (frozen) {
+          // No movement means no streak to draw: paint each star as a dot so a
+          // frozen starfield is still a starfield.
+          ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+          ctx.fillRect(sx, sy, lineWidth, lineWidth);
+        } else {
+          ctx.beginPath();
+          ctx.moveTo(prevSx, prevSy);
+          ctx.lineTo(sx, sy);
+          ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+          ctx.lineWidth = lineWidth;
+          ctx.stroke();
+        }
       }
 
-      animationId = requestAnimationFrame(draw);
+      // Frozen starfield: the frame just drawn stays on screen instead of
+      // running a 60fps loop that would not move anything.
+      if (!frozen) animationId = requestAnimationFrame(draw);
     };
 
     draw();
@@ -134,17 +159,22 @@ const Starfield = ({ starCount = DEFAULT_STAR_COUNT, speed = DEFAULT_SPEED, clas
           star.z = Math.random() * width;
           star.prevZ = width;
         }
+
+        // Resizing the canvas clears its bitmap. While frozen no frame is
+        // pending, so repaint the single static frame here — the running loop
+        // takes care of it otherwise.
+        if (frozen) draw();
       }, 100);
     };
 
     window.addEventListener('resize', handleResize);
 
     return () => {
-      cancelAnimationFrame(animationId);
+      if (animationId !== null) cancelAnimationFrame(animationId);
       if (resizeTimer !== null) clearTimeout(resizeTimer);
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [frozen]);
 
   return <canvas ref={canvasRef} className={className} aria-hidden="true" />;
 };

@@ -94,7 +94,7 @@ export default async function Services() {
               href="/projects"
               className={cn(
                 buttonVariants({ variant: 'aerospace' }),
-                'w-fit py-3 transition-transform hover:scale-105'
+                'w-fit py-3 transition-transform hover:scale-105 motion-reduce:scale-100! motion-reduce:transition-none!'
               )}>
               {t('explore.projects')}
             </Link>

@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [1.8.0] - 2026-09-17
+## [1.8.0] - 2026-09-18
 
 ### Added
 
@@ -17,6 +17,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - The About, Services, Projects and Contact pages have been redesigned to match the homepage: starfield headers, clearer section titles and easier-to-scan lists
 - The projects page now shows one card per project with a short summary and a direct link to its case study
+
+### Fixed
+
+- A message that cannot be delivered is now reported as such, instead of showing a confirmation for something nobody would receive
+- The privacy policy now describes the contact form — the details it collects, who delivers the message and how long the exchange is kept — instead of stating that the site has no such form
+- Submitting an incomplete form now takes you straight to the first field that needs attention, so the error is announced instead of appearing to do nothing
+- The star fields behind the page headers and the closing call-to-action sections now stand still, and buttons no longer grow on hover, for visitors who ask for reduced motion
 
 ## [1.7.1] - 2026-09-18
 
@@ -33,7 +40,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Updated the project's build tooling to its latest stable release
 - The privacy policy now describes the free mockup form: which details it collects, that they are emailed to the studio rather than stored, and who handles the delivery
 - The free mockup form now accepts a website address written simply, such as my-site.com, without requiring https://
-
 
 ## [1.7.0] - 2026-09-17
 

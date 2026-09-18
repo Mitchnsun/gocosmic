@@ -150,4 +150,65 @@ describe('ContactForm', () => {
 
     await waitFor(() => expect(fetchMock).toHaveBeenCalledWith('/api/custom', expect.anything()));
   });
+
+  it('disables clearing while the submission is in flight', async () => {
+    let release: (value: { ok: boolean; status: number }) => void = () => {};
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(
+        () =>
+          new Promise((resolve) => {
+            release = resolve;
+          })
+      )
+    );
+    const { getByLabelText, getByRole } = render(<ContactForm />);
+
+    await fillValidForm(getByLabelText);
+    await userEvent.click(getByRole('button', { name: /Send the message/ }));
+
+    await waitFor(() => expect(getByRole('button', { name: 'Clear the form' })).toBeDisabled());
+    expect(getByRole('button', { name: /Sending/ })).toBeDisabled();
+
+    release({ ok: true, status: 200 });
+    await waitFor(() => expect(getByRole('status')).toBeInTheDocument());
+  });
+
+  it('does not submit twice while a request is pending', async () => {
+    let release: (value: { ok: boolean; status: number }) => void = () => {};
+    const fetchMock = vi.fn(
+      () =>
+        new Promise((resolve) => {
+          release = resolve;
+        })
+    );
+    vi.stubGlobal('fetch', fetchMock);
+    const { getByLabelText, getByRole } = render(<ContactForm />);
+
+    await fillValidForm(getByLabelText);
+    const submit = getByRole('button', { name: /Send the message/ });
+    await userEvent.click(submit);
+    await userEvent.click(getByRole('button', { name: /Sending/ }));
+
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    release({ ok: true, status: 200 });
+    await waitFor(() => expect(getByRole('status')).toBeInTheDocument());
+  });
+
+  it('moves focus to the first invalid field when the submission is rejected', async () => {
+    const { getByRole, getByLabelText } = render(<ContactForm />);
+
+    await userEvent.click(getByRole('button', { name: /Send the message/ }));
+
+    await waitFor(() => expect(getByLabelText(/^Name/)).toHaveFocus());
+  });
+
+  it('focuses the first field that is still invalid on a later attempt', async () => {
+    const { getByRole, getByLabelText } = render(<ContactForm />);
+
+    await userEvent.type(getByLabelText(/^Name/), 'Ada Lovelace');
+    await userEvent.click(getByRole('button', { name: /Send the message/ }));
+
+    await waitFor(() => expect(getByLabelText(/^Email/)).toHaveFocus());
+  });
 });

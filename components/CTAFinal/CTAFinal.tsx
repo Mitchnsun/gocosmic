@@ -96,8 +96,8 @@ export interface CTAFinalProps {
  *
  * The headline uses an animated accent gradient and the button pulses with a
  * glow effect. All motion is disabled when the user prefers reduced motion and
- * {@link CTAFinalProps.respectReducedMotion} is enabled, in which case the
- * starfield keeps its rest speed.
+ * {@link CTAFinalProps.respectReducedMotion} is enabled: the warp is
+ * suppressed and the starfield draws a single static frame.
  *
  * @component
  */
@@ -157,6 +157,7 @@ const CTAFinal = ({
           className="h-full w-full opacity-80 transition-opacity duration-300 group-hover:opacity-100"
           starCount={currentStarCount}
           speed={currentSpeed}
+          respectReducedMotion={respectReducedMotion}
         />
       </div>
       <div

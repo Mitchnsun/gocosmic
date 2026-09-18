@@ -76,7 +76,7 @@
         "aria_label": "E-Mail an prospect@gocosmic.dev mit Betreff: Geschäftsanfrage senden"
       }
     },
-    "privacyNotice": "Per E-Mail übermittelte personenbezogene Daten werden nur zur Beantwortung deiner Anfrage, zur Nachverfolgung und als Nachweis der Korrespondenz für die in der Datenschutzerklärung genannten Fristen verwendet.",
+    "privacyNotice": "Personenbezogene Daten, die über das Kontaktformular oder per E-Mail übermittelt werden, dienen ausschließlich der Beantwortung deiner Anfrage, der Nachverfolgung und dem Nachweis des Austauschs für die in der Datenschutzerklärung genannten Fristen.",
     "privacyLink": "Datenschutzerklärung",
     "eyebrow": "Kontakt — Missionsbriefing",
     "form": {

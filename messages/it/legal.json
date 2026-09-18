@@ -21,27 +21,29 @@
         {
           "title": "Dati raccolti",
           "body": [
-            "Il sito non offre area cliente, pagamento, CAPTCHA o pixel pubblicitario. La maggior parte dei messaggi è inviata tramite link mailto e trattata dal tuo client email e dalla casella destinataria. La pagina del mockup gratuito è l’unico modulo trattato lato server: raccoglie il tuo indirizzo email, la direzione di colori scelta, l’indirizzo del tuo sito attuale se lo indichi, il tuo messaggio e la lingua della pagina, e li inoltra via email alla casella dello studio. Nulla viene conservato in un database.",
-            "Dati tecnici possono essere trattati dal provider di hosting per log di sicurezza e distribuzione. Vercel Analytics viene caricato solo dopo il consenso per misurare le visualizzazioni di pagina."
+            "Il sito non offre area cliente, pagamento, CAPTCHA o pixel pubblicitario. Due moduli sono trattati lato server. La pagina del mockup gratuito raccoglie il tuo indirizzo email, la direzione di colori scelta, l’indirizzo del tuo sito attuale se lo indichi, il tuo messaggio e la lingua della pagina. Il modulo di contatto raccoglie il nome, l’indirizzo e-mail e il messaggio che inserisci, oltre a oggetto, telefono e azienda facoltativi. In entrambi i casi i campi sono inoltrati via email alla casella dello studio e nulla viene conservato in un database. I messaggi inviati tramite link mailto restano gestiti dal tuo client email e dalla casella destinataria.",
+            "Il tuo indirizzo IP è trattato in modo temporaneo per limitare il numero di invii del modulo di contatto ogni ora, insieme a un campo anti-spam nascosto. Dati tecnici possono essere trattati dal provider di hosting per log di sicurezza e distribuzione. Vercel Analytics viene caricato solo dopo il consenso per misurare le visualizzazioni di pagina."
           ]
         },
         {
           "title": "Finalità e basi giuridiche",
           "body": [
             "Le email sono trattate per rispondere alle richieste, preparare preventivi, fornire supporto e conservare prova degli scambi. Il trattamento si basa sul legittimo interesse e, ove applicabile, su misure precontrattuali richieste da te. Le richieste di mockup gratuito sono trattate per preparare e inviarti il mockup richiesto, e per risponderti.",
+            "I messaggi inviati tramite il modulo di contatto sono trattati per le stesse finalità. La limitazione degli invii per indirizzo IP e il filtro degli invii automatizzati si basano sul legittimo interesse a proteggere il servizio dagli abusi.",
             "La misurazione audience serve a comprendere il traffico aggregato e migliorare il sito. Go Cosmic carica Vercel Analytics solo dopo il tuo consenso. I log di sicurezza sono trattati per legittimo interesse alla protezione del servizio."
           ]
         },
         {
           "title": "Destinatari e responsabili",
           "body": [
-            "I dati possono essere accessibili a Go Cosmic, al provider email, a Resend (che recapita le email delle richieste di mockup gratuito), al provider di hosting e a Vercel per hosting e analytics. LinkedIn è un sito esterno e può trattare dati secondo la propria policy dopo il clic su un link in uscita."
+            "I dati possono essere accessibili a Go Cosmic, al provider email, a Resend (che recapita le email delle richieste di mockup gratuito e del modulo di contatto), al provider di hosting e a Vercel per hosting e analytics. LinkedIn è un sito esterno e può trattare dati secondo la propria policy dopo il clic su un link in uscita."
           ]
         },
         {
           "title": "Periodi di conservazione",
           "body": [
-            "Gli scambi email sono conservati solo per il tempo necessario alla gestione e al seguito, poi archiviati o eliminati secondo esigenze legali, contabili o di contenzioso. Il consenso analytics è memorizzato nel browser finché non cancelli il local storage o cambi browser. I log di hosting seguono la configurazione del provider."
+            "Gli scambi email sono conservati solo per il tempo necessario alla gestione e al seguito, poi archiviati o eliminati secondo esigenze legali, contabili o di contenzioso. Il consenso analytics è memorizzato nel browser finché non cancelli il local storage o cambi browser. I log di hosting seguono la configurazione del provider.",
+            "Gli invii del modulo di contatto non sono conservati in un database: vengono consegnati come e-mail e lo scambio che ne deriva segue i periodi descritti sopra."
           ]
         },
         {
@@ -84,7 +86,9 @@
         },
         {
           "title": "Direttore della pubblicazione",
-          "body": ["Direttore della pubblicazione: Matthieu Compérat."]
+          "body": [
+            "Direttore della pubblicazione: Matthieu Compérat."
+          ]
         },
         {
           "title": "Hosting",
@@ -106,7 +110,9 @@
         },
         {
           "title": "Contatto",
-          "body": ["Per domande legali, privacy o sicurezza, contatta support@gocosmic.dev."]
+          "body": [
+            "Per domande legali, privacy o sicurezza, contatta support@gocosmic.dev."
+          ]
         }
       ]
     }
