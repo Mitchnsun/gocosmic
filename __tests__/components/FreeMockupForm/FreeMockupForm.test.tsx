@@ -17,6 +17,20 @@ const fillRequiredFields = (
   fireEvent.click(getByRole('radio', { name: 'Starry night' }));
 };
 
+/**
+ * A promise the test settles itself. Leaving an action promise unresolved keeps
+ * a React transition pending past the test, which leaks `isPending` into the
+ * next one, so every deferred submission here is settled before the test ends.
+ */
+const deferredSubmission = () => {
+  let settle: (state: { status: string }) => void = () => {};
+  const promise = new Promise<{ status: string }>((resolve) => {
+    settle = resolve;
+  });
+
+  return { promise, settle: (state: { status: string }) => settle(state) };
+};
+
 describe('FreeMockupForm', () => {
   beforeEach(() => {
     submitFreeMockupRequest.mockReset();
@@ -129,12 +143,8 @@ describe('FreeMockupForm', () => {
   });
 
   it('still confirms a success when the visitor edited a field while it was in flight', async () => {
-    let settle: (state: { status: string }) => void = () => {};
-    submitFreeMockupRequest.mockReturnValue(
-      new Promise((resolve) => {
-        settle = resolve;
-      })
-    );
+    const inFlight = deferredSubmission();
+    submitFreeMockupRequest.mockReturnValue(inFlight.promise);
     const { getByLabelText, getByRole, getByText, queryByRole } = render(<FreeMockupForm />);
 
     fillRequiredFields(getByLabelText, getByRole);
@@ -143,19 +153,15 @@ describe('FreeMockupForm', () => {
 
     // The fields stay editable while the request is in flight.
     fireEvent.change(getByLabelText(/What you have in mind/), { target: { value: 'One more thought' } });
-    settle({ status: 'success' });
+    inFlight.settle({ status: 'success' });
 
     await waitFor(() => expect(getByText('Request received')).toBeInTheDocument());
     expect(queryByRole('button', { name: /Request my free mockup/ })).not.toBeInTheDocument();
   });
 
   it('still reports a failure when the visitor edited a field while it was in flight', async () => {
-    let settle: (state: { status: string }) => void = () => {};
-    submitFreeMockupRequest.mockReturnValue(
-      new Promise((resolve) => {
-        settle = resolve;
-      })
-    );
+    const inFlight = deferredSubmission();
+    submitFreeMockupRequest.mockReturnValue(inFlight.promise);
     const { getByLabelText, getByRole, getByText } = render(<FreeMockupForm />);
 
     fillRequiredFields(getByLabelText, getByRole);
@@ -163,11 +169,76 @@ describe('FreeMockupForm', () => {
     await waitFor(() => expect(getByRole('button', { name: /Sending/ })).toBeDisabled());
 
     fireEvent.change(getByLabelText(/What you have in mind/), { target: { value: 'One more thought' } });
-    settle({ status: 'error' });
+    inFlight.settle({ status: 'error' });
 
     await waitFor(() =>
       expect(getByText('Your request could not be sent. Please try again in a moment.')).toBeInTheDocument()
     );
+  });
+
+  it('does not show the previous failure while a retry is in flight', async () => {
+    submitFreeMockupRequest.mockResolvedValue({ status: 'error' });
+    const { getByLabelText, getByRole, getByText, queryByText } = render(<FreeMockupForm />);
+
+    fillRequiredFields(getByLabelText, getByRole);
+    fireEvent.click(getByRole('button', { name: /Request my free mockup/ }));
+    await waitFor(() =>
+      expect(getByText('Your request could not be sent. Please try again in a moment.')).toBeInTheDocument()
+    );
+
+    // Retry: the old failure must not sit next to a button reading "Sending…".
+    const retry = deferredSubmission();
+    submitFreeMockupRequest.mockReturnValue(retry.promise);
+    fireEvent.click(getByRole('button', { name: /Request my free mockup/ }));
+
+    await waitFor(() => expect(getByRole('button', { name: /Sending/ })).toBeDisabled());
+    expect(queryByText('Your request could not be sent. Please try again in a moment.')).not.toBeInTheDocument();
+
+    retry.settle({ status: 'success' });
+    await waitFor(() => expect(getByText('Request received')).toBeInTheDocument());
+  });
+
+  it('does not resurrect a corrected validation banner while the retry is in flight', async () => {
+    const { getByLabelText, getByRole, getByText, queryByText } = render(<FreeMockupForm />);
+
+    fireEvent.click(getByRole('button', { name: /Request my free mockup/ }));
+    await waitFor(() => expect(getByText('Please check the highlighted fields.')).toBeInTheDocument());
+
+    fillRequiredFields(getByLabelText, getByRole);
+    const retry = deferredSubmission();
+    submitFreeMockupRequest.mockReturnValue(retry.promise);
+    fireEvent.click(getByRole('button', { name: /Request my free mockup/ }));
+
+    await waitFor(() => expect(getByRole('button', { name: /Sending/ })).toBeDisabled());
+    expect(queryByText('Please check the highlighted fields.')).not.toBeInTheDocument();
+
+    retry.settle({ status: 'success' });
+    await waitFor(() => expect(getByText('Request received')).toBeInTheDocument());
+  });
+
+  it('still submits the chosen palette when retrying after a failure', async () => {
+    // React 19 resets the form once an action settles and skips re-rendering
+    // controlled inputs whose state did not change, so the palette radio is
+    // unchecked in the DOM while its card still renders as selected. A retry
+    // must carry the palette the visitor can see they picked.
+    submitFreeMockupRequest.mockResolvedValue({ status: 'error' });
+    const { getByLabelText, getByRole, getByText, queryByText } = render(<FreeMockupForm />);
+
+    fillRequiredFields(getByLabelText, getByRole);
+    fireEvent.click(getByRole('button', { name: /Request my free mockup/ }));
+    await waitFor(() =>
+      expect(getByText('Your request could not be sent. Please try again in a moment.')).toBeInTheDocument()
+    );
+
+    submitFreeMockupRequest.mockResolvedValue({ status: 'success' });
+    fireEvent.click(getByRole('button', { name: /Request my free mockup/ }));
+    await waitFor(() => expect(getByText('Request received')).toBeInTheDocument());
+
+    expect(submitFreeMockupRequest).toHaveBeenCalledTimes(2);
+    const retryPayload = submitFreeMockupRequest.mock.calls[1]?.[1] as FormData;
+    expect(retryPayload.get('colorPalette')).toBe('starryNight');
+    expect(retryPayload.get('email')).toBe('prospect@example.com');
+    expect(queryByText('This field is required.')).not.toBeInTheDocument();
   });
 
   it('submits a valid request and confirms it was received', async () => {
@@ -204,12 +275,16 @@ describe('FreeMockupForm', () => {
   });
 
   it('disables the button while the request is in flight', async () => {
-    submitFreeMockupRequest.mockReturnValue(new Promise(() => {}));
-    const { getByLabelText, getByRole } = render(<FreeMockupForm />);
+    const inFlight = deferredSubmission();
+    submitFreeMockupRequest.mockReturnValue(inFlight.promise);
+    const { getByLabelText, getByRole, getByText } = render(<FreeMockupForm />);
 
     fillRequiredFields(getByLabelText, getByRole);
     fireEvent.click(getByRole('button', { name: /Request my free mockup/ }));
 
     await waitFor(() => expect(getByRole('button', { name: /Sending/ })).toBeDisabled());
+
+    inFlight.settle({ status: 'success' });
+    await waitFor(() => expect(getByText('Request received')).toBeInTheDocument());
   });
 });

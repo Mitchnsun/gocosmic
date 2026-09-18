@@ -29,7 +29,7 @@ const INPUT_CLASSES =
 export function FreeMockupForm() {
   const t = useTranslations('freeMockup');
   const locale = useLocale();
-  const { values, errors, feedback, setValue, markTouched, formAction, isPending } = useFreeMockupForm();
+  const { values, errors, feedback, formRef, setValue, markTouched, formAction, isPending } = useFreeMockupForm();
 
   // Both the confirmation and the form visibility read the same status, so the
   // card can never hide the form while showing nothing.
@@ -40,7 +40,7 @@ export function FreeMockupForm() {
       <SubmitFeedback status={feedback.status} hasInvalidFields={feedback.hasInvalidFields} />
 
       {!isSent && (
-        <form action={formAction} noValidate className="flex flex-col gap-6">
+        <form ref={formRef} action={formAction} noValidate className="flex flex-col gap-6">
           <input type="hidden" name="locale" value={locale} />
 
           <FormField
