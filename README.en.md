@@ -128,6 +128,10 @@ export default function Header() {
 
 Professional contact form for client inquiries and consultations.
 
+### Free Mockup Page (`/free-mockup`)
+
+Lead-capture page where a prospect asks for a free mockup of their future website: email, colour direction (closed list of six), current website URL and a free-text field capped at 500 characters. Submissions go through a server action that validates them with `zod` and emails them via Resend — there is no database. A hidden honeypot field silently drops bot submissions. Entry points: the journey page and the end of the pricing simulator.
+
 ### Local SEO Page (`/local`)
 
 Locale-specific landing page targeting local searches (e.g., `/en/web-mobile-developer-annecy-geneva`, `/fr/developpeur-web-mobile-annecy-geneve`).
@@ -190,6 +194,15 @@ yarn dev
 ```
 
 The application will be accessible at [http://localhost:3000](http://localhost:3000).
+
+### Environment Variables
+
+Copy `.env.example` to `.env.local` and fill it in. Server-only secrets must never be prefixed with `NEXT_PUBLIC_`.
+
+| Variable            | Required | Purpose                                                                                                         |
+| ------------------- | -------- | --------------------------------------------------------------------------------------------------------------- |
+| `RESEND_API_KEY`    | Yes      | Resend API key used to email free mockup requests. Without it, the free mockup form reports a send failure.     |
+| `RESEND_FROM_EMAIL` | No       | Sender of that email; must be verified in the Resend dashboard. Defaults to `Go Cosmic <noreply@gocosmic.dev>`. |
 
 ### Available Scripts
 

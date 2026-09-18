@@ -112,7 +112,9 @@
       "subject": "Consulta de precios — Presupuesto de proyecto",
       "aria_label": "Enviar un correo a prospect@gocosmic.dev para un presupuesto de proyecto",
       "privacy_notice": "Al enviar un email, aceptas que tu mensaje y tus datos de contacto se traten para preparar un presupuesto y hacer seguimiento del proyecto.",
-      "privacy_link": "Política de privacidad"
+      "privacy_link": "Política de privacidad",
+      "free_mockup_cta_label": "Recibir una maqueta gratuita",
+      "free_mockup_cta_aria_label": "Ir a la página de solicitud de maqueta gratuita"
     },
     "reset": "Empezar de nuevo"
   }

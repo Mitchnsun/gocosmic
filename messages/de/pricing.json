@@ -112,7 +112,9 @@
       "subject": "Preisanfrage — Projektangebot",
       "aria_label": "E-Mail an prospect@gocosmic.dev für ein Projektangebot senden",
       "privacy_notice": "Mit dem Versand einer E-Mail erklärst du dich damit einverstanden, dass deine Nachricht und Kontaktdaten zur Angebotserstellung und Projektbetreuung verarbeitet werden.",
-      "privacy_link": "Datenschutzerklärung"
+      "privacy_link": "Datenschutzerklärung",
+      "free_mockup_cta_label": "Kostenloses Mockup erhalten",
+      "free_mockup_cta_aria_label": "Zur Seite für die Anfrage eines kostenlosen Mockups"
     },
     "reset": "Neu starten"
   }

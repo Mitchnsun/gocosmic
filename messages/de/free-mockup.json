@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "title": "Kostenloses Mockup - Go Cosmic | Annecy · Genf",
+    "description": "Erhalten Sie ein kostenloses Mockup Ihrer künftigen Website: Wählen Sie Ihre Farben, schildern Sie Ihre Wünsche und bekommen Sie einen ersten Entwurf per E-Mail. Unverbindlich."
+  },
+  "freeMockup": {
+    "eyebrow": "[ KOSTENLOSES MOCKUP ]",
+    "title": "Sehen Sie Ihre Website, bevor Sie entscheiden",
+    "intro": "Sagen Sie uns, wo Sie heute stehen und welche Stimmung Ihnen vorschwebt. Sie erhalten ein Mockup Ihrer künftigen Website — kostenlos und ohne jede Verpflichtung.",
+    "steps": {
+      "title": "So läuft es ab",
+      "items": {
+        "brief": {
+          "title": "Sie schicken das Wichtigste",
+          "description": "Ihre E-Mail-Adresse, die Farbrichtung, die Ihnen gefällt, und Ihre aktuelle Website, falls vorhanden."
+        },
+        "design": {
+          "title": "Wir gestalten ein Mockup",
+          "description": "Ein erster Blick auf Ihre Startseite, aufgebaut auf dem, was Sie beschrieben haben."
+        },
+        "deliver": {
+          "title": "Sie entscheiden in Ruhe",
+          "description": "Das Mockup landet in Ihrem Postfach. Passt es nicht, endet die Sache dort."
+        }
+      }
+    },
+    "privacy_notice": "Ihre E-Mail-Adresse und Ihre Nachricht dienen ausschließlich dazu, Ihr Mockup vorzubereiten und Ihnen zuzusenden.",
+    "privacy_link": "Datenschutzerklärung",
+    "form": {
+      "heading": "Fordern Sie Ihr Mockup an",
+      "lead": "Eine E-Mail-Adresse, eine Farbrichtung — alles andere ist optional.",
+      "email_label": "Ihre E-Mail-Adresse",
+      "email_placeholder": "sie@beispiel.com",
+      "palette_label": "Farbrichtung",
+      "website_label": "Ihre aktuelle Website",
+      "website_placeholder": "ihre-website.de",
+      "wishes_label": "Was Ihnen vorschwebt",
+      "wishes_placeholder": "Welche Seiten Sie brauchen, was Ihnen gefällt, was Sie lieber vermeiden möchten…",
+      "wishes_counter": "{count}/{max}",
+      "optional": "Optional",
+      "submit": "Kostenloses Mockup anfordern",
+      "submitting": "Wird gesendet…",
+      "reassurance": "Kostenlos, unverbindlich.",
+      "success_title": "Anfrage erhalten",
+      "success_message": "Danke — wir melden uns per E-Mail mit Ihrem Mockup.",
+      "error_message": "Ihre Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es gleich noch einmal.",
+      "invalid_message": "Bitte prüfen Sie die markierten Felder."
+    },
+    "palette": {
+      "options": {
+        "sober": "Schlicht & minimalistisch",
+        "lakeMountains": "See & Berge",
+        "alpineSunset": "Alpiner Sonnenuntergang",
+        "deepForest": "Tiefer Wald",
+        "starryNight": "Sternennacht",
+        "terracottaStone": "Terrakotta & Stein"
+      }
+    },
+    "validation": {
+      "required": "Dieses Feld ist erforderlich.",
+      "email_invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "url_invalid": "Bitte geben Sie eine gültige Website-Adresse ein, zum Beispiel meine-seite.de.",
+      "wishes_too_long": "Bitte bleiben Sie unter 500 Zeichen."
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "title": "Mockup gratuito - Go Cosmic | Annecy · Ginevra",
+    "description": "Riceva un mockup gratuito del suo futuro sito: scelga i colori, ci racconti le sue idee e scopra una prima proposta via email. Senza impegno."
+  },
+  "freeMockup": {
+    "eyebrow": "[ MOCKUP GRATUITO ]",
+    "title": "Veda il suo sito prima di decidere",
+    "intro": "Ci dica a che punto è oggi e che atmosfera ha in mente. Riceve un mockup del suo futuro sito, gratuito e senza alcun impegno.",
+    "steps": {
+      "title": "Come funziona",
+      "items": {
+        "brief": {
+          "title": "Ci invia l'essenziale",
+          "description": "La sua email, la direzione di colori che le piace e il suo sito attuale, se ne ha uno."
+        },
+        "design": {
+          "title": "Disegniamo un mockup",
+          "description": "Una prima anteprima della sua home page, costruita a partire da ciò che ha descritto."
+        },
+        "deliver": {
+          "title": "Decide con calma",
+          "description": "Il mockup arriva nella sua casella di posta. Se non fa per lei, tutto finisce lì."
+        }
+      }
+    },
+    "privacy_notice": "La sua email e il suo messaggio servono unicamente a preparare e inviarle il suo mockup.",
+    "privacy_link": "Informativa sulla privacy",
+    "form": {
+      "heading": "Richieda il suo mockup",
+      "lead": "Un'email, una direzione di colori: tutto il resto è facoltativo.",
+      "email_label": "La sua email",
+      "email_placeholder": "lei@esempio.com",
+      "palette_label": "Direzione di colori",
+      "website_label": "Il suo sito attuale",
+      "website_placeholder": "il-suo-sito.it",
+      "wishes_label": "Che cosa ha in mente",
+      "wishes_placeholder": "Le pagine di cui ha bisogno, ciò che le piace, ciò che preferisce evitare…",
+      "wishes_counter": "{count}/{max}",
+      "optional": "Facoltativo",
+      "submit": "Richiedi il mio mockup gratuito",
+      "submitting": "Invio in corso…",
+      "reassurance": "Gratuito, senza impegno.",
+      "success_title": "Richiesta ricevuta",
+      "success_message": "Grazie — le risponderemo via email con il suo mockup.",
+      "error_message": "Non è stato possibile inviare la sua richiesta. Riprovi tra un istante.",
+      "invalid_message": "Controlli i campi segnalati."
+    },
+    "palette": {
+      "options": {
+        "sober": "Sobrio e minimalista",
+        "lakeMountains": "Lago e montagne",
+        "alpineSunset": "Tramonto alpino",
+        "deepForest": "Foresta profonda",
+        "starryNight": "Notte stellata",
+        "terracottaStone": "Terracotta e pietra"
+      }
+    },
+    "validation": {
+      "required": "Questo campo è obbligatorio.",
+      "email_invalid": "Inserisca un indirizzo email valido.",
+      "url_invalid": "Inserisca un indirizzo del sito valido, ad esempio il-mio-sito.it.",
+      "wishes_too_long": "Resti entro i 500 caratteri."
+    }
+  }
+}

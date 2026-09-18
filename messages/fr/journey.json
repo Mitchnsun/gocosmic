@@ -5,6 +5,11 @@
   },
   "journey": {
     "subtitle": "Vous voyagez désormais parmi les étoiles",
-    "title": "Bienvenue dans votre voyage cosmique"
+    "title": "Bienvenue dans votre voyage cosmique",
+    "free_mockup_cta": {
+      "title": "Envie de voir d'abord ?",
+      "description": "Recevez une maquette de votre futur site avant de décider quoi que ce soit — gratuite, et sans rien devoir engager.",
+      "cta_label": "Obtenir ma maquette gratuite"
+    }
   }
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import { EnvelopeIcon } from '@heroicons/react/24/solid';
+import { EnvelopeIcon, SparklesIcon } from '@heroicons/react/24/solid';
 import { useTranslations } from 'next-intl';
 
 import { buttonVariants } from '@/design-system/button.variants';
@@ -27,6 +27,13 @@ export function ContactBanner() {
           {t('contact.cta')}
           <EnvelopeIcon className="h-4 w-4" aria-hidden="true" />
         </a>
+        <Link
+          href="/free-mockup"
+          className={cn(buttonVariants({ variant: 'jungle' }), 'inline-flex items-center gap-2')}
+          aria-label={t('contact.free_mockup_cta_aria_label')}>
+          {t('contact.free_mockup_cta_label')}
+          <SparklesIcon className="h-4 w-4" aria-hidden="true" />
+        </Link>
         <p className="text-ghost/35 font-mono text-sm">{email}</p>
       </div>
       <p className="text-ghost/35 mt-3 text-sm">

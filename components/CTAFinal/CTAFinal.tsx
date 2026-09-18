@@ -60,6 +60,8 @@ export interface CTAFinalProps {
   headline: string;
   /** Supporting description displayed below the headline. */
   description: string;
+  /** Optional supporting line rendered between the description and the CTA button. */
+  note?: ReactNode;
   /** Label for the call-to-action button. */
   ctaText: string;
   /** Destination for the call-to-action link. */
@@ -102,6 +104,7 @@ export interface CTAFinalProps {
 const CTAFinal = ({
   headline,
   description,
+  note,
   ctaText,
   ctaHref,
   starfieldDensity = 'high',
@@ -171,6 +174,7 @@ const CTAFinal = ({
           </span>
         </h2>
         <p className="text-ghost/70 max-w-xl text-lg leading-8 sm:text-xl">{description}</p>
+        {note && <p className="text-ghost/45 max-w-xl text-sm">{note}</p>}
         <Link
           href={ctaHref}
           onClick={onCtaClick}

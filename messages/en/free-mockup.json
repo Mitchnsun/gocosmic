@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "title": "Free mockup - Go Cosmic | Annecy · Geneva",
+    "description": "Get a free mockup of your future website: pick a colour direction, tell us what you have in mind, and receive a first design by email. No commitment."
+  },
+  "freeMockup": {
+    "eyebrow": "[ FREE MOCKUP ]",
+    "title": "See your site before you decide",
+    "intro": "Tell us where you stand today and the mood you have in mind. You get a mockup of your future website — free, and with nothing to commit to.",
+    "steps": {
+      "title": "How it works",
+      "items": {
+        "brief": {
+          "title": "You send the essentials",
+          "description": "Your email, the colour direction you like, and your current website if you have one."
+        },
+        "design": {
+          "title": "We design a mockup",
+          "description": "A first look at your home page, built from what you described."
+        },
+        "deliver": {
+          "title": "You decide, calmly",
+          "description": "The mockup lands in your inbox. If it is not for you, it stops there."
+        }
+      }
+    },
+    "privacy_notice": "Your email and your message are used only to prepare and send your mockup.",
+    "privacy_link": "Privacy policy",
+    "form": {
+      "heading": "Request your mockup",
+      "lead": "One email, one colour direction — everything else is optional.",
+      "email_label": "Your email",
+      "email_placeholder": "you@example.com",
+      "palette_label": "Colour direction",
+      "website_label": "Your current website",
+      "website_placeholder": "your-website.com",
+      "wishes_label": "What you have in mind",
+      "wishes_placeholder": "The pages you need, what you like, what you would rather avoid…",
+      "wishes_counter": "{count}/{max}",
+      "optional": "Optional",
+      "submit": "Request my free mockup",
+      "submitting": "Sending…",
+      "reassurance": "Free, no commitment.",
+      "success_title": "Request received",
+      "success_message": "Thank you — we will come back to you by email with your mockup.",
+      "error_message": "Your request could not be sent. Please try again in a moment.",
+      "invalid_message": "Please check the highlighted fields."
+    },
+    "palette": {
+      "options": {
+        "sober": "Sober & minimalist",
+        "lakeMountains": "Lake & mountains",
+        "alpineSunset": "Alpine sunset",
+        "deepForest": "Deep forest",
+        "starryNight": "Starry night",
+        "terracottaStone": "Terracotta & stone"
+      }
+    },
+    "validation": {
+      "required": "This field is required.",
+      "email_invalid": "Please enter a valid email address.",
+      "url_invalid": "Please enter a valid website address, for example my-site.com.",
+      "wishes_too_long": "Please keep your message under 500 characters."
+    }
+  }
+}

@@ -21,18 +21,13 @@
     "cta": {
       "button": "Contáctanos",
       "description": "Hablemos de cómo podemos dar vida a tu proyecto web o móvil, creando algo realmente fuera de este mundo.",
+      "freeMockup": "¿Aún no te decides? Pide tu <link>maqueta gratuita</link>.",
       "title": "¿Listo para Go Cosmic?",
       "viewOffers": "Consultar nuestras ofertas"
     },
     "hero": {
       "cta": "Comienza tu viaje",
-      "endWords": [
-        "brillan",
-        "vuelan",
-        "inspiran",
-        "transforman",
-        "elevan"
-      ],
+      "endWords": ["brillan", "vuelan", "inspiran", "transforman", "elevan"],
       "subtitle": "Permítenos lanzar tus ideas a la estratosfera con diseño místico y funcionalidades cósmicas",
       "title": "Construimos aplicaciones estelares que"
     },
@@ -65,42 +60,22 @@
       "ai": {
         "description": "Integrando características avanzadas de IA para hacer tus aplicaciones más inteligentes, adaptativas y verdaderamente de nueva generación.",
         "title": "Impulsado por IA",
-        "features": [
-          "LLMs",
-          "Embeddings",
-          "Agentes",
-          "RAG"
-        ]
+        "features": ["LLMs", "Embeddings", "Agentes", "RAG"]
       },
       "design": {
         "description": "Creando experiencias de usuario intuitivas y encantadoras que cautivan y deleitan.",
         "title": "Diseño UI/UX Místico",
-        "features": [
-          "Figma",
-          "Design Systems",
-          "Motion",
-          "Accesibilidad"
-        ]
+        "features": ["Figma", "Design Systems", "Motion", "Accesibilidad"]
       },
       "development": {
         "description": "Construyendo aplicaciones móviles robustas y escalables para plataformas iOS y Android.",
         "title": "Desarrollo Estelar",
-        "features": [
-          "React",
-          "Next.js",
-          "TypeScript",
-          "Expo"
-        ]
+        "features": ["React", "Next.js", "TypeScript", "Expo"]
       },
       "launch": {
         "description": "Guiando tu aplicación a través del proceso de lanzamiento y más allá, asegurando un despegue exitoso.",
         "title": "Lanzamiento Cósmico",
-        "features": [
-          "Vercel",
-          "AWS",
-          "Docker",
-          "Sentry"
-        ]
+        "features": ["Vercel", "AWS", "Docker", "Sentry"]
       },
       "title": "Nuestros Servicios Cósmicos",
       "eyebrow": "[ SERVICIOS · 04 ]",
@@ -154,38 +129,28 @@
         "title": "Daily Fortune",
         "tagline": "Móvil · iOS / Android",
         "description": "Una aplicación móvil mística que entrega fortunas diarias y mensajes motivacionales potenciados por IA.",
-        "tags": [
-          "IA",
-          "Bienestar"
-        ],
+        "tags": ["IA", "Bienestar"],
         "imageAlt": "Vista previa de la app Daily Fortune"
       },
       "mcomperat": {
         "title": "mcomper.at",
         "tagline": "Web · Next.js",
         "description": "Un CV web moderno y responsivo creado con Next.js, TypeScript e internacionalización completa.",
-        "tags": [
-          "CV personal"
-        ],
+        "tags": ["CV personal"],
         "imageAlt": "Vista previa del sitio web mcomper.at"
       },
       "pscSupersprint": {
         "title": "PSC Supersprint",
         "tagline": "Web · Tiempo real",
         "description": "Una aplicación web para gestionar y mostrar en tiempo real los resultados de competiciones de triatlón.",
-        "tags": [
-          "Deporte",
-          "En directo"
-        ],
+        "tags": ["Deporte", "En directo"],
         "imageAlt": "Vista previa del tablero de resultados de PSC Supersprint"
       },
       "choeurDesPaysduMontBlanc": {
         "title": "Chœur des Pays du Mont Blanc",
         "tagline": "Web · Editorial",
         "description": "Un sitio web que muestra las actividades, conciertos y repertorio del coro en Haute-Savoie.",
-        "tags": [
-          "Cultura"
-        ],
+        "tags": ["Cultura"],
         "imageAlt": "Vista previa del sitio web del Chœur des Pays du Mont Blanc"
       }
     }

@@ -7,7 +7,7 @@
       },
       "eyebrow": "RGPD",
       "title": "Política de privacidad",
-      "updated": "Última actualización: 26 de mayo de 2026",
+      "updated": "Última actualización: 18 de septiembre de 2026",
       "intro": "Esta página explica cómo Go Cosmic trata los datos personales en este sitio web y cuando contactas con el estudio por email.",
       "legalNoticePrefix": "Para los datos del editor y del alojamiento, consulta el",
       "legalNoticeLink": "aviso legal",
@@ -21,21 +21,21 @@
         {
           "title": "Datos recopilados",
           "body": [
-            "El sitio no ofrece área de cliente, pago, formulario servidor, CAPTCHA ni píxel publicitario. Los mensajes se envían mediante enlaces mailto y son tratados por tu cliente de email y el buzón destinatario.",
+            "El sitio no ofrece área de cliente, pago, CAPTCHA ni píxel publicitario. La mayoría de los mensajes se envían mediante enlaces mailto y son tratados por tu cliente de email y el buzón destinatario. La página de maqueta gratuita es el único formulario tratado en el servidor: recoge tu dirección de email, la gama de colores elegida, la dirección de tu sitio actual si la indicas, tu mensaje y el idioma de la página, y los envía por email al buzón del estudio. No se guarda nada en una base de datos.",
             "El proveedor de alojamiento puede tratar datos técnicos para registros de seguridad y entrega. Vercel Analytics solo se carga tras el consentimiento para medir páginas vistas."
           ]
         },
         {
           "title": "Finalidades y bases jurídicas",
           "body": [
-            "Los emails se tratan para responder solicitudes, preparar presupuestos, prestar soporte y conservar prueba de los intercambios. Este tratamiento se basa en el interés legítimo y, cuando proceda, en medidas precontractuales solicitadas por ti.",
+            "Los emails se tratan para responder solicitudes, preparar presupuestos, prestar soporte y conservar prueba de los intercambios. Este tratamiento se basa en el interés legítimo y, cuando proceda, en medidas precontractuales solicitadas por ti. Las solicitudes de maqueta gratuita se tratan para preparar y enviarte la maqueta solicitada, y para responderte.",
             "La medición de audiencia sirve para comprender el tráfico agregado y mejorar el sitio. Go Cosmic carga Vercel Analytics únicamente tras tu consentimiento. Los registros de seguridad se tratan por interés legítimo en proteger el servicio."
           ]
         },
         {
           "title": "Destinatarios y encargados",
           "body": [
-            "Los datos pueden ser accesibles para Go Cosmic, el proveedor de email, el proveedor de alojamiento y Vercel para alojamiento y analítica. LinkedIn es un sitio externo y puede tratar datos según su propia política después de hacer clic en un enlace saliente."
+            "Los datos pueden ser accesibles para Go Cosmic, el proveedor de email, Resend (que entrega los emails de solicitud de maqueta gratuita), el proveedor de alojamiento y Vercel para alojamiento y analítica. LinkedIn es un sitio externo y puede tratar datos según su propia política después de hacer clic en un enlace saliente."
           ]
         },
         {

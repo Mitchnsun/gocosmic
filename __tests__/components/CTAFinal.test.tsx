@@ -47,6 +47,24 @@ describe('CTAFinal', () => {
     expect(getByRole('link', { name: /Contact us/ })).toHaveAttribute('href', '/contact');
   });
 
+  it('should render the optional note with a link when provided', () => {
+    const { getByRole } = renderCTA({
+      note: (
+        <>
+          Not ready to talk yet? Ask for your <a href="/free-mockup">free mockup</a>.
+        </>
+      ),
+    });
+
+    expect(getByRole('link', { name: 'free mockup' })).toHaveAttribute('href', '/free-mockup');
+  });
+
+  it('should not render a note when none is provided', () => {
+    const { queryByText } = renderCTA();
+
+    expect(queryByText(/free mockup/i)).not.toBeInTheDocument();
+  });
+
   it('should render the starfield background', () => {
     const { container } = renderCTA();
 

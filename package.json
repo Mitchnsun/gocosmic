@@ -45,8 +45,10 @@
     "next-seo": "7.2.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
+    "resend": "^6.28.1",
     "tailwind-merge": "^2.6.1",
-    "three": "~0.182.0"
+    "three": "~0.182.0",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",

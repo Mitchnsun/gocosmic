@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "title": "Maqueta gratuita - Go Cosmic | Annecy · Ginebra",
+    "description": "Reciba una maqueta gratuita de su futuro sitio web: elija sus colores, cuéntenos sus ideas y descubra una primera propuesta por email. Sin compromiso."
+  },
+  "freeMockup": {
+    "eyebrow": "[ MAQUETA GRATUITA ]",
+    "title": "Vea su sitio antes de decidir",
+    "intro": "Cuéntenos en qué punto está hoy y el ambiente que tiene en mente. Recibirá una maqueta de su futuro sitio, gratis y sin nada que comprometer.",
+    "steps": {
+      "title": "Cómo funciona",
+      "items": {
+        "brief": {
+          "title": "Nos envía lo esencial",
+          "description": "Su email, la gama de colores que le gusta y su sitio actual, si tiene uno."
+        },
+        "design": {
+          "title": "Diseñamos una maqueta",
+          "description": "Una primera vista de su página de inicio, creada a partir de lo que nos ha descrito."
+        },
+        "deliver": {
+          "title": "Decide con calma",
+          "description": "La maqueta llega a su correo. Si no le convence, todo termina ahí."
+        }
+      }
+    },
+    "privacy_notice": "Su email y su mensaje se utilizan únicamente para preparar y enviarle su maqueta.",
+    "privacy_link": "Política de privacidad",
+    "form": {
+      "heading": "Solicite su maqueta",
+      "lead": "Un email y una gama de colores: todo lo demás es opcional.",
+      "email_label": "Su email",
+      "email_placeholder": "usted@ejemplo.com",
+      "palette_label": "Gama de colores",
+      "website_label": "Su sitio actual",
+      "website_placeholder": "su-sitio.es",
+      "wishes_label": "Lo que tiene en mente",
+      "wishes_placeholder": "Las páginas que necesita, lo que le gusta, lo que prefiere evitar…",
+      "wishes_counter": "{count}/{max}",
+      "optional": "Opcional",
+      "submit": "Pedir mi maqueta gratuita",
+      "submitting": "Enviando…",
+      "reassurance": "Gratis, sin compromiso.",
+      "success_title": "Solicitud recibida",
+      "success_message": "Gracias: le responderemos por email con su maqueta.",
+      "error_message": "No se ha podido enviar su solicitud. Inténtelo de nuevo en un momento.",
+      "invalid_message": "Revise los campos señalados."
+    },
+    "palette": {
+      "options": {
+        "sober": "Sobrio y minimalista",
+        "lakeMountains": "Lago y montañas",
+        "alpineSunset": "Atardecer alpino",
+        "deepForest": "Bosque profundo",
+        "starryNight": "Noche estrellada",
+        "terracottaStone": "Terracota y piedra"
+      }
+    },
+    "validation": {
+      "required": "Este campo es obligatorio.",
+      "email_invalid": "Introduzca una dirección de email válida.",
+      "url_invalid": "Introduzca una dirección de sitio web válida, por ejemplo mi-sitio.es.",
+      "wishes_too_long": "No supere los 500 caracteres."
+    }
+  }
+}

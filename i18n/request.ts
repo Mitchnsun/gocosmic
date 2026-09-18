@@ -93,6 +93,14 @@ const getNamespacesForPath = (pathname: string): string[] => {
   ) {
     return ['legal'];
   } else if (
+    pathWithoutLocale.startsWith('/free-mockup') ||
+    pathWithoutLocale.startsWith('/maquette-gratuite') ||
+    pathWithoutLocale.startsWith('/maqueta-gratuita') ||
+    pathWithoutLocale.startsWith('/kostenloses-mockup') ||
+    pathWithoutLocale.startsWith('/mockup-gratuito')
+  ) {
+    return ['free-mockup'];
+  } else if (
     pathWithoutLocale.startsWith('/pricing') ||
     pathWithoutLocale.startsWith('/tarifs') ||
     pathWithoutLocale.startsWith('/precios') ||

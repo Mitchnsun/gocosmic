@@ -6,6 +6,9 @@ import { useTranslations } from 'next-intl';
 
 import MovingStarfield from '@/components/Journey/MovingStarfield';
 import { PricingTeaser } from '@/components/PricingTeaser';
+import { buttonVariants } from '@/design-system/button.variants';
+import { cn } from '@/design-system/lib/utils';
+import { Link } from '@/i18n/navigation';
 import type { Currency } from '@/lib/region';
 
 interface JourneyContentProps {
@@ -41,6 +44,17 @@ export default function JourneyContent({ currency }: JourneyContentProps) {
       </div>
       <div className="relative z-10 m-auto max-w-2xl px-4 pb-16">
         <PricingTeaser currency={currency} />
+        <section
+          aria-labelledby="journey-free-mockup-heading"
+          className="border-ghost/15 bg-void/70 mt-6 rounded-2xl border p-6 backdrop-blur">
+          <h3 id="journey-free-mockup-heading" className="font-display text-ghost text-lg font-semibold">
+            {t('free_mockup_cta.title')}
+          </h3>
+          <p className="text-ghost/55 mt-2 text-sm">{t('free_mockup_cta.description')}</p>
+          <Link href="/free-mockup" className={cn(buttonVariants({ variant: 'aerospace', size: 'lg' }), 'mt-6')}>
+            {t('free_mockup_cta.cta_label')}
+          </Link>
+        </section>
       </div>
     </div>
   );
