@@ -21,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Fixed
 
 - A message that cannot be delivered is now reported as such, instead of showing a confirmation for something nobody would receive
-- The starfield behind the project pages now stands still for visitors who ask for reduced motion
+- The star fields behind the page headers and the closing call-to-action sections now stand still, and buttons no longer grow on hover, for visitors who ask for reduced motion
 
 ## [1.7.1] - 2026-09-18
 
