@@ -21,27 +21,29 @@
         {
           "title": "Erhobene Daten",
           "body": [
-            "Die Website bietet keinen Kundenbereich, keine Zahlung, kein CAPTCHA und keinen Werbepixel. Die meisten Nachrichten werden über mailto-Links versendet und durch dein E-Mail-Programm sowie das Empfängerpostfach verarbeitet. Die Seite für das kostenlose Mockup ist das einzige serverseitig verarbeitete Formular: Sie erfasst deine E-Mail-Adresse, die gewählte Farbrichtung, die Adresse deiner aktuellen Website, sofern du sie angibst, deine Nachricht und die Sprache der Seite und leitet sie per E-Mail an das Postfach des Studios weiter. Nichts wird in einer Datenbank gespeichert.",
-            "Technische Daten können vom Hosting-Anbieter für Sicherheits- und Bereitstellungsprotokolle verarbeitet werden. Vercel Analytics wird nur nach Einwilligung geladen, um Seitenaufrufe zu messen."
+            "Die Website bietet keinen Kundenbereich, keine Zahlung, kein CAPTCHA und keinen Werbepixel. Zwei Formulare werden serverseitig verarbeitet. Die Seite für das kostenlose Mockup erfasst deine E-Mail-Adresse, die gewählte Farbrichtung, die Adresse deiner aktuellen Website, sofern du sie angibst, deine Nachricht und die Sprache der Seite. Das Kontaktformular erfasst den Namen, die E-Mail-Adresse und die Nachricht, die du einträgst, sowie den optionalen Betreff, die Telefonnummer und das Unternehmen. In beiden Fällen werden die Felder per E-Mail an das Postfach des Studios weitergeleitet und nichts wird in einer Datenbank gespeichert. Über mailto-Links gesendete Nachrichten verarbeiten weiterhin dein E-Mail-Programm und das Empfängerpostfach.",
+            "Deine IP-Adresse wird vorübergehend verarbeitet, um die Zahl der Kontaktformular-Sendungen pro Stunde zu begrenzen, ergänzt durch ein verstecktes Anti-Spam-Feld. Technische Daten können vom Hosting-Anbieter für Sicherheits- und Bereitstellungsprotokolle verarbeitet werden. Vercel Analytics wird nur nach Einwilligung geladen, um Seitenaufrufe zu messen."
           ]
         },
         {
           "title": "Zwecke und Rechtsgrundlagen",
           "body": [
             "E-Mails werden verarbeitet, um Anfragen zu beantworten, Angebote zu erstellen, Support zu leisten und Nachweise der Korrespondenz aufzubewahren. Die Verarbeitung beruht auf berechtigtem Interesse und gegebenenfalls auf von dir angefragten vorvertraglichen Maßnahmen. Anfragen für ein kostenloses Mockup werden verarbeitet, um das angefragte Mockup zu erstellen, dir zuzusenden und dir zu antworten.",
+            "Über das Kontaktformular gesendete Nachrichten werden zu denselben Zwecken verarbeitet. Die Begrenzung der Sendungen pro IP-Adresse und das Filtern automatisierter Sendungen beruhen auf dem berechtigten Interesse, den Dienst vor Missbrauch zu schützen.",
             "Die Reichweitenmessung dient dazu, aggregierten Traffic zu verstehen und die Website zu verbessern. Go Cosmic lädt Vercel Analytics nur nach deiner Einwilligung. Sicherheitslogs werden auf Grundlage des berechtigten Interesses am Schutz des Dienstes verarbeitet."
           ]
         },
         {
           "title": "Empfänger und Auftragsverarbeiter",
           "body": [
-            "Daten können für Go Cosmic, den E-Mail-Anbieter, Resend (das die E-Mails der Mockup-Anfragen zustellt), den Hosting-Anbieter und Vercel für Hosting und Analytics zugänglich sein. LinkedIn ist eine externe Website und kann nach einem Klick auf einen ausgehenden Link Daten nach eigener Richtlinie verarbeiten."
+            "Daten können für Go Cosmic, den E-Mail-Anbieter, Resend (das die E-Mails der Mockup-Anfragen und des Kontaktformulars zustellt), den Hosting-Anbieter und Vercel für Hosting und Analytics zugänglich sein. LinkedIn ist eine externe Website und kann nach einem Klick auf einen ausgehenden Link Daten nach eigener Richtlinie verarbeiten."
           ]
         },
         {
           "title": "Aufbewahrungsfristen",
           "body": [
-            "E-Mail-Korrespondenz wird nur so lange aufbewahrt, wie es für Bearbeitung und Nachverfolgung erforderlich ist, und danach je nach gesetzlichen, buchhalterischen oder streitbezogenen Anforderungen archiviert oder gelöscht. Die Analytics-Einwilligung wird in deinem Browser gespeichert, bis du den lokalen Speicher löschst oder den Browser wechselst. Hosting-Logs richten sich nach der Konfiguration des Anbieters."
+            "E-Mail-Korrespondenz wird nur so lange aufbewahrt, wie es für Bearbeitung und Nachverfolgung erforderlich ist, und danach je nach gesetzlichen, buchhalterischen oder streitbezogenen Anforderungen archiviert oder gelöscht. Die Analytics-Einwilligung wird in deinem Browser gespeichert, bis du den lokalen Speicher löschst oder den Browser wechselst. Hosting-Logs richten sich nach der Konfiguration des Anbieters.",
+            "Sendungen des Kontaktformulars werden nicht in einer Datenbank aufbewahrt: Sie werden als E-Mail zugestellt, und der daraus entstehende Austausch folgt den oben beschriebenen Fristen."
           ]
         },
         {
@@ -84,7 +86,9 @@
         },
         {
           "title": "Verantwortlich für die Veröffentlichung",
-          "body": ["Verantwortlich für die Veröffentlichung: Matthieu Compérat."]
+          "body": [
+            "Verantwortlich für die Veröffentlichung: Matthieu Compérat."
+          ]
         },
         {
           "title": "Hosting",
@@ -106,7 +110,9 @@
         },
         {
           "title": "Kontakt",
-          "body": ["Für rechtliche, Datenschutz- oder Sicherheitsfragen kontaktiere support@gocosmic.dev."]
+          "body": [
+            "Für rechtliche, Datenschutz- oder Sicherheitsfragen kontaktiere support@gocosmic.dev."
+          ]
         }
       ]
     }

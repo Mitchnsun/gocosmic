@@ -4,7 +4,7 @@ import type { ChangeEvent, FormEvent } from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import type { ContactErrors, ContactField, ContactPayload } from '@/lib/contact/validation';
-import { emptyContactPayload, validateContact } from '@/lib/contact/validation';
+import { CONTACT_FIELD_ORDER, emptyContactPayload, validateContact } from '@/lib/contact/validation';
 
 import type { ContactFormErrorCode, ContactFormStatus } from './ContactForm.types';
 import { hasReachedSubmissionLimit, recordSubmission } from './ContactForm.utils';
@@ -29,6 +29,9 @@ export const useContactForm = ({ endpoint, onSuccess }: UseContactFormOptions) =
    *  response cannot undo the visitor's action. */
   const requestIdRef = useRef(0);
   const abortRef = useRef<AbortController | null>(null);
+  /** Field to focus after a failed submission. The nonce makes two failures on
+   *  the same field distinct, so the focus effect runs again. */
+  const [invalidFocus, setInvalidFocus] = useState<{ field: ContactField; nonce: number } | null>(null);
 
   useEffect(() => () => abortRef.current?.abort(), []);
 
@@ -44,6 +47,7 @@ export const useContactForm = ({ endpoint, onSuccess }: UseContactFormOptions) =
   }, []);
 
   const reset = useCallback(() => {
+    setInvalidFocus(null);
     requestIdRef.current += 1;
     abortRef.current?.abort();
     abortRef.current = null;
@@ -64,6 +68,12 @@ export const useContactForm = ({ endpoint, onSuccess }: UseContactFormOptions) =
       if (Object.keys(nextErrors).length > 0) {
         setErrors(nextErrors);
         setStatus('error');
+        // Without this the submission looks like it did nothing: the form is
+        // noValidate, so the browser announces no error of its own.
+        const firstInvalid = CONTACT_FIELD_ORDER.find((field) =>
+          Object.prototype.hasOwnProperty.call(nextErrors, field)
+        );
+        if (firstInvalid) setInvalidFocus({ field: firstInvalid, nonce: Date.now() });
         return;
       }
 
@@ -128,5 +138,5 @@ export const useContactForm = ({ endpoint, onSuccess }: UseContactFormOptions) =
     [endpoint, onSuccess, values]
   );
 
-  return { values, errors, status, formError, handleChange, handleSubmit, reset };
+  return { values, errors, status, formError, invalidFocus, handleChange, handleSubmit, reset };
 };

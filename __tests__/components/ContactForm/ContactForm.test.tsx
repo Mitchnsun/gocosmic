@@ -194,4 +194,21 @@ describe('ContactForm', () => {
     release({ ok: true, status: 200 });
     await waitFor(() => expect(getByRole('status')).toBeInTheDocument());
   });
+
+  it('moves focus to the first invalid field when the submission is rejected', async () => {
+    const { getByRole, getByLabelText } = render(<ContactForm />);
+
+    await userEvent.click(getByRole('button', { name: /Send the message/ }));
+
+    await waitFor(() => expect(getByLabelText(/^Name/)).toHaveFocus());
+  });
+
+  it('focuses the first field that is still invalid on a later attempt', async () => {
+    const { getByRole, getByLabelText } = render(<ContactForm />);
+
+    await userEvent.type(getByLabelText(/^Name/), 'Ada Lovelace');
+    await userEvent.click(getByRole('button', { name: /Send the message/ }));
+
+    await waitFor(() => expect(getByLabelText(/^Email/)).toHaveFocus());
+  });
 });

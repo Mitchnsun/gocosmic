@@ -21,27 +21,29 @@
         {
           "title": "Données collectées",
           "body": [
-            "Le site ne propose pas d’espace client, paiement, CAPTCHA ni pixel publicitaire. La plupart des messages passent par des liens mailto et sont traités par votre client email et la boîte de réception destinataire. La page de maquette gratuite est le seul formulaire traité côté serveur : elle collecte votre adresse email, la direction de couleurs choisie, l’adresse de votre site actuel si vous la renseignez, votre message et la langue de la page, puis les transmet par email à la boîte du studio. Rien n’est conservé en base de données.",
-            "Des données techniques peuvent être traitées par l’hébergeur pour les journaux de sécurité et de diffusion. Vercel Analytics n’est chargé qu’après consentement pour mesurer les pages vues."
+            "Le site ne propose pas d’espace client, paiement, CAPTCHA ni pixel publicitaire. Deux formulaires sont traités côté serveur. La page de maquette gratuite collecte votre adresse email, la direction de couleurs choisie, l’adresse de votre site actuel si vous la renseignez, votre message et la langue de la page. Le formulaire de contact collecte le nom, l’adresse e-mail et le message que vous saisissez, ainsi que l’objet, le téléphone et la société facultatifs. Dans les deux cas, les champs sont transmis par email à la boîte du studio et rien n’est conservé en base de données. Les messages envoyés via les liens mailto restent traités par votre client email et la boîte destinataire.",
+            "Votre adresse IP est traitée de manière temporaire pour limiter le nombre d’envois du formulaire de contact par heure, en complément d’un champ anti-spam masqué. Des données techniques peuvent être traitées par l’hébergeur pour les journaux de sécurité et de diffusion. Vercel Analytics n’est chargé qu’après consentement pour mesurer les pages vues."
           ]
         },
         {
           "title": "Finalités et bases légales",
           "body": [
             "Les emails sont traités pour répondre aux demandes, préparer des devis, fournir du support et conserver une preuve des échanges. Ce traitement repose sur l’intérêt légitime et, le cas échéant, sur des mesures précontractuelles demandées par vous. Les demandes de maquette gratuite sont traitées pour préparer et vous envoyer la maquette demandée, et pour vous répondre.",
+            "Les messages envoyés via le formulaire de contact sont traités pour les mêmes finalités. La limitation des envois par adresse IP et le filtrage des envois automatisés reposent sur l'intérêt légitime à protéger le service contre les abus.",
             "La mesure d’audience sert à comprendre le trafic agrégé et améliorer le site. Go Cosmic charge Vercel Analytics uniquement après votre consentement. Les journaux de sécurité reposent sur l’intérêt légitime de protection du service."
           ]
         },
         {
           "title": "Destinataires et sous-traitants",
           "body": [
-            "Les données peuvent être accessibles à Go Cosmic, au fournisseur email, à Resend (qui achemine les emails de demande de maquette gratuite), à l’hébergeur et à Vercel pour l’hébergement et l’analytics. LinkedIn est un site externe qui peut traiter des données selon sa propre politique après clic sur un lien sortant."
+            "Les données peuvent être accessibles à Go Cosmic, au fournisseur email, à Resend (qui achemine les emails de demande de maquette gratuite et du formulaire de contact), à l’hébergeur et à Vercel pour l’hébergement et l’analytics. LinkedIn est un site externe qui peut traiter des données selon sa propre politique après clic sur un lien sortant."
           ]
         },
         {
           "title": "Durées de conservation",
           "body": [
-            "Les échanges email sont conservés le temps nécessaire au traitement et au suivi, puis archivés ou supprimés selon les besoins légaux, comptables ou contentieux. Le consentement analytics est stocké dans votre navigateur jusqu’à suppression du stockage local ou changement de navigateur. Les logs d’hébergement suivent la configuration du prestataire."
+            "Les échanges email sont conservés le temps nécessaire au traitement et au suivi, puis archivés ou supprimés selon les besoins légaux, comptables ou contentieux. Le consentement analytics est stocké dans votre navigateur jusqu’à suppression du stockage local ou changement de navigateur. Les logs d’hébergement suivent la configuration du prestataire.",
+            "Les envois du formulaire de contact ne sont pas conservés en base de données : ils sont transmis sous forme d'e-mail, et l'échange qui en découle suit les durées décrites ci-dessus."
           ]
         },
         {
@@ -88,7 +90,9 @@
         },
         {
           "title": "Directeur de publication",
-          "body": ["Directeur de publication : Matthieu Compérat."]
+          "body": [
+            "Directeur de publication : Matthieu Compérat."
+          ]
         },
         {
           "title": "Hébergement",
@@ -110,7 +114,9 @@
         },
         {
           "title": "Contact",
-          "body": ["Pour toute question légale, confidentialité ou sécurité, contactez support@gocosmic.dev."]
+          "body": [
+            "Pour toute question légale, confidentialité ou sécurité, contactez support@gocosmic.dev."
+          ]
         }
       ]
     }

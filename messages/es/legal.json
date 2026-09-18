@@ -21,27 +21,29 @@
         {
           "title": "Datos recopilados",
           "body": [
-            "El sitio no ofrece área de cliente, pago, CAPTCHA ni píxel publicitario. La mayoría de los mensajes se envían mediante enlaces mailto y son tratados por tu cliente de email y el buzón destinatario. La página de maqueta gratuita es el único formulario tratado en el servidor: recoge tu dirección de email, la gama de colores elegida, la dirección de tu sitio actual si la indicas, tu mensaje y el idioma de la página, y los envía por email al buzón del estudio. No se guarda nada en una base de datos.",
-            "El proveedor de alojamiento puede tratar datos técnicos para registros de seguridad y entrega. Vercel Analytics solo se carga tras el consentimiento para medir páginas vistas."
+            "El sitio no ofrece área de cliente, pago, CAPTCHA ni píxel publicitario. Dos formularios se tratan en el servidor. La página de maqueta gratuita recoge tu dirección de email, la gama de colores elegida, la dirección de tu sitio actual si la indicas, tu mensaje y el idioma de la página. El formulario de contacto recoge el nombre, la dirección de correo y el mensaje que escribes, además del asunto, el teléfono y la empresa opcionales. En ambos casos los campos se envían por email al buzón del estudio y no se guarda nada en una base de datos. Los mensajes enviados mediante enlaces mailto los gestiona tu cliente de email y el buzón destinatario.",
+            "Tu dirección IP se trata de forma temporal para limitar el número de envíos del formulario de contacto por hora, junto con un campo antispam oculto. El proveedor de alojamiento puede tratar datos técnicos para registros de seguridad y entrega. Vercel Analytics solo se carga tras el consentimiento para medir páginas vistas."
           ]
         },
         {
           "title": "Finalidades y bases jurídicas",
           "body": [
             "Los emails se tratan para responder solicitudes, preparar presupuestos, prestar soporte y conservar prueba de los intercambios. Este tratamiento se basa en el interés legítimo y, cuando proceda, en medidas precontractuales solicitadas por ti. Las solicitudes de maqueta gratuita se tratan para preparar y enviarte la maqueta solicitada, y para responderte.",
+            "Los mensajes enviados mediante el formulario de contacto se tratan con las mismas finalidades. Limitar los envíos por dirección IP y filtrar los envíos automatizados se basan en el interés legítimo de proteger el servicio frente a abusos.",
             "La medición de audiencia sirve para comprender el tráfico agregado y mejorar el sitio. Go Cosmic carga Vercel Analytics únicamente tras tu consentimiento. Los registros de seguridad se tratan por interés legítimo en proteger el servicio."
           ]
         },
         {
           "title": "Destinatarios y encargados",
           "body": [
-            "Los datos pueden ser accesibles para Go Cosmic, el proveedor de email, Resend (que entrega los emails de solicitud de maqueta gratuita), el proveedor de alojamiento y Vercel para alojamiento y analítica. LinkedIn es un sitio externo y puede tratar datos según su propia política después de hacer clic en un enlace saliente."
+            "Los datos pueden ser accesibles para Go Cosmic, el proveedor de email, Resend (que entrega los emails de solicitud de maqueta gratuita y del formulario de contacto), el proveedor de alojamiento y Vercel para alojamiento y analítica. LinkedIn es un sitio externo y puede tratar datos según su propia política después de hacer clic en un enlace saliente."
           ]
         },
         {
           "title": "Plazos de conservación",
           "body": [
-            "Los intercambios por email se conservan solo el tiempo necesario para tratar la solicitud y hacer seguimiento, y después se archivan o eliminan según necesidades legales, contables o de defensa de derechos. El consentimiento de analítica se almacena en tu navegador hasta que borres el almacenamiento local o cambies de navegador. Los logs de alojamiento siguen la configuración del proveedor."
+            "Los intercambios por email se conservan solo el tiempo necesario para tratar la solicitud y hacer seguimiento, y después se archivan o eliminan según necesidades legales, contables o de defensa de derechos. El consentimiento de analítica se almacena en tu navegador hasta que borres el almacenamiento local o cambies de navegador. Los logs de alojamiento siguen la configuración del proveedor.",
+            "Los envíos del formulario de contacto no se conservan en una base de datos: se entregan como correo electrónico y el intercambio resultante sigue los plazos descritos arriba."
           ]
         },
         {
@@ -84,7 +86,9 @@
         },
         {
           "title": "Director de publicación",
-          "body": ["Director de publicación: Matthieu Compérat."]
+          "body": [
+            "Director de publicación: Matthieu Compérat."
+          ]
         },
         {
           "title": "Alojamiento",
@@ -106,7 +110,9 @@
         },
         {
           "title": "Contacto",
-          "body": ["Para cuestiones legales, de privacidad o seguridad, contacta con support@gocosmic.dev."]
+          "body": [
+            "Para cuestiones legales, de privacidad o seguridad, contacta con support@gocosmic.dev."
+          ]
         }
       ]
     }

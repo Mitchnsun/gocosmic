@@ -2,6 +2,7 @@
 
 import { PaperAirplaneIcon } from '@heroicons/react/24/solid';
 import { useTranslations } from 'next-intl';
+import { useEffect } from 'react';
 
 import { buttonVariants } from '@/design-system/button.variants';
 import { cn } from '@/design-system/lib/utils';
@@ -29,10 +30,17 @@ export const ContactForm = ({
   id = 'contact-form',
 }: ContactFormProps) => {
   const t = useTranslations('contact.form');
-  const { values, errors, status, formError, handleChange, handleSubmit, reset } = useContactForm({
+  const { values, errors, status, formError, invalidFocus, handleChange, handleSubmit, reset } = useContactForm({
     endpoint,
     onSuccess,
   });
+
+  // Move focus to the first invalid field so screen-reader and keyboard users
+  // hear why the submission did not go through.
+  useEffect(() => {
+    if (!invalidFocus) return;
+    document.getElementById(invalidFocus.field)?.focus();
+  }, [invalidFocus]);
 
   const wrapperClassName = cn(
     'w-full',

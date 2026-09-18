@@ -21,6 +21,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Fixed
 
 - A message that cannot be delivered is now reported as such, instead of showing a confirmation for something nobody would receive
+- The privacy policy now describes the contact form — the details it collects, who delivers the message and how long the exchange is kept — instead of stating that the site has no such form
+- Submitting an incomplete form now takes you straight to the first field that needs attention, so the error is announced instead of appearing to do nothing
 - The star fields behind the page headers and the closing call-to-action sections now stand still, and buttons no longer grow on hover, for visitors who ask for reduced motion
 
 ## [1.7.1] - 2026-09-18
