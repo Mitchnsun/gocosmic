@@ -81,6 +81,7 @@ export const useContactForm = ({ endpoint, onSuccess }: UseContactFormOptions) =
       const isStale = () => requestIdRef.current !== requestId;
 
       setStatus('submitting');
+      let delivered = false;
       try {
         const response = await fetch(endpoint, {
           method: 'POST',
@@ -105,13 +106,23 @@ export const useContactForm = ({ endpoint, onSuccess }: UseContactFormOptions) =
 
         recordSubmission();
         setStatus('success');
-        onSuccess?.();
+        delivered = true;
       } catch {
         if (isStale() || controller.signal.aborted) return;
         setFormError('network');
         setStatus('error');
       } finally {
         if (abortRef.current === controller) abortRef.current = null;
+      }
+
+      // Outside the request try/catch on purpose: a consumer callback that
+      // throws must not turn a delivered message into a network error the
+      // visitor would retry.
+      if (!delivered) return;
+      try {
+        onSuccess?.();
+      } catch (error) {
+        console.error('[contact] the onSuccess callback threw after a delivered message', error);
       }
     },
     [endpoint, onSuccess, values]

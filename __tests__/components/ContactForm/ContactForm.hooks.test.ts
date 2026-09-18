@@ -109,4 +109,24 @@ describe('useContactForm', () => {
     expect(fetchMock).toHaveBeenCalledTimes(2);
     expect(result.current.status).toBe('success');
   });
+
+  it('keeps the confirmation when the onSuccess callback throws', async () => {
+    const fetchMock = vi.fn().mockResolvedValue({ ok: true, status: 200 });
+    vi.stubGlobal('fetch', fetchMock);
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const onSuccess = vi.fn(() => {
+      throw new Error('analytics is down');
+    });
+    const { result } = renderHook(() => useContactForm({ endpoint: '/api/contact', onSuccess }));
+
+    fillValidValues(result);
+    await act(async () => {
+      await result.current.handleSubmit(submitEvent());
+    });
+
+    expect(result.current.status).toBe('success');
+    expect(result.current.formError).toBeNull();
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(errorSpy).toHaveBeenCalled();
+  });
 });
