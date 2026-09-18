@@ -1,6 +1,6 @@
 {
   "name": "gocosmic",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "type": "module",
   "private": true,
   "engines": {
@@ -91,7 +91,7 @@
     "vite": "^7.3.3",
     "vitest": "^3.2.4"
   },
-  "packageManager": "yarn@4.14.1",
+  "packageManager": "yarn@4.18.0",
   "resolutions": {
     "vite": "7.3.3"
   }
