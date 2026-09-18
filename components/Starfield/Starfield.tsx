@@ -36,8 +36,8 @@ const DEFAULT_SPEED = 2;
  * Fully configurable and resizes automatically with the viewport.
  *
  * With {@link StarfieldProps.respectReducedMotion} enabled and a visitor who
- * asks for reduced motion, a single static frame is drawn and no animation
- * loop is started.
+ * asks for reduced motion, a single static frame of still stars is drawn and
+ * no animation loop is started.
  *
  * @component
  * @param {StarfieldProps} props - Component configuration
@@ -121,12 +121,19 @@ const Starfield = ({
         const opacity = Math.min(1, 1 - star.z / width);
         const lineWidth = Math.max(0.5, (1 - star.z / width) * 2.5);
 
-        ctx.beginPath();
-        ctx.moveTo(prevSx, prevSy);
-        ctx.lineTo(sx, sy);
-        ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
-        ctx.lineWidth = lineWidth;
-        ctx.stroke();
+        if (frozen) {
+          // No movement means no streak to draw: paint each star as a dot so a
+          // frozen starfield is still a starfield.
+          ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+          ctx.fillRect(sx, sy, lineWidth, lineWidth);
+        } else {
+          ctx.beginPath();
+          ctx.moveTo(prevSx, prevSy);
+          ctx.lineTo(sx, sy);
+          ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+          ctx.lineWidth = lineWidth;
+          ctx.stroke();
+        }
       }
 
       // Frozen starfield: the frame just drawn stays on screen instead of
@@ -152,6 +159,11 @@ const Starfield = ({
           star.z = Math.random() * width;
           star.prevZ = width;
         }
+
+        // Resizing the canvas clears its bitmap. While frozen no frame is
+        // pending, so repaint the single static frame here — the running loop
+        // takes care of it otherwise.
+        if (frozen) draw();
       }, 100);
     };
 

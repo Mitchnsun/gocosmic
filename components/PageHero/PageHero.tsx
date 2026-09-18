@@ -92,7 +92,12 @@ const PageHero = ({
         className
       )}>
       <div className="absolute inset-0 -z-20" aria-hidden="true">
-        <Starfield className="h-full w-full opacity-60" starCount={starCount} speed={prefersReducedMotion ? 0 : 1.2} />
+        <Starfield
+          className="h-full w-full opacity-60"
+          starCount={starCount}
+          speed={1.2}
+          respectReducedMotion={respectReducedMotion}
+        />
       </div>
       <div
         className="pointer-events-none absolute inset-0 -z-10 opacity-70"

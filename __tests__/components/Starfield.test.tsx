@@ -2,7 +2,7 @@ import { vi } from 'vitest';
 
 import Starfield from '@/components/Starfield';
 
-import { render } from '../test-utils';
+import { act, render } from '../test-utils';
 
 // Mock canvas context methods used by the Starfield animation
 const mockCtx = {
@@ -123,12 +123,64 @@ describe('Starfield Component', () => {
       expect(requestAnimationFrame).not.toHaveBeenCalled();
     });
 
+    it('paints still stars as dots, since a motionless star draws no streak', () => {
+      stubMatchMedia(true);
+
+      render(<Starfield starCount={20} speed={4} respectReducedMotion />);
+
+      // One background fill plus one dot per star, and no zero-length strokes.
+      expect(mockCtx.fillRect.mock.calls.length).toBeGreaterThan(20);
+      expect(mockCtx.stroke).not.toHaveBeenCalled();
+    });
+
+    it('paints moving stars as streaks', () => {
+      stubMatchMedia(false);
+
+      render(<Starfield starCount={20} speed={4} respectReducedMotion />);
+
+      expect(mockCtx.stroke).toHaveBeenCalled();
+    });
+
     it('keeps animating when the component does not opt in', () => {
       stubMatchMedia(true);
 
       render(<Starfield starCount={20} speed={4} />);
 
       expect(requestAnimationFrame).toHaveBeenCalled();
+    });
+
+    it('repaints the static frame after a resize, which clears the canvas bitmap', () => {
+      vi.useFakeTimers({ toFake: ['setTimeout', 'clearTimeout'] });
+      stubMatchMedia(true);
+
+      render(<Starfield starCount={20} speed={4} respectReducedMotion />);
+      mockCtx.fillRect.mockClear();
+
+      act(() => {
+        window.dispatchEvent(new Event('resize'));
+        vi.advanceTimersByTime(150);
+      });
+
+      expect(mockCtx.fillRect).toHaveBeenCalled();
+      expect(requestAnimationFrame).not.toHaveBeenCalled();
+      vi.useRealTimers();
+    });
+
+    it('leaves the running loop in charge of repainting after a resize', () => {
+      vi.useFakeTimers({ toFake: ['setTimeout', 'clearTimeout'] });
+      stubMatchMedia(false);
+
+      render(<Starfield starCount={20} speed={4} respectReducedMotion />);
+      const framesBefore = vi.mocked(requestAnimationFrame).mock.calls.length;
+
+      act(() => {
+        window.dispatchEvent(new Event('resize'));
+        vi.advanceTimersByTime(150);
+      });
+
+      // No extra draw() call, so no second animation loop is started.
+      expect(vi.mocked(requestAnimationFrame).mock.calls.length).toBe(framesBefore);
+      vi.useRealTimers();
     });
 
     it('animates for a visitor with no reduced-motion preference', () => {
