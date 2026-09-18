@@ -5,11 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [1.7.1] - 2026-09-17
+## [1.7.1] - 2026-09-18
 
 ### Changed
 
 - The call-to-action buttons at the bottom of the services page now share the exact styling of every other button on the site
+- Updated the project's build tooling to its latest stable release
 
 ## [1.7.0] - 2026-09-17
 
