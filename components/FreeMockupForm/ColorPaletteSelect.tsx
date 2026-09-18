@@ -9,6 +9,7 @@ import type { ColorPaletteKey } from '@/lib/validation/free-mockup.schema';
 import type { ColorPaletteSelectProps } from './FreeMockupForm.types';
 import { COLOR_PALETTE_KEYS, PALETTE_SWATCHES } from './FreeMockupForm.utils';
 
+const LEGEND_ID = 'free-mockup-palette-label';
 const ERROR_ID = 'free-mockup-palette-error';
 
 /** Three dots previewing the mood of a palette. Purely decorative. */
@@ -28,13 +29,25 @@ function PaletteSwatch({ paletteKey }: { paletteKey: ColorPaletteKey }) {
 /**
  * Closed list of colour directions, rendered as a native radio group so arrow
  * keys move between options and screen readers announce "n of 6".
+ *
+ * `role="radiogroup"` is deliberate: a bare fieldset exposes `group`, which does
+ * not support `aria-invalid`, so the group could never be announced as invalid.
+ * `aria-labelledby` keeps the legend as the accessible name regardless of how
+ * the role override is mapped.
  */
 export function ColorPaletteSelect({ value, onChange, error, onBlur }: ColorPaletteSelectProps) {
   const t = useTranslations('freeMockup');
 
   return (
-    <fieldset className="flex flex-col gap-3" aria-describedby={error ? ERROR_ID : undefined}>
-      <legend className="font-display text-ghost text-sm font-medium">{t('form.palette_label')}</legend>
+    <fieldset
+      role="radiogroup"
+      aria-labelledby={LEGEND_ID}
+      aria-invalid={error ? true : undefined}
+      aria-describedby={error ? ERROR_ID : undefined}
+      className="flex flex-col gap-3">
+      <legend id={LEGEND_ID} className="font-display text-ghost text-sm font-medium">
+        {t('form.palette_label')}
+      </legend>
       <div className="grid gap-2 sm:grid-cols-2">
         {COLOR_PALETTE_KEYS.map((paletteKey) => {
           const isSelected = value === paletteKey;

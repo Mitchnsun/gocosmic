@@ -17,10 +17,16 @@ describe('ColorPaletteSelect', () => {
     expect(getByText('Terracotta & stone')).toBeInTheDocument();
   });
 
-  it('labels the group with the palette question', () => {
-    const { getByText } = render(<ColorPaletteSelect value="" onChange={vi.fn()} />);
+  it('names the radio group after the palette question', () => {
+    const { getByRole } = render(<ColorPaletteSelect value="" onChange={vi.fn()} />);
 
-    expect(getByText('Colour direction')).toBeInTheDocument();
+    expect(getByRole('radiogroup', { name: 'Colour direction' })).toBeInTheDocument();
+  });
+
+  it('leaves the group valid while no error is reported', () => {
+    const { getByRole } = render(<ColorPaletteSelect value="" onChange={vi.fn()} />);
+
+    expect(getByRole('radiogroup')).not.toHaveAttribute('aria-invalid');
   });
 
   it('checks only the selected option', () => {
@@ -48,11 +54,14 @@ describe('ColorPaletteSelect', () => {
     expect(onBlur).toHaveBeenCalled();
   });
 
-  it('shows the translated error and points the group at it', () => {
+  it('shows the translated error and marks the group invalid', () => {
     const { getByText, getByRole } = render(<ColorPaletteSelect value="" onChange={vi.fn()} error="required" />);
 
     const error = getByText('This field is required.');
+    const group = getByRole('radiogroup');
+
     expect(error).toBeInTheDocument();
-    expect(getByRole('group')).toHaveAttribute('aria-describedby', error.id);
+    expect(group).toHaveAttribute('aria-describedby', error.id);
+    expect(group).toHaveAttribute('aria-invalid', 'true');
   });
 });
