@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 
+import { readBoundedText } from '@/lib/contact/body';
 import { createRateLimiter } from '@/lib/contact/rateLimit';
 import type { ContactPayload } from '@/lib/contact/validation';
 import { emptyContactPayload, validateContact } from '@/lib/contact/validation';
@@ -8,7 +9,7 @@ import { emptyContactPayload, validateContact } from '@/lib/contact/validation';
 const RATE_LIMIT = 3;
 /** Rate-limit window: one hour. */
 const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000;
-/** Rejects oversized bodies before parsing. */
+/** Hard budget for the request body, enforced on the bytes actually read. */
 const MAX_BODY_BYTES = 20_000;
 
 const limiter = createRateLimiter({ limit: RATE_LIMIT, windowMs: RATE_LIMIT_WINDOW_MS });
@@ -51,18 +52,29 @@ const toPayload = (body: unknown): ContactPayload => {
   };
 };
 
-/** Forwards the message by email when a provider is configured. */
+/** Forwards the message by email. Returns `false` unless it was really sent. */
 const deliver = async (payload: ContactPayload): Promise<boolean> => {
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO_EMAIL;
   const from = process.env.CONTACT_FROM_EMAIL;
 
   if (!apiKey || !to || !from) {
-    // No provider configured (e.g. previews): accept the message and log it so
-    // the submission is not silently lost.
-    console.info('[contact] submission received without a configured mail provider', {
+    if (process.env.NODE_ENV === 'production') {
+      // Never tell the visitor the message was sent when it was not: the form
+      // then shows the error and its "write to us by email" fallback.
+      console.error('[contact] submission refused: RESEND_API_KEY, CONTACT_TO_EMAIL or CONTACT_FROM_EMAIL is missing');
+      return false;
+    }
+
+    // Development and test sink: the whole submission is written to the server
+    // log, so the form can be exercised end to end without a provider.
+    console.info('[contact] no mail provider configured — submission logged locally', {
+      name: payload.name.trim(),
       email: payload.email.trim(),
       subject: payload.subject.trim(),
+      phone: payload.phone.trim(),
+      company: payload.company.trim(),
+      message: payload.message.trim(),
     });
     return true;
   }
@@ -99,14 +111,14 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'forbidden' }, { status: 403 });
   }
 
-  const contentLength = Number(request.headers.get('content-length') ?? 0);
-  if (contentLength > MAX_BODY_BYTES) {
+  const text = await readBoundedText(request, MAX_BODY_BYTES);
+  if (text === null) {
     return NextResponse.json({ error: 'payload_too_large' }, { status: 413 });
   }
 
   let body: unknown;
   try {
-    body = await request.json();
+    body = JSON.parse(text);
   } catch {
     return NextResponse.json({ error: 'invalid_json' }, { status: 400 });
   }

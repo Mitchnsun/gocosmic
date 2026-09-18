@@ -45,7 +45,7 @@ export const CaseStudyHero = ({
         />
       ) : (
         <div className="absolute inset-0 -z-20" aria-hidden="true">
-          <Starfield className="h-full w-full opacity-60" starCount={180} speed={1} />
+          <Starfield className="h-full w-full opacity-60" starCount={180} speed={1} respectReducedMotion />
         </div>
       )}
       <div

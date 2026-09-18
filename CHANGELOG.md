@@ -18,6 +18,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - The About, Services, Projects and Contact pages have been redesigned to match the homepage: starfield headers, clearer section titles and easier-to-scan lists
 - The projects page now shows one card per project with a short summary and a direct link to its case study
 
+### Fixed
+
+- A message that cannot be delivered is now reported as such, instead of showing a confirmation for something nobody would receive
+- The starfield behind the project pages now stands still for visitors who ask for reduced motion
+
 ## [1.7.1] - 2026-09-18
 
 ### Added
@@ -33,7 +38,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Updated the project's build tooling to its latest stable release
 - The privacy policy now describes the free mockup form: which details it collects, that they are emailed to the studio rather than stored, and who handles the delivery
 - The free mockup form now accepts a website address written simply, such as my-site.com, without requiring https://
-
 
 ## [1.7.0] - 2026-09-17
 

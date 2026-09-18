@@ -98,4 +98,45 @@ describe('Starfield Component', () => {
 
     unmount();
   });
+
+  describe('reduced motion', () => {
+    const stubMatchMedia = (matches: boolean) => {
+      Object.defineProperty(window, 'matchMedia', {
+        writable: true,
+        value: (query: string) => ({
+          matches,
+          media: query,
+          onchange: null,
+          addEventListener: vi.fn(),
+          removeEventListener: vi.fn(),
+          dispatchEvent: vi.fn(),
+        }),
+      });
+    };
+
+    it('draws a single static frame and starts no loop when the visitor prefers reduced motion', () => {
+      stubMatchMedia(true);
+
+      render(<Starfield starCount={20} speed={4} respectReducedMotion />);
+
+      expect(mockCtx.fillRect).toHaveBeenCalled();
+      expect(requestAnimationFrame).not.toHaveBeenCalled();
+    });
+
+    it('keeps animating when the component does not opt in', () => {
+      stubMatchMedia(true);
+
+      render(<Starfield starCount={20} speed={4} />);
+
+      expect(requestAnimationFrame).toHaveBeenCalled();
+    });
+
+    it('animates for a visitor with no reduced-motion preference', () => {
+      stubMatchMedia(false);
+
+      render(<Starfield starCount={20} speed={4} respectReducedMotion />);
+
+      expect(requestAnimationFrame).toHaveBeenCalled();
+    });
+  });
 });

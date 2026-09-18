@@ -111,8 +111,10 @@ receives contact form submissions. Its protections are:
 1. **Same-origin check** — requests carrying an `Origin` header from another
    host are rejected with `403`. Custom route handlers get no CSRF protection
    from Next.js, unlike server actions.
-2. **Body size cap** — a `Content-Length` above 20 kB is rejected with `413`
-   before the JSON is parsed.
+2. **Body size cap** — the body is read through `lib/contact/body.ts`, which
+   counts the bytes as they arrive and cancels the stream past 20 kB (`413`)
+   before anything is parsed. `Content-Length` is never trusted: a client can
+   omit it or use chunked transfer encoding.
 3. **Input validation** — every field is coerced to a string, truncated, then
    validated by `lib/contact/validation.ts` (shared with the client form).
    Invalid payloads return `400` with the per-field error codes.
@@ -123,9 +125,12 @@ receives contact form submissions. Its protections are:
    `@upstash/ratelimit`) if the deployment ever spans several long-lived
    instances.
 6. **Delivery** — forwarded through Resend when `RESEND_API_KEY`,
-   `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL` are set; otherwise the
-   submission is logged server-side so it is not silently lost. The route never
-   echoes the submitted content back to the client.
+   `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL` are set. In production a missing
+   variable is an error: the route logs it and answers `502` rather than
+   telling the visitor a message was sent that nobody will read. Outside
+   production the whole submission is written to the server log and accepted,
+   so the form can be exercised without a provider. The route never echoes the
+   submitted content back to the client.
 
 The endpoint is unauthenticated by design (public marketing form) and performs
 no mutation beyond sending that email.

@@ -37,6 +37,7 @@ describe('POST /api/contact', () => {
   afterEach(() => {
     vi.restoreAllMocks();
     vi.unstubAllGlobals();
+    vi.unstubAllEnvs();
   });
 
   it('accepts a valid submission', async () => {
@@ -46,6 +47,31 @@ describe('POST /api/contact', () => {
 
     expect(response.status).toBe(200);
     await expect(response.json()).resolves.toEqual({ success: true });
+  });
+
+  it('refuses to acknowledge the message when no provider is configured in production', async () => {
+    vi.stubEnv('NODE_ENV', 'production');
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const { POST } = await loadRoute();
+
+    const response = await POST(buildRequest(validBody(), { 'x-forwarded-for': '9.9.9.9' }));
+
+    expect(response.status).toBe(502);
+    await expect(response.json()).resolves.toEqual({ error: 'delivery_failed' });
+    expect(errorSpy).toHaveBeenCalled();
+  });
+
+  it('logs the whole submission outside production so nothing is lost', async () => {
+    const infoSpy = vi.spyOn(console, 'info').mockImplementation(() => {});
+    const { POST } = await loadRoute();
+
+    const response = await POST(buildRequest(validBody(), { 'x-forwarded-for': '8.8.8.8' }));
+
+    expect(response.status).toBe(200);
+    expect(infoSpy).toHaveBeenCalledWith(
+      expect.stringContaining('no mail provider configured'),
+      expect.objectContaining({ message: 'I would like a showcase website for my analytical engine.' })
+    );
   });
 
   it('rejects a cross-origin submission', async () => {
@@ -74,10 +100,10 @@ describe('POST /api/contact', () => {
     expect(response.status).toBe(403);
   });
 
-  it('rejects an oversized body', async () => {
+  it('rejects an oversized body even when content-length lies about it', async () => {
     const { POST } = await loadRoute();
 
-    const response = await POST(buildRequest(validBody(), { 'content-length': '999999' }));
+    const response = await POST(buildRequest(validBody({ message: 'a'.repeat(30_000) }), { 'content-length': '10' }));
 
     expect(response.status).toBe(413);
   });
