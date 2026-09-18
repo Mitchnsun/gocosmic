@@ -28,7 +28,10 @@ export const WISHES_MAX_LENGTH = 500;
 export const freeMockupSchema = z.object({
   email: z.email(),
   colorPalette: z.enum(COLOR_PALETTE_KEYS),
-  websiteUrl: z.url().optional().or(z.literal('')),
+  websiteUrl: z
+    .url({ protocol: /^https?$/, hostname: z.regexes.domain })
+    .optional()
+    .or(z.literal('')),
   wishes: z.string().max(WISHES_MAX_LENGTH).optional(),
   honeypot: z.string().max(0),
 });
@@ -46,12 +49,43 @@ export type FreeMockupFieldErrors = Partial<Record<FreeMockupFieldName, FreeMock
 /** Raw string values of the four visible fields, as typed by the visitor. */
 export type FreeMockupValues = Record<FreeMockupFieldName, string>;
 
+/** A single dot-separated label of a host, e.g. `mcomper` or `at`. */
+const HOST_LABEL_PATTERN = /^[a-z0-9-]+$/i;
+
+/** No whitespace, so `mcomper.at some text` isn't mistaken for a host with a path. */
+const PATH_PATTERN = /^\S*$/;
+
+/**
+ * True for a bare host such as `mcomper.at` or `www.site.fr/page`, with no
+ * scheme — split on the first `/` and each dot-separated label checked
+ * individually, rather than with one regex, to avoid nested quantifiers.
+ */
+function isBareHost(value: string): boolean {
+  const slashIndex = value.indexOf('/');
+  const host = slashIndex === -1 ? value : value.slice(0, slashIndex);
+  const path = slashIndex === -1 ? '' : value.slice(slashIndex + 1);
+
+  const labels = host.split('.');
+  return labels.length > 1 && labels.every((label) => HOST_LABEL_PATTERN.test(label)) && PATH_PATTERN.test(path);
+}
+
+/**
+ * Accepts a website address the way visitors actually write it: `mcomper.at` and
+ * `www.site.fr` are prefixed with `https://`, an address that already carries a
+ * scheme is left untouched, and anything that is not host-shaped is returned as
+ * typed so the schema rejects it with the usual error.
+ */
+export function normalizeWebsiteUrl(value: string): string {
+  const trimmed = value.trim();
+  return isBareHost(trimmed) ? `https://${trimmed}` : trimmed;
+}
+
 /** Trims the values that must not carry stray whitespace before validation. */
 export function normalizeFreeMockupValues(values: FreeMockupValues): FreeMockupValues {
   return {
     email: values.email.trim(),
     colorPalette: values.colorPalette,
-    websiteUrl: values.websiteUrl.trim(),
+    websiteUrl: normalizeWebsiteUrl(values.websiteUrl),
     wishes: values.wishes,
   };
 }

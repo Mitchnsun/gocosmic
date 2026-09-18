@@ -78,7 +78,7 @@ export function FreeMockupForm() {
             <input
               id={WEBSITE_ID}
               name="websiteUrl"
-              type="url"
+              type="text"
               inputMode="url"
               autoComplete="url"
               value={values.websiteUrl}
@@ -100,7 +100,7 @@ export function FreeMockupForm() {
 
           <HoneypotField />
 
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="flex flex-col items-center gap-3">
             <button
               type="submit"
               disabled={isPending}

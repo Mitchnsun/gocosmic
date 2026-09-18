@@ -59,6 +59,14 @@ describe('submitFreeMockupRequest', () => {
     expect(payload.html).toContain('https://example.com');
   });
 
+  it('normalizes a bare host before sending', async () => {
+    const state = await submitFreeMockupRequest(INITIAL, buildFormData({ websiteUrl: 'mcomper.at' }));
+
+    expect(state).toEqual({ status: 'success' });
+    const payload = send.mock.calls[0]?.[0] as { html: string };
+    expect(payload.html).toContain('https://mcomper.at');
+  });
+
   it('falls back to the default locale when the submitted one is unknown', async () => {
     await submitFreeMockupRequest(INITIAL, buildFormData({ locale: 'kr' }));
 

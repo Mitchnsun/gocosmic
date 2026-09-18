@@ -12,12 +12,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - New free mockup page where visitors ask for a mockup of their future website: their email, the colour direction they like, their current site and a short description of what they have in mind
 - Requests now reach us by email straight from the page, with a confirmation shown on screen and clear messages when something is missing or mistyped
 - The page can be reached from the cosmic journey and from the end of the pricing simulator, so visitors can ask for their mockup without hunting for a contact address
+- The closing "Ready for Go Cosmic?" section on the homepage now also invites visitors who aren't ready to talk yet to request a free mockup
 
 ### Changed
 
 - The call-to-action buttons at the bottom of the services page now share the exact styling of every other button on the site
 - Updated the project's build tooling to its latest stable release
 - The privacy policy now describes the free mockup form: which details it collects, that they are emailed to the studio rather than stored, and who handles the delivery
+- The free mockup form now accepts a website address written simply, such as my-site.com, without requiring https://
 
 ## [1.7.0] - 2026-09-17
 

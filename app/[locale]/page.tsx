@@ -9,6 +9,7 @@ import { homepageSteps } from '@/components/ProcessTimeline/constants';
 import { PROJECT_DEFINITIONS, ProjectsShowcase } from '@/components/ProjectsShowcase';
 import { ServicesGrid } from '@/components/ServicesGrid';
 import { ZoneIntervention } from '@/components/ZoneIntervention';
+import { Link } from '@/i18n/navigation';
 import { getRegion } from '@/lib/region.server';
 
 export default async function Home() {
@@ -80,6 +81,15 @@ export default async function Home() {
         id="cta"
         headline={t('cta.title')}
         description={t('cta.description')}
+        note={t.rich('cta.freeMockup', {
+          link: (chunks) => (
+            <Link
+              href="/free-mockup"
+              className="text-ghost/70 hover:text-ghost underline underline-offset-4 transition">
+              {chunks}
+            </Link>
+          ),
+        })}
         ctaText={t('cta.button')}
         ctaHref="/contact"
         accentColor="aerospace"

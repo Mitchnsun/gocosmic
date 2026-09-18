@@ -42,7 +42,7 @@ describe('FreeMockupForm', () => {
 
     expect(getByLabelText('Your email')).toHaveAttribute('type', 'email');
     expect(getAllByRole('radio')).toHaveLength(6);
-    expect(getByLabelText(/Your current website/)).toHaveAttribute('type', 'url');
+    expect(getByLabelText(/Your current website/)).toHaveAttribute('type', 'text');
     expect(getByLabelText(/What you have in mind/)).toBeInTheDocument();
     expect(getByRole('button', { name: /Request my free mockup/ })).toBeEnabled();
   });
@@ -80,8 +80,19 @@ describe('FreeMockupForm', () => {
     fireEvent.change(website, { target: { value: 'example' } });
     fireEvent.blur(website);
 
-    expect(getByText('Please enter a valid address, starting with https://')).toBeInTheDocument();
+    expect(getByText('Please enter a valid website address, for example my-site.com.')).toBeInTheDocument();
     expect(website).toHaveAttribute('aria-invalid', 'true');
+  });
+
+  it('shows no inline error for a bare website address', () => {
+    const { getByLabelText, queryByText } = render(<FreeMockupForm />);
+    const website = getByLabelText(/Your current website/);
+
+    fireEvent.change(website, { target: { value: 'mcomper.at' } });
+    fireEvent.blur(website);
+
+    expect(queryByText('Please enter a valid website address, for example my-site.com.')).not.toBeInTheDocument();
+    expect(website).not.toHaveAttribute('aria-invalid');
   });
 
   it('flags wishes longer than the cap once the field is left', () => {

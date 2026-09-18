@@ -5,6 +5,7 @@ import {
   getFieldErrors,
   hasFieldErrors,
   normalizeFreeMockupValues,
+  normalizeWebsiteUrl,
   readFreeMockupField,
   readFreeMockupValues,
   WISHES_MAX_LENGTH,
@@ -48,6 +49,10 @@ describe('freeMockupSchema', () => {
     expect(freeMockupSchema.safeParse({ ...validPayload, websiteUrl: 'example' }).success).toBe(false);
   });
 
+  it('accepts a bare host once normalized', () => {
+    expect(freeMockupSchema.safeParse({ ...validPayload, websiteUrl: 'https://mcomper.at' }).success).toBe(true);
+  });
+
   it('rejects wishes longer than the cap', () => {
     const tooLong = 'a'.repeat(WISHES_MAX_LENGTH + 1);
     expect(freeMockupSchema.safeParse({ ...validPayload, wishes: tooLong }).success).toBe(false);
@@ -64,6 +69,31 @@ describe('freeMockupSchema', () => {
 
   it('exposes the six palette keys', () => {
     expect(COLOR_PALETTE_KEYS).toHaveLength(6);
+  });
+});
+
+describe('normalizeWebsiteUrl', () => {
+  it('prefixes a bare host with https://', () => {
+    expect(normalizeWebsiteUrl('mcomper.at')).toBe('https://mcomper.at');
+  });
+
+  it('prefixes a bare host that carries www and a path', () => {
+    expect(normalizeWebsiteUrl('www.site.fr/page')).toBe('https://www.site.fr/page');
+  });
+
+  it('leaves an address that already has a scheme untouched', () => {
+    expect(normalizeWebsiteUrl('https://x.dev')).toBe('https://x.dev');
+    expect(normalizeWebsiteUrl('http://x.dev')).toBe('http://x.dev');
+  });
+
+  it('trims surrounding whitespace', () => {
+    expect(normalizeWebsiteUrl('  mcomper.at  ')).toBe('https://mcomper.at');
+  });
+
+  it('leaves input that is not host-shaped as typed', () => {
+    expect(normalizeWebsiteUrl('example')).toBe('example');
+    expect(normalizeWebsiteUrl('hello world')).toBe('hello world');
+    expect(normalizeWebsiteUrl('')).toBe('');
   });
 });
 
@@ -107,6 +137,10 @@ describe('getFieldErrors', () => {
 
   it('flags a malformed website URL', () => {
     expect(getFieldErrors(values({ websiteUrl: 'example' })).websiteUrl).toBe('url_invalid');
+  });
+
+  it('accepts a bare host as a website URL', () => {
+    expect(getFieldErrors(values({ websiteUrl: 'mcomper.at' })).websiteUrl).toBeUndefined();
   });
 
   it('flags wishes above the cap', () => {

@@ -33,7 +33,7 @@
       "email_placeholder": "vous@exemple.com",
       "palette_label": "Direction de couleurs",
       "website_label": "Votre site actuel",
-      "website_placeholder": "https://votre-site.fr",
+      "website_placeholder": "votre-site.fr",
       "wishes_label": "Ce que vous avez en tête",
       "wishes_placeholder": "Les pages dont vous avez besoin, ce qui vous plaît, ce que vous préférez éviter…",
       "wishes_counter": "{count}/{max}",
@@ -59,7 +59,7 @@
     "validation": {
       "required": "Ce champ est obligatoire.",
       "email_invalid": "Merci d'indiquer une adresse email valide.",
-      "url_invalid": "Merci d'indiquer une adresse valide, commençant par https://",
+      "url_invalid": "Merci d'indiquer une adresse de site valide, par exemple mon-site.fr.",
       "wishes_too_long": "Merci de rester sous 500 caractères."
     }
   }
