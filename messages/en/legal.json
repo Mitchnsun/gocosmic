@@ -7,7 +7,7 @@
       },
       "eyebrow": "GDPR",
       "title": "Privacy policy",
-      "updated": "Last updated: 26 May 2026",
+      "updated": "Last updated: 18 September 2026",
       "intro": "This page explains how Go Cosmic handles personal data on this website and when you contact the studio by email.",
       "legalNoticePrefix": "For publisher and hosting details, see the",
       "legalNoticeLink": "legal notice",
@@ -21,21 +21,21 @@
         {
           "title": "Data collected",
           "body": [
-            "The website does not provide an account area, checkout, server-side contact form, CAPTCHA, or advertising pixel. Messages are sent through mailto links and are processed by your email client and the recipient mailbox.",
+            "The website does not provide an account area, checkout, CAPTCHA, or advertising pixel. Most messages are sent through mailto links and are processed by your email client and the recipient mailbox. The free mockup page is the one form handled server-side: it collects your email address, the colour direction you pick, the address of your current website if you provide one, your message, and the language of the page, then forwards them to the studio mailbox by email. Nothing is stored in a database.",
             "Technical data may be processed by the hosting provider for security and delivery logs. Vercel Analytics is loaded only after consent to measure page views."
           ]
         },
         {
           "title": "Purposes and legal bases",
           "body": [
-            "Email messages are processed to answer requests, prepare quotes, provide support, and keep evidence of exchanges. This processing is based on legitimate interest and, where applicable, pre-contractual steps requested by you.",
+            "Email messages are processed to answer requests, prepare quotes, provide support, and keep evidence of exchanges. This processing is based on legitimate interest and, where applicable, pre-contractual steps requested by you. Free mockup requests are processed to prepare and send you the mockup you asked for, and to reply to you.",
             "Audience measurement is used to understand aggregate traffic and improve the website. Go Cosmic loads Vercel Analytics only after your consent. Security logs are processed for legitimate interest in protecting the service."
           ]
         },
         {
           "title": "Recipients and processors",
           "body": [
-            "Data may be accessed by Go Cosmic, the email service provider, the hosting provider, and Vercel for hosting and analytics. LinkedIn is an external website and may process data under its own policy after you click an outbound link."
+            "Data may be accessed by Go Cosmic, the email service provider, Resend (which delivers the free mockup request emails), the hosting provider, and Vercel for hosting and analytics. LinkedIn is an external website and may process data under its own policy after you click an outbound link."
           ]
         },
         {

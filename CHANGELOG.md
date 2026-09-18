@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - The call-to-action buttons at the bottom of the services page now share the exact styling of every other button on the site
 - Updated the project's build tooling to its latest stable release
+- The privacy policy now describes the free mockup form: which details it collects, that they are emailed to the studio rather than stored, and who handles the delivery
 
 ## [1.7.0] - 2026-09-17
 

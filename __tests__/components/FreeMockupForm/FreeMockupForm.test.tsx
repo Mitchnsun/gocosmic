@@ -96,6 +96,38 @@ describe('FreeMockupForm', () => {
     expect(submitFreeMockupRequest).not.toHaveBeenCalled();
   });
 
+  it('never turns a validation failure into a send failure once the fields are fixed', async () => {
+    const { getByLabelText, getByRole, getByText, queryByText } = render(<FreeMockupForm />);
+
+    fireEvent.click(getByRole('button', { name: /Request my free mockup/ }));
+    await waitFor(() => expect(getByText('Please check the highlighted fields.')).toBeInTheDocument());
+
+    // Correcting the highlighted fields must retire the banner, not relabel it:
+    // no send was ever attempted.
+    fillRequiredFields(getByLabelText, getByRole);
+
+    await waitFor(() => expect(queryByText('Please check the highlighted fields.')).not.toBeInTheDocument());
+    expect(queryByText('Your request could not be sent. Please try again in a moment.')).not.toBeInTheDocument();
+    expect(submitFreeMockupRequest).not.toHaveBeenCalled();
+  });
+
+  it('clears a delivery failure banner as soon as the visitor edits the form', async () => {
+    submitFreeMockupRequest.mockResolvedValue({ status: 'error' });
+    const { getByLabelText, getByRole, getByText, queryByText } = render(<FreeMockupForm />);
+
+    fillRequiredFields(getByLabelText, getByRole);
+    fireEvent.click(getByRole('button', { name: /Request my free mockup/ }));
+    await waitFor(() =>
+      expect(getByText('Your request could not be sent. Please try again in a moment.')).toBeInTheDocument()
+    );
+
+    fireEvent.change(getByLabelText('Your email'), { target: { value: 'someone@example.com' } });
+
+    await waitFor(() =>
+      expect(queryByText('Your request could not be sent. Please try again in a moment.')).not.toBeInTheDocument()
+    );
+  });
+
   it('submits a valid request and confirms it was received', async () => {
     const { getByLabelText, getByRole, getByText, queryByRole } = render(<FreeMockupForm />);
 

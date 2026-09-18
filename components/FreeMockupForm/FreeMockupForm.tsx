@@ -5,7 +5,6 @@ import { useLocale, useTranslations } from 'next-intl';
 
 import { buttonVariants } from '@/design-system/button.variants';
 import { cn } from '@/design-system/lib/utils';
-import { hasFieldErrors } from '@/lib/validation/free-mockup.schema';
 
 import { ColorPaletteSelect } from './ColorPaletteSelect';
 import { FormField } from './FormField';
@@ -30,13 +29,13 @@ const INPUT_CLASSES =
 export function FreeMockupForm() {
   const t = useTranslations('freeMockup');
   const locale = useLocale();
-  const { values, errors, setValue, markTouched, state, formAction, isPending } = useFreeMockupForm();
+  const { values, errors, feedback, setValue, markTouched, state, formAction, isPending } = useFreeMockupForm();
 
   const isSent = state.status === 'success';
 
   return (
     <div className="border-ghost/8 bg-ghost/[0.02] flex w-full flex-col gap-6 rounded-2xl border p-6 sm:p-8">
-      <SubmitFeedback status={state.status} hasInvalidFields={hasFieldErrors(errors)} />
+      <SubmitFeedback status={feedback.status} hasInvalidFields={feedback.hasInvalidFields} />
 
       {!isSent && (
         <form action={formAction} noValidate className="flex flex-col gap-6">

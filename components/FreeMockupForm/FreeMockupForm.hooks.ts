@@ -38,10 +38,12 @@ const revealTouchedErrors = (errors: FreeMockupFieldErrors, touched: TouchedFiel
 export function useFreeMockupForm() {
   const [values, setValues] = useState<FreeMockupValues>(EMPTY_FREE_MOCKUP_VALUES);
   const [touched, setTouched] = useState<TouchedFields>({});
+  const [hasEditedSinceSubmit, setHasEditedSinceSubmit] = useState(false);
 
   const [state, formAction, isPending] = useActionState<FreeMockupFormState, FormData>(
     async (previousState, formData) => {
       setTouched(ALL_TOUCHED);
+      setHasEditedSinceSubmit(false);
 
       const clientErrors = getFieldErrors(readFreeMockupValues(formData));
       if (hasFieldErrors(clientErrors)) {
@@ -55,6 +57,7 @@ export function useFreeMockupForm() {
 
   const setValue = useCallback((field: FreeMockupFieldName, value: string) => {
     setValues((previous) => ({ ...previous, [field]: value }));
+    setHasEditedSinceSubmit(true);
   }, []);
 
   const markTouched = useCallback((field: FreeMockupFieldName) => {
@@ -65,5 +68,18 @@ export function useFreeMockupForm() {
   // helper the action uses, so a field clears as soon as the visitor fixes it.
   const errors = useMemo(() => revealTouchedErrors(getFieldErrors(values), touched), [touched, values]);
 
-  return { values, errors, setValue, markTouched, state, formAction, isPending };
+  // The banner describes one past submission, so its category comes from the
+  // state that submission returned, never from the live values: recomputing it
+  // would turn "check the highlighted fields" into "could not be sent" the
+  // moment the visitor fixes them, reporting a send that never happened. Any
+  // edit retires the banner altogether, since it no longer describes the form.
+  const feedback = useMemo(
+    () => ({
+      status: hasEditedSinceSubmit ? ('idle' as const) : state.status,
+      hasInvalidFields: hasFieldErrors(state.fieldErrors ?? {}),
+    }),
+    [hasEditedSinceSubmit, state.fieldErrors, state.status]
+  );
+
+  return { values, errors, feedback, setValue, markTouched, state, formAction, isPending };
 }

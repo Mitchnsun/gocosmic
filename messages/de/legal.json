@@ -7,7 +7,7 @@
       },
       "eyebrow": "DSGVO",
       "title": "Datenschutzerklärung",
-      "updated": "Zuletzt aktualisiert: 26. Mai 2026",
+      "updated": "Zuletzt aktualisiert: 18. September 2026",
       "intro": "Diese Seite erklärt, wie Go Cosmic personenbezogene Daten auf dieser Website und bei Kontaktaufnahme per E-Mail verarbeitet.",
       "legalNoticePrefix": "Angaben zum Anbieter und Hosting findest du im",
       "legalNoticeLink": "Impressum",
@@ -21,21 +21,21 @@
         {
           "title": "Erhobene Daten",
           "body": [
-            "Die Website bietet keinen Kundenbereich, keine Zahlung, kein serverseitiges Kontaktformular, kein CAPTCHA und keinen Werbepixel. Nachrichten werden über mailto-Links versendet und durch dein E-Mail-Programm sowie das Empfängerpostfach verarbeitet.",
+            "Die Website bietet keinen Kundenbereich, keine Zahlung, kein CAPTCHA und keinen Werbepixel. Die meisten Nachrichten werden über mailto-Links versendet und durch dein E-Mail-Programm sowie das Empfängerpostfach verarbeitet. Die Seite für das kostenlose Mockup ist das einzige serverseitig verarbeitete Formular: Sie erfasst deine E-Mail-Adresse, die gewählte Farbrichtung, die Adresse deiner aktuellen Website, sofern du sie angibst, deine Nachricht und die Sprache der Seite und leitet sie per E-Mail an das Postfach des Studios weiter. Nichts wird in einer Datenbank gespeichert.",
             "Technische Daten können vom Hosting-Anbieter für Sicherheits- und Bereitstellungsprotokolle verarbeitet werden. Vercel Analytics wird nur nach Einwilligung geladen, um Seitenaufrufe zu messen."
           ]
         },
         {
           "title": "Zwecke und Rechtsgrundlagen",
           "body": [
-            "E-Mails werden verarbeitet, um Anfragen zu beantworten, Angebote zu erstellen, Support zu leisten und Nachweise der Korrespondenz aufzubewahren. Die Verarbeitung beruht auf berechtigtem Interesse und gegebenenfalls auf von dir angefragten vorvertraglichen Maßnahmen.",
+            "E-Mails werden verarbeitet, um Anfragen zu beantworten, Angebote zu erstellen, Support zu leisten und Nachweise der Korrespondenz aufzubewahren. Die Verarbeitung beruht auf berechtigtem Interesse und gegebenenfalls auf von dir angefragten vorvertraglichen Maßnahmen. Anfragen für ein kostenloses Mockup werden verarbeitet, um das angefragte Mockup zu erstellen, dir zuzusenden und dir zu antworten.",
             "Die Reichweitenmessung dient dazu, aggregierten Traffic zu verstehen und die Website zu verbessern. Go Cosmic lädt Vercel Analytics nur nach deiner Einwilligung. Sicherheitslogs werden auf Grundlage des berechtigten Interesses am Schutz des Dienstes verarbeitet."
           ]
         },
         {
           "title": "Empfänger und Auftragsverarbeiter",
           "body": [
-            "Daten können für Go Cosmic, den E-Mail-Anbieter, den Hosting-Anbieter und Vercel für Hosting und Analytics zugänglich sein. LinkedIn ist eine externe Website und kann nach einem Klick auf einen ausgehenden Link Daten nach eigener Richtlinie verarbeiten."
+            "Daten können für Go Cosmic, den E-Mail-Anbieter, Resend (das die E-Mails der Mockup-Anfragen zustellt), den Hosting-Anbieter und Vercel für Hosting und Analytics zugänglich sein. LinkedIn ist eine externe Website und kann nach einem Klick auf einen ausgehenden Link Daten nach eigener Richtlinie verarbeiten."
           ]
         },
         {
