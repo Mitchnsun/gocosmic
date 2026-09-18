@@ -1,6 +1,12 @@
 import { beforeEach, vi } from 'vitest';
 
-import { FREE_MOCKUP_TO_EMAIL, getResendClient, resetResendClient } from '@/lib/resend';
+import {
+  DEFAULT_FREE_MOCKUP_FROM_EMAIL,
+  FREE_MOCKUP_TO_EMAIL,
+  getFreeMockupFromEmail,
+  getResendClient,
+  resetResendClient,
+} from '@/lib/resend';
 
 const resendConstructor = vi.hoisted(() => vi.fn());
 
@@ -38,5 +44,41 @@ describe('getResendClient', () => {
 
   it('targets the prospect inbox', () => {
     expect(FREE_MOCKUP_TO_EMAIL).toBe('prospect@gocosmic.dev');
+  });
+});
+
+describe('getFreeMockupFromEmail', () => {
+  beforeEach(() => {
+    vi.unstubAllEnvs();
+  });
+
+  it('uses the configured sender', () => {
+    vi.stubEnv('RESEND_FROM_EMAIL', 'Studio <hello@gocosmic.dev>');
+
+    expect(getFreeMockupFromEmail()).toBe('Studio <hello@gocosmic.dev>');
+  });
+
+  it('trims the configured sender', () => {
+    vi.stubEnv('RESEND_FROM_EMAIL', '  Studio <hello@gocosmic.dev>  ');
+
+    expect(getFreeMockupFromEmail()).toBe('Studio <hello@gocosmic.dev>');
+  });
+
+  it('falls back to the default when the variable is unset', () => {
+    vi.stubEnv('RESEND_FROM_EMAIL', undefined);
+
+    expect(getFreeMockupFromEmail()).toBe(DEFAULT_FREE_MOCKUP_FROM_EMAIL);
+  });
+
+  it('falls back to the default when the variable is empty', () => {
+    vi.stubEnv('RESEND_FROM_EMAIL', '');
+
+    expect(getFreeMockupFromEmail()).toBe(DEFAULT_FREE_MOCKUP_FROM_EMAIL);
+  });
+
+  it('falls back to the default when the variable is whitespace only', () => {
+    vi.stubEnv('RESEND_FROM_EMAIL', '   ');
+
+    expect(getFreeMockupFromEmail()).toBe(DEFAULT_FREE_MOCKUP_FROM_EMAIL);
   });
 });

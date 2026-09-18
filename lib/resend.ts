@@ -3,11 +3,21 @@ import { Resend } from 'resend';
 /** Inbox receiving the prospect requests — same address as the pricing and contact pages. */
 export const FREE_MOCKUP_TO_EMAIL = 'prospect@gocosmic.dev';
 
+/** Sender used when `RESEND_FROM_EMAIL` is not configured. */
+export const DEFAULT_FREE_MOCKUP_FROM_EMAIL = 'Go Cosmic <noreply@gocosmic.dev>';
+
 /**
- * Sender address. It must be a domain verified in the Resend dashboard,
- * otherwise Resend rejects the request.
+ * Resolves the sender address, which must belong to a domain verified in the
+ * Resend dashboard. Read at call time, like the API key, so a redeploy is not
+ * needed to pick up a new value.
+ *
+ * An empty or whitespace-only variable counts as unset: a deployment that
+ * copies `.env.example` and fills in only the API key leaves this one defined
+ * but empty, and Resend rejects every request sent with an empty `from`.
  */
-export const FREE_MOCKUP_FROM_EMAIL = process.env.RESEND_FROM_EMAIL ?? 'Go Cosmic <noreply@gocosmic.dev>';
+export function getFreeMockupFromEmail(): string {
+  return process.env.RESEND_FROM_EMAIL?.trim() || DEFAULT_FREE_MOCKUP_FROM_EMAIL;
+}
 
 let client: Resend | undefined;
 

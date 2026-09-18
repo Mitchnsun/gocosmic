@@ -5,7 +5,7 @@ import { hasLocale } from 'next-intl';
 import type { FreeMockupFormState } from '@/components/FreeMockupForm/FreeMockupForm.types';
 import { routing } from '@/i18n/routing';
 import { buildFreeMockupEmail } from '@/lib/free-mockup-email';
-import { FREE_MOCKUP_FROM_EMAIL, FREE_MOCKUP_TO_EMAIL, getResendClient } from '@/lib/resend';
+import { FREE_MOCKUP_TO_EMAIL, getFreeMockupFromEmail, getResendClient } from '@/lib/resend';
 import {
   freeMockupSchema,
   getFieldErrors,
@@ -58,7 +58,7 @@ export async function submitFreeMockupRequest(
 
   try {
     const { error } = await getResendClient().emails.send({
-      from: FREE_MOCKUP_FROM_EMAIL,
+      from: getFreeMockupFromEmail(),
       to: [FREE_MOCKUP_TO_EMAIL],
       replyTo: parsed.data.email,
       subject,
