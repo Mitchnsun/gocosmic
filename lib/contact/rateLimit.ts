@@ -18,6 +18,8 @@ export interface RateLimiterOptions {
 export interface RateLimiter {
   /** Records an attempt for `key` and reports whether it is allowed. */
   check: (key: string, now?: number) => RateLimitResult;
+  /** Number of keys currently held — used by tests. */
+  size: () => number;
   /** Clears all recorded attempts — used by tests. */
   reset: () => void;
 }
@@ -33,9 +35,27 @@ export interface RateLimiter {
  */
 export const createRateLimiter = ({ limit, windowMs }: RateLimiterOptions): RateLimiter => {
   const hits = new Map<string, number[]>();
+  let lastSweep = Number.NEGATIVE_INFINITY;
+
+  /** Drops keys whose attempts all fell out of the window.
+   *  Without this, a key that never comes back is never cleaned up — one entry
+   *  per one-time IP would grow the heap of a long-lived instance for ever. */
+  const sweep = (now: number) => {
+    if (now - lastSweep < windowMs) return;
+    lastSweep = now;
+
+    const windowStart = now - windowMs;
+    for (const [key, timestamps] of hits) {
+      const recent = timestamps.filter((timestamp) => timestamp > windowStart);
+      if (recent.length === 0) hits.delete(key);
+      else hits.set(key, recent);
+    }
+  };
 
   return {
     check: (key: string, now = Date.now()): RateLimitResult => {
+      sweep(now);
+
       const windowStart = now - windowMs;
       const recent = (hits.get(key) ?? []).filter((timestamp) => timestamp > windowStart);
 
@@ -53,6 +73,10 @@ export const createRateLimiter = ({ limit, windowMs }: RateLimiterOptions): Rate
       hits.set(key, recent);
       return { allowed: true, remaining: limit - recent.length, retryAfterSeconds: 0 };
     },
-    reset: () => hits.clear(),
+    size: () => hits.size,
+    reset: () => {
+      hits.clear();
+      lastSweep = Number.NEGATIVE_INFINITY;
+    },
   };
 };

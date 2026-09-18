@@ -40,7 +40,7 @@ export const CaseStudyCtaCard = ({ cta, contactCta, accent }: CaseStudyCtaCardPr
           aria-label={cta.ariaLabel}
           className={cn(
             buttonVariants({ variant: accent === 'ghost' ? 'ghost' : accent }),
-            'focus-visible:ring-ghost focus-visible:ring-offset-void gap-2 py-3 transition-transform duration-300 ease-out hover:scale-105 focus-visible:ring-2 focus-visible:ring-offset-2'
+            'focus-visible:ring-ghost focus-visible:ring-offset-void gap-2 py-3 transition-transform duration-300 ease-out hover:scale-105 focus-visible:ring-2 focus-visible:ring-offset-2 motion-reduce:scale-100! motion-reduce:transition-none!'
           )}>
           {cta.button}
           <ArrowTopRightOnSquareIcon className="size-4" aria-hidden="true" />

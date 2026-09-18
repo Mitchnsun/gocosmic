@@ -79,7 +79,7 @@ export default async function Projects() {
                   <p className="text-ghost/55 text-base leading-7">{t(`items.${titleKey}.description`)}</p>
                   <span
                     className={cn(
-                      'font-display mt-auto inline-flex items-center gap-1.5 text-sm transition-transform duration-300 ease-out group-hover:translate-x-1',
+                      'font-display mt-auto inline-flex items-center gap-1.5 text-sm transition-transform duration-300 ease-out group-hover:translate-x-1 motion-reduce:translate-none! motion-reduce:transition-none!',
                       text
                     )}
                     aria-hidden="true">

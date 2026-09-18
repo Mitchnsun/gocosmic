@@ -126,7 +126,7 @@ const PageHero = ({
                 href={cta.href}
                 className={cn(
                   buttonVariants({ variant: accent === 'ghost' ? 'ghost' : accent }),
-                  'focus-visible:ring-ghost focus-visible:ring-offset-void w-fit gap-2 py-3 transition-transform duration-300 ease-out hover:scale-105 focus-visible:ring-2 focus-visible:ring-offset-2'
+                  'focus-visible:ring-ghost focus-visible:ring-offset-void w-fit gap-2 py-3 transition-transform duration-300 ease-out hover:scale-105 focus-visible:ring-2 focus-visible:ring-offset-2 motion-reduce:scale-100! motion-reduce:transition-none!'
                 )}>
                 {cta.text}
                 <ArrowRightIcon className="size-4" aria-hidden="true" />
