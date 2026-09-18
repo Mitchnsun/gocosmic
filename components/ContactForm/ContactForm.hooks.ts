@@ -1,7 +1,7 @@
 'use client';
 
 import type { ChangeEvent, FormEvent } from 'react';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import type { ContactErrors, ContactField, ContactPayload } from '@/lib/contact/validation';
 import { emptyContactPayload, validateContact } from '@/lib/contact/validation';
@@ -25,6 +25,12 @@ export const useContactForm = ({ endpoint, onSuccess }: UseContactFormOptions) =
   const [errors, setErrors] = useState<ContactErrors>({});
   const [status, setStatus] = useState<ContactFormStatus>('idle');
   const [formError, setFormError] = useState<ContactFormErrorCode | null>(null);
+  /** Identifies the in-flight submission: a reset invalidates it so a late
+   *  response cannot undo the visitor's action. */
+  const requestIdRef = useRef(0);
+  const abortRef = useRef<AbortController | null>(null);
+
+  useEffect(() => () => abortRef.current?.abort(), []);
 
   const handleChange = useCallback((event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
@@ -38,6 +44,9 @@ export const useContactForm = ({ endpoint, onSuccess }: UseContactFormOptions) =
   }, []);
 
   const reset = useCallback(() => {
+    requestIdRef.current += 1;
+    abortRef.current?.abort();
+    abortRef.current = null;
     setValues(emptyContactPayload());
     setErrors({});
     setFormError(null);
@@ -47,6 +56,8 @@ export const useContactForm = ({ endpoint, onSuccess }: UseContactFormOptions) =
   const handleSubmit = useCallback(
     async (event: FormEvent<HTMLFormElement>) => {
       event.preventDefault();
+      // A second submit while the first is in flight would deliver twice.
+      if (abortRef.current !== null) return;
       setFormError(null);
 
       const nextErrors = validateContact(values);
@@ -62,13 +73,23 @@ export const useContactForm = ({ endpoint, onSuccess }: UseContactFormOptions) =
         return;
       }
 
+      const requestId = requestIdRef.current + 1;
+      requestIdRef.current = requestId;
+      const controller = new AbortController();
+      abortRef.current = controller;
+      /** True once the visitor reset or resubmitted: the response is stale. */
+      const isStale = () => requestIdRef.current !== requestId;
+
       setStatus('submitting');
       try {
         const response = await fetch(endpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(values),
+          signal: controller.signal,
         });
+
+        if (isStale()) return;
 
         if (response.status === 429) {
           setFormError('rate_limited');
@@ -86,8 +107,11 @@ export const useContactForm = ({ endpoint, onSuccess }: UseContactFormOptions) =
         setStatus('success');
         onSuccess?.();
       } catch {
+        if (isStale() || controller.signal.aborted) return;
         setFormError('network');
         setStatus('error');
+      } finally {
+        if (abortRef.current === controller) abortRef.current = null;
       }
     },
     [endpoint, onSuccess, values]

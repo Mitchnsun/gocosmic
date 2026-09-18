@@ -166,7 +166,8 @@ export const ContactForm = ({
           <button
             type="button"
             onClick={reset}
-            className="text-ghost/55 hover:text-ghost focus-visible:ring-ghost font-display w-fit cursor-pointer rounded-full px-4 py-3 text-sm transition-colors focus-visible:ring-2 focus-visible:outline-none">
+            disabled={status === 'submitting'}
+            className="text-ghost/55 hover:text-ghost focus-visible:ring-ghost font-display w-fit cursor-pointer rounded-full px-4 py-3 text-sm transition-colors focus-visible:ring-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50">
             {t('clear')}
           </button>
         </div>
