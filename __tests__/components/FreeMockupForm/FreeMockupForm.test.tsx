@@ -128,6 +128,48 @@ describe('FreeMockupForm', () => {
     );
   });
 
+  it('still confirms a success when the visitor edited a field while it was in flight', async () => {
+    let settle: (state: { status: string }) => void = () => {};
+    submitFreeMockupRequest.mockReturnValue(
+      new Promise((resolve) => {
+        settle = resolve;
+      })
+    );
+    const { getByLabelText, getByRole, getByText, queryByRole } = render(<FreeMockupForm />);
+
+    fillRequiredFields(getByLabelText, getByRole);
+    fireEvent.click(getByRole('button', { name: /Request my free mockup/ }));
+    await waitFor(() => expect(getByRole('button', { name: /Sending/ })).toBeDisabled());
+
+    // The fields stay editable while the request is in flight.
+    fireEvent.change(getByLabelText(/What you have in mind/), { target: { value: 'One more thought' } });
+    settle({ status: 'success' });
+
+    await waitFor(() => expect(getByText('Request received')).toBeInTheDocument());
+    expect(queryByRole('button', { name: /Request my free mockup/ })).not.toBeInTheDocument();
+  });
+
+  it('still reports a failure when the visitor edited a field while it was in flight', async () => {
+    let settle: (state: { status: string }) => void = () => {};
+    submitFreeMockupRequest.mockReturnValue(
+      new Promise((resolve) => {
+        settle = resolve;
+      })
+    );
+    const { getByLabelText, getByRole, getByText } = render(<FreeMockupForm />);
+
+    fillRequiredFields(getByLabelText, getByRole);
+    fireEvent.click(getByRole('button', { name: /Request my free mockup/ }));
+    await waitFor(() => expect(getByRole('button', { name: /Sending/ })).toBeDisabled());
+
+    fireEvent.change(getByLabelText(/What you have in mind/), { target: { value: 'One more thought' } });
+    settle({ status: 'error' });
+
+    await waitFor(() =>
+      expect(getByText('Your request could not be sent. Please try again in a moment.')).toBeInTheDocument()
+    );
+  });
+
   it('submits a valid request and confirms it was received', async () => {
     const { getByLabelText, getByRole, getByText, queryByRole } = render(<FreeMockupForm />);
 

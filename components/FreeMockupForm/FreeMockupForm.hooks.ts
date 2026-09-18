@@ -50,7 +50,13 @@ export function useFreeMockupForm() {
         return { status: 'error', fieldErrors: clientErrors };
       }
 
-      return submitFreeMockupRequest(previousState, formData);
+      const result = await submitFreeMockupRequest(previousState, formData);
+
+      // Edits made while the request was in flight happened before this answer
+      // existed, so they must not retire it.
+      setHasEditedSinceSubmit(false);
+
+      return result;
     },
     INITIAL_FREE_MOCKUP_STATE
   );
@@ -73,13 +79,17 @@ export function useFreeMockupForm() {
   // would turn "check the highlighted fields" into "could not be sent" the
   // moment the visitor fixes them, reporting a send that never happened. Any
   // edit retires the banner altogether, since it no longer describes the form.
-  const feedback = useMemo(
-    () => ({
-      status: hasEditedSinceSubmit ? ('idle' as const) : state.status,
+  const feedback = useMemo(() => {
+    // Only a failure is retired by a later edit. A success is terminal — the
+    // form is replaced by its confirmation — so retiring it would leave an
+    // empty card and swallow the one acknowledgement the visitor gets.
+    const isStaleFailure = hasEditedSinceSubmit && state.status === 'error';
+
+    return {
+      status: isStaleFailure ? ('idle' as const) : state.status,
       hasInvalidFields: hasFieldErrors(state.fieldErrors ?? {}),
-    }),
-    [hasEditedSinceSubmit, state.fieldErrors, state.status]
-  );
+    };
+  }, [hasEditedSinceSubmit, state.fieldErrors, state.status]);
 
   return { values, errors, feedback, setValue, markTouched, state, formAction, isPending };
 }

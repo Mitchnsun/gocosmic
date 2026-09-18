@@ -29,9 +29,11 @@ const INPUT_CLASSES =
 export function FreeMockupForm() {
   const t = useTranslations('freeMockup');
   const locale = useLocale();
-  const { values, errors, feedback, setValue, markTouched, state, formAction, isPending } = useFreeMockupForm();
+  const { values, errors, feedback, setValue, markTouched, formAction, isPending } = useFreeMockupForm();
 
-  const isSent = state.status === 'success';
+  // Both the confirmation and the form visibility read the same status, so the
+  // card can never hide the form while showing nothing.
+  const isSent = feedback.status === 'success';
 
   return (
     <div className="border-ghost/8 bg-ghost/[0.02] flex w-full flex-col gap-6 rounded-2xl border p-6 sm:p-8">
