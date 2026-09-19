@@ -116,6 +116,11 @@
       "free_mockup_cta_label": "Ricevi un mockup gratuito",
       "free_mockup_cta_aria_label": "Vai alla pagina di richiesta del mockup gratuito"
     },
-    "reset": "Ricominciare"
+    "reset": "Ricominciare",
+    "summary": {
+      "intro": "Buongiorno, ecco il riepilogo della mia simulazione sulla vostra pagina prezzi:",
+      "project": "Progetto",
+      "site_type": "Tipo di sito"
+    }
   }
 }

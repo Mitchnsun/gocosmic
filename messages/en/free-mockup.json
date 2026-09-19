@@ -44,7 +44,8 @@
       "success_title": "Request received",
       "success_message": "Thank you — we will come back to you by email with your mockup.",
       "error_message": "Your request could not be sent. Please try again in a moment.",
-      "invalid_message": "Please check the highlighted fields."
+      "invalid_message": "Please check the highlighted fields.",
+      "plan_attached": "Your pricing simulation is attached to the request."
     },
     "palette": {
       "options": {

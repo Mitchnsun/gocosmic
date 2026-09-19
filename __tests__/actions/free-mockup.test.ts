@@ -39,6 +39,21 @@ describe('submitFreeMockupRequest', () => {
     vi.spyOn(console, 'error').mockImplementation(() => {});
   });
 
+  it('appends a valid pricing simulation to the email', async () => {
+    await submitFreeMockupRequest(INITIAL, buildFormData({ plan: 'website~showcase~p2~u-~domain~ch' }));
+
+    const payload = send.mock.calls[0]?.[0] as { text: string };
+    expect(payload.text).toContain('Simulation — pages: 5 to 7 pages (+10 CHF)');
+    expect(payload.text).toContain('Simulation — monthly total: 25 CHF / month');
+  });
+
+  it('ignores an invalid pricing simulation and still sends the request', async () => {
+    const state = await submitFreeMockupRequest(INITIAL, buildFormData({ plan: 'not-a-plan' }));
+
+    expect(state).toEqual({ status: 'success' });
+    expect((send.mock.calls[0]?.[0] as { text: string }).text).not.toContain('Simulation');
+  });
+
   it('sends the request to the prospect inbox and reports success', async () => {
     const state = await submitFreeMockupRequest(INITIAL, buildFormData());
 

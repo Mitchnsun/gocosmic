@@ -5,13 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [1.8.0] - 2026-09-18
+## [1.8.0] - 2026-09-19
 
 ### Added
 
 - A contact form on the contact page: describe your project in a few fields, send it, and get an immediate on-screen confirmation — the direct email addresses stay available just below
 - Every project now has a full case study page telling what it is, what it does and what it was built with, plus links to the previous and next project
 - The services page now ends with direct routes to the projects, to the pricing simulator and to the Annecy / Geneva page
+- Requests started from the pricing simulator, by email or through the free mockup form, now include the options chosen and the estimated monthly price, so no context is lost
 
 ### Changed
 

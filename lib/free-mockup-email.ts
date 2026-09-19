@@ -1,3 +1,5 @@
+import type { DecodedPlan } from '@/lib/pricing/plan-code';
+import { buildPlanEmailRows } from '@/lib/pricing/plan-email';
 import { type ColorPaletteKey } from '@/lib/validation/free-mockup.schema';
 
 /**
@@ -25,6 +27,8 @@ export interface FreeMockupEmailInput {
   wishes?: string;
   /** Locale of the page the request was sent from, e.g. `fr`. */
   locale: string;
+  /** Pricing simulation the visitor came from, when there was one. */
+  plan?: DecodedPlan;
 }
 
 /** Rendered email, ready to hand over to the mail provider. */
@@ -55,6 +59,7 @@ export function buildFreeMockupEmail({
   websiteUrl,
   wishes,
   locale,
+  plan,
 }: FreeMockupEmailInput): FreeMockupEmail {
   // eslint-disable-next-line security/detect-object-injection
   const paletteLabel = PALETTE_LABELS[colorPalette];
@@ -66,6 +71,7 @@ export function buildFreeMockupEmail({
     ['Colour palette', `${paletteLabel} (${colorPalette})`],
     ['Current website', website],
     ['Wishes', wishesText],
+    ...(plan ? buildPlanEmailRows(plan) : []),
     ['Locale', locale],
   ];
 
