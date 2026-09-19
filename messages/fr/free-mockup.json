@@ -12,7 +12,7 @@
       "items": {
         "brief": {
           "title": "Vous envoyez l'essentiel",
-          "description": "Votre email, la direction de couleurs qui vous plaît, et votre site actuel si vous en avez un."
+          "description": "Votre email, la direction de couleurs qui vous plaît si vous en avez une, et votre site actuel si vous en avez un."
         },
         "design": {
           "title": "Nous dessinons une maquette",
@@ -28,7 +28,7 @@
     "privacy_link": "Politique de confidentialité",
     "form": {
       "heading": "Demandez votre maquette",
-      "lead": "Un email, une direction de couleurs : tout le reste est facultatif.",
+      "lead": "Un email : tout le reste est facultatif.",
       "email_label": "Votre email",
       "email_placeholder": "vous@exemple.com",
       "palette_label": "Direction de couleurs",
@@ -44,7 +44,8 @@
       "success_title": "Demande bien reçue",
       "success_message": "Merci — nous revenons vers vous par email avec votre maquette.",
       "error_message": "Votre demande n'a pas pu être envoyée. Merci de réessayer dans un instant.",
-      "invalid_message": "Merci de vérifier les champs signalés."
+      "invalid_message": "Merci de vérifier les champs signalés.",
+      "plan_attached": "Votre simulation tarifs est jointe à la demande."
     },
     "palette": {
       "options": {
@@ -53,7 +54,8 @@
         "alpineSunset": "Coucher de soleil alpin",
         "deepForest": "Forêt profonde",
         "starryNight": "Nuit étoilée",
-        "terracottaStone": "Terracotta & pierre"
+        "terracottaStone": "Terracotta & pierre",
+        "none": "Aucune préférence"
       }
     },
     "validation": {

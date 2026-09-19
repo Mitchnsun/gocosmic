@@ -24,7 +24,7 @@ interface CaseStudyCtaCardProps {
 export const CaseStudyCtaCard = ({ cta, contactCta, accent }: CaseStudyCtaCardProps) => (
   <section
     aria-labelledby="case-study-cta-heading"
-    className="border-ghost/8 bg-ghost/[0.02] flex flex-col items-center gap-5 rounded-2xl border px-6 py-12 text-center lg:p-12">
+    className="border-ghost/8 bg-ghost/2 flex flex-col items-center gap-5 rounded-2xl border px-6 py-12 text-center lg:p-12">
     <h2
       id="case-study-cta-heading"
       className="font-display text-[clamp(1.75rem,4vw,2.75rem)] font-semibold tracking-[-0.03em] text-balance">

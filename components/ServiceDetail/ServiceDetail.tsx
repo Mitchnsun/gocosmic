@@ -61,9 +61,9 @@ export const ServiceDetail = ({
         {icon}
         {subtitle}
       </p>
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className={cn('grid gap-8 md:grid-cols-2', { 'lg:grid-cols-3': groups.length > 2 })}>
         {groups.map((group) => (
-          <AccentList key={group.label} accent={accent} label={group.label} items={group.items} />
+          <AccentList key={group.label} accent={accent} label={group.label} labelAs="h3" items={group.items} />
         ))}
       </div>
     </ContentSection>

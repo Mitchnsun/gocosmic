@@ -7,7 +7,7 @@
       },
       "eyebrow": "RGPD",
       "title": "Política de privacidad",
-      "updated": "Última actualización: 18 de septiembre de 2026",
+      "updated": "Última actualización: 19 de septiembre de 2026",
       "intro": "Esta página explica cómo Go Cosmic trata los datos personales en este sitio web y cuando contactas con el estudio por email.",
       "legalNoticePrefix": "Para los datos del editor y del alojamiento, consulta el",
       "legalNoticeLink": "aviso legal",
@@ -21,8 +21,9 @@
         {
           "title": "Datos recopilados",
           "body": [
-            "El sitio no ofrece área de cliente, pago, CAPTCHA ni píxel publicitario. Dos formularios se tratan en el servidor. La página de maqueta gratuita recoge tu dirección de email, la gama de colores elegida, la dirección de tu sitio actual si la indicas, tu mensaje y el idioma de la página. El formulario de contacto recoge el nombre, la dirección de correo y el mensaje que escribes, además del asunto, el teléfono y la empresa opcionales. En ambos casos los campos se envían por email al buzón del estudio y no se guarda nada en una base de datos. Los mensajes enviados mediante enlaces mailto los gestiona tu cliente de email y el buzón destinatario.",
-            "Tu dirección IP se trata de forma temporal para limitar el número de envíos del formulario de contacto por hora, junto con un campo antispam oculto. El proveedor de alojamiento puede tratar datos técnicos para registros de seguridad y entrega. Vercel Analytics solo se carga tras el consentimiento para medir páginas vistas."
+            "El sitio no ofrece área de cliente, pago, CAPTCHA ni píxel publicitario. Dos formularios se tratan en el servidor. La página de maqueta gratuita recoge tu dirección de email, la gama de colores elegida, la dirección de tu sitio actual si la indicas, tu mensaje y el idioma de la página. Si llegas desde el simulador de precios, la solicitud incluye también las opciones que elegiste allí —tipo de proyecto, tipo de sitio, número de páginas, opciones seleccionadas, frecuencia de actualizaciones y el precio mensual estimado resultante— para que el estudio pueda responderte con todo el contexto. El formulario de contacto recoge el nombre, la dirección de correo y el mensaje que escribes, además del asunto, el teléfono y la empresa opcionales. En ambos casos los campos se envían por email al buzón del estudio y no se guarda nada en una base de datos. Los mensajes enviados mediante enlaces mailto los gestiona tu cliente de email y el buzón destinatario.",
+            "Tu dirección IP se trata de forma temporal para limitar el número de envíos del formulario de contacto por hora, junto con un campo antispam oculto. El proveedor de alojamiento puede tratar datos técnicos para registros de seguridad y entrega. Vercel Analytics solo se carga tras el consentimiento para medir páginas vistas.",
+            "Se guardan dos elementos en tu navegador. La simulación de precios solo sirve para acompañarte desde el simulador hasta el formulario de maqueta gratuita: únicamente nos llega si envías ese formulario, se borra una vez enviada la solicitud y desaparece al cerrar la pestaña. Las fechas de tus últimos envíos del formulario de contacto sirven para limitar la frecuencia de envío desde ese navegador y permanecen en él hasta que borres los datos de navegación; nunca nos llegan."
           ]
         },
         {
@@ -86,9 +87,7 @@
         },
         {
           "title": "Director de publicación",
-          "body": [
-            "Director de publicación: Matthieu Compérat."
-          ]
+          "body": ["Director de publicación: Matthieu Compérat."]
         },
         {
           "title": "Alojamiento",
@@ -110,9 +109,7 @@
         },
         {
           "title": "Contacto",
-          "body": [
-            "Para cuestiones legales, de privacidad o seguridad, contacta con support@gocosmic.dev."
-          ]
+          "body": ["Para cuestiones legales, de privacidad o seguridad, contacta con support@gocosmic.dev."]
         }
       ]
     }

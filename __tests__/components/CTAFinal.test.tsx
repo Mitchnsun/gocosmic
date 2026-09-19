@@ -156,6 +156,46 @@ describe('CTAFinal', () => {
     expect(lastStarfieldProps().respectReducedMotion).toBe(true);
   });
 
+  describe.each([
+    ['immersive', 'hover:scale-[1.08]', 'focus-visible:scale-[1.08]'],
+    ['sober', 'hover:scale-[1.03]', 'focus-visible:scale-[1.03]'],
+  ] as const)('%s tone CTA motion', (tone, hoverScale, focusScale) => {
+    const mockReducedMotion = (matches: boolean) => {
+      window.matchMedia = vi.fn().mockReturnValue({
+        addEventListener: vi.fn(),
+        matches,
+        removeEventListener: vi.fn(),
+      });
+    };
+
+    it('should scale the CTA on hover and focus by default', () => {
+      const { getByRole } = renderCTA({ tone });
+      const cta = getByRole('link', { name: /Contact us/ });
+
+      expect(cta).toHaveClass(hoverScale, focusScale, 'transition-transform');
+    });
+
+    it('should drop the CTA scale and transition when prefers-reduced-motion is set', () => {
+      mockReducedMotion(true);
+      const { getByRole } = renderCTA({ tone });
+      const cta = getByRole('link', { name: /Contact us/ });
+
+      expect(cta).not.toHaveClass(hoverScale);
+      expect(cta).not.toHaveClass(focusScale);
+      expect(cta).not.toHaveClass('transition-transform');
+      expect(cta).toHaveClass('motion-reduce:scale-100!', 'motion-reduce:transition-none!');
+    });
+
+    it('should keep the CTA scale when the preference is not honoured', () => {
+      mockReducedMotion(true);
+      const { getByRole } = renderCTA({ tone, respectReducedMotion: false });
+      const cta = getByRole('link', { name: /Contact us/ });
+
+      expect(cta).toHaveClass(hoverScale, focusScale, 'transition-transform');
+      expect(cta).not.toHaveClass('motion-reduce:scale-100!');
+    });
+  });
+
   it('should leave the starfield animating when the preference is not honoured', () => {
     renderCTA({ respectReducedMotion: false });
 
@@ -191,5 +231,48 @@ describe('CTAFinal', () => {
 
     expect(section).toHaveClass('custom-class');
     expect(section).toHaveAttribute('id', 'final-cta');
+  });
+  describe('sober tone', () => {
+    it('should default to the immersive tone', () => {
+      const { container } = renderCTA();
+
+      expect(container.querySelector('section')).toHaveAttribute('data-tone', 'immersive');
+      expect(container.querySelector('.cta-final-headline')).toBeInTheDocument();
+      expect(container.querySelector('.cta-final-glow')).toBeInTheDocument();
+    });
+
+    it('should use a light starfield by default', () => {
+      const { container } = renderCTA({ tone: 'sober' });
+
+      expect(container.querySelector('section')).toHaveAttribute('data-tone', 'sober');
+      expect(lastStarfieldProps().starCount).toBe(250);
+    });
+
+    it('should drop the animated headline, button glow and accent halo', () => {
+      const { container } = renderCTA({ tone: 'sober' });
+
+      expect(container.querySelector('.cta-final-headline')).not.toBeInTheDocument();
+      expect(container.querySelector('.cta-final-glow')).not.toBeInTheDocument();
+      expect(container.querySelector('[style*="radial-gradient"]')).not.toBeInTheDocument();
+    });
+
+    it('should not warp the starfield on hover or focus', () => {
+      const { getByRole } = renderCTA({ tone: 'sober' });
+      const cta = getByRole('link', { name: /Contact us/ });
+      const restSpeed = lastStarfieldProps().speed;
+
+      fireEvent.pointerEnter(cta);
+      expect(lastStarfieldProps().speed).toBe(restSpeed);
+      fireEvent.focus(cta);
+      expect(lastStarfieldProps().speed).toBe(restSpeed);
+    });
+
+    it('should let explicit props override the tone defaults', () => {
+      const { getByRole } = renderCTA({ tone: 'sober', starfieldDensity: 'high', warpOnHover: true });
+
+      expect(lastStarfieldProps().starCount).toBe(600);
+      fireEvent.pointerEnter(getByRole('link', { name: /Contact us/ }));
+      expect(lastStarfieldProps().starCount).toBe(780);
+    });
   });
 });

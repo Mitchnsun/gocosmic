@@ -1,4 +1,8 @@
-import type { ColorPaletteKey, FreeMockupErrorCode, FreeMockupFieldErrors } from '@/lib/validation/free-mockup.schema';
+import type {
+  ColorPaletteChoice,
+  FreeMockupErrorCode,
+  FreeMockupFieldErrors,
+} from '@/lib/validation/free-mockup.schema';
 
 /** Lifecycle of a submission, as returned by the server action. */
 export type FreeMockupStatus = 'idle' | 'success' | 'error';
@@ -17,9 +21,9 @@ export interface FreeMockupFormState {
 
 /** Props of the colour palette radio group. */
 export interface ColorPaletteSelectProps {
-  /** Currently selected palette, or an empty string while nothing is picked. */
+  /** Currently selected answer, or an empty string while nothing is picked. */
   value: string;
-  onChange: (value: ColorPaletteKey) => void;
+  onChange: (value: ColorPaletteChoice) => void;
   /** Error code to display under the group, if any. */
   error?: FreeMockupErrorCode;
   /** Marks the group as touched so the error can be revealed. */

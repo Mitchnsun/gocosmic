@@ -56,3 +56,75 @@ export const SERVICE_DETAIL_DEFINITIONS: ServiceDetailDefinition[] = [
     ],
   },
 ];
+
+/** Static description of the three offer blocks on the offers page, in the
+ *  order the footer links to them. Copy comes from the `offers` namespace. */
+export const OFFER_DEFINITIONS: ServiceDetailDefinition[] = [
+  {
+    anchor: 'solo-developer',
+    key: 'solo_developer',
+    accent: 'aerospace',
+    groups: [
+      {
+        key: 'features',
+        items: [
+          'dedication',
+          'technologies',
+          'deployment',
+          'responsive',
+          'testing',
+          'support',
+          'communication',
+          'optimization',
+        ],
+      },
+      { key: 'ideal_for', items: ['startups', 'mvp', 'apps', 'redesign'] },
+    ],
+  },
+  {
+    anchor: 'developer-designer',
+    key: 'developer_designer',
+    accent: 'royal',
+    groups: [
+      {
+        key: 'features',
+        items: [
+          'collaboration',
+          'ux_research',
+          'design_system',
+          'prototyping',
+          'development',
+          'animations',
+          'accessibility',
+          'testing',
+          'assets',
+          'iterations',
+        ],
+      },
+      { key: 'ideal_for', items: ['brands', 'consumer', 'ecommerce', 'saas'] },
+    ],
+  },
+  {
+    anchor: 'team-developers',
+    key: 'team_developers',
+    accent: 'jungle',
+    groups: [
+      {
+        key: 'features',
+        items: [
+          'team',
+          'fullstack',
+          'architecture',
+          'databases',
+          'apis',
+          'infrastructure',
+          'security',
+          'cicd',
+          'monitoring',
+          'documentation',
+        ],
+      },
+      { key: 'ideal_for', items: ['enterprise', 'platforms', 'complex', 'scaling'] },
+    ],
+  },
+];

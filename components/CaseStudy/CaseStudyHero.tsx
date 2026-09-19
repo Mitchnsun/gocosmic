@@ -33,7 +33,7 @@ export const CaseStudyHero = ({
   return (
     <section
       aria-labelledby={headingId}
-      className="bg-void text-ghost relative isolate flex min-h-[18rem] items-end overflow-hidden px-4 py-16 sm:min-h-[22rem] sm:px-6 lg:min-h-[28rem] lg:px-8 lg:py-20">
+      className="bg-void text-ghost relative isolate flex min-h-72 items-end overflow-hidden p-4 sm:min-h-88 sm:p-6 lg:min-h-112 lg:p-8">
       {heroImage ? (
         <Image
           src={heroImage.src}
@@ -54,24 +54,26 @@ export const CaseStudyHero = ({
       />
 
       <div className="relative z-10 m-auto flex w-full max-w-7xl flex-col gap-5">
-        {logo && (
-          <Image
-            src={logo.src}
-            alt={logo.alt}
-            width={logo.width ?? 72}
-            height={logo.height ?? 72}
-            className="border-ghost/8 bg-void/60 h-16 w-16 rounded-2xl border object-contain p-2"
-          />
-        )}
         <p className={cn('text-2xs flex items-center gap-2 font-mono tracking-[0.24em] uppercase', text)}>
           <span className={cn('h-1.5 w-1.5 rounded-full', bg)} aria-hidden="true" />
           {eyebrow}
         </p>
-        <h1
-          id={headingId}
-          className="font-display text-[clamp(2.25rem,6.5vw,4.25rem)] leading-[1.02] font-bold tracking-[-0.04em] text-balance">
-          {title}
-        </h1>
+        <div className="flex items-center gap-4">
+          {logo && (
+            <Image
+              src={logo.src}
+              alt={logo.alt}
+              width={logo.width ?? 72}
+              height={logo.height ?? 72}
+              className="border-ghost/8 bg-void/60 h-16 w-16 rounded-2xl border object-contain p-2"
+            />
+          )}
+          <h1
+            id={headingId}
+            className="font-display text-[clamp(2.25rem,6.5vw,4.25rem)] leading-[1.02] font-bold tracking-[-0.04em] text-balance">
+            {title}
+          </h1>
+        </div>
         <p className="text-ghost/55 max-w-2xl text-lg leading-8">{tagline}</p>
         {meta && meta.length > 0 && (
           <ul className="text-ghost/35 text-3xs flex flex-wrap gap-x-6 gap-y-2 font-mono tracking-[0.2em] uppercase">

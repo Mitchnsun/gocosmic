@@ -7,7 +7,7 @@
       },
       "eyebrow": "DSGVO",
       "title": "Datenschutzerklärung",
-      "updated": "Zuletzt aktualisiert: 18. September 2026",
+      "updated": "Zuletzt aktualisiert: 19. September 2026",
       "intro": "Diese Seite erklärt, wie Go Cosmic personenbezogene Daten auf dieser Website und bei Kontaktaufnahme per E-Mail verarbeitet.",
       "legalNoticePrefix": "Angaben zum Anbieter und Hosting findest du im",
       "legalNoticeLink": "Impressum",
@@ -21,8 +21,9 @@
         {
           "title": "Erhobene Daten",
           "body": [
-            "Die Website bietet keinen Kundenbereich, keine Zahlung, kein CAPTCHA und keinen Werbepixel. Zwei Formulare werden serverseitig verarbeitet. Die Seite für das kostenlose Mockup erfasst deine E-Mail-Adresse, die gewählte Farbrichtung, die Adresse deiner aktuellen Website, sofern du sie angibst, deine Nachricht und die Sprache der Seite. Das Kontaktformular erfasst den Namen, die E-Mail-Adresse und die Nachricht, die du einträgst, sowie den optionalen Betreff, die Telefonnummer und das Unternehmen. In beiden Fällen werden die Felder per E-Mail an das Postfach des Studios weitergeleitet und nichts wird in einer Datenbank gespeichert. Über mailto-Links gesendete Nachrichten verarbeiten weiterhin dein E-Mail-Programm und das Empfängerpostfach.",
-            "Deine IP-Adresse wird vorübergehend verarbeitet, um die Zahl der Kontaktformular-Sendungen pro Stunde zu begrenzen, ergänzt durch ein verstecktes Anti-Spam-Feld. Technische Daten können vom Hosting-Anbieter für Sicherheits- und Bereitstellungsprotokolle verarbeitet werden. Vercel Analytics wird nur nach Einwilligung geladen, um Seitenaufrufe zu messen."
+            "Die Website bietet keinen Kundenbereich, keine Zahlung, kein CAPTCHA und keinen Werbepixel. Zwei Formulare werden serverseitig verarbeitet. Die Seite für das kostenlose Mockup erfasst deine E-Mail-Adresse, die gewählte Farbrichtung, die Adresse deiner aktuellen Website, sofern du sie angibst, deine Nachricht und die Sprache der Seite. Wenn du aus dem Preissimulator kommst, enthält die Anfrage außerdem deine dortigen Angaben – Projektart, Art der Website, Seitenanzahl, gewählte Optionen, Aktualisierungshäufigkeit und den daraus berechneten geschätzten Monatspreis –, damit das Studio dir mit vollem Kontext antworten kann. Das Kontaktformular erfasst den Namen, die E-Mail-Adresse und die Nachricht, die du einträgst, sowie den optionalen Betreff, die Telefonnummer und das Unternehmen. In beiden Fällen werden die Felder per E-Mail an das Postfach des Studios weitergeleitet und nichts wird in einer Datenbank gespeichert. Über mailto-Links gesendete Nachrichten verarbeiten weiterhin dein E-Mail-Programm und das Empfängerpostfach.",
+            "Deine IP-Adresse wird vorübergehend verarbeitet, um die Zahl der Kontaktformular-Sendungen pro Stunde zu begrenzen, ergänzt durch ein verstecktes Anti-Spam-Feld. Technische Daten können vom Hosting-Anbieter für Sicherheits- und Bereitstellungsprotokolle verarbeitet werden. Vercel Analytics wird nur nach Einwilligung geladen, um Seitenaufrufe zu messen.",
+            "Zwei Angaben werden in deinem Browser gespeichert. Die Preissimulation dient nur dazu, dich vom Simulator zum Formular für das kostenlose Mockup zu begleiten: Sie wird nur an uns übermittelt, wenn du dieses Formular abschickst, nach dem Senden der Anfrage gelöscht und verschwindet, sobald du den Tab schließt. Die Zeitpunkte deiner letzten Kontaktformular-Sendungen dienen dazu, die Sendehäufigkeit aus diesem Browser zu begrenzen, und bleiben dort, bis du die Browserdaten löschst; sie werden nie an uns übermittelt."
           ]
         },
         {
@@ -86,9 +87,7 @@
         },
         {
           "title": "Verantwortlich für die Veröffentlichung",
-          "body": [
-            "Verantwortlich für die Veröffentlichung: Matthieu Compérat."
-          ]
+          "body": ["Verantwortlich für die Veröffentlichung: Matthieu Compérat."]
         },
         {
           "title": "Hosting",
@@ -110,9 +109,7 @@
         },
         {
           "title": "Kontakt",
-          "body": [
-            "Für rechtliche, Datenschutz- oder Sicherheitsfragen kontaktiere support@gocosmic.dev."
-          ]
+          "body": ["Für rechtliche, Datenschutz- oder Sicherheitsfragen kontaktiere support@gocosmic.dev."]
         }
       ]
     }

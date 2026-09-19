@@ -83,6 +83,7 @@ export default function DailyFortune() {
         title: t('cta.title'),
         description: t('cta.description'),
         button: t('cta.button'),
+        href: 'https://apps.apple.com/app/id6754465790',
         ariaLabel: t('cta.ariaLabel'),
       }}
       contactCta={{ label: tCommon('contact_cta'), href: '/contact' }}

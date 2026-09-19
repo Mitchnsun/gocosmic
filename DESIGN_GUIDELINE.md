@@ -166,7 +166,7 @@ To mark a location, category, or action: **geometric SVGs** (crosshair, diamond 
 
 ### 3.9 Shared page primitives
 
-Inner pages (about, services, contact, projects, case studies) are assembled from four shared building blocks — reuse them instead of re-implementing the patterns above:
+Inner pages (about, services, offers, contact, projects, case studies) are assembled from four shared building blocks — reuse them instead of re-implementing the patterns above:
 
 | Component                   | Role                                                                                     |
 | --------------------------- | ---------------------------------------------------------------------------------------- |

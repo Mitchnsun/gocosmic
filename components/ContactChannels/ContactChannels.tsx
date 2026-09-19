@@ -36,10 +36,10 @@ export const ContactChannels = ({ ariaLabel, className }: ContactChannelsProps) 
             key={channel.id}
             className="border-ghost/8 bg-ghost/[0.02] hover:bg-ghost/[0.04] flex flex-col rounded-2xl border p-6 transition-colors sm:p-8">
             <div className="mb-4 flex items-baseline justify-between gap-4">
-              <p className={cn('text-2xs flex items-center gap-2 font-mono tracking-[0.24em] uppercase', text)}>
+              <h3 className={cn('text-2xs flex items-center gap-2 font-mono tracking-[0.24em] uppercase', text)}>
                 <span className={cn('h-1.5 w-1.5 rounded-full', bg)} aria-hidden="true" />
                 {t(`blocks.${channel.id}.title`)}
-              </p>
+              </h3>
               <span className="text-ghost/35 text-3xs font-mono tracking-[0.2em]">
                 {String(position + 1).padStart(2, '0')} / {String(CONTACT_CHANNELS.length).padStart(2, '0')}
               </span>
@@ -49,6 +49,7 @@ export const ContactChannels = ({ ariaLabel, className }: ContactChannelsProps) 
               className="mt-6"
               accent={channel.accent}
               label={t(`blocks.${channel.id}.reasons.title`)}
+              labelAs="h4"
               items={channel.reasons.map((reason) => t(`blocks.${channel.id}.reasons.items.${reason}`))}
             />
             <a

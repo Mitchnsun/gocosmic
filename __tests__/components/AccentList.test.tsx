@@ -30,4 +30,20 @@ describe('AccentList', () => {
 
     expect(container.querySelector('.bg-jungle')).toBeInTheDocument();
   });
+
+  it('renders the label as a paragraph by default', () => {
+    const { getByText, queryByRole } = render(<AccentList items={['First']} label="Technologies" />);
+
+    expect(getByText('Technologies').tagName).toBe('P');
+    expect(queryByRole('heading')).not.toBeInTheDocument();
+  });
+
+  it('renders the label at the requested heading level', () => {
+    const { getByRole, rerender } = render(<AccentList items={['First']} label="Technologies" labelAs="h3" />);
+
+    expect(getByRole('heading', { level: 3, name: 'Technologies' })).toBeInTheDocument();
+
+    rerender(<AccentList items={['First']} label="Technologies" labelAs="h4" />);
+    expect(getByRole('heading', { level: 4, name: 'Technologies' })).toBeInTheDocument();
+  });
 });

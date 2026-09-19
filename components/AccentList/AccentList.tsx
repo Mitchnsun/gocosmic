@@ -8,6 +8,10 @@ export interface AccentListProps {
   items: string[];
   /** Optional mono label rendered above the list. */
   label?: string;
+  /** Element used for the label. Pick the heading level that sits under the
+   *  enclosing section's heading, so the list stays reachable by heading
+   *  navigation. Defaults to `'p'` for decorative labels. */
+  labelAs?: 'p' | 'h3' | 'h4';
   /** Accent colour for the bullets. Defaults to `'aerospace'`. */
   accent?: AccentToken;
   /** Number of columns from the `md` breakpoint. Defaults to `1`. */
@@ -27,6 +31,7 @@ export interface AccentListProps {
 export const AccentList = ({
   items,
   label,
+  labelAs: LabelTag = 'p',
   accent = 'aerospace',
   columns = 1,
   ariaLabel,
@@ -36,7 +41,9 @@ export const AccentList = ({
 
   return (
     <div className={cn('w-full', className)}>
-      {label && <p className="text-ghost/35 text-2xs mb-4 font-mono tracking-[0.24em] uppercase">{label}</p>}
+      {label && (
+        <LabelTag className="text-ghost/35 text-2xs mb-4 font-mono tracking-[0.24em] uppercase">{label}</LabelTag>
+      )}
       <ul
         aria-label={label ? undefined : ariaLabel}
         className={cn('grid gap-3', { 'md:grid-cols-2 md:gap-x-8': columns === 2 })}>

@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 
+import type { DecodedPlan } from '@/lib/pricing/plan-code';
 import { getCurrency, type Region } from '@/lib/region';
 
 import { ContactBanner } from './ContactBanner';
@@ -23,6 +24,14 @@ export function PricingSimulator({ region }: PricingSimulatorProps) {
   const currency = getCurrency(region);
   const t = useTranslations('pricing');
   const simulator = usePricingSimulator();
+  const plan: DecodedPlan | undefined = simulator.projectType
+    ? {
+        projectType: simulator.projectType,
+        websiteType: simulator.websiteType,
+        selection: simulator.selection,
+        region,
+      }
+    : undefined;
 
   return (
     <div className="space-y-6">
@@ -72,7 +81,7 @@ export function PricingSimulator({ region }: PricingSimulatorProps) {
             onPagesChange={simulator.setPages}
             onUpdatesChange={simulator.setUpdates}
           />
-          <ContactBanner />
+          <ContactBanner plan={plan} />
         </div>
       )}
 
@@ -91,7 +100,7 @@ export function PricingSimulator({ region }: PricingSimulatorProps) {
               description={t('results.custom.description')}
             />
           </section>
-          <ContactBanner />
+          <ContactBanner plan={plan} />
         </div>
       )}
 

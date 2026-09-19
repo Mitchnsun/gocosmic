@@ -34,6 +34,7 @@ export const CaseStudySection = ({ section, index, accent }: CaseStudySectionPro
         <AccentList
           accent={sectionAccent}
           label={section.pointsLabel}
+          labelAs="h3"
           ariaLabel={section.title}
           items={section.points}
           columns={section.columns ?? 1}

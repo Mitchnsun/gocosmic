@@ -7,7 +7,7 @@
       },
       "eyebrow": "RGPD",
       "title": "Politique de confidentialité",
-      "updated": "Dernière mise à jour : 18 septembre 2026",
+      "updated": "Dernière mise à jour : 19 septembre 2026",
       "intro": "Cette page explique comment Go Cosmic traite les données personnelles sur ce site et lors des contacts par email.",
       "legalNoticePrefix": "Pour les informations éditeur et hébergement, consultez les",
       "legalNoticeLink": "mentions légales",
@@ -21,8 +21,9 @@
         {
           "title": "Données collectées",
           "body": [
-            "Le site ne propose pas d’espace client, paiement, CAPTCHA ni pixel publicitaire. Deux formulaires sont traités côté serveur. La page de maquette gratuite collecte votre adresse email, la direction de couleurs choisie, l’adresse de votre site actuel si vous la renseignez, votre message et la langue de la page. Le formulaire de contact collecte le nom, l’adresse e-mail et le message que vous saisissez, ainsi que l’objet, le téléphone et la société facultatifs. Dans les deux cas, les champs sont transmis par email à la boîte du studio et rien n’est conservé en base de données. Les messages envoyés via les liens mailto restent traités par votre client email et la boîte destinataire.",
-            "Votre adresse IP est traitée de manière temporaire pour limiter le nombre d’envois du formulaire de contact par heure, en complément d’un champ anti-spam masqué. Des données techniques peuvent être traitées par l’hébergeur pour les journaux de sécurité et de diffusion. Vercel Analytics n’est chargé qu’après consentement pour mesurer les pages vues."
+            "Le site ne propose pas d’espace client, paiement, CAPTCHA ni pixel publicitaire. Deux formulaires sont traités côté serveur. La page de maquette gratuite collecte votre adresse email, la direction de couleurs choisie, l’adresse de votre site actuel si vous la renseignez, votre message et la langue de la page. Si vous arrivez depuis le simulateur de tarifs, la demande inclut aussi les choix que vous y avez faits — type de projet, type de site, nombre de pages, options retenues, fréquence des mises à jour et prix mensuel estimé qui en résulte — afin que le studio puisse vous répondre en connaissance de cause. Le formulaire de contact collecte le nom, l’adresse e-mail et le message que vous saisissez, ainsi que l’objet, le téléphone et la société facultatifs. Dans les deux cas, les champs sont transmis par email à la boîte du studio et rien n’est conservé en base de données. Les messages envoyés via les liens mailto restent traités par votre client email et la boîte destinataire.",
+            "Votre adresse IP est traitée de manière temporaire pour limiter le nombre d’envois du formulaire de contact par heure, en complément d’un champ anti-spam masqué. Des données techniques peuvent être traitées par l’hébergeur pour les journaux de sécurité et de diffusion. Vercel Analytics n’est chargé qu’après consentement pour mesurer les pages vues.",
+            "Deux éléments sont conservés dans votre navigateur. La simulation de tarifs ne sert qu’à vous suivre du simulateur jusqu’au formulaire de maquette gratuite : elle ne nous est transmise que si vous envoyez ce formulaire, elle est effacée une fois la demande envoyée et disparaît à la fermeture de l’onglet. Les dates de vos derniers envois du formulaire de contact servent à limiter la fréquence d’envoi depuis ce navigateur et y restent jusqu’à ce que vous effaciez les données de navigation ; elles ne nous sont jamais transmises."
           ]
         },
         {
@@ -90,9 +91,7 @@
         },
         {
           "title": "Directeur de publication",
-          "body": [
-            "Directeur de publication : Matthieu Compérat."
-          ]
+          "body": ["Directeur de publication : Matthieu Compérat."]
         },
         {
           "title": "Hébergement",
@@ -114,9 +113,7 @@
         },
         {
           "title": "Contact",
-          "body": [
-            "Pour toute question légale, confidentialité ou sécurité, contactez support@gocosmic.dev."
-          ]
+          "body": ["Pour toute question légale, confidentialité ou sécurité, contactez support@gocosmic.dev."]
         }
       ]
     }

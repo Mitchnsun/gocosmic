@@ -88,7 +88,7 @@ export default async function About() {
           cta={{ text: t('hero.cta'), href: '/contact' }}
         />
 
-        <div className="m-auto flex max-w-7xl flex-col gap-10 px-4 py-16 sm:px-6 lg:px-8">
+        <div className="m-auto flex max-w-7xl flex-col gap-10 p-4 sm:p-6 lg:p-8">
           {/* Mission */}
           <ContentSection
             id="mission"
@@ -96,7 +96,7 @@ export default async function About() {
             index="01 / 03"
             title={t('mission.title')}
             lead={t('mission.description')}>
-            <AccentList label={t('mission.specialization.title')} items={specialization} columns={2} />
+            <AccentList label={t('mission.specialization.title')} labelAs="h3" items={specialization} columns={2} />
             <p className="text-aerospace mt-8 text-lg leading-8">{t('mission.conclusion')}</p>
           </ContentSection>
 
@@ -113,6 +113,7 @@ export default async function About() {
               className="mt-6"
               accent="royal"
               label={t('developer.expertise.title')}
+              labelAs="h3"
               items={expertise}
               columns={2}
             />
@@ -140,8 +141,8 @@ export default async function About() {
             title={t('legal.title')}
             lead={t('legal.intro')}>
             <div className="grid gap-8 md:grid-cols-2">
-              <AccentList accent="jungle" label={t('legal.ai.title')} items={aiPolicy} />
-              <AccentList accent="jungle" label={t('legal.responsibility.title')} items={responsibility} />
+              <AccentList accent="jungle" label={t('legal.ai.title')} labelAs="h3" items={aiPolicy} />
+              <AccentList accent="jungle" label={t('legal.responsibility.title')} labelAs="h3" items={responsibility} />
             </div>
             <p className="text-ghost/55 border-ghost/8 mt-8 border-t pt-6 text-sm leading-7">
               {t('legal.contact.text')}{' '}
@@ -171,7 +172,7 @@ export default async function About() {
           ctaText={t('cta.button')}
           ctaHref="/contact"
           accentColor="aerospace"
-          starfieldDensity="medium"
+          tone="sober"
         />
       </div>
     </>

@@ -65,7 +65,7 @@ export default async function Services() {
         secondaryCta={{ text: t('hero.secondary'), href: '/pricing' }}
       />
 
-      <div className="m-auto flex max-w-7xl flex-col gap-10 px-4 py-16 sm:px-6 lg:px-8">
+      <div className="m-auto flex max-w-7xl flex-col gap-10 p-4 sm:p-6 lg:p-8">
         {SERVICE_DETAIL_DEFINITIONS.map((definition, position) => (
           <ServiceDetail
             key={definition.anchor}
@@ -120,9 +120,9 @@ export default async function Services() {
         headline={t('cta.title')}
         description={t('cta.description')}
         ctaText={t('cta.primary_button')}
-        ctaHref="/contact"
+        ctaHref="/journey"
         accentColor="aerospace"
-        starfieldDensity="medium"
+        tone="sober"
       />
     </div>
   );

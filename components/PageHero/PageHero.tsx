@@ -87,10 +87,7 @@ const PageHero = ({
       style={style}
       data-reduced-motion={prefersReducedMotion ? 'true' : 'false'}
       aria-labelledby={`${id}-heading`}
-      className={cn(
-        'bg-void text-ghost relative isolate overflow-hidden px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-28',
-        className
-      )}>
+      className={cn('bg-void text-ghost relative isolate overflow-hidden p-4 sm:p-6 lg:p-8', className)}>
       <div className="absolute inset-0 -z-20" aria-hidden="true">
         <Starfield
           className="h-full w-full opacity-60"
@@ -99,14 +96,6 @@ const PageHero = ({
           respectReducedMotion={respectReducedMotion}
         />
       </div>
-      <div
-        className="pointer-events-none absolute inset-0 -z-10 opacity-70"
-        style={{
-          backgroundImage:
-            'radial-gradient(circle at 20% 15%, rgb(var(--page-hero-accent-rgb) / 0.18), transparent 55%)',
-        }}
-        aria-hidden="true"
-      />
 
       <div className="relative z-10 m-auto flex max-w-7xl flex-col gap-6">
         <p className={cn('text-2xs flex items-center gap-2 font-mono tracking-[0.24em] uppercase', text)}>

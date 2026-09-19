@@ -53,7 +53,7 @@ export default async function Projects() {
     <div className="bg-void text-ghost relative">
       <PageHero id="projects-hero" eyebrow={t('eyebrow')} title={t('title')} lead={t('subtitle')} />
 
-      <div className="m-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="m-auto max-w-7xl p-4 sm:p-6 lg:p-8">
         <ul className="grid gap-4 sm:grid-cols-2">
           {CASE_STUDY_SLUGS.map((slug, position) => {
             // eslint-disable-next-line security/detect-object-injection
@@ -100,7 +100,7 @@ export default async function Projects() {
         ctaText={t('cta.button')}
         ctaHref="/contact"
         accentColor="aerospace"
-        starfieldDensity="medium"
+        tone="sober"
       />
     </div>
   );

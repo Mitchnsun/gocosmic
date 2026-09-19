@@ -12,7 +12,7 @@
       "items": {
         "brief": {
           "title": "Sie schicken das Wichtigste",
-          "description": "Ihre E-Mail-Adresse, die Farbrichtung, die Ihnen gefällt, und Ihre aktuelle Website, falls vorhanden."
+          "description": "Deine E-Mail-Adresse, die Farbrichtung, die dir gefällt, falls du eine hast, und deine aktuelle Website, falls vorhanden."
         },
         "design": {
           "title": "Wir gestalten ein Mockup",
@@ -28,7 +28,7 @@
     "privacy_link": "Datenschutzerklärung",
     "form": {
       "heading": "Fordern Sie Ihr Mockup an",
-      "lead": "Eine E-Mail-Adresse, eine Farbrichtung — alles andere ist optional.",
+      "lead": "Eine E-Mail-Adresse — alles andere ist optional.",
       "email_label": "Ihre E-Mail-Adresse",
       "email_placeholder": "sie@beispiel.com",
       "palette_label": "Farbrichtung",
@@ -44,7 +44,8 @@
       "success_title": "Anfrage erhalten",
       "success_message": "Danke — wir melden uns per E-Mail mit Ihrem Mockup.",
       "error_message": "Ihre Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es gleich noch einmal.",
-      "invalid_message": "Bitte prüfen Sie die markierten Felder."
+      "invalid_message": "Bitte prüfen Sie die markierten Felder.",
+      "plan_attached": "Ihre Preissimulation wird der Anfrage beigefügt."
     },
     "palette": {
       "options": {
@@ -53,7 +54,8 @@
         "alpineSunset": "Alpiner Sonnenuntergang",
         "deepForest": "Tiefer Wald",
         "starryNight": "Sternennacht",
-        "terracottaStone": "Terrakotta & Stein"
+        "terracottaStone": "Terrakotta & Stein",
+        "none": "Keine Präferenz"
       }
     },
     "validation": {

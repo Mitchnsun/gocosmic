@@ -44,7 +44,7 @@ export const CaseStudy = ({
         accent={accent}
       />
 
-      <div className="m-auto flex max-w-5xl flex-col gap-10 px-4 py-16 sm:px-6 lg:px-8">
+      <div className="m-auto flex max-w-7xl flex-col gap-10 p-4 sm:p-6 lg:p-8">
         {sections.map((section, position) => (
           <CaseStudySection
             key={section.id}

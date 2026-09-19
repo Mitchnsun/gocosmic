@@ -46,7 +46,7 @@ export default async function Contact() {
     <div className="bg-void text-ghost relative">
       <PageHero id="contact-hero" eyebrow={t('eyebrow')} title={t('title')} lead={t('subtitle')} />
 
-      <div className="m-auto flex max-w-7xl flex-col gap-10 px-4 py-16 sm:px-6 lg:px-8">
+      <div className="m-auto flex max-w-7xl flex-col gap-10 p-4 sm:p-6 lg:p-8">
         {/* Contact form */}
         <ContentSection
           id="brief"

@@ -12,7 +12,7 @@
       "items": {
         "brief": {
           "title": "You send the essentials",
-          "description": "Your email, the colour direction you like, and your current website if you have one."
+          "description": "Your email, the colour direction you like if you have one, and your current website if you have one."
         },
         "design": {
           "title": "We design a mockup",
@@ -28,7 +28,7 @@
     "privacy_link": "Privacy policy",
     "form": {
       "heading": "Request your mockup",
-      "lead": "One email, one colour direction — everything else is optional.",
+      "lead": "One email — everything else is optional.",
       "email_label": "Your email",
       "email_placeholder": "you@example.com",
       "palette_label": "Colour direction",
@@ -44,7 +44,8 @@
       "success_title": "Request received",
       "success_message": "Thank you — we will come back to you by email with your mockup.",
       "error_message": "Your request could not be sent. Please try again in a moment.",
-      "invalid_message": "Please check the highlighted fields."
+      "invalid_message": "Please check the highlighted fields.",
+      "plan_attached": "Your pricing simulation is attached to the request."
     },
     "palette": {
       "options": {
@@ -53,7 +54,8 @@
         "alpineSunset": "Alpine sunset",
         "deepForest": "Deep forest",
         "starryNight": "Starry night",
-        "terracottaStone": "Terracotta & stone"
+        "terracottaStone": "Terracotta & stone",
+        "none": "No preference"
       }
     },
     "validation": {
