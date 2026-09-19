@@ -5,7 +5,7 @@
   },
   "contact": {
     "title": "Contattaci",
-    "subtitle": "Scegli l'email giusta per la tua richiesta",
+    "subtitle": "Inviaci un brief oppure scrivi direttamente alla casella giusta.",
     "blocks": {
       "general": {
         "title": "Richieste Generali",
@@ -76,7 +76,66 @@
         "aria_label": "Invia un'email a prospect@gocosmic.dev con oggetto: Richiesta commerciale"
       }
     },
-    "privacyNotice": "I dati personali inviati via email sono usati solo per rispondere alla richiesta, gestire il seguito e conservare prova degli scambi per i periodi indicati nella privacy policy.",
-    "privacyLink": "Informativa privacy"
+    "privacyNotice": "I dati personali inviati tramite il modulo di contatto o per e-mail sono utilizzati solo per rispondere alla tua richiesta, gestire il seguito e conservare prova degli scambi per i periodi indicati nell'informativa sulla privacy.",
+    "privacyLink": "Informativa privacy",
+    "eyebrow": "Contatto — Briefing di missione",
+    "form": {
+      "eyebrow": "Brief di progetto",
+      "title": "Raccontaci il tuo progetto",
+      "description": "Compila il modulo e ti risponderemo con i passi successivi. Preferisci l’e-mail? Gli indirizzi qui sotto arrivano direttamente nella casella giusta.",
+      "optional": "facoltativo",
+      "required_hint": "I campi contrassegnati con un asterisco sono obbligatori",
+      "submit": "Invia il messaggio",
+      "submitting": "Invio in corso…",
+      "clear": "Svuota il modulo",
+      "honeypot_label": "Lascia vuoto questo campo",
+      "fields": {
+        "name": {
+          "label": "Nome",
+          "placeholder": "Il tuo nome"
+        },
+        "email": {
+          "label": "E-mail",
+          "placeholder": "tu@esempio.com"
+        },
+        "subject": {
+          "label": "Oggetto",
+          "placeholder": "Sito vitrina, app mobile, restyling…"
+        },
+        "message": {
+          "label": "Messaggio",
+          "placeholder": "Descrivi il tuo progetto, le tempistiche e il budget se ne hai uno."
+        },
+        "phone": {
+          "label": "Telefono",
+          "placeholder": "+39 333 123 4567"
+        },
+        "company": {
+          "label": "Azienda",
+          "placeholder": "La tua azienda o associazione"
+        }
+      },
+      "errors": {
+        "name_length": "Inserisci un nome da 2 a 100 caratteri.",
+        "email_invalid": "Inserisci un indirizzo e-mail valido.",
+        "subject_length": "L’oggetto deve contenere tra 5 e 200 caratteri.",
+        "message_length": "Il messaggio deve contenere tra 10 e 5000 caratteri.",
+        "phone_invalid": "Inserisci un numero di telefono valido.",
+        "company_length": "Il nome dell’azienda è troppo lungo.",
+        "rate_limited": "Hai già inviato diversi messaggi. Riprova più tardi o scrivici per e-mail.",
+        "server": "Non è stato possibile inviare il messaggio. Riprova o scrivici per e-mail.",
+        "network": "Connessione perduta. Controlla la rete e riprova."
+      },
+      "success": {
+        "title": "Grazie per averci scritto!",
+        "description": "Il tuo messaggio è stato inviato. Leggiamo ogni richiesta e ti risponderemo a breve.",
+        "back": "Invia un altro messaggio"
+      }
+    },
+    "direct": {
+      "eyebrow": "Linee dirette",
+      "title": "Scrivi alla casella giusta",
+      "description": "Ogni richiesta ha il suo indirizzo: scegli quello che corrisponde alla tua."
+    }
   }
 }

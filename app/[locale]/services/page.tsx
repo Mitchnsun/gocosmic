@@ -1,18 +1,14 @@
-import {
-  CloudIcon,
-  CodeBracketIcon,
-  CpuChipIcon,
-  EnvelopeIcon,
-  PuzzlePieceIcon,
-  RocketLaunchIcon,
-  ShieldCheckIcon,
-  SparklesIcon,
-} from '@heroicons/react/24/solid';
+import { CodeBracketIcon, PuzzlePieceIcon, RocketLaunchIcon, SparklesIcon } from '@heroicons/react/24/solid';
 import type { Metadata } from 'next';
-import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
+import type { ReactNode } from 'react';
 
-import { Button } from '@/design-system/button';
+import { ContentSection } from '@/components/ContentSection';
+import CTAFinal from '@/components/CTAFinal';
+import PageHero from '@/components/PageHero';
+import { SERVICE_DETAIL_DEFINITIONS, ServiceDetail } from '@/components/ServiceDetail';
+import { buttonVariants } from '@/design-system/button.variants';
+import { cn } from '@/design-system/lib/utils';
 import { getCanonicalUrl } from '@/i18n/canonical';
 import { Link } from '@/i18n/navigation';
 import { getOgImages } from '@/lib/og';
@@ -45,388 +41,89 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export default function Services() {
-  const t = useTranslations('services');
-  const subject = encodeURIComponent(t('cta.email_subject'));
+/** Icons per service anchor — kept out of the shared definitions so the
+ *  constants file stays free of JSX. */
+const SERVICE_ICONS: Record<string, ReactNode> = {
+  development: <CodeBracketIcon className="size-5" aria-hidden="true" />,
+  design: <SparklesIcon className="size-5" aria-hidden="true" />,
+  ai: <PuzzlePieceIcon className="size-5" aria-hidden="true" />,
+  launch: <RocketLaunchIcon className="size-5" aria-hidden="true" />,
+};
+
+export default async function Services() {
+  const t = await getTranslations('services');
+  const total = SERVICE_DETAIL_DEFINITIONS.length;
 
   return (
-    <div className="text-ghost relative pt-10">
-      <div className="m-auto flex max-w-7xl flex-col items-center gap-10 px-4 pb-4">
-        {/* Page Header */}
-        <div className="text-center">
-          <h1 className="mb-4 text-2xl font-extrabold sm:text-4xl">{t('title')}</h1>
-          <p className="text-lg text-gray-400">{t('subtitle')}</p>
-        </div>
+    <div className="bg-void text-ghost relative">
+      <PageHero
+        id="services-hero"
+        eyebrow={t('eyebrow')}
+        title={t('title')}
+        lead={t('subtitle')}
+        cta={{ text: t('hero.cta'), href: '/contact' }}
+        secondaryCta={{ text: t('hero.secondary'), href: '/pricing' }}
+      />
 
-        {/* Stellar Development Section */}
-        <section id="development" className="w-full scroll-mt-24" aria-labelledby="stellar-development-heading">
-          <div className="relative rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
-            <div className="mb-6 flex items-center gap-4">
-              <CodeBracketIcon className="text-jungle h-8 w-8 shrink-0" aria-hidden="true" />
-              <h2 id="stellar-development-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
-                {t('stellar_development.title')}
-              </h2>
-            </div>
-            <div className="space-y-6 text-gray-300">
-              <div>
-                <h3 className="text-jungle mb-2 text-lg font-semibold sm:text-xl">
-                  {t('stellar_development.subtitle')}
-                </h3>
-                <p className="text-lg">{t('stellar_development.description')}</p>
-              </div>
+      <div className="m-auto flex max-w-7xl flex-col gap-10 px-4 py-16 sm:px-6 lg:px-8">
+        {SERVICE_DETAIL_DEFINITIONS.map((definition, position) => (
+          <ServiceDetail
+            key={definition.anchor}
+            id={definition.anchor}
+            accent={definition.accent}
+            icon={SERVICE_ICONS[definition.anchor]}
+            index={`${String(position + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`}
+            title={t(`${definition.key}.title`)}
+            subtitle={t(`${definition.key}.subtitle`)}
+            description={t(`${definition.key}.description`)}
+            groups={definition.groups.map((group) => ({
+              label: t(`${definition.key}.${group.key}.title`),
+              items: group.items.map((item) => t(`${definition.key}.${group.key}.items.${item}`)),
+            }))}
+          />
+        ))}
 
-              <div>
-                <h4 className="mb-4 text-lg font-semibold text-white">
-                  {t('stellar_development.technologies.title')}:
-                </h4>
-                <ul className="grid gap-3 md:grid-cols-2">
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-400" aria-hidden="true"></span>
-                    <span>{t('stellar_development.technologies.items.frontend')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-500" aria-hidden="true"></span>
-                    <span>{t('stellar_development.technologies.items.architecture')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-600" aria-hidden="true"></span>
-                    <span>{t('stellar_development.technologies.items.quality')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-700" aria-hidden="true"></span>
-                    <span>{t('stellar_development.technologies.items.performance')}</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="mb-4 text-lg font-semibold text-white">{t('stellar_development.expertise.title')}:</h4>
-                <ul className="grid gap-3 md:grid-cols-2">
-                  <li className="flex items-center gap-3">
-                    <span className="bg-jungle mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
-                    <span>{t('stellar_development.expertise.items.workflow')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="bg-jungle/90 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
-                    <span>{t('stellar_development.expertise.items.scalability')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="bg-jungle/75 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
-                    <span>{t('stellar_development.expertise.items.security')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="bg-jungle/60 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
-                    <span>{t('stellar_development.expertise.items.apis')}</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="mb-4 text-lg font-semibold text-white">{t('stellar_development.features.title')}:</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-3">
-                    <span className="bg-jungle/90 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
-                    <span>{t('stellar_development.features.items.quality')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="bg-jungle/75 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
-                    <span>{t('stellar_development.features.items.performance')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="bg-jungle/60 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
-                    <span>{t('stellar_development.features.items.maintainability')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="bg-jungle/45 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
-                    <span>{t('stellar_development.features.items.reliability')}</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+        {/* Projects & pricing entry points */}
+        <ContentSection
+          id="explore"
+          eyebrow={t('explore.eyebrow')}
+          title={t('explore.title')}
+          lead={t('explore.description')}>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Link
+              href="/projects"
+              className={cn(
+                buttonVariants({ variant: 'aerospace' }),
+                'w-fit py-3 transition-transform hover:scale-105 motion-reduce:scale-100! motion-reduce:transition-none!'
+              )}>
+              {t('explore.projects')}
+            </Link>
+            <Link
+              href="/pricing"
+              className="border-ghost/15 text-ghost hover:border-ghost hover:bg-ghost/5 focus-visible:ring-ghost font-display w-fit rounded-full border px-6 py-3 text-base transition-colors focus-visible:ring-2 focus-visible:outline-none">
+              {t('explore.pricing')}
+            </Link>
+            <Link
+              href="/local"
+              className="border-ghost/15 text-ghost hover:border-ghost hover:bg-ghost/5 focus-visible:ring-ghost font-display w-fit rounded-full border px-6 py-3 text-base transition-colors focus-visible:ring-2 focus-visible:outline-none">
+              {t('cta.local_page')}
+            </Link>
           </div>
-        </section>
-
-        {/* Mystical Design Section */}
-        <section id="design" className="w-full scroll-mt-24" aria-labelledby="mystical-design-heading">
-          <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
-            <div className="mb-6 flex items-center gap-4">
-              <SparklesIcon className="text-royal h-8 w-8 shrink-0" aria-hidden="true" />
-              <h2 id="mystical-design-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
-                {t('mystical_design.title')}
-              </h2>
-            </div>
-            <div className="space-y-6 text-gray-300">
-              <div>
-                <h3 className="text-royal mb-2 text-lg font-semibold sm:text-xl">{t('mystical_design.subtitle')}</h3>
-                <p className="text-lg">{t('mystical_design.description')}</p>
-              </div>
-
-              <div>
-                <h4 className="mb-4 text-lg font-semibold text-white">{t('mystical_design.approach.title')}:</h4>
-                <ul className="grid gap-3 md:grid-cols-2">
-                  <li className="flex items-center gap-3">
-                    <span className="bg-royal mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
-                    <span>{t('mystical_design.approach.items.systems')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="bg-royal/90 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
-                    <span>{t('mystical_design.approach.items.accessibility')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="bg-royal/75 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
-                    <span>{t('mystical_design.approach.items.responsive')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="bg-royal/60 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
-                    <span>{t('mystical_design.approach.items.performance')}</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="mb-4 text-lg font-semibold text-white">{t('mystical_design.tools.title')}:</h4>
-                <ul className="grid gap-3 md:grid-cols-2">
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-400" aria-hidden="true"></span>
-                    <span>{t('mystical_design.tools.items.components')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-500" aria-hidden="true"></span>
-                    <span>{t('mystical_design.tools.items.styling')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-600" aria-hidden="true"></span>
-                    <span>{t('mystical_design.tools.items.testing')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-700" aria-hidden="true"></span>
-                    <span>{t('mystical_design.tools.items.prototyping')}</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="mb-4 text-lg font-semibold text-white">{t('mystical_design.outcomes.title')}:</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-3">
-                    <span className="bg-royal mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
-                    <span>{t('mystical_design.outcomes.items.engagement')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="bg-royal/90 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
-                    <span>{t('mystical_design.outcomes.items.conversion')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="bg-royal/75 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
-                    <span>{t('mystical_design.outcomes.items.brand')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="bg-royal/60 mt-1 h-2 w-2 shrink-0 rounded-full" aria-hidden="true"></span>
-                    <span>{t('mystical_design.outcomes.items.satisfaction')}</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* AI Powered Section */}
-        <section id="ai" className="w-full scroll-mt-24" aria-labelledby="ai-powered-heading">
-          <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
-            <div className="mb-6 flex items-center gap-4">
-              <CpuChipIcon className="h-8 w-8 shrink-0 text-yellow-400" aria-hidden="true" />
-              <h2 id="ai-powered-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
-                {t('ai_powered.title')}
-              </h2>
-            </div>
-            <div className="space-y-6 text-gray-300">
-              <div>
-                <h3 className="mb-2 text-lg font-semibold text-yellow-300 sm:text-xl">{t('ai_powered.subtitle')}</h3>
-                <p className="text-lg">{t('ai_powered.description')}</p>
-              </div>
-
-              <div>
-                <h4 className="mb-4 text-lg font-semibold text-white">{t('ai_powered.capabilities.title')}:</h4>
-                <ul className="grid gap-3 md:grid-cols-2">
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-yellow-400" aria-hidden="true"></span>
-                    <span>{t('ai_powered.capabilities.items.recommendations')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-yellow-500" aria-hidden="true"></span>
-                    <span>{t('ai_powered.capabilities.items.automation')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-yellow-600" aria-hidden="true"></span>
-                    <span>{t('ai_powered.capabilities.items.analytics')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-yellow-700" aria-hidden="true"></span>
-                    <span>{t('ai_powered.capabilities.items.nlp')}</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="mb-4 text-lg font-semibold text-white">{t('ai_powered.implementation.title')}:</h4>
-                <ul className="grid gap-3 md:grid-cols-2">
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-400" aria-hidden="true"></span>
-                    <span>{t('ai_powered.implementation.items.apis')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-500" aria-hidden="true"></span>
-                    <span>{t('ai_powered.implementation.items.privacy')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-600" aria-hidden="true"></span>
-                    <span>{t('ai_powered.implementation.items.scalability')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-700" aria-hidden="true"></span>
-                    <span>{t('ai_powered.implementation.items.monitoring')}</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="mb-4 text-lg font-semibold text-white">{t('ai_powered.use_cases.title')}:</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-yellow-400" aria-hidden="true"></span>
-                    <span>{t('ai_powered.use_cases.items.personalization')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-yellow-500" aria-hidden="true"></span>
-                    <span>{t('ai_powered.use_cases.items.support')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-yellow-600" aria-hidden="true"></span>
-                    <span>{t('ai_powered.use_cases.items.optimization')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-yellow-700" aria-hidden="true"></span>
-                    <span>{t('ai_powered.use_cases.items.insights')}</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Cosmic Launch Section */}
-        <section id="launch" className="w-full scroll-mt-24" aria-labelledby="cosmic-launch-heading">
-          <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
-            <div className="mb-6 flex items-center gap-4">
-              <RocketLaunchIcon className="h-8 w-8 shrink-0 text-blue-400" aria-hidden="true" />
-              <h2 id="cosmic-launch-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
-                {t('cosmic_launch.title')}
-              </h2>
-            </div>
-            <div className="space-y-6 text-gray-300">
-              <div>
-                <h3 className="mb-2 text-lg font-semibold text-blue-300 sm:text-xl">{t('cosmic_launch.subtitle')}</h3>
-                <p className="text-lg">{t('cosmic_launch.description')}</p>
-              </div>
-
-              <div>
-                <h4 className="mb-4 text-lg font-semibold text-white">{t('cosmic_launch.process.title')}:</h4>
-                <ul className="grid gap-3 md:grid-cols-2">
-                  <li className="flex items-center gap-3">
-                    <ShieldCheckIcon className="h-4 w-4 shrink-0 text-blue-400" aria-hidden="true" />
-                    <span>{t('cosmic_launch.process.items.testing')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <PuzzlePieceIcon className="h-4 w-4 shrink-0 text-blue-500" aria-hidden="true" />
-                    <span>{t('cosmic_launch.process.items.staging')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <RocketLaunchIcon className="h-4 w-4 shrink-0 text-blue-600" aria-hidden="true" />
-                    <span>{t('cosmic_launch.process.items.deployment')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-700" aria-hidden="true"></span>
-                    <span>{t('cosmic_launch.process.items.monitoring')}</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="mb-4 text-lg font-semibold text-white">{t('cosmic_launch.infrastructure.title')}:</h4>
-                <ul className="grid gap-3 md:grid-cols-2">
-                  <li className="flex items-center gap-3">
-                    <CloudIcon className="h-4 w-4 shrink-0 text-sky-400" aria-hidden="true" />
-                    <span>{t('cosmic_launch.infrastructure.items.cloud')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-sky-500" aria-hidden="true"></span>
-                    <span>{t('cosmic_launch.infrastructure.items.cicd')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <ShieldCheckIcon className="h-4 w-4 shrink-0 text-sky-600" aria-hidden="true" />
-                    <span>{t('cosmic_launch.infrastructure.items.security')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-sky-700" aria-hidden="true"></span>
-                    <span>{t('cosmic_launch.infrastructure.items.scaling')}</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="mb-4 text-lg font-semibold text-white">{t('cosmic_launch.support.title')}:</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-400" aria-hidden="true"></span>
-                    <span>{t('cosmic_launch.support.items.monitoring')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-500" aria-hidden="true"></span>
-                    <span>{t('cosmic_launch.support.items.optimization')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-600" aria-hidden="true"></span>
-                    <span>{t('cosmic_launch.support.items.updates')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-700" aria-hidden="true"></span>
-                    <span>{t('cosmic_launch.support.items.consultation')}</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="w-full" aria-labelledby="cta-heading">
-          <div className="m-auto flex max-w-5xl flex-col items-center gap-6 rounded-lg bg-slate-800 px-6 py-12 lg:p-12">
-            <h2 id="cta-heading" className="text-center text-3xl font-bold lg:text-4xl">
-              {t('cta.title')}
-            </h2>
-            <p className="text-center text-lg text-gray-400 sm:text-xl lg:text-lg">{t('cta.description')}</p>
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <Button variant="royal" className="w-fit gap-2" asChild>
-                <Link href="/journey" aria-label={t('cta.primary_button')}>
-                  <RocketLaunchIcon className="h-5 w-5" aria-hidden="true" />
-                  {t('cta.primary_button')}
-                </Link>
-              </Button>
-              <Button variant="jungle" className="flex items-center gap-2" asChild>
-                <a href={`mailto:prospect@gocosmic.dev?subject=${subject}`} aria-label={t('cta.secondary_button')}>
-                  {t('cta.secondary_button')}
-                  <EnvelopeIcon className="h-4 w-4" aria-hidden="true" />
-                </a>
-              </Button>
-            </div>
-            <Button variant="space" className="w-fit border border-blue-400/40" asChild>
-              <Link href="/local">{t('cta.local_page')}</Link>
-            </Button>
-            <p className="text-center text-sm text-gray-500">{t('cta.contact_info')}</p>
-            <p className="text-center text-sm text-gray-500">{t('cta.geo_availability')}</p>
-          </div>
-        </section>
+          <p className="text-ghost/35 text-3xs mt-8 font-mono tracking-[0.2em] uppercase">
+            {t('cta.geo_availability')}
+          </p>
+        </ContentSection>
       </div>
+
+      <CTAFinal
+        id="services-cta"
+        headline={t('cta.title')}
+        description={t('cta.description')}
+        ctaText={t('cta.primary_button')}
+        ctaHref="/contact"
+        accentColor="aerospace"
+        starfieldDensity="medium"
+      />
     </div>
   );
 }

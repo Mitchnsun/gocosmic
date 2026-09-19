@@ -6,8 +6,24 @@ import { fireEvent, render } from '../test-utils';
 
 const { starfieldMock } = vi.hoisted(() => ({
   starfieldMock: vi.fn(
-    ({ className, speed, starCount }: { className?: string; speed?: number; starCount?: number }) => (
-      <canvas aria-hidden="true" className={className} data-speed={speed} data-star-count={starCount} />
+    ({
+      className,
+      speed,
+      starCount,
+      respectReducedMotion,
+    }: {
+      className?: string;
+      speed?: number;
+      starCount?: number;
+      respectReducedMotion?: boolean;
+    }) => (
+      <canvas
+        aria-hidden="true"
+        className={className}
+        data-speed={speed}
+        data-star-count={starCount}
+        data-respect-reduced-motion={respectReducedMotion ? 'true' : 'false'}
+      />
     )
   ),
 }));
@@ -27,7 +43,8 @@ const renderCTA = (props = {}) =>
     />
   );
 
-const lastStarfieldProps = () => starfieldMock.mock.calls.at(-1)?.[0] as { speed: number; starCount: number };
+const lastStarfieldProps = () =>
+  starfieldMock.mock.calls.at(-1)?.[0] as { speed: number; starCount: number; respectReducedMotion: boolean };
 
 describe('CTAFinal', () => {
   beforeEach(() => {
@@ -135,6 +152,14 @@ describe('CTAFinal', () => {
 
     fireEvent.pointerEnter(cta);
     expect(lastStarfieldProps().speed).toBe(2);
+    // The starfield freezes itself: it draws one frame and starts no loop.
+    expect(lastStarfieldProps().respectReducedMotion).toBe(true);
+  });
+
+  it('should leave the starfield animating when the preference is not honoured', () => {
+    renderCTA({ respectReducedMotion: false });
+
+    expect(lastStarfieldProps().respectReducedMotion).toBe(false);
   });
 
   it('should call onCtaClick when the button is clicked', () => {

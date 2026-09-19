@@ -44,7 +44,8 @@
       "success_title": "Demande bien reçue",
       "success_message": "Merci — nous revenons vers vous par email avec votre maquette.",
       "error_message": "Votre demande n'a pas pu être envoyée. Merci de réessayer dans un instant.",
-      "invalid_message": "Merci de vérifier les champs signalés."
+      "invalid_message": "Merci de vérifier les champs signalés.",
+      "plan_attached": "Votre simulation tarifs est jointe à la demande."
     },
     "palette": {
       "options": {

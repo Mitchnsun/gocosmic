@@ -66,5 +66,12 @@
     "privacyLink": "Datenschutzerklärung lesen",
     "manage": "Datenschutzeinstellungen",
     "close": "Schließen"
+  },
+  "case_study": {
+    "eyebrow": "Fallstudie",
+    "previous": "Vorheriges Projekt",
+    "next": "Nächstes Projekt",
+    "nav_label": "Navigation zwischen Fallstudien",
+    "contact_cta": "Ähnliches Projekt besprechen"
   }
 }

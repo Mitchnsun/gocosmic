@@ -116,6 +116,11 @@
       "free_mockup_cta_label": "Get a free mockup",
       "free_mockup_cta_aria_label": "Go to the free mockup request page"
     },
-    "reset": "Start over"
+    "reset": "Start over",
+    "summary": {
+      "intro": "Hello, here is the summary of my simulation on your pricing page:",
+      "project": "Project",
+      "site_type": "Site type"
+    }
   }
 }

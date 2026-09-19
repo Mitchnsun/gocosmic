@@ -29,19 +29,21 @@ const INPUT_CLASSES =
 export function FreeMockupForm() {
   const t = useTranslations('freeMockup');
   const locale = useLocale();
-  const { values, errors, feedback, formRef, setValue, markTouched, formAction, isPending } = useFreeMockupForm();
+  const { values, errors, feedback, planCode, formRef, setValue, markTouched, formAction, isPending } =
+    useFreeMockupForm();
 
   // Both the confirmation and the form visibility read the same status, so the
   // card can never hide the form while showing nothing.
   const isSent = feedback.status === 'success';
 
   return (
-    <div className="border-ghost/8 bg-ghost/[0.02] flex w-full flex-col gap-6 rounded-2xl border p-6 sm:p-8">
+    <div className="border-ghost/8 bg-ghost/2 flex w-full flex-col gap-6 rounded-2xl border p-6 sm:p-8">
       <SubmitFeedback status={feedback.status} hasInvalidFields={feedback.hasInvalidFields} />
 
       {!isSent && (
         <form ref={formRef} action={formAction} noValidate className="flex flex-col gap-6">
           <input type="hidden" name="locale" value={locale} />
+          {planCode && <input type="hidden" name="plan" value={planCode} />}
 
           <FormField
             id={EMAIL_ID}
@@ -111,6 +113,7 @@ export function FreeMockupForm() {
               {isPending ? t('form.submitting') : t('form.submit')}
               <ArrowRightIcon className="h-5 w-5" aria-hidden="true" />
             </button>
+            {planCode && <p className="text-ghost/55 text-sm">{t('form.plan_attached')}</p>}
             <p className="text-ghost/35 text-sm">{t('form.reassurance')}</p>
           </div>
         </form>

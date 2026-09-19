@@ -1,8 +1,11 @@
 import { beforeEach, vi } from 'vitest';
 
 import { FreeMockupForm } from '@/components/FreeMockupForm';
+import { PLAN_STORAGE_KEY } from '@/lib/pricing/plan-storage';
 
 import { fireEvent, render, waitFor } from '../../test-utils';
+
+const PLAN_CODE = 'website~showcase~p0~u-~-~fr';
 
 const submitFreeMockupRequest = vi.hoisted(() => vi.fn());
 
@@ -32,7 +35,57 @@ const deferredSubmission = () => {
 };
 
 describe('FreeMockupForm', () => {
+  it('carries a stored pricing simulation as a hidden field and says so', async () => {
+    window.sessionStorage.setItem(PLAN_STORAGE_KEY, PLAN_CODE);
+    const { container, findByText } = render(<FreeMockupForm />);
+
+    expect(await findByText('Your pricing simulation is attached to the request.')).toBeInTheDocument();
+    expect(container.querySelector('input[name="plan"]')).toHaveValue(PLAN_CODE);
+  });
+
+  it('has no plan field without a stored simulation', () => {
+    const { container, queryByText } = render(<FreeMockupForm />);
+
+    expect(container.querySelector('input[name="plan"]')).toBeNull();
+    expect(queryByText('Your pricing simulation is attached to the request.')).not.toBeInTheDocument();
+  });
+
+  it('ignores a stored simulation that is not a valid code', () => {
+    window.sessionStorage.setItem(PLAN_STORAGE_KEY, 'not-a-plan');
+    const { container, queryByText } = render(<FreeMockupForm />);
+
+    expect(container.querySelector('input[name="plan"]')).toBeNull();
+    expect(queryByText('Your pricing simulation is attached to the request.')).not.toBeInTheDocument();
+  });
+
+  it('sends the stored simulation and forgets it once the request is received', async () => {
+    window.sessionStorage.setItem(PLAN_STORAGE_KEY, PLAN_CODE);
+    const { findByText, getByLabelText, getByRole } = render(<FreeMockupForm />);
+    await findByText('Your pricing simulation is attached to the request.');
+
+    fillRequiredFields(getByLabelText, getByRole);
+    fireEvent.click(getByRole('button', { name: /Request my free mockup/ }));
+
+    await findByText('Request received');
+    expect((submitFreeMockupRequest.mock.calls[0]?.[1] as FormData).get('plan')).toBe(PLAN_CODE);
+    expect(window.sessionStorage.getItem(PLAN_STORAGE_KEY)).toBeNull();
+  });
+
+  it('keeps the stored simulation when the request fails', async () => {
+    window.sessionStorage.setItem(PLAN_STORAGE_KEY, PLAN_CODE);
+    submitFreeMockupRequest.mockResolvedValue({ status: 'error' });
+    const { findByText, getByLabelText, getByRole } = render(<FreeMockupForm />);
+    await findByText('Your pricing simulation is attached to the request.');
+
+    fillRequiredFields(getByLabelText, getByRole);
+    fireEvent.click(getByRole('button', { name: /Request my free mockup/ }));
+
+    await findByText('Your request could not be sent. Please try again in a moment.');
+    expect(window.sessionStorage.getItem(PLAN_STORAGE_KEY)).toBe(PLAN_CODE);
+  });
+
   beforeEach(() => {
+    window.sessionStorage.clear();
     submitFreeMockupRequest.mockReset();
     submitFreeMockupRequest.mockResolvedValue({ status: 'success' });
   });

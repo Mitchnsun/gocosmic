@@ -51,3 +51,31 @@ describe('buildFreeMockupEmail', () => {
     expect(html.match(/<tr>/g)).toHaveLength(5);
   });
 });
+
+describe('buildFreeMockupEmail with a pricing simulation', () => {
+  const input = { email: 'prospect@example.com', colorPalette: 'sober' as const, locale: 'fr' };
+  const plan = {
+    projectType: 'website' as const,
+    websiteType: 'showcase' as const,
+    selection: {
+      addOns: { domain: true, swiss_hosting: false, email: false },
+      pages: 1 as const,
+      updatesEnabled: false,
+      updates: 0 as const,
+    },
+    region: 'fr' as const,
+  };
+
+  it('adds the simulation rows to the text and html bodies', () => {
+    const { text, html } = buildFreeMockupEmail({ ...input, plan });
+
+    expect(text).toContain('Simulation — pages: 2 to 4 pages (+5€)');
+    // 10 base + 5 pages + 5 domain
+    expect(text).toContain('Simulation — monthly total: 20€ / month');
+    expect(html).toContain('Simulation — monthly total');
+  });
+
+  it('adds nothing without a simulation', () => {
+    expect(buildFreeMockupEmail(input).text).not.toContain('Simulation');
+  });
+});

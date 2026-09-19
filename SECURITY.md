@@ -105,8 +105,46 @@ async headers() {
 
 ### API Routes
 
-This project currently has no API routes (`app/**/route.ts`). If API routes are
-added in the future, the following must be checked before merging:
+This project exposes one public API route: `app/api/contact/route.ts`, which
+receives contact form submissions. Its protections are:
+
+1. **Same-origin check** — requests carrying an `Origin` header from another
+   host are rejected with `403`. Custom route handlers get no CSRF protection
+   from Next.js, unlike server actions.
+2. **Body size cap** — the body is read through `lib/contact/body.ts`, which
+   counts the bytes as they arrive and cancels the stream past 20 kB (`413`)
+   before anything is parsed. `Content-Length` is never trusted: a client can
+   omit it or use chunked transfer encoding.
+3. **Input validation** — every field is coerced to a string, truncated, then
+   validated by `lib/contact/validation.ts` (shared with the client form).
+   Invalid payloads return `400` with the per-field error codes.
+4. **Honeypot** — a hidden `honeypot` field; a filled one is answered `200`
+   without delivery so bots cannot detect the filter.
+5. **Rate limiting** — three submissions per client IP per hour
+   (`lib/contact/rateLimit.ts`). Keys whose attempts have all aged out are
+   swept at most once per window, so the map does not grow with one-time IPs.
+
+   **Known limitation:** the counters live in the process memory of a single
+   instance. On a serverless or horizontally scaled deployment each instance
+   keeps its own counters and a cold start clears them, so a determined caller
+   can exceed three messages per hour by reaching several instances — each
+   accepted message costs a Resend delivery. Closing this needs a shared
+   atomic TTL store (Vercel KV, `@upstash/ratelimit`) and the credentials that
+   go with it; until one is provisioned, treat the limit as protection against
+   casual abuse, not as a hard quota.
+
+6. **Delivery** — forwarded through Resend when `RESEND_API_KEY`,
+   `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL` are set. In production a missing
+   variable is an error: the route logs it and answers `502` rather than
+   telling the visitor a message was sent that nobody will read. Outside
+   production the whole submission is written to the server log and accepted,
+   so the form can be exercised without a provider. The route never echoes the
+   submitted content back to the client.
+
+The endpoint is unauthenticated by design (public marketing form) and performs
+no mutation beyond sending that email.
+
+If further API routes are added, the following must be checked before merging:
 
 1. **Input validation** — Validate and sanitize all request body and query
    parameters. Use `zod` or similar for schema validation.

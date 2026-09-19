@@ -143,6 +143,18 @@
       "geo_availability": "Disponible à Annecy, Genève, en Suisse romande, en Haute-Savoie et en remote.",
       "email_subject": "Demande de renseignements sur les services Cosmiques",
       "local_page": "Découvrir notre page dédiée Annecy / Genève"
+    },
+    "eyebrow": "Services — Savoir-faire",
+    "hero": {
+      "cta": "Parlons de votre projet",
+      "secondary": "Voir les tarifs"
+    },
+    "explore": {
+      "eyebrow": "Prochaine étape",
+      "title": "Voir les réalisations, puis le budget",
+      "description": "Parcourez les projets déjà livrés, ou construisez votre estimation en deux clics.",
+      "projects": "Voir les réalisations",
+      "pricing": "Construire mon estimation"
     }
   }
 }

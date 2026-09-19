@@ -143,6 +143,18 @@
       "geo_availability": "Disponible en Annecy, Ginebra, la Suiza romanda, Alta Saboya y en remoto.",
       "email_subject": "Consulta sobre servicios Cósmicos",
       "local_page": "Descubrir nuestra página dedicada Annecy / Ginebra"
+    },
+    "eyebrow": "Servicios — Capacidades",
+    "hero": {
+      "cta": "Hablemos de tu proyecto",
+      "secondary": "Ver precios"
+    },
+    "explore": {
+      "eyebrow": "Siguiente paso",
+      "title": "Primero los proyectos, después el presupuesto",
+      "description": "Explora los proyectos ya entregados o calcula tu presupuesto en dos clics.",
+      "projects": "Ver los proyectos",
+      "pricing": "Calcular mi presupuesto"
     }
   }
 }

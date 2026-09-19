@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.8.0] - 2026-09-19
+
+### Added
+
+- A contact form on the contact page: describe your project in a few fields, send it, and get an immediate on-screen confirmation — the direct email addresses stay available just below
+- Every project now has a full case study page telling what it is, what it does and what it was built with, plus links to the previous and next project
+- The services page now ends with direct routes to the projects, to the pricing simulator and to the Annecy / Geneva page
+- Requests started from the pricing simulator, by email or through the free mockup form, now include the options chosen and the estimated monthly price, so no context is lost
+
+### Changed
+
+- The About, Services, Projects and Contact pages have been redesigned to match the homepage: starfield headers, clearer section titles and easier-to-scan lists
+- The projects page now shows one card per project with a short summary and a direct link to its case study
+
+### Fixed
+
+- A message that cannot be delivered is now reported as such, instead of showing a confirmation for something nobody would receive
+- The privacy policy now describes the contact form — the details it collects, who delivers the message and how long the exchange is kept — instead of stating that the site has no such form
+- Submitting an incomplete form now takes you straight to the first field that needs attention, so the error is announced instead of appearing to do nothing
+- The star fields behind the page headers and the closing call-to-action sections now stand still, and buttons no longer grow on hover, for visitors who ask for reduced motion
+
 ## [1.7.1] - 2026-09-18
 
 ### Added
