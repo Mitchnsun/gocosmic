@@ -1,4 +1,5 @@
 import {
+  COLOR_PALETTE_CHOICES,
   COLOR_PALETTE_KEYS,
   type ColorPaletteKey,
   type FreeMockupValues,
@@ -7,7 +8,7 @@ import {
 
 import type { FreeMockupFormState } from './FreeMockupForm.types';
 
-export { COLOR_PALETTE_KEYS, WISHES_MAX_LENGTH };
+export { COLOR_PALETTE_CHOICES, COLOR_PALETTE_KEYS, WISHES_MAX_LENGTH };
 
 /** State the form starts from, before any submission. */
 export const INITIAL_FREE_MOCKUP_STATE: FreeMockupFormState = { status: 'idle' };

@@ -5,22 +5,45 @@ import { ColorPaletteSelect } from '@/components/FreeMockupForm/ColorPaletteSele
 import { fireEvent, render } from '../../test-utils';
 
 describe('ColorPaletteSelect', () => {
-  it('renders the six translated options as a radio group', () => {
+  it('renders the six translated options plus "no preference" as a radio group', () => {
     const { getAllByRole, getByText } = render(<ColorPaletteSelect value="" onChange={vi.fn()} />);
 
-    expect(getAllByRole('radio')).toHaveLength(6);
+    expect(getAllByRole('radio')).toHaveLength(7);
     expect(getByText('Sober & minimalist')).toBeInTheDocument();
     expect(getByText('Lake & mountains')).toBeInTheDocument();
     expect(getByText('Alpine sunset')).toBeInTheDocument();
     expect(getByText('Deep forest')).toBeInTheDocument();
     expect(getByText('Starry night')).toBeInTheDocument();
     expect(getByText('Terracotta & stone')).toBeInTheDocument();
+    expect(getByText('No preference')).toBeInTheDocument();
+  });
+
+  it('lets the visitor answer that they have no preference', () => {
+    const onChange = vi.fn();
+    const { getByRole } = render(<ColorPaletteSelect value="" onChange={onChange} />);
+
+    fireEvent.click(getByRole('radio', { name: 'No preference' }));
+
+    expect(onChange).toHaveBeenCalledWith('none');
+  });
+
+  it('undoes a pick through the "no preference" option', () => {
+    const { getByRole } = render(<ColorPaletteSelect value="none" onChange={vi.fn()} />);
+
+    expect(getByRole('radio', { name: 'No preference' })).toBeChecked();
+    expect(getByRole('radio', { name: 'Deep forest' })).not.toBeChecked();
+  });
+
+  it('announces the group as optional', () => {
+    const { getByText } = render(<ColorPaletteSelect value="" onChange={vi.fn()} />);
+
+    expect(getByText('Optional')).toBeInTheDocument();
   });
 
   it('names the radio group after the palette question', () => {
     const { getByRole } = render(<ColorPaletteSelect value="" onChange={vi.fn()} />);
 
-    expect(getByRole('radiogroup', { name: 'Colour direction' })).toBeInTheDocument();
+    expect(getByRole('radiogroup', { name: /Colour direction/ })).toBeInTheDocument();
   });
 
   it('leaves the group valid while no error is reported', () => {

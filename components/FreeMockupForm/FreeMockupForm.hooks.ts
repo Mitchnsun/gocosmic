@@ -3,6 +3,8 @@
 import { useActionState, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { submitFreeMockupRequest } from '@/app/actions/free-mockup';
+import { clearStoredPlanCode, readStoredPlanCode } from '@/lib/pricing/plan-storage';
+import { isRetryLaterError } from '@/lib/serverActionError';
 import {
   type FreeMockupFieldErrors,
   type FreeMockupFieldName,
@@ -42,6 +44,7 @@ export function useFreeMockupForm() {
   const [values, setValues] = useState<FreeMockupValues>(EMPTY_FREE_MOCKUP_VALUES);
   const [touched, setTouched] = useState<TouchedFields>({});
   const [hasEditedSinceSubmit, setHasEditedSinceSubmit] = useState(false);
+  const [planCode, setPlanCode] = useState<string | undefined>(undefined);
   const formRef = useRef<HTMLFormElement>(null);
 
   const [state, formAction, isPending] = useActionState<FreeMockupFormState, FormData>(
@@ -53,14 +56,15 @@ export function useFreeMockupForm() {
       // action settles, and skips re-rendering controlled inputs whose state did
       // not change: the palette radio is silently unchecked in the DOM while its
       // card still renders as selected, so submitting the DOM itself would send an
-      // empty palette the visitor can see they picked. Only the honeypot and the
-      // locale, which no React state holds, come from the submitted form.
+      // empty palette the visitor can see they picked. Only the honeypot, the
+      // locale and the pricing plan, which no React state holds, come from the submitted form.
       const payload = new FormData();
       payload.set('email', values.email);
       payload.set('colorPalette', values.colorPalette);
       payload.set('websiteUrl', values.websiteUrl);
       payload.set('wishes', values.wishes);
       payload.set('locale', readFreeMockupField(submitted, 'locale'));
+      payload.set('plan', readFreeMockupField(submitted, 'plan'));
       payload.set('company', readFreeMockupField(submitted, HONEYPOT_FIELD));
 
       // The flag is cleared where each answer is produced, never when an attempt
@@ -73,13 +77,28 @@ export function useFreeMockupForm() {
         return { status: 'error', fieldErrors: clientErrors };
       }
 
-      const result = await submitFreeMockupRequest(previousState, payload);
+      const result = await submitFreeMockupRequest(previousState, payload).catch(
+        (error): FreeMockupFormState => ({
+          status: 'error',
+          reason: isRetryLaterError(error) ? 'retry_later' : undefined,
+        })
+      );
       setHasEditedSinceSubmit(false);
-
       return result;
     },
     INITIAL_FREE_MOCKUP_STATE
   );
+
+  // The pricing simulation is read after mount: sessionStorage does not exist on
+  // the server, so reading it during render would break hydration.
+  useEffect(() => {
+    setPlanCode(readStoredPlanCode() ?? undefined);
+  }, []);
+
+  // A sent request consumes the simulation, so a later one starts clean.
+  useEffect(() => {
+    if (state.status === 'success') clearStoredPlanCode();
+  }, [state.status]);
 
   // React's post-action form reset leaves the palette radio unchecked while its
   // card still renders as selected. The payload no longer depends on the DOM, but
@@ -128,8 +147,9 @@ export function useFreeMockupForm() {
     return {
       status: isStaleFailure ? ('idle' as const) : state.status,
       hasInvalidFields: hasFieldErrors(state.fieldErrors ?? {}),
+      reason: isStaleFailure ? undefined : state.reason,
     };
-  }, [hasEditedSinceSubmit, isPending, state.fieldErrors, state.status]);
+  }, [hasEditedSinceSubmit, isPending, state.fieldErrors, state.reason, state.status]);
 
-  return { values, errors, feedback, formRef, setValue, markTouched, formAction, isPending };
+  return { values, errors, feedback, planCode, formRef, setValue, markTouched, formAction, isPending };
 }

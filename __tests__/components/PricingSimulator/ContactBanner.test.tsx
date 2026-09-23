@@ -1,6 +1,16 @@
+import { INITIAL_SELECTION } from '@/components/PricingSimulator/constants';
 import { ContactBanner } from '@/components/PricingSimulator/ContactBanner';
+import type { DecodedPlan } from '@/lib/pricing/plan-code';
+import { PLAN_STORAGE_KEY } from '@/lib/pricing/plan-storage';
 
-import { render, screen } from '../../test-utils';
+import { fireEvent, render, screen } from '../../test-utils';
+
+const plan: DecodedPlan = {
+  projectType: 'website',
+  websiteType: 'showcase',
+  selection: { ...INITIAL_SELECTION, addOns: { domain: true, swiss_hosting: false, email: false } },
+  region: 'fr',
+};
 
 describe('ContactBanner', () => {
   it('renders the contact title', () => {
@@ -44,5 +54,41 @@ describe('ContactBanner', () => {
 
     expect(screen.getByText(/processed to prepare a quote/i)).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Privacy policy' })).toHaveAttribute('href', '/privacy');
+  });
+
+  it('has no body on the mailto link without a simulation', () => {
+    render(<ContactBanner />);
+
+    expect(screen.getByRole('link', { name: /send an email/i }).getAttribute('href')).not.toContain('body=');
+  });
+
+  it('pre-fills the mailto body with the simulation summary', () => {
+    render(<ContactBanner plan={plan} />);
+
+    const href = screen.getByRole('link', { name: /send an email/i }).getAttribute('href') ?? '';
+    const body = decodeURIComponent(href.split('&body=')[1] ?? '');
+    expect(body).toContain('A website');
+    expect(body).toContain('Managing your domain name (+5€)');
+    expect(body).toContain('15€');
+  });
+
+  it('stores the simulation for the free mockup page when the link is clicked', () => {
+    window.sessionStorage.clear();
+    render(<ContactBanner plan={plan} />);
+
+    const link = screen.getByRole('link', { name: 'Go to the free mockup request page' });
+    expect(link).toHaveAttribute('href', '/free-mockup');
+    expect(window.sessionStorage.getItem(PLAN_STORAGE_KEY)).toBeNull();
+
+    fireEvent.click(link);
+    expect(window.sessionStorage.getItem(PLAN_STORAGE_KEY)).toBe('website~showcase~p0~u-~domain~fr');
+  });
+
+  it('stores nothing when there is no simulation', () => {
+    window.sessionStorage.clear();
+    render(<ContactBanner />);
+
+    fireEvent.click(screen.getByRole('link', { name: 'Go to the free mockup request page' }));
+    expect(window.sessionStorage.getItem(PLAN_STORAGE_KEY)).toBeNull();
   });
 });

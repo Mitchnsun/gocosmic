@@ -6,8 +6,8 @@ import type { FreeMockupFormState } from '@/components/FreeMockupForm/FreeMockup
 const send = vi.hoisted(() => vi.fn());
 
 vi.mock('@/lib/resend', () => ({
-  FREE_MOCKUP_TO_EMAIL: 'prospect@gocosmic.dev',
-  getFreeMockupFromEmail: () => 'Go Cosmic <noreply@gocosmic.dev>',
+  STUDIO_INBOX_EMAIL: 'prospect@gocosmic.dev',
+  getSenderEmail: () => 'Go Cosmic <noreply@gocosmic.dev>',
   getResendClient: () => ({ emails: { send } }),
 }));
 
@@ -37,6 +37,21 @@ describe('submitFreeMockupRequest', () => {
     send.mockReset();
     send.mockResolvedValue({ data: { id: 'email-id' }, error: null });
     vi.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  it('appends a valid pricing simulation to the email', async () => {
+    await submitFreeMockupRequest(INITIAL, buildFormData({ plan: 'website~showcase~p2~u-~domain~ch' }));
+
+    const payload = send.mock.calls[0]?.[0] as { text: string };
+    expect(payload.text).toContain('Simulation — pages: 5 to 7 pages (+10 CHF)');
+    expect(payload.text).toContain('Simulation — monthly total: 25 CHF / month');
+  });
+
+  it('ignores an invalid pricing simulation and still sends the request', async () => {
+    const state = await submitFreeMockupRequest(INITIAL, buildFormData({ plan: 'not-a-plan' }));
+
+    expect(state).toEqual({ status: 'success' });
+    expect((send.mock.calls[0]?.[0] as { text: string }).text).not.toContain('Simulation');
   });
 
   it('sends the request to the prospect inbox and reports success', async () => {
@@ -88,9 +103,28 @@ describe('submitFreeMockupRequest', () => {
 
     expect(state).toEqual({
       status: 'error',
-      fieldErrors: { email: 'email_invalid', colorPalette: 'required', websiteUrl: 'url_invalid' },
+      fieldErrors: { email: 'email_invalid', websiteUrl: 'url_invalid' },
     });
     expect(send).not.toHaveBeenCalled();
+  });
+
+  it('sends a request that carries no colour direction', async () => {
+    send.mockResolvedValue({ data: { id: 'sent' }, error: null });
+
+    const state = await submitFreeMockupRequest(INITIAL, buildFormData({ colorPalette: '' }));
+
+    expect(state).toEqual({ status: 'success' });
+    expect(send).toHaveBeenCalledTimes(1);
+    expect(send.mock.calls[0]![0].text).toContain('Colour palette: No preference');
+  });
+
+  it('sends an explicit "no preference" answer', async () => {
+    send.mockResolvedValue({ data: { id: 'sent' }, error: null });
+
+    const state = await submitFreeMockupRequest(INITIAL, buildFormData({ colorPalette: 'none' }));
+
+    expect(state).toEqual({ status: 'success' });
+    expect(send.mock.calls[0]![0].text).toContain('Colour palette: No preference');
   });
 
   it('reports an error when the provider rejects the email', async () => {

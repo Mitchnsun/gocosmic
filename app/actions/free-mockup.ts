@@ -5,7 +5,8 @@ import { hasLocale } from 'next-intl';
 import type { FreeMockupFormState } from '@/components/FreeMockupForm/FreeMockupForm.types';
 import { routing } from '@/i18n/routing';
 import { buildFreeMockupEmail } from '@/lib/free-mockup-email';
-import { FREE_MOCKUP_TO_EMAIL, getFreeMockupFromEmail, getResendClient } from '@/lib/resend';
+import { decodePlanCode } from '@/lib/pricing/plan-code';
+import { getResendClient, getSenderEmail, STUDIO_INBOX_EMAIL } from '@/lib/resend';
 import {
   freeMockupSchema,
   getFieldErrors,
@@ -48,18 +49,22 @@ export async function submitFreeMockupRequest(
   const requestLocale = readFreeMockupField(formData, 'locale');
   const locale = hasLocale(routing.locales, requestLocale) ? requestLocale : routing.defaultLocale;
 
+  // The simulation is a bonus, not a form field: an invalid code is ignored.
+  const plan = decodePlanCode(readFreeMockupField(formData, 'plan')) ?? undefined;
+
   const { subject, text, html } = buildFreeMockupEmail({
     email: parsed.data.email,
     colorPalette: parsed.data.colorPalette,
     websiteUrl: parsed.data.websiteUrl,
     wishes: parsed.data.wishes,
     locale,
+    plan,
   });
 
   try {
     const { error } = await getResendClient().emails.send({
-      from: getFreeMockupFromEmail(),
-      to: [FREE_MOCKUP_TO_EMAIL],
+      from: getSenderEmail(),
+      to: [STUDIO_INBOX_EMAIL],
       replyTo: parsed.data.email,
       subject,
       text,

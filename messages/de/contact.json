@@ -5,7 +5,7 @@
   },
   "contact": {
     "title": "Kontaktieren Sie Uns",
-    "subtitle": "Wählen Sie die richtige E-Mail-Adresse für Ihre Anfrage",
+    "subtitle": "Senden Sie uns ein Briefing oder schreiben Sie direkt an das richtige Postfach.",
     "blocks": {
       "general": {
         "title": "Allgemeine Anfragen",
@@ -76,7 +76,67 @@
         "aria_label": "E-Mail an prospect@gocosmic.dev mit Betreff: Geschäftsanfrage senden"
       }
     },
-    "privacyNotice": "Per E-Mail übermittelte personenbezogene Daten werden nur zur Beantwortung deiner Anfrage, zur Nachverfolgung und als Nachweis der Korrespondenz für die in der Datenschutzerklärung genannten Fristen verwendet.",
-    "privacyLink": "Datenschutzerklärung"
+    "privacyNotice": "Personenbezogene Daten, die über das Kontaktformular oder per E-Mail übermittelt werden, dienen ausschließlich der Beantwortung deiner Anfrage, der Nachverfolgung und dem Nachweis des Austauschs für die in der Datenschutzerklärung genannten Fristen.",
+    "privacyLink": "Datenschutzerklärung",
+    "eyebrow": "Kontakt — Missionsbriefing",
+    "form": {
+      "eyebrow": "Projekt-Briefing",
+      "title": "Erzählen Sie uns von Ihrem Projekt",
+      "description": "Füllen Sie das Formular aus und wir melden uns mit den nächsten Schritten. Lieber per E-Mail? Die Adressen unten landen direkt im richtigen Postfach.",
+      "optional": "optional",
+      "required_hint": "Mit einem Sternchen markierte Felder sind Pflichtfelder",
+      "submit": "Nachricht senden",
+      "submitting": "Wird gesendet…",
+      "clear": "Formular leeren",
+      "honeypot_label": "Dieses Feld leer lassen",
+      "fields": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Ihr Name"
+        },
+        "email": {
+          "label": "E-Mail",
+          "placeholder": "sie@beispiel.com"
+        },
+        "subject": {
+          "label": "Betreff",
+          "placeholder": "Website, mobile App, Redesign…"
+        },
+        "message": {
+          "label": "Nachricht",
+          "placeholder": "Beschreiben Sie Ihr Projekt, Ihren Zeitrahmen und Ihr Budget, falls vorhanden."
+        },
+        "phone": {
+          "label": "Telefon",
+          "placeholder": "+49 151 23456789"
+        },
+        "company": {
+          "label": "Unternehmen",
+          "placeholder": "Ihr Unternehmen oder Verein"
+        }
+      },
+      "errors": {
+        "name_length": "Bitte geben Sie einen Namen mit 2 bis 100 Zeichen an.",
+        "email_invalid": "Bitte geben Sie eine gültige E-Mail-Adresse an.",
+        "subject_length": "Der Betreff muss 5 bis 200 Zeichen enthalten.",
+        "message_length": "Die Nachricht muss 10 bis 5000 Zeichen enthalten.",
+        "phone_invalid": "Bitte geben Sie eine gültige Telefonnummer an.",
+        "company_length": "Der Unternehmensname ist zu lang.",
+        "rate_limited": "Sie haben bereits mehrere Nachrichten gesendet. Versuchen Sie es später erneut oder schreiben Sie uns eine E-Mail.",
+        "retry_later": "Ihre Nachricht konnte im Moment nicht gesendet werden. Versuchen Sie es später erneut oder schreiben Sie uns eine E-Mail.",
+        "server": "Die Nachricht konnte nicht gesendet werden. Versuchen Sie es erneut oder schreiben Sie uns eine E-Mail.",
+        "network": "Verbindung verloren. Prüfen Sie Ihr Netzwerk und versuchen Sie es erneut."
+      },
+      "success": {
+        "title": "Danke für Ihre Nachricht!",
+        "description": "Ihre Nachricht ist unterwegs. Wir lesen jede Anfrage und melden uns in Kürze.",
+        "back": "Weitere Nachricht senden"
+      }
+    },
+    "direct": {
+      "eyebrow": "Direkte Wege",
+      "title": "An das richtige Postfach schreiben",
+      "description": "Jede Anfrage hat ihre eigene Adresse — wählen Sie die passende."
+    }
   }
 }

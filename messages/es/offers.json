@@ -4,6 +4,11 @@
       "title": "Nuestras Ofertas | Desarrollo Web y Móvil | Annecy · Ginebra | Go Cosmic",
       "description": "Ofertas de desarrollo web y móvil adaptadas para empresas en Annecy, Ginebra y Alta Saboya. Elige tu paquete de desarrollo ideal."
     },
+    "eyebrow": "Ofertas — Fórmulas",
+    "hero": {
+      "cta": "Hablemos de tu proyecto",
+      "secondary": "Crear mi presupuesto"
+    },
     "title": "Nuestras Ofertas Cósmicas",
     "subtitle": "Elige la solución perfecta adaptada a las necesidades de tu proyecto",
     "solo_developer": {
@@ -92,6 +97,7 @@
       }
     },
     "cta": {
+      "eyebrow": "Empieza ya",
       "title": "¿Listo para comenzar tu proyecto cósmico?",
       "description": "Hablemos de qué oferta se adapta mejor a tus necesidades y cómo podemos transformar tu visión en realidad.",
       "button": "Hablemos de tu proyecto",

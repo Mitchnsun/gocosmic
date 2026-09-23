@@ -138,11 +138,20 @@
       "title": "Pronto a lanciare il tuo prossimo progetto cosmico?",
       "description": "Parliamo di come i nostri servizi completi possono trasformare la tua visione in realtà. Dallo sviluppo stellare al lancio cosmico, siamo qui per guidare il tuo progetto al successo.",
       "primary_button": "Inizia il tuo viaggio cosmico",
-      "secondary_button": "Ottieni un preventivo personalizzato",
-      "contact_info": "Connettiti con il nostro team tecnico per esplorare le possibilità",
       "geo_availability": "Disponibile ad Annecy, Ginevra, nella Svizzera romanda, in Alta Savoia e da remoto.",
-      "email_subject": "Richiesta informazioni sui servizi Cosmici",
       "local_page": "Scopri la nostra pagina dedicata Annecy / Ginevra"
+    },
+    "eyebrow": "Servizi — Competenze",
+    "hero": {
+      "cta": "Parliamo del tuo progetto",
+      "secondary": "Vedi i prezzi"
+    },
+    "explore": {
+      "eyebrow": "Prossimo passo",
+      "title": "Prima i progetti, poi il budget",
+      "description": "Scopri i progetti già realizzati oppure calcola il tuo preventivo in due clic.",
+      "projects": "Vedi i progetti",
+      "pricing": "Calcola il preventivo"
     }
   }
 }

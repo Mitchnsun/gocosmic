@@ -49,7 +49,7 @@ describe('PricingSimulator', () => {
       render(<PricingSimulator region="fr" />);
       openPlanBuilder();
 
-      fireEvent.click(screen.getByRole('checkbox', { name: /managing your web address/i }));
+      fireEvent.click(screen.getByRole('checkbox', { name: /managing your domain name/i }));
 
       expect(screen.getByRole('status', { name: /your plan/i })).toHaveTextContent('15€');
     });
@@ -75,7 +75,7 @@ describe('PricingSimulator', () => {
       render(<PricingSimulator region="fr" />);
       openPlanBuilder();
 
-      fireEvent.click(screen.getByRole('checkbox', { name: /managing your web address/i }));
+      fireEvent.click(screen.getByRole('checkbox', { name: /managing your domain name/i }));
       fireEvent.click(screen.getByRole('checkbox', { name: /email address in your own name/i }));
 
       expect(screen.getByRole('status', { name: /your plan/i })).toHaveTextContent('25€');
@@ -179,7 +179,7 @@ describe('PricingSimulator', () => {
     it('clears a composed plan when the project type changes', () => {
       render(<PricingSimulator region="fr" />);
       openPlanBuilder();
-      fireEvent.click(screen.getByRole('checkbox', { name: /managing your web address/i }));
+      fireEvent.click(screen.getByRole('checkbox', { name: /managing your domain name/i }));
       expect(screen.getByRole('status', { name: /your plan/i })).toHaveTextContent('15€');
 
       fireEvent.click(screen.getByRole('button', { name: 'A website' }));

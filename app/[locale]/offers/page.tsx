@@ -1,10 +1,15 @@
-import { CheckCircleIcon, CodeBracketIcon, EnvelopeIcon, SparklesIcon, UserGroupIcon } from '@heroicons/react/24/solid';
+import { CodeBracketIcon, SparklesIcon, UserGroupIcon } from '@heroicons/react/24/solid';
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages, getTranslations } from 'next-intl/server';
+import type { ReactNode } from 'react';
 
+import { ContentSection } from '@/components/ContentSection';
+import PageHero from '@/components/PageHero';
 import { PricingTeaser } from '@/components/PricingTeaser';
-import { Button } from '@/design-system/button';
+import { OFFER_DEFINITIONS, ServiceDetail } from '@/components/ServiceDetail';
+import { buttonVariants } from '@/design-system/button.variants';
+import { cn } from '@/design-system/lib/utils';
 import { getCanonicalUrl } from '@/i18n/canonical';
 import { Link } from '@/i18n/navigation';
 import { getOgImages } from '@/lib/og';
@@ -39,315 +44,76 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
+/** Icons per offer anchor — kept out of the shared definitions so the
+ *  constants file stays free of JSX. */
+const OFFER_ICONS: Record<string, ReactNode> = {
+  'solo-developer': <CodeBracketIcon className="size-5" aria-hidden="true" />,
+  'developer-designer': <SparklesIcon className="size-5" aria-hidden="true" />,
+  'team-developers': <UserGroupIcon className="size-5" aria-hidden="true" />,
+};
+
+const linkClassName =
+  'text-aerospace hover:text-aerospace/80 focus-visible:ring-aerospace rounded underline underline-offset-4 transition-colors focus-visible:ring-2 focus-visible:outline-none';
+
 export default async function Offers() {
   const t = await getTranslations('offers');
   const subject = encodeURIComponent(t('cta.email_subject'));
   const locale = await getLocale();
   const messages = await getMessages();
   const currency = getCurrency(await getRegion());
+  const total = OFFER_DEFINITIONS.length;
 
   return (
-    <div className="text-ghost relative pt-10">
-      <div className="m-auto flex max-w-7xl flex-col items-center gap-10 px-4 pb-4">
-        {/* Page Header */}
-        <div className="text-center">
-          <h1 className="mb-4 text-2xl font-extrabold sm:text-4xl">{t('title')}</h1>
-          <p className="text-lg text-gray-400">{t('subtitle')}</p>
-        </div>
+    <div className="bg-void text-ghost relative">
+      <PageHero
+        id="offers-hero"
+        eyebrow={t('eyebrow')}
+        title={t('title')}
+        lead={t('subtitle')}
+        cta={{ text: t('hero.cta'), href: '/contact' }}
+        secondaryCta={{ text: t('hero.secondary'), href: '/pricing' }}
+      />
 
-        {/* Solo Developer Offer */}
-        <section
-          id="solo-developer"
-          className="w-full scroll-mt-20 md:scroll-mt-24"
-          aria-labelledby="solo-developer-heading">
-          <div className="relative rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
-            <div className="mb-6 flex items-center gap-4">
-              <CodeBracketIcon className="h-8 w-8 shrink-0 text-blue-400" aria-hidden="true" />
-              <h2 id="solo-developer-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
-                {t('solo_developer.title')}
-              </h2>
-            </div>
-            <div className="space-y-6 text-gray-300">
-              <div>
-                <h3 className="mb-2 text-lg font-semibold text-blue-300 sm:text-xl">{t('solo_developer.subtitle')}</h3>
-                <p className="text-lg">{t('solo_developer.description')}</p>
-              </div>
+      <div className="m-auto flex max-w-7xl flex-col gap-10 p-4 sm:p-6 lg:p-8">
+        {OFFER_DEFINITIONS.map((definition, position) => (
+          <ServiceDetail
+            key={definition.anchor}
+            id={definition.anchor}
+            accent={definition.accent}
+            icon={OFFER_ICONS[definition.anchor]}
+            index={`${String(position + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`}
+            title={t(`${definition.key}.title`)}
+            subtitle={t(`${definition.key}.subtitle`)}
+            description={t(`${definition.key}.description`)}
+            groups={definition.groups.map((group) => ({
+              label: t(`${definition.key}.${group.key}.title`),
+              items: group.items.map((item) => t(`${definition.key}.${group.key}.items.${item}`)),
+            }))}
+          />
+        ))}
 
-              <div>
-                <h4 className="mb-4 text-lg font-semibold text-white">{t('solo_developer.features.title')}:</h4>
-                <ul className="grid gap-3 md:grid-cols-2">
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-blue-400" aria-hidden="true" />
-                    <span>{t('solo_developer.features.items.dedication')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-blue-400" aria-hidden="true" />
-                    <span>{t('solo_developer.features.items.technologies')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-blue-400" aria-hidden="true" />
-                    <span>{t('solo_developer.features.items.deployment')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-blue-400" aria-hidden="true" />
-                    <span>{t('solo_developer.features.items.responsive')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-blue-400" aria-hidden="true" />
-                    <span>{t('solo_developer.features.items.testing')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-blue-400" aria-hidden="true" />
-                    <span>{t('solo_developer.features.items.support')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-blue-400" aria-hidden="true" />
-                    <span>{t('solo_developer.features.items.communication')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-blue-400" aria-hidden="true" />
-                    <span>{t('solo_developer.features.items.optimization')}</span>
-                  </li>
-                </ul>
-              </div>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <PricingTeaser currency={currency} />
+        </NextIntlClientProvider>
 
-              <div>
-                <h4 className="mb-4 text-lg font-semibold text-white">{t('solo_developer.ideal_for.title')}:</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-400" aria-hidden="true"></span>
-                    <span>{t('solo_developer.ideal_for.items.startups')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-500" aria-hidden="true"></span>
-                    <span>{t('solo_developer.ideal_for.items.mvp')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-600" aria-hidden="true"></span>
-                    <span>{t('solo_developer.ideal_for.items.apps')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue-700" aria-hidden="true"></span>
-                    <span>{t('solo_developer.ideal_for.items.redesign')}</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Developer + Designer Offer */}
-        <section
-          id="developer-designer"
-          className="w-full scroll-mt-20 md:scroll-mt-24"
-          aria-labelledby="developer-designer-heading">
-          <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
-            <div className="mb-6 flex items-center gap-4">
-              <SparklesIcon className="h-8 w-8 shrink-0 text-purple-400" aria-hidden="true" />
-              <h2 id="developer-designer-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
-                {t('developer_designer.title')}
-              </h2>
-            </div>
-            <div className="space-y-6 text-gray-300">
-              <div>
-                <h3 className="mb-2 text-lg font-semibold text-purple-300 sm:text-xl">
-                  {t('developer_designer.subtitle')}
-                </h3>
-                <p className="text-lg">{t('developer_designer.description')}</p>
-              </div>
-
-              <div>
-                <h4 className="mb-4 text-lg font-semibold text-white">{t('developer_designer.features.title')}:</h4>
-                <ul className="grid gap-3 md:grid-cols-2">
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-purple-400" aria-hidden="true" />
-                    <span>{t('developer_designer.features.items.collaboration')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-purple-400" aria-hidden="true" />
-                    <span>{t('developer_designer.features.items.ux_research')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-purple-400" aria-hidden="true" />
-                    <span>{t('developer_designer.features.items.design_system')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-purple-400" aria-hidden="true" />
-                    <span>{t('developer_designer.features.items.prototyping')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-purple-400" aria-hidden="true" />
-                    <span>{t('developer_designer.features.items.development')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-purple-400" aria-hidden="true" />
-                    <span>{t('developer_designer.features.items.animations')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-purple-400" aria-hidden="true" />
-                    <span>{t('developer_designer.features.items.accessibility')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-purple-400" aria-hidden="true" />
-                    <span>{t('developer_designer.features.items.testing')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-purple-400" aria-hidden="true" />
-                    <span>{t('developer_designer.features.items.assets')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-purple-400" aria-hidden="true" />
-                    <span>{t('developer_designer.features.items.iterations')}</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="mb-4 text-lg font-semibold text-white">{t('developer_designer.ideal_for.title')}:</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-400" aria-hidden="true"></span>
-                    <span>{t('developer_designer.ideal_for.items.brands')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-500" aria-hidden="true"></span>
-                    <span>{t('developer_designer.ideal_for.items.consumer')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-600" aria-hidden="true"></span>
-                    <span>{t('developer_designer.ideal_for.items.ecommerce')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-purple-700" aria-hidden="true"></span>
-                    <span>{t('developer_designer.ideal_for.items.saas')}</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Team Developers Offer */}
-        <section
-          id="team-developers"
-          className="w-full scroll-mt-20 md:scroll-mt-24"
-          aria-labelledby="team-developers-heading">
-          <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
-            <div className="mb-6 flex items-center gap-4">
-              <UserGroupIcon className="h-8 w-8 shrink-0 text-green-400" aria-hidden="true" />
-              <h2 id="team-developers-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
-                {t('team_developers.title')}
-              </h2>
-            </div>
-            <div className="space-y-6 text-gray-300">
-              <div>
-                <h3 className="mb-2 text-lg font-semibold text-green-300 sm:text-xl">
-                  {t('team_developers.subtitle')}
-                </h3>
-                <p className="text-lg">{t('team_developers.description')}</p>
-              </div>
-
-              <div>
-                <h4 className="mb-4 text-lg font-semibold text-white">{t('team_developers.features.title')}:</h4>
-                <ul className="grid gap-3 md:grid-cols-2">
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
-                    <span>{t('team_developers.features.items.team')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
-                    <span>{t('team_developers.features.items.fullstack')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
-                    <span>{t('team_developers.features.items.architecture')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
-                    <span>{t('team_developers.features.items.databases')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
-                    <span>{t('team_developers.features.items.apis')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
-                    <span>{t('team_developers.features.items.infrastructure')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
-                    <span>{t('team_developers.features.items.security')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
-                    <span>{t('team_developers.features.items.cicd')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
-                    <span>{t('team_developers.features.items.monitoring')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 shrink-0 text-green-400" aria-hidden="true" />
-                    <span>{t('team_developers.features.items.documentation')}</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="mb-4 text-lg font-semibold text-white">{t('team_developers.ideal_for.title')}:</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-400" aria-hidden="true"></span>
-                    <span>{t('team_developers.ideal_for.items.enterprise')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-500" aria-hidden="true"></span>
-                    <span>{t('team_developers.ideal_for.items.platforms')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-600" aria-hidden="true"></span>
-                    <span>{t('team_developers.ideal_for.items.complex')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-green-700" aria-hidden="true"></span>
-                    <span>{t('team_developers.ideal_for.items.scaling')}</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Pricing Teaser */}
-        <section className="w-full">
-          <NextIntlClientProvider locale={locale} messages={messages}>
-            <PricingTeaser currency={currency} />
-          </NextIntlClientProvider>
-        </section>
-
-        {/* CTA Section */}
-        <section className="w-full" aria-labelledby="cta-heading">
-          <div className="m-auto flex max-w-5xl flex-col items-center gap-6 rounded-lg bg-slate-800 px-6 py-12 lg:p-12">
-            <h2 id="cta-heading" className="text-center text-3xl font-bold lg:text-4xl">
-              {t('cta.title')}
-            </h2>
-            <p className="text-center text-lg text-gray-400 sm:text-xl lg:text-lg">{t('cta.description')}</p>
-            <Button variant="jungle" className="flex items-center gap-2" asChild>
-              <a href={`mailto:prospect@gocosmic.dev?subject=${subject}`}>
-                {t('cta.button')}
-                <EnvelopeIcon className="h-4 w-4" aria-hidden="true" />
-              </a>
-            </Button>
-            <p className="text-center text-sm text-gray-500">{t('cta.contact_info')}</p>
-            <p className="max-w-2xl text-center text-sm text-gray-500">
-              {t('cta.privacy_notice')}{' '}
-              <Link href="/privacy" className="underline transition hover:text-gray-300">
-                {t('cta.privacy_link')}
-              </Link>
-              .
-            </p>
-          </div>
-        </section>
+        <ContentSection id="offers-cta" eyebrow={t('cta.eyebrow')} title={t('cta.title')} lead={t('cta.description')}>
+          <a
+            href={`mailto:prospect@gocosmic.dev?subject=${subject}`}
+            className={cn(
+              buttonVariants({ variant: 'aerospace' }),
+              'w-fit py-3 transition-transform hover:scale-105 motion-reduce:scale-100! motion-reduce:transition-none!'
+            )}>
+            {t('cta.button')}
+          </a>
+          <p className="text-ghost/55 mt-6 text-sm">{t('cta.contact_info')}</p>
+          <p className="text-ghost/55 mt-2 max-w-2xl text-sm">
+            {t('cta.privacy_notice')}{' '}
+            <Link href="/privacy" className={linkClassName}>
+              {t('cta.privacy_link')}
+            </Link>
+            .
+          </p>
+        </ContentSection>
       </div>
     </div>
   );

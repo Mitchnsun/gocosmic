@@ -49,6 +49,7 @@ Codex instructions for working in this repository.
 - For client components that call `useTranslations`, make sure the owning page provides a page-level `NextIntlClientProvider` seeded with `getMessages()` and `getLocale()` when the namespace is route-loaded.
 - Use Next.js client-side navigation for internal links: `next/link` or `@/i18n/navigation`. Raw `<a>` tags are only for external, `mailto:`, and `tel:` links.
 - Write all documentation in **English**: README files, code comments, JSDoc, inline documentation, and any Markdown files. This applies to AI-generated content as well.
+- `README.en.md` and `README.fr.md` are the same document in two languages. Any change to one must be applied to the other in the same commit: same sections, same heading order, same content. English is canonical if they disagree.
 
 ## Verification
 

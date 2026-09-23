@@ -29,4 +29,10 @@ describe('SubmitFeedback', () => {
 
     expect(getByText('Please check the highlighted fields.')).toBeInTheDocument();
   });
+
+  it('announces the retry-later message', () => {
+    const { getByText } = render(<SubmitFeedback status="error" hasInvalidFields={false} reason="retry_later" />);
+
+    expect(getByText('Your request could not be sent right now. Please try again later.')).toBeInTheDocument();
+  });
 });

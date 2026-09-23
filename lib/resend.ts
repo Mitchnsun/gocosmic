@@ -1,10 +1,10 @@
 import { Resend } from 'resend';
 
-/** Inbox receiving the prospect requests — same address as the pricing and contact pages. */
-export const FREE_MOCKUP_TO_EMAIL = 'prospect@gocosmic.dev';
+/** Inbox receiving the free mockup requests and contact form messages. */
+export const STUDIO_INBOX_EMAIL = 'prospect@gocosmic.dev';
 
 /** Sender used when `RESEND_FROM_EMAIL` is not configured. */
-export const DEFAULT_FREE_MOCKUP_FROM_EMAIL = 'Go Cosmic <noreply@gocosmic.dev>';
+export const DEFAULT_SENDER_EMAIL = 'Go Cosmic <noreply@gocosmic.dev>';
 
 /**
  * Resolves the sender address, which must belong to a domain verified in the
@@ -15,8 +15,8 @@ export const DEFAULT_FREE_MOCKUP_FROM_EMAIL = 'Go Cosmic <noreply@gocosmic.dev>'
  * copies `.env.example` and fills in only the API key leaves this one defined
  * but empty, and Resend rejects every request sent with an empty `from`.
  */
-export function getFreeMockupFromEmail(): string {
-  return process.env.RESEND_FROM_EMAIL?.trim() || DEFAULT_FREE_MOCKUP_FROM_EMAIL;
+export function getSenderEmail(): string {
+  return process.env.RESEND_FROM_EMAIL?.trim() || DEFAULT_SENDER_EMAIL;
 }
 
 let client: Resend | undefined;
@@ -31,7 +31,7 @@ export function getResendClient(): Resend {
   const apiKey = process.env.RESEND_API_KEY;
 
   if (!apiKey) {
-    throw new Error('RESEND_API_KEY is not set: cannot send the free mockup request email.');
+    throw new Error('RESEND_API_KEY is not set: cannot send email.');
   }
 
   client ??= new Resend(apiKey);

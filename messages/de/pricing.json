@@ -56,7 +56,7 @@
           "ch": "mein-betrieb.ch"
         },
         "domain": {
-          "label": "Verwaltung Ihrer Internetadresse",
+          "label": "Verwaltung Ihres Domainnamens",
           "hint": "Ihr Domainname, zum Beispiel {domain} — für Sie registriert und verlängert."
         },
         "swiss_hosting": {
@@ -116,6 +116,11 @@
       "free_mockup_cta_label": "Kostenloses Mockup erhalten",
       "free_mockup_cta_aria_label": "Zur Seite für die Anfrage eines kostenlosen Mockups"
     },
-    "reset": "Neu starten"
+    "reset": "Neu starten",
+    "summary": {
+      "intro": "Guten Tag, hier ist die Zusammenfassung meiner Simulation auf Ihrer Preisseite:",
+      "project": "Projekt",
+      "site_type": "Art der Website"
+    }
   }
 }

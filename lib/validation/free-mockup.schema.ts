@@ -16,6 +16,18 @@ export const COLOR_PALETTE_KEYS = [
 
 export type ColorPaletteKey = (typeof COLOR_PALETTE_KEYS)[number];
 
+/**
+ * Explicit "no preference" answer. It is a value of its own rather than an
+ * empty string so a visitor who deliberately skips the question stays
+ * distinguishable from one who has not answered it yet.
+ */
+export const NO_PALETTE_PREFERENCE = 'none';
+
+/** Every answer the palette group accepts. */
+export const COLOR_PALETTE_CHOICES = [...COLOR_PALETTE_KEYS, NO_PALETTE_PREFERENCE] as const;
+
+export type ColorPaletteChoice = (typeof COLOR_PALETTE_CHOICES)[number];
+
 /** Maximum length of the free-text "wishes" field, mirrored by the live counter. */
 export const WISHES_MAX_LENGTH = 500;
 
@@ -23,11 +35,14 @@ export const WISHES_MAX_LENGTH = 500;
  * Shape of a free mockup request, validated on the server (mandatory) and on
  * the client (to surface inline errors before a round trip).
  *
+ * Only the email is mandatory: a visitor with no colour direction in mind can
+ * leave the palette group untouched.
+ *
  * `honeypot` must stay empty: it is filled in only by bots.
  */
 export const freeMockupSchema = z.object({
   email: z.email(),
-  colorPalette: z.enum(COLOR_PALETTE_KEYS),
+  colorPalette: z.enum(COLOR_PALETTE_CHOICES).optional().or(z.literal('')),
   websiteUrl: z
     .url({ protocol: /^https?$/, hostname: z.regexes.domain })
     .optional()
@@ -98,17 +113,13 @@ export function normalizeFreeMockupValues(values: FreeMockupValues): FreeMockupV
  * only decides *which* message a visitor sees.
  */
 export function getFieldErrors(values: FreeMockupValues): FreeMockupFieldErrors {
-  const { email, colorPalette, websiteUrl, wishes } = normalizeFreeMockupValues(values);
+  const { email, websiteUrl, wishes } = normalizeFreeMockupValues(values);
   const errors: FreeMockupFieldErrors = {};
 
   if (!email) {
     errors.email = 'required';
   } else if (!freeMockupSchema.shape.email.safeParse(email).success) {
     errors.email = 'email_invalid';
-  }
-
-  if (!freeMockupSchema.shape.colorPalette.safeParse(colorPalette).success) {
-    errors.colorPalette = 'required';
   }
 
   if (websiteUrl && !freeMockupSchema.shape.websiteUrl.safeParse(websiteUrl).success) {

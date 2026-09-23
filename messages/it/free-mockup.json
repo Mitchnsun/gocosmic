@@ -12,7 +12,7 @@
       "items": {
         "brief": {
           "title": "Ci invia l'essenziale",
-          "description": "La sua email, la direzione di colori che le piace e il suo sito attuale, se ne ha uno."
+          "description": "La tua email, la direzione di colori che preferisci se ne hai una, e il tuo sito attuale se ne hai uno."
         },
         "design": {
           "title": "Disegniamo un mockup",
@@ -28,7 +28,7 @@
     "privacy_link": "Informativa sulla privacy",
     "form": {
       "heading": "Richieda il suo mockup",
-      "lead": "Un'email, una direzione di colori: tutto il resto è facoltativo.",
+      "lead": "Un'email: tutto il resto è facoltativo.",
       "email_label": "La sua email",
       "email_placeholder": "lei@esempio.com",
       "palette_label": "Direzione di colori",
@@ -44,7 +44,9 @@
       "success_title": "Richiesta ricevuta",
       "success_message": "Grazie — le risponderemo via email con il suo mockup.",
       "error_message": "Non è stato possibile inviare la sua richiesta. Riprovi tra un istante.",
-      "invalid_message": "Controlli i campi segnalati."
+      "retry_later_message": "La tua richiesta non è stata inviata al momento. Riprova più tardi.",
+      "invalid_message": "Controlli i campi segnalati.",
+      "plan_attached": "Il risultato della vostra simulazione dei prezzi sarà incluso nella richiesta."
     },
     "palette": {
       "options": {
@@ -53,7 +55,8 @@
         "alpineSunset": "Tramonto alpino",
         "deepForest": "Foresta profonda",
         "starryNight": "Notte stellata",
-        "terracottaStone": "Terracotta e pietra"
+        "terracottaStone": "Terracotta e pietra",
+        "none": "Nessuna preferenza"
       }
     },
     "validation": {

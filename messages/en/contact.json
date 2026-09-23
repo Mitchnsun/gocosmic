@@ -5,7 +5,7 @@
   },
   "contact": {
     "title": "Contact Us",
-    "subtitle": "Choose the right email for your request",
+    "subtitle": "Send us a brief, or write straight to the right inbox.",
     "blocks": {
       "general": {
         "title": "General Inquiries",
@@ -76,7 +76,67 @@
         "aria_label": "Send an email to prospect@gocosmic.dev with subject: Commercial Inquiry"
       }
     },
-    "privacyNotice": "Personal data sent by email is used only to answer your request, manage follow-up, and keep evidence of exchanges for the periods stated in the privacy policy.",
-    "privacyLink": "Privacy policy"
+    "privacyNotice": "Personal data sent through the contact form or by email is used only to answer your request, manage follow-up, and keep evidence of exchanges for the periods stated in the privacy policy.",
+    "privacyLink": "Privacy policy",
+    "eyebrow": "Contact — Mission brief",
+    "form": {
+      "eyebrow": "Project brief",
+      "title": "Tell us about your project",
+      "description": "Fill in the form and we will come back to you with next steps. Prefer email? The addresses below go straight to the right inbox.",
+      "optional": "optional",
+      "required_hint": "Fields marked with an asterisk are required",
+      "submit": "Send the message",
+      "submitting": "Sending…",
+      "clear": "Clear the form",
+      "honeypot_label": "Leave this field empty",
+      "fields": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Your name"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "you@example.com"
+        },
+        "subject": {
+          "label": "Subject",
+          "placeholder": "Showcase website, mobile app, redesign…"
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Describe your project, your deadline and your budget if you have one."
+        },
+        "phone": {
+          "label": "Phone",
+          "placeholder": "+33 6 12 34 56 78"
+        },
+        "company": {
+          "label": "Company",
+          "placeholder": "Your company or organisation"
+        }
+      },
+      "errors": {
+        "name_length": "Please enter a name between 2 and 100 characters.",
+        "email_invalid": "Please enter a valid email address.",
+        "subject_length": "The subject must be between 5 and 200 characters.",
+        "message_length": "The message must be between 10 and 5000 characters.",
+        "phone_invalid": "Please enter a valid phone number.",
+        "company_length": "The company name is too long.",
+        "rate_limited": "You have already sent several messages. Please try again later or write to us by email.",
+        "retry_later": "Your message could not be sent right now. Please try again later or write to us by email.",
+        "server": "The message could not be sent. Please try again or write to us by email.",
+        "network": "Connection lost. Check your network and try again."
+      },
+      "success": {
+        "title": "Thank you for getting in touch!",
+        "description": "Your message has been sent. We read every request and will come back to you shortly.",
+        "back": "Send another message"
+      }
+    },
+    "direct": {
+      "eyebrow": "Direct lines",
+      "title": "Write to the right inbox",
+      "description": "Every request has a dedicated address — pick the one that matches yours."
+    }
   }
 }

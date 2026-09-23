@@ -43,11 +43,6 @@ export default async function FreeMockup() {
     <div
       className="bg-void text-ghost relative isolate pt-10"
       style={{ minHeight: 'calc(100vh - var(--header-height))' }}>
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-96"
-        style={{ backgroundImage: 'radial-gradient(circle at 50% 0%, rgb(255 79 0 / 0.14), transparent 65%)' }}
-        aria-hidden="true"
-      />
       <NextIntlClientProvider locale={locale} messages={messages}>
         <div className="m-auto grid max-w-6xl gap-10 px-4 pb-20 sm:px-6 lg:grid-cols-2 lg:items-start lg:gap-14 lg:px-8">
           <FreeMockupPitch />

@@ -123,12 +123,12 @@ describe('getFieldErrors', () => {
     expect(getFieldErrors(values({ email: 'nope' })).email).toBe('email_invalid');
   });
 
-  it('flags a missing palette', () => {
-    expect(getFieldErrors(values({ colorPalette: '' })).colorPalette).toBe('required');
+  it('accepts a request with no colour direction', () => {
+    expect(getFieldErrors(values({ colorPalette: '' })).colorPalette).toBeUndefined();
   });
 
-  it('flags a palette outside the closed list', () => {
-    expect(getFieldErrors(values({ colorPalette: 'neon' })).colorPalette).toBe('required');
+  it('accepts an explicit "no preference" answer', () => {
+    expect(getFieldErrors(values({ colorPalette: 'none' })).colorPalette).toBeUndefined();
   });
 
   it('ignores an empty website URL', () => {

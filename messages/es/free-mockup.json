@@ -12,7 +12,7 @@
       "items": {
         "brief": {
           "title": "Nos envía lo esencial",
-          "description": "Su email, la gama de colores que le gusta y su sitio actual, si tiene uno."
+          "description": "Tu email, la gama de colores que te guste si tienes una, y tu sitio actual si lo tienes."
         },
         "design": {
           "title": "Diseñamos una maqueta",
@@ -28,7 +28,7 @@
     "privacy_link": "Política de privacidad",
     "form": {
       "heading": "Solicite su maqueta",
-      "lead": "Un email y una gama de colores: todo lo demás es opcional.",
+      "lead": "Un email: todo lo demás es opcional.",
       "email_label": "Su email",
       "email_placeholder": "usted@ejemplo.com",
       "palette_label": "Gama de colores",
@@ -44,7 +44,9 @@
       "success_title": "Solicitud recibida",
       "success_message": "Gracias: le responderemos por email con su maqueta.",
       "error_message": "No se ha podido enviar su solicitud. Inténtelo de nuevo en un momento.",
-      "invalid_message": "Revise los campos señalados."
+      "retry_later_message": "Tu solicitud no se ha podido enviar en este momento. Inténtalo de nuevo más tarde.",
+      "invalid_message": "Revise los campos señalados.",
+      "plan_attached": "El resultado de su simulación de precios se incluirá con su solicitud."
     },
     "palette": {
       "options": {
@@ -53,7 +55,8 @@
         "alpineSunset": "Atardecer alpino",
         "deepForest": "Bosque profundo",
         "starryNight": "Noche estrellada",
-        "terracottaStone": "Terracota y piedra"
+        "terracottaStone": "Terracota y piedra",
+        "none": "Sin preferencia"
       }
     },
     "validation": {

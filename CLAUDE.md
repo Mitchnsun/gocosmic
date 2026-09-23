@@ -135,6 +135,8 @@ Avoid: `New CTAFinal component with useWarpEffect hook, cta-final-headline anima
 
 All documentation must be written in **English**: README files, code comments, JSDoc, inline documentation, and any Markdown files added to the repository. This applies to AI-generated content as well.
 
+`README.en.md` and `README.fr.md` are the same document in two languages. Any change to one must be applied to the other in the same commit: same sections, same heading order, same content. English is canonical if they disagree.
+
 ## AI agent workflow
 
 ### Helper files

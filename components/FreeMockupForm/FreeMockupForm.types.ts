@@ -1,4 +1,8 @@
-import type { ColorPaletteKey, FreeMockupErrorCode, FreeMockupFieldErrors } from '@/lib/validation/free-mockup.schema';
+import type {
+  ColorPaletteChoice,
+  FreeMockupErrorCode,
+  FreeMockupFieldErrors,
+} from '@/lib/validation/free-mockup.schema';
 
 /** Lifecycle of a submission, as returned by the server action. */
 export type FreeMockupStatus = 'idle' | 'success' | 'error';
@@ -7,19 +11,25 @@ export type FreeMockupStatus = 'idle' | 'success' | 'error';
  * State shared between the server action and `useActionState`.
  *
  * `fieldErrors` is only set when the payload failed validation server-side;
- * a transport or provider failure yields `status: 'error'` with no field error,
- * which the form renders as the generic message.
+ * a delivery failure yields `status: 'error'` with no field error, which the
+ * form renders as the generic message. `reason: 'retry_later'` is set
+ * client-side (`FreeMockupForm.hooks.ts`) when the Server Action call itself
+ * was blocked in transit — the Vercel Firewall rate-limit rule, a stale
+ * action after a redeploy, or any other transport-level failure — rather
+ * than failing inside the action; it narrows the generic message to a
+ * dedicated one.
  */
 export interface FreeMockupFormState {
   status: FreeMockupStatus;
   fieldErrors?: FreeMockupFieldErrors;
+  reason?: 'retry_later';
 }
 
 /** Props of the colour palette radio group. */
 export interface ColorPaletteSelectProps {
-  /** Currently selected palette, or an empty string while nothing is picked. */
+  /** Currently selected answer, or an empty string while nothing is picked. */
   value: string;
-  onChange: (value: ColorPaletteKey) => void;
+  onChange: (value: ColorPaletteChoice) => void;
   /** Error code to display under the group, if any. */
   error?: FreeMockupErrorCode;
   /** Marks the group as touched so the error can be revealed. */

@@ -66,5 +66,12 @@
     "privacyLink": "Leer la política de privacidad",
     "manage": "Ajustes de privacidad",
     "close": "Cerrar"
+  },
+  "case_study": {
+    "eyebrow": "Caso práctico",
+    "previous": "Proyecto anterior",
+    "next": "Proyecto siguiente",
+    "nav_label": "Navegación entre casos prácticos",
+    "contact_cta": "Hablar de un proyecto similar"
   }
 }

@@ -105,8 +105,9 @@ async headers() {
 
 ### API Routes
 
-This project currently has no API routes (`app/**/route.ts`). If API routes are
-added in the future, the following must be checked before merging:
+This project has no public API route: both public form submissions go through
+Server Actions instead (see below). If one is added later, the following must
+be checked before merging:
 
 1. **Input validation** — Validate and sanitize all request body and query
    parameters. Use `zod` or similar for schema validation.
@@ -124,23 +125,73 @@ added in the future, the following must be checked before merging:
 
 ### Server Actions
 
-The project has one `"use server"` action, `app/actions/free-mockup.ts`, which
-emails a free mockup request to the studio. Rules for it and for any action
-added later:
+The project has two `"use server"` actions, both handling a public form
+submission: `app/actions/contact.ts` and `app/actions/free-mockup.ts`. Rules
+for them and for any action added later:
 
-- They are CSRF-protected by Next.js (same-origin enforcement on the
-  `Content-Type` header).
+- **CSRF** — Next.js compares the `Origin` header against the `Host` (or
+  `X-Forwarded-Host`) header on every Server Action request and aborts on a
+  mismatch; a request with no `Origin` (non-browser clients) is let through.
+  This replaces the hand-written same-origin check a custom route handler
+  would need.
+- **Body size cap** — capped at 20 kB by `next.config.ts`
+  (`experimental.serverActions.bodySizeLimit`), well above the largest
+  legitimate payload from either form.
 - They run with full server privileges — never expose admin operations from
   server actions accessible to unauthenticated users.
-- Validate all inputs with a schema (zod) — do not trust `FormData` values.
-  The free mockup payload is validated by `lib/validation/free-mockup.schema.ts`
-  server-side; the identical client-side check is a UX shortcut, never the
-  security boundary.
+- **Input validation** — never trust the client shape. `submitContactMessage`
+  coerces unknown input through `toContactPayload` before validating it with
+  `lib/contact/validation.ts` (shared with the client form); the free mockup
+  payload is validated by `lib/validation/free-mockup.schema.ts`. The
+  identical client-side checks are a UX shortcut, never the security boundary.
 - Escape visitor input before interpolating it into an HTML email body (see
   `lib/free-mockup-email.ts`).
-- The free mockup form carries an invisible honeypot field; a filled honeypot
-  is dropped silently. Rate limiting (Upstash, Vercel WAF) remains a future
-  improvement.
+- **Honeypot** — both forms carry an invisible `honeypot`/`company` field; a
+  filled one is dropped silently (reported as a success) so bots cannot detect
+  the filter.
+- **Rate limiting** — enforced at the platform level by a Vercel Firewall
+  rule, not in application code: **"Rate limit POST requests"**, limiting
+  POST requests to 3 per 10 minutes per IP address, answering the blocked
+  request with `429`. This applies to every POST on the domain, which covers
+  both Server Actions (the only two public POST entry points — see
+  `SECURITY.md`'s API Routes section). This was decided in
+  [#127](https://github.com/Mitchnsun/gocosmic/issues/127) over the two
+  alternatives it evaluated: a shared store (Upstash Redis) would have added a
+  third-party dependency and per-submission network latency for both forms;
+  an in-memory, per-instance counter was rejected outright, since each
+  serverless instance keeps its own counter and a cold start clears it — it
+  would protect nothing while looking like it does.
+
+  **Known limitation:** the rule lives in the Vercel dashboard, not in
+  `vercel.json` or anywhere else in this repo, so it is invisible and
+  unversioned here. Before relying on it, confirm in the Vercel dashboard that
+  it is still active for this project.
+
+  A blocked `429` is returned by the edge before the Server Action runs, so it
+  never reaches the `try`/`catch` inside `submitContactMessage` or
+  `submitFreeMockupRequest` themselves — but both forms still show their own
+  "please try again later" message for it. The classification happens
+  client-side, in `lib/serverActionError.ts`: a real network failure (offline,
+  DNS, connection refused) makes the browser's `fetch()` reject with a
+  `TypeError` per the Fetch API contract, while a blocked or otherwise
+  malformed Server Action response (a `429` from this rule, a stale action
+  reference after a redeploy, an unexpected 5xx) surfaces as a plain `Error`
+  thrown by Next's client runtime — neither action ever throws on its own, so
+  any thrown error reaching the client comes from this transport layer. This
+  is shape-based, not a parsed status code (the block response's exact body
+  isn't controlled from this repo), so it can't tell the rate limit apart
+  from those other transport failures — deliberately, both forms show the
+  same neutral "try again later" message for all of them, rather than
+  claiming a specific cause that may not be true.
+
+- **Delivery** — both forwarded through Resend (`lib/resend.ts`) when
+  `RESEND_API_KEY` is set. For the contact form, a missing key in production
+  is an error: the `deliver` helper in `app/actions/contact.ts` logs it and
+  the action returns `{ status: 'error' }` rather than telling the visitor a
+  message was sent that nobody will read. Outside production the whole
+  submission is written to the server log and accepted, so the form can be
+  exercised without a provider. Neither action echoes the submitted content
+  back to the client.
 
 ---
 

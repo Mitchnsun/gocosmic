@@ -13,7 +13,8 @@
           "architecture": "Arquitectura de software y buenas prácticas de desarrollo",
           "leadership": "Liderazgo técnico y mentoría de equipos",
           "modernDev": "Desarrollo web moderno (React, React-Native, Next.js, Expo, TypeScript, Tailwind CSS)"
-        }
+        },
+        "title": "Experiencia"
       },
       "linkedin": "Ver perfil de LinkedIn",
       "linkedin_aria": "Perfil de LinkedIn de Matthieu Compérat (se abre en una nueva pestaña)",
@@ -69,6 +70,20 @@
       "title": "Go Cosmic — Creando aplicaciones cósmicas con IA"
     },
     "subtitle": "Descubre nuestra misión, nuestro equipo y nuestro compromiso con la excelencia",
-    "title": "Acerca de Go Cosmic"
+    "title": "Acerca de Go Cosmic",
+    "eyebrow": "Acerca de — Estudio",
+    "hero": {
+      "cta": "Contáctanos"
+    },
+    "sections": {
+      "mission": "Misión",
+      "developer": "Desarrollador",
+      "legal": "Transparencia"
+    },
+    "cta": {
+      "title": "¿Listos para trabajar juntos?",
+      "description": "Cuéntanos tu proyecto: te responderemos con un plan claro.",
+      "button": "Iniciar la conversación"
+    }
   }
 }

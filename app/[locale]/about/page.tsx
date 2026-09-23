@@ -1,9 +1,12 @@
-import { CodeBracketIcon, ShieldCheckIcon, UserIcon } from '@heroicons/react/24/solid';
 import { createTranslator } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 
+import { AccentList } from '@/components/AccentList';
+import { ContentSection } from '@/components/ContentSection';
+import CTAFinal from '@/components/CTAFinal';
 import LinkedInIcon from '@/components/icons/LinkedInIcon';
 import PersonSeo from '@/components/JsonLd/PersonSeo';
+import PageHero from '@/components/PageHero';
 import { getCanonicalUrl } from '@/i18n/canonical';
 import { Link } from '@/i18n/navigation';
 import { getOgImages } from '@/lib/og';
@@ -37,204 +40,140 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
+const linkClassName =
+  'text-aerospace hover:text-aerospace/80 focus-visible:ring-aerospace rounded underline underline-offset-4 transition-colors focus-visible:ring-2 focus-visible:outline-none';
+
 export default async function About() {
   const t = await getTranslations('about');
   const region = await getRegion();
+  const legalContactSubject = encodeURIComponent(t('legal.contact.subject'));
+
+  const specialization = [
+    t('mission.specialization.items.webMobile'),
+    t('mission.specialization.items.aiIntegration'),
+    t('mission.specialization.items.uiUxDesign'),
+    t('mission.specialization.items.customSolutions'),
+  ];
+
+  const expertise = [
+    t('developer.expertise.items.modernDev'),
+    t('developer.expertise.items.architecture'),
+    t('developer.expertise.items.aiTech'),
+    t('developer.expertise.items.leadership'),
+  ];
+
+  const aiPolicy = [
+    t('legal.ai.items.integration'),
+    t('legal.ai.items.ethics'),
+    t('legal.ai.items.compliance'),
+    t('legal.ai.items.privacy'),
+  ];
+
+  const responsibility = [
+    t('legal.responsibility.items.testing'),
+    t('legal.responsibility.items.recommendations'),
+    t('legal.responsibility.items.security'),
+  ];
 
   return (
     <>
       {/* Person JSON-LD structured data */}
       <PersonSeo />
-      <div className="text-ghost relative pt-10">
-        <div className="m-auto flex max-w-7xl flex-col items-center gap-10 px-4 pb-4">
-          {/* Page Header */}
-          <div className="text-center">
-            <h1 className="mb-4 text-2xl font-extrabold sm:text-4xl">{t('title')}</h1>
-            <p className="text-lg text-gray-400">{t('subtitle')}</p>
-          </div>
+      <div className="bg-void text-ghost relative">
+        <PageHero
+          id="about-hero"
+          eyebrow={t('eyebrow')}
+          title={t('title')}
+          lead={t('subtitle')}
+          cta={{ text: t('hero.cta'), href: '/contact' }}
+        />
 
-          {/* Go Cosmic Presentation Section */}
-          <section className="w-full" aria-labelledby="go-cosmic-heading">
-            <div className="relative rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
-              <div className="mb-6 flex items-center gap-4">
-                <CodeBracketIcon className="h-8 w-8 shrink-0 text-blue-400" aria-hidden="true" />
-                <h2 id="go-cosmic-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
-                  {t('mission.title')}
-                </h2>
-              </div>
-              <div className="space-y-4 text-gray-300">
-                <p className="text-lg">{t('mission.description')}</p>
+        <div className="m-auto flex max-w-7xl flex-col gap-10 p-4 sm:p-6 lg:p-8">
+          {/* Mission */}
+          <ContentSection
+            id="mission"
+            eyebrow={t('sections.mission')}
+            index="01 / 03"
+            title={t('mission.title')}
+            lead={t('mission.description')}>
+            <AccentList label={t('mission.specialization.title')} labelAs="h3" items={specialization} columns={2} />
+            <p className="text-aerospace mt-8 text-lg leading-8">{t('mission.conclusion')}</p>
+          </ContentSection>
 
-                <div className="my-6">
-                  <h3 className="mb-4 text-lg font-semibold text-white sm:text-xl">
-                    {t('mission.specialization.title')}:
-                  </h3>
-                  <ul className="grid gap-3 md:grid-cols-2">
-                    <li className="flex items-center gap-3">
-                      <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-400" aria-hidden="true"></span>
-                      <span>{t('mission.specialization.items.webMobile')}</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-500" aria-hidden="true"></span>
-                      <span>{t('mission.specialization.items.aiIntegration')}</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-600" aria-hidden="true"></span>
-                      <span>{t('mission.specialization.items.uiUxDesign')}</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-700" aria-hidden="true"></span>
-                      <span>{t('mission.specialization.items.customSolutions')}</span>
-                    </li>
-                  </ul>
-                </div>
+          {/* Developer profile */}
+          <ContentSection
+            id="developer"
+            eyebrow={t('sections.developer')}
+            index="02 / 03"
+            accent="royal"
+            title={`${t('developer.title')} — ${t('developer.name')}`}
+            lead={t('developer.description')}>
+            <p className="text-ghost font-display text-xl font-medium">{t('developer.subtitle')}</p>
+            <AccentList
+              className="mt-6"
+              accent="royal"
+              label={t('developer.expertise.title')}
+              labelAs="h3"
+              items={expertise}
+              columns={2}
+            />
+            <p className="text-ghost/70 mt-6 text-base leading-7">{t('developer.bio')}</p>
+            <p className="border-ghost/8 bg-ghost/[0.02] text-ghost/55 mt-6 rounded-xl border px-4 py-3 text-sm">
+              {t(`mission.location.${region}`)}
+            </p>
+            <a
+              href="https://www.linkedin.com/in/matthieucomperat/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-ghost/15 text-ghost hover:border-ghost hover:bg-ghost/5 focus-visible:ring-ghost font-display mt-8 inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-sm transition-colors focus-visible:ring-2 focus-visible:outline-none"
+              aria-label={t('developer.linkedin_aria')}>
+              {t('developer.linkedin')}
+              <LinkedInIcon className="h-4 w-4" />
+            </a>
+          </ContentSection>
 
-                <p className="text-lg font-medium text-blue-300">{t('mission.conclusion')}</p>
-              </div>
+          {/* Legal & AI disclosure */}
+          <ContentSection
+            id="legal"
+            eyebrow={t('sections.legal')}
+            index="03 / 03"
+            accent="jungle"
+            title={t('legal.title')}
+            lead={t('legal.intro')}>
+            <div className="grid gap-8 md:grid-cols-2">
+              <AccentList accent="jungle" label={t('legal.ai.title')} labelAs="h3" items={aiPolicy} />
+              <AccentList accent="jungle" label={t('legal.responsibility.title')} labelAs="h3" items={responsibility} />
             </div>
-          </section>
-
-          {/* Matthieu Compérat Section */}
-          <section className="w-full" aria-labelledby="developer-heading">
-            <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
-              <div className="mb-6 flex items-center gap-4">
-                <UserIcon className="h-8 w-8 shrink-0 text-yellow-400" aria-hidden="true" />
-                <h2 id="developer-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
-                  {t('developer.title')} — {t('developer.name')}
-                </h2>
-              </div>
-              <div className="space-y-4 text-gray-300">
-                <p className="text-lg">
-                  <strong className="text-white">
-                    {t('developer.name')} — {t('developer.subtitle')}
-                  </strong>
-                </p>
-
-                <p>{t('developer.description')}</p>
-
-                <ul className="grid gap-3 md:grid-cols-2">
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-400" aria-hidden="true"></span>
-                    <span>{t('developer.expertise.items.modernDev')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-500" aria-hidden="true"></span>
-                    <span>{t('developer.expertise.items.architecture')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-600" aria-hidden="true"></span>
-                    <span>{t('developer.expertise.items.aiTech')}</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-700" aria-hidden="true"></span>
-                    <span>{t('developer.expertise.items.leadership')}</span>
-                  </li>
-                </ul>
-
-                <p>{t('developer.bio')}</p>
-
-                <p className="text-lg font-medium text-blue-300">{t('mission.conclusion')}</p>
-                <div className="mt-4 rounded border border-blue-700 bg-slate-900 p-4 text-sm text-blue-300">
-                  {t(`mission.location.${region}`)}
-                </div>
-
-                <div className="mt-6 border-t border-gray-700 pt-4">
-                  <a
-                    href="https://www.linkedin.com/in/matthieucomperat/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded px-1 text-blue-400 underline transition-colors hover:text-blue-300 focus:ring-2 focus:ring-blue-400 focus:outline-none"
-                    aria-label={t('developer.linkedin_aria')}>
-                    {t('developer.linkedin')}
-                    <LinkedInIcon className="h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Legal Mentions Section */}
-          <section className="w-full" aria-labelledby="legal-heading">
-            <div className="rounded-lg bg-slate-800 px-6 py-8 lg:p-8">
-              <div className="mb-6 flex items-center gap-4">
-                <ShieldCheckIcon className="h-8 w-8 shrink-0 text-green-400" aria-hidden="true" />
-                <h2 id="legal-heading" className="text-xl font-bold sm:text-2xl lg:text-3xl">
-                  {t('legal.title')}
-                </h2>
-              </div>
-              <div className="space-y-6 text-gray-300">
-                <p>{t('legal.intro')}</p>
-
-                <div>
-                  <h3 className="mb-3 text-lg font-semibold text-white sm:text-xl">{t('legal.ai.title')}:</h3>
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-3">
-                      <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-400" aria-hidden="true"></span>
-                      <span>{t('legal.ai.items.integration')}</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-500" aria-hidden="true"></span>
-                      <span>{t('legal.ai.items.ethics')}</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-600" aria-hidden="true"></span>
-                      <span>{t('legal.ai.items.compliance')}</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-700" aria-hidden="true"></span>
-                      <span>{t('legal.ai.items.privacy')}</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h3 className="mb-3 text-lg font-semibold text-white sm:text-xl">
-                    {t('legal.responsibility.title')}:
-                  </h3>
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-3">
-                      <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-400" aria-hidden="true"></span>
-                      <span>{t('legal.responsibility.items.testing')}</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-500" aria-hidden="true"></span>
-                      <span>{t('legal.responsibility.items.recommendations')}</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-green-600" aria-hidden="true"></span>
-                      <span>{t('legal.responsibility.items.security')}</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="mt-6 border-t border-gray-700 pt-4">
-                  <p className="font-medium text-blue-300">
-                    {t('legal.contact.text')}
-                    <a
-                      href={`mailto:support@gocosmic.dev?subject=${encodeURIComponent(t('legal.contact.subject'))}`}
-                      className="ml-1 rounded px-1 text-blue-400 underline transition-colors hover:text-blue-300 focus:ring-2 focus:ring-blue-400 focus:outline-none"
-                      aria-label={t('legal.contact.ariaLabel')}>
-                      {t('legal.contact.link')}
-                    </a>
-                    ,{' '}
-                    <Link
-                      href="/privacy"
-                      className="rounded px-1 text-blue-400 underline transition-colors hover:text-blue-300 focus:ring-2 focus:ring-blue-400 focus:outline-none">
-                      {t('legal.contact.privacyLink')}
-                    </Link>
-                    ,{' '}
-                    <Link
-                      href="/legal-notice"
-                      className="rounded px-1 text-blue-400 underline transition-colors hover:text-blue-300 focus:ring-2 focus:ring-blue-400 focus:outline-none">
-                      {t('legal.contact.legalNoticeLink')}
-                    </Link>
-                    .
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
+            <p className="text-ghost/55 border-ghost/8 mt-8 border-t pt-6 text-sm leading-7">
+              {t('legal.contact.text')}{' '}
+              <a
+                href={`mailto:support@gocosmic.dev?subject=${legalContactSubject}`}
+                className={linkClassName}
+                aria-label={t('legal.contact.ariaLabel')}>
+                {t('legal.contact.link')}
+              </a>
+              ,{' '}
+              <Link href="/privacy" className={linkClassName}>
+                {t('legal.contact.privacyLink')}
+              </Link>
+              ,{' '}
+              <Link href="/legal-notice" className={linkClassName}>
+                {t('legal.contact.legalNoticeLink')}
+              </Link>
+              .
+            </p>
+          </ContentSection>
         </div>
+
+        <CTAFinal
+          id="about-cta"
+          headline={t('cta.title')}
+          description={t('cta.description')}
+          ctaText={t('cta.button')}
+          ctaHref="/contact"
+          accentColor="aerospace"
+          tone="sober"
+        />
       </div>
     </>
   );

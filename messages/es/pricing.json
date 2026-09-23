@@ -56,7 +56,7 @@
           "ch": "mi-empresa.ch"
         },
         "domain": {
-          "label": "Gestión de su dirección web",
+          "label": "Gestión de su nombre de dominio",
           "hint": "Su nombre de dominio, por ejemplo {domain} — registrado y renovado por usted."
         },
         "swiss_hosting": {
@@ -116,6 +116,11 @@
       "free_mockup_cta_label": "Recibir una maqueta gratuita",
       "free_mockup_cta_aria_label": "Ir a la página de solicitud de maqueta gratuita"
     },
-    "reset": "Empezar de nuevo"
+    "reset": "Empezar de nuevo",
+    "summary": {
+      "intro": "Hola, este es el resumen de mi simulación en su página de precios:",
+      "project": "Proyecto",
+      "site_type": "Tipo de sitio"
+    }
   }
 }

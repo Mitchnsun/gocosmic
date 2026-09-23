@@ -164,6 +164,20 @@ CTA heading: animated gradient `from-{accent} via-ghost to-{accent}` with `bg-cl
 
 To mark a location, category, or action: **geometric SVGs** (crosshair, diamond `◇`, stars `✶ ✦`, arrows) in `currentColor`, tinted by token. Emoji 📍/🚀/✨ are **forbidden**.
 
+### 3.9 Shared page primitives
+
+Inner pages (about, services, offers, contact, projects, case studies) are assembled from four shared building blocks — reuse them instead of re-implementing the patterns above:
+
+| Component                   | Role                                                                                     |
+| --------------------------- | ---------------------------------------------------------------------------------------- |
+| `components/PageHero`       | Inner-page hero: light starfield, accent glow, mono eyebrow, `h1`, lead, up to two CTAs  |
+| `components/ContentSection` | Card-shaped section: eyebrow + HUD counter, `h2` bound via `aria-labelledby`, lead, body |
+| `components/AccentList`     | Bullet list with accent dots, optional mono label, 1 or 2 columns                        |
+| `components/CaseStudy`      | Full project case study: hero, ordered sections, CTA card, previous / next navigation    |
+| `design-system/accent.ts`   | `accentClasses(token)` → the text / bg / border utilities and RGB channels of a token    |
+
+Accent tokens accepted by all of them: `aerospace`, `royal`, `jungle`, `ghost`. One accent per zone (see §1, principle 2).
+
 ### 3.8 Cards
 
 Background `void` slightly lifted (`bg-ghost/[0.02]` or `void-2`), border `ghost/8`, `rounded-2xl`, hover that lightens the background and/or shifts an accent arrow. Card number in mono `ghost/35`, title `font-display`, tags as bordered mono chips.

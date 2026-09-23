@@ -23,7 +23,13 @@
         "title": "Chœur des Pays du Mont Blanc",
         "description": "A website showcasing the choir's activities, concerts, and repertoire in Haute-Savoie."
       }
-    }
+    },
+    "cta": {
+      "title": "Your project could be next",
+      "description": "Tell us what you want to build and we will map out the route.",
+      "button": "Let's talk"
+    },
+    "eyebrow": "Projects — Selected work"
   },
   "dailyFortune": {
     "title": "Daily Fortune",
@@ -58,7 +64,7 @@
     },
     "cta": {
       "title": "Explore Daily Fortune",
-      "description": "Discover your cosmic fortune soon and let the stars guide your journey.",
+      "description": "Discover your cosmic fortune and let the stars guide your journey.",
       "button": "Download the app",
       "ariaLabel": "Download Daily Fortune (opens in a new tab)"
     }

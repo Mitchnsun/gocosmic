@@ -138,11 +138,20 @@
       "title": "Ready to launch your next Cosmic project?",
       "description": "Let's discuss how our comprehensive services can transform your vision into reality. From stellar development to cosmic launch, we're here to guide your project to success.",
       "primary_button": "Start your Cosmic journey",
-      "secondary_button": "Get a custom quote",
-      "contact_info": "Connect with our technical team to explore the possibilities",
       "geo_availability": "Available in Annecy, Geneva, French-speaking Switzerland, Haute-Savoie and remotely.",
-      "email_subject": "Inquiry about Cosmic services",
       "local_page": "Discover our dedicated Annecy / Geneva page"
+    },
+    "eyebrow": "Services — Capabilities",
+    "hero": {
+      "cta": "Discuss your project",
+      "secondary": "See pricing"
+    },
+    "explore": {
+      "eyebrow": "Next step",
+      "title": "See the work, then the budget",
+      "description": "Browse the projects we have shipped, or build your own estimate in a couple of clicks.",
+      "projects": "Browse the projects",
+      "pricing": "Build my estimate"
     }
   }
 }
