@@ -1,26 +1,26 @@
 'use client';
 
 import type { ChangeEvent, FormEvent } from 'react';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 
+import { submitContactMessage } from '@/app/actions/contact';
 import type { ContactErrors, ContactField, ContactPayload } from '@/lib/contact/validation';
 import { CONTACT_FIELD_ORDER, emptyContactPayload, validateContact } from '@/lib/contact/validation';
+import { isRetryLaterError } from '@/lib/serverActionError';
 
 import type { ContactFormErrorCode, ContactFormStatus } from './ContactForm.types';
 import { hasReachedSubmissionLimit, recordSubmission } from './ContactForm.utils';
 
 interface UseContactFormOptions {
-  /** Endpoint receiving the payload. */
-  endpoint: string;
   /** Called once the submission succeeded. */
   onSuccess?: () => void;
 }
 
 /**
  * Owns the contact form state: field values, per-field validation errors,
- * submission status, client-side rate limiting and the network call.
+ * submission status, client-side rate limiting and the Server Action call.
  */
-export const useContactForm = ({ endpoint, onSuccess }: UseContactFormOptions) => {
+export const useContactForm = ({ onSuccess }: UseContactFormOptions) => {
   const [values, setValues] = useState<ContactPayload>(emptyContactPayload);
   const [errors, setErrors] = useState<ContactErrors>({});
   const [status, setStatus] = useState<ContactFormStatus>('idle');
@@ -28,12 +28,12 @@ export const useContactForm = ({ endpoint, onSuccess }: UseContactFormOptions) =
   /** Identifies the in-flight submission: a reset invalidates it so a late
    *  response cannot undo the visitor's action. */
   const requestIdRef = useRef(0);
-  const abortRef = useRef<AbortController | null>(null);
+  /** Guards against a second submit while one is already in flight — a Server
+   *  Action call cannot be aborted the way a `fetch` request can. */
+  const inFlightRef = useRef(false);
   /** Field to focus after a failed submission. The nonce makes two failures on
    *  the same field distinct, so the focus effect runs again. */
   const [invalidFocus, setInvalidFocus] = useState<{ field: ContactField; nonce: number } | null>(null);
-
-  useEffect(() => () => abortRef.current?.abort(), []);
 
   const handleChange = useCallback((event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
@@ -49,8 +49,7 @@ export const useContactForm = ({ endpoint, onSuccess }: UseContactFormOptions) =
   const reset = useCallback(() => {
     setInvalidFocus(null);
     requestIdRef.current += 1;
-    abortRef.current?.abort();
-    abortRef.current = null;
+    inFlightRef.current = false;
     setValues(emptyContactPayload());
     setErrors({});
     setFormError(null);
@@ -61,7 +60,7 @@ export const useContactForm = ({ endpoint, onSuccess }: UseContactFormOptions) =
     async (event: FormEvent<HTMLFormElement>) => {
       event.preventDefault();
       // A second submit while the first is in flight would deliver twice.
-      if (abortRef.current !== null) return;
+      if (inFlightRef.current) return;
       setFormError(null);
 
       const nextErrors = validateContact(values);
@@ -85,30 +84,18 @@ export const useContactForm = ({ endpoint, onSuccess }: UseContactFormOptions) =
 
       const requestId = requestIdRef.current + 1;
       requestIdRef.current = requestId;
-      const controller = new AbortController();
-      abortRef.current = controller;
+      inFlightRef.current = true;
       /** True once the visitor reset or resubmitted: the response is stale. */
       const isStale = () => requestIdRef.current !== requestId;
 
       setStatus('submitting');
       let delivered = false;
       try {
-        const response = await fetch(endpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(values),
-          signal: controller.signal,
-        });
+        const result = await submitContactMessage(values);
 
         if (isStale()) return;
 
-        if (response.status === 429) {
-          setFormError('rate_limited');
-          setStatus('error');
-          return;
-        }
-
-        if (!response.ok) {
+        if (result.status === 'error') {
           setFormError('server');
           setStatus('error');
           return;
@@ -117,12 +104,12 @@ export const useContactForm = ({ endpoint, onSuccess }: UseContactFormOptions) =
         recordSubmission();
         setStatus('success');
         delivered = true;
-      } catch {
-        if (isStale() || controller.signal.aborted) return;
-        setFormError('network');
+      } catch (error) {
+        if (isStale()) return;
+        setFormError(isRetryLaterError(error) ? 'retry_later' : 'network');
         setStatus('error');
       } finally {
-        if (abortRef.current === controller) abortRef.current = null;
+        if (!isStale()) inFlightRef.current = false;
       }
 
       // Outside the request try/catch on purpose: a consumer callback that
@@ -135,7 +122,7 @@ export const useContactForm = ({ endpoint, onSuccess }: UseContactFormOptions) =
         console.error('[contact] the onSuccess callback threw after a delivered message', error);
       }
     },
-    [endpoint, onSuccess, values]
+    [onSuccess, values]
   );
 
   return { values, errors, status, formError, invalidFocus, handleChange, handleSubmit, reset };

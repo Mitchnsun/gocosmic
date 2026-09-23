@@ -44,8 +44,9 @@
       "success_title": "Anfrage erhalten",
       "success_message": "Danke — wir melden uns per E-Mail mit Ihrem Mockup.",
       "error_message": "Ihre Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es gleich noch einmal.",
+      "retry_later_message": "Ihre Anfrage konnte im Moment nicht gesendet werden. Bitte versuchen Sie es später erneut.",
       "invalid_message": "Bitte prüfen Sie die markierten Felder.",
-      "plan_attached": "Ihre Preissimulation wird der Anfrage beigefügt."
+      "plan_attached": "Das Ergebnis Ihrer Preissimulation wird Ihrer Anfrage beigefügt."
     },
     "palette": {
       "options": {

@@ -56,7 +56,7 @@
           "ch": "mi-empresa.ch"
         },
         "domain": {
-          "label": "Gestión de su dirección web",
+          "label": "Gestión de su nombre de dominio",
           "hint": "Su nombre de dominio, por ejemplo {domain} — registrado y renovado por usted."
         },
         "swiss_hosting": {

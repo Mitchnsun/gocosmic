@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [1.8.0] - 2026-09-19
+## [1.8.0] - 2026-09-23
 
 ### Added
 
@@ -21,6 +21,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - The closing call-to-action on the Services, About and Projects pages is now calmer and more discreet, keeping the full spectacle for the homepage
 - The projects page now shows one card per project with a short summary and a direct link to its case study
 - Choosing a colour direction on the free mockup page is now optional — an explicit "no preference" choice lets you skip it or undo a pick — and the option cards all share the same height whatever the length of their name
+- The domain option in the pricing simulator is now labelled "Managing your domain name" (it was "Managing your web address")
+- The free mockup page no longer has an orange glow at the top
 
 ### Fixed
 
@@ -31,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Submitting an incomplete form now takes you straight to the first field that needs attention, so the error is announced instead of appearing to do nothing
 - The star fields behind the page headers and the closing call-to-action sections now stand still, and buttons no longer grow on hover, for visitors who ask for reduced motion
 - The four direct email destinations on the contact page can again be reached directly by visitors browsing with a screen reader
+- When a message or request can't be sent for a temporary reason, both forms now ask you to try again later instead of showing a generic error
 
 ## [1.7.1] - 2026-09-18
 

@@ -123,6 +123,7 @@
         "phone_invalid": "Merci d’indiquer un numéro de téléphone valide.",
         "company_length": "Le nom de la société est trop long.",
         "rate_limited": "Vous avez déjà envoyé plusieurs messages. Réessayez plus tard ou écrivez-nous par e-mail.",
+        "retry_later": "Votre message n'a pas pu être envoyé pour le moment. Réessayez plus tard ou écrivez-nous par e-mail.",
         "server": "Le message n’a pas pu être envoyé. Réessayez ou écrivez-nous par e-mail.",
         "network": "Connexion perdue. Vérifiez votre réseau et réessayez."
       },

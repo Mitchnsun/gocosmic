@@ -44,8 +44,9 @@
       "success_title": "Solicitud recibida",
       "success_message": "Gracias: le responderemos por email con su maqueta.",
       "error_message": "No se ha podido enviar su solicitud. Inténtelo de nuevo en un momento.",
+      "retry_later_message": "Tu solicitud no se ha podido enviar en este momento. Inténtalo de nuevo más tarde.",
       "invalid_message": "Revise los campos señalados.",
-      "plan_attached": "Su simulación de precios se adjunta a la solicitud."
+      "plan_attached": "El resultado de su simulación de precios se incluirá con su solicitud."
     },
     "palette": {
       "options": {

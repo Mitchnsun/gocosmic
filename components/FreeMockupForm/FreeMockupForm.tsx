@@ -38,7 +38,7 @@ export function FreeMockupForm() {
 
   return (
     <div className="border-ghost/8 bg-ghost/2 flex w-full flex-col gap-6 rounded-2xl border p-6 sm:p-8">
-      <SubmitFeedback status={feedback.status} hasInvalidFields={feedback.hasInvalidFields} />
+      <SubmitFeedback status={feedback.status} hasInvalidFields={feedback.hasInvalidFields} reason={feedback.reason} />
 
       {!isSent && (
         <form ref={formRef} action={formAction} noValidate className="flex flex-col gap-6">

@@ -4,6 +4,7 @@ import { useActionState, useCallback, useEffect, useMemo, useRef, useState } fro
 
 import { submitFreeMockupRequest } from '@/app/actions/free-mockup';
 import { clearStoredPlanCode, readStoredPlanCode } from '@/lib/pricing/plan-storage';
+import { isRetryLaterError } from '@/lib/serverActionError';
 import {
   type FreeMockupFieldErrors,
   type FreeMockupFieldName,
@@ -76,9 +77,13 @@ export function useFreeMockupForm() {
         return { status: 'error', fieldErrors: clientErrors };
       }
 
-      const result = await submitFreeMockupRequest(previousState, payload);
+      const result = await submitFreeMockupRequest(previousState, payload).catch(
+        (error): FreeMockupFormState => ({
+          status: 'error',
+          reason: isRetryLaterError(error) ? 'retry_later' : undefined,
+        })
+      );
       setHasEditedSinceSubmit(false);
-
       return result;
     },
     INITIAL_FREE_MOCKUP_STATE
@@ -142,8 +147,9 @@ export function useFreeMockupForm() {
     return {
       status: isStaleFailure ? ('idle' as const) : state.status,
       hasInvalidFields: hasFieldErrors(state.fieldErrors ?? {}),
+      reason: isStaleFailure ? undefined : state.reason,
     };
-  }, [hasEditedSinceSubmit, isPending, state.fieldErrors, state.status]);
+  }, [hasEditedSinceSubmit, isPending, state.fieldErrors, state.reason, state.status]);
 
   return { values, errors, feedback, planCode, formRef, setValue, markTouched, formAction, isPending };
 }

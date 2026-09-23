@@ -44,8 +44,9 @@
       "success_title": "Richiesta ricevuta",
       "success_message": "Grazie — le risponderemo via email con il suo mockup.",
       "error_message": "Non è stato possibile inviare la sua richiesta. Riprovi tra un istante.",
+      "retry_later_message": "La tua richiesta non è stata inviata al momento. Riprova più tardi.",
       "invalid_message": "Controlli i campi segnalati.",
-      "plan_attached": "La vostra simulazione dei prezzi è allegata alla richiesta."
+      "plan_attached": "Il risultato della vostra simulazione dei prezzi sarà incluso nella richiesta."
     },
     "palette": {
       "options": {

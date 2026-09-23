@@ -56,7 +56,7 @@
           "ch": "la-mia-impresa.ch"
         },
         "domain": {
-          "label": "Gestione del suo indirizzo internet",
+          "label": "Gestione del suo nome a dominio",
           "hint": "Il suo nome a dominio, per esempio {domain} — registrato e rinnovato per lei."
         },
         "swiss_hosting": {

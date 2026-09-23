@@ -1,11 +1,11 @@
 import { beforeEach, vi } from 'vitest';
 
 import {
-  DEFAULT_FREE_MOCKUP_FROM_EMAIL,
-  FREE_MOCKUP_TO_EMAIL,
-  getFreeMockupFromEmail,
+  DEFAULT_SENDER_EMAIL,
   getResendClient,
+  getSenderEmail,
   resetResendClient,
+  STUDIO_INBOX_EMAIL,
 } from '@/lib/resend';
 
 const resendConstructor = vi.hoisted(() => vi.fn());
@@ -42,12 +42,12 @@ describe('getResendClient', () => {
     expect(resendConstructor).toHaveBeenCalledWith('test-key');
   });
 
-  it('targets the prospect inbox', () => {
-    expect(FREE_MOCKUP_TO_EMAIL).toBe('prospect@gocosmic.dev');
+  it('targets the studio inbox', () => {
+    expect(STUDIO_INBOX_EMAIL).toBe('prospect@gocosmic.dev');
   });
 });
 
-describe('getFreeMockupFromEmail', () => {
+describe('getSenderEmail', () => {
   beforeEach(() => {
     vi.unstubAllEnvs();
   });
@@ -55,30 +55,30 @@ describe('getFreeMockupFromEmail', () => {
   it('uses the configured sender', () => {
     vi.stubEnv('RESEND_FROM_EMAIL', 'Studio <hello@gocosmic.dev>');
 
-    expect(getFreeMockupFromEmail()).toBe('Studio <hello@gocosmic.dev>');
+    expect(getSenderEmail()).toBe('Studio <hello@gocosmic.dev>');
   });
 
   it('trims the configured sender', () => {
     vi.stubEnv('RESEND_FROM_EMAIL', '  Studio <hello@gocosmic.dev>  ');
 
-    expect(getFreeMockupFromEmail()).toBe('Studio <hello@gocosmic.dev>');
+    expect(getSenderEmail()).toBe('Studio <hello@gocosmic.dev>');
   });
 
   it('falls back to the default when the variable is unset', () => {
     vi.stubEnv('RESEND_FROM_EMAIL', undefined);
 
-    expect(getFreeMockupFromEmail()).toBe(DEFAULT_FREE_MOCKUP_FROM_EMAIL);
+    expect(getSenderEmail()).toBe(DEFAULT_SENDER_EMAIL);
   });
 
   it('falls back to the default when the variable is empty', () => {
     vi.stubEnv('RESEND_FROM_EMAIL', '');
 
-    expect(getFreeMockupFromEmail()).toBe(DEFAULT_FREE_MOCKUP_FROM_EMAIL);
+    expect(getSenderEmail()).toBe(DEFAULT_SENDER_EMAIL);
   });
 
   it('falls back to the default when the variable is whitespace only', () => {
     vi.stubEnv('RESEND_FROM_EMAIL', '   ');
 
-    expect(getFreeMockupFromEmail()).toBe(DEFAULT_FREE_MOCKUP_FROM_EMAIL);
+    expect(getSenderEmail()).toBe(DEFAULT_SENDER_EMAIL);
   });
 });

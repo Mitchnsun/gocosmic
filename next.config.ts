@@ -38,6 +38,14 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{ source: '/(.*)', headers: securityHeaders }];
   },
+  experimental: {
+    serverActions: {
+      // Caps the contact and free mockup form submissions, both handled by
+      // Server Actions. Well above the largest legitimate payload (a filled
+      // contact form is a few hundred bytes) but still a hard ceiling.
+      bodySizeLimit: '20kb',
+    },
+  },
 };
 
 const withNextIntl = createNextIntlPlugin();

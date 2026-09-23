@@ -199,10 +199,10 @@ The application will be accessible at [http://localhost:3000](http://localhost:3
 
 Copy `.env.example` to `.env.local` and fill it in. Server-only secrets must never be prefixed with `NEXT_PUBLIC_`.
 
-| Variable            | Required | Purpose                                                                                                         |
-| ------------------- | -------- | --------------------------------------------------------------------------------------------------------------- |
-| `RESEND_API_KEY`    | Yes      | Resend API key used to email free mockup requests. Without it, the free mockup form reports a send failure.     |
-| `RESEND_FROM_EMAIL` | No       | Sender of that email; must be verified in the Resend dashboard. Defaults to `Go Cosmic <noreply@gocosmic.dev>`. |
+| Variable            | Required | Purpose                                                                                                                                                                                                        |
+| ------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `RESEND_API_KEY`    | Yes      | Resend API key used to email free mockup requests and contact form submissions. Without it, the free mockup form reports a send failure and the contact form logs submissions locally instead of sending them. |
+| `RESEND_FROM_EMAIL` | No       | Sender of those emails; must be verified in the Resend dashboard. Defaults to `Go Cosmic <noreply@gocosmic.dev>`.                                                                                              |
 
 ### Available Scripts
 
@@ -406,3 +406,20 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 ├── public/           # Static assets and icons
 └── ...
 ```
+
+## Documentation
+
+- Bilingual policy: [DOCS_POLICY.md](./DOCS_POLICY.md)
+- Business glossary FR -> EN: [docs/glossary.md](./docs/glossary.md)
+- Main agent guide: [CLAUDE.md](./CLAUDE.md)
+- Codex guide: [AGENTS.md](./AGENTS.md)
+- UI/code standards: [GUIDELINES.md](./GUIDELINES.md)
+- Contributing: [CONTRIBUTING.md](./CONTRIBUTING.md)
+- Security: [SECURITY.md](./SECURITY.md)
+
+Notes on the bilingual docs:
+
+- **No mixed languages on a single page**
+- **Technical/prompt/DevOps content is canonical English**
+- **Onboarding and product presentation are prioritized in French**
+- Keep business terms aligned with the glossary

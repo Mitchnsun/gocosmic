@@ -74,7 +74,8 @@ For each documentation change:
 2. Write in the canonical language for that type.
 3. Add cross-links between EN and FR equivalents when both exist.
 4. Keep terminology aligned with `docs/glossary.md`.
-5. Validate Markdown formatting and link integrity.
+5. `README.en.md` and `README.fr.md` are the same document in two languages: any change to one must be applied to the other in the same commit (same sections, same heading order, same content). English is canonical if they disagree.
+6. Validate Markdown formatting and link integrity.
 
 ## 5) Governance
 

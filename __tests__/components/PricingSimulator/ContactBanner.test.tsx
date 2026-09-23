@@ -68,7 +68,7 @@ describe('ContactBanner', () => {
     const href = screen.getByRole('link', { name: /send an email/i }).getAttribute('href') ?? '';
     const body = decodeURIComponent(href.split('&body=')[1] ?? '');
     expect(body).toContain('A website');
-    expect(body).toContain('Managing your web address (+5€)');
+    expect(body).toContain('Managing your domain name (+5€)');
     expect(body).toContain('15€');
   });
 

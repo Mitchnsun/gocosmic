@@ -84,3 +84,21 @@ export const validateContact = (payload: ContactPayload): ContactErrors => {
 /** True when the payload carries no validation error. */
 export const isContactPayloadValid = (payload: ContactPayload): boolean =>
   Object.keys(validateContact(payload)).length === 0;
+
+/**
+ * Coerces unknown input into a fully-populated string payload.
+ *
+ * A Server Action can be invoked directly over the network with any body, not
+ * just the typed value the client form sends, so the shape is never trusted.
+ */
+export const toContactPayload = (input: unknown): ContactPayload => {
+  const source = (typeof input === 'object' && input !== null ? input : {}) as Record<string, unknown>;
+  const read = (key: string) => {
+    const value = source[String(key)];
+    return typeof value === 'string' ? value.slice(0, 6000) : '';
+  };
+
+  return Object.fromEntries(
+    Object.keys(emptyContactPayload()).map((key) => [key, read(key)])
+  ) as unknown as ContactPayload;
+};

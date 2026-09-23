@@ -11,12 +11,18 @@ export type FreeMockupStatus = 'idle' | 'success' | 'error';
  * State shared between the server action and `useActionState`.
  *
  * `fieldErrors` is only set when the payload failed validation server-side;
- * a transport or provider failure yields `status: 'error'` with no field error,
- * which the form renders as the generic message.
+ * a delivery failure yields `status: 'error'` with no field error, which the
+ * form renders as the generic message. `reason: 'retry_later'` is set
+ * client-side (`FreeMockupForm.hooks.ts`) when the Server Action call itself
+ * was blocked in transit — the Vercel Firewall rate-limit rule, a stale
+ * action after a redeploy, or any other transport-level failure — rather
+ * than failing inside the action; it narrows the generic message to a
+ * dedicated one.
  */
 export interface FreeMockupFormState {
   status: FreeMockupStatus;
   fieldErrors?: FreeMockupFieldErrors;
+  reason?: 'retry_later';
 }
 
 /** Props of the colour palette radio group. */

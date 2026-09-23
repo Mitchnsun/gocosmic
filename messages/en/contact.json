@@ -123,6 +123,7 @@
         "phone_invalid": "Please enter a valid phone number.",
         "company_length": "The company name is too long.",
         "rate_limited": "You have already sent several messages. Please try again later or write to us by email.",
+        "retry_later": "Your message could not be sent right now. Please try again later or write to us by email.",
         "server": "The message could not be sent. Please try again or write to us by email.",
         "network": "Connection lost. Check your network and try again."
       },

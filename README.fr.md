@@ -130,6 +130,10 @@ export default function Header() {
 
 Formulaire de contact professionnel pour les demandes clients et consultations.
 
+### Page Free Mockup (`/free-mockup`)
+
+Page de capture de prospects où un visiteur demande une maquette gratuite de son futur site : email, direction couleur (liste fermée de six choix), URL du site actuel et un champ libre limité à 500 caractères. Les soumissions passent par une server action qui les valide avec `zod` et les envoie par email via Resend — il n'y a pas de base de données. Un champ honeypot caché élimine silencieusement les soumissions de bots. Points d'entrée : la page journey et la fin du simulateur de prix.
+
 ### Page SEO locale (`/local`)
 
 Page d'atterrissage locale ciblant les recherches géolocalisées (ex. `/en/web-mobile-developer-annecy-geneva`, `/fr/developpeur-web-mobile-annecy-geneve`).
@@ -193,6 +197,15 @@ yarn dev
 
 Application disponible sur [http://localhost:3000](http://localhost:3000).
 
+### Variables d'environnement
+
+Copier `.env.example` vers `.env.local` et le compléter. Les secrets serveur ne doivent jamais être préfixés par `NEXT_PUBLIC_`.
+
+| Variable            | Requise | Rôle                                                                                                                                                                                                                                                                                           |
+| ------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `RESEND_API_KEY`    | Oui     | Clé API Resend utilisée pour envoyer les demandes de maquette gratuite et les soumissions du formulaire de contact par email. Sans elle, le formulaire de maquette gratuite signale un échec d'envoi et le formulaire de contact journalise les soumissions localement au lieu de les envoyer. |
+| `RESEND_FROM_EMAIL` | Non     | Expéditeur de ces emails ; doit être vérifié dans le dashboard Resend. Par défaut : `Go Cosmic <noreply@gocosmic.dev>`.                                                                                                                                                                        |
+
 ### Scripts disponibles
 
 ```bash
@@ -205,10 +218,14 @@ yarn build
 # Démarrage production
 yarn start
 
-# Qualité
-yarn lint
-yarn check-types
+# Formatage
 yarn format
+
+# Linting
+yarn lint
+
+# Vérification des types
+yarn check-types
 
 # Tests
 yarn test           # Exécuter les tests unitaires
@@ -216,7 +233,7 @@ yarn test:watch     # Tests en mode watch
 yarn coverage       # Rapport de couverture de tests
 ```
 
-## Ajouter une nouvelle route
+### Ajouter une nouvelle route
 
 Pour conserver la cohérence i18n :
 
@@ -330,11 +347,7 @@ vi.mock('next/navigation', () => ({
 - **Stratégie de mock** : les dépendances externes sont correctement mockées
 - **Pas de snapshots** : les snapshots sont déconseillés pour les composants, tolérés pour les pages/vues uniquement
 
-Commandes de validation recommandées avant commit :
-
-```bash
-yarn format && yarn lint && yarn check-types && yarn test && yarn coverage
-```
+Pour des consignes de test détaillées, voir [`__tests__/TESTING.md`](./__tests__/TESTING.md).
 
 ## Architecture
 
@@ -406,7 +419,7 @@ yarn format && yarn lint && yarn check-types && yarn test && yarn coverage
 - Contributions : [CONTRIBUTING.md](./CONTRIBUTING.md)
 - Sécurité : [SECURITY.md](./SECURITY.md)
 
-## Notes sur la doc bilingue
+Notes sur la doc bilingue :
 
 - **Pas de mélange de langues sur une même page**
 - **Technique/prompt/DevOps en anglais canonique**

@@ -6,8 +6,8 @@ import type { FreeMockupFormState } from '@/components/FreeMockupForm/FreeMockup
 const send = vi.hoisted(() => vi.fn());
 
 vi.mock('@/lib/resend', () => ({
-  FREE_MOCKUP_TO_EMAIL: 'prospect@gocosmic.dev',
-  getFreeMockupFromEmail: () => 'Go Cosmic <noreply@gocosmic.dev>',
+  STUDIO_INBOX_EMAIL: 'prospect@gocosmic.dev',
+  getSenderEmail: () => 'Go Cosmic <noreply@gocosmic.dev>',
   getResendClient: () => ({ emails: { send } }),
 }));
 

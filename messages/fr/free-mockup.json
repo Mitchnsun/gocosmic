@@ -44,8 +44,9 @@
       "success_title": "Demande bien reçue",
       "success_message": "Merci — nous revenons vers vous par email avec votre maquette.",
       "error_message": "Votre demande n'a pas pu être envoyée. Merci de réessayer dans un instant.",
+      "retry_later_message": "Votre demande n'a pas pu être envoyée pour le moment. Merci de réessayer plus tard.",
       "invalid_message": "Merci de vérifier les champs signalés.",
-      "plan_attached": "Votre simulation tarifs est jointe à la demande."
+      "plan_attached": "Le résultat de votre simulation tarifaire sera joint à votre demande."
     },
     "palette": {
       "options": {

@@ -17,21 +17,14 @@ import { FormField } from './FormField';
  * Contact form with client-side validation, a honeypot field, client and
  * server rate limiting, and an animated confirmation panel on success.
  *
- * Copy comes from the `contact.form` namespace; the payload is posted to
- * {@link ContactFormProps.endpoint}.
+ * Copy comes from the `contact.form` namespace; the payload is delivered
+ * through the `submitContactMessage` Server Action.
  *
  * @component
  */
-export const ContactForm = ({
-  variant = 'page',
-  onSuccess,
-  endpoint = '/api/contact',
-  className,
-  id = 'contact-form',
-}: ContactFormProps) => {
+export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'contact-form' }: ContactFormProps) => {
   const t = useTranslations('contact.form');
   const { values, errors, status, formError, invalidFocus, handleChange, handleSubmit, reset } = useContactForm({
-    endpoint,
     onSuccess,
   });
 

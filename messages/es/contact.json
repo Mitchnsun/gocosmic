@@ -123,6 +123,7 @@
         "phone_invalid": "Indica un número de teléfono válido.",
         "company_length": "El nombre de la empresa es demasiado largo.",
         "rate_limited": "Ya has enviado varios mensajes. Inténtalo más tarde o escríbenos por correo.",
+        "retry_later": "Tu mensaje no se ha podido enviar en este momento. Inténtalo más tarde o escríbenos por correo.",
         "server": "No se pudo enviar el mensaje. Inténtalo de nuevo o escríbenos por correo.",
         "network": "Conexión perdida. Comprueba tu red e inténtalo de nuevo."
       },

@@ -6,7 +6,7 @@ import type { FreeMockupFormState } from '@/components/FreeMockupForm/FreeMockup
 import { routing } from '@/i18n/routing';
 import { buildFreeMockupEmail } from '@/lib/free-mockup-email';
 import { decodePlanCode } from '@/lib/pricing/plan-code';
-import { FREE_MOCKUP_TO_EMAIL, getFreeMockupFromEmail, getResendClient } from '@/lib/resend';
+import { getResendClient, getSenderEmail, STUDIO_INBOX_EMAIL } from '@/lib/resend';
 import {
   freeMockupSchema,
   getFieldErrors,
@@ -63,8 +63,8 @@ export async function submitFreeMockupRequest(
 
   try {
     const { error } = await getResendClient().emails.send({
-      from: getFreeMockupFromEmail(),
-      to: [FREE_MOCKUP_TO_EMAIL],
+      from: getSenderEmail(),
+      to: [STUDIO_INBOX_EMAIL],
       replyTo: parsed.data.email,
       subject,
       text,

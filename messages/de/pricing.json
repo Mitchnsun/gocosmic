@@ -56,7 +56,7 @@
           "ch": "mein-betrieb.ch"
         },
         "domain": {
-          "label": "Verwaltung Ihrer Internetadresse",
+          "label": "Verwaltung Ihres Domainnamens",
           "hint": "Ihr Domainname, zum Beispiel {domain} — für Sie registriert und verlängert."
         },
         "swiss_hosting": {

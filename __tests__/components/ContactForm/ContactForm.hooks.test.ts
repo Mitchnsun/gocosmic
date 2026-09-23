@@ -3,6 +3,11 @@ import type { FormEvent } from 'react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { useContactForm } from '@/components/ContactForm/ContactForm.hooks';
+import type { ContactActionResult } from '@/components/ContactForm/ContactForm.types';
+
+const submitContactMessage = vi.hoisted(() => vi.fn());
+
+vi.mock('@/app/actions/contact', () => ({ submitContactMessage }));
 
 const submitEvent = () => ({ preventDefault: vi.fn() }) as unknown as FormEvent<HTMLFormElement>;
 
@@ -22,26 +27,23 @@ const fillValidValues = (result: { current: ReturnType<typeof useContactForm> })
 describe('useContactForm', () => {
   beforeEach(() => {
     window.localStorage.clear();
+    submitContactMessage.mockReset();
   });
 
   afterEach(() => {
     vi.restoreAllMocks();
-    vi.unstubAllGlobals();
   });
 
   it('ignores a response that lands after the visitor reset the form', async () => {
-    let release: (value: { ok: boolean; status: number }) => void = () => {};
-    vi.stubGlobal(
-      'fetch',
-      vi.fn(
-        () =>
-          new Promise((resolve) => {
-            release = resolve;
-          })
-      )
+    let release: (value: ContactActionResult) => void = () => {};
+    submitContactMessage.mockImplementation(
+      () =>
+        new Promise((resolve) => {
+          release = resolve;
+        })
     );
     const onSuccess = vi.fn();
-    const { result } = renderHook(() => useContactForm({ endpoint: '/api/contact', onSuccess }));
+    const { result } = renderHook(() => useContactForm({ onSuccess }));
 
     fillValidValues(result);
     act(() => {
@@ -52,7 +54,7 @@ describe('useContactForm', () => {
     // The visitor clears the form before the request settles.
     act(() => result.current.reset());
     await act(async () => {
-      release({ ok: true, status: 200 });
+      release({ status: 'success' });
     });
 
     expect(result.current.status).toBe('idle');
@@ -63,16 +65,13 @@ describe('useContactForm', () => {
 
   it('ignores a failure that lands after a reset', async () => {
     let fail: (reason: Error) => void = () => {};
-    vi.stubGlobal(
-      'fetch',
-      vi.fn(
-        () =>
-          new Promise((_resolve, reject) => {
-            fail = reject;
-          })
-      )
+    submitContactMessage.mockImplementation(
+      () =>
+        new Promise((_resolve, reject) => {
+          fail = reject;
+        })
     );
-    const { result } = renderHook(() => useContactForm({ endpoint: '/api/contact' }));
+    const { result } = renderHook(() => useContactForm({}));
 
     fillValidValues(result);
     act(() => {
@@ -90,9 +89,8 @@ describe('useContactForm', () => {
   });
 
   it('accepts a new submission once the previous one settled', async () => {
-    const fetchMock = vi.fn().mockResolvedValue({ ok: true, status: 200 });
-    vi.stubGlobal('fetch', fetchMock);
-    const { result } = renderHook(() => useContactForm({ endpoint: '/api/contact' }));
+    submitContactMessage.mockResolvedValue({ status: 'success' } satisfies ContactActionResult);
+    const { result } = renderHook(() => useContactForm({}));
 
     fillValidValues(result);
     await act(async () => {
@@ -106,18 +104,17 @@ describe('useContactForm', () => {
       await result.current.handleSubmit(submitEvent());
     });
 
-    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(submitContactMessage).toHaveBeenCalledTimes(2);
     expect(result.current.status).toBe('success');
   });
 
   it('keeps the confirmation when the onSuccess callback throws', async () => {
-    const fetchMock = vi.fn().mockResolvedValue({ ok: true, status: 200 });
-    vi.stubGlobal('fetch', fetchMock);
+    submitContactMessage.mockResolvedValue({ status: 'success' } satisfies ContactActionResult);
     const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
     const onSuccess = vi.fn(() => {
       throw new Error('analytics is down');
     });
-    const { result } = renderHook(() => useContactForm({ endpoint: '/api/contact', onSuccess }));
+    const { result } = renderHook(() => useContactForm({ onSuccess }));
 
     fillValidValues(result);
     await act(async () => {
@@ -126,7 +123,7 @@ describe('useContactForm', () => {
 
     expect(result.current.status).toBe('success');
     expect(result.current.formError).toBeNull();
-    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(submitContactMessage).toHaveBeenCalledTimes(1);
     expect(errorSpy).toHaveBeenCalled();
   });
 });

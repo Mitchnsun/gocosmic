@@ -56,7 +56,7 @@
           "ch": "mon-entreprise.ch"
         },
         "domain": {
-          "label": "Gestion de votre adresse internet",
+          "label": "Gestion de votre nom de domaine",
           "hint": "Votre nom de domaine, par exemple {domain} — réservé et renouvelé pour vous."
         },
         "swiss_hosting": {
