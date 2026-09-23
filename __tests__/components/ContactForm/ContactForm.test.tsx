@@ -196,4 +196,31 @@ describe('ContactForm', () => {
 
     await waitFor(() => expect(getByLabelText(/^Email/)).toHaveFocus());
   });
+
+  it('freezes the fields while the submission is in flight', async () => {
+    let release: (value: ContactActionResult) => void = () => {};
+    submitContactMessage.mockImplementation(
+      () =>
+        new Promise((resolve) => {
+          release = resolve;
+        })
+    );
+    const { getByLabelText, getByRole } = render(<ContactForm />);
+
+    await fillValidForm(getByLabelText);
+    await userEvent.click(getByRole('button', { name: /Send the message/ }));
+
+    // An edit made meanwhile would be dropped by the confirmation, while the
+    // message already on its way still carried the old text.
+    await waitFor(() => expect(getByLabelText(/^Message/)).toBeDisabled());
+    expect(getByLabelText(/^Name/)).toBeDisabled();
+    expect(getByLabelText(/^Email/)).toBeDisabled();
+    expect(getByLabelText(/^Subject/)).toBeDisabled();
+    expect(getByLabelText(/^Phone/)).toBeDisabled();
+    expect(getByLabelText(/^Company/)).toBeDisabled();
+
+    release({ status: 'success' });
+    await waitFor(() => expect(getByRole('status')).toBeInTheDocument());
+    expect(getByRole('button', { name: 'Send another message' })).toBeInTheDocument();
+  });
 });

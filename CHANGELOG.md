@@ -28,6 +28,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - A message that cannot be delivered is now reported as such, instead of showing a confirmation for something nobody would receive
 - Screen readers can again jump straight to the subsections of the services, offers, about and contact pages, which had lost their heading level in the redesign
+- The privacy policy now states the real limit on form submissions — three every ten minutes, on both forms — instead of an hourly limit on the contact form alone
+- The contact form no longer loses what you type while a message is being sent, and no longer holds you back once the platform would let you send again
 - The privacy policy now describes the contact form — the details it collects, who delivers the message and how long the exchange is kept — instead of stating that the site has no such form
 - The privacy policy now also covers the pricing simulation carried into a free mockup request, and the two items the site keeps in your browser
 - Submitting an incomplete form now takes you straight to the first field that needs attention, so the error is announced instead of appearing to do nothing

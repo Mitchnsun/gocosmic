@@ -28,6 +28,8 @@ export interface FormFieldProps {
   maxLength?: number;
   /** Autocomplete token. */
   autoComplete?: string;
+  /** Freezes the control, e.g. while a submission is in flight. */
+  disabled?: boolean;
   /** Additional classes for the wrapper. */
   className?: string;
 }
@@ -38,6 +40,9 @@ const controlClassName =
 /**
  * Labelled input or textarea with inline validation feedback wired through
  * `aria-invalid` / `aria-describedby`.
+ *
+ * The control freezes while {@link FormFieldProps.disabled} is set, so an edit
+ * made during a submission cannot be silently dropped by its confirmation.
  *
  * @component
  */
@@ -54,6 +59,7 @@ export const FormField = ({
   error,
   maxLength,
   autoComplete,
+  disabled = false,
   className,
 }: FormFieldProps) => {
   const errorId = `${name}-error`;
@@ -66,9 +72,12 @@ export const FormField = ({
     placeholder,
     maxLength,
     autoComplete,
+    disabled,
     'aria-invalid': error ? true : undefined,
     'aria-describedby': error ? errorId : undefined,
-    className: cn(controlClassName, { 'border-red-400 focus:border-red-400 focus:ring-red-400/30': Boolean(error) }),
+    className: cn(controlClassName, 'disabled:cursor-not-allowed disabled:opacity-60', {
+      'border-red-400 focus:border-red-400 focus:ring-red-400/30': Boolean(error),
+    }),
   };
 
   return (

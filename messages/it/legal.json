@@ -7,7 +7,7 @@
       },
       "eyebrow": "GDPR",
       "title": "Informativa privacy",
-      "updated": "Ultimo aggiornamento: 19 settembre 2026",
+      "updated": "Ultimo aggiornamento: 23 settembre 2026",
       "intro": "Questa pagina spiega come Go Cosmic tratta i dati personali su questo sito e quando contatti lo studio via email.",
       "legalNoticePrefix": "Per i dettagli su editore e hosting, consulta le",
       "legalNoticeLink": "note legali",
@@ -22,7 +22,7 @@
           "title": "Dati raccolti",
           "body": [
             "Il sito non offre area cliente, pagamento, CAPTCHA o pixel pubblicitario. Due moduli sono trattati lato server. La pagina del mockup gratuito raccoglie il tuo indirizzo email, la direzione di colori scelta, l’indirizzo del tuo sito attuale se lo indichi, il tuo messaggio e la lingua della pagina. Se arrivi dal simulatore di prezzi, la richiesta include anche le scelte che hai fatto lì — tipo di progetto, tipo di sito, numero di pagine, opzioni selezionate, frequenza degli aggiornamenti e il prezzo mensile stimato che ne risulta — così lo studio può risponderti con tutto il contesto. Il modulo di contatto raccoglie il nome, l’indirizzo e-mail e il messaggio che inserisci, oltre a oggetto, telefono e azienda facoltativi. In entrambi i casi i campi sono inoltrati via email alla casella dello studio e nulla viene conservato in un database. I messaggi inviati tramite link mailto restano gestiti dal tuo client email e dalla casella destinataria.",
-            "Il tuo indirizzo IP è trattato in modo temporaneo per limitare il numero di invii del modulo di contatto ogni ora, insieme a un campo anti-spam nascosto. Dati tecnici possono essere trattati dal provider di hosting per log di sicurezza e distribuzione. Vercel Analytics viene caricato solo dopo il consenso per misurare le visualizzazioni di pagina.",
+            "Il tuo indirizzo IP è trattato in modo temporaneo dal firewall del provider di hosting, che limita entrambi i moduli — quello di contatto e quello del mockup gratuito — a tre invii ogni dieci minuti, insieme a un campo anti-spam nascosto in ciascuno. Dati tecnici possono essere trattati dal provider di hosting per log di sicurezza e distribuzione. Vercel Analytics viene caricato solo dopo il consenso per misurare le visualizzazioni di pagina.",
             "Due elementi restano nel tuo browser. La simulazione di prezzi serve solo ad accompagnarti dal simulatore al modulo del mockup gratuito: ci viene trasmessa solo se invii quel modulo, viene cancellata una volta inviata la richiesta e scompare alla chiusura della scheda. Le date dei tuoi ultimi invii del modulo di contatto servono a limitare la frequenza di invio da questo browser e vi restano finché non cancelli i dati di navigazione; non ci vengono mai trasmesse."
           ]
         },
@@ -87,7 +87,9 @@
         },
         {
           "title": "Direttore della pubblicazione",
-          "body": ["Direttore della pubblicazione: Matthieu Compérat."]
+          "body": [
+            "Direttore della pubblicazione: Matthieu Compérat."
+          ]
         },
         {
           "title": "Hosting",
@@ -109,7 +111,9 @@
         },
         {
           "title": "Contatto",
-          "body": ["Per domande legali, privacy o sicurezza, contatta support@gocosmic.dev."]
+          "body": [
+            "Per domande legali, privacy o sicurezza, contatta support@gocosmic.dev."
+          ]
         }
       ]
     }

@@ -55,4 +55,16 @@ describe('ContactForm storage helpers', () => {
 
     expect(() => recordSubmission()).not.toThrow();
   });
+
+  it('uses the same ten-minute window as the deployed firewall rule', () => {
+    expect(CLIENT_SUBMISSION_WINDOW_MS).toBe(10 * 60 * 1000);
+
+    recordSubmission(0);
+    recordSubmission(0);
+    recordSubmission(0);
+    expect(hasReachedSubmissionLimit(0)).toBe(true);
+
+    // Once the platform window has expired, the browser must let the visitor through.
+    expect(hasReachedSubmissionLimit(10 * 60 * 1000 + 1)).toBe(false);
+  });
 });

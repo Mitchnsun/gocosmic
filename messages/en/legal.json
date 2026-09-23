@@ -7,7 +7,7 @@
       },
       "eyebrow": "GDPR",
       "title": "Privacy policy",
-      "updated": "Last updated: 19 September 2026",
+      "updated": "Last updated: 23 September 2026",
       "intro": "This page explains how Go Cosmic handles personal data on this website and when you contact the studio by email.",
       "legalNoticePrefix": "For publisher and hosting details, see the",
       "legalNoticeLink": "legal notice",
@@ -22,7 +22,7 @@
           "title": "Data collected",
           "body": [
             "The website has no account area, checkout, CAPTCHA, or advertising pixel. Two forms are handled server-side. The free mockup page collects your email address, the colour direction you pick, the address of your current website if you provide one, your message, and the language of the page. If you arrive from the pricing simulator, the request also includes the choices you made there — project type, site type, number of pages, selected options, update frequency and the resulting estimated monthly price — so the studio can answer with the full context. The contact form collects the name, email address and message you enter, plus the optional subject, phone number and company. In both cases the fields are forwarded to the studio mailbox by email and nothing is stored in a database. Messages sent through the mailto links are handled by your email client and the recipient mailbox instead.",
-            "Your IP address is processed transiently to limit the number of contact form submissions per hour, alongside a hidden anti-spam field. Technical data may be processed by the hosting provider for security and delivery logs. Vercel Analytics is loaded only after consent to measure page views.",
+            "Your IP address is processed transiently by the hosting provider's firewall, which limits both forms — the contact form and the free mockup form — to three submissions every ten minutes, alongside a hidden anti-spam field in each. Technical data may be processed by the hosting provider for security and delivery logs. Vercel Analytics is loaded only after consent to measure page views.",
             "Two items are stored in your browser. The pricing simulation is kept only so it can follow you from the simulator to the free mockup form: it is sent to us only if you submit that form, is erased once the request is sent, and disappears when you close the tab. The dates of your recent contact form submissions are used to limit how often the form can be sent from the same browser and stay there until you clear your browser data; they are never sent to us."
           ]
         },
@@ -87,7 +87,9 @@
         },
         {
           "title": "Publication director",
-          "body": ["Publication director: Matthieu Compérat."]
+          "body": [
+            "Publication director: Matthieu Compérat."
+          ]
         },
         {
           "title": "Hosting",
@@ -109,7 +111,9 @@
         },
         {
           "title": "Contact",
-          "body": ["For legal, privacy, or security questions, contact support@gocosmic.dev."]
+          "body": [
+            "For legal, privacy, or security questions, contact support@gocosmic.dev."
+          ]
         }
       ]
     }

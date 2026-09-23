@@ -35,6 +35,10 @@ export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'cont
     document.getElementById(invalidFocus.field)?.focus();
   }, [invalidFocus]);
 
+  // Fields freeze during the flight: an edit made meanwhile would be dropped
+  // by the confirmation while the sent message still carried the old text.
+  const isSending = status === 'submitting';
+
   const wrapperClassName = cn(
     'w-full',
     { 'border-ghost/8 bg-ghost/[0.02] rounded-2xl border p-6 sm:p-8 lg:p-10': variant === 'page' },
@@ -70,6 +74,7 @@ export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'cont
             onChange={handleChange}
             error={errors.name ? t(`errors.${errors.name}`) : undefined}
             maxLength={CONTACT_LIMITS.name.max}
+            disabled={isSending}
             autoComplete="name"
             required
           />
@@ -82,6 +87,7 @@ export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'cont
             onChange={handleChange}
             error={errors.email ? t(`errors.${errors.email}`) : undefined}
             maxLength={CONTACT_LIMITS.email.max}
+            disabled={isSending}
             autoComplete="email"
             required
           />
@@ -95,6 +101,7 @@ export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'cont
           onChange={handleChange}
           error={errors.subject ? t(`errors.${errors.subject}`) : undefined}
           maxLength={CONTACT_LIMITS.subject.max}
+          disabled={isSending}
         />
 
         <FormField
@@ -106,6 +113,7 @@ export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'cont
           onChange={handleChange}
           error={errors.message ? t(`errors.${errors.message}`) : undefined}
           maxLength={CONTACT_LIMITS.message.max}
+          disabled={isSending}
           required
         />
 
@@ -119,6 +127,7 @@ export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'cont
             onChange={handleChange}
             error={errors.phone ? t(`errors.${errors.phone}`) : undefined}
             maxLength={CONTACT_LIMITS.phone.max}
+            disabled={isSending}
             autoComplete="tel"
           />
           <FormField
@@ -129,6 +138,7 @@ export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'cont
             onChange={handleChange}
             error={errors.company ? t(`errors.${errors.company}`) : undefined}
             maxLength={CONTACT_LIMITS.company.max}
+            disabled={isSending}
             autoComplete="organization"
           />
         </div>
@@ -156,18 +166,18 @@ export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'cont
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
           <button
             type="submit"
-            disabled={status === 'submitting'}
+            disabled={isSending}
             className={cn(
               buttonVariants({ variant: 'aerospace' }),
               'focus-visible:ring-ghost focus-visible:ring-offset-void w-fit gap-2 py-3 transition-transform duration-300 ease-out hover:scale-105 focus-visible:ring-2 focus-visible:ring-offset-2 motion-reduce:scale-100! motion-reduce:transition-none!'
             )}>
-            {status === 'submitting' ? t('submitting') : t('submit')}
+            {isSending ? t('submitting') : t('submit')}
             <PaperAirplaneIcon className="size-4" aria-hidden="true" />
           </button>
           <button
             type="button"
             onClick={reset}
-            disabled={status === 'submitting'}
+            disabled={isSending}
             className="text-ghost/55 hover:text-ghost focus-visible:ring-ghost font-display w-fit cursor-pointer rounded-full px-4 py-3 text-sm transition-colors focus-visible:ring-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50">
             {t('clear')}
           </button>
