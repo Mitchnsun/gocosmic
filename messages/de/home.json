@@ -1,85 +1,75 @@
 {
   "homepage": {
     "ascii_labels": [
-      "Remote",
       "Go Cosmic",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Apps mit Schub",
-      "Code, der liefert",
-      "Annecy",
-      "Tournette",
-      "Aravis",
-      "React",
-      "Expo",
-      "Null Bugs in Prod",
-      "Stabile Umlaufbahn",
-      "T-0. Abheben.",
-      "Houston, wir haben ein Problem."
+      "Genf · Annecy",
+      "Bei Google auffindbar",
+      "Ein Ansprechpartner für alles",
+      "Kostenloser Entwurf",
+      "Antwort innerhalb von 24 Stunden"
     ],
     "cta": {
-      "button": "Kontaktieren Sie uns",
-      "description": "Lassen Sie uns besprechen, wie wir Ihr Web- oder Mobile-Projekt zum Leben erwecken und etwas wirklich Außergewöhnliches schaffen können.",
-      "freeMockup": "Noch unentschlossen? Fordern Sie Ihr <link>kostenloses Mockup</link> an.",
-      "title": "Bereit für Go Cosmic?",
+      "button": "Mein Projekt besprechen",
+      "description": "Erzählen Sie uns in ein paar Zeilen, was Sie tun. Wir melden uns innerhalb von 24 Stunden bei Ihnen: mit Fragen, nicht mit einem automatischen Angebot.",
+      "freeMockup": "Noch unsicher? Fordern Sie Ihr <link>kostenloses Mockup</link> an.",
+      "title": "Bringen wir Ihren Betrieb zum Strahlen.",
       "viewOffers": "Unsere Angebote ansehen"
     },
     "hero": {
-      "cta": "Beginnen Sie Ihre Reise",
-      "endWords": ["glänzen", "aufsteigen", "inspirieren", "transformieren", "erheben"],
-      "subtitle": "Lassen Sie uns Ihre Ideen in die Stratosphäre starten mit mystischem Design und kosmischen Funktionalitäten",
-      "title": "Wir entwickeln stellare Anwendungen, die"
+      "cta": "Go Cosmic",
+      "endWords": ["gesehen zu werden.", "gefunden zu werden.", "gewählt zu werden."],
+      "subtitle": "Cosmic Studio erstellt Websites und Apps für Handwerksbetriebe, Vereine und Selbstständige. Eine klare Website, die bei Google gefunden wird, und ein Ansprechpartner, der auch nach dem Start für Sie da ist.",
+      "title": "Ihr Betrieb verdient es,"
     },
     "process": {
-      "eyebrow": "[ PROZESS ]",
-      "title": "Vier Phasen. <em>Kein Drama.</em>",
-      "subtitle": "Von der Idee zur Realität in 4 Phasen",
+      "eyebrow": "[ Ablauf · 04 ]",
+      "title": "Vier Schritte. <em>Ohne Überraschungen.</em>",
+      "subtitle": "Vom ersten Gespräch bis zum Start der Website wissen Sie immer, wo Ihr Projekt steht.",
       "discovery": {
-        "label": "T-45",
-        "title": "Entdeckung",
-        "description": "Audit, Ziele, Einschränkungen. Wir kartieren das Gebiet, bevor wir die Karte zeichnen."
+        "label": "T-3",
+        "title": "Wir lernen uns kennen",
+        "description": "Zwanzig Minuten am Telefon oder bei einem Kaffee, in Genf oder in Annecy. Ihre Arbeit, Ihre Kundschaft und was die Website für Sie leisten soll."
       },
       "design": {
-        "label": "T-30",
-        "title": "Design",
-        "description": "Wireframes, Prototypen, High-Fidelity. Schnelle Iterationen bis zum \"Ja\"."
+        "label": "T-2",
+        "title": "Erst sehen, dann zahlen",
+        "description": "Ein Entwurf Ihrer Startseite, mit Ihren Farben und Ihren Worten. Kostenlos und unverbindlich: Danach entscheiden Sie."
       },
       "build": {
-        "label": "T-15",
-        "title": "Entwicklung",
-        "description": "TypeScript, Tests, Code-Reviews. Wir behandeln Code wie Infrastruktur."
+        "label": "T-1",
+        "title": "Wir bauen",
+        "description": "Zwei bis sechs Wochen, je nach Projekt. Sie verfolgen den Fortschritt über einen privaten Link, Sie kommentieren, wir passen an."
       },
       "launch": {
         "label": "T-0",
-        "title": "Launch",
-        "description": "In der Umlaufbahn. Monitoring, Performance, Analytics und Support nach dem Launch."
+        "title": "Online, und wir bleiben da",
+        "description": "Start der Website, gemeinsame Einführung, danach Hosting, Datensicherungen und kleine Änderungen, Monat für Monat."
       }
     },
     "services": {
       "ai": {
-        "description": "Integration fortschrittlicher KI-Funktionen, um Ihre Anwendungen intelligenter, anpassungsfähiger und wirklich zukunftsweisend zu machen.",
-        "title": "KI-gesteuert",
-        "features": ["LLMs", "Embeddings", "Agents", "RAG"]
+        "title": "Assistenten & Automatisierung",
+        "description": "Antworten auf häufige Fragen, sortierte Anfragen, persönliche Vorschläge: KI dort, wo sie Ihnen Zeit spart, und Ihre Daten bleiben geschützt.",
+        "features": ["Automatische Antworten", "Anfragen sortieren", "Empfehlungen", "Geschützte Daten"]
       },
       "design": {
-        "description": "Gestaltung intuitiver und bezaubernder Benutzererfahrungen, die fesseln und begeistern.",
-        "title": "Mystisches UI/UX Design",
-        "features": ["Figma", "Design Systems", "Motion", "Barrierefreiheit"]
+        "title": "Design, das zu Ihnen passt",
+        "description": "Ein gepflegter Auftritt in Ihren Farben, der vom ersten Besuch an Vertrauen weckt und Lust macht, Sie zu kontaktieren.",
+        "features": ["Kostenloser Entwurf", "Ihre Farben", "Gut lesbar auf dem Handy", "Barrierefrei"]
       },
       "development": {
-        "description": "Entwicklung robuster und skalierbarer mobiler Anwendungen für iOS- und Android-Plattformen.",
-        "title": "Stellare Entwicklung",
-        "features": ["React", "Next.js", "TypeScript", "Expo"]
+        "title": "Websites & Apps",
+        "description": "Eine Präsentationswebsite, ein Onlineshop oder eine Smartphone-App, maßgeschneidert für Ihren Betrieb und angenehm auf dem Handy zu bedienen.",
+        "features": ["Präsentationswebsite", "Onlineshop", "Online-Buchung", "Smartphone-App"]
       },
       "launch": {
-        "description": "Begleitung Ihrer App durch den Startprozess und darüber hinaus, um einen erfolgreichen Start zu gewährleisten.",
-        "title": "Kosmischer Start",
-        "features": ["Vercel", "AWS", "Docker", "Sentry"]
+        "title": "Sichtbarkeit & Betreuung",
+        "description": "Start der Website, Auffindbarkeit bei Google, Hosting, Datensicherungen und Aktualisierungen: Ihre Website bleibt sichtbar, schnell und sicher, ohne dass Sie daran denken müssen.",
+        "features": ["Auffindbar bei Google", "Hosting", "Datensicherung", "Aktualisierungen"]
       },
-      "title": "Unsere Kosmischen Dienstleistungen",
-      "eyebrow": "[ SERVICES · 04 ]",
-      "subtitle": "Vier Säulen, um Ihr Produkt in die Umlaufbahn zu bringen — entwerfen, bauen, ausliefern, wachsen.",
+      "title": "Alles, was es braucht, damit man Sie findet",
+      "eyebrow": "[ Leistungen · 04 ]",
+      "subtitle": "Gestalten, bauen, online stellen, bekannt machen: ein einziger Ansprechpartner, vom ersten Entwurf bis zur Betreuung Monat für Monat.",
       "learnMore": "Mehr erfahren"
     },
     "zone": {
@@ -120,37 +110,37 @@
       }
     },
     "projects": {
-      "eyebrow": "[ AKTUELLE ARBEITEN · 04 ]",
-      "title": "Kürzlich <em>im Orbit.</em>",
-      "subtitle": "Eine Auswahl unserer neuesten Projekte",
+      "eyebrow": "[ Referenzen · 04 ]",
+      "title": "Unsere neuesten <em>Arbeiten.</em>",
+      "subtitle": "Vereine, ein Sportclub, unsere eigenen Apps: echte Projekte, die heute online sind.",
       "learnMore": "Projekt ansehen",
       "loadMore": "Mehr Projekte laden",
       "dailyFortune": {
         "title": "Daily Fortune",
-        "tagline": "Mobil · iOS / Android",
-        "description": "Eine mystische mobile App, die täglich KI-gestützte Horoskope und motivierende Nachrichten liefert.",
-        "tags": ["KI", "Wellness"],
+        "tagline": "Smartphone-App · iOS / Android",
+        "description": "Jeden Morgen eine kurze Nachricht für einen guten Start in den Tag. Unsere erste App im App Store und bei Google Play.",
+        "tags": ["Eigene App", "Wohlbefinden"],
         "imageAlt": "Vorschau der Daily Fortune App"
       },
       "mcomperat": {
         "title": "mcomper.at",
-        "tagline": "Web · Next.js",
-        "description": "Ein moderner, responsiver Web-Lebenslauf, erstellt mit Next.js, TypeScript und vollständiger Internationalisierung.",
-        "tags": ["Persönlicher Lebenslauf"],
+        "tagline": "Website · Mehrsprachig",
+        "description": "Ein Online-Lebenslauf in mehreren Sprachen, der schnell lädt. Hier erproben wir die Werkzeuge, die wir danach für Sie einsetzen.",
+        "tags": ["Persönliche Website"],
         "imageAlt": "Vorschau der Website mcomper.at"
       },
       "pscSupersprint": {
         "title": "PSC Supersprint",
-        "tagline": "Web · Echtzeit",
-        "description": "Eine Webanwendung zur Verwaltung und Echtzeitanzeige von Triathlonwettkampfergebnissen.",
+        "tagline": "Web-App · Echtzeit",
+        "description": "Rennergebnisse in Echtzeit, die das Publikum während des Wettkampfs auf dem Handy verfolgen kann.",
         "tags": ["Sport", "Live"],
         "imageAlt": "Vorschau der PSC Supersprint Ergebnistafel"
       },
       "choeurDesPaysduMontBlanc": {
         "title": "Chœur des Pays du Mont Blanc",
-        "tagline": "Web · Redaktionell",
-        "description": "Eine Website, die die Aktivitäten, Konzerte und das Repertoire des Chors in Haute-Savoie präsentiert.",
-        "tags": ["Kultur"],
+        "tagline": "Website · Verein",
+        "description": "Die Website des Chors: kommende Konzerte, Repertoire und Anmeldungen, mit einem Terminkalender, den der Vorstand selbst pflegt.",
+        "tags": ["Kultur", "Verein"],
         "imageAlt": "Vorschau der Website des Chœur des Pays du Mont Blanc"
       }
     }

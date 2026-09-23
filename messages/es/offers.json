@@ -1,20 +1,20 @@
 {
   "offers": {
     "meta": {
-      "title": "Nuestras Ofertas | Desarrollo Web y Móvil | Annecy · Ginebra | Go Cosmic",
-      "description": "Ofertas de desarrollo web y móvil adaptadas para empresas en Annecy, Ginebra y Alta Saboya. Elige tu paquete de desarrollo ideal."
+      "title": "Ofertas · Páginas web en Ginebra y Annecy | Cosmic Studio",
+      "description": "Tres formas de trabajar juntos, de un solo desarrollador a un equipo completo, para proyectos en Ginebra, Annecy y Alta Saboya."
     },
     "eyebrow": "Ofertas — Fórmulas",
     "hero": {
       "cta": "Hablemos de tu proyecto",
       "secondary": "Crear mi presupuesto"
     },
-    "title": "Nuestras Ofertas Cósmicas",
-    "subtitle": "Elige la solución perfecta adaptada a las necesidades de tu proyecto",
+    "title": "Nuestras ofertas",
+    "subtitle": "Elige la fórmula que se ajusta al tamaño de tu proyecto",
     "solo_developer": {
-      "title": "Desarrollador Cósmico Solo",
-      "subtitle": "Perfecto para Startups y Proyectos Pequeños",
-      "description": "Obtén un desarrollador experto dedicado para tu aplicación móvil o sitio web. Ideal para dar vida a tu visión con calidad profesional y creatividad cósmica.",
+      "title": "Un solo desarrollador",
+      "subtitle": "Para autónomos y proyectos pequeños",
+      "description": "Un desarrollador dedicado a tu sitio web o a tu aplicación móvil, desde la primera conversación hasta la publicación, y después para el seguimiento. Ideal para empezar con un presupuesto controlado.",
       "features": {
         "title": "Qué está incluido",
         "items": {
@@ -39,9 +39,9 @@
       }
     },
     "team_developers": {
-      "title": "Equipo Cósmico Completo",
-      "subtitle": "Soluciones Full-Stack para Proyectos Complejos",
-      "description": "Un equipo de desarrolladores expertos para gestionar tu arquitectura completa incluyendo bases de datos, aplicaciones y sitios web. Perfecto para construir soluciones escalables de nivel empresarial.",
+      "title": "Equipo completo",
+      "subtitle": "Para proyectos ambiciosos y complejos",
+      "description": "Un pequeño equipo de desarrolladores para los proyectos que piden más: área de clientes, gestión de datos, varias aplicaciones conectadas entre sí.",
       "features": {
         "title": "Qué está incluido",
         "items": {
@@ -69,8 +69,8 @@
     },
     "developer_designer": {
       "title": "Dúo Desarrollador + Diseñador",
-      "subtitle": "Paquete Completo de Experiencia Digital",
-      "description": "La combinación perfecta de excelencia técnica y diseño impresionante. Obtén tanto un desarrollador como un diseñador trabajando juntos para crear aplicaciones hermosas y funcionales.",
+      "subtitle": "Un sitio o una aplicación, diseño incluido",
+      "description": "Un desarrollador y un diseñador trabajan juntos para crear una identidad y un sitio a tu imagen, agradables de ver y fáciles de usar.",
       "features": {
         "title": "Qué está incluido",
         "items": {
@@ -98,8 +98,8 @@
     },
     "cta": {
       "eyebrow": "Empieza ya",
-      "title": "¿Listo para comenzar tu proyecto cósmico?",
-      "description": "Hablemos de qué oferta se adapta mejor a tus necesidades y cómo podemos transformar tu visión en realidad.",
+      "title": "Empecemos tu proyecto.",
+      "description": "Hablemos de la oferta que mejor te encaja: recibes respuesta en menos de 24 h, de la persona que construirá tu sitio.",
       "button": "Hablemos de tu proyecto",
       "contact_info": "Contáctanos para discutir los requisitos de tu proyecto",
       "email_subject": "Solicitud de contacto para el desarrollo del proyecto",

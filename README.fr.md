@@ -1,17 +1,17 @@
-# Go Cosmic Web - Application principale
+# Cosmic Studio Web - Application principale
 
-L'application web principale de l'écosystème Go Cosmic, utilisée comme vitrine publique et plateforme business de l'équipe. Elle sert à **présenter les réalisations de Go Cosmic, valoriser leurs applications, introduire l'équipe et promouvoir leurs services de développement** auprès des prospects et collaborateurs.
+L'application web principale de Cosmic Studio (anciennement Go Cosmic, toujours servie depuis `gocosmic.dev`), utilisée comme vitrine publique et plateforme business du studio. Elle sert à **présenter les réalisations de Cosmic Studio, valoriser ses applications, introduire l'équipe et promouvoir ses services web et mobile** auprès des artisans, associations et indépendants qui cherchent un site avec un accompagnement humain.
 
 > Référence technique exhaustive (canonique EN) : [README.en.md](./README.en.md)
 
 ## Objectifs principaux
 
-Le site Go Cosmic a pour objectifs :
+Le site Cosmic Studio a pour objectifs :
 
 - **Vitrine portfolio** : mettre en avant les applications et projets livrés
 - **Présentation de l'équipe** : valoriser les expertises techniques et design
 - **Promotion des services** : clarifier les offres pour prospects et clients
-- **Identité de marque** : renforcer l'univers et le positionnement Go Cosmic
+- **Identité de marque** : installer Cosmic Studio comme un studio local de confiance, avec un univers spatial discret (« Go Cosmic » reste la signature des appels à l'action)
 - **Acquisition client** : transformer les visites en prises de contact qualifiées
 
 ## Fonctionnalités actuelles
@@ -90,7 +90,7 @@ export default function Header() {
 
 ### Page d'accueil
 
-- **Hero Section** : introduction percutante avec le branding « Go Cosmic » et un appel à l'action
+- **Hero Section** : promesse de visibilité (« Votre activité mérite d'être vue / trouvée / choisie ») et l'appel à l'action « Go Cosmic »
 - **Bouton interactif** : démonstration des composants UI
 - **Lien équipe** : accès direct à la présentation de l'équipe
 - **Design cosmique** : univers spatial avec composants UI célestes
@@ -107,7 +107,7 @@ export default function Header() {
 
 ### Page About (`/about`)
 
-- **Présentation** : mission et domaines d'expertise de Go Cosmic
+- **Présentation** : mission et domaines d'expertise de Cosmic Studio
 - **Profil développeur** : mise en avant de l'expertise et de l'expérience de Matthieu Compérat
 - **Mentions légales et usage IA** : déclarations transparentes sur l'IA, la confidentialité et les responsabilités
 - **Accessibilité** : titres sémantiques, aria-labels descriptifs et styles de focus clavier
@@ -204,7 +204,7 @@ Copier `.env.example` vers `.env.local` et le compléter. Les secrets serveur ne
 | Variable            | Requise | Rôle                                                                                                                                                                                                                                                                                           |
 | ------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `RESEND_API_KEY`    | Oui     | Clé API Resend utilisée pour envoyer les demandes de maquette gratuite et les soumissions du formulaire de contact par email. Sans elle, le formulaire de maquette gratuite signale un échec d'envoi et le formulaire de contact journalise les soumissions localement au lieu de les envoyer. |
-| `RESEND_FROM_EMAIL` | Non     | Expéditeur de ces emails ; doit être vérifié dans le dashboard Resend. Par défaut : `Go Cosmic <noreply@gocosmic.dev>`.                                                                                                                                                                        |
+| `RESEND_FROM_EMAIL` | Non     | Expéditeur de ces emails ; doit être vérifié dans le dashboard Resend. Par défaut : `Cosmic Studio <noreply@gocosmic.dev>`.                                                                                                                                                                    |
 
 ### Scripts disponibles
 

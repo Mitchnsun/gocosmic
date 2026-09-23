@@ -58,7 +58,7 @@ describe('validateContact', () => {
   });
 
   it('caps the company name', () => {
-    expect(validateContact(validPayload({ company: 'Go Cosmic' })).company).toBeUndefined();
+    expect(validateContact(validPayload({ company: 'Cosmic Studio' })).company).toBeUndefined();
     expect(validateContact(validPayload({ company: 'a'.repeat(121) })).company).toBe('company_length');
   });
 

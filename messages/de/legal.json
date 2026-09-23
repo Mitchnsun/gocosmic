@@ -2,7 +2,7 @@
   "legal": {
     "privacy": {
       "meta": {
-        "title": "Datenschutzerklärung - Go Cosmic",
+        "title": "Datenschutzerklärung - Cosmic Studio",
         "description": "Wie Go Cosmic personenbezogene Daten, Reichweitenmessung, E-Mail-Kontakte, Aufbewahrungsfristen, Rechte und CNIL-Beschwerden verarbeitet."
       },
       "eyebrow": "DSGVO",
@@ -71,7 +71,7 @@
     },
     "legalNotice": {
       "meta": {
-        "title": "Impressum - Go Cosmic",
+        "title": "Impressum - Cosmic Studio",
         "description": "Anbieter, Hosting, geistiges Eigentum, Haftung und Kontaktinformationen von Go Cosmic."
       },
       "eyebrow": "Rechtliche Informationen",
@@ -87,9 +87,7 @@
         },
         {
           "title": "Verantwortlich für die Veröffentlichung",
-          "body": [
-            "Verantwortlich für die Veröffentlichung: Matthieu Compérat."
-          ]
+          "body": ["Verantwortlich für die Veröffentlichung: Matthieu Compérat."]
         },
         {
           "title": "Hosting",
@@ -111,9 +109,7 @@
         },
         {
           "title": "Kontakt",
-          "body": [
-            "Für rechtliche, Datenschutz- oder Sicherheitsfragen kontaktiere support@gocosmic.dev."
-          ]
+          "body": ["Für rechtliche, Datenschutz- oder Sicherheitsfragen kontaktiere support@gocosmic.dev."]
         }
       ]
     }

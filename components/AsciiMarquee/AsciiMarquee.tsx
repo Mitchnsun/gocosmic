@@ -4,11 +4,17 @@ import { useEffect, useState } from 'react';
 
 import { shuffle } from '@/lib/shuffle';
 
+/** Each half of the loop must be wider than the viewport, so a short list is repeated up to this many items. */
+const MIN_ITEMS_PER_COPY = 12;
+
+const fillTrack = (labels: string[]) =>
+  Array.from({ length: Math.ceil(MIN_ITEMS_PER_COPY / Math.max(labels.length, 1)) }, () => labels).flat();
+
 export function AsciiMarquee({ labels }: { labels: string[] }) {
-  const [items, setItems] = useState(labels);
+  const [items, setItems] = useState(() => fillTrack(labels));
 
   useEffect(() => {
-    setItems(shuffle(labels));
+    setItems(fillTrack(shuffle(labels)));
   }, [labels]);
 
   return (

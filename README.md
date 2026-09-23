@@ -1,4 +1,4 @@
-# Go Cosmic Web - Documentation Entry Point
+# Cosmic Studio Web - Documentation Entry Point
 
 This repository uses a bilingual documentation strategy with strict language separation.
 

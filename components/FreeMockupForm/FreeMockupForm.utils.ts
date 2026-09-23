@@ -26,7 +26,7 @@ export const EMPTY_FREE_MOCKUP_VALUES: FreeMockupValues = {
  *
  * These are *content*, not design tokens: they illustrate the mood a visitor is
  * choosing for their own future site, so they deliberately live outside the
- * Go Cosmic palette.
+ * Cosmic Studio palette.
  */
 export const PALETTE_SWATCHES: Record<ColorPaletteKey, readonly [string, string, string]> = {
   sober: ['#F8F8FF', '#8A8F98', '#111318'],

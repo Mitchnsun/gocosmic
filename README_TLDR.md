@@ -1,10 +1,10 @@
-# Go Cosmic - TL;DR
+# Cosmic Studio - TL;DR
 
-Quick reference guide for getting started with the Go Cosmic project.
+Quick reference guide for getting started with the Cosmic Studio project.
 
-## What is Go Cosmic?
+## What is Cosmic Studio?
 
-A **multilingual web application** (EN, FR, ES, DE, IT) showcasing Go Cosmic's portfolio, team, and development services. Features a cosmic theme with interactive 3D experiences.
+A **multilingual web application** (EN, FR, ES, DE, IT) showcasing Cosmic Studio's portfolio, team, and development services. Features a cosmic theme with interactive 3D experiences.
 
 ## Quick Start
 

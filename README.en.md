@@ -1,15 +1,15 @@
-# Go Cosmic Web - Main Application
+# Cosmic Studio Web - Main Application
 
-The main web application of the Go Cosmic ecosystem, serving as the public showcase and business platform for the Go Cosmic development team. This platform is designed to **present Go Cosmic's work, showcase their applications, introduce the team, and promote their development services** to potential clients and collaborators.
+The main web application of Cosmic Studio (formerly Go Cosmic, still served from `gocosmic.dev`), serving as the public showcase and business platform of the studio. This platform is designed to **present Cosmic Studio's work, showcase its applications, introduce the team, and promote its web and mobile services** to craftspeople, associations and independents looking for a website with human support.
 
 ## Primary Objectives
 
-The Go Cosmic website serves as the primary business interface with the following goals:
+The Cosmic Studio website serves as the primary business interface with the following goals:
 
-- **Portfolio Showcase**: Present Go Cosmic's applications and development projects
+- **Portfolio Showcase**: Present Cosmic Studio's applications and development projects
 - **Team Presentation**: Introduce the talented developers and their expertise
 - **Service Promotion**: Highlight development services offered to potential clients
-- **Brand Identity**: Establish Go Cosmic as a leading cosmic-themed development team
+- **Brand Identity**: Establish Cosmic Studio as a trusted local studio with a light space theme ("Go Cosmic" remains the call-to-action signature)
 - **Client Acquisition**: Convert visitors into clients through compelling presentation
 
 ## Current Features
@@ -88,7 +88,7 @@ export default function Header() {
 
 ### Homepage
 
-- **Hero Section**: Engaging introduction with "Go Cosmic" branding and call-to-action
+- **Hero Section**: Visibility promise ("Your business deserves to be seen / found / chosen") and the "Go Cosmic" call-to-action
 - **Interactive Button**: Demonstration of UI components with alert functionality
 - **Team Link**: Direct access to learn more about the development team
 - **Cosmic Design**: Universe-inspired design with celestial UI components
@@ -105,7 +105,7 @@ export default function Header() {
 
 ### About Page (`/about`)
 
-- **Company Overview**: Presents Go Cosmic's mission and areas of specialization
+- **Company Overview**: Presents Cosmic Studio's mission and areas of specialization
 - **Developer Profile**: Highlights Matthieu Compérat's expertise and experience
 - **Legal & AI Usage**: Transparent statements about AI usage, privacy, and responsibility
 - **Accessibility**: Semantic headings, descriptive aria-labels, and keyboard focus styles
@@ -202,7 +202,7 @@ Copy `.env.example` to `.env.local` and fill it in. Server-only secrets must nev
 | Variable            | Required | Purpose                                                                                                                                                                                                        |
 | ------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `RESEND_API_KEY`    | Yes      | Resend API key used to email free mockup requests and contact form submissions. Without it, the free mockup form reports a send failure and the contact form logs submissions locally instead of sending them. |
-| `RESEND_FROM_EMAIL` | No       | Sender of those emails; must be verified in the Resend dashboard. Defaults to `Go Cosmic <noreply@gocosmic.dev>`.                                                                                              |
+| `RESEND_FROM_EMAIL` | No       | Sender of those emails; must be verified in the Resend dashboard. Defaults to `Cosmic Studio <noreply@gocosmic.dev>`.                                                                                          |
 
 ### Available Scripts
 

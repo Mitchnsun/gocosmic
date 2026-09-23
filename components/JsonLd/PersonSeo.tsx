@@ -2,6 +2,7 @@ import { useLocale } from 'next-intl';
 import { JsonLdScript } from 'next-seo';
 
 import { getCanonicalUrl } from '@/i18n/canonical';
+import { BRAND_NAME } from '@/lib/config';
 
 function getJobTitleByLocale(locale: string): string {
   switch (locale) {
@@ -36,7 +37,7 @@ export default function PersonSeo() {
     worksFor: [
       {
         '@type': 'Organization',
-        name: 'Go Cosmic',
+        name: BRAND_NAME,
         url: 'https://www.gocosmic.dev',
       },
     ],

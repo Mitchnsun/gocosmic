@@ -1,22 +1,20 @@
 {
   "navigation": {
-    "about_label": "About Go Cosmic",
-    "about": "About",
-    "contact_label": "Contact Go Cosmic",
+    "contact_label": "Contact Cosmic Studio",
     "contact": "Contact",
-    "home": "Go to homepage",
+    "home": "{brand}, home",
     "label": "Main navigation",
     "menu_close": "Close menu",
     "menu_open": "Open menu",
-    "pricing_label": "Pricing Simulator",
-    "pricing": "Pricing",
-    "projects_label": "Our Projects",
+    "projects_label": "Our projects",
     "projects": "Projects",
-    "services_label": "Our Cosmic Services",
+    "services_label": "Services & pricing",
     "services": "Services",
     "skip_to_content": "Skip to main content",
     "switch_locale": "Switch Language",
     "lang_drawer_title": "LANGUAGE · SELECT",
-    "menu_title": "MENU"
+    "menu_title": "Menu",
+    "home_menu": "Home",
+    "cta": "Talk about my project"
   }
 }

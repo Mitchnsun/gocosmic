@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Contact Us - Get in Touch with Go Cosmic",
-    "description": "Contact Go Cosmic for general inquiries, support, technical questions, or commercial requests. Choose the right email for your specific needs and get personalized assistance."
+    "title": "Contact · Let's talk about your project | Cosmic Studio",
+    "description": "Tell Cosmic Studio about your project: one message is enough, and you get a reply within 24 hours from the person who will build your site."
   },
   "contact": {
     "title": "Contact Us",
@@ -18,7 +18,7 @@
             "partnership": "Partnership proposals",
             "feedback": "User feedback and experience",
             "suggestions": "Improvement suggestions",
-            "mission": "Questions about Go Cosmic's mission and values"
+            "mission": "Questions about Cosmic Studio's mission and values"
           }
         },
         "cta": "Send an email",

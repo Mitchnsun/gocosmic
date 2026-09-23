@@ -1,15 +1,15 @@
 {
   "services": {
     "meta": {
-      "title": "Web- & Mobile-Entwicklungsleistungen | Annecy · Genf | Go Cosmic",
-      "description": "Umfassende Web- und Mobile-Entwicklungsleistungen mit Sitz in Annecy, tätig in Genf und Haute-Savoie. React, React Native, Next.js, KI-Integration."
+      "title": "Leistungen · Websites in Genf & Annecy | Cosmic Studio",
+      "description": "Präsentationswebsites, Onlineshops, Apps und Betreuung für Handwerksbetriebe, Vereine und Selbstständige in Genf, der Westschweiz und Hochsavoyen."
     },
-    "title": "Unsere Kosmischen Dienstleistungen",
-    "subtitle": "Umfassende technische Lösungen, um Ihre Projekte in die Stratosphäre zu katapultieren",
+    "title": "Unsere Leistungen",
+    "subtitle": "Alles, was es braucht, damit Ihre Kundschaft Sie findet, versteht und kontaktiert.",
     "stellar_development": {
-      "title": "Stellare Entwicklung",
-      "subtitle": "Moderne Web-Exzellenz mit Spitzentechnologien",
-      "description": "Unsere Entwicklungsexpertise nutzt die neuesten Technologien, um robuste, skalierbare und leistungsstarke Anwendungen zu erstellen. Wir beherrschen den kompletten Entwicklungsstack vom Frontend bis zum Backend.",
+      "title": "Websites & Apps",
+      "subtitle": "Eine Website oder App, maßgeschneidert für Ihren Betrieb",
+      "description": "Präsentationswebsite, Onlineshop, Terminbuchung oder Smartphone-App: Wir schreiben den Code selbst, ohne überladene Vorlagen und ohne anfällige Erweiterungen. Das Ergebnis ist schnell, zuverlässig und wächst mit Ihnen.",
       "technologies": {
         "title": "Technologien, die wir beherrschen",
         "items": {
@@ -39,9 +39,9 @@
       }
     },
     "mystical_design": {
-      "title": "Mystisches UI/UX Design",
-      "subtitle": "Immersive Erfahrungen, die Fesseln und Konvertieren",
-      "description": "Wir schaffen digitale Erfahrungen, die nicht nur visuell beeindruckend, sondern auch intuitiv, zugänglich und konversionsorientiert sind. Unsere Design-Philosophie kombiniert kosmische Ästhetik mit bewährten UX-Prinzipien.",
+      "title": "Design, das zu Ihnen passt",
+      "subtitle": "Ein gepflegter Auftritt, der Vertrauen weckt",
+      "description": "Ihre Farben, Ihre Fotos, Ihre Worte: Wir gestalten einen klaren Auftritt, der auf dem Handy wie am Computer gut lesbar und für alle zugänglich ist, damit Ihre Besucher Lust bekommen, Sie zu kontaktieren.",
       "approach": {
         "title": "Unser Design-Ansatz",
         "items": {
@@ -71,9 +71,9 @@
       }
     },
     "ai_powered": {
-      "title": "KI-gestützte Lösungen",
-      "subtitle": "Intelligente Features, die die Benutzererfahrung transformieren",
-      "description": "Wir integrieren modernste KI-Technologien, um intelligentere, adaptivere Anwendungen zu schaffen. Unsere KI-Lösungen verbessern die Benutzererfahrung bei gleichzeitiger Wahrung von Datenschutz und ethischen Standards.",
+      "title": "Assistenten & Automatisierung",
+      "subtitle": "KI dort, wo sie Ihnen wirklich Zeit spart",
+      "description": "Automatische Antworten auf häufige Fragen, sortierte Anfragen, persönliche Vorschläge: Wir setzen KI ein, wenn sie Ihren Alltag einfacher macht, nie als Spielerei, und Ihre Daten bleiben dabei immer geschützt.",
       "capabilities": {
         "title": "KI-Integrationsfähigkeiten",
         "items": {
@@ -103,9 +103,9 @@
       }
     },
     "cosmic_launch": {
-      "title": "Kosmischer Launch",
-      "subtitle": "Vollständige Launch-Unterstützung von der Entwicklung bis zur Produktion",
-      "description": "Wir bieten umfassende Launch-Unterstützung, um sicherzustellen, dass Ihre Anwendung erfolgreich in die Produktion geht und weiterhin optimal funktioniert. Unsere DevOps-Expertise garantiert eine reibungslose Reise vom Code zum Kosmos.",
+      "title": "Sichtbarkeit & Betreuung",
+      "subtitle": "Start, Auffindbarkeit bei Google und Begleitung auf Dauer",
+      "description": "Wir stellen Ihre Website online, sorgen dafür, dass sie bei Google gefunden wird, und kümmern uns danach um Hosting, Datensicherungen und Aktualisierungen. Sie behalten einen einzigen Ansprechpartner, Monat für Monat.",
       "process": {
         "title": "Launch-Prozess",
         "items": {
@@ -135,9 +135,9 @@
       }
     },
     "cta": {
-      "title": "Bereit, Ihr nächstes kosmisches Projekt zu starten?",
-      "description": "Lassen Sie uns besprechen, wie unsere umfassenden Services Ihre Vision in die Realität umsetzen können. Von stellarer Entwicklung bis zum kosmischen Launch - wir sind da, um Ihr Projekt zum Erfolg zu führen.",
-      "primary_button": "Starten Sie Ihre kosmische Reise",
+      "title": "Bringen wir Ihren Betrieb zum Strahlen.",
+      "description": "Erzählen Sie uns in ein paar Zeilen, was Sie tun. Wir melden uns innerhalb von 24 Stunden mit Fragen und danach mit einem kostenlosen Entwurf, wenn das Projekt für Sie passt.",
+      "primary_button": "Mein Projekt besprechen",
       "geo_availability": "Verfügbar in Annecy, Genf, der Westschweiz, Haute-Savoie und remote.",
       "local_page": "Unsere spezielle Seite Annecy / Genf entdecken"
     },

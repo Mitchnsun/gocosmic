@@ -29,14 +29,16 @@ describe('ServicesGrid', () => {
 
     it('renders the section as a labelled region', () => {
       const { getByRole } = render(<ServicesGrid />);
-      expect(getByRole('region', { name: 'Our Cosmic Services' })).toBeInTheDocument();
+      expect(getByRole('region', { name: 'Everything it takes to get found' })).toBeInTheDocument();
     });
 
     it('renders the eyebrow and subtitle from translations', () => {
       const { getByText } = render(<ServicesGrid />);
-      expect(getByText('[ SERVICES · 04 ]')).toBeInTheDocument();
+      expect(getByText('[ Services · 04 ]')).toBeInTheDocument();
       expect(
-        getByText('Four pillars to launch your product into orbit — design, build, ship, grow.')
+        getByText(
+          'Design, build, launch, get known: one point of contact, from the first mockup to month-after-month follow-up.'
+        )
       ).toBeInTheDocument();
     });
 
@@ -49,18 +51,18 @@ describe('ServicesGrid', () => {
   describe('service content', () => {
     it('renders title and description for each service', () => {
       const { getByText } = render(<ServicesGrid />);
-      expect(getByText('Stellar Development')).toBeInTheDocument();
-      expect(getByText('Mystical UI/UX Design')).toBeInTheDocument();
-      expect(getByText('AI Powered')).toBeInTheDocument();
-      expect(getByText('Cosmic Launch')).toBeInTheDocument();
+      expect(getByText('Websites & apps')).toBeInTheDocument();
+      expect(getByText('Design that looks like you')).toBeInTheDocument();
+      expect(getByText('Assistants & automation')).toBeInTheDocument();
+      expect(getByText('Visibility & care')).toBeInTheDocument();
     });
 
     it('renders the features list for each service', () => {
       const { getByLabelText } = render(<ServicesGrid />);
-      expect(getByLabelText('Stellar Development features')).toBeInTheDocument();
-      expect(getByLabelText('Mystical UI/UX Design features')).toBeInTheDocument();
-      expect(getByLabelText('AI Powered features')).toBeInTheDocument();
-      expect(getByLabelText('Cosmic Launch features')).toBeInTheDocument();
+      expect(getByLabelText('Websites & apps features')).toBeInTheDocument();
+      expect(getByLabelText('Design that looks like you features')).toBeInTheDocument();
+      expect(getByLabelText('Assistants & automation features')).toBeInTheDocument();
+      expect(getByLabelText('Visibility & care features')).toBeInTheDocument();
     });
 
     it('renders links to the services page for each card', () => {

@@ -1,11 +1,11 @@
 {
   "projectsList": {
     "meta": {
-      "title": "Nuestros Proyectos | Go Cosmic — Annecy · Ginebra",
-      "description": "Descubre los proyectos de Go Cosmic — aplicaciones web y móviles desarrolladas en Annecy, al servicio de clientes en Ginebra y Alta Saboya."
+      "title": "Proyectos · Sitios web y aplicaciones | Cosmic Studio",
+      "description": "Sitios web y aplicaciones creados por Cosmic Studio para asociaciones, un club deportivo y autónomos, en Ginebra y Alta Saboya."
     },
     "title": "Nuestros Proyectos",
-    "subtitle": "Explora la constelación de experiencias digitales creadas por Go Cosmic.",
+    "subtitle": "Sitios web y aplicaciones que ya están en línea, para asociaciones, un club deportivo y nuestros propios productos.",
     "items": {
       "dailyFortune": {
         "title": "Daily Fortune",

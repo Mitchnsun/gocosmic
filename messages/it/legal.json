@@ -2,7 +2,7 @@
   "legal": {
     "privacy": {
       "meta": {
-        "title": "Informativa privacy - Go Cosmic",
+        "title": "Informativa privacy - Cosmic Studio",
         "description": "Come Go Cosmic tratta dati personali, misurazione audience, contatti email, periodi di conservazione, diritti e reclami alla CNIL."
       },
       "eyebrow": "GDPR",
@@ -71,7 +71,7 @@
     },
     "legalNotice": {
       "meta": {
-        "title": "Note legali - Go Cosmic",
+        "title": "Note legali - Cosmic Studio",
         "description": "Editore, hosting, proprietà intellettuale, responsabilità e contatti di Go Cosmic."
       },
       "eyebrow": "Informazioni legali",
@@ -87,9 +87,7 @@
         },
         {
           "title": "Direttore della pubblicazione",
-          "body": [
-            "Direttore della pubblicazione: Matthieu Compérat."
-          ]
+          "body": ["Direttore della pubblicazione: Matthieu Compérat."]
         },
         {
           "title": "Hosting",
@@ -111,9 +109,7 @@
         },
         {
           "title": "Contatto",
-          "body": [
-            "Per domande legali, privacy o sicurezza, contatta support@gocosmic.dev."
-          ]
+          "body": ["Per domande legali, privacy o sicurezza, contatta support@gocosmic.dev."]
         }
       ]
     }

@@ -1,20 +1,20 @@
 {
   "offers": {
     "meta": {
-      "title": "Our Offers | Web & Mobile Development | Annecy · Geneva | Go Cosmic",
-      "description": "Tailored web and mobile development offers for businesses in Annecy, Geneva, and Haute-Savoie. Choose your perfect development package."
+      "title": "Offers · Websites in Geneva & Annecy | Cosmic Studio",
+      "description": "Three ways to work together, from a single developer to a full team, for projects in Geneva, Annecy and Haute-Savoie."
     },
     "eyebrow": "Offers — Formulas",
     "hero": {
       "cta": "Discuss your project",
       "secondary": "Build my estimate"
     },
-    "title": "Our Cosmic Offers",
-    "subtitle": "Choose the perfect solution tailored to your project needs",
+    "title": "Our offers",
+    "subtitle": "Choose the option that fits the size of your project",
     "solo_developer": {
-      "title": "Solo Cosmic Developer",
-      "subtitle": "Perfect for Startups and Small Projects",
-      "description": "Get a dedicated expert developer for your mobile app or website. Ideal for bringing your vision to life with professional quality and cosmic creativity.",
+      "title": "Solo developer",
+      "subtitle": "For independents and smaller projects",
+      "description": "One developer dedicated to your website or mobile app, from the first conversation to launch, then for ongoing care. Ideal to get started on a controlled budget.",
       "features": {
         "title": "What's included",
         "items": {
@@ -39,9 +39,9 @@
       }
     },
     "team_developers": {
-      "title": "Complete Cosmic Team",
-      "subtitle": "Full-Stack Solutions for Complex Projects",
-      "description": "A team of expert developers to manage your complete architecture including databases, applications, and websites. Perfect for building scalable, enterprise-grade solutions.",
+      "title": "Full team",
+      "subtitle": "For ambitious, complex projects",
+      "description": "A small team of developers for projects that need more: customer accounts, data management, several connected apps.",
       "features": {
         "title": "What's included",
         "items": {
@@ -69,8 +69,8 @@
     },
     "developer_designer": {
       "title": "Developer + Designer Duo",
-      "subtitle": "Complete Digital Experience Package",
-      "description": "The perfect combination of technical excellence and stunning design. Get both a developer and a designer working together to create beautiful, functional applications.",
+      "subtitle": "A website or an app, design included",
+      "description": "A developer and a designer work together to create a brand and a website that look like you, pleasant to see and simple to use.",
       "features": {
         "title": "What's included",
         "items": {
@@ -98,8 +98,8 @@
     },
     "cta": {
       "eyebrow": "Get started",
-      "title": "Ready to start your Cosmic project?",
-      "description": "Let's discuss which offer best suits your needs and how we can transform your vision into reality.",
+      "title": "Let's start your project.",
+      "description": "Let's talk about the offer that suits you: you get a reply within 24 hours, from the person who will build your site.",
       "button": "Let's talk about your project",
       "contact_info": "Contact us to discuss your project requirements",
       "email_subject": "Contact request for project development",

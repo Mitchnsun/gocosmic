@@ -1,6 +1,6 @@
 # Testing Documentation for Web App
 
-This document describes the testing patterns and configuration implemented for the Go Cosmic web application.
+This document describes the testing patterns and configuration implemented for the Cosmic Studio web application.
 
 ## Overview
 
@@ -60,10 +60,10 @@ import { render } from '../test-utils';
 import { Header } from '@/components/Header';
 
 describe('Header Component', () => {
-  it('should render the "Go Cosmic" title', () => {
+  it('should render the "Cosmic Studio" title', () => {
     const { getByRole } = render(<Header />);
 
-    const title = getByRole('heading', { name: /go cosmic/i });
+    const title = getByRole('heading', { name: /cosmic studio/i });
     expect(title).toBeInTheDocument();
   });
 });
@@ -147,7 +147,7 @@ The tests specifically validate:
 - Cosmic-themed content and messaging
 - Proper use of space-inspired color classes
 - Heroicons integration and accessibility
-- "Go Cosmic" branding consistency
+- "Cosmic Studio" branding consistency
 - Dark theme implementation
 
 ## Best Practices

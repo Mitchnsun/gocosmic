@@ -8,8 +8,8 @@
     "loading": "Cargando tu viaje cósmico..."
   },
   "meta": {
-    "title": "Desarrollo Web y Móvil | Annecy · Ginebra | Go Cosmic",
-    "description": "Agencia de desarrollo de aplicaciones web y móviles con sede en Annecy, con proyectos en Ginebra, la Suiza romanda y Alta Saboya. React, React Native, Next.js."
+    "title": "Creación de páginas web · Ginebra y Annecy | Cosmic Studio",
+    "description": "Páginas web para artesanos, asociaciones y autónomos de Ginebra y Alta Saboya. Haz que te encuentren en Google, con alguien que sigue a tu lado."
   },
   "language": {
     "current": "Idioma actual: {language}",
@@ -27,7 +27,7 @@
     "features": {
       "page": "Una única página vitrina estática",
       "redesign": "Rediseño gráfico de su sitio web vitrina",
-      "seo": "Optimización SEO",
+      "seo": "Pensado para que te encuentren en Google",
       "updates": "Actualizaciones técnicas regulares",
       "hosting": "Alojamiento web",
       "ssl": "Conexión segura HTTPS (el candado del navegador)",
@@ -45,26 +45,27 @@
     "cta_contact_aria_label": "Enviar un email a prospect@gocosmic.dev para solicitar un presupuesto"
   },
   "status_bar": {
-    "signal_stable": "SEÑAL ESTABLE",
-    "mission_control": "CONTROL DE MISIÓN",
-    "location": {
-      "fr": "ANNECY · ALT. 447M",
-      "ch": "CHÊNE-BOUGERIES · ALT. 424M"
+    "aria_label": "Disponibilidad del estudio",
+    "available": {
+      "label": "Disponible",
+      "detail": "Nuevos proyectos en {month}"
     },
-    "aria_label": "Estado del control de misión",
-    "aria_signal": "Señal activa"
+    "booked": {
+      "label": "Completo",
+      "detail": "Próximas plazas en {month}"
+    }
   },
   "cookieConsent": {
     "title": "Preferencias de privacidad",
     "description": "Usamos Vercel Analytics para medir la audiencia solo después de tu consentimiento. Rechazarlo no afecta al sitio.",
     "analyticsTitle": "Medición de audiencia",
-    "analyticsDescription": "Estadísticas anónimas de páginas vistas usadas para mejorar el sitio. Go Cosmic no carga rastreadores publicitarios.",
+    "analyticsDescription": "Estadísticas anónimas de páginas vistas usadas para mejorar el sitio. Cosmic Studio no carga ningún rastreador publicitario.",
     "accept": "Aceptar analíticas",
     "refuse": "Rechazar",
     "customize": "Personalizar",
     "save": "Guardar mi elección",
     "privacyLink": "Leer la política de privacidad",
-    "manage": "Ajustes de privacidad",
+    "manage": "Gestionar las cookies",
     "close": "Cerrar"
   },
   "case_study": {

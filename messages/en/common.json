@@ -8,8 +8,8 @@
     "loading": "Loading your Cosmic journey..."
   },
   "meta": {
-    "title": "Web & Mobile Development | Annecy · Geneva | Go Cosmic",
-    "description": "Web and mobile app development agency based in Annecy, serving Geneva, French-speaking Switzerland and Haute-Savoie. React, React Native, Next.js."
+    "title": "Websites for local businesses · Geneva & Annecy | Cosmic Studio",
+    "description": "Websites for craftspeople, associations and independents in Geneva and Haute-Savoie. Get found on Google, with one person who stays by your side."
   },
   "language": {
     "current": "Current language: {language}",
@@ -27,7 +27,7 @@
     "features": {
       "page": "A single static showcase page",
       "redesign": "Graphic redesign of your showcase website",
-      "seo": "SEO optimisation",
+      "seo": "Built to be found on Google",
       "updates": "Regular technical updates",
       "hosting": "Web hosting",
       "ssl": "Secure HTTPS connection (the padlock in the browser)",
@@ -45,26 +45,27 @@
     "cta_contact_aria_label": "Send an email to prospect@gocosmic.dev to request a quote"
   },
   "status_bar": {
-    "signal_stable": "SIGNAL STABLE",
-    "mission_control": "MISSION CONTROL",
-    "location": {
-      "fr": "ANNECY · ALT. 447M",
-      "ch": "CHÊNE-BOUGERIES · ALT. 424M"
+    "aria_label": "Studio availability",
+    "available": {
+      "label": "Available",
+      "detail": "New projects from {month}"
     },
-    "aria_label": "Mission control status",
-    "aria_signal": "Signal active"
+    "booked": {
+      "label": "Fully booked",
+      "detail": "Next openings in {month}"
+    }
   },
   "cookieConsent": {
     "title": "Privacy preferences",
     "description": "We only use Vercel Analytics to measure audience after your agreement. Refusing has no impact on the website.",
     "analyticsTitle": "Audience measurement",
-    "analyticsDescription": "Anonymous page-view statistics used to improve the website. No advertising tracker is loaded by Go Cosmic.",
+    "analyticsDescription": "Anonymous page view statistics used to improve the site. No advertising tracker is loaded by Cosmic Studio.",
     "accept": "Accept analytics",
     "refuse": "Refuse",
     "customize": "Customize",
     "save": "Save my choice",
     "privacyLink": "Read the privacy policy",
-    "manage": "Privacy settings",
+    "manage": "Manage cookies",
     "close": "Close"
   },
   "case_study": {

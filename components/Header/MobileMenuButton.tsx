@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { RefObject } from 'react';
 
 import { MOBILE_MENU_BURGER_DURATION_MS } from '@/components/Header/constants';
+import { cn } from '@/design-system/lib/utils';
 
 interface MobileMenuButtonProps {
   isOpen: boolean;
@@ -28,7 +29,10 @@ const MobileMenuButton = ({ isOpen, onToggle, buttonRef, className }: MobileMenu
       aria-label={t(isOpen ? 'menu_close' : 'menu_open')}
       aria-expanded={isOpen}
       aria-controls="mobile-menu"
-      className={`flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-xl border border-gray-600 bg-slate-800/80 transition-colors hover:border-gray-400 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none ${className ?? ''}`}>
+      className={cn(
+        'border-ghost/15 hover:border-ghost/40 focus-visible:ring-aerospace/70 flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border transition-colors focus-visible:ring-2 focus-visible:outline-none',
+        className
+      )}>
       <motion.span
         className="block h-0.5 w-5 rounded-full bg-current"
         animate={isOpen ? { y: 4, rotate: 45 } : { y: 0, rotate: 0 }}

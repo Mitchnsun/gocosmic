@@ -1,85 +1,75 @@
 {
   "homepage": {
     "ascii_labels": [
-      "Remote",
       "Go Cosmic",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Des apps qui décollent",
-      "Du code qui livre",
-      "Annecy",
-      "Tournette",
-      "Aravis",
-      "React",
-      "Expo",
-      "Zéro bug en prod",
-      "En orbite stable",
-      "T-0. Décollage.",
-      "Houston, on a un problème !"
+      "Genève · Annecy",
+      "Visible sur Google",
+      "Un seul interlocuteur",
+      "Maquette offerte",
+      "Réponse sous 24 h"
     ],
     "cta": {
-      "button": "Nous contacter",
-      "description": "Discutons de la façon dont nous pouvons donner vie à votre projet web ou mobile, pour créer quelque chose de vraiment hors du commun.",
-      "freeMockup": "Pas encore décidé ? Demandez votre <link>maquette gratuite</link>.",
-      "title": "Prêt pour Go Cosmic ?",
+      "button": "Parler de mon projet",
+      "description": "Racontez-nous votre activité en quelques lignes. Nous revenons vers vous sous 24 h, avec des questions, pas avec un devis automatique.",
+      "freeMockup": "Vous hésitez encore ? Demandez votre <link>maquette gratuite</link>.",
+      "title": "Faisons rayonner votre activité.",
       "viewOffers": "Consulter nos offres"
     },
     "hero": {
-      "cta": "Commencez votre voyage",
-      "endWords": ["rayonnent", "s'envolent", "inspirent", "transforment", "élèvent"],
-      "subtitle": "Laissez-nous propulser vos idées dans la stratosphère avec un design mystique et des fonctionnalités cosmiques",
-      "title": "Nous créons des applications stellaires qui"
+      "cta": "Go Cosmic",
+      "endWords": ["vue.", "trouvée.", "choisie."],
+      "subtitle": "Cosmic Studio crée des sites et des applications pour les artisans, les associations et les indépendants. Un site clair, pensé pour être trouvé sur Google, et un interlocuteur qui reste après la mise en ligne.",
+      "title": "Votre activité mérite d'être"
     },
     "process": {
-      "eyebrow": "[ PROCESSUS ]",
-      "title": "Quatre phases. <em>Sans drama.</em>",
-      "subtitle": "De l'idée à la réalité en 4 phases",
+      "eyebrow": "[ Processus · 04 ]",
+      "title": "Quatre étapes. <em>Sans surprise.</em>",
+      "subtitle": "De la première discussion à la mise en ligne, vous savez toujours où en est votre projet.",
       "discovery": {
-        "label": "T-45",
-        "title": "Découverte",
-        "description": "Audit, objectifs, contraintes. Nous cartographions le territoire avant de dessiner la carte."
+        "label": "T-3",
+        "title": "On se parle",
+        "description": "Vingt minutes au téléphone ou autour d'un café, à Genève ou à Annecy. Votre métier, vos clients, ce que le site doit faire pour vous."
       },
       "design": {
-        "label": "T-30",
-        "title": "Design",
-        "description": "Maquettes, prototypes, haute-fidélité. Des itérations rapides jusqu'au « oui »."
+        "label": "T-2",
+        "title": "Vous voyez avant de payer",
+        "description": "Une maquette de votre page d'accueil, avec vos couleurs et vos mots. Gratuite et sans engagement : vous décidez ensuite."
       },
       "build": {
-        "label": "T-15",
-        "title": "Développement",
-        "description": "TypeScript, tests, revues de code. Nous traitons le code comme une infrastructure."
+        "label": "T-1",
+        "title": "On construit",
+        "description": "De deux à six semaines selon le projet. Vous suivez l'avancement sur un lien privé, vous commentez, on ajuste."
       },
       "launch": {
         "label": "T-0",
-        "title": "Lancement",
-        "description": "Mise en orbite. Surveillance, performances, statistiques et accompagnement après lancement."
+        "title": "En ligne, et on reste",
+        "description": "Mise en ligne, prise en main ensemble, puis hébergement, sauvegardes et petites modifications au fil des mois."
       }
     },
     "services": {
       "ai": {
-        "description": "Intégration de fonctionnalités IA avancées pour rendre vos applications plus intelligentes et plus adaptatives.",
-        "title": "Alimenté par l'IA",
-        "features": ["LLMs", "Embeddings", "Agents", "RAG"]
+        "title": "Assistants & automatisation",
+        "description": "Réponses aux questions fréquentes, tri des demandes, suggestions personnalisées : l'IA là où elle vous fait gagner du temps, avec vos données protégées.",
+        "features": ["Réponses automatiques", "Tri des demandes", "Recommandations", "Données protégées"]
       },
       "design": {
-        "description": "Création d'expériences utilisateur intuitives et enchanteresses qui captivent et ravissent.",
-        "title": "Design UI/UX Mystique",
-        "features": ["Figma", "Design Systems", "Motion", "Accessibilité"]
+        "title": "Design à votre image",
+        "description": "Une présentation soignée, à vos couleurs, qui inspire confiance dès la première visite et donne envie de vous contacter.",
+        "features": ["Maquette offerte", "Vos couleurs", "Lisible sur mobile", "Accessible à tous"]
       },
       "development": {
-        "description": "Création d'applications mobiles robustes et évolutives pour les plateformes iOS et Android.",
-        "title": "Développement Stellaire",
-        "features": ["React", "Next.js", "TypeScript", "Expo"]
+        "title": "Sites & applications",
+        "description": "Un site vitrine, une boutique ou une application mobile, construits sur mesure pour votre activité et agréables à utiliser sur téléphone.",
+        "features": ["Site vitrine", "Boutique en ligne", "Réservation", "Application mobile"]
       },
       "launch": {
-        "description": "Guidage de votre application à travers le processus de lancement et au-delà, assurant un décollage réussi.",
-        "title": "Lancement Cosmique",
-        "features": ["Vercel", "AWS", "Docker", "Sentry"]
+        "title": "Visibilité & suivi",
+        "description": "Mise en ligne, référencement sur Google, hébergement, sauvegardes et mises à jour : votre site reste visible, rapide et sûr, sans que vous ayez à y penser.",
+        "features": ["Référencement Google", "Hébergement", "Sauvegardes", "Mises à jour"]
       },
-      "title": "Nos Services Cosmiques",
-      "eyebrow": "[ SERVICES · 04 ]",
-      "subtitle": "Quatre piliers pour mettre votre produit en orbite — concevoir, construire, livrer, faire grandir.",
+      "title": "Tout ce qu'il faut pour qu'on vous trouve",
+      "eyebrow": "[ Services · 04 ]",
+      "subtitle": "Concevoir, construire, mettre en ligne, faire connaître : un seul interlocuteur, de la première maquette au suivi mois après mois.",
       "learnMore": "En savoir plus"
     },
     "zone": {
@@ -120,37 +110,37 @@
       }
     },
     "projects": {
-      "eyebrow": "[ TRAVAUX RÉCENTS · 04 ]",
-      "title": "Récemment <em>en orbite.</em>",
-      "subtitle": "Une sélection de nos derniers projets",
+      "eyebrow": "[ Réalisations · 04 ]",
+      "title": "Nos dernières <em>réalisations.</em>",
+      "subtitle": "Des associations, un club sportif, nos propres applications : des projets concrets, en ligne aujourd'hui.",
       "learnMore": "Voir le projet",
       "loadMore": "Voir plus de projets",
       "dailyFortune": {
         "title": "Daily Fortune",
-        "tagline": "Mobile · iOS / Android",
-        "description": "Une application mobile mystique délivrant des fortunes quotidiennes et des messages de motivation générés par l'IA.",
-        "tags": ["IA", "Bien-être"],
+        "tagline": "Application mobile · iOS / Android",
+        "description": "Un message court chaque matin pour bien commencer la journée. Notre première application publiée sur l'App Store et Google Play.",
+        "tags": ["Application du studio", "Bien-être"],
         "imageAlt": "Aperçu de l'application Daily Fortune"
       },
       "mcomperat": {
         "title": "mcomper.at",
-        "tagline": "Web · Next.js",
-        "description": "Un CV web moderne et responsive, conçu avec Next.js, TypeScript et une internationalisation complète.",
-        "tags": ["CV personnel"],
+        "tagline": "Site · Multilingue",
+        "description": "Un CV en ligne, disponible en plusieurs langues et rapide à charger. Le terrain d'essai des outils que nous utilisons ensuite pour vous.",
+        "tags": ["Site personnel"],
         "imageAlt": "Aperçu du site mcomper.at"
       },
       "pscSupersprint": {
         "title": "PSC Supersprint",
-        "tagline": "Web · Temps réel",
-        "description": "Une application web pour la gestion et l'affichage en temps réel des résultats de compétitions de triathlon.",
+        "tagline": "Application web · Direct",
+        "description": "Les résultats de course en direct, consultables sur téléphone par les spectateurs pendant l'épreuve.",
         "tags": ["Sport", "Direct"],
         "imageAlt": "Aperçu du tableau des résultats PSC Supersprint"
       },
       "choeurDesPaysduMontBlanc": {
         "title": "Chœur des Pays du Mont Blanc",
-        "tagline": "Web · Éditorial",
-        "description": "Un site web présentant les activités, concerts et répertoire du chœur en Haute-Savoie.",
-        "tags": ["Culture"],
+        "tagline": "Site · Association",
+        "description": "Le site de la chorale : concerts à venir, répertoire et inscriptions, avec un agenda que le bureau met à jour lui-même.",
+        "tags": ["Culture", "Association"],
         "imageAlt": "Aperçu du site du Chœur des Pays du Mont Blanc"
       }
     }

@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.9.0] - 2026-09-23
+
+### Added
+
+- The studio is now called Cosmic Studio across the whole site, in search results and in outgoing emails, with "Go Cosmic" kept as the signature of the main call-to-action
+- A "Talk about my project" button stays visible at the top of every page and at the bottom of the mobile menu
+- The top bar now tells visitors whether the studio is taking new projects and from which month, next to its Chêne-Bougeries base
+
+### Changed
+
+- The homepage, page titles and search descriptions are rewritten in plain words for craftspeople, associations and independents, around one promise: making their business seen, found and chosen — in all five languages
+- The menu is reduced to Services, Projects and Contact, while About, Our apps, the legal pages, cookie settings and a language picker move to a simpler three-column footer
+- Tablets now use the compact menu, and the top bar keeps the same height while scrolling
+
+### Fixed
+
+- Screen readers now announce the logo with the studio name shown on screen
+
 ## [1.8.0] - 2026-09-23
 
 ### Added

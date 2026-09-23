@@ -40,7 +40,7 @@ describe('submitContactMessage', () => {
     expect(result).toEqual({ status: 'success' });
     const [payload] = send.mock.calls[0]!;
     expect(payload).toMatchObject({
-      from: 'Go Cosmic <noreply@gocosmic.dev>',
+      from: 'Cosmic Studio <noreply@gocosmic.dev>',
       to: ['prospect@gocosmic.dev'],
       replyTo: 'ada@example.com',
       subject: 'A showcase website',

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Chi è Go Cosmic - Agenzia Web ad Annecy & Ginevra",
-    "description": "Scopri Go Cosmic, agenzia di sviluppo web e mobile con sede ad Annecy, operante a Ginevra e in Alta Savoia. Incontra Matthieu Compérat, il nostro sviluppatore."
+    "title": "Chi siamo · Cosmic Studio, studio web a Ginevra & Annecy",
+    "description": "Scopri Cosmic Studio, studio web e mobile tra Ginevra e Annecy, e Matthieu Compérat, il tuo referente dal primo contatto all'assistenza nel tempo."
   },
   "about": {
     "developer": {
@@ -40,11 +40,11 @@
         "privacyLink": "Informativa privacy",
         "legalNoticeLink": "Note legali"
       },
-      "intro": "Go Cosmic può integrare funzionalità assistite dall'IA nei progetti dei clienti, mantenendo revisione umana e trasparenza al centro della consegna.",
+      "intro": "Cosmic Studio può integrare funzionalità assistite dall'IA nei progetti dei clienti, mantenendo revisione umana e trasparenza al centro della consegna.",
       "responsibility": {
         "items": {
           "recommendations": "Le raccomandazioni basate sull'IA sono informative e non sostituiscono il giudizio umano",
-          "security": "Go Cosmic si impegna a mantenere i più alti standard di sicurezza e riservatezza",
+          "security": "Cosmic Studio si impegna a mantenere i più alti standard di sicurezza e riservatezza",
           "testing": "Le applicazioni sono testate secondo le migliori pratiche del settore"
         },
         "title": "Responsabilità"
@@ -52,8 +52,8 @@
       "title": "Note legali e uso dell'IA"
     },
     "mission": {
-      "conclusion": "La nostra missione: portare i tuoi progetti verso nuovi orizzonti tecnologici con creatività, innovazione ed eccellenza tecnica.",
-      "description": "Go Cosmic trasforma le tue idee in applicazioni innovative combinando competenza moderna e intelligenza artificiale.",
+      "conclusion": "La nostra missione: rendere visibile online la tua attività, con un sito semplice da gestire e un referente che resta al tuo fianco.",
+      "description": "Cosmic Studio trasforma le tue idee in siti e app concreti, usando l'intelligenza artificiale quando ti fa risparmiare tempo.",
       "location": {
         "fr": "Con sede ad Annecy, operiamo a Ginevra, nella Svizzera romanda e in Alta Savoia — in presenza o da remoto.",
         "ch": "Con sede a Chêne-Bougeries, Ginevra, operiamo in tutta la Svizzera romanda e nella regione di Annecy — in presenza o da remoto."
@@ -62,15 +62,15 @@
         "items": {
           "aiIntegration": "Integrazione avanzata di IA per esperienze utente intelligenti",
           "customSolutions": "Soluzioni su misura con tecnologie moderne (React, React-Native, Next.js, Expo, TypeScript, Tailwind CSS)",
-          "uiUxDesign": "Design UI/UX immersivo con un approccio cosmico unico",
+          "uiUxDesign": "Un design curato, che ti somiglia, pensato per chi visita il tuo sito",
           "webMobile": "Sviluppo di applicazioni web e mobile di nuova generazione"
         },
         "title": "Siamo specializzati in"
       },
-      "title": "Go Cosmic — Creare applicazioni cosmiche con l'IA"
+      "title": "Cosmic Studio — Rendere visibile la tua attività"
     },
-    "subtitle": "Scopri la nostra missione, il nostro team e il nostro impegno per l'eccellenza",
-    "title": "Chi è Go Cosmic",
+    "subtitle": "Chi siamo, come lavoriamo e su cosa puoi contare",
+    "title": "Chi è Cosmic Studio",
     "eyebrow": "Chi siamo — Studio",
     "hero": {
       "cta": "Contattaci"

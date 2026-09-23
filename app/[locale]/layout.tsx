@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Space_Grotesk } from 'next/font/google';
+import { Inter, Space_Grotesk, Space_Mono } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
@@ -26,6 +26,12 @@ const inter = Inter({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font-body',
+});
+
+const spaceMono = Space_Mono({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-mono',
 });
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -79,12 +85,12 @@ export default async function LocaleLayout({
   const region = await getRegion();
 
   return (
-    <html lang={locale || 'en'} className={`${spaceGrotesk.variable} ${inter.variable}`}>
+    <html lang={locale || 'en'} className={`${spaceGrotesk.variable} ${inter.variable} ${spaceMono.variable}`}>
       <body className="bg-slate-950">
         <NextIntlClientProvider>
           <CookieConsentProvider>
             <CosmicCursor />
-            <StatusBar region={region} />
+            <StatusBar />
             <Header />
             <main id="main-content">{children}</main>
             <Footer region={region} />

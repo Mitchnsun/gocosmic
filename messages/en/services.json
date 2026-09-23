@@ -1,15 +1,15 @@
 {
   "services": {
     "meta": {
-      "title": "Web & Mobile Development Services | Annecy · Geneva | Go Cosmic",
-      "description": "Comprehensive web and mobile development services based in Annecy, serving Geneva and Haute-Savoie. React, React Native, Next.js, AI integration."
+      "title": "Services · Websites in Geneva & Annecy | Cosmic Studio",
+      "description": "Showcase sites, online shops, apps and ongoing care for craftspeople, associations and independents in Geneva, French-speaking Switzerland and Haute-Savoie."
     },
-    "title": "Our Cosmic Services",
-    "subtitle": "Comprehensive technical solutions to propel your projects into the stratosphere",
+    "title": "Our services",
+    "subtitle": "Everything it takes for your customers to find you, understand you and get in touch.",
     "stellar_development": {
-      "title": "Stellar Development",
-      "subtitle": "Modern Web Excellence with Cutting-Edge Technologies",
-      "description": "Our development expertise leverages the latest technologies to create robust, scalable, and performant applications. We master the complete development stack from frontend to backend.",
+      "title": "Websites & apps",
+      "subtitle": "A website or an app custom-built for your business",
+      "description": "Showcase site, online shop, appointment booking or mobile app: we write the code ourselves, with no heavy theme or fragile plugin. The result is fast, reliable, and it grows with you.",
       "technologies": {
         "title": "Technologies we master",
         "items": {
@@ -39,9 +39,9 @@
       }
     },
     "mystical_design": {
-      "title": "Mystical UI/UX Design",
-      "subtitle": "Immersive experiences that captivate and convert",
-      "description": "We create digital experiences that are not only visually stunning but also intuitive, accessible, and conversion-focused. Our design philosophy combines cosmic aesthetics with proven UX principles.",
+      "title": "Design that looks like you",
+      "subtitle": "A polished presentation that builds trust",
+      "description": "Your colours, your photos, your words: we design a clear presentation that reads well on phones and computers alike, is accessible to everyone, and makes visitors want to contact you.",
       "approach": {
         "title": "Our design approach",
         "items": {
@@ -71,9 +71,9 @@
       }
     },
     "ai_powered": {
-      "title": "AI Powered Solutions",
-      "subtitle": "Intelligent features that transform user experience",
-      "description": "We integrate cutting-edge AI technologies to create smarter, more adaptive applications. Our AI solutions enhance user experience while maintaining privacy and ethical standards.",
+      "title": "Assistants & automation",
+      "subtitle": "AI where it genuinely saves you time",
+      "description": "Automatic answers to frequent questions, sorted requests, personalised suggestions: we add AI when it makes your day simpler, never as a gimmick, and always with your data kept safe.",
       "capabilities": {
         "title": "AI Integration capabilities",
         "items": {
@@ -103,9 +103,9 @@
       }
     },
     "cosmic_launch": {
-      "title": "Cosmic Launch",
-      "subtitle": "Complete Launch support from development to production",
-      "description": "We provide comprehensive launch support to ensure your application reaches production successfully and continues to perform optimally. Our DevOps expertise guarantees a smooth journey from code to cosmos.",
+      "title": "Visibility & care",
+      "subtitle": "Launch, search visibility and long-term support",
+      "description": "We put your site online, optimise it to be found on Google, then take care of hosting, backups and updates. You keep one point of contact, month after month.",
       "process": {
         "title": "Launch Process",
         "items": {
@@ -135,9 +135,9 @@
       }
     },
     "cta": {
-      "title": "Ready to launch your next Cosmic project?",
-      "description": "Let's discuss how our comprehensive services can transform your vision into reality. From stellar development to cosmic launch, we're here to guide your project to success.",
-      "primary_button": "Start your Cosmic journey",
+      "title": "Let's make your business shine.",
+      "description": "Tell us about your business in a few lines. We get back to you within 24 hours with questions, then a free mockup if the project suits you.",
+      "primary_button": "Talk about my project",
       "geo_availability": "Available in Annecy, Geneva, French-speaking Switzerland, Haute-Savoie and remotely.",
       "local_page": "Discover our dedicated Annecy / Geneva page"
     },

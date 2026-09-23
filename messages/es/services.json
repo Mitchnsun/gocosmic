@@ -1,15 +1,15 @@
 {
   "services": {
     "meta": {
-      "title": "Servicios de Desarrollo Web y Móvil | Annecy · Ginebra | Go Cosmic",
-      "description": "Soluciones completas de desarrollo web y móvil con sede en Annecy, con proyectos en Ginebra y Alta Saboya. React, React Native, Next.js, integración IA."
+      "title": "Servicios · Páginas web en Ginebra y Annecy | Cosmic Studio",
+      "description": "Sitios de presentación, tiendas, aplicaciones y seguimiento para artesanos, asociaciones y autónomos de Ginebra, la Suiza romanda y Alta Saboya."
     },
-    "title": "Nuestros Servicios Cósmicos",
-    "subtitle": "Soluciones técnicas integrales para impulsar tus proyectos a la estratosfera",
+    "title": "Nuestros servicios",
+    "subtitle": "Todo lo necesario para que tus clientes te encuentren, te entiendan y te contacten.",
     "stellar_development": {
-      "title": "Desarrollo Estelar",
-      "subtitle": "Excelencia Web Moderna con Tecnologías de Vanguardia",
-      "description": "Nuestra experiencia en desarrollo aprovecha las últimas tecnologías para crear aplicaciones robustas, escalables y de alto rendimiento. Dominamos todo el stack de desarrollo desde frontend hasta backend.",
+      "title": "Sitios web y aplicaciones",
+      "subtitle": "Un sitio o una aplicación hechos a medida para tu negocio",
+      "description": "Sitio de presentación, tienda en línea, reserva de citas o aplicación móvil: escribimos el código nosotros mismos, sin plantillas pesadas ni complementos frágiles. El resultado es rápido, fiable y crece contigo.",
       "technologies": {
         "title": "Tecnologías que Dominamos",
         "items": {
@@ -39,9 +39,9 @@
       }
     },
     "mystical_design": {
-      "title": "Diseño UI/UX Místico",
-      "subtitle": "Experiencias Inmersivas que Cautivan y Convierten",
-      "description": "Creamos experiencias digitales que son no solo visualmente impresionantes sino también intuitivas, accesibles y orientadas a la conversión. Nuestra filosofía de diseño combina estética cósmica con principios UX probados.",
+      "title": "Diseño a tu imagen",
+      "subtitle": "Una presentación cuidada que inspira confianza",
+      "description": "Tus colores, tus fotos, tus palabras: diseñamos una presentación clara, fácil de leer tanto en el móvil como en el ordenador y accesible para todos, pensada para que tus visitantes quieran contactarte.",
       "approach": {
         "title": "Nuestro Enfoque de Diseño",
         "items": {
@@ -71,9 +71,9 @@
       }
     },
     "ai_powered": {
-      "title": "Soluciones Potenciadas por IA",
-      "subtitle": "Características Inteligentes que Transforman la Experiencia del Usuario",
-      "description": "Integramos tecnologías de IA de vanguardia para crear aplicaciones más inteligentes y adaptativas. Nuestras soluciones de IA mejoran la experiencia del usuario mientras mantienen la privacidad y estándares éticos.",
+      "title": "Asistentes y automatización",
+      "subtitle": "La IA donde de verdad te ahorra tiempo",
+      "description": "Respuestas automáticas a las preguntas frecuentes, clasificación de solicitudes, sugerencias personalizadas: añadimos IA cuando te simplifica el día a día, nunca por moda, y siempre con tus datos protegidos.",
       "capabilities": {
         "title": "Capacidades de Integración de IA",
         "items": {
@@ -103,9 +103,9 @@
       }
     },
     "cosmic_launch": {
-      "title": "Lanzamiento Cósmico",
-      "subtitle": "Soporte Completo de Lanzamiento desde Desarrollo hasta Producción",
-      "description": "Proporcionamos soporte integral de lanzamiento para asegurar que tu aplicación llegue a producción exitosamente y continúe funcionando de manera óptima. Nuestra experiencia en DevOps garantiza un viaje fluido del código al cosmos.",
+      "title": "Visibilidad y seguimiento",
+      "subtitle": "Publicación, posicionamiento en Google y acompañamiento a largo plazo",
+      "description": "Ponemos tu sitio en línea, lo preparamos para que te encuentren en Google y después nos ocupamos del alojamiento, las copias de seguridad y las actualizaciones. Mantienes un solo interlocutor, mes tras mes.",
       "process": {
         "title": "Proceso de Lanzamiento",
         "items": {
@@ -135,9 +135,9 @@
       }
     },
     "cta": {
-      "title": "¿Listo para lanzar tu próximo proyecto cósmico?",
-      "description": "Hablemos de cómo nuestros servicios integrales pueden transformar tu visión en realidad. Desde desarrollo estelar hasta lanzamiento cósmico, estamos aquí para guiar tu proyecto hacia el éxito.",
-      "primary_button": "Comienza tu viaje cósmico",
+      "title": "Hagamos brillar tu negocio.",
+      "description": "Háblanos de tu negocio en unas líneas. Te respondemos en menos de 24 h con preguntas y, si el proyecto te convence, con una maqueta gratuita.",
+      "primary_button": "Hablar de mi proyecto",
       "geo_availability": "Disponible en Annecy, Ginebra, la Suiza romanda, Alta Saboya y en remoto.",
       "local_page": "Descubrir nuestra página dedicada Annecy / Ginebra"
     },

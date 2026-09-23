@@ -1,5 +1,4 @@
-import { WrenchScrewdriverIcon } from '@heroicons/react/24/solid';
-import { act, fireEvent } from '@testing-library/react';
+import { act, fireEvent, within } from '@testing-library/react';
 
 import { Header } from '@/components/Header';
 
@@ -51,25 +50,37 @@ describe('Header Component', () => {
     const header = getByRole('banner');
     expect(header).toBeInTheDocument();
     expect(header).toHaveClass('text-ghost', 'sticky', 'top-0', 'backdrop-blur-md');
-    expectHeaderHeight(header, 85);
+    expectHeaderHeight(header, 64);
 
     const heading = getByRole('heading', { level: 1 });
-    expect(heading).toBeInTheDocument();
-    expect(heading).toHaveTextContent('Go Cosmic');
-    expect(heading).toHaveAccessibleName('Go to homepage');
+    expect(heading).toHaveTextContent('Cosmic Studio.');
+    expect(getByRole('link', { name: 'Cosmic Studio, home' })).toHaveAttribute('href', '/');
     expect(getByRole('link', { name: /skip to main content/i })).toHaveAttribute('href', '#main-content');
+  });
 
-    // Check that translated navigation items are present as links
-    const aboutLink = getByRole('link', { name: /about/i });
-    expect(aboutLink).toBeInTheDocument();
-    expect(aboutLink).toHaveAttribute('href', '/about');
+  it('shows Services, Projects and Contact, and leaves About and Pricing to the footer', () => {
+    const { getByRole, queryByRole } = render(<Header />);
+    const nav = getByRole('navigation', { name: /main navigation/i });
 
-    const contactLink = getByRole('link', { name: /contact/i });
-    expect(contactLink).toBeInTheDocument();
-    expect(contactLink).toHaveAttribute('href', '/contact');
+    expect(getByRole('link', { name: 'Services & pricing' })).toHaveAttribute('href', '/services');
+    expect(getByRole('link', { name: 'Our projects' })).toHaveAttribute('href', '/projects');
+    expect(getByRole('link', { name: 'Contact Cosmic Studio' })).toHaveAttribute('href', '/contact');
+    expect(nav).toHaveTextContent(/^ServicesProjectsContact/);
+    expect(queryByRole('link', { name: /^about/i })).not.toBeInTheDocument();
+    expect(queryByRole('link', { name: /^pricing/i })).not.toBeInTheDocument();
+  });
 
-    const servicesLink = getByRole('link', { name: /services/i });
-    expect(servicesLink).toBeInTheDocument();
+  it('renders the primary CTA pill leading to the contact page', () => {
+    const { getByRole } = render(<Header />);
+    const cta = getByRole('link', { name: 'Talk about my project' });
+
+    expect(cta).toHaveAttribute('href', '/contact');
+    expect(cta).toHaveClass('bg-aerospace', 'text-void', 'rounded-full', 'h-11');
+  });
+
+  it('accepts a custom logo', () => {
+    const { getByRole } = render(<Header logo="Test Studio" />);
+    expect(getByRole('link', { name: 'Test Studio, home' })).toHaveTextContent('Test Studio.');
   });
 
   it('renders the MobileMenuButton', () => {
@@ -80,14 +91,14 @@ describe('Header Component', () => {
     expect(burgerButton).toHaveAttribute('aria-expanded', 'false');
   });
 
-  it('desktop nav has hidden class', () => {
+  it('switches to the burger below the lg breakpoint (tablets included)', () => {
     const { getByRole } = render(<Header />);
     const nav = getByRole('navigation', { name: /main navigation/i });
-    expect(nav).toHaveClass('hidden');
+    expect(nav).toHaveClass('hidden', 'lg:flex');
+    expect(getByRole('button', { name: /open menu/i }).parentElement).toHaveClass('lg:hidden');
   });
 
-  it('compacts the header while scrolling down', () => {
-    Object.defineProperty(window, 'innerWidth', { writable: true, value: 1280 });
+  it('keeps a fixed height while scrolling', () => {
     let mockScrollY = 0;
     Object.defineProperty(window, 'scrollY', {
       configurable: true,
@@ -95,25 +106,6 @@ describe('Header Component', () => {
     });
 
     const { getByRole } = render(<Header />);
-    const header = getByRole('banner');
-    expectHeaderHeight(header, 85);
-
-    mockScrollY = 120;
-    act(() => {
-      window.dispatchEvent(new Event('scroll'));
-    });
-
-    expectHeaderHeight(header, 64);
-  });
-
-  it('keeps max height when adaptiveHeight is disabled', () => {
-    let mockScrollY = 0;
-    Object.defineProperty(window, 'scrollY', {
-      configurable: true,
-      get: () => mockScrollY,
-    });
-
-    const { getByRole } = render(<Header adaptiveHeight={false} />);
     const header = getByRole('banner');
 
     mockScrollY = 300;
@@ -121,93 +113,43 @@ describe('Header Component', () => {
       window.dispatchEvent(new Event('scroll'));
     });
 
-    expectHeaderHeight(header, 85);
-  });
-
-  it('uses tablet and mobile adaptive heights', () => {
-    let mockScrollY = 0;
-    Object.defineProperty(window, 'scrollY', {
-      configurable: true,
-      get: () => mockScrollY,
-    });
-
-    Object.defineProperty(window, 'innerWidth', { writable: true, value: 800 });
-    const { getByRole } = render(<Header />);
-    const header = getByRole('banner');
-    expectHeaderHeight(header, 85);
-
-    mockScrollY = 100;
-    act(() => {
-      window.dispatchEvent(new Event('scroll'));
-    });
-    expectHeaderHeight(header, 56);
-
-    Object.defineProperty(window, 'innerWidth', { writable: true, value: 500 });
-    act(() => {
-      window.dispatchEvent(new Event('resize'));
-    });
     expectHeaderHeight(header, 64);
-  });
-
-  it('supports disabling reduced-motion detection', () => {
-    const matchMediaSpy = vi.spyOn(window, 'matchMedia');
-
-    const { getByRole } = render(<Header respectReducedMotion={false} />);
-    expect(getByRole('banner')).toBeInTheDocument();
-    expect(matchMediaSpy).not.toHaveBeenCalled();
-  });
-
-  it('renders the orbital dot by default', () => {
-    const { getByRole } = render(<Header />);
-    const heading = getByRole('heading', { level: 1 });
-    expect(heading.querySelector('[aria-hidden="true"]')).toBeInTheDocument();
-  });
-
-  it('hides the orbital dot when logoOrbitalEnabled is false', () => {
-    const { getByRole } = render(<Header logoOrbitalEnabled={false} />);
-    const heading = getByRole('heading', { level: 1 });
-    expect(heading.querySelector('[aria-hidden="true"]')).toBeNull();
   });
 
   it('marks a nav item active when isActive is explicitly true', () => {
     const { getByRole } = render(
-      <Header
-        navItems={[
-          {
-            label: 'Services',
-            href: '/services',
-            ariaLabel: 'Services',
-            icon: WrenchScrewdriverIcon,
-            isActive: true,
-          },
-        ]}
-      />
+      <Header navItems={[{ label: 'Services', href: '/services', ariaLabel: 'Services', isActive: true }]} />
     );
     const link = getByRole('link', { name: 'Services' });
     expect(link).toHaveAttribute('aria-current', 'page');
-    expect(link).toHaveClass('opacity-100');
+    expect(link).toHaveClass('text-ghost');
+    expect(link).not.toHaveClass('text-ghost/75');
   });
 
   it('marks a nav item active when pathname equals the href', () => {
     mockPathname = '/services';
     const { getByRole } = render(<Header />);
-    expect(getByRole('link', { name: /our cosmic services/i })).toHaveAttribute('aria-current', 'page');
+    expect(getByRole('link', { name: 'Services & pricing' })).toHaveAttribute('aria-current', 'page');
+    expect(getByRole('link', { name: 'Our projects' })).not.toHaveAttribute('aria-current');
   });
 
   it('marks a nav item active when pathname starts with the href', () => {
-    mockPathname = '/services/sub-page';
+    mockPathname = '/projects/daily-fortune';
     const { getByRole } = render(<Header />);
-    expect(getByRole('link', { name: /our cosmic services/i })).toHaveAttribute('aria-current', 'page');
+    expect(getByRole('link', { name: 'Our projects' })).toHaveAttribute('aria-current', 'page');
   });
 
-  it('opens the mobile menu when the burger button is clicked', () => {
+  it('opens the mobile menu with a Home link and the primary CTA', () => {
     const { getByRole } = render(<Header />);
 
     act(() => {
       fireEvent.click(getByRole('button', { name: /open menu/i }));
     });
 
-    expect(getByRole('dialog', { name: /^menu$/i })).toBeInTheDocument();
+    const menu = getByRole('dialog', { name: /^menu$/i });
+    expect(within(menu).getByRole('link', { name: 'Home' })).toHaveAttribute('href', '/');
+    expect(within(menu).getByRole('link', { name: 'Services & pricing' })).toHaveAttribute('href', '/services');
+    expect(within(menu).getByRole('link', { name: 'Talk about my project' })).toHaveAttribute('href', '/contact');
   });
 
   it('opens the lang drawer when the mobile language switcher is clicked', () => {
@@ -217,6 +159,22 @@ describe('Header Component', () => {
       fireEvent.click(getAllByRole('button', { name: /switch language/i })[1]!);
     });
 
+    expect(getByRole('dialog', { name: /switch language/i })).toBeInTheDocument();
+  });
+
+  it('closes the mobile menu when the lang drawer opens', () => {
+    const { getAllByRole, getByRole, queryByRole } = render(<Header />);
+
+    act(() => {
+      fireEvent.click(getByRole('button', { name: /open menu/i }));
+    });
+    expect(getByRole('dialog', { name: /^menu$/i })).toBeInTheDocument();
+
+    act(() => {
+      fireEvent.click(getAllByRole('button', { name: /switch language/i })[1]!);
+    });
+
+    expect(queryByRole('dialog', { name: /^menu$/i })).not.toBeInTheDocument();
     expect(getByRole('dialog', { name: /switch language/i })).toBeInTheDocument();
   });
 
@@ -248,48 +206,5 @@ describe('Header Component', () => {
     });
 
     expect(queryByRole('dialog')).not.toBeInTheDocument();
-  });
-
-  it('expands the header when scrolling back up after compact', () => {
-    Object.defineProperty(window, 'innerWidth', { writable: true, value: 1280 });
-    let mockScrollY = 0;
-    Object.defineProperty(window, 'scrollY', {
-      configurable: true,
-      get: () => mockScrollY,
-    });
-
-    const { getByRole } = render(<Header />);
-    const header = getByRole('banner');
-
-    mockScrollY = 120;
-    act(() => {
-      window.dispatchEvent(new Event('scroll'));
-    });
-    expectHeaderHeight(header, 64);
-
-    mockScrollY = 20;
-    act(() => {
-      window.dispatchEvent(new Event('scroll'));
-    });
-    expectHeaderHeight(header, 85);
-  });
-
-  it('reapplies expanded height on resize when not compact', () => {
-    Object.defineProperty(window, 'innerWidth', { writable: true, value: 1280 });
-    const mockScrollY = 0;
-    Object.defineProperty(window, 'scrollY', {
-      configurable: true,
-      get: () => mockScrollY,
-    });
-
-    const { getByRole } = render(<Header />);
-    const header = getByRole('banner');
-    expectHeaderHeight(header, 85);
-
-    Object.defineProperty(window, 'innerWidth', { writable: true, value: 800 });
-    act(() => {
-      window.dispatchEvent(new Event('resize'));
-    });
-    expectHeaderHeight(header, 85);
   });
 });

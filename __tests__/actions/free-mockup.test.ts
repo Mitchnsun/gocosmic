@@ -7,7 +7,7 @@ const send = vi.hoisted(() => vi.fn());
 
 vi.mock('@/lib/resend', () => ({
   STUDIO_INBOX_EMAIL: 'prospect@gocosmic.dev',
-  getSenderEmail: () => 'Go Cosmic <noreply@gocosmic.dev>',
+  getSenderEmail: () => 'Cosmic Studio <noreply@gocosmic.dev>',
   getResendClient: () => ({ emails: { send } }),
 }));
 
@@ -61,7 +61,7 @@ describe('submitFreeMockupRequest', () => {
     expect(send).toHaveBeenCalledTimes(1);
     expect(send).toHaveBeenCalledWith(
       expect.objectContaining({
-        from: 'Go Cosmic <noreply@gocosmic.dev>',
+        from: 'Cosmic Studio <noreply@gocosmic.dev>',
         to: ['prospect@gocosmic.dev'],
         replyTo: 'prospect@example.com',
         subject: 'Demande de maquette gratuite — prospect@example.com',

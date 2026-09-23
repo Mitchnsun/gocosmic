@@ -120,7 +120,7 @@ export default async function Services() {
         headline={t('cta.title')}
         description={t('cta.description')}
         ctaText={t('cta.primary_button')}
-        ctaHref="/journey"
+        ctaHref="/contact"
         accentColor="aerospace"
         tone="sober"
       />

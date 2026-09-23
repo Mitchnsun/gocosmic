@@ -1,4 +1,4 @@
-# Documentation Policy (FR/EN) for Go Cosmic
+# Documentation Policy (FR/EN) for Cosmic Studio
 
 ## 1) Language policy by documentation type
 

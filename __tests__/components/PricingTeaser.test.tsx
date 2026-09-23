@@ -16,7 +16,7 @@ describe('PricingTeaser', () => {
 
     expect(screen.getByText(/a single static showcase page/i)).toBeInTheDocument();
     expect(screen.getByText(/graphic redesign of your showcase website/i)).toBeInTheDocument();
-    expect(screen.getByText(/seo optimisation/i)).toBeInTheDocument();
+    expect(screen.getByText(/built to be found on google/i)).toBeInTheDocument();
     expect(screen.getByText(/regular technical updates/i)).toBeInTheDocument();
     expect(screen.getByText(/web hosting/i)).toBeInTheDocument();
     expect(screen.getByText(/secure https connection/i)).toBeInTheDocument();

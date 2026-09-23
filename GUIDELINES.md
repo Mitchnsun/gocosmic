@@ -120,7 +120,7 @@ BREAKING CHANGE: remove deprecated Button API
 After making changes, validate the app manually:
 
 1. `yarn dev` → open http://localhost:3000
-2. Verify the "Go Cosmic" heading renders
+2. Verify the "Cosmic Studio" logo renders in the header
 3. Click "Try me" button → alert should appear
 4. Click "Cosmic developer" link → opens external link
 5. Switch languages (EN → FR → ES → DE → IT):

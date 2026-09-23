@@ -1,11 +1,11 @@
 {
   "projectsList": {
     "meta": {
-      "title": "Our Projects | Go Cosmic — Annecy · Geneva",
-      "description": "Explore Go Cosmic projects — web and mobile apps crafted in Annecy, serving clients in Geneva and Haute-Savoie."
+      "title": "Work · Websites and apps | Cosmic Studio",
+      "description": "Websites and apps built by Cosmic Studio for associations, a sports club and independents, in Geneva and Haute-Savoie."
     },
     "title": "Our Projects",
-    "subtitle": "Explore the constellation of digital experiences crafted by Go Cosmic.",
+    "subtitle": "Websites and apps live today, for associations, a sports club and our own products.",
     "items": {
       "dailyFortune": {
         "title": "Daily Fortune",

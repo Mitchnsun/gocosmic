@@ -1,6 +1,7 @@
 import { JsonLdScript } from 'next-seo';
 
 import { SITE_URL } from '@/i18n/canonical';
+import { BRAND_NAME } from '@/lib/config';
 
 type LocalBusinessSeoProps = {
   locale: string;
@@ -62,7 +63,7 @@ export default function LocalBusinessSeo({ locale }: LocalBusinessSeoProps) {
         '@context': 'https://schema.org',
         '@type': 'ProfessionalService',
         '@id': `${SITE_URL}/#company`,
-        name: 'Go Cosmic',
+        name: BRAND_NAME,
         description,
         url: SITE_URL,
         inLanguage,

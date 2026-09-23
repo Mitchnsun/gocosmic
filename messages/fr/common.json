@@ -8,8 +8,8 @@
     "loading": "Chargement de votre voyage cosmique..."
   },
   "meta": {
-    "title": "Développement Web & Mobile | Annecy · Genève | Go Cosmic",
-    "description": "Agence de développement d'applications web et mobiles basée à Annecy, intervenant à Genève, en Suisse romande et en Haute-Savoie. React, React Native, Next.js."
+    "title": "Création de sites internet · Genève & Annecy | Cosmic Studio",
+    "description": "Sites internet pour les artisans, associations et indépendants de Genève et de Haute-Savoie. Faites-vous trouver sur Google, avec un interlocuteur qui reste."
   },
   "language": {
     "current": "Langue actuelle : {language}",
@@ -27,7 +27,7 @@
     "features": {
       "page": "Une seule page vitrine statique",
       "redesign": "Refonte graphique du site vitrine",
-      "seo": "Optimisations SEO",
+      "seo": "Pensé pour être trouvé sur Google",
       "updates": "Mises à jour techniques régulières",
       "hosting": "Hébergement web",
       "ssl": "Connexion sécurisée HTTPS (le cadenas dans le navigateur)",
@@ -45,26 +45,27 @@
     "cta_contact_aria_label": "Envoyer un email à prospect@gocosmic.dev pour demander un devis"
   },
   "status_bar": {
-    "signal_stable": "SIGNAL STABLE",
-    "mission_control": "CENTRE DE CONTRÔLE",
-    "location": {
-      "fr": "ANNECY · ALT. 447M",
-      "ch": "CHÊNE-BOUGERIES · ALT. 424M"
+    "aria_label": "Disponibilité du studio",
+    "available": {
+      "label": "Disponible",
+      "detail": "Nouveaux projets dès {month}"
     },
-    "aria_label": "Statut du centre de contrôle",
-    "aria_signal": "Signal actif"
+    "booked": {
+      "label": "Complet",
+      "detail": "Prochaines places en {month}"
+    }
   },
   "cookieConsent": {
     "title": "Préférences de confidentialité",
     "description": "Nous utilisons Vercel Analytics pour mesurer l'audience uniquement après votre accord. Le refus n'a aucun impact sur le site.",
     "analyticsTitle": "Mesure d'audience",
-    "analyticsDescription": "Statistiques anonymes de pages vues utilisées pour améliorer le site. Aucun traceur publicitaire n'est chargé par Go Cosmic.",
+    "analyticsDescription": "Statistiques anonymes de pages vues utilisées pour améliorer le site. Aucun traceur publicitaire n'est chargé par Cosmic Studio.",
     "accept": "Accepter l'analyse",
     "refuse": "Refuser",
     "customize": "Personnaliser",
     "save": "Enregistrer mon choix",
     "privacyLink": "Lire la politique de confidentialité",
-    "manage": "Paramètres de confidentialité",
+    "manage": "Gérer les cookies",
     "close": "Fermer"
   },
   "case_study": {

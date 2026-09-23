@@ -1,25 +1,20 @@
 {
   "footer": {
-    "brand_title": "Go Cosmic",
     "brand_desc": {
-      "fr": "Un estudio de desarrollo y diseño que construye aplicaciones cósmicas desde los Alpes franceses.",
-      "ch": "Un estudio de desarrollo y diseño que construye aplicaciones cósmicas desde Ginebra y los Alpes."
+      "fr": "Estudio web y móvil entre Ginebra y Annecy. Ayudamos a artesanos, asociaciones y autónomos a darse a conocer en internet, y seguimos ahí cuando el sitio ya está en línea.",
+      "ch": "Estudio web y móvil en Ginebra. Ayudamos a artesanos, asociaciones y autónomos a darse a conocer en internet, y seguimos ahí cuando el sitio ya está en línea."
     },
-    "nav_title": "Studio",
-    "nav_aria": "Navegación del pie de página",
-    "link_services": "Servicios",
+    "nav_title": "Estudio",
+    "link_services": "Servicios y precios",
     "link_projects": "Proyectos",
-    "link_offers": "Ofertas",
     "link_about": "Acerca de",
     "link_contact": "Contacto",
-    "offers_title": "Ofertas",
-    "offer_solo": "Desarrollador Cósmico Solo",
-    "offer_team": "Equipo Cósmico Completo",
-    "offer_duo": "Dúo Desarrollador + Diseñador",
-    "legal": "El aviso legal, la política de privacidad y la información sobre IA están disponibles en línea.",
-    "copyright": "© {year} Go Cosmic. Todos los sistemas nominales.",
-    "local_page": "Desarrollador web y móvil Annecy / Ginebra",
+    "copyright": "© {year} {brand}",
+    "local_page": "Chêne-Bougeries · Annecy",
     "privacy": "Política de privacidad",
-    "legal_notice": "Aviso legal"
+    "legal_notice": "Aviso legal",
+    "link_apps": "Nuestras aplicaciones",
+    "legal_title": "Legal",
+    "status": "Todos los sistemas en orden"
   }
 }

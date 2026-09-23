@@ -1,7 +1,7 @@
-# DESIGN_GUIDELINE.md — Go Cosmic
+# DESIGN_GUIDELINE.md — Cosmic Studio
 
 > Single design reference for building new components and pages **consistent with the homepage**.
-> Sources: `app/globals.css` (implemented tokens), shipped components (`Header`, `StatusBar`, `ProcessTimeline`, `CTAFinal`, `HeroSection`…), and the EPIC redesign ticket [#58](https://github.com/Mitchnsun/gocosmic/issues/58).
+> Sources: `app/globals.css` (implemented tokens), shipped components (`Header`, `StatusBar`, `ProcessTimeline`, `CTAFinal`, `HeroSection`…), the EPIC redesign ticket [#58](https://github.com/Mitchnsun/gocosmic/issues/58) and the rebrand EPIC [#98](https://github.com/Mitchnsun/gocosmic/issues/98).
 >
 > **For an AI agent:** read this file **before** writing any JSX. The golden rule: never **reinvent** colors, fonts, or spacing — **reuse** the tokens and patterns described here. When in doubt, copy the nearest existing component.
 
@@ -9,7 +9,7 @@
 
 ## 1. Essence & principles
 
-Go Cosmic is a web/mobile dev studio. The visual universe is **spatial / mission-control**: deep near-black background, starfield, orange "ignition" accents, technical mono labels, and a touch of immersion (parallax, warp, reveals). Yet the overall feel stays **sober and premium** — never gimmicky.
+Cosmic Studio (formerly Go Cosmic; "Go Cosmic" survives as the call-to-action signature) is a web/mobile studio for craftspeople, associations and independents. The visual universe is **spatial / mission-control**: deep near-black background, starfield, orange "ignition" accents, technical mono labels, and a touch of immersion (parallax, warp, reveals). Yet the overall feel stays **sober and premium** — never gimmicky.
 
 Four principles that resolve every design decision:
 
@@ -69,7 +69,7 @@ Real CTA pattern: `radial-gradient(circle at 50% 60%, rgb(var(--cta-accent-rgb) 
 | **Inter**                                  | `--font-body`                     | Body text, paragraphs                                     |
 | **Mono** (`Space Mono` / `JetBrains Mono`) | `--font-mono` → class `font-mono` | Eyebrows, coordinates, statuses, metadata, technical tags |
 
-> `globals.css` currently only declares `--font-display` and `--font-body`. The `font-mono` used in components falls back to the default monospace stack. **Recommendation**: formalize `--font-mono: 'Space Mono', ui-monospace, monospace;` in `@theme` to lock HUD label rendering.
+> All three families are loaded with `next/font` in `app/[locale]/layout.tsx` and declared in `@theme` (`--font-display`, `--font-body`, `--font-mono: 'Space Mono', ui-monospace, monospace`), so `font-mono` always renders Space Mono.
 
 **Characteristics:**
 
@@ -113,7 +113,7 @@ Minimum readable size: **14px** for body text.
 
 ## 3. Visual vocabulary (signature elements)
 
-These elements **define** the Go Cosmic style. Reuse them as-is to stay consistent.
+These elements **define** the Cosmic Studio style. Reuse them as-is to stay consistent.
 
 ### 3.1 Eyebrow / `tag`
 
@@ -133,7 +133,7 @@ Common text format: `[ NAME · NN ]` or `SECTOR — STUDIO`.
 
 ```tsx
 <span className="relative flex h-2 w-2" aria-hidden="true">
-  <span className="bg-jungle absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" />
+  <span className="bg-jungle absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 motion-reduce:animate-none" />
   <span className="bg-jungle relative inline-flex h-2 w-2 rounded-full" />
 </span>
 ```
@@ -142,7 +142,7 @@ Common text format: `[ NAME · NN ]` or `SECTOR — STUDIO`.
 
 ### 3.3 HUD labels / coordinates
 
-Ambient mono metadata: coordinates (`48.7°N · 6.2°E`), versions (`v2.026.05`), counters (`[ 01 / 04 ]`), statuses (`SIGNAL · STABLE`). Color `text-ghost/35`, discreet, placed in corners or at the bottom of blocks. Use sparingly for "mission-control" texture.
+Ambient mono metadata: coordinates (`46.2°N 6.2°E`, from `STUDIO_BASE` in `lib/config.ts`), versions (`v2.026.05`), counters (`[ 01 / 04 ]`), statuses (`DISPONIBLE · NOUVEAUX PROJETS DÈS OCTOBRE`). Color `text-ghost/35`, discreet, placed in corners or at the bottom of blocks. Use sparingly for "mission-control" texture.
 
 ### 3.4 Starfield background + glow
 
@@ -264,6 +264,45 @@ Glyph ............. geometric SVG currentColor — NO emoji
 - **Filler content**: fake stats, empty sections, gratuitous icons. Ask before adding content.
 - State logic in the `.tsx` (it belongs in `.hooks.ts`).
 - Fonts outside the system (Roboto, Arial…) or invented new colors.
+
+---
+
+## 8. Voice & copy
+
+The words carry as much of the brand as the tokens. Copy targets **people with a trade, not a CTO**: craftspeople (carpenter, hairdresser, caterer), associations (choir, sports club), independents who are starting out (therapist, photographer). Their question is not "which stack?" but "will people find me, and will someone answer when I call?". Every page answers it.
+
+**Core promise — visibility.** Each page states, in plain words, that the studio makes the reader's business _seen, found and chosen_: a clear site, built to be found on Google, and one person who stays after launch. Prefer outcomes ("vos clients vous trouvent") over deliverables ("site responsive optimisé SEO").
+
+**Tone.**
+
+- Address the reader as "vous" (FR), "you" (EN), "Sie" (DE), "tu" (IT, ES). Short sentences, everyday words, real trades as examples.
+- Say what we do, what it costs, who answers. Prices are visible; delays are concrete ("réponse sous 24 h", "deux à six semaines").
+- Every page ends with a single action: talk to Matthieu (`Parler de mon projet`).
+- Avoid gendered adjectives aimed at the reader in French ("Prêt ?" → "Démarrons votre projet."); agree with the business instead ("Votre activité mérite d'être vue").
+
+**Space theme, one notch down.** Keep the universe, never at the expense of clarity.
+
+| Keep                                                                                                   | Stop                                                                                        |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- |
+| "Go Cosmic" as the CTA signature where an explicit action is also in view (hero under the header pill) | "Go Cosmic" as the only CTA on a screen — a newcomer cannot tell where it leads             |
+| **One** space metaphor per page, tied to visibility: "faire rayonner", "briller", "en orbite"          | Stellar / mystical / cosmic in service names ("Développement Stellaire", "Design Mystique") |
+| Mono HUD details: status bar, coordinates, countdown labels (`T-3 … T-0`)                              | Superlatives: époustouflant, excellence, propulser, stratosphère                            |
+| Green signal dot for "available"                                                                       | Technology lists in client-facing copy (React, Next.js, TypeScript…), acronyms (SEO, SSL)   |
+| "Tous systèmes nominaux" as a footer wink                                                              | Slang and anglicisms when a plain word exists ("Sans drama" → "Sans surprise"), emoji       |
+
+**Lexicon — plain words first.**
+
+| Instead of                      | Write                                               |
+| ------------------------------- | --------------------------------------------------- |
+| SEO, référencement naturel      | être trouvé sur Google, référencement Google        |
+| Responsive, mobile-first        | lisible sur téléphone                               |
+| SSL, HTTPS                      | connexion sécurisée (le cadenas dans le navigateur) |
+| Déploiement, mise en production | mise en ligne                                       |
+| Maintenance, monitoring         | suivi, sauvegardes, mises à jour                    |
+| UI/UX design                    | design à votre image, présentation soignée          |
+| Stack, framework, CMS           | (omit — say what the client can do instead)         |
+
+**Workflow.** French is the source of truth: write FR first, have it proofread, then mirror EN, DE, IT and ES in the same change. Headlines that carry the promise (hero, final CTA, header CTA, status bar, footer baseline) are listed in the PR so the owner can validate them.
 
 ---
 

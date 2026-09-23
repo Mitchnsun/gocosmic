@@ -7,13 +7,13 @@ import { render } from '../test-utils';
 describe('PageHero', () => {
   it('renders the eyebrow, headline and lead', () => {
     const { getByRole, getByText } = render(
-      <PageHero eyebrow="About — Studio" title="About Go Cosmic" lead="Our mission" />
+      <PageHero eyebrow="About — Studio" title="About Cosmic Studio" lead="Our mission" />
     );
 
     expect(getByText('About — Studio')).toBeInTheDocument();
-    expect(getByRole('heading', { level: 1, name: 'About Go Cosmic' })).toHaveAttribute('id', 'page-hero-heading');
+    expect(getByRole('heading', { level: 1, name: 'About Cosmic Studio' })).toHaveAttribute('id', 'page-hero-heading');
     expect(getByText('Our mission')).toBeInTheDocument();
-    expect(getByRole('region', { name: 'About Go Cosmic' })).toBeInTheDocument();
+    expect(getByRole('region', { name: 'About Cosmic Studio' })).toBeInTheDocument();
   });
 
   it('renders both calls-to-action', () => {

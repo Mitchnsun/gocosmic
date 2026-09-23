@@ -1,85 +1,75 @@
 {
   "homepage": {
     "ascii_labels": [
-      "Remote",
       "Go Cosmic",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Apps that launch",
-      "Code that ships",
-      "Annecy",
-      "Tournette",
-      "Aravis",
-      "React",
-      "Expo",
-      "Zero bugs in prod",
-      "Stable orbit",
-      "T-0. Liftoff.",
-      "Houston, we have a problem."
+      "Geneva · Annecy",
+      "Visible on Google",
+      "One point of contact",
+      "Free mockup",
+      "Reply within 24 h"
     ],
     "cta": {
-      "button": "Contact us",
-      "description": "Let's discuss how we can bring your mobile or web app vision to life, creating something truly out of this world.",
-      "freeMockup": "Not ready to talk yet? Ask for your <link>free mockup</link>.",
-      "title": "Ready to Go Cosmic?",
+      "button": "Talk about my project",
+      "description": "Tell us about your business in a few lines. We get back to you within 24 hours, with questions, not an automated quote.",
+      "freeMockup": "Still unsure? Ask for your <link>free mockup</link>.",
+      "title": "Let's make your business shine.",
       "viewOffers": "View our offers"
     },
     "hero": {
-      "cta": "Start your journey",
-      "endWords": ["shine", "soar", "inspire", "transform", "elevate"],
-      "subtitle": "Let us launch your ideas into the stratosphere with mystical design and cosmic functionalities",
-      "title": "We build stellar applications that"
+      "cta": "Go Cosmic",
+      "endWords": ["seen.", "found.", "chosen."],
+      "subtitle": "Cosmic Studio builds websites and apps for craftspeople, associations and independents. A clear site, built to be found on Google, and one person who stays on after launch.",
+      "title": "Your business deserves to be"
     },
     "process": {
-      "eyebrow": "[ PROCESS ]",
-      "title": "Four phases. <em>No drama.</em>",
-      "subtitle": "From idea to reality in 4 phases",
+      "eyebrow": "[ Process · 04 ]",
+      "title": "Four steps. <em>No surprises.</em>",
+      "subtitle": "From the first conversation to launch day, you always know where your project stands.",
       "discovery": {
-        "label": "T-45",
-        "title": "Discover",
-        "description": "Audit, goals, constraints. We map the territory before drawing the map."
+        "label": "T-3",
+        "title": "We talk",
+        "description": "Twenty minutes on the phone or over a coffee in Geneva or Annecy. Your trade, your customers, what the site needs to do for you."
       },
       "design": {
-        "label": "T-30",
-        "title": "Design",
-        "description": "Wireframes, prototypes, high-fidelity. Fast iterations until \"yes\"."
+        "label": "T-2",
+        "title": "You see it before you pay",
+        "description": "A mockup of your home page, with your colours and your words. Free, with no commitment: you decide afterwards."
       },
       "build": {
-        "label": "T-15",
-        "title": "Build",
-        "description": "TypeScript, tests, code reviews. We treat code like infrastructure."
+        "label": "T-1",
+        "title": "We build",
+        "description": "Two to six weeks depending on the project. You follow progress on a private link, you comment, we adjust."
       },
       "launch": {
         "label": "T-0",
-        "title": "Launch",
-        "description": "In orbit. Monitoring, performance, analytics, and post-launch support."
+        "title": "Live, and we stay",
+        "description": "Launch, a hands-on walkthrough together, then hosting, backups and small changes as the months go by."
       }
     },
     "services": {
       "ai": {
-        "description": "Integrating advanced AI features to make your applications smarter, more adaptive, and truly next-gen.",
-        "title": "AI Powered",
-        "features": ["LLMs", "Embeddings", "Agents", "RAG"]
+        "title": "Assistants & automation",
+        "description": "Answers to frequent questions, sorted requests, personalised suggestions: AI where it saves you time, with your data kept safe.",
+        "features": ["Automatic replies", "Request sorting", "Recommendations", "Data protection"]
       },
       "design": {
-        "description": "Crafting intuitive and enchanting user experiences that captivate and delight.",
-        "title": "Mystical UI/UX Design",
-        "features": ["Figma", "Design Systems", "Motion", "A11y"]
+        "title": "Design that looks like you",
+        "description": "A polished presentation in your colours that builds trust from the very first visit and makes people want to get in touch.",
+        "features": ["Free mockup", "Your colours", "Mobile-friendly", "Accessible to all"]
       },
       "development": {
-        "description": "Building robust and scalable mobile applications for both iOS and Android platforms.",
-        "title": "Stellar Development",
-        "features": ["React", "Next.js", "TypeScript", "Expo"]
+        "title": "Websites & apps",
+        "description": "A showcase site, an online shop or a mobile app, custom-built for your business and pleasant to use on a phone.",
+        "features": ["Showcase site", "Online shop", "Bookings", "Mobile app"]
       },
       "launch": {
-        "description": "Guiding your app through the launch process and beyond, ensuring a successful liftoff.",
-        "title": "Cosmic Launch",
-        "features": ["Vercel", "AWS", "Docker", "Sentry"]
+        "title": "Visibility & care",
+        "description": "Launch, Google search optimisation, hosting, backups and updates: your site stays visible, fast and secure, without you having to think about it.",
+        "features": ["Google visibility", "Hosting", "Backups", "Updates"]
       },
-      "title": "Our Cosmic Services",
-      "eyebrow": "[ SERVICES · 04 ]",
-      "subtitle": "Four pillars to launch your product into orbit — design, build, ship, grow.",
+      "title": "Everything it takes to get found",
+      "eyebrow": "[ Services · 04 ]",
+      "subtitle": "Design, build, launch, get known: one point of contact, from the first mockup to month-after-month follow-up.",
       "learnMore": "Learn more"
     },
     "zone": {
@@ -120,37 +110,37 @@
       }
     },
     "projects": {
-      "eyebrow": "[ SELECTED WORK · 04 ]",
-      "title": "Recently <em>in orbit.</em>",
-      "subtitle": "A selection of our latest work",
+      "eyebrow": "[ Work · 04 ]",
+      "title": "Our latest <em>work.</em>",
+      "subtitle": "Associations, a sports club, our own apps: real projects, live today.",
       "learnMore": "View project",
       "loadMore": "Load more projects",
       "dailyFortune": {
         "title": "Daily Fortune",
-        "tagline": "Mobile · iOS / Android",
-        "description": "A mystical mobile app delivering AI-powered daily fortunes and motivational messages.",
-        "tags": ["AI", "Wellness"],
+        "tagline": "Mobile app · iOS / Android",
+        "description": "A short message every morning to start the day well. Our first app published on the App Store and Google Play.",
+        "tags": ["Studio app", "Well-being"],
         "imageAlt": "Daily Fortune app preview"
       },
       "mcomperat": {
         "title": "mcomper.at",
-        "tagline": "Web · Next.js",
-        "description": "A modern, responsive web CV built with Next.js, TypeScript, and full internationalization.",
-        "tags": ["Personal CV"],
+        "tagline": "Website · Multilingual",
+        "description": "An online résumé, available in several languages and quick to load. The testing ground for the tools we then use for you.",
+        "tags": ["Personal site"],
         "imageAlt": "mcomper.at website preview"
       },
       "pscSupersprint": {
         "title": "PSC Supersprint",
-        "tagline": "Web · Real-time",
-        "description": "A web application for managing and displaying real-time triathlon competition results.",
+        "tagline": "Web app · Live",
+        "description": "Live race results that spectators can check on their phones during the event.",
         "tags": ["Sport", "Live"],
         "imageAlt": "PSC Supersprint results board preview"
       },
       "choeurDesPaysduMontBlanc": {
         "title": "Chœur des Pays du Mont Blanc",
-        "tagline": "Web · Editorial",
-        "description": "A website showcasing the choir's activities, concerts, and repertoire in Haute-Savoie.",
-        "tags": ["Culture"],
+        "tagline": "Website · Association",
+        "description": "The choir's website: upcoming concerts, repertoire and sign-ups, with a calendar the committee updates on its own.",
+        "tags": ["Culture", "Association"],
         "imageAlt": "Chœur des Pays du Mont Blanc website preview"
       }
     }

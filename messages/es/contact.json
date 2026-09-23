@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Contáctenos - Póngase en Contacto con Go Cosmic",
-    "description": "Contacte con Go Cosmic para consultas generales, soporte, preguntas técnicas o solicitudes comerciales. Elija el correo adecuado para sus necesidades y obtenga asistencia personalizada."
+    "title": "Contacto · Hablemos de tu proyecto | Cosmic Studio",
+    "description": "Cuéntale tu proyecto a Cosmic Studio: basta con un mensaje y recibes respuesta en menos de 24 h, de la persona que construirá tu sitio."
   },
   "contact": {
     "title": "Contáctenos",
@@ -18,7 +18,7 @@
             "partnership": "Propuestas de asociación",
             "feedback": "Comentarios y experiencia del usuario",
             "suggestions": "Sugerencias de mejora",
-            "mission": "Preguntas sobre la misión y los valores de Go Cosmic"
+            "mission": "Preguntas sobre la misión y los valores de Cosmic Studio"
           }
         },
         "cta": "Enviar un correo",

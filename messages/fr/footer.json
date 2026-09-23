@@ -1,25 +1,20 @@
 {
   "footer": {
-    "brand_title": "Go Cosmic",
     "brand_desc": {
-      "fr": "Un studio de développement & design qui construit des applications cosmiques depuis les Alpes françaises.",
-      "ch": "Un studio de développement & design qui construit des applications cosmiques depuis Genève et les Alpes."
+      "fr": "Studio web et mobile entre Genève et Annecy. Nous aidons les artisans, les associations et les indépendants à se faire connaître en ligne, et nous restons là après la mise en ligne.",
+      "ch": "Studio web et mobile à Genève. Nous aidons les artisans, les associations et les indépendants à se faire connaître en ligne, et nous restons là après la mise en ligne."
     },
     "nav_title": "Studio",
-    "nav_aria": "Navigation du pied de page",
-    "link_services": "Services",
+    "link_services": "Services & tarifs",
     "link_projects": "Projets",
-    "link_offers": "Offres",
     "link_about": "À propos",
     "link_contact": "Contact",
-    "offers_title": "Offres",
-    "offer_solo": "Développeur Cosmique Solo",
-    "offer_team": "Équipe Cosmique Complète",
-    "offer_duo": "Duo Développeur + Designer",
-    "legal": "Mentions légales, politique de confidentialité et informations sur l'IA sont disponibles en ligne.",
-    "copyright": "© {year} Go Cosmic. Tous systèmes nominaux.",
-    "local_page": "Développeur Web & Mobile Annecy / Genève",
+    "copyright": "© {year} {brand}",
+    "local_page": "Chêne-Bougeries · Annecy",
     "privacy": "Politique de confidentialité",
-    "legal_notice": "Mentions légales"
+    "legal_notice": "Mentions légales",
+    "link_apps": "Nos apps",
+    "legal_title": "Légal",
+    "status": "Tous systèmes nominaux"
   }
 }

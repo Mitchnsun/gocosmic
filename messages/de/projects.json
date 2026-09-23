@@ -1,11 +1,11 @@
 {
   "projectsList": {
     "meta": {
-      "title": "Unsere Projekte | Go Cosmic — Annecy · Genf",
-      "description": "Entdecke die Projekte von Go Cosmic — Web- und Mobile-Apps aus Annecy, für Kunden in Genf und Haute-Savoie."
+      "title": "Referenzen · Websites und Apps | Cosmic Studio",
+      "description": "Websites und Apps von Cosmic Studio für Vereine, einen Sportclub und Selbstständige, in Genf und in Hochsavoyen."
     },
     "title": "Unsere Projekte",
-    "subtitle": "Erkunde die Konstellation digitaler Erlebnisse, die von Go Cosmic erschaffen wurden.",
+    "subtitle": "Websites und Apps, die heute online sind: für Vereine, einen Sportclub und unsere eigenen Produkte.",
     "items": {
       "dailyFortune": {
         "title": "Daily Fortune",

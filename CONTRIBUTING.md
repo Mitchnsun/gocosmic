@@ -1,4 +1,4 @@
-# Contributing to Go Cosmic
+# Contributing to Cosmic Studio
 
 Embark on your journey among the stars, thanks to you for helping shape gocosmic.dev! This guide will navigate you through our contribution process and community guidelines.
 

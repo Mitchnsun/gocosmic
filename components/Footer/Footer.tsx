@@ -1,20 +1,17 @@
 import { useTranslations } from 'next-intl';
 
 import { CookieManageButton } from '@/components/CookieConsent';
+import { cn } from '@/design-system/lib/utils';
 import { Link } from '@/i18n/navigation';
+import { BRAND_NAME } from '@/lib/config';
 import type { Region } from '@/lib/region';
 
-const ColumnHeading = ({ children }: { children: React.ReactNode }) => (
-  <h4 className="mb-2 flex items-center gap-2 text-xs font-semibold tracking-widest text-white uppercase">
-    <span className="text-aerospace text-lg drop-shadow-[0_0_6px_rgba(249,115,22,0.8)]" aria-hidden="true">
-      •
-    </span>
-    {children}
-  </h4>
-);
+import { FOOTER_LINK_CLASS, LEGAL_LINKS, STUDIO_LINKS } from './Footer.constants';
+import FooterColumnHeading from './FooterColumnHeading';
+import FooterLanguages from './FooterLanguages';
 
 interface FooterProps {
-  /** Drives which base the studio tagline claims. */
+  /** Drives which base the studio baseline claims. */
   region: Region;
 }
 
@@ -23,94 +20,64 @@ const Footer = ({ region }: FooterProps) => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-slate-900 pt-12 text-gray-400">
-      <div className="m-auto grid max-w-7xl grid-cols-2 gap-12 px-6 md:grid-cols-4">
-        {/* Column 1 — Brand */}
-        <div className="col-span-2">
-          <h4 className="mb-2 text-lg font-bold text-white">
-            {t('brand_title')}
+    <footer className="border-ghost/8 bg-void text-ghost w-full border-t">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 pt-12 pb-8 sm:grid-cols-2 sm:px-6 lg:grid-cols-[2fr_1fr_1fr] lg:px-8 lg:pt-20">
+        {/* Brand */}
+        <div className="flex flex-col gap-3.5 sm:col-span-2 lg:col-span-1">
+          <p className="font-display text-xl font-bold tracking-[-0.02em]">
+            {BRAND_NAME}
             <span className="text-aerospace">.</span>
-          </h4>
-          <p className="text-sm leading-relaxed">{t(`brand_desc.${region}`)}</p>
-          <Link href="/local" className="my-2 block text-sm text-white transition hover:text-blue-400">
-            {t('local_page')}
-          </Link>
-          <p className="text-xs text-gray-500">{t('legal')}</p>
-          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-xs">
-            <Link className="text-gray-300 underline transition hover:text-white" href="/privacy">
-              {t('privacy')}
+          </p>
+          <p className="text-ghost/60 max-w-[40ch] text-[15px] leading-relaxed">{t(`brand_desc.${region}`)}</p>
+          <p className="text-3xs text-ghost/35 font-mono tracking-[0.18em] uppercase">
+            gocosmic.dev ·{' '}
+            <Link
+              href="/local"
+              className="hover:text-ghost focus-visible:ring-aerospace/70 rounded transition-colors focus-visible:ring-2 focus-visible:outline-none">
+              {t('local_page')}
             </Link>
-            <Link className="text-gray-300 underline transition hover:text-white" href="/legal-notice">
-              {t('legal_notice')}
-            </Link>
-            <CookieManageButton />
-          </div>
+          </p>
         </div>
 
-        {/* Column 2 — Studio navigation */}
-        <nav aria-label={t('nav_aria')}>
-          <ColumnHeading>{t('nav_title')}</ColumnHeading>
-          <ul className="space-y-2 pl-4 text-sm">
-            <li>
-              <Link className="transition-colors hover:text-white" href="/services">
-                {t('link_services')}
-              </Link>
-            </li>
-            <li>
-              <Link className="transition-colors hover:text-white" href="/projects">
-                {t('link_projects')}
-              </Link>
-            </li>
-            <li>
-              <Link className="transition-colors hover:text-white" href="/offers">
-                {t('link_offers')}
-              </Link>
-            </li>
-            <li>
-              <Link className="transition-colors hover:text-white" href="/about">
-                {t('link_about')}
-              </Link>
-            </li>
-            <li>
-              <Link className="transition-colors hover:text-white" href="/contact">
-                {t('link_contact')}
-              </Link>
-            </li>
+        {/* Studio */}
+        <nav aria-labelledby="footer-studio" className="flex flex-col gap-3">
+          <FooterColumnHeading id="footer-studio">{t('nav_title')}</FooterColumnHeading>
+          <ul className="flex flex-col gap-2.5">
+            {STUDIO_LINKS.map(({ labelKey, href }) => (
+              <li key={labelKey}>
+                <Link className={FOOTER_LINK_CLASS} href={href}>
+                  {t(labelKey)}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
 
-        {/* Column 3 — Offers */}
-        <div>
-          <ColumnHeading>{t('offers_title')}</ColumnHeading>
-          <ul className="space-y-2 pl-4 text-sm">
+        {/* Legal */}
+        <div className="flex flex-col gap-3">
+          <FooterColumnHeading>{t('legal_title')}</FooterColumnHeading>
+          <ul className="flex flex-col gap-2.5">
+            {LEGAL_LINKS.map(({ labelKey, href }) => (
+              <li key={labelKey}>
+                <Link className={FOOTER_LINK_CLASS} href={href}>
+                  {t(labelKey)}
+                </Link>
+              </li>
+            ))}
             <li>
-              <Link
-                className="transition-colors hover:text-white"
-                href={{ pathname: '/offers', hash: 'solo-developer' }}>
-                {t('offer_solo')}
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="transition-colors hover:text-white"
-                href={{ pathname: '/offers', hash: 'developer-designer' }}>
-                {t('offer_duo')}
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="transition-colors hover:text-white"
-                href={{ pathname: '/offers', hash: 'team-developers' }}>
-                {t('offer_team')}
-              </Link>
+              <CookieManageButton className={cn(FOOTER_LINK_CLASS, 'no-underline')} />
             </li>
           </ul>
+          <FooterLanguages />
         </div>
       </div>
 
       {/* Bottom bar */}
-      <div className="mt-12 border-t border-slate-800 p-6 text-xs">
-        <p>{t('copyright', { year })}</p>
+      <div className="border-ghost/8 border-t">
+        <div className="text-3xs text-ghost/35 mx-auto flex max-w-7xl flex-wrap justify-between gap-2 px-4 py-4 font-mono tracking-[0.14em] uppercase sm:px-6 lg:px-8">
+          <p>{t('copyright', { year, brand: BRAND_NAME })}</p>
+          <p>{t('status')}</p>
+        </div>
       </div>
     </footer>
   );

@@ -1,22 +1,20 @@
 {
   "navigation": {
-    "about_label": "Chi è Go Cosmic",
-    "about": "Chi siamo",
-    "contact_label": "Contatta Go Cosmic",
+    "contact_label": "Contatta Cosmic Studio",
     "contact": "Contatto",
-    "home": "Home",
+    "home": "{brand}, home",
     "label": "Navigazione principale",
     "menu_close": "Chiudi menu",
     "menu_open": "Apri menu",
-    "pricing_label": "Simulatore di prezzi",
-    "pricing": "Prezzi",
-    "projects_label": "I Nostri Progetti",
+    "projects_label": "I nostri progetti",
     "projects": "Progetti",
-    "services_label": "I Nostri Servizi Cosmici",
+    "services_label": "Servizi & prezzi",
     "services": "Servizi",
     "skip_to_content": "Vai al contenuto principale",
     "switch_locale": "Cambia lingua",
     "lang_drawer_title": "LINGUA · SELEZIONA",
-    "menu_title": "MENU"
+    "menu_title": "Menu",
+    "home_menu": "Home",
+    "cta": "Parliamo del tuo progetto"
   }
 }

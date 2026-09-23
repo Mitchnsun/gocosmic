@@ -1,4 +1,3 @@
-import { EnvelopeIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/solid';
 import { fireEvent } from '@testing-library/react';
 
 import { HeaderNavItem } from '@/components/Header/constants';
@@ -7,8 +6,8 @@ import MobileMenu from '@/components/Header/MobileMenu';
 import { render, screen } from '../../test-utils';
 
 const items: HeaderNavItem[] = [
-  { label: 'Services', href: '/services', ariaLabel: 'Services', icon: WrenchScrewdriverIcon },
-  { label: 'Contact', href: '/contact', ariaLabel: 'Contact', icon: EnvelopeIcon },
+  { label: 'Services', href: '/services', ariaLabel: 'Services' },
+  { label: 'Contact', href: '/contact', ariaLabel: 'Contact' },
 ];
 
 describe('MobileMenu', () => {
@@ -43,6 +42,24 @@ describe('MobileMenu', () => {
     render(<MobileMenu onClose={onClose} items={items} />);
     fireEvent.click(screen.getByRole('link', { name: 'Services' }));
     expect(onClose).toHaveBeenCalledTimes(1);
+  });
+
+  it('renders the full-width primary CTA leading to the contact page', () => {
+    render(<MobileMenu onClose={onClose} items={items} />);
+    const cta = screen.getByRole('link', { name: 'Talk about my project' });
+    expect(cta).toHaveAttribute('href', '/contact');
+    expect(cta).toHaveClass('w-full');
+  });
+
+  it('closes the menu when the CTA is clicked', () => {
+    render(<MobileMenu onClose={onClose} items={items} />);
+    fireEvent.click(screen.getByRole('link', { name: 'Talk about my project' }));
+    expect(onClose).toHaveBeenCalledTimes(1);
+  });
+
+  it('shows the studio coordinates in the metadata row', () => {
+    render(<MobileMenu onClose={onClose} items={items} />);
+    expect(screen.getByText('46.2°N 6.2°E')).toBeInTheDocument();
   });
 
   it('renders the email footer link', () => {

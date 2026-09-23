@@ -1,25 +1,20 @@
 {
   "footer": {
-    "brand_title": "Go Cosmic",
     "brand_desc": {
-      "fr": "Uno studio di sviluppo e design che costruisce app cosmiche dalle Alpi francesi.",
-      "ch": "Uno studio di sviluppo e design che costruisce app cosmiche da Ginevra e dalle Alpi."
+      "fr": "Studio web e mobile tra Ginevra e Annecy. Aiutiamo artigiani, associazioni e liberi professionisti a farsi conoscere su internet, e restiamo al loro fianco anche dopo la messa online.",
+      "ch": "Studio web e mobile a Ginevra. Aiutiamo artigiani, associazioni e liberi professionisti a farsi conoscere su internet, e restiamo al loro fianco anche dopo la messa online."
     },
     "nav_title": "Studio",
-    "nav_aria": "Navigazione del footer",
-    "link_services": "Servizi",
+    "link_services": "Servizi & prezzi",
     "link_projects": "Progetti",
-    "link_offers": "Offerte",
     "link_about": "Chi siamo",
     "link_contact": "Contatto",
-    "offers_title": "Offerte",
-    "offer_solo": "Sviluppatore Cosmico Solo",
-    "offer_team": "Team Cosmico Completo",
-    "offer_duo": "Duo Sviluppatore + Designer",
-    "legal": "Note legali, informativa privacy e informazioni sull'IA sono disponibili online.",
-    "copyright": "© {year} Go Cosmic. Tutti i sistemi nominali.",
-    "local_page": "Sviluppatore web e mobile Annecy / Ginevra",
+    "copyright": "© {year} {brand}",
+    "local_page": "Chêne-Bougeries · Annecy",
     "privacy": "Informativa privacy",
-    "legal_notice": "Note legali"
+    "legal_notice": "Note legali",
+    "link_apps": "Le nostre app",
+    "legal_title": "Informazioni legali",
+    "status": "Tutti i sistemi nominali"
   }
 }

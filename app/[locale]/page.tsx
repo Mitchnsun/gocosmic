@@ -42,7 +42,7 @@ export default async function Home() {
         endWords={t.raw('hero.endWords') as string[]}
         subtitle={t('hero.subtitle')}
         ctaText={t('hero.cta')}
-        ctaHref="/journey"
+        ctaHref="/contact"
         className="-m-4 mb-4"
       />
 

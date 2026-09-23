@@ -8,8 +8,8 @@
     "loading": "Caricamento del tuo viaggio cosmico..."
   },
   "meta": {
-    "title": "Sviluppo Web & Mobile | Annecy · Ginevra | Go Cosmic",
-    "description": "Agenzia di sviluppo app web e mobile con sede ad Annecy, operante a Ginevra, nella Svizzera romanda e in Alta Savoia. React, React Native, Next.js."
+    "title": "Creazione di siti internet · Ginevra & Annecy | Cosmic Studio",
+    "description": "Siti internet per artigiani, associazioni e liberi professionisti di Ginevra e dell'Alta Savoia. Fatti trovare su Google, con un referente che resta nel tempo."
   },
   "language": {
     "current": "Lingua attuale: {language}",
@@ -27,7 +27,7 @@
     "features": {
       "page": "Una sola pagina vetrina statica",
       "redesign": "Ridisegno grafico del sito web vetrina",
-      "seo": "Ottimizzazione SEO",
+      "seo": "Pensato per farti trovare su Google",
       "updates": "Aggiornamenti tecnici regolari",
       "hosting": "Hosting web",
       "ssl": "Connessione sicura HTTPS (il lucchetto nel browser)",
@@ -45,26 +45,27 @@
     "cta_contact_aria_label": "Invia un'email a prospect@gocosmic.dev per richiedere un preventivo"
   },
   "status_bar": {
-    "signal_stable": "SEGNALE STABILE",
-    "mission_control": "CONTROLLO MISSIONE",
-    "location": {
-      "fr": "ANNECY · ALT. 447M",
-      "ch": "CHÊNE-BOUGERIES · ALT. 424M"
+    "aria_label": "Disponibilità dello studio",
+    "available": {
+      "label": "Disponibile",
+      "detail": "Nuovi progetti da {month}"
     },
-    "aria_label": "Stato del controllo missione",
-    "aria_signal": "Segnale attivo"
+    "booked": {
+      "label": "Al completo",
+      "detail": "Posti liberi da {month}"
+    }
   },
   "cookieConsent": {
     "title": "Preferenze privacy",
     "description": "Usiamo Vercel Analytics per misurare l'audience solo dopo il tuo consenso. Il rifiuto non influisce sul sito.",
     "analyticsTitle": "Misurazione dell'audience",
-    "analyticsDescription": "Statistiche anonime sulle pagine viste usate per migliorare il sito. Go Cosmic non carica tracker pubblicitari.",
+    "analyticsDescription": "Statistiche anonime sulle pagine visitate, usate per migliorare il sito. Cosmic Studio non carica alcuno strumento di tracciamento pubblicitario.",
     "accept": "Accetta analytics",
     "refuse": "Rifiuta",
     "customize": "Personalizza",
     "save": "Salva la scelta",
     "privacyLink": "Leggi la privacy policy",
-    "manage": "Impostazioni privacy",
+    "manage": "Gestisci i cookie",
     "close": "Chiudi"
   },
   "case_study": {
