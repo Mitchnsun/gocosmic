@@ -6,12 +6,13 @@ import { useEffect } from 'react';
 
 import { buttonVariants } from '@/design-system/button.variants';
 import { cn } from '@/design-system/lib/utils';
-import { CONTACT_LIMITS } from '@/lib/contact/validation';
+import { CONTACT_LIMITS, CONTACT_NEEDS } from '@/lib/contact/validation';
 
 import { useContactForm } from './ContactForm.hooks';
 import type { ContactFormProps } from './ContactForm.types';
 import { ContactFormSuccess } from './ContactFormSuccess';
 import { FormField } from './FormField';
+import { NeedPicker } from './NeedPicker';
 
 /**
  * Contact form with client-side validation, a honeypot field, client and
@@ -93,30 +94,6 @@ export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'cont
           />
         </div>
 
-        <FormField
-          name="subject"
-          label={`${t('fields.subject.label')} — ${t('optional')}`}
-          placeholder={t('fields.subject.placeholder')}
-          value={values.subject}
-          onChange={handleChange}
-          error={errors.subject ? t(`errors.${errors.subject}`) : undefined}
-          maxLength={CONTACT_LIMITS.subject.max}
-          disabled={isSending}
-        />
-
-        <FormField
-          name="message"
-          multiline
-          label={t('fields.message.label')}
-          placeholder={t('fields.message.placeholder')}
-          value={values.message}
-          onChange={handleChange}
-          error={errors.message ? t(`errors.${errors.message}`) : undefined}
-          maxLength={CONTACT_LIMITS.message.max}
-          disabled={isSending}
-          required
-        />
-
         <div className="grid gap-6 md:grid-cols-2">
           <FormField
             name="phone"
@@ -143,6 +120,27 @@ export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'cont
           />
         </div>
 
+        <NeedPicker
+          legend={`${t('fields.need.legend')} — ${t('optional')}`}
+          options={CONTACT_NEEDS.map((need) => ({ value: need, label: t(`fields.need.options.${need}`) }))}
+          value={values.need}
+          onChange={handleChange}
+          disabled={isSending}
+        />
+
+        <FormField
+          name="message"
+          multiline
+          label={t('fields.message.label')}
+          placeholder={t('fields.message.placeholder')}
+          value={values.message}
+          onChange={handleChange}
+          error={errors.message ? t(`errors.${errors.message}`) : undefined}
+          maxLength={CONTACT_LIMITS.message.max}
+          disabled={isSending}
+          required
+        />
+
         {/* Anti-spam honeypot — hidden from humans and assistive technology. */}
         <div className="hidden" aria-hidden="true">
           <label htmlFor="honeypot">{t('honeypot_label')}</label>
@@ -158,7 +156,7 @@ export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'cont
         </div>
 
         {formError && (
-          <p role="alert" className="text-sm text-red-400">
+          <p role="alert" className="text-aerospace text-sm">
             {t(`errors.${formError}`)}
           </p>
         )}

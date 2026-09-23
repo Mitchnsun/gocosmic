@@ -1,157 +1,75 @@
 {
   "services": {
     "meta": {
-      "title": "Web- & Mobile-Entwicklungsleistungen | Annecy · Genf | Go Cosmic",
-      "description": "Umfassende Web- und Mobile-Entwicklungsleistungen mit Sitz in Annecy, tätig in Genf und Haute-Savoie. React, React Native, Next.js, KI-Integration."
-    },
-    "title": "Unsere Kosmischen Dienstleistungen",
-    "subtitle": "Umfassende technische Lösungen, um Ihre Projekte in die Stratosphäre zu katapultieren",
-    "stellar_development": {
-      "title": "Stellare Entwicklung",
-      "subtitle": "Moderne Web-Exzellenz mit Spitzentechnologien",
-      "description": "Unsere Entwicklungsexpertise nutzt die neuesten Technologien, um robuste, skalierbare und leistungsstarke Anwendungen zu erstellen. Wir beherrschen den kompletten Entwicklungsstack vom Frontend bis zum Backend.",
-      "technologies": {
-        "title": "Technologien, die wir beherrschen",
-        "items": {
-          "frontend": "Modernes Frontend: React 19, Next.js 15, TypeScript, TailwindCSS 4.x",
-          "architecture": "Skalierbare Architektur: Monorepo mit Turborepo, Komponentenbibliotheken, Design Systems",
-          "quality": "Code-Qualität: ESLint 9.x, Prettier, Husky, 100% Testabdeckung mit Vitest",
-          "performance": "Performance: Server-Side Rendering, Static Generation, Bildoptimierung"
-        }
-      },
-      "expertise": {
-        "title": "Unsere Entwicklungsexpertise",
-        "items": {
-          "workflow": "Erweiterte CI/CD-Workflows mit automatisierten Tests und Deployment",
-          "scalability": "Microservices-Architektur und cloud-native Lösungen",
-          "security": "Sicherheits-Best-Practices mit Vulnerability-Scanning und Compliance",
-          "apis": "RESTful und GraphQL APIs mit umfassender Dokumentation"
-        }
-      },
-      "features": {
-        "title": "Was wir liefern",
-        "items": {
-          "quality": "Produktionsreifer Code mit 100% Testabdeckung und umfassender Dokumentation",
-          "performance": "Blitzschnelle Anwendungen optimiert für Core Web Vitals",
-          "maintainability": "Saubere, modulare Architektur, die mit Ihren Geschäftsanforderungen skaliert",
-          "reliability": "Robuste Anwendungen mit Fehlerbehandlung und Monitoring-Integration"
-        }
-      }
-    },
-    "mystical_design": {
-      "title": "Mystisches UI/UX Design",
-      "subtitle": "Immersive Erfahrungen, die Fesseln und Konvertieren",
-      "description": "Wir schaffen digitale Erfahrungen, die nicht nur visuell beeindruckend, sondern auch intuitiv, zugänglich und konversionsorientiert sind. Unsere Design-Philosophie kombiniert kosmische Ästhetik mit bewährten UX-Prinzipien.",
-      "approach": {
-        "title": "Unser Design-Ansatz",
-        "items": {
-          "systems": "Design Systems: Konsistente, skalierbare Komponentenbibliotheken mit dokumentierten Mustern",
-          "accessibility": "Universelle Zugänglichkeit: WCAG-Konformität mit semantischem HTML und ARIA-Standards",
-          "responsive": "Mobile-First Responsive: Fließende Layouts, die perfekt auf allen Geräten funktionieren",
-          "performance": "Performance-fokussiert: Optimierte Assets und flüssige Animationen"
-        }
-      },
-      "tools": {
-        "title": "Design & Entwicklungstools",
-        "items": {
-          "components": "Radix UI Primitives mit Class Variance Authority für type-safe Styling",
-          "styling": "TailwindCSS mit benutzerdefinierten Design-Tokens und Utility-First-Ansatz",
-          "testing": "Storybook für Komponentendokumentation und visuelles Testen",
-          "prototyping": "Interaktive Prototypen mit echten Daten und produktionsreifen Komponenten"
-        }
-      },
-      "outcomes": {
-        "title": "Design-Ergebnisse",
-        "items": {
-          "engagement": "Erhöhtes Nutzerengagement durch intuitive und erfreuliche Interaktionen",
-          "conversion": "Höhere Konversionsraten mit strategisch platzierten CTAs und Nutzerflüssen",
-          "brand": "Starke Markenidentität, die in der kosmischen digitalen Landschaft hervorsticht",
-          "satisfaction": "Außergewöhnliche Nutzerzufriedenheit durch durchdachte UX-Forschung und Tests"
-        }
-      }
-    },
-    "ai_powered": {
-      "title": "KI-gestützte Lösungen",
-      "subtitle": "Intelligente Features, die die Benutzererfahrung transformieren",
-      "description": "Wir integrieren modernste KI-Technologien, um intelligentere, adaptivere Anwendungen zu schaffen. Unsere KI-Lösungen verbessern die Benutzererfahrung bei gleichzeitiger Wahrung von Datenschutz und ethischen Standards.",
-      "capabilities": {
-        "title": "KI-Integrationsfähigkeiten",
-        "items": {
-          "recommendations": "Intelligente Empfehlungsmaschinen angetrieben von Machine-Learning-Algorithmen",
-          "automation": "Prozessautomatisierung und Workflow-Optimierung mit KI-gestützten Insights",
-          "analytics": "Erweiterte Analytics und prädiktive Modellierung für datengetriebene Entscheidungen",
-          "nlp": "Natural Language Processing für Chatbots und Content-Analyse"
-        }
-      },
-      "implementation": {
-        "title": "Technische Implementierung",
-        "items": {
-          "apis": "Nahtlose Integration mit führenden KI-Plattformen (OpenAI, Google AI, Azure Cognitive Services)",
-          "privacy": "Privacy-First-Ansatz mit On-Device-Verarbeitung wenn möglich",
-          "scalability": "Cloud-basierte KI-Services, die mit Ihrer Nutzerbasis skalieren",
-          "monitoring": "Umfassendes Monitoring und Performance-Optimierung für KI-Features"
-        }
-      },
-      "use_cases": {
-        "title": "KI-Anwendungsfälle",
-        "items": {
-          "personalization": "Personalisierte Benutzererfahrungen basierend auf Verhalten und Präferenzen",
-          "support": "Intelligenter Kundensupport mit automatisierten Antworten und Eskalation",
-          "optimization": "Performance-Optimierung durch prädiktive Ressourcenzuweisung",
-          "insights": "Business Intelligence durch automatisierte Datenanalyse und Reporting"
-        }
-      }
-    },
-    "cosmic_launch": {
-      "title": "Kosmischer Launch",
-      "subtitle": "Vollständige Launch-Unterstützung von der Entwicklung bis zur Produktion",
-      "description": "Wir bieten umfassende Launch-Unterstützung, um sicherzustellen, dass Ihre Anwendung erfolgreich in die Produktion geht und weiterhin optimal funktioniert. Unsere DevOps-Expertise garantiert eine reibungslose Reise vom Code zum Kosmos.",
-      "process": {
-        "title": "Launch-Prozess",
-        "items": {
-          "testing": "Umfassende Tests einschließlich Unit-, Integrations- und End-to-End-Tests",
-          "staging": "Staging-Umgebung-Setup mit produktionsähnlichen Konfigurationen",
-          "deployment": "Automatisierte Deployment-Pipelines mit Rollback-Funktionen",
-          "monitoring": "Echtzeit-Monitoring und Alarmsysteme"
-        }
-      },
-      "infrastructure": {
-        "title": "Infrastruktur & DevOps",
-        "items": {
-          "cloud": "Multi-Cloud-Deployment-Strategien (AWS, Vercel, Azure, Google Cloud)",
-          "cicd": "Erweiterte CI/CD-Pipelines mit automatisierten Tests und Deployment",
-          "security": "Sicherheitsscanning, Vulnerability-Assessments und Compliance-Monitoring",
-          "scaling": "Auto-skalende Infrastruktur, die mit Ihrem Erfolg wächst"
-        }
-      },
-      "support": {
-        "title": "Laufende Unterstützung",
-        "items": {
-          "monitoring": "24/7 Anwendungsmonitoring mit intelligenten Alarmen",
-          "optimization": "Kontinuierliche Performance-Optimierung und Ressourcenmanagement",
-          "updates": "Regelmäßige Sicherheitsupdates und Feature-Verbesserungen",
-          "consultation": "Strategische technische Beratung für zukünftiges Wachstum"
-        }
-      }
+      "title": "Leistungen & Preise · Websites in Genf & Annecy | Cosmic Studio",
+      "description": "Präsentationswebsites, Onlineshops, Apps und Betreuung, mit offenen Preisen: ein Abonnement ab 10 € im Monat oder ein Projekt nach Angebot. Genf, Hochsavoyen und aus der Ferne."
     },
     "cta": {
-      "title": "Bereit, Ihr nächstes kosmisches Projekt zu starten?",
-      "description": "Lassen Sie uns besprechen, wie unsere umfassenden Services Ihre Vision in die Realität umsetzen können. Von stellarer Entwicklung bis zum kosmischen Launch - wir sind da, um Ihr Projekt zum Erfolg zu führen.",
-      "primary_button": "Starten Sie Ihre kosmische Reise",
-      "geo_availability": "Verfügbar in Annecy, Genf, der Westschweiz, Haute-Savoie und remote.",
-      "local_page": "Unsere spezielle Seite Annecy / Genf entdecken"
+      "title": "Bringen wir Ihren Betrieb zum Strahlen.",
+      "description": "Erzählen Sie uns in ein paar Zeilen, was Sie tun. Wir melden uns innerhalb von 24 Stunden mit Fragen und danach mit einem kostenlosen Entwurf, wenn das Projekt für Sie passt.",
+      "primary_button": "Mein Projekt besprechen"
     },
-    "eyebrow": "Leistungen — Kompetenzen",
-    "hero": {
-      "cta": "Über Ihr Projekt sprechen",
-      "secondary": "Preise ansehen"
+    "intro": {
+      "eyebrow": "[ Leistungen & Preise ]",
+      "title": "Eine Website, die läuft, <em>und jemand, der sich darum kümmert.</em>",
+      "lead": "Die Preise stehen hier offen, denn Sie haben Besseres zu tun, als ein Angebot anzufragen, nur um zu erfahren, ob es in Ihr Budget passt. Und Sie beginnen mit einem kostenlosen, unverbindlichen Mockup."
     },
-    "explore": {
-      "eyebrow": "Nächster Schritt",
-      "title": "Erst die Projekte, dann das Budget",
-      "description": "Sehen Sie sich die umgesetzten Projekte an oder berechnen Sie Ihr Budget in zwei Klicks.",
-      "projects": "Projekte ansehen",
-      "pricing": "Budget berechnen"
+    "simulator": {
+      "eyebrow": "[ Abonnement zusammenstellen ]",
+      "title": "Fangen Sie klein an. <em>Erweitern Sie, wenn Sie es brauchen.</em>",
+      "lead": "Die Basis: eine Präsentationsseite, online und sicher, für {price} im Monat. Optionen kommen mit der Zeit hinzu, wenn Sie sie brauchen."
+    },
+    "trades": {
+      "eyebrow": "[ Was wir machen · 04 ]",
+      "title": "Vier Fachgebiete, <em>ein einziger Ansprechpartner.</em>",
+      "items": {
+        "showcase": {
+          "title": "Präsentationswebsites",
+          "description": "Ihren Betrieb, Ihre Arbeiten und Ihre Öffnungszeiten zeigen und bei Google von den Menschen in der Nähe gefunden werden.",
+          "tags": ["Handwerksbetriebe", "Vereine", "Selbstständige"]
+        },
+        "shops": {
+          "title": "Onlineshops & Buchungen",
+          "description": "Online verkaufen, Termine vergeben, Mitgliedschaften verwalten. Ohne Provision auf Ihre Verkäufe.",
+          "tags": ["Onlineverkauf", "Terminbuchung", "Mitgliedschaften"]
+        },
+        "apps": {
+          "title": "Apps",
+          "description": "Ein Werkzeug für Ihren Betrieb, eine App für Ihre Kundschaft oder Ihre Mitglieder, ein Assistent, der häufige Fragen beantwortet: im Web oder auf dem Handy.",
+          "tags": ["Web", "iOS", "Android"]
+        },
+        "care": {
+          "title": "Sichtbarkeit & Betreuung",
+          "description": "Auffindbarkeit bei Google, Hosting, Datensicherungen, Aktualisierungen, Änderungen und Einführung: ein einziger Ansprechpartner, der Ihre Website kennt.",
+          "tags": ["Google", "Betreuung", "Schulung"]
+        }
+      }
+    },
+    "faq": {
+      "eyebrow": "[ Häufige Fragen ]",
+      "title": "Was man uns fragt, <em>bevor man unterschreibt.</em>",
+      "items": {
+        "ownership": {
+          "question": "Gehört mir die Website?",
+          "answer": "Ihre Texte, Ihre Bilder und Ihr Domainname gehören Ihnen vom ersten Tag an. Der Code der Website geht nach {months} Monaten Abonnement an Sie über: Nur so ist ein so niedriger Einstiegspreis möglich. Sie möchten ihn früher? Das geht, gegen eine Übertragungsgebühr, die von der verbleibenden Laufzeit abhängt. Bei einem Einzelprojekt gehört Ihnen der Code ab der Übergabe."
+        },
+        "edit": {
+          "question": "Kann ich die Website selbst ändern?",
+          "answer": "Am einfachsten ist die Option „Inhaltsänderungen inklusive“: Sie schicken uns Ihre Texte, Fotos oder Öffnungszeiten, und die Sache ist erledigt. Viele schreiben uns lieber, als ein Werkzeug zu lernen. Wenn Sie unbedingt selbst veröffentlichen möchten, ist das möglich: Wir besprechen es, es ist dann ein individuelles Projekt."
+        },
+        "timing": {
+          "question": "Wie lange dauert es, bis ich online bin?",
+          "answer": "Für eine Präsentationsseite: zwei bis drei Wochen, nachdem wir Ihre Texte und Fotos erhalten haben. Für eine Website mit fünf Seiten: vier bis sechs Wochen. Wir nennen Ihnen zu Beginn ein Datum und halten es ein."
+        },
+        "stop": {
+          "question": "Was passiert, wenn ich kündige?",
+          "answer": "Sie geben uns Bescheid, und die Website bleibt bis zum Ende des laufenden bezahlten Zeitraums online. Sie behalten Ihre Inhalte und Ihren Domainnamen. Der Code der Website ist nach {months} Monaten Abonnement inbegriffen; davor wird er gegen eine Gebühr übertragen, die wir Ihnen von Anfang an nennen. Enthält Ihr Abonnement einen Domainnamen oder eine E-Mail-Adresse, läuft es in 12-Monats-Zeiträumen: der laufende Zeitraum wird zu Ende geführt."
+        },
+        "content": {
+          "question": "Kümmern Sie sich auch um Texte und Fotos?",
+          "answer": "Wir helfen Ihnen beim Schreiben und lesen alles gegen, mit Blick auf die Wörter, die Ihre Kundschaft bei Google eintippt. Bei den Fotos arbeiten wir mit Ihren eigenen oder bringen Sie mit einer Fotografin oder einem Fotografen aus der Region zusammen; das ist nicht im Abonnement enthalten."
+        }
+      }
     }
   }
 }

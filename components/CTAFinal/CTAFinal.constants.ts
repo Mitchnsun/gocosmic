@@ -24,8 +24,8 @@ export const DENSITY_STAR_COUNT: Record<StarfieldDensity, number> = {
 /** Base background per visual variant (rendered behind the starfield). */
 export const VARIANT_BACKGROUND: Record<Variant, string> = {
   dark: 'bg-void',
-  light: 'bg-space',
-  gradient: 'bg-gradient-to-b from-void via-space to-void',
+  light: 'bg-ember',
+  gradient: 'bg-gradient-to-b from-void via-ember to-void',
 };
 
 /** Scales the conceptual 0–1 speed props to the Starfield's pixels-per-frame units. */

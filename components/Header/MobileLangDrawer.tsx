@@ -7,7 +7,7 @@ import { useEffect, useTransition } from 'react';
 
 import { usePathname, useRouter } from '@/i18n/navigation';
 
-import { MOBILE_HEIGHT, MOBILE_MENU_DURATION_MS, MOBILE_MENU_STAGGER_MS, STATUS_BAR_HEIGHT } from './constants';
+import { HEADER_HEIGHT, MOBILE_MENU_DURATION_MS, MOBILE_MENU_STAGGER_MS, STATUS_BAR_HEIGHT } from './constants';
 
 export const LANG_DRAWER_LANGUAGES = {
   en: { name: 'English', flag: '🇬🇧' },
@@ -19,10 +19,9 @@ export const LANG_DRAWER_LANGUAGES = {
 
 interface MobileLangDrawerProps {
   onClose: () => void;
-  headerHeight?: number;
 }
 
-const MobileLangDrawer = ({ onClose, headerHeight = MOBILE_HEIGHT }: MobileLangDrawerProps) => {
+const MobileLangDrawer = ({ onClose }: MobileLangDrawerProps) => {
   const [isPending, startTransition] = useTransition();
   const t = useTranslations('navigation');
   const router = useRouter();
@@ -64,7 +63,7 @@ const MobileLangDrawer = ({ onClose, headerHeight = MOBILE_HEIGHT }: MobileLangD
       transition={{ ease: [0.16, 1, 0.3, 1], duration: MOBILE_MENU_DURATION_MS / 1000 }}>
       <div
         aria-hidden="true"
-        style={{ height: `calc(${STATUS_BAR_HEIGHT}px + env(safe-area-inset-top, 0px) + ${headerHeight}px)` }}
+        style={{ height: `calc(${STATUS_BAR_HEIGHT}px + env(safe-area-inset-top, 0px) + ${HEADER_HEIGHT}px)` }}
         className="shrink-0"
       />
       <div className="border-ghost/10 text-3xs flex items-center justify-between border-b px-4 py-3 tracking-widest text-slate-500 uppercase sm:px-6">

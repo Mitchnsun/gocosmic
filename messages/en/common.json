@@ -1,70 +1,42 @@
 {
   "404": {
-    "description": "Maybe the stars just haven't aligned yet.",
-    "link": "Go back home",
-    "title": "You seem to be lost in space"
-  },
-  "common": {
-    "loading": "Loading your Cosmic journey..."
+    "eyebrow": "[ Error 404 ]",
+    "title": "This page has drifted out of orbit.",
+    "description": "The link may be old, or the page has moved. Head back to the homepage, or tell us what you were looking for.",
+    "link": "Back to the homepage",
+    "contact": "Tell us what you were looking for"
   },
   "meta": {
-    "title": "Web & Mobile Development | Annecy · Geneva | Go Cosmic",
-    "description": "Web and mobile app development agency based in Annecy, serving Geneva, French-speaking Switzerland and Haute-Savoie. React, React Native, Next.js."
+    "title": "Websites for local businesses · Geneva & Annecy | Cosmic Studio",
+    "description": "Websites for craftspeople, associations and independents in Geneva and Haute-Savoie. Get found on Google, with one person who stays by your side."
   },
   "language": {
     "current": "Current language: {language}",
     "switchTo": "Switch to {language}"
   },
-  "pricing_teaser": {
-    "eyebrow": "Showcase website",
-    "price": {
-      "eur": "from 10€",
-      "chf": "from 10 CHF"
-    },
-    "price_period": "/ month",
-    "tagline": "All-inclusive, no surprises",
-    "scope_note": "Ideal for presenting your business, services and contact details online — without order management or client portal.",
-    "features": {
-      "page": "A single static showcase page",
-      "redesign": "Graphic redesign of your showcase website",
-      "seo": "SEO optimisation",
-      "updates": "Regular technical updates",
-      "hosting": "Web hosting",
-      "ssl": "Secure HTTPS connection (the padlock in the browser)",
-      "email": "1 professional email address"
-    },
-    "footnote": {
-      "eur": "The domain name is not included: managing it is an option at +5€ a month, like extra pages and the email address.",
-      "chf": "The domain name is not included: managing it is an option at +5 CHF a month, like extra pages and the email address."
-    },
-    "footnote_scope": "For an e-commerce shop or client portal, contact us for a tailored quote.",
-    "mockup_mention": "Request your mockup with no commitment",
-    "cta_simulate": "Simulate my pricing",
-    "cta_contact": "Request a quote",
-    "cta_contact_email_subject": "Quote request for my project",
-    "cta_contact_aria_label": "Send an email to prospect@gocosmic.dev to request a quote"
-  },
   "status_bar": {
-    "signal_stable": "SIGNAL STABLE",
-    "mission_control": "MISSION CONTROL",
-    "location": {
-      "fr": "ANNECY · ALT. 447M",
-      "ch": "CHÊNE-BOUGERIES · ALT. 424M"
+    "aria_label": "Studio availability",
+    "mission_control": "Mission control",
+    "available": {
+      "label": "Available",
+      "detail": "New projects from {month}"
     },
-    "aria_label": "Mission control status",
-    "aria_signal": "Signal active"
+    "booked": {
+      "label": "Fully booked",
+      "detail": "Next openings in {month}"
+    }
   },
   "cookieConsent": {
     "title": "Privacy preferences",
     "description": "We only use Vercel Analytics to measure audience after your agreement. Refusing has no impact on the website.",
     "analyticsTitle": "Audience measurement",
-    "analyticsDescription": "Anonymous page-view statistics used to improve the website. No advertising tracker is loaded by Go Cosmic.",
+    "analyticsDescription": "Anonymous page view statistics used to improve the site. No advertising tracker is loaded by Cosmic Studio.",
     "accept": "Accept analytics",
     "refuse": "Refuse",
     "customize": "Customize",
     "save": "Save my choice",
     "privacyLink": "Read the privacy policy",
-    "manage": "Privacy settings",
+    "manage": "Manage cookies",
     "close": "Close"
   },
   "case_study": {

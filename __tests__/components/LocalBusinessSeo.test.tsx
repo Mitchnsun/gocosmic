@@ -27,7 +27,7 @@ describe('LocalBusinessSeo', () => {
         '@context': 'https://schema.org',
         '@type': 'ProfessionalService',
         '@id': 'https://www.gocosmic.dev/#company',
-        name: 'Go Cosmic',
+        name: 'Cosmic Studio',
         description:
           'Web and mobile development agency based in Annecy, serving Geneva, French-speaking Switzerland and Haute-Savoie.',
         url: 'https://www.gocosmic.dev',

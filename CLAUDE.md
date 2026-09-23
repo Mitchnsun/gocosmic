@@ -15,7 +15,7 @@ yarn build            # Production build (~34s)
 yarn lint             # ESLint with zero-warnings policy (~7s)
 yarn format           # Prettier write on all .ts/.tsx/.md
 yarn check-types      # TypeScript type check via tsconfig.check.json (~9s)
-yarn test             # Run all Vitest tests (~4s, ~305 tests / 40 files)
+yarn test             # Run all Vitest tests (~9s, ~660 tests / 84 files)
 yarn test:watch       # Vitest in watch mode
 yarn coverage         # Generate coverage report (must stay ≥90% on all metrics)
 ```
@@ -47,15 +47,14 @@ This is a single Next.js 16 app (App Router) with full internationalization via 
 ### Key directories
 
 - `app/[locale]/` — All routes are under the dynamic `[locale]` segment. Pages export metadata and use server components by default.
-- `components/` — App-specific components: `Header`, `Footer`, `LanguageSwitcher`, `Loader`, `JsonLd`, `Journey`, icons.
+- `components/` — App-specific components: `Header`, `Footer`, `LanguageSwitcher`, `JsonLd`, `Planet`, `PricingColumns`, `PricingSimulator`, icons.
 - `design-system/` — Reusable UI primitives: `button.tsx` + `button.variants.ts` using CVA. Components use `@radix-ui/react-slot` for polymorphism. `design-system/lib/utils.ts` exports `cn` (clsx + tailwind-merge) — **always use `cn` for conditional Tailwind classes**, never string interpolation. Prefer the object form (`cn({ 'class': condition })`) over `condition && 'class'`.
 - `lib/` — Standalone helpers shared across the app (`clamp.ts`, `config.ts`, `og.ts`, `renderWithLinks.tsx`). Distinct from `design-system/lib/`.
 - `data/` — Static content sources (e.g. `projects.json` backing the projects pages).
-- `views/` — View-layer components for complex pages (e.g., Journey 3D canvas).
-- `messages/<locale>/` — Translation files split by namespace: `common`, `navigation`, `footer`, `home`, `about`, `services`, `offers`, `journey`, `projects`, `contact`, `local`, `legal`, `pricing`, `psc-supersprint`.
+- `messages/<locale>/` — Translation files split by namespace: `common`, `navigation`, `footer`, `home`, `about`, `services`, `pricing`, `projects`, `contact`, `free-mockup`, `local`, `legal`, `psc-supersprint`.
 - `i18n/routing.ts` — Defines supported locales (`en`, `fr`, `es`, `de`, `it`) and all translated pathnames.
 - `i18n/request.ts` — Server-side i18n setup (namespace loading per route).
-- `__tests__/` — Mirrors source structure (`components/`, `pages/`, `views/`). `test-utils.tsx` provides a custom `render` that wraps with `NextIntlClientProvider`.
+- `__tests__/` — Mirrors source structure (`components/`, `pages/`). `test-utils.tsx` provides a custom `render` that wraps with `NextIntlClientProvider`.
 
 ### TypeScript configs
 

@@ -2,9 +2,11 @@
 export interface ContactPayload {
   name: string;
   email: string;
-  subject: string;
+  /** What the visitor needs, one of {@link CONTACT_NEEDS}, or empty when not chosen. */
+  need: string;
   message: string;
   phone: string;
+  /** The visitor's business or activity, e.g. "Cabinetmaker in Annecy". */
   company: string;
   /** Hidden anti-spam field — must stay empty. */
   honeypot: string;
@@ -17,7 +19,7 @@ export type ContactField = Exclude<keyof ContactPayload, 'honeypot'>;
 export type ContactErrorCode =
   | 'name_length'
   | 'email_invalid'
-  | 'subject_length'
+  | 'need_invalid'
   | 'message_length'
   | 'phone_invalid'
   | 'company_length';
@@ -26,13 +28,18 @@ export type ContactErrors = Partial<Record<ContactField, ContactErrorCode>>;
 
 /** Fields in the order they appear in the form, so the first invalid one can
  *  be focused after a failed submission. */
-export const CONTACT_FIELD_ORDER: ContactField[] = ['name', 'email', 'subject', 'message', 'phone', 'company'];
+export const CONTACT_FIELD_ORDER: ContactField[] = ['name', 'email', 'phone', 'company', 'need', 'message'];
+
+/** Needs the visitor can pick, shown as chips above the message. */
+export const CONTACT_NEEDS = ['showcase', 'redesign', 'shop', 'app', 'unsure'] as const;
+export type ContactNeed = (typeof CONTACT_NEEDS)[number];
+
+const isContactNeed = (value: string): value is ContactNeed => (CONTACT_NEEDS as readonly string[]).includes(value);
 
 /** Length boundaries enforced on both sides of the wire. */
 export const CONTACT_LIMITS = {
   name: { min: 2, max: 100 },
   email: { min: 5, max: 254 },
-  subject: { min: 5, max: 200 },
   message: { min: 10, max: 5000 },
   phone: { min: 6, max: 30 },
   company: { min: 0, max: 120 },
@@ -45,7 +52,7 @@ const PHONE_PATTERN = /^[+0-9][0-9\s().-]{5,29}$/;
 export const emptyContactPayload = (): ContactPayload => ({
   name: '',
   email: '',
-  subject: '',
+  need: '',
   message: '',
   phone: '',
   company: '',
@@ -57,7 +64,7 @@ const isLengthOutside = (value: string, { min, max }: { min: number; max: number
 
 /**
  * Validates a contact payload. Required fields are `name`, `email` and
- * `message`; `subject`, `phone` and `company` are only checked when filled.
+ * `message`; `need`, `phone` and `company` are only checked when filled.
  *
  * @param payload - Raw values, trimmed internally before checking.
  * @returns A map of field to error code — empty when the payload is valid.
@@ -66,14 +73,14 @@ export const validateContact = (payload: ContactPayload): ContactErrors => {
   const errors: ContactErrors = {};
   const name = payload.name.trim();
   const email = payload.email.trim();
-  const subject = payload.subject.trim();
+  const need = payload.need.trim();
   const message = payload.message.trim();
   const phone = payload.phone.trim();
   const company = payload.company.trim();
 
   if (isLengthOutside(name, CONTACT_LIMITS.name)) errors.name = 'name_length';
   if (!EMAIL_PATTERN.test(email) || email.length > CONTACT_LIMITS.email.max) errors.email = 'email_invalid';
-  if (subject.length > 0 && isLengthOutside(subject, CONTACT_LIMITS.subject)) errors.subject = 'subject_length';
+  if (need.length > 0 && !isContactNeed(need)) errors.need = 'need_invalid';
   if (isLengthOutside(message, CONTACT_LIMITS.message)) errors.message = 'message_length';
   if (phone.length > 0 && !PHONE_PATTERN.test(phone)) errors.phone = 'phone_invalid';
   if (company.length > CONTACT_LIMITS.company.max) errors.company = 'company_length';

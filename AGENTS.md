@@ -7,7 +7,7 @@ Codex instructions for working in this repository.
 - Read and follow `CLAUDE.md` first. Treat it as the shared source of truth for AI-agent behavior in this project.
 - This file adds Codex-specific operating notes and project shortcuts. If anything here conflicts with `CLAUDE.md`, prefer `CLAUDE.md`.
 - Also consult `GUIDELINES.md` for UI, coding, security, commit, and manual validation rules, `__tests__/TESTING.md` for test patterns, and `docs/lessons.md` for persistent agent lessons.
-- **Before implementing any UI component or page section**, read `DESIGN_GUIDELINE.md`. It defines all visual tokens, signature patterns, component architecture, and anti-patterns for the Go Cosmic design system.
+- **Before implementing any UI component or page section**, read `DESIGN_GUIDELINE.md`. It defines all visual tokens, signature patterns, component architecture, and anti-patterns for the Cosmic Studio design system.
 - Consult `SECURITY.md` before adding or changing API routes, Server Actions, environment variables, third-party scripts, CSP/security headers, or dependency policy.
 
 ## Project Snapshot
@@ -17,7 +17,7 @@ Codex instructions for working in this repository.
 - Node.js must be `>=24`.
 - Routes live under `app/[locale]/`; supported locales are `en`, `fr`, `es`, `de`, and `it`.
 - Translation namespaces live in `messages/<locale>/` and are loaded on demand by `i18n/request.ts`.
-- Reusable primitives live in `design-system/`; app-specific components live in `components/`; complex view code lives in `views/`.
+- Reusable primitives live in `design-system/`; app-specific components live in `components/`.
 
 ## Codex Workflow
 
@@ -73,7 +73,7 @@ yarn format && yarn lint && yarn check-types && yarn test && yarn coverage
 
 For documentation-only edits, at minimum ensure Markdown formatting is clean. If a commit is requested, still follow the full pre-commit verification rule from `CLAUDE.md`.
 
-For UI, routing, i18n, animation, or WebGL changes, run the relevant manual validation from `GUIDELINES.md` in addition to automated checks. Prioritize affected routes, locale switching, browser back/forward navigation, and the Journey WebGL page when touched.
+For UI, routing, i18n, or animation changes, run the relevant manual validation from `GUIDELINES.md` in addition to automated checks. Prioritize affected routes, locale switching, and browser back/forward navigation.
 
 ## Release And PR Notes
 

@@ -1,4 +1,3 @@
-import { EnvelopeIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/solid';
 import { fireEvent } from '@testing-library/react';
 
 import { HeaderNavItem } from '@/components/Header/constants';
@@ -7,8 +6,8 @@ import MobileMenu from '@/components/Header/MobileMenu';
 import { render, screen } from '../../test-utils';
 
 const items: HeaderNavItem[] = [
-  { label: 'Services', href: '/services', ariaLabel: 'Services', icon: WrenchScrewdriverIcon },
-  { label: 'Contact', href: '/contact', ariaLabel: 'Contact', icon: EnvelopeIcon },
+  { label: 'Services', href: '/services', ariaLabel: 'Services' },
+  { label: 'Contact', href: '/contact', ariaLabel: 'Contact' },
 ];
 
 describe('MobileMenu', () => {
@@ -43,6 +42,34 @@ describe('MobileMenu', () => {
     render(<MobileMenu onClose={onClose} items={items} />);
     fireEvent.click(screen.getByRole('link', { name: 'Services' }));
     expect(onClose).toHaveBeenCalledTimes(1);
+  });
+
+  it('renders the full-width primary CTA leading to the free mockup request', () => {
+    render(<MobileMenu onClose={onClose} items={items} />);
+    const cta = screen.getByRole('link', { name: 'Get my free mockup' });
+    expect(cta).toHaveAttribute('href', '/free-mockup');
+    expect(cta).toHaveClass('w-full');
+  });
+
+  it('closes the menu when the CTA is clicked', () => {
+    render(<MobileMenu onClose={onClose} items={items} />);
+    fireEvent.click(screen.getByRole('link', { name: 'Get my free mockup' }));
+    expect(onClose).toHaveBeenCalledTimes(1);
+  });
+
+  it('shows the studio altitude in the metadata row, defaulting to Annecy', () => {
+    render(<MobileMenu onClose={onClose} items={items} />);
+    expect(screen.getByText('Alt. 447m')).toBeInTheDocument();
+  });
+
+  it('shows the Chêne-Bougeries altitude for Swiss visitors', () => {
+    render(<MobileMenu onClose={onClose} items={items} region="ch" />);
+    expect(screen.getByText('Alt. 424m')).toBeInTheDocument();
+  });
+
+  it('renders the mountain skyline decoration', () => {
+    const { container } = render(<MobileMenu onClose={onClose} items={items} />);
+    expect(container.querySelector('svg[role="presentation"]')).toBeInTheDocument();
   });
 
   it('renders the email footer link', () => {

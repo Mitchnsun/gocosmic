@@ -47,7 +47,11 @@ export function needsCustomQuote(selection: PlanSelection): boolean {
   return selection.pages === MAX_TIER_INDEX || (selection.updatesEnabled && selection.updates === MAX_TIER_INDEX);
 }
 
-/** Amounts are identical in both currencies — only the symbol changes. */
-export function formatAmount(amount: number, currency: Currency): string {
-  return currency === 'chf' ? `${amount} CHF` : `${amount}€`;
+/**
+ * Amounts are identical in both currencies — only the symbol changes.
+ * Pass a locale to group thousands the local way (`3 500€`, `3,500€`…).
+ */
+export function formatAmount(amount: number, currency: Currency, locale?: string): string {
+  const figure = locale ? new Intl.NumberFormat(locale).format(amount) : String(amount);
+  return currency === 'chf' ? `${figure} CHF` : `${figure}€`;
 }

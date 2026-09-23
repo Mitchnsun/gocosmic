@@ -1,158 +1,133 @@
 {
   "homepage": {
-    "ascii_labels": [
-      "Remote",
-      "Go Cosmic",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Apps that launch",
-      "Code that ships",
-      "Annecy",
-      "Tournette",
-      "Aravis",
-      "React",
-      "Expo",
-      "Zero bugs in prod",
-      "Stable orbit",
-      "T-0. Liftoff.",
-      "Houston, we have a problem."
-    ],
-    "cta": {
-      "button": "Contact us",
-      "description": "Let's discuss how we can bring your mobile or web app vision to life, creating something truly out of this world.",
-      "freeMockup": "Not ready to talk yet? Ask for your <link>free mockup</link>.",
-      "title": "Ready to Go Cosmic?",
-      "viewOffers": "View our offers"
-    },
     "hero": {
-      "cta": "Start your journey",
-      "endWords": ["shine", "soar", "inspire", "transform", "elevate"],
-      "subtitle": "Let us launch your ideas into the stratosphere with mystical design and cosmic functionalities",
-      "title": "We build stellar applications that"
-    },
-    "process": {
-      "eyebrow": "[ PROCESS ]",
-      "title": "Four phases. <em>No drama.</em>",
-      "subtitle": "From idea to reality in 4 phases",
-      "discovery": {
-        "label": "T-45",
-        "title": "Discover",
-        "description": "Audit, goals, constraints. We map the territory before drawing the map."
-      },
-      "design": {
-        "label": "T-30",
-        "title": "Design",
-        "description": "Wireframes, prototypes, high-fidelity. Fast iterations until \"yes\"."
-      },
-      "build": {
-        "label": "T-15",
-        "title": "Build",
-        "description": "TypeScript, tests, code reviews. We treat code like infrastructure."
-      },
-      "launch": {
-        "label": "T-0",
-        "title": "Launch",
-        "description": "In orbit. Monitoring, performance, analytics, and post-launch support."
-      }
-    },
-    "services": {
-      "ai": {
-        "description": "Integrating advanced AI features to make your applications smarter, more adaptive, and truly next-gen.",
-        "title": "AI Powered",
-        "features": ["LLMs", "Embeddings", "Agents", "RAG"]
-      },
-      "design": {
-        "description": "Crafting intuitive and enchanting user experiences that captivate and delight.",
-        "title": "Mystical UI/UX Design",
-        "features": ["Figma", "Design Systems", "Motion", "A11y"]
-      },
-      "development": {
-        "description": "Building robust and scalable mobile applications for both iOS and Android platforms.",
-        "title": "Stellar Development",
-        "features": ["React", "Next.js", "TypeScript", "Expo"]
-      },
-      "launch": {
-        "description": "Guiding your app through the launch process and beyond, ensuring a successful liftoff.",
-        "title": "Cosmic Launch",
-        "features": ["Vercel", "AWS", "Docker", "Sentry"]
-      },
-      "title": "Our Cosmic Services",
-      "eyebrow": "[ SERVICES · 04 ]",
-      "subtitle": "Four pillars to launch your product into orbit — design, build, ship, grow.",
-      "learnMore": "Learn more"
-    },
-    "zone": {
-      "title": "Our service area",
-      "description": "Available in Annecy, Geneva, Haute-Savoie, and across French-speaking Switzerland.",
-      "availability": "Available",
-      "locations": {
-        "annecy": "Annecy",
-        "geneva": "Geneva",
-        "haute_savoie": "Haute-Savoie",
-        "suisse_romande": "Romandy"
-      },
-      "stations": {
-        "annecy": {
-          "meta": {
-            "fr": "Base · 74",
-            "ch": "France"
-          }
+      "eyebrow": "Web & mobile studio · Geneva",
+      "title": "Your business deserves to be",
+      "endWords": ["seen.", "found.", "chosen."],
+      "subtitle": "Cosmic Studio builds websites and apps for craftspeople, associations and independents. A clear site, built to be found on Google, and one person who stays on after launch.",
+      "cta": "Go Cosmic",
+      "secondary": "See pricing",
+      "facts": {
+        "price": {
+          "highlight": "From {price}",
+          "text": "/ month"
         },
-        "geneva": {
-          "meta": {
-            "fr": "Switzerland",
-            "ch": "Base · GE"
-          }
+        "reply": {
+          "highlight": "Reply",
+          "text": "within 24 h"
         },
-        "haute_savoie": {
-          "meta": {
-            "fr": "France",
-            "ch": "France"
-          }
+        "contact": {
+          "highlight": "One",
+          "text": "point of contact"
         },
-        "suisse_romande": {
-          "meta": {
-            "fr": "Switzerland",
-            "ch": "Switzerland"
-          }
+        "area": {
+          "highlight": "Geneva",
+          "text": "· Haute-Savoie · remote"
         }
       }
     },
-    "projects": {
-      "eyebrow": "[ SELECTED WORK · 04 ]",
-      "title": "Recently <em>in orbit.</em>",
-      "subtitle": "A selection of our latest work",
-      "learnMore": "View project",
-      "loadMore": "Load more projects",
-      "dailyFortune": {
-        "title": "Daily Fortune",
-        "tagline": "Mobile · iOS / Android",
-        "description": "A mystical mobile app delivering AI-powered daily fortunes and motivational messages.",
-        "tags": ["AI", "Wellness"],
-        "imageAlt": "Daily Fortune app preview"
-      },
-      "mcomperat": {
-        "title": "mcomper.at",
-        "tagline": "Web · Next.js",
-        "description": "A modern, responsive web CV built with Next.js, TypeScript, and full internationalization.",
-        "tags": ["Personal CV"],
-        "imageAlt": "mcomper.at website preview"
-      },
-      "pscSupersprint": {
-        "title": "PSC Supersprint",
-        "tagline": "Web · Real-time",
-        "description": "A web application for managing and displaying real-time triathlon competition results.",
-        "tags": ["Sport", "Live"],
-        "imageAlt": "PSC Supersprint results board preview"
-      },
-      "choeurDesPaysduMontBlanc": {
-        "title": "Chœur des Pays du Mont Blanc",
-        "tagline": "Web · Editorial",
-        "description": "A website showcasing the choir's activities, concerts, and repertoire in Haute-Savoie.",
-        "tags": ["Culture"],
-        "imageAlt": "Chœur des Pays du Mont Blanc website preview"
+    "audience": {
+      "eyebrow": "[ Who it's for · 03 ]",
+      "title": "People with a trade, <em>and no time to learn a second one.</em>",
+      "items": {
+        "artisans": {
+          "title": "Craftspeople",
+          "description": "Carpenter, plumber, hairdresser, caterer. A page that says what you do, where, and how to reach you, and that people find when they search for your trade nearby."
+        },
+        "associations": {
+          "title": "Associations",
+          "description": "Choir, sports club, collective. Event calendar, memberships, news: everything to make your activities known and bring in new members."
+        },
+        "independents": {
+          "title": "Independents starting out",
+          "description": "Therapist, consultant, photographer. A professional site from day one to get known, and a price that grows with your business."
+        }
       }
+    },
+    "why": {
+      "eyebrow": "[ Why a studio ]",
+      "title": "Wix and WordPress do the job. <em>Until the day they don't.</em>",
+      "lead": "These tools are handy at first. Then you need a plugin, then an update breaks the page, then the bill goes up. We write the code ourselves: the site is yours, it is fast, and it grows without starting over.",
+      "reasons": {
+        "ownership": {
+          "title": "You own it",
+          "description": "Your content and your domain name are yours from day one. The code is handed over at the end of the minimum subscription period, or earlier for a transfer fee."
+        },
+        "fast": {
+          "title": "Fast and easy to find",
+          "description": "No heavy theme, no plugins: pages that load quickly on a phone, which Google rewards."
+        },
+        "person": {
+          "title": "A person, not a ticket",
+          "description": "You talk to Matthieu, who knows your site because he built it."
+        },
+        "grows": {
+          "title": "It grows with you",
+          "description": "A page today, a shop or an app tomorrow, on the same foundation."
+        }
+      }
+    },
+    "process": {
+      "eyebrow": "[ Process · 04 ]",
+      "title": "Four steps. <em>No surprises.</em>",
+      "subtitle": "From the first conversation to launch day, you always know where your project stands.",
+      "discovery": {
+        "label": "T-3 · Meeting",
+        "title": "We talk",
+        "description": "Twenty minutes on the phone or over a coffee in Geneva or Annecy. Your trade, your customers, what the site needs to do for you."
+      },
+      "design": {
+        "label": "T-2 · Mockup",
+        "title": "You see it before you pay",
+        "description": "A mockup of your home page, with your colours and your words. Free, with no commitment: you decide afterwards."
+      },
+      "build": {
+        "label": "T-1 · Build",
+        "title": "We build",
+        "description": "Two to six weeks depending on the project. You follow progress on a private link, you comment, we adjust."
+      },
+      "launch": {
+        "label": "T-0 · Launch",
+        "title": "Live, and we stay",
+        "description": "Launch, a hands-on walkthrough together, then hosting, backups and small changes as the months go by."
+      }
+    },
+    "projects": {
+      "eyebrow": "[ Work ]",
+      "title": "Real projects, <em>live today.</em>",
+      "all": "All projects"
+    },
+    "apps": {
+      "eyebrow": "[ Our apps ]",
+      "title": "The studio also builds <em>its own products.</em>",
+      "lead": "That is where we test tools before offering them to clients. What we learn on our apps ends up in yours.",
+      "daily_fortune": {
+        "name": "Daily Fortune",
+        "badge": "iOS · Android",
+        "description": "A short message every morning to start the day well. Our first app published on the App Store and Google Play.",
+        "link": "Discover the app",
+        "icon_alt": "Daily Fortune app icon"
+      }
+    },
+    "studio": {
+      "eyebrow": "[ The studio ]",
+      "title": "A developer in Geneva, <em>not a platform.</em>",
+      "paragraphs": [
+        "I'm Matthieu Compérat. I grew up in Duingt, on the shores of Lake Annecy, and I'm based in Chêne-Bougeries. I have been building websites and apps for about fifteen years, first for large companies, then for people whose first names I know. Cosmic Studio is that second choice.",
+        "You call, I answer. You write, you get a reply the same day. The site I deliver, I know exactly how it works."
+      ],
+      "zones": [
+        "Chêne-Bougeries · base",
+        "French-speaking Switzerland · on site",
+        "Haute-Savoie · on site",
+        "Elsewhere · remote"
+      ]
+    },
+    "cta": {
+      "button": "Talk about my project",
+      "description": "Tell us about your business in a few lines. We get back to you within 24 hours, with questions, not an automated quote.",
+      "freeMockup": "Still unsure? Ask for your <link>free mockup</link>.",
+      "title": "Let's make your business shine."
     }
   }
 }

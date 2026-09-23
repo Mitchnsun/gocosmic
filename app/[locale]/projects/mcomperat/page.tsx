@@ -45,49 +45,33 @@ export default function Mcomperat() {
       title={t('title')}
       tagline={t('subtitle')}
       accent="aerospace"
-      meta={['2026', 'Next.js · TypeScript', 'Web']}
+      meta={['2026', tList('items.mcomperat.client'), tList('kinds.site')]}
       sections={[
         {
-          id: 'overview',
-          title: t('overview.title'),
-          content: t('overview.description'),
-          secondary: t('overview.architecture'),
+          id: 'for-whom',
+          label: t('for_whom.label'),
+          title: t('for_whom.title'),
+          content: t('for_whom.description'),
         },
         {
-          id: 'features',
-          title: t('features.title'),
+          id: 'what-we-did',
+          label: t('what_we_did.label'),
+          title: t('what_we_did.title'),
+          content: t('what_we_did.description'),
           columns: 2,
           points: [
-            t('features.items.i18n'),
-            t('features.items.seo'),
-            t('features.items.performance'),
-            t('features.items.accessibility'),
-            t('features.items.quality'),
+            t('what_we_did.items.two_languages'),
+            t('what_we_did.items.found_on_google'),
+            t('what_we_did.items.fast_on_phone'),
+            t('what_we_did.items.accessible'),
+            t('what_we_did.items.ai_with_review'),
           ],
         },
         {
-          id: 'technology',
-          title: t('technology.title'),
-          content: t('technology.description'),
-          columns: 2,
-          points: [
-            t('technology.stack.nextjs'),
-            t('technology.stack.typescript'),
-            t('technology.stack.tailwind'),
-            t('technology.stack.yarn'),
-          ],
-        },
-        {
-          id: 'ai',
-          title: t('ai.title'),
-          content: t('ai.description'),
-          columns: 2,
-          points: [
-            t('ai.features.development'),
-            t('ai.features.quality'),
-            t('ai.features.content'),
-            t('ai.features.i18n'),
-          ],
+          id: 'result',
+          label: t('result.label'),
+          title: t('result.title'),
+          content: t('result.description'),
         },
       ]}
       cta={{

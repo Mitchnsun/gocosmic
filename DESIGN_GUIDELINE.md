@@ -1,7 +1,7 @@
-# DESIGN_GUIDELINE.md — Go Cosmic
+# DESIGN_GUIDELINE.md — Cosmic Studio
 
 > Single design reference for building new components and pages **consistent with the homepage**.
-> Sources: `app/globals.css` (implemented tokens), shipped components (`Header`, `StatusBar`, `ProcessTimeline`, `CTAFinal`, `HeroSection`…), and the EPIC redesign ticket [#58](https://github.com/Mitchnsun/gocosmic/issues/58).
+> Sources: `app/globals.css` (implemented tokens), shipped components (`Header`, `StatusBar`, `ProcessTimeline`, `CTAFinal`, `HeroSection`…), the EPIC redesign ticket [#58](https://github.com/Mitchnsun/gocosmic/issues/58) and the rebrand EPIC [#98](https://github.com/Mitchnsun/gocosmic/issues/98).
 >
 > **For an AI agent:** read this file **before** writing any JSX. The golden rule: never **reinvent** colors, fonts, or spacing — **reuse** the tokens and patterns described here. When in doubt, copy the nearest existing component.
 
@@ -9,7 +9,7 @@
 
 ## 1. Essence & principles
 
-Go Cosmic is a web/mobile dev studio. The visual universe is **spatial / mission-control**: deep near-black background, starfield, orange "ignition" accents, technical mono labels, and a touch of immersion (parallax, warp, reveals). Yet the overall feel stays **sober and premium** — never gimmicky.
+Cosmic Studio (formerly Go Cosmic; "Go Cosmic" survives as the call-to-action signature) is a web/mobile studio for craftspeople, associations and independents. The visual universe is **spatial / mission-control**: deep near-black background, starfield, orange "ignition" accents, technical mono labels, and a touch of immersion (parallax, warp, reveals). Yet the overall feel stays **sober and premium** — never gimmicky.
 
 Four principles that resolve every design decision:
 
@@ -26,18 +26,19 @@ Four principles that resolve every design decision:
 
 Official tokens declared in `app/globals.css` under `@theme` (Tailwind v4 → available as utilities `bg-void`, `text-ghost`, `text-aerospace`, `border-royal`, …).
 
-| Token          | Hex       | Role                                                          |
-| -------------- | --------- | ------------------------------------------------------------- |
-| `void`         | `#020617` | **Main background** of the entire site                        |
-| `space`        | `#1E2952` | Alternate background / lighter section variant, midnight blue |
-| `ghost`        | `#F8F8FF` | **Primary text** on dark backgrounds                          |
-| `aerospace`    | `#FF4F00` | **Primary accent** — CTA, attention signal, heading gradients |
-| `royal`        | `#7851A9` | Secondary accent — planet, glows, variants                    |
-| `jungle`       | `#29AB87` | "System" accent — **availability / online / success**         |
-| `cosmic-latte` | `#FFF8E7` | Soft accent / warm off-white (rare)                           |
-| `chocolate`    | `#58111A` | Deep brown, orange gradient support (rare)                    |
-| `misty-rose`   | `#FFE4E1` | Decorative pale pink (rare)                                   |
-| `outer-space`  | `#414A4C` | Neutral slate grey                                            |
+| Token          | Hex       | Role                                                                            |
+| -------------- | --------- | ------------------------------------------------------------------------------- |
+| `void`         | `#020617` | **Main background** of the entire site                                          |
+| `space`        | `#1E2952` | Exceptional use only: brand backgrounds (e.g. white-logo covers), midnight blue |
+| `ember`        | `#1C1012` | Alternate section background (dark theme), "cendre rosée"                       |
+| `ghost`        | `#F8F8FF` | **Primary text** on dark backgrounds                                            |
+| `aerospace`    | `#FF4F00` | **Primary accent** — CTA, attention signal, heading gradients                   |
+| `royal`        | `#7851A9` | Secondary accent — planet, glows, variants                                      |
+| `jungle`       | `#29AB87` | "System" accent — **availability / online / success**                           |
+| `cosmic-latte` | `#FFF8E7` | Soft accent / warm off-white (rare)                                             |
+| `chocolate`    | `#58111A` | Deep brown, orange gradient support (rare)                                      |
+| `misty-rose`   | `#FFE4E1` | Decorative pale pink (rare)                                                     |
+| `outer-space`  | `#414A4C` | Neutral slate grey                                                              |
 
 **Derived scales** (used everywhere via Tailwind opacity modifiers on `ghost`). Prefer these over raw greys:
 
@@ -69,7 +70,7 @@ Real CTA pattern: `radial-gradient(circle at 50% 60%, rgb(var(--cta-accent-rgb) 
 | **Inter**                                  | `--font-body`                     | Body text, paragraphs                                     |
 | **Mono** (`Space Mono` / `JetBrains Mono`) | `--font-mono` → class `font-mono` | Eyebrows, coordinates, statuses, metadata, technical tags |
 
-> `globals.css` currently only declares `--font-display` and `--font-body`. The `font-mono` used in components falls back to the default monospace stack. **Recommendation**: formalize `--font-mono: 'Space Mono', ui-monospace, monospace;` in `@theme` to lock HUD label rendering.
+> All three families are loaded with `next/font` in `app/[locale]/layout.tsx` and declared in `@theme` (`--font-display`, `--font-body`, `--font-mono: 'Space Mono', ui-monospace, monospace`), so `font-mono` always renders Space Mono.
 
 **Characteristics:**
 
@@ -113,7 +114,7 @@ Minimum readable size: **14px** for body text.
 
 ## 3. Visual vocabulary (signature elements)
 
-These elements **define** the Go Cosmic style. Reuse them as-is to stay consistent.
+These elements **define** the Cosmic Studio style. Reuse them as-is to stay consistent.
 
 ### 3.1 Eyebrow / `tag`
 
@@ -133,7 +134,7 @@ Common text format: `[ NAME · NN ]` or `SECTOR — STUDIO`.
 
 ```tsx
 <span className="relative flex h-2 w-2" aria-hidden="true">
-  <span className="bg-jungle absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" />
+  <span className="bg-jungle absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 motion-reduce:animate-none" />
   <span className="bg-jungle relative inline-flex h-2 w-2 rounded-full" />
 </span>
 ```
@@ -142,7 +143,7 @@ Common text format: `[ NAME · NN ]` or `SECTOR — STUDIO`.
 
 ### 3.3 HUD labels / coordinates
 
-Ambient mono metadata: coordinates (`48.7°N · 6.2°E`), versions (`v2.026.05`), counters (`[ 01 / 04 ]`), statuses (`SIGNAL · STABLE`). Color `text-ghost/35`, discreet, placed in corners or at the bottom of blocks. Use sparingly for "mission-control" texture.
+Ambient mono metadata: studio base and altitude (`ALT. 424M`, from `STUDIO_BASES` in `lib/config.ts`, region-aware), versions (`v2.026.05`), counters (`[ 01 / 04 ]`), statuses (`DISPONIBLE`). Color `text-ghost/35`, discreet, placed in corners or at the bottom of blocks. Use sparingly for "mission-control" texture.
 
 ### 3.4 Starfield background + glow
 
@@ -152,9 +153,9 @@ Immersive sections (hero, CTA): `<Starfield>` at layer `-z-20` + a radial accent
 
 **Pill** shape (`rounded-full`), `font-display` 500, optional arrow icon (`→`).
 
-- **Primary**: `bg-aerospace text-void` + glow (`box-shadow` orange), `hover:scale-[1.08]`.
-- **Ghost**: `border-ghost/15 text-ghost`, `hover:border-ghost hover:bg-ghost/5`.
-- Always via `buttonVariants()` (`design-system/button.variants`) + `cn()`. Available accent variants: `aerospace` / `royal` / `jungle`.
+- **Primary**: `primaryPill()` from `design-system/pill.ts` — `bg-aerospace text-void` (dark label: white on orange fails WCAG AA), orange glow, `hover:scale-[1.04]` over 200 ms, still under reduced motion. One primary per visible screen.
+- **Ghost**: `ghostPill()` — the `outline` variant, `border-ghost/15 text-ghost`, `hover:border-ghost hover:bg-ghost/5`.
+- Both are built on `buttonVariants()` (`design-system/button.variants`, size `pill`: 48 px high) + `cn()`; pass extra classes as the helper's argument. Other accent variants (`royal` / `jungle`) remain available through `buttonVariants()`.
 
 ### 3.6 Gradient accent heading
 
@@ -166,15 +167,19 @@ To mark a location, category, or action: **geometric SVGs** (crosshair, diamond 
 
 ### 3.9 Shared page primitives
 
-Inner pages (about, services, offers, contact, projects, case studies) are assembled from four shared building blocks — reuse them instead of re-implementing the patterns above:
+Pages are assembled from shared building blocks — reuse them instead of re-implementing the patterns above:
 
-| Component                   | Role                                                                                     |
-| --------------------------- | ---------------------------------------------------------------------------------------- |
-| `components/PageHero`       | Inner-page hero: light starfield, accent glow, mono eyebrow, `h1`, lead, up to two CTAs  |
-| `components/ContentSection` | Card-shaped section: eyebrow + HUD counter, `h2` bound via `aria-labelledby`, lead, body |
-| `components/AccentList`     | Bullet list with accent dots, optional mono label, 1 or 2 columns                        |
-| `components/CaseStudy`      | Full project case study: hero, ordered sections, CTA card, previous / next navigation    |
-| `design-system/accent.ts`   | `accentClasses(token)` → the text / bg / border utilities and RGB channels of a token    |
+| Component                   | Role                                                                                                  |
+| --------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `components/SectionHeading` | Eyebrow → title with light italic `<em>` emphasis → 56ch lead; `level={1}` for page intros            |
+| `components/Reveal`         | Fade-and-lift on scroll, `delay={index * 50}` for a 50 ms stagger; CSS-first reduced-motion guard     |
+| `design-system/pill.ts`     | `primaryPill()`, `ghostPill()`, plus `CONTAINER` (1280 px, fluid gutters) and `SECTION_Y` (64–120 px) |
+| `components/ContentSection` | Card-shaped section: eyebrow + HUD counter, `h2` bound via `aria-labelledby`, lead, body              |
+| `components/AccentList`     | Bullet list with accent dots, optional mono label, 1 or 2 columns                                     |
+| `components/CaseStudy`      | Full project case study: hero, ordered sections, CTA card, previous / next navigation                 |
+| `design-system/accent.ts`   | `accentClasses(token)` → the text / bg / border utilities and RGB channels of a token                 |
+
+Inner pages open with a plain `SectionHeading level={1}` intro — no starfield. The one immersive moment per page is the homepage hero or the final `CTAFinal`.
 
 Accent tokens accepted by all of them: `aerospace`, `royal`, `jungle`, `ghost`. One accent per zone (see §1, principle 2).
 
@@ -198,7 +203,7 @@ index.ts            ← re-export surface
 README.md           ← (optional) props, design, a11y, reduced-motion notes
 ```
 
-- **Strict rendering / logic separation**: no complex `useState`/`useEffect` in the `.tsx` → that lives in `.hooks.ts`. A purely static component has no hook file (see `ZoneIntervention`).
+- **Strict rendering / logic separation**: no complex `useState`/`useEffect` in the `.tsx` → that lives in `.hooks.ts`. A purely static component has no hook file (see `SectionHeading`).
 - **i18n**: all text goes through `next-intl` (`useTranslations`), keys in `messages/{en,fr,es,de,it}/<namespace>.json`. **All 5 locales** are updated together.
 - **Styling**: Tailwind v4 + `@theme` tokens. Compose classes with `cn()` (`design-system/lib/utils`). No raw CSS except global keyframes in `globals.css`.
 - **Accessibility**: semantic HTML (`section[aria-labelledby]`, lists for collections), complete `aria-*` on interactives (`aria-expanded`, `aria-controls`, `role="dialog"` + `aria-modal`…), touch targets **≥ 44×44px**, visible focus (`focus-visible:ring`), decorative elements as `aria-hidden`.
@@ -264,6 +269,45 @@ Glyph ............. geometric SVG currentColor — NO emoji
 - **Filler content**: fake stats, empty sections, gratuitous icons. Ask before adding content.
 - State logic in the `.tsx` (it belongs in `.hooks.ts`).
 - Fonts outside the system (Roboto, Arial…) or invented new colors.
+
+---
+
+## 8. Voice & copy
+
+The words carry as much of the brand as the tokens. Copy targets **people with a trade, not a CTO**: craftspeople (carpenter, hairdresser, caterer), associations (choir, sports club), independents who are starting out (therapist, photographer). Their question is not "which stack?" but "will people find me, and will someone answer when I call?". Every page answers it.
+
+**Core promise — visibility.** Each page states, in plain words, that the studio makes the reader's business _seen, found and chosen_: a clear site, built to be found on Google, and one person who stays after launch. Prefer outcomes ("vos clients vous trouvent") over deliverables ("site responsive optimisé SEO").
+
+**Tone.**
+
+- Address the reader as "vous" (FR), "you" (EN), "Sie" (DE), "tu" (IT, ES). Short sentences, everyday words, real trades as examples.
+- Say what we do, what it costs, who answers. Prices are visible; delays are concrete ("réponse sous 24 h", "deux à six semaines").
+- Every page ends with a single action: talk to Matthieu (`Parler de mon projet`).
+- Avoid gendered adjectives aimed at the reader in French ("Prêt ?" → "Démarrons votre projet."); agree with the business instead ("Votre activité mérite d'être vue").
+
+**Space theme, one notch down.** Keep the universe, never at the expense of clarity.
+
+| Keep                                                                                                   | Stop                                                                                        |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- |
+| "Go Cosmic" as the CTA signature where an explicit action is also in view (hero under the header pill) | "Go Cosmic" as the only CTA on a screen — a newcomer cannot tell where it leads             |
+| **One** space metaphor per page, tied to visibility: "faire rayonner", "briller", "en orbite"          | Stellar / mystical / cosmic in service names ("Développement Stellaire", "Design Mystique") |
+| Mono HUD details: status bar, coordinates, countdown labels (`T-3 … T-0`)                              | Superlatives: époustouflant, excellence, propulser, stratosphère                            |
+| Green signal dot for "available"                                                                       | Technology lists in client-facing copy (React, Next.js, TypeScript…), acronyms (SEO, SSL)   |
+| "Tous systèmes nominaux" as a footer wink                                                              | Slang and anglicisms when a plain word exists ("Sans drama" → "Sans surprise"), emoji       |
+
+**Lexicon — plain words first.**
+
+| Instead of                      | Write                                               |
+| ------------------------------- | --------------------------------------------------- |
+| SEO, référencement naturel      | être trouvé sur Google, référencement Google        |
+| Responsive, mobile-first        | lisible sur téléphone                               |
+| SSL, HTTPS                      | connexion sécurisée (le cadenas dans le navigateur) |
+| Déploiement, mise en production | mise en ligne                                       |
+| Maintenance, monitoring         | suivi, sauvegardes, mises à jour                    |
+| UI/UX design                    | design à votre image, présentation soignée          |
+| Stack, framework, CMS           | (omit — say what the client can do instead)         |
+
+**Workflow.** French is the source of truth: write FR first, have it proofread, then mirror EN, DE, IT and ES in the same change. Headlines that carry the promise (hero, final CTA, header CTA, status bar, footer baseline) are listed in the PR so the owner can validate them.
 
 ---
 

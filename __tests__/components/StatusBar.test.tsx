@@ -1,82 +1,73 @@
-import { act } from '@testing-library/react';
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import { StatusBar } from '@/components/StatusBar';
+import { formatStartMonth } from '@/components/StatusBar/StatusBar.utils';
 
 import { render } from '../test-utils';
 
 describe('StatusBar', () => {
-  beforeEach(() => {
-    vi.useFakeTimers();
-    vi.setSystemTime(new Date('2026-05-22T19:50:32Z'));
+  it('announces availability with a pulsing signal dot', () => {
+    const { getByText, container } = render(
+      <StatusBar availability={{ status: 'available', startMonth: '2026-10' }} />
+    );
+    expect(getByText('Available')).toBeInTheDocument();
+    const ping = container.querySelector('.animate-ping');
+    expect(ping).toHaveClass('bg-jungle', 'motion-reduce:animate-none');
+    expect(ping?.parentElement).toHaveAttribute('aria-hidden', 'true');
   });
 
-  afterEach(() => {
-    vi.useRealTimers();
+  it('shows a fully booked calendar with a static dot, no month', () => {
+    const { getByText, container, queryByText } = render(
+      <StatusBar availability={{ status: 'booked', startMonth: '2027-01' }} />
+    );
+    expect(getByText('Fully booked')).toBeInTheDocument();
+    expect(queryByText(/January/)).not.toBeInTheDocument();
+    expect(container.querySelector('.animate-ping')).not.toBeInTheDocument();
+    expect(container.querySelector('.bg-ghost\\/40')).toBeInTheDocument();
   });
 
-  it('renders the signal acquired label', () => {
-    const { getByText } = render(<StatusBar region="fr" />);
-    expect(getByText('SIGNAL STABLE')).toBeInTheDocument();
+  it('uses the studio schedule by default', () => {
+    const { getByRole } = render(<StatusBar />);
+    expect(getByRole('status')).toHaveTextContent(/Available/);
   });
 
-  it('renders the mission control and the Annecy base outside Switzerland', () => {
-    const { getByText } = render(<StatusBar region="fr" />);
-    expect(getByText(/MISSION CONTROL/)).toBeInTheDocument();
-    expect(getByText(/ANNECY/)).toBeInTheDocument();
+  it('shows the region-aware studio base and altitude, defaulting to Annecy', () => {
+    const { getByText } = render(<StatusBar />);
+    expect(getByText('Mission control · Annecy · Alt. 447m')).toBeInTheDocument();
   });
 
-  it('renders the Geneva base for Swiss visitors', () => {
+  it('shows Chêne-Bougeries for Swiss visitors', () => {
     const { getByText } = render(<StatusBar region="ch" />);
-    expect(getByText(/CHÊNE-BOUGERIES/)).toBeInTheDocument();
+    expect(getByText('Mission control · Chêne-Bougeries · Alt. 424m')).toBeInTheDocument();
   });
 
-  it('renders the status role for accessibility', () => {
-    const { getByRole } = render(<StatusBar region="fr" />);
-    expect(getByRole('status')).toBeInTheDocument();
+  it('exposes a labelled status region without live announcements', () => {
+    const { getByRole } = render(<StatusBar />);
+    const bar = getByRole('status', { name: 'Studio availability' });
+    expect(bar).toHaveAttribute('aria-live', 'off');
+  });
+});
+
+describe('formatStartMonth', () => {
+  const now = new Date('2026-09-23T10:00:00Z');
+
+  it('localises the configured month', () => {
+    expect(formatStartMonth('2026-10', 'fr', now)).toBe('octobre');
+    expect(formatStartMonth('2026-10', 'de', now)).toBe('Oktober');
   });
 
-  it('renders the signal dot with aria-label', () => {
-    const { getByRole } = render(<StatusBar region="fr" />);
-    const dot = getByRole('img', { name: 'Signal active' });
-    expect(dot).toBeInTheDocument();
+  it('falls back to the current month when the configured one is past', () => {
+    expect(formatStartMonth('2026-08', 'en', now)).toBe('September');
   });
 
-  it('shows the clock time once mounted', () => {
-    const { container } = render(<StatusBar region="fr" />);
-    act(() => {
-      vi.advanceTimersByTime(0);
-    });
-    // After mounting, no invisible placeholder — real time is rendered
-    const invisible = container.querySelector('.invisible');
-    expect(invisible).not.toBeInTheDocument();
-    // A time element (HH:MM:SS) should be visible
-    expect(container.querySelector('.tabular-nums')).toBeInTheDocument();
+  it('falls back to the current month when the value is unreadable', () => {
+    expect(formatStartMonth('soon', 'en', now)).toBe('September');
   });
 
-  it('ticks the clock every second', () => {
-    const { queryByText } = render(<StatusBar region="fr" />);
-    act(() => {
-      vi.advanceTimersByTime(0);
-    });
-    // Initial tick — time rendered
-    const initialTimeEl = queryByText(/^\d{2}:\d{2}:\d{2}$/);
-    expect(initialTimeEl).toBeInTheDocument();
-
-    const before = initialTimeEl?.textContent;
-
-    vi.setSystemTime(new Date('2026-05-22T19:50:33Z'));
-    act(() => {
-      vi.advanceTimersByTime(1000);
-    });
-
-    // Should still have a time element; contents may differ if the TZ shifts the second
-    const afterEl = queryByText(/^\d{2}:\d{2}:\d{2}$/);
-    expect(afterEl).toBeInTheDocument();
-
-    // At least verify the element is still present (clock didn't disappear)
-    expect(afterEl?.textContent).toBeTruthy();
-    // Suppress unused-variable warning from `before`
-    void before;
+  it('defaults to the current date', () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(now);
+    expect(formatStartMonth('2020-01', 'en')).toBe('September');
+    vi.useRealTimers();
   });
 });

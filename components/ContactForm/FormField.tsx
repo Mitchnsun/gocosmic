@@ -76,7 +76,7 @@ export const FormField = ({
     'aria-invalid': error ? true : undefined,
     'aria-describedby': error ? errorId : undefined,
     className: cn(controlClassName, 'disabled:cursor-not-allowed disabled:opacity-60', {
-      'border-red-400 focus:border-red-400 focus:ring-red-400/30': Boolean(error),
+      'border-aerospace focus:border-aerospace focus:ring-aerospace/30': Boolean(error),
     }),
   };
 
@@ -92,7 +92,7 @@ export const FormField = ({
       </label>
       {multiline ? <textarea {...shared} rows={rows} /> : <input {...shared} type={type} />}
       {error && (
-        <p id={errorId} className="text-2xs text-red-400">
+        <p id={errorId} className="text-aerospace text-sm">
           {error}
         </p>
       )}

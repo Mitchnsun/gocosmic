@@ -11,9 +11,9 @@ const submitContactMessage = vi.hoisted(() => vi.fn());
 vi.mock('@/app/actions/contact', () => ({ submitContactMessage }));
 
 const fillValidForm = async (getByLabelText: (matcher: RegExp | string) => HTMLElement) => {
-  await userEvent.type(getByLabelText(/^Name/), 'Ada Lovelace');
+  await userEvent.type(getByLabelText(/^Your name/), 'Ada Lovelace');
   await userEvent.type(getByLabelText(/^Email/), 'ada@example.com');
-  await userEvent.type(getByLabelText(/^Message/), 'I would like a showcase website for my analytical engine.');
+  await userEvent.type(getByLabelText(/^Your message/), 'I would like a showcase website for my analytical engine.');
 };
 
 describe('ContactForm', () => {
@@ -30,20 +30,21 @@ describe('ContactForm', () => {
     const { getByLabelText, getByText, getByRole } = render(<ContactForm />);
 
     expect(getByText('Fields marked with an asterisk are required')).toBeInTheDocument();
-    expect(getByLabelText(/^Name/)).toBeRequired();
+    expect(getByLabelText(/^Your name/)).toBeRequired();
     expect(getByLabelText(/^Email/)).toBeRequired();
-    expect(getByLabelText(/^Message/)).toBeRequired();
-    expect(getByLabelText(/^Subject/)).not.toBeRequired();
+    expect(getByLabelText(/^Your message/)).toBeRequired();
     expect(getByLabelText(/^Phone/)).toBeInTheDocument();
-    expect(getByLabelText(/^Company/)).toBeInTheDocument();
-    expect(getByRole('button', { name: /Send the message/ })).toBeInTheDocument();
+    expect(getByLabelText(/^Your business/)).toBeInTheDocument();
+    expect(getByRole('group', { name: /What you need/ })).toBeInTheDocument();
+    expect(getByRole('radio', { name: 'Online shop' })).not.toBeChecked();
+    expect(getByRole('button', { name: /Send my message/ })).toBeInTheDocument();
     expect(document.querySelector('input[name="honeypot"]')).toBeInTheDocument();
   });
 
   it('shows validation errors and does not call the action', async () => {
     const { getByRole, getByText } = render(<ContactForm />);
 
-    await userEvent.click(getByRole('button', { name: /Send the message/ }));
+    await userEvent.click(getByRole('button', { name: /Send my message/ }));
 
     expect(getByText('Please enter a name between 2 and 100 characters.')).toBeInTheDocument();
     expect(getByText('Please enter a valid email address.')).toBeInTheDocument();
@@ -54,8 +55,8 @@ describe('ContactForm', () => {
   it('clears a field error as soon as the visitor edits it', async () => {
     const { getByRole, getByLabelText, queryByText } = render(<ContactForm />);
 
-    await userEvent.click(getByRole('button', { name: /Send the message/ }));
-    await userEvent.type(getByLabelText(/^Name/), 'Ada');
+    await userEvent.click(getByRole('button', { name: /Send my message/ }));
+    await userEvent.type(getByLabelText(/^Your name/), 'Ada');
 
     expect(queryByText('Please enter a name between 2 and 100 characters.')).not.toBeInTheDocument();
   });
@@ -66,10 +67,12 @@ describe('ContactForm', () => {
     const { getByLabelText, getByRole } = render(<ContactForm onSuccess={onSuccess} />);
 
     await fillValidForm(getByLabelText);
-    await userEvent.click(getByRole('button', { name: /Send the message/ }));
+    await userEvent.click(getByRole('button', { name: /Send my message/ }));
 
     await waitFor(() => expect(getByRole('status')).toBeInTheDocument());
-    expect(getByRole('heading', { level: 3, name: 'Thank you for getting in touch!' })).toBeInTheDocument();
+    expect(
+      getByRole('heading', { level: 3, name: 'Thank you. Matthieu will reply within one working day.' })
+    ).toBeInTheDocument();
     expect(onSuccess).toHaveBeenCalledTimes(1);
 
     expect(submitContactMessage).toHaveBeenCalledWith(
@@ -82,11 +85,11 @@ describe('ContactForm', () => {
     const { getByLabelText, getByRole } = render(<ContactForm />);
 
     await fillValidForm(getByLabelText);
-    await userEvent.click(getByRole('button', { name: /Send the message/ }));
+    await userEvent.click(getByRole('button', { name: /Send my message/ }));
     await waitFor(() => expect(getByRole('button', { name: 'Send another message' })).toBeInTheDocument());
     await userEvent.click(getByRole('button', { name: 'Send another message' }));
 
-    expect(getByLabelText(/^Name/)).toHaveValue('');
+    expect(getByLabelText(/^Your name/)).toHaveValue('');
   });
 
   it('blocks the fourth submission client-side', async () => {
@@ -95,7 +98,7 @@ describe('ContactForm', () => {
     const { getByLabelText, getByRole } = render(<ContactForm />);
 
     await fillValidForm(getByLabelText);
-    await userEvent.click(getByRole('button', { name: /Send the message/ }));
+    await userEvent.click(getByRole('button', { name: /Send my message/ }));
 
     await waitFor(() => expect(getByRole('alert')).toHaveTextContent(/already sent several messages/));
     expect(submitContactMessage).not.toHaveBeenCalled();
@@ -106,7 +109,7 @@ describe('ContactForm', () => {
     const { getByLabelText, getByRole } = render(<ContactForm />);
 
     await fillValidForm(getByLabelText);
-    await userEvent.click(getByRole('button', { name: /Send the message/ }));
+    await userEvent.click(getByRole('button', { name: /Send my message/ }));
 
     await waitFor(() => expect(getByRole('alert')).toHaveTextContent(/could not be sent/));
   });
@@ -116,7 +119,7 @@ describe('ContactForm', () => {
     const { getByLabelText, getByRole } = render(<ContactForm />);
 
     await fillValidForm(getByLabelText);
-    await userEvent.click(getByRole('button', { name: /Send the message/ }));
+    await userEvent.click(getByRole('button', { name: /Send my message/ }));
 
     await waitFor(() => expect(getByRole('alert')).toHaveTextContent(/Connection lost/));
   });
@@ -126,7 +129,7 @@ describe('ContactForm', () => {
     const { getByLabelText, getByRole } = render(<ContactForm />);
 
     await fillValidForm(getByLabelText);
-    await userEvent.click(getByRole('button', { name: /Send the message/ }));
+    await userEvent.click(getByRole('button', { name: /Send my message/ }));
 
     await waitFor(() => expect(getByRole('alert')).toHaveTextContent(/could not be sent right now/));
   });
@@ -134,10 +137,10 @@ describe('ContactForm', () => {
   it('clears the form on demand', async () => {
     const { getByLabelText, getByRole } = render(<ContactForm variant="embedded" />);
 
-    await userEvent.type(getByLabelText(/^Name/), 'Ada');
+    await userEvent.type(getByLabelText(/^Your name/), 'Ada');
     await userEvent.click(getByRole('button', { name: 'Clear the form' }));
 
-    expect(getByLabelText(/^Name/)).toHaveValue('');
+    expect(getByLabelText(/^Your name/)).toHaveValue('');
   });
 
   it('disables clearing while the submission is in flight', async () => {
@@ -151,7 +154,7 @@ describe('ContactForm', () => {
     const { getByLabelText, getByRole } = render(<ContactForm />);
 
     await fillValidForm(getByLabelText);
-    await userEvent.click(getByRole('button', { name: /Send the message/ }));
+    await userEvent.click(getByRole('button', { name: /Send my message/ }));
 
     await waitFor(() => expect(getByRole('button', { name: 'Clear the form' })).toBeDisabled());
     expect(getByRole('button', { name: /Sending/ })).toBeDisabled();
@@ -171,7 +174,7 @@ describe('ContactForm', () => {
     const { getByLabelText, getByRole } = render(<ContactForm />);
 
     await fillValidForm(getByLabelText);
-    const submit = getByRole('button', { name: /Send the message/ });
+    const submit = getByRole('button', { name: /Send my message/ });
     await userEvent.click(submit);
     await userEvent.click(getByRole('button', { name: /Sending/ }));
 
@@ -183,16 +186,16 @@ describe('ContactForm', () => {
   it('moves focus to the first invalid field when the submission is rejected', async () => {
     const { getByRole, getByLabelText } = render(<ContactForm />);
 
-    await userEvent.click(getByRole('button', { name: /Send the message/ }));
+    await userEvent.click(getByRole('button', { name: /Send my message/ }));
 
-    await waitFor(() => expect(getByLabelText(/^Name/)).toHaveFocus());
+    await waitFor(() => expect(getByLabelText(/^Your name/)).toHaveFocus());
   });
 
   it('focuses the first field that is still invalid on a later attempt', async () => {
     const { getByRole, getByLabelText } = render(<ContactForm />);
 
-    await userEvent.type(getByLabelText(/^Name/), 'Ada Lovelace');
-    await userEvent.click(getByRole('button', { name: /Send the message/ }));
+    await userEvent.type(getByLabelText(/^Your name/), 'Ada Lovelace');
+    await userEvent.click(getByRole('button', { name: /Send my message/ }));
 
     await waitFor(() => expect(getByLabelText(/^Email/)).toHaveFocus());
   });
@@ -208,19 +211,34 @@ describe('ContactForm', () => {
     const { getByLabelText, getByRole } = render(<ContactForm />);
 
     await fillValidForm(getByLabelText);
-    await userEvent.click(getByRole('button', { name: /Send the message/ }));
+    await userEvent.click(getByRole('button', { name: /Send my message/ }));
 
     // An edit made meanwhile would be dropped by the confirmation, while the
     // message already on its way still carried the old text.
-    await waitFor(() => expect(getByLabelText(/^Message/)).toBeDisabled());
-    expect(getByLabelText(/^Name/)).toBeDisabled();
+    await waitFor(() => expect(getByLabelText(/^Your message/)).toBeDisabled());
+    expect(getByLabelText(/^Your name/)).toBeDisabled();
     expect(getByLabelText(/^Email/)).toBeDisabled();
-    expect(getByLabelText(/^Subject/)).toBeDisabled();
+    expect(getByRole('radio', { name: 'Online shop' })).toBeDisabled();
     expect(getByLabelText(/^Phone/)).toBeDisabled();
-    expect(getByLabelText(/^Company/)).toBeDisabled();
+    expect(getByLabelText(/^Your business/)).toBeDisabled();
 
     release({ status: 'success' });
     await waitFor(() => expect(getByRole('status')).toBeInTheDocument());
     expect(getByRole('button', { name: 'Send another message' })).toBeInTheDocument();
+  });
+});
+
+describe('ContactForm need chips', () => {
+  it('sends the picked need along with the message', async () => {
+    submitContactMessage.mockResolvedValue({ status: 'success' });
+    const { getByLabelText, getByRole } = render(<ContactForm />);
+
+    await fillValidForm(getByLabelText);
+    await userEvent.click(getByRole('radio', { name: 'Online shop' }));
+    expect(getByRole('radio', { name: 'Online shop' })).toBeChecked();
+    await userEvent.click(getByRole('button', { name: /Send my message/ }));
+
+    await waitFor(() => expect(submitContactMessage).toHaveBeenCalled());
+    expect(submitContactMessage.mock.calls[0]?.[0]).toMatchObject({ need: 'shop' });
   });
 });

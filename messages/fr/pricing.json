@@ -1,12 +1,5 @@
 {
   "pricing": {
-    "meta": {
-      "title": "Tarifs - Go Cosmic",
-      "description": "Composez votre site à partir de 10€ par mois : vous choisissez le nombre de pages et les options. Maquette et état des lieux offerts, sans engagement."
-    },
-    "eyebrow": "[ TARIFS ]",
-    "title": "Composez votre offre",
-    "subtitle": "Un prix de départ clair, et vous n'ajoutez que ce dont vous avez vraiment besoin. Le montant se met à jour au fur et à mesure.",
     "free_offers": {
       "eyebrow": "Offert, sans engagement",
       "title": "Avant même de parler budget",
@@ -21,23 +14,6 @@
         }
       },
       "note": "Ces deux prestations sont gratuites et ne vous engagent à rien."
-    },
-    "step1": {
-      "question": "Qu'est-ce que vous souhaitez créer ?",
-      "options": {
-        "website": "Un site internet",
-        "mobile": "Une application mobile",
-        "both": "Les deux"
-      }
-    },
-    "step2": {
-      "question": "Quel type de site vous faut-il ?",
-      "options": {
-        "showcase": "Un site qui présente mon activité",
-        "self_managed": "Un site que je veux modifier moi-même",
-        "accounts": "Un site avec un espace pour mes clients",
-        "ecommerce": "Un site pour vendre en ligne"
-      }
     },
     "builder": {
       "period": "/ mois",
@@ -80,7 +56,7 @@
       },
       "updates": {
         "label": "Modifications de contenu incluses",
-        "hint": "Vos textes, photos et horaires mis à jour par mes soins, sans surcoût à chaque fois.",
+        "hint": "Vos textes, photos et horaires mis à jour par nos soins, sans surcoût à chaque fois.",
         "off": "Non inclus",
         "slider_label": "Modifications par an",
         "tiers": {
@@ -92,35 +68,63 @@
         }
       },
       "total": {
-        "label": "Votre offre",
-        "note": "Vous pouvez faire évoluer ces options à tout moment.",
-        "beyond": "Au-delà de ces volumes, on en discute ensemble : je vous fais une proposition adaptée."
+        "label": "Votre estimation",
+        "note": "Estimation indicative, confirmée après un premier échange. Vous pouvez ajouter des options au fil du temps ; une fois activées, elles restent dans votre abonnement (voir les conditions générales de vente).",
+        "cta": "Demander ma maquette gratuite",
+        "question": "Une question avant ? <link>Écrivez-nous</link>.",
+        "beyond": "Au-delà de ces volumes, on en discute ensemble : nous vous faisons une proposition adaptée."
       }
     },
-    "results": {
+    "columns": {
+      "eyebrow": "[ Tarifs ]",
+      "title": "Plusieurs façons de travailler ensemble.",
+      "subscription": {
+        "title": "Abonnement",
+        "label": "Site, hébergement et suivi",
+        "price": "Dès {price}",
+        "period": "/ mois",
+        "description": "Pour avoir un site en ligne, tenu à jour, sans y penser. Le prix suit vos besoins : nombre de pages, nom de domaine, adresse e-mail, modifications.",
+        "features": {
+          "included": "Hébergement, connexion sécurisée et référencement de base compris",
+          "options": "Des options à ajouter au fil du temps, quand vous en avez besoin",
+          "mockup": "Maquette offerte avant de vous décider"
+        },
+        "cta": "Composer mon abonnement"
+      },
+      "guidance": {
+        "title": "Accompagnement",
+        "label": "Conseil, UX/UI et design",
+        "price": "Tarif à la journée",
+        "description": "Pour aller plus loin que la maquette gratuite sans forcément développer le site : l'architecture, les choix techniques, l'UX/UI et le design, avec l'intervention d'un designer.",
+        "features": {
+          "architecture": "Architecture et choix techniques",
+          "design": "UX/UI, parcours utilisateurs et maquettes détaillées",
+          "designer": "Un designer qui travaille aux côtés du développeur"
+        },
+        "cta": "En parler"
+      },
+      "reinforcement": {
+        "title": "Renforcement",
+        "label": "Site existant, équipe renforcée",
+        "price": "Tarif à la journée",
+        "description": "Pour intervenir sur un site déjà existant : amélioration technique, nouvelles fonctionnalités, avec un ou plusieurs développeurs selon l'ampleur du projet.",
+        "features": {
+          "technical": "Amélioration technique : performance, sécurité, mises à jour",
+          "features": "Nouvelles fonctionnalités sur un site existant",
+          "team": "Un ou plusieurs développeurs selon l'ampleur du projet"
+        },
+        "cta": "En parler"
+      },
       "custom": {
-        "note": "Projet sur mesure",
-        "title": "Parlons-en de vive voix",
-        "description": "Ce type de projet se chiffre au cas par cas : ce qu'il vous faut n'a rien à voir avec un site de présentation. Décrivez-moi votre besoin et je vous envoie une proposition détaillée, sans engagement."
+        "title": "Sur mesure",
+        "label": "Projet ponctuel · sur devis",
+        "description": "Boutique en ligne, espace adhérents, application mobile, outil métier. On cadre ensemble, on chiffre, on livre. Vous pouvez ensuite passer en abonnement pour le suivi.",
+        "features": {
+          "payment": "Paiement échelonné, étape par étape",
+          "ownership": "Le code et les données vous appartiennent"
+        },
+        "cta": "Demander un devis"
       }
-    },
-    "contact": {
-      "title": "Discutons de votre projet",
-      "description": "Écrivez-moi en quelques lignes : je vous réponds avec une proposition claire.",
-      "email": "prospect@gocosmic.dev",
-      "cta": "Demander un devis",
-      "subject": "Demande de tarif — Devis projet",
-      "aria_label": "Envoyer un email à prospect@gocosmic.dev pour un devis projet",
-      "privacy_notice": "En envoyant un email, vous acceptez que votre message et vos coordonnées soient traités pour préparer un devis et suivre votre projet.",
-      "privacy_link": "Politique de confidentialité",
-      "free_mockup_cta_label": "Recevoir une maquette gratuite",
-      "free_mockup_cta_aria_label": "Aller à la page de demande de maquette gratuite"
-    },
-    "reset": "Recommencer",
-    "summary": {
-      "intro": "Bonjour, voici le détail de ma simulation sur votre page tarifs :",
-      "project": "Projet",
-      "site_type": "Type de site"
     }
   }
 }

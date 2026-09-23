@@ -1,44 +1,34 @@
 {
   "pscSupersprint": {
     "title": "PSC Supersprint",
-    "subtitle": "Web application for managing PSC triathlon supersprint competition results",
-    "overview": {
-      "title": "About the Project",
-      "description": "PSC Supersprint is a modern web application for managing and displaying real-time results of a supersprint triathlon competition. It provides detailed rankings by category, gender and scratch, as well as individual athlete profiles.",
-      "mission": "This application is primarily designed for PSC Supersprint athletes, organizers and spectators, allowing them to easily track competition results, podiums and performances."
-    },
-    "features": {
-      "title": "Key Features",
-      "items": {
-        "results": "Real-time results display",
-        "rankings": "Rankings by category, gender and scratch",
-        "podiums": "Podium visualization by year",
-        "athletes": "Individual athlete profiles",
-        "responsive": "Responsive interface optimized for mobile-first",
-        "admin": "Administration interface for entering results"
-      }
-    },
-    "technology": {
-      "title": "Tech Stack",
-      "description": "Built with modern web technologies to deliver a fast and reliable experience:",
-      "stack": {
-        "nextjs": "Next.js 16 (App Router) - React framework for high-performance apps",
-        "typescript": "TypeScript 5.1+ - Type-safe development for reliability",
-        "tailwind": "Tailwind CSS v4 - Modern and responsive styling",
-        "firebase": "Firebase Realtime Database - Real-time data and administration",
-        "radix": "Radix UI + shadcn/ui - Accessible and styled components",
-        "testing": "Vitest + Testing Library - Code quality and reliability"
-      }
-    },
-    "purpose": {
-      "title": "Purpose",
-      "description": "This application is primarily designed to present and distribute results from the supersprint triathlon organized by PSC. It allows athletes to find their performances, organizers to easily manage competition data, and spectators to follow the rankings live."
-    },
+    "subtitle": "Live results of the PSC supersprint triathlon, on athletes' and spectators' phones.",
     "cta": {
-      "title": "Access the Application",
-      "description": "Check results, rankings and podiums from PSC Supersprint online.",
-      "button": "View the application",
-      "ariaLabel": "View the PSC Supersprint application (opens in a new tab)"
+      "title": "See the results",
+      "description": "Rankings, podiums and athlete pages from PSC Supersprint, available online.",
+      "button": "View the app",
+      "ariaLabel": "View the PSC Supersprint app (opens in a new tab)"
+    },
+    "for_whom": {
+      "label": "Who it's for",
+      "title": "A triathlon club on race day",
+      "description": "PSC is a triathlon club that organises a supersprint triathlon. On race day, athletes, organisers and spectators all want the same thing: the results, quickly and without searching."
+    },
+    "what_we_did": {
+      "label": "What we did",
+      "title": "Live results, on any phone",
+      "description": "We built a web app, with nothing to install, that shows the results during the race and keeps them online afterwards.",
+      "items": {
+        "live_results": "Results shown live, during the race",
+        "rankings": "An overall ranking, plus rankings by category and gender",
+        "podiums": "Podiums for each year, easy to look back on",
+        "athlete_pages": "A page for each athlete, with their results",
+        "organiser_space": "A private area where organisers enter the results"
+      }
+    },
+    "result": {
+      "label": "Result",
+      "title": "A race that is easier to follow",
+      "description": "Athletes find their performances on their phones, spectators follow the rankings live, and organisers manage the results easily, from their own area."
     }
   }
 }

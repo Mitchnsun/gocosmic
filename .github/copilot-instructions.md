@@ -1,4 +1,4 @@
-# Go Cosmic — GitHub Copilot Instructions
+# Cosmic Studio — GitHub Copilot Instructions
 
 > **Primary references**: [`CLAUDE.md`](../CLAUDE.md) is the authoritative guide for commands, architecture, and workflows. [`GUIDELINES.md`](../GUIDELINES.md) covers UI principles, coding standards, commit examples, manual validation, and coverage details. Read both before making changes.
 

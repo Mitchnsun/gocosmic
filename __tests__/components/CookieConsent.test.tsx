@@ -54,7 +54,7 @@ describe('CookieConsent', () => {
 
     await waitFor(() => expect(screen.getByTestId('vercel-analytics')).toBeInTheDocument());
 
-    fireEvent.click(screen.getByRole('button', { name: 'Privacy settings' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Manage cookies' }));
     fireEvent.click(screen.getByRole('checkbox', { name: /Audience measurement/ }));
     fireEvent.click(screen.getByRole('button', { name: 'Save my choice' }));
 
@@ -81,7 +81,7 @@ describe('CookieConsent', () => {
 
     await waitFor(() => expect(screen.getByTestId('vercel-analytics')).toBeInTheDocument());
 
-    fireEvent.click(screen.getByRole('button', { name: 'Privacy settings' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Manage cookies' }));
     expect(await screen.findByRole('button', { name: 'Close' })).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole('button', { name: 'Close' }));

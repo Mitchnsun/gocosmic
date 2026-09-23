@@ -1,10 +1,10 @@
-# Go Cosmic - TL;DR
+# Cosmic Studio - TL;DR
 
-Quick reference guide for getting started with the Go Cosmic project.
+Quick reference guide for getting started with the Cosmic Studio project.
 
-## What is Go Cosmic?
+## What is Cosmic Studio?
 
-A **multilingual web application** (EN, FR, ES, DE, IT) showcasing Go Cosmic's portfolio, team, and development services. Features a cosmic theme with interactive 3D experiences.
+A **multilingual web application** (EN, FR, ES, DE, IT) showcasing Cosmic Studio's portfolio, team, and development services. Features a cosmic theme with interactive 3D experiences.
 
 ## Quick Start
 
@@ -23,10 +23,9 @@ yarn dev
 
 ## Tech Stack
 
-- **Next.js 15** + **React 19** + **TypeScript 5.8**
+- **Next.js 16** + **React 19** + **TypeScript 5.8**
 - **TailwindCSS 4.x** for styling
 - **next-intl** for internationalization (5 languages)
-- **Three.js** + **React Three Fiber** for 3D graphics
 - **Vitest** + **Testing Library** for testing
 
 ## Project Structure
@@ -35,9 +34,10 @@ yarn dev
 ├── app/[locale]/          # Internationalized pages
 │   ├── page.tsx           # Homepage
 │   ├── about/             # About page
-│   ├── services/          # Services page
-│   ├── offers/            # Offers page
-│   ├── journey/           # 3D cosmic experience
+│   ├── services/          # Services & pricing page
+│   ├── contact/           # Contact page
+│   ├── free-mockup/       # Free mockup request page
+│   ├── terms/             # Terms of sale
 │   └── projects/          # Project showcases
 ├── components/            # React components
 ├── messages/              # Translations (organized by namespace)
@@ -191,9 +191,8 @@ export default function MyPage() {
 
 - **Homepage** (`/`) - Hero section, CTA, team link
 - **About** (`/about`) - Company overview, developer profile, legal
-- **Services** (`/services`) - Development, design, AI, launch
-- **Offers** (`/offers`) - Solo, team, duo packages
-- **Journey** (`/journey`) - 3D cosmic experience with Three.js
+- **Services & pricing** (`/services`) - Pricing columns, subscription simulator, trades, FAQ
+- **Terms of sale** (`/terms`) - Subscription duration, options, cancellation
 - **Projects** (`/projects/*`) - Project showcases (e.g., Daily Fortune)
 
 ## Coding Standards

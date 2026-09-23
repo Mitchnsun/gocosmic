@@ -4,6 +4,7 @@ interface MountainSkylineProps {
   className?: string;
 }
 
+/** Decorative mountain horizon shown behind the mobile menu's top spacer. */
 const MountainSkyline = ({ className }: MountainSkylineProps) => (
   <svg
     aria-hidden="true"
@@ -11,7 +12,7 @@ const MountainSkyline = ({ className }: MountainSkylineProps) => (
     viewBox="0 0 400 48"
     preserveAspectRatio="none"
     height={48}
-    className={cn('w-full text-white', className)}
+    className={cn('text-ghost/30 w-full', className)}
     xmlns="http://www.w3.org/2000/svg">
     <polyline
       fill="none"

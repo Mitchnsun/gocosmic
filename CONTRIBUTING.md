@@ -1,4 +1,4 @@
-# Contributing to Go Cosmic
+# Contributing to Cosmic Studio
 
 Embark on your journey among the stars, thanks to you for helping shape gocosmic.dev! This guide will navigate you through our contribution process and community guidelines.
 
@@ -230,9 +230,10 @@ messages/
   │   ├── footer.json      # Footer content
   │   ├── home.json        # Homepage content
   │   ├── about.json       # About page content
-  │   ├── services.json    # Services page content
-  │   ├── offers.json      # Offers page content
-  │   ├── journey.json     # Journey page content
+  │   ├── services.json    # Services & pricing page content
+  │   ├── pricing.json     # Pricing columns and subscription simulator
+  │   ├── free-mockup.json # Free mockup page content
+  │   ├── legal.json       # Privacy policy, legal notice and terms of sale
   │   └── projects.json    # Project pages content
 ```
 

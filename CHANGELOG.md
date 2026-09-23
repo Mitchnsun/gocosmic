@@ -5,6 +5,35 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.0.0] - 2026-09-26
+
+### Added
+
+- A redesigned homepage that explains who the studio is for, why a studio rather than a site builder, the ways to work together with visible prices, recent projects, the studio's own apps and the person behind it
+- A single Services & pricing page where visitors compose their monthly plan, watch the total update live and request a free mockup with their choices attached, followed by answers to the questions people ask before signing
+- A contact page where visitors either write a message, saying what kind of help they need, or book a 20-minute call in Matthieu's calendar, which only loads if they ask for it
+- A terms of sale page, linked from the footer, spelling out the subscription's duration, options and cancellation terms
+
+### Changed
+
+- The studio is now called Cosmic Studio across the site, in search results and in emails; the menu is reduced to Services, Projects and Contact with a "Get my free mockup" button always in view, and a simpler footer gathers the other pages, the legal links and a language picker
+- Alternate sections in the dark theme now use a warm, deep rose-ash tone instead of midnight blue
+- Texts across the site are rewritten in plain words for craftspeople, associations and independents, around one promise: making their business seen, found and chosen, in all five languages
+- The projects page can be filtered by type of project, and each project page now tells who it was for, what was done and what changed
+- The pricing section now shows four ways to work together — subscription, guidance, reinforcement and custom projects — instead of two, and day-based services are shown without a figure
+- Subscription options are now described as added over time rather than freely removable, since once active they stay part of the plan
+- The homepage opening keeps its animated ringed planet, shown discreetly behind the text on phones and larger alongside it on desktop
+- The top bar and mobile menu now show the studio's altitude instead of its GPS coordinates, and the mobile menu's mountain horizon decoration is back
+- The top bar now simply shows "Available" without a start month, and names the mission control base — Chêne-Bougeries for Swiss visitors, Annecy for everyone else
+
+### Removed
+
+- The 3D journey page and the separate offers and pricing pages: their content now lives on Services & pricing, and old links lead there
+
+### Fixed
+
+- Screen readers now announce the logo with the studio name shown on screen, and orange buttons now use a dark label that stays readable
+
 ## [1.8.0] - 2026-09-23
 
 ### Added
