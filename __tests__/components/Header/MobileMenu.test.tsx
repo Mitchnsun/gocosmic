@@ -44,16 +44,16 @@ describe('MobileMenu', () => {
     expect(onClose).toHaveBeenCalledTimes(1);
   });
 
-  it('renders the full-width primary CTA leading to the contact page', () => {
+  it('renders the full-width primary CTA leading to the free mockup request', () => {
     render(<MobileMenu onClose={onClose} items={items} />);
-    const cta = screen.getByRole('link', { name: 'Talk about my project' });
-    expect(cta).toHaveAttribute('href', '/contact');
+    const cta = screen.getByRole('link', { name: 'Get my free mockup' });
+    expect(cta).toHaveAttribute('href', '/free-mockup');
     expect(cta).toHaveClass('w-full');
   });
 
   it('closes the menu when the CTA is clicked', () => {
     render(<MobileMenu onClose={onClose} items={items} />);
-    fireEvent.click(screen.getByRole('link', { name: 'Talk about my project' }));
+    fireEvent.click(screen.getByRole('link', { name: 'Get my free mockup' }));
     expect(onClose).toHaveBeenCalledTimes(1);
   });
 

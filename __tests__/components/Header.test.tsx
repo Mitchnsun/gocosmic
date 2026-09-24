@@ -70,11 +70,11 @@ describe('Header Component', () => {
     expect(queryByRole('link', { name: /^pricing/i })).not.toBeInTheDocument();
   });
 
-  it('renders the primary CTA pill leading to the contact page', () => {
+  it('renders the primary CTA pill leading to the free mockup request', () => {
     const { getByRole } = render(<Header />);
-    const cta = getByRole('link', { name: 'Talk about my project' });
+    const cta = getByRole('link', { name: 'Get my free mockup' });
 
-    expect(cta).toHaveAttribute('href', '/contact');
+    expect(cta).toHaveAttribute('href', '/free-mockup');
     expect(cta).toHaveClass('bg-aerospace', 'text-void', 'rounded-full', 'h-11');
   });
 
@@ -149,7 +149,8 @@ describe('Header Component', () => {
     const menu = getByRole('dialog', { name: /^menu$/i });
     expect(within(menu).getByRole('link', { name: 'Home' })).toHaveAttribute('href', '/');
     expect(within(menu).getByRole('link', { name: 'Services & pricing' })).toHaveAttribute('href', '/services');
-    expect(within(menu).getByRole('link', { name: 'Talk about my project' })).toHaveAttribute('href', '/contact');
+    expect(within(menu).getByRole('link', { name: 'Contact Cosmic Studio' })).toHaveAttribute('href', '/contact');
+    expect(within(menu).getByRole('link', { name: 'Get my free mockup' })).toHaveAttribute('href', '/free-mockup');
   });
 
   it('opens the lang drawer when the mobile language switcher is clicked', () => {

@@ -9,13 +9,13 @@ interface HeaderCtaProps {
   className?: string;
 }
 
-/** Primary pill leading to the contact page, shared by the desktop nav and the mobile menu. */
+/** Primary pill leading to the free mockup request, shared by the desktop nav and the mobile menu. */
 const HeaderCta = ({ onClick, className }: HeaderCtaProps) => {
   const t = useTranslations('navigation');
 
   return (
     <Link
-      href="/contact"
+      href="/free-mockup"
       onClick={onClick}
       className={cn(
         buttonVariants({ variant: 'aerospace' }),

@@ -8,7 +8,7 @@ Main navigation bar, sticky at the top of every page. It has a fixed 64 px heigh
 Header/
 ├── Header.tsx              # React component (rendering only)
 ├── DesktopNav.tsx          # Inline links, CTA pill and language switcher (≥ 1024 px)
-├── HeaderCta.tsx           # "Talk about my project" pill, shared by DesktopNav and MobileMenu
+├── HeaderCta.tsx           # "Get my free mockup" pill, shared by DesktopNav and MobileMenu
 ├── MobileMenu.tsx          # Full-screen mobile drawer (rendering only)
 ├── MobileMenuButton.tsx    # Burger → ✕ toggle button (rendering only)
 ├── MobileLangDrawer.tsx    # Full-screen language selection drawer for mobile
@@ -34,7 +34,7 @@ Just before the `<header>`, a `href="#main-content"` link is rendered invisibly 
 
 ### Desktop navigation (`hidden lg:flex`)
 
-On viewports ≥ 1024 px, `DesktopNav` shows Services · Projects · Contact, the `HeaderCta` pill (`bg-aerospace text-void`, 44 px high, leads to `/contact`) and the `LanguageSwitcher`. About and Pricing live in the footer. Below `lg`, the nav is hidden and the mobile menu takes over: three links plus a CTA do not fit comfortably on a 768 px tablet.
+On viewports ≥ 1024 px, `DesktopNav` shows Services · Projects · Contact, the `HeaderCta` pill (`bg-aerospace text-void`, 44 px high, leads to `/free-mockup`: the free mockup request is the main lead source, the Contact link stays next to it) and the `LanguageSwitcher`. About and Pricing live in the footer. Below `lg`, the nav is hidden and the mobile menu takes over: three links plus a CTA do not fit comfortably on a 768 px tablet.
 
 ### Active navigation link
 

@@ -5,12 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [1.9.0] - 2026-09-23
+## [1.9.0] - 2026-09-24
 
 ### Added
 
 - The studio is now called Cosmic Studio across the whole site, in search results and in outgoing emails, with "Go Cosmic" kept as the signature of the main call-to-action
-- A "Talk about my project" button stays visible at the top of every page and at the bottom of the mobile menu
+- A "Get my free mockup" button stays visible at the top of every page and at the bottom of the mobile menu, so visitors can request their free mockup in one click
 - The top bar now tells visitors whether the studio is taking new projects and from which month, next to its Chêne-Bougeries base
 
 ### Changed
