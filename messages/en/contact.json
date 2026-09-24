@@ -4,139 +4,89 @@
     "description": "Tell Cosmic Studio about your project: one message is enough, and you get a reply within 24 hours from the person who will build your site."
   },
   "contact": {
-    "title": "Contact Us",
-    "subtitle": "Send us a brief, or write straight to the right inbox.",
-    "blocks": {
-      "general": {
-        "title": "General Inquiries",
-        "email": "contact@gocosmic.dev",
-        "subject": "General Inquiry",
-        "reasons": {
-          "title": "Contact us for:",
-          "items": {
-            "generalQuestion": "General questions about the project or company",
-            "partnership": "Partnership proposals",
-            "feedback": "User feedback and experience",
-            "suggestions": "Improvement suggestions",
-            "mission": "Questions about Cosmic Studio's mission and values"
-          }
-        },
-        "cta": "Send an email",
-        "aria_label": "Send an email to contact@gocosmic.dev with subject: General Inquiry"
-      },
-      "support": {
-        "title": "Support & Assistance",
-        "email": "support@gocosmic.dev",
-        "subject": "Support Request",
-        "reasons": {
-          "title": "Contact us for:",
-          "items": {
-            "help": "Help with an application or service",
-            "bugs": "Bug or error reporting",
-            "access": "Connection or access issues",
-            "technical": "Technical assistance requests",
-            "troubleshooting": "Questions about problem resolution"
-          }
-        },
-        "cta": "Request support",
-        "aria_label": "Send an email to support@gocosmic.dev with subject: Support Request"
-      },
-      "technical": {
-        "title": "Technical Inquiries",
-        "email": "technique@gocosmic.dev",
-        "subject": "Technical Question",
-        "reasons": {
-          "title": "Contact us for:",
-          "items": {
-            "architecture": "Detailed questions about architecture or integration",
-            "documentation": "Technical documentation requests",
-            "evolution": "Suggestions for technical product evolution",
-            "collaboration": "Collaboration or code contribution",
-            "api": "Discussions about APIs or integrations"
-          }
-        },
-        "cta": "Ask a technical question",
-        "aria_label": "Send an email to technique@gocosmic.dev with subject: Technical Question"
-      },
-      "commercial": {
-        "title": "Commercial Inquiries",
-        "email": "prospect@gocosmic.dev",
-        "subject": "Commercial Inquiry",
-        "reasons": {
-          "title": "Contact us for:",
-          "items": {
-            "quote": "Commercial requests or quotes",
-            "pricing": "Information about offers and pricing",
-            "demo": "Product demonstration requests",
-            "meeting": "Meeting requests with the sales team",
-            "purchase": "Pre-purchase or subscription questions"
-          }
-        },
-        "cta": "Get in touch",
-        "aria_label": "Send an email to prospect@gocosmic.dev with subject: Commercial Inquiry"
-      }
-    },
-    "privacyNotice": "Personal data sent through the contact form or by email is used only to answer your request, manage follow-up, and keep evidence of exchanges for the periods stated in the privacy policy.",
+    "title": "Tell us about your business. <em>We'll take care of the rest.</em>",
+    "privacyNotice": "Your details are only used to reply to you and to prepare a possible quote.",
     "privacyLink": "Privacy policy",
-    "eyebrow": "Contact — Mission brief",
+    "eyebrow": "[ Contact ]",
     "form": {
-      "eyebrow": "Project brief",
-      "title": "Tell us about your project",
-      "description": "Fill in the form and we will come back to you with next steps. Prefer email? The addresses below go straight to the right inbox.",
       "optional": "optional",
       "required_hint": "Fields marked with an asterisk are required",
-      "submit": "Send the message",
+      "submit": "Send my message",
       "submitting": "Sending…",
       "clear": "Clear the form",
       "honeypot_label": "Leave this field empty",
       "fields": {
         "name": {
-          "label": "Name",
-          "placeholder": "Your name"
+          "label": "Your name",
+          "placeholder": "Camille Durand"
         },
         "email": {
           "label": "Email",
-          "placeholder": "you@example.com"
-        },
-        "subject": {
-          "label": "Subject",
-          "placeholder": "Showcase website, mobile app, redesign…"
+          "placeholder": "camille@example.com"
         },
         "message": {
-          "label": "Message",
-          "placeholder": "Describe your project, your deadline and your budget if you have one."
+          "label": "Your message",
+          "placeholder": "Where you are, what you want, what you already have (logo, photos, old site)…"
         },
         "phone": {
           "label": "Phone",
-          "placeholder": "+33 6 12 34 56 78"
+          "placeholder": "+41 22 123 45 67"
         },
         "company": {
-          "label": "Company",
-          "placeholder": "Your company or organisation"
+          "label": "Your business",
+          "placeholder": "Cabinetmaker in Annecy, theatre association…"
+        },
+        "need": {
+          "legend": "What you need",
+          "options": {
+            "showcase": "Showcase site",
+            "redesign": "Redesign of an existing site",
+            "shop": "Online shop",
+            "app": "App",
+            "unsure": "Not sure yet"
+          }
         }
       },
       "errors": {
         "name_length": "Please enter a name between 2 and 100 characters.",
         "email_invalid": "Please enter a valid email address.",
-        "subject_length": "The subject must be between 5 and 200 characters.",
         "message_length": "The message must be between 10 and 5000 characters.",
         "phone_invalid": "Please enter a valid phone number.",
-        "company_length": "The company name is too long.",
+        "company_length": "The description of your business is too long.",
         "rate_limited": "You have already sent several messages. Please try again later or write to us by email.",
         "retry_later": "Your message could not be sent right now. Please try again later or write to us by email.",
         "server": "The message could not be sent. Please try again or write to us by email.",
-        "network": "Connection lost. Check your network and try again."
+        "network": "Connection lost. Check your network and try again.",
+        "need_invalid": "Please pick an option from the list."
       },
       "success": {
-        "title": "Thank you for getting in touch!",
-        "description": "Your message has been sent. We read every request and will come back to you shortly.",
+        "title": "Thank you. Matthieu will reply within one working day.",
+        "description": "Your message has arrived. Next step: a few questions by email, then a free mockup if that suits you.",
         "back": "Send another message"
       }
     },
-    "direct": {
-      "eyebrow": "Direct lines",
-      "title": "Write to the right inbox",
-      "description": "Every request has a dedicated address — pick the one that matches yours."
+    "lead": "A message, or a 20-minute call. Either way, you talk to Matthieu, and you get a reply within one working day.",
+    "details": {
+      "aria_label": "Contact details",
+      "email_label": "Email",
+      "support_label": "Existing client · support",
+      "where_label": "Where",
+      "where": "Geneva · French-speaking Switzerland · Haute-Savoie, or by video call"
+    },
+    "modes": {
+      "label": "How would you like to get in touch?",
+      "message": "Write a message",
+      "call": "Book a call"
+    },
+    "booking": {
+      "title": "Pick a 20-minute slot",
+      "via": "via Google Calendar",
+      "consent": "The booking calendar is provided by Google Calendar, which sets its own cookies. It only loads if you ask for it.",
+      "load": "Show the calendar",
+      "open": "Open the booking page",
+      "iframe_title": "Matthieu's booking calendar (Google Calendar)",
+      "note": "The slot is booked straight into Matthieu's calendar. Google Calendar sends you the confirmation and the call link.",
+      "unavailable": "Online booking is not open yet. Write us a message: we will suggest a slot the same day."
     }
   }
 }

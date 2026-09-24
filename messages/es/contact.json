@@ -4,139 +4,89 @@
     "description": "Cuéntale tu proyecto a Cosmic Studio: basta con un mensaje y recibes respuesta en menos de 24 h, de la persona que construirá tu sitio."
   },
   "contact": {
-    "title": "Contáctenos",
-    "subtitle": "Envíanos un resumen o escribe directamente al buzón adecuado.",
-    "blocks": {
-      "general": {
-        "title": "Consultas Generales",
-        "email": "contact@gocosmic.dev",
-        "subject": "Consulta general",
-        "reasons": {
-          "title": "Contáctenos para:",
-          "items": {
-            "generalQuestion": "Preguntas generales sobre el proyecto o la empresa",
-            "partnership": "Propuestas de asociación",
-            "feedback": "Comentarios y experiencia del usuario",
-            "suggestions": "Sugerencias de mejora",
-            "mission": "Preguntas sobre la misión y los valores de Cosmic Studio"
-          }
-        },
-        "cta": "Enviar un correo",
-        "aria_label": "Enviar un correo electrónico a contact@gocosmic.dev con asunto: Consulta general"
-      },
-      "support": {
-        "title": "Soporte y Asistencia",
-        "email": "support@gocosmic.dev",
-        "subject": "Solicitud de soporte",
-        "reasons": {
-          "title": "Contáctenos para:",
-          "items": {
-            "help": "Ayuda con una aplicación o servicio",
-            "bugs": "Reporte de errores o fallos",
-            "access": "Problemas de conexión o acceso",
-            "technical": "Solicitudes de asistencia técnica",
-            "troubleshooting": "Preguntas sobre resolución de problemas"
-          }
-        },
-        "cta": "Solicitar soporte",
-        "aria_label": "Enviar un correo electrónico a support@gocosmic.dev con asunto: Solicitud de soporte"
-      },
-      "technical": {
-        "title": "Consultas Técnicas",
-        "email": "technique@gocosmic.dev",
-        "subject": "Pregunta técnica",
-        "reasons": {
-          "title": "Contáctenos para:",
-          "items": {
-            "architecture": "Preguntas detalladas sobre arquitectura o integración",
-            "documentation": "Solicitudes de documentación técnica",
-            "evolution": "Sugerencias para la evolución técnica del producto",
-            "collaboration": "Colaboración o contribución al código",
-            "api": "Discusiones sobre APIs o integraciones"
-          }
-        },
-        "cta": "Hacer una pregunta técnica",
-        "aria_label": "Enviar un correo electrónico a technique@gocosmic.dev con asunto: Pregunta técnica"
-      },
-      "commercial": {
-        "title": "Consultas Comerciales",
-        "email": "prospect@gocosmic.dev",
-        "subject": "Consulta comercial",
-        "reasons": {
-          "title": "Contáctenos para:",
-          "items": {
-            "quote": "Solicitudes comerciales o presupuestos",
-            "pricing": "Información sobre ofertas y precios",
-            "demo": "Solicitudes de demostración del producto",
-            "meeting": "Solicitudes de reunión con el equipo comercial",
-            "purchase": "Preguntas antes de la compra o suscripción"
-          }
-        },
-        "cta": "Ponerse en contacto",
-        "aria_label": "Enviar un correo electrónico a prospect@gocosmic.dev con asunto: Consulta comercial"
-      }
-    },
-    "privacyNotice": "Los datos personales enviados mediante el formulario de contacto o por correo se utilizan únicamente para responder a tu solicitud, gestionar el seguimiento y conservar prueba de los intercambios durante los plazos indicados en la política de privacidad.",
+    "title": "Cuéntanos a qué te dedicas. <em>Del resto nos ocupamos nosotros.</em>",
+    "privacyNotice": "Tus datos solo sirven para responderte y preparar un posible presupuesto.",
     "privacyLink": "Política de privacidad",
-    "eyebrow": "Contacto — Resumen de misión",
+    "eyebrow": "[ Contacto ]",
     "form": {
-      "eyebrow": "Resumen del proyecto",
-      "title": "Cuéntanos tu proyecto",
-      "description": "¿Prefieres el correo? Las direcciones siguientes llegan directamente al buzón adecuado. Rellena el formulario y te responderemos con los siguientes pasos.",
       "optional": "opcional",
       "required_hint": "Los campos marcados con un asterisco son obligatorios",
-      "submit": "Enviar el mensaje",
+      "submit": "Enviar mi mensaje",
       "submitting": "Enviando…",
       "clear": "Borrar el formulario",
       "honeypot_label": "Deja este campo vacío",
       "fields": {
         "name": {
-          "label": "Nombre",
-          "placeholder": "Tu nombre"
+          "label": "Tu nombre",
+          "placeholder": "Camille Durand"
         },
         "email": {
           "label": "Correo electrónico",
-          "placeholder": "tu@ejemplo.com"
-        },
-        "subject": {
-          "label": "Asunto",
-          "placeholder": "Web de presentación, app móvil, rediseño…"
+          "placeholder": "camille@ejemplo.com"
         },
         "message": {
-          "label": "Mensaje",
-          "placeholder": "Describe tu proyecto, tu plazo y tu presupuesto si lo tienes."
+          "label": "Tu mensaje",
+          "placeholder": "En qué punto estás, qué quieres, qué tienes ya (logo, fotos, sitio antiguo)…"
         },
         "phone": {
           "label": "Teléfono",
-          "placeholder": "+34 600 12 34 56"
+          "placeholder": "+41 22 123 45 67"
         },
         "company": {
-          "label": "Empresa",
-          "placeholder": "Tu empresa u organización"
+          "label": "Tu actividad",
+          "placeholder": "Ebanista en Annecy, asociación de teatro…"
+        },
+        "need": {
+          "legend": "Lo que necesitas",
+          "options": {
+            "showcase": "Sitio de presentación",
+            "redesign": "Renovar un sitio existente",
+            "shop": "Tienda en línea",
+            "app": "Aplicación",
+            "unsure": "Aún no lo sé"
+          }
         }
       },
       "errors": {
         "name_length": "Indica un nombre de 2 a 100 caracteres.",
         "email_invalid": "Indica una dirección de correo válida.",
-        "subject_length": "El asunto debe tener entre 5 y 200 caracteres.",
         "message_length": "El mensaje debe tener entre 10 y 5000 caracteres.",
         "phone_invalid": "Indica un número de teléfono válido.",
-        "company_length": "El nombre de la empresa es demasiado largo.",
+        "company_length": "La descripción de tu actividad es demasiado larga.",
         "rate_limited": "Ya has enviado varios mensajes. Inténtalo más tarde o escríbenos por correo.",
         "retry_later": "Tu mensaje no se ha podido enviar en este momento. Inténtalo más tarde o escríbenos por correo.",
         "server": "No se pudo enviar el mensaje. Inténtalo de nuevo o escríbenos por correo.",
-        "network": "Conexión perdida. Comprueba tu red e inténtalo de nuevo."
+        "network": "Conexión perdida. Comprueba tu red e inténtalo de nuevo.",
+        "need_invalid": "Elige una opción de la lista."
       },
       "success": {
-        "title": "¡Gracias por escribirnos!",
-        "description": "Tu mensaje se ha enviado. Leemos todas las solicitudes y te responderemos en breve.",
+        "title": "Gracias. Matthieu te responde en un día laborable.",
+        "description": "Tu mensaje ha llegado bien. Siguiente paso: unas preguntas por correo y, después, una maqueta gratuita si te parece bien.",
         "back": "Enviar otro mensaje"
       }
     },
-    "direct": {
-      "eyebrow": "Líneas directas",
-      "title": "Escribe al buzón adecuado",
-      "description": "Cada solicitud tiene su dirección — elige la que corresponda a la tuya."
+    "lead": "Un mensaje o una llamada de 20 minutos. En ambos casos hablas con Matthieu y recibes respuesta en un día laborable.",
+    "details": {
+      "aria_label": "Datos de contacto",
+      "email_label": "Correo",
+      "support_label": "Ya eres cliente · soporte",
+      "where_label": "Dónde",
+      "where": "Ginebra · Suiza romanda · Alta Saboya, o por videollamada"
+    },
+    "modes": {
+      "label": "¿Cómo prefieres contactarnos?",
+      "message": "Escribir un mensaje",
+      "call": "Reservar una llamada"
+    },
+    "booking": {
+      "title": "Elige una franja de 20 minutos",
+      "via": "vía Google Calendar",
+      "consent": "La agenda de reservas la proporciona Google Calendar, que instala sus propias cookies. Solo se carga si tú lo pides.",
+      "load": "Mostrar la agenda",
+      "open": "Abrir la página de reservas",
+      "iframe_title": "Agenda de reservas de Matthieu (Google Calendar)",
+      "note": "La franja se reserva directamente en la agenda de Matthieu. Google Calendar te envía la confirmación y el enlace de la llamada.",
+      "unavailable": "La reserva en línea aún no está abierta. Escríbenos un mensaje: te proponemos una franja en el mismo día."
     }
   }
 }

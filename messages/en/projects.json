@@ -4,152 +4,151 @@
       "title": "Work · Websites and apps | Cosmic Studio",
       "description": "Websites and apps built by Cosmic Studio for associations, a sports club and independents, in Geneva and Haute-Savoie."
     },
-    "title": "Our Projects",
-    "subtitle": "Websites and apps live today, for associations, a sports club and our own products.",
+    "title": "Websites and apps <em>that do a real job.</em>",
+    "subtitle": "A selection of what we have delivered: for clients, and for ourselves. Each page says what we did, for whom, and what changed.",
     "items": {
-      "dailyFortune": {
-        "title": "Daily Fortune",
-        "description": "A mobile app delivering daily cosmic fortunes and motivational messages powered by AI."
-      },
-      "mcomperat": {
-        "title": "mcomper.at",
-        "description": "A modern, responsive web CV built with Next.js, TypeScript, and full internationalization."
+      "choeurDesPaysduMontBlanc": {
+        "title": "Chœur des Pays du Mont Blanc",
+        "client": "Association · Haute-Savoie",
+        "description": "The choir's website: upcoming concerts, repertoire and how to join, easy to read on a phone or a computer.",
+        "tags": ["Showcase site", "Calendar", "Association"],
+        "cover_alt": "Chœur des Pays du Mont Blanc logo"
       },
       "pscSupersprint": {
         "title": "PSC Supersprint",
-        "description": "A web application for managing and displaying real-time triathlon competition results."
+        "client": "Triathlon club",
+        "description": "Live race results that spectators can check on their phones during the event.",
+        "tags": ["Web app", "Live", "Sport"],
+        "cover_alt": "PSC Supersprint preview"
       },
-      "choeurDesPaysduMontBlanc": {
-        "title": "Chœur des Pays du Mont Blanc",
-        "description": "A website showcasing the choir's activities, concerts, and repertoire in Haute-Savoie."
+      "dailyFortune": {
+        "title": "Daily Fortune",
+        "client": "Studio app",
+        "description": "A short message every morning to start the day well. Our first app published on the App Store and Google Play.",
+        "tags": ["Mobile app", "iOS · Android", "Studio"],
+        "cover_alt": "Daily Fortune app icon"
+      },
+      "mcomperat": {
+        "title": "mcomper.at",
+        "client": "Personal project",
+        "description": "An online résumé, available in several languages and quick to load. The testing ground for the tools we then use for you.",
+        "tags": ["Website", "Multilingual"],
+        "cover_alt": "mcomper.at preview"
       }
     },
     "cta": {
-      "title": "Your project could be next",
-      "description": "Tell us what you want to build and we will map out the route.",
-      "button": "Let's talk"
+      "title": "Your project could be the next one on this list.",
+      "description": "Tell us about your business in a few lines: we get back to you within 24 hours, with questions rather than an automated quote.",
+      "button": "Talk about my project"
     },
-    "eyebrow": "Projects — Selected work"
+    "eyebrow": "[ Work · {count} ]",
+    "kinds": {
+      "site": "Website",
+      "webapp": "Web app",
+      "mobile": "Mobile app"
+    },
+    "filters": {
+      "label": "Filter by project type",
+      "all": "All",
+      "site": "Website",
+      "webapp": "Web app",
+      "mobile": "Mobile app",
+      "count": "{count, plural, =0 {No projects} one {# project} other {# projects}}"
+    },
+    "view_project": "View project"
   },
   "dailyFortune": {
     "title": "Daily Fortune",
-    "subtitle": "Your daily dose of inspiration and cosmic wisdom",
-    "overview": {
-      "title": "About Daily Fortune",
-      "description": "Daily Fortune is a delightful mobile application that brings a touch of cosmic magic to your routine. Each day, receive a personalized fortune to brighten your day.",
-      "motivation": "Whether you're looking for a morning boost, a phrase to keep you on track, or a message to share, Daily Fortune fits into your routine to spread positivity and clarity."
-    },
-    "features": {
-      "title": "Key Features",
-      "items": {
-        "daily": "New cosmic fortunes delivered every day",
-        "motivation": "A chosen message to brighten your day: fortune cookie, motivational quote, or positive affirmation",
-        "modern": "Clean, responsive interface with smooth animations",
-        "cosmic": "Space-inspired design that captures the wonder of the universe"
-      }
-    },
-    "technology": {
-      "title": "Technology Stack",
-      "description": "Built with modern web technologies to deliver a fast, beautiful, and reliable experience:",
-      "stack": {
-        "nextjs": "Next.js - React framework for production-ready applications",
-        "typescript": "TypeScript - Type-safe development for reliability",
-        "tailwind": "Tailwind CSS - Utility-first styling for cosmic aesthetics",
-        "native": "React Native - Native mobile experience for iOS and Android"
-      }
-    },
-    "ai": {
-      "title": "Powered by AI",
-      "description": "Daily Fortune leverages modern AI capabilities to generate unique, engaging, and contextually relevant fortunes that resonate with everyone's daily experiences and aspirations."
-    },
+    "subtitle": "Our studio's own app: a short message every day to start the day well.",
     "cta": {
-      "title": "Explore Daily Fortune",
-      "description": "Discover your cosmic fortune and let the stars guide your journey.",
+      "title": "Try Daily Fortune",
+      "description": "Download the app and get a new message every day.",
       "button": "Download the app",
       "ariaLabel": "Download Daily Fortune (opens in a new tab)"
+    },
+    "for_whom": {
+      "label": "Who it's for",
+      "title": "A small boost every morning",
+      "description": "Daily Fortune is not a client project: it is our studio's own app, designed and published by us. It is for anyone looking for a little lift in the morning, a phrase to stay on track or a message to share."
+    },
+    "what_we_did": {
+      "label": "What we did",
+      "title": "A mobile app, from idea to publication",
+      "description": "We did everything ourselves, from the first idea to the release on the app stores.",
+      "items": {
+        "daily_message": "A new message every day: a motivational quote, a positive affirmation or a fortune-cookie saying",
+        "ai_messages": "Varied messages created with the help of AI, in tune with everyone's daily life and hopes",
+        "clean_design": "A clean screen that reacts quickly, with smooth animations",
+        "stores": "Published on the App Store and Google Play, for iPhone and Android"
+      }
+    },
+    "result": {
+      "label": "Result",
+      "title": "Our first app, live",
+      "description": "Daily Fortune is available on the App Store and Google Play, and its users get a new message every day. For you, it means we know the whole journey, from the first idea to publication on the stores."
     }
   },
   "mcomperat": {
     "title": "mcomper.at",
-    "subtitle": "Modern, responsive web CV of Matthieu Compérat",
-    "overview": {
-      "title": "About the Project",
-      "description": "Modern and responsive web CV of Matthieu Compérat, designed with Next.js (App Router) for fast, accessible, and SEO-friendly pages.",
-      "architecture": "Clear and maintainable architecture: reusable components, Server Components by default, and strict types for production reliability. Integrated internationalization in French (default) and English, with homepage redirection to /fr."
-    },
-    "features": {
-      "title": "Key Features",
-      "items": {
-        "i18n": "Internationalization: /fr and /en routes with dedicated JSON content",
-        "seo": "SEO: metadata managed via Next.js API (generateMetadata) for better ranking",
-        "performance": "Performance: Server Components, streaming, and React 19 for fast loading",
-        "accessibility": "Accessibility: best practices (jsx-a11y) and semantic HTML",
-        "quality": "Code quality: ESLint (flat config), Prettier (Tailwind sort), Husky hooks, sorted imports, zero lint errors"
-      }
-    },
-    "technology": {
-      "title": "Technology Stack",
-      "description": "Built with cutting-edge web technologies for a fast, maintainable, and production-ready experience:",
-      "stack": {
-        "nextjs": "Next.js 15.5+ (App Router) - Modern React framework",
-        "typescript": "TypeScript 5.9+ (strict mode) - Type safety and reliability",
-        "tailwind": "Tailwind CSS 4.1+ - Utility-first styling with custom theme",
-        "yarn": "Yarn 4+ (Corepack) and Node.js 22+ - Modern tooling"
-      }
-    },
-    "ai": {
-      "title": "Powered by AI",
-      "description": "Development workflow enhanced by AI assistance for faster, more consistent, and higher quality results:",
-      "features": {
-        "development": "Assisted development: recommended use of GitHub Copilot to accelerate component writing and reduce errors",
-        "quality": "Quality and consistency: automatic suggestions for import fixes, ESLint/TypeScript compliance, and Tailwind class ordering",
-        "content": "Content and SEO: assistance with microcopy, meta/OG tags, and accessible alt text",
-        "i18n": "Internationalization: help pre-generating consistent FR/EN strings from templates, with mandatory human review"
-      }
-    },
+    "subtitle": "Matthieu Compérat's online résumé, and the testing ground for the tools we then use for our clients.",
     "cta": {
-      "title": "Explore mcomper.at",
-      "description": "Discover Matthieu Compérat's professional web CV and explore his expertise.",
+      "title": "Discover mcomper.at",
+      "description": "Browse Matthieu Compérat's online résumé, in French or English.",
       "button": "Visit the website",
-      "ariaLabel": "Visit mcomper.at website (opens in a new tab)"
+      "ariaLabel": "Visit the mcomper.at website (opens in a new tab)"
+    },
+    "for_whom": {
+      "label": "Who it's for",
+      "title": "An online résumé, and our testing ground",
+      "description": "mcomper.at is the online résumé of Matthieu Compérat, your contact at Cosmic Studio: his background and expertise on a single page. It is also the testing ground for the tools we then use for our clients. What works here makes its way into your project."
+    },
+    "what_we_did": {
+      "label": "What we did",
+      "title": "A clear, fast résumé in two languages",
+      "description": "We built a site that is easy to read and easy to update, and we use it to try out our working methods before offering them to clients.",
+      "items": {
+        "two_languages": "Available in French and English, with texts written for each language",
+        "found_on_google": "Pages prepared to be found on Google",
+        "fast_on_phone": "Pages that load quickly and are easy to read on a phone",
+        "accessible": "A site accessible to everyone, following good practice",
+        "ai_with_review": "AI as an assistant for writing and translating, with every text reviewed by a person"
+      }
+    },
+    "result": {
+      "label": "Result",
+      "title": "Tested here, then used for you",
+      "description": "Matthieu has a clear, bilingual and fast online résumé. For the studio, it is where we refined how we handle several languages, how pages appear on Google and how AI-assisted texts get reviewed, before using it all on our clients' sites. Every change also goes through automatic checks, to catch mistakes."
     }
   },
   "choeurDesPaysduMontBlanc": {
     "title": "Chœur des Pays du Mont Blanc",
-    "subtitle": "Website for the amateur choir based in Haute-Savoie, France",
-    "overview": {
-      "title": "About the Project",
-      "description": "The Chœur des Pays du Mont Blanc website is a modern web platform designed to showcase the choir's activities, upcoming concerts, and provide information to members and the public.",
-      "mission": "This website serves as a primary communication hub for choir members and music enthusiasts in the Mont Blanc region, facilitating event organization and community engagement."
-    },
-    "features": {
-      "title": "Key Features",
-      "items": {
-        "concerts": "Concert schedule with dates, locations, and program details",
-        "repertoire": "Diverse repertoire from baroque to contemporary classical music",
-        "community": "Member recruitment information and rehearsal schedules",
-        "events": "Event updates and news about choir activities"
-      }
-    },
-    "technology": {
-      "title": "Technology Stack",
-      "description": "Built with modern web technologies to deliver an elegant and responsive experience:",
-      "stack": {
-        "nextjs": "Next.js - React framework for fast, SEO-friendly pages",
-        "typescript": "TypeScript - Type-safe development for reliability",
-        "tailwind": "Tailwind CSS - Modern styling for elegant presentation",
-        "responsive": "Responsive design - Optimized for all devices"
-      }
-    },
-    "purpose": {
-      "title": "Purpose",
-      "description": "This website is primarily designed to present the Chœur des Pays du Mont Blanc project to choir members, music enthusiasts, and the general public. It provides essential information about concerts, rehearsals, and opportunities to join this passionate musical community in the Haute-Savoie region."
-    },
+    "subtitle": "The website of an amateur choir in Haute-Savoie: concerts, repertoire and rehearsals in one place.",
     "cta": {
-      "title": "Discover the Choir",
-      "description": "Visit the website to learn more about upcoming concerts and join the musical journey.",
+      "title": "Discover the choir",
+      "description": "Upcoming concerts, repertoire, rehearsals: it is all on the choir's website.",
       "button": "Visit the website",
-      "ariaLabel": "Visit Chœur des Pays du Mont Blanc website (opens in a new tab)"
+      "ariaLabel": "Visit the Chœur des Pays du Mont Blanc website (opens in a new tab)"
+    },
+    "for_whom": {
+      "label": "Who it's for",
+      "title": "An amateur choir in Haute-Savoie",
+      "description": "The Chœur des Pays du Mont Blanc is an association of amateur singers in Haute-Savoie. It needed one place to keep its members informed, make its concerts known and welcome new voices."
+    },
+    "what_we_did": {
+      "label": "What we did",
+      "title": "A website for singers and the public",
+      "description": "We brought together everything singers, music lovers and the general public look for on a single site, easy to read on a computer or a phone.",
+      "items": {
+        "concerts": "A concert calendar with dates, venues and programmes",
+        "repertoire": "A look at the repertoire, from baroque to contemporary classical music",
+        "join": "Rehearsal times and how to join the choir",
+        "news": "News and events from the life of the choir"
+      }
+    },
+    "result": {
+      "label": "Result",
+      "title": "One place to follow the choir",
+      "description": "The site has become the choir's main meeting point: members find rehearsal times and news, the public discovers upcoming concerts, and anyone who wants to sing knows how to join."
     }
   }
 }

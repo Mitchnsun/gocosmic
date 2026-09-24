@@ -76,7 +76,7 @@ describe('<Button />', () => {
 
     const variantClasses = {
       default: ['bg-neutral-950', 'text-neutral-50', 'hover:bg-neutral-800'],
-      aerospace: ['bg-aerospace', 'text-neutral-50', 'hover:bg-aerospace/90'],
+      aerospace: ['bg-aerospace', 'text-void', 'hover:bg-aerospace/90'],
       chocolate: ['bg-chocolate', 'text-neutral-50', 'hover:bg-chocolate/90'],
       'cosmic-latte': ['bg-cosmic-latte', 'text-space', 'hover:bg-cosmic-latte/90', 'hover:text-space/90'],
       ghost: ['bg-ghost', 'text-neutral-900', 'hover:bg-violet-100'],
@@ -162,7 +162,7 @@ describe('<Button />', () => {
       const button = getByTestId('combo-button');
       expect(button).toHaveClass(
         'bg-aerospace',
-        'text-neutral-50',
+        'text-void',
         'hover:bg-aerospace/90',
         'font-bold',
         'text-lg',

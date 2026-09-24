@@ -21,7 +21,7 @@
         {
           "title": "Erhobene Daten",
           "body": [
-            "Die Website bietet keinen Kundenbereich, keine Zahlung, kein CAPTCHA und keinen Werbepixel. Zwei Formulare werden serverseitig verarbeitet. Die Seite für das kostenlose Mockup erfasst deine E-Mail-Adresse, die gewählte Farbrichtung, die Adresse deiner aktuellen Website, sofern du sie angibst, deine Nachricht und die Sprache der Seite. Wenn du aus dem Preissimulator kommst, enthält die Anfrage außerdem deine dortigen Angaben – Projektart, Art der Website, Seitenanzahl, gewählte Optionen, Aktualisierungshäufigkeit und den daraus berechneten geschätzten Monatspreis –, damit das Studio dir mit vollem Kontext antworten kann. Das Kontaktformular erfasst den Namen, die E-Mail-Adresse und die Nachricht, die du einträgst, sowie den optionalen Betreff, die Telefonnummer und das Unternehmen. In beiden Fällen werden die Felder per E-Mail an das Postfach des Studios weitergeleitet und nichts wird in einer Datenbank gespeichert. Über mailto-Links gesendete Nachrichten verarbeiten weiterhin dein E-Mail-Programm und das Empfängerpostfach.",
+            "Die Website bietet keinen Kundenbereich, keine Zahlung, kein CAPTCHA und keinen Werbepixel. Zwei Formulare werden serverseitig verarbeitet. Die Seite für das kostenlose Mockup erfasst deine E-Mail-Adresse, die gewählte Farbrichtung, die Adresse deiner aktuellen Website, sofern du sie angibst, deine Nachricht und die Sprache der Seite. Wenn du aus dem Preissimulator kommst, enthält die Anfrage außerdem deine dortigen Angaben – Projektart, Art der Website, Seitenanzahl, gewählte Optionen, Aktualisierungshäufigkeit und den daraus berechneten geschätzten Monatspreis –, damit das Studio dir mit vollem Kontext antworten kann. Das Kontaktformular erfasst den Namen, die E-Mail-Adresse und die Nachricht, die du einträgst, sowie, falls angegeben, Telefonnummer, Tätigkeit und die gewählte Art des Anliegens. In beiden Fällen werden die Felder per E-Mail an das Postfach des Studios weitergeleitet und nichts wird in einer Datenbank gespeichert. Über mailto-Links gesendete Nachrichten verarbeiten weiterhin dein E-Mail-Programm und das Empfängerpostfach.",
             "Deine IP-Adresse wird vorübergehend von der Firewall des Hosting-Anbieters verarbeitet, die beide Formulare — das Kontaktformular und das für das kostenlose Mockup — auf drei Sendungen alle zehn Minuten begrenzt, ergänzt durch ein verstecktes Anti-Spam-Feld in jedem. Technische Daten können vom Hosting-Anbieter für Sicherheits- und Bereitstellungsprotokolle verarbeitet werden. Vercel Analytics wird nur nach Einwilligung geladen, um Seitenaufrufe zu messen.",
             "Zwei Angaben werden in deinem Browser gespeichert. Die Preissimulation dient nur dazu, dich vom Simulator zum Formular für das kostenlose Mockup zu begleiten: Sie wird nur an uns übermittelt, wenn du dieses Formular abschickst, nach dem Senden der Anfrage gelöscht und verschwindet, sobald du den Tab schließt. Die Zeitpunkte deiner letzten Kontaktformular-Sendungen dienen dazu, die Sendehäufigkeit aus diesem Browser zu begrenzen, und bleiben dort, bis du die Browserdaten löschst; sie werden nie an uns übermittelt."
           ]
@@ -37,7 +37,8 @@
         {
           "title": "Empfänger und Auftragsverarbeiter",
           "body": [
-            "Daten können für Go Cosmic, den E-Mail-Anbieter, Resend (das die E-Mails der Mockup-Anfragen und des Kontaktformulars zustellt), den Hosting-Anbieter und Vercel für Hosting und Analytics zugänglich sein. LinkedIn ist eine externe Website und kann nach einem Klick auf einen ausgehenden Link Daten nach eigener Richtlinie verarbeiten."
+            "Daten können für Go Cosmic, den E-Mail-Anbieter, Resend (das die E-Mails der Mockup-Anfragen und des Kontaktformulars zustellt), den Hosting-Anbieter und Vercel für Hosting und Analytics zugänglich sein. LinkedIn ist eine externe Website und kann nach einem Klick auf einen ausgehenden Link Daten nach eigener Richtlinie verarbeiten.",
+            "Wird über die Kontaktseite ein Gespräch gebucht, stellt Google (Google Calendar) den Buchungskalender bereit und verarbeitet die eingegebenen Angaben nach seiner eigenen Datenschutzerklärung: https://policies.google.com/privacy."
           ]
         },
         {
@@ -64,7 +65,8 @@
           "title": "Cookies und Reichweitenmessung",
           "body": [
             "Go Cosmic lädt bewusst keine Werbe-Cookies. Vercel Analytics wird auf dieser Website als nicht notwendiges Reichweitenmessungswerkzeug behandelt und nur nach deiner Einwilligung geladen.",
-            "Du kannst deine Einwilligung jederzeit über die Schaltfläche zur Einwilligungsverwaltung unten auf jeder Seite ändern oder widerrufen."
+            "Du kannst deine Einwilligung jederzeit über die Schaltfläche zur Einwilligungsverwaltung unten auf jeder Seite ändern oder widerrufen.",
+            "Der Buchungskalender von Google Calendar auf der Kontaktseite wird nur geladen, wenn auf „Kalender anzeigen“ geklickt wird; Google kann dann eigene Cookies setzen. Ohne diesen Klick wird nichts von Google geladen, und die Buchungsseite lässt sich stattdessen in einem neuen Tab öffnen."
           ]
         }
       ]
@@ -105,6 +107,14 @@
           "title": "Haftung",
           "body": [
             "Go Cosmic bemüht sich um genaue und verfügbare Informationen, kann jedoch nicht garantieren, dass die Website frei von Unterbrechungen, Fehlern oder veralteten Inhalten ist. Externe Links führen zu Diensten Dritter, die ihren eigenen Bedingungen und Richtlinien unterliegen."
+          ]
+        },
+        {
+          "title": "Einsatz künstlicher Intelligenz",
+          "body": [
+            "Cosmic Studio kann KI-gestützte Funktionen in Kundenprojekte einbauen und nutzt diese Werkzeuge, um schneller zu schreiben, zu übersetzen und zu entwickeln. Alle Inhalte und alle Lieferungen werden von einem Menschen geprüft.",
+            "KI-basierte Empfehlungen sind informativ und ersetzen nicht das menschliche Urteilsvermögen. Anwendungen werden nach den bewährten Methoden der Branche getestet.",
+            "Sensible Daten werden ohne dokumentierte Rechtsgrundlage oder, wo erforderlich, ausdrückliche Einwilligung nicht an Dritte weitergegeben. Der Umgang mit personenbezogenen Daten wird in der Datenschutzerklärung erläutert."
           ]
         },
         {

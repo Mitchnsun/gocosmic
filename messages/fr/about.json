@@ -4,86 +4,52 @@
     "description": "Découvrez Cosmic Studio, studio web et mobile entre Genève et Annecy, et Matthieu Compérat, votre interlocuteur du premier échange au suivi."
   },
   "about": {
-    "developer": {
-      "bio": "Matthieu allie une expertise technique approfondie à une vision créative pour concevoir des solutions numériques qui repoussent les limites du possible. Son approche \"cosmique\" vise à créer des expériences utilisateurs performantes, esthétiques et innovantes.",
-      "description": "Développeur passionné avec une expertise dans les technologies web et mobiles modernes.",
-      "expertise": {
-        "items": {
-          "aiTech": "Intégration de l'IA et technologies émergentes",
-          "architecture": "Architecture logicielle et bonnes pratiques de développement",
-          "leadership": "Leadership technique et mentorat d'équipe",
-          "modernDev": "Développement web moderne (React, React-Native, Next.js, Expo, TypeScript, Tailwind CSS)"
-        },
-        "title": "Expertise"
-      },
+    "eyebrow": "[ À propos ]",
+    "title": "Un studio à taille humaine, <em>au service de votre visibilité.</em>",
+    "lead": "Cosmic Studio, c'est Matthieu Compérat : un développeur installé à Chêne-Bougeries, qui construit des sites et des applications pour les artisans, les associations et les indépendants, de Genève à Annecy.",
+    "path": {
+      "eyebrow": "[ Parcours ]",
+      "title": "Quinze ans de code, <em>un seul interlocuteur.</em>",
+      "paragraphs": [
+        "Originaire de Duingt, au bord du lac d'Annecy, Matthieu développe des sites et des applications depuis une quinzaine d'années. D'abord pour de grandes entreprises, où il a appris à construire des outils fiables, rapides et accessibles à tous ; puis pour des gens dont il connaît le prénom.",
+        "Cosmic Studio est né de ce second choix : mettre ce savoir-faire au service de ceux qui ont un métier, et pas le temps d'en apprendre un second. Vous parlez à la personne qui construit votre site, du premier appel au suivi mois après mois."
+      ],
+      "zones": [
+        "Chêne-Bougeries · base",
+        "Suisse romande · sur place",
+        "Haute-Savoie · sur place",
+        "Ailleurs · à distance"
+      ],
       "linkedin": "Voir le profil LinkedIn",
-      "linkedin_aria": "Profil LinkedIn de Matthieu Compérat (s'ouvre dans un nouvel onglet)",
-      "name": "Matthieu Compérat",
-      "subtitle": "Architecte d'Expériences Digitales",
-      "title": "Rencontrez le Développeur"
+      "linkedin_aria": "Profil LinkedIn de Matthieu Compérat (s'ouvre dans un nouvel onglet)"
     },
-    "legal": {
-      "ai": {
-        "items": {
-          "compliance": "Les pratiques liées aux données personnelles sont détaillées dans la politique de confidentialité plutôt que résumées par une mention générique ici.",
-          "ethics": "Nous nous engageons à une utilisation éthique et transparente de l'intelligence artificielle",
-          "integration": "Nos solutions peuvent intégrer des modèles d'IA pour des fonctionnalités avancées",
-          "privacy": "Les données sensibles ne doivent pas être partagées avec des tiers sans base légale documentée ou consentement explicite lorsque celui-ci est requis."
+    "why": {
+      "eyebrow": "[ Pourquoi eux ]",
+      "title": "Les artisans et les associations <em>méritent mieux qu'un modèle tout fait.</em>",
+      "lead": "Les grandes agences visent les grandes entreprises ; les créateurs de sites vous laissent seul face à l'outil. Cosmic Studio s'adresse à ceux qui sont entre les deux.",
+      "reasons": {
+        "found": {
+          "title": "Être trouvé près de chez soi",
+          "description": "Vos clients vous cherchent sur leur téléphone, à quelques kilomètres. Un site rapide et bien construit fait la différence sur Google."
         },
-        "title": "Utilisation de l'IA"
-      },
-      "contact": {
-        "link": "nous contacter",
-        "text": "Pour toute question sur la confidentialité, les mentions légales ou l'utilisation de l'IA,",
-        "subject": "Questions sur la confidentialité, les mentions légales et l’utilisation de l’IA",
-        "ariaLabel": "Envoyer un e-mail à support@gocosmic.dev",
-        "privacyLink": "Politique de confidentialité",
-        "legalNoticeLink": "Mentions légales"
-      },
-      "intro": "Cosmic Studio peut intégrer des fonctionnalités assistées par IA dans les projets clients, avec revue humaine et transparence au cœur de la livraison.",
-      "responsibility": {
-        "items": {
-          "recommendations": "Les recommandations basées sur l'IA sont informatives et ne remplacent pas le jugement humain",
-          "security": "Cosmic Studio s'engage à maintenir les plus hauts standards de sécurité et de confidentialité",
-          "testing": "Les applications sont testées selon les meilleures pratiques du secteur"
+        "price": {
+          "title": "Un prix qui suit votre activité",
+          "description": "Un abonnement dès {price} par mois, qui grandit avec vous, plutôt qu'un gros investissement de départ."
         },
-        "title": "Responsabilité"
-      },
-      "title": "Mentions légales et usage de l'IA"
-    },
-    "mission": {
-      "conclusion": "Notre mission : rendre votre activité visible en ligne, avec un site simple à vivre et un interlocuteur qui reste à vos côtés.",
-      "description": "Cosmic Studio transforme vos idées en sites et en applications concrets, en utilisant l'intelligence artificielle quand elle vous fait gagner du temps.",
-      "location": {
-        "fr": "Basé à Annecy, nous intervenons à Genève, en Suisse romande et en Haute-Savoie — en présentiel ou à distance.",
-        "ch": "Basé à Chêne-Bougeries, à Genève, nous intervenons dans toute la Suisse romande et dans le bassin annécien — en présentiel ou à distance."
-      },
-      "specialization": {
-        "items": {
-          "aiIntegration": "Intégration avancée de l'IA pour des expériences utilisateurs intelligentes",
-          "customSolutions": "Solutions sur-mesure avec les technologies modernes (React, React-Native, Next.js, Expo, TypeScript, Tailwind CSS)",
-          "uiUxDesign": "Un design soigné, à votre image, pensé pour vos visiteurs",
-          "webMobile": "Développement d'applications web et mobiles de nouvelle génération"
+        "answer": {
+          "title": "Quelqu’un qui répond",
+          "description": "Pas de centre d'assistance : la personne qui a construit votre site vous répond, en général dans la journée."
         },
-        "title": "Nous sommes spécialisés dans"
-      },
-      "title": "Cosmic Studio — Rendre votre activité visible"
-    },
-    "subtitle": "Qui nous sommes, comment nous travaillons, et ce sur quoi vous pouvez compter",
-    "title": "À propos de Cosmic Studio",
-    "eyebrow": "À propos — Studio",
-    "hero": {
-      "cta": "Nous contacter"
-    },
-    "sections": {
-      "mission": "Mission",
-      "developer": "Développeur",
-      "legal": "Transparence"
+        "ai": {
+          "title": "L'IA quand elle aide, jamais à votre place",
+          "description": "Nous utilisons l'intelligence artificielle pour aller plus vite, toujours avec une relecture humaine. Le détail figure dans nos mentions légales."
+        }
+      }
     },
     "cta": {
-      "title": "Prêt à travailler ensemble ?",
-      "description": "Parlez-nous de votre projet : nous revenons vers vous avec un plan clair.",
-      "button": "Démarrer la conversation"
+      "title": "Travaillons ensemble.",
+      "description": "Racontez-nous votre activité en quelques lignes : nous revenons vers vous sous 24 h, avec des questions plutôt qu'un devis automatique.",
+      "button": "Parler de mon projet"
     }
   }
 }

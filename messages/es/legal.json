@@ -21,7 +21,7 @@
         {
           "title": "Datos recopilados",
           "body": [
-            "El sitio no ofrece área de cliente, pago, CAPTCHA ni píxel publicitario. Dos formularios se tratan en el servidor. La página de maqueta gratuita recoge tu dirección de email, la gama de colores elegida, la dirección de tu sitio actual si la indicas, tu mensaje y el idioma de la página. Si llegas desde el simulador de precios, la solicitud incluye también las opciones que elegiste allí —tipo de proyecto, tipo de sitio, número de páginas, opciones seleccionadas, frecuencia de actualizaciones y el precio mensual estimado resultante— para que el estudio pueda responderte con todo el contexto. El formulario de contacto recoge el nombre, la dirección de correo y el mensaje que escribes, además del asunto, el teléfono y la empresa opcionales. En ambos casos los campos se envían por email al buzón del estudio y no se guarda nada en una base de datos. Los mensajes enviados mediante enlaces mailto los gestiona tu cliente de email y el buzón destinatario.",
+            "El sitio no ofrece área de cliente, pago, CAPTCHA ni píxel publicitario. Dos formularios se tratan en el servidor. La página de maqueta gratuita recoge tu dirección de email, la gama de colores elegida, la dirección de tu sitio actual si la indicas, tu mensaje y el idioma de la página. Si llegas desde el simulador de precios, la solicitud incluye también las opciones que elegiste allí —tipo de proyecto, tipo de sitio, número de páginas, opciones seleccionadas, frecuencia de actualizaciones y el precio mensual estimado resultante— para que el estudio pueda responderte con todo el contexto. El formulario de contacto recoge el nombre, la dirección de correo y el mensaje que escribes, así como, si los indicas, tu teléfono, tu actividad y el tipo de necesidad elegido. En ambos casos los campos se envían por email al buzón del estudio y no se guarda nada en una base de datos. Los mensajes enviados mediante enlaces mailto los gestiona tu cliente de email y el buzón destinatario.",
             "Tu dirección IP se trata de forma temporal por el cortafuegos del proveedor de alojamiento, que limita ambos formularios — el de contacto y el de maqueta gratuita — a tres envíos cada diez minutos, junto con un campo antispam oculto en cada uno. El proveedor de alojamiento puede tratar datos técnicos para registros de seguridad y entrega. Vercel Analytics solo se carga tras el consentimiento para medir páginas vistas.",
             "Se guardan dos elementos en tu navegador. La simulación de precios solo sirve para acompañarte desde el simulador hasta el formulario de maqueta gratuita: únicamente nos llega si envías ese formulario, se borra una vez enviada la solicitud y desaparece al cerrar la pestaña. Las fechas de tus últimos envíos del formulario de contacto sirven para limitar la frecuencia de envío desde ese navegador y permanecen en él hasta que borres los datos de navegación; nunca nos llegan."
           ]
@@ -37,7 +37,8 @@
         {
           "title": "Destinatarios y encargados",
           "body": [
-            "Los datos pueden ser accesibles para Go Cosmic, el proveedor de email, Resend (que entrega los emails de solicitud de maqueta gratuita y del formulario de contacto), el proveedor de alojamiento y Vercel para alojamiento y analítica. LinkedIn es un sitio externo y puede tratar datos según su propia política después de hacer clic en un enlace saliente."
+            "Los datos pueden ser accesibles para Go Cosmic, el proveedor de email, Resend (que entrega los emails de solicitud de maqueta gratuita y del formulario de contacto), el proveedor de alojamiento y Vercel para alojamiento y analítica. LinkedIn es un sitio externo y puede tratar datos según su propia política después de hacer clic en un enlace saliente.",
+            "Si decides reservar una llamada desde la página de contacto, la agenda de reservas la proporciona Google (Google Calendar), que trata la información que introduces según su propia política de privacidad: https://policies.google.com/privacy."
           ]
         },
         {
@@ -64,7 +65,8 @@
           "title": "Cookies y medición de audiencia",
           "body": [
             "Go Cosmic no carga voluntariamente cookies publicitarias. Vercel Analytics se trata en este sitio como una herramienta de medición de audiencia no esencial y solo se carga tras tu consentimiento.",
-            "Puedes modificar o retirar tu consentimiento en cualquier momento mediante el botón de gestión de preferencias que aparece en la parte inferior de cada página."
+            "Puedes modificar o retirar tu consentimiento en cualquier momento mediante el botón de gestión de preferencias que aparece en la parte inferior de cada página.",
+            "La agenda de reservas de Google Calendar de la página de contacto solo se carga si haces clic en «Mostrar la agenda»; Google puede entonces instalar sus propias cookies. Sin ese clic, no se carga nada desde Google y puedes abrir la página de reservas en una nueva pestaña."
           ]
         }
       ]
@@ -105,6 +107,14 @@
           "title": "Responsabilidad",
           "body": [
             "Go Cosmic procura mantener información exacta y disponible, pero no puede garantizar la ausencia de interrupciones, errores o contenido desactualizado. Los enlaces externos llevan a servicios de terceros regidos por sus propias condiciones y políticas."
+          ]
+        },
+        {
+          "title": "Uso de la inteligencia artificial",
+          "body": [
+            "Cosmic Studio puede integrar funciones asistidas por inteligencia artificial en los proyectos de sus clientes, y utiliza estas herramientas para redactar, traducir y desarrollar más rápido. Cada contenido y cada entrega los revisa una persona.",
+            "Las recomendaciones generadas por la IA son informativas y no sustituyen el juicio humano. Las aplicaciones se prueban según las buenas prácticas del sector.",
+            "Los datos sensibles no se comparten con terceros sin una base legal documentada o un consentimiento explícito cuando sea necesario. Las prácticas relativas a datos personales se detallan en la política de privacidad."
           ]
         },
         {

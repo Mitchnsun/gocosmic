@@ -1,44 +1,34 @@
 {
   "pscSupersprint": {
     "title": "PSC Supersprint",
-    "subtitle": "Applicazione web per la gestione dei risultati del triathlon supersprint del PSC",
-    "overview": {
-      "title": "Presentazione del Progetto",
-      "description": "PSC Supersprint è un'applicazione web moderna per gestire e visualizzare in tempo reale i risultati di una competizione di triathlon supersprint. Offre classifiche dettagliate per categoria, genere e scratch, nonché schede individuali per ogni atleta.",
-      "mission": "Questa applicazione è principalmente destinata agli atleti, agli organizzatori e agli spettatori del PSC Supersprint, permettendo loro di seguire facilmente i risultati, i podi e le prestazioni della competizione."
-    },
-    "features": {
-      "title": "Funzionalità principali",
-      "items": {
-        "results": "Visualizzazione dei risultati in tempo reale",
-        "rankings": "Classifiche per categoria, genere e scratch",
-        "podiums": "Visualizzazione dei podi per anno",
-        "athletes": "Schede individuali degli atleti",
-        "responsive": "Interfaccia responsive ottimizzata per mobile",
-        "admin": "Interfaccia di amministrazione per l'inserimento dei risultati"
-      }
-    },
-    "technology": {
-      "title": "Stack tecnologico",
-      "description": "Costruito con tecnologie web moderne per offrire un'esperienza rapida e affidabile:",
-      "stack": {
-        "nextjs": "Next.js 16 (App Router) - Framework React per app ad alte prestazioni",
-        "typescript": "TypeScript 5.1+ - Sviluppo type-safe per l'affidabilità",
-        "tailwind": "Tailwind CSS v4 - Styling moderno e responsive",
-        "firebase": "Firebase Realtime Database - Dati in tempo reale e amministrazione",
-        "radix": "Radix UI + shadcn/ui - Componenti accessibili e stilizzati",
-        "testing": "Vitest + Testing Library - Qualità e affidabilità del codice"
-      }
-    },
-    "purpose": {
-      "title": "Obiettivo",
-      "description": "Questa applicazione è principalmente progettata per presentare e distribuire i risultati del triathlon supersprint organizzato dal PSC. Permette agli atleti di trovare le proprie prestazioni, agli organizzatori di gestire facilmente i dati della competizione e agli spettatori di seguire le classifiche in diretta."
-    },
+    "subtitle": "I risultati del triathlon supersprint del PSC in diretta, sul telefono di atleti e spettatori.",
     "cta": {
-      "title": "Accedi all'applicazione",
-      "description": "Consulta i risultati, le classifiche e i podi del PSC Supersprint online.",
-      "button": "Vedere l'applicazione",
-      "ariaLabel": "Vedere l'applicazione PSC Supersprint (si apre in una nuova scheda)"
+      "title": "Vedi i risultati",
+      "description": "Classifiche, podi e schede degli atleti del PSC Supersprint, consultabili online.",
+      "button": "Vedi l'app",
+      "ariaLabel": "Vedi l'app PSC Supersprint (si apre in una nuova scheda)"
+    },
+    "for_whom": {
+      "label": "Per chi",
+      "title": "Un club di triathlon, nel giorno della sua gara",
+      "description": "Il PSC è un club di triathlon che organizza un triathlon supersprint. Il giorno della gara, atleti, organizzatori e spettatori vogliono tutti la stessa cosa: conoscere i risultati, in fretta e senza doverli cercare."
+    },
+    "what_we_did": {
+      "label": "Cosa abbiamo fatto",
+      "title": "Risultati in diretta, sul telefono",
+      "description": "Abbiamo creato un'app web, senza nulla da installare, che mostra i risultati durante la gara e li mantiene online anche dopo.",
+      "items": {
+        "live_results": "I risultati mostrati in diretta, durante la gara",
+        "rankings": "Una classifica generale, più classifiche per categoria e per genere",
+        "podiums": "I podi di ogni anno, facili da ritrovare",
+        "athlete_pages": "Una scheda per ogni atleta, con i suoi risultati",
+        "organiser_space": "Un'area riservata agli organizzatori per inserire i risultati"
+      }
+    },
+    "result": {
+      "label": "Risultato",
+      "title": "Una gara più facile da seguire",
+      "description": "Gli atleti ritrovano le loro prestazioni sul telefono, gli spettatori seguono le classifiche in diretta e gli organizzatori gestiscono i risultati in modo semplice, dalla loro area riservata."
     }
   }
 }

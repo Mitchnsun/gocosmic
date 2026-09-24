@@ -1,17 +1,25 @@
-import { CodeBracketIcon, PuzzlePieceIcon, RocketLaunchIcon, SparklesIcon } from '@heroicons/react/24/solid';
 import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getMessages, getTranslations } from 'next-intl/server';
 import type { ReactNode } from 'react';
 
-import { ContentSection } from '@/components/ContentSection';
 import CTAFinal from '@/components/CTAFinal';
-import PageHero from '@/components/PageHero';
-import { SERVICE_DETAIL_DEFINITIONS, ServiceDetail } from '@/components/ServiceDetail';
-import { buttonVariants } from '@/design-system/button.variants';
+import { Faq } from '@/components/Faq';
+import { PricingColumns } from '@/components/PricingColumns';
+import { buildPricingColumns } from '@/components/PricingColumns/PricingColumns.utils';
+import { FreeOffers, PricingSimulator } from '@/components/PricingSimulator';
+import { BASE_PRICE } from '@/components/PricingSimulator/constants';
+import { formatAmount } from '@/components/PricingSimulator/PricingSimulator.utils';
+import { SectionHeading } from '@/components/SectionHeading';
+import { ServicesGrid } from '@/components/ServicesGrid';
+import { WorkFormats } from '@/components/WorkFormats';
 import { cn } from '@/design-system/lib/utils';
+import { CONTAINER, SECTION_Y } from '@/design-system/pill';
 import { getCanonicalUrl } from '@/i18n/canonical';
-import { Link } from '@/i18n/navigation';
 import { getOgImages } from '@/lib/og';
+import { CODE_HANDOVER_MONTHS, MISSION_DAY_RATE } from '@/lib/pricing/offers';
+import { getCurrency } from '@/lib/region';
+import { getRegion } from '@/lib/region.server';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -41,79 +49,89 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-/** Icons per service anchor — kept out of the shared definitions so the
- *  constants file stays free of JSX. */
-const SERVICE_ICONS: Record<string, ReactNode> = {
-  development: <CodeBracketIcon className="size-5" aria-hidden="true" />,
-  design: <SparklesIcon className="size-5" aria-hidden="true" />,
-  ai: <PuzzlePieceIcon className="size-5" aria-hidden="true" />,
-  launch: <RocketLaunchIcon className="size-5" aria-hidden="true" />,
-};
+const TRADES = ['showcase', 'shops', 'apps', 'care'] as const;
+const FORMATS = ['mission', 'duo', 'team'] as const;
+const QUESTIONS = ['ownership', 'edit', 'timing', 'stop', 'content'] as const;
 
+const em = (chunks: ReactNode) => <em>{chunks}</em>;
+
+/** Services & pricing: the former services, offers and pricing pages merged into one. */
 export default async function Services() {
   const t = await getTranslations('services');
-  const total = SERVICE_DETAIL_DEFINITIONS.length;
+  const tPricing = await getTranslations('pricing.columns');
+  const locale = await getLocale();
+  const messages = await getMessages();
+  const region = await getRegion();
+  const currency = getCurrency(region);
+  const pricing = buildPricingColumns(tPricing, region, locale);
+  const months = String(CODE_HANDOVER_MONTHS);
 
   return (
-    <div className="bg-void text-ghost relative">
-      <PageHero
-        id="services-hero"
-        eyebrow={t('eyebrow')}
-        title={t('title')}
-        lead={t('subtitle')}
-        cta={{ text: t('hero.cta'), href: '/contact' }}
-        secondaryCta={{ text: t('hero.secondary'), href: '/pricing' }}
+    <div className="bg-void text-ghost">
+      <section aria-labelledby="services-intro" className="pt-[clamp(3.5rem,8vw,7rem)]">
+        <div className={CONTAINER}>
+          <SectionHeading
+            level={1}
+            eyebrow={t('intro.eyebrow')}
+            title={t.rich('intro.title', { em })}
+            titleId="services-intro"
+            lead={t('intro.lead')}
+          />
+        </div>
+      </section>
+
+      <PricingColumns
+        eyebrow={tPricing('eyebrow')}
+        title={tPricing('title')}
+        subscription={pricing.subscription}
+        project={pricing.project}
       />
 
-      <div className="m-auto flex max-w-7xl flex-col gap-10 p-4 sm:p-6 lg:p-8">
-        {SERVICE_DETAIL_DEFINITIONS.map((definition, position) => (
-          <ServiceDetail
-            key={definition.anchor}
-            id={definition.anchor}
-            accent={definition.accent}
-            icon={SERVICE_ICONS[definition.anchor]}
-            index={`${String(position + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`}
-            title={t(`${definition.key}.title`)}
-            subtitle={t(`${definition.key}.subtitle`)}
-            description={t(`${definition.key}.description`)}
-            groups={definition.groups.map((group) => ({
-              label: t(`${definition.key}.${group.key}.title`),
-              items: group.items.map((item) => t(`${definition.key}.${group.key}.items.${item}`)),
-            }))}
+      <section id="simulator" aria-labelledby="simulator-heading" className={cn('bg-space scroll-mt-20', SECTION_Y)}>
+        <div className={cn(CONTAINER, 'flex flex-col gap-10')}>
+          <SectionHeading
+            eyebrow={t('simulator.eyebrow')}
+            title={t.rich('simulator.title', { em })}
+            titleId="simulator-heading"
+            lead={t('simulator.lead', { price: formatAmount(BASE_PRICE, currency) })}
           />
-        ))}
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <PricingSimulator region={region} />
+            <FreeOffers />
+          </NextIntlClientProvider>
+        </div>
+      </section>
 
-        {/* Projects & pricing entry points */}
-        <ContentSection
-          id="explore"
-          eyebrow={t('explore.eyebrow')}
-          title={t('explore.title')}
-          lead={t('explore.description')}>
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <Link
-              href="/projects"
-              className={cn(
-                buttonVariants({ variant: 'aerospace' }),
-                'w-fit py-3 transition-transform hover:scale-105 motion-reduce:scale-100! motion-reduce:transition-none!'
-              )}>
-              {t('explore.projects')}
-            </Link>
-            <Link
-              href="/pricing"
-              className="border-ghost/15 text-ghost hover:border-ghost hover:bg-ghost/5 focus-visible:ring-ghost font-display w-fit rounded-full border px-6 py-3 text-base transition-colors focus-visible:ring-2 focus-visible:outline-none">
-              {t('explore.pricing')}
-            </Link>
-            <Link
-              href="/local"
-              className="border-ghost/15 text-ghost hover:border-ghost hover:bg-ghost/5 focus-visible:ring-ghost font-display w-fit rounded-full border px-6 py-3 text-base transition-colors focus-visible:ring-2 focus-visible:outline-none">
-              {t('cta.local_page')}
-            </Link>
-          </div>
-          <p className="text-ghost/35 text-3xs mt-8 font-mono tracking-[0.2em] uppercase">
-            {t('cta.geo_availability')}
-          </p>
-        </ContentSection>
-      </div>
+      <ServicesGrid
+        eyebrow={t('trades.eyebrow')}
+        title={t.rich('trades.title', { em })}
+        services={TRADES.map((trade) => ({
+          title: t(`trades.items.${trade}.title`),
+          description: t(`trades.items.${trade}.description`),
+          tags: t.raw(`trades.items.${trade}.tags`) as string[],
+        }))}
+      />
+
+      <WorkFormats
+        eyebrow={t('formats.eyebrow')}
+        title={t.rich('formats.title', { em })}
+        lead={t('formats.lead')}
+        ctaText={t('formats.cta')}
+        formats={FORMATS.map((format) => ({
+          title: t(`formats.items.${format}.title`),
+          price: t(`formats.items.${format}.price`, { price: formatAmount(MISSION_DAY_RATE, currency, locale) }),
+          description: t(`formats.items.${format}.description`),
+        }))}
+      />
+
+      <Faq
+        eyebrow={t('faq.eyebrow')}
+        title={t.rich('faq.title', { em })}
+        items={QUESTIONS.map((question) => ({
+          question: t(`faq.items.${question}.question`),
+          answer: t(`faq.items.${question}.answer`, { months }),
+        }))}
+      />
 
       <CTAFinal
         id="services-cta"

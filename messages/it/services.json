@@ -1,157 +1,98 @@
 {
   "services": {
     "meta": {
-      "title": "Servizi · Siti internet a Ginevra & Annecy | Cosmic Studio",
-      "description": "Siti vetrina, negozi online, app e assistenza per artigiani, associazioni e liberi professionisti di Ginevra, della Svizzera romanda e dell'Alta Savoia."
-    },
-    "title": "I nostri servizi",
-    "subtitle": "Tutto ciò che serve perché i tuoi clienti ti trovino, ti capiscano e ti contattino.",
-    "stellar_development": {
-      "title": "Siti & app",
-      "subtitle": "Un sito o un'app costruiti su misura per la tua attività",
-      "description": "Sito vetrina, negozio online, prenotazione di appuntamenti o app mobile: scriviamo noi il codice, senza modelli preconfezionati pesanti né estensioni fragili. Il risultato è veloce, affidabile e cresce insieme a te.",
-      "technologies": {
-        "title": "Tecnologie che Padroneggiamo",
-        "items": {
-          "frontend": "Frontend Moderno: React 19, Next.js 15, TypeScript, TailwindCSS 4.x",
-          "architecture": "Architettura Scalabile: Monorepo con Turborepo, Librerie di Componenti, Design Systems",
-          "quality": "Qualità del Codice: ESLint 9.x, Prettier, Husky, 100% Copertura Test con Vitest",
-          "performance": "Performance: Server-Side Rendering, Generazione Statica, Ottimizzazione Immagini"
-        }
-      },
-      "expertise": {
-        "title": "La Nostra Esperienza di Sviluppo",
-        "items": {
-          "workflow": "Workflow CI/CD avanzati con test automatizzati e deployment",
-          "scalability": "Architettura a microservizi e soluzioni cloud-native",
-          "security": "Best practice di sicurezza con scansione vulnerabilità e monitoraggio conformità",
-          "apis": "API RESTful e GraphQL con documentazione completa"
-        }
-      },
-      "features": {
-        "title": "Cosa Consegniamo",
-        "items": {
-          "quality": "Codice pronto per la produzione con copertura test 100% e documentazione completa",
-          "performance": "Applicazioni ultra-veloci ottimizzate per i Core Web Vitals",
-          "maintainability": "Architettura pulita e modulare che scala con le esigenze del tuo business",
-          "reliability": "Applicazioni robuste con gestione errori e integrazione monitoring"
-        }
-      }
-    },
-    "mystical_design": {
-      "title": "Un design che ti somiglia",
-      "subtitle": "Una presentazione curata che ispira fiducia",
-      "description": "I tuoi colori, le tue foto, le tue parole: progettiamo una presentazione chiara, leggibile sia sul telefono sia sul computer e accessibile a tutti, pensata perché chi ti visita abbia voglia di contattarti.",
-      "approach": {
-        "title": "Il Nostro Approccio al Design",
-        "items": {
-          "systems": "Design Systems: Librerie di componenti coerenti e scalabili con pattern documentati",
-          "accessibility": "Accessibilità Universale: Conformità WCAG con HTML semantico e standard ARIA",
-          "responsive": "Responsive Mobile-First: Layout fluidi che funzionano perfettamente su tutti i dispositivi",
-          "performance": "Focalizzato sulle Performance: Asset ottimizzati e animazioni fluide"
-        }
-      },
-      "tools": {
-        "title": "Strumenti di Design e Sviluppo",
-        "items": {
-          "components": "Primitive Radix UI con Class Variance Authority per styling type-safe",
-          "styling": "TailwindCSS con token di design personalizzati e approccio utility-first",
-          "testing": "Storybook per documentazione componenti e test visivi",
-          "prototyping": "Prototipi interattivi con dati reali e componenti pronti per la produzione"
-        }
-      },
-      "outcomes": {
-        "title": "Risultati del Design",
-        "items": {
-          "engagement": "Maggiore coinvolgimento utente attraverso interazioni intuitive e piacevoli",
-          "conversion": "Tassi di conversione più alti con CTA strategicamente posizionati e flussi utente",
-          "brand": "Identità di brand forte che si distingue nel paesaggio digitale cosmico",
-          "satisfaction": "Soddisfazione utente eccezionale attraverso ricerca UX e test approfonditi"
-        }
-      }
-    },
-    "ai_powered": {
-      "title": "Assistenti & automazione",
-      "subtitle": "L'IA dove ti fa davvero risparmiare tempo",
-      "description": "Risposte automatiche alle domande frequenti, smistamento delle richieste, suggerimenti personalizzati: aggiungiamo l'IA quando ti semplifica la giornata, mai per fare scena, e sempre con i tuoi dati protetti.",
-      "capabilities": {
-        "title": "Capacità di Integrazione IA",
-        "items": {
-          "recommendations": "Motori di raccomandazione intelligenti alimentati da algoritmi di machine learning",
-          "automation": "Automazione dei processi e ottimizzazione dei workflow usando insight guidati dall'IA",
-          "analytics": "Analytics avanzati e modellazione predittiva per decisioni data-driven",
-          "nlp": "Natural Language Processing per chatbot e analisi contenuti"
-        }
-      },
-      "implementation": {
-        "title": "Implementazione Tecnica",
-        "items": {
-          "apis": "Integrazione fluida con piattaforme IA leader (OpenAI, Google AI, Azure Cognitive Services)",
-          "privacy": "Approccio privacy-first con elaborazione on-device quando possibile",
-          "scalability": "Servizi IA cloud che scalano con la tua base utenti",
-          "monitoring": "Monitoraggio completo e ottimizzazione performance per funzionalità IA"
-        }
-      },
-      "use_cases": {
-        "title": "Casi d'Uso IA",
-        "items": {
-          "personalization": "Esperienze utente personalizzate basate su comportamento e preferenze",
-          "support": "Supporto clienti intelligente con risposte automatizzate ed escalation",
-          "optimization": "Ottimizzazione performance attraverso allocazione predittiva delle risorse",
-          "insights": "Business intelligence attraverso analisi automatizzata dei dati e reporting"
-        }
-      }
-    },
-    "cosmic_launch": {
-      "title": "Visibilità & assistenza",
-      "subtitle": "Messa online, posizionamento su Google e assistenza nel tempo",
-      "description": "Mettiamo online il tuo sito, lo ottimizziamo perché venga trovato su Google, poi ci occupiamo di hosting, copie di sicurezza e aggiornamenti. Hai un unico referente, mese dopo mese.",
-      "process": {
-        "title": "Processo di Lancio",
-        "items": {
-          "testing": "Test completi inclusi test unitari, di integrazione ed end-to-end",
-          "staging": "Setup ambiente di staging con configurazioni simili alla produzione",
-          "deployment": "Pipeline di deployment automatizzate con capacità di rollback",
-          "monitoring": "Sistemi di monitoraggio in tempo reale e alerting"
-        }
-      },
-      "infrastructure": {
-        "title": "Infrastruttura e DevOps",
-        "items": {
-          "cloud": "Strategie di deployment multi-cloud (AWS, Vercel, Azure, Google Cloud)",
-          "cicd": "Pipeline CI/CD avanzate con test automatizzati e deployment",
-          "security": "Scansione sicurezza, valutazioni vulnerabilità e monitoraggio conformità",
-          "scaling": "Infrastruttura auto-scaling che cresce con il tuo successo"
-        }
-      },
-      "support": {
-        "title": "Supporto Continuo",
-        "items": {
-          "monitoring": "Monitoraggio applicazione 24/7 con alerting intelligente",
-          "optimization": "Ottimizzazione performance continua e gestione risorse",
-          "updates": "Aggiornamenti di sicurezza regolari e miglioramenti funzionalità",
-          "consultation": "Consulenza tecnica strategica per crescita futura"
-        }
-      }
+      "title": "Servizi & prezzi · Siti internet a Ginevra & Annecy | Cosmic Studio",
+      "description": "Siti vetrina, negozi online, app e assistenza, con i prezzi in chiaro: un abbonamento da 10 € al mese o un progetto su preventivo. Ginevra, Alta Savoia e da remoto."
     },
     "cta": {
       "title": "Facciamo brillare la tua attività.",
       "description": "Raccontaci la tua attività in poche righe. Ti rispondiamo entro 24 ore con qualche domanda, poi con un mockup gratuito se il progetto ti convince.",
-      "primary_button": "Parliamo del tuo progetto",
-      "geo_availability": "Disponibile ad Annecy, Ginevra, nella Svizzera romanda, in Alta Savoia e da remoto.",
-      "local_page": "Scopri la nostra pagina dedicata Annecy / Ginevra"
+      "primary_button": "Parliamo del tuo progetto"
     },
-    "eyebrow": "Servizi — Competenze",
-    "hero": {
-      "cta": "Parliamo del tuo progetto",
-      "secondary": "Vedi i prezzi"
+    "intro": {
+      "eyebrow": "[ Servizi & prezzi ]",
+      "title": "Un sito che funziona, <em>e qualcuno che se ne occupa.</em>",
+      "lead": "I prezzi sono in chiaro, perché hai di meglio da fare che chiedere un preventivo per sapere se è alla tua portata. E parti da un mockup gratuito, senza impegno."
     },
-    "explore": {
-      "eyebrow": "Prossimo passo",
-      "title": "Prima i progetti, poi il budget",
-      "description": "Scopri i progetti già realizzati oppure calcola il tuo preventivo in due clic.",
-      "projects": "Vedi i progetti",
-      "pricing": "Calcola il preventivo"
+    "simulator": {
+      "eyebrow": "[ Componi il tuo abbonamento ]",
+      "title": "Parti in piccolo. <em>Aggiungi quando ti serve.</em>",
+      "lead": "La base: una pagina vetrina, online e sicura, a {price} al mese. Ogni opzione si aggiunge o si toglie da un mese all'altro."
+    },
+    "trades": {
+      "eyebrow": "[ Cosa facciamo · 04 ]",
+      "title": "Quattro mestieri, <em>un unico referente.</em>",
+      "items": {
+        "showcase": {
+          "title": "Siti vetrina",
+          "description": "Presentare la tua attività, i tuoi lavori e i tuoi orari, e farti trovare su Google da chi abita vicino.",
+          "tags": ["Artigiani", "Associazioni", "Liberi professionisti"]
+        },
+        "shops": {
+          "title": "Negozi & prenotazioni",
+          "description": "Vendere online, prendere appuntamenti, gestire le iscrizioni. Senza commissioni sulle tue vendite.",
+          "tags": ["Vendita online", "Calendario", "Iscrizioni"]
+        },
+        "apps": {
+          "title": "Applicazioni",
+          "description": "Uno strumento di lavoro, un'app per i tuoi clienti o i tuoi soci, un assistente che risponde alle domande frequenti: sul web o sul telefono.",
+          "tags": ["Web", "iOS", "Android"]
+        },
+        "care": {
+          "title": "Visibilità & assistenza",
+          "description": "Posizionamento su Google, hosting, copie di sicurezza, aggiornamenti, modifiche e formazione: un unico contatto, che conosce il tuo sito.",
+          "tags": ["Google", "Assistenza", "Formazione"]
+        }
+      }
+    },
+    "formats": {
+      "eyebrow": "[ Per le aziende ]",
+      "title": "Ti serve un rinforzo <em>più che un sito?</em>",
+      "lead": "Per i team che hanno già un prodotto e cercano braccia in più, o per i progetti che richiedono più competenze.",
+      "items": {
+        "mission": {
+          "title": "Collaborazione a giornata",
+          "price": "{price} IVA esclusa / giorno",
+          "description": "Uno sviluppatore esperto si unisce al tuo team per il tempo necessario, in sede o da remoto."
+        },
+        "duo": {
+          "title": "Duo sviluppatore + designer",
+          "price": "Su preventivo",
+          "description": "Un'identità visiva e un sito progettati insieme, dal primo schizzo alla messa online."
+        },
+        "team": {
+          "title": "Squadra completa",
+          "price": "Su preventivo",
+          "description": "Una piccola squadra per i progetti che richiedono di più: più app collegate tra loro, gestione dei dati, area clienti."
+        }
+      },
+      "cta": "Parliamone"
+    },
+    "faq": {
+      "eyebrow": "[ Domande frequenti ]",
+      "title": "Cosa ci chiedono <em>prima di firmare.</em>",
+      "items": {
+        "ownership": {
+          "question": "Il sito è mio?",
+          "answer": "I tuoi testi, le tue immagini e il tuo nome a dominio sono tuoi dal primo giorno. Il codice del sito ti viene ceduto dopo {months} mesi di abbonamento: è questo che permette un prezzo d'ingresso così basso. Vuoi averlo prima? Si può, con un costo di cessione che dipende dal tempo rimanente. Per un progetto singolo, il codice è tuo fin dalla consegna."
+        },
+        "edit": {
+          "question": "Posso modificare il sito da solo?",
+          "answer": "La cosa più semplice è l'opzione «Modifiche ai contenuti comprese»: ci mandi testi, foto o orari, e pensiamo a tutto noi. Molti preferiscono scriverci piuttosto che imparare a usare uno strumento. Se ci tieni a pubblicare da solo, si può fare: ne parliamo, è un progetto su misura."
+        },
+        "timing": {
+          "question": "Quanto tempo serve per andare online?",
+          "answer": "Per una pagina vetrina: da due a tre settimane dopo aver ricevuto i tuoi testi e le tue foto. Per un sito di cinque pagine: da quattro a sei settimane. Ti diamo una data all'inizio, e la rispettiamo."
+        },
+        "stop": {
+          "question": "Cosa succede se smetto?",
+          "answer": "Ci avvisi, e il sito resta online fino alla fine del periodo pagato. Te ne vai con i tuoi contenuti e il tuo nome a dominio. Il codice del sito è compreso dopo {months} mesi di abbonamento; prima, viene ceduto con un costo che ti indichiamo fin dall'inizio."
+        },
+        "content": {
+          "question": "Vi occupate anche di testi e foto?",
+          "answer": "Ti aiutiamo a scrivere e rileggiamo tutto, pensando alle parole che i tuoi clienti cercano su Google. Per le foto, lavoriamo con le tue oppure ti mettiamo in contatto con un fotografo della zona; non è compreso nell'abbonamento."
+        }
+      }
     }
   }
 }

@@ -21,7 +21,7 @@
         {
           "title": "Données collectées",
           "body": [
-            "Le site ne propose pas d’espace client, paiement, CAPTCHA ni pixel publicitaire. Deux formulaires sont traités côté serveur. La page de maquette gratuite collecte votre adresse email, la direction de couleurs choisie, l’adresse de votre site actuel si vous la renseignez, votre message et la langue de la page. Si vous arrivez depuis le simulateur de tarifs, la demande inclut aussi les choix que vous y avez faits — type de projet, type de site, nombre de pages, options retenues, fréquence des mises à jour et prix mensuel estimé qui en résulte — afin que le studio puisse vous répondre en connaissance de cause. Le formulaire de contact collecte le nom, l’adresse e-mail et le message que vous saisissez, ainsi que l’objet, le téléphone et la société facultatifs. Dans les deux cas, les champs sont transmis par email à la boîte du studio et rien n’est conservé en base de données. Les messages envoyés via les liens mailto restent traités par votre client email et la boîte destinataire.",
+            "Le site ne propose pas d’espace client, paiement, CAPTCHA ni pixel publicitaire. Deux formulaires sont traités côté serveur. La page de maquette gratuite collecte votre adresse email, la direction de couleurs choisie, l’adresse de votre site actuel si vous la renseignez, votre message et la langue de la page. Si vous arrivez depuis le simulateur de tarifs, la demande inclut aussi les choix que vous y avez faits — type de projet, type de site, nombre de pages, options retenues, fréquence des mises à jour et prix mensuel estimé qui en résulte — afin que le studio puisse vous répondre en connaissance de cause. Le formulaire de contact collecte le nom, l’adresse e-mail et le message que vous saisissez, ainsi que, si vous les renseignez, votre téléphone, votre activité et le type de besoin choisi. Dans les deux cas, les champs sont transmis par email à la boîte du studio et rien n’est conservé en base de données. Les messages envoyés via les liens mailto restent traités par votre client email et la boîte destinataire.",
             "Votre adresse IP est traitée de manière temporaire par le pare-feu de l’hébergeur, qui limite les deux formulaires — le formulaire de contact et celui de maquette gratuite — à trois envois toutes les dix minutes, en complément d’un champ anti-spam masqué dans chacun. Des données techniques peuvent être traitées par l’hébergeur pour les journaux de sécurité et de diffusion. Vercel Analytics n’est chargé qu’après consentement pour mesurer les pages vues.",
             "Deux éléments sont conservés dans votre navigateur. La simulation de tarifs ne sert qu’à vous suivre du simulateur jusqu’au formulaire de maquette gratuite : elle ne nous est transmise que si vous envoyez ce formulaire, elle est effacée une fois la demande envoyée et disparaît à la fermeture de l’onglet. Les dates de vos derniers envois du formulaire de contact servent à limiter la fréquence d’envoi depuis ce navigateur et y restent jusqu’à ce que vous effaciez les données de navigation ; elles ne nous sont jamais transmises."
           ]
@@ -37,7 +37,8 @@
         {
           "title": "Destinataires et sous-traitants",
           "body": [
-            "Les données peuvent être accessibles à Go Cosmic, au fournisseur email, à Resend (qui achemine les emails de demande de maquette gratuite et du formulaire de contact), à l’hébergeur et à Vercel pour l’hébergement et l’analytics. LinkedIn est un site externe qui peut traiter des données selon sa propre politique après clic sur un lien sortant."
+            "Les données peuvent être accessibles à Go Cosmic, au fournisseur email, à Resend (qui achemine les emails de demande de maquette gratuite et du formulaire de contact), à l’hébergeur et à Vercel pour l’hébergement et l’analytics. LinkedIn est un site externe qui peut traiter des données selon sa propre politique après clic sur un lien sortant.",
+            "Si vous choisissez de réserver un appel depuis la page contact, l’agenda de réservation est fourni par Google (Google Calendar), qui traite les informations saisies selon sa propre politique de confidentialité : https://policies.google.com/privacy."
           ]
         },
         {
@@ -64,7 +65,8 @@
           "title": "Cookies et mesure d’audience",
           "body": [
             "Aucun cookie publicitaire n’est volontairement chargé par Go Cosmic. Vercel Analytics est traité sur ce site comme un outil de mesure d’audience non essentiel et n’est chargé qu’après votre consentement.",
-            "Vous pouvez modifier ou retirer votre consentement à tout moment via le bouton de gestion des préférences affiché en bas de chaque page."
+            "Vous pouvez modifier ou retirer votre consentement à tout moment via le bouton de gestion des préférences affiché en bas de chaque page.",
+            "L’agenda de réservation Google Calendar de la page contact n’est chargé que si vous cliquez sur « Afficher l’agenda » ; Google peut alors déposer ses propres cookies. Sans ce clic, rien n’est chargé depuis Google et vous pouvez ouvrir la page de réservation dans un nouvel onglet."
           ]
         }
       ]
@@ -109,6 +111,14 @@
           "title": "Responsabilité",
           "body": [
             "Go Cosmic cherche à maintenir des informations exactes et disponibles, sans garantir l’absence d’interruptions, d’erreurs ou de contenus obsolètes. Les liens externes mènent vers des services tiers régis par leurs propres conditions et politiques."
+          ]
+        },
+        {
+          "title": "Usage de l'intelligence artificielle",
+          "body": [
+            "Cosmic Studio peut intégrer des fonctionnalités assistées par l'intelligence artificielle dans les projets clients, et utilise ces outils pour rédiger, traduire et développer plus vite. Chaque contenu et chaque livraison sont relus par une personne.",
+            "Les recommandations produites par l'IA sont informatives et ne remplacent pas le jugement humain. Les applications sont testées selon les bonnes pratiques du secteur.",
+            "Les données sensibles ne sont pas partagées avec des tiers sans base légale documentée ou consentement explicite lorsque celui-ci est requis. Les pratiques liées aux données personnelles sont détaillées dans la politique de confidentialité."
           ]
         },
         {

@@ -9,7 +9,7 @@ L'application web principale de Cosmic Studio (anciennement Go Cosmic, toujours 
 Le site Cosmic Studio a pour objectifs :
 
 - **Vitrine portfolio** : mettre en avant les applications et projets livrés
-- **Présentation de l'équipe** : valoriser les expertises techniques et design
+- **Présentation du studio** : présenter la personne derrière le studio et son parcours
 - **Promotion des services** : clarifier les offres pour prospects et clients
 - **Identité de marque** : installer Cosmic Studio comme un studio local de confiance, avec un univers spatial discret (« Go Cosmic » reste la signature des appels à l'action)
 - **Acquisition client** : transformer les visites en prises de contact qualifiées
@@ -22,7 +22,7 @@ Le site Cosmic Studio a pour objectifs :
 - **Traductions typées** : validation TypeScript des clés à la compilation
 - **SEO localisé** : métadonnées et attributs `lang` par locale
 - **URLs propres** : routage préfixé (`/en/`, `/fr/`, `/es/`, `/de/`, `/it/`)
-- **Slugs traduits** : chemins localisés (ex. `/en/about` → `/fr/a-propos`, `/en/journey` → `/de/reise`)
+- **Slugs traduits** : chemins localisés (ex. `/en/about` → `/fr/a-propos`, `/en/projects` → `/de/projekte`)
 - **Détection navigateur** : locale automatique selon préférences utilisateur
 - **Language switcher** : menu de changement de langue avec indication visuelle
 - **Organisation par namespace** : fichiers de traduction organisés par espace de noms pour une meilleure maintenabilité
@@ -38,14 +38,15 @@ messages/
   │   ├── navigation.json    # Labels de navigation du header
   │   ├── footer.json        # Contenu du footer
   │   ├── home.json          # Contenu de la page d'accueil
-  │   ├── about.json         # Contenu de la page about
-  │   ├── services.json      # Contenu de la page services
-  │   ├── offers.json        # Contenu de la page offres
-  │   ├── journey.json       # Contenu de la page journey
-  │   ├── projects.json      # Contenu des pages projets
+  │   ├── about.json         # Contenu de la page à propos
+  │   ├── services.json      # Contenu de la page services & tarifs
+  │   ├── pricing.json       # Colonnes de tarifs et simulateur d'abonnement
+  │   ├── projects.json      # Liste des projets et études de cas
   │   ├── contact.json       # Contenu de la page contact
+  │   ├── free-mockup.json   # Contenu de la page maquette gratuite
   │   ├── local.json         # Contenu de la page SEO locale
-  │   └── psc-supersprint.json # Contenu du projet PSC Supersprint
+  │   ├── legal.json         # Politique de confidentialité et mentions légales
+  │   └── psc-supersprint.json # Contenu de l'étude de cas PSC Supersprint
   ├── fr/              # Français (même structure)
   ├── es/              # Espagnol (même structure)
   ├── de/              # Allemand (même structure)
@@ -90,76 +91,80 @@ export default function Header() {
 
 ### Page d'accueil
 
-- **Hero Section** : promesse de visibilité (« Votre activité mérite d'être vue / trouvée / choisie ») et l'appel à l'action « Go Cosmic »
-- **Bouton interactif** : démonstration des composants UI
-- **Lien équipe** : accès direct à la présentation de l'équipe
-- **Design cosmique** : univers spatial avec composants UI célestes
-- **Responsive** : optimisé pour tous les formats d'écran
-- **Contenu multilingue** : tous les textes traduits dans les 5 langues
+- **Hero** : promesse de visibilité (« Votre activité mérite d'être vue / trouvée / choisie », le dernier mot change en boucle), quatre repères (prix mensuel de départ, réponse sous 24 h, un seul interlocuteur, zone d'intervention), l'appel à l'action « Go Cosmic » vers la page maquette gratuite et un lien secondaire vers les tarifs
+- **Public** : pour qui travaille le studio (artisans, associations, indépendants qui se lancent)
+- **Pourquoi un studio** : quatre raisons de choisir un studio plutôt qu'un constructeur de sites
+- **Déroulé** : frise en quatre étapes (rencontre, maquette, réalisation, mise en ligne)
+- **Tarifs** : les deux mêmes colonnes de tarifs que sur la page Services & tarifs
+- **Projets** : les trois premières cartes projet et un lien vers la liste complète
+- **Applications maison** : l'application mobile du studio, Daily Fortune
+- **Studio** : qui est derrière le studio et les zones desservies
+- **Appel à l'action final** : lien vers la page contact et vers la maquette gratuite, sur un champ d'étoiles qui accélère au survol
 
-### Page Journey (`/journey`)
+### Page Services & tarifs (`/services`)
 
-- **Expérience 3D cosmique** : champ d'étoiles interactif avec Three.js et React Three Fiber
-- **Chargement dynamique** : imports dynamiques Next.js pour des performances optimales
-- **Animation immersive** : plus de 2 000 étoiles animées avec une physique réaliste
-- **État de chargement** : transition fluide avec un spinner cosmique
-- **Optimisation SSR** : rendu côté client pour éviter les problèmes WebGL serveur
+Remplace les anciennes pages services, offres et tarifs.
 
-### Page About (`/about`)
+- **Introduction** : ce que propose le studio, un site qui tourne et quelqu'un qui s'en occupe
+- **Colonnes de tarifs** : un abonnement mensuel (site, hébergement et suivi) et un projet ponctuel sur devis, avec des prix de départ indicatifs pour un espace membres, une boutique et une application mobile (montants dans `lib/pricing/offers.ts`)
+- **Simulateur d'abonnement** : formule de base et options (nombre de pages, nom de domaine, hébergement en Suisse, adresse e-mail, modifications de contenu), avec un récapitulatif fixe qui affiche le total mensuel en direct ; son bouton « Demander ma maquette gratuite » transmet la simulation au formulaire de maquette gratuite, et un bloc en dessous présente les deux offres gratuites (une maquette et un état des lieux du site actuel)
+- **Métiers** : quatre cartes (sites vitrine, boutiques et réservations, applications, visibilité et suivi)
+- **Pour les entreprises** : les autres façons de travailler avec le studio (mission à la journée, duo développeur + designer, équipe complète), avec un lien vers la page contact
+- **FAQ** : accordéon qui répond à cinq questions fréquentes (propriété du site, modification par le client, délai de mise en ligne, arrêt de l'abonnement, textes et photos)
+- **Appel à l'action final** : lien vers la page contact
 
-- **Présentation** : mission et domaines d'expertise de Cosmic Studio
-- **Profil développeur** : mise en avant de l'expertise et de l'expérience de Matthieu Compérat
-- **Mentions légales et usage IA** : déclarations transparentes sur l'IA, la confidentialité et les responsabilités
-- **Accessibilité** : titres sémantiques, aria-labels descriptifs et styles de focus clavier
-- **SEO** : métadonnées et descriptions Open Graph optimisées
+Les prix s'affichent en euros, ou en francs suisses pour les visiteurs situés en Suisse (détectés via l'en-tête pays de Vercel). La page d'accueil et la page à propos suivent la même règle.
 
-### Page Services (`/services`)
+### Page Projets (`/projects`)
 
-- **Développement Stellar** : expertise web moderne avec des technologies de pointe
-- **Design UI/UX Mystical** : approche design immersive, accessible et orientée conversion
-- **Solutions propulsées par l'IA** : fonctionnalités intelligentes exploitant l'IA moderne
-- **Lancement Cosmic** : accompagnement complet du développement à la mise en production
+- **Grille de projets** : une carte par projet avec son visuel, son type, son année, son client, un résumé, des étiquettes et un lien vers son étude de cas
+- **Filtres** : boutons « Tous », « Site », « App web » et « App mobile » ; le nombre de projets affichés est annoncé aux lecteurs d'écran
+- **Filtre partageable** : le filtre actif est conservé dans le paramètre d'URL `?type=` (`site`, `webapp` ou `mobile`), pour pouvoir partager une liste filtrée
+- **Appel à l'action final** : lien vers la page contact
 
-### Page Offres (`/offers`)
+#### Études de cas
 
-- **Solo Cosmic Developer** : développeur dédié pour startups et petits projets
-- **Complete Cosmic Team** : solutions full-stack pour projets complexes à grande échelle
-- **Developer + Designer Duo** : excellence technique et design de qualité combinés
+Les quatre études de cas partagent un même modèle : un en-tête avec l'année, le client et le type de projet, trois sections numérotées (« Pour qui », « Ce qu'on a fait », « Résultat »), un lien vers le projet en ligne accompagné d'un lien « Parler d'un projet similaire » vers la page contact, et une navigation précédent / suivant entre les études de cas.
+
+- **Chœur des Pays du Mont Blanc** (`/projects/choeurdespaysdumontblanc`) : le site de la chorale, avec les concerts à venir, le répertoire et les informations pour rejoindre le chœur
+- **PSC Supersprint** (`/projects/psc-supersprint`) : les résultats de course en direct pour un club de triathlon, avec son propre namespace de traduction
+- **Daily Fortune** (`/projects/daily-fortune`) : l'application mobile du studio, publiée sur l'App Store et Google Play
+- **mcomper.at** (`/projects/mcomperat`) : un CV en ligne multilingue
+
+### Page À propos (`/about`)
+
+- **Parcours** : le parcours de Matthieu Compérat, les zones desservies et un lien vers son profil LinkedIn
+- **Pourquoi les artisans et les associations** : quatre raisons pour lesquelles le studio leur convient (être trouvé près de chez soi, un prix qui suit l'activité, quelqu'un qui répond, l'IA seulement quand elle aide)
+- **Appel à l'action final** : lien vers la page contact
+- **Données structurées** : une entrée JSON-LD `Person` pour les moteurs de recherche
 
 ### Page Contact (`/contact`)
 
-Formulaire de contact professionnel pour les demandes clients et consultations.
+- **Coordonnées** : adresses e-mail générale et support, zone d'intervention et disponibilité actuelle du studio
+- **Onglet « Écrire un message »** : formulaire de contact (nom, email, téléphone, entreprise, type de besoin, message), envoyé par email via Resend
+- **Onglet « Réserver un appel »** : page de réservation Google Calendar pour un appel de 20 minutes ; comme Google dépose ses propres cookies, l'agenda ne se charge qu'après un clic du visiteur, et sur écran étroit la page de réservation s'ouvre dans un nouvel onglet. L'adresse de la page vient de `NEXT_PUBLIC_GCAL_BOOKING_URL` ; sans elle, l'onglet invite à écrire un message
+- **Mention de confidentialité** : lien vers la politique de confidentialité
 
-### Page Free Mockup (`/free-mockup`)
+### Page Maquette gratuite (`/free-mockup`)
 
-Page de capture de prospects où un visiteur demande une maquette gratuite de son futur site : email, direction couleur (liste fermée de six choix), URL du site actuel et un champ libre limité à 500 caractères. Les soumissions passent par une server action qui les valide avec `zod` et les envoie par email via Resend — il n'y a pas de base de données. Un champ honeypot caché élimine silencieusement les soumissions de bots. Points d'entrée : la page journey et la fin du simulateur de prix.
+Page de capture de prospects où un visiteur demande une maquette gratuite de son futur site : email, direction couleur (liste fermée de six choix), URL du site actuel et un champ libre limité à 500 caractères. Les soumissions passent par une server action qui les valide avec `zod` et les envoie par email via Resend — il n'y a pas de base de données. Un champ honeypot caché élimine silencieusement les soumissions de bots. Quand le visiteur arrive du simulateur de prix, sa simulation est jointe à la demande. Points d'entrée : le bouton du header, le hero de la page d'accueil et le simulateur de la page Services & tarifs.
 
 ### Page SEO locale (`/local`)
 
-Page d'atterrissage locale ciblant les recherches géolocalisées (ex. `/en/web-mobile-developer-annecy-geneva`, `/fr/developpeur-web-mobile-annecy-geneve`).
+Page d'atterrissage locale ciblant les recherches géolocalisées (ex. `/en/web-mobile-developer-annecy-geneva`, `/fr/developpeur-web-mobile-annecy-geneve`). Elle liste les zones desservies et renvoie vers Services & tarifs, les projets et la page contact.
 
-### Section Projets
+### Pages légales
 
-#### Daily Fortune (`/projects/daily-fortune`)
+- **Politique de confidentialité** (`/privacy`) : traitement des données personnelles, droits des visiteurs et cookies
+- **Mentions légales** (`/legal-notice`) : éditeur, hébergement, propriété intellectuelle, et les déclarations sur l'usage de l'intelligence artificielle
 
-- **Vitrine projet** : présentation complète de l'application mobile Daily Fortune
-- **Fonctionnalités** : fortunes quotidiennes, contenus motivants et design cosmique
-- **Stack technique** : Next.js, TypeScript, React Native, TailwindCSS
-- **Intégration IA** : génération de fortunes propulsée par l'IA
-- **Support multilingue** : traductions complètes dans les 5 langues
-- **Appel à l'action** : lien vers le dépôt du projet
+### Page introuvable
 
-#### mcomperat (`/projects/mcomperat`)
+Page 404 localisée avec des liens vers la page d'accueil et vers la page contact. Les chemins inconnus sous un préfixe de locale affichent cette page.
 
-Vitrine du portfolio personnel du développeur.
+### Pages retirées
 
-#### PSC Supersprint (`/projects/psc-supersprint`)
-
-Vitrine du projet PSC Supersprint avec namespace de traduction dédié.
-
-#### Choeur des Pays du Mont Blanc (`/projects/choeurdespaysdumontblanc`)
-
-Vitrine du projet Choeur des Pays du Mont Blanc.
+Les anciennes pages `/journey` (expérience 3D), `/offers` et `/pricing` n'existent plus. Elles redirigent de façon permanente (301) vers Services & tarifs dans toutes les locales, y compris depuis leurs anciens slugs localisés (voir `lib/redirects.ts` et `next.config.ts`).
 
 ### Fonctionnalités techniques
 
@@ -171,7 +176,6 @@ Vitrine du projet Choeur des Pays du Mont Blanc.
 ## Évolutions futures
 
 - **Profils équipe** : pages individuelles par développeur avec compétences et expériences
-- **Études de cas** : présentation approfondie de projets clients réussis
 - **Témoignages** : retours et succès clients
 - **Blog / Articles** : insights techniques et actualités de l'équipe
 
@@ -179,7 +183,7 @@ Vitrine du projet Choeur des Pays du Mont Blanc.
 
 ### Prérequis
 
-- Node.js >= 22
+- Node.js >= 24
 - Yarn via Corepack
 
 ### Installation et lancement
@@ -201,10 +205,11 @@ Application disponible sur [http://localhost:3000](http://localhost:3000).
 
 Copier `.env.example` vers `.env.local` et le compléter. Les secrets serveur ne doivent jamais être préfixés par `NEXT_PUBLIC_`.
 
-| Variable            | Requise | Rôle                                                                                                                                                                                                                                                                                           |
-| ------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `RESEND_API_KEY`    | Oui     | Clé API Resend utilisée pour envoyer les demandes de maquette gratuite et les soumissions du formulaire de contact par email. Sans elle, le formulaire de maquette gratuite signale un échec d'envoi et le formulaire de contact journalise les soumissions localement au lieu de les envoyer. |
-| `RESEND_FROM_EMAIL` | Non     | Expéditeur de ces emails ; doit être vérifié dans le dashboard Resend. Par défaut : `Cosmic Studio <noreply@gocosmic.dev>`.                                                                                                                                                                    |
+| Variable                       | Requise | Rôle                                                                                                                                                                                                                                                                                           |
+| ------------------------------ | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `RESEND_API_KEY`               | Oui     | Clé API Resend utilisée pour envoyer les demandes de maquette gratuite et les soumissions du formulaire de contact par email. Sans elle, le formulaire de maquette gratuite signale un échec d'envoi et le formulaire de contact journalise les soumissions localement au lieu de les envoyer. |
+| `RESEND_FROM_EMAIL`            | Non     | Expéditeur de ces emails ; doit être vérifié dans le dashboard Resend. Par défaut : `Cosmic Studio <noreply@gocosmic.dev>`.                                                                                                                                                                    |
+| `NEXT_PUBLIC_GCAL_BOOKING_URL` | Non     | Page de réservation Google Calendar intégrée dans l'onglet « Réserver un appel » de la page contact. Seules les URL `calendar.google.com` sont acceptées ; vide, l'onglet invite à écrire un message.                                                                                          |
 
 ### Scripts disponibles
 
@@ -276,7 +281,7 @@ Cette approche garantit des URLs SEO-friendly et une expérience utilisateur coh
 
 ## Qualité et tests
 
-Le projet inclut des tests unitaires complets couvrant composants, pages et vues. Les tests suivent une approche accessibility-first et valident la cohérence du thème cosmique.
+Le projet inclut des tests unitaires complets couvrant composants, pages et helpers. Les tests suivent une approche accessibility-first et valident la cohérence du thème cosmique.
 
 ### Structure de tests
 
@@ -285,7 +290,6 @@ __tests__/
 ├── components/      # Tests unitaires des composants
 ├── design-system/   # Tests des primitives du design system
 ├── pages/           # Tests des composants de pages
-├── views/           # Tests des composants de vues
 ├── test-setup.tsx   # Configuration globale des tests
 └── test-utils.tsx   # Utilitaires de rendu avec contexte i18n
 ```
@@ -345,7 +349,7 @@ vi.mock('next/navigation', () => ({
 - **Validation du thème cosmique** : les tests assurent la cohérence du style spatial
 - **Tests i18n** : les composants utilisant des traductions sont testés avec le contexte approprié
 - **Stratégie de mock** : les dépendances externes sont correctement mockées
-- **Pas de snapshots** : les snapshots sont déconseillés pour les composants, tolérés pour les pages/vues uniquement
+- **Pas de snapshots** : pas de tests snapshot ; on vérifie le comportement et les attributs d'accessibilité
 
 Pour des consignes de test détaillées, voir [`__tests__/TESTING.md`](./__tests__/TESTING.md).
 
@@ -354,39 +358,72 @@ Pour des consignes de test détaillées, voir [`__tests__/TESTING.md`](./__tests
 ```
 ├── app/              # App Router (Next.js 16+)
 │   ├── [locale]/     # Routes internationalisées
-│   │   ├── about/    # Page about (mission, profil, mentions légales et IA)
-│   │   ├── contact/  # Page contact
-│   │   ├── journey/  # Page expérience 3D cosmique
+│   │   ├── about/    # Page à propos (parcours, pourquoi les artisans et associations, LinkedIn)
+│   │   ├── contact/  # Page contact (coordonnées, formulaire, réservation d'appel)
+│   │   ├── free-mockup/ # Page de demande de maquette gratuite
+│   │   ├── legal-notice/ # Mentions légales (dont les déclarations sur l'usage de l'IA)
 │   │   ├── local/    # Page landing SEO locale
-│   │   ├── offers/   # Page offres (solo, équipe, duo)
-│   │   ├── projects/ # Index projets + sous-pages (daily-fortune, mcomperat, psc-supersprint, choeurdespaysdumontblanc)
-│   │   ├── services/ # Page services (développement, design, IA, lancement)
+│   │   ├── privacy/  # Politique de confidentialité
+│   │   ├── projects/ # Liste filtrable des projets + études de cas (daily-fortune, mcomperat, psc-supersprint, choeurdespaysdumontblanc)
+│   │   ├── services/ # Page services & tarifs (tarifs, simulateur, métiers, formats, FAQ)
+│   │   ├── not-found.tsx # Page 404 localisée
 │   │   └── page.tsx  # Page d'accueil
+│   ├── actions/      # Server actions (formulaire de contact, demande de maquette gratuite)
 │   ├── layout.tsx    # Layout racine avec provider i18n
 │   └── ...
 ├── components/       # Composants spécifiques à l'application
+│   ├── AudienceGrid/ # Cartes « pour qui »
+│   ├── BookingEmbed/ # Page de réservation Google Calendar, chargée au clic
+│   ├── CaseStudy/    # Modèle d'étude de cas
+│   ├── ContactDetails/ # Coordonnées et disponibilité
+│   ├── ContactForm/  # Formulaire de contact
+│   ├── ContactPanel/ # Onglets « Écrire un message » / « Réserver un appel »
+│   ├── CTAFinal/     # Appel à l'action final avec champ d'étoiles
+│   ├── Faq/          # Accordéon FAQ
 │   ├── Footer/       # Pied de page du site
+│   ├── FreeMockupForm/ # Formulaire de demande de maquette gratuite
 │   ├── Header/       # En-tête et navigation du site
-│   ├── Journey/      # Enveloppe canvas 3D
+│   ├── HeroSection/  # Hero de la page d'accueil
 │   ├── JsonLd/       # Données structurées (JSON-LD)
 │   ├── LanguageSwitcher/ # Composant de navigation multilingue
-│   ├── Loader/       # États de chargement
+│   ├── OwnApps/      # Les applications du studio
+│   ├── PricingColumns/ # Colonnes abonnement et projet ponctuel
+│   ├── PricingSimulator/ # Simulateur d'abonnement avec récapitulatif fixe
+│   ├── ProjectGrid/  # Cartes projet et filtres par type
+│   ├── Reveal/       # Apparition au défilement
+│   ├── SectionHeading/ # Surtitre, titre et chapô en tête de chaque section
+│   ├── StudioIntro/  # Qui est derrière le studio
+│   ├── WhyStudio/    # Raisons numérotées de choisir le studio
+│   ├── WorkFormats/  # Formats pour les entreprises (mission, duo, équipe)
+│   ├── ...           # Autres composants (ProcessTimeline, ServicesGrid, StatusBar, CookieConsent…)
 │   └── icons/        # Icônes SVG réutilisables
-├── design-system/    # Primitives UI réutilisables (Button avec variantes CVA)
+├── design-system/    # Primitives UI réutilisables
+│   ├── button.tsx    # Button avec variantes CVA
+│   ├── pill.ts       # Styles de liens en pilule et constantes de mise en page partagées
+│   ├── slider.tsx    # Slider utilisé par le simulateur de prix
+│   └── lib/utils.ts  # Helper `cn` (clsx + tailwind-merge)
+├── data/             # Contenu statique (liste et ordre des études de cas)
+├── lib/              # Helpers partagés
+│   ├── pricing/      # Montants des offres (offers.ts) et simulation transmise au formulaire de maquette gratuite
+│   ├── redirects.ts  # Redirections 301 des pages retirées vers Services & tarifs
+│   ├── region.ts     # Région (France ou Suisse) et devise
+│   ├── resend.ts     # Client email Resend
+│   └── validation/   # Schémas de validation des formulaires
 ├── messages/         # Fichiers de traduction organisés par namespace
 │   ├── en/           # Traductions anglaises
 │   │   ├── common.json        # Chaînes communes (404, meta, langue)
 │   │   ├── navigation.json    # Navigation du header
 │   │   ├── footer.json        # Contenu du footer
 │   │   ├── home.json          # Contenu de l'accueil
-│   │   ├── about.json         # Contenu about
-│   │   ├── services.json      # Contenu services
-│   │   ├── offers.json        # Contenu offres
-│   │   ├── journey.json       # Contenu journey
-│   │   ├── projects.json      # Contenu pages projets
+│   │   ├── about.json         # Contenu à propos
+│   │   ├── services.json      # Contenu services & tarifs
+│   │   ├── pricing.json       # Colonnes de tarifs et simulateur
+│   │   ├── projects.json      # Liste des projets et études de cas
 │   │   ├── contact.json       # Contenu contact
+│   │   ├── free-mockup.json   # Contenu maquette gratuite
 │   │   ├── local.json         # Contenu SEO local
-│   │   └── psc-supersprint.json # Projet PSC Supersprint
+│   │   ├── legal.json         # Confidentialité et mentions légales
+│   │   └── psc-supersprint.json # Étude de cas PSC Supersprint
 │   ├── fr/           # Français (même structure)
 │   ├── es/           # Espagnol (même structure)
 │   ├── de/           # Allemand (même structure)
@@ -396,12 +433,11 @@ Pour des consignes de test détaillées, voir [`__tests__/TESTING.md`](./__tests
 │   ├── request.ts    # Configuration i18n côté serveur
 │   ├── navigation.ts # Utilitaires de navigation côté client
 │   └── canonical.ts  # Helpers d'URL canoniques
-├── views/            # Composants de vue (ex. contenu Journey)
 ├── __tests__/        # Tests unitaires complets
 │   ├── components/   # Tests composants
 │   ├── i18n/         # Tests utilitaires i18n (canonical)
+│   ├── lib/          # Tests des helpers
 │   ├── pages/        # Tests pages
-│   ├── views/        # Tests vues
 │   ├── proxy.test.ts # Tests middleware/proxy
 │   └── test-utils.tsx # Rendu personnalisé avec contexte i18n
 ├── proxy.ts          # Middleware de détection de locale et routage

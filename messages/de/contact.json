@@ -4,85 +4,11 @@
     "description": "Erzählen Sie Cosmic Studio von Ihrem Projekt: Eine Nachricht genügt, und innerhalb von 24 Stunden antwortet Ihnen die Person, die Ihre Website baut."
   },
   "contact": {
-    "title": "Kontaktieren Sie Uns",
-    "subtitle": "Senden Sie uns ein Briefing oder schreiben Sie direkt an das richtige Postfach.",
-    "blocks": {
-      "general": {
-        "title": "Allgemeine Anfragen",
-        "email": "contact@gocosmic.dev",
-        "subject": "Allgemeine Anfrage",
-        "reasons": {
-          "title": "Kontaktieren Sie uns für:",
-          "items": {
-            "generalQuestion": "Allgemeine Fragen zum Projekt oder Unternehmen",
-            "partnership": "Partnerschaftsvorschläge",
-            "feedback": "Benutzerfeedback und Erfahrungen",
-            "suggestions": "Verbesserungsvorschläge",
-            "mission": "Fragen zur Mission und zu den Werten von Cosmic Studio"
-          }
-        },
-        "cta": "E-Mail senden",
-        "aria_label": "E-Mail an contact@gocosmic.dev mit Betreff: Allgemeine Anfrage senden"
-      },
-      "support": {
-        "title": "Support & Unterstützung",
-        "email": "support@gocosmic.dev",
-        "subject": "Support-Anfrage",
-        "reasons": {
-          "title": "Kontaktieren Sie uns für:",
-          "items": {
-            "help": "Hilfe mit einer Anwendung oder einem Dienst",
-            "bugs": "Meldung von Fehlern oder Bugs",
-            "access": "Verbindungs- oder Zugriffsprobleme",
-            "technical": "Anfragen zur technischen Unterstützung",
-            "troubleshooting": "Fragen zur Fehlerbehebung"
-          }
-        },
-        "cta": "Support anfordern",
-        "aria_label": "E-Mail an support@gocosmic.dev mit Betreff: Support-Anfrage senden"
-      },
-      "technical": {
-        "title": "Technische Anfragen",
-        "email": "technique@gocosmic.dev",
-        "subject": "Technische Frage",
-        "reasons": {
-          "title": "Kontaktieren Sie uns für:",
-          "items": {
-            "architecture": "Detaillierte Fragen zur Architektur oder Integration",
-            "documentation": "Anfragen zur technischen Dokumentation",
-            "evolution": "Vorschläge für die technische Produktentwicklung",
-            "collaboration": "Zusammenarbeit oder Code-Beiträge",
-            "api": "Diskussionen über APIs oder Integrationen"
-          }
-        },
-        "cta": "Technische Frage stellen",
-        "aria_label": "E-Mail an technique@gocosmic.dev mit Betreff: Technische Frage senden"
-      },
-      "commercial": {
-        "title": "Geschäftliche Anfragen",
-        "email": "prospect@gocosmic.dev",
-        "subject": "Geschäftsanfrage",
-        "reasons": {
-          "title": "Kontaktieren Sie uns für:",
-          "items": {
-            "quote": "Geschäftliche Anfragen oder Angebote",
-            "pricing": "Informationen zu Angeboten und Preisen",
-            "demo": "Produktdemonstrationsanfragen",
-            "meeting": "Terminanfragen mit dem Vertriebsteam",
-            "purchase": "Fragen vor dem Kauf oder Abonnement"
-          }
-        },
-        "cta": "Kontakt aufnehmen",
-        "aria_label": "E-Mail an prospect@gocosmic.dev mit Betreff: Geschäftsanfrage senden"
-      }
-    },
-    "privacyNotice": "Personenbezogene Daten, die über das Kontaktformular oder per E-Mail übermittelt werden, dienen ausschließlich der Beantwortung deiner Anfrage, der Nachverfolgung und dem Nachweis des Austauschs für die in der Datenschutzerklärung genannten Fristen.",
+    "title": "Erzählen Sie uns von Ihrem Betrieb. <em>Um den Rest kümmern wir uns.</em>",
+    "privacyNotice": "Ihre Angaben dienen nur dazu, Ihnen zu antworten und gegebenenfalls ein Angebot vorzubereiten.",
     "privacyLink": "Datenschutzerklärung",
-    "eyebrow": "Kontakt — Missionsbriefing",
+    "eyebrow": "[ Kontakt ]",
     "form": {
-      "eyebrow": "Projekt-Briefing",
-      "title": "Erzählen Sie uns von Ihrem Projekt",
-      "description": "Füllen Sie das Formular aus und wir melden uns mit den nächsten Schritten. Lieber per E-Mail? Die Adressen unten landen direkt im richtigen Postfach.",
       "optional": "optional",
       "required_hint": "Mit einem Sternchen markierte Felder sind Pflichtfelder",
       "submit": "Nachricht senden",
@@ -91,52 +17,76 @@
       "honeypot_label": "Dieses Feld leer lassen",
       "fields": {
         "name": {
-          "label": "Name",
-          "placeholder": "Ihr Name"
+          "label": "Ihr Name",
+          "placeholder": "Anna Meier"
         },
         "email": {
           "label": "E-Mail",
-          "placeholder": "sie@beispiel.com"
-        },
-        "subject": {
-          "label": "Betreff",
-          "placeholder": "Website, mobile App, Redesign…"
+          "placeholder": "anna@beispiel.ch"
         },
         "message": {
-          "label": "Nachricht",
-          "placeholder": "Beschreiben Sie Ihr Projekt, Ihren Zeitrahmen und Ihr Budget, falls vorhanden."
+          "label": "Ihre Nachricht",
+          "placeholder": "Wo Sie stehen, was Sie möchten, was Sie schon haben (Logo, Fotos, bisherige Website)…"
         },
         "phone": {
           "label": "Telefon",
-          "placeholder": "+49 151 23456789"
+          "placeholder": "+41 22 123 45 67"
         },
         "company": {
-          "label": "Unternehmen",
-          "placeholder": "Ihr Unternehmen oder Verein"
+          "label": "Ihre Tätigkeit",
+          "placeholder": "Schreinerei in Annecy, Theaterverein…"
+        },
+        "need": {
+          "legend": "Was Sie brauchen",
+          "options": {
+            "showcase": "Präsentationswebsite",
+            "redesign": "Neugestaltung einer bestehenden Website",
+            "shop": "Onlineshop",
+            "app": "App",
+            "unsure": "Weiß ich noch nicht"
+          }
         }
       },
       "errors": {
         "name_length": "Bitte geben Sie einen Namen mit 2 bis 100 Zeichen an.",
         "email_invalid": "Bitte geben Sie eine gültige E-Mail-Adresse an.",
-        "subject_length": "Der Betreff muss 5 bis 200 Zeichen enthalten.",
         "message_length": "Die Nachricht muss 10 bis 5000 Zeichen enthalten.",
         "phone_invalid": "Bitte geben Sie eine gültige Telefonnummer an.",
-        "company_length": "Der Unternehmensname ist zu lang.",
+        "company_length": "Die Beschreibung Ihrer Tätigkeit ist zu lang.",
         "rate_limited": "Sie haben bereits mehrere Nachrichten gesendet. Versuchen Sie es später erneut oder schreiben Sie uns eine E-Mail.",
         "retry_later": "Ihre Nachricht konnte im Moment nicht gesendet werden. Versuchen Sie es später erneut oder schreiben Sie uns eine E-Mail.",
         "server": "Die Nachricht konnte nicht gesendet werden. Versuchen Sie es erneut oder schreiben Sie uns eine E-Mail.",
-        "network": "Verbindung verloren. Prüfen Sie Ihr Netzwerk und versuchen Sie es erneut."
+        "network": "Verbindung verloren. Prüfen Sie Ihr Netzwerk und versuchen Sie es erneut.",
+        "need_invalid": "Bitte wählen Sie eine Option aus der Liste."
       },
       "success": {
-        "title": "Danke für Ihre Nachricht!",
-        "description": "Ihre Nachricht ist unterwegs. Wir lesen jede Anfrage und melden uns in Kürze.",
+        "title": "Danke. Matthieu antwortet Ihnen innerhalb eines Werktags.",
+        "description": "Ihre Nachricht ist angekommen. Nächster Schritt: ein paar Fragen per E-Mail, danach ein kostenloses Mockup, wenn Ihnen das zusagt.",
         "back": "Weitere Nachricht senden"
       }
     },
-    "direct": {
-      "eyebrow": "Direkte Wege",
-      "title": "An das richtige Postfach schreiben",
-      "description": "Jede Anfrage hat ihre eigene Adresse — wählen Sie die passende."
+    "lead": "Eine Nachricht oder ein Gespräch von 20 Minuten. In beiden Fällen sprechen Sie mit Matthieu und erhalten innerhalb eines Werktags eine Antwort.",
+    "details": {
+      "aria_label": "Kontaktdaten",
+      "email_label": "E-Mail",
+      "support_label": "Bestehende Kundschaft · Support",
+      "where_label": "Wo",
+      "where": "Genf · Westschweiz · Hochsavoyen, oder per Videogespräch"
+    },
+    "modes": {
+      "label": "Wie möchten Sie uns kontaktieren?",
+      "message": "Nachricht schreiben",
+      "call": "Gespräch buchen"
+    },
+    "booking": {
+      "title": "Wählen Sie einen Termin von 20 Minuten",
+      "via": "über Google Calendar",
+      "consent": "Der Buchungskalender stammt von Google Calendar; Google setzt dabei eigene Cookies. Er wird nur geladen, wenn Sie es wünschen.",
+      "load": "Kalender anzeigen",
+      "open": "Buchungsseite öffnen",
+      "iframe_title": "Buchungskalender von Matthieu (Google Calendar)",
+      "note": "Der Termin wird direkt in Matthieus Kalender gebucht. Die Bestätigung und den Link zum Gespräch erhalten Sie von Google Calendar.",
+      "unavailable": "Die Online-Buchung ist noch nicht freigeschaltet. Schreiben Sie uns eine Nachricht: Wir schlagen Ihnen noch am selben Tag einen Termin vor."
     }
   }
 }

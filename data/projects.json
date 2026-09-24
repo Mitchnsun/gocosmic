@@ -1,18 +1,18 @@
 [
   {
-    "id": "daily-fortune",
-    "i18nKey": "dailyFortune"
-  },
-  {
-    "id": "mcomperat",
-    "i18nKey": "mcomperat"
+    "id": "choeurdespaysdumontblanc",
+    "i18nKey": "choeurDesPaysduMontBlanc"
   },
   {
     "id": "psc-supersprint",
     "i18nKey": "pscSupersprint"
   },
   {
-    "id": "choeurdespaysdumontblanc",
-    "i18nKey": "choeurDesPaysduMontBlanc"
+    "id": "daily-fortune",
+    "i18nKey": "dailyFortune"
+  },
+  {
+    "id": "mcomperat",
+    "i18nKey": "mcomperat"
   }
 ]

@@ -39,11 +39,10 @@ describe('validateContact', () => {
     }
   );
 
-  it('only checks the subject when it is filled', () => {
-    expect(validateContact(validPayload({ subject: '' })).subject).toBeUndefined();
-    expect(validateContact(validPayload({ subject: 'Hi' })).subject).toBe('subject_length');
-    expect(validateContact(validPayload({ subject: 'a'.repeat(201) })).subject).toBe('subject_length');
-    expect(validateContact(validPayload({ subject: 'A showcase website' })).subject).toBeUndefined();
+  it('only accepts a need from the list, and none at all', () => {
+    expect(validateContact(validPayload({ need: '' })).need).toBeUndefined();
+    expect(validateContact(validPayload({ need: 'shop' })).need).toBeUndefined();
+    expect(validateContact(validPayload({ need: 'free-money' })).need).toBe('need_invalid');
   });
 
   it('checks the message length boundaries', () => {

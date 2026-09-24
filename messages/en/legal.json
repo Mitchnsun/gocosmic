@@ -21,7 +21,7 @@
         {
           "title": "Data collected",
           "body": [
-            "The website has no account area, checkout, CAPTCHA, or advertising pixel. Two forms are handled server-side. The free mockup page collects your email address, the colour direction you pick, the address of your current website if you provide one, your message, and the language of the page. If you arrive from the pricing simulator, the request also includes the choices you made there — project type, site type, number of pages, selected options, update frequency and the resulting estimated monthly price — so the studio can answer with the full context. The contact form collects the name, email address and message you enter, plus the optional subject, phone number and company. In both cases the fields are forwarded to the studio mailbox by email and nothing is stored in a database. Messages sent through the mailto links are handled by your email client and the recipient mailbox instead.",
+            "The website has no account area, checkout, CAPTCHA, or advertising pixel. Two forms are handled server-side. The free mockup page collects your email address, the colour direction you pick, the address of your current website if you provide one, your message, and the language of the page. If you arrive from the pricing simulator, the request also includes the choices you made there — project type, site type, number of pages, selected options, update frequency and the resulting estimated monthly price — so the studio can answer with the full context. The contact form collects the name, email address and message you enter, plus your phone number, your business and the kind of need you picked, if you fill them in. In both cases the fields are forwarded to the studio mailbox by email and nothing is stored in a database. Messages sent through the mailto links are handled by your email client and the recipient mailbox instead.",
             "Your IP address is processed transiently by the hosting provider's firewall, which limits both forms — the contact form and the free mockup form — to three submissions every ten minutes, alongside a hidden anti-spam field in each. Technical data may be processed by the hosting provider for security and delivery logs. Vercel Analytics is loaded only after consent to measure page views.",
             "Two items are stored in your browser. The pricing simulation is kept only so it can follow you from the simulator to the free mockup form: it is sent to us only if you submit that form, is erased once the request is sent, and disappears when you close the tab. The dates of your recent contact form submissions are used to limit how often the form can be sent from the same browser and stay there until you clear your browser data; they are never sent to us."
           ]
@@ -37,7 +37,8 @@
         {
           "title": "Recipients and processors",
           "body": [
-            "Data may be accessed by Go Cosmic, the email service provider, Resend (which delivers the free mockup and contact form emails), the hosting provider, and Vercel for hosting and analytics. LinkedIn is an external website and may process data under its own policy after you click an outbound link."
+            "Data may be accessed by Go Cosmic, the email service provider, Resend (which delivers the free mockup and contact form emails), the hosting provider, and Vercel for hosting and analytics. LinkedIn is an external website and may process data under its own policy after you click an outbound link.",
+            "If you choose to book a call from the contact page, the booking calendar is provided by Google (Google Calendar), which processes the information you enter under its own privacy policy: https://policies.google.com/privacy."
           ]
         },
         {
@@ -64,7 +65,8 @@
           "title": "Cookies and audience measurement",
           "body": [
             "No advertising cookies are intentionally loaded by Go Cosmic. Vercel Analytics is treated as a non-essential audience measurement tool on this site and is loaded only after your consent.",
-            "You can modify or withdraw your consent at any time using the preference management button displayed at the bottom of every page."
+            "You can modify or withdraw your consent at any time using the preference management button displayed at the bottom of every page.",
+            "The Google Calendar booking calendar on the contact page only loads if you click “Show the calendar”; Google may then set its own cookies. Without that click, nothing is loaded from Google and you can open the booking page in a new tab."
           ]
         }
       ]
@@ -105,6 +107,14 @@
           "title": "Responsibility",
           "body": [
             "Go Cosmic aims to keep information accurate and available but cannot guarantee that the website is free from interruptions, errors, or outdated content. External links lead to third-party services governed by their own terms and policies."
+          ]
+        },
+        {
+          "title": "Use of artificial intelligence",
+          "body": [
+            "Cosmic Studio may integrate AI-assisted features into client projects, and uses these tools to write, translate and develop faster. Every piece of content and every delivery is reviewed by a person.",
+            "Recommendations produced by AI are informative and do not replace human judgement. Applications are tested according to industry best practices.",
+            "Sensitive data is not shared with third parties without a documented legal basis or explicit consent where required. Personal data practices are detailed in the privacy policy."
           ]
         },
         {

@@ -7,7 +7,7 @@ The main web application of Cosmic Studio (formerly Go Cosmic, still served from
 The Cosmic Studio website serves as the primary business interface with the following goals:
 
 - **Portfolio Showcase**: Present Cosmic Studio's applications and development projects
-- **Team Presentation**: Introduce the talented developers and their expertise
+- **Studio Presentation**: Introduce the person behind the studio and his background
 - **Service Promotion**: Highlight development services offered to potential clients
 - **Brand Identity**: Establish Cosmic Studio as a trusted local studio with a light space theme ("Go Cosmic" remains the call-to-action signature)
 - **Client Acquisition**: Convert visitors into clients through compelling presentation
@@ -20,7 +20,7 @@ The Cosmic Studio website serves as the primary business interface with the foll
 - **Type-Safe Translations**: Full TypeScript integration with compile-time validation
 - **SEO Optimization**: Dynamic metadata and lang attributes per locale
 - **Clean URLs**: Locale-prefixed routing (`/en/`, `/fr/`, `/es/`, `/de/`, `/it/`)
-- **Translated Pathnames**: Route paths are localized for better SEO and UX (e.g., `/en/about` → `/fr/a-propos`, `/en/journey` → `/de/reise`)
+- **Translated Pathnames**: Route paths are localized for better SEO and UX (e.g., `/en/about` → `/fr/a-propos`, `/en/projects` → `/de/projekte`)
 - **Browser Detection**: Automatic locale detection based on user preferences
 - **Language Switcher**: Intuitive dropdown component with flag icons and current language indication
 - **Namespace Organization**: Translation files are organized by namespace for better maintainability and scalability
@@ -37,13 +37,14 @@ messages/
   │   ├── footer.json        # Footer content
   │   ├── home.json          # Homepage content
   │   ├── about.json         # About page content
-  │   ├── services.json      # Services page content
-  │   ├── offers.json        # Offers page content
-  │   ├── journey.json       # Journey page content
-  │   ├── projects.json      # Project pages content
+  │   ├── services.json      # Services & pricing page content
+  │   ├── pricing.json       # Pricing columns and subscription simulator
+  │   ├── projects.json      # Projects list and case studies
   │   ├── contact.json       # Contact page content
+  │   ├── free-mockup.json   # Free mockup page content
   │   ├── local.json         # Local SEO page content
-  │   └── psc-supersprint.json # PSC Supersprint project content
+  │   ├── legal.json         # Privacy policy and legal notice
+  │   └── psc-supersprint.json # PSC Supersprint case study content
   ├── fr/              # French (same structure)
   ├── es/              # Spanish (same structure)
   ├── de/              # German (same structure)
@@ -88,76 +89,80 @@ export default function Header() {
 
 ### Homepage
 
-- **Hero Section**: Visibility promise ("Your business deserves to be seen / found / chosen") and the "Go Cosmic" call-to-action
-- **Interactive Button**: Demonstration of UI components with alert functionality
-- **Team Link**: Direct access to learn more about the development team
-- **Cosmic Design**: Universe-inspired design with celestial UI components
-- **Responsive Layout**: Optimized for all device sizes
-- **Multilingual Content**: All text content fully translated across 5 languages
+- **Hero**: visibility promise ("Your business deserves to be seen / found / chosen", the last word cycling), four key facts (starting monthly price, reply within 24 h, one point of contact, area served), the "Go Cosmic" call-to-action leading to the free mockup page and a secondary link to the pricing
+- **Audience**: who the studio works for (craftspeople, associations, independents starting out)
+- **Why a studio**: four reasons to choose a studio rather than a site builder
+- **Process**: four-step timeline (meeting, mockup, build, launch)
+- **Pricing**: the same two pricing columns as the Services & pricing page
+- **Projects**: the first three project cards and a link to the full list
+- **Own apps**: the studio's own mobile app, Daily Fortune
+- **Studio**: who is behind the studio and the areas served
+- **Closing call-to-action**: link to the contact page and to the free mockup, over a star field that accelerates on hover
 
-### Journey Page (`/journey`)
+### Services & Pricing Page (`/services`)
 
-- **3D Cosmic Experience**: Interactive starfield using Three.js and React Three Fiber
-- **Dynamic Loading**: Utilizes Next.js dynamic imports for optimal performance
-- **Immersive Animation**: 2000+ animated stars with realistic physics
-- **Loading State**: Smooth transition with cosmic-themed loading spinner
-- **SSR Optimization**: Client-side rendering to avoid WebGL server-side issues
+Replaces the former services, offers and pricing pages.
+
+- **Introduction**: what the studio offers, a site that runs and someone who looks after it
+- **Pricing columns**: a monthly subscription (site, hosting and care) and a one-off project quoted on request, with indicative starting prices for a members' area, a shop and a mobile app (figures in `lib/pricing/offers.ts`)
+- **Subscription simulator**: base plan plus options (number of pages, domain name, hosting in Switzerland, email address, content changes), with a sticky recap showing the live monthly total; its "Request my free mockup" button carries the simulation over to the free mockup form, and a block below it presents the two free offers (a mockup and a review of the current website)
+- **Trades**: four cards (showcase sites, shops and bookings, apps, visibility and care)
+- **For companies**: other ways to work with the studio (day-rate mission, developer + designer duo, full team), with a link to the contact page
+- **FAQ**: accordion answering five common questions (ownership, editing the site, time to go live, stopping the subscription, texts and photos)
+- **Closing call-to-action**: link to the contact page
+
+Prices are shown in euros, or in Swiss francs for visitors located in Switzerland (detected from the Vercel country header). The homepage and the about page follow the same rule.
+
+### Projects Page (`/projects`)
+
+- **Project grid**: one card per project with its visual, type, year, client, summary, tags and a link to its case study
+- **Filters**: "All", "Website", "Web app" and "Mobile app" buttons; the number of matching projects is announced to screen readers
+- **Shareable filter**: the active filter is kept in the `?type=` URL parameter (`site`, `webapp` or `mobile`), so a filtered list can be shared
+- **Closing call-to-action**: link to the contact page
+
+#### Case Studies
+
+All four case studies share one template: a header with the year, client and project type, three numbered sections ("For whom", "What we did", "Result"), a link to the live project with a "Discuss a similar project" link to the contact page, and previous / next navigation between case studies.
+
+- **Chœur des Pays du Mont Blanc** (`/projects/choeurdespaysdumontblanc`): the choir's website, with upcoming concerts, repertoire and how to join
+- **PSC Supersprint** (`/projects/psc-supersprint`): live race results for a triathlon club, with its own translation namespace
+- **Daily Fortune** (`/projects/daily-fortune`): the studio's own mobile app, published on the App Store and Google Play
+- **mcomper.at** (`/projects/mcomperat`): a multilingual online résumé
 
 ### About Page (`/about`)
 
-- **Company Overview**: Presents Cosmic Studio's mission and areas of specialization
-- **Developer Profile**: Highlights Matthieu Compérat's expertise and experience
-- **Legal & AI Usage**: Transparent statements about AI usage, privacy, and responsibility
-- **Accessibility**: Semantic headings, descriptive aria-labels, and keyboard focus styles
-- **SEO Ready**: Metadata and Open Graph descriptions optimized in the page's `metadata`
-
-### Services Page (`/services`)
-
-- **Stellar Development**: Modern web development expertise with cutting-edge technologies
-- **Mystical UI/UX Design**: Immersive, accessible, and conversion-focused design approach
-- **AI Powered Solutions**: Intelligent features leveraging modern AI capabilities
-- **Cosmic Launch**: Complete launch support from development to production
-
-### Offers Page (`/offers`)
-
-- **Solo Cosmic Developer**: Dedicated developer for startups and small projects
-- **Complete Cosmic Team**: Full-stack solutions for complex, enterprise-grade projects
-- **Developer + Designer Duo**: Combined technical excellence and stunning design
+- **Background**: Matthieu Compérat's path, the areas served and a link to his LinkedIn profile
+- **Why craftspeople and associations**: four reasons the studio works for them (being found locally, a price that follows the business, someone who answers, AI used only where it helps)
+- **Closing call-to-action**: link to the contact page
+- **Structured data**: a JSON-LD `Person` entry for search engines
 
 ### Contact Page (`/contact`)
 
-Professional contact form for client inquiries and consultations.
+- **Contact details**: general and support email addresses, the area served and the studio's current availability
+- **"Write a message" tab**: contact form (name, email, phone, company, type of need, message), sent by email through Resend
+- **"Book a call" tab**: Google Calendar booking page for a 20-minute call; since Google sets its own cookies, the calendar only loads once the visitor clicks to show it, and on narrow screens the booking page opens in a new tab instead. The page address comes from `NEXT_PUBLIC_GCAL_BOOKING_URL`; without it, the tab invites visitors to write a message
+- **Privacy notice**: link to the privacy policy
 
 ### Free Mockup Page (`/free-mockup`)
 
-Lead-capture page where a prospect asks for a free mockup of their future website: email, colour direction (closed list of six), current website URL and a free-text field capped at 500 characters. Submissions go through a server action that validates them with `zod` and emails them via Resend — there is no database. A hidden honeypot field silently drops bot submissions. Entry points: the journey page and the end of the pricing simulator.
+Lead-capture page where a prospect asks for a free mockup of their future website: email, colour direction (closed list of six), current website URL and a free-text field capped at 500 characters. Submissions go through a server action that validates them with `zod` and emails them via Resend — there is no database. A hidden honeypot field silently drops bot submissions. When the visitor comes from the pricing simulator, their simulation is attached to the request. Entry points: the header button, the homepage hero, and the simulator on the Services & pricing page.
 
 ### Local SEO Page (`/local`)
 
-Locale-specific landing page targeting local searches (e.g., `/en/web-mobile-developer-annecy-geneva`, `/fr/developpeur-web-mobile-annecy-geneve`).
+Locale-specific landing page targeting local searches (e.g., `/en/web-mobile-developer-annecy-geneva`, `/fr/developpeur-web-mobile-annecy-geneve`). It lists the areas served and links to Services & pricing, the projects and the contact page.
 
-### Projects Section
+### Legal Pages
 
-#### Daily Fortune (`/projects/daily-fortune`)
+- **Privacy policy** (`/privacy`): how personal data is handled, visitors' rights and cookies
+- **Legal notice** (`/legal-notice`): publisher, hosting, intellectual property, and the statements on the use of artificial intelligence
 
-- **Project Showcase**: Comprehensive presentation of the Daily Fortune mobile application
-- **Features Overview**: Key features including daily fortunes, motivational content, and cosmic design
-- **Technology Stack**: Details about modern technologies used (Next.js, TypeScript, React Native, TailwindCSS)
-- **AI Integration**: Information about AI-powered fortune generation
-- **Multilingual Support**: Complete translation coverage in 5 languages
-- **Call-to-Action**: Repository link for exploring the project
+### Not Found Page
 
-#### mcomperat (`/projects/mcomperat`)
+Localized 404 page with links back to the homepage and to the contact page. Unknown paths under a locale prefix are routed to it.
 
-Personal developer portfolio project showcase.
+### Retired Pages
 
-#### PSC Supersprint (`/projects/psc-supersprint`)
-
-PSC Supersprint project showcase with dedicated translation namespace.
-
-#### Choeur des Pays du Mont Blanc (`/projects/choeurdespaysdumontblanc`)
-
-Choeur des Pays du Mont Blanc project showcase.
+The former `/journey` (3D experience), `/offers` and `/pricing` pages no longer exist. They permanently redirect (301) to Services & pricing in every locale, including their former localized slugs (see `lib/redirects.ts` and `next.config.ts`).
 
 ### Technical Features
 
@@ -169,7 +174,6 @@ Choeur des Pays du Mont Blanc project showcase.
 ## Future Enhancements
 
 - **Team Profiles**: Individual developer profiles with skills and experience
-- **Case Studies**: In-depth presentation of successful client projects
 - **Testimonials**: Client feedback and success stories
 - **Blog/Articles**: Technical insights and company updates
 
@@ -177,7 +181,7 @@ Choeur des Pays du Mont Blanc project showcase.
 
 ### Prerequisites
 
-- Node.js >= 22
+- Node.js >= 24
 - yarn (via Corepack)
 
 ### Installation and Launch
@@ -199,10 +203,11 @@ The application will be accessible at [http://localhost:3000](http://localhost:3
 
 Copy `.env.example` to `.env.local` and fill it in. Server-only secrets must never be prefixed with `NEXT_PUBLIC_`.
 
-| Variable            | Required | Purpose                                                                                                                                                                                                        |
-| ------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `RESEND_API_KEY`    | Yes      | Resend API key used to email free mockup requests and contact form submissions. Without it, the free mockup form reports a send failure and the contact form logs submissions locally instead of sending them. |
-| `RESEND_FROM_EMAIL` | No       | Sender of those emails; must be verified in the Resend dashboard. Defaults to `Cosmic Studio <noreply@gocosmic.dev>`.                                                                                          |
+| Variable                       | Required | Purpose                                                                                                                                                                                                        |
+| ------------------------------ | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `RESEND_API_KEY`               | Yes      | Resend API key used to email free mockup requests and contact form submissions. Without it, the free mockup form reports a send failure and the contact form logs submissions locally instead of sending them. |
+| `RESEND_FROM_EMAIL`            | No       | Sender of those emails; must be verified in the Resend dashboard. Defaults to `Cosmic Studio <noreply@gocosmic.dev>`.                                                                                          |
+| `NEXT_PUBLIC_GCAL_BOOKING_URL` | No       | Google Calendar appointment page embedded in the contact page's "Book a call" tab. Only `calendar.google.com` URLs are accepted; when empty the tab invites visitors to write instead.                         |
 
 ### Available Scripts
 
@@ -274,7 +279,7 @@ This approach ensures SEO-friendly URLs and consistent user experience across al
 
 ## Testing
 
-The application includes comprehensive unit tests covering components, pages, and views. Tests follow accessibility-first principles and validate cosmic theme consistency.
+The application includes comprehensive unit tests covering components, pages, and helpers. Tests follow accessibility-first principles and validate cosmic theme consistency.
 
 ### Test Structure
 
@@ -283,7 +288,6 @@ __tests__/
 ├── components/      # Component unit tests
 ├── design-system/   # Components from design-system unit tests
 ├── pages/           # Page component tests
-├── views/           # View component tests
 ├── test-setup.tsx   # Global test configuration
 └── test-utils.tsx   # Custom render utilities with i18n context
 ```
@@ -343,7 +347,7 @@ vi.mock('next/navigation', () => ({
 - **Cosmic theme validation** - Tests ensure consistent space-inspired styling
 - **i18n Testing** - Components using translations are tested with proper context
 - **Mock strategy** - External dependencies are properly mocked for isolation
-- **Snapshot avoidance** - Snapshots are discouraged for components, tolerated for pages/views only
+- **Snapshot avoidance** - No snapshot tests: assert behaviour and accessibility attributes instead
 
 For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTING.md).
 
@@ -352,25 +356,57 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 ```
 ├── app/              # App Router (Next.js 16+)
 │   ├── [locale]/     # Internationalized routes
-│   │   ├── about/    # About page (mission, profile, legal & AI usage)
-│   │   ├── contact/  # Contact page
-│   │   ├── journey/  # 3D cosmic experience page
+│   │   ├── about/    # About page (background, why craftspeople and associations, LinkedIn)
+│   │   ├── contact/  # Contact page (details, message form, call booking)
+│   │   ├── free-mockup/ # Free mockup request page
+│   │   ├── legal-notice/ # Legal notice (including AI usage statements)
 │   │   ├── local/    # Local SEO landing page
-│   │   ├── offers/   # Offers page (solo, team, duo packages)
-│   │   ├── projects/ # Projects index + sub-pages (daily-fortune, mcomperat, psc-supersprint, choeurdespaysdumontblanc)
-│   │   ├── services/ # Services page (development, design, AI, launch)
+│   │   ├── privacy/  # Privacy policy
+│   │   ├── projects/ # Filterable projects list + case studies (daily-fortune, mcomperat, psc-supersprint, choeurdespaysdumontblanc)
+│   │   ├── services/ # Services & pricing page (pricing, simulator, trades, formats, FAQ)
+│   │   ├── not-found.tsx # Localized 404 page
 │   │   └── page.tsx  # Homepage
+│   ├── actions/      # Server actions (contact form, free mockup request)
 │   ├── layout.tsx    # Root layout with i18n provider
 │   └── ...
 ├── components/       # App-specific components
+│   ├── AudienceGrid/ # "Who it's for" cards
+│   ├── BookingEmbed/ # Google Calendar booking page, loaded on click
+│   ├── CaseStudy/    # Case study template
+│   ├── ContactDetails/ # Contact lines and availability
+│   ├── ContactForm/  # Contact form
+│   ├── ContactPanel/ # "Write a message" / "Book a call" tabs
+│   ├── CTAFinal/     # Closing call-to-action with star field
+│   ├── Faq/          # FAQ accordion
 │   ├── Footer/       # Site footer
+│   ├── FreeMockupForm/ # Free mockup request form
 │   ├── Header/       # Site header and navigation
-│   ├── Journey/      # 3D canvas wrapper
+│   ├── HeroSection/  # Homepage hero
 │   ├── JsonLd/       # Structured data (JSON-LD)
 │   ├── LanguageSwitcher/ # Multilingual navigation component
-│   ├── Loader/       # Loading states
+│   ├── OwnApps/      # The studio's own apps
+│   ├── PricingColumns/ # Subscription and one-off project columns
+│   ├── PricingSimulator/ # Subscription simulator with sticky recap
+│   ├── ProjectGrid/  # Project cards and type filters
+│   ├── Reveal/       # Fade-in on scroll
+│   ├── SectionHeading/ # Eyebrow, title and lead opening each section
+│   ├── StudioIntro/  # Who is behind the studio
+│   ├── WhyStudio/    # Numbered reasons to choose the studio
+│   ├── WorkFormats/  # Formats for companies (mission, duo, team)
+│   ├── ...           # Other components (ProcessTimeline, ServicesGrid, StatusBar, CookieConsent…)
 │   └── icons/        # Reusable SVG icons
-├── design-system/    # Reusable UI primitives (Button with CVA variants)
+├── design-system/    # Reusable UI primitives
+│   ├── button.tsx    # Button with CVA variants
+│   ├── pill.ts       # Pill link styles and shared layout constants
+│   ├── slider.tsx    # Slider used by the pricing simulator
+│   └── lib/utils.ts  # `cn` helper (clsx + tailwind-merge)
+├── data/             # Static content (list and order of case studies)
+├── lib/              # Shared helpers
+│   ├── pricing/      # Offer figures (offers.ts) and the simulation passed to the free mockup form
+│   ├── redirects.ts  # 301 redirects from retired pages to Services & pricing
+│   ├── region.ts     # Region (France or Switzerland) and currency
+│   ├── resend.ts     # Resend email client
+│   └── validation/   # Form validation schemas
 ├── messages/         # Translation files organized by namespace
 │   ├── en/           # English translations
 │   │   ├── common.json        # Common UI strings (404, meta, language)
@@ -378,13 +414,14 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   │   ├── footer.json        # Footer content
 │   │   ├── home.json          # Homepage content
 │   │   ├── about.json         # About page content
-│   │   ├── services.json      # Services page content
-│   │   ├── offers.json        # Offers page content
-│   │   ├── journey.json       # Journey page content
-│   │   ├── projects.json      # Project pages content
+│   │   ├── services.json      # Services & pricing page content
+│   │   ├── pricing.json       # Pricing columns and simulator
+│   │   ├── projects.json      # Projects list and case studies
 │   │   ├── contact.json       # Contact page content
+│   │   ├── free-mockup.json   # Free mockup page content
 │   │   ├── local.json         # Local SEO page content
-│   │   └── psc-supersprint.json # PSC Supersprint project
+│   │   ├── legal.json         # Privacy policy and legal notice
+│   │   └── psc-supersprint.json # PSC Supersprint case study
 │   ├── fr/           # French translations (same structure)
 │   ├── es/           # Spanish translations (same structure)
 │   ├── de/           # German translations (same structure)
@@ -394,12 +431,11 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   ├── request.ts    # Server-side i18n configuration
 │   ├── navigation.ts # Client-side navigation utilities
 │   └── canonical.ts  # Canonical URL helpers
-├── views/            # View components (e.g., Journey content)
 ├── __tests__/        # Comprehensive unit tests
 │   ├── components/   # Component tests
 │   ├── i18n/         # i18n utility tests (canonical)
+│   ├── lib/          # Helper tests
 │   ├── pages/        # Page tests
-│   ├── views/        # View tests
 │   ├── proxy.test.ts # Middleware/proxy tests
 │   └── test-utils.tsx # Custom render with i18n context
 ├── proxy.ts          # Locale detection and routing middleware

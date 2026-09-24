@@ -1,9 +1,24 @@
 'use server';
 
 import type { ContactActionResult } from '@/components/ContactForm/ContactForm.types';
-import type { ContactPayload } from '@/lib/contact/validation';
+import type { ContactNeed, ContactPayload } from '@/lib/contact/validation';
 import { toContactPayload, validateContact } from '@/lib/contact/validation';
 import { getResendClient, getSenderEmail, STUDIO_INBOX_EMAIL } from '@/lib/resend';
+
+/*
+ * Labels are kept in one fixed language on purpose: the email is read by the
+ * studio, not by the visitor, and a server-side map cannot be spoofed.
+ */
+const NEED_LABELS: Record<ContactNeed, string> = {
+  showcase: 'Showcase site',
+  redesign: 'Redesign of an existing site',
+  shop: 'Online shop',
+  app: 'App',
+  unsure: 'Not sure yet',
+};
+
+/** Label of a validated need, or a dash when the visitor did not pick one. */
+const needLabel = (need: string) => Object.entries(NEED_LABELS).find(([key]) => key === need.trim())?.[1] ?? '—';
 
 /** Forwards the message by email. Returns `false` unless it was really sent. */
 const deliver = async (payload: ContactPayload): Promise<boolean> => {
@@ -25,12 +40,13 @@ const deliver = async (payload: ContactPayload): Promise<boolean> => {
     from: getSenderEmail(),
     to: [STUDIO_INBOX_EMAIL],
     replyTo: payload.email.trim(),
-    subject: payload.subject.trim() || `Contact — ${payload.name.trim()}`,
+    subject: `Contact — ${payload.name.trim()}${payload.need.trim() ? ` · ${needLabel(payload.need)}` : ''}`,
     text: [
       `Name: ${payload.name.trim()}`,
       `Email: ${payload.email.trim()}`,
       `Phone: ${payload.phone.trim() || '—'}`,
-      `Company: ${payload.company.trim() || '—'}`,
+      `Activity: ${payload.company.trim() || '—'}`,
+      `Need: ${needLabel(payload.need)}`,
       '',
       payload.message.trim(),
     ].join('\n'),

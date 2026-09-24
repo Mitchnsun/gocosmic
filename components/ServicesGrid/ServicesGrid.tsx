@@ -1,55 +1,51 @@
-'use client';
+import type { ReactNode } from 'react';
 
-import { useTranslations } from 'next-intl';
-import { useEffect, useState } from 'react';
+import { Reveal } from '@/components/Reveal';
+import { SectionHeading } from '@/components/SectionHeading';
+import { cn } from '@/design-system/lib/utils';
+import { CONTAINER, SECTION_Y } from '@/design-system/pill';
 
-import { ServiceCard } from './ServiceCard';
-import { SERVICE_DEFINITIONS } from './ServicesGrid.constants';
+export interface ServiceItem {
+  title: string;
+  description: string;
+  tags: string[];
+}
 
-export function ServicesGrid() {
-  const t = useTranslations('homepage');
-  const [reducedMotion, setReducedMotion] = useState(false);
+interface ServicesGridProps {
+  eyebrow: string;
+  title: ReactNode;
+  services: ServiceItem[];
+  id?: string;
+}
 
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setReducedMotion(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
-    mq.addEventListener('change', handler);
-    return () => mq.removeEventListener('change', handler);
-  }, []);
-
-  const services = SERVICE_DEFINITIONS.map((def) => ({
-    ...def,
-    title: t(`services.${def.id}.title`),
-    description: t(`services.${def.id}.description`),
-    features: t.raw(`services.${def.id}.features`) as string[],
-    link: { href: def.href, label: t('services.learnMore') },
-  }));
+/** What the studio does: numbered cards separated by hairlines, each with mono tags. */
+export function ServicesGrid({ eyebrow, title, services, id = 'trades' }: ServicesGridProps) {
+  const titleId = `${id}-heading`;
 
   return (
-    <section id="services" aria-labelledby="services-heading" className="w-full py-16">
-      <div className="mb-12 max-w-7xl md:px-8">
-        <p className="text-aerospace mb-4 flex items-center gap-2 font-mono text-sm font-medium tracking-widest uppercase">
-          <span className="bg-aerospace h-2 w-2 rounded-full" aria-hidden="true" />
-          {t('services.eyebrow')}
-        </p>
-        <h2 id="services-heading" className="text-ghost text-4xl font-extrabold sm:text-5xl lg:text-6xl">
-          {t('services.title')}
-        </h2>
-        <p className="mt-4 max-w-2xl text-lg text-slate-400">{t('services.subtitle')}</p>
-      </div>
-
-      <div className="max-w-7xl md:px-8">
-        <ul className="grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:gap-8">
+    <section id={id} aria-labelledby={titleId} className={SECTION_Y}>
+      <div className={cn(CONTAINER, 'flex flex-col gap-10')}>
+        <SectionHeading eyebrow={eyebrow} title={title} titleId={titleId} />
+        <ul className="bg-ghost/8 border-ghost/8 grid gap-px overflow-hidden rounded-[20px] border sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service, index) => (
-            <ServiceCard
-              key={service.id}
-              service={service}
-              index={index}
-              staggerDelay={100}
-              animationDuration={600}
-              reducedMotion={reducedMotion}
-            />
+            <li key={service.title} className="bg-void">
+              <Reveal delay={index * 50} className="flex h-full flex-col gap-3 p-7">
+                <span className="text-ghost/35 text-2xs font-mono" aria-hidden="true">
+                  /{String(index + 1).padStart(2, '0')}
+                </span>
+                <h3 className="font-display text-xl font-semibold tracking-[-0.02em]">{service.title}</h3>
+                <p className="text-ghost/60 text-[15px] leading-relaxed">{service.description}</p>
+                <ul className="mt-auto flex flex-wrap gap-1.5 pt-2">
+                  {service.tags.map((tag) => (
+                    <li
+                      key={tag}
+                      className="border-ghost/15 text-ghost/60 text-3xs rounded-full border px-2.5 py-1 font-mono tracking-[0.12em] uppercase">
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            </li>
           ))}
         </ul>
       </div>

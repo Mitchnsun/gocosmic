@@ -14,7 +14,6 @@ import {
   UPDATE_TIER_PRICES,
 } from './constants';
 import { OptionToggle } from './OptionToggle';
-import { PriceTotal } from './PriceTotal';
 import type { AddOnKey, PlanSelection } from './PricingSimulator.types';
 import { formatAmount, getAddOnPrice, getUpdateTierPrice } from './PricingSimulator.utils';
 import { TierSlider } from './TierSlider';
@@ -23,21 +22,17 @@ interface PlanBuilderProps {
   currency: Currency;
   region: Region;
   selection: PlanSelection;
-  total: number;
-  showQuoteHint: boolean;
   onToggleAddOn: (key: AddOnKey) => void;
   onToggleUpdates: () => void;
   onPagesChange: (value: number) => void;
   onUpdatesChange: (value: number) => void;
 }
 
-/** Composable showcase plan: a base price the visitor grows with add-ons and sliders. */
+/** Composable showcase plan: a base price the visitor grows with add-ons and sliders. The total lives in `PlanSummary`. */
 export function PlanBuilder({
   currency,
   region,
   selection,
-  total,
-  showQuoteHint,
   onToggleAddOn,
   onToggleUpdates,
   onPagesChange,
@@ -127,20 +122,6 @@ export function PlanBuilder({
           </div>
         </OptionToggle>
       </section>
-
-      {/* Live total */}
-      <PriceTotal
-        label={t('builder.total.label')}
-        amount={formatAmount(total, currency)}
-        period={t('builder.period')}
-        note={t('builder.total.note')}
-      />
-
-      {showQuoteHint && (
-        <p className="border-aerospace/30 bg-aerospace/[0.04] text-ghost/55 rounded-xl border px-4 py-3 text-sm">
-          {t('builder.total.beyond')}
-        </p>
-      )}
     </div>
   );
 }

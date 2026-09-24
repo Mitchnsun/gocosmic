@@ -21,7 +21,7 @@
         {
           "title": "Dati raccolti",
           "body": [
-            "Il sito non offre area cliente, pagamento, CAPTCHA o pixel pubblicitario. Due moduli sono trattati lato server. La pagina del mockup gratuito raccoglie il tuo indirizzo email, la direzione di colori scelta, l’indirizzo del tuo sito attuale se lo indichi, il tuo messaggio e la lingua della pagina. Se arrivi dal simulatore di prezzi, la richiesta include anche le scelte che hai fatto lì — tipo di progetto, tipo di sito, numero di pagine, opzioni selezionate, frequenza degli aggiornamenti e il prezzo mensile stimato che ne risulta — così lo studio può risponderti con tutto il contesto. Il modulo di contatto raccoglie il nome, l’indirizzo e-mail e il messaggio che inserisci, oltre a oggetto, telefono e azienda facoltativi. In entrambi i casi i campi sono inoltrati via email alla casella dello studio e nulla viene conservato in un database. I messaggi inviati tramite link mailto restano gestiti dal tuo client email e dalla casella destinataria.",
+            "Il sito non offre area cliente, pagamento, CAPTCHA o pixel pubblicitario. Due moduli sono trattati lato server. La pagina del mockup gratuito raccoglie il tuo indirizzo email, la direzione di colori scelta, l’indirizzo del tuo sito attuale se lo indichi, il tuo messaggio e la lingua della pagina. Se arrivi dal simulatore di prezzi, la richiesta include anche le scelte che hai fatto lì — tipo di progetto, tipo di sito, numero di pagine, opzioni selezionate, frequenza degli aggiornamenti e il prezzo mensile stimato che ne risulta — così lo studio può risponderti con tutto il contesto. Il modulo di contatto raccoglie il nome, l’indirizzo e-mail e il messaggio che inserisci, oltre, se li indichi, al tuo telefono, alla tua attività e al tipo di esigenza scelto. In entrambi i casi i campi sono inoltrati via email alla casella dello studio e nulla viene conservato in un database. I messaggi inviati tramite link mailto restano gestiti dal tuo client email e dalla casella destinataria.",
             "Il tuo indirizzo IP è trattato in modo temporaneo dal firewall del provider di hosting, che limita entrambi i moduli — quello di contatto e quello del mockup gratuito — a tre invii ogni dieci minuti, insieme a un campo anti-spam nascosto in ciascuno. Dati tecnici possono essere trattati dal provider di hosting per log di sicurezza e distribuzione. Vercel Analytics viene caricato solo dopo il consenso per misurare le visualizzazioni di pagina.",
             "Due elementi restano nel tuo browser. La simulazione di prezzi serve solo ad accompagnarti dal simulatore al modulo del mockup gratuito: ci viene trasmessa solo se invii quel modulo, viene cancellata una volta inviata la richiesta e scompare alla chiusura della scheda. Le date dei tuoi ultimi invii del modulo di contatto servono a limitare la frequenza di invio da questo browser e vi restano finché non cancelli i dati di navigazione; non ci vengono mai trasmesse."
           ]
@@ -37,7 +37,8 @@
         {
           "title": "Destinatari e responsabili",
           "body": [
-            "I dati possono essere accessibili a Go Cosmic, al provider email, a Resend (che recapita le email delle richieste di mockup gratuito e del modulo di contatto), al provider di hosting e a Vercel per hosting e analytics. LinkedIn è un sito esterno e può trattare dati secondo la propria policy dopo il clic su un link in uscita."
+            "I dati possono essere accessibili a Go Cosmic, al provider email, a Resend (che recapita le email delle richieste di mockup gratuito e del modulo di contatto), al provider di hosting e a Vercel per hosting e analytics. LinkedIn è un sito esterno e può trattare dati secondo la propria policy dopo il clic su un link in uscita.",
+            "Se scegli di prenotare una chiamata dalla pagina di contatto, il calendario delle prenotazioni è fornito da Google (Google Calendar), che tratta le informazioni inserite secondo la propria informativa sulla privacy: https://policies.google.com/privacy."
           ]
         },
         {
@@ -64,7 +65,8 @@
           "title": "Cookie e misurazione audience",
           "body": [
             "Go Cosmic non carica intenzionalmente cookie pubblicitari. Vercel Analytics è trattato su questo sito come strumento di misurazione audience non essenziale e viene caricato solo dopo il tuo consenso.",
-            "Puoi modificare o revocare il tuo consenso in qualsiasi momento tramite il pulsante di gestione delle preferenze in fondo a ogni pagina."
+            "Puoi modificare o revocare il tuo consenso in qualsiasi momento tramite il pulsante di gestione delle preferenze in fondo a ogni pagina.",
+            "Il calendario delle prenotazioni Google Calendar della pagina di contatto si carica solo se fai clic su «Mostra il calendario»; Google può allora impostare i propri cookie. Senza questo clic, nulla viene caricato da Google e puoi aprire la pagina di prenotazione in una nuova scheda."
           ]
         }
       ]
@@ -105,6 +107,14 @@
           "title": "Responsabilità",
           "body": [
             "Go Cosmic mira a mantenere informazioni accurate e disponibili, ma non può garantire che il sito sia privo di interruzioni, errori o contenuti obsoleti. I link esterni conducono a servizi terzi regolati dalle loro condizioni e policy."
+          ]
+        },
+        {
+          "title": "Uso dell’intelligenza artificiale",
+          "body": [
+            "Cosmic Studio può integrare funzionalità assistite dall’intelligenza artificiale nei progetti dei clienti, e usa questi strumenti per scrivere, tradurre e sviluppare più rapidamente. Ogni contenuto e ogni consegna vengono riletti da una persona.",
+            "Le raccomandazioni prodotte dall’IA sono informative e non sostituiscono il giudizio umano. Le applicazioni sono testate secondo le migliori pratiche del settore.",
+            "I dati sensibili non vengono condivisi con terzi senza una base giuridica documentata o un consenso esplicito quando richiesto. Le pratiche relative ai dati personali sono descritte nell’informativa privacy."
           ]
         },
         {

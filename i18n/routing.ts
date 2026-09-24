@@ -29,24 +29,6 @@ export const routing = defineRouting({
       it: '/servizi',
     },
 
-    // Journey page
-    '/journey': {
-      en: '/journey',
-      fr: '/voyage',
-      es: '/viaje',
-      de: '/reise',
-      it: '/viaggio',
-    },
-
-    // Offers page
-    '/offers': {
-      en: '/offers',
-      fr: '/nos-offres',
-      es: '/nuestras-ofertas',
-      de: '/unsere-angebote',
-      it: '/le-nostre-offerte',
-    },
-
     // Projects - Daily Fortune
     '/projects/daily-fortune': {
       en: '/projects/daily-fortune',
@@ -135,15 +117,6 @@ export const routing = defineRouting({
       es: '/maqueta-gratuita',
       de: '/kostenloses-mockup',
       it: '/mockup-gratuito',
-    },
-
-    // Pricing page
-    '/pricing': {
-      en: '/pricing',
-      fr: '/tarifs',
-      es: '/precios',
-      de: '/preise',
-      it: '/prezzi',
     },
   },
 });

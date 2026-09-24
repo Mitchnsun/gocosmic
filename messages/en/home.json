@@ -1,148 +1,133 @@
 {
   "homepage": {
-    "ascii_labels": [
-      "Go Cosmic",
-      "Geneva · Annecy",
-      "Visible on Google",
-      "One point of contact",
-      "Free mockup",
-      "Reply within 24 h"
-    ],
-    "cta": {
-      "button": "Talk about my project",
-      "description": "Tell us about your business in a few lines. We get back to you within 24 hours, with questions, not an automated quote.",
-      "freeMockup": "Still unsure? Ask for your <link>free mockup</link>.",
-      "title": "Let's make your business shine.",
-      "viewOffers": "View our offers"
-    },
     "hero": {
-      "cta": "Go Cosmic",
+      "eyebrow": "Web & mobile studio · Geneva",
+      "title": "Your business deserves to be",
       "endWords": ["seen.", "found.", "chosen."],
       "subtitle": "Cosmic Studio builds websites and apps for craftspeople, associations and independents. A clear site, built to be found on Google, and one person who stays on after launch.",
-      "title": "Your business deserves to be"
+      "cta": "Go Cosmic",
+      "secondary": "See pricing",
+      "facts": {
+        "price": {
+          "highlight": "From {price}",
+          "text": "/ month"
+        },
+        "reply": {
+          "highlight": "Reply",
+          "text": "within 24 h"
+        },
+        "contact": {
+          "highlight": "One",
+          "text": "point of contact"
+        },
+        "area": {
+          "highlight": "Geneva",
+          "text": "· Haute-Savoie · remote"
+        }
+      }
+    },
+    "audience": {
+      "eyebrow": "[ Who it's for · 03 ]",
+      "title": "People with a trade, <em>and no time to learn a second one.</em>",
+      "items": {
+        "artisans": {
+          "title": "Craftspeople",
+          "description": "Carpenter, plumber, hairdresser, caterer. A page that says what you do, where, and how to reach you, and that people find when they search for your trade nearby."
+        },
+        "associations": {
+          "title": "Associations",
+          "description": "Choir, sports club, collective. Event calendar, memberships, news: everything to make your activities known and bring in new members."
+        },
+        "independents": {
+          "title": "Independents starting out",
+          "description": "Therapist, consultant, photographer. A professional site from day one to get known, and a price that grows with your business."
+        }
+      }
+    },
+    "why": {
+      "eyebrow": "[ Why a studio ]",
+      "title": "Wix and WordPress do the job. <em>Until the day they don't.</em>",
+      "lead": "These tools are handy at first. Then you need a plugin, then an update breaks the page, then the bill goes up. We write the code ourselves: the site is yours, it is fast, and it grows without starting over.",
+      "reasons": {
+        "ownership": {
+          "title": "You own it",
+          "description": "Your content and your domain name are yours from day one. The code is handed over at the end of the minimum subscription period, or earlier for a transfer fee."
+        },
+        "fast": {
+          "title": "Fast and easy to find",
+          "description": "No heavy theme, no plugins: pages that load quickly on a phone, which Google rewards."
+        },
+        "person": {
+          "title": "A person, not a ticket",
+          "description": "You talk to Matthieu, who knows your site because he built it."
+        },
+        "grows": {
+          "title": "It grows with you",
+          "description": "A page today, a shop or an app tomorrow, on the same foundation."
+        }
+      }
     },
     "process": {
       "eyebrow": "[ Process · 04 ]",
       "title": "Four steps. <em>No surprises.</em>",
       "subtitle": "From the first conversation to launch day, you always know where your project stands.",
       "discovery": {
-        "label": "T-3",
+        "label": "T-3 · Meeting",
         "title": "We talk",
         "description": "Twenty minutes on the phone or over a coffee in Geneva or Annecy. Your trade, your customers, what the site needs to do for you."
       },
       "design": {
-        "label": "T-2",
+        "label": "T-2 · Mockup",
         "title": "You see it before you pay",
         "description": "A mockup of your home page, with your colours and your words. Free, with no commitment: you decide afterwards."
       },
       "build": {
-        "label": "T-1",
+        "label": "T-1 · Build",
         "title": "We build",
         "description": "Two to six weeks depending on the project. You follow progress on a private link, you comment, we adjust."
       },
       "launch": {
-        "label": "T-0",
+        "label": "T-0 · Launch",
         "title": "Live, and we stay",
         "description": "Launch, a hands-on walkthrough together, then hosting, backups and small changes as the months go by."
       }
     },
-    "services": {
-      "ai": {
-        "title": "Assistants & automation",
-        "description": "Answers to frequent questions, sorted requests, personalised suggestions: AI where it saves you time, with your data kept safe.",
-        "features": ["Automatic replies", "Request sorting", "Recommendations", "Data protection"]
-      },
-      "design": {
-        "title": "Design that looks like you",
-        "description": "A polished presentation in your colours that builds trust from the very first visit and makes people want to get in touch.",
-        "features": ["Free mockup", "Your colours", "Mobile-friendly", "Accessible to all"]
-      },
-      "development": {
-        "title": "Websites & apps",
-        "description": "A showcase site, an online shop or a mobile app, custom-built for your business and pleasant to use on a phone.",
-        "features": ["Showcase site", "Online shop", "Bookings", "Mobile app"]
-      },
-      "launch": {
-        "title": "Visibility & care",
-        "description": "Launch, Google search optimisation, hosting, backups and updates: your site stays visible, fast and secure, without you having to think about it.",
-        "features": ["Google visibility", "Hosting", "Backups", "Updates"]
-      },
-      "title": "Everything it takes to get found",
-      "eyebrow": "[ Services · 04 ]",
-      "subtitle": "Design, build, launch, get known: one point of contact, from the first mockup to month-after-month follow-up.",
-      "learnMore": "Learn more"
-    },
-    "zone": {
-      "title": "Our service area",
-      "description": "Available in Annecy, Geneva, Haute-Savoie, and across French-speaking Switzerland.",
-      "availability": "Available",
-      "locations": {
-        "annecy": "Annecy",
-        "geneva": "Geneva",
-        "haute_savoie": "Haute-Savoie",
-        "suisse_romande": "Romandy"
-      },
-      "stations": {
-        "annecy": {
-          "meta": {
-            "fr": "Base · 74",
-            "ch": "France"
-          }
-        },
-        "geneva": {
-          "meta": {
-            "fr": "Switzerland",
-            "ch": "Base · GE"
-          }
-        },
-        "haute_savoie": {
-          "meta": {
-            "fr": "France",
-            "ch": "France"
-          }
-        },
-        "suisse_romande": {
-          "meta": {
-            "fr": "Switzerland",
-            "ch": "Switzerland"
-          }
-        }
-      }
-    },
     "projects": {
-      "eyebrow": "[ Work · 04 ]",
-      "title": "Our latest <em>work.</em>",
-      "subtitle": "Associations, a sports club, our own apps: real projects, live today.",
-      "learnMore": "View project",
-      "loadMore": "Load more projects",
-      "dailyFortune": {
-        "title": "Daily Fortune",
-        "tagline": "Mobile app · iOS / Android",
+      "eyebrow": "[ Work ]",
+      "title": "Real projects, <em>live today.</em>",
+      "all": "All projects"
+    },
+    "apps": {
+      "eyebrow": "[ Our apps ]",
+      "title": "The studio also builds <em>its own products.</em>",
+      "lead": "That is where we test tools before offering them to clients. What we learn on our apps ends up in yours.",
+      "daily_fortune": {
+        "name": "Daily Fortune",
+        "badge": "iOS · Android",
         "description": "A short message every morning to start the day well. Our first app published on the App Store and Google Play.",
-        "tags": ["Studio app", "Well-being"],
-        "imageAlt": "Daily Fortune app preview"
-      },
-      "mcomperat": {
-        "title": "mcomper.at",
-        "tagline": "Website · Multilingual",
-        "description": "An online résumé, available in several languages and quick to load. The testing ground for the tools we then use for you.",
-        "tags": ["Personal site"],
-        "imageAlt": "mcomper.at website preview"
-      },
-      "pscSupersprint": {
-        "title": "PSC Supersprint",
-        "tagline": "Web app · Live",
-        "description": "Live race results that spectators can check on their phones during the event.",
-        "tags": ["Sport", "Live"],
-        "imageAlt": "PSC Supersprint results board preview"
-      },
-      "choeurDesPaysduMontBlanc": {
-        "title": "Chœur des Pays du Mont Blanc",
-        "tagline": "Website · Association",
-        "description": "The choir's website: upcoming concerts, repertoire and sign-ups, with a calendar the committee updates on its own.",
-        "tags": ["Culture", "Association"],
-        "imageAlt": "Chœur des Pays du Mont Blanc website preview"
+        "link": "Discover the app",
+        "icon_alt": "Daily Fortune app icon"
       }
+    },
+    "studio": {
+      "eyebrow": "[ The studio ]",
+      "title": "A developer in Geneva, <em>not a platform.</em>",
+      "paragraphs": [
+        "I'm Matthieu Compérat. I grew up in Duingt, on the shores of Lake Annecy, and I'm based in Chêne-Bougeries. I have been building websites and apps for about fifteen years, first for large companies, then for people whose first names I know. Cosmic Studio is that second choice.",
+        "You call, I answer. You write, you get a reply the same day. The site I deliver, I know exactly how it works."
+      ],
+      "zones": [
+        "Chêne-Bougeries · base",
+        "French-speaking Switzerland · on site",
+        "Haute-Savoie · on site",
+        "Elsewhere · remote"
+      ]
+    },
+    "cta": {
+      "button": "Talk about my project",
+      "description": "Tell us about your business in a few lines. We get back to you within 24 hours, with questions, not an automated quote.",
+      "freeMockup": "Still unsure? Ask for your <link>free mockup</link>.",
+      "title": "Let's make your business shine."
     }
   }
 }

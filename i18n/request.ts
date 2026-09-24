@@ -14,7 +14,8 @@ const getNamespacesForPath = (pathname: string): string[] => {
 
   // Map routes to their specific namespaces
   if (pathWithoutLocale === '/' || pathWithoutLocale === '') {
-    return ['home'];
+    // The homepage also shows the pricing columns and the latest project cards.
+    return ['home', 'pricing', 'projects'];
   } else if (
     pathWithoutLocale.startsWith('/about') ||
     pathWithoutLocale.startsWith('/a-propos') ||
@@ -29,23 +30,8 @@ const getNamespacesForPath = (pathname: string): string[] => {
     pathWithoutLocale.startsWith('/dienstleistungen') ||
     pathWithoutLocale.startsWith('/servizi')
   ) {
-    return ['services'];
-  } else if (
-    pathWithoutLocale.startsWith('/offers') ||
-    pathWithoutLocale.startsWith('/nos-offres') ||
-    pathWithoutLocale.startsWith('/nuestras-ofertas') ||
-    pathWithoutLocale.startsWith('/unsere-angebote') ||
-    pathWithoutLocale.startsWith('/le-nostre-offerte')
-  ) {
-    return ['offers'];
-  } else if (
-    pathWithoutLocale.startsWith('/journey') ||
-    pathWithoutLocale.startsWith('/voyage') ||
-    pathWithoutLocale.startsWith('/viaje') ||
-    pathWithoutLocale.startsWith('/reise') ||
-    pathWithoutLocale.startsWith('/viaggio')
-  ) {
-    return ['journey'];
+    // Services & pricing embeds the subscription simulator.
+    return ['services', 'pricing'];
   } else if (
     pathWithoutLocale.startsWith('/web-mobile-developer-annecy-geneva') ||
     pathWithoutLocale.startsWith('/developpeur-web-mobile-annecy-geneve') ||
@@ -101,14 +87,6 @@ const getNamespacesForPath = (pathname: string): string[] => {
     pathWithoutLocale.startsWith('/mockup-gratuito')
   ) {
     return ['free-mockup'];
-  } else if (
-    pathWithoutLocale.startsWith('/pricing') ||
-    pathWithoutLocale.startsWith('/tarifs') ||
-    pathWithoutLocale.startsWith('/precios') ||
-    pathWithoutLocale.startsWith('/preise') ||
-    pathWithoutLocale.startsWith('/prezzi')
-  ) {
-    return ['pricing'];
   }
 
   // Default to home for unknown routes

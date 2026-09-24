@@ -1,11 +1,10 @@
 {
   "404": {
-    "description": "Peut-être que les étoiles ne se sont pas encore alignées.",
+    "eyebrow": "[ Erreur 404 ]",
+    "title": "Cette page est sortie de l'orbite.",
+    "description": "Le lien est peut-être ancien, ou la page a changé d'adresse. Revenez à l'accueil, ou dites-nous ce que vous cherchiez.",
     "link": "Retour à l'accueil",
-    "title": "Vous semblez perdu dans l'espace"
-  },
-  "common": {
-    "loading": "Chargement de votre voyage cosmique..."
+    "contact": "Dites-nous ce que vous cherchiez"
   },
   "meta": {
     "title": "Création de sites internet · Genève & Annecy | Cosmic Studio",
@@ -14,35 +13,6 @@
   "language": {
     "current": "Langue actuelle : {language}",
     "switchTo": "Passer au {language}"
-  },
-  "pricing_teaser": {
-    "eyebrow": "Site vitrine",
-    "price": {
-      "eur": "à partir de 10€",
-      "chf": "à partir de 10 CHF"
-    },
-    "price_period": "/ mois",
-    "tagline": "Tout compris, sans surprise",
-    "scope_note": "Idéal pour présenter votre activité, vos services et vos coordonnées en ligne — sans gestion de commandes ni espace client.",
-    "features": {
-      "page": "Une seule page vitrine statique",
-      "redesign": "Refonte graphique du site vitrine",
-      "seo": "Pensé pour être trouvé sur Google",
-      "updates": "Mises à jour techniques régulières",
-      "hosting": "Hébergement web",
-      "ssl": "Connexion sécurisée HTTPS (le cadenas dans le navigateur)",
-      "email": "1 adresse e-mail professionnelle"
-    },
-    "footnote": {
-      "eur": "Le nom de domaine n'est pas compris : sa gestion est en option à +5€ par mois, comme les pages supplémentaires et l'adresse e-mail.",
-      "chf": "Le nom de domaine n'est pas compris : sa gestion est en option à +5 CHF par mois, comme les pages supplémentaires et l'adresse e-mail."
-    },
-    "footnote_scope": "Pour une boutique e-commerce ou un espace client, contactez-nous pour un devis sur mesure.",
-    "mockup_mention": "Demandez votre maquette sans engagement",
-    "cta_simulate": "Simuler mon tarif",
-    "cta_contact": "Demander un devis",
-    "cta_contact_email_subject": "Demande de devis pour mon projet",
-    "cta_contact_aria_label": "Envoyer un email à prospect@gocosmic.dev pour demander un devis"
   },
   "status_bar": {
     "aria_label": "Disponibilité du studio",

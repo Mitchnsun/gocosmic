@@ -1,157 +1,98 @@
 {
   "services": {
     "meta": {
-      "title": "Servicios · Páginas web en Ginebra y Annecy | Cosmic Studio",
-      "description": "Sitios de presentación, tiendas, aplicaciones y seguimiento para artesanos, asociaciones y autónomos de Ginebra, la Suiza romanda y Alta Saboya."
-    },
-    "title": "Nuestros servicios",
-    "subtitle": "Todo lo necesario para que tus clientes te encuentren, te entiendan y te contacten.",
-    "stellar_development": {
-      "title": "Sitios web y aplicaciones",
-      "subtitle": "Un sitio o una aplicación hechos a medida para tu negocio",
-      "description": "Sitio de presentación, tienda en línea, reserva de citas o aplicación móvil: escribimos el código nosotros mismos, sin plantillas pesadas ni complementos frágiles. El resultado es rápido, fiable y crece contigo.",
-      "technologies": {
-        "title": "Tecnologías que Dominamos",
-        "items": {
-          "frontend": "Frontend Moderno: React 19, Next.js 15, TypeScript, TailwindCSS 4.x",
-          "architecture": "Arquitectura Escalable: Monorepo con Turborepo, Librerías de Componentes, Design Systems",
-          "quality": "Calidad de Código: ESLint 9.x, Prettier, Husky, 100% Cobertura de Pruebas con Vitest",
-          "performance": "Rendimiento: Server-Side Rendering, Generación Estática, Optimización de Imágenes"
-        }
-      },
-      "expertise": {
-        "title": "Nuestra Experiencia en Desarrollo",
-        "items": {
-          "workflow": "Flujos CI/CD avanzados con pruebas automatizadas y despliegue",
-          "scalability": "Arquitectura de microservicios y soluciones cloud-native",
-          "security": "Mejores prácticas de seguridad con escaneo de vulnerabilidades y monitoreo de cumplimiento",
-          "apis": "APIs RESTful y GraphQL con documentación completa"
-        }
-      },
-      "features": {
-        "title": "Lo que Entregamos",
-        "items": {
-          "quality": "Código listo para producción con 100% cobertura de pruebas y documentación completa",
-          "performance": "Aplicaciones ultrarrápidas optimizadas para Core Web Vitals",
-          "maintainability": "Arquitectura limpia y modular que escala con las necesidades de tu negocio",
-          "reliability": "Aplicaciones robustas con manejo de errores e integración de monitoreo"
-        }
-      }
-    },
-    "mystical_design": {
-      "title": "Diseño a tu imagen",
-      "subtitle": "Una presentación cuidada que inspira confianza",
-      "description": "Tus colores, tus fotos, tus palabras: diseñamos una presentación clara, fácil de leer tanto en el móvil como en el ordenador y accesible para todos, pensada para que tus visitantes quieran contactarte.",
-      "approach": {
-        "title": "Nuestro Enfoque de Diseño",
-        "items": {
-          "systems": "Design Systems: Librerías de componentes consistentes y escalables con patrones documentados",
-          "accessibility": "Accesibilidad Universal: Cumplimiento WCAG con HTML semántico y estándares ARIA",
-          "responsive": "Responsive Mobile-First: Layouts fluidos que funcionan perfectamente en todos los dispositivos",
-          "performance": "Enfocado en Rendimiento: Assets optimizados y animaciones suaves"
-        }
-      },
-      "tools": {
-        "title": "Herramientas de Diseño y Desarrollo",
-        "items": {
-          "components": "Primitivas Radix UI con Class Variance Authority para estilado type-safe",
-          "styling": "TailwindCSS con tokens de diseño personalizados y enfoque utility-first",
-          "testing": "Storybook para documentación de componentes y pruebas visuales",
-          "prototyping": "Prototipos interactivos con datos reales y componentes listos para producción"
-        }
-      },
-      "outcomes": {
-        "title": "Resultados de Diseño",
-        "items": {
-          "engagement": "Mayor engagement del usuario a través de interacciones intuitivas y placenteras",
-          "conversion": "Tasas de conversión más altas con CTAs estratégicamente ubicados y flujos de usuario",
-          "brand": "Identidad de marca fuerte que destaca en el paisaje digital cósmico",
-          "satisfaction": "Satisfacción excepcional del usuario a través de investigación UX y pruebas consideradas"
-        }
-      }
-    },
-    "ai_powered": {
-      "title": "Asistentes y automatización",
-      "subtitle": "La IA donde de verdad te ahorra tiempo",
-      "description": "Respuestas automáticas a las preguntas frecuentes, clasificación de solicitudes, sugerencias personalizadas: añadimos IA cuando te simplifica el día a día, nunca por moda, y siempre con tus datos protegidos.",
-      "capabilities": {
-        "title": "Capacidades de Integración de IA",
-        "items": {
-          "recommendations": "Motores de recomendación inteligentes potenciados por algoritmos de machine learning",
-          "automation": "Automatización de procesos y optimización de flujos de trabajo usando insights impulsados por IA",
-          "analytics": "Analytics avanzados y modelado predictivo para decisiones basadas en datos",
-          "nlp": "Procesamiento de Lenguaje Natural para chatbots y análisis de contenido"
-        }
-      },
-      "implementation": {
-        "title": "Implementación Técnica",
-        "items": {
-          "apis": "Integración perfecta con plataformas de IA líderes (OpenAI, Google AI, Azure Cognitive Services)",
-          "privacy": "Enfoque privacy-first con procesamiento en dispositivo cuando es posible",
-          "scalability": "Servicios de IA en la nube que escalan con tu base de usuarios",
-          "monitoring": "Monitoreo integral y optimización de rendimiento para características de IA"
-        }
-      },
-      "use_cases": {
-        "title": "Casos de Uso de IA",
-        "items": {
-          "personalization": "Experiencias de usuario personalizadas basadas en comportamiento y preferencias",
-          "support": "Soporte al cliente inteligente con respuestas automatizadas y escalación",
-          "optimization": "Optimización de rendimiento a través de asignación predictiva de recursos",
-          "insights": "Business intelligence a través de análisis automatizado de datos y reportes"
-        }
-      }
-    },
-    "cosmic_launch": {
-      "title": "Visibilidad y seguimiento",
-      "subtitle": "Publicación, posicionamiento en Google y acompañamiento a largo plazo",
-      "description": "Ponemos tu sitio en línea, lo preparamos para que te encuentren en Google y después nos ocupamos del alojamiento, las copias de seguridad y las actualizaciones. Mantienes un solo interlocutor, mes tras mes.",
-      "process": {
-        "title": "Proceso de Lanzamiento",
-        "items": {
-          "testing": "Pruebas integrales incluyendo pruebas unitarias, de integración y end-to-end",
-          "staging": "Configuración de entorno de staging con configuraciones similares a producción",
-          "deployment": "Pipelines de despliegue automatizados con capacidades de rollback",
-          "monitoring": "Sistemas de monitoreo en tiempo real y alertas"
-        }
-      },
-      "infrastructure": {
-        "title": "Infraestructura y DevOps",
-        "items": {
-          "cloud": "Estrategias de despliegue multi-cloud (AWS, Vercel, Azure, Google Cloud)",
-          "cicd": "Pipelines CI/CD avanzados con pruebas automatizadas y despliegue",
-          "security": "Escaneo de seguridad, evaluaciones de vulnerabilidades y monitoreo de cumplimiento",
-          "scaling": "Infraestructura de auto-escalado que crece con tu éxito"
-        }
-      },
-      "support": {
-        "title": "Soporte Continuo",
-        "items": {
-          "monitoring": "Monitoreo de aplicación 24/7 con alertas inteligentes",
-          "optimization": "Optimización continua de rendimiento y gestión de recursos",
-          "updates": "Actualizaciones de seguridad regulares y mejoras de características",
-          "consultation": "Consultoría técnica estratégica para crecimiento futuro"
-        }
-      }
+      "title": "Servicios y precios · Páginas web en Ginebra y Annecy | Cosmic Studio",
+      "description": "Sitios de presentación, tiendas, aplicaciones y seguimiento, con precios a la vista: una suscripción desde 10 € al mes o un proyecto según presupuesto. Ginebra, Alta Saboya y a distancia."
     },
     "cta": {
       "title": "Hagamos brillar tu negocio.",
       "description": "Háblanos de tu negocio en unas líneas. Te respondemos en menos de 24 h con preguntas y, si el proyecto te convence, con una maqueta gratuita.",
-      "primary_button": "Hablar de mi proyecto",
-      "geo_availability": "Disponible en Annecy, Ginebra, la Suiza romanda, Alta Saboya y en remoto.",
-      "local_page": "Descubrir nuestra página dedicada Annecy / Ginebra"
+      "primary_button": "Hablar de mi proyecto"
     },
-    "eyebrow": "Servicios — Capacidades",
-    "hero": {
-      "cta": "Hablemos de tu proyecto",
-      "secondary": "Ver precios"
+    "intro": {
+      "eyebrow": "[ Servicios y precios ]",
+      "title": "Un sitio que funciona, <em>y alguien que se ocupa de él.</em>",
+      "lead": "Los precios están a la vista, porque tienes cosas mejores que hacer que pedir un presupuesto para saber si te lo puedes permitir. Y empiezas con una maqueta gratuita, sin compromiso."
     },
-    "explore": {
-      "eyebrow": "Siguiente paso",
-      "title": "Primero los proyectos, después el presupuesto",
-      "description": "Explora los proyectos ya entregados o calcula tu presupuesto en dos clics.",
-      "projects": "Ver los proyectos",
-      "pricing": "Calcular mi presupuesto"
+    "simulator": {
+      "eyebrow": "[ Configura tu suscripción ]",
+      "title": "Empieza con poco. <em>Añade cuando lo necesites.</em>",
+      "lead": "La base: una página de presentación, en línea y con conexión segura, por {price} al mes. Cada opción se añade o se quita de un mes para otro."
+    },
+    "trades": {
+      "eyebrow": "[ Lo que hacemos · 04 ]",
+      "title": "Cuatro oficios, <em>un solo interlocutor.</em>",
+      "items": {
+        "showcase": {
+          "title": "Sitios de presentación",
+          "description": "Presentar tu negocio, tus trabajos y tus horarios, y que la gente de tu zona te encuentre en Google.",
+          "tags": ["Artesanos", "Asociaciones", "Autónomos"]
+        },
+        "shops": {
+          "title": "Tiendas y reservas",
+          "description": "Vender en línea, dar citas, gestionar las altas de socios. Sin comisión sobre tus ventas.",
+          "tags": ["Venta en línea", "Agenda", "Socios"]
+        },
+        "apps": {
+          "title": "Aplicaciones",
+          "description": "Una herramienta para tu oficio, una aplicación para tus clientes o tus socios, un asistente que responde a las preguntas frecuentes: en la web o en el móvil.",
+          "tags": ["Web", "iOS", "Android"]
+        },
+        "care": {
+          "title": "Visibilidad y seguimiento",
+          "description": "Posicionamiento en Google, alojamiento, copias de seguridad, actualizaciones, cambios y formación: un solo contacto, que conoce tu sitio.",
+          "tags": ["Google", "Seguimiento", "Formación"]
+        }
+      }
+    },
+    "formats": {
+      "eyebrow": "[ Para empresas ]",
+      "title": "¿Necesitas un refuerzo <em>más que un sitio web?</em>",
+      "lead": "Para equipos que ya tienen un producto y buscan manos extra, o para proyectos que requieren varios perfiles.",
+      "items": {
+        "mission": {
+          "title": "Misión por días",
+          "price": "{price} sin IVA / día",
+          "description": "Un desarrollador con experiencia se une a tu equipo el tiempo que haga falta, en persona o a distancia."
+        },
+        "duo": {
+          "title": "Dúo desarrollador + diseñador",
+          "price": "Según presupuesto",
+          "description": "Una identidad y un sitio diseñados juntos, desde el primer boceto hasta la publicación."
+        },
+        "team": {
+          "title": "Equipo completo",
+          "price": "Según presupuesto",
+          "description": "Un pequeño equipo para los proyectos que piden más: varias aplicaciones conectadas, gestión de datos, área de clientes."
+        }
+      },
+      "cta": "Hablemos"
+    },
+    "faq": {
+      "eyebrow": "[ Preguntas frecuentes ]",
+      "title": "Lo que nos preguntan <em>antes de firmar.</em>",
+      "items": {
+        "ownership": {
+          "question": "¿El sitio es mío?",
+          "answer": "Tus textos, tus imágenes y tu nombre de dominio son tuyos desde el primer día. El código del sitio se te cede al cabo de {months} meses de suscripción: eso es lo que permite un precio de entrada tan bajo. ¿Lo quieres antes? Es posible, pagando una tarifa de cesión que depende del tiempo que quede. En un proyecto puntual, el código es tuyo desde la entrega."
+        },
+        "edit": {
+          "question": "¿Puedo modificar el sitio por mi cuenta?",
+          "answer": "Lo más sencillo es la opción «Cambios de contenido incluidos»: nos envías tus textos, fotos u horarios, y listo. Mucha gente prefiere escribirnos antes que aprender a usar una herramienta. Si de verdad quieres publicar por tu cuenta, es posible: lo hablamos, es un proyecto a medida."
+        },
+        "timing": {
+          "question": "¿Cuánto se tarda en estar en línea?",
+          "answer": "Para una página de presentación: de dos a tres semanas después de recibir tus textos y fotos. Para un sitio de cinco páginas: de cuatro a seis semanas. Te damos una fecha al empezar, y la cumplimos."
+        },
+        "stop": {
+          "question": "¿Qué pasa si lo dejo?",
+          "answer": "Nos avisas y el sitio sigue en línea hasta el final del periodo pagado. Te llevas tus contenidos y tu nombre de dominio. El código del sitio está incluido a partir de {months} meses de suscripción; antes, se cede pagando una tarifa que te indicamos desde el principio."
+        },
+        "content": {
+          "question": "¿También os encargáis de los textos y las fotos?",
+          "answer": "Te ayudamos a escribir y lo revisamos todo, pensando en las palabras que tus clientes buscan en Google. Para las fotos, trabajamos con las tuyas o te ponemos en contacto con un fotógrafo local; eso no está incluido en la suscripción."
+        }
+      }
     }
   }
 }

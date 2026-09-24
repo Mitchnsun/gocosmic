@@ -1,148 +1,133 @@
 {
   "homepage": {
-    "ascii_labels": [
-      "Go Cosmic",
-      "Ginevra · Annecy",
-      "Visibile su Google",
-      "Un unico referente",
-      "Mockup gratuito",
-      "Risposta entro 24 h"
-    ],
     "cta": {
       "button": "Parliamo del tuo progetto",
       "description": "Raccontaci la tua attività in poche righe. Ti rispondiamo entro 24 ore, con delle domande, non con un preventivo automatico.",
       "freeMockup": "Ci stai ancora pensando? Richiedi il tuo <link>mockup gratuito</link>.",
-      "title": "Facciamo brillare la tua attività.",
-      "viewOffers": "Consulta le nostre offerte"
+      "title": "Facciamo brillare la tua attività."
     },
     "hero": {
       "cta": "Go Cosmic",
       "endWords": ["vista.", "trovata.", "scelta."],
       "subtitle": "Cosmic Studio crea siti e app per artigiani, associazioni e liberi professionisti. Un sito chiaro, pensato per farti trovare su Google, e un referente che resta con te anche dopo la messa online.",
-      "title": "La tua attività merita di essere"
+      "title": "La tua attività merita di essere",
+      "eyebrow": "Studio web & mobile · Ginevra",
+      "secondary": "Vedi i prezzi",
+      "facts": {
+        "price": {
+          "highlight": "Da {price}",
+          "text": "/ mese"
+        },
+        "reply": {
+          "highlight": "Risposta",
+          "text": "entro 24 h"
+        },
+        "contact": {
+          "highlight": "Un unico",
+          "text": "referente"
+        },
+        "area": {
+          "highlight": "Ginevra",
+          "text": "· Alta Savoia · da remoto"
+        }
+      }
     },
     "process": {
       "eyebrow": "[ Processo · 04 ]",
       "title": "Quattro fasi. <em>Nessuna sorpresa.</em>",
       "subtitle": "Dalla prima chiacchierata alla messa online, sai sempre a che punto è il tuo progetto.",
       "discovery": {
-        "label": "T-3",
+        "label": "T-3 · Incontro",
         "title": "Parliamone",
         "description": "Venti minuti al telefono o davanti a un caffè, a Ginevra o ad Annecy. Il tuo mestiere, i tuoi clienti, cosa deve fare il sito per te."
       },
       "design": {
-        "label": "T-2",
+        "label": "T-2 · Mockup",
         "title": "Vedi prima di pagare",
         "description": "Un mockup della tua pagina iniziale, con i tuoi colori e le tue parole. Gratuito e senza impegno: poi decidi tu."
       },
       "build": {
-        "label": "T-1",
+        "label": "T-1 · Realizzazione",
         "title": "Costruiamo",
         "description": "Da due a sei settimane, a seconda del progetto. Segui i progressi da un link privato, lasci i tuoi commenti e noi sistemiamo."
       },
       "launch": {
-        "label": "T-0",
+        "label": "T-0 · Messa online",
         "title": "Online, e restiamo con te",
         "description": "Messa online e prime istruzioni insieme, poi hosting, copie di sicurezza e piccole modifiche mese dopo mese."
       }
     },
-    "services": {
-      "ai": {
-        "title": "Assistenti & automazione",
-        "description": "Risposte alle domande frequenti, smistamento delle richieste, suggerimenti personalizzati: l'IA dove ti fa risparmiare tempo, con i tuoi dati protetti.",
-        "features": ["Risposte automatiche", "Smistamento richieste", "Suggerimenti", "Dati protetti"]
-      },
-      "design": {
-        "title": "Un design che ti somiglia",
-        "description": "Una presentazione curata, con i tuoi colori, che ispira fiducia fin dalla prima visita e fa venire voglia di contattarti.",
-        "features": ["Mockup gratuito", "I tuoi colori", "Leggibile sul telefono", "Accessibile a tutti"]
-      },
-      "development": {
-        "title": "Siti & app",
-        "description": "Un sito vetrina, un negozio online o un'app mobile, costruiti su misura per la tua attività e comodi da usare sul telefono.",
-        "features": ["Sito vetrina", "Negozio online", "Prenotazioni", "App mobile"]
-      },
-      "launch": {
-        "title": "Visibilità & assistenza",
-        "description": "Messa online, posizionamento su Google, hosting, copie di sicurezza e aggiornamenti: il tuo sito resta visibile, veloce e sicuro, senza che tu debba pensarci.",
-        "features": ["Posizionamento su Google", "Hosting", "Copie di sicurezza", "Aggiornamenti"]
-      },
-      "title": "Tutto ciò che serve per farti trovare",
-      "eyebrow": "[ Servizi · 04 ]",
-      "subtitle": "Progettare, costruire, mettere online, far conoscere: un unico referente, dal primo mockup all'assistenza mese dopo mese.",
-      "learnMore": "Scopri di più"
+    "projects": {
+      "eyebrow": "[ Realizzazioni ]",
+      "title": "Progetti concreti, <em>già online.</em>",
+      "all": "Tutti i progetti"
     },
-    "zone": {
-      "title": "Area di intervento",
-      "description": "Disponibile ad Annecy, Ginevra, in Alta Savoia e nella Svizzera romanda.",
-      "availability": "Disponibile",
-      "locations": {
-        "annecy": "Annecy",
-        "geneva": "Ginevra",
-        "haute_savoie": "Alta Savoia",
-        "suisse_romande": "Svizzera romanda"
-      },
-      "stations": {
-        "annecy": {
-          "meta": {
-            "fr": "Base · 74",
-            "ch": "Francia"
-          }
+    "audience": {
+      "eyebrow": "[ Per chi · 03 ]",
+      "title": "Per chi ha un mestiere, <em>e non il tempo di impararne un altro.</em>",
+      "items": {
+        "artisans": {
+          "title": "Artigiani",
+          "description": "Falegname, idraulico, parrucchiera, catering. Una pagina che dice cosa fai, dove e come raggiungerti, e che si trova quando qualcuno cerca il tuo mestiere in zona."
         },
-        "geneva": {
-          "meta": {
-            "fr": "Svizzera",
-            "ch": "Base · GE"
-          }
+        "associations": {
+          "title": "Associazioni",
+          "description": "Coro, club sportivo, collettivo. Calendario degli eventi, iscrizioni, notizie: tutto ciò che serve per far conoscere le tue attività e attirare nuovi soci."
         },
-        "haute_savoie": {
-          "meta": {
-            "fr": "Francia",
-            "ch": "Francia"
-          }
-        },
-        "suisse_romande": {
-          "meta": {
-            "fr": "Svizzera",
-            "ch": "Svizzera"
-          }
+        "independents": {
+          "title": "Liberi professionisti agli inizi",
+          "description": "Terapeuta, consulente, fotografo. Un sito professionale fin dal primo giorno per farti conoscere, e una tariffa che cresce con la tua attività."
         }
       }
     },
-    "projects": {
-      "eyebrow": "[ Realizzazioni · 04 ]",
-      "title": "Le nostre ultime <em>realizzazioni.</em>",
-      "subtitle": "Associazioni, un club sportivo, le nostre app: progetti concreti, già online.",
-      "learnMore": "Visualizza progetto",
-      "loadMore": "Carica altri progetti",
-      "dailyFortune": {
-        "title": "Daily Fortune",
-        "tagline": "App mobile · iOS / Android",
-        "description": "Un breve messaggio ogni mattina per iniziare bene la giornata. La nostra prima app pubblicata sull'App Store e su Google Play.",
-        "tags": ["App dello studio", "Benessere"],
-        "imageAlt": "Anteprima dell'app Daily Fortune"
-      },
-      "mcomperat": {
-        "title": "mcomper.at",
-        "tagline": "Sito · Multilingue",
-        "description": "Un curriculum online, disponibile in più lingue e veloce da caricare. Il banco di prova degli strumenti che poi usiamo per te.",
-        "tags": ["Sito personale"],
-        "imageAlt": "Anteprima del sito web mcomper.at"
-      },
-      "pscSupersprint": {
-        "title": "PSC Supersprint",
-        "tagline": "App web · In diretta",
-        "description": "I risultati della gara in diretta, che il pubblico può consultare sul telefono durante la competizione.",
-        "tags": ["Sport", "Diretta"],
-        "imageAlt": "Anteprima del tabellone risultati PSC Supersprint"
-      },
-      "choeurDesPaysduMontBlanc": {
-        "title": "Chœur des Pays du Mont Blanc",
-        "tagline": "Sito · Associazione",
-        "description": "Il sito del coro: concerti in programma, repertorio e iscrizioni, con un calendario che il direttivo aggiorna da solo.",
-        "tags": ["Cultura", "Associazione"],
-        "imageAlt": "Anteprima del sito web del Chœur des Pays du Mont Blanc"
+    "why": {
+      "eyebrow": "[ Perché uno studio ]",
+      "title": "Wix e WordPress fanno il loro lavoro. <em>Fino al giorno in cui non lo fanno più.</em>",
+      "lead": "All'inizio questi strumenti sono comodi. Poi serve un'estensione, poi un aggiornamento rovina la pagina, poi la fattura sale. Il codice lo scriviamo noi: il sito è tuo, è veloce e cresce senza ripartire da zero.",
+      "reasons": {
+        "ownership": {
+          "title": "Il sito è tuo",
+          "description": "I tuoi contenuti e il tuo nome a dominio sono tuoi fin dall'inizio. Il codice diventa tuo al termine della durata minima dell'abbonamento, o prima con un costo di cessione."
+        },
+        "fast": {
+          "title": "Veloce e facile da trovare",
+          "description": "Niente temi pesanti, niente estensioni: pagine che si aprono in fretta sul telefono, e Google lo premia."
+        },
+        "person": {
+          "title": "Una persona, non un centralino",
+          "description": "Parli con Matthieu, che conosce il tuo sito perché l'ha costruito lui."
+        },
+        "grows": {
+          "title": "Cresce con te",
+          "description": "Una pagina oggi, un negozio o un'app domani, sulla stessa base."
+        }
       }
+    },
+    "apps": {
+      "eyebrow": "[ Le nostre app ]",
+      "title": "Lo studio costruisce anche <em>i propri prodotti.</em>",
+      "lead": "È lì che mettiamo alla prova gli strumenti prima di proporli ai nostri clienti. Quello che impariamo sulle nostre app finisce nelle tue.",
+      "daily_fortune": {
+        "name": "Daily Fortune",
+        "badge": "iOS · Android",
+        "description": "Un breve messaggio ogni mattina, per iniziare bene la giornata. La nostra prima app pubblicata sull'App Store e su Google Play.",
+        "link": "Scopri l'app",
+        "icon_alt": "Icona dell'app Daily Fortune"
+      }
+    },
+    "studio": {
+      "eyebrow": "[ Lo studio ]",
+      "title": "Uno sviluppatore a Ginevra, <em>non una piattaforma.</em>",
+      "paragraphs": [
+        "Mi chiamo Matthieu Compérat. Sono originario di Duingt, sulle rive del lago di Annecy, e oggi ho sede a Chêne-Bougeries. Sviluppo siti e app da una quindicina d'anni, prima per grandi aziende, poi per persone di cui conosco il nome. Cosmic Studio è questa seconda scelta.",
+        "Mi chiami, ti rispondo. Mi scrivi, ricevi una risposta in giornata. Il sito che ti consegno, so esattamente come funziona."
+      ],
+      "zones": [
+        "Chêne-Bougeries · sede",
+        "Svizzera romanda · in presenza",
+        "Alta Savoia · in presenza",
+        "Altrove · da remoto"
+      ]
     }
   }
 }

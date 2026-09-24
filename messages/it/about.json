@@ -4,86 +4,52 @@
     "description": "Scopri Cosmic Studio, studio web e mobile tra Ginevra e Annecy, e Matthieu Compérat, il tuo referente dal primo contatto all'assistenza nel tempo."
   },
   "about": {
-    "developer": {
-      "bio": "Matthieu unisce una profonda competenza tecnica a una visione creativa per progettare soluzioni digitali che superano i limiti del possibile. Il suo approccio 'cosmico' mira a creare esperienze utente performanti, belle e innovative.",
-      "description": "Sviluppatore appassionato con esperienza in tecnologie web e mobili moderne.",
-      "expertise": {
-        "items": {
-          "aiTech": "Integrazione di IA e tecnologie emergenti",
-          "architecture": "Architettura software e best practice di sviluppo",
-          "leadership": "Leadership tecnica e mentoring di team",
-          "modernDev": "Sviluppo web moderno (React, React-Native, Next.js, Expo, TypeScript, Tailwind CSS)"
-        },
-        "title": "Competenze"
-      },
-      "linkedin": "Vedi profilo LinkedIn",
-      "linkedin_aria": "Profilo LinkedIn di Matthieu Compérat (si apre in una nuova scheda)",
-      "name": "Matthieu Compérat",
-      "subtitle": "Architetto di Esperienze Digitali",
-      "title": "Incontra lo Sviluppatore"
-    },
-    "legal": {
-      "ai": {
-        "items": {
-          "compliance": "Le pratiche sui dati personali sono dettagliate nella privacy policy invece di essere riassunte qui in modo generico.",
-          "ethics": "Ci impegniamo per un uso etico e trasparente dell'intelligenza artificiale",
-          "integration": "Le nostre soluzioni possono integrare modelli di IA per funzionalità avanzate",
-          "privacy": "I dati sensibili non devono essere condivisi con terzi senza una base giuridica documentata o consenso esplicito quando richiesto."
-        },
-        "title": "Uso dell'IA"
-      },
-      "contact": {
-        "link": "contattaci",
-        "text": "Per domande su privacy, note legali o uso dell'IA,",
-        "subject": "Domande su privacy, note legali e uso dell'IA",
-        "ariaLabel": "Inviare un'email a support@gocosmic.dev",
-        "privacyLink": "Informativa privacy",
-        "legalNoticeLink": "Note legali"
-      },
-      "intro": "Cosmic Studio può integrare funzionalità assistite dall'IA nei progetti dei clienti, mantenendo revisione umana e trasparenza al centro della consegna.",
-      "responsibility": {
-        "items": {
-          "recommendations": "Le raccomandazioni basate sull'IA sono informative e non sostituiscono il giudizio umano",
-          "security": "Cosmic Studio si impegna a mantenere i più alti standard di sicurezza e riservatezza",
-          "testing": "Le applicazioni sono testate secondo le migliori pratiche del settore"
-        },
-        "title": "Responsabilità"
-      },
-      "title": "Note legali e uso dell'IA"
-    },
-    "mission": {
-      "conclusion": "La nostra missione: rendere visibile online la tua attività, con un sito semplice da gestire e un referente che resta al tuo fianco.",
-      "description": "Cosmic Studio trasforma le tue idee in siti e app concreti, usando l'intelligenza artificiale quando ti fa risparmiare tempo.",
-      "location": {
-        "fr": "Con sede ad Annecy, operiamo a Ginevra, nella Svizzera romanda e in Alta Savoia — in presenza o da remoto.",
-        "ch": "Con sede a Chêne-Bougeries, Ginevra, operiamo in tutta la Svizzera romanda e nella regione di Annecy — in presenza o da remoto."
-      },
-      "specialization": {
-        "items": {
-          "aiIntegration": "Integrazione avanzata di IA per esperienze utente intelligenti",
-          "customSolutions": "Soluzioni su misura con tecnologie moderne (React, React-Native, Next.js, Expo, TypeScript, Tailwind CSS)",
-          "uiUxDesign": "Un design curato, che ti somiglia, pensato per chi visita il tuo sito",
-          "webMobile": "Sviluppo di applicazioni web e mobile di nuova generazione"
-        },
-        "title": "Siamo specializzati in"
-      },
-      "title": "Cosmic Studio — Rendere visibile la tua attività"
-    },
-    "subtitle": "Chi siamo, come lavoriamo e su cosa puoi contare",
-    "title": "Chi è Cosmic Studio",
-    "eyebrow": "Chi siamo — Studio",
-    "hero": {
-      "cta": "Contattaci"
-    },
-    "sections": {
-      "mission": "Missione",
-      "developer": "Sviluppatore",
-      "legal": "Trasparenza"
-    },
+    "title": "Uno studio a misura d'uomo, <em>al servizio della tua visibilità.</em>",
+    "eyebrow": "[ Chi siamo ]",
     "cta": {
-      "title": "Pronti a lavorare insieme?",
-      "description": "Raccontaci il tuo progetto: ti risponderemo con un piano chiaro.",
-      "button": "Iniziare la conversazione"
+      "title": "Lavoriamo insieme.",
+      "description": "Raccontaci la tua attività in poche righe: ti rispondiamo entro 24 ore, con delle domande invece di un preventivo automatico.",
+      "button": "Parliamo del tuo progetto"
+    },
+    "lead": "Cosmic Studio è Matthieu Compérat: uno sviluppatore con sede a Chêne-Bougeries, che crea siti e app per artigiani, associazioni e liberi professionisti, da Ginevra ad Annecy.",
+    "path": {
+      "eyebrow": "[ Percorso ]",
+      "title": "Quindici anni di codice, <em>un unico referente.</em>",
+      "paragraphs": [
+        "Originario di Duingt, sulle rive del lago di Annecy, Matthieu sviluppa siti e app da una quindicina d'anni. Prima per grandi aziende, dove ha imparato a costruire strumenti affidabili, veloci e accessibili a tutti; poi per persone di cui conosce il nome.",
+        "Cosmic Studio nasce da questa seconda scelta: mettere questa competenza al servizio di chi ha un mestiere e non ha il tempo di impararne un altro. Parli con la persona che costruisce il tuo sito, dalla prima chiamata all'assistenza mese dopo mese."
+      ],
+      "zones": [
+        "Chêne-Bougeries · sede",
+        "Svizzera romanda · in presenza",
+        "Alta Savoia · in presenza",
+        "Altrove · da remoto"
+      ],
+      "linkedin": "Vedi il profilo LinkedIn",
+      "linkedin_aria": "Profilo LinkedIn di Matthieu Compérat (si apre in una nuova scheda)"
+    },
+    "why": {
+      "eyebrow": "[ Perché loro ]",
+      "title": "Artigiani e associazioni <em>meritano più di un modello già pronto.</em>",
+      "lead": "Le grandi agenzie puntano alle grandi aziende; le piattaforme fai-da-te ti lasciano solo davanti allo strumento. Cosmic Studio si rivolge a chi sta nel mezzo.",
+      "reasons": {
+        "found": {
+          "title": "Farsi trovare in zona",
+          "description": "I tuoi clienti ti cercano sul telefono, a pochi chilometri da te. Un sito veloce e ben costruito fa la differenza su Google."
+        },
+        "price": {
+          "title": "Un prezzo che segue la tua attività",
+          "description": "Un abbonamento da {price} al mese, che cresce con te, invece di un grosso investimento iniziale."
+        },
+        "answer": {
+          "title": "Qualcuno che risponde",
+          "description": "Nessun centro assistenza: ti risponde la persona che ha costruito il tuo sito, di solito in giornata."
+        },
+        "ai": {
+          "title": "L'IA quando aiuta, mai al posto tuo",
+          "description": "Usiamo l'intelligenza artificiale per lavorare più in fretta, sempre con una rilettura umana. I dettagli sono nelle nostre note legali."
+        }
+      }
     }
   }
 }

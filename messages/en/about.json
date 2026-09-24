@@ -4,86 +4,52 @@
     "description": "Meet Cosmic Studio, a web and mobile studio between Geneva and Annecy, and Matthieu Compérat, your contact from the first call to ongoing care."
   },
   "about": {
-    "developer": {
-      "bio": "Matthieu combines deep technical expertise with a creative vision to design digital solutions that push the limits of what's possible. His \"cosmic\" approach to development aims to create user experiences that are performant, beautiful, and innovative.",
-      "description": "Passionate developer with expertise in modern web and mobile technologies.",
-      "expertise": {
-        "items": {
-          "aiTech": "AI integration and emerging technologies",
-          "architecture": "Software architecture and development best practices",
-          "leadership": "Technical leadership and team mentorship",
-          "modernDev": "Modern web application development (React, React-Native, Next.js, Expo, TypeScript, Tailwind CSS)"
-        },
-        "title": "Expertise"
-      },
-      "linkedin": "View LinkedIn profile",
-      "linkedin_aria": "Matthieu Compérat’s LinkedIn profile (opens in a new tab)",
-      "name": "Matthieu Compérat",
-      "subtitle": "Digital Experience Architect",
-      "title": "Meet the Developer"
+    "eyebrow": "[ About ]",
+    "title": "A small studio, <em>working for your visibility.</em>",
+    "lead": "Cosmic Studio is Matthieu Compérat: a developer based in Chêne-Bougeries who builds websites and apps for craftspeople, associations and independents, from Geneva to Annecy.",
+    "path": {
+      "eyebrow": "[ Background ]",
+      "title": "Fifteen years of code, <em>one point of contact.</em>",
+      "paragraphs": [
+        "Matthieu grew up in Duingt, on the shores of Lake Annecy, and has been building websites and apps for about fifteen years. First for large companies, where he learnt to build tools that are reliable, fast and accessible to all; then for people whose first names he knows.",
+        "Cosmic Studio grew out of that second choice: putting this know-how at the service of people who have a trade, and no time to learn a second one. You talk to the person who builds your site, from the first call to month-after-month care."
+      ],
+      "zones": [
+        "Chêne-Bougeries · base",
+        "French-speaking Switzerland · on site",
+        "Haute-Savoie · on site",
+        "Elsewhere · remote"
+      ],
+      "linkedin": "See the LinkedIn profile",
+      "linkedin_aria": "Matthieu Compérat's LinkedIn profile (opens in a new tab)"
     },
-    "legal": {
-      "ai": {
-        "items": {
-          "compliance": "Personal data practices are detailed in the privacy policy rather than handled as a generic statement here.",
-          "ethics": "We are committed to ethical and transparent use of artificial intelligence",
-          "integration": "Solutions may integrate AI models to enable advanced features",
-          "privacy": "Sensitive data must not be shared with third parties without a documented legal basis or explicit consent when required."
+    "why": {
+      "eyebrow": "[ Why them ]",
+      "title": "Craftspeople and associations <em>deserve better than a template.</em>",
+      "lead": "Large agencies aim at large companies; site builders leave you alone with the tool. Cosmic Studio is for the people in between.",
+      "reasons": {
+        "found": {
+          "title": "Get found close to home",
+          "description": "Your customers look for you on their phones, a few kilometres away. A fast, well-built site makes the difference on Google."
         },
-        "title": "AI Usage"
-      },
-      "contact": {
-        "link": "contact us",
-        "text": "For questions about privacy, legal notices, or AI usage,",
-        "subject": "Questions about privacy, legal notices, and AI usage",
-        "ariaLabel": "Send an email to support@gocosmic.dev",
-        "privacyLink": "Privacy policy",
-        "legalNoticeLink": "Legal notice"
-      },
-      "intro": "Cosmic Studio can integrate AI-assisted features into client projects, with human review and transparency at the core of delivery.",
-      "responsibility": {
-        "items": {
-          "recommendations": "AI-powered recommendations are for informational purposes and do not replace human judgment",
-          "security": "Cosmic Studio is committed to maintaining the highest standards of security and privacy",
-          "testing": "Applications are tested according to industry best practices"
+        "price": {
+          "title": "A price that follows your business",
+          "description": "A subscription from {price} a month that grows with you, rather than a large upfront investment."
         },
-        "title": "Responsibility"
-      },
-      "title": "Legal Notices and AI Usage"
-    },
-    "mission": {
-      "conclusion": "Our mission: make your business visible online, with a site that is easy to live with and a contact who stays by your side.",
-      "description": "Cosmic Studio turns your ideas into real websites and apps, using artificial intelligence where it saves you time.",
-      "location": {
-        "fr": "Based in Annecy, we work across Geneva, French-speaking Switzerland and Haute-Savoie — on-site or remotely.",
-        "ch": "Based in Chêne-Bougeries, Geneva, we work across French-speaking Switzerland and the Annecy area — on-site or remotely."
-      },
-      "specialization": {
-        "items": {
-          "aiIntegration": "Advanced AI integration for intelligent user experiences",
-          "customSolutions": "Tailor-made solutions using modern technologies (React, React-Native, Next.js, Expo, TypeScript, Tailwind CSS)",
-          "uiUxDesign": "Polished design that looks like you, built around your visitors",
-          "webMobile": "Next-generation web and mobile application development"
+        "answer": {
+          "title": "Someone who answers",
+          "description": "No help desk: the person who built your site answers you, usually the same day."
         },
-        "title": "We specialize in"
-      },
-      "title": "Cosmic Studio — Making your business visible"
-    },
-    "subtitle": "Who we are, how we work, and what you can count on",
-    "title": "About Cosmic Studio",
-    "eyebrow": "About — Studio",
-    "hero": {
-      "cta": "Get in touch"
-    },
-    "sections": {
-      "mission": "Mission",
-      "developer": "Developer",
-      "legal": "Transparency"
+        "ai": {
+          "title": "AI when it helps, never in your place",
+          "description": "We use artificial intelligence to work faster, always with a human review. The details are in our legal notice."
+        }
+      }
     },
     "cta": {
-      "title": "Ready to work together?",
-      "description": "Tell us about your project and we'll come back to you with a clear plan.",
-      "button": "Start the conversation"
+      "title": "Let's work together.",
+      "description": "Tell us about your business in a few lines: we get back to you within 24 hours, with questions rather than an automated quote.",
+      "button": "Talk about my project"
     }
   }
 }

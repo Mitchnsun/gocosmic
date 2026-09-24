@@ -39,23 +39,10 @@ describe('getCanonicalUrl', () => {
     });
   });
 
-  describe('journey page (localized pathnames)', () => {
-    it('resolves French localized pathname /voyage', () => {
-      expect(getCanonicalUrl('fr', '/journey')).toBe(`${SITE_URL}/fr/voyage`);
-    });
-
-    it('resolves German localized pathname /reise', () => {
-      expect(getCanonicalUrl('de', '/journey')).toBe(`${SITE_URL}/de/reise`);
-    });
-  });
-
-  describe('offers page (localized pathnames)', () => {
-    it('resolves French localized pathname /nos-offres', () => {
-      expect(getCanonicalUrl('fr', '/offers')).toBe(`${SITE_URL}/fr/nos-offres`);
-    });
-
-    it('resolves German localized pathname /unsere-angebote', () => {
-      expect(getCanonicalUrl('de', '/offers')).toBe(`${SITE_URL}/de/unsere-angebote`);
+  describe('services & pricing page (localized pathnames)', () => {
+    it('resolves the Spanish and German localized pathnames', () => {
+      expect(getCanonicalUrl('es', '/services')).toBe(`${SITE_URL}/es/servicios`);
+      expect(getCanonicalUrl('de', '/services')).toBe(`${SITE_URL}/de/dienstleistungen`);
     });
   });
 

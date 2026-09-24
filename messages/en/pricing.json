@@ -1,12 +1,5 @@
 {
   "pricing": {
-    "meta": {
-      "title": "Pricing · Build your website plan | Cosmic Studio",
-      "description": "Build your website from 10€ a month: you choose how many pages and which options. Free mockup and website review, no strings attached."
-    },
-    "eyebrow": "[ PRICING ]",
-    "title": "Build your plan",
-    "subtitle": "A clear starting price, then you add only what you actually need. The total updates as you go.",
     "free_offers": {
       "eyebrow": "Free, no commitment",
       "title": "Before we even talk budget",
@@ -21,23 +14,6 @@
         }
       },
       "note": "Both are free and commit you to nothing."
-    },
-    "step1": {
-      "question": "What would you like to create?",
-      "options": {
-        "website": "A website",
-        "mobile": "A mobile app",
-        "both": "Both"
-      }
-    },
-    "step2": {
-      "question": "What kind of website do you need?",
-      "options": {
-        "showcase": "A site that presents my business",
-        "self_managed": "A site I want to edit myself",
-        "accounts": "A site with an area for my customers",
-        "ecommerce": "A site to sell online"
-      }
     },
     "builder": {
       "period": "/ month",
@@ -80,7 +56,7 @@
       },
       "updates": {
         "label": "Content changes included",
-        "hint": "Your text, photos and opening hours updated by me, with nothing extra to pay each time.",
+        "hint": "Your text, photos and opening hours updated by us, with nothing extra to pay each time.",
         "off": "Not included",
         "slider_label": "Changes per year",
         "tiers": {
@@ -92,35 +68,39 @@
         }
       },
       "total": {
-        "label": "Your plan",
-        "note": "You can change these options at any time.",
-        "beyond": "Beyond these volumes, let's talk it through: I'll put together a proposal that fits."
+        "label": "Your estimate",
+        "note": "Indicative estimate, confirmed after a first conversation. You can change your options at any time.",
+        "cta": "Request my free mockup",
+        "question": "A question first? <link>Write to us</link>.",
+        "beyond": "Beyond these volumes, let's talk it through: we'll put together a proposal that fits."
       }
     },
-    "results": {
-      "custom": {
-        "note": "Custom project",
-        "title": "Let's talk it through",
-        "description": "This kind of project is priced case by case — what you need has little in common with a simple presentation site. Tell me about it and I will send you a detailed proposal, with no commitment."
+    "columns": {
+      "eyebrow": "[ Pricing ]",
+      "title": "Two ways to work together.",
+      "subscription": {
+        "label": "Subscription · site, hosting and care",
+        "price": "From {price}",
+        "period": "/ month",
+        "description": "To have a site online and kept up to date without thinking about it. The price follows your needs: number of pages, domain name, email address, changes.",
+        "features": {
+          "included": "Hosting, secure connection and basic search visibility included",
+          "options": "Options you add or remove from one month to the next",
+          "mockup": "Free mockup before you decide"
+        },
+        "cta": "Build my plan"
+      },
+      "project": {
+        "label": "One-off project · quoted",
+        "price": "Custom",
+        "description": "Online shop, members' area, mobile app, business tool. We scope it together, quote it, deliver it. You can then switch to a subscription for ongoing care.",
+        "features": {
+          "floors": "From {members} for a members' area, {shop} for a shop, {mobile} for a mobile app",
+          "payment": "Staged payments, step by step",
+          "ownership": "The code and the data belong to you"
+        },
+        "cta": "Ask for a quote"
       }
-    },
-    "contact": {
-      "title": "Let's discuss your project",
-      "description": "Write me a few lines and I'll come back with a clear proposal.",
-      "email": "prospect@gocosmic.dev",
-      "cta": "Request a quote",
-      "subject": "Pricing inquiry — Project quote",
-      "aria_label": "Send an email to prospect@gocosmic.dev for a project quote",
-      "privacy_notice": "By sending an email, you agree that your message and contact details are processed to prepare a quote and follow up on your project.",
-      "privacy_link": "Privacy policy",
-      "free_mockup_cta_label": "Get a free mockup",
-      "free_mockup_cta_aria_label": "Go to the free mockup request page"
-    },
-    "reset": "Start over",
-    "summary": {
-      "intro": "Hello, here is the summary of my simulation on your pricing page:",
-      "project": "Project",
-      "site_type": "Site type"
     }
   }
 }

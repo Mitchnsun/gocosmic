@@ -1,6 +1,8 @@
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 
+import { getLegacyRedirects } from './lib/redirects';
+
 // Build the CSP as an array so each directive stays readable.
 // unsafe-inline is required by Next.js App Router (inline hydration scripts + Tailwind styles).
 // unsafe-eval is required only by React development tooling for debugging features.
@@ -21,6 +23,8 @@ const cspDirectives = [
   "font-src 'self'",
   // Vercel Analytics beacon endpoint
   "connect-src 'self' https://vitals.vercel-insights.com",
+  // Google Calendar appointment page, embedded on the contact page after the visitor asks for it
+  'frame-src https://calendar.google.com',
   "frame-ancestors 'none'",
   "object-src 'none'",
   "base-uri 'self'",
@@ -35,6 +39,9 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return getLegacyRedirects();
+  },
   async headers() {
     return [{ source: '/(.*)', headers: securityHeaders }];
   },

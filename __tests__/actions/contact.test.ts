@@ -35,7 +35,7 @@ describe('submitContactMessage', () => {
   it('delivers a valid submission through Resend and reports success', async () => {
     process.env.RESEND_API_KEY = 'test-key';
 
-    const result = await submitContactMessage(validPayload({ subject: 'A showcase website' }));
+    const result = await submitContactMessage(validPayload({ need: 'showcase', company: 'Cabinetmaker in Annecy' }));
 
     expect(result).toEqual({ status: 'success' });
     const [payload] = send.mock.calls[0]!;
@@ -43,12 +43,14 @@ describe('submitContactMessage', () => {
       from: 'Cosmic Studio <noreply@gocosmic.dev>',
       to: ['prospect@gocosmic.dev'],
       replyTo: 'ada@example.com',
-      subject: 'A showcase website',
+      subject: 'Contact — Ada Lovelace · Showcase site',
     });
     expect(payload.text).toContain('Ada Lovelace');
+    expect(payload.text).toContain('Activity: Cabinetmaker in Annecy');
+    expect(payload.text).toContain('Need: Showcase site');
   });
 
-  it('falls back to a generated subject', async () => {
+  it('leaves the need out of the subject when none was picked', async () => {
     process.env.RESEND_API_KEY = 'test-key';
 
     await submitContactMessage(validPayload());

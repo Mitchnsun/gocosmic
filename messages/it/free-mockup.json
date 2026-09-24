@@ -1,52 +1,52 @@
 {
   "meta": {
     "title": "Mockup gratuito · Cosmic Studio | Ginevra & Annecy",
-    "description": "Riceva un mockup gratuito del suo futuro sito: scelga i colori, ci racconti le sue idee e scopra una prima proposta via email. Senza impegno."
+    "description": "Ricevi un mockup gratuito del tuo futuro sito: scegli i colori, raccontaci le tue idee e scopri una prima proposta via email. Senza impegno."
   },
   "freeMockup": {
     "eyebrow": "[ MOCKUP GRATUITO ]",
-    "title": "Veda il suo sito prima di decidere",
-    "intro": "Ci dica a che punto è oggi e che atmosfera ha in mente. Riceve un mockup del suo futuro sito, gratuito e senza alcun impegno.",
+    "title": "Vedi il tuo sito prima di decidere",
+    "intro": "Dicci a che punto sei oggi e che atmosfera hai in mente. Ricevi un mockup del tuo futuro sito, gratuito e senza alcun impegno.",
     "steps": {
       "title": "Come funziona",
       "items": {
         "brief": {
-          "title": "Ci invia l'essenziale",
+          "title": "Ci invii l'essenziale",
           "description": "La tua email, la direzione di colori che preferisci se ne hai una, e il tuo sito attuale se ne hai uno."
         },
         "design": {
           "title": "Disegniamo un mockup",
-          "description": "Una prima anteprima della sua home page, costruita a partire da ciò che ha descritto."
+          "description": "Una prima anteprima della tua home page, costruita a partire da ciò che hai descritto."
         },
         "deliver": {
-          "title": "Decide con calma",
-          "description": "Il mockup arriva nella sua casella di posta. Se non fa per lei, tutto finisce lì."
+          "title": "Decidi con calma",
+          "description": "Il mockup arriva nella tua casella di posta. Se non fa per te, tutto finisce lì."
         }
       }
     },
-    "privacy_notice": "La sua email e il suo messaggio servono unicamente a preparare e inviarle il suo mockup.",
+    "privacy_notice": "La tua email e il tuo messaggio servono unicamente a preparare e inviarti il tuo mockup.",
     "privacy_link": "Informativa sulla privacy",
     "form": {
-      "heading": "Richieda il suo mockup",
+      "heading": "Richiedi il tuo mockup",
       "lead": "Un'email: tutto il resto è facoltativo.",
-      "email_label": "La sua email",
-      "email_placeholder": "lei@esempio.com",
+      "email_label": "La tua email",
+      "email_placeholder": "tu@esempio.com",
       "palette_label": "Direzione di colori",
-      "website_label": "Il suo sito attuale",
-      "website_placeholder": "il-suo-sito.it",
-      "wishes_label": "Che cosa ha in mente",
-      "wishes_placeholder": "Le pagine di cui ha bisogno, ciò che le piace, ciò che preferisce evitare…",
+      "website_label": "Il tuo sito attuale",
+      "website_placeholder": "il-tuo-sito.it",
+      "wishes_label": "Che cosa hai in mente",
+      "wishes_placeholder": "Le pagine di cui hai bisogno, ciò che ti piace, ciò che preferisci evitare…",
       "wishes_counter": "{count}/{max}",
       "optional": "Facoltativo",
       "submit": "Richiedi il mio mockup gratuito",
       "submitting": "Invio in corso…",
       "reassurance": "Gratuito, senza impegno.",
       "success_title": "Richiesta ricevuta",
-      "success_message": "Grazie — le risponderemo via email con il suo mockup.",
-      "error_message": "Non è stato possibile inviare la sua richiesta. Riprovi tra un istante.",
+      "success_message": "Grazie — ti risponderemo via email con il tuo mockup.",
+      "error_message": "Non è stato possibile inviare la tua richiesta. Riprova tra un istante.",
       "retry_later_message": "La tua richiesta non è stata inviata al momento. Riprova più tardi.",
-      "invalid_message": "Controlli i campi segnalati.",
-      "plan_attached": "Il risultato della vostra simulazione dei prezzi sarà incluso nella richiesta."
+      "invalid_message": "Controlla i campi segnalati.",
+      "plan_attached": "Il risultato della tua simulazione dei prezzi sarà incluso nella richiesta."
     },
     "palette": {
       "options": {
@@ -61,9 +61,9 @@
     },
     "validation": {
       "required": "Questo campo è obbligatorio.",
-      "email_invalid": "Inserisca un indirizzo email valido.",
-      "url_invalid": "Inserisca un indirizzo del sito valido, ad esempio il-mio-sito.it.",
-      "wishes_too_long": "Resti entro i 500 caratteri."
+      "email_invalid": "Inserisci un indirizzo email valido.",
+      "url_invalid": "Inserisci un indirizzo del sito valido, ad esempio il-mio-sito.it.",
+      "wishes_too_long": "Resta entro i 500 caratteri."
     }
   }
 }

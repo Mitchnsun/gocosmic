@@ -152,9 +152,9 @@ Immersive sections (hero, CTA): `<Starfield>` at layer `-z-20` + a radial accent
 
 **Pill** shape (`rounded-full`), `font-display` 500, optional arrow icon (`→`).
 
-- **Primary**: `bg-aerospace text-void` + glow (`box-shadow` orange), `hover:scale-[1.08]`.
-- **Ghost**: `border-ghost/15 text-ghost`, `hover:border-ghost hover:bg-ghost/5`.
-- Always via `buttonVariants()` (`design-system/button.variants`) + `cn()`. Available accent variants: `aerospace` / `royal` / `jungle`.
+- **Primary**: `primaryPill()` from `design-system/pill.ts` — `bg-aerospace text-void` (dark label: white on orange fails WCAG AA), orange glow, `hover:scale-[1.04]` over 200 ms, still under reduced motion. One primary per visible screen.
+- **Ghost**: `ghostPill()` — the `outline` variant, `border-ghost/15 text-ghost`, `hover:border-ghost hover:bg-ghost/5`.
+- Both are built on `buttonVariants()` (`design-system/button.variants`, size `pill`: 48 px high) + `cn()`; pass extra classes as the helper's argument. Other accent variants (`royal` / `jungle`) remain available through `buttonVariants()`.
 
 ### 3.6 Gradient accent heading
 
@@ -166,15 +166,19 @@ To mark a location, category, or action: **geometric SVGs** (crosshair, diamond 
 
 ### 3.9 Shared page primitives
 
-Inner pages (about, services, offers, contact, projects, case studies) are assembled from four shared building blocks — reuse them instead of re-implementing the patterns above:
+Pages are assembled from shared building blocks — reuse them instead of re-implementing the patterns above:
 
-| Component                   | Role                                                                                     |
-| --------------------------- | ---------------------------------------------------------------------------------------- |
-| `components/PageHero`       | Inner-page hero: light starfield, accent glow, mono eyebrow, `h1`, lead, up to two CTAs  |
-| `components/ContentSection` | Card-shaped section: eyebrow + HUD counter, `h2` bound via `aria-labelledby`, lead, body |
-| `components/AccentList`     | Bullet list with accent dots, optional mono label, 1 or 2 columns                        |
-| `components/CaseStudy`      | Full project case study: hero, ordered sections, CTA card, previous / next navigation    |
-| `design-system/accent.ts`   | `accentClasses(token)` → the text / bg / border utilities and RGB channels of a token    |
+| Component                   | Role                                                                                                  |
+| --------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `components/SectionHeading` | Eyebrow → title with light italic `<em>` emphasis → 56ch lead; `level={1}` for page intros            |
+| `components/Reveal`         | Fade-and-lift on scroll, `delay={index * 50}` for a 50 ms stagger; CSS-first reduced-motion guard     |
+| `design-system/pill.ts`     | `primaryPill()`, `ghostPill()`, plus `CONTAINER` (1280 px, fluid gutters) and `SECTION_Y` (64–120 px) |
+| `components/ContentSection` | Card-shaped section: eyebrow + HUD counter, `h2` bound via `aria-labelledby`, lead, body              |
+| `components/AccentList`     | Bullet list with accent dots, optional mono label, 1 or 2 columns                                     |
+| `components/CaseStudy`      | Full project case study: hero, ordered sections, CTA card, previous / next navigation                 |
+| `design-system/accent.ts`   | `accentClasses(token)` → the text / bg / border utilities and RGB channels of a token                 |
+
+Inner pages open with a plain `SectionHeading level={1}` intro — no starfield. The one immersive moment per page is the homepage hero or the final `CTAFinal`.
 
 Accent tokens accepted by all of them: `aerospace`, `royal`, `jungle`, `ghost`. One accent per zone (see §1, principle 2).
 

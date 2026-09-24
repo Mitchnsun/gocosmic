@@ -1,157 +1,98 @@
 {
   "services": {
     "meta": {
-      "title": "Services · Sites internet à Genève & Annecy | Cosmic Studio",
-      "description": "Sites vitrine, boutiques, applications et suivi pour les artisans, associations et indépendants de Genève, de Suisse romande et de Haute-Savoie."
+      "title": "Services & tarifs · Sites internet à Genève & Annecy | Cosmic Studio",
+      "description": "Sites vitrine, boutiques, applications et suivi, avec des prix affichés : un abonnement dès 10 € par mois ou un projet sur devis. Genève, Haute-Savoie et à distance."
     },
-    "title": "Nos services",
-    "subtitle": "Tout ce qu'il faut pour que vos clients vous trouvent, vous comprennent et vous contactent.",
-    "stellar_development": {
-      "title": "Sites & applications",
-      "subtitle": "Un site ou une application construits sur mesure pour votre activité",
-      "description": "Site vitrine, boutique en ligne, prise de rendez-vous ou application mobile : nous écrivons le code nous-mêmes, sans thème lourd ni extension fragile. Le résultat est rapide, fiable, et il évolue avec vous.",
-      "technologies": {
-        "title": "Technologies que nous maîtrisons",
-        "items": {
-          "frontend": "Frontend Moderne : React 19, Next.js 15, TypeScript, TailwindCSS 4.x",
-          "architecture": "Architecture Évolutive : Monorepo avec Turborepo, Librairies de Composants, Design Systems",
-          "quality": "Qualité du Code : ESLint 9.x, Prettier, Husky, Couverture de Tests 100% avec Vitest",
-          "performance": "Performance : Server-Side Rendering, Génération Statique, Optimisation d'Images"
-        }
-      },
-      "expertise": {
-        "title": "Notre Expertise en Développement",
-        "items": {
-          "workflow": "Workflows CI/CD avancés avec tests automatisés et déploiement",
-          "scalability": "Architecture microservices et solutions cloud-native",
-          "security": "Bonnes pratiques de sécurité avec scan de vulnérabilités et conformité",
-          "apis": "APIs RESTful et GraphQL avec documentation complète"
-        }
-      },
-      "features": {
-        "title": "Ce que nous livrons",
-        "items": {
-          "quality": "Code prêt pour la production avec 100% de couverture de tests et documentation complète",
-          "performance": "Applications ultra-rapides optimisées pour les Core Web Vitals",
-          "maintainability": "Architecture claire et modulaire qui évolue avec vos besoins métier",
-          "reliability": "Applications robustes avec gestion d'erreurs et intégration de monitoring"
+    "intro": {
+      "eyebrow": "[ Services & tarifs ]",
+      "title": "Un site qui tourne, <em>et quelqu'un qui s'en occupe.</em>",
+      "lead": "Les prix sont affichés, parce que vous avez mieux à faire que de demander un devis pour savoir si c'est dans vos moyens. Et vous commencez par une maquette gratuite, sans engagement."
+    },
+    "simulator": {
+      "eyebrow": "[ Composez votre abonnement ]",
+      "title": "Commencez petit. <em>Ajoutez quand vous en avez besoin.</em>",
+      "lead": "La base : une page vitrine, en ligne et sécurisée, pour {price} par mois. Chaque option s'ajoute ou se retire d'un mois sur l'autre."
+    },
+    "trades": {
+      "eyebrow": "[ Ce qu'on fait · 04 ]",
+      "title": "Quatre métiers, <em>un seul interlocuteur.</em>",
+      "items": {
+        "showcase": {
+          "title": "Sites vitrine",
+          "description": "Présenter votre activité, vos réalisations et vos horaires, et être trouvé sur Google par les gens d'à côté.",
+          "tags": ["Artisans", "Associations", "Indépendants"]
+        },
+        "shops": {
+          "title": "Boutiques & réservations",
+          "description": "Vendre en ligne, prendre des rendez-vous, gérer des adhésions. Sans commission sur vos ventes.",
+          "tags": ["Vente en ligne", "Agenda", "Adhésions"]
+        },
+        "apps": {
+          "title": "Applications",
+          "description": "Un outil métier, une application pour vos clients ou vos membres, un assistant qui répond aux questions fréquentes : sur le web ou sur téléphone.",
+          "tags": ["Web", "iOS", "Android"]
+        },
+        "care": {
+          "title": "Visibilité & suivi",
+          "description": "Référencement sur Google, hébergement, sauvegardes, mises à jour, modifications et prise en main : un seul contact, qui connaît votre site.",
+          "tags": ["Google", "Suivi", "Formation"]
         }
       }
     },
-    "mystical_design": {
-      "title": "Design à votre image",
-      "subtitle": "Une présentation soignée qui inspire confiance",
-      "description": "Vos couleurs, vos photos, vos mots : nous concevons une présentation claire, lisible sur téléphone comme sur ordinateur et accessible à tous, pensée pour que vos visiteurs aient envie de vous contacter.",
-      "approach": {
-        "title": "Notre approche Design",
-        "items": {
-          "systems": "Design Systems : Librairies de composants cohérentes et évolutives avec patterns documentés",
-          "accessibility": "Accessibilité Universelle : Conformité WCAG avec HTML sémantique et standards ARIA",
-          "responsive": "Responsive Mobile-First : Layouts fluides qui fonctionnent parfaitement sur tous appareils",
-          "performance": "Orienté Performance : Assets optimisés et animations fluides"
+    "formats": {
+      "eyebrow": "[ Pour les entreprises ]",
+      "title": "Besoin d'un renfort <em>plutôt que d'un site ?</em>",
+      "lead": "Pour les équipes qui ont déjà un produit et cherchent des bras en plus, ou pour les projets qui demandent plusieurs métiers.",
+      "items": {
+        "mission": {
+          "title": "Mission à la journée",
+          "price": "{price} HT / jour",
+          "description": "Un développeur expérimenté rejoint votre équipe le temps qu'il faut, sur place ou à distance."
+        },
+        "duo": {
+          "title": "Duo développeur + designer",
+          "price": "Sur devis",
+          "description": "Une identité et un site conçus ensemble, du premier croquis à la mise en ligne."
+        },
+        "team": {
+          "title": "Équipe complète",
+          "price": "Sur devis",
+          "description": "Une petite équipe pour les projets qui demandent plus : plusieurs applications reliées, gestion de données, espace client."
         }
       },
-      "tools": {
-        "title": "Outils Design & Développement",
-        "items": {
-          "components": "Primitives Radix UI avec Class Variance Authority pour un styling type-safe",
-          "styling": "TailwindCSS avec tokens de design personnalisés et approche utility-first",
-          "testing": "Storybook pour documentation de composants et tests visuels",
-          "prototyping": "Prototypes interactifs avec données réelles et composants prêts pour la production"
-        }
-      },
-      "outcomes": {
-        "title": "Résultats Design",
-        "items": {
-          "engagement": "Engagement utilisateur accru grâce à des interactions intuitives et plaisantes",
-          "conversion": "Taux de conversion plus élevés avec CTAs et parcours utilisateurs stratégiques",
-          "brand": "Identité de marque forte qui se distingue dans le paysage numérique cosmique",
-          "satisfaction": "Satisfaction utilisateur exceptionnelle grâce à la recherche UX et aux tests approfondis"
-        }
-      }
+      "cta": "En parler"
     },
-    "ai_powered": {
-      "title": "Assistants & automatisation",
-      "subtitle": "L'IA là où elle vous fait vraiment gagner du temps",
-      "description": "Réponses automatiques aux questions fréquentes, tri des demandes, suggestions personnalisées : nous ajoutons l'IA quand elle simplifie votre quotidien, jamais pour le gadget, et toujours avec vos données protégées.",
-      "capabilities": {
-        "title": "Capacités d'Intégration IA",
-        "items": {
-          "recommendations": "Moteurs de recommandation intelligents alimentés par des algorithmes de machine learning",
-          "automation": "Automatisation de processus et optimisation de workflows avec insights IA",
-          "analytics": "Analytics avancées et modélisation prédictive pour des décisions data-driven",
-          "nlp": "Traitement du Langage Naturel pour chatbots et analyse de contenu"
-        }
-      },
-      "implementation": {
-        "title": "Implémentation Technique",
-        "items": {
-          "apis": "Intégration fluide avec les plateformes IA leaders (OpenAI, Google AI, Azure Cognitive Services)",
-          "privacy": "Approche privacy-first avec traitement on-device quand possible",
-          "scalability": "Services IA cloud qui s'adaptent à votre base d'utilisateurs",
-          "monitoring": "Monitoring complet et optimisation de performance pour les fonctionnalités IA"
-        }
-      },
-      "use_cases": {
-        "title": "Cas d'Usage IA",
-        "items": {
-          "personalization": "Expériences utilisateur personnalisées basées sur le comportement et les préférences",
-          "support": "Support client intelligent avec réponses automatisées et escalade",
-          "optimization": "Optimisation de performance grâce à l'allocation prédictive de ressources",
-          "insights": "Business intelligence par analyse automatisée de données et reporting"
-        }
-      }
-    },
-    "cosmic_launch": {
-      "title": "Visibilité & suivi",
-      "subtitle": "Mise en ligne, référencement et accompagnement dans la durée",
-      "description": "Nous mettons votre site en ligne, l'optimisons pour qu'il soit trouvé sur Google, puis nous nous occupons de l'hébergement, des sauvegardes et des mises à jour. Vous gardez un seul interlocuteur, mois après mois.",
-      "process": {
-        "title": "Processus de Lancement",
-        "items": {
-          "testing": "Tests complets incluant tests unitaires, d'intégration et end-to-end",
-          "staging": "Configuration d'environnement de staging avec configurations similaires à la production",
-          "deployment": "Pipelines de déploiement automatisés avec capacités de rollback",
-          "monitoring": "Systèmes de monitoring en temps réel et d'alertes"
-        }
-      },
-      "infrastructure": {
-        "title": "Infrastructure & DevOps",
-        "items": {
-          "cloud": "Stratégies de déploiement multi-cloud (AWS, Vercel, Azure, Google Cloud)",
-          "cicd": "Pipelines CI/CD avancés avec tests automatisés et déploiement",
-          "security": "Scan de sécurité, évaluations de vulnérabilités et monitoring de conformité",
-          "scaling": "Infrastructure auto-scaling qui grandit avec votre succès"
-        }
-      },
-      "support": {
-        "title": "Support Continu",
-        "items": {
-          "monitoring": "Monitoring d'application 24/7 avec alertes intelligentes",
-          "optimization": "Optimisation continue de performance et gestion de ressources",
-          "updates": "Mises à jour de sécurité régulières et améliorations de fonctionnalités",
-          "consultation": "Consultation technique stratégique pour la croissance future"
+    "faq": {
+      "eyebrow": "[ Questions fréquentes ]",
+      "title": "Ce qu'on nous demande <em>avant de signer.</em>",
+      "items": {
+        "ownership": {
+          "question": "Le site m'appartient-il ?",
+          "answer": "Vos textes, vos images et votre nom de domaine sont à vous dès le premier jour. Le code du site vous est cédé au bout de {months} mois d'abonnement : c'est ce qui permet un tarif d'entrée aussi bas. Vous voulez le récupérer avant ? C'est possible, contre des frais de cession qui dépendent du temps restant. En projet ponctuel, le code est à vous dès la livraison."
+        },
+        "edit": {
+          "question": "Puis-je modifier le site moi-même ?",
+          "answer": "Le plus simple, c'est l'option « Modifications de contenu incluses » : vous nous envoyez vos textes, photos ou horaires, et c'est fait. Beaucoup préfèrent nous écrire plutôt que d'apprendre un outil. Si vous tenez à publier vous-même, c'est possible : on en parle, c'est un projet sur mesure."
+        },
+        "timing": {
+          "question": "Combien de temps pour être en ligne ?",
+          "answer": "Pour une page vitrine : deux à trois semaines après réception de vos textes et photos. Pour un site de cinq pages : quatre à six semaines. Nous vous donnons une date au démarrage, et nous la tenons."
+        },
+        "stop": {
+          "question": "Que se passe-t-il si j'arrête ?",
+          "answer": "Vous nous prévenez, et le site reste en ligne jusqu'à la fin de la période payée. Vous repartez avec vos contenus et votre nom de domaine. Le code du site est inclus après {months} mois d'abonnement ; avant, il est cédé contre des frais que nous vous indiquons dès le départ."
+        },
+        "content": {
+          "question": "Faites-vous aussi les textes et les photos ?",
+          "answer": "Nous vous aidons à écrire et nous relisons tout, en pensant aux mots que vos clients tapent sur Google. Pour les photos, nous travaillons avec les vôtres ou nous vous mettons en contact avec un photographe local ; ce n'est pas compris dans l'abonnement."
         }
       }
     },
     "cta": {
       "title": "Faisons rayonner votre activité.",
       "description": "Racontez-nous votre activité en quelques lignes. Nous revenons vers vous sous 24 h avec des questions, puis une maquette gratuite si le projet vous convient.",
-      "primary_button": "Parler de mon projet",
-      "geo_availability": "Disponible à Annecy, Genève, en Suisse romande, en Haute-Savoie et en remote.",
-      "local_page": "Découvrir notre page dédiée Annecy / Genève"
-    },
-    "eyebrow": "Services — Savoir-faire",
-    "hero": {
-      "cta": "Parlons de votre projet",
-      "secondary": "Voir les tarifs"
-    },
-    "explore": {
-      "eyebrow": "Prochaine étape",
-      "title": "Voir les réalisations, puis le budget",
-      "description": "Parcourez les projets déjà livrés, ou construisez votre estimation en deux clics.",
-      "projects": "Voir les réalisations",
-      "pricing": "Construire mon estimation"
+      "primary_button": "Parler de mon projet"
     }
   }
 }

@@ -4,152 +4,151 @@
       "title": "Réalisations · Sites et applications | Cosmic Studio",
       "description": "Sites et applications réalisés par Cosmic Studio pour des associations, un club sportif et des indépendants, à Genève et en Haute-Savoie."
     },
-    "title": "Nos Projets",
-    "subtitle": "Des sites et des applications en ligne aujourd'hui, pour des associations, un club sportif et nos propres produits.",
+    "title": "Des sites et des apps <em>qui servent à quelque chose.</em>",
+    "subtitle": "Une sélection de ce que nous avons livré : pour des clients, et pour nous. Chaque fiche dit ce qu'on a fait, pour qui, et ce que ça a changé.",
     "items": {
-      "dailyFortune": {
-        "title": "Daily Fortune",
-        "description": "Une application mobile qui délivre chaque jour des fortunes cosmiques et des messages motivants grâce à l'IA."
-      },
-      "mcomperat": {
-        "title": "mcomper.at",
-        "description": "Un CV web moderne et responsive construit avec Next.js, TypeScript et une internationalisation complète."
+      "choeurDesPaysduMontBlanc": {
+        "title": "Chœur des Pays du Mont Blanc",
+        "client": "Association · Haute-Savoie",
+        "description": "Le site de la chorale : concerts à venir, répertoire et informations pour rejoindre le chœur, lisible sur téléphone comme sur ordinateur.",
+        "tags": ["Site vitrine", "Agenda", "Association"],
+        "cover_alt": "Logo du Chœur des Pays du Mont Blanc"
       },
       "pscSupersprint": {
         "title": "PSC Supersprint",
-        "description": "Une application web pour gérer et afficher en temps réel les résultats d'une compétition de triathlon."
+        "client": "Club de triathlon",
+        "description": "Les résultats de course en direct, consultables sur téléphone par les spectateurs pendant l'épreuve.",
+        "tags": ["App web", "Direct", "Sport"],
+        "cover_alt": "Aperçu de PSC Supersprint"
       },
-      "choeurDesPaysduMontBlanc": {
-        "title": "Chœur des Pays du Mont Blanc",
-        "description": "Un site web présentant les activités, concerts et répertoire du chœur en Haute-Savoie."
+      "dailyFortune": {
+        "title": "Daily Fortune",
+        "client": "Application du studio",
+        "description": "Un message court chaque matin pour bien commencer la journée. Notre première application publiée sur l'App Store et Google Play.",
+        "tags": ["App mobile", "iOS · Android", "Studio"],
+        "cover_alt": "Icône de l'application Daily Fortune"
+      },
+      "mcomperat": {
+        "title": "mcomper.at",
+        "client": "Projet personnel",
+        "description": "Un CV en ligne, disponible en plusieurs langues et rapide à charger. Le terrain d'essai des outils que nous utilisons ensuite pour vous.",
+        "tags": ["Site", "Multilingue"],
+        "cover_alt": "Aperçu du site mcomper.at"
       }
     },
     "cta": {
-      "title": "Votre projet pourrait être le prochain",
-      "description": "Dites-nous ce que vous voulez construire et nous tracerons la trajectoire.",
-      "button": "Discutons-en"
+      "title": "Votre projet pourrait être le prochain de cette liste.",
+      "description": "Racontez-nous votre activité en quelques lignes : nous revenons vers vous sous 24 h, avec des questions plutôt qu'un devis automatique.",
+      "button": "Parler de mon projet"
     },
-    "eyebrow": "Projets — Réalisations"
+    "eyebrow": "[ Réalisations · {count} ]",
+    "kinds": {
+      "site": "Site",
+      "webapp": "App web",
+      "mobile": "App mobile"
+    },
+    "filters": {
+      "label": "Filtrer par type de projet",
+      "all": "Tous",
+      "site": "Site",
+      "webapp": "App web",
+      "mobile": "App mobile",
+      "count": "{count, plural, =0 {Aucun projet} one {# projet} other {# projets}}"
+    },
+    "view_project": "Voir le projet"
   },
   "dailyFortune": {
     "title": "Daily Fortune",
-    "subtitle": "Votre dose quotidienne d'inspiration et de sagesse cosmique",
-    "overview": {
-      "title": "À propos de Daily Fortune",
-      "description": "Daily Fortune est une application mobile délicieuse qui apporte une touche de magie cosmique à votre routine. Chaque jour, recevez une fortune personnalisée pour éclairer votre journée.",
-      "motivation": "Que vous cherchiez un petit boost le matin, une phrase pour garder le cap, ou un message à partager, Daily Fortune s’invite dans votre routine pour semer positivité et clarté."
-    },
-    "features": {
-      "title": "Fonctionnalités clés",
-      "items": {
-        "daily": "De nouvelles fortunes cosmiques livrées chaque jour",
-        "motivation": "Un message choisi pour éclairer votre journée : fortune cookie, citation motivante ou affirmation positive",
-        "modern": "Interface épurée et réactive avec animations fluides",
-        "cosmic": "Design inspiré de l'espace capturant l'émerveillement de l'univers"
-      }
-    },
-    "technology": {
-      "title": "Stack technologique",
-      "description": "Construit avec des technologies web modernes pour offrir une expérience rapide, belle et fiable :",
-      "stack": {
-        "nextjs": "Next.js - Framework React pour applications prêtes pour la production",
-        "typescript": "TypeScript - Développement type-safe pour la fiabilité",
-        "tailwind": "Tailwind CSS - Styling utilitaire pour une esthétique cosmique",
-        "native": "React Native - Expérience mobile native pour iOS et Android"
-      }
-    },
-    "ai": {
-      "title": "Propulsé par l'IA",
-      "description": "Daily Fortune exploite les capacités modernes de l'IA pour générer des fortunes uniques, engageantes et contextuellement pertinentes qui résonnent avec les expériences quotidiennes et les aspirations de chacun."
-    },
+    "subtitle": "L'application du studio : un message court chaque jour pour bien commencer la journée.",
     "cta": {
-      "title": "Explorez Daily Fortune",
-      "description": "Découvrez votre fortune cosmique et laissez les étoiles guider votre voyage.",
+      "title": "Essayez Daily Fortune",
+      "description": "Téléchargez l'application et recevez un nouveau message chaque jour.",
       "button": "Télécharger l'application",
       "ariaLabel": "Télécharger Daily Fortune (s'ouvre dans un nouvel onglet)"
+    },
+    "for_whom": {
+      "label": "Pour qui",
+      "title": "Un petit coup de pouce chaque matin",
+      "description": "Daily Fortune n'est pas un projet client : c'est l'application du studio, conçue et publiée par nos soins. Elle s'adresse à toute personne qui cherche un petit élan le matin, une phrase pour garder le cap ou un message à partager."
+    },
+    "what_we_did": {
+      "label": "Ce qu'on a fait",
+      "title": "Une application mobile, de l'idée à la publication",
+      "description": "Nous avons tout fait nous-mêmes, de la première idée jusqu'à la mise en ligne sur les boutiques d'applications.",
+      "items": {
+        "daily_message": "Un nouveau message chaque jour : citation motivante, affirmation positive ou petite phrase de biscuit chinois",
+        "ai_messages": "Des messages variés, créés avec l'aide de l'IA, qui parlent du quotidien et des envies de chacun",
+        "clean_design": "Un écran épuré et réactif, avec des animations fluides",
+        "stores": "Une publication sur l'App Store et Google Play, pour iPhone et Android"
+      }
+    },
+    "result": {
+      "label": "Résultat",
+      "title": "Notre première application en ligne",
+      "description": "Daily Fortune est disponible sur l'App Store et Google Play, et ses utilisateurs reçoivent un nouveau message chaque jour. Pour vous, c'est l'assurance que nous connaissons tout le parcours, de l'idée jusqu'à la publication sur les boutiques."
     }
   },
   "mcomperat": {
     "title": "mcomper.at",
-    "subtitle": "CV web moderne et responsive de Matthieu Compérat",
-    "overview": {
-      "title": "Présentation du projet",
-      "description": "CV web moderne et responsive de Matthieu Compérat, conçu avec Next.js (App Router) pour des pages rapides, accessibles et SEO-friendly.",
-      "architecture": "Architecture claire et maintenable : composants réutilisables, Server Components par défaut, et types stricts pour fiabilité en production. Internationalisation intégrée en français (par défaut) et anglais, avec redirection de l'accueil vers /fr."
-    },
-    "features": {
-      "title": "Fonctionnalités clés",
-      "items": {
-        "i18n": "Internationalisation : routes /fr et /en avec contenus JSON dédiés",
-        "seo": "SEO : métadonnées gérées via l'API Next.js (generateMetadata) pour un meilleur référencement",
-        "performance": "Performance : Server Components, streaming, et React 19 pour un chargement rapide",
-        "accessibility": "Accessibilité : respect des bonnes pratiques (jsx-a11y) et HTML sémantique",
-        "quality": "Qualité de code : ESLint (flat config), Prettier (tri Tailwind), hooks Husky, imports triés, zéro erreur au lint"
-      }
-    },
-    "technology": {
-      "title": "Stack technique",
-      "description": "Construit avec des technologies web de pointe pour une expérience rapide, maintenable et prête pour la production :",
-      "stack": {
-        "nextjs": "Next.js 15.5+ (App Router) - Framework React moderne",
-        "typescript": "TypeScript 5.9+ (mode strict) - Sécurité des types et fiabilité",
-        "tailwind": "Tailwind CSS 4.1+ - Styling utilitaire avec thème personnalisé",
-        "yarn": "Yarn 4+ (Corepack) et Node.js 22+ - Outillage moderne"
-      }
-    },
-    "ai": {
-      "title": "Propulsé par l'IA",
-      "description": "Flux de développement amélioré par l'assistance IA pour des résultats plus rapides, plus cohérents et de meilleure qualité :",
-      "features": {
-        "development": "Développement assisté : usage recommandé de GitHub Copilot pour accélérer la rédaction de composants et réduire les erreurs",
-        "quality": "Qualité et cohérence : suggestions automatiques pour la correction des imports, la conformité ESLint/TypeScript et l'ordonnancement des classes Tailwind",
-        "content": "Contenu et SEO : assistance à la rédaction de microcopies, des balises meta/OG et de textes alternatifs accessibles",
-        "i18n": "Internationalisation : aide à la pré-génération des chaînes FR/EN cohérentes à partir d'un canevas, avec relecture humaine obligatoire"
-      }
-    },
+    "subtitle": "Le CV en ligne de Matthieu Compérat, et le terrain d'essai des outils que nous utilisons ensuite pour nos clients.",
     "cta": {
-      "title": "Explorez mcomper.at",
-      "description": "Découvrez le CV web professionnel de Matthieu Compérat et explorez son expertise.",
-      "button": "Visiter le site web",
-      "ariaLabel": "Visiter le site web mcomper.at (s'ouvre dans un nouvel onglet)"
+      "title": "Découvrez mcomper.at",
+      "description": "Parcourez le CV en ligne de Matthieu Compérat, en français ou en anglais.",
+      "button": "Visiter le site",
+      "ariaLabel": "Visiter le site mcomper.at (s'ouvre dans un nouvel onglet)"
+    },
+    "for_whom": {
+      "label": "Pour qui",
+      "title": "Un CV en ligne, et notre terrain d'essai",
+      "description": "mcomper.at est le CV en ligne de Matthieu Compérat, votre interlocuteur chez Cosmic Studio : son parcours et son expertise, sur une seule page. C'est aussi le terrain d'essai des outils que nous utilisons ensuite pour nos clients. Ce qui fonctionne ici rejoint vos projets."
+    },
+    "what_we_did": {
+      "label": "Ce qu'on a fait",
+      "title": "Un CV clair, rapide et en deux langues",
+      "description": "Nous avons conçu un site simple à lire et facile à faire évoluer, et nous y testons nos méthodes de travail avant de les proposer à nos clients.",
+      "items": {
+        "two_languages": "Un site disponible en français et en anglais, avec des textes propres à chaque langue",
+        "found_on_google": "Des pages préparées pour être trouvées sur Google",
+        "fast_on_phone": "Des pages rapides à charger et lisibles sur téléphone",
+        "accessible": "Un site accessible à tous, dans le respect des bonnes pratiques",
+        "ai_with_review": "L'IA comme assistant pour rédiger et traduire les textes, toujours relus par un humain"
+      }
+    },
+    "result": {
+      "label": "Résultat",
+      "title": "Testé ici, puis utilisé pour vous",
+      "description": "Matthieu dispose d'un CV en ligne clair, bilingue et rapide. Pour le studio, c'est là que nous avons rodé la gestion de plusieurs langues, la présentation sur Google et la relecture des textes rédigés avec l'IA, avant de les utiliser sur les sites de nos clients. Chaque modification y passe aussi par des vérifications automatiques, pour éviter les erreurs."
     }
   },
   "choeurDesPaysduMontBlanc": {
     "title": "Chœur des Pays du Mont Blanc",
-    "subtitle": "Site web du chœur amateur basé en Haute-Savoie, France",
-    "overview": {
-      "title": "Présentation du projet",
-      "description": "Le site web du Chœur des Pays du Mont Blanc est une plateforme web moderne conçue pour mettre en valeur les activités du chœur, les concerts à venir et fournir des informations aux membres et au public.",
-      "mission": "Ce site web sert de hub de communication principal pour les membres du chœur et les passionnés de musique dans la région du Mont Blanc, facilitant l'organisation d'événements et l'engagement communautaire."
-    },
-    "features": {
-      "title": "Fonctionnalités clés",
-      "items": {
-        "concerts": "Calendrier des concerts avec dates, lieux et détails du programme",
-        "repertoire": "Répertoire varié allant du baroque à la musique classique contemporaine",
-        "community": "Informations de recrutement des membres et horaires des répétitions",
-        "events": "Mises à jour des événements et actualités des activités du chœur"
-      }
-    },
-    "technology": {
-      "title": "Stack technique",
-      "description": "Construit avec des technologies web modernes pour offrir une expérience élégante et responsive :",
-      "stack": {
-        "nextjs": "Next.js - Framework React pour des pages rapides et SEO-friendly",
-        "typescript": "TypeScript - Développement type-safe pour la fiabilité",
-        "tailwind": "Tailwind CSS - Styling moderne pour une présentation élégante",
-        "responsive": "Design responsive - Optimisé pour tous les appareils"
-      }
-    },
-    "purpose": {
-      "title": "Objectif",
-      "description": "Ce site web est principalement conçu pour présenter le projet Chœur des Pays du Mont Blanc aux membres du chœur, aux passionnés de musique et au grand public. Il fournit des informations essentielles sur les concerts, les répétitions et les opportunités de rejoindre cette communauté musicale passionnée en Haute-Savoie."
-    },
+    "subtitle": "Le site d'un chœur amateur de Haute-Savoie : concerts, répertoire et répétitions, au même endroit.",
     "cta": {
       "title": "Découvrez le chœur",
-      "description": "Visitez le site web pour en savoir plus sur les prochains concerts et rejoindre l'aventure musicale.",
-      "button": "Visiter le site web",
-      "ariaLabel": "Visiter le site web du Chœur des Pays du Mont Blanc (s'ouvre dans un nouvel onglet)"
+      "description": "Prochains concerts, répertoire, répétitions : tout est sur le site du chœur.",
+      "button": "Visiter le site",
+      "ariaLabel": "Visiter le site du Chœur des Pays du Mont Blanc (s'ouvre dans un nouvel onglet)"
+    },
+    "for_whom": {
+      "label": "Pour qui",
+      "title": "Un chœur amateur de Haute-Savoie",
+      "description": "Le Chœur des Pays du Mont Blanc est une association de chanteurs amateurs en Haute-Savoie. Il lui fallait un seul endroit pour informer ses membres, faire connaître ses concerts et accueillir de nouvelles voix."
+    },
+    "what_we_did": {
+      "label": "Ce qu'on a fait",
+      "title": "Un site pour les choristes et pour le public",
+      "description": "Nous avons réuni sur un seul site tout ce que cherchent les choristes, les amateurs de musique et le grand public, lisible sur ordinateur comme sur téléphone.",
+      "items": {
+        "concerts": "Un agenda des concerts, avec les dates, les lieux et le programme",
+        "repertoire": "La présentation du répertoire, du baroque à la musique classique contemporaine",
+        "join": "Les horaires des répétitions et les informations pour rejoindre le chœur",
+        "news": "Les actualités et les événements de la vie du chœur"
+      }
+    },
+    "result": {
+      "label": "Résultat",
+      "title": "Un seul endroit pour suivre le chœur",
+      "description": "Le site est devenu le point de rendez-vous principal du chœur : les membres y trouvent horaires et nouvelles, le public découvre les prochains concerts, et celles et ceux qui veulent chanter savent comment le rejoindre."
     }
   }
 }

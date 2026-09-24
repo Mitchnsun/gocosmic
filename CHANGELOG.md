@@ -9,19 +9,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Added
 
-- The studio is now called Cosmic Studio across the whole site, in search results and in outgoing emails, with "Go Cosmic" kept as the signature of the main call-to-action
-- A "Get my free mockup" button stays visible at the top of every page and at the bottom of the mobile menu, so visitors can request their free mockup in one click
-- The top bar now tells visitors whether the studio is taking new projects and from which month, next to its Chêne-Bougeries base
+- A redesigned homepage that explains who the studio is for, why a studio rather than a site builder, the two ways to work together with visible prices, recent projects, the studio's own apps and the person behind it
+- A single Services & pricing page where visitors compose their monthly plan, watch the total update live and request a free mockup with their choices attached, followed by answers to the questions people ask before signing
+- A contact page where visitors either write a message, saying what kind of help they need, or book a 20-minute call in Matthieu's calendar, which only loads if they ask for it
 
 ### Changed
 
-- The homepage, page titles and search descriptions are rewritten in plain words for craftspeople, associations and independents, around one promise: making their business seen, found and chosen — in all five languages
-- The menu is reduced to Services, Projects and Contact, while About, Our apps, the legal pages, cookie settings and a language picker move to a simpler three-column footer
-- Tablets now use the compact menu, and the top bar keeps the same height while scrolling
+- The studio is now called Cosmic Studio across the site, in search results and in emails; the menu is reduced to Services, Projects and Contact with a "Get my free mockup" button always in view, and a simpler footer gathers the other pages, the legal links and a language picker
+- Texts across the site are rewritten in plain words for craftspeople, associations and independents, around one promise: making their business seen, found and chosen, in all five languages
+- The projects page can be filtered by type of project, and each project page now tells who it was for, what was done and what changed
+
+### Removed
+
+- The 3D journey page and the separate offers and pricing pages: their content now lives on Services & pricing, and old links lead there
 
 ### Fixed
 
-- Screen readers now announce the logo with the studio name shown on screen
+- Screen readers now announce the logo with the studio name shown on screen, and orange buttons now use a dark label that stays readable
 
 ## [1.8.0] - 2026-09-23
 

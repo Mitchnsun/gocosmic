@@ -1,52 +1,52 @@
 {
   "meta": {
     "title": "Maqueta gratuita · Cosmic Studio | Ginebra y Annecy",
-    "description": "Reciba una maqueta gratuita de su futuro sitio web: elija sus colores, cuéntenos sus ideas y descubra una primera propuesta por email. Sin compromiso."
+    "description": "Recibe una maqueta gratuita de tu futuro sitio web: elige tus colores, cuéntanos tus ideas y descubre una primera propuesta por email. Sin compromiso."
   },
   "freeMockup": {
     "eyebrow": "[ MAQUETA GRATUITA ]",
-    "title": "Vea su sitio antes de decidir",
-    "intro": "Cuéntenos en qué punto está hoy y el ambiente que tiene en mente. Recibirá una maqueta de su futuro sitio, gratis y sin nada que comprometer.",
+    "title": "Mira tu sitio antes de decidir",
+    "intro": "Cuéntanos en qué punto estás hoy y el ambiente que tienes en mente. Recibirás una maqueta de tu futuro sitio, gratis y sin nada que comprometer.",
     "steps": {
       "title": "Cómo funciona",
       "items": {
         "brief": {
-          "title": "Nos envía lo esencial",
+          "title": "Nos envías lo esencial",
           "description": "Tu email, la gama de colores que te guste si tienes una, y tu sitio actual si lo tienes."
         },
         "design": {
           "title": "Diseñamos una maqueta",
-          "description": "Una primera vista de su página de inicio, creada a partir de lo que nos ha descrito."
+          "description": "Una primera vista de tu página de inicio, creada a partir de lo que nos has descrito."
         },
         "deliver": {
           "title": "Decide con calma",
-          "description": "La maqueta llega a su correo. Si no le convence, todo termina ahí."
+          "description": "La maqueta llega a tu correo. Si no te convence, todo termina ahí."
         }
       }
     },
-    "privacy_notice": "Su email y su mensaje se utilizan únicamente para preparar y enviarle su maqueta.",
+    "privacy_notice": "Tu email y tu mensaje se utilizan únicamente para preparar y enviarte tu maqueta.",
     "privacy_link": "Política de privacidad",
     "form": {
-      "heading": "Solicite su maqueta",
+      "heading": "Solicita tu maqueta",
       "lead": "Un email: todo lo demás es opcional.",
-      "email_label": "Su email",
-      "email_placeholder": "usted@ejemplo.com",
+      "email_label": "Tu email",
+      "email_placeholder": "tu@ejemplo.com",
       "palette_label": "Gama de colores",
-      "website_label": "Su sitio actual",
-      "website_placeholder": "su-sitio.es",
-      "wishes_label": "Lo que tiene en mente",
-      "wishes_placeholder": "Las páginas que necesita, lo que le gusta, lo que prefiere evitar…",
+      "website_label": "Tu sitio actual",
+      "website_placeholder": "tu-sitio.es",
+      "wishes_label": "Lo que tienes en mente",
+      "wishes_placeholder": "Las páginas que necesitas, lo que te gusta, lo que prefieres evitar…",
       "wishes_counter": "{count}/{max}",
       "optional": "Opcional",
       "submit": "Pedir mi maqueta gratuita",
       "submitting": "Enviando…",
       "reassurance": "Gratis, sin compromiso.",
       "success_title": "Solicitud recibida",
-      "success_message": "Gracias: le responderemos por email con su maqueta.",
-      "error_message": "No se ha podido enviar su solicitud. Inténtelo de nuevo en un momento.",
+      "success_message": "Gracias: te responderemos por email con tu maqueta.",
+      "error_message": "No se ha podido enviar tu solicitud. Inténtalo de nuevo en un momento.",
       "retry_later_message": "Tu solicitud no se ha podido enviar en este momento. Inténtalo de nuevo más tarde.",
-      "invalid_message": "Revise los campos señalados.",
-      "plan_attached": "El resultado de su simulación de precios se incluirá con su solicitud."
+      "invalid_message": "Revisa los campos señalados.",
+      "plan_attached": "El resultado de tu simulación de precios se incluirá con tu solicitud."
     },
     "palette": {
       "options": {
@@ -61,9 +61,9 @@
     },
     "validation": {
       "required": "Este campo es obligatorio.",
-      "email_invalid": "Introduzca una dirección de email válida.",
-      "url_invalid": "Introduzca una dirección de sitio web válida, por ejemplo mi-sitio.es.",
-      "wishes_too_long": "No supere los 500 caracteres."
+      "email_invalid": "Introduce una dirección de email válida.",
+      "url_invalid": "Introduce una dirección de sitio web válida, por ejemplo mi-sitio.es.",
+      "wishes_too_long": "No superes los 500 caracteres."
     }
   }
 }

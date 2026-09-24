@@ -4,152 +4,151 @@
       "title": "Referenzen · Websites und Apps | Cosmic Studio",
       "description": "Websites und Apps von Cosmic Studio für Vereine, einen Sportclub und Selbstständige, in Genf und in Hochsavoyen."
     },
-    "title": "Unsere Projekte",
-    "subtitle": "Websites und Apps, die heute online sind: für Vereine, einen Sportclub und unsere eigenen Produkte.",
+    "title": "Websites und Apps, <em>die wirklich etwas bringen.</em>",
+    "subtitle": "Eine Auswahl dessen, was wir geliefert haben: für unsere Kundschaft und für uns selbst. Jede Seite zeigt, was wir gemacht haben, für wen und was sich dadurch verändert hat.",
     "items": {
       "dailyFortune": {
         "title": "Daily Fortune",
-        "description": "Eine mobile App, die täglich kosmische Weissagungen und motivierende Nachrichten per KI liefert."
+        "description": "Jeden Morgen eine kurze Nachricht für einen guten Start in den Tag. Unsere erste App im App Store und bei Google Play.",
+        "client": "App des Studios",
+        "tags": ["Smartphone-App", "iOS · Android", "Studio"],
+        "cover_alt": "App-Symbol von Daily Fortune"
       },
       "mcomperat": {
         "title": "mcomper.at",
-        "description": "Ein moderner, responsiver Web-Lebenslauf, erstellt mit Next.js, TypeScript und vollständiger Internationalisierung."
+        "description": "Ein Online-Lebenslauf in mehreren Sprachen, der schnell lädt. Hier erproben wir die Werkzeuge, die wir danach für Sie einsetzen.",
+        "client": "Persönliches Projekt",
+        "tags": ["Website", "Mehrsprachig"],
+        "cover_alt": "Vorschau der Website mcomper.at"
       },
       "pscSupersprint": {
         "title": "PSC Supersprint",
-        "description": "Eine Webanwendung zur Verwaltung und Echtzeitanzeige von Triathlon-Wettkampfergebnissen."
+        "description": "Die Rennergebnisse live, die das Publikum während des Wettkampfs auf dem Handy abrufen kann.",
+        "client": "Triathlonverein",
+        "tags": ["Web-App", "Live", "Sport"],
+        "cover_alt": "Vorschau von PSC Supersprint"
       },
       "choeurDesPaysduMontBlanc": {
         "title": "Chœur des Pays du Mont Blanc",
-        "description": "Eine Website, die die Aktivitäten, Konzerte und das Repertoire des Chors in Haute-Savoie präsentiert."
+        "description": "Die Website des Chors: kommende Konzerte, Repertoire und alles zum Mitsingen, gut lesbar auf dem Handy wie am Computer.",
+        "client": "Verein · Hochsavoyen",
+        "tags": ["Präsentationswebsite", "Kalender", "Verein"],
+        "cover_alt": "Logo des Chœur des Pays du Mont Blanc"
       }
     },
     "cta": {
-      "title": "Ihr Projekt könnte das nächste sein",
-      "description": "Sagen Sie uns, was Sie bauen möchten — wir zeichnen die Route.",
-      "button": "Sprechen wir darüber"
+      "title": "Ihr Projekt könnte das nächste auf dieser Liste sein.",
+      "description": "Erzählen Sie uns in ein paar Zeilen von Ihrem Betrieb: Wir melden uns innerhalb von 24 Stunden, mit Fragen statt mit einem automatischen Angebot.",
+      "button": "Mein Projekt besprechen"
     },
-    "eyebrow": "Projekte — Ausgewählte Arbeiten"
+    "eyebrow": "[ Referenzen · {count} ]",
+    "kinds": {
+      "site": "Website",
+      "webapp": "Web-App",
+      "mobile": "Smartphone-App"
+    },
+    "filters": {
+      "label": "Nach Projektart filtern",
+      "all": "Alle",
+      "site": "Website",
+      "webapp": "Web-App",
+      "mobile": "Smartphone-App",
+      "count": "{count, plural, =0 {Kein Projekt} one {# Projekt} other {# Projekte}}"
+    },
+    "view_project": "Projekt ansehen"
   },
   "dailyFortune": {
     "title": "Daily Fortune",
-    "subtitle": "Ihre tägliche Dosis Inspiration und kosmischer Weisheit",
-    "overview": {
-      "title": "Über Daily Fortune",
-      "description": "Daily Fortune ist eine entzückende mobile Anwendung, die einen Hauch von kosmischer Magie in Ihre Routine bringt. Jeden Tag erhalten Sie ein personalisiertes Schicksal, um Ihren Tag aufzuhellen.",
-      "motivation": "Ob Sie einen morgendlichen Motivationsschub, einen Spruch zur Orientierung oder eine Botschaft zum Teilen suchen - Daily Fortune passt sich Ihrer Routine an, um Positivität und Klarheit zu verbreiten."
-    },
-    "features": {
-      "title": "Hauptmerkmale",
-      "items": {
-        "daily": "Jeden Tag neue kosmische Schicksale",
-        "motivation": "Eine ausgewählte Botschaft, um Ihren Tag aufzuhellen: Glückskeks, Motivationszitat oder positive Affirmation",
-        "modern": "Saubere, responsive Oberfläche mit flüssigen Animationen",
-        "cosmic": "Weltraum-inspiriertes Design, das die Wunder des Universums einfängt"
-      }
-    },
-    "technology": {
-      "title": "Technologie-Stack",
-      "description": "Gebaut mit modernen Web-Technologien für ein schnelles, schönes und zuverlässiges Erlebnis:",
-      "stack": {
-        "nextjs": "Next.js - React-Framework für produktionsreife Anwendungen",
-        "typescript": "TypeScript - Typsichere Entwicklung für Zuverlässigkeit",
-        "tailwind": "Tailwind CSS - Utility-First-Styling für kosmische Ästhetik",
-        "native": "React Native - Native mobile Erfahrung für iOS und Android"
-      }
-    },
-    "ai": {
-      "title": "Angetrieben von KI",
-      "description": "Daily Fortune nutzt moderne KI-Fähigkeiten, um einzigartige, ansprechende und kontextuell relevante Schicksale zu generieren, die mit den täglichen Erfahrungen und Bestrebungen aller in Resonanz stehen."
-    },
+    "subtitle": "Die eigene App des Studios: jeden Tag eine kurze Nachricht für einen guten Start in den Tag.",
     "cta": {
-      "title": "Erkunden Sie Daily Fortune",
-      "description": "Entdecken Sie Ihr kosmisches Schicksal und lassen Sie die Sterne Ihre Reise leiten.",
+      "title": "Probieren Sie Daily Fortune aus",
+      "description": "Laden Sie die App herunter und erhalten Sie jeden Tag eine neue Nachricht.",
       "button": "App herunterladen",
       "ariaLabel": "Daily Fortune herunterladen (öffnet in einem neuen Tab)"
+    },
+    "for_whom": {
+      "label": "Für wen",
+      "title": "Jeden Morgen ein kleiner Anstoß",
+      "description": "Daily Fortune ist kein Kundenprojekt, sondern die eigene App des Studios, von uns gestaltet und veröffentlicht. Sie richtet sich an alle, die morgens ein wenig Schwung suchen, einen Satz, der Orientierung gibt, oder eine Nachricht zum Teilen."
+    },
+    "what_we_did": {
+      "label": "Was wir gemacht haben",
+      "title": "Eine Smartphone-App, von der Idee bis zur Veröffentlichung",
+      "description": "Wir haben alles selbst gemacht, von der ersten Idee bis zur Veröffentlichung in den App-Stores.",
+      "items": {
+        "daily_message": "Jeden Tag eine neue Nachricht: ein motivierendes Zitat, eine positive Affirmation oder ein Spruch wie aus dem Glückskeks",
+        "ai_messages": "Abwechslungsreiche Nachrichten, mit Hilfe von KI erstellt, die vom Alltag und von den Wünschen aller erzählen",
+        "clean_design": "Ein aufgeräumter Bildschirm, der schnell reagiert, mit flüssigen Animationen",
+        "stores": "Veröffentlicht im App Store und bei Google Play, für iPhone und Android"
+      }
+    },
+    "result": {
+      "label": "Ergebnis",
+      "title": "Unsere erste App ist online",
+      "description": "Daily Fortune ist im App Store und bei Google Play erhältlich, und wer die App nutzt, erhält jeden Tag eine neue Nachricht. Für Sie bedeutet das: Wir kennen den ganzen Weg, von der Idee bis zur Veröffentlichung in den App-Stores."
     }
   },
   "mcomperat": {
     "title": "mcomper.at",
-    "subtitle": "Moderner, responsiver Web-Lebenslauf von Matthieu Compérat",
-    "overview": {
-      "title": "Über das Projekt",
-      "description": "Moderner und responsiver Web-Lebenslauf von Matthieu Compérat, entworfen mit Next.js (App Router) für schnelle, barrierefreie und SEO-freundliche Seiten.",
-      "architecture": "Klare und wartbare Architektur: wiederverwendbare Komponenten, Server Components standardmäßig und strikte Typen für Produktionszuverlässigkeit. Integrierte Internationalisierung auf Französisch (Standard) und Englisch, mit Weiterleitung der Startseite zu /fr."
-    },
-    "features": {
-      "title": "Hauptmerkmale",
-      "items": {
-        "i18n": "Internationalisierung: /fr und /en Routen mit dedizierten JSON-Inhalten",
-        "seo": "SEO: Metadaten verwaltet über Next.js API (generateMetadata) für besseres Ranking",
-        "performance": "Performance: Server Components, Streaming und React 19 für schnelles Laden",
-        "accessibility": "Barrierefreiheit: Einhaltung bewährter Praktiken (jsx-a11y) und semantisches HTML",
-        "quality": "Code-Qualität: ESLint (flat config), Prettier (Tailwind-Sortierung), Husky-Hooks, sortierte Imports, null Lint-Fehler"
-      }
-    },
-    "technology": {
-      "title": "Technologie-Stack",
-      "description": "Gebaut mit modernsten Web-Technologien für ein schnelles, wartbares und produktionsreifes Erlebnis:",
-      "stack": {
-        "nextjs": "Next.js 15.5+ (App Router) - Modernes React-Framework",
-        "typescript": "TypeScript 5.9+ (strikter Modus) - Typsicherheit und Zuverlässigkeit",
-        "tailwind": "Tailwind CSS 4.1+ - Utility-First-Styling mit benutzerdefiniertem Theme",
-        "yarn": "Yarn 4+ (Corepack) und Node.js 22+ - Moderne Werkzeuge"
-      }
-    },
-    "ai": {
-      "title": "Angetrieben von KI",
-      "description": "Entwicklungs-Workflow verbessert durch KI-Unterstützung für schnellere, konsistentere und qualitativ hochwertigere Ergebnisse:",
-      "features": {
-        "development": "Unterstützte Entwicklung: empfohlene Verwendung von GitHub Copilot zur Beschleunigung der Komponentenerstellung und Fehlerreduzierung",
-        "quality": "Qualität und Konsistenz: automatische Vorschläge für Import-Korrekturen, ESLint/TypeScript-Konformität und Tailwind-Klassenordnung",
-        "content": "Inhalt und SEO: Unterstützung beim Verfassen von Mikrotexten, Meta/OG-Tags und barrierefreien Alt-Texten",
-        "i18n": "Internationalisierung: Hilfe bei der Vorgenerierung konsistenter FR/EN-Zeichenfolgen aus Vorlagen, mit obligatorischer menschlicher Überprüfung"
-      }
-    },
+    "subtitle": "Der Online-Lebenslauf von Matthieu Compérat, und das Testfeld für die Werkzeuge, die wir danach für unsere Kundschaft einsetzen.",
     "cta": {
-      "title": "Erkunden Sie mcomper.at",
-      "description": "Entdecken Sie den professionellen Web-Lebenslauf von Matthieu Compérat und erkunden Sie sein Fachwissen.",
+      "title": "Entdecken Sie mcomper.at",
+      "description": "Sehen Sie sich den Online-Lebenslauf von Matthieu Compérat an, auf Französisch oder Englisch.",
       "button": "Website besuchen",
       "ariaLabel": "Website mcomper.at besuchen (öffnet in einem neuen Tab)"
+    },
+    "for_whom": {
+      "label": "Für wen",
+      "title": "Ein Online-Lebenslauf und unser Testfeld",
+      "description": "mcomper.at ist der Online-Lebenslauf von Matthieu Compérat, Ihrem Ansprechpartner bei Cosmic Studio: sein Werdegang und seine Erfahrung auf einer einzigen Seite. Es ist auch das Testfeld für die Werkzeuge, die wir danach für unsere Kundschaft einsetzen. Was hier funktioniert, kommt Ihren Projekten zugute."
+    },
+    "what_we_did": {
+      "label": "Was wir gemacht haben",
+      "title": "Ein klarer, schneller Lebenslauf in zwei Sprachen",
+      "description": "Wir haben eine Website gestaltet, die leicht zu lesen und einfach weiterzuentwickeln ist, und erproben dort unsere Arbeitsweisen, bevor wir sie unserer Kundschaft anbieten.",
+      "items": {
+        "two_languages": "Eine Website auf Französisch und Englisch, mit eigenen Texten für jede Sprache",
+        "found_on_google": "Seiten, die darauf ausgelegt sind, bei Google gefunden zu werden",
+        "fast_on_phone": "Seiten, die schnell laden und auf dem Handy gut lesbar sind",
+        "accessible": "Eine für alle zugängliche Website, nach bewährten Regeln gebaut",
+        "ai_with_review": "KI als Hilfe beim Schreiben und Übersetzen der Texte, die immer ein Mensch gegenliest"
+      }
+    },
+    "result": {
+      "label": "Ergebnis",
+      "title": "Hier getestet, dann für Sie eingesetzt",
+      "description": "Matthieu hat einen klaren, zweisprachigen und schnellen Online-Lebenslauf. Für das Studio ist es der Ort, an dem wir den Umgang mit mehreren Sprachen, die Darstellung bei Google und das Gegenlesen von Texten, die mit KI entstanden sind, eingespielt haben, bevor wir all das auf den Websites unserer Kundschaft einsetzen. Jede Änderung durchläuft dort außerdem automatische Prüfungen, damit sich keine Fehler einschleichen."
     }
   },
   "choeurDesPaysduMontBlanc": {
     "title": "Chœur des Pays du Mont Blanc",
-    "subtitle": "Website des Amateurchors aus Haute-Savoie, Frankreich",
-    "overview": {
-      "title": "Über das Projekt",
-      "description": "Die Website des Chœur des Pays du Mont Blanc ist eine moderne Webplattform, die entwickelt wurde, um die Aktivitäten des Chors, bevorstehende Konzerte zu präsentieren und Informationen für Mitglieder und die Öffentlichkeit bereitzustellen.",
-      "mission": "Diese Website dient als primärer Kommunikationsknotenpunkt für Chormitglieder und Musikliebhaber in der Mont Blanc Region und erleichtert die Organisation von Veranstaltungen und das gemeinschaftliche Engagement."
-    },
-    "features": {
-      "title": "Hauptmerkmale",
-      "items": {
-        "concerts": "Konzertkalender mit Daten, Orten und Programmdetails",
-        "repertoire": "Vielfältiges Repertoire von Barock bis zeitgenössischer klassischer Musik",
-        "community": "Informationen zur Mitgliederrekrutierung und Probenzeiten",
-        "events": "Veranstaltungsupdates und Neuigkeiten über Choraktivitäten"
-      }
-    },
-    "technology": {
-      "title": "Technologie-Stack",
-      "description": "Gebaut mit modernen Web-Technologien für ein elegantes und responsives Erlebnis:",
-      "stack": {
-        "nextjs": "Next.js - React-Framework für schnelle, SEO-freundliche Seiten",
-        "typescript": "TypeScript - Typsichere Entwicklung für Zuverlässigkeit",
-        "tailwind": "Tailwind CSS - Modernes Styling für elegante Präsentation",
-        "responsive": "Responsives Design - Optimiert für alle Geräte"
-      }
-    },
-    "purpose": {
-      "title": "Zweck",
-      "description": "Diese Website ist hauptsächlich dafür konzipiert, das Projekt Chœur des Pays du Mont Blanc Chormitgliedern, Musikliebhabern und der breiten Öffentlichkeit vorzustellen. Sie bietet wesentliche Informationen über Konzerte, Proben und Möglichkeiten, sich dieser leidenschaftlichen Musikgemeinschaft in der Haute-Savoie Region anzuschließen."
-    },
+    "subtitle": "Die Website eines Amateurchors aus Hochsavoyen: Konzerte, Repertoire und Proben an einem Ort.",
     "cta": {
       "title": "Entdecken Sie den Chor",
-      "description": "Besuchen Sie die Website, um mehr über bevorstehende Konzerte zu erfahren und sich der musikalischen Reise anzuschließen.",
+      "description": "Nächste Konzerte, Repertoire, Proben: Alles steht auf der Website des Chors.",
       "button": "Website besuchen",
       "ariaLabel": "Website des Chœur des Pays du Mont Blanc besuchen (öffnet in einem neuen Tab)"
+    },
+    "for_whom": {
+      "label": "Für wen",
+      "title": "Ein Amateurchor aus Hochsavoyen",
+      "description": "Der Chœur des Pays du Mont Blanc ist ein Verein von Amateursängerinnen und -sängern in Hochsavoyen. Er brauchte einen einzigen Ort, um seine Mitglieder zu informieren, seine Konzerte bekannt zu machen und neue Stimmen willkommen zu heißen."
+    },
+    "what_we_did": {
+      "label": "Was wir gemacht haben",
+      "title": "Eine Website für Chormitglieder und Publikum",
+      "description": "Wir haben auf einer einzigen Website alles zusammengeführt, was Chormitglieder, Musikbegeisterte und die breite Öffentlichkeit suchen, gut lesbar am Computer wie auf dem Handy.",
+      "items": {
+        "concerts": "Ein Konzertkalender mit Daten, Orten und Programm",
+        "repertoire": "Die Vorstellung des Repertoires, vom Barock bis zur zeitgenössischen klassischen Musik",
+        "join": "Die Probenzeiten und alle Informationen, um im Chor mitzusingen",
+        "news": "Neuigkeiten und Veranstaltungen aus dem Chorleben"
+      }
+    },
+    "result": {
+      "label": "Ergebnis",
+      "title": "Ein Ort, um dem Chor zu folgen",
+      "description": "Die Website ist zum wichtigsten Treffpunkt des Chors geworden: Die Mitglieder finden dort Probenzeiten und Neuigkeiten, das Publikum entdeckt die nächsten Konzerte, und wer mitsingen möchte, weiß, wie es geht."
     }
   }
 }

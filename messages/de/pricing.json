@@ -1,12 +1,5 @@
 {
   "pricing": {
-    "meta": {
-      "title": "Preise · Stellen Sie Ihre Website zusammen | Cosmic Studio",
-      "description": "Stellen Sie Ihre Website ab 10€ im Monat zusammen: Sie wählen die Seitenzahl und die Optionen. Entwurf und Website-Check kostenlos und unverbindlich."
-    },
-    "eyebrow": "[ PREISE ]",
-    "title": "Stellen Sie Ihr Paket zusammen",
-    "subtitle": "Ein klarer Einstiegspreis, und Sie ergänzen nur, was Sie wirklich brauchen. Die Summe aktualisiert sich dabei laufend.",
     "free_offers": {
       "eyebrow": "Kostenlos und unverbindlich",
       "title": "Noch bevor wir über Budget sprechen",
@@ -21,23 +14,6 @@
         }
       },
       "note": "Beides ist kostenlos und verpflichtet Sie zu nichts."
-    },
-    "step1": {
-      "question": "Was möchten Sie erstellen?",
-      "options": {
-        "website": "Eine Website",
-        "mobile": "Eine mobile App",
-        "both": "Beides"
-      }
-    },
-    "step2": {
-      "question": "Welche Art von Website brauchen Sie?",
-      "options": {
-        "showcase": "Eine Website, die meinen Betrieb vorstellt",
-        "self_managed": "Eine Website, die ich selbst ändern möchte",
-        "accounts": "Eine Website mit einem Bereich für meine Kunden",
-        "ecommerce": "Eine Website zum Verkaufen"
-      }
     },
     "builder": {
       "period": "/ Monat",
@@ -80,7 +56,7 @@
       },
       "updates": {
         "label": "Inhaltsänderungen inklusive",
-        "hint": "Ihre Texte, Fotos und Öffnungszeiten von mir aktualisiert, ohne jedes Mal Zusatzkosten.",
+        "hint": "Ihre Texte, Fotos und Öffnungszeiten von uns aktualisiert, ohne jedes Mal Zusatzkosten.",
         "off": "Nicht enthalten",
         "slider_label": "Änderungen pro Jahr",
         "tiers": {
@@ -92,35 +68,39 @@
         }
       },
       "total": {
-        "label": "Ihr Paket",
-        "note": "Sie können diese Optionen jederzeit ändern.",
-        "beyond": "Über diese Mengen hinaus sprechen wir darüber: Ich erstelle Ihnen ein passendes Angebot."
+        "label": "Ihre Schätzung",
+        "note": "Ein Richtwert, den wir nach einem ersten Gespräch bestätigen. Sie können Ihre Optionen jederzeit ändern.",
+        "beyond": "Über diese Mengen hinaus besprechen wir es gemeinsam: Wir machen Ihnen ein passendes Angebot.",
+        "cta": "Mein kostenloses Mockup anfordern",
+        "question": "Vorher noch eine Frage? <link>Schreiben Sie uns</link>."
       }
     },
-    "results": {
-      "custom": {
-        "note": "Maßgeschneidertes Projekt",
-        "title": "Sprechen wir darüber",
-        "description": "Ein solches Projekt wird im Einzelfall kalkuliert — was Sie brauchen, hat wenig mit einer einfachen Website zu tun. Beschreiben Sie mir Ihr Vorhaben, und Sie erhalten ein ausführliches Angebot, unverbindlich."
+    "columns": {
+      "eyebrow": "[ Preise ]",
+      "title": "Zwei Wege der Zusammenarbeit.",
+      "subscription": {
+        "label": "Abonnement · Website, Hosting und Betreuung",
+        "price": "Ab {price}",
+        "period": "/ Monat",
+        "description": "Damit Ihre Website online ist und aktuell bleibt, ohne dass Sie daran denken müssen. Der Preis richtet sich nach Ihrem Bedarf: Anzahl der Seiten, Domainname, E-Mail-Adresse, Änderungen.",
+        "features": {
+          "included": "Inklusive Hosting, sicherer Verbindung und einer guten Grundlage, um bei Google gefunden zu werden",
+          "options": "Optionen, die Sie von Monat zu Monat hinzufügen oder entfernen",
+          "mockup": "Kostenloses Mockup, bevor Sie sich entscheiden"
+        },
+        "cta": "Mein Abonnement zusammenstellen"
+      },
+      "project": {
+        "label": "Einzelprojekt · nach Angebot",
+        "price": "Individuell",
+        "description": "Onlineshop, Mitgliederbereich, Smartphone-App, Werkzeug für Ihren Betrieb. Wir klären den Umfang gemeinsam, machen ein Angebot und liefern. Danach können Sie für die Betreuung in ein Abonnement wechseln.",
+        "features": {
+          "floors": "Ab {members} für einen Mitgliederbereich, {shop} für einen Onlineshop, {mobile} für eine Smartphone-App",
+          "payment": "Zahlung in Etappen, je nach Fortschritt",
+          "ownership": "Code und Daten gehören Ihnen"
+        },
+        "cta": "Angebot anfordern"
       }
-    },
-    "contact": {
-      "title": "Lassen Sie uns über Ihr Projekt sprechen",
-      "description": "Schreiben Sie mir ein paar Zeilen — Sie bekommen ein klares Angebot zurück.",
-      "email": "prospect@gocosmic.dev",
-      "cta": "Angebot anfordern",
-      "subject": "Preisanfrage — Projektangebot",
-      "aria_label": "E-Mail an prospect@gocosmic.dev für ein Projektangebot senden",
-      "privacy_notice": "Mit dem Versand einer E-Mail erklärst du dich damit einverstanden, dass deine Nachricht und Kontaktdaten zur Angebotserstellung und Projektbetreuung verarbeitet werden.",
-      "privacy_link": "Datenschutzerklärung",
-      "free_mockup_cta_label": "Kostenloses Mockup erhalten",
-      "free_mockup_cta_aria_label": "Zur Seite für die Anfrage eines kostenlosen Mockups"
-    },
-    "reset": "Neu starten",
-    "summary": {
-      "intro": "Guten Tag, hier ist die Zusammenfassung meiner Simulation auf Ihrer Preisseite:",
-      "project": "Projekt",
-      "site_type": "Art der Website"
     }
   }
 }
