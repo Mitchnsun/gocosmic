@@ -38,7 +38,7 @@ function hexToRgb(hex: string): { r: number; g: number; b: number } {
  * - Canvas fullscreen overlay, pointer-events: none
  * - 60fps RAF loop — no DOM queries per frame
  * - Respects `prefers-reduced-motion` (static dot only)
- * - Returns `null` on touch devices so no canvas is added to the DOM
+ * - Returns `null` unless the primary pointer is fine (mouse, trackpad), so touch screens get no canvas
  * - Hides the native cursor on all elements via an injected `<style>` tag using `!important`,
  *   which overrides utility classes such as `cursor-pointer` on interactive elements. Text
  *   inputs keep the native text caret, and clickable form controls (checkboxes, radios,

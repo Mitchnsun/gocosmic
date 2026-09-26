@@ -25,14 +25,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - The homepage opening keeps its animated ringed planet, shown discreetly behind the text on phones and larger alongside it on desktop
 - The top bar and mobile menu now show the studio's altitude instead of its GPS coordinates, and the mobile menu's mountain horizon decoration is back
 - The top bar now simply shows "Available" without a start month, and names the mission control base — Chêne-Bougeries for Swiss visitors, Annecy for everyone else
+- The Geneva and Annecy page now looks like the rest of the site and shows where the studio meets clients in person, along with recent projects
+- Search engines now present the studio from its Geneva base while still naming Annecy and Haute-Savoie, and link each page to its versions in the other languages
+- The legal pages, the cookie banner and the language picker now use the site's own colours, and the custom cursor only appears with a mouse or trackpad
 
 ### Removed
 
 - The 3D journey page and the separate offers and pricing pages: their content now lives on Services & pricing, and old links lead there
+- The unused 3D engine, which made the site lighter to install and build
 
 ### Fixed
 
 - Screen readers now announce the logo with the studio name shown on screen, and orange buttons now use a dark label that stays readable
+- Old links to the offers and pricing pages now open the matching section of Services & pricing, and the footer's "Our apps" link goes to the apps section of the homepage
 
 ## [1.8.0] - 2026-09-23
 

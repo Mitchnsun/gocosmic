@@ -39,7 +39,8 @@ const getNamespacesForPath = (pathname: string): string[] => {
     pathWithoutLocale.startsWith('/web-mobile-entwickler-annecy-genf') ||
     pathWithoutLocale.startsWith('/sviluppatore-web-mobile-annecy-ginevra')
   ) {
-    return ['local'];
+    // The local page also shows the latest project cards.
+    return ['local', 'projects'];
   } else if (
     pathWithoutLocale.startsWith('/projects/psc-supersprint') ||
     pathWithoutLocale.startsWith('/projets/psc-supersprint') ||

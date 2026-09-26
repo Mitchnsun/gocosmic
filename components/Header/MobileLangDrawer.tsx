@@ -56,7 +56,7 @@ const MobileLangDrawer = ({ onClose }: MobileLangDrawerProps) => {
       role="dialog"
       aria-modal="true"
       aria-label={t('switch_locale')}
-      className="fixed inset-0 z-40 flex flex-col bg-slate-950/95 backdrop-blur-xl"
+      className="bg-void/95 fixed inset-0 z-40 flex flex-col backdrop-blur-xl"
       initial={{ y: '-100%' }}
       animate={{ y: 0 }}
       exit={{ y: '-100%' }}
@@ -66,14 +66,14 @@ const MobileLangDrawer = ({ onClose }: MobileLangDrawerProps) => {
         style={{ height: `calc(${STATUS_BAR_HEIGHT}px + env(safe-area-inset-top, 0px) + ${HEADER_HEIGHT}px)` }}
         className="shrink-0"
       />
-      <div className="border-ghost/10 text-3xs flex items-center justify-between border-b px-4 py-3 tracking-widest text-slate-500 uppercase sm:px-6">
+      <div className="border-ghost/10 text-3xs text-ghost/45 flex items-center justify-between border-b px-4 py-3 tracking-widest uppercase sm:px-6">
         <span>{t('lang_drawer_title')}</span>
-        <button onClick={onClose} aria-label={t('menu_close')} className="p-1 transition-colors hover:text-slate-300">
+        <button onClick={onClose} aria-label={t('menu_close')} className="hover:text-ghost p-1 transition-colors">
           <XMarkIcon className="h-4 w-4" aria-hidden="true" />
         </button>
       </div>
       <nav className="flex flex-1 flex-col overflow-y-auto" aria-label={t('switch_locale')}>
-        <ul className="flex flex-col divide-y divide-slate-800">
+        <ul className="divide-ghost/8 flex flex-col divide-y">
           {Object.entries(LANG_DRAWER_LANGUAGES).map(([code, { name, flag }], index) => (
             <motion.li
               key={code}
@@ -88,7 +88,7 @@ const MobileLangDrawer = ({ onClose }: MobileLangDrawerProps) => {
                   <span aria-hidden="true">{flag}</span>
                   {name}
                 </span>
-                {locale === code && <CheckIcon className="h-5 w-5 text-blue-400" aria-hidden="true" />}
+                {locale === code && <CheckIcon className="text-aerospace h-5 w-5" aria-hidden="true" />}
               </button>
             </motion.li>
           ))}

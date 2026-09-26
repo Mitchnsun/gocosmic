@@ -273,8 +273,6 @@ Cette approche garantit des URLs SEO-friendly et une expérience utilisateur coh
 - **[TypeScript 5.9](https://www.typescriptlang.org/)** — Typage statique et développement robuste
 - **[next-intl](https://next-intl.dev/)** — Internationalisation typée avec support 5 langues
 - **[TailwindCSS 4.x](https://tailwindcss.com/)** — Styles avec système de design cosmique
-- **[Three.js](https://threejs.org/)** — Graphiques 3D et expériences interactives
-- **[React Three Fiber](https://docs.pmnd.rs/react-three-fiber)** — Renderer React pour Three.js
 - **[Heroicons](https://heroicons.com/)** — Icônes SVG artisanales
 - **[Vitest](https://vitest.dev/)** — Framework de tests unitaires rapide
 - **[React Testing Library](https://testing-library.com/react)** — Utilitaires de test de composants

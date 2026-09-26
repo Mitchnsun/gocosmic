@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 
+import { Eyebrow } from '@/design-system/eyebrow';
 import { cn } from '@/design-system/lib/utils';
 
 interface SectionHeadingProps {
@@ -32,10 +33,7 @@ export function SectionHeading({
 
   return (
     <div className={cn('flex flex-col gap-4', className)}>
-      <p className="text-aerospace text-2xs flex items-center gap-2.5 font-mono tracking-[0.22em] uppercase">
-        <span className="bg-aerospace h-1.5 w-1.5 rounded-full" aria-hidden="true" />
-        {eyebrow}
-      </p>
+      <Eyebrow>{eyebrow}</Eyebrow>
       <Heading
         id={titleId}
         className={cn(

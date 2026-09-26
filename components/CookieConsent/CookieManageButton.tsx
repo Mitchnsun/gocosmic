@@ -13,7 +13,7 @@ export function CookieManageButton({ className }: { className?: string }) {
   return (
     <button
       type="button"
-      className={cn('text-gray-300 underline transition hover:text-white', className)}
+      className={cn('text-ghost/70 hover:text-ghost underline underline-offset-4 transition', className)}
       onClick={openManage}>
       {t('manage')}
     </button>

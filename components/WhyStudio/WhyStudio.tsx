@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import { Reveal } from '@/components/Reveal';
 import { SectionHeading } from '@/components/SectionHeading';
+import { HairlineGrid } from '@/design-system/hairline-grid';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, SECTION_Y } from '@/design-system/pill';
 
@@ -26,7 +27,7 @@ export function WhyStudio({ eyebrow, title, lead, reasons, id = 'why-studio' }: 
     <section id={id} aria-labelledby={titleId} className={cn('bg-ember', SECTION_Y)}>
       <div className={cn(CONTAINER, 'grid items-start gap-[clamp(2rem,5vw,5rem)] lg:grid-cols-2')}>
         <SectionHeading eyebrow={eyebrow} title={title} titleId={titleId} lead={lead} />
-        <ol className="bg-ghost/10 border-ghost/10 grid gap-px overflow-hidden rounded-2xl border">
+        <HairlineGrid as="ol">
           {reasons.map((reason, index) => (
             <li key={reason.title} className="bg-ember">
               <Reveal delay={index * 50} className="grid grid-cols-[auto_1fr] items-baseline gap-4 px-6 py-5">
@@ -40,7 +41,7 @@ export function WhyStudio({ eyebrow, title, lead, reasons, id = 'why-studio' }: 
               </Reveal>
             </li>
           ))}
-        </ol>
+        </HairlineGrid>
       </div>
     </section>
   );

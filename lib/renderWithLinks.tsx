@@ -6,7 +6,11 @@ export function renderWithLinks(text: string) {
     const trailing = part.slice(clean.length);
     return (
       <span key={`${clean}-${i}`}>
-        <a href={clean} target="_blank" rel="noopener noreferrer" className="underline transition hover:text-blue-300">
+        <a
+          href={clean}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-ghost underline underline-offset-4 transition-colors">
           {clean}
         </a>
         {trailing}

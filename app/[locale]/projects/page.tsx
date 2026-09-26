@@ -8,7 +8,7 @@ import { buildProjectCards, FilterableProjectGrid } from '@/components/ProjectGr
 import { SectionHeading } from '@/components/SectionHeading';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, SECTION_Y } from '@/design-system/pill';
-import { getCanonicalUrl } from '@/i18n/canonical';
+import { getAlternates } from '@/i18n/canonical';
 import { getOgImages } from '@/lib/og';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -23,9 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title,
     description,
-    alternates: {
-      canonical: getCanonicalUrl(locale, '/projects'),
-    },
+    alternates: getAlternates(locale, '/projects'),
     openGraph: {
       title,
       description,

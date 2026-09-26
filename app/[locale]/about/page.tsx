@@ -11,7 +11,7 @@ import { SectionHeading } from '@/components/SectionHeading';
 import { StudioIntro } from '@/components/StudioIntro';
 import { WhyStudio } from '@/components/WhyStudio';
 import { CONTAINER, ghostPill } from '@/design-system/pill';
-import { getCanonicalUrl } from '@/i18n/canonical';
+import { getAlternates } from '@/i18n/canonical';
 import { getOgImages } from '@/lib/og';
 import { getCurrency } from '@/lib/region';
 import { getRegion } from '@/lib/region.server';
@@ -27,9 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title,
     description,
-    alternates: {
-      canonical: getCanonicalUrl(locale, '/about'),
-    },
+    alternates: getAlternates(locale, '/about'),
     openGraph: {
       title,
       description,

@@ -2,31 +2,32 @@ import { useLocale } from 'next-intl';
 import { JsonLdScript } from 'next-seo';
 
 import { getCanonicalUrl } from '@/i18n/canonical';
-import { BRAND_NAME } from '@/lib/config';
+import { BRAND_NAME, SITE_URL, STUDIO_ADDRESS } from '@/lib/config';
 
 function getJobTitleByLocale(locale: string): string {
   switch (locale) {
     case 'en': {
-      return 'Freelance Web & Mobile Developer';
+      return 'Founder of Cosmic Studio, web and mobile developer';
     }
     case 'es': {
-      return 'Desarrollador Web y Móvil Freelance';
+      return 'Fundador de Cosmic Studio, desarrollador web y móvil';
     }
     case 'de': {
-      return 'Freelancer für Web- und Mobile-Entwicklung';
+      return 'Gründer von Cosmic Studio, Web- und App-Entwickler';
     }
     case 'it': {
-      return 'Sviluppatore Web e Mobile Freelance';
+      return 'Fondatore di Cosmic Studio, sviluppatore web e mobile';
     }
     case 'fr':
     default: {
-      return 'Développeur Web & Mobile Freelance';
+      return 'Fondateur de Cosmic Studio, développeur web et mobile';
     }
   }
 }
 
 export default function PersonSeo() {
   const locale = useLocale();
+  const { addressLocality, addressCountry } = STUDIO_ADDRESS;
   const personJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -37,14 +38,14 @@ export default function PersonSeo() {
     worksFor: [
       {
         '@type': 'Organization',
+        '@id': `${SITE_URL}/#company`,
         name: BRAND_NAME,
-        url: 'https://www.gocosmic.dev',
+        url: SITE_URL,
       },
     ],
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Annecy',
-      addressCountry: 'FR',
+    homeLocation: {
+      '@type': 'Place',
+      address: { '@type': 'PostalAddress', addressLocality, addressCountry },
     },
   };
 

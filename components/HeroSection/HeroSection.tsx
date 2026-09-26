@@ -7,6 +7,7 @@ import AnimatedEndWord from '@/components/HeroSection/AnimatedEndWord';
 import { useWordCycler } from '@/components/HeroSection/HeroSection.hooks';
 import Planet from '@/components/Planet';
 import Starfield from '@/components/Starfield';
+import { Eyebrow } from '@/design-system/eyebrow';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, ghostPill, primaryPill } from '@/design-system/pill';
 import { Link } from '@/i18n/navigation';
@@ -94,10 +95,7 @@ const HeroSection = ({
       </div>
 
       <div className={cn(CONTAINER, 'flex flex-col gap-8')}>
-        <p className="hero-reveal-line text-aerospace text-2xs flex items-center gap-2.5 font-mono tracking-[0.22em] uppercase">
-          <span className="bg-aerospace h-1.5 w-1.5 rounded-full" aria-hidden="true" />
-          {eyebrow}
-        </p>
+        <Eyebrow className="hero-reveal-line">{eyebrow}</Eyebrow>
         <h1
           className="font-display max-w-[16ch] text-[clamp(2.5rem,7.2vw,6.5rem)] leading-[0.98] font-semibold tracking-[-0.035em] text-balance"
           aria-label={`${title} ${currentWord}`}>

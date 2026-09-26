@@ -19,7 +19,7 @@ type FooterLink = {
 export const STUDIO_LINKS: FooterLink[] = [
   { labelKey: 'link_services', href: '/services' },
   { labelKey: 'link_projects', href: '/projects' },
-  { labelKey: 'link_apps', href: '/projects/daily-fortune' },
+  { labelKey: 'link_apps', href: { pathname: '/', hash: 'apps' } },
   { labelKey: 'link_about', href: '/about' },
   { labelKey: 'link_contact', href: '/contact' },
 ];

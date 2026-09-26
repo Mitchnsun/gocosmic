@@ -25,3 +25,25 @@ export function getCanonicalUrl(locale: string, routeKey: PathKey): string {
   }
   return `${SITE_URL}/${locale}${localizedPath}`;
 }
+
+/**
+ * hreflang map for a route: its URL in every locale, plus `x-default` pointing
+ * to the default locale. Shared by page metadata and the sitemap.
+ */
+export function getLanguageAlternates(routeKey: PathKey): Record<string, string> {
+  return {
+    ...Object.fromEntries(routing.locales.map((locale) => [locale, getCanonicalUrl(locale, routeKey)])),
+    'x-default': getCanonicalUrl(routing.defaultLocale, routeKey),
+  };
+}
+
+/**
+ * `alternates` block of a page's metadata: canonical URL in the current locale
+ * and the hreflang links to its translations.
+ */
+export function getAlternates(locale: string, routeKey: PathKey) {
+  return {
+    canonical: getCanonicalUrl(locale, routeKey),
+    languages: getLanguageAlternates(routeKey),
+  };
+}

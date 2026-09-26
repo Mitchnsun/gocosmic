@@ -166,7 +166,7 @@ export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'cont
             type="submit"
             disabled={isSending}
             className={cn(
-              buttonVariants({ variant: 'aerospace' }),
+              buttonVariants({ variant: 'primary' }),
               'focus-visible:ring-ghost focus-visible:ring-offset-void w-fit gap-2 py-3 transition-transform duration-300 ease-out hover:scale-105 focus-visible:ring-2 focus-visible:ring-offset-2 motion-reduce:scale-100! motion-reduce:transition-none!'
             )}>
             {isSending ? t('submitting') : t('submit')}

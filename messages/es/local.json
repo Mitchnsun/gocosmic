@@ -1,34 +1,50 @@
 {
   "local": {
-    "hero": {
-      "title": "Desarrollador Web y Móvil en Annecy, Ginebra y la Suiza romanda",
-      "description": {
-        "fr": "Matthieu Compérat, desarrollador freelance con base en Annecy. Diseño y desarrollo aplicaciones web y móviles modernas para empresas de Annecy, Alta Saboya, Ginebra y la Suiza romanda.",
-        "ch": "Matthieu Compérat, desarrollador freelance con base en Chêne-Bougeries, Ginebra. Diseño y desarrollo aplicaciones web y móviles modernas para empresas de Ginebra, la Suiza romanda y la región de Annecy."
-      }
+    "meta": {
+      "title": "Desarrollador web y móvil en Ginebra y Annecy | Cosmic Studio",
+      "description": "Cosmic Studio crea sitios web y aplicaciones para artesanos, asociaciones y profesionales independientes de Ginebra, la Suiza romanda, Annecy y la Alta Saboya. Reuniones en persona o por videollamada."
     },
-    "services": {
-      "title": "Servicios de desarrollo web y móvil para empresas locales"
+    "intro": {
+      "eyebrow": "[ Ginebra · Annecy ]",
+      "title": "Tu estudio web, <em>entre Ginebra y Annecy.</em>",
+      "lead": {
+        "ch": "Cosmic Studio está en Chêne-Bougeries. Creamos sitios web y aplicaciones para artesanos, asociaciones y profesionales independientes de Ginebra y la Suiza romanda, y vamos a conocerte en persona.",
+        "fr": "Cosmic Studio trabaja entre Annecy y Ginebra. Creamos sitios web y aplicaciones para artesanos, asociaciones y profesionales independientes de la Alta Saboya, y vamos a conocerte en persona."
+      },
+      "primary": "Hablar de mi proyecto",
+      "secondary": "Ver servicios y precios"
     },
-    "zone": {
-      "title": "Zona de cobertura",
-      "remote": "Colaboración remota disponible en toda Francia y Suiza",
-      "locations": {
-        "annecy": "Annecy y Alta Saboya",
-        "geneva": "Ginebra y arco del lago Lemán",
-        "suisse_romande": "Suiza romanda (Vaud, Valais, Neuchâtel, Friburgo)"
+    "zones": {
+      "eyebrow": "[ Dónde trabajamos ]",
+      "title": "En persona cuando ayuda, <em>a distancia el resto del tiempo.</em>",
+      "items": {
+        "geneva": {
+          "title": "Ginebra",
+          "description": "El estudio está en Chêne-Bougeries. Nos vemos en tu casa, en tu taller o tomando un café."
+        },
+        "romandy": {
+          "title": "Suiza romanda",
+          "description": "Vaud, Valais, Neuchâtel, Friburgo: vamos a la primera reunión y seguimos por videollamada."
+        },
+        "annecy": {
+          "title": "Annecy y la Alta Saboya",
+          "description": "De la zona de Annecy al Ginebrino francés, las condiciones y los plazos son los mismos que en Ginebra."
+        },
+        "remote": {
+          "title": "En otros lugares",
+          "description": "En toda Francia y Suiza, todo puede hacerse a distancia: videollamadas, maqueta compartida, publicación."
+        }
       }
     },
     "projects": {
-      "title": {
-        "fr": "Proyectos recientes realizados desde Annecy",
-        "ch": "Proyectos recientes realizados desde Ginebra"
-      }
+      "eyebrow": "[ Proyectos ]",
+      "title": "Algunos sitios <em>ya en línea.</em>",
+      "all": "Todos los proyectos"
     },
-    "cta": "Contactar a tu desarrollador web local",
-    "meta": {
-      "title": "Desarrollador web y móvil Annecy • Ginebra • Suiza romanda | Cosmic Studio",
-      "description": "Matthieu Compérat, desarrollador freelance con base en Annecy y Ginebra. Desarrollo de aplicaciones web y móviles para Annecy, Alta Saboya, Ginebra y la Suiza romanda."
+    "cta": {
+      "title": "¿Un proyecto cerca de ti?",
+      "description": "Cuéntanos en pocas líneas a qué te dedicas. Te respondemos en un día laborable para concertar una primera conversación.",
+      "button": "Hablar de mi proyecto"
     }
   }
 }

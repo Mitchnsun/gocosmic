@@ -53,7 +53,7 @@ export function ProcessTimeline({
               {title}
             </h2>
           )}
-          {subtitle && <p className="mt-4 max-w-2xl text-lg text-slate-400">{subtitle}</p>}
+          {subtitle && <p className="text-ghost/60 mt-4 max-w-2xl text-lg">{subtitle}</p>}
         </div>
       )}
 

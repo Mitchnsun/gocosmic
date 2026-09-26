@@ -1,43 +1,47 @@
 import { JsonLdScript } from 'next-seo';
 
 import { SITE_URL } from '@/i18n/canonical';
-import { BRAND_NAME } from '@/lib/config';
+import { BRAND_NAME, LEGACY_BRAND_NAME, STUDIO_ADDRESS } from '@/lib/config';
 
 type LocalBusinessSeoProps = {
   locale: string;
 };
 
+/*
+ * The studio is declared at its Geneva base, while Annecy stays named in the
+ * description and the served areas for local searches on the French side.
+ */
 function getLocalizedLocalBusinessData(locale: string) {
   switch (locale) {
     case 'fr': {
       return {
         description:
-          'Agence de développement web et mobile basée à Annecy, intervenant à Genève, en Suisse romande et en Haute-Savoie.',
-        areaServed: ['Annecy', 'Genève', 'Haute-Savoie', 'Arc lémanique', 'Suisse romande'],
+          'Studio web et mobile installé à Chêne-Bougeries, près de Genève. Sites et applications pour les artisans, associations et indépendants de Suisse romande et de Haute-Savoie, notamment à Annecy.',
+        areaServed: ['Genève', 'Suisse romande', 'Haute-Savoie', 'Annecy'],
         inLanguage: 'fr',
       };
     }
     case 'es': {
       return {
         description:
-          'Agencia de desarrollo web y móvil con sede en Annecy, que presta servicios en Ginebra, la Suiza romanda y Alta Saboya.',
-        areaServed: ['Annecy', 'Ginebra', 'Alta Saboya', 'Arco lemánico', 'Suiza romanda'],
+          'Estudio web y móvil con sede en Chêne-Bougeries, cerca de Ginebra. Sitios web y aplicaciones para artesanos, asociaciones y profesionales independientes de la Suiza romanda y la Alta Saboya, en particular en Annecy.',
+        areaServed: ['Ginebra', 'Suiza romanda', 'Alta Saboya', 'Annecy'],
         inLanguage: 'es',
       };
     }
     case 'de': {
       return {
         description:
-          'Agentur für Web- und Mobile-Entwicklung mit Sitz in Annecy, tätig in Genf, der Westschweiz und Hochsavoyen.',
-        areaServed: ['Annecy', 'Genf', 'Hochsavoyen', 'Genferseeregion', 'Westschweiz'],
+          'Web- und App-Studio in Chêne-Bougeries bei Genf. Websites und Apps für Handwerksbetriebe, Vereine und Selbstständige in der Westschweiz und in Hochsavoyen, insbesondere in Annecy.',
+        areaServed: ['Genf', 'Westschweiz', 'Hochsavoyen', 'Annecy'],
         inLanguage: 'de',
       };
     }
     case 'it': {
       return {
         description:
-          'Agenzia di sviluppo web e mobile con sede ad Annecy, attiva a Ginevra, nella Svizzera romanda e nell’Alta Savoia.',
-        areaServed: ['Annecy', 'Ginevra', 'Alta Savoia', 'Arco lemanico', 'Svizzera romanda'],
+          'Studio web e mobile con sede a Chêne-Bougeries, vicino a Ginevra. Siti e app per artigiani, associazioni e liberi professionisti della Svizzera romanda e dell’Alta Savoia, in particolare ad Annecy.',
+        areaServed: ['Ginevra', 'Svizzera romanda', 'Alta Savoia', 'Annecy'],
         inLanguage: 'it',
       };
     }
@@ -45,8 +49,8 @@ function getLocalizedLocalBusinessData(locale: string) {
     default: {
       return {
         description:
-          'Web and mobile development agency based in Annecy, serving Geneva, French-speaking Switzerland and Haute-Savoie.',
-        areaServed: ['Annecy', 'Geneva', 'Haute-Savoie', 'Lake Geneva region', 'French-speaking Switzerland'],
+          'Web and mobile studio based in Chêne-Bougeries, near Geneva. Websites and apps for craftspeople, associations and independents in French-speaking Switzerland and Haute-Savoie, including Annecy.',
+        areaServed: ['Geneva', 'French-speaking Switzerland', 'Haute-Savoie', 'Annecy'],
         inLanguage: 'en',
       };
     }
@@ -55,6 +59,7 @@ function getLocalizedLocalBusinessData(locale: string) {
 
 export default function LocalBusinessSeo({ locale }: LocalBusinessSeoProps) {
   const { description, areaServed, inLanguage } = getLocalizedLocalBusinessData(locale);
+  const { geo, ...address } = STUDIO_ADDRESS;
 
   return (
     <JsonLdScript
@@ -64,21 +69,13 @@ export default function LocalBusinessSeo({ locale }: LocalBusinessSeoProps) {
         '@type': 'ProfessionalService',
         '@id': `${SITE_URL}/#company`,
         name: BRAND_NAME,
+        alternateName: LEGACY_BRAND_NAME,
         description,
         url: SITE_URL,
+        image: `${SITE_URL}/og-default.jpg`,
         inLanguage,
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Annecy',
-          addressRegion: 'Auvergne-Rhône-Alpes',
-          postalCode: '74000',
-          addressCountry: 'FR',
-        },
-        geo: {
-          '@type': 'GeoCoordinates',
-          latitude: 45.8992,
-          longitude: 6.1294,
-        },
+        address: { '@type': 'PostalAddress', ...address },
+        geo: { '@type': 'GeoCoordinates', ...geo },
         areaServed,
         sameAs: ['https://www.linkedin.com/in/matthieucomperat/'],
       }}

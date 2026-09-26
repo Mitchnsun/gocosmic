@@ -87,7 +87,7 @@ const Starfield = ({
     let animationId: number | null = null;
 
     const draw = () => {
-      // Deep space background — matches bg-slate-950
+      // Deep space background — the `void` colour token (#020617)
       ctx.fillStyle = 'rgb(2, 6, 23)';
       ctx.fillRect(0, 0, width, height);
 

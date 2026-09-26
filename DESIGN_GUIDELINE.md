@@ -50,7 +50,7 @@ Official tokens declared in `app/globals.css` under `@theme` (Tailwind v4 → av
 | Tertiary / meta text     | `rgba(248,248,255,.35)` | `text-ghost/35`   |
 | Card surface on void     | `rgba(248,248,255,.02)` | `bg-ghost/[0.02]` |
 
-> ❌ **Never** use `text-blue-300`, `text-gray-400`, raw `slate-*` for brand text. The only tolerated `slate` is the legacy `text-slate-400` on sub-headings; migrate to `text-ghost/55` over time.
+> ❌ **Never** use Tailwind's default palettes (`slate-*`, `gray-*`, `blue-*`, `amber-*`…). An ESLint rule (`no-restricted-syntax` in `eslint.config.js`) rejects them in `app/`, `components/`, `design-system/` and `lib/`: pick a token or a `ghost` opacity instead.
 
 **Accent glows** (radial-gradient, layered behind content):
 
@@ -94,10 +94,12 @@ Minimum readable size: **14px** for body text.
 ### 2.3 Spacing, layout, radii
 
 - **Container**: `max-w-7xl` centered (`m-auto`), horizontal padding `px-4 sm:px-6 lg:px-8`.
-- **Vertical section rhythm**: generous — `py-16` to `py-24` (prototype goes up to 140px on desktop). Sections need room to breathe.
+- **Vertical section rhythm**: `SECTION_Y` from `design-system/pill.ts` — `clamp(64px, 8vw, 120px)` top and bottom. Sections need room to breathe.
+- **Alternate sections**: at most one section in three on the `ember` background, the rest on `void`. `space` is kept for brand backgrounds.
 - **Radii**: pills `rounded-full` (buttons, chips, badges); cards/containers `rounded-xl` → `rounded-2xl` (12–24px). No sharp corners on interactive surfaces.
 - **Borders**: always via `ghost` opacity (see §2.1), never an opaque grey.
-- **Card grids**: "1px gap" pattern — grid with `gap: 1px` on a `line` background, producing thin separators between cards (`ServicesGrid`).
+- **Card grids**: `grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))]` (260–320 px minimum per card) lets cards wrap without breakpoints.
+- **Hairline grids**: `HairlineGrid` (`design-system/hairline-grid.tsx`) — a `gap-px` grid on a `ghost/8` background, producing 1 px separators; each cell paints the section background. Give it explicit columns (`md:grid-cols-3`) so a last row never shows an empty cell.
 
 ### 2.4 Motion
 
@@ -118,12 +120,10 @@ These elements **define** the Cosmic Studio style. Reuse them as-is to stay cons
 
 ### 3.1 Eyebrow / `tag`
 
-Section label: luminous `aerospace` dot + uppercase spaced mono text.
+Section label: luminous `aerospace` dot + uppercase spaced mono text. Use the `Eyebrow` primitive (`design-system/eyebrow.tsx`); `SectionHeading` renders it for you.
 
 ```tsx
-<p className="text-aerospace mb-4 flex items-center gap-2 font-mono text-sm font-medium tracking-widest uppercase">
-  <span className="bg-aerospace h-2 w-2 rounded-full" aria-hidden="true" />[ Services · 04 ]
-</p>
+<Eyebrow>[ Services · 04 ]</Eyebrow>
 ```
 
 Common text format: `[ NAME · NN ]` or `SECTOR — STUDIO`.
@@ -147,15 +147,16 @@ Ambient mono metadata: studio base and altitude (`ALT. 424M`, from `STUDIO_BASES
 
 ### 3.4 Starfield background + glow
 
-Immersive sections (hero, CTA): `<Starfield>` at layer `-z-20` + a radial accent gradient at `-z-10`, content at `z-10`. Density/speed are configurable; the CTA shifts to "warp" on hover. Outside these zones, keep a flat `bg-void`.
+Immersive sections: `<Starfield>` at layer `-z-20` + a radial accent gradient or the animated ringed `Planet` at `-z-10`, content at `z-10`. Density/speed are configurable; the CTA shifts to "warp" on hover. Stars appear in the homepage hero and in the final `CTAFinal` only: **one immersive section per inner page** (its closing CTA). Everywhere else, keep a flat `bg-void`.
 
 ### 3.5 Buttons
 
 **Pill** shape (`rounded-full`), `font-display` 500, optional arrow icon (`→`).
 
-- **Primary**: `primaryPill()` from `design-system/pill.ts` — `bg-aerospace text-void` (dark label: white on orange fails WCAG AA), orange glow, `hover:scale-[1.04]` over 200 ms, still under reduced motion. One primary per visible screen.
-- **Ghost**: `ghostPill()` — the `outline` variant, `border-ghost/15 text-ghost`, `hover:border-ghost hover:bg-ghost/5`.
-- Both are built on `buttonVariants()` (`design-system/button.variants`, size `pill`: 48 px high) + `cn()`; pass extra classes as the helper's argument. Other accent variants (`royal` / `jungle`) remain available through `buttonVariants()`.
+- **Primary**: `primaryPill()` from `design-system/pill.ts` — the `primary` variant: `bg-aerospace text-void` (dark label: white on orange fails WCAG AA), orange glow, `hover:scale-[1.04]` over 200 ms, still under reduced motion. One primary per visible screen, 44–52 px high.
+- **Ghost**: `ghostPill()` — the `ghost` variant, `border-ghost/15 text-ghost`, `hover:border-ghost hover:bg-ghost/5`.
+- **Link**: `buttonVariants({ variant: 'link', size: 'inline' })` — orange text followed by `→`, for an action inside running content.
+- All are built on `buttonVariants()` (`design-system/button.variants`, size `pill`: 48 px high) + `cn()`; pass extra classes as the helper's argument. The plain fills `aerospace` / `royal` / `jungle` exist for `CTAFinal`'s `accentColor`.
 
 ### 3.6 Gradient accent heading
 
@@ -169,15 +170,20 @@ To mark a location, category, or action: **geometric SVGs** (crosshair, diamond 
 
 Pages are assembled from shared building blocks — reuse them instead of re-implementing the patterns above:
 
-| Component                   | Role                                                                                                  |
-| --------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `components/SectionHeading` | Eyebrow → title with light italic `<em>` emphasis → 56ch lead; `level={1}` for page intros            |
-| `components/Reveal`         | Fade-and-lift on scroll, `delay={index * 50}` for a 50 ms stagger; CSS-first reduced-motion guard     |
-| `design-system/pill.ts`     | `primaryPill()`, `ghostPill()`, plus `CONTAINER` (1280 px, fluid gutters) and `SECTION_Y` (64–120 px) |
-| `components/ContentSection` | Card-shaped section: eyebrow + HUD counter, `h2` bound via `aria-labelledby`, lead, body              |
-| `components/AccentList`     | Bullet list with accent dots, optional mono label, 1 or 2 columns                                     |
-| `components/CaseStudy`      | Full project case study: hero, ordered sections, CTA card, previous / next navigation                 |
-| `design-system/accent.ts`   | `accentClasses(token)` → the text / bg / border utilities and RGB channels of a token                 |
+| Component                     | Role                                                                                                  |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `components/SectionHeading`   | Eyebrow → title with light italic `<em>` emphasis → 56ch lead; `level={1}` for page intros            |
+| `components/Reveal`           | Fade-and-lift on scroll, `delay={index * 50}` for a 50 ms stagger; CSS-first reduced-motion guard     |
+| `design-system/pill.ts`       | `primaryPill()`, `ghostPill()`, plus `CONTAINER` (1280 px, fluid gutters) and `SECTION_Y` (64–120 px) |
+| `design-system/eyebrow`       | Orange dot + uppercase mono label opening a section                                                   |
+| `design-system/chip`          | Bordered mono tag; `variant="jungle"` marks what is included                                          |
+| `design-system/hairline-grid` | `gap-px` card grid with 1 px separators (`as="ol"` for ordered content)                               |
+| `design-system/field`         | `Field` (label, optional hint, required asterisk, error) + `FIELD_INPUT` / `FIELD_TEXTAREA` controls  |
+| `components/LegalDocument`    | Legal notice, privacy policy and terms of sale layout: intro, one card per section                    |
+| `components/ContentSection`   | Card-shaped section: eyebrow + HUD counter, `h2` bound via `aria-labelledby`, lead, body              |
+| `components/AccentList`       | Bullet list with accent dots, optional mono label, 1 or 2 columns                                     |
+| `components/CaseStudy`        | Full project case study: hero, ordered sections, CTA card, previous / next navigation                 |
+| `design-system/accent.ts`     | `accentClasses(token)` → the text / bg / border utilities and RGB channels of a token                 |
 
 Inner pages open with a plain `SectionHeading level={1}` intro — no starfield. The one immersive moment per page is the homepage hero or the final `CTAFinal`.
 
@@ -185,7 +191,11 @@ Accent tokens accepted by all of them: `aerospace`, `royal`, `jungle`, `ghost`. 
 
 ### 3.8 Cards
 
-Background `void` slightly lifted (`bg-ghost/[0.02]` or `void-2`), border `ghost/8`, `rounded-2xl`, hover that lightens the background and/or shifts an accent arrow. Card number in mono `ghost/35`, title `font-display`, tags as bordered mono chips.
+Background `void` slightly lifted (`bg-ghost/[0.02]` or `void-2`), border `ghost/8`, `rounded-2xl`, hover that lightens the background and/or shifts an accent arrow. Card number in mono `ghost/35`, title `font-display`, tags as `Chip`s. List bullets are 6 px dots (`h-1.5 w-1.5`): `jungle` for what is included, `ghost/35` otherwise.
+
+### 3.10 Form fields
+
+48 px high inputs (`h-12`), 12 px radius (`rounded-xl`), `border-ghost/15` on `bg-ghost/[0.03]`, orange border and ring on focus, orange border and message on error (`aria-invalid` + `aria-describedby="{id}-error"`). Build every field with `Field` and the `FIELD_INPUT` / `FIELD_TEXTAREA` classes.
 
 ---
 
@@ -263,7 +273,7 @@ Glyph ............. geometric SVG currentColor — NO emoji
 **❌ Don't (anti-slop)**
 
 - **Emoji** (📍🚀✨…) → geometric SVGs.
-- Raw Tailwind colors outside the palette: `blue-*`, `gray-*`, `slate-*` for brand text.
+- Raw Tailwind colors outside the palette: `blue-*`, `gray-*`, `slate-*`… (the linter rejects them).
 - Stacking **decorative gradients**, neons everywhere, multiple accents in one zone.
 - Generic "left-colored-border + rounded corners" cards, heavy shadows.
 - **Filler content**: fake stats, empty sections, gratuitous icons. Ask before adding content.
@@ -294,6 +304,14 @@ The words carry as much of the brand as the tokens. Copy targets **people with a
 | Mono HUD details: status bar, coordinates, countdown labels (`T-3 … T-0`)                              | Superlatives: époustouflant, excellence, propulser, stratosphère                            |
 | Green signal dot for "available"                                                                       | Technology lists in client-facing copy (React, Next.js, TypeScript…), acronyms (SEO, SSL)   |
 | "Tous systèmes nominaux" as a footer wink                                                              | Slang and anglicisms when a plain word exists ("Sans drama" → "Sans surprise"), emoji       |
+
+**Write like a person.** Copy that sounds generated loses the trust the site is asking for. Read every sentence aloud; if nobody would say it to a customer across a counter, rewrite it.
+
+- Plain statements over slogans. No "Pas X, mais Y" or "Plus qu'un X, un Y" contrasts, no "Et si…", "Fini les…", "Que vous soyez… ou…" openers, no rhetorical questions stacked in a row.
+- Lists of three only when there really are three things. Vary sentence length; one idea per sentence.
+- Few colons and dashes: at most one per sentence, never used as a drumroll ("Le résultat : …").
+- Concrete over grand: name the trade, the delay, the price, the person. Drop filler words: véritable, unique, clé en main, en toute sérénité, solutions, n'hésitez pas, sur mesure (once per page at most), accompagner (prefer a verb that says what happens).
+- Legal pages stay precise before they are friendly: never change what a clause commits to when polishing its wording.
 
 **Lexicon — plain words first.**
 

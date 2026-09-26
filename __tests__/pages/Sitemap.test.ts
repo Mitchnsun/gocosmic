@@ -79,4 +79,20 @@ describe('sitemap', () => {
     expect(result.some((entry) => entry.url === 'https://www.gocosmic.dev/de/ueber-uns')).toBe(true);
     expect(result.some((entry) => entry.url === 'https://www.gocosmic.dev/it/chi-siamo')).toBe(true);
   });
+
+  it('lists every translation of a page as hreflang alternates', () => {
+    const about = sitemap().find((entry) => entry.url === 'https://www.gocosmic.dev/de/ueber-uns');
+
+    expect(about?.alternates?.languages).toMatchObject({
+      fr: 'https://www.gocosmic.dev/fr/a-propos',
+      it: 'https://www.gocosmic.dev/it/chi-siamo',
+      'x-default': 'https://www.gocosmic.dev/en/about',
+    });
+  });
+
+  it('no longer lists the retired offers, pricing and journey pages', () => {
+    const urls = sitemap().map((entry) => entry.url);
+
+    expect(urls.some((url) => /\/(offers|pricing|journey|tarifs|nos-offres|voyage)$/.test(url))).toBe(false);
+  });
 });

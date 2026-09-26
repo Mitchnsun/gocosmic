@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 
+import { Field, FIELD_TEXTAREA } from '@/design-system/field';
 import { cn } from '@/design-system/lib/utils';
 
 import type { WishesTextareaProps } from './FreeMockupForm.types';
@@ -17,11 +18,7 @@ export function WishesTextarea({ value, onChange, error, onBlur }: WishesTextare
   const { count, max, isAtLimit } = getWishesCounter(value);
 
   return (
-    <div className="flex flex-col gap-2">
-      <label htmlFor={FIELD_ID} className="font-display text-ghost flex items-baseline gap-2 text-sm font-medium">
-        {t('form.wishes_label')}
-        <span className="text-ghost/35 text-2xs font-mono tracking-widest uppercase">{t('form.optional')}</span>
-      </label>
+    <Field id={FIELD_ID} label={t('form.wishes_label')} hint={t('form.optional')}>
       <textarea
         id={FIELD_ID}
         name="wishes"
@@ -33,7 +30,7 @@ export function WishesTextarea({ value, onChange, error, onBlur }: WishesTextare
         placeholder={t('form.wishes_placeholder')}
         aria-invalid={error ? true : undefined}
         aria-describedby={error ? `${COUNTER_ID} ${ERROR_ID}` : COUNTER_ID}
-        className="border-ghost/8 bg-ghost/[0.02] text-ghost placeholder:text-ghost/25 focus-visible:border-aerospace/40 focus-visible:ring-aerospace w-full resize-y rounded-xl border p-3 text-sm transition-colors focus-visible:ring-1 focus-visible:outline-none"
+        className={cn(FIELD_TEXTAREA, 'resize-y')}
       />
       <div className="flex items-baseline justify-between gap-3">
         {error ? (
@@ -49,6 +46,6 @@ export function WishesTextarea({ value, onChange, error, onBlur }: WishesTextare
           {t('form.wishes_counter', { count, max })}
         </span>
       </div>
-    </div>
+    </Field>
   );
 }

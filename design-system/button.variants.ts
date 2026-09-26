@@ -1,22 +1,26 @@
 import { cva } from 'class-variance-authority';
 
+/**
+ * Button styles. Screens mostly go through the `primaryPill()` / `ghostPill()`
+ * helpers in `pill.ts`; use the variants directly for anything else.
+ */
 export const buttonVariants = cva(
   'inline-flex items-center justify-center cursor-pointer rounded-full transition-colors disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
-        default: 'bg-neutral-950 text-neutral-50 hover:bg-neutral-800',
-        // Dark text on orange: white only reaches 3.2:1, below WCAG AA for body-size labels.
+        /** Quiet neutral action. */
+        default: 'bg-ghost/10 text-ghost hover:bg-ghost/15',
+        /** The one main action of a screen. Dark text on orange: white only reaches 3.2:1, below WCAG AA. */
+        primary: 'bg-aerospace text-void shadow-[0_0_32px_rgb(255_79_0/0.4)] hover:bg-aerospace/90',
+        /** Secondary action: outlined, no fill. */
+        ghost: 'border border-ghost/15 bg-transparent text-ghost hover:border-ghost hover:bg-ghost/5',
+        /** Text action inside content, followed by an arrow. Pair with the `inline` size. */
+        link: 'text-aerospace rounded-none underline-offset-4 hover:underline',
+        /* Plain accent fills, picked by the closing call-to-action's `accentColor`. */
         aerospace: 'bg-aerospace text-void hover:bg-aerospace/90',
-        chocolate: 'bg-chocolate text-neutral-50 hover:bg-chocolate/90',
-        'cosmic-latte': 'bg-cosmic-latte text-space hover:bg-cosmic-latte/90 hover:text-space/90',
-        ghost: 'bg-ghost text-neutral-900 hover:bg-violet-100',
-        jungle: 'bg-jungle text-white hover:bg-jungle/90',
-        outline: 'border border-ghost/15 bg-transparent text-ghost hover:border-ghost hover:bg-ghost/5',
-        'misty-rose': 'bg-misty-rose text-space hover:bg-misty-rose/80',
-        'outer-space': 'bg-outer-space text-neutral-50 hover:bg-outer-space/90',
-        royal: 'bg-royal text-neutral-50 hover:bg-royal/90',
-        space: 'bg-space text-neutral-50 hover:bg-space/50',
+        royal: 'bg-royal text-ghost hover:bg-royal/90',
+        jungle: 'bg-jungle text-void hover:bg-jungle/90',
       },
       size: {
         default: 'font-normal text-base px-6 py-2',
@@ -24,6 +28,7 @@ export const buttonVariants = cva(
         lg: 'font-bold text-lg px-8 py-2',
         icon: 'h-10 w-10',
         pill: 'h-12 gap-2.5 px-6 font-display text-base font-semibold',
+        inline: 'gap-1.5 p-0 font-display font-semibold',
       },
     },
     defaultVariants: {

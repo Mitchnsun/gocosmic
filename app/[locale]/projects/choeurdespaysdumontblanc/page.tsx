@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
 import { buildCaseStudyNavigation, CaseStudy } from '@/components/CaseStudy';
-import { getCanonicalUrl } from '@/i18n/canonical';
+import { getAlternates } from '@/i18n/canonical';
 import { getOgImages } from '@/lib/og';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -17,9 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title,
     description,
-    alternates: {
-      canonical: getCanonicalUrl(locale, '/projects/choeurdespaysdumontblanc'),
-    },
+    alternates: getAlternates(locale, '/projects/choeurdespaysdumontblanc'),
     openGraph: {
       title,
       description,

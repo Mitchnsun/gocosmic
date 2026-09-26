@@ -14,7 +14,7 @@ import { SectionHeading } from '@/components/SectionHeading';
 import { ServicesGrid } from '@/components/ServicesGrid';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, SECTION_Y } from '@/design-system/pill';
-import { getCanonicalUrl } from '@/i18n/canonical';
+import { getAlternates } from '@/i18n/canonical';
 import { getOgImages } from '@/lib/og';
 import { CODE_HANDOVER_MONTHS } from '@/lib/pricing/offers';
 import { getCurrency } from '@/lib/region';
@@ -31,9 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title,
     description,
-    alternates: {
-      canonical: getCanonicalUrl(locale, '/services'),
-    },
+    alternates: getAlternates(locale, '/services'),
     openGraph: {
       title,
       description,

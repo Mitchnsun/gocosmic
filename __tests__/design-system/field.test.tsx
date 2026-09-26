@@ -1,13 +1,13 @@
-import { FormField } from '@/components/FreeMockupForm/FormField';
+import { Field, FIELD_INPUT } from '@/design-system/field';
 
-import { render } from '../../test-utils';
+import { render } from '../test-utils';
 
-describe('FormField', () => {
+describe('Field', () => {
   it('links the label to the control', () => {
     const { getByLabelText } = render(
-      <FormField id="demo" label="Your email">
+      <Field id="demo" label="Your email">
         <input id="demo" />
-      </FormField>
+      </Field>
     );
 
     expect(getByLabelText('Your email')).toBeInTheDocument();
@@ -15,9 +15,9 @@ describe('FormField', () => {
 
   it('renders the optional hint next to the label', () => {
     const { getByText } = render(
-      <FormField id="demo" label="Your website" hint="Optional">
+      <Field id="demo" label="Your website" hint="Optional">
         <input id="demo" />
-      </FormField>
+      </Field>
     );
 
     expect(getByText('Optional')).toBeInTheDocument();
@@ -25,19 +25,29 @@ describe('FormField', () => {
 
   it('renders the error under an id the control can point at', () => {
     const { getByText, queryByText, rerender } = render(
-      <FormField id="demo" label="Your email">
+      <Field id="demo" label="Your email">
         <input id="demo" />
-      </FormField>
+      </Field>
     );
 
     expect(queryByText('Invalid')).not.toBeInTheDocument();
 
     rerender(
-      <FormField id="demo" label="Your email" error="Invalid">
+      <Field id="demo" label="Your email" error="Invalid">
         <input id="demo" />
-      </FormField>
+      </Field>
     );
 
     expect(getByText('Invalid')).toHaveAttribute('id', 'demo-error');
+  });
+
+  it('marks a required field with a decorative asterisk', () => {
+    const { getByText } = render(
+      <Field id="demo" label="Name" required>
+        <input id="demo" className={FIELD_INPUT} />
+      </Field>
+    );
+
+    expect(getByText('*')).toHaveAttribute('aria-hidden', 'true');
   });
 });

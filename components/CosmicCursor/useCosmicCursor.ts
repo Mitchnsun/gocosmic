@@ -2,6 +2,9 @@
 
 import { useCallback, useEffect, useRef } from 'react';
 
+/** Matches when the primary pointer is not a precise one such as a mouse or trackpad. */
+export const COARSE_POINTER_QUERY = 'not all and (pointer: fine)';
+
 /** Represents a single trailing dot position */
 export interface TrailPoint {
   x: number;
@@ -103,8 +106,9 @@ export function useCosmicCursor({
   useEffect(() => {
     const state = stateRef.current;
 
-    // Detect touch-only device
-    state.isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+    // Keep the custom cursor for mice and trackpads only: any primary pointer that isn't fine
+    // (finger, stylus, TV remote, no pointer at all) keeps the native behaviour.
+    state.isTouchDevice = window.matchMedia(COARSE_POINTER_QUERY).matches;
     if (state.isTouchDevice) return;
 
     // Detect reduced motion preference

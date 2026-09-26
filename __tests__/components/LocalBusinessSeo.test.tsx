@@ -28,23 +28,25 @@ describe('LocalBusinessSeo', () => {
         '@type': 'ProfessionalService',
         '@id': 'https://www.gocosmic.dev/#company',
         name: 'Cosmic Studio',
+        alternateName: 'Go Cosmic',
         description:
-          'Web and mobile development agency based in Annecy, serving Geneva, French-speaking Switzerland and Haute-Savoie.',
+          'Web and mobile studio based in Chêne-Bougeries, near Geneva. Websites and apps for craftspeople, associations and independents in French-speaking Switzerland and Haute-Savoie, including Annecy.',
         url: 'https://www.gocosmic.dev',
+        image: 'https://www.gocosmic.dev/og-default.jpg',
         inLanguage: 'en',
         address: {
           '@type': 'PostalAddress',
-          addressLocality: 'Annecy',
-          addressRegion: 'Auvergne-Rhône-Alpes',
-          postalCode: '74000',
-          addressCountry: 'FR',
+          addressLocality: 'Chêne-Bougeries',
+          postalCode: '1224',
+          addressRegion: 'GE',
+          addressCountry: 'CH',
         },
         geo: {
           '@type': 'GeoCoordinates',
-          latitude: 45.8992,
-          longitude: 6.1294,
+          latitude: 46.195,
+          longitude: 6.186,
         },
-        areaServed: ['Annecy', 'Geneva', 'Haute-Savoie', 'Lake Geneva region', 'French-speaking Switzerland'],
+        areaServed: ['Geneva', 'French-speaking Switzerland', 'Haute-Savoie', 'Annecy'],
         sameAs: ['https://www.linkedin.com/in/matthieucomperat/'],
       },
     });
@@ -57,11 +59,23 @@ describe('LocalBusinessSeo', () => {
       expect.objectContaining({
         data: expect.objectContaining({
           description:
-            'Agence de développement web et mobile basée à Annecy, intervenant à Genève, en Suisse romande et en Haute-Savoie.',
+            'Studio web et mobile installé à Chêne-Bougeries, près de Genève. Sites et applications pour les artisans, associations et indépendants de Suisse romande et de Haute-Savoie, notamment à Annecy.',
           inLanguage: 'fr',
-          areaServed: ['Annecy', 'Genève', 'Haute-Savoie', 'Arc lémanique', 'Suisse romande'],
+          areaServed: ['Genève', 'Suisse romande', 'Haute-Savoie', 'Annecy'],
         }),
       })
+    );
+  });
+
+  it.each([
+    ['de', ['Genf', 'Westschweiz', 'Hochsavoyen', 'Annecy']],
+    ['it', ['Ginevra', 'Svizzera romanda', 'Alta Savoia', 'Annecy']],
+    ['es', ['Ginebra', 'Suiza romanda', 'Alta Saboya', 'Annecy']],
+  ])('should name the served areas in %s', (locale, areaServed) => {
+    render(<LocalBusinessSeo locale={locale} />);
+
+    expect(jsonLdScriptMock).toHaveBeenCalledWith(
+      expect.objectContaining({ data: expect.objectContaining({ inLanguage: locale, areaServed }) })
     );
   });
 });

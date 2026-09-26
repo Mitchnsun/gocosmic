@@ -17,9 +17,9 @@ describe('<Button />', () => {
       'cursor-pointer',
       'rounded-full',
       'transition-colors',
-      'bg-neutral-950',
-      'text-neutral-50',
-      'hover:bg-neutral-800',
+      'bg-ghost/10',
+      'text-ghost',
+      'hover:bg-ghost/15',
       'font-normal',
       'text-base',
       'px-6',
@@ -63,28 +63,22 @@ describe('<Button />', () => {
   describe('variants', () => {
     const variants: Array<ButtonProps['variant']> = [
       'default',
-      'aerospace',
-      'chocolate',
-      'cosmic-latte',
+      'primary',
       'ghost',
-      'jungle',
-      'misty-rose',
-      'outer-space',
+      'link',
+      'aerospace',
       'royal',
-      'space',
+      'jungle',
     ];
 
     const variantClasses = {
-      default: ['bg-neutral-950', 'text-neutral-50', 'hover:bg-neutral-800'],
+      default: ['bg-ghost/10', 'text-ghost', 'hover:bg-ghost/15'],
+      primary: ['bg-aerospace', 'text-void', 'shadow-[0_0_32px_rgb(255_79_0/0.4)]'],
+      ghost: ['border', 'border-ghost/15', 'bg-transparent', 'text-ghost'],
+      link: ['text-aerospace', 'hover:underline'],
       aerospace: ['bg-aerospace', 'text-void', 'hover:bg-aerospace/90'],
-      chocolate: ['bg-chocolate', 'text-neutral-50', 'hover:bg-chocolate/90'],
-      'cosmic-latte': ['bg-cosmic-latte', 'text-space', 'hover:bg-cosmic-latte/90', 'hover:text-space/90'],
-      ghost: ['bg-ghost', 'text-neutral-900', 'hover:bg-violet-100'],
-      jungle: ['bg-jungle', 'text-white', 'hover:bg-jungle/90'],
-      'misty-rose': ['bg-misty-rose', 'text-space', 'hover:bg-misty-rose/80'],
-      'outer-space': ['bg-outer-space', 'text-neutral-50', 'hover:bg-outer-space/90'],
-      royal: ['bg-royal', 'text-neutral-50', 'hover:bg-royal/90'],
-      space: ['bg-space', 'text-neutral-50', 'hover:bg-space/50'],
+      royal: ['bg-royal', 'text-ghost', 'hover:bg-royal/90'],
+      jungle: ['bg-jungle', 'text-void', 'hover:bg-jungle/90'],
     };
 
     it.each(variants)('should apply correct classes for %s variant', (variant) => {
@@ -99,13 +93,15 @@ describe('<Button />', () => {
   });
 
   describe('sizes', () => {
-    const sizes: Array<ButtonProps['size']> = ['default', 'sm', 'lg', 'icon'];
+    const sizes: Array<ButtonProps['size']> = ['default', 'sm', 'lg', 'icon', 'pill', 'inline'];
 
     const sizeClasses = {
       default: ['font-normal', 'text-base', 'px-6', 'py-2'],
       sm: ['font-light', 'text-sm', 'px-4', 'py-1'],
       lg: ['font-bold', 'text-lg', 'px-8', 'py-2'],
       icon: ['h-10', 'w-10'],
+      pill: ['h-12', 'px-6', 'font-semibold'],
+      inline: ['p-0', 'font-semibold'],
     };
 
     it.each(sizes)('should apply correct classes for %s size', (size) => {

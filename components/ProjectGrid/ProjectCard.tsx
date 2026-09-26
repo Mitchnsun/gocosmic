@@ -1,5 +1,6 @@
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 
+import { Chip } from '@/design-system/chip';
 import { Link } from '@/i18n/navigation';
 
 import { ProjectCover } from './ProjectCover';
@@ -11,9 +12,7 @@ export function ProjectCard({ project }: { project: ProjectCardContent }) {
     <article className="group border-ghost/8 bg-ghost/[0.02] hover:bg-ghost/[0.04] has-[a:focus-visible]:ring-aerospace/70 relative flex h-full flex-col overflow-hidden rounded-[20px] border transition-colors has-[a:focus-visible]:ring-2">
       <div className="relative">
         <ProjectCover cover={project.cover} title={project.title} />
-        <span className="bg-void/80 border-ghost/15 text-ghost/75 text-3xs absolute top-3 left-3 rounded-full border px-2.5 py-1 font-mono tracking-[0.12em] uppercase backdrop-blur-sm">
-          {project.kindLabel}
-        </span>
+        <Chip className="bg-void/80 text-ghost/75 absolute top-3 left-3 backdrop-blur-sm">{project.kindLabel}</Chip>
       </div>
       <div className="flex flex-1 flex-col gap-2.5 p-6">
         <div className="flex items-baseline justify-between gap-3">
@@ -28,10 +27,8 @@ export function ProjectCard({ project }: { project: ProjectCardContent }) {
         <p className="text-ghost/60 text-[15px] leading-normal">{project.description}</p>
         <ul className="flex flex-wrap gap-1.5 pt-1.5">
           {project.tags.map((tag) => (
-            <li
-              key={tag}
-              className="border-ghost/15 text-ghost/60 text-3xs rounded-full border px-2.5 py-1 font-mono tracking-[0.12em] uppercase">
-              {tag}
+            <li key={tag}>
+              <Chip>{tag}</Chip>
             </li>
           ))}
         </ul>

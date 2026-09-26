@@ -271,8 +271,6 @@ This approach ensures SEO-friendly URLs and consistent user experience across al
 - **[TypeScript 5.9](https://www.typescriptlang.org/)** - Type safety and robust development
 - **[next-intl](https://next-intl.dev/)** - Type-safe internationalization with 5 language support
 - **[TailwindCSS 4.x](https://tailwindcss.com/)** - Styling with cosmic design system
-- **[Three.js](https://threejs.org/)** - 3D graphics and interactive experiences
-- **[React Three Fiber](https://docs.pmnd.rs/react-three-fiber)** - React renderer for Three.js
 - **[Heroicons](https://heroicons.com/)** - Beautiful hand-crafted SVG icons
 - **[Vitest](https://vitest.dev/)** - Fast unit testing framework
 - **[React Testing Library](https://testing-library.com/react)** - Component testing utilities

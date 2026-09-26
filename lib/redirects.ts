@@ -12,35 +12,50 @@ const SERVICES_PATHS: Array<[Locale, string]> = [
   ['it', '/servizi'],
 ];
 
+interface RetiredPage {
+  /** Former slug per locale. */
+  slugs: Map<Locale, string>;
+  /** Section of the Services & pricing page that now holds the content, if any. */
+  hash?: string;
+}
+
 /**
  * Pages merged away by the Cosmic Studio rebrand, with their former localized
  * slugs. Their content now lives on the Services & pricing page.
  */
-const RETIRED_PAGES: Array<Map<Locale, string>> = [
-  // Offers
-  new Map([
-    ['en', '/offers'],
-    ['fr', '/nos-offres'],
-    ['es', '/nuestras-ofertas'],
-    ['de', '/unsere-angebote'],
-    ['it', '/le-nostre-offerte'],
-  ]),
-  // Pricing
-  new Map([
-    ['en', '/pricing'],
-    ['fr', '/tarifs'],
-    ['es', '/precios'],
-    ['de', '/preise'],
-    ['it', '/prezzi'],
-  ]),
-  // 3D journey
-  new Map([
-    ['en', '/journey'],
-    ['fr', '/voyage'],
-    ['es', '/viaje'],
-    ['de', '/reise'],
-    ['it', '/viaggio'],
-  ]),
+const RETIRED_PAGES: RetiredPage[] = [
+  // Offers → the pricing columns
+  {
+    hash: '#pricing',
+    slugs: new Map([
+      ['en', '/offers'],
+      ['fr', '/nos-offres'],
+      ['es', '/nuestras-ofertas'],
+      ['de', '/unsere-angebote'],
+      ['it', '/le-nostre-offerte'],
+    ]),
+  },
+  // Pricing → the subscription simulator
+  {
+    hash: '#simulator',
+    slugs: new Map([
+      ['en', '/pricing'],
+      ['fr', '/tarifs'],
+      ['es', '/precios'],
+      ['de', '/preise'],
+      ['it', '/prezzi'],
+    ]),
+  },
+  // 3D journey → the page itself
+  {
+    slugs: new Map([
+      ['en', '/journey'],
+      ['fr', '/voyage'],
+      ['es', '/viaje'],
+      ['de', '/reise'],
+      ['it', '/viaggio'],
+    ]),
+  },
 ];
 
 /**
@@ -49,16 +64,16 @@ const RETIRED_PAGES: Array<Map<Locale, string>> = [
  * any prefix, since older links used both forms.
  */
 export function getLegacyRedirects(): Redirect[] {
-  return RETIRED_PAGES.flatMap((slugs) => {
+  return RETIRED_PAGES.flatMap(({ slugs, hash = '' }) => {
     const english = slugs.get('en') ?? '';
     const localized = SERVICES_PATHS.flatMap(([locale, servicesPath]) =>
       [...new Set([slugs.get(locale) ?? english, english])].map((slug) => ({
         source: `/${locale}${slug}`,
-        destination: `/${locale}${servicesPath}`,
+        destination: `/${locale}${servicesPath}${hash}`,
         permanent: true,
       }))
     );
 
-    return [{ source: english, destination: '/services', permanent: true }, ...localized];
+    return [{ source: english, destination: `/services${hash}`, permanent: true }, ...localized];
   });
 }

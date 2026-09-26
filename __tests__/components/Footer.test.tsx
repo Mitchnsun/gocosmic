@@ -34,7 +34,7 @@ describe('Footer Component', () => {
 
     expect(within(nav).getByRole('link', { name: 'Services & pricing' })).toHaveAttribute('href', '/services');
     expect(within(nav).getByRole('link', { name: 'Projects' })).toHaveAttribute('href', '/projects');
-    expect(within(nav).getByRole('link', { name: 'Our apps' })).toHaveAttribute('href', '/projects/daily-fortune');
+    expect(within(nav).getByRole('link', { name: 'Our apps' })).toHaveAttribute('href', '/#apps');
     expect(within(nav).getByRole('link', { name: 'About' })).toHaveAttribute('href', '/about');
     expect(within(nav).getByRole('link', { name: 'Contact' })).toHaveAttribute('href', '/contact');
   });

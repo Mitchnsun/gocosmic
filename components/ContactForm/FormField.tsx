@@ -1,6 +1,6 @@
 import type { ChangeEvent } from 'react';
 
-import { cn } from '@/design-system/lib/utils';
+import { Field, FIELD_INPUT, FIELD_TEXTAREA } from '@/design-system/field';
 
 /** Props for a labelled contact form field. */
 export interface FormFieldProps {
@@ -34,9 +34,6 @@ export interface FormFieldProps {
   className?: string;
 }
 
-const controlClassName =
-  'bg-ghost/[0.03] border-ghost/15 text-ghost placeholder:text-ghost/35 focus:border-aerospace focus:ring-aerospace/30 w-full rounded-xl border px-4 py-3 text-base transition-colors focus:ring-2 focus:outline-none';
-
 /**
  * Labelled input or textarea with inline validation feedback wired through
  * `aria-invalid` / `aria-describedby`.
@@ -62,7 +59,6 @@ export const FormField = ({
   disabled = false,
   className,
 }: FormFieldProps) => {
-  const errorId = `${name}-error`;
   const shared = {
     id: name,
     name,
@@ -74,28 +70,16 @@ export const FormField = ({
     autoComplete,
     disabled,
     'aria-invalid': error ? true : undefined,
-    'aria-describedby': error ? errorId : undefined,
-    className: cn(controlClassName, 'disabled:cursor-not-allowed disabled:opacity-60', {
-      'border-aerospace focus:border-aerospace focus:ring-aerospace/30': Boolean(error),
-    }),
+    'aria-describedby': error ? `${name}-error` : undefined,
   };
 
   return (
-    <div className={cn('flex flex-col gap-2', className)}>
-      <label htmlFor={name} className="text-ghost font-display text-sm font-medium">
-        {label}
-        {required && (
-          <span className="text-aerospace ml-1" aria-hidden="true">
-            *
-          </span>
-        )}
-      </label>
-      {multiline ? <textarea {...shared} rows={rows} /> : <input {...shared} type={type} />}
-      {error && (
-        <p id={errorId} className="text-aerospace text-sm">
-          {error}
-        </p>
+    <Field id={name} label={label} required={required} error={error} className={className}>
+      {multiline ? (
+        <textarea {...shared} rows={rows} className={FIELD_TEXTAREA} />
+      ) : (
+        <input {...shared} type={type} className={FIELD_INPUT} />
       )}
-    </div>
+    </Field>
   );
 };

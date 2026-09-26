@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import { Reveal } from '@/components/Reveal';
 import { SectionHeading } from '@/components/SectionHeading';
+import { HairlineGrid } from '@/design-system/hairline-grid';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, SECTION_Y } from '@/design-system/pill';
 
@@ -17,7 +18,7 @@ interface AudienceGridProps {
   id?: string;
 }
 
-/** "Who it is for": one card per audience, separated by hairlines (gap-px grid). */
+/** Numbered cards separated by hairlines: who the studio is for, or where it works. */
 export function AudienceGrid({ eyebrow, title, items, id = 'audience' }: AudienceGridProps) {
   const titleId = `${id}-heading`;
 
@@ -25,7 +26,8 @@ export function AudienceGrid({ eyebrow, title, items, id = 'audience' }: Audienc
     <section id={id} aria-labelledby={titleId} className={cn('border-ghost/8 border-t', SECTION_Y)}>
       <div className={cn(CONTAINER, 'flex flex-col gap-10')}>
         <SectionHeading eyebrow={eyebrow} title={title} titleId={titleId} />
-        <ul className="bg-ghost/8 border-ghost/8 grid gap-px overflow-hidden rounded-[20px] border md:grid-cols-3">
+        <HairlineGrid
+          className={cn({ 'md:grid-cols-3': items.length % 3 === 0, 'md:grid-cols-2': items.length % 3 !== 0 })}>
           {items.map((item, index) => (
             <li key={item.title} className="bg-void">
               <Reveal delay={index * 50} className="flex h-full flex-col gap-3 p-8">
@@ -37,7 +39,7 @@ export function AudienceGrid({ eyebrow, title, items, id = 'audience' }: Audienc
               </Reveal>
             </li>
           ))}
-        </ul>
+        </HairlineGrid>
       </div>
     </section>
   );

@@ -10,7 +10,7 @@ import { AVAILABILITY } from '@/components/StatusBar/StatusBar.constants';
 import { formatStartMonth } from '@/components/StatusBar/StatusBar.utils';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, SECTION_Y } from '@/design-system/pill';
-import { getCanonicalUrl } from '@/i18n/canonical';
+import { getAlternates } from '@/i18n/canonical';
 import { Link } from '@/i18n/navigation';
 import { getOgImages } from '@/lib/og';
 
@@ -25,9 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title,
     description,
-    alternates: {
-      canonical: getCanonicalUrl(locale, '/contact'),
-    },
+    alternates: getAlternates(locale, '/contact'),
     openGraph: {
       title,
       description,

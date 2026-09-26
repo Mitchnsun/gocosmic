@@ -1,13 +1,8 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
-import { getCanonicalUrl } from '@/i18n/canonical';
-import { renderWithLinks } from '@/lib/renderWithLinks';
-
-type LegalSection = {
-  title: string;
-  body: string[];
-};
+import { LegalDocument, type LegalSection } from '@/components/LegalDocument';
+import { getAlternates } from '@/i18n/canonical';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -16,39 +11,20 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: t('terms.meta.title'),
     description: t('terms.meta.description'),
-    alternates: {
-      canonical: getCanonicalUrl(locale, '/terms'),
-    },
+    alternates: getAlternates(locale, '/terms'),
   };
 }
 
 export default async function TermsPage() {
   const t = await getTranslations('legal');
-  const sections = t.raw('terms.sections') as LegalSection[];
 
   return (
-    <div className="text-ghost relative pt-10">
-      <div className="m-auto flex max-w-6xl flex-col gap-8 px-4 pb-12">
-        <div className="space-y-4">
-          <p className="text-aerospace text-sm font-semibold tracking-wide uppercase">{t('terms.eyebrow')}</p>
-          <h1 className="text-3xl font-extrabold sm:text-4xl">{t('terms.title')}</h1>
-          <p className="text-gray-400">{t('terms.updated')}</p>
-          <p className="text-lg text-gray-300">{t('terms.intro')}</p>
-        </div>
-
-        <div className="space-y-6">
-          {sections.map((section) => (
-            <section key={section.title} className="rounded-lg bg-slate-800 px-6 py-6">
-              <h2 className="mb-4 text-xl font-bold text-white">{section.title}</h2>
-              <div className="space-y-3 text-gray-300">
-                {section.body.map((paragraph, index) => (
-                  <p key={`${section.title}-${index}`}>{renderWithLinks(paragraph)}</p>
-                ))}
-              </div>
-            </section>
-          ))}
-        </div>
-      </div>
-    </div>
+    <LegalDocument
+      eyebrow={t('terms.eyebrow')}
+      title={t('terms.title')}
+      updated={t('terms.updated')}
+      intro={t('terms.intro')}
+      sections={t.raw('terms.sections') as LegalSection[]}
+    />
   );
 }

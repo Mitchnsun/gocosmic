@@ -18,8 +18,8 @@ const HeaderCta = ({ onClick, className }: HeaderCtaProps) => {
       href="/free-mockup"
       onClick={onClick}
       className={cn(
-        buttonVariants({ variant: 'aerospace' }),
-        'font-display text-void hover:bg-aerospace focus-visible:ring-ghost focus-visible:ring-offset-void h-11 px-5 py-0 text-[15px] font-semibold whitespace-nowrap shadow-[0_0_24px_rgb(255_79_0/0.35)] transition-transform duration-200 ease-[cubic-bezier(.16,1,.3,1)] hover:scale-[1.04] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none motion-reduce:transition-none motion-reduce:hover:scale-100',
+        buttonVariants({ variant: 'primary' }),
+        'font-display hover:bg-aerospace focus-visible:ring-ghost focus-visible:ring-offset-void h-11 px-5 py-0 text-[15px] font-semibold whitespace-nowrap shadow-[0_0_24px_rgb(255_79_0/0.35)] transition-transform duration-200 ease-[cubic-bezier(.16,1,.3,1)] hover:scale-[1.04] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none motion-reduce:transition-none motion-reduce:hover:scale-100',
         className
       )}>
       {t('cta')}

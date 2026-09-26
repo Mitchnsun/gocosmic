@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { getCanonicalUrl, SITE_URL } from '@/i18n/canonical';
+import { getAlternates, getCanonicalUrl, getLanguageAlternates, SITE_URL } from '@/i18n/canonical';
 
 describe('getCanonicalUrl', () => {
   describe('home page (static pathname "/")', () => {
@@ -94,5 +94,25 @@ describe('getCanonicalUrl', () => {
         `${SITE_URL}/es/proyectos/choeurdespaysdumontblanc`
       );
     });
+  });
+});
+
+describe('getAlternates', () => {
+  it('pairs the canonical URL with the page in every locale and an x-default', () => {
+    expect(getAlternates('fr', '/about')).toEqual({
+      canonical: `${SITE_URL}/fr/a-propos`,
+      languages: {
+        en: `${SITE_URL}/en/about`,
+        fr: `${SITE_URL}/fr/a-propos`,
+        es: `${SITE_URL}/es/acerca-de`,
+        de: `${SITE_URL}/de/ueber-uns`,
+        it: `${SITE_URL}/it/chi-siamo`,
+        'x-default': `${SITE_URL}/en/about`,
+      },
+    });
+  });
+
+  it('keeps the trailing slash of the home page', () => {
+    expect(getLanguageAlternates('/')).toMatchObject({ de: `${SITE_URL}/de/`, 'x-default': `${SITE_URL}/en/` });
   });
 });

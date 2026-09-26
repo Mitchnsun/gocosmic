@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 
+import { Eyebrow } from '@/design-system/eyebrow';
 import { Link } from '@/i18n/navigation';
 
 /** The three moments of a free mockup, announced next to the form. */
@@ -14,10 +15,7 @@ export function FreeMockupPitch() {
 
   return (
     <div className="flex flex-col gap-6">
-      <p className="text-aerospace text-2xs flex items-center gap-2 font-mono tracking-[0.24em] uppercase">
-        <span className="bg-aerospace h-1.5 w-1.5 rounded-full" aria-hidden="true" />
-        {t('eyebrow')}
-      </p>
+      <Eyebrow>{t('eyebrow')}</Eyebrow>
       <h1 className="font-display text-[clamp(2.25rem,6vw,4rem)] leading-[1.05] font-bold tracking-[-0.03em] text-balance">
         {t('title')}
       </h1>

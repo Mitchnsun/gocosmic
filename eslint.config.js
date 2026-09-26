@@ -14,6 +14,10 @@ import unusedImportsPlugin from 'eslint-plugin-unused-imports';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
+/** Class names drawing on a default Tailwind palette, e.g. `text-slate-400` or `hover:bg-blue-500/50`. */
+const OFF_PALETTE =
+  '/(^|[\\s:-])(slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-[0-9]{2,3}/';
+
 /**
  * A shared ESLint configuration for the repository.
  *
@@ -51,6 +55,20 @@ const config = [
               message: "Use `cn` from '@/design-system/lib/utils' instead of importing clsx directly.",
             },
           ],
+        },
+      ],
+    },
+  },
+  {
+    // Colours come from the theme tokens (void, space, ember, ghost, aerospace, jungle…), never from
+    // Tailwind's default palettes. See DESIGN_GUIDELINE.md §2.1.
+    files: ['app/**/*.{ts,tsx}', 'components/**/*.{ts,tsx}', 'design-system/**/*.{ts,tsx}', 'lib/**/*.{ts,tsx}'],
+    rules: {
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: `Literal[value=${OFF_PALETTE}], TemplateElement[value.raw=${OFF_PALETTE}]`,
+          message: 'Use a theme colour token instead of a default Tailwind palette (slate, gray, blue…).',
         },
       ],
     },

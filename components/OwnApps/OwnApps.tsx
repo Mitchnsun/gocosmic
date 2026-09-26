@@ -3,6 +3,7 @@ import Image from 'next/image';
 import type { ComponentProps, ReactNode } from 'react';
 
 import { SectionHeading } from '@/components/SectionHeading';
+import { Chip } from '@/design-system/chip';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, SECTION_Y } from '@/design-system/pill';
 import { Link } from '@/i18n/navigation';
@@ -26,7 +27,7 @@ interface OwnAppsProps {
 }
 
 /** The studio's own products, presented as proof that it ships real apps. */
-export function OwnApps({ eyebrow, title, lead, app, id = 'own-apps' }: OwnAppsProps) {
+export function OwnApps({ eyebrow, title, lead, app, id = 'apps' }: OwnAppsProps) {
   const titleId = `${id}-heading`;
 
   return (
@@ -46,9 +47,7 @@ export function OwnApps({ eyebrow, title, lead, app, id = 'own-apps' }: OwnAppsP
           <div className="flex flex-col gap-2">
             <div className="flex flex-wrap items-center gap-2">
               <h3 className="font-display text-2xl font-semibold tracking-[-0.02em]">{app.name}</h3>
-              <span className="border-jungle/50 text-jungle text-3xs rounded-full border px-2.5 py-0.5 font-mono tracking-[0.12em] uppercase">
-                {app.badge}
-              </span>
+              <Chip variant="jungle">{app.badge}</Chip>
             </div>
             <p className="text-ghost/65 leading-normal">{app.description}</p>
             <span className="font-display text-aerospace inline-flex items-center gap-1.5 text-[15px] font-medium">

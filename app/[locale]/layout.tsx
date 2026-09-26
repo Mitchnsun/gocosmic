@@ -11,6 +11,7 @@ import { Header } from '@/components/Header';
 import LocalBusinessSeo from '@/components/JsonLd/LocalBusinessSeo';
 import WebsiteSeo from '@/components/JsonLd/WebsiteSeo';
 import { StatusBar } from '@/components/StatusBar';
+import { getAlternates } from '@/i18n/canonical';
 import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/config';
 import { getOgImages } from '@/lib/og';
@@ -37,7 +38,6 @@ const spaceMono = Space_Mono({
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta' });
-  const languages = Object.fromEntries(routing.locales.map((localeCode) => [localeCode, `${SITE_URL}/${localeCode}/`]));
 
   const title = t('title');
   const description = t('description');
@@ -47,13 +47,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title,
     description,
     metadataBase: new URL(SITE_URL),
-    alternates: {
-      canonical: `/${locale}/`,
-      languages: {
-        ...languages,
-        'x-default': `${SITE_URL}/${routing.defaultLocale}/`,
-      },
-    },
+    // Home page alternates; every other page overrides them with its own.
+    alternates: getAlternates(locale, '/'),
     openGraph: {
       title,
       description,
@@ -86,7 +81,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale || 'en'} className={`${spaceGrotesk.variable} ${inter.variable} ${spaceMono.variable}`}>
-      <body className="bg-slate-950">
+      <body className="bg-void">
         <NextIntlClientProvider>
           <CookieConsentProvider>
             <CosmicCursor />

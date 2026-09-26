@@ -10,14 +10,14 @@ const colorMap: Record<NonNullable<TimelineStep['color']>, string> = {
   aerospace: 'text-aerospace',
   royal: 'text-royal',
   jungle: 'text-jungle',
-  default: 'text-slate-400',
+  default: 'text-ghost/60',
 };
 
 const dotColorMap: Record<NonNullable<TimelineStep['color']>, string> = {
   aerospace: 'bg-aerospace shadow-aerospace/40',
   royal: 'bg-royal shadow-royal/40',
   jungle: 'bg-jungle shadow-jungle/40',
-  default: 'bg-slate-400 shadow-slate-400/40',
+  default: 'bg-ghost/60 shadow-ghost/20',
 };
 
 interface TimelineStepProps {
@@ -112,7 +112,7 @@ export function TimelineStepItem({
         <div className="relative z-10 flex shrink-0 flex-col items-center">
           <div
             data-testid={`dot-${step.id}`}
-            className={cn('h-3 w-3 rounded-full border-2 border-slate-700', dotColor, {
+            className={cn('border-ghost/15 h-3 w-3 rounded-full border-2', dotColor, {
               'timeline-dot': !reducedMotion,
             })}
             aria-hidden="true"
@@ -130,11 +130,11 @@ export function TimelineStepItem({
           }}>
           <span className={`font-mono text-sm font-medium tracking-widest uppercase ${labelColor}`}>{step.label}</span>
           <h3 className="text-ghost mt-1 text-xl font-bold">{step.title}</h3>
-          {showDescription && step.description && <p className="mt-2 text-sm text-slate-400">{step.description}</p>}
+          {showDescription && step.description && <p className="text-ghost/60 mt-2 text-sm">{step.description}</p>}
           {showDescription && step.features && step.features.length > 0 && (
             <ul className="mt-3 space-y-1" aria-label={`${step.title} features`}>
               {step.features.map((feature) => (
-                <li key={feature} className="flex items-center gap-2 text-sm text-slate-400">
+                <li key={feature} className="text-ghost/60 flex items-center gap-2 text-sm">
                   <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${dotColor}`} aria-hidden="true" />
                   {feature}
                 </li>
@@ -181,7 +181,7 @@ export function TimelineStepItem({
         />
         <div
           ref={lineRef}
-          className="h-px flex-1 origin-left bg-slate-600"
+          className="bg-ghost/15 h-px flex-1 origin-left"
           aria-hidden="true"
           style={{
             transform: reducedMotion ? 'scaleX(1)' : 'scaleX(0)',
@@ -200,11 +200,11 @@ export function TimelineStepItem({
           transition: `opacity 300ms ease-out, transform 300ms ease-out`,
         }}>
         <h3 className="text-ghost text-xl font-bold">{step.title}</h3>
-        {showDescription && step.description && <p className="mt-2 text-sm text-slate-400">{step.description}</p>}
+        {showDescription && step.description && <p className="text-ghost/60 mt-2 text-sm">{step.description}</p>}
         {showDescription && step.features && step.features.length > 0 && (
           <ul className="mt-3 space-y-1" aria-label={`${step.title} features`}>
             {step.features.map((feature) => (
-              <li key={feature} className="flex items-center gap-2 text-sm text-slate-400">
+              <li key={feature} className="text-ghost/60 flex items-center gap-2 text-sm">
                 <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${dotColor}`} aria-hidden="true" />
                 {feature}
               </li>
