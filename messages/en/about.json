@@ -1,18 +1,18 @@
 {
   "meta": {
     "title": "About · Cosmic Studio, web studio in Geneva & Annecy",
-    "description": "Meet Cosmic Studio, a web and mobile studio between Geneva and Annecy, and Matthieu Compérat, your contact from the first call to ongoing care."
+    "description": "Cosmic Studio is a web and mobile studio between Geneva and Annecy, run by Matthieu Compérat, who follows your project from the first conversation to long after launch."
   },
   "about": {
     "eyebrow": "[ About ]",
-    "title": "A small studio, <em>working for your visibility.</em>",
-    "lead": "Cosmic Studio is Matthieu Compérat: a developer based in Chêne-Bougeries who builds websites and apps for craftspeople, associations and independents, from Geneva to Annecy.",
+    "title": "A small studio, <em>so your customers can find you.</em>",
+    "lead": "Cosmic Studio is Matthieu Compérat, a developer based in Chêne-Bougeries. He builds websites and apps for craftspeople, associations and independents, from Geneva to Annecy.",
     "path": {
       "eyebrow": "[ Background ]",
-      "title": "Fifteen years of code, <em>one point of contact.</em>",
+      "title": "Fifteen years of development, <em>one point of contact.</em>",
       "paragraphs": [
-        "Matthieu grew up in Duingt, on the shores of Lake Annecy, and has been building websites and apps for about fifteen years. First for large companies, where he learnt to build tools that are reliable, fast and accessible to all; then for people whose first names he knows.",
-        "Cosmic Studio grew out of that second choice: putting this know-how at the service of people who have a trade, and no time to learn a second one. You talk to the person who builds your site, from the first call to month-after-month care."
+        "Matthieu comes from Duingt, on the shores of Lake Annecy, and has been building websites and apps for about fifteen years. He started out with large companies, where he learnt to build tools that are reliable and accessible to everyone.",
+        "With Cosmic Studio, he puts that experience to work for craftspeople, associations and independents. You talk to the person who builds your site, from the first call to the ongoing care, month after month."
       ],
       "zones": [
         "Chêne-Bougeries · base",
@@ -24,31 +24,31 @@
       "linkedin_aria": "Matthieu Compérat's LinkedIn profile (opens in a new tab)"
     },
     "why": {
-      "eyebrow": "[ Why them ]",
+      "eyebrow": "[ Why this choice ]",
       "title": "Craftspeople and associations <em>deserve better than a template.</em>",
-      "lead": "Large agencies aim at large companies; site builders leave you alone with the tool. Cosmic Studio is for the people in between.",
+      "lead": "Large agencies mostly work for large companies, and online site builders leave you to figure the tool out on your own. Cosmic Studio is for everyone in between.",
       "reasons": {
         "found": {
           "title": "Get found close to home",
-          "description": "Your customers look for you on their phones, a few kilometres away. A fast, well-built site makes the difference on Google."
+          "description": "Your customers look for you on their phones, a few kilometres away. A fast, well-built site ranks better on Google."
         },
         "price": {
           "title": "A price that follows your business",
-          "description": "A subscription from {price} a month that grows with you, rather than a large upfront investment."
+          "description": "A subscription from {price} a month that evolves with you, rather than a large upfront investment."
         },
         "answer": {
           "title": "Someone who answers",
-          "description": "No help desk: the person who built your site answers you, usually the same day."
+          "description": "No call centre: the person who built your site is the one who answers, usually the same day."
         },
         "ai": {
-          "title": "AI when it helps, never in your place",
-          "description": "We use artificial intelligence to work faster, always with a human review. The details are in our legal notice."
+          "title": "AI to save time, always reviewed",
+          "description": "We use artificial intelligence to work faster, and a person reviews everything it produces. The details are in our legal notice."
         }
       }
     },
     "cta": {
       "title": "Let's work together.",
-      "description": "Tell us about your business in a few lines: we get back to you within 24 hours, with questions rather than an automated quote.",
+      "description": "Tell us about your business in a few lines. Matthieu replies within one working day.",
       "button": "Talk about my project"
     }
   }

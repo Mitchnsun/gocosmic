@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import type { ReactNode } from 'react';
 
 import CTAFinal from '@/components/CTAFinal';
@@ -48,8 +48,9 @@ const em = (chunks: ReactNode) => <em>{chunks}</em>;
 
 export default async function About() {
   const t = await getTranslations('about');
+  const locale = await getLocale();
   const region = await getRegion();
-  const price = formatAmount(BASE_PRICE, getCurrency(region));
+  const price = formatAmount(BASE_PRICE, getCurrency(region), locale);
 
   return (
     <>

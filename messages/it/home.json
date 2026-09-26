@@ -2,14 +2,14 @@
   "homepage": {
     "cta": {
       "button": "Parliamo del tuo progetto",
-      "description": "Raccontaci la tua attività in poche righe. Ti rispondiamo entro 24 ore, con delle domande, non con un preventivo automatico.",
-      "freeMockup": "Ci stai ancora pensando? Richiedi il tuo <link>mockup gratuito</link>.",
+      "description": "Presentaci la tua attività in poche righe. Ti rispondiamo entro un giorno lavorativo per parlarne, prima di proporti qualsiasi cosa.",
+      "freeMockup": "Ci stai ancora pensando? Inizia con un <link>mockup gratuito</link>.",
       "title": "Facciamo brillare la tua attività."
     },
     "hero": {
       "cta": "Go Cosmic",
       "endWords": ["vista.", "trovata.", "scelta."],
-      "subtitle": "Cosmic Studio crea siti e app per artigiani, associazioni e liberi professionisti. Un sito chiaro, pensato per farti trovare su Google, e un referente che resta con te anche dopo la messa online.",
+      "subtitle": "Cosmic Studio crea siti e app per artigiani, associazioni e liberi professionisti. Facciamo in modo che ti trovino su Google, e restiamo raggiungibili anche dopo la messa online.",
       "title": "La tua attività merita di essere",
       "eyebrow": "Studio web & mobile · Ginevra",
       "secondary": "Vedi i prezzi",
@@ -20,7 +20,7 @@
         },
         "reply": {
           "highlight": "Risposta",
-          "text": "entro 24 h"
+          "text": "entro 24 ore"
         },
         "contact": {
           "highlight": "Un unico",
@@ -34,93 +34,93 @@
     },
     "process": {
       "eyebrow": "[ Processo · 04 ]",
-      "title": "Quattro fasi. <em>Nessuna sorpresa.</em>",
-      "subtitle": "Dalla prima chiacchierata alla messa online, sai sempre a che punto è il tuo progetto.",
+      "title": "Quattro fasi, <em>nessuna sorpresa.</em>",
+      "subtitle": "Dalla prima conversazione alla messa online, sai a che punto è il tuo progetto.",
       "discovery": {
         "label": "T-3 · Incontro",
-        "title": "Parliamone",
-        "description": "Venti minuti al telefono o davanti a un caffè, a Ginevra o ad Annecy. Il tuo mestiere, i tuoi clienti, cosa deve fare il sito per te."
+        "title": "Facciamo conoscenza",
+        "description": "Venti minuti al telefono o davanti a un caffè, a Ginevra o ad Annecy, per parlare del tuo lavoro, dei tuoi clienti e di quello che il sito deve fare per te."
       },
       "design": {
         "label": "T-2 · Mockup",
-        "title": "Vedi prima di pagare",
-        "description": "Un mockup della tua pagina iniziale, con i tuoi colori e le tue parole. Gratuito e senza impegno: poi decidi tu."
+        "title": "Prima vedi, poi decidi",
+        "description": "Prepariamo un mockup della tua home page, con i tuoi colori e i tuoi testi. È gratuito e non ti impegna a nulla."
       },
       "build": {
         "label": "T-1 · Realizzazione",
-        "title": "Costruiamo",
-        "description": "Da due a sei settimane, a seconda del progetto. Segui i progressi da un link privato, lasci i tuoi commenti e noi sistemiamo."
+        "title": "Costruiamo il sito",
+        "description": "Ci vogliono da due a sei settimane, a seconda del progetto. Segui l'avanzamento da un link privato e ci mandi i tuoi commenti man mano."
       },
       "launch": {
         "label": "T-0 · Messa online",
-        "title": "Online, e restiamo con te",
-        "description": "Messa online e prime istruzioni insieme, poi hosting, copie di sicurezza e piccole modifiche mese dopo mese."
+        "title": "Restiamo con te dopo il lancio",
+        "description": "Mettiamo il sito online e ti mostriamo come funziona. Poi ci occupiamo noi dell'hosting, delle copie di sicurezza e delle piccole modifiche."
       }
     },
     "projects": {
       "eyebrow": "[ Realizzazioni ]",
-      "title": "Progetti concreti, <em>già online.</em>",
+      "title": "I nostri ultimi <em>lavori.</em>",
       "all": "Tutti i progetti"
     },
     "audience": {
       "eyebrow": "[ Per chi · 03 ]",
-      "title": "Per chi ha un mestiere, <em>e non il tempo di impararne un altro.</em>",
+      "title": "Per chi ha già un mestiere <em>e non ha tempo di impararne un altro.</em>",
       "items": {
         "artisans": {
           "title": "Artigiani",
-          "description": "Falegname, idraulico, parrucchiera, catering. Una pagina che dice cosa fai, dove e come raggiungerti, e che si trova quando qualcuno cerca il tuo mestiere in zona."
+          "description": "Falegname, idraulico, parrucchiera, catering… Un sito che dice cosa fai, dove lavori e come contattarti, e che la gente trova quando cerca il tuo mestiere in zona."
         },
         "associations": {
           "title": "Associazioni",
-          "description": "Coro, club sportivo, collettivo. Calendario degli eventi, iscrizioni, notizie: tutto ciò che serve per far conoscere le tue attività e attirare nuovi soci."
+          "description": "Coro, club sportivo, collettivo… Gli eventi, le iscrizioni e le notizie dell'associazione in un unico posto, per far conoscere le tue attività e accogliere nuovi soci."
         },
         "independents": {
           "title": "Liberi professionisti agli inizi",
-          "description": "Terapeuta, consulente, fotografo. Un sito professionale fin dal primo giorno per farti conoscere, e una tariffa che cresce con la tua attività."
+          "description": "Terapeuta, consulente, fotografo… Un sito professionale fin dall'inizio, a un prezzo che segue la crescita della tua attività."
         }
       }
     },
     "why": {
       "eyebrow": "[ Perché uno studio ]",
-      "title": "Wix e WordPress fanno il loro lavoro. <em>Fino al giorno in cui non lo fanno più.</em>",
-      "lead": "All'inizio questi strumenti sono comodi. Poi serve un'estensione, poi un aggiornamento rovina la pagina, poi la fattura sale. Il codice lo scriviamo noi: il sito è tuo, è veloce e cresce senza ripartire da zero.",
+      "title": "Wix e WordPress sono comodi <em>all'inizio.</em>",
+      "lead": "Poi serve un'estensione a pagamento, un aggiornamento manda in tilt una pagina, l'abbonamento rincara. Il codice lo scriviamo noi: il tuo sito resta veloce e può crescere senza ripartire da zero.",
       "reasons": {
         "ownership": {
           "title": "Il sito è tuo",
-          "description": "I tuoi contenuti e il tuo nome a dominio sono tuoi fin dall'inizio. Il codice diventa tuo al termine della durata minima dell'abbonamento, o prima con un costo di cessione."
+          "description": "Testi, foto e nome a dominio ti appartengono dal primo giorno. Il codice passa a te dopo {months} mesi di abbonamento, oppure prima, pagando un costo di cessione."
         },
         "fast": {
-          "title": "Veloce e facile da trovare",
-          "description": "Niente temi pesanti, niente estensioni: pagine che si aprono in fretta sul telefono, e Google lo premia."
+          "title": "Veloce e ben posizionato su Google",
+          "description": "Senza temi pesanti né estensioni, le tue pagine si aprono in fretta sul telefono, e Google ne tiene conto nei risultati."
         },
         "person": {
-          "title": "Una persona, non un centralino",
+          "title": "Qualcuno che ti risponde",
           "description": "Parli con Matthieu, che conosce il tuo sito perché l'ha costruito lui."
         },
         "grows": {
-          "title": "Cresce con te",
-          "description": "Una pagina oggi, un negozio o un'app domani, sulla stessa base."
+          "title": "Un sito che cresce con la tua attività",
+          "description": "Una pagina oggi, un negozio online o un'app più avanti, senza dover rifare tutto."
         }
       }
     },
     "apps": {
       "eyebrow": "[ Le nostre app ]",
-      "title": "Lo studio costruisce anche <em>i propri prodotti.</em>",
-      "lead": "È lì che mettiamo alla prova gli strumenti prima di proporli ai nostri clienti. Quello che impariamo sulle nostre app finisce nelle tue.",
+      "title": "Sviluppiamo anche <em>le nostre app.</em>",
+      "lead": "Ci servono per provare gli strumenti prima di usarli per i clienti, e quello che impariamo va poi a vantaggio dei tuoi progetti.",
       "daily_fortune": {
         "name": "Daily Fortune",
         "badge": "iOS · Android",
-        "description": "Un breve messaggio ogni mattina, per iniziare bene la giornata. La nostra prima app pubblicata sull'App Store e su Google Play.",
+        "description": "Un breve messaggio ogni mattina per iniziare bene la giornata. È la nostra prima app, disponibile sull'App Store e su Google Play.",
         "link": "Scopri l'app",
         "icon_alt": "Icona dell'app Daily Fortune"
       }
     },
     "studio": {
       "eyebrow": "[ Lo studio ]",
-      "title": "Uno sviluppatore a Ginevra, <em>non una piattaforma.</em>",
+      "title": "Dietro Cosmic Studio <em>c'è Matthieu.</em>",
       "paragraphs": [
-        "Mi chiamo Matthieu Compérat. Sono originario di Duingt, sulle rive del lago di Annecy, e oggi ho sede a Chêne-Bougeries. Sviluppo siti e app da una quindicina d'anni, prima per grandi aziende, poi per persone di cui conosco il nome. Cosmic Studio è questa seconda scelta.",
-        "Mi chiami, ti rispondo. Mi scrivi, ricevi una risposta in giornata. Il sito che ti consegno, so esattamente come funziona."
+        "Mi chiamo Matthieu Compérat. Sono originario di Duingt, sulle rive del lago di Annecy, e oggi vivo a Chêne-Bougeries. Sviluppo siti e app da una quindicina d'anni, all'inizio per grandi aziende. Con Cosmic Studio lavoro direttamente con artigiani, associazioni e liberi professionisti.",
+        "Quando chiami, sono io a rispondere, e i tuoi messaggi ricevono una risposta in giornata. Conosco a fondo il sito che ti consegno, per questo ogni modifica è semplice e veloce."
       ],
       "zones": [
         "Chêne-Bougeries · sede",

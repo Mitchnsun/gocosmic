@@ -3,70 +3,70 @@
     "privacy": {
       "meta": {
         "title": "Informativa privacy - Cosmic Studio",
-        "description": "Come Go Cosmic tratta dati personali, misurazione audience, contatti email, periodi di conservazione, diritti e reclami alla CNIL."
+        "description": "Come Cosmic Studio tratta i dati personali: moduli, e-mail, misurazione dell'audience, periodi di conservazione e diritti."
       },
       "eyebrow": "GDPR",
       "title": "Informativa privacy",
       "updated": "Ultimo aggiornamento: 23 settembre 2026",
-      "intro": "Questa pagina spiega come Go Cosmic tratta i dati personali su questo sito e quando contatti lo studio via email.",
-      "legalNoticePrefix": "Per i dettagli su editore e hosting, consulta le",
+      "intro": "Questa pagina spiega come Cosmic Studio tratta i dati personali raccolti su questo sito e negli scambi via e-mail.",
+      "legalNoticePrefix": "Per i dati dell'editore e le informazioni sull'hosting, consulta le",
       "legalNoticeLink": "note legali",
       "sections": [
         {
           "title": "Titolare del trattamento",
           "body": [
-            "Il titolare del trattamento è Go Cosmic, rappresentato da Matthieu Compérat. Lo studio può essere contattato a support@gocosmic.dev per richieste relative ai dati personali."
+            "Il titolare del trattamento è Cosmic Studio, rappresentato da Matthieu Compérat. Per qualsiasi richiesta relativa ai tuoi dati personali, scrivi a support@gocosmic.dev."
           ]
         },
         {
           "title": "Dati raccolti",
           "body": [
-            "Il sito non offre area cliente, pagamento, CAPTCHA o pixel pubblicitario. Due moduli sono trattati lato server. La pagina del mockup gratuito raccoglie il tuo indirizzo email, la direzione di colori scelta, l’indirizzo del tuo sito attuale se lo indichi, il tuo messaggio e la lingua della pagina. Se arrivi dal simulatore di prezzi, la richiesta include anche le scelte che hai fatto lì — tipo di progetto, tipo di sito, numero di pagine, opzioni selezionate, frequenza degli aggiornamenti e il prezzo mensile stimato che ne risulta — così lo studio può risponderti con tutto il contesto. Il modulo di contatto raccoglie il nome, l’indirizzo e-mail e il messaggio che inserisci, oltre, se li indichi, al tuo telefono, alla tua attività e al tipo di esigenza scelto. In entrambi i casi i campi sono inoltrati via email alla casella dello studio e nulla viene conservato in un database. I messaggi inviati tramite link mailto restano gestiti dal tuo client email e dalla casella destinataria.",
-            "Il tuo indirizzo IP è trattato in modo temporaneo dal firewall del provider di hosting, che limita entrambi i moduli — quello di contatto e quello del mockup gratuito — a tre invii ogni dieci minuti, insieme a un campo anti-spam nascosto in ciascuno. Dati tecnici possono essere trattati dal provider di hosting per log di sicurezza e distribuzione. Vercel Analytics viene caricato solo dopo il consenso per misurare le visualizzazioni di pagina.",
-            "Due elementi restano nel tuo browser. La simulazione di prezzi serve solo ad accompagnarti dal simulatore al modulo del mockup gratuito: ci viene trasmessa solo se invii quel modulo, viene cancellata una volta inviata la richiesta e scompare alla chiusura della scheda. Le date dei tuoi ultimi invii del modulo di contatto servono a limitare la frequenza di invio da questo browser e vi restano finché non cancelli i dati di navigazione; non ci vengono mai trasmesse."
+            "Il sito non prevede area clienti, pagamenti, CAPTCHA né pixel pubblicitari. Due moduli vengono elaborati sul server. La pagina del mockup gratuito raccoglie il tuo indirizzo e-mail, la palette di colori scelta, l'indirizzo del tuo sito attuale se lo indichi, il tuo messaggio e la lingua della pagina. Se arrivi dal simulatore di prezzi, la richiesta include anche le scelte che vi hai fatto (tipo di progetto, tipo di sito, numero di pagine, opzioni selezionate, frequenza degli aggiornamenti e prezzo mensile stimato), così lo studio può risponderti con cognizione di causa. Il modulo di contatto raccoglie il tuo nome, il tuo indirizzo e-mail e il tuo messaggio e, se li indichi, il tuo numero di telefono, la tua attività e il tipo di esigenza scelto. In entrambi i casi le informazioni vengono inviate via e-mail alla casella dello studio e nulla viene conservato in un database. I messaggi inviati tramite i link e-mail del sito sono gestiti dal tuo programma di posta e dalla casella del destinatario.",
+            "Il tuo indirizzo IP viene trattato temporaneamente dal firewall del fornitore di hosting, che limita ciascuno dei due moduli (contatto e mockup gratuito) a tre invii ogni dieci minuti, in aggiunta a un campo anti-spam nascosto. Il fornitore di hosting può anche trattare dati tecnici per i propri registri di sicurezza e di distribuzione. Vercel Analytics viene caricato solo dopo il tuo consenso, per contare le pagine visualizzate.",
+            "Nel tuo browser vengono conservate due informazioni. La simulazione dei prezzi serve solo a trasferire le tue scelte dal simulatore al modulo del mockup gratuito: ci viene trasmessa solo se invii quel modulo, viene cancellata una volta inviata la richiesta e scompare quando chiudi la scheda. Le date dei tuoi ultimi invii del modulo di contatto servono a limitare la frequenza degli invii da questo browser; vi restano finché non cancelli i tuoi dati di navigazione e non ci vengono mai trasmesse."
           ]
         },
         {
           "title": "Finalità e basi giuridiche",
           "body": [
-            "Le email sono trattate per rispondere alle richieste, preparare preventivi, fornire supporto e conservare prova degli scambi. Il trattamento si basa sul legittimo interesse e, ove applicabile, su misure precontrattuali richieste da te. Le richieste di mockup gratuito sono trattate per preparare e inviarti il mockup richiesto, e per risponderti.",
-            "I messaggi inviati tramite il modulo di contatto sono trattati per le stesse finalità. La limitazione degli invii per indirizzo IP e il filtro degli invii automatizzati si basano sul legittimo interesse a proteggere il servizio dagli abusi.",
-            "La misurazione audience serve a comprendere il traffico aggregato e migliorare il sito. Go Cosmic carica Vercel Analytics solo dopo il tuo consenso. I log di sicurezza sono trattati per legittimo interesse alla protezione del servizio."
+            "Le e-mail sono trattate per rispondere alle richieste, preparare preventivi, fornire assistenza e conservare traccia della corrispondenza. Questo trattamento si basa sul legittimo interesse e, se del caso, su misure precontrattuali adottate su tua richiesta. Le richieste di mockup gratuito sono trattate per preparare il mockup, inviartelo e risponderti.",
+            "I messaggi inviati tramite il modulo di contatto sono trattati per le stesse finalità. La limitazione degli invii per indirizzo IP e il filtraggio degli invii automatici si basano sul legittimo interesse a proteggere il servizio dagli abusi.",
+            "La misurazione dell'audience serve a capire il traffico complessivo del sito e a migliorarlo. Cosmic Studio carica Vercel Analytics solo dopo il tuo consenso. I registri di sicurezza si basano sul legittimo interesse a proteggere il servizio."
           ]
         },
         {
-          "title": "Destinatari e responsabili",
+          "title": "Destinatari e responsabili del trattamento",
           "body": [
-            "I dati possono essere accessibili a Go Cosmic, al provider email, a Resend (che recapita le email delle richieste di mockup gratuito e del modulo di contatto), al provider di hosting e a Vercel per hosting e analytics. LinkedIn è un sito esterno e può trattare dati secondo la propria policy dopo il clic su un link in uscita.",
-            "Se scegli di prenotare una chiamata dalla pagina di contatto, il calendario delle prenotazioni è fornito da Google (Google Calendar), che tratta le informazioni inserite secondo la propria informativa sulla privacy: https://policies.google.com/privacy."
+            "I dati possono essere accessibili a Cosmic Studio, al suo fornitore di posta elettronica, a Resend (che recapita le e-mail del modulo di contatto e delle richieste di mockup gratuito) e a Vercel, per l'hosting e la misurazione dell'audience. LinkedIn è un sito esterno che può trattare dati secondo la propria informativa se clicchi su un link che vi rimanda.",
+            "Se scegli di prenotare una chiamata dalla pagina Contatti, il calendario delle prenotazioni è fornito da Google (Google Calendar), che tratta le informazioni inserite secondo la propria informativa sulla privacy: https://policies.google.com/privacy."
           ]
         },
         {
           "title": "Periodi di conservazione",
           "body": [
-            "Gli scambi email sono conservati solo per il tempo necessario alla gestione e al seguito, poi archiviati o eliminati secondo esigenze legali, contabili o di contenzioso. Il consenso analytics è memorizzato nel browser finché non cancelli il local storage o cambi browser. I log di hosting seguono la configurazione del provider.",
-            "Gli invii del modulo di contatto non sono conservati in un database: vengono consegnati come e-mail e lo scambio che ne deriva segue i periodi descritti sopra."
+            "Gli scambi via e-mail sono conservati per il tempo necessario a gestire la tua richiesta e a darle seguito, poi archiviati o cancellati secondo gli obblighi legali, contabili o legati a eventuali contenziosi. La tua scelta sulla misurazione dell'audience è registrata nel tuo browser finché non ne cancelli i dati o non cambi browser. I registri dell'hosting seguono la configurazione del fornitore di hosting.",
+            "Gli invii del modulo di contatto non sono conservati in un database: vengono trasmessi via e-mail e lo scambio che ne segue rispetta i periodi descritti sopra."
           ]
         },
         {
           "title": "Trasferimenti internazionali",
           "body": [
-            "Alcuni responsabili, inclusi Vercel e provider email, possono comportare trattamenti fuori dallo Spazio Economico Europeo.",
-            "Vercel disciplina questi trasferimenti tramite clausole contrattuali standard approvate dalla Commissione europea. Per domande sulle garanzie applicabili, contatta support@gocosmic.dev."
+            "Alcuni responsabili del trattamento, tra cui Vercel e i fornitori di posta elettronica, possono trattare dati al di fuori dello Spazio economico europeo.",
+            "Vercel disciplina questi trasferimenti con clausole contrattuali standard approvate dalla Commissione europea. Per qualsiasi domanda sulle garanzie applicate, scrivi a support@gocosmic.dev."
           ]
         },
         {
           "title": "I tuoi diritti",
           "body": [
-            "Puoi richiedere accesso, rettifica, cancellazione, limitazione, opposizione e portabilità quando applicabile scrivendo a support@gocosmic.dev. Puoi anche presentare reclamo alla CNIL: https://www.cnil.fr/."
+            "Quando questi diritti si applicano, puoi chiedere l'accesso ai tuoi dati, la loro rettifica o cancellazione, la limitazione del trattamento, opporti al trattamento o chiederne la portabilità, scrivendo a support@gocosmic.dev. Puoi anche presentare un reclamo alla CNIL: https://www.cnil.fr/."
           ]
         },
         {
-          "title": "Cookie e misurazione audience",
+          "title": "Cookie e misurazione dell'audience",
           "body": [
-            "Go Cosmic non carica intenzionalmente cookie pubblicitari. Vercel Analytics è trattato su questo sito come strumento di misurazione audience non essenziale e viene caricato solo dopo il tuo consenso.",
-            "Puoi modificare o revocare il tuo consenso in qualsiasi momento tramite il pulsante di gestione delle preferenze in fondo a ogni pagina.",
-            "Il calendario delle prenotazioni Google Calendar della pagina di contatto si carica solo se fai clic su «Mostra il calendario»; Google può allora impostare i propri cookie. Senza questo clic, nulla viene caricato da Google e puoi aprire la pagina di prenotazione in una nuova scheda."
+            "Cosmic Studio non carica alcun cookie pubblicitario. Vercel Analytics è considerato uno strumento di misurazione dell'audience non essenziale e viene caricato solo dopo il tuo consenso.",
+            "Puoi modificare o revocare il tuo consenso in qualsiasi momento con il pulsante di gestione dei cookie, in fondo a ogni pagina.",
+            "Il calendario delle prenotazioni Google Calendar della pagina Contatti si carica solo se fai clic su «Mostra il calendario»; a quel punto Google può installare i propri cookie. Senza questo clic, da Google non viene caricato nulla e puoi aprire la pagina di prenotazione in una nuova scheda."
           ]
         }
       ]
@@ -74,17 +74,17 @@
     "legalNotice": {
       "meta": {
         "title": "Note legali - Cosmic Studio",
-        "description": "Editore, hosting, proprietà intellettuale, responsabilità e contatti di Go Cosmic."
+        "description": "Editore, hosting, proprietà intellettuale, responsabilità e contatti di Cosmic Studio."
       },
       "eyebrow": "Informazioni legali",
       "title": "Note legali",
       "updated": "Ultimo aggiornamento: 26 maggio 2026",
-      "intro": "Queste note legali identificano l’editore del sito e le principali responsabilità legate all’uso di www.gocosmic.dev.",
+      "intro": "Queste note legali identificano l'editore del sito www.gocosmic.dev e precisano le responsabilità legate al suo utilizzo.",
       "sections": [
         {
           "title": "Editore",
           "body": [
-            "Sito: www.gocosmic.dev. Editore: Matthieu Compérat, che opera con il nome commerciale Go Cosmic — impresa individuale (Entreprise individuelle) registrata dal 17 ottobre 2016. SIRET: 823 200 365 00026. Indirizzo registrato: 485 route de la champanaise, 74410 Duingt, Francia. Contatto: support@gocosmic.dev."
+            "Sito: www.gocosmic.dev. Editore: Matthieu Compérat, impresa individuale (entreprise individuelle) registrata dal 17 ottobre 2016, che opera con il nome commerciale Cosmic Studio (in precedenza Go Cosmic). SIRET: 823 200 365 00026. Indirizzo della sede: 485 route de la champanaise, 74410 Duingt, Francia. Contatto: support@gocosmic.dev."
           ]
         },
         {
@@ -100,33 +100,33 @@
         {
           "title": "Proprietà intellettuale",
           "body": [
-            "Testi, immagini, codice sorgente, elementi di design e identità Go Cosmic sono protetti salvo diversa indicazione. Qualsiasi riproduzione o riutilizzo richiede autorizzazione scritta preventiva."
+            "Salvo diversa indicazione, i testi, le immagini, il codice sorgente, gli elementi grafici e l'identità di Cosmic Studio sono protetti. Qualsiasi riproduzione o riutilizzo richiede un'autorizzazione scritta preventiva."
           ]
         },
         {
           "title": "Responsabilità",
           "body": [
-            "Go Cosmic mira a mantenere informazioni accurate e disponibili, ma non può garantire che il sito sia privo di interruzioni, errori o contenuti obsoleti. I link esterni conducono a servizi terzi regolati dalle loro condizioni e policy."
+            "Cosmic Studio si adopera per mantenere le informazioni corrette e il sito disponibile, senza poter garantire l'assenza di interruzioni, errori o contenuti non aggiornati. I link esterni rimandano a servizi di terzi, regolati dalle rispettive condizioni."
           ]
         },
         {
-          "title": "Uso dell’intelligenza artificiale",
+          "title": "Uso dell'intelligenza artificiale",
           "body": [
-            "Cosmic Studio può integrare funzionalità assistite dall’intelligenza artificiale nei progetti dei clienti, e usa questi strumenti per scrivere, tradurre e sviluppare più rapidamente. Ogni contenuto e ogni consegna vengono riletti da una persona.",
-            "Le raccomandazioni prodotte dall’IA sono informative e non sostituiscono il giudizio umano. Le applicazioni sono testate secondo le migliori pratiche del settore.",
-            "I dati sensibili non vengono condivisi con terzi senza una base giuridica documentata o un consenso esplicito quando richiesto. Le pratiche relative ai dati personali sono descritte nell’informativa privacy."
+            "Cosmic Studio può integrare funzionalità basate sull'intelligenza artificiale nei progetti dei suoi clienti e usa questi strumenti per scrivere, tradurre e sviluppare più rapidamente. Ogni contenuto e ogni consegna vengono riletti da una persona.",
+            "Le raccomandazioni prodotte dall'IA hanno valore informativo e non sostituiscono il giudizio umano. Le applicazioni vengono testate secondo le buone pratiche professionali.",
+            "I dati sensibili non vengono mai condivisi con terzi senza una base giuridica documentata, o senza consenso esplicito quando è richiesto. Il trattamento dei dati personali è descritto nell'informativa privacy."
           ]
         },
         {
-          "title": "Contatto",
-          "body": ["Per domande legali, privacy o sicurezza, contatta support@gocosmic.dev."]
+          "title": "Contatti",
+          "body": ["Per qualsiasi domanda legale, sulla privacy o sulla sicurezza, scrivi a support@gocosmic.dev."]
         }
       ]
     },
     "terms": {
       "meta": {
         "title": "Condizioni generali di vendita - Cosmic Studio",
-        "description": "Condizioni generali di vendita di Cosmic Studio: abbonamento, opzioni, durata, recesso, proprietà del codice."
+        "description": "Condizioni generali di vendita di Cosmic Studio: abbonamento, opzioni, durata, disdetta e proprietà del codice."
       },
       "eyebrow": "Condizioni di vendita",
       "title": "Condizioni generali di vendita",
@@ -136,7 +136,7 @@
         {
           "title": "Fornitore",
           "body": [
-            "Il fornitore è Cosmic Studio, rappresentato da Matthieu Compérat, impresa individuale (Entreprise individuelle) registrata dal 17 ottobre 2016 (SIRET 823 200 365 00026), 485 route de la champanaise, 74410 Duingt, Francia. Contatto: support@gocosmic.dev."
+            "Il fornitore è Cosmic Studio, rappresentato da Matthieu Compérat, impresa individuale (entreprise individuelle) registrata dal 17 ottobre 2016 (SIRET 823 200 365 00026), 485 route de la champanaise, 74410 Duingt, Francia. Contatto: support@gocosmic.dev."
           ]
         },
         {
@@ -148,64 +148,64 @@
         {
           "title": "Sottoscrizione",
           "body": [
-            "L'abbonamento viene confermato per iscritto dopo un primo scambio, una volta definite insieme le tue esigenze (pagine, opzioni, modifiche). Entra in vigore alla messa online del sito."
+            "L'abbonamento viene confermato per iscritto dopo un primo colloquio, una volta definite insieme le tue esigenze (pagine, opzioni, modifiche). Decorre dalla messa online del sito."
           ]
         },
         {
           "title": "Prezzo e fatturazione",
           "body": [
-            "I prezzi dell'abbonamento sono quelli indicati nella pagina Servizi e tariffe al momento della sottoscrizione, in base alle opzioni scelte. La fatturazione può essere mensile, trimestrale o annuale, a tua scelta.",
-            "L'accompagnamento, il rinforzo e i progetti su misura sono fatturati alla tariffa a giornata o su preventivo, comunicato prima di qualsiasi intervento."
+            "I prezzi dell'abbonamento sono quelli indicati nella pagina Servizi & prezzi al momento della sottoscrizione, in base alle opzioni scelte. La fatturazione è mensile, trimestrale o annuale, a tua scelta.",
+            "L'accompagnamento, il rinforzo del team e i progetti su misura sono fatturati alla tariffa a giornata o su preventivo, comunicato prima di qualsiasi intervento."
           ]
         },
         {
           "title": "Durata e impegno",
           "body": [
             "L'abbonamento non prevede un periodo minimo ed è disdicibile ogni mese, a condizione che non includa la gestione di un nome a dominio o di un indirizzo e-mail.",
-            "Non appena una di queste due opzioni è attiva, l'abbonamento è sottoscritto per periodi di 12 mesi, rinnovati tacitamente, per coprire la riserva del nome a dominio e dell'indirizzo e-mail per quel periodo."
+            "Non appena una di queste due opzioni è attiva, l'abbonamento è sottoscritto per periodi di 12 mesi, rinnovati tacitamente, per coprire la registrazione del nome a dominio e dell'indirizzo e-mail."
           ]
         },
         {
           "title": "Opzioni",
           "body": [
             "Puoi aggiungere un'opzione in qualsiasi momento; si applica a partire dal periodo di fatturazione successivo.",
-            "Il numero di pagine, il nome a dominio, l'hosting in Svizzera e l'indirizzo e-mail non possono essere rimossi una volta attivati, poiché corrispondono a un impegno assunto per tuo conto (pagine create, dominio riservato, casella e-mail aperta). Solo la frequenza delle modifiche ai contenuti può essere rivista al rialzo o al ribasso."
+            "Il numero di pagine, il nome a dominio, l'hosting in Svizzera e l'indirizzo e-mail non possono essere rimossi una volta attivati, perché corrispondono a un impegno assunto per tuo conto (pagine create, dominio registrato, casella e-mail aperta). Solo la frequenza delle modifiche ai contenuti può essere rivista al rialzo o al ribasso."
           ]
         },
         {
-          "title": "Recesso",
+          "title": "Disdetta",
           "body": [
-            "Puoi recedere in qualsiasi momento per iscritto. Il sito resta online fino alla fine del periodo pagato in corso (fine del mese per un abbonamento senza impegno, fine del periodo di 12 mesi in corso se comprende un nome a dominio o un indirizzo e-mail).",
-            "Te ne vai con i tuoi contenuti e il tuo nome a dominio."
+            "Puoi disdire l'abbonamento in qualsiasi momento per iscritto. Il sito resta online fino alla fine del periodo in corso già pagato (fine del mese per un abbonamento senza vincolo di durata, fine del periodo di 12 mesi in corso se comprende un nome a dominio o un indirizzo e-mail).",
+            "Porti con te i tuoi contenuti e il tuo nome a dominio."
           ]
         },
         {
           "title": "Proprietà",
           "body": [
-            "I tuoi testi, le tue immagini e il tuo nome a dominio sono tuoi dal primo giorno. Il codice del sito ti viene ceduto gratuitamente dopo 36 mesi di abbonamento. Prima di questo termine, può esserti ceduto a fronte di un costo di cessione che dipende dal tempo restante.",
-            "Per un progetto singolo, il codice è tuo dalla consegna."
+            "I tuoi testi, le tue immagini e il tuo nome a dominio ti appartengono dal primo giorno. Il codice del sito ti viene ceduto gratuitamente dopo 36 mesi di abbonamento. Prima di questo termine, può esserti ceduto a fronte di un costo di cessione che dipende dalla durata residua.",
+            "Per un progetto una tantum, il codice ti appartiene dalla consegna."
           ]
         },
         {
           "title": "I tuoi obblighi",
           "body": [
-            "Ci fornisci i testi, le immagini e le informazioni necessarie alla realizzazione o all'aggiornamento del sito. I tempi indicati decorrono dalla loro ricezione."
+            "Ci fornisci i testi, le immagini e le informazioni necessari alla realizzazione o all'aggiornamento del sito. I tempi indicati decorrono da quando li riceviamo."
           ]
         },
         {
           "title": "Responsabilità e disponibilità",
           "body": [
-            "Cosmic Studio adotta le misure ragionevoli per garantire la disponibilità del sito, senza garantire l'assenza totale di interruzioni. In caso di indisponibilità prolungata imputabile a Cosmic Studio, il periodo interessato potrà essere prorogato di conseguenza."
+            "Cosmic Studio adotta misure ragionevoli per assicurare la disponibilità del sito, senza poter garantire l'assenza totale di interruzioni. In caso di indisponibilità prolungata imputabile a Cosmic Studio, il periodo interessato può essere prolungato per una durata equivalente."
           ]
         },
         {
           "title": "Dati personali",
-          "body": ["Il trattamento dei dati personali è descritto nella politica sulla privacy."]
+          "body": ["Il trattamento dei dati personali è descritto nell'informativa privacy."]
         },
         {
           "title": "Legge applicabile e controversie",
           "body": [
-            "Le presenti condizioni sono soggette al diritto francese. In caso di controversia, si cercherà una soluzione amichevole prima di qualsiasi azione legale; in mancanza, saranno competenti i tribunali della sede di Cosmic Studio."
+            "Le presenti condizioni sono regolate dal diritto francese. In caso di controversia, si cerca una soluzione amichevole prima di qualsiasi azione legale; in mancanza, sono competenti i tribunali del luogo in cui ha sede Cosmic Studio."
           ]
         }
       ]

@@ -20,8 +20,9 @@ export function getCanonicalUrl(locale: string, routeKey: PathKey): string {
   const pathnames = routing.pathnames[routeKey];
   const localizedPath = getLocalizedPath(pathnames as string | Record<Locale, string>, locale);
 
+  // No trailing slash on the home page: `/fr/` permanently redirects to `/fr`, and a canonical URL must not redirect.
   if (localizedPath === '/') {
-    return `${SITE_URL}/${locale}/`;
+    return `${SITE_URL}/${locale}`;
   }
   return `${SITE_URL}/${locale}${localizedPath}`;
 }

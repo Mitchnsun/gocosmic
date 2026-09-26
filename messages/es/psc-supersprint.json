@@ -11,7 +11,7 @@
     "for_whom": {
       "label": "Para quién",
       "title": "Un club de triatlón, el día de su carrera",
-      "description": "El PSC es un club de triatlón que organiza un triatlón supersprint. El día de la carrera, atletas, organizadores y público quieren lo mismo: conocer los resultados, rápido y sin tener que buscarlos."
+      "description": "El PSC es un club de triatlón que organiza cada año un triatlón supersprint. El día de la carrera, atletas, organizadores y público quieren lo mismo: conocer los resultados rápido, sin tener que buscarlos."
     },
     "what_we_did": {
       "label": "Lo que hicimos",
@@ -19,7 +19,7 @@
       "description": "Creamos una aplicación web, sin nada que instalar, que muestra los resultados durante la prueba y los mantiene en línea después.",
       "items": {
         "live_results": "Los resultados en directo, durante la carrera",
-        "rankings": "Una clasificación general, y clasificaciones por categoría y por género",
+        "rankings": "Una clasificación general y otras por categoría y por género",
         "podiums": "Los podios de cada año, fáciles de encontrar",
         "athlete_pages": "Una ficha para cada atleta, con sus resultados",
         "organiser_space": "Un área reservada para que los organizadores introduzcan los resultados"

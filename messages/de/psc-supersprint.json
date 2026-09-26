@@ -6,17 +6,17 @@
       "title": "Ergebnisse ansehen",
       "description": "Ranglisten, Podestplätze und die Seiten der Teilnehmenden des PSC Supersprint, online abrufbar.",
       "button": "App ansehen",
-      "ariaLabel": "Die App PSC Supersprint ansehen (öffnet in einem neuen Tab)"
+      "ariaLabel": "App PSC Supersprint ansehen (öffnet in einem neuen Tab)"
     },
     "for_whom": {
       "label": "Für wen",
       "title": "Ein Triathlonverein an seinem Renntag",
-      "description": "Der PSC ist ein Triathlonverein, der einen Supersprint-Triathlon veranstaltet. Am Renntag wollen alle dasselbe, ob Teilnehmende, Organisationsteam oder Publikum: die Ergebnisse kennen, schnell und ohne suchen zu müssen."
+      "description": "Der PSC ist ein Triathlonverein, der jedes Jahr einen Supersprint-Triathlon veranstaltet. Am Renntag wollen Teilnehmende, Organisationsteam und Publikum alle dasselbe: die Ergebnisse schnell kennen, ohne danach suchen zu müssen."
     },
     "what_we_did": {
       "label": "Was wir gemacht haben",
       "title": "Live-Ergebnisse auf dem Handy",
-      "description": "Wir haben eine Web-App gebaut, für die man nichts installieren muss. Sie zeigt die Ergebnisse während des Wettkampfs an und hält sie danach online.",
+      "description": "Wir haben eine Web-App gebaut, für die man nichts installieren muss. Sie zeigt die Ergebnisse während des Wettkampfs an, und danach bleiben sie online abrufbar.",
       "items": {
         "live_results": "Die Ergebnisse live, während des Rennens",
         "rankings": "Eine Gesamtwertung sowie Wertungen nach Kategorie und Geschlecht",

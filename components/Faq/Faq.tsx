@@ -28,7 +28,7 @@ export function Faq({ eyebrow, title, items, defaultOpen = 0, id = 'faq' }: FaqP
   const titleId = `${id}-heading`;
 
   return (
-    <section id={id} aria-labelledby={titleId} className={SECTION_Y}>
+    <section id={id} aria-labelledby={titleId} className={cn('scroll-mt-20', SECTION_Y)}>
       <div className={cn(CONTAINER, 'grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]')}>
         <SectionHeading eyebrow={eyebrow} title={title} titleId={titleId} />
         <ul className="border-ghost/10 flex flex-col border-t">

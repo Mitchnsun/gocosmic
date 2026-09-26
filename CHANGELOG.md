@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [2.0.0] - 2026-09-26
+## [2.0.0] - 2026-09-27
 
 ### Added
 
@@ -18,26 +18,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - The studio is now called Cosmic Studio across the site, in search results and in emails; the menu is reduced to Services, Projects and Contact with a "Get my free mockup" button always in view, and a simpler footer gathers the other pages, the legal links and a language picker
 - Alternate sections in the dark theme now use a warm, deep rose-ash tone instead of midnight blue
-- Texts across the site are rewritten in plain words for craftspeople, associations and independents, around one promise: making their business seen, found and chosen, in all five languages
+- Texts across the site are rewritten in plain, natural words for craftspeople, associations and independents, around one promise: making their business seen, found and chosen, in all five languages, with prices written the way each language expects ("10 €" in French, "€10" in English)
 - The projects page can be filtered by type of project, and each project page now tells who it was for, what was done and what changed
 - The pricing section now shows four ways to work together — subscription, guidance, reinforcement and custom projects — instead of two, and day-based services are shown without a figure
 - Subscription options are now described as added over time rather than freely removable, since once active they stay part of the plan
 - The homepage opening keeps its animated ringed planet, shown discreetly behind the text on phones and larger alongside it on desktop
 - The top bar and mobile menu now show the studio's altitude instead of its GPS coordinates, and the mobile menu's mountain horizon decoration is back
 - The top bar now simply shows "Available" without a start month, and names the mission control base — Chêne-Bougeries for Swiss visitors, Annecy for everyone else
-- The Geneva and Annecy page now looks like the rest of the site and shows where the studio meets clients in person, along with recent projects
-- Search engines now present the studio from its Geneva base while still naming Annecy and Haute-Savoie, and link each page to its versions in the other languages
-- The legal pages, the cookie banner and the language picker now use the site's own colours, and the custom cursor only appears with a mouse or trackpad
+- The Geneva and Annecy page now looks like the rest of the site and shows where the studio meets clients in person, and search results present the studio from its Geneva base while still naming Annecy and Haute-Savoie
+- The legal pages, now under the studio's current name, the cookie banner and the language picker use the site's own colours, links shared on social networks show a new preview image, and the custom cursor only appears with a mouse or trackpad
 
 ### Removed
 
 - The 3D journey page and the separate offers and pricing pages: their content now lives on Services & pricing, and old links lead there
-- The unused 3D engine, which made the site lighter to install and build
 
 ### Fixed
 
 - Screen readers now announce the logo with the studio name shown on screen, and orange buttons now use a dark label that stays readable
-- Old links to the offers and pricing pages now open the matching section of Services & pricing, and the footer's "Our apps" link goes to the apps section of the homepage
+- Old links to the offers and pricing pages now open the matching section of Services & pricing, the footer's "Our apps" link goes to the apps section of the homepage, and switching language keeps the projects filter and the section being read
+- Visitors who ask their device for fewer animations now get a still page from the start, where some moving elements used to slip through
+- Search engines are now given each page's versions in the other languages and the exact address of each homepage, which used to go through a redirect
 
 ## [1.8.0] - 2026-09-23
 

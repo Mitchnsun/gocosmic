@@ -8,6 +8,8 @@ export interface FormFieldProps {
   name: string;
   /** Visible label. */
   label: string;
+  /** Short mono hint after the label, e.g. the "optional" marker. */
+  hint?: string;
   /** Current value. */
   value: string;
   /** Change handler shared with the form hook. */
@@ -46,6 +48,7 @@ export interface FormFieldProps {
 export const FormField = ({
   name,
   label,
+  hint,
   value,
   onChange,
   type = 'text',
@@ -74,7 +77,7 @@ export const FormField = ({
   };
 
   return (
-    <Field id={name} label={label} required={required} error={error} className={className}>
+    <Field id={name} label={label} hint={hint} required={required} error={error} className={className}>
       {multiline ? (
         <textarea {...shared} rows={rows} className={FIELD_TEXTAREA} />
       ) : (

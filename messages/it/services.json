@@ -2,72 +2,72 @@
   "services": {
     "meta": {
       "title": "Servizi & prezzi · Siti internet a Ginevra & Annecy | Cosmic Studio",
-      "description": "Siti vetrina, negozi online, app e assistenza, con i prezzi in chiaro: un abbonamento da 10 € al mese o un progetto su preventivo. Ginevra, Alta Savoia e da remoto."
+      "description": "Siti vetrina, negozi online, app e assistenza, con i prezzi in chiaro: un abbonamento da 10 € al mese, o un progetto su preventivo. A Ginevra, ad Annecy e a distanza."
     },
     "cta": {
-      "title": "Facciamo brillare la tua attività.",
-      "description": "Raccontaci la tua attività in poche righe. Ti rispondiamo entro 24 ore con qualche domanda, poi con un mockup gratuito se il progetto ti convince.",
+      "title": "Parliamo del tuo sito.",
+      "description": "Presentaci la tua attività in poche righe. Ti rispondiamo entro un giorno lavorativo, poi prepariamo il tuo mockup gratuito, se ti va.",
       "primary_button": "Parliamo del tuo progetto"
     },
     "intro": {
       "eyebrow": "[ Servizi & prezzi ]",
       "title": "Un sito che funziona, <em>e qualcuno che se ne occupa.</em>",
-      "lead": "I prezzi sono in chiaro, perché hai di meglio da fare che chiedere un preventivo per sapere se è alla tua portata. E parti da un mockup gratuito, senza impegno."
+      "lead": "I nostri prezzi sono in chiaro: sai subito se rientra nel tuo budget, senza chiedere un preventivo. E tutto parte da un mockup gratuito, senza impegno."
     },
     "simulator": {
       "eyebrow": "[ Componi il tuo abbonamento ]",
-      "title": "Parti in piccolo. <em>Aggiungi quando ti serve.</em>",
-      "lead": "La base: una pagina vetrina, online e sicura, a {price} al mese. Le opzioni si aggiungono nel tempo, quando ti servono."
+      "title": "Parti semplice, <em>il resto lo aggiungi dopo.</em>",
+      "lead": "La formula base comprende una pagina vetrina online e sicura, a {price} al mese. Seleziona le opzioni che ti interessano per vedere il prezzo mensile."
     },
     "trades": {
-      "eyebrow": "[ Cosa facciamo · 04 ]",
+      "eyebrow": "[ I nostri mestieri · 04 ]",
       "title": "Quattro mestieri, <em>un unico referente.</em>",
       "items": {
         "showcase": {
           "title": "Siti vetrina",
-          "description": "Presentare la tua attività, i tuoi lavori e i tuoi orari, e farti trovare su Google da chi abita vicino.",
+          "description": "Per presentare la tua attività, i tuoi lavori e i tuoi orari, e farti trovare su Google da chi abita vicino a te.",
           "tags": ["Artigiani", "Associazioni", "Liberi professionisti"]
         },
         "shops": {
-          "title": "Negozi & prenotazioni",
-          "description": "Vendere online, prendere appuntamenti, gestire le iscrizioni. Senza commissioni sulle tue vendite.",
+          "title": "Negozi online & prenotazioni",
+          "description": "Per vendere online, prendere appuntamenti o gestire le iscrizioni, senza commissioni sulle tue vendite.",
           "tags": ["Vendita online", "Calendario", "Iscrizioni"]
         },
         "apps": {
           "title": "Applicazioni",
-          "description": "Uno strumento di lavoro, un'app per i tuoi clienti o i tuoi soci, un assistente che risponde alle domande frequenti: sul web o sul telefono.",
+          "description": "Uno strumento per chi lavora con te, un'app per i tuoi clienti o i tuoi soci, un assistente che risponde alle domande frequenti, sul web o sul telefono.",
           "tags": ["Web", "iOS", "Android"]
         },
         "care": {
           "title": "Visibilità & assistenza",
-          "description": "Posizionamento su Google, hosting, copie di sicurezza, aggiornamenti, modifiche e formazione: un unico contatto, che conosce il tuo sito.",
+          "description": "Posizionamento su Google, hosting, copie di sicurezza, aggiornamenti e modifiche, con una sola persona da contattare, che conosce il tuo sito.",
           "tags": ["Google", "Assistenza", "Formazione"]
         }
       }
     },
     "faq": {
       "eyebrow": "[ Domande frequenti ]",
-      "title": "Cosa ci chiedono <em>prima di firmare.</em>",
+      "title": "Le domande che ci fanno <em>prima di firmare.</em>",
       "items": {
         "ownership": {
           "question": "Il sito è mio?",
-          "answer": "I tuoi testi, le tue immagini e il tuo nome a dominio sono tuoi dal primo giorno. Il codice del sito ti viene ceduto dopo {months} mesi di abbonamento: è questo che permette un prezzo d'ingresso così basso. Vuoi averlo prima? Si può, con un costo di cessione che dipende dal tempo rimanente. Per un progetto singolo, il codice è tuo fin dalla consegna."
+          "answer": "Testi, immagini e nome a dominio ti appartengono dal primo giorno. Il codice del sito ti viene ceduto dopo {months} mesi di abbonamento, ed è questo che ci permette di proporre un prezzo di partenza così basso. Puoi anche averlo prima, pagando un costo di cessione calcolato sul tempo che resta. Per un progetto su preventivo, il codice è tuo dalla consegna."
         },
         "edit": {
           "question": "Posso modificare il sito da solo?",
-          "answer": "La cosa più semplice è l'opzione «Modifiche ai contenuti comprese»: ci mandi testi, foto o orari, e pensiamo a tutto noi. Molti preferiscono scriverci piuttosto che imparare a usare uno strumento. Se ci tieni a pubblicare da solo, si può fare: ne parliamo, è un progetto su misura."
+          "answer": "Il modo più semplice è l'opzione «Modifiche ai contenuti comprese»: ci mandi testi, foto o nuovi orari e li mettiamo online noi. Se preferisci pubblicare da solo, si può fare anche questo; ne parliamo insieme, perché richiede uno sviluppo specifico."
         },
         "timing": {
           "question": "Quanto tempo serve per andare online?",
-          "answer": "Per una pagina vetrina: da due a tre settimane dopo aver ricevuto i tuoi testi e le tue foto. Per un sito di cinque pagine: da quattro a sei settimane. Ti diamo una data all'inizio, e la rispettiamo."
+          "answer": "Per una pagina vetrina servono due o tre settimane da quando riceviamo i tuoi testi e le tue foto; per un sito di cinque pagine, da quattro a sei settimane. Fissiamo la data di messa online all'inizio e la rispettiamo."
         },
         "stop": {
           "question": "Cosa succede se smetto?",
-          "answer": "Ci avvisi, e il sito resta online fino alla fine del periodo pagato in corso. Te ne vai con i tuoi contenuti e il tuo nome a dominio. Il codice del sito è compreso dopo {months} mesi di abbonamento; prima, viene ceduto con un costo che ti indichiamo fin dall'inizio. Se il tuo abbonamento comprende un nome a dominio o un indirizzo e-mail, è sottoscritto per periodi di 12 mesi: il periodo in corso arriva al suo termine."
+          "answer": "Basta avvisarci: il sito resta online fino alla fine del periodo già pagato, e porti con te i tuoi contenuti e il tuo nome a dominio. Il codice ti viene ceduto gratuitamente dopo {months} mesi di abbonamento; prima di allora, puoi averlo a un costo che ti comunichiamo fin dall'inizio. Se il tuo abbonamento comprende un nome a dominio o un indirizzo e-mail, dura 12 mesi alla volta, e il periodo in corso va fino alla sua scadenza."
         },
         "content": {
           "question": "Vi occupate anche di testi e foto?",
-          "answer": "Ti aiutiamo a scrivere e rileggiamo tutto, pensando alle parole che i tuoi clienti cercano su Google. Per le foto, lavoriamo con le tue oppure ti mettiamo in contatto con un fotografo della zona; non è compreso nell'abbonamento."
+          "answer": "Ti aiutiamo a scrivere e rileggiamo tutto, pensando alle parole che i tuoi clienti cercano su Google. Per le foto usiamo le tue, oppure ti mettiamo in contatto con un fotografo della zona, il cui lavoro non è compreso nell'abbonamento."
         }
       }
     }

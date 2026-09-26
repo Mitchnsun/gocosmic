@@ -2,21 +2,21 @@
   "projectsList": {
     "meta": {
       "title": "Realizzazioni · Siti e app | Cosmic Studio",
-      "description": "Siti e app realizzati da Cosmic Studio per associazioni, un club sportivo e liberi professionisti, a Ginevra e in Alta Savoia."
+      "description": "Siti e app realizzati da Cosmic Studio per un coro, un club di triathlon e liberi professionisti, a Ginevra e in Alta Savoia."
     },
-    "title": "Siti e app <em>che servono a qualcosa.</em>",
-    "subtitle": "Una selezione di ciò che abbiamo consegnato: per i clienti e per noi. Ogni scheda dice cosa abbiamo fatto, per chi e cosa è cambiato.",
+    "title": "Siti e app <em>usati ogni giorno.</em>",
+    "subtitle": "Una selezione di progetti realizzati per i nostri clienti e per lo studio. Ogni scheda racconta per chi abbiamo lavorato, cosa abbiamo fatto e cosa è cambiato.",
     "items": {
       "dailyFortune": {
         "title": "Daily Fortune",
-        "description": "Un breve messaggio ogni mattina per iniziare bene la giornata. La nostra prima app pubblicata sull'App Store e su Google Play.",
+        "description": "Un breve messaggio ogni mattina per iniziare bene la giornata. È la nostra prima app, disponibile sull'App Store e su Google Play.",
         "client": "App dello studio",
         "tags": ["App mobile", "iOS · Android", "Studio"],
         "cover_alt": "Icona dell'app Daily Fortune"
       },
       "mcomperat": {
         "title": "mcomper.at",
-        "description": "Un curriculum online, disponibile in più lingue e veloce da caricare. Il banco di prova degli strumenti che poi usiamo per te.",
+        "description": "Un curriculum online, in francese e in inglese, veloce da caricare. Ci serve anche per provare gli strumenti che poi usiamo per i nostri clienti.",
         "client": "Progetto personale",
         "tags": ["Sito", "Multilingue"],
         "cover_alt": "Anteprima del sito mcomper.at"
@@ -37,8 +37,8 @@
       }
     },
     "cta": {
-      "title": "Il tuo progetto potrebbe essere il prossimo di questa lista.",
-      "description": "Raccontaci la tua attività in poche righe: ti rispondiamo entro 24 ore, con delle domande invece di un preventivo automatico.",
+      "title": "Il tuo progetto potrebbe essere il prossimo della lista.",
+      "description": "Presentaci la tua attività in poche righe. Ti rispondiamo entro un giorno lavorativo.",
       "button": "Parliamo del tuo progetto"
     },
     "eyebrow": "[ Realizzazioni · {count} ]",
@@ -85,7 +85,7 @@
     "result": {
       "label": "Risultato",
       "title": "La nostra prima app online",
-      "description": "Daily Fortune è disponibile sull'App Store e su Google Play, e i suoi utenti ricevono un nuovo messaggio ogni giorno. Per te è la garanzia che conosciamo tutto il percorso, dall'idea alla pubblicazione nei negozi di app."
+      "description": "Daily Fortune è disponibile sull'App Store e su Google Play, e i suoi utenti ricevono un nuovo messaggio ogni giorno. Per te è la prova che sappiamo portare un'app dall'idea fino alla pubblicazione."
     }
   },
   "mcomperat": {
@@ -100,12 +100,12 @@
     "for_whom": {
       "label": "Per chi",
       "title": "Un curriculum online, e il nostro banco di prova",
-      "description": "mcomper.at è il curriculum online di Matthieu Compérat, il tuo referente in Cosmic Studio: il suo percorso e le sue competenze, in una sola pagina. È anche il banco di prova degli strumenti che poi usiamo per i nostri clienti. Quello che funziona qui arriva nei tuoi progetti."
+      "description": "mcomper.at è il curriculum online di Matthieu Compérat, il tuo referente in Cosmic Studio: il suo percorso e le sue competenze, in una sola pagina. È anche il posto in cui proviamo gli strumenti che poi usiamo per i nostri clienti."
     },
     "what_we_did": {
       "label": "Cosa abbiamo fatto",
       "title": "Un curriculum chiaro, veloce e in due lingue",
-      "description": "Abbiamo progettato un sito facile da leggere e da far evolvere, e lo usiamo per mettere alla prova i nostri metodi di lavoro prima di proporli ai clienti.",
+      "description": "Abbiamo progettato un sito facile da leggere e da aggiornare, che ci serve anche per provare i nostri metodi di lavoro prima di applicarli ai tuoi progetti.",
       "items": {
         "two_languages": "Un sito disponibile in francese e in inglese, con testi scritti per ciascuna lingua",
         "found_on_google": "Pagine preparate per essere trovate su Google",
@@ -117,7 +117,7 @@
     "result": {
       "label": "Risultato",
       "title": "Provato qui, poi usato per te",
-      "description": "Matthieu ha un curriculum online chiaro, bilingue e veloce. Per lo studio, è qui che abbiamo messo a punto la gestione di più lingue, la presentazione su Google e la rilettura dei testi scritti con l'IA, prima di usarle sui siti dei nostri clienti. Ogni modifica passa anche da controlli automatici, per evitare errori."
+      "description": "Matthieu ha un curriculum online chiaro, bilingue e veloce. È qui che abbiamo messo a punto la gestione di più lingue, la presentazione su Google e la rilettura dei testi scritti con l'IA, prima di adottarle sui siti dei nostri clienti. Ogni modifica passa anche da controlli automatici, per evitare errori."
     }
   },
   "choeurDesPaysduMontBlanc": {

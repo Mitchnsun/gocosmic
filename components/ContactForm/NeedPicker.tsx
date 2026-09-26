@@ -4,6 +4,8 @@ import type { ContactNeed } from '@/lib/contact/validation';
 
 interface NeedPickerProps {
   legend: string;
+  /** Short mono hint after the legend, e.g. the "optional" marker. */
+  hint?: string;
   options: { value: ContactNeed; label: string }[];
   value: string;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
@@ -11,9 +13,12 @@ interface NeedPickerProps {
 }
 
 /** "What you need" chips: native radio buttons styled as pills, so the keyboard and screen readers get a real radio group. */
-export const NeedPicker = ({ legend, options, value, onChange, disabled = false }: NeedPickerProps) => (
+export const NeedPicker = ({ legend, hint, options, value, onChange, disabled = false }: NeedPickerProps) => (
   <fieldset className="flex flex-col gap-3" disabled={disabled}>
-    <legend className="text-ghost font-display mb-3 text-sm font-medium">{legend}</legend>
+    <legend className="text-ghost font-display mb-3 flex items-baseline gap-2 text-sm font-medium">
+      {legend}
+      {hint && <span className="text-ghost/35 text-2xs font-mono tracking-widest uppercase">{hint}</span>}
+    </legend>
     <div className="flex flex-wrap gap-2">
       {options.map((option, index) => (
         <label key={option.value} className="cursor-pointer">

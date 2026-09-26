@@ -1,7 +1,7 @@
 {
   "navigation": {
     "contact_label": "Contatta Cosmic Studio",
-    "contact": "Contatto",
+    "contact": "Contatti",
     "home": "{brand}, home",
     "label": "Navigazione principale",
     "menu_close": "Chiudi menu",
@@ -12,7 +12,7 @@
     "services": "Servizi",
     "skip_to_content": "Vai al contenuto principale",
     "switch_locale": "Cambia lingua",
-    "lang_drawer_title": "LINGUA · SELEZIONA",
+    "lang_drawer_title": "LINGUA · SELEZIONE",
     "menu_title": "Menu",
     "home_menu": "Home",
     "cta": "Il mio mockup gratuito"

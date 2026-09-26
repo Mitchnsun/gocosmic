@@ -2,72 +2,72 @@
   "services": {
     "meta": {
       "title": "Servicios y precios · Páginas web en Ginebra y Annecy | Cosmic Studio",
-      "description": "Sitios de presentación, tiendas, aplicaciones y seguimiento, con precios a la vista: una suscripción desde 10 € al mes o un proyecto según presupuesto. Ginebra, Alta Saboya y a distancia."
+      "description": "Sitios de presentación, tiendas en línea, aplicaciones y seguimiento, con precios a la vista: una suscripción desde 10 € al mes o un proyecto según presupuesto. En Ginebra, en Annecy y a distancia."
     },
     "cta": {
-      "title": "Hagamos brillar tu negocio.",
-      "description": "Háblanos de tu negocio en unas líneas. Te respondemos en menos de 24 h con preguntas y, si el proyecto te convence, con una maqueta gratuita.",
+      "title": "Hablemos de tu sitio.",
+      "description": "Háblanos de tu negocio en unas pocas líneas. Te respondemos en 24 h laborables y después preparamos tu maqueta gratuita, si quieres.",
       "primary_button": "Hablar de mi proyecto"
     },
     "intro": {
       "eyebrow": "[ Servicios y precios ]",
       "title": "Un sitio que funciona, <em>y alguien que se ocupa de él.</em>",
-      "lead": "Los precios están a la vista, porque tienes cosas mejores que hacer que pedir un presupuesto para saber si te lo puedes permitir. Y empiezas con una maqueta gratuita, sin compromiso."
+      "lead": "Nuestros precios están a la vista, así que sabes enseguida si te lo puedes permitir, sin tener que pedir presupuesto. Y todo empieza con una maqueta gratuita, sin compromiso."
     },
     "simulator": {
       "eyebrow": "[ Configura tu suscripción ]",
-      "title": "Empieza con poco. <em>Añade cuando lo necesites.</em>",
-      "lead": "La base: una página de presentación, en línea y con conexión segura, por {price} al mes. Las opciones se añaden con el tiempo, según las necesites."
+      "title": "Empieza por lo básico <em>y añade el resto más adelante.</em>",
+      "lead": "El plan base incluye una página de presentación en línea y con conexión segura, por {price} al mes. Marca las opciones que te interesen para ver el precio mensual."
     },
     "trades": {
       "eyebrow": "[ Lo que hacemos · 04 ]",
-      "title": "Cuatro oficios, <em>un solo interlocutor.</em>",
+      "title": "Cuatro especialidades, <em>un solo interlocutor.</em>",
       "items": {
         "showcase": {
           "title": "Sitios de presentación",
-          "description": "Presentar tu negocio, tus trabajos y tus horarios, y que la gente de tu zona te encuentre en Google.",
+          "description": "Para presentar tu negocio, tus trabajos y tus horarios, y que la gente de tu zona te encuentre en Google.",
           "tags": ["Artesanos", "Asociaciones", "Autónomos"]
         },
         "shops": {
           "title": "Tiendas y reservas",
-          "description": "Vender en línea, dar citas, gestionar las altas de socios. Sin comisión sobre tus ventas.",
+          "description": "Para vender en línea, dar citas o gestionar las inscripciones de socios, sin comisión sobre tus ventas.",
           "tags": ["Venta en línea", "Agenda", "Socios"]
         },
         "apps": {
           "title": "Aplicaciones",
-          "description": "Una herramienta para tu oficio, una aplicación para tus clientes o tus socios, un asistente que responde a las preguntas frecuentes: en la web o en el móvil.",
+          "description": "Una herramienta para tu equipo, una aplicación para tus clientes o tus socios, un asistente que responde a las preguntas frecuentes, en la web o en el móvil.",
           "tags": ["Web", "iOS", "Android"]
         },
         "care": {
           "title": "Visibilidad y seguimiento",
-          "description": "Posicionamiento en Google, alojamiento, copias de seguridad, actualizaciones, cambios y formación: un solo contacto, que conoce tu sitio.",
+          "description": "Posicionamiento en Google, alojamiento, copias de seguridad, actualizaciones y cambios, con una sola persona de contacto que conoce tu sitio.",
           "tags": ["Google", "Seguimiento", "Formación"]
         }
       }
     },
     "faq": {
       "eyebrow": "[ Preguntas frecuentes ]",
-      "title": "Lo que nos preguntan <em>antes de firmar.</em>",
+      "title": "Las preguntas que nos hacen <em>antes de firmar.</em>",
       "items": {
         "ownership": {
           "question": "¿El sitio es mío?",
-          "answer": "Tus textos, tus imágenes y tu nombre de dominio son tuyos desde el primer día. El código del sitio se te cede al cabo de {months} meses de suscripción: eso es lo que permite un precio de entrada tan bajo. ¿Lo quieres antes? Es posible, pagando una tarifa de cesión que depende del tiempo que quede. En un proyecto puntual, el código es tuyo desde la entrega."
+          "answer": "Tus textos, tus imágenes y tu nombre de dominio te pertenecen desde el primer día. El código del sitio se te cede tras {months} meses de suscripción, y eso es lo que nos permite ofrecer un precio de partida tan bajo. También puedes quedártelo antes, a cambio de unos gastos de cesión calculados según el tiempo que quede. En un proyecto según presupuesto, el código es tuyo desde la entrega."
         },
         "edit": {
           "question": "¿Puedo modificar el sitio por mi cuenta?",
-          "answer": "Lo más sencillo es la opción «Cambios de contenido incluidos»: nos envías tus textos, fotos u horarios, y listo. Mucha gente prefiere escribirnos antes que aprender a usar una herramienta. Si de verdad quieres publicar por tu cuenta, es posible: lo hablamos, es un proyecto a medida."
+          "answer": "Lo más sencillo es la opción «Cambios de contenido incluidos»: nos envías tus textos, tus fotos o tus nuevos horarios, y nosotros los publicamos. Si prefieres publicar por tu cuenta, también es posible; lo hablamos, porque requiere un desarrollo específico."
         },
         "timing": {
-          "question": "¿Cuánto se tarda en estar en línea?",
-          "answer": "Para una página de presentación: de dos a tres semanas después de recibir tus textos y fotos. Para un sitio de cinco páginas: de cuatro a seis semanas. Te damos una fecha al empezar, y la cumplimos."
+          "question": "¿Cuánto se tarda en publicar el sitio?",
+          "answer": "Calcula entre dos y tres semanas para una página de presentación, desde el momento en que tenemos tus textos y tus fotos, y entre cuatro y seis semanas para un sitio de cinco páginas. Fijamos una fecha de publicación al empezar y la respetamos."
         },
         "stop": {
           "question": "¿Qué pasa si lo dejo?",
-          "answer": "Nos avisas y el sitio sigue en línea hasta el final del periodo pagado en curso. Te llevas tus contenidos y tu nombre de dominio. El código del sitio está incluido a partir de {months} meses de suscripción; antes, se cede pagando una tarifa que te indicamos desde el principio. Si tu suscripción incluye un nombre de dominio o una dirección de correo, se contrata por periodos de 12 meses: el periodo en curso llega hasta su término."
+          "answer": "Basta con avisarnos: el sitio sigue en línea hasta el final del periodo ya pagado, y te llevas tus contenidos y tu nombre de dominio. El código se te cede gratis después de {months} meses de suscripción; antes de ese plazo, la cesión tiene un coste que te indicamos desde el principio. Si tu suscripción incluye un nombre de dominio o una dirección de correo, se contrata por periodos de 12 meses, y el periodo en curso se mantiene hasta su vencimiento."
         },
         "content": {
           "question": "¿También os encargáis de los textos y las fotos?",
-          "answer": "Te ayudamos a escribir y lo revisamos todo, pensando en las palabras que tus clientes buscan en Google. Para las fotos, trabajamos con las tuyas o te ponemos en contacto con un fotógrafo local; eso no está incluido en la suscripción."
+          "answer": "Te ayudamos a redactar y lo revisamos todo, pensando en las palabras que tus clientes escriben en Google. Para las fotos, usamos las tuyas o te ponemos en contacto con un fotógrafo de la zona, cuyo trabajo no está incluido en la suscripción."
         }
       }
     }

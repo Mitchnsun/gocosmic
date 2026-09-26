@@ -8,10 +8,10 @@ const fakeT = (key: string, values?: Record<string, string>) =>
   values ? `${key}(${Object.values(values).join('|')})` : key;
 
 describe('buildPricingColumns', () => {
-  it('prices the subscription from the base price, in euros', () => {
+  it('prices the subscription from the base price, in euros, the French way', () => {
     const [subscription, , , custom] = buildPricingColumns(fakeT, 'fr', 'fr');
 
-    expect(subscription!.price).toBe('subscription.price(10€)');
+    expect(subscription!.price).toMatch(/^subscription\.price\(10\s€\)$/);
     expect(subscription!.cta.href).toEqual({ pathname: '/services', hash: 'simulator' });
     expect(custom!.price).toBeUndefined();
     expect(custom!.cta.href).toBe('/contact');
@@ -20,7 +20,7 @@ describe('buildPricingColumns', () => {
   it('switches to Swiss francs for Swiss visitors', () => {
     const [subscription] = buildPricingColumns(fakeT, 'ch', 'en');
 
-    expect(subscription!.price).toBe('subscription.price(10 CHF)');
+    expect(subscription!.price).toMatch(/^subscription\.price\(CHF\s10\)$/);
   });
 
   it('builds the guidance and reinforcement columns without prices from amounts', () => {

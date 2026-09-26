@@ -2,14 +2,14 @@
   "homepage": {
     "cta": {
       "button": "Hablar de mi proyecto",
-      "description": "Háblanos de tu negocio en unas líneas. Te respondemos en menos de 24 h, con preguntas, no con un presupuesto automático.",
-      "freeMockup": "¿Aún no te decides? Pide tu <link>maqueta gratuita</link>.",
+      "description": "Háblanos de tu negocio en unas pocas líneas. Te respondemos en 24 h laborables para comentarlo contigo, antes de proponerte nada.",
+      "freeMockup": "¿Aún no te decides? Empieza por una <link>maqueta gratuita</link>.",
       "title": "Hagamos brillar tu negocio."
     },
     "hero": {
       "cta": "Go Cosmic",
       "endWords": ["visto.", "encontrado.", "elegido."],
-      "subtitle": "Cosmic Studio crea sitios web y aplicaciones para artesanos, asociaciones y autónomos. Un sitio claro, pensado para que te encuentren en Google, y alguien que sigue a tu lado cuando ya está en línea.",
+      "subtitle": "Cosmic Studio crea sitios web y aplicaciones para artesanos, asociaciones y autónomos. Nos encargamos de que te encuentren en Google y seguimos localizables una vez publicada la web.",
       "title": "Tu negocio merece ser",
       "eyebrow": "Estudio web y móvil · Ginebra",
       "secondary": "Ver precios",
@@ -34,93 +34,93 @@
     },
     "process": {
       "eyebrow": "[ Proceso · 04 ]",
-      "title": "Cuatro pasos. <em>Sin sorpresas.</em>",
-      "subtitle": "Desde la primera conversación hasta que tu sitio está en línea, siempre sabes en qué punto está tu proyecto.",
+      "title": "Cuatro pasos, <em>sin sorpresas.</em>",
+      "subtitle": "Desde la primera conversación hasta la publicación, sabes en qué punto está tu proyecto.",
       "discovery": {
-        "label": "T-3 · Encuentro",
-        "title": "Hablamos",
-        "description": "Veinte minutos por teléfono o con un café, en Ginebra o en Annecy. Tu oficio, tus clientes y lo que el sitio tiene que hacer por ti."
+        "label": "T-3 · Primer contacto",
+        "title": "Nos conocemos",
+        "description": "Veinte minutos por teléfono o tomando un café, en Ginebra o en Annecy, para hablar de tu oficio, de tus clientes y de lo que el sitio debe aportarte."
       },
       "design": {
         "label": "T-2 · Maqueta",
-        "title": "Lo ves antes de pagar",
-        "description": "Una maqueta de tu página de inicio, con tus colores y tus palabras. Gratis y sin compromiso: después decides tú."
+        "title": "Lo ves antes de decidir",
+        "description": "Preparamos una maqueta de tu página de inicio, con tus colores y tus textos. Es gratuita y no te compromete a nada."
       },
       "build": {
         "label": "T-1 · Construcción",
-        "title": "Lo construimos",
-        "description": "De dos a seis semanas según el proyecto. Sigues el avance en un enlace privado, comentas y ajustamos."
+        "title": "Construimos el sitio",
+        "description": "Calcula entre dos y seis semanas, según el proyecto. Sigues el avance en un enlace privado y nos vas dando tu opinión sobre la marcha."
       },
       "launch": {
         "label": "T-0 · Publicación",
-        "title": "En línea, y seguimos contigo",
-        "description": "Publicamos tu sitio, te enseñamos a manejarlo y después nos ocupamos del alojamiento, las copias de seguridad y los pequeños cambios mes a mes."
+        "title": "Seguimos contigo después del lanzamiento",
+        "description": "Publicamos el sitio y te enseñamos cómo funciona. Después, nos ocupamos del alojamiento, las copias de seguridad y los pequeños cambios."
       }
     },
     "projects": {
       "eyebrow": "[ Trabajos ]",
-      "title": "Proyectos concretos, <em>ya en línea.</em>",
+      "title": "Nuestros últimos <em>proyectos.</em>",
       "all": "Todos los proyectos"
     },
     "audience": {
       "eyebrow": "[ Para quién · 03 ]",
-      "title": "Para quienes tienen un oficio <em>y no tienen tiempo de aprender otro.</em>",
+      "title": "Para quienes ya tienen un oficio <em>y no tienen tiempo de aprender otro.</em>",
       "items": {
         "artisans": {
           "title": "Artesanos",
-          "description": "Carpintero, fontanero, peluquera, catering. Una página que dice qué haces, dónde y cómo contactarte, y que la gente encuentra cuando busca tu oficio cerca de casa."
+          "description": "Carpintero, fontanero, peluquera, catering… Un sitio que dice qué haces, dónde trabajas y cómo contactar contigo, y que la gente encuentra cuando busca tu oficio cerca de casa."
         },
         "associations": {
           "title": "Asociaciones",
-          "description": "Coro, club deportivo, colectivo. Agenda de eventos, inscripciones, noticias: todo lo necesario para dar a conocer tus actividades y atraer a nuevos socios."
+          "description": "Coro, club deportivo, colectivo… Tus eventos, las inscripciones y las novedades de la asociación en un solo lugar, para dar a conocer tus actividades y sumar nuevos socios."
         },
         "independents": {
           "title": "Autónomos que empiezan",
-          "description": "Terapeuta, consultor, fotógrafa. Un sitio profesional desde el primer día para darte a conocer, y una tarifa que crece con tu negocio."
+          "description": "Terapeuta, consultora, fotógrafo… Un sitio profesional desde el principio, a un precio que acompaña la evolución de tu negocio."
         }
       }
     },
     "why": {
       "eyebrow": "[ Por qué un estudio ]",
-      "title": "Wix y WordPress cumplen su función. <em>Hasta el día en que dejan de hacerlo.</em>",
-      "lead": "Estas herramientas son prácticas al principio. Luego hace falta un complemento, luego una actualización rompe la página, luego la factura sube. Nosotros escribimos el código: el sitio es tuyo, es rápido y evoluciona sin empezar de cero.",
+      "title": "Wix y WordPress son prácticos <em>al principio.</em>",
+      "lead": "Luego necesitas un complemento de pago, una actualización estropea una página, la suscripción sube de precio. Escribimos el código nosotros mismos, así que tu sitio sigue siendo rápido y puede crecer sin empezar de cero.",
       "reasons": {
         "ownership": {
           "title": "El sitio es tuyo",
-          "description": "Tus contenidos y tu nombre de dominio son tuyos desde el principio. El código pasa a ser tuyo al terminar el periodo mínimo de suscripción, o antes pagando una tarifa de cesión."
+          "description": "Tus textos, tus fotos y tu nombre de dominio te pertenecen desde el primer día. El código pasa a ser tuyo tras {months} meses de suscripción, o antes a cambio de unos gastos de cesión."
         },
         "fast": {
-          "title": "Rápido y fácil de encontrar",
-          "description": "Sin temas pesados ni complementos: páginas que cargan rápido en el móvil, algo que Google premia."
+          "title": "Rápido y bien posicionado en Google",
+          "description": "Sin temas pesados ni complementos, tus páginas cargan rápido en el móvil, y Google lo tiene en cuenta en sus resultados."
         },
         "person": {
-          "title": "Una persona, no un ticket",
+          "title": "Alguien que te responde",
           "description": "Hablas con Matthieu, que conoce tu sitio porque lo construyó él."
         },
         "grows": {
-          "title": "Crece contigo",
-          "description": "Una página hoy, una tienda o una aplicación mañana, sobre la misma base."
+          "title": "Un sitio que evoluciona contigo",
+          "description": "Una página hoy, una tienda o una aplicación más adelante, sin rehacerlo todo."
         }
       }
     },
     "apps": {
       "eyebrow": "[ Nuestras apps ]",
-      "title": "El estudio también crea <em>sus propios productos.</em>",
-      "lead": "Ahí es donde probamos las herramientas antes de ofrecérselas a nuestros clientes. Lo que aprendemos con nuestras aplicaciones acaba en las tuyas.",
+      "title": "También desarrollamos <em>nuestras propias aplicaciones.</em>",
+      "lead": "Nos sirven para probar las herramientas antes de usarlas con nuestros clientes, y lo que aprendemos acaba beneficiando a tus proyectos.",
       "daily_fortune": {
         "name": "Daily Fortune",
         "badge": "iOS · Android",
-        "description": "Un mensaje breve cada mañana para empezar bien el día. Nuestra primera aplicación publicada en App Store y Google Play.",
+        "description": "Un mensaje breve cada mañana para empezar bien el día. Es nuestra primera aplicación, disponible en App Store y Google Play.",
         "link": "Descubrir la app",
         "icon_alt": "Icono de la aplicación Daily Fortune"
       }
     },
     "studio": {
       "eyebrow": "[ El estudio ]",
-      "title": "Un desarrollador en Ginebra, <em>no una plataforma.</em>",
+      "title": "Detrás de Cosmic Studio <em>está Matthieu.</em>",
       "paragraphs": [
-        "Me llamo Matthieu Compérat. Soy de Duingt, a orillas del lago de Annecy, y estoy afincado en Chêne-Bougeries. Llevo unos quince años desarrollando sitios web y aplicaciones, primero para grandes empresas y después para personas a las que conozco por su nombre. Cosmic Studio es esa segunda elección.",
-        "Me llamas y te respondo. Me escribes y tienes respuesta en el mismo día. Sé exactamente cómo funciona el sitio que te entrego."
+        "Me llamo Matthieu Compérat. Soy de Duingt, a orillas del lago de Annecy, y ahora vivo en Chêne-Bougeries. Llevo unos quince años desarrollando sitios web y aplicaciones, primero para grandes empresas. Con Cosmic Studio trabajo directamente con artesanos, asociaciones y autónomos.",
+        "Cuando llamas, soy yo quien contesta, y tus mensajes reciben respuesta ese mismo día. Conozco al detalle el sitio que te entrego, así que cada cambio es rápido y sencillo."
       ],
       "zones": [
         "Chêne-Bougeries · base",

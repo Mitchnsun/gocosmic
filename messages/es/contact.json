@@ -1,10 +1,10 @@
 {
   "meta": {
     "title": "Contacto · Hablemos de tu proyecto | Cosmic Studio",
-    "description": "Cuéntale tu proyecto a Cosmic Studio: basta con un mensaje y recibes respuesta en menos de 24 h, de la persona que construirá tu sitio."
+    "description": "Cuéntale tu proyecto a Cosmic Studio. Basta con un mensaje: la persona que construirá tu sitio te responde en 24 h laborables."
   },
   "contact": {
-    "title": "Cuéntanos a qué te dedicas. <em>Del resto nos ocupamos nosotros.</em>",
+    "title": "Háblanos <em>de tu negocio.</em>",
     "privacyNotice": "Tus datos solo sirven para responderte y preparar un posible presupuesto.",
     "privacyLink": "Política de privacidad",
     "eyebrow": "[ Contacto ]",
@@ -26,7 +26,7 @@
         },
         "message": {
           "label": "Tu mensaje",
-          "placeholder": "En qué punto estás, qué quieres, qué tienes ya (logo, fotos, sitio antiguo)…"
+          "placeholder": "En qué punto está tu proyecto, qué te gustaría, qué tienes ya (logo, fotos, web antigua)…"
         },
         "phone": {
           "label": "Teléfono",
@@ -40,7 +40,7 @@
           "legend": "Lo que necesitas",
           "options": {
             "showcase": "Sitio de presentación",
-            "redesign": "Renovar un sitio existente",
+            "redesign": "Rediseño de un sitio existente",
             "shop": "Tienda en línea",
             "app": "Aplicación",
             "unsure": "Aún no lo sé"
@@ -48,7 +48,7 @@
         }
       },
       "errors": {
-        "name_length": "Indica un nombre de 2 a 100 caracteres.",
+        "name_length": "Indica un nombre de entre 2 y 100 caracteres.",
         "email_invalid": "Indica una dirección de correo válida.",
         "message_length": "El mensaje debe tener entre 10 y 5000 caracteres.",
         "phone_invalid": "Indica un número de teléfono válido.",
@@ -56,25 +56,25 @@
         "rate_limited": "Ya has enviado varios mensajes. Inténtalo más tarde o escríbenos por correo.",
         "retry_later": "Tu mensaje no se ha podido enviar en este momento. Inténtalo más tarde o escríbenos por correo.",
         "server": "No se pudo enviar el mensaje. Inténtalo de nuevo o escríbenos por correo.",
-        "network": "Conexión perdida. Comprueba tu red e inténtalo de nuevo.",
+        "network": "Se ha perdido la conexión. Comprueba tu red e inténtalo de nuevo.",
         "need_invalid": "Elige una opción de la lista."
       },
       "success": {
-        "title": "Gracias. Matthieu te responde en un día laborable.",
-        "description": "Tu mensaje ha llegado bien. Siguiente paso: unas preguntas por correo y, después, una maqueta gratuita si te parece bien.",
+        "title": "Gracias. Matthieu te responderá en 24 h laborables.",
+        "description": "Tu mensaje ha llegado correctamente. Matthieu te escribirá para aclarar algunos detalles y, después, te propondrá una maqueta gratuita si quieres.",
         "back": "Enviar otro mensaje"
       }
     },
-    "lead": "Un mensaje o una llamada de 20 minutos. En ambos casos hablas con Matthieu y recibes respuesta en un día laborable.",
+    "lead": "Escríbenos un mensaje o reserva una llamada de 20 minutos. En ambos casos te responde el propio Matthieu, en 24 h laborables.",
     "details": {
       "aria_label": "Datos de contacto",
       "email_label": "Correo",
-      "support_label": "Ya eres cliente · soporte",
+      "support_label": "Clientes · soporte",
       "where_label": "Dónde",
       "where": "Ginebra · Suiza romanda · Alta Saboya, o por videollamada"
     },
     "modes": {
-      "label": "¿Cómo prefieres contactarnos?",
+      "label": "¿Cómo prefieres ponerte en contacto?",
       "message": "Escribir un mensaje",
       "call": "Reservar una llamada"
     },
@@ -86,7 +86,7 @@
       "open": "Abrir la página de reservas",
       "iframe_title": "Agenda de reservas de Matthieu (Google Calendar)",
       "note": "La franja se reserva directamente en la agenda de Matthieu. Google Calendar te envía la confirmación y el enlace de la llamada.",
-      "unavailable": "La reserva en línea aún no está abierta. Escríbenos un mensaje: te proponemos una franja en el mismo día."
+      "unavailable": "La reserva en línea aún no está disponible. Escríbenos un mensaje y te propondremos una franja ese mismo día."
     }
   }
 }

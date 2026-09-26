@@ -35,7 +35,7 @@ describe('sitemap', () => {
 
         const expectedUrl =
           localizedPath === '/'
-            ? `https://www.gocosmic.dev/${locale}/`
+            ? `https://www.gocosmic.dev/${locale}`
             : `https://www.gocosmic.dev/${locale}${localizedPath}`;
 
         expect(result.some((entry) => entry.url === expectedUrl)).toBe(true);
@@ -62,11 +62,11 @@ describe('sitemap', () => {
   it('should generate correct URL for home page across all locales', () => {
     const result = sitemap();
 
-    expect(result.some((entry) => entry.url === 'https://www.gocosmic.dev/en/')).toBe(true);
-    expect(result.some((entry) => entry.url === 'https://www.gocosmic.dev/fr/')).toBe(true);
-    expect(result.some((entry) => entry.url === 'https://www.gocosmic.dev/es/')).toBe(true);
-    expect(result.some((entry) => entry.url === 'https://www.gocosmic.dev/de/')).toBe(true);
-    expect(result.some((entry) => entry.url === 'https://www.gocosmic.dev/it/')).toBe(true);
+    expect(result.some((entry) => entry.url === 'https://www.gocosmic.dev/en')).toBe(true);
+    expect(result.some((entry) => entry.url === 'https://www.gocosmic.dev/fr')).toBe(true);
+    expect(result.some((entry) => entry.url === 'https://www.gocosmic.dev/es')).toBe(true);
+    expect(result.some((entry) => entry.url === 'https://www.gocosmic.dev/de')).toBe(true);
+    expect(result.some((entry) => entry.url === 'https://www.gocosmic.dev/it')).toBe(true);
   });
 
   it('should generate localized URLs for translated routes', () => {

@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 import type { Currency, Region } from '@/lib/region';
 
@@ -39,7 +39,8 @@ export function PlanBuilder({
   onUpdatesChange,
 }: PlanBuilderProps) {
   const t = useTranslations('pricing');
-  const surcharge = (amount: number) => `+${formatAmount(amount, currency)}`;
+  const locale = useLocale();
+  const surcharge = (amount: number) => `+${formatAmount(amount, currency, locale)}`;
   const exampleDomain = t(`builder.options.example_domain.${region}`);
 
   // Indexes come from TIER_INDEXES, a fixed list of slider positions.
@@ -64,7 +65,7 @@ export function PlanBuilder({
             {t('builder.base.title')}
           </h3>
           <p className="font-display text-ghost text-lg font-medium tabular-nums">
-            {formatAmount(BASE_PRICE, currency)}
+            {formatAmount(BASE_PRICE, currency, locale)}
             <span className="text-ghost/55 ml-1 text-sm">{t('builder.period')}</span>
           </p>
         </div>

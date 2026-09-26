@@ -2,10 +2,10 @@
   "projectsList": {
     "meta": {
       "title": "Réalisations · Sites et applications | Cosmic Studio",
-      "description": "Sites et applications réalisés par Cosmic Studio pour des associations, un club sportif et des indépendants, à Genève et en Haute-Savoie."
+      "description": "Sites et applications réalisés par Cosmic Studio pour une chorale, un club de triathlon et des indépendants, à Genève et en Haute-Savoie."
     },
-    "title": "Des sites et des apps <em>qui servent à quelque chose.</em>",
-    "subtitle": "Une sélection de ce que nous avons livré : pour des clients, et pour nous. Chaque fiche dit ce qu'on a fait, pour qui, et ce que ça a changé.",
+    "title": "Des sites et des applications <em>utilisés au quotidien.</em>",
+    "subtitle": "Une sélection de projets réalisés pour nos clients et pour le studio. Chaque fiche explique pour qui nous avons travaillé, ce que nous avons fait et ce que cela a changé.",
     "items": {
       "choeurDesPaysduMontBlanc": {
         "title": "Chœur des Pays du Mont Blanc",
@@ -24,21 +24,21 @@
       "dailyFortune": {
         "title": "Daily Fortune",
         "client": "Application du studio",
-        "description": "Un message court chaque matin pour bien commencer la journée. Notre première application publiée sur l'App Store et Google Play.",
+        "description": "Un court message chaque matin pour bien démarrer la journée. C'est notre première application, disponible sur l'App Store et Google Play.",
         "tags": ["App mobile", "iOS · Android", "Studio"],
         "cover_alt": "Icône de l'application Daily Fortune"
       },
       "mcomperat": {
         "title": "mcomper.at",
         "client": "Projet personnel",
-        "description": "Un CV en ligne, disponible en plusieurs langues et rapide à charger. Le terrain d'essai des outils que nous utilisons ensuite pour vous.",
+        "description": "Un CV en ligne, en français et en anglais, rapide à charger. Nous y testons les outils que nous utilisons ensuite pour nos clients.",
         "tags": ["Site", "Multilingue"],
         "cover_alt": "Aperçu du site mcomper.at"
       }
     },
     "cta": {
-      "title": "Votre projet pourrait être le prochain de cette liste.",
-      "description": "Racontez-nous votre activité en quelques lignes : nous revenons vers vous sous 24 h, avec des questions plutôt qu'un devis automatique.",
+      "title": "Votre projet pourrait être le prochain sur cette liste.",
+      "description": "Présentez-nous votre activité en quelques lignes. Nous vous répondons sous 24 h ouvrées.",
       "button": "Parler de mon projet"
     },
     "eyebrow": "[ Réalisations · {count} ]",
@@ -59,7 +59,7 @@
   },
   "dailyFortune": {
     "title": "Daily Fortune",
-    "subtitle": "L'application du studio : un message court chaque jour pour bien commencer la journée.",
+    "subtitle": "L'application du studio : un court message chaque jour pour bien démarrer la journée.",
     "cta": {
       "title": "Essayez Daily Fortune",
       "description": "Téléchargez l'application et recevez un nouveau message chaque jour.",
@@ -85,7 +85,7 @@
     "result": {
       "label": "Résultat",
       "title": "Notre première application en ligne",
-      "description": "Daily Fortune est disponible sur l'App Store et Google Play, et ses utilisateurs reçoivent un nouveau message chaque jour. Pour vous, c'est l'assurance que nous connaissons tout le parcours, de l'idée jusqu'à la publication sur les boutiques."
+      "description": "Daily Fortune est disponible sur l'App Store et Google Play, et ses utilisateurs reçoivent un nouveau message chaque jour. Pour vous, c'est la preuve que nous savons mener une application de l'idée jusqu'à sa publication."
     }
   },
   "mcomperat": {
@@ -100,12 +100,12 @@
     "for_whom": {
       "label": "Pour qui",
       "title": "Un CV en ligne, et notre terrain d'essai",
-      "description": "mcomper.at est le CV en ligne de Matthieu Compérat, votre interlocuteur chez Cosmic Studio : son parcours et son expertise, sur une seule page. C'est aussi le terrain d'essai des outils que nous utilisons ensuite pour nos clients. Ce qui fonctionne ici rejoint vos projets."
+      "description": "mcomper.at est le CV en ligne de Matthieu Compérat, votre interlocuteur chez Cosmic Studio : son parcours et ses compétences, sur une seule page. C'est aussi là que nous testons les outils que nous utilisons ensuite pour nos clients."
     },
     "what_we_did": {
       "label": "Ce qu'on a fait",
       "title": "Un CV clair, rapide et en deux langues",
-      "description": "Nous avons conçu un site simple à lire et facile à faire évoluer, et nous y testons nos méthodes de travail avant de les proposer à nos clients.",
+      "description": "Nous avons conçu un site simple à lire et facile à faire évoluer, qui nous sert aussi à essayer nos méthodes de travail avant de les appliquer à vos projets.",
       "items": {
         "two_languages": "Un site disponible en français et en anglais, avec des textes propres à chaque langue",
         "found_on_google": "Des pages préparées pour être trouvées sur Google",
@@ -117,7 +117,7 @@
     "result": {
       "label": "Résultat",
       "title": "Testé ici, puis utilisé pour vous",
-      "description": "Matthieu dispose d'un CV en ligne clair, bilingue et rapide. Pour le studio, c'est là que nous avons rodé la gestion de plusieurs langues, la présentation sur Google et la relecture des textes rédigés avec l'IA, avant de les utiliser sur les sites de nos clients. Chaque modification y passe aussi par des vérifications automatiques, pour éviter les erreurs."
+      "description": "Matthieu dispose d'un CV en ligne clair, bilingue et rapide. C'est là que nous avons mis au point la gestion de plusieurs langues, la présentation sur Google et la relecture des textes rédigés avec l'IA, avant de les utiliser sur les sites de nos clients. Chaque modification passe aussi par des vérifications automatiques, pour éviter les erreurs."
     }
   },
   "choeurDesPaysduMontBlanc": {

@@ -16,7 +16,7 @@ const fillRequiredFields = (
   getByLabelText: ReturnType<typeof render>['getByLabelText'],
   getByRole: ReturnType<typeof render>['getByRole']
 ) => {
-  fireEvent.change(getByLabelText('Your email'), { target: { value: 'prospect@example.com' } });
+  fireEvent.change(getByLabelText('Your email address'), { target: { value: 'prospect@example.com' } });
   fireEvent.click(getByRole('radio', { name: 'Starry night' }));
 };
 
@@ -99,7 +99,7 @@ describe('FreeMockupForm', () => {
   it('renders the four fields and the submit button', () => {
     const { getByLabelText, getAllByRole, getByRole } = render(<FreeMockupForm />);
 
-    expect(getByLabelText('Your email')).toHaveAttribute('type', 'email');
+    expect(getByLabelText('Your email address')).toHaveAttribute('type', 'email');
     expect(getAllByRole('radio')).toHaveLength(7);
     expect(getByLabelText(/Your current website/)).toHaveAttribute('type', 'text');
     expect(getByLabelText(/What you have in mind/)).toBeInTheDocument();
@@ -123,7 +123,7 @@ describe('FreeMockupForm', () => {
 
   it('shows an inline error once an invalid email field is left', () => {
     const { getByLabelText, getByText } = render(<FreeMockupForm />);
-    const email = getByLabelText('Your email');
+    const email = getByLabelText('Your email address');
 
     fireEvent.change(email, { target: { value: 'nope' } });
     fireEvent.blur(email);
@@ -187,7 +187,7 @@ describe('FreeMockupForm', () => {
     submitFreeMockupRequest.mockReturnValue(promise);
     const { getByLabelText, getByRole } = render(<FreeMockupForm />);
 
-    fireEvent.change(getByLabelText('Your email'), { target: { value: 'prospect@example.com' } });
+    fireEvent.change(getByLabelText('Your email address'), { target: { value: 'prospect@example.com' } });
     fireEvent.click(getByRole('button', { name: /Request my free mockup/ }));
 
     await waitFor(() => expect(submitFreeMockupRequest).toHaveBeenCalled());
@@ -204,7 +204,7 @@ describe('FreeMockupForm', () => {
     submitFreeMockupRequest.mockReturnValue(promise);
     const { getByLabelText, getByRole } = render(<FreeMockupForm />);
 
-    fireEvent.change(getByLabelText('Your email'), { target: { value: 'prospect@example.com' } });
+    fireEvent.change(getByLabelText('Your email address'), { target: { value: 'prospect@example.com' } });
     fireEvent.click(getByRole('radio', { name: 'No preference' }));
     fireEvent.click(getByRole('button', { name: /Request my free mockup/ }));
 
@@ -240,7 +240,7 @@ describe('FreeMockupForm', () => {
       expect(getByText('Your request could not be sent. Please try again in a moment.')).toBeInTheDocument()
     );
 
-    fireEvent.change(getByLabelText('Your email'), { target: { value: 'someone@example.com' } });
+    fireEvent.change(getByLabelText('Your email address'), { target: { value: 'someone@example.com' } });
 
     await waitFor(() =>
       expect(queryByText('Your request could not be sent. Please try again in a moment.')).not.toBeInTheDocument()
@@ -387,7 +387,9 @@ describe('FreeMockupForm', () => {
     fireEvent.click(getByRole('button', { name: /Request my free mockup/ }));
 
     await waitFor(() =>
-      expect(getByText('Your request could not be sent right now. Please try again later.')).toBeInTheDocument()
+      expect(
+        getByText('Your request could not be sent right now. Please try again a little later.')
+      ).toBeInTheDocument()
     );
   });
 

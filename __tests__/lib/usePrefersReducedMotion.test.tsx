@@ -1,4 +1,5 @@
 import { renderHook, waitFor } from '@testing-library/react';
+import { renderToString } from 'react-dom/server';
 
 import { usePrefersReducedMotion } from '@/lib/hooks/usePrefersReducedMotion';
 
@@ -39,5 +40,28 @@ describe('usePrefersReducedMotion', () => {
     await waitFor(() => {
       expect(result.current).toBe(true);
     });
+  });
+
+  it('renders false on the server so hydration matches, whatever the preference', () => {
+    window.matchMedia = vi.fn().mockImplementation(() => ({
+      matches: true,
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+    }));
+    const Probe = () => <span>{String(usePrefersReducedMotion(true))}</span>;
+
+    expect(renderToString(<Probe />)).toBe('<span>false</span>');
+  });
+
+  it('reads the preference right away in the browser', () => {
+    window.matchMedia = vi.fn().mockImplementation(() => ({
+      matches: true,
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+    }));
+
+    const { result } = renderHook(() => usePrefersReducedMotion(true));
+
+    expect(result.current).toBe(true);
   });
 });

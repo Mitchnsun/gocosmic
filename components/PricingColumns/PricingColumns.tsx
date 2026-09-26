@@ -20,7 +20,7 @@ export function PricingColumns({ eyebrow, title, columns, id = 'pricing', classN
   const titleId = `${id}-heading`;
 
   return (
-    <section id={id} aria-labelledby={titleId} className={cn(SECTION_Y, className)}>
+    <section id={id} aria-labelledby={titleId} className={cn('scroll-mt-20', SECTION_Y, className)}>
       <div className={cn(CONTAINER, 'flex flex-col gap-10')}>
         <SectionHeading eyebrow={eyebrow} title={title} titleId={titleId} />
         <div className="grid gap-5 md:grid-cols-2">

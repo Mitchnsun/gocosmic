@@ -1,10 +1,10 @@
 {
   "meta": {
     "title": "Contact · Let's talk about your project | Cosmic Studio",
-    "description": "Tell Cosmic Studio about your project: one message is enough, and you get a reply within 24 hours from the person who will build your site."
+    "description": "Tell Cosmic Studio about your project. One message is enough: the person who will build your site replies within one working day."
   },
   "contact": {
-    "title": "Tell us about your business. <em>We'll take care of the rest.</em>",
+    "title": "Tell us <em>about your business.</em>",
     "privacyNotice": "Your details are only used to reply to you and to prepare a possible quote.",
     "privacyLink": "Privacy policy",
     "eyebrow": "[ Contact ]",
@@ -21,12 +21,12 @@
           "placeholder": "Camille Durand"
         },
         "email": {
-          "label": "Email",
+          "label": "Email address",
           "placeholder": "camille@example.com"
         },
         "message": {
           "label": "Your message",
-          "placeholder": "Where you are, what you want, what you already have (logo, photos, old site)…"
+          "placeholder": "Where your project stands, what you would like, what you already have (logo, photos, old site)…"
         },
         "phone": {
           "label": "Phone",
@@ -61,11 +61,11 @@
       },
       "success": {
         "title": "Thank you. Matthieu will reply within one working day.",
-        "description": "Your message has arrived. Next step: a few questions by email, then a free mockup if that suits you.",
+        "description": "Your message has arrived. Matthieu will write to you to clarify a few points, then offer you a free mockup if you would like one.",
         "back": "Send another message"
       }
     },
-    "lead": "A message, or a 20-minute call. Either way, you talk to Matthieu, and you get a reply within one working day.",
+    "lead": "Write us a message or book a 20-minute call. Either way, Matthieu is the one who answers, within one working day.",
     "details": {
       "aria_label": "Contact details",
       "email_label": "Email",

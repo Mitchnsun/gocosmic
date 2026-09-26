@@ -84,7 +84,7 @@ export default async function Services() {
             eyebrow={t('simulator.eyebrow')}
             title={t.rich('simulator.title', { em })}
             titleId="simulator-heading"
-            lead={t('simulator.lead', { price: formatAmount(BASE_PRICE, currency) })}
+            lead={t('simulator.lead', { price: formatAmount(BASE_PRICE, currency, locale) })}
           />
           <NextIntlClientProvider locale={locale} messages={messages}>
             <PricingSimulator region={region} />

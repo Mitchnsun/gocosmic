@@ -4,16 +4,16 @@ import { getAlternates, getCanonicalUrl, getLanguageAlternates, SITE_URL } from 
 
 describe('getCanonicalUrl', () => {
   describe('home page (static pathname "/")', () => {
-    it('returns trailing-slash URL for English', () => {
-      expect(getCanonicalUrl('en', '/')).toBe(`${SITE_URL}/en/`);
+    it('returns the URL without trailing slash for English', () => {
+      expect(getCanonicalUrl('en', '/')).toBe(`${SITE_URL}/en`);
     });
 
-    it('returns trailing-slash URL for French', () => {
-      expect(getCanonicalUrl('fr', '/')).toBe(`${SITE_URL}/fr/`);
+    it('returns the URL without trailing slash for French', () => {
+      expect(getCanonicalUrl('fr', '/')).toBe(`${SITE_URL}/fr`);
     });
 
-    it('returns trailing-slash URL for German', () => {
-      expect(getCanonicalUrl('de', '/')).toBe(`${SITE_URL}/de/`);
+    it('returns the URL without trailing slash for German', () => {
+      expect(getCanonicalUrl('de', '/')).toBe(`${SITE_URL}/de`);
     });
   });
 
@@ -112,7 +112,7 @@ describe('getAlternates', () => {
     });
   });
 
-  it('keeps the trailing slash of the home page', () => {
-    expect(getLanguageAlternates('/')).toMatchObject({ de: `${SITE_URL}/de/`, 'x-default': `${SITE_URL}/en/` });
+  it('gives the home page no trailing slash, since /en/ redirects to /en', () => {
+    expect(getLanguageAlternates('/')).toMatchObject({ de: `${SITE_URL}/de`, 'x-default': `${SITE_URL}/en` });
   });
 });

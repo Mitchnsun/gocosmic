@@ -1,18 +1,18 @@
 {
   "meta": {
     "title": "Kontakt · Sprechen wir über Ihr Projekt | Cosmic Studio",
-    "description": "Erzählen Sie Cosmic Studio von Ihrem Projekt: Eine Nachricht genügt, und innerhalb von 24 Stunden antwortet Ihnen die Person, die Ihre Website baut."
+    "description": "Erzählen Sie Cosmic Studio von Ihrem Projekt. Eine Nachricht genügt: Die Person, die Ihre Website bauen wird, antwortet Ihnen innerhalb eines Werktags."
   },
   "contact": {
-    "title": "Erzählen Sie uns von Ihrem Betrieb. <em>Um den Rest kümmern wir uns.</em>",
-    "privacyNotice": "Ihre Angaben dienen nur dazu, Ihnen zu antworten und gegebenenfalls ein Angebot vorzubereiten.",
+    "title": "Erzählen Sie uns, <em>was Sie machen.</em>",
+    "privacyNotice": "Ihre Angaben dienen nur dazu, Ihnen zu antworten und gegebenenfalls ein Angebot zu erstellen.",
     "privacyLink": "Datenschutzerklärung",
     "eyebrow": "[ Kontakt ]",
     "form": {
       "optional": "optional",
       "required_hint": "Mit einem Sternchen markierte Felder sind Pflichtfelder",
       "submit": "Nachricht senden",
-      "submitting": "Wird gesendet…",
+      "submitting": "Wird gesendet …",
       "clear": "Formular leeren",
       "honeypot_label": "Dieses Feld leer lassen",
       "fields": {
@@ -21,12 +21,12 @@
           "placeholder": "Anna Meier"
         },
         "email": {
-          "label": "E-Mail",
+          "label": "E-Mail-Adresse",
           "placeholder": "anna@beispiel.ch"
         },
         "message": {
           "label": "Ihre Nachricht",
-          "placeholder": "Wo Sie stehen, was Sie möchten, was Sie schon haben (Logo, Fotos, bisherige Website)…"
+          "placeholder": "Wo Ihr Projekt steht, was Sie sich wünschen, was Sie schon haben (Logo, Fotos, bisherige Website) …"
         },
         "phone": {
           "label": "Telefon",
@@ -34,7 +34,7 @@
         },
         "company": {
           "label": "Ihre Tätigkeit",
-          "placeholder": "Schreinerei in Annecy, Theaterverein…"
+          "placeholder": "Schreinerei in Annecy, Theaterverein …"
         },
         "need": {
           "legend": "Was Sie brauchen",
@@ -56,22 +56,22 @@
         "rate_limited": "Sie haben bereits mehrere Nachrichten gesendet. Versuchen Sie es später erneut oder schreiben Sie uns eine E-Mail.",
         "retry_later": "Ihre Nachricht konnte im Moment nicht gesendet werden. Versuchen Sie es später erneut oder schreiben Sie uns eine E-Mail.",
         "server": "Die Nachricht konnte nicht gesendet werden. Versuchen Sie es erneut oder schreiben Sie uns eine E-Mail.",
-        "network": "Verbindung verloren. Prüfen Sie Ihr Netzwerk und versuchen Sie es erneut.",
+        "network": "Die Verbindung wurde unterbrochen. Prüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.",
         "need_invalid": "Bitte wählen Sie eine Option aus der Liste."
       },
       "success": {
-        "title": "Danke. Matthieu antwortet Ihnen innerhalb eines Werktags.",
-        "description": "Ihre Nachricht ist angekommen. Nächster Schritt: ein paar Fragen per E-Mail, danach ein kostenloses Mockup, wenn Ihnen das zusagt.",
+        "title": "Vielen Dank. Matthieu antwortet Ihnen innerhalb eines Werktags.",
+        "description": "Ihre Nachricht ist angekommen. Matthieu schreibt Ihnen, um ein paar Punkte zu klären, und bietet Ihnen danach auf Wunsch ein kostenloses Mockup an.",
         "back": "Weitere Nachricht senden"
       }
     },
-    "lead": "Eine Nachricht oder ein Gespräch von 20 Minuten. In beiden Fällen sprechen Sie mit Matthieu und erhalten innerhalb eines Werktags eine Antwort.",
+    "lead": "Schreiben Sie uns eine Nachricht oder buchen Sie ein 20-minütiges Gespräch. In beiden Fällen antwortet Ihnen Matthieu selbst, und zwar innerhalb eines Werktags.",
     "details": {
       "aria_label": "Kontaktdaten",
       "email_label": "E-Mail",
       "support_label": "Bestehende Kundschaft · Support",
       "where_label": "Wo",
-      "where": "Genf · Westschweiz · Hochsavoyen, oder per Videogespräch"
+      "where": "Genf · Westschweiz · Hochsavoyen oder per Videogespräch"
     },
     "modes": {
       "label": "Wie möchten Sie uns kontaktieren?",
@@ -79,7 +79,7 @@
       "call": "Gespräch buchen"
     },
     "booking": {
-      "title": "Wählen Sie einen Termin von 20 Minuten",
+      "title": "Wählen Sie einen Termin für ein 20-minütiges Gespräch",
       "via": "über Google Calendar",
       "consent": "Der Buchungskalender stammt von Google Calendar; Google setzt dabei eigene Cookies. Er wird nur geladen, wenn Sie es wünschen.",
       "load": "Kalender anzeigen",

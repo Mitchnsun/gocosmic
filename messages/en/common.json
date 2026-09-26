@@ -2,13 +2,13 @@
   "404": {
     "eyebrow": "[ Error 404 ]",
     "title": "This page has drifted out of orbit.",
-    "description": "The link may be old, or the page has moved. Head back to the homepage, or tell us what you were looking for.",
+    "description": "The link may be old, or the page has moved. Start again from the homepage, or tell us what you were looking for.",
     "link": "Back to the homepage",
     "contact": "Tell us what you were looking for"
   },
   "meta": {
     "title": "Websites for local businesses · Geneva & Annecy | Cosmic Studio",
-    "description": "Websites for craftspeople, associations and independents in Geneva and Haute-Savoie. Get found on Google, with one person who stays by your side."
+    "description": "Websites for craftspeople, associations and independents in Geneva, Annecy and Haute-Savoie. A site people find on Google, and someone who looks after it once it is live."
   },
   "language": {
     "current": "Current language: {language}",
@@ -28,12 +28,12 @@
   },
   "cookieConsent": {
     "title": "Privacy preferences",
-    "description": "We only use Vercel Analytics to measure audience after your agreement. Refusing has no impact on the website.",
+    "description": "With your consent, we measure the site's audience with Vercel Analytics. If you refuse, the site works exactly the same.",
     "analyticsTitle": "Audience measurement",
-    "analyticsDescription": "Anonymous page view statistics used to improve the site. No advertising tracker is loaded by Cosmic Studio.",
-    "accept": "Accept analytics",
+    "analyticsDescription": "Anonymous statistics on the pages visited, used to improve the site. No advertising trackers.",
+    "accept": "Accept",
     "refuse": "Refuse",
-    "customize": "Customize",
+    "customize": "Customise",
     "save": "Save my choice",
     "privacyLink": "Read the privacy policy",
     "manage": "Manage cookies",

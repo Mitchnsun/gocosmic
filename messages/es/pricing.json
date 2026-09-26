@@ -2,7 +2,7 @@
   "pricing": {
     "free_offers": {
       "eyebrow": "Gratis, sin compromiso",
-      "title": "Antes incluso de hablar de presupuesto",
+      "title": "Antes de hablar de presupuesto",
       "items": {
         "mockup": {
           "title": "Una maqueta de tu futuro sitio",
@@ -10,7 +10,7 @@
         },
         "audit": {
           "title": "Una revisión de tu sitio actual",
-          "description": "Lo que funciona, lo que te hace perder visitantes y si te encuentran en Google."
+          "description": "Lo que funciona, lo que ahuyenta a los visitantes y cómo aparece tu sitio en Google."
         }
       },
       "note": "Ambas son gratuitas y no te comprometen a nada."
@@ -20,9 +20,9 @@
       "base": {
         "title": "Plan base",
         "includes": {
-          "page": "Una única página vitrina estática que presenta tu actividad",
+          "page": "Una página de presentación de tu negocio",
           "hosting": "En línea las 24 horas, publicación incluida",
-          "security": "Conexión segura HTTPS (el candado del navegador)"
+          "security": "Conexión segura (el candado que aparece en el navegador)"
         }
       },
       "options": {
@@ -33,7 +33,7 @@
         },
         "domain": {
           "label": "Gestión de tu nombre de dominio",
-          "hint": "Tu nombre de dominio, por ejemplo {domain} — registrado y renovado para ti."
+          "hint": "Por ejemplo {domain}: lo registramos y lo renovamos por ti."
         },
         "swiss_hosting": {
           "label": "Sitio alojado en Suiza",
@@ -50,13 +50,13 @@
           "one": "1 página (incluida)",
           "two_four": "2 a 4 páginas",
           "five_seven": "5 a 7 páginas",
-          "eight_nine": "8 a 9 páginas",
+          "eight_nine": "8 o 9 páginas",
           "ten_plus": "10 páginas o más"
         }
       },
       "updates": {
         "label": "Cambios de contenido incluidos",
-        "hint": "Tus textos, fotos y horarios actualizados por nosotros, sin coste adicional cada vez.",
+        "hint": "Actualizamos tus textos, tus fotos y tus horarios, sin coste adicional por cada petición.",
         "off": "No incluido",
         "slider_label": "Cambios al año",
         "tiers": {
@@ -69,25 +69,25 @@
       },
       "total": {
         "label": "Tu estimación",
-        "note": "Estimación orientativa, que confirmamos tras una primera conversación. Puedes añadir opciones con el tiempo; una vez activadas, se mantienen en tu suscripción (consulta las condiciones generales de venta).",
-        "beyond": "Por encima de estos volúmenes, lo hablamos juntos: te hacemos una propuesta a medida.",
+        "note": "Precio orientativo, que confirmamos tras una primera conversación. Puedes añadir opciones en cualquier momento; una vez activadas, se mantienen en tu suscripción (consulta las condiciones generales de venta).",
+        "beyond": "Si necesitas más, lo hablamos y te hacemos una propuesta.",
         "cta": "Pedir mi maqueta gratuita",
         "question": "¿Alguna pregunta antes? <link>Escríbenos</link>."
       }
     },
     "columns": {
       "eyebrow": "[ Precios ]",
-      "title": "Varias formas de trabajar juntos.",
+      "title": "Cuatro formas de trabajar con nosotros.",
       "subscription": {
         "title": "Suscripción",
         "label": "Sitio, alojamiento y seguimiento",
         "price": "Desde {price}",
         "period": "/ mes",
-        "description": "Para tener un sitio en línea y al día sin tener que pensar en ello. El precio se ajusta a lo que necesitas: número de páginas, nombre de dominio, dirección de correo, cambios.",
+        "description": "Tu sitio está en línea y al día sin que tengas que ocuparte de nada. El precio depende de lo que necesites: número de páginas, nombre de dominio, dirección de correo, cambios.",
         "features": {
           "included": "Alojamiento, conexión segura y posicionamiento básico en Google incluidos",
-          "options": "Opciones que añades con el tiempo, según lo necesites",
-          "mockup": "Maqueta gratuita antes de decidirte"
+          "options": "Opciones que puedes añadir cuando las necesites",
+          "mockup": "Una maqueta gratuita antes de decidirte"
         },
         "cta": "Configurar mi suscripción"
       },
@@ -95,7 +95,7 @@
         "title": "Acompañamiento",
         "label": "Asesoría, UX/UI y diseño",
         "price": "Tarifa por día",
-        "description": "Para ir más allá de la maqueta gratuita sin desarrollar necesariamente el sitio: arquitectura, decisiones técnicas, UX/UI y diseño, con la intervención de un diseñador.",
+        "description": "Para ir más allá de la maqueta gratuita sin tener que empezar el desarrollo: arquitectura, decisiones técnicas, UX/UI y diseño, con un diseñador en el equipo.",
         "features": {
           "architecture": "Arquitectura y decisiones técnicas",
           "design": "UX/UI, recorridos de usuario y maquetas detalladas",
@@ -107,7 +107,7 @@
         "title": "Refuerzo",
         "label": "Sitio existente, equipo reforzado",
         "price": "Tarifa por día",
-        "description": "Para intervenir en un sitio ya existente: mejora técnica, nuevas funcionalidades, con uno o varios desarrolladores según el alcance del proyecto.",
+        "description": "Para hacer evolucionar un sitio que ya tienes, ya sea con mejoras técnicas o con nuevas funcionalidades, con uno o varios desarrolladores según el alcance del proyecto.",
         "features": {
           "technical": "Mejora técnica: rendimiento, seguridad, actualizaciones",
           "features": "Nuevas funcionalidades en un sitio existente",
@@ -118,9 +118,9 @@
       "custom": {
         "title": "A medida",
         "label": "Proyecto puntual · según presupuesto",
-        "description": "Tienda en línea, área de socios, aplicación móvil, herramienta para tu oficio. Lo definimos juntos, lo presupuestamos y lo entregamos. Después puedes pasarte a la suscripción para el seguimiento.",
+        "description": "Tienda en línea, área de socios, aplicación móvil o herramienta interna: definimos el proyecto juntos y luego te enviamos un presupuesto. Tras la entrega, puedes pasarte a la suscripción para el seguimiento.",
         "features": {
-          "payment": "Pago escalonado, etapa por etapa",
+          "payment": "Pago en varios plazos, uno por etapa",
           "ownership": "El código y los datos son tuyos"
         },
         "cta": "Pedir un presupuesto"

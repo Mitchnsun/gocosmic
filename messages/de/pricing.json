@@ -2,15 +2,15 @@
   "pricing": {
     "free_offers": {
       "eyebrow": "Kostenlos und unverbindlich",
-      "title": "Noch bevor wir über Budget sprechen",
+      "title": "Bevor wir über das Budget sprechen",
       "items": {
         "mockup": {
-          "title": "Ein Entwurf Ihrer künftigen Website",
+          "title": "Ein Mockup Ihrer künftigen Website",
           "description": "Sie sehen, wie Ihre Website aussehen könnte, bevor Sie sich entscheiden."
         },
         "audit": {
-          "title": "Ein Check Ihrer bestehenden Website",
-          "description": "Was funktioniert, was Ihnen Besucher kostet und ob man Sie bei Google findet."
+          "title": "Eine Bestandsaufnahme Ihrer aktuellen Website",
+          "description": "Was funktioniert, was Besucher vertreibt und wie Ihre Website bei Google erscheint."
         }
       },
       "note": "Beides ist kostenlos und verpflichtet Sie zu nichts."
@@ -20,9 +20,9 @@
       "base": {
         "title": "Grundpaket",
         "includes": {
-          "page": "Eine einzige statische Präsentationsseite für Ihren Betrieb",
+          "page": "Eine Präsentationsseite, die Ihre Tätigkeit vorstellt",
           "hosting": "Rund um die Uhr online, Veröffentlichung inklusive",
-          "security": "Sichere HTTPS-Verbindung (das Schloss im Browser)"
+          "security": "Sichere Verbindung (das Schloss-Symbol im Browser)"
         }
       },
       "options": {
@@ -33,10 +33,10 @@
         },
         "domain": {
           "label": "Verwaltung Ihres Domainnamens",
-          "hint": "Ihr Domainname, zum Beispiel {domain} — für Sie registriert und verlängert."
+          "hint": "Zum Beispiel {domain}: Wir registrieren und verlängern ihn für Sie."
         },
         "swiss_hosting": {
-          "label": "Website in der Schweiz gehostet",
+          "label": "Hosting in der Schweiz",
           "hint": "Ihre Daten bleiben auf einem Server in der Schweiz."
         },
         "email": {
@@ -56,38 +56,38 @@
       },
       "updates": {
         "label": "Inhaltsänderungen inklusive",
-        "hint": "Ihre Texte, Fotos und Öffnungszeiten von uns aktualisiert, ohne jedes Mal Zusatzkosten.",
+        "hint": "Wir aktualisieren Ihre Texte, Fotos und Öffnungszeiten, ohne dass jede Anfrage extra kostet.",
         "off": "Nicht enthalten",
         "slider_label": "Änderungen pro Jahr",
         "tiers": {
-          "few_per_year": "2 bis 3 Mal im Jahr",
-          "monthly": "1 Mal im Monat",
-          "twice_monthly": "2 Mal im Monat",
-          "weekly": "1 Mal pro Woche",
+          "few_per_year": "Zwei- bis dreimal im Jahr",
+          "monthly": "Einmal im Monat",
+          "twice_monthly": "Zweimal im Monat",
+          "weekly": "Einmal pro Woche",
           "unlimited": "So oft wie nötig"
         }
       },
       "total": {
-        "label": "Ihre Schätzung",
-        "note": "Ein Richtwert, den wir nach einem ersten Gespräch bestätigen. Sie können mit der Zeit Optionen hinzufügen; sind sie aktiv, bleiben sie Teil Ihres Abonnements (siehe die allgemeinen Geschäftsbedingungen).",
-        "beyond": "Über diese Mengen hinaus besprechen wir es gemeinsam: Wir machen Ihnen ein passendes Angebot.",
+        "label": "Ihre Kostenschätzung",
+        "note": "Richtpreis, den wir nach einem ersten Gespräch bestätigen. Sie können jederzeit Optionen hinzufügen; einmal aktiviert, bleiben sie Teil Ihres Abonnements (siehe Allgemeine Geschäftsbedingungen).",
+        "beyond": "Bei größerem Umfang sprechen wir gemeinsam darüber und machen Ihnen einen Vorschlag.",
         "cta": "Mein kostenloses Mockup anfordern",
         "question": "Vorher noch eine Frage? <link>Schreiben Sie uns</link>."
       }
     },
     "columns": {
       "eyebrow": "[ Preise ]",
-      "title": "Mehrere Wege der Zusammenarbeit.",
+      "title": "Vier Wege, mit uns zusammenzuarbeiten.",
       "subscription": {
         "title": "Abonnement",
         "label": "Website, Hosting und Betreuung",
         "price": "Ab {price}",
         "period": "/ Monat",
-        "description": "Damit Ihre Website online ist und aktuell bleibt, ohne dass Sie daran denken müssen. Der Preis richtet sich nach Ihrem Bedarf: Anzahl der Seiten, Domainname, E-Mail-Adresse, Änderungen.",
+        "description": "Ihre Website ist online und bleibt aktuell, ohne dass Sie sich darum kümmern müssen. Der Preis richtet sich nach Ihrem Bedarf: Anzahl der Seiten, Domainname, E-Mail-Adresse, Änderungen.",
         "features": {
-          "included": "Inklusive Hosting, sicherer Verbindung und einer guten Grundlage, um bei Google gefunden zu werden",
-          "options": "Optionen, die Sie nach Bedarf mit der Zeit hinzufügen",
-          "mockup": "Kostenloses Mockup, bevor Sie sich entscheiden"
+          "included": "Hosting, sichere Verbindung und grundlegende Auffindbarkeit bei Google inklusive",
+          "options": "Optionen, die Sie hinzufügen, wenn Sie sie brauchen",
+          "mockup": "Ein kostenloses Mockup, bevor Sie sich entscheiden"
         },
         "cta": "Mein Abonnement zusammenstellen"
       },
@@ -95,11 +95,11 @@
         "title": "Begleitung",
         "label": "Beratung, UX/UI und Design",
         "price": "Tagessatz",
-        "description": "Um über das kostenlose Mockup hinauszugehen, ohne die Website zwingend zu entwickeln: Architektur, technische Entscheidungen, UX/UI und Design, mit Unterstützung durch eine Designerin oder einen Designer.",
+        "description": "Wenn Sie über das kostenlose Mockup hinausgehen möchten, ohne gleich die Entwicklung zu starten: Architektur, technische Entscheidungen, UX/UI und Design, mit einem Designer an unserer Seite.",
         "features": {
           "architecture": "Architektur und technische Entscheidungen",
           "design": "UX/UI, Nutzerführung und detaillierte Mockups",
-          "designer": "Eine Designerin oder ein Designer arbeitet mit dem Entwickler zusammen"
+          "designer": "Ein Designer, der Seite an Seite mit dem Entwickler arbeitet"
         },
         "cta": "Sprechen wir darüber"
       },
@@ -107,7 +107,7 @@
         "title": "Verstärkung",
         "label": "Bestehende Website, verstärktes Team",
         "price": "Tagessatz",
-        "description": "Für den Einsatz auf einer bereits bestehenden Website: technische Verbesserung, neue Funktionen, mit einem oder mehreren Entwicklern je nach Umfang.",
+        "description": "Um eine bestehende Website weiterzuentwickeln, sei es durch technische Verbesserungen oder neue Funktionen, mit einem oder mehreren Entwicklern je nach Umfang des Projekts.",
         "features": {
           "technical": "Technische Verbesserung: Leistung, Sicherheit, Updates",
           "features": "Neue Funktionen auf einer bestehenden Website",
@@ -118,9 +118,9 @@
       "custom": {
         "title": "Individuell",
         "label": "Einzelprojekt · nach Angebot",
-        "description": "Onlineshop, Mitgliederbereich, Smartphone-App, Werkzeug für Ihren Betrieb. Wir klären den Umfang gemeinsam, machen ein Angebot und liefern. Danach können Sie für die Betreuung in ein Abonnement wechseln.",
+        "description": "Onlineshop, Mitgliederbereich, Smartphone-App oder internes Werkzeug: Wir legen das Projekt gemeinsam fest und schicken Ihnen dann ein Angebot. Nach der Übergabe können Sie für die Betreuung in ein Abonnement wechseln.",
         "features": {
-          "payment": "Zahlung in Etappen, je nach Fortschritt",
+          "payment": "Zahlung in mehreren Raten, Phase für Phase",
           "ownership": "Code und Daten gehören Ihnen"
         },
         "cta": "Angebot anfordern"

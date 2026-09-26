@@ -16,7 +16,7 @@ describe('PricingSimulator', () => {
     render(<PricingSimulator region="fr" />);
 
     expect(screen.getByRole('heading', { level: 3, name: 'Base plan' })).toBeInTheDocument();
-    expect(total()).toHaveTextContent('10€');
+    expect(total()).toHaveTextContent('€10');
     expect(within(recap()).getAllByRole('listitem')).toHaveLength(1);
   });
 
@@ -25,10 +25,10 @@ describe('PricingSimulator', () => {
 
     fireEvent.click(screen.getByRole('checkbox', { name: /managing your domain name/i }));
 
-    expect(total()).toHaveTextContent('15€');
+    expect(total()).toHaveTextContent('€15');
     const lines = within(recap()).getAllByRole('listitem');
     expect(lines).toHaveLength(2);
-    expect(lines[1]).toHaveTextContent('+5€');
+    expect(lines[1]).toHaveTextContent('+€5');
   });
 
   it('shows a .com domain example for non-Swiss visitors and .ch for Swiss ones', () => {
@@ -46,7 +46,7 @@ describe('PricingSimulator', () => {
     fireEvent.click(screen.getByRole('checkbox', { name: /managing your domain name/i }));
     fireEvent.click(screen.getByRole('checkbox', { name: /email address in your own name/i }));
 
-    expect(total()).toHaveTextContent('25€');
+    expect(total()).toHaveTextContent('€25');
   });
 
   it('raises the total and lists the page tier when the pages slider moves', () => {
@@ -56,7 +56,7 @@ describe('PricingSimulator', () => {
     fireEvent.keyDown(slider, { key: 'ArrowRight' });
     fireEvent.keyDown(slider, { key: 'ArrowRight' });
 
-    expect(total()).toHaveTextContent('20€');
+    expect(total()).toHaveTextContent('€20');
     expect(within(recap()).getByText('5 to 7 pages')).toBeInTheDocument();
   });
 
@@ -64,12 +64,12 @@ describe('PricingSimulator', () => {
     render(<PricingSimulator region="fr" />);
 
     expect(screen.getByRole('slider', { name: /changes per year/i })).toHaveAttribute('data-disabled');
-    expect(total()).toHaveTextContent('10€');
+    expect(total()).toHaveTextContent('€10');
 
     fireEvent.click(screen.getByRole('checkbox', { name: /content changes included/i }));
 
     expect(screen.getByRole('slider', { name: /changes per year/i })).not.toHaveAttribute('data-disabled');
-    expect(total()).toHaveTextContent('15€');
+    expect(total()).toHaveTextContent('€15');
     expect(within(recap()).getByText('Content changes included')).toBeInTheDocument();
   });
 
@@ -82,7 +82,7 @@ describe('PricingSimulator', () => {
     fireEvent.keyDown(slider, { key: 'ArrowRight' });
     fireEvent.keyDown(slider, { key: 'ArrowRight' });
 
-    expect(total()).toHaveTextContent('60€');
+    expect(total()).toHaveTextContent('€60');
   });
 
   it('invites a conversation once a slider hits its top position', () => {
@@ -97,8 +97,8 @@ describe('PricingSimulator', () => {
   it('quotes the plan in francs for Swiss visitors', () => {
     render(<PricingSimulator region="ch" />);
 
-    expect(total()).toHaveTextContent('10 CHF');
-    expect(total()).not.toHaveTextContent('10€');
+    expect(total()).toHaveTextContent('CHF 10');
+    expect(total()).not.toHaveTextContent('€10');
   });
 
   it('carries the composed plan to the free mockup request', () => {

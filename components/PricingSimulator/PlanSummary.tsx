@@ -1,7 +1,7 @@
 'use client';
 
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 import { primaryPill } from '@/design-system/pill';
 import { Link } from '@/i18n/navigation';
@@ -28,7 +28,8 @@ interface PlanSummaryProps {
  */
 export function PlanSummary({ currency, region, selection, total, showQuoteHint }: PlanSummaryProps) {
   const t = useTranslations('pricing');
-  const price = (amount: number) => formatAmount(amount, currency);
+  const locale = useLocale();
+  const price = (amount: number) => formatAmount(amount, currency, locale);
 
   // Keys come from the fixed ADD_ON_KEYS / PAGE_TIER_KEYS lists.
   /* eslint-disable security/detect-object-injection */

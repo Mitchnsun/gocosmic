@@ -1,10 +1,10 @@
 {
   "meta": {
     "title": "Contact · Parlons de votre projet | Cosmic Studio",
-    "description": "Parlez de votre projet à Cosmic Studio : un message suffit, vous recevez une réponse sous 24 h, par la personne qui construira votre site."
+    "description": "Parlez de votre projet à Cosmic Studio. Un message suffit : la personne qui construira votre site vous répond sous 24 h ouvrées."
   },
   "contact": {
-    "title": "Racontez-nous votre activité. <em>On s'occupe du reste.</em>",
+    "title": "Parlez-nous <em>de votre activité.</em>",
     "privacyNotice": "Vos coordonnées servent uniquement à vous répondre et à préparer un éventuel devis.",
     "privacyLink": "Politique de confidentialité",
     "eyebrow": "[ Contact ]",
@@ -21,12 +21,12 @@
           "placeholder": "Camille Durand"
         },
         "email": {
-          "label": "E-mail",
+          "label": "Adresse e-mail",
           "placeholder": "camille@exemple.fr"
         },
         "message": {
           "label": "Votre message",
-          "placeholder": "Où vous en êtes, ce que vous voulez, ce que vous avez déjà (logo, photos, ancien site)…"
+          "placeholder": "Où en est votre projet, ce que vous aimeriez, ce que vous avez déjà (logo, photos, ancien site)…"
         },
         "phone": {
           "label": "Téléphone",
@@ -61,14 +61,14 @@
       },
       "success": {
         "title": "Merci. Matthieu vous répond sous 24 h ouvrées.",
-        "description": "Votre message est bien arrivé. Prochaine étape : quelques questions par e-mail, puis une maquette gratuite si cela vous convient.",
+        "description": "Votre message est bien arrivé. Matthieu vous écrira pour préciser quelques points, puis vous proposera une maquette gratuite si vous le souhaitez.",
         "back": "Envoyer un autre message"
       }
     },
-    "lead": "Un message, ou un appel de 20 minutes. Dans les deux cas, vous parlez à Matthieu, et vous avez une réponse sous 24 h ouvrées.",
+    "lead": "Écrivez-nous un message ou réservez un appel de 20 minutes. Dans les deux cas, c'est Matthieu qui vous répond, sous 24 h ouvrées.",
     "details": {
       "aria_label": "Coordonnées",
-      "email_label": "Email",
+      "email_label": "E-mail",
       "support_label": "Déjà client · support",
       "where_label": "Où",
       "where": "Genève · Suisse romande · Haute-Savoie, ou en visio"

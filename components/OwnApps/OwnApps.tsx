@@ -31,7 +31,7 @@ export function OwnApps({ eyebrow, title, lead, app, id = 'apps' }: OwnAppsProps
   const titleId = `${id}-heading`;
 
   return (
-    <section id={id} aria-labelledby={titleId} className={cn('bg-ember', SECTION_Y)}>
+    <section id={id} aria-labelledby={titleId} className={cn('bg-ember scroll-mt-20', SECTION_Y)}>
       <div className={cn(CONTAINER, 'grid items-center gap-[clamp(2rem,5vw,5rem)] lg:grid-cols-2')}>
         <SectionHeading eyebrow={eyebrow} title={title} titleId={titleId} lead={lead} />
         <Link

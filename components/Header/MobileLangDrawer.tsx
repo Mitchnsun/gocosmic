@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 import { useLocale, useTranslations } from 'next-intl';
 import { useEffect, useTransition } from 'react';
 
-import { usePathname, useRouter } from '@/i18n/navigation';
+import { useSwitchLocale } from '@/components/LanguageSwitcher/useSwitchLocale';
 
 import { HEADER_HEIGHT, MOBILE_MENU_DURATION_MS, MOBILE_MENU_STAGGER_MS, STATUS_BAR_HEIGHT } from './constants';
 
@@ -24,9 +24,8 @@ interface MobileLangDrawerProps {
 const MobileLangDrawer = ({ onClose }: MobileLangDrawerProps) => {
   const [isPending, startTransition] = useTransition();
   const t = useTranslations('navigation');
-  const router = useRouter();
   const locale = useLocale();
-  const pathname = usePathname();
+  const switchLocale = useSwitchLocale();
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -45,7 +44,7 @@ const MobileLangDrawer = ({ onClose }: MobileLangDrawerProps) => {
 
   const handleSelect = (newLocale: string) => {
     startTransition(() => {
-      router.push(pathname, { locale: newLocale });
+      switchLocale(newLocale);
       onClose();
     });
   };

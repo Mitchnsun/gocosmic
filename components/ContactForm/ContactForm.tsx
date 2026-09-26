@@ -98,7 +98,8 @@ export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'cont
           <FormField
             name="phone"
             type="tel"
-            label={`${t('fields.phone.label')} — ${t('optional')}`}
+            label={t('fields.phone.label')}
+            hint={t('optional')}
             placeholder={t('fields.phone.placeholder')}
             value={values.phone}
             onChange={handleChange}
@@ -109,7 +110,8 @@ export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'cont
           />
           <FormField
             name="company"
-            label={`${t('fields.company.label')} — ${t('optional')}`}
+            label={t('fields.company.label')}
+            hint={t('optional')}
             placeholder={t('fields.company.placeholder')}
             value={values.company}
             onChange={handleChange}
@@ -121,7 +123,8 @@ export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'cont
         </div>
 
         <NeedPicker
-          legend={`${t('fields.need.legend')} — ${t('optional')}`}
+          legend={t('fields.need.legend')}
+          hint={t('optional')}
           options={CONTACT_NEEDS.map((need) => ({ value: need, label: t(`fields.need.options.${need}`) }))}
           value={values.need}
           onChange={handleChange}

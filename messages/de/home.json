@@ -2,14 +2,14 @@
   "homepage": {
     "cta": {
       "button": "Mein Projekt besprechen",
-      "description": "Erzählen Sie uns in ein paar Zeilen, was Sie tun. Wir melden uns innerhalb von 24 Stunden bei Ihnen: mit Fragen, nicht mit einem automatischen Angebot.",
-      "freeMockup": "Noch unsicher? Fordern Sie Ihr <link>kostenloses Mockup</link> an.",
+      "description": "Erzählen Sie uns in ein paar Zeilen, was Sie machen. Wir melden uns innerhalb eines Werktags, um darüber zu sprechen, bevor wir Ihnen irgendetwas vorschlagen.",
+      "freeMockup": "Noch unsicher? Beginnen Sie mit einem <link>kostenlosen Mockup</link>.",
       "title": "Bringen wir Ihren Betrieb zum Strahlen."
     },
     "hero": {
       "cta": "Go Cosmic",
-      "endWords": ["gesehen zu werden.", "gefunden zu werden.", "gewählt zu werden."],
-      "subtitle": "Cosmic Studio erstellt Websites und Apps für Handwerksbetriebe, Vereine und Selbstständige. Eine klare Website, die bei Google gefunden wird, und ein Ansprechpartner, der auch nach dem Start für Sie da ist.",
+      "endWords": ["gesehen zu werden.", "gefunden zu werden.", "ausgewählt zu werden."],
+      "subtitle": "Cosmic Studio erstellt Websites und Apps für Handwerksbetriebe, Vereine und Selbstständige. Wir sorgen dafür, dass man Sie bei Google findet, und bleiben erreichbar, wenn Ihre Website online ist.",
       "title": "Ihr Betrieb verdient es,",
       "eyebrow": "Web- & App-Studio · Genf",
       "secondary": "Preise ansehen",
@@ -20,7 +20,7 @@
         },
         "reply": {
           "highlight": "Antwort",
-          "text": "binnen 24 h"
+          "text": "binnen 24 Std."
         },
         "contact": {
           "highlight": "Ein einziger",
@@ -34,95 +34,100 @@
     },
     "process": {
       "eyebrow": "[ Ablauf · 04 ]",
-      "title": "Vier Schritte. <em>Ohne Überraschungen.</em>",
-      "subtitle": "Vom ersten Gespräch bis zum Start der Website wissen Sie immer, wo Ihr Projekt steht.",
+      "title": "Vier Schritte, <em>ohne Überraschungen.</em>",
+      "subtitle": "Vom ersten Gespräch bis zum Start der Website wissen Sie, wo Ihr Projekt steht.",
       "discovery": {
         "label": "T-3 · Kennenlernen",
         "title": "Wir lernen uns kennen",
-        "description": "Zwanzig Minuten am Telefon oder bei einem Kaffee, in Genf oder in Annecy. Ihre Arbeit, Ihre Kundschaft und was die Website für Sie leisten soll."
+        "description": "Zwanzig Minuten am Telefon oder bei einem Kaffee in Genf oder Annecy, um über Ihre Arbeit, Ihre Kundschaft und das zu sprechen, was die Website Ihnen bringen soll."
       },
       "design": {
-        "label": "T-2 · Entwurf",
-        "title": "Erst sehen, dann zahlen",
-        "description": "Ein Entwurf Ihrer Startseite, mit Ihren Farben und Ihren Worten. Kostenlos und unverbindlich: Danach entscheiden Sie."
+        "label": "T-2 · Mockup",
+        "title": "Erst sehen, dann entscheiden",
+        "description": "Wir erstellen ein Mockup Ihrer Startseite mit Ihren Farben und Ihren Texten. Es ist kostenlos und verpflichtet Sie zu nichts."
       },
       "build": {
         "label": "T-1 · Umsetzung",
-        "title": "Wir bauen",
-        "description": "Zwei bis sechs Wochen, je nach Projekt. Sie verfolgen den Fortschritt über einen privaten Link, Sie kommentieren, wir passen an."
+        "title": "Wir bauen die Website",
+        "description": "Rechnen Sie je nach Projekt mit zwei bis sechs Wochen. Über einen privaten Link verfolgen Sie den Fortschritt und geben uns laufend Rückmeldung."
       },
       "launch": {
         "label": "T-0 · Start",
-        "title": "Online, und wir bleiben da",
-        "description": "Start der Website, gemeinsame Einführung, danach Hosting, Datensicherungen und kleine Änderungen, Monat für Monat."
+        "title": "Wir bleiben auch nach dem Start da",
+        "description": "Wir schalten die Website online und zeigen Ihnen, wie sie funktioniert. Danach kümmern wir uns um Hosting, Datensicherungen und kleine Änderungen."
       }
     },
     "projects": {
       "eyebrow": "[ Referenzen ]",
-      "title": "Echte Projekte, <em>heute online.</em>",
+      "title": "Unsere neuesten <em>Arbeiten.</em>",
       "all": "Alle Projekte"
     },
     "audience": {
       "eyebrow": "[ Für wen · 03 ]",
-      "title": "Für alle, die einen Beruf haben <em>und keine Zeit, einen zweiten zu lernen.</em>",
+      "title": "Für alle, die schon einen Beruf haben <em>und keine Zeit, einen zweiten zu lernen.</em>",
       "items": {
         "artisans": {
           "title": "Handwerksbetriebe",
-          "description": "Schreinerei, Sanitärbetrieb, Friseursalon, Partyservice. Eine Seite, die sagt, was Sie tun, wo und wie man Sie erreicht, und die gefunden wird, wenn jemand in der Nähe nach Ihrem Handwerk sucht."
+          "description": "Schreinerei, Sanitärbetrieb, Friseursalon, Partyservice … Eine Website, die zeigt, was Sie tun, wo Sie arbeiten und wie man Sie erreicht, und die gefunden wird, wenn jemand in der Nähe nach Ihrem Handwerk sucht."
         },
         "associations": {
           "title": "Vereine",
-          "description": "Chor, Sportverein, Initiative. Veranstaltungskalender, Mitgliedschaften, Neuigkeiten: alles, um Ihre Aktivitäten bekannt zu machen und neue Mitglieder zu gewinnen."
+          "description": "Chor, Sportverein, Initiative … Ihre Veranstaltungen, Mitgliedschaften und Neuigkeiten an einem Ort, damit Ihre Aktivitäten bekannt werden und neue Mitglieder zu Ihnen finden."
         },
         "independents": {
-          "title": "Selbstständige, die loslegen",
-          "description": "Therapie, Beratung, Fotografie. Eine professionelle Website ab dem ersten Tag, um bekannt zu werden, und ein Preis, der mit Ihrer Tätigkeit wächst."
+          "title": "Selbstständige, die gerade starten",
+          "description": "Therapeutin, Berater, Fotografin … Eine professionelle Website von Anfang an, zu einem Preis, der mit Ihrer Tätigkeit mitwächst."
         }
       }
     },
     "why": {
       "eyebrow": "[ Warum ein Studio ]",
-      "title": "Wix und WordPress erfüllen ihren Zweck. <em>Bis zu dem Tag, an dem sie es nicht mehr tun.</em>",
-      "lead": "Diese Werkzeuge sind am Anfang praktisch. Dann braucht es eine Erweiterung, dann legt eine Aktualisierung die Seite lahm, dann steigt die Rechnung. Wir schreiben den Code selbst: Die Website gehört Ihnen, sie ist schnell, und sie wächst weiter, ohne dass Sie bei null anfangen müssen.",
+      "title": "Wix und WordPress sind praktisch, <em>zumindest am Anfang.</em>",
+      "lead": "Dann braucht man eine kostenpflichtige Erweiterung, ein Update legt eine Seite lahm, das Abo wird teurer. Wir schreiben den Code selbst. So bleibt Ihre Website schnell und kann wachsen, ohne dass Sie bei null anfangen müssen.",
       "reasons": {
         "ownership": {
           "title": "Ihre Website gehört Ihnen",
-          "description": "Ihre Inhalte und Ihr Domainname gehören Ihnen von Anfang an. Der Code geht nach Ablauf der Mindestlaufzeit des Abonnements an Sie über, oder früher gegen eine Übertragungsgebühr."
+          "description": "Ihre Texte, Ihre Fotos und Ihr Domainname gehören Ihnen vom ersten Tag an. Der Code geht nach {months} Monaten Abonnement an Sie über, auf Wunsch auch früher gegen eine Übertragungsgebühr."
         },
         "fast": {
-          "title": "Schnell und gut auffindbar",
-          "description": "Keine überladene Vorlage, keine Erweiterungen: Seiten, die auf dem Handy schnell laden. Genau das belohnt Google."
+          "title": "Schnell und bei Google gut platziert",
+          "description": "Ohne überladene Vorlage und ohne Erweiterungen laden Ihre Seiten auf dem Handy schnell, und das berücksichtigt Google in seinen Ergebnissen."
         },
         "person": {
-          "title": "Ein Mensch, keine Ticketnummer",
+          "title": "Jemand, der Ihnen antwortet",
           "description": "Sie sprechen mit Matthieu, der Ihre Website kennt, weil er sie gebaut hat."
         },
         "grows": {
-          "title": "Wächst mit Ihnen mit",
-          "description": "Heute eine Seite, morgen ein Onlineshop oder eine App, auf derselben Grundlage."
+          "title": "Eine Website, die mit Ihnen mitwächst",
+          "description": "Heute eine Seite, später ein Onlineshop oder eine App, ohne alles neu zu bauen."
         }
       }
     },
     "apps": {
       "eyebrow": "[ Unsere Apps ]",
-      "title": "Das Studio baut auch <em>eigene Produkte.</em>",
-      "lead": "Dort testen wir Werkzeuge, bevor wir sie unserer Kundschaft anbieten. Was wir bei unseren eigenen Apps lernen, fließt in Ihre ein.",
+      "title": "Wir entwickeln auch <em>eigene Apps.</em>",
+      "lead": "Daran testen wir Werkzeuge, bevor wir sie für unsere Kundschaft einsetzen, und was wir dabei lernen, kommt danach Ihren Projekten zugute.",
       "daily_fortune": {
         "name": "Daily Fortune",
         "badge": "iOS · Android",
-        "description": "Jeden Morgen eine kurze Nachricht für einen guten Start in den Tag. Unsere erste App im App Store und bei Google Play.",
+        "description": "Jeden Morgen eine kurze Nachricht für einen guten Start in den Tag. Es ist unsere erste App, erhältlich im App Store und bei Google Play.",
         "link": "App entdecken",
         "icon_alt": "App-Symbol von Daily Fortune"
       }
     },
     "studio": {
       "eyebrow": "[ Das Studio ]",
-      "title": "Ein Entwickler in Genf, <em>keine Plattform.</em>",
+      "title": "Hinter Cosmic Studio <em>steht Matthieu.</em>",
       "paragraphs": [
-        "Ich heiße Matthieu Compérat. Ich stamme aus Duingt am Annecy-See und bin heute in Chêne-Bougeries zu Hause. Seit rund fünfzehn Jahren entwickle ich Websites und Apps, zuerst für große Unternehmen, dann für Menschen, deren Vornamen ich kenne. Aus dieser zweiten Entscheidung ist Cosmic Studio entstanden.",
-        "Sie rufen an, ich nehme ab. Sie schreiben mir, Sie bekommen noch am selben Tag eine Antwort. Von der Website, die ich Ihnen übergebe, weiß ich genau, wie sie funktioniert."
+        "Ich heiße Matthieu Compérat. Ich stamme aus Duingt am Annecy-See und lebe heute in Chêne-Bougeries. Seit rund fünfzehn Jahren entwickle ich Websites und Apps, zuerst für große Unternehmen. Mit Cosmic Studio arbeite ich direkt mit Handwerksbetrieben, Vereinen und Selbstständigen zusammen.",
+        "Wenn Sie anrufen, nehme ich selbst ab, und auf Ihre Nachrichten bekommen Sie noch am selben Tag eine Antwort. Ich kenne die Website, die ich Ihnen übergebe, bis ins Detail. Das macht jede Änderung einfach und schnell."
       ],
-      "zones": ["Chêne-Bougeries · Basis", "Westschweiz · vor Ort", "Hochsavoyen · vor Ort", "Anderswo · aus der Ferne"]
+      "zones": [
+        "Chêne-Bougeries · Standort",
+        "Westschweiz · vor Ort",
+        "Hochsavoyen · vor Ort",
+        "Anderswo · aus der Ferne"
+      ]
     }
   }
 }

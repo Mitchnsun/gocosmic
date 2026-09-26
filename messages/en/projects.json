@@ -2,10 +2,10 @@
   "projectsList": {
     "meta": {
       "title": "Work · Websites and apps | Cosmic Studio",
-      "description": "Websites and apps built by Cosmic Studio for associations, a sports club and independents, in Geneva and Haute-Savoie."
+      "description": "Websites and apps built by Cosmic Studio for a choir, a triathlon club and independents, in Geneva and Haute-Savoie."
     },
-    "title": "Websites and apps <em>that do a real job.</em>",
-    "subtitle": "A selection of what we have delivered: for clients, and for ourselves. Each page says what we did, for whom, and what changed.",
+    "title": "Websites and apps <em>in daily use.</em>",
+    "subtitle": "A selection of projects built for our clients and for the studio. Each page explains who we worked for, what we did and what changed.",
     "items": {
       "choeurDesPaysduMontBlanc": {
         "title": "Chœur des Pays du Mont Blanc",
@@ -24,21 +24,21 @@
       "dailyFortune": {
         "title": "Daily Fortune",
         "client": "Studio app",
-        "description": "A short message every morning to start the day well. Our first app published on the App Store and Google Play.",
+        "description": "A short message every morning to start the day on the right foot. It is our first app, available on the App Store and Google Play.",
         "tags": ["Mobile app", "iOS · Android", "Studio"],
         "cover_alt": "Daily Fortune app icon"
       },
       "mcomperat": {
         "title": "mcomper.at",
         "client": "Personal project",
-        "description": "An online résumé, available in several languages and quick to load. The testing ground for the tools we then use for you.",
+        "description": "An online résumé in French and English, quick to load. We use it to test the tools we then use for our clients.",
         "tags": ["Website", "Multilingual"],
         "cover_alt": "mcomper.at preview"
       }
     },
     "cta": {
       "title": "Your project could be the next one on this list.",
-      "description": "Tell us about your business in a few lines: we get back to you within 24 hours, with questions rather than an automated quote.",
+      "description": "Tell us about your business in a few lines. We reply within one working day.",
       "button": "Talk about my project"
     },
     "eyebrow": "[ Work · {count} ]",
@@ -59,7 +59,7 @@
   },
   "dailyFortune": {
     "title": "Daily Fortune",
-    "subtitle": "Our studio's own app: a short message every day to start the day well.",
+    "subtitle": "The studio's own app: a short message every day to start the day on the right foot.",
     "cta": {
       "title": "Try Daily Fortune",
       "description": "Download the app and get a new message every day.",
@@ -85,7 +85,7 @@
     "result": {
       "label": "Result",
       "title": "Our first app, live",
-      "description": "Daily Fortune is available on the App Store and Google Play, and its users get a new message every day. For you, it means we know the whole journey, from the first idea to publication on the stores."
+      "description": "Daily Fortune is available on the App Store and Google Play, and its users get a new message every day. For you, it shows that we can take an app from the first idea all the way to publication."
     }
   },
   "mcomperat": {
@@ -100,12 +100,12 @@
     "for_whom": {
       "label": "Who it's for",
       "title": "An online résumé, and our testing ground",
-      "description": "mcomper.at is the online résumé of Matthieu Compérat, your contact at Cosmic Studio: his background and expertise on a single page. It is also the testing ground for the tools we then use for our clients. What works here makes its way into your project."
+      "description": "mcomper.at is the online résumé of Matthieu Compérat, your contact at Cosmic Studio: his background and skills on a single page. It is also where we test the tools we then use for our clients."
     },
     "what_we_did": {
       "label": "What we did",
       "title": "A clear, fast résumé in two languages",
-      "description": "We built a site that is easy to read and easy to update, and we use it to try out our working methods before offering them to clients.",
+      "description": "We built a site that is easy to read and easy to update, which also lets us try out our working methods before applying them to your projects.",
       "items": {
         "two_languages": "Available in French and English, with texts written for each language",
         "found_on_google": "Pages prepared to be found on Google",
@@ -117,7 +117,7 @@
     "result": {
       "label": "Result",
       "title": "Tested here, then used for you",
-      "description": "Matthieu has a clear, bilingual and fast online résumé. For the studio, it is where we refined how we handle several languages, how pages appear on Google and how AI-assisted texts get reviewed, before using it all on our clients' sites. Every change also goes through automatic checks, to catch mistakes."
+      "description": "Matthieu has a clear, bilingual and fast online résumé. It is where we worked out how to handle several languages, how pages appear on Google and how to review texts drafted with AI, before using all of this on our clients' sites. Every change also goes through automatic checks, to catch mistakes."
     }
   },
   "choeurDesPaysduMontBlanc": {

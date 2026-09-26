@@ -150,7 +150,7 @@ Page de capture de prospects où un visiteur demande une maquette gratuite de so
 
 ### Page SEO locale (`/local`)
 
-Page d'atterrissage locale ciblant les recherches géolocalisées (ex. `/en/web-mobile-developer-annecy-geneva`, `/fr/developpeur-web-mobile-annecy-geneve`). Elle liste les zones desservies et renvoie vers Services & tarifs, les projets et la page contact.
+Page d'atterrissage locale ciblant les recherches géolocalisées (ex. `/en/web-mobile-developer-annecy-geneva`, `/fr/developpeur-web-mobile-annecy-geneve`). Elle s'ouvre sur une introduction qui suit la région du visiteur (base de Genève pour la Suisse, Annecy sinon), liste les quatre zones d'intervention, montre trois projets récents et se termine par une invitation à parler de son projet.
 
 ### Pages légales
 
@@ -158,13 +158,15 @@ Page d'atterrissage locale ciblant les recherches géolocalisées (ex. `/en/web-
 - **Mentions légales** (`/legal-notice`) : éditeur, hébergement, propriété intellectuelle, et les déclarations sur l'usage de l'intelligence artificielle
 - **Conditions générales de vente** (`/terms`) : durée de l'abonnement, options et modalités d'annulation, accessibles depuis le pied de page
 
+Les trois partagent la mise en page `LegalDocument` : une introduction, puis une carte par section.
+
 ### Page introuvable
 
 Page 404 localisée avec des liens vers la page d'accueil et vers la page contact. Les chemins inconnus sous un préfixe de locale affichent cette page.
 
 ### Pages retirées
 
-Les anciennes pages `/journey` (expérience 3D), `/offers` et `/pricing` n'existent plus. Elles redirigent de façon permanente (301) vers Services & tarifs dans toutes les locales, y compris depuis leurs anciens slugs localisés (voir `lib/redirects.ts` et `next.config.ts`).
+Les anciennes pages `/journey` (expérience 3D), `/offers` et `/pricing` n'existent plus. Elles redirigent de façon permanente vers Services & tarifs dans toutes les locales, y compris depuis leurs anciens slugs localisés : les offres vers les colonnes de tarifs (`#pricing`), les tarifs vers le simulateur (`#simulator`) et le parcours vers le haut de la page (voir `lib/redirects.ts` et `next.config.ts`).
 
 ### Fonctionnalités techniques
 
@@ -397,14 +399,18 @@ Pour des consignes de test détaillées, voir [`__tests__/TESTING.md`](./__tests
 │   ├── ...           # Autres composants (ProcessTimeline, ServicesGrid, StatusBar, CookieConsent…)
 │   └── icons/        # Icônes SVG réutilisables
 ├── design-system/    # Primitives UI réutilisables
-│   ├── button.tsx    # Button avec variantes CVA
+│   ├── button.tsx    # Button avec variantes CVA (primary, ghost, link…)
 │   ├── pill.ts       # Styles de liens en pilule et constantes de mise en page partagées
+│   ├── eyebrow.tsx   # Étiquette mono de section avec le point orange
+│   ├── chip.tsx      # Étiquette mono bordée
+│   ├── hairline-grid.tsx # Grille de cartes séparées par des filets de 1 px
+│   ├── field.tsx     # Cadre des champs de formulaire et styles des contrôles
 │   ├── slider.tsx    # Slider utilisé par le simulateur de prix
 │   └── lib/utils.ts  # Helper `cn` (clsx + tailwind-merge)
 ├── data/             # Contenu statique (liste et ordre des études de cas)
 ├── lib/              # Helpers partagés
 │   ├── pricing/      # Délai de remise du code (offers.ts) et simulation transmise au formulaire de maquette gratuite
-│   ├── redirects.ts  # Redirections 301 des pages retirées vers Services & tarifs
+│   ├── redirects.ts  # Redirections permanentes des pages retirées vers Services & tarifs
 │   ├── region.ts     # Région (France ou Suisse) et devise
 │   ├── resend.ts     # Client email Resend
 │   └── validation/   # Schémas de validation des formulaires

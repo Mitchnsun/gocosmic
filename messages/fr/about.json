@@ -1,18 +1,18 @@
 {
   "meta": {
     "title": "À propos · Cosmic Studio, studio web à Genève & Annecy",
-    "description": "Découvrez Cosmic Studio, studio web et mobile entre Genève et Annecy, et Matthieu Compérat, votre interlocuteur du premier échange au suivi."
+    "description": "Cosmic Studio est un studio web et mobile entre Genève et Annecy, tenu par Matthieu Compérat, qui suit votre projet du premier échange jusqu'après la mise en ligne."
   },
   "about": {
     "eyebrow": "[ À propos ]",
-    "title": "Un studio à taille humaine, <em>au service de votre visibilité.</em>",
-    "lead": "Cosmic Studio, c'est Matthieu Compérat : un développeur installé à Chêne-Bougeries, qui construit des sites et des applications pour les artisans, les associations et les indépendants, de Genève à Annecy.",
+    "title": "Un petit studio, <em>pour que vos clients vous trouvent.</em>",
+    "lead": "Cosmic Studio, c'est Matthieu Compérat, développeur installé à Chêne-Bougeries. Il crée des sites et des applications pour les artisans, les associations et les indépendants, de Genève à Annecy.",
     "path": {
       "eyebrow": "[ Parcours ]",
-      "title": "Quinze ans de code, <em>un seul interlocuteur.</em>",
+      "title": "Quinze ans de développement, <em>un seul interlocuteur.</em>",
       "paragraphs": [
-        "Originaire de Duingt, au bord du lac d'Annecy, Matthieu développe des sites et des applications depuis une quinzaine d'années. D'abord pour de grandes entreprises, où il a appris à construire des outils fiables, rapides et accessibles à tous ; puis pour des gens dont il connaît le prénom.",
-        "Cosmic Studio est né de ce second choix : mettre ce savoir-faire au service de ceux qui ont un métier, et pas le temps d'en apprendre un second. Vous parlez à la personne qui construit votre site, du premier appel au suivi mois après mois."
+        "Originaire de Duingt, au bord du lac d'Annecy, Matthieu développe des sites et des applications depuis une quinzaine d'années. Il a d'abord travaillé pour de grandes entreprises, où il a appris à construire des outils fiables et accessibles à tous.",
+        "Avec Cosmic Studio, il met cette expérience au service des artisans, des associations et des indépendants. Vous parlez à la personne qui construit votre site, du premier appel jusqu'au suivi, mois après mois."
       ],
       "zones": [
         "Chêne-Bougeries · base",
@@ -24,31 +24,31 @@
       "linkedin_aria": "Profil LinkedIn de Matthieu Compérat (s'ouvre dans un nouvel onglet)"
     },
     "why": {
-      "eyebrow": "[ Pourquoi eux ]",
+      "eyebrow": "[ Pourquoi ce choix ]",
       "title": "Les artisans et les associations <em>méritent mieux qu'un modèle tout fait.</em>",
-      "lead": "Les grandes agences visent les grandes entreprises ; les créateurs de sites vous laissent seul face à l'outil. Cosmic Studio s'adresse à ceux qui sont entre les deux.",
+      "lead": "Les grandes agences travaillent surtout pour les grandes entreprises, et les créateurs de sites en ligne vous laissent vous débrouiller avec l'outil. Cosmic Studio s'adresse à tous ceux qui se trouvent entre les deux.",
       "reasons": {
         "found": {
           "title": "Être trouvé près de chez soi",
-          "description": "Vos clients vous cherchent sur leur téléphone, à quelques kilomètres. Un site rapide et bien construit fait la différence sur Google."
+          "description": "Vos clients vous cherchent sur leur téléphone, à quelques kilomètres de chez vous. Un site rapide et bien construit remonte mieux sur Google."
         },
         "price": {
           "title": "Un prix qui suit votre activité",
-          "description": "Un abonnement dès {price} par mois, qui grandit avec vous, plutôt qu'un gros investissement de départ."
+          "description": "Un abonnement dès {price} par mois, qui évolue avec vous, plutôt qu'un gros investissement de départ."
         },
         "answer": {
           "title": "Quelqu’un qui répond",
-          "description": "Pas de centre d'assistance : la personne qui a construit votre site vous répond, en général dans la journée."
+          "description": "Pas de centre d'appels : c'est la personne qui a construit votre site qui vous répond, en général dans la journée."
         },
         "ai": {
-          "title": "L'IA quand elle aide, jamais à votre place",
-          "description": "Nous utilisons l'intelligence artificielle pour aller plus vite, toujours avec une relecture humaine. Le détail figure dans nos mentions légales."
+          "title": "L'IA pour gagner du temps, toujours relue",
+          "description": "Nous utilisons l'intelligence artificielle pour aller plus vite, et une personne relit tout ce qu'elle produit. Les détails figurent dans nos mentions légales."
         }
       }
     },
     "cta": {
       "title": "Travaillons ensemble.",
-      "description": "Racontez-nous votre activité en quelques lignes : nous revenons vers vous sous 24 h, avec des questions plutôt qu'un devis automatique.",
+      "description": "Présentez-nous votre activité en quelques lignes. Matthieu vous répond sous 24 h ouvrées.",
       "button": "Parler de mon projet"
     }
   }

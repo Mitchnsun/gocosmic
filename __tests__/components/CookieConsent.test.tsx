@@ -26,7 +26,7 @@ describe('CookieConsent', () => {
   it('loads analytics after accepting consent', async () => {
     renderWithProvider(<CookieConsent />);
 
-    fireEvent.click(await screen.findByRole('button', { name: 'Accept analytics' }));
+    fireEvent.click(await screen.findByRole('button', { name: 'Accept' }));
 
     await waitFor(() => expect(screen.getByTestId('vercel-analytics')).toBeInTheDocument());
     expect(window.localStorage.getItem('gocosmic.analytics-consent')).toBe('accepted');
@@ -94,7 +94,7 @@ describe('CookieConsent', () => {
   it('saves a customized analytics opt-in', async () => {
     renderWithProvider(<CookieConsent />);
 
-    fireEvent.click(await screen.findByRole('button', { name: 'Customize' }));
+    fireEvent.click(await screen.findByRole('button', { name: 'Customise' }));
     fireEvent.click(screen.getByRole('checkbox', { name: /Audience measurement/ }));
     fireEvent.click(screen.getByRole('button', { name: 'Save my choice' }));
 

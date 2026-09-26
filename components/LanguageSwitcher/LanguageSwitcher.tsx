@@ -7,7 +7,8 @@ import { useEffect, useRef, useState, useTransition } from 'react';
 
 import { MOBILE_MENU_DURATION_MS, MOBILE_MENU_STAGGER_MS } from '@/components/Header/constants';
 import { cn } from '@/design-system/lib/utils';
-import { usePathname, useRouter } from '@/i18n/navigation';
+
+import { useSwitchLocale } from './useSwitchLocale';
 
 const languages = {
   en: { name: 'English', flag: '🇬🇧' },
@@ -26,9 +27,8 @@ const LanguageSwitcher = ({ onOpen }: LanguageSwitcherProps = {}) => {
   const [isPending, startTransition] = useTransition();
   const menuRef = useRef<HTMLDivElement>(null);
   const t = useTranslations('navigation');
-  const router = useRouter();
   const locale = useLocale();
-  const pathname = usePathname();
+  const switchLocale = useSwitchLocale();
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -54,7 +54,7 @@ const LanguageSwitcher = ({ onOpen }: LanguageSwitcherProps = {}) => {
     startTransition(() => {
       // For more robust locale switching, especially with default locale,
       // we ensure the router properly handles the navigation
-      router.push(pathname, { locale: newLocale });
+      switchLocale(newLocale);
       setIsOpen(false);
     });
   };

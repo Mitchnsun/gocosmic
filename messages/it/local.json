@@ -11,7 +11,7 @@
         "ch": "Cosmic Studio ha sede a Chêne-Bougeries. Creiamo siti e app per artigiani, associazioni e liberi professionisti di Ginevra e della Svizzera romanda, e veniamo a trovarti di persona.",
         "fr": "Cosmic Studio lavora tra Annecy e Ginevra. Creiamo siti e app per artigiani, associazioni e liberi professionisti dell'Alta Savoia, e veniamo a trovarti di persona."
       },
-      "primary": "Parlare del mio progetto",
+      "primary": "Parliamo del tuo progetto",
       "secondary": "Vedi servizi e prezzi"
     },
     "zones": {
@@ -37,14 +37,14 @@
       }
     },
     "projects": {
-      "eyebrow": "[ Lavori ]",
+      "eyebrow": "[ Realizzazioni ]",
       "title": "Alcuni siti <em>già online.</em>",
       "all": "Tutti i progetti"
     },
     "cta": {
-      "title": "Un progetto vicino a te?",
+      "title": "Un progetto dalle tue parti?",
       "description": "Raccontaci in poche righe di cosa ti occupi. Ti rispondiamo entro un giorno lavorativo per fissare un primo incontro.",
-      "button": "Parlare del mio progetto"
+      "button": "Parliamo del tuo progetto"
     }
   }
 }

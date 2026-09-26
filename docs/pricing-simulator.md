@@ -58,7 +58,9 @@ Two rules the tables alone do not carry:
   saying that anything beyond it is quoted personally.
 
 Both currencies quote the same number — only the symbol changes (`formatAmount`), matching
-how the rest of the site handles `eur` / `chf` (see `lib/region.ts`).
+how the rest of the site handles `eur` / `chf` (see `lib/region.ts`). Pages pass their locale
+so prices follow the language's conventions (`10 €` in French, `€10` in English, `CHF 10`…);
+without a locale, as in the studio's internal emails, the compact `10€` form is kept.
 
 ---
 

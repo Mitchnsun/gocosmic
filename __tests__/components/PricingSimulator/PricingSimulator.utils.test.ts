@@ -102,4 +102,11 @@ describe('formatAmount', () => {
     expect(formatAmount(10, 'eur')).toBe('10€');
     expect(formatAmount(10, 'chf')).toBe('10 CHF');
   });
+
+  it('follows the conventions of the page language when given one', () => {
+    expect(formatAmount(10, 'eur', 'fr')).toMatch(/^10\s€$/);
+    expect(formatAmount(10, 'eur', 'en')).toBe('€10');
+    expect(formatAmount(3500, 'chf', 'fr')).toMatch(/^3\s500\sCHF$/);
+    expect(formatAmount(10, 'chf', 'en')).toMatch(/^CHF\s10$/);
+  });
 });

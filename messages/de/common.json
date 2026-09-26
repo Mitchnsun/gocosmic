@@ -8,7 +8,7 @@
   },
   "meta": {
     "title": "Website erstellen lassen · Genf & Annecy | Cosmic Studio",
-    "description": "Websites für Handwerksbetriebe, Vereine und Selbstständige in Genf und Hochsavoyen. Werden Sie bei Google gefunden, mit einem Ansprechpartner, der bleibt."
+    "description": "Websites für Handwerksbetriebe, Vereine und Selbstständige in Genf, Annecy und Hochsavoyen. Eine Website, die man bei Google findet, und ein Mensch, der sich auch nach dem Start darum kümmert."
   },
   "language": {
     "current": "Aktuelle Sprache: {language}",
@@ -28,10 +28,10 @@
   },
   "cookieConsent": {
     "title": "Datenschutzeinstellungen",
-    "description": "Wir verwenden Vercel Analytics zur Reichweitenmessung nur nach deiner Zustimmung. Eine Ablehnung beeinträchtigt die Website nicht.",
+    "description": "Mit Ihrer Zustimmung messen wir die Besucherzahlen der Website mit Vercel Analytics. Wenn Sie ablehnen, funktioniert die Website genauso.",
     "analyticsTitle": "Reichweitenmessung",
-    "analyticsDescription": "Anonyme Statistiken zu Seitenaufrufen, mit denen wir die Website verbessern. Cosmic Studio lädt keine Werbetracker.",
-    "accept": "Analytics akzeptieren",
+    "analyticsDescription": "Anonyme Statistiken zu den aufgerufenen Seiten, damit wir die Website verbessern können. Werbetracker setzen wir keine ein.",
+    "accept": "Akzeptieren",
     "refuse": "Ablehnen",
     "customize": "Anpassen",
     "save": "Auswahl speichern",

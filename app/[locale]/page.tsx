@@ -19,6 +19,7 @@ import { WhyStudio } from '@/components/WhyStudio';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, ghostPill, SECTION_Y } from '@/design-system/pill';
 import { Link } from '@/i18n/navigation';
+import { CODE_HANDOVER_MONTHS } from '@/lib/pricing/offers';
 import { getCurrency } from '@/lib/region';
 import { getRegion } from '@/lib/region.server';
 
@@ -36,7 +37,7 @@ export default async function Home() {
   const tProjects = await getTranslations('projectsList');
   const locale = await getLocale();
   const region = await getRegion();
-  const startingPrice = formatAmount(BASE_PRICE, getCurrency(region));
+  const startingPrice = formatAmount(BASE_PRICE, getCurrency(region), locale);
 
   const processSteps = homepageSteps.map((step) => ({
     ...step,
@@ -77,7 +78,7 @@ export default async function Home() {
         lead={t('why.lead')}
         reasons={REASONS.map((reason) => ({
           title: t(`why.reasons.${reason}.title`),
-          description: t(`why.reasons.${reason}.description`),
+          description: t(`why.reasons.${reason}.description`, { months: String(CODE_HANDOVER_MONTHS) }),
         }))}
       />
 

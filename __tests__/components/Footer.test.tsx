@@ -18,14 +18,14 @@ describe('Footer Component', () => {
 
     expect(getByRole('contentinfo')).toBeInTheDocument();
     expect(getByText('Cosmic Studio')).toHaveTextContent('Cosmic Studio.');
-    expect(getByText(/^Web and mobile studio between Geneva and Annecy\./)).toBeInTheDocument();
+    expect(getByText(/^Web and mobile development studio between Geneva and Annecy\./)).toBeInTheDocument();
     expect(getByRole('link', { name: 'Chêne-Bougeries · Annecy' })).toHaveAttribute('href', '/local');
     expect(getByText(/gocosmic\.dev ·/)).toBeInTheDocument();
   });
 
   it('claims the Geneva base for Swiss visitors', () => {
     const { getByText } = renderFooter('ch');
-    expect(getByText(/^Web and mobile studio in Geneva\./)).toBeInTheDocument();
+    expect(getByText(/^Web and mobile development studio in Geneva\./)).toBeInTheDocument();
   });
 
   it('lists the studio pages, About included', () => {
@@ -51,7 +51,7 @@ describe('Footer Component', () => {
 
   it('shows the language pill with the current locale first and links to the others', () => {
     const { getByRole } = renderFooter();
-    const languages = getByRole('navigation', { name: 'Switch Language' });
+    const languages = getByRole('navigation', { name: 'Switch language' });
     const items = within(languages).getAllByRole('listitem');
 
     expect(items).toHaveLength(5);

@@ -2,35 +2,35 @@
   "projectsList": {
     "meta": {
       "title": "Referenzen · Websites und Apps | Cosmic Studio",
-      "description": "Websites und Apps von Cosmic Studio für Vereine, einen Sportclub und Selbstständige, in Genf und in Hochsavoyen."
+      "description": "Websites und Apps von Cosmic Studio für einen Chor, einen Triathlonverein und Selbstständige, in Genf und Hochsavoyen."
     },
-    "title": "Websites und Apps, <em>die wirklich etwas bringen.</em>",
-    "subtitle": "Eine Auswahl dessen, was wir geliefert haben: für unsere Kundschaft und für uns selbst. Jede Seite zeigt, was wir gemacht haben, für wen und was sich dadurch verändert hat.",
+    "title": "Websites und Apps, <em>die täglich genutzt werden.</em>",
+    "subtitle": "Eine Auswahl von Projekten für unsere Kundschaft und für das Studio. Jede Seite erklärt, für wen wir gearbeitet haben, was wir gemacht haben und was sich dadurch verändert hat.",
     "items": {
       "dailyFortune": {
         "title": "Daily Fortune",
-        "description": "Jeden Morgen eine kurze Nachricht für einen guten Start in den Tag. Unsere erste App im App Store und bei Google Play.",
+        "description": "Jeden Morgen eine kurze Nachricht für einen guten Start in den Tag. Es ist unsere erste App, erhältlich im App Store und bei Google Play.",
         "client": "App des Studios",
         "tags": ["Smartphone-App", "iOS · Android", "Studio"],
         "cover_alt": "App-Symbol von Daily Fortune"
       },
       "mcomperat": {
         "title": "mcomper.at",
-        "description": "Ein Online-Lebenslauf in mehreren Sprachen, der schnell lädt. Hier erproben wir die Werkzeuge, die wir danach für Sie einsetzen.",
+        "description": "Ein Online-Lebenslauf auf Französisch und Englisch, der schnell lädt. Daran testen wir die Werkzeuge, die wir danach für unsere Kundschaft einsetzen.",
         "client": "Persönliches Projekt",
         "tags": ["Website", "Mehrsprachig"],
         "cover_alt": "Vorschau der Website mcomper.at"
       },
       "pscSupersprint": {
         "title": "PSC Supersprint",
-        "description": "Die Rennergebnisse live, die das Publikum während des Wettkampfs auf dem Handy abrufen kann.",
+        "description": "Live-Rennergebnisse, die das Publikum während des Wettkampfs auf dem Handy abrufen kann.",
         "client": "Triathlonverein",
         "tags": ["Web-App", "Live", "Sport"],
         "cover_alt": "Vorschau von PSC Supersprint"
       },
       "choeurDesPaysduMontBlanc": {
         "title": "Chœur des Pays du Mont Blanc",
-        "description": "Die Website des Chors: kommende Konzerte, Repertoire und alles zum Mitsingen, gut lesbar auf dem Handy wie am Computer.",
+        "description": "Die Website des Chors: kommende Konzerte, Repertoire und Informationen für alle, die mitsingen möchten, gut lesbar auf dem Handy wie am Computer.",
         "client": "Verein · Hochsavoyen",
         "tags": ["Präsentationswebsite", "Kalender", "Verein"],
         "cover_alt": "Logo des Chœur des Pays du Mont Blanc"
@@ -38,7 +38,7 @@
     },
     "cta": {
       "title": "Ihr Projekt könnte das nächste auf dieser Liste sein.",
-      "description": "Erzählen Sie uns in ein paar Zeilen von Ihrem Betrieb: Wir melden uns innerhalb von 24 Stunden, mit Fragen statt mit einem automatischen Angebot.",
+      "description": "Erzählen Sie uns in ein paar Zeilen, was Sie machen. Wir antworten innerhalb eines Werktags.",
       "button": "Mein Projekt besprechen"
     },
     "eyebrow": "[ Referenzen · {count} ]",
@@ -69,7 +69,7 @@
     "for_whom": {
       "label": "Für wen",
       "title": "Jeden Morgen ein kleiner Anstoß",
-      "description": "Daily Fortune ist kein Kundenprojekt, sondern die eigene App des Studios, von uns gestaltet und veröffentlicht. Sie richtet sich an alle, die morgens ein wenig Schwung suchen, einen Satz, der Orientierung gibt, oder eine Nachricht zum Teilen."
+      "description": "Daily Fortune ist kein Kundenprojekt. Wir haben die App für das Studio selbst gestaltet und veröffentlicht. Sie richtet sich an alle, die morgens ein wenig Schwung suchen, einen Satz, der sie auf Kurs hält, oder eine Nachricht zum Teilen."
     },
     "what_we_did": {
       "label": "Was wir gemacht haben",
@@ -77,7 +77,7 @@
       "description": "Wir haben alles selbst gemacht, von der ersten Idee bis zur Veröffentlichung in den App-Stores.",
       "items": {
         "daily_message": "Jeden Tag eine neue Nachricht: ein motivierendes Zitat, eine positive Affirmation oder ein Spruch wie aus dem Glückskeks",
-        "ai_messages": "Abwechslungsreiche Nachrichten, mit Hilfe von KI erstellt, die vom Alltag und von den Wünschen aller erzählen",
+        "ai_messages": "Abwechslungsreiche Nachrichten, mithilfe von KI erstellt, die vom Alltag und von den Wünschen der Menschen erzählen",
         "clean_design": "Ein aufgeräumter Bildschirm, der schnell reagiert, mit flüssigen Animationen",
         "stores": "Veröffentlicht im App Store und bei Google Play, für iPhone und Android"
       }
@@ -85,12 +85,12 @@
     "result": {
       "label": "Ergebnis",
       "title": "Unsere erste App ist online",
-      "description": "Daily Fortune ist im App Store und bei Google Play erhältlich, und wer die App nutzt, erhält jeden Tag eine neue Nachricht. Für Sie bedeutet das: Wir kennen den ganzen Weg, von der Idee bis zur Veröffentlichung in den App-Stores."
+      "description": "Daily Fortune ist im App Store und bei Google Play erhältlich, und wer die App nutzt, erhält jeden Tag eine neue Nachricht. Für Sie ist das der Beweis, dass wir eine App von der Idee bis zur Veröffentlichung umsetzen können."
     }
   },
   "mcomperat": {
     "title": "mcomper.at",
-    "subtitle": "Der Online-Lebenslauf von Matthieu Compérat, und das Testfeld für die Werkzeuge, die wir danach für unsere Kundschaft einsetzen.",
+    "subtitle": "Der Online-Lebenslauf von Matthieu Compérat und das Testfeld für die Werkzeuge, die wir danach für unsere Kundschaft einsetzen.",
     "cta": {
       "title": "Entdecken Sie mcomper.at",
       "description": "Sehen Sie sich den Online-Lebenslauf von Matthieu Compérat an, auf Französisch oder Englisch.",
@@ -100,24 +100,24 @@
     "for_whom": {
       "label": "Für wen",
       "title": "Ein Online-Lebenslauf und unser Testfeld",
-      "description": "mcomper.at ist der Online-Lebenslauf von Matthieu Compérat, Ihrem Ansprechpartner bei Cosmic Studio: sein Werdegang und seine Erfahrung auf einer einzigen Seite. Es ist auch das Testfeld für die Werkzeuge, die wir danach für unsere Kundschaft einsetzen. Was hier funktioniert, kommt Ihren Projekten zugute."
+      "description": "mcomper.at ist der Online-Lebenslauf von Matthieu Compérat, Ihrem Ansprechpartner bei Cosmic Studio: sein Werdegang und seine Kompetenzen auf einer einzigen Seite. Hier testen wir auch die Werkzeuge, die wir danach für unsere Kundschaft einsetzen."
     },
     "what_we_did": {
       "label": "Was wir gemacht haben",
       "title": "Ein klarer, schneller Lebenslauf in zwei Sprachen",
-      "description": "Wir haben eine Website gestaltet, die leicht zu lesen und einfach weiterzuentwickeln ist, und erproben dort unsere Arbeitsweisen, bevor wir sie unserer Kundschaft anbieten.",
+      "description": "Wir haben eine Website gestaltet, die leicht zu lesen und einfach zu erweitern ist. Dort erproben wir auch unsere Arbeitsweisen, bevor wir sie bei Ihren Projekten anwenden.",
       "items": {
         "two_languages": "Eine Website auf Französisch und Englisch, mit eigenen Texten für jede Sprache",
         "found_on_google": "Seiten, die darauf ausgelegt sind, bei Google gefunden zu werden",
         "fast_on_phone": "Seiten, die schnell laden und auf dem Handy gut lesbar sind",
         "accessible": "Eine für alle zugängliche Website, nach bewährten Regeln gebaut",
-        "ai_with_review": "KI als Hilfe beim Schreiben und Übersetzen der Texte, die immer ein Mensch gegenliest"
+        "ai_with_review": "KI als Hilfe beim Schreiben und Übersetzen, wobei jeder Text von einem Menschen gegengelesen wird"
       }
     },
     "result": {
       "label": "Ergebnis",
       "title": "Hier getestet, dann für Sie eingesetzt",
-      "description": "Matthieu hat einen klaren, zweisprachigen und schnellen Online-Lebenslauf. Für das Studio ist es der Ort, an dem wir den Umgang mit mehreren Sprachen, die Darstellung bei Google und das Gegenlesen von Texten, die mit KI entstanden sind, eingespielt haben, bevor wir all das auf den Websites unserer Kundschaft einsetzen. Jede Änderung durchläuft dort außerdem automatische Prüfungen, damit sich keine Fehler einschleichen."
+      "description": "Matthieu hat einen klaren, zweisprachigen und schnellen Online-Lebenslauf. Hier haben wir erarbeitet, wie wir mehrere Sprachen verwalten, wie Seiten bei Google erscheinen und wie wir mit KI verfasste Texte gegenlesen, bevor wir all das auf den Websites unserer Kundschaft einsetzen. Jede Änderung durchläuft außerdem automatische Prüfungen, damit sich keine Fehler einschleichen."
     }
   },
   "choeurDesPaysduMontBlanc": {
@@ -139,7 +139,7 @@
       "title": "Eine Website für Chormitglieder und Publikum",
       "description": "Wir haben auf einer einzigen Website alles zusammengeführt, was Chormitglieder, Musikbegeisterte und die breite Öffentlichkeit suchen, gut lesbar am Computer wie auf dem Handy.",
       "items": {
-        "concerts": "Ein Konzertkalender mit Daten, Orten und Programm",
+        "concerts": "Ein Konzertkalender mit Terminen, Orten und Programm",
         "repertoire": "Die Vorstellung des Repertoires, vom Barock bis zur zeitgenössischen klassischen Musik",
         "join": "Die Probenzeiten und alle Informationen, um im Chor mitzusingen",
         "news": "Neuigkeiten und Veranstaltungen aus dem Chorleben"
@@ -147,8 +147,8 @@
     },
     "result": {
       "label": "Ergebnis",
-      "title": "Ein Ort, um dem Chor zu folgen",
-      "description": "Die Website ist zum wichtigsten Treffpunkt des Chors geworden: Die Mitglieder finden dort Probenzeiten und Neuigkeiten, das Publikum entdeckt die nächsten Konzerte, und wer mitsingen möchte, weiß, wie es geht."
+      "title": "Alles rund um den Chor an einem Ort",
+      "description": "Die Website ist zum wichtigsten Treffpunkt des Chors geworden: Die Mitglieder finden dort Probenzeiten und Neuigkeiten, das Publikum entdeckt die nächsten Konzerte, und wer mitsingen möchte, erfährt, wie man dem Chor beitritt."
     }
   }
 }

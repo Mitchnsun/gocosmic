@@ -4,7 +4,7 @@
       "eyebrow": "Studio web & mobile · Genève",
       "title": "Votre activité mérite d'être",
       "endWords": ["vue.", "trouvée.", "choisie."],
-      "subtitle": "Cosmic Studio crée des sites et des applications pour les artisans, les associations et les indépendants. Un site clair, pensé pour être trouvé sur Google, et un interlocuteur qui reste après la mise en ligne.",
+      "subtitle": "Cosmic Studio crée des sites et des applications pour les artisans, les associations et les indépendants. Nous faisons en sorte qu'on vous trouve sur Google, et nous restons joignables une fois le site en ligne.",
       "cta": "Go Cosmic",
       "secondary": "Voir les tarifs",
       "facts": {
@@ -28,93 +28,93 @@
     },
     "audience": {
       "eyebrow": "[ Pour qui · 03 ]",
-      "title": "Ceux qui ont un métier, <em>pas le temps d'en apprendre un second.</em>",
+      "title": "Pour ceux qui ont déjà un métier <em>et pas le temps d'en apprendre un autre.</em>",
       "items": {
         "artisans": {
           "title": "Artisans",
-          "description": "Menuisier, plombier, coiffeuse, traiteur. Une page qui dit ce que vous faites, où, et comment vous joindre, et que l'on trouve quand on cherche votre métier près de chez soi."
+          "description": "Menuisier, plombier, coiffeuse, traiteur… Un site qui dit ce que vous faites, où vous travaillez et comment vous joindre, et qu'on trouve quand on cherche votre métier près de chez soi."
         },
         "associations": {
           "title": "Associations",
-          "description": "Chorale, club sportif, collectif. Agenda des événements, adhésions, actualités : de quoi faire connaître vos activités et attirer de nouveaux membres."
+          "description": "Chorale, club sportif, collectif… Vos événements, les adhésions et les nouvelles de l'association au même endroit, pour faire connaître vos activités et accueillir de nouveaux membres."
         },
         "independents": {
           "title": "Indépendants qui se lancent",
-          "description": "Thérapeute, consultant, photographe. Un site professionnel dès le premier jour pour vous faire connaître, et un tarif qui grandit avec votre activité."
+          "description": "Thérapeute, consultante, photographe… Un site professionnel dès vos débuts, à un prix qui suit le développement de votre activité."
         }
       }
     },
     "why": {
       "eyebrow": "[ Pourquoi un studio ]",
-      "title": "Wix et WordPress font le travail. <em>Jusqu'au jour où ils ne le font plus.</em>",
-      "lead": "Ces outils sont pratiques au départ. Puis il faut une extension, puis une mise à jour casse la page, puis la facture grimpe. Nous écrivons le code nous-mêmes : le site est à vous, il est rapide, et il évolue sans repartir de zéro.",
+      "title": "Wix et WordPress, c'est pratique <em>au début.</em>",
+      "lead": "Ensuite, il faut une extension payante, une mise à jour casse une page, l'abonnement augmente. Nous écrivons le code nous-mêmes : votre site reste rapide et peut évoluer sans repartir de zéro.",
       "reasons": {
         "ownership": {
           "title": "Vous êtes propriétaire",
-          "description": "Vos contenus et votre nom de domaine sont à vous dès le départ. Le code vous revient au terme de la durée minimale d'abonnement, ou plus tôt contre des frais de cession."
+          "description": "Vos textes, vos photos et votre nom de domaine vous appartiennent dès le premier jour. Le code vous est cédé après {months} mois d'abonnement, ou avant contre des frais de cession."
         },
         "fast": {
-          "title": "Rapide et bien référencé",
-          "description": "Pas de thème lourd, pas d'extension : des pages qui s'affichent vite sur téléphone, ce que Google récompense."
+          "title": "Rapide, et bien placé sur Google",
+          "description": "Sans thème lourd ni extensions, vos pages s'affichent vite sur téléphone, et Google en tient compte dans ses résultats."
         },
         "person": {
-          "title": "Une personne, pas un ticket",
-          "description": "Vous parlez à Matthieu, qui connaît votre site parce qu'il l'a construit."
+          "title": "Quelqu'un qui vous répond",
+          "description": "Vous parlez à Matthieu, qui connaît votre site puisqu'il l'a construit."
         },
         "grows": {
-          "title": "Ça grandit avec vous",
-          "description": "Une page aujourd'hui, une boutique ou une application demain, sur la même base."
+          "title": "Un site qui suit votre activité",
+          "description": "Une page aujourd'hui, une boutique ou une application plus tard, sans tout reconstruire."
         }
       }
     },
     "process": {
       "eyebrow": "[ Processus · 04 ]",
-      "title": "Quatre étapes. <em>Sans surprise.</em>",
-      "subtitle": "De la première discussion à la mise en ligne, vous savez toujours où en est votre projet.",
+      "title": "Quatre étapes, <em>sans surprise.</em>",
+      "subtitle": "De la première discussion à la mise en ligne, vous savez où en est votre projet.",
       "discovery": {
         "label": "T-3 · Rencontre",
-        "title": "On se parle",
-        "description": "Vingt minutes au téléphone ou autour d'un café, à Genève ou à Annecy. Votre métier, vos clients, ce que le site doit faire pour vous."
+        "title": "On fait connaissance",
+        "description": "Vingt minutes au téléphone ou autour d'un café, à Genève ou à Annecy, pour parler de votre métier, de vos clients et de ce que le site doit vous apporter."
       },
       "design": {
         "label": "T-2 · Maquette",
-        "title": "Vous voyez avant de payer",
-        "description": "Une maquette de votre page d'accueil, avec vos couleurs et vos mots. Gratuite et sans engagement : vous décidez ensuite."
+        "title": "Vous voyez avant de décider",
+        "description": "Nous préparons une maquette de votre page d'accueil, avec vos couleurs et vos textes. Elle est gratuite et ne vous engage à rien."
       },
       "build": {
         "label": "T-1 · Réalisation",
-        "title": "On construit",
-        "description": "De deux à six semaines selon le projet. Vous suivez l'avancement sur un lien privé, vous commentez, on ajuste."
+        "title": "Nous construisons le site",
+        "description": "Comptez deux à six semaines selon le projet. Vous suivez l'avancement sur un lien privé et vous nous faites vos retours au fur et à mesure."
       },
       "launch": {
         "label": "T-0 · Mise en ligne",
-        "title": "En ligne, et on reste",
-        "description": "Mise en ligne, prise en main ensemble, puis hébergement, sauvegardes et petites modifications au fil des mois."
+        "title": "Nous restons après le lancement",
+        "description": "Nous mettons le site en ligne et vous montrons comment il fonctionne. Ensuite, nous nous occupons de l'hébergement, des sauvegardes et des petites modifications."
       }
     },
     "projects": {
       "eyebrow": "[ Réalisations ]",
-      "title": "Des projets concrets, <em>en ligne aujourd'hui.</em>",
+      "title": "Nos dernières <em>réalisations.</em>",
       "all": "Tous les projets"
     },
     "apps": {
       "eyebrow": "[ Nos apps ]",
-      "title": "Le studio construit aussi <em>ses propres produits.</em>",
-      "lead": "C'est là que nous testons les outils avant de les proposer à nos clients. Ce que nous apprenons sur nos applications se retrouve dans les vôtres.",
+      "title": "Nous développons aussi <em>nos propres applications.</em>",
+      "lead": "Nous y testons les outils avant de les utiliser pour nos clients, et ce que nous apprenons profite ensuite à vos projets.",
       "daily_fortune": {
         "name": "Daily Fortune",
         "badge": "iOS · Android",
-        "description": "Un message court chaque matin, pour bien commencer la journée. Notre première application publiée sur l'App Store et Google Play.",
+        "description": "Un court message chaque matin pour bien démarrer la journée. C'est notre première application, disponible sur l'App Store et Google Play.",
         "link": "Découvrir l'app",
         "icon_alt": "Icône de l'application Daily Fortune"
       }
     },
     "studio": {
       "eyebrow": "[ Le studio ]",
-      "title": "Un développeur à Genève, <em>pas une plateforme.</em>",
+      "title": "Derrière Cosmic Studio, <em>il y a Matthieu.</em>",
       "paragraphs": [
-        "Je m'appelle Matthieu Compérat. Originaire de Duingt, au bord du lac d'Annecy, je suis installé à Chêne-Bougeries. Je développe des sites et des applications depuis une quinzaine d'années, pour de grandes entreprises d'abord, puis pour des gens dont je connais le prénom. Cosmic Studio, c'est ce deuxième choix.",
-        "Vous m'appelez, je réponds. Vous m'écrivez, vous avez une réponse dans la journée. Le site que je vous livre, je sais exactement comment il fonctionne."
+        "Je m'appelle Matthieu Compérat. Originaire de Duingt, au bord du lac d'Annecy, je vis aujourd'hui à Chêne-Bougeries. Je développe des sites et des applications depuis une quinzaine d'années, d'abord pour de grandes entreprises. Avec Cosmic Studio, je travaille directement avec les artisans, les associations et les indépendants.",
+        "Quand vous appelez, c'est moi qui réponds, et vos messages ont une réponse dans la journée. Je connais en détail le site que je vous livre, ce qui rend chaque modification simple et rapide."
       ],
       "zones": [
         "Chêne-Bougeries · base",
@@ -125,8 +125,8 @@
     },
     "cta": {
       "button": "Parler de mon projet",
-      "description": "Racontez-nous votre activité en quelques lignes. Nous revenons vers vous sous 24 h, avec des questions, pas avec un devis automatique.",
-      "freeMockup": "Vous hésitez encore ? Demandez votre <link>maquette gratuite</link>.",
+      "description": "Présentez-nous votre activité en quelques lignes. Nous vous répondons sous 24 h ouvrées pour en parler, avant de vous proposer quoi que ce soit.",
+      "freeMockup": "Vous hésitez encore ? Commencez par une <link>maquette gratuite</link>.",
       "title": "Faisons rayonner votre activité."
     }
   }

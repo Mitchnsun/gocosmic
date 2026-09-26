@@ -2,17 +2,17 @@
   "services": {
     "meta": {
       "title": "Services & pricing · Websites in Geneva & Annecy | Cosmic Studio",
-      "description": "Showcase sites, shops, apps and ongoing care, with prices on display: a subscription from €10 a month or a quoted project. Geneva, Haute-Savoie and remote."
+      "description": "Showcase sites, online shops, apps and ongoing care, with prices on display: a subscription from €10 a month, or a quoted project. In Geneva, in Annecy and remotely."
     },
     "intro": {
       "eyebrow": "[ Services & pricing ]",
       "title": "A site that runs, <em>and someone who looks after it.</em>",
-      "lead": "Prices are on display, because you have better things to do than ask for a quote to find out whether it fits your budget. And you start with a free mockup, with no commitment."
+      "lead": "Our prices are on display, so you know straight away whether it fits your budget, without asking for a quote. And it all starts with a free mockup, with no commitment."
     },
     "simulator": {
       "eyebrow": "[ Build your plan ]",
-      "title": "Start small. <em>Add when you need it.</em>",
-      "lead": "The base: a showcase page, online and secure, for {price} a month. Options are added over time, as you need them."
+      "title": "Start simple, <em>add the rest later.</em>",
+      "lead": "The base plan covers a showcase page, online and secure, for {price} a month. Tick the options you want to see the monthly price."
     },
     "trades": {
       "eyebrow": "[ What we do · 04 ]",
@@ -20,22 +20,22 @@
       "items": {
         "showcase": {
           "title": "Showcase sites",
-          "description": "Present your business, your work and your opening hours, and get found on Google by the people nearby.",
+          "description": "To present your business, your work and your opening hours, and be found on Google by people nearby.",
           "tags": ["Craftspeople", "Associations", "Independents"]
         },
         "shops": {
           "title": "Shops & bookings",
-          "description": "Sell online, take appointments, manage memberships. No commission on your sales.",
+          "description": "To sell online, take appointments or manage memberships, with no commission on your sales.",
           "tags": ["Online sales", "Calendar", "Memberships"]
         },
         "apps": {
           "title": "Apps",
-          "description": "A business tool, an app for your customers or members, an assistant that answers frequent questions: on the web or on the phone.",
+          "description": "A tool for your team, an app for your customers or members, an assistant that answers frequent questions, on the web or on a phone.",
           "tags": ["Web", "iOS", "Android"]
         },
         "care": {
           "title": "Visibility & care",
-          "description": "Google visibility, hosting, backups, updates, changes and training: one contact who knows your site.",
+          "description": "Google visibility, hosting, backups, updates and changes, with one person to contact who knows your site.",
           "tags": ["Google", "Care", "Training"]
         }
       }
@@ -46,29 +46,29 @@
       "items": {
         "ownership": {
           "question": "Do I own the site?",
-          "answer": "Your texts, images and domain name are yours from day one. The site's code is handed over after {months} months of subscription: that is what keeps the entry price this low. Want it earlier? That is possible, for a transfer fee that depends on the remaining time. For a one-off project, the code is yours on delivery."
+          "answer": "Your texts, images and domain name belong to you from day one. The site's code is transferred to you after {months} months of subscription, which is what lets us keep the starting price this low. You can also take it over earlier, for a transfer fee based on the remaining time. For a quoted project, the code is yours on delivery."
         },
         "edit": {
           "question": "Can I edit the site myself?",
-          "answer": "The simplest way is the “Content changes included” option: you send us your texts, photos or opening hours, and it is done. Many people prefer writing to us over learning a tool. If you really want to publish yourself, that is possible: let's talk, it is a custom project."
+          "answer": "The simplest way is the “Content changes included” option: you send us your texts, photos or new opening hours, and we put them online. If you would rather publish yourself, that is possible too; we will talk it through, as it needs some specific development."
         },
         "timing": {
           "question": "How long until I am online?",
-          "answer": "For a showcase page: two to three weeks after we receive your texts and photos. For a five-page site: four to six weeks. We give you a date at the start, and we keep it."
+          "answer": "Allow two to three weeks for a showcase page, from the moment we have your texts and photos, and four to six weeks for a five-page site. We set a launch date at the start and we stick to it."
         },
         "stop": {
           "question": "What happens if I stop?",
-          "answer": "You let us know, and the site stays online until the end of the current paid period. You leave with your content and your domain name. The site's code is included after {months} months of subscription; before that, it is handed over for a fee we tell you from the start. If your subscription includes a domain name or an email address, it runs in 12-month periods: the current period runs its course."
+          "answer": "Just let us know: the site stays online until the end of the period already paid, and you leave with your content and your domain name. The code is transferred to you free of charge after {months} months of subscription; before that, it is transferred for a fee we tell you about from the start. If your subscription includes a domain name or an email address, it runs in 12-month periods, and the current period runs to its end."
         },
         "content": {
           "question": "Do you also write the texts and take the photos?",
-          "answer": "We help you write and we proofread everything, with the words your customers type into Google in mind. For photos, we work with yours or put you in touch with a local photographer; that is not included in the subscription."
+          "answer": "We help you write and we proofread everything, keeping in mind the words your customers type into Google. For photos, we use yours or put you in touch with a local photographer, whose work is not included in the subscription."
         }
       }
     },
     "cta": {
-      "title": "Let's make your business shine.",
-      "description": "Tell us about your business in a few lines. We get back to you within 24 hours with questions, then a free mockup if the project suits you.",
+      "title": "Let's talk about your site.",
+      "description": "Tell us about your business in a few lines. We reply within one working day, then prepare your free mockup if you would like one.",
       "primary_button": "Talk about my project"
     }
   }

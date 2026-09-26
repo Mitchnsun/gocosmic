@@ -49,9 +49,16 @@ export function needsCustomQuote(selection: PlanSelection): boolean {
 
 /**
  * Amounts are identical in both currencies — only the symbol changes.
- * Pass a locale to group thousands the local way (`3 500€`, `3,500€`…).
+ * With a locale, the price follows that language's conventions (`10 €` in French, `€10` in English,
+ * `1 500 CHF`…); without one, it stays compact (`10€`), e.g. in the studio's internal emails.
  */
 export function formatAmount(amount: number, currency: Currency, locale?: string): string {
-  const figure = locale ? new Intl.NumberFormat(locale).format(amount) : String(amount);
-  return currency === 'chf' ? `${figure} CHF` : `${figure}€`;
+  if (locale) {
+    return new Intl.NumberFormat(locale, {
+      style: 'currency',
+      currency: currency === 'chf' ? 'CHF' : 'EUR',
+      maximumFractionDigits: 0,
+    }).format(amount);
+  }
+  return currency === 'chf' ? `${amount} CHF` : `${amount}€`;
 }

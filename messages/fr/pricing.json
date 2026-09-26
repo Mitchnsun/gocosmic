@@ -2,7 +2,7 @@
   "pricing": {
     "free_offers": {
       "eyebrow": "Offert, sans engagement",
-      "title": "Avant même de parler budget",
+      "title": "Avant de parler budget",
       "items": {
         "mockup": {
           "title": "Une maquette de votre futur site",
@@ -10,7 +10,7 @@
         },
         "audit": {
           "title": "Un état des lieux de votre site actuel",
-          "description": "Ce qui fonctionne, ce qui vous fait perdre des visiteurs, et si on vous trouve sur Google."
+          "description": "Ce qui fonctionne, ce qui fait fuir les visiteurs, et comment votre site ressort sur Google."
         }
       },
       "note": "Ces deux prestations sont gratuites et ne vous engagent à rien."
@@ -20,9 +20,9 @@
       "base": {
         "title": "Formule de base",
         "includes": {
-          "page": "Une seule page vitrine statique qui présente votre activité",
-          "hosting": "Site en ligne 24h/24, mise en ligne comprise",
-          "security": "Connexion sécurisée HTTPS (le cadenas dans le navigateur)"
+          "page": "Une page vitrine qui présente votre activité",
+          "hosting": "Site en ligne 24 h/24, mise en ligne comprise",
+          "security": "Connexion sécurisée (le cadenas dans le navigateur)"
         }
       },
       "options": {
@@ -33,7 +33,7 @@
         },
         "domain": {
           "label": "Gestion de votre nom de domaine",
-          "hint": "Votre nom de domaine, par exemple {domain} — réservé et renouvelé pour vous."
+          "hint": "Par exemple {domain} : nous le réservons et le renouvelons pour vous."
         },
         "swiss_hosting": {
           "label": "Site hébergé en Suisse",
@@ -56,7 +56,7 @@
       },
       "updates": {
         "label": "Modifications de contenu incluses",
-        "hint": "Vos textes, photos et horaires mis à jour par nos soins, sans surcoût à chaque fois.",
+        "hint": "Nous mettons à jour vos textes, vos photos et vos horaires, sans frais supplémentaires à chaque demande.",
         "off": "Non inclus",
         "slider_label": "Modifications par an",
         "tiers": {
@@ -69,25 +69,25 @@
       },
       "total": {
         "label": "Votre estimation",
-        "note": "Estimation indicative, confirmée après un premier échange. Vous pouvez ajouter des options au fil du temps ; une fois activées, elles restent dans votre abonnement (voir les conditions générales de vente).",
+        "note": "Prix indicatif, confirmé après un premier échange. Vous pouvez ajouter des options à tout moment ; une fois activées, elles restent dans votre abonnement (voir les conditions générales de vente).",
         "cta": "Demander ma maquette gratuite",
         "question": "Une question avant ? <link>Écrivez-nous</link>.",
-        "beyond": "Au-delà de ces volumes, on en discute ensemble : nous vous faisons une proposition adaptée."
+        "beyond": "Au-delà de ces volumes, nous en parlons ensemble pour vous faire une proposition."
       }
     },
     "columns": {
       "eyebrow": "[ Tarifs ]",
-      "title": "Plusieurs façons de travailler ensemble.",
+      "title": "Quatre façons de travailler avec nous.",
       "subscription": {
         "title": "Abonnement",
         "label": "Site, hébergement et suivi",
         "price": "Dès {price}",
         "period": "/ mois",
-        "description": "Pour avoir un site en ligne, tenu à jour, sans y penser. Le prix suit vos besoins : nombre de pages, nom de domaine, adresse e-mail, modifications.",
+        "description": "Votre site est en ligne et tenu à jour, sans que vous ayez à vous en occuper. Le prix dépend de vos besoins : nombre de pages, nom de domaine, adresse e-mail, modifications.",
         "features": {
           "included": "Hébergement, connexion sécurisée et référencement de base compris",
-          "options": "Des options à ajouter au fil du temps, quand vous en avez besoin",
-          "mockup": "Maquette offerte avant de vous décider"
+          "options": "Des options à ajouter quand vous en avez besoin",
+          "mockup": "Une maquette offerte avant de vous décider"
         },
         "cta": "Composer mon abonnement"
       },
@@ -95,7 +95,7 @@
         "title": "Accompagnement",
         "label": "Conseil, UX/UI et design",
         "price": "Tarif à la journée",
-        "description": "Pour aller plus loin que la maquette gratuite sans forcément développer le site : l'architecture, les choix techniques, l'UX/UI et le design, avec l'intervention d'un designer.",
+        "description": "Pour aller plus loin que la maquette gratuite sans forcément lancer le développement : architecture, choix techniques, UX/UI et design, avec un designer à nos côtés.",
         "features": {
           "architecture": "Architecture et choix techniques",
           "design": "UX/UI, parcours utilisateurs et maquettes détaillées",
@@ -107,7 +107,7 @@
         "title": "Renforcement",
         "label": "Site existant, équipe renforcée",
         "price": "Tarif à la journée",
-        "description": "Pour intervenir sur un site déjà existant : amélioration technique, nouvelles fonctionnalités, avec un ou plusieurs développeurs selon l'ampleur du projet.",
+        "description": "Pour faire évoluer un site existant, qu'il s'agisse d'améliorations techniques ou de nouvelles fonctionnalités, avec un ou plusieurs développeurs selon l'ampleur du projet.",
         "features": {
           "technical": "Amélioration technique : performance, sécurité, mises à jour",
           "features": "Nouvelles fonctionnalités sur un site existant",
@@ -118,9 +118,9 @@
       "custom": {
         "title": "Sur mesure",
         "label": "Projet ponctuel · sur devis",
-        "description": "Boutique en ligne, espace adhérents, application mobile, outil métier. On cadre ensemble, on chiffre, on livre. Vous pouvez ensuite passer en abonnement pour le suivi.",
+        "description": "Boutique en ligne, espace adhérents, application mobile ou outil interne : nous définissons le projet ensemble, puis nous vous remettons un devis. Après la livraison, vous pouvez passer à l'abonnement pour le suivi.",
         "features": {
-          "payment": "Paiement échelonné, étape par étape",
+          "payment": "Un paiement en plusieurs fois, à chaque étape",
           "ownership": "Le code et les données vous appartiennent"
         },
         "cta": "Demander un devis"

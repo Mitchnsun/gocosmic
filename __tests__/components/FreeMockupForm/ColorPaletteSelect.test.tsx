@@ -43,7 +43,7 @@ describe('ColorPaletteSelect', () => {
   it('names the radio group after the palette question', () => {
     const { getByRole } = render(<ColorPaletteSelect value="" onChange={vi.fn()} />);
 
-    expect(getByRole('radiogroup', { name: /Colour direction/ })).toBeInTheDocument();
+    expect(getByRole('radiogroup', { name: /Colour mood/ })).toBeInTheDocument();
   });
 
   it('leaves the group valid while no error is reported', () => {

@@ -2,45 +2,45 @@
   "services": {
     "meta": {
       "title": "Leistungen & Preise · Websites in Genf & Annecy | Cosmic Studio",
-      "description": "Präsentationswebsites, Onlineshops, Apps und Betreuung, mit offenen Preisen: ein Abonnement ab 10 € im Monat oder ein Projekt nach Angebot. Genf, Hochsavoyen und aus der Ferne."
+      "description": "Präsentationswebsites, Onlineshops, Apps und Betreuung mit offen ausgewiesenen Preisen: ein Abonnement ab 10 € im Monat oder ein Projekt nach Angebot. In Genf, in Annecy und aus der Ferne."
     },
     "cta": {
-      "title": "Bringen wir Ihren Betrieb zum Strahlen.",
-      "description": "Erzählen Sie uns in ein paar Zeilen, was Sie tun. Wir melden uns innerhalb von 24 Stunden mit Fragen und danach mit einem kostenlosen Entwurf, wenn das Projekt für Sie passt.",
+      "title": "Sprechen wir über Ihre Website.",
+      "description": "Erzählen Sie uns in ein paar Zeilen, was Sie machen. Wir antworten innerhalb eines Werktags und erstellen danach auf Wunsch Ihr kostenloses Mockup.",
       "primary_button": "Mein Projekt besprechen"
     },
     "intro": {
       "eyebrow": "[ Leistungen & Preise ]",
       "title": "Eine Website, die läuft, <em>und jemand, der sich darum kümmert.</em>",
-      "lead": "Die Preise stehen hier offen, denn Sie haben Besseres zu tun, als ein Angebot anzufragen, nur um zu erfahren, ob es in Ihr Budget passt. Und Sie beginnen mit einem kostenlosen, unverbindlichen Mockup."
+      "lead": "Unsere Preise stehen direkt auf dieser Seite. So wissen Sie sofort, ob es in Ihr Budget passt, ohne ein Angebot anfragen zu müssen. Und alles beginnt mit einem kostenlosen, unverbindlichen Mockup."
     },
     "simulator": {
       "eyebrow": "[ Abonnement zusammenstellen ]",
-      "title": "Fangen Sie klein an. <em>Erweitern Sie, wenn Sie es brauchen.</em>",
-      "lead": "Die Basis: eine Präsentationsseite, online und sicher, für {price} im Monat. Optionen kommen mit der Zeit hinzu, wenn Sie sie brauchen."
+      "title": "Fangen Sie klein an, <em>den Rest ergänzen Sie später.</em>",
+      "lead": "Das Grundpaket umfasst eine Präsentationsseite, online und sicher, für {price} im Monat. Kreuzen Sie die Optionen an, die Sie interessieren, und Sie sehen den Monatspreis."
     },
     "trades": {
-      "eyebrow": "[ Was wir machen · 04 ]",
+      "eyebrow": "[ Unsere Fachgebiete · 04 ]",
       "title": "Vier Fachgebiete, <em>ein einziger Ansprechpartner.</em>",
       "items": {
         "showcase": {
           "title": "Präsentationswebsites",
-          "description": "Ihren Betrieb, Ihre Arbeiten und Ihre Öffnungszeiten zeigen und bei Google von den Menschen in der Nähe gefunden werden.",
+          "description": "Um Ihren Betrieb, Ihre Arbeiten und Ihre Öffnungszeiten vorzustellen und bei Google von Menschen in Ihrer Nähe gefunden zu werden.",
           "tags": ["Handwerksbetriebe", "Vereine", "Selbstständige"]
         },
         "shops": {
           "title": "Onlineshops & Buchungen",
-          "description": "Online verkaufen, Termine vergeben, Mitgliedschaften verwalten. Ohne Provision auf Ihre Verkäufe.",
+          "description": "Um online zu verkaufen, Termine zu vergeben oder Mitgliedschaften zu verwalten, ohne Provision auf Ihre Verkäufe.",
           "tags": ["Onlineverkauf", "Terminbuchung", "Mitgliedschaften"]
         },
         "apps": {
           "title": "Apps",
-          "description": "Ein Werkzeug für Ihren Betrieb, eine App für Ihre Kundschaft oder Ihre Mitglieder, ein Assistent, der häufige Fragen beantwortet: im Web oder auf dem Handy.",
+          "description": "Ein Werkzeug für Ihr Team, eine App für Ihre Kundschaft oder Ihre Mitglieder, ein Assistent, der häufige Fragen beantwortet, im Web oder auf dem Handy.",
           "tags": ["Web", "iOS", "Android"]
         },
         "care": {
           "title": "Sichtbarkeit & Betreuung",
-          "description": "Auffindbarkeit bei Google, Hosting, Datensicherungen, Aktualisierungen, Änderungen und Einführung: ein einziger Ansprechpartner, der Ihre Website kennt.",
+          "description": "Auffindbarkeit bei Google, Hosting, Datensicherungen, Aktualisierungen und Änderungen, mit einem einzigen Ansprechpartner, der Ihre Website kennt.",
           "tags": ["Google", "Betreuung", "Schulung"]
         }
       }
@@ -51,23 +51,23 @@
       "items": {
         "ownership": {
           "question": "Gehört mir die Website?",
-          "answer": "Ihre Texte, Ihre Bilder und Ihr Domainname gehören Ihnen vom ersten Tag an. Der Code der Website geht nach {months} Monaten Abonnement an Sie über: Nur so ist ein so niedriger Einstiegspreis möglich. Sie möchten ihn früher? Das geht, gegen eine Übertragungsgebühr, die von der verbleibenden Laufzeit abhängt. Bei einem Einzelprojekt gehört Ihnen der Code ab der Übergabe."
+          "answer": "Ihre Texte, Ihre Bilder und Ihr Domainname gehören Ihnen vom ersten Tag an. Der Code der Website geht nach {months} Monaten Abonnement an Sie über; dadurch können wir einen so niedrigen Einstiegspreis anbieten. Sie können ihn auch früher übernehmen, gegen eine Übertragungsgebühr, die sich nach der verbleibenden Dauer richtet. Bei einem Projekt nach Angebot gehört Ihnen der Code ab der Übergabe."
         },
         "edit": {
           "question": "Kann ich die Website selbst ändern?",
-          "answer": "Am einfachsten ist die Option „Inhaltsänderungen inklusive“: Sie schicken uns Ihre Texte, Fotos oder Öffnungszeiten, und die Sache ist erledigt. Viele schreiben uns lieber, als ein Werkzeug zu lernen. Wenn Sie unbedingt selbst veröffentlichen möchten, ist das möglich: Wir besprechen es, es ist dann ein individuelles Projekt."
+          "answer": "Am einfachsten ist die Option „Inhaltsänderungen inklusive“: Sie schicken uns Ihre Texte, Fotos oder neuen Öffnungszeiten, und wir stellen sie online. Wenn Sie lieber selbst veröffentlichen möchten, geht das auch; darüber sprechen wir gemeinsam, denn dafür muss eigens etwas entwickelt werden."
         },
         "timing": {
           "question": "Wie lange dauert es, bis ich online bin?",
-          "answer": "Für eine Präsentationsseite: zwei bis drei Wochen, nachdem wir Ihre Texte und Fotos erhalten haben. Für eine Website mit fünf Seiten: vier bis sechs Wochen. Wir nennen Ihnen zu Beginn ein Datum und halten es ein."
+          "answer": "Rechnen Sie mit zwei bis drei Wochen für eine Präsentationsseite, sobald wir Ihre Texte und Fotos haben, und mit vier bis sechs Wochen für eine Website mit fünf Seiten. Wir legen zu Beginn einen Starttermin fest und halten ihn ein."
         },
         "stop": {
           "question": "Was passiert, wenn ich kündige?",
-          "answer": "Sie geben uns Bescheid, und die Website bleibt bis zum Ende des laufenden bezahlten Zeitraums online. Sie behalten Ihre Inhalte und Ihren Domainnamen. Der Code der Website ist nach {months} Monaten Abonnement inbegriffen; davor wird er gegen eine Gebühr übertragen, die wir Ihnen von Anfang an nennen. Enthält Ihr Abonnement einen Domainnamen oder eine E-Mail-Adresse, läuft es in 12-Monats-Zeiträumen: der laufende Zeitraum wird zu Ende geführt."
+          "answer": "Sagen Sie uns einfach Bescheid: Die Website bleibt bis zum Ende des bereits bezahlten Zeitraums online, und Sie nehmen Ihre Inhalte und Ihren Domainnamen mit. Der Code wird Ihnen nach {months} Monaten Abonnement kostenlos übertragen; davor gegen eine Gebühr, die wir Ihnen von Anfang an nennen. Enthält Ihr Abonnement einen Domainnamen oder eine E-Mail-Adresse, läuft es in Zeiträumen von jeweils 12 Monaten, und der aktuelle Zeitraum wird bis zu seinem Ende weitergeführt."
         },
         "content": {
           "question": "Kümmern Sie sich auch um Texte und Fotos?",
-          "answer": "Wir helfen Ihnen beim Schreiben und lesen alles gegen, mit Blick auf die Wörter, die Ihre Kundschaft bei Google eintippt. Bei den Fotos arbeiten wir mit Ihren eigenen oder bringen Sie mit einer Fotografin oder einem Fotografen aus der Region zusammen; das ist nicht im Abonnement enthalten."
+          "answer": "Wir helfen Ihnen beim Schreiben und lesen alles gegen, mit Blick auf die Wörter, die Ihre Kundschaft bei Google eingibt. Für die Fotos verwenden wir Ihre eigenen oder bringen Sie mit Fotografinnen und Fotografen aus der Region in Kontakt; deren Arbeit ist nicht im Abonnement enthalten."
         }
       }
     }

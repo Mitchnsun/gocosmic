@@ -1,21 +1,21 @@
 {
   "footer": {
     "brand_desc": {
-      "fr": "Studio web e mobile tra Ginevra e Annecy. Aiutiamo artigiani, associazioni e liberi professionisti a farsi conoscere su internet, e restiamo al loro fianco anche dopo la messa online.",
-      "ch": "Studio web e mobile a Ginevra. Aiutiamo artigiani, associazioni e liberi professionisti a farsi conoscere su internet, e restiamo al loro fianco anche dopo la messa online."
+      "fr": "Studio di sviluppo web e mobile tra Ginevra e Annecy. Siti, app e assistenza continua per artigiani, associazioni e liberi professionisti.",
+      "ch": "Studio di sviluppo web e mobile a Ginevra. Siti, app e assistenza continua per artigiani, associazioni e liberi professionisti."
     },
     "nav_title": "Studio",
     "link_services": "Servizi & prezzi",
     "link_projects": "Progetti",
     "link_about": "Chi siamo",
-    "link_contact": "Contatto",
+    "link_contact": "Contatti",
     "copyright": "© {year} {brand}",
     "local_page": "Chêne-Bougeries · Annecy",
     "privacy": "Informativa privacy",
     "legal_notice": "Note legali",
     "link_apps": "Le nostre app",
     "legal_title": "Informazioni legali",
-    "status": "Tutti i sistemi nominali",
+    "status": "Tutti i sistemi nella norma",
     "terms": "Condizioni generali di vendita"
   }
 }

@@ -1,23 +1,23 @@
 {
   "meta": {
     "title": "Acerca de · Cosmic Studio, estudio web en Ginebra y Annecy",
-    "description": "Conoce Cosmic Studio, estudio web y móvil entre Ginebra y Annecy, y a Matthieu Compérat, tu interlocutor desde la primera conversación hasta el seguimiento."
+    "description": "Cosmic Studio es un estudio web y móvil entre Ginebra y Annecy, dirigido por Matthieu Compérat, que acompaña tu proyecto desde la primera conversación hasta después de su publicación."
   },
   "about": {
-    "title": "Un estudio pequeño y cercano, <em>al servicio de tu visibilidad.</em>",
+    "title": "Un estudio pequeño, <em>para que tus clientes te encuentren.</em>",
     "eyebrow": "[ Acerca de ]",
     "cta": {
       "title": "Trabajemos juntos.",
-      "description": "Háblanos de tu negocio en unas líneas: te respondemos en menos de 24 h, con preguntas, no con un presupuesto automático.",
+      "description": "Háblanos de tu negocio en unas pocas líneas. Matthieu te responde en 24 h laborables.",
       "button": "Hablar de mi proyecto"
     },
-    "lead": "Cosmic Studio es Matthieu Compérat: un desarrollador afincado en Chêne-Bougeries que crea sitios web y aplicaciones para artesanos, asociaciones y autónomos, de Ginebra a Annecy.",
+    "lead": "Cosmic Studio es Matthieu Compérat, desarrollador afincado en Chêne-Bougeries. Crea sitios web y aplicaciones para artesanos, asociaciones y autónomos, de Ginebra a Annecy.",
     "path": {
       "eyebrow": "[ Trayectoria ]",
-      "title": "Quince años de código, <em>un solo interlocutor.</em>",
+      "title": "Quince años de desarrollo, <em>un solo interlocutor.</em>",
       "paragraphs": [
-        "Originario de Duingt, a orillas del lago de Annecy, Matthieu lleva unos quince años desarrollando sitios web y aplicaciones. Primero para grandes empresas, donde aprendió a construir herramientas fiables, rápidas y accesibles para todos; después, para personas a las que conoce por su nombre.",
-        "Cosmic Studio nació de esa segunda elección: poner ese saber hacer al servicio de quienes tienen un oficio y no tienen tiempo de aprender otro. Hablas con la persona que construye tu sitio, desde la primera llamada hasta el seguimiento mes a mes."
+        "Originario de Duingt, a orillas del lago de Annecy, Matthieu lleva unos quince años desarrollando sitios web y aplicaciones. Empezó trabajando para grandes empresas, donde aprendió a construir herramientas fiables y accesibles para todos.",
+        "Con Cosmic Studio pone esa experiencia al servicio de artesanos, asociaciones y autónomos. Hablas con la persona que construye tu sitio, desde la primera llamada hasta el seguimiento, mes a mes."
       ],
       "zones": [
         "Chêne-Bougeries · base",
@@ -29,25 +29,25 @@
       "linkedin_aria": "Perfil de LinkedIn de Matthieu Compérat (se abre en una nueva pestaña)"
     },
     "why": {
-      "eyebrow": "[ Por qué ellos ]",
+      "eyebrow": "[ Por qué este enfoque ]",
       "title": "Los artesanos y las asociaciones <em>merecen algo mejor que una plantilla.</em>",
-      "lead": "Las grandes agencias apuntan a las grandes empresas; las plataformas para crear webs te dejan a solas con la herramienta. Cosmic Studio es para quienes están entre ambos.",
+      "lead": "Las grandes agencias trabajan sobre todo para grandes empresas, y con las plataformas para crear webs tienes que arreglártelas solo con la herramienta. Cosmic Studio es para todos los que están en medio.",
       "reasons": {
         "found": {
           "title": "Que te encuentren cerca de casa",
-          "description": "Tus clientes te buscan en el móvil, a pocos kilómetros. Un sitio rápido y bien construido marca la diferencia en Google."
+          "description": "Tus clientes te buscan en el móvil, a pocos kilómetros de ti. Un sitio rápido y bien construido aparece más arriba en Google."
         },
         "price": {
           "title": "Un precio al ritmo de tu negocio",
-          "description": "Una suscripción desde {price} al mes, que crece contigo, en lugar de una gran inversión inicial."
+          "description": "Una suscripción desde {price} al mes, que evoluciona contigo, en lugar de una gran inversión inicial."
         },
         "answer": {
           "title": "Alguien que responde",
-          "description": "Sin centro de atención al cliente: te responde la persona que construyó tu sitio, normalmente en el mismo día."
+          "description": "Nada de centros de llamadas: quien te responde es la persona que construyó tu sitio, normalmente en el mismo día."
         },
         "ai": {
-          "title": "La IA cuando ayuda, nunca en tu lugar",
-          "description": "Usamos la inteligencia artificial para ir más rápido, siempre con una revisión humana. Encontrarás los detalles en nuestro aviso legal."
+          "title": "La IA para ahorrar tiempo, siempre revisada",
+          "description": "Usamos la inteligencia artificial para ir más rápido, y una persona revisa todo lo que produce. Los detalles están en nuestro aviso legal."
         }
       }
     }

@@ -2,73 +2,73 @@
   "services": {
     "meta": {
       "title": "Services & tarifs · Sites internet à Genève & Annecy | Cosmic Studio",
-      "description": "Sites vitrine, boutiques, applications et suivi, avec des prix affichés : un abonnement dès 10 € par mois ou un projet sur devis. Genève, Haute-Savoie et à distance."
+      "description": "Sites vitrine, boutiques en ligne, applications et suivi, avec des prix affichés : un abonnement dès 10 € par mois, ou un projet sur devis. À Genève, à Annecy et à distance."
     },
     "intro": {
       "eyebrow": "[ Services & tarifs ]",
       "title": "Un site qui tourne, <em>et quelqu'un qui s'en occupe.</em>",
-      "lead": "Les prix sont affichés, parce que vous avez mieux à faire que de demander un devis pour savoir si c'est dans vos moyens. Et vous commencez par une maquette gratuite, sans engagement."
+      "lead": "Nos prix sont affichés : vous savez tout de suite si c'est dans votre budget, sans demander de devis. Et tout commence par une maquette gratuite, sans engagement."
     },
     "simulator": {
       "eyebrow": "[ Composez votre abonnement ]",
-      "title": "Commencez petit. <em>Ajoutez quand vous en avez besoin.</em>",
-      "lead": "La base : une page vitrine, en ligne et sécurisée, pour {price} par mois. Les options s'ajoutent au fil du temps, quand vous en avez besoin."
+      "title": "Commencez simple, <em>ajoutez le reste plus tard.</em>",
+      "lead": "La formule de base comprend une page vitrine en ligne et sécurisée, pour {price} par mois. Cochez les options qui vous intéressent pour voir le prix mensuel."
     },
     "trades": {
-      "eyebrow": "[ Ce qu'on fait · 04 ]",
+      "eyebrow": "[ Nos métiers · 04 ]",
       "title": "Quatre métiers, <em>un seul interlocuteur.</em>",
       "items": {
         "showcase": {
           "title": "Sites vitrine",
-          "description": "Présenter votre activité, vos réalisations et vos horaires, et être trouvé sur Google par les gens d'à côté.",
+          "description": "Pour présenter votre activité, vos réalisations et vos horaires, et être trouvé sur Google par les gens près de chez vous.",
           "tags": ["Artisans", "Associations", "Indépendants"]
         },
         "shops": {
           "title": "Boutiques & réservations",
-          "description": "Vendre en ligne, prendre des rendez-vous, gérer des adhésions. Sans commission sur vos ventes.",
+          "description": "Pour vendre en ligne, prendre des rendez-vous ou gérer des adhésions, sans commission sur vos ventes.",
           "tags": ["Vente en ligne", "Agenda", "Adhésions"]
         },
         "apps": {
           "title": "Applications",
-          "description": "Un outil métier, une application pour vos clients ou vos membres, un assistant qui répond aux questions fréquentes : sur le web ou sur téléphone.",
+          "description": "Un outil pour votre équipe, une application pour vos clients ou vos membres, un assistant qui répond aux questions fréquentes, sur le web ou sur téléphone.",
           "tags": ["Web", "iOS", "Android"]
         },
         "care": {
           "title": "Visibilité & suivi",
-          "description": "Référencement sur Google, hébergement, sauvegardes, mises à jour, modifications et prise en main : un seul contact, qui connaît votre site.",
+          "description": "Référencement Google, hébergement, sauvegardes, mises à jour et modifications, avec une seule personne à contacter, qui connaît votre site.",
           "tags": ["Google", "Suivi", "Formation"]
         }
       }
     },
     "faq": {
       "eyebrow": "[ Questions fréquentes ]",
-      "title": "Ce qu'on nous demande <em>avant de signer.</em>",
+      "title": "Les questions qu'on nous pose <em>avant de signer.</em>",
       "items": {
         "ownership": {
           "question": "Le site m'appartient-il ?",
-          "answer": "Vos textes, vos images et votre nom de domaine sont à vous dès le premier jour. Le code du site vous est cédé au bout de {months} mois d'abonnement : c'est ce qui permet un tarif d'entrée aussi bas. Vous voulez le récupérer avant ? C'est possible, contre des frais de cession qui dépendent du temps restant. En projet ponctuel, le code est à vous dès la livraison."
+          "answer": "Vos textes, vos images et votre nom de domaine vous appartiennent dès le premier jour. Le code du site vous est cédé après {months} mois d'abonnement, ce qui nous permet de proposer un prix de départ aussi bas. Vous pouvez aussi le récupérer plus tôt, contre des frais de cession calculés sur la durée restante. Pour un projet sur devis, le code vous revient dès la livraison."
         },
         "edit": {
           "question": "Puis-je modifier le site moi-même ?",
-          "answer": "Le plus simple, c'est l'option « Modifications de contenu incluses » : vous nous envoyez vos textes, photos ou horaires, et c'est fait. Beaucoup préfèrent nous écrire plutôt que d'apprendre un outil. Si vous tenez à publier vous-même, c'est possible : on en parle, c'est un projet sur mesure."
+          "answer": "Le plus simple est l'option « Modifications de contenu incluses » : vous nous envoyez vos textes, vos photos ou vos nouveaux horaires, et nous les mettons en ligne. Si vous préférez publier vous-même, c'est possible aussi ; nous en discutons, car cela demande un développement spécifique."
         },
         "timing": {
           "question": "Combien de temps pour être en ligne ?",
-          "answer": "Pour une page vitrine : deux à trois semaines après réception de vos textes et photos. Pour un site de cinq pages : quatre à six semaines. Nous vous donnons une date au démarrage, et nous la tenons."
+          "answer": "Comptez deux à trois semaines pour une page vitrine, à partir du moment où nous avons vos textes et vos photos, et quatre à six semaines pour un site de cinq pages. Nous fixons une date de mise en ligne au démarrage et nous la respectons."
         },
         "stop": {
           "question": "Que se passe-t-il si j'arrête ?",
-          "answer": "Vous nous prévenez, et le site reste en ligne jusqu'à la fin de la période payée en cours. Vous repartez avec vos contenus et votre nom de domaine. Le code du site est inclus après {months} mois d'abonnement ; avant, il est cédé contre des frais que nous vous indiquons dès le départ. Si votre abonnement comprend un nom de domaine ou une adresse e-mail, il est souscrit par périodes de 12 mois : la période en cours va jusqu'à son terme."
+          "answer": "Il suffit de nous prévenir : le site reste en ligne jusqu'à la fin de la période déjà payée, et vous repartez avec vos contenus et votre nom de domaine. Le code vous est cédé gratuitement après {months} mois d'abonnement ; avant, il vous est cédé contre des frais que nous vous indiquons dès le départ. Si votre abonnement comprend un nom de domaine ou une adresse e-mail, il court par périodes de 12 mois, et la période en cours va jusqu'à son terme."
         },
         "content": {
           "question": "Faites-vous aussi les textes et les photos ?",
-          "answer": "Nous vous aidons à écrire et nous relisons tout, en pensant aux mots que vos clients tapent sur Google. Pour les photos, nous travaillons avec les vôtres ou nous vous mettons en contact avec un photographe local ; ce n'est pas compris dans l'abonnement."
+          "answer": "Nous vous aidons à rédiger et nous relisons tout, en pensant aux mots que vos clients tapent sur Google. Pour les photos, nous utilisons les vôtres ou nous vous mettons en relation avec un photographe de la région, dont la prestation n'est pas comprise dans l'abonnement."
         }
       }
     },
     "cta": {
-      "title": "Faisons rayonner votre activité.",
-      "description": "Racontez-nous votre activité en quelques lignes. Nous revenons vers vous sous 24 h avec des questions, puis une maquette gratuite si le projet vous convient.",
+      "title": "Parlons de votre site.",
+      "description": "Présentez-nous votre activité en quelques lignes. Nous vous répondons sous 24 h ouvrées, puis nous préparons votre maquette gratuite si vous le souhaitez.",
       "primary_button": "Parler de mon projet"
     }
   }

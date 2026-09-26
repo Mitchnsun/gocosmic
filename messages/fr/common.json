@@ -2,13 +2,13 @@
   "404": {
     "eyebrow": "[ Erreur 404 ]",
     "title": "Cette page est sortie de l'orbite.",
-    "description": "Le lien est peut-être ancien, ou la page a changé d'adresse. Revenez à l'accueil, ou dites-nous ce que vous cherchiez.",
+    "description": "Le lien est peut-être ancien, ou la page a changé d'adresse. Repartez de l'accueil, ou dites-nous ce que vous cherchiez.",
     "link": "Retour à l'accueil",
     "contact": "Dites-nous ce que vous cherchiez"
   },
   "meta": {
     "title": "Création de sites internet · Genève & Annecy | Cosmic Studio",
-    "description": "Sites internet pour les artisans, associations et indépendants de Genève et de Haute-Savoie. Faites-vous trouver sur Google, avec un interlocuteur qui reste."
+    "description": "Création de sites internet pour les artisans, associations et indépendants de Genève, d'Annecy et de Haute-Savoie. Un site qu'on trouve sur Google, et une personne qui s'en occupe après la mise en ligne."
   },
   "language": {
     "current": "Langue actuelle : {language}",
@@ -28,10 +28,10 @@
   },
   "cookieConsent": {
     "title": "Préférences de confidentialité",
-    "description": "Nous utilisons Vercel Analytics pour mesurer l'audience uniquement après votre accord. Le refus n'a aucun impact sur le site.",
+    "description": "Avec votre accord, nous mesurons l'audience du site avec Vercel Analytics. Si vous refusez, le site fonctionne exactement de la même façon.",
     "analyticsTitle": "Mesure d'audience",
-    "analyticsDescription": "Statistiques anonymes de pages vues utilisées pour améliorer le site. Aucun traceur publicitaire n'est chargé par Cosmic Studio.",
-    "accept": "Accepter l'analyse",
+    "analyticsDescription": "Des statistiques anonymes sur les pages consultées, pour améliorer le site. Aucun traceur publicitaire n'est utilisé.",
+    "accept": "Accepter",
     "refuse": "Refuser",
     "customize": "Personnaliser",
     "save": "Enregistrer mon choix",

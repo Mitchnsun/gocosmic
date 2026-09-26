@@ -2,7 +2,7 @@
   "pricing": {
     "free_offers": {
       "eyebrow": "Free, no commitment",
-      "title": "Before we even talk budget",
+      "title": "Before we talk budget",
       "items": {
         "mockup": {
           "title": "A mockup of your future website",
@@ -10,7 +10,7 @@
         },
         "audit": {
           "title": "A review of your current website",
-          "description": "What works, what loses you visitors, and whether people find you on Google."
+          "description": "What works, what drives visitors away, and how your site shows up on Google."
         }
       },
       "note": "Both are free and commit you to nothing."
@@ -20,9 +20,9 @@
       "base": {
         "title": "Base plan",
         "includes": {
-          "page": "A single static showcase page presenting your business",
+          "page": "A showcase page presenting your business",
           "hosting": "Online around the clock, publishing included",
-          "security": "Secure HTTPS connection (the padlock in the browser)"
+          "security": "Secure connection (the padlock in the browser)"
         }
       },
       "options": {
@@ -33,7 +33,7 @@
         },
         "domain": {
           "label": "Managing your domain name",
-          "hint": "Your domain name, for example {domain} — registered and renewed for you."
+          "hint": "For example {domain}: we register it and renew it for you."
         },
         "swiss_hosting": {
           "label": "Website hosted in Switzerland",
@@ -56,7 +56,7 @@
       },
       "updates": {
         "label": "Content changes included",
-        "hint": "Your text, photos and opening hours updated by us, with nothing extra to pay each time.",
+        "hint": "We update your texts, photos and opening hours, with no extra charge for each request.",
         "off": "Not included",
         "slider_label": "Changes per year",
         "tiers": {
@@ -69,25 +69,25 @@
       },
       "total": {
         "label": "Your estimate",
-        "note": "Indicative estimate, confirmed after a first conversation. You can add options over time; once active, they stay part of your subscription (see the terms of sale).",
+        "note": "Indicative price, confirmed after a first conversation. You can add options at any time; once active, they stay part of your subscription (see the terms of sale).",
         "cta": "Request my free mockup",
         "question": "A question first? <link>Write to us</link>.",
-        "beyond": "Beyond these volumes, let's talk it through: we'll put together a proposal that fits."
+        "beyond": "Beyond these volumes, we will talk it through and make you a proposal."
       }
     },
     "columns": {
       "eyebrow": "[ Pricing ]",
-      "title": "Several ways to work together.",
+      "title": "Four ways to work with us.",
       "subscription": {
         "title": "Subscription",
         "label": "Site, hosting and care",
         "price": "From {price}",
         "period": "/ month",
-        "description": "To have a site online and kept up to date without thinking about it. The price follows your needs: number of pages, domain name, email address, changes.",
+        "description": "Your site is online and kept up to date, without you having to deal with it. The price depends on your needs: number of pages, domain name, email address, changes.",
         "features": {
-          "included": "Hosting, secure connection and basic search visibility included",
-          "options": "Options you add over time, as you need them",
-          "mockup": "Free mockup before you decide"
+          "included": "Hosting, secure connection and basic Google visibility included",
+          "options": "Options to add when you need them",
+          "mockup": "A free mockup before you decide"
         },
         "cta": "Build my plan"
       },
@@ -95,7 +95,7 @@
         "title": "Guidance",
         "label": "Advice, UX/UI and design",
         "price": "Day rate",
-        "description": "To go further than the free mockup without necessarily building the site: architecture, technical choices, UX/UI and design, with a designer involved.",
+        "description": "To go further than the free mockup without necessarily starting development: architecture, technical choices, UX/UI and design, with a designer on board.",
         "features": {
           "architecture": "Architecture and technical choices",
           "design": "UX/UI, user journeys and detailed mockups",
@@ -107,7 +107,7 @@
         "title": "Reinforcement",
         "label": "Existing site, extra hands",
         "price": "Day rate",
-        "description": "To work on a site that already exists: technical improvements, new features, with one or several developers depending on the scope.",
+        "description": "To improve an existing site, whether through technical work or new features, with one or several developers depending on the scope.",
         "features": {
           "technical": "Technical improvements: performance, security, updates",
           "features": "New features on an existing site",
@@ -118,9 +118,9 @@
       "custom": {
         "title": "Custom",
         "label": "One-off project · quoted",
-        "description": "Online shop, members' area, mobile app, business tool. We scope it together, quote it, deliver it. You can then switch to a subscription for ongoing care.",
+        "description": "Online shop, members' area, mobile app or in-house tool: we define the project together, then send you a quote. After delivery, you can switch to a subscription for ongoing care.",
         "features": {
-          "payment": "Staged payments, step by step",
+          "payment": "Payment in instalments, at each stage",
           "ownership": "The code and the data belong to you"
         },
         "cta": "Ask for a quote"

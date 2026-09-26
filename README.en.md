@@ -148,7 +148,7 @@ Lead-capture page where a prospect asks for a free mockup of their future websit
 
 ### Local SEO Page (`/local`)
 
-Locale-specific landing page targeting local searches (e.g., `/en/web-mobile-developer-annecy-geneva`, `/fr/developpeur-web-mobile-annecy-geneve`). It lists the areas served and links to Services & pricing, the projects and the contact page.
+Locale-specific landing page targeting local searches (e.g., `/en/web-mobile-developer-annecy-geneva`, `/fr/developpeur-web-mobile-annecy-geneve`). It opens with a lead that follows the visitor's region (Geneva base for Swiss visitors, Annecy otherwise), then lists the four areas served, shows three recent projects and ends with a call to talk about a project.
 
 ### Legal Pages
 
@@ -156,13 +156,15 @@ Locale-specific landing page targeting local searches (e.g., `/en/web-mobile-dev
 - **Legal notice** (`/legal-notice`): publisher, hosting, intellectual property, and the statements on the use of artificial intelligence
 - **Terms of sale** (`/terms`): the subscription's duration, options and cancellation terms, linked from the footer
 
+All three share the `LegalDocument` layout: an introduction, then one card per section.
+
 ### Not Found Page
 
 Localized 404 page with links back to the homepage and to the contact page. Unknown paths under a locale prefix are routed to it.
 
 ### Retired Pages
 
-The former `/journey` (3D experience), `/offers` and `/pricing` pages no longer exist. They permanently redirect (301) to Services & pricing in every locale, including their former localized slugs (see `lib/redirects.ts` and `next.config.ts`).
+The former `/journey` (3D experience), `/offers` and `/pricing` pages no longer exist. They permanently redirect to Services & pricing in every locale, including their former localized slugs: offers to the pricing columns (`#pricing`), pricing to the simulator (`#simulator`) and the journey to the top of the page (see `lib/redirects.ts` and `next.config.ts`).
 
 ### Technical Features
 
@@ -395,14 +397,18 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   ├── ...           # Other components (ProcessTimeline, ServicesGrid, StatusBar, CookieConsent…)
 │   └── icons/        # Reusable SVG icons
 ├── design-system/    # Reusable UI primitives
-│   ├── button.tsx    # Button with CVA variants
+│   ├── button.tsx    # Button with CVA variants (primary, ghost, link…)
 │   ├── pill.ts       # Pill link styles and shared layout constants
+│   ├── eyebrow.tsx   # Mono section label with the orange dot
+│   ├── chip.tsx      # Bordered mono tag
+│   ├── hairline-grid.tsx # Card grid with 1 px separators
+│   ├── field.tsx     # Form field frame and control styles
 │   ├── slider.tsx    # Slider used by the pricing simulator
 │   └── lib/utils.ts  # `cn` helper (clsx + tailwind-merge)
 ├── data/             # Static content (list and order of case studies)
 ├── lib/              # Shared helpers
 │   ├── pricing/      # Code handover delay (offers.ts) and the simulation passed to the free mockup form
-│   ├── redirects.ts  # 301 redirects from retired pages to Services & pricing
+│   ├── redirects.ts  # Permanent redirects from retired pages to Services & pricing
 │   ├── region.ts     # Region (France or Switzerland) and currency
 │   ├── resend.ts     # Resend email client
 │   └── validation/   # Form validation schemas

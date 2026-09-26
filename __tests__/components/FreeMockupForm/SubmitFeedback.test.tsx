@@ -15,7 +15,7 @@ describe('SubmitFeedback', () => {
     const { getByText } = render(<SubmitFeedback status="success" hasInvalidFields={false} />);
 
     expect(getByText('Request received')).toBeInTheDocument();
-    expect(getByText(/come back to you by email/)).toBeInTheDocument();
+    expect(getByText(/send you your mockup by email/)).toBeInTheDocument();
   });
 
   it('announces a delivery failure', () => {
@@ -33,6 +33,6 @@ describe('SubmitFeedback', () => {
   it('announces the retry-later message', () => {
     const { getByText } = render(<SubmitFeedback status="error" hasInvalidFields={false} reason="retry_later" />);
 
-    expect(getByText('Your request could not be sent right now. Please try again later.')).toBeInTheDocument();
+    expect(getByText('Your request could not be sent right now. Please try again a little later.')).toBeInTheDocument();
   });
 });

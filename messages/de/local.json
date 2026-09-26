@@ -2,21 +2,21 @@
   "local": {
     "meta": {
       "title": "Web- und App-Entwickler in Genf und Annecy | Cosmic Studio",
-      "description": "Cosmic Studio erstellt Websites und Apps für Handwerksbetriebe, Vereine und Selbstständige in Genf, der Westschweiz, Annecy und Hochsavoyen. Treffen vor Ort oder per Videocall."
+      "description": "Cosmic Studio erstellt Websites und Apps für Handwerksbetriebe, Vereine und Selbstständige in Genf, der Westschweiz, Annecy und Hochsavoyen. Treffen vor Ort oder per Videogespräch."
     },
     "intro": {
       "eyebrow": "[ Genf · Annecy ]",
       "title": "Ihr Webstudio <em>zwischen Genf und Annecy.</em>",
       "lead": {
-        "ch": "Cosmic Studio sitzt in Chêne-Bougeries. Wir erstellen Websites und Apps für Handwerksbetriebe, Vereine und Selbstständige in Genf und der Westschweiz und kommen gern bei Ihnen vorbei.",
+        "ch": "Cosmic Studio ist in Chêne-Bougeries zu Hause. Wir erstellen Websites und Apps für Handwerksbetriebe, Vereine und Selbstständige in Genf und der Westschweiz und kommen gern bei Ihnen vorbei.",
         "fr": "Cosmic Studio arbeitet zwischen Annecy und Genf. Wir erstellen Websites und Apps für Handwerksbetriebe, Vereine und Selbstständige in Hochsavoyen und kommen gern bei Ihnen vorbei."
       },
-      "primary": "Über mein Projekt sprechen",
+      "primary": "Mein Projekt besprechen",
       "secondary": "Leistungen und Preise ansehen"
     },
     "zones": {
       "eyebrow": "[ Einsatzgebiet ]",
-      "title": "Vor Ort, wenn es hilft, <em>sonst aus der Ferne.</em>",
+      "title": "Vor Ort, wenn es sinnvoll ist, <em>sonst aus der Ferne.</em>",
       "items": {
         "geneva": {
           "title": "Genf",
@@ -24,15 +24,15 @@
         },
         "romandy": {
           "title": "Westschweiz",
-          "description": "Waadt, Wallis, Neuenburg, Freiburg: Zum ersten Termin kommen wir vorbei, danach geht es per Videocall weiter."
+          "description": "Waadt, Wallis, Neuenburg, Freiburg: Zum ersten Termin kommen wir vorbei, danach geht es per Videogespräch weiter."
         },
         "annecy": {
           "title": "Annecy und Hochsavoyen",
-          "description": "Von Annecy bis ins französische Genfer Umland gelten dieselben Bedingungen und Fristen wie in Genf."
+          "description": "Von Annecy bis ins französische Genfer Umland gelten dieselben Bedingungen und Lieferzeiten wie in Genf."
         },
         "remote": {
           "title": "Anderswo",
-          "description": "Überall in Frankreich und der Schweiz geht alles auch aus der Ferne: Videocalls, ein geteiltes Mockup, die Veröffentlichung."
+          "description": "Überall in Frankreich und in der Schweiz geht alles auch aus der Ferne: Videogespräche, das Mockup per Link, der Start der Website."
         }
       }
     },
@@ -44,7 +44,7 @@
     "cta": {
       "title": "Ein Projekt in Ihrer Nähe?",
       "description": "Schreiben Sie uns in ein paar Zeilen, was Sie machen. Wir antworten innerhalb eines Werktags und vereinbaren ein erstes Gespräch.",
-      "button": "Über mein Projekt sprechen"
+      "button": "Mein Projekt besprechen"
     }
   }
 }

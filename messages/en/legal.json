@@ -3,70 +3,70 @@
     "privacy": {
       "meta": {
         "title": "Privacy policy - Cosmic Studio",
-        "description": "How Go Cosmic processes personal data, audience measurement, email contacts, retention periods, rights, and CNIL complaints."
+        "description": "How Cosmic Studio handles personal data: forms, emails, audience measurement, retention periods and your rights."
       },
       "eyebrow": "GDPR",
       "title": "Privacy policy",
       "updated": "Last updated: 23 September 2026",
-      "intro": "This page explains how Go Cosmic handles personal data on this website and when you contact the studio by email.",
+      "intro": "This page explains how Cosmic Studio handles the personal data collected on this website and in email exchanges.",
       "legalNoticePrefix": "For publisher and hosting details, see the",
       "legalNoticeLink": "legal notice",
       "sections": [
         {
           "title": "Data controller",
           "body": [
-            "The data controller is Go Cosmic, represented by Matthieu Compérat. The studio can be contacted at support@gocosmic.dev for privacy requests."
+            "The data controller is Cosmic Studio, represented by Matthieu Compérat. For any request about your personal data, write to support@gocosmic.dev."
           ]
         },
         {
           "title": "Data collected",
           "body": [
-            "The website has no account area, checkout, CAPTCHA, or advertising pixel. Two forms are handled server-side. The free mockup page collects your email address, the colour direction you pick, the address of your current website if you provide one, your message, and the language of the page. If you arrive from the pricing simulator, the request also includes the choices you made there — project type, site type, number of pages, selected options, update frequency and the resulting estimated monthly price — so the studio can answer with the full context. The contact form collects the name, email address and message you enter, plus your phone number, your business and the kind of need you picked, if you fill them in. In both cases the fields are forwarded to the studio mailbox by email and nothing is stored in a database. Messages sent through the mailto links are handled by your email client and the recipient mailbox instead.",
-            "Your IP address is processed transiently by the hosting provider's firewall, which limits both forms — the contact form and the free mockup form — to three submissions every ten minutes, alongside a hidden anti-spam field in each. Technical data may be processed by the hosting provider for security and delivery logs. Vercel Analytics is loaded only after consent to measure page views.",
+            "The website has no customer account, payment, CAPTCHA or advertising pixel. Two forms are handled on the server. The free mockup page collects your email address, the colour mood you pick, the address of your current website if you provide it, your message and the language of the page. If you arrive from the pricing simulator, the request also includes the choices you made there (project type, site type, number of pages, selected options, update frequency and the resulting estimated monthly price), so the studio can reply with the full picture. The contact form collects your name, email address and message, plus your phone number, your business and the kind of need you picked, if you fill them in. In both cases, the information is sent by email to the studio's mailbox and nothing is stored in a database. Messages sent through the site's email links are handled by your email software and the recipient's mailbox.",
+            "Your IP address is processed temporarily by the hosting provider's firewall, which limits each of the two forms (contact and free mockup) to three submissions every ten minutes, alongside a hidden anti-spam field. The hosting provider may also process technical data for its security and delivery logs. Vercel Analytics is only loaded after your consent, to count page views.",
             "Two items are stored in your browser. The pricing simulation is kept only so it can follow you from the simulator to the free mockup form: it is sent to us only if you submit that form, is erased once the request is sent, and disappears when you close the tab. The dates of your recent contact form submissions are used to limit how often the form can be sent from the same browser and stay there until you clear your browser data; they are never sent to us."
           ]
         },
         {
           "title": "Purposes and legal bases",
           "body": [
-            "Email messages are processed to answer requests, prepare quotes, provide support, and keep evidence of exchanges. This processing is based on legitimate interest and, where applicable, pre-contractual steps requested by you. Free mockup requests are processed to prepare and send you the mockup you asked for, and to reply to you.",
+            "Emails are processed to answer requests, prepare quotes, provide support and keep a record of exchanges. This processing is based on legitimate interest and, where applicable, on pre-contractual steps taken at your request. Free mockup requests are processed to prepare the mockup, send it to you and reply to you.",
             "Messages sent through the contact form are processed for the same purposes. Limiting submissions per IP address and filtering automated submissions rely on the legitimate interest in protecting the service from abuse.",
-            "Audience measurement is used to understand aggregate traffic and improve the website. Go Cosmic loads Vercel Analytics only after your consent. Security logs are processed for legitimate interest in protecting the service."
+            "Audience measurement is used to understand overall traffic and improve the website. Cosmic Studio only loads Vercel Analytics after your consent. Security logs rely on the legitimate interest in protecting the service."
           ]
         },
         {
           "title": "Recipients and processors",
           "body": [
-            "Data may be accessed by Go Cosmic, the email service provider, Resend (which delivers the free mockup and contact form emails), the hosting provider, and Vercel for hosting and analytics. LinkedIn is an external website and may process data under its own policy after you click an outbound link.",
+            "Data may be accessed by Cosmic Studio, its email provider, Resend (which delivers the emails from the contact form and the free mockup requests) and Vercel, for hosting and audience measurement. LinkedIn is an external website that may process data under its own policy if you follow a link to it.",
             "If you choose to book a call from the contact page, the booking calendar is provided by Google (Google Calendar), which processes the information you enter under its own privacy policy: https://policies.google.com/privacy."
           ]
         },
         {
           "title": "Retention periods",
           "body": [
-            "Email exchanges are kept only for the time needed to handle the request and follow-up, then archived or deleted according to legal, accounting, or dispute limitation needs. Audience consent is stored in your browser until you clear local storage or change browsers. Hosting logs are retained according to the provider configuration.",
-            "Contact form submissions are not kept in a database: they are delivered as an email, and the resulting exchange follows the retention described above."
+            "Email exchanges are kept for as long as needed to handle your request and follow it up, then archived or deleted according to legal, accounting or litigation requirements. Your audience measurement choice is stored in your browser until you clear its data or switch browsers. Hosting logs follow the hosting provider's configuration.",
+            "Contact form submissions are not stored in a database: they are sent by email, and the exchange that follows is kept as described above."
           ]
         },
         {
           "title": "International transfers",
           "body": [
-            "Some processors, including Vercel and email providers, may involve processing outside the European Economic Area.",
+            "Some processors, including Vercel and email providers, may process data outside the European Economic Area.",
             "Vercel frames these transfers using Standard Contractual Clauses approved by the European Commission. For questions about the applicable safeguards, contact support@gocosmic.dev."
           ]
         },
         {
           "title": "Your rights",
           "body": [
-            "You may request access, rectification, erasure, restriction, objection, and portability when applicable by writing to support@gocosmic.dev. You may also lodge a complaint with the CNIL: https://www.cnil.fr/."
+            "Where these rights apply, you can ask to access, correct or erase your data, restrict or object to its processing, or receive it in a portable format, by writing to support@gocosmic.dev. You can also lodge a complaint with the CNIL: https://www.cnil.fr/."
           ]
         },
         {
           "title": "Cookies and audience measurement",
           "body": [
-            "No advertising cookies are intentionally loaded by Go Cosmic. Vercel Analytics is treated as a non-essential audience measurement tool on this site and is loaded only after your consent.",
-            "You can modify or withdraw your consent at any time using the preference management button displayed at the bottom of every page.",
-            "The Google Calendar booking calendar on the contact page only loads if you click “Show the calendar”; Google may then set its own cookies. Without that click, nothing is loaded from Google and you can open the booking page in a new tab."
+            "Cosmic Studio does not load any advertising cookies. Vercel Analytics is treated as a non-essential audience measurement tool and is only loaded after your consent.",
+            "You can change or withdraw your consent at any time with the cookie settings button at the bottom of every page.",
+            "The Google Calendar booking calendar on the contact page only loads if you click “Show the calendar”; Google may then set its own cookies. Without that click, nothing is loaded from Google, and you can open the booking page in a new tab instead."
           ]
         }
       ]
@@ -74,17 +74,17 @@
     "legalNotice": {
       "meta": {
         "title": "Legal notice - Cosmic Studio",
-        "description": "Publisher, hosting, intellectual property, responsibility, and contact information for Go Cosmic."
+        "description": "Publisher, hosting, intellectual property, liability and contact details for Cosmic Studio."
       },
       "eyebrow": "Legal information",
       "title": "Legal notice",
       "updated": "Last updated: 26 May 2026",
-      "intro": "This legal notice identifies the website publisher and the main responsibilities linked to using www.gocosmic.dev.",
+      "intro": "This legal notice identifies the publisher of www.gocosmic.dev and sets out the responsibilities linked to using it.",
       "sections": [
         {
           "title": "Publisher",
           "body": [
-            "Website: www.gocosmic.dev. Publisher: Matthieu Compérat, trading as Go Cosmic — sole trader (Entreprise individuelle) registered since 17 October 2016. SIRET: 823 200 365 00026. Registered address: 485 route de la champanaise, 74410 Duingt, France. Contact: support@gocosmic.dev."
+            "Website: www.gocosmic.dev. Publisher: Matthieu Compérat, sole trader (entreprise individuelle) registered since 17 October 2016, trading as Cosmic Studio (formerly Go Cosmic). SIRET: 823 200 365 00026. Registered address: 485 route de la champanaise, 74410 Duingt, France. Contact: support@gocosmic.dev."
           ]
         },
         {
@@ -100,33 +100,33 @@
         {
           "title": "Intellectual property",
           "body": [
-            "Texts, visuals, source code, design elements, and the Go Cosmic identity are protected unless otherwise stated. Any reproduction or reuse requires prior written permission."
+            "Unless stated otherwise, the texts, visuals, source code, design elements and the Cosmic Studio identity are protected. Any reproduction or reuse requires prior written permission."
           ]
         },
         {
-          "title": "Responsibility",
+          "title": "Liability",
           "body": [
-            "Go Cosmic aims to keep information accurate and available but cannot guarantee that the website is free from interruptions, errors, or outdated content. External links lead to third-party services governed by their own terms and policies."
+            "Cosmic Studio does its best to keep information accurate and the website available, but cannot guarantee that it is free from interruptions, errors or outdated content. External links lead to third-party services governed by their own terms."
           ]
         },
         {
           "title": "Use of artificial intelligence",
           "body": [
-            "Cosmic Studio may integrate AI-assisted features into client projects, and uses these tools to write, translate and develop faster. Every piece of content and every delivery is reviewed by a person.",
-            "Recommendations produced by AI are informative and do not replace human judgement. Applications are tested according to industry best practices.",
-            "Sensitive data is not shared with third parties without a documented legal basis or explicit consent where required. Personal data practices are detailed in the privacy policy."
+            "Cosmic Studio may build AI-based features into its clients' projects, and uses these tools to write, translate and develop faster. Every piece of content and every delivery is reviewed by a person.",
+            "Recommendations produced by AI are for information only and do not replace human judgement. Applications are tested according to industry good practice.",
+            "Sensitive data is never shared with third parties without a documented legal basis, or without explicit consent where it is required. The handling of personal data is detailed in the privacy policy."
           ]
         },
         {
           "title": "Contact",
-          "body": ["For legal, privacy, or security questions, contact support@gocosmic.dev."]
+          "body": ["For any legal, privacy or security question, write to support@gocosmic.dev."]
         }
       ]
     },
     "terms": {
       "meta": {
-        "title": "Terms of Sale - Cosmic Studio",
-        "description": "Cosmic Studio's terms of sale: subscription, options, duration, cancellation, ownership of the code."
+        "title": "Terms of sale - Cosmic Studio",
+        "description": "Cosmic Studio's terms of sale: subscription, options, duration, cancellation and ownership of the code."
       },
       "eyebrow": "Terms of sale",
       "title": "Terms of sale",
@@ -148,28 +148,28 @@
         {
           "title": "Subscribing",
           "body": [
-            "The subscription is confirmed in writing after a first conversation, once your needs (pages, options, changes) have been scoped together. It takes effect when the site goes online."
+            "The subscription is confirmed in writing after a first conversation, once your needs (pages, options, changes) have been defined together. It takes effect when the site goes live."
           ]
         },
         {
           "title": "Price and billing",
           "body": [
             "Subscription prices are those shown on the Services & pricing page at the time of subscription, based on the options chosen. Billing is monthly, quarterly or annual, whichever you prefer.",
-            "Guidance, reinforcement and custom projects are billed at the day rate or on a quote, communicated before any work starts."
+            "Guidance, team reinforcement and custom projects are billed at the day rate or on a quote, provided before any work starts."
           ]
         },
         {
           "title": "Duration and commitment",
           "body": [
             "The subscription has no minimum term and can be cancelled every month, as long as it does not include domain name or email management.",
-            "As soon as either of those two options is active, the subscription runs in 12-month periods, tacitly renewed, to cover the reservation of the domain name and the email address over that period."
+            "As soon as either of these two options is active, the subscription runs in 12-month periods, renewed automatically, to cover the registration of the domain name and the email address."
           ]
         },
         {
           "title": "Options",
           "body": [
             "You can add an option at any time; it takes effect from the next billing period.",
-            "The number of pages, the domain name, Swiss hosting and the email address cannot be removed once active, since each represents a commitment made on your behalf (pages built, domain reserved, mailbox opened). Only the content-updates frequency can be revised up or down."
+            "The number of pages, the domain name, Swiss hosting and the email address cannot be removed once active, because each one is a commitment made on your behalf (pages built, domain registered, mailbox opened). Only the frequency of content changes can be adjusted up or down."
           ]
         },
         {
@@ -182,20 +182,20 @@
         {
           "title": "Ownership",
           "body": [
-            "Your text, images and domain name belong to you from day one. The site's code is handed over to you at no cost after 36 months of subscription. Before that, it can be handed over against a buyout fee that depends on the time remaining.",
-            "For a one-off project, the code is yours from delivery."
+            "Your texts, images and domain name belong to you from day one. The site's code is transferred to you free of charge after 36 months of subscription. Before then, it can be transferred for a fee that depends on the remaining time.",
+            "For a one-off project, the code belongs to you from delivery."
           ]
         },
         {
           "title": "Your commitments",
           "body": [
-            "You provide the text, images and information needed to build or update the site. Stated timelines start once we receive these."
+            "You provide the texts, images and information needed to build or update the site. Announced timelines start once we have received them."
           ]
         },
         {
           "title": "Liability and availability",
           "body": [
-            "Cosmic Studio takes reasonable steps to keep the site available, without guaranteeing it will never be interrupted. In case of a prolonged outage caused by Cosmic Studio, the affected period may be extended accordingly."
+            "Cosmic Studio takes reasonable steps to keep the site available, without being able to guarantee that it will never be interrupted. If a prolonged outage is caused by Cosmic Studio, the period concerned may be extended by the same length of time."
           ]
         },
         {

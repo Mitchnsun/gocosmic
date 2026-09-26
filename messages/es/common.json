@@ -1,6 +1,6 @@
 {
   "404": {
-    "description": "Puede que el enlace sea antiguo o que la página haya cambiado de dirección. Vuelve al inicio o dinos qué estabas buscando.",
+    "description": "Puede que el enlace sea antiguo o que la página haya cambiado de dirección. Vuelve a empezar desde la página de inicio o dinos qué estabas buscando.",
     "link": "Volver al inicio",
     "title": "Esta página se ha salido de su órbita.",
     "eyebrow": "[ Error 404 ]",
@@ -8,7 +8,7 @@
   },
   "meta": {
     "title": "Creación de páginas web · Ginebra y Annecy | Cosmic Studio",
-    "description": "Páginas web para artesanos, asociaciones y autónomos de Ginebra y Alta Saboya. Haz que te encuentren en Google, con alguien que sigue a tu lado."
+    "description": "Creación de páginas web para artesanos, asociaciones y autónomos de Ginebra, Annecy y Alta Saboya. Una web que la gente encuentra en Google, y alguien que se ocupa de ella una vez publicada."
   },
   "language": {
     "current": "Idioma actual: {language}",
@@ -19,7 +19,7 @@
     "mission_control": "Centro de control",
     "available": {
       "label": "Disponible",
-      "detail": "Nuevos proyectos en {month}"
+      "detail": "Nuevos proyectos a partir de {month}"
     },
     "booked": {
       "label": "Completo",
@@ -28,10 +28,10 @@
   },
   "cookieConsent": {
     "title": "Preferencias de privacidad",
-    "description": "Usamos Vercel Analytics para medir la audiencia solo después de tu consentimiento. Rechazarlo no afecta al sitio.",
+    "description": "Si nos das tu consentimiento, medimos la audiencia del sitio con Vercel Analytics. Si lo rechazas, el sitio funciona exactamente igual.",
     "analyticsTitle": "Medición de audiencia",
-    "analyticsDescription": "Estadísticas anónimas de páginas vistas usadas para mejorar el sitio. Cosmic Studio no carga ningún rastreador publicitario.",
-    "accept": "Aceptar analíticas",
+    "analyticsDescription": "Estadísticas anónimas sobre las páginas visitadas, para mejorar el sitio. No se usa ningún rastreador publicitario.",
+    "accept": "Aceptar",
     "refuse": "Rechazar",
     "customize": "Personalizar",
     "save": "Guardar mi elección",

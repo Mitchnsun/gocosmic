@@ -138,7 +138,7 @@ After making changes, validate the app manually:
    - `/projects/mcomperat` — mcomperat showcase
    - `/projects/psc-supersprint` — PSC Supersprint showcase
    - `/projects/choeurdespaysdumontblanc` — Choeur des Pays du Mont Blanc showcase
-   - `/offers`, `/pricing`, `/journey` (and their old localized slugs) — redirect (301) to `/services`
+   - `/offers`, `/pricing`, `/journey` (and their old localized slugs) — permanent redirect to `/services#pricing`, `/services#simulator` and `/services`
 5. `yarn test` — all tests must pass
 
 ## Coverage System
