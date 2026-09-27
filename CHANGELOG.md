@@ -43,6 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Old links to the offers and pricing pages now open the matching section of Services & pricing, the footer's "Our apps" link goes to the apps section of the homepage, and switching language keeps the projects filter and the section being read
 - Visitors who ask their device for fewer animations now get a still page from the start, where some moving elements used to slip through
 - Search engines are now given each page's versions in the other languages and the exact address of each page — the homepage's own address instead of a redirect, and no address at all for pages that don't exist, instead of the homepage's
+- Fixed a production build failure that prevented the site from deploying
 - After scrolling, opening the mobile menu or language panel no longer leaves an empty gap under the top bar
 - The contact form now explains when the "what you need" choice needs to be picked again
 
