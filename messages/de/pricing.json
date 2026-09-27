@@ -1,52 +1,28 @@
 {
   "pricing": {
-    "meta": {
-      "title": "Preise - Go Cosmic",
-      "description": "Stellen Sie Ihre Website ab 10€ im Monat zusammen: Sie wählen die Seitenzahl und die Optionen. Entwurf und Website-Check kostenlos und unverbindlich."
-    },
-    "eyebrow": "[ PREISE ]",
-    "title": "Stellen Sie Ihr Paket zusammen",
-    "subtitle": "Ein klarer Einstiegspreis, und Sie ergänzen nur, was Sie wirklich brauchen. Die Summe aktualisiert sich dabei laufend.",
     "free_offers": {
       "eyebrow": "Kostenlos und unverbindlich",
-      "title": "Noch bevor wir über Budget sprechen",
+      "title": "Bevor wir über das Budget sprechen",
       "items": {
         "mockup": {
-          "title": "Ein Entwurf Ihrer künftigen Website",
+          "title": "Ein Mockup Ihrer künftigen Website",
           "description": "Sie sehen, wie Ihre Website aussehen könnte, bevor Sie sich entscheiden."
         },
         "audit": {
-          "title": "Ein Check Ihrer bestehenden Website",
-          "description": "Was funktioniert, was Ihnen Besucher kostet und ob man Sie bei Google findet."
+          "title": "Eine Bestandsaufnahme Ihrer aktuellen Website",
+          "description": "Was funktioniert, was Besucher vertreibt und wie Ihre Website bei Google erscheint."
         }
       },
       "note": "Beides ist kostenlos und verpflichtet Sie zu nichts."
-    },
-    "step1": {
-      "question": "Was möchten Sie erstellen?",
-      "options": {
-        "website": "Eine Website",
-        "mobile": "Eine mobile App",
-        "both": "Beides"
-      }
-    },
-    "step2": {
-      "question": "Welche Art von Website brauchen Sie?",
-      "options": {
-        "showcase": "Eine Website, die meinen Betrieb vorstellt",
-        "self_managed": "Eine Website, die ich selbst ändern möchte",
-        "accounts": "Eine Website mit einem Bereich für meine Kunden",
-        "ecommerce": "Eine Website zum Verkaufen"
-      }
     },
     "builder": {
       "period": "/ Monat",
       "base": {
         "title": "Grundpaket",
         "includes": {
-          "page": "Eine einzige statische Präsentationsseite für Ihren Betrieb",
+          "page": "Eine Präsentationsseite, die Ihre Tätigkeit vorstellt",
           "hosting": "Rund um die Uhr online, Veröffentlichung inklusive",
-          "security": "Sichere HTTPS-Verbindung (das Schloss im Browser)"
+          "security": "Sichere Verbindung (das Schloss-Symbol im Browser)"
         }
       },
       "options": {
@@ -57,10 +33,10 @@
         },
         "domain": {
           "label": "Verwaltung Ihres Domainnamens",
-          "hint": "Ihr Domainname, zum Beispiel {domain} — für Sie registriert und verlängert."
+          "hint": "Zum Beispiel {domain}: Wir registrieren und verlängern ihn für Sie."
         },
         "swiss_hosting": {
-          "label": "Website in der Schweiz gehostet",
+          "label": "Hosting in der Schweiz",
           "hint": "Ihre Daten bleiben auf einem Server in der Schweiz."
         },
         "email": {
@@ -80,47 +56,75 @@
       },
       "updates": {
         "label": "Inhaltsänderungen inklusive",
-        "hint": "Ihre Texte, Fotos und Öffnungszeiten von mir aktualisiert, ohne jedes Mal Zusatzkosten.",
+        "hint": "Wir aktualisieren Ihre Texte, Fotos und Öffnungszeiten, ohne dass jede Anfrage extra kostet.",
         "off": "Nicht enthalten",
         "slider_label": "Änderungen pro Jahr",
         "tiers": {
-          "few_per_year": "2 bis 3 Mal im Jahr",
-          "monthly": "1 Mal im Monat",
-          "twice_monthly": "2 Mal im Monat",
-          "weekly": "1 Mal pro Woche",
+          "few_per_year": "Zwei- bis dreimal im Jahr",
+          "monthly": "Einmal im Monat",
+          "twice_monthly": "Zweimal im Monat",
+          "weekly": "Einmal pro Woche",
           "unlimited": "So oft wie nötig"
         }
       },
       "total": {
-        "label": "Ihr Paket",
-        "note": "Sie können diese Optionen jederzeit ändern.",
-        "beyond": "Über diese Mengen hinaus sprechen wir darüber: Ich erstelle Ihnen ein passendes Angebot."
+        "label": "Ihre Kostenschätzung",
+        "note": "Richtpreis, den wir nach einem ersten Gespräch bestätigen. Sie können jederzeit Optionen hinzufügen; einmal aktiviert, bleiben sie Teil Ihres Abonnements (siehe Allgemeine Geschäftsbedingungen).",
+        "beyond": "Bei größerem Umfang sprechen wir gemeinsam darüber und machen Ihnen einen Vorschlag.",
+        "cta": "Mein kostenloses Mockup anfordern",
+        "question": "Vorher noch eine Frage? <link>Schreiben Sie uns</link>."
       }
     },
-    "results": {
+    "columns": {
+      "eyebrow": "[ Preise ]",
+      "title": "Vier Wege, mit uns zusammenzuarbeiten.",
+      "subscription": {
+        "title": "Abonnement",
+        "label": "Website, Hosting und Betreuung",
+        "price": "Ab {price}",
+        "period": "/ Monat",
+        "description": "Ihre Website ist online und bleibt aktuell, ohne dass Sie sich darum kümmern müssen. Der Preis richtet sich nach Ihrem Bedarf: Anzahl der Seiten, Domainname, E-Mail-Adresse, Änderungen.",
+        "features": {
+          "included": "Hosting, sichere Verbindung und grundlegende Auffindbarkeit bei Google inklusive",
+          "options": "Optionen, die Sie hinzufügen, wenn Sie sie brauchen",
+          "mockup": "Ein kostenloses Mockup, bevor Sie sich entscheiden"
+        },
+        "cta": "Mein Abonnement zusammenstellen"
+      },
+      "guidance": {
+        "title": "Begleitung",
+        "label": "Beratung, UX/UI und Design",
+        "price": "Tagessatz",
+        "description": "Wenn Sie über das kostenlose Mockup hinausgehen möchten, ohne gleich die Entwicklung zu starten: Architektur, technische Entscheidungen, UX/UI und Design, mit einem Designer an unserer Seite.",
+        "features": {
+          "architecture": "Architektur und technische Entscheidungen",
+          "design": "UX/UI, Nutzerführung und detaillierte Mockups",
+          "designer": "Ein Designer, der Seite an Seite mit dem Entwickler arbeitet"
+        },
+        "cta": "Sprechen wir darüber"
+      },
+      "reinforcement": {
+        "title": "Verstärkung",
+        "label": "Bestehende Website, verstärktes Team",
+        "price": "Tagessatz",
+        "description": "Um eine bestehende Website weiterzuentwickeln, sei es durch technische Verbesserungen oder neue Funktionen, mit einem oder mehreren Entwicklern je nach Umfang des Projekts.",
+        "features": {
+          "technical": "Technische Verbesserung: Leistung, Sicherheit, Updates",
+          "features": "Neue Funktionen auf einer bestehenden Website",
+          "team": "Ein oder mehrere Entwickler je nach Umfang des Projekts"
+        },
+        "cta": "Sprechen wir darüber"
+      },
       "custom": {
-        "note": "Maßgeschneidertes Projekt",
-        "title": "Sprechen wir darüber",
-        "description": "Ein solches Projekt wird im Einzelfall kalkuliert — was Sie brauchen, hat wenig mit einer einfachen Website zu tun. Beschreiben Sie mir Ihr Vorhaben, und Sie erhalten ein ausführliches Angebot, unverbindlich."
+        "title": "Individuell",
+        "label": "Einzelprojekt · nach Angebot",
+        "description": "Onlineshop, Mitgliederbereich, Smartphone-App oder internes Werkzeug: Wir legen das Projekt gemeinsam fest und schicken Ihnen dann ein Angebot. Nach der Übergabe können Sie für die Betreuung in ein Abonnement wechseln.",
+        "features": {
+          "payment": "Zahlung in mehreren Raten, Phase für Phase",
+          "ownership": "Code und Daten gehören Ihnen"
+        },
+        "cta": "Angebot anfordern"
       }
-    },
-    "contact": {
-      "title": "Lassen Sie uns über Ihr Projekt sprechen",
-      "description": "Schreiben Sie mir ein paar Zeilen — Sie bekommen ein klares Angebot zurück.",
-      "email": "prospect@gocosmic.dev",
-      "cta": "Angebot anfordern",
-      "subject": "Preisanfrage — Projektangebot",
-      "aria_label": "E-Mail an prospect@gocosmic.dev für ein Projektangebot senden",
-      "privacy_notice": "Mit dem Versand einer E-Mail erklärst du dich damit einverstanden, dass deine Nachricht und Kontaktdaten zur Angebotserstellung und Projektbetreuung verarbeitet werden.",
-      "privacy_link": "Datenschutzerklärung",
-      "free_mockup_cta_label": "Kostenloses Mockup erhalten",
-      "free_mockup_cta_aria_label": "Zur Seite für die Anfrage eines kostenlosen Mockups"
-    },
-    "reset": "Neu starten",
-    "summary": {
-      "intro": "Guten Tag, hier ist die Zusammenfassung meiner Simulation auf Ihrer Preisseite:",
-      "project": "Projekt",
-      "site_type": "Art der Website"
     }
   }
 }

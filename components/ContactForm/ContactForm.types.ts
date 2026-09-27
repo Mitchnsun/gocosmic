@@ -1,4 +1,5 @@
 import type { ContactErrorCode, ContactField } from '@/lib/contact/validation';
+import type { Region } from '@/lib/region';
 
 /** Submission lifecycle of the contact form. */
 export type ContactFormStatus = 'idle' | 'submitting' | 'success' | 'error';
@@ -12,6 +13,8 @@ export type ContactFormVariant = 'embedded' | 'page';
 export interface ContactFormProps {
   /** Wrapper styling. `'page'` adds the card surface. Defaults to `'page'`. */
   variant?: ContactFormVariant;
+  /** Visitor region, for the Swiss vs. French email/phone placeholders. Defaults to `fr`. */
+  region?: Region;
   /** Called once the submission succeeded. */
   onSuccess?: () => void;
   /** Additional classes for the wrapper. */

@@ -7,7 +7,7 @@ describe('FreeMockupPitch', () => {
     const { getByRole, getByText } = render(<FreeMockupPitch />);
 
     expect(getByRole('heading', { level: 1, name: 'See your site before you decide' })).toBeInTheDocument();
-    expect(getByText(/Tell us where you stand today/)).toBeInTheDocument();
+    expect(getByText(/Tell us where you stand/)).toBeInTheDocument();
   });
 
   it('lists the three steps in order', () => {
@@ -16,8 +16,8 @@ describe('FreeMockupPitch', () => {
     const steps = getAllByRole('listitem');
     expect(steps).toHaveLength(3);
     expect(steps[0]).toHaveTextContent('You send the essentials');
-    expect(steps[1]).toHaveTextContent('We design a mockup');
-    expect(steps[2]).toHaveTextContent('You decide, calmly');
+    expect(steps[1]).toHaveTextContent('We prepare the mockup');
+    expect(steps[2]).toHaveTextContent('Then you decide');
   });
 
   it('labels the steps section with its heading', () => {
@@ -29,7 +29,7 @@ describe('FreeMockupPitch', () => {
   it('links the privacy notice to the privacy policy', () => {
     const { getByRole, getByText } = render(<FreeMockupPitch />);
 
-    expect(getByText(/only to prepare and send your mockup/)).toBeInTheDocument();
+    expect(getByText(/only used to prepare and send your mockup/)).toBeInTheDocument();
     expect(getByRole('link', { name: 'Privacy policy' })).toHaveAttribute('href', '/privacy');
   });
 });

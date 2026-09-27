@@ -28,21 +28,21 @@ export function CookieConsent() {
       {choice === 'accepted' && <Analytics />}
       {choice === null && (
         <section
-          className="fixed right-4 bottom-4 left-4 z-50 m-auto max-w-2xl rounded-lg border border-slate-700 bg-slate-950 p-5 text-gray-200 shadow-2xl md:left-auto"
+          className="border-ghost/15 bg-void text-ghost/85 fixed right-4 bottom-4 left-4 z-50 m-auto max-w-2xl rounded-2xl border p-5 shadow-2xl md:left-auto"
           aria-labelledby="cookie-consent-title">
           <div className="space-y-4">
             <div className="flex items-start justify-between gap-4">
               <div>
-                <h2 id="cookie-consent-title" className="text-lg font-bold text-white">
+                <h2 id="cookie-consent-title" className="font-display text-ghost text-lg font-bold">
                   {t('title')}
                 </h2>
-                <p className="mt-2 text-sm text-gray-300">{t('description')}</p>
+                <p className="text-ghost/70 mt-2 text-sm">{t('description')}</p>
               </div>
               {isDismissable && (
                 <button
                   type="button"
                   aria-label={t('close')}
-                  className="shrink-0 rounded p-1 text-gray-500 transition hover:text-gray-200 focus:ring-2 focus:ring-blue-300 focus:outline-none"
+                  className="text-ghost/45 hover:text-ghost focus:ring-ghost shrink-0 rounded-full p-1 transition focus:ring-2 focus:outline-none"
                   onClick={closeManage}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +63,7 @@ export function CookieConsent() {
             </div>
 
             {isCustomizing && (
-              <div className="flex items-start gap-3 rounded border border-slate-700 bg-slate-900 p-3 text-sm">
+              <div className="border-ghost/15 bg-ghost/[0.03] flex items-start gap-3 rounded-xl border p-3 text-sm">
                 <input
                   id="analytics-consent"
                   type="checkbox"
@@ -72,8 +72,8 @@ export function CookieConsent() {
                   onChange={(event) => setAnalyticsEnabled(event.target.checked)}
                 />
                 <label htmlFor="analytics-consent">
-                  <span className="block font-semibold text-white">{t('analyticsTitle')}</span>
-                  <span className="text-gray-400">{t('analyticsDescription')}</span>
+                  <span className="text-ghost block font-semibold">{t('analyticsTitle')}</span>
+                  <span className="text-ghost/55">{t('analyticsDescription')}</span>
                 </label>
               </div>
             )}
@@ -81,19 +81,19 @@ export function CookieConsent() {
             <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <button
                 type="button"
-                className="rounded bg-blue-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-400 focus:ring-2 focus:ring-blue-300 focus:outline-none"
+                className="font-display bg-aerospace text-void hover:bg-aerospace/90 focus:ring-ghost rounded-full px-4 py-2 text-sm font-semibold transition focus:ring-2 focus:outline-none"
                 onClick={() => saveChoice('accepted')}>
                 {t('accept')}
               </button>
               <button
                 type="button"
-                className="rounded border border-slate-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800 focus:ring-2 focus:ring-blue-300 focus:outline-none"
+                className="font-display border-ghost/15 text-ghost hover:border-ghost hover:bg-ghost/5 focus:ring-ghost rounded-full border px-4 py-2 text-sm font-semibold transition focus:ring-2 focus:outline-none"
                 onClick={() => saveChoice('refused')}>
                 {t('refuse')}
               </button>
               <button
                 type="button"
-                className="rounded px-4 py-2 text-sm font-semibold text-gray-300 underline transition hover:text-white focus:ring-2 focus:ring-blue-300 focus:outline-none"
+                className="font-display text-ghost/70 hover:text-ghost focus:ring-ghost rounded-full px-4 py-2 text-sm font-semibold underline underline-offset-4 transition focus:ring-2 focus:outline-none"
                 onClick={() => {
                   if (isCustomizing) {
                     saveChoice(analyticsEnabled ? 'accepted' : 'refused');
@@ -105,7 +105,7 @@ export function CookieConsent() {
               </button>
               <Link
                 href="/privacy"
-                className="rounded px-4 py-2 text-sm font-semibold text-blue-300 underline transition hover:text-blue-200 focus:ring-2 focus:ring-blue-300 focus:outline-none">
+                className="font-display text-ghost/70 hover:text-ghost focus:ring-ghost rounded-full px-4 py-2 text-sm font-semibold underline underline-offset-4 transition focus:ring-2 focus:outline-none">
                 {t('privacyLink')}
               </Link>
             </div>

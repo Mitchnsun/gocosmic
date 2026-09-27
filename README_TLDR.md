@@ -1,228 +1,112 @@
-# Go Cosmic - TL;DR
+# Cosmic Studio — TL;DR
 
-Quick reference guide for getting started with the Go Cosmic project.
+A lightweight, quick-read version of the docs. For full detail, see
+[README.en.md](./README.en.md) / [README.fr.md](./README.fr.md),
+[CLAUDE.md](./CLAUDE.md) and [CONTRIBUTING.md](./CONTRIBUTING.md).
 
-## What is Go Cosmic?
+## What is Cosmic Studio?
 
-A **multilingual web application** (EN, FR, ES, DE, IT) showcasing Go Cosmic's portfolio, team, and development services. Features a cosmic theme with interactive 3D experiences.
+A single Next.js 16 app (App Router), fully internationalized (EN, FR, ES,
+DE, IT), showcasing Cosmic Studio's portfolio, services and pricing to
+craftspeople, associations and independents.
 
 ## Quick Start
 
 ```bash
-# Enable Corepack for yarn (first time only)
-corepack enable
-
-# Install dependencies (3.5 min)
-yarn
-
-# Start development server
-yarn dev
-
-# Access at http://localhost:3000
+corepack enable   # first time only
+yarn              # install deps (~3.5 min)
+yarn dev          # http://localhost:3000
 ```
 
 ## Tech Stack
 
-- **Next.js 15** + **React 19** + **TypeScript 5.8**
-- **TailwindCSS 4.x** for styling
-- **next-intl** for internationalization (5 languages)
-- **Three.js** + **React Three Fiber** for 3D graphics
-- **Vitest** + **Testing Library** for testing
+- **Next.js 16** + **React 19** + **TypeScript 5.9**
+- **TailwindCSS 4** for styling, **next-intl** for i18n (5 locales)
+- **Vitest** + **React Testing Library** for testing
 
 ## Project Structure
 
 ```
-├── app/[locale]/          # Internationalized pages
-│   ├── page.tsx           # Homepage
-│   ├── about/             # About page
-│   ├── services/          # Services page
-│   ├── offers/            # Offers page
-│   ├── journey/           # 3D cosmic experience
-│   └── projects/          # Project showcases
-├── components/            # React components
-├── messages/              # Translations (organized by namespace)
-│   ├── en/, fr/, es/, de/, it/
-│   │   ├── common.json    # Shared strings
-│   │   ├── navigation.json
-│   │   ├── footer.json
-│   │   ├── home.json
-│   │   └── [page].json
-├── i18n/                  # i18n configuration
-├── design-system/         # Reusable UI components
-└── __tests__/             # Unit tests
-
+app/[locale]/       # Internationalized pages (server components by default)
+components/         # App-specific components
+design-system/      # Reusable UI primitives (button, eyebrow, chip, field…)
+data/projects.ts    # Case study registry
+lib/                # Shared helpers
+messages/<locale>/  # Translations, one JSON file per namespace
+i18n/               # Routing, request config, canonical URLs
+__tests__/          # Unit tests, mirrors the source structure
 ```
 
 ## Essential Commands
 
 ```bash
-yarn dev              # Development server
-yarn build            # Production build (34 sec)
-yarn test             # Run tests (4 sec)
-yarn coverage         # Test coverage report
-yarn lint             # Lint code (7 sec)
-yarn format           # Format code (2 sec)
-yarn check-types      # TypeScript validation (9 sec)
+yarn dev              # Dev server
+yarn build            # Production build (~34s)
+yarn lint             # ESLint, zero warnings (~7s)
+yarn format           # Prettier
+yarn check-types      # TypeScript via tsconfig.check.json (~9s)
+yarn test             # Vitest (~9s, ~690 tests / 87 files)
+yarn coverage         # Coverage report, ≥90% required (~15 min)
 ```
 
-## Before Committing
+**Before committing**, always run:
+`yarn format && yarn lint && yarn check-types && yarn test && yarn coverage`
 
-**ALWAYS run these commands (CI will fail otherwise):**
+## Commit Messages
 
-1. `yarn format`
-2. `yarn lint`
-3. `yarn check-types`
-4. `yarn test`
-5. `yarn coverage`
+[Conventional Commits](https://www.conventionalcommits.org/):
+`<type>(<scope>): <description>` — imperative, lowercase, no period, ≤69
+chars, English only.
 
-## Commit Message Format
-
-Follow [Conventional Commits](https://www.conventionalcommits.org/):
-
-```
-<type>[optional scope]: <description>
-
-[optional body]
-```
-
-**Types**: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `tech`, `chore`
-
-**Rules**:
-
-- Imperative mood, lowercase, no period
-- Max 69 characters for description
-- English only
-
-**Examples**:
+Types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `tech`, `chore`
 
 ```bash
 feat(ui): add cosmic Button component
 fix(web): resolve navigation issue on mobile
-docs: update README installation instructions
-tech(deps): update Next.js to version 15
+tech(deps): update Next.js to version 16
 ```
 
 ## Before Opening a PR
 
-**CRITICAL - Update version and changelog:**
-
-1. **Increment version in `package.json`** ([Semantic Versioning](https://semver.org/)):
-   - **PATCH** (x.y.Z) - Bug fixes: `1.0.3` → `1.0.4`
-   - **MINOR** (x.Y.0) - New features: `1.0.3` → `1.1.0`
-   - **MAJOR** (X.0.0) - Breaking changes: `1.0.3` → `2.0.0`
-
-2. **Add entry to `CHANGELOG.md`**:
-
-   ```markdown
-   ## [X.Y.Z] - YYYY-MM-DD
-
-   ### Added
-
-   - New features
-
-   ### Changed
-
-   - Changes in existing functionality
-
-   ### Fixed
-
-   - Bug fixes
-
-   ### Removed
-
-   - Removed features
-   ```
-
-3. Use current date in YYYY-MM-DD format (e.g., 2025-10-29)
-
-## Adding New Routes
-
-1. Create page: `app/[locale]/your-route/page.tsx`
-2. Add translated pathnames in `i18n/routing.ts`:
-   ```typescript
-   pathnames: {
-     '/your-route': {
-       en: '/your-route',
-       fr: '/votre-route',
-       es: '/tu-ruta',
-       de: '/ihre-route',
-       it: '/la-tua-route',
-     },
-   }
-   ```
-3. Create or update namespace files in `messages/[locale]/[namespace].json`
-4. Update `i18n/request.ts` to map route to namespace
-5. Test in all locales
-
-## Internationalization (i18n)
-
-**Namespace Organization:**
-
-- `common.json` - Shared strings (404, meta, language switcher)
-- `navigation.json` - Header navigation
-- `footer.json` - Footer content
-- `[page].json` - Page-specific content
-
-**Usage in components:**
-
-```tsx
-import { useTranslations } from 'next-intl';
-
-export default function MyPage() {
-  const t = useTranslations('namespace');
-  return <h1>{t('key')}</h1>;
-}
-```
-
-**Adding translations:**
-
-1. Add to `messages/en/[namespace].json` first (English is base)
-2. Translate to all other locales (fr, es, de, it)
-
-## Testing
-
-- Components using translations need `next-intl` context
-- Use custom render from `__tests__/test-utils.tsx`
-- Focus on behavior, not implementation
-- Validate accessibility (ARIA attributes)
-- 90% coverage threshold enforced
+**One version bump per PR, not per commit.** The first change on a branch
+bumps `version` in `package.json` (semver) and adds a `CHANGELOG.md` entry
+under `## [X.Y.Z] - YYYY-MM-DD`; later commits on the same branch add
+bullets to that same entry instead of bumping again. See
+[CLAUDE.md § PR checklist](./CLAUDE.md#pr-checklist) for the full rule.
 
 ## Key Pages
 
-- **Homepage** (`/`) - Hero section, CTA, team link
-- **About** (`/about`) - Company overview, developer profile, legal
-- **Services** (`/services`) - Development, design, AI, launch
-- **Offers** (`/offers`) - Solo, team, duo packages
-- **Journey** (`/journey`) - 3D cosmic experience with Three.js
-- **Projects** (`/projects/*`) - Project showcases (e.g., Daily Fortune)
+- **Homepage** (`/`) — hero, audience, pricing, projects, own apps, CTA
+- **About** (`/about`) — background, why craftspeople and associations
+- **Services & pricing** (`/services`) — pricing columns, subscription simulator, trades, FAQ
+- **Contact** (`/contact`) — details, message form, call booking
+- **Free mockup** (`/free-mockup`) — lead-capture form
+- **Local** (`/local`) — Geneva / Annecy landing page (localized slugs)
+- **Projects** (`/projects/*`) — filterable index + case studies
+- **Legal** — `/privacy`, `/legal-notice`, `/terms`
 
 ## Coding Standards
 
-- **TypeScript-first** with strict type checking
-- **ESLint 9.x** with zero warnings (`--max-warnings 0`)
-- **Prettier** for formatting
-- **Conventional Commits** enforced
-- **Pre-commit hooks** via Husky + lint-staged
-- **90% test coverage** requirement
+- TypeScript strict, no `any`
+- ESLint zero-warnings policy, Prettier formatting
+- Conventional Commits, Husky + lint-staged pre-commit hooks
+- 90% test coverage threshold (lines, functions, branches, statements)
 
-## Important Notes
+## Good to Know
 
-- **NEVER cancel builds** - Wait at least 15 minutes
-- Node.js >= 22 recommended (works on v20 with warnings)
-- All commands listed above must complete successfully before PR
-- English is the base language for translations
-- Coverage threshold is 90% (lines, functions, branches, statements)
+- Node.js **≥ 24** required
+- **Never cancel** long-running commands — install, build and coverage all take real time
+- English is the base language for translations; all 5 locales are updated together
 
-## Documentation
+## More Docs
 
-- **README.md** - Full project documentation
-- **CONTRIBUTING.md** - Contribution guidelines and workflow
-- **CHANGELOG.md** - Version history and changes
-- \***\*tests**/TESTING.md\*\* - Testing guidelines
-
-## Need Help?
-
-1. Check `README.md` for detailed information
-2. Check `CONTRIBUTING.md` for workflow details
-3. Check `.github/copilot-instructions.md` for development guidance
-4. Open an issue or contact maintainers
+| File                                                            | What it covers                                 |
+| --------------------------------------------------------------- | ---------------------------------------------- |
+| [README.en.md](./README.en.md) / [README.fr.md](./README.fr.md) | Full project documentation                     |
+| [CLAUDE.md](./CLAUDE.md)                                        | AI agent guide (setup, architecture, workflow) |
+| [CONTRIBUTING.md](./CONTRIBUTING.md)                            | Contribution workflow                          |
+| [GUIDELINES.md](./GUIDELINES.md)                                | UI, ESLint, security, manual validation        |
+| [DESIGN_GUIDELINE.md](./DESIGN_GUIDELINE.md)                    | Design system tokens and patterns              |
+| [`__tests__/TESTING.md`](./__tests__/TESTING.md)                | Testing patterns and conventions               |
+| [SECURITY.md](./SECURITY.md)                                    | Security policy                                |
+| [CHANGELOG.md](./CHANGELOG.md)                                  | Version history                                |

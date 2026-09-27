@@ -1,34 +1,50 @@
 {
   "local": {
-    "hero": {
-      "title": "Web- & Mobile-Entwickler in Annecy, Genf und der Westschweiz",
-      "description": {
-        "fr": "Matthieu Compérat, freiberuflicher Entwickler mit Sitz in Annecy. Ich entwickle moderne Web- und Mobile-Apps für Unternehmen in Annecy, Haute-Savoie, Genf und der Westschweiz.",
-        "ch": "Matthieu Compérat, freiberuflicher Entwickler mit Sitz in Chêne-Bougeries bei Genf. Ich entwickle moderne Web- und Mobile-Apps für Unternehmen in Genf, der Westschweiz und der Region Annecy."
-      }
+    "meta": {
+      "title": "Web- und App-Entwickler in Genf und Annecy | Cosmic Studio",
+      "description": "Cosmic Studio erstellt Websites und Apps für Handwerksbetriebe, Vereine und Selbstständige in Genf, der Westschweiz, Annecy und Hochsavoyen. Treffen vor Ort oder per Videogespräch."
     },
-    "services": {
-      "title": "Web- und Mobile-Entwicklung für lokale Unternehmen"
+    "intro": {
+      "eyebrow": "[ Genf · Annecy ]",
+      "title": "Ihr Webstudio <em>zwischen Genf und Annecy.</em>",
+      "lead": {
+        "ch": "Cosmic Studio ist in Chêne-Bougeries zu Hause. Wir erstellen Websites und Apps für Handwerksbetriebe, Vereine und Selbstständige in Genf und der Westschweiz und kommen gern bei Ihnen vorbei.",
+        "fr": "Cosmic Studio arbeitet zwischen Annecy und Genf. Wir erstellen Websites und Apps für Handwerksbetriebe, Vereine und Selbstständige in Hochsavoyen und kommen gern bei Ihnen vorbei."
+      },
+      "primary": "Mein Projekt besprechen",
+      "secondary": "Leistungen und Preise ansehen"
     },
-    "zone": {
-      "title": "Einsatzgebiet",
-      "remote": "Remote-Zusammenarbeit in ganz Frankreich und der Schweiz möglich",
-      "locations": {
-        "annecy": "Annecy & Haute-Savoie",
-        "geneva": "Genf & Genferseeregion",
-        "suisse_romande": "Westschweiz (Waadt, Wallis, Neuenburg, Freiburg)"
+    "zones": {
+      "eyebrow": "[ Einsatzgebiet ]",
+      "title": "Vor Ort, wenn es sinnvoll ist, <em>sonst aus der Ferne.</em>",
+      "items": {
+        "geneva": {
+          "title": "Genf",
+          "description": "Das Studio liegt in Chêne-Bougeries. Wir treffen uns bei Ihnen, in Ihrer Werkstatt oder bei einem Kaffee."
+        },
+        "romandy": {
+          "title": "Westschweiz",
+          "description": "Waadt, Wallis, Neuenburg, Freiburg: Zum ersten Termin kommen wir vorbei, danach geht es per Videogespräch weiter."
+        },
+        "annecy": {
+          "title": "Annecy und Hochsavoyen",
+          "description": "Von Annecy bis ins französische Genfer Umland gelten dieselben Bedingungen und Lieferzeiten wie in Genf."
+        },
+        "remote": {
+          "title": "Anderswo",
+          "description": "Überall in Frankreich und in der Schweiz geht alles auch aus der Ferne: Videogespräche, das Mockup per Link, der Start der Website."
+        }
       }
     },
     "projects": {
-      "title": {
-        "fr": "Aktuelle Projekte aus Annecy",
-        "ch": "Aktuelle Projekte aus Genf"
-      }
+      "eyebrow": "[ Referenzen ]",
+      "title": "Einige Websites, <em>die schon online sind.</em>",
+      "all": "Alle Projekte"
     },
-    "cta": "Kontakt zu Ihrem lokalen Webentwickler",
-    "meta": {
-      "title": "Web- & Mobile-Entwickler Annecy • Genf • Westschweiz | Go Cosmic",
-      "description": "Matthieu Compérat, freiberuflicher Entwickler mit Sitz in Annecy und Genf. Entwicklung von Web- und Mobile-Apps für Annecy, Haute-Savoie, Genf und die Westschweiz."
+    "cta": {
+      "title": "Ein Projekt in Ihrer Nähe?",
+      "description": "Schreiben Sie uns in ein paar Zeilen, was Sie machen. Wir antworten schnell und vereinbaren ein erstes Gespräch.",
+      "button": "Mein Projekt besprechen"
     }
   }
 }

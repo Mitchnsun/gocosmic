@@ -1,70 +1,46 @@
 {
   "pricing": {
-    "meta": {
-      "title": "Tarifas - Go Cosmic",
-      "description": "Componga su sitio desde 10€ al mes: elija el número de páginas y las opciones. Maqueta y revisión de su web gratuitas, sin compromiso."
-    },
-    "eyebrow": "[ TARIFAS ]",
-    "title": "Componga su oferta",
-    "subtitle": "Un precio de partida claro y solo añade lo que realmente necesita. El total se actualiza sobre la marcha.",
     "free_offers": {
       "eyebrow": "Gratis, sin compromiso",
-      "title": "Antes incluso de hablar de presupuesto",
+      "title": "Antes de hablar de presupuesto",
       "items": {
         "mockup": {
-          "title": "Una maqueta de su futuro sitio",
-          "description": "Vea cómo quedaría su sitio antes de decidir nada."
+          "title": "Una maqueta de tu futuro sitio",
+          "description": "Mira cómo quedaría tu sitio antes de decidir nada."
         },
         "audit": {
-          "title": "Una revisión de su sitio actual",
-          "description": "Lo que funciona, lo que le hace perder visitantes y si le encuentran en Google."
+          "title": "Una revisión de tu sitio actual",
+          "description": "Lo que funciona, lo que ahuyenta a los visitantes y cómo aparece tu sitio en Google."
         }
       },
-      "note": "Ambas son gratuitas y no le comprometen a nada."
-    },
-    "step1": {
-      "question": "¿Qué desea crear?",
-      "options": {
-        "website": "Un sitio web",
-        "mobile": "Una aplicación móvil",
-        "both": "Ambos"
-      }
-    },
-    "step2": {
-      "question": "¿Qué tipo de sitio necesita?",
-      "options": {
-        "showcase": "Un sitio que presente mi actividad",
-        "self_managed": "Un sitio que quiero modificar yo mismo",
-        "accounts": "Un sitio con un espacio para mis clientes",
-        "ecommerce": "Un sitio para vender en línea"
-      }
+      "note": "Ambas son gratuitas y no te comprometen a nada."
     },
     "builder": {
       "period": "/ mes",
       "base": {
         "title": "Plan base",
         "includes": {
-          "page": "Una única página vitrina estática que presenta su actividad",
+          "page": "Una página de presentación de tu negocio",
           "hosting": "En línea las 24 horas, publicación incluida",
-          "security": "Conexión segura HTTPS (el candado del navegador)"
+          "security": "Conexión segura (el candado que aparece en el navegador)"
         }
       },
       "options": {
-        "title": "Añada lo que necesite",
+        "title": "Añade lo que necesites",
         "example_domain": {
           "fr": "mi-empresa.es",
           "ch": "mi-empresa.ch"
         },
         "domain": {
-          "label": "Gestión de su nombre de dominio",
-          "hint": "Su nombre de dominio, por ejemplo {domain} — registrado y renovado por usted."
+          "label": "Gestión de tu nombre de dominio",
+          "hint": "Por ejemplo {domain}: lo registramos y lo renovamos por ti."
         },
         "swiss_hosting": {
           "label": "Sitio alojado en Suiza",
-          "hint": "Sus datos permanecen en un servidor situado en Suiza."
+          "hint": "Tus datos permanecen en un servidor situado en Suiza."
         },
         "email": {
-          "label": "Una dirección de correo con su nombre",
+          "label": "Una dirección de correo con tu nombre",
           "hint": "Por ejemplo contacto@{domain}, en lugar de una dirección gratuita."
         }
       },
@@ -74,13 +50,13 @@
           "one": "1 página (incluida)",
           "two_four": "2 a 4 páginas",
           "five_seven": "5 a 7 páginas",
-          "eight_nine": "8 a 9 páginas",
+          "eight_nine": "8 o 9 páginas",
           "ten_plus": "10 páginas o más"
         }
       },
       "updates": {
         "label": "Cambios de contenido incluidos",
-        "hint": "Sus textos, fotos y horarios actualizados por mí, sin coste adicional cada vez.",
+        "hint": "Actualizamos tus textos, tus fotos y tus horarios, sin coste adicional por cada petición.",
         "off": "No incluido",
         "slider_label": "Cambios al año",
         "tiers": {
@@ -92,35 +68,63 @@
         }
       },
       "total": {
-        "label": "Su oferta",
-        "note": "Puede cambiar estas opciones en cualquier momento.",
-        "beyond": "Por encima de estos volúmenes lo hablamos: le preparo una propuesta a medida."
+        "label": "Tu estimación",
+        "note": "Precio orientativo, que confirmamos tras una primera conversación. Puedes añadir opciones en cualquier momento; una vez activadas, se mantienen en tu suscripción (consulta las condiciones generales de venta).",
+        "beyond": "Si necesitas más, lo hablamos y te hacemos una propuesta.",
+        "cta": "Pedir mi maqueta gratuita",
+        "question": "¿Alguna pregunta antes? <link>Escríbenos</link>."
       }
     },
-    "results": {
+    "columns": {
+      "eyebrow": "[ Precios ]",
+      "title": "Cuatro formas de trabajar con nosotros.",
+      "subscription": {
+        "title": "Suscripción",
+        "label": "Sitio, alojamiento y seguimiento",
+        "price": "Desde {price}",
+        "period": "/ mes",
+        "description": "Tu sitio está en línea y al día sin que tengas que ocuparte de nada. El precio depende de lo que necesites: número de páginas, nombre de dominio, dirección de correo, cambios.",
+        "features": {
+          "included": "Alojamiento, conexión segura y posicionamiento básico en Google incluidos",
+          "options": "Opciones que puedes añadir cuando las necesites",
+          "mockup": "Una maqueta gratuita antes de decidirte"
+        },
+        "cta": "Configurar mi suscripción"
+      },
+      "guidance": {
+        "title": "Acompañamiento",
+        "label": "Asesoría, UX/UI y diseño",
+        "price": "Tarifa por día",
+        "description": "Para ir más allá de la maqueta gratuita sin tener que empezar el desarrollo: arquitectura, decisiones técnicas, UX/UI y diseño, con un diseñador en el equipo.",
+        "features": {
+          "architecture": "Arquitectura y decisiones técnicas",
+          "design": "UX/UI, recorridos de usuario y maquetas detalladas",
+          "designer": "Un diseñador que trabaja junto al desarrollador"
+        },
+        "cta": "Hablemos"
+      },
+      "reinforcement": {
+        "title": "Refuerzo",
+        "label": "Sitio existente, equipo reforzado",
+        "price": "Tarifa por día",
+        "description": "Para hacer evolucionar un sitio que ya tienes, ya sea con mejoras técnicas o con nuevas funcionalidades, con uno o varios desarrolladores según el alcance del proyecto.",
+        "features": {
+          "technical": "Mejora técnica: rendimiento, seguridad, actualizaciones",
+          "features": "Nuevas funcionalidades en un sitio existente",
+          "team": "Uno o varios desarrolladores según el alcance del proyecto"
+        },
+        "cta": "Hablemos"
+      },
       "custom": {
-        "note": "Proyecto a medida",
-        "title": "Hablémoslo",
-        "description": "Este tipo de proyecto se presupuesta caso por caso: lo que necesita poco tiene que ver con un sitio de presentación. Cuénteme su necesidad y le envío una propuesta detallada, sin compromiso."
+        "title": "A medida",
+        "label": "Proyecto puntual · según presupuesto",
+        "description": "Tienda en línea, área de socios, aplicación móvil o herramienta interna: definimos el proyecto juntos y luego te enviamos un presupuesto. Tras la entrega, puedes pasarte a la suscripción para el seguimiento.",
+        "features": {
+          "payment": "Pago en varios plazos, uno por etapa",
+          "ownership": "El código y los datos son tuyos"
+        },
+        "cta": "Pedir un presupuesto"
       }
-    },
-    "contact": {
-      "title": "Hablemos de su proyecto",
-      "description": "Escríbame unas líneas y le respondo con una propuesta clara.",
-      "email": "prospect@gocosmic.dev",
-      "cta": "Solicitar un presupuesto",
-      "subject": "Consulta de precios — Presupuesto de proyecto",
-      "aria_label": "Enviar un correo a prospect@gocosmic.dev para un presupuesto de proyecto",
-      "privacy_notice": "Al enviar un email, aceptas que tu mensaje y tus datos de contacto se traten para preparar un presupuesto y hacer seguimiento del proyecto.",
-      "privacy_link": "Política de privacidad",
-      "free_mockup_cta_label": "Recibir una maqueta gratuita",
-      "free_mockup_cta_aria_label": "Ir a la página de solicitud de maqueta gratuita"
-    },
-    "reset": "Empezar de nuevo",
-    "summary": {
-      "intro": "Hola, este es el resumen de mi simulación en su página de precios:",
-      "project": "Proyecto",
-      "site_type": "Tipo de sitio"
     }
   }
 }

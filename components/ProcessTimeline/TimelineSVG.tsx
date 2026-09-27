@@ -40,7 +40,7 @@ export function TimelineSVG({ steps, duration, reducedMotion }: TimelineSVGProps
       height={totalHeight}
       viewBox={`0 0 2 ${totalHeight}`}
       aria-hidden="true"
-      className="absolute top-0 left-1/2 -translate-x-1/2 overflow-visible text-slate-600">
+      className="text-ghost/20 absolute top-0 left-1/2 -translate-x-1/2 overflow-visible">
       <line
         ref={lineRef}
         x1="1"

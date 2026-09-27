@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
-import { buildCaseStudyNavigation, CaseStudy } from '@/components/CaseStudy';
-import { getCanonicalUrl } from '@/i18n/canonical';
+import { buildCaseStudyMeta, buildCaseStudyNavigation, CaseStudy, PROJECTS_BY_SLUG } from '@/components/CaseStudy';
+import { getAlternates } from '@/i18n/canonical';
 import { getOgImages } from '@/lib/og';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -17,9 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title,
     description,
-    alternates: {
-      canonical: getCanonicalUrl(locale, '/projects/choeurdespaysdumontblanc'),
-    },
+    alternates: getAlternates(locale, '/projects/choeurdespaysdumontblanc'),
     openGraph: {
       title,
       description,
@@ -44,40 +42,35 @@ export default function ChoeurDesPaysduMontBlanc() {
       eyebrow={tCommon('eyebrow')}
       title={t('title')}
       tagline={t('subtitle')}
-      accent="royal"
-      logo={{ src: '/projects/choeurdespaysdumontblanc/CPMB-logo-blanc.png', alt: t('title') }}
-      meta={['2025', 'Next.js · Tailwind CSS', 'Web']}
+      accent={PROJECTS_BY_SLUG.choeurdespaysdumontblanc.accent}
+      logo={{ src: PROJECTS_BY_SLUG.choeurdespaysdumontblanc.cover.src, alt: t('title') }}
+      meta={buildCaseStudyMeta('choeurdespaysdumontblanc', tList)}
       sections={[
         {
-          id: 'overview',
-          title: t('overview.title'),
-          content: t('overview.description'),
-          secondary: t('overview.mission'),
+          id: 'for-whom',
+          label: t('for_whom.label'),
+          title: t('for_whom.title'),
+          content: t('for_whom.description'),
         },
         {
-          id: 'features',
-          title: t('features.title'),
+          id: 'what-we-did',
+          label: t('what_we_did.label'),
+          title: t('what_we_did.title'),
+          content: t('what_we_did.description'),
           columns: 2,
           points: [
-            t('features.items.concerts'),
-            t('features.items.repertoire'),
-            t('features.items.community'),
-            t('features.items.events'),
+            t('what_we_did.items.concerts'),
+            t('what_we_did.items.repertoire'),
+            t('what_we_did.items.join'),
+            t('what_we_did.items.news'),
           ],
         },
         {
-          id: 'technology',
-          title: t('technology.title'),
-          content: t('technology.description'),
-          columns: 2,
-          points: [
-            t('technology.stack.nextjs'),
-            t('technology.stack.typescript'),
-            t('technology.stack.tailwind'),
-            t('technology.stack.responsive'),
-          ],
+          id: 'result',
+          label: t('result.label'),
+          title: t('result.title'),
+          content: t('result.description'),
         },
-        { id: 'purpose', title: t('purpose.title'), content: t('purpose.description') },
       ]}
       cta={{
         title: t('cta.title'),

@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 import type { Currency, Region } from '@/lib/region';
 
@@ -14,7 +14,6 @@ import {
   UPDATE_TIER_PRICES,
 } from './constants';
 import { OptionToggle } from './OptionToggle';
-import { PriceTotal } from './PriceTotal';
 import type { AddOnKey, PlanSelection } from './PricingSimulator.types';
 import { formatAmount, getAddOnPrice, getUpdateTierPrice } from './PricingSimulator.utils';
 import { TierSlider } from './TierSlider';
@@ -23,28 +22,25 @@ interface PlanBuilderProps {
   currency: Currency;
   region: Region;
   selection: PlanSelection;
-  total: number;
-  showQuoteHint: boolean;
   onToggleAddOn: (key: AddOnKey) => void;
   onToggleUpdates: () => void;
   onPagesChange: (value: number) => void;
   onUpdatesChange: (value: number) => void;
 }
 
-/** Composable showcase plan: a base price the visitor grows with add-ons and sliders. */
+/** Composable showcase plan: a base price the visitor grows with add-ons and sliders. The total lives in `PlanSummary`. */
 export function PlanBuilder({
   currency,
   region,
   selection,
-  total,
-  showQuoteHint,
   onToggleAddOn,
   onToggleUpdates,
   onPagesChange,
   onUpdatesChange,
 }: PlanBuilderProps) {
   const t = useTranslations('pricing');
-  const surcharge = (amount: number) => `+${formatAmount(amount, currency)}`;
+  const locale = useLocale();
+  const surcharge = (amount: number) => `+${formatAmount(amount, currency, locale)}`;
   const exampleDomain = t(`builder.options.example_domain.${region}`);
 
   // Indexes come from TIER_INDEXES, a fixed list of slider positions.
@@ -69,7 +65,7 @@ export function PlanBuilder({
             {t('builder.base.title')}
           </h3>
           <p className="font-display text-ghost text-lg font-medium tabular-nums">
-            {formatAmount(BASE_PRICE, currency)}
+            {formatAmount(BASE_PRICE, currency, locale)}
             <span className="text-ghost/55 ml-1 text-sm">{t('builder.period')}</span>
           </p>
         </div>
@@ -127,20 +123,6 @@ export function PlanBuilder({
           </div>
         </OptionToggle>
       </section>
-
-      {/* Live total */}
-      <PriceTotal
-        label={t('builder.total.label')}
-        amount={formatAmount(total, currency)}
-        period={t('builder.period')}
-        note={t('builder.total.note')}
-      />
-
-      {showQuoteHint && (
-        <p className="border-aerospace/30 bg-aerospace/[0.04] text-ghost/55 rounded-xl border px-4 py-3 text-sm">
-          {t('builder.total.beyond')}
-        </p>
-      )}
     </div>
   );
 }

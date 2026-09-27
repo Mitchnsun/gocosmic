@@ -15,7 +15,7 @@ yarn build            # Production build (~34s)
 yarn lint             # ESLint with zero-warnings policy (~7s)
 yarn format           # Prettier write on all .ts/.tsx/.md
 yarn check-types      # TypeScript type check via tsconfig.check.json (~9s)
-yarn test             # Run all Vitest tests (~4s, ~305 tests / 40 files)
+yarn test             # Run all Vitest tests (~9s, ~690 tests / 87 files)
 yarn test:watch       # Vitest in watch mode
 yarn coverage         # Generate coverage report (must stay ≥90% on all metrics)
 ```
@@ -47,15 +47,14 @@ This is a single Next.js 16 app (App Router) with full internationalization via 
 ### Key directories
 
 - `app/[locale]/` — All routes are under the dynamic `[locale]` segment. Pages export metadata and use server components by default.
-- `components/` — App-specific components: `Header`, `Footer`, `LanguageSwitcher`, `Loader`, `JsonLd`, `Journey`, icons.
-- `design-system/` — Reusable UI primitives: `button.tsx` + `button.variants.ts` using CVA. Components use `@radix-ui/react-slot` for polymorphism. `design-system/lib/utils.ts` exports `cn` (clsx + tailwind-merge) — **always use `cn` for conditional Tailwind classes**, never string interpolation. Prefer the object form (`cn({ 'class': condition })`) over `condition && 'class'`.
-- `lib/` — Standalone helpers shared across the app (`clamp.ts`, `config.ts`, `og.ts`, `renderWithLinks.tsx`). Distinct from `design-system/lib/`.
-- `data/` — Static content sources (e.g. `projects.json` backing the projects pages).
-- `views/` — View-layer components for complex pages (e.g., Journey 3D canvas).
-- `messages/<locale>/` — Translation files split by namespace: `common`, `navigation`, `footer`, `home`, `about`, `services`, `offers`, `journey`, `projects`, `contact`, `local`, `legal`, `pricing`, `psc-supersprint`.
+- `components/` — App-specific components, one folder per component (`Header`, `Footer`, `LanguageSwitcher`, `JsonLd`, `Planet`, `PricingColumns`, `PricingSimulator`, `CaseStudy`, `ContactForm`, `ProjectGrid`, icons, and more).
+- `design-system/` — Reusable UI primitives: `button.tsx` + `button.variants.ts` using CVA, plus `eyebrow.tsx`, `chip.tsx`, `field.tsx`, `hairline-grid.tsx`, `pill.ts`, `slider.tsx`, `accent.ts`. Components use `@radix-ui/react-slot` for polymorphism. `design-system/lib/utils.ts` exports `cn` (clsx + tailwind-merge) — **always use `cn` for conditional Tailwind classes**, never string interpolation. Prefer the object form (`cn({ 'class': condition })`) over `condition && 'class'`.
+- `lib/` — Standalone helpers shared across the app (`clamp.ts`, `config.ts`, `og.ts`, `renderWithLinks.tsx`, plus `contact/`, `pricing/`, `validation/`, `hooks/` subfolders). Distinct from `design-system/lib/`.
+- `data/` — Static content sources (`projects.ts` exports `PROJECTS`, the ordered case-study registry backing the projects pages).
+- `messages/<locale>/` — Translation files split by namespace: `common`, `navigation`, `footer`, `home`, `about`, `services`, `pricing`, `projects`, `contact`, `free-mockup`, `local`, `legal`, `psc-supersprint`.
 - `i18n/routing.ts` — Defines supported locales (`en`, `fr`, `es`, `de`, `it`) and all translated pathnames.
 - `i18n/request.ts` — Server-side i18n setup (namespace loading per route).
-- `__tests__/` — Mirrors source structure (`components/`, `pages/`, `views/`). `test-utils.tsx` provides a custom `render` that wraps with `NextIntlClientProvider`.
+- `__tests__/` — Mirrors source structure (`components/`, `pages/`). `test-utils.tsx` provides a custom `render` that wraps with `NextIntlClientProvider`.
 
 ### TypeScript configs
 
@@ -69,9 +68,11 @@ This is a single Next.js 16 app (App Router) with full internationalization via 
 - When adding a new route:
   1. Create `app/[locale]/your-route/page.tsx`
   2. Add translated pathnames in `i18n/routing.ts`
-  3. Export `metadata` with `alternates.canonical` set to the locale-agnostic path
-  4. Add translation keys to all 5 locale namespace files under `messages/`
+  3. Export `generateMetadata` with `alternates.canonical` set via `getCanonicalUrl` (`i18n/canonical.ts`) to the locale-agnostic path
+  4. Map the route to its translation namespace(s) in `getNamespacesForPath` (`i18n/request.ts`)
+  5. Add translation keys to all 5 locale namespace files under `messages/`
 - `proxy.ts` handles locale detection and redirects at the middleware level.
+- **Inclusive writing for trades/professions**: when copy lists or names a profession in a gendered language, write both forms. FR uses the median dot (`coiffeur·se`, `consultant·e`); ES/IT use a slash (`fontanero/a`, `parrucchiere/a`); DE uses a colon (`Berater:in`). Generic plural nouns that already read as neutral (e.g. "artisans", "indépendants", "artigiani") don't need doubling — only actual profession names do. When in doubt about which professions to list or how to phrase a specific sentence, ask for confirmation rather than guessing.
 
 ### Component architecture
 
@@ -91,7 +92,7 @@ This is a single Next.js 16 app (App Router) with full internationalization via 
 - Write tests for components, utils, and design-system primitives — these are the primary targets for unit coverage.
 - Do **not** write snapshot tests for pages or views; page-level snapshots add maintenance burden without meaningful coverage.
 - Use `render` from `__tests__/test-utils.tsx` (not from `@testing-library/react` directly) for any component that uses translations — it includes the `NextIntlClientProvider`.
-- Global mocks for `next/navigation` are configured in `test-setup.tsx`.
+- Global mocks for `@/i18n/navigation` (router, `Link`, `usePathname`) and `motion/react` are configured in `test-setup.tsx`.
 - Test behavior and accessibility attributes, not implementation details.
 
 ## Commit conventions
@@ -142,7 +143,7 @@ All documentation must be written in **English**: README files, code comments, J
 ### Helper files
 
 - `tasks/todo.md` — ephemeral planning scratch-pad (`.gitignore`d, never committed)
-- `docs/lessons.md` — persistent lessons log that **must be committed** after each correction
+- `docs/lessons.md` — persistent lessons log; update it after each correction and commit it when the user asks for a commit
 
 ### Planning
 
@@ -158,7 +159,7 @@ All documentation must be written in **English**: README files, code comments, J
 
 ### Self-improvement loop
 
-- After any correction from the user: update `docs/lessons.md` with the pattern and commit it
+- After any correction from the user: update `docs/lessons.md` with the pattern (commit it only when the user asks to commit)
 - Review `docs/lessons.md` at the start of each session for relevant context
 
 ### Verification before done

@@ -1,120 +1,41 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
-
-import type { DecodedPlan } from '@/lib/pricing/plan-code';
 import { getCurrency, type Region } from '@/lib/region';
 
-import { ContactBanner } from './ContactBanner';
-import { OptionButton } from './OptionButton';
 import { PlanBuilder } from './PlanBuilder';
+import { PlanSummary } from './PlanSummary';
 import { usePricingSimulator } from './PricingSimulator.hooks';
-import type { ProjectType, WebsiteType } from './PricingSimulator.types';
-import { QuoteCard } from './QuoteCard';
-import { StepCard } from './StepCard';
-
-const PROJECT_TYPES: ProjectType[] = ['website', 'mobile', 'both'];
-const WEBSITE_TYPES: WebsiteType[] = ['showcase', 'self_managed', 'accounts', 'ecommerce'];
 
 interface PricingSimulatorProps {
   region: Region;
 }
 
+/**
+ * Subscription composer: options on the left, a sticky recap with the live total
+ * on the right. One-off projects are quoted personally, outside the simulator.
+ */
 export function PricingSimulator({ region }: PricingSimulatorProps) {
   const currency = getCurrency(region);
-  const t = useTranslations('pricing');
   const simulator = usePricingSimulator();
-  const plan: DecodedPlan | undefined = simulator.projectType
-    ? {
-        projectType: simulator.projectType,
-        websiteType: simulator.websiteType,
-        selection: simulator.selection,
-        region,
-      }
-    : undefined;
 
   return (
-    <div className="space-y-6">
-      {/* Step 1 — what the visitor wants to build */}
-      <StepCard>
-        <p className="font-display text-ghost mb-6 text-lg font-semibold sm:text-xl">{t('step1.question')}</p>
-        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          {PROJECT_TYPES.map((option) => (
-            <OptionButton
-              key={option}
-              label={t(`step1.options.${option}`)}
-              selected={simulator.projectType === option}
-              onClick={() => simulator.chooseProjectType(option)}
-            />
-          ))}
-        </div>
-      </StepCard>
-
-      {/* Step 2 — which kind of website */}
-      {simulator.showWebsiteTypes && (
-        <StepCard>
-          <p className="font-display text-ghost mb-6 text-lg font-semibold sm:text-xl">{t('step2.question')}</p>
-          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            {WEBSITE_TYPES.map((option) => (
-              <OptionButton
-                key={option}
-                label={t(`step2.options.${option}`)}
-                selected={simulator.websiteType === option}
-                onClick={() => simulator.chooseWebsiteType(option)}
-              />
-            ))}
-          </div>
-        </StepCard>
-      )}
-
-      {/* Showcase site — compose the plan and watch the total move */}
-      {simulator.showPlanBuilder && (
-        <div className="animate-fade-in-up space-y-6">
-          <PlanBuilder
-            currency={currency}
-            region={region}
-            selection={simulator.selection}
-            total={simulator.total}
-            showQuoteHint={simulator.showQuoteHint}
-            onToggleAddOn={simulator.toggleAddOn}
-            onToggleUpdates={simulator.toggleUpdates}
-            onPagesChange={simulator.setPages}
-            onUpdatesChange={simulator.setUpdates}
-          />
-          <ContactBanner plan={plan} />
-        </div>
-      )}
-
-      {/* Every other path — a conversation, not a figure */}
-      {simulator.showQuote && (
-        <div className="animate-fade-in-up space-y-6">
-          <section
-            aria-labelledby="quote-result-heading"
-            className="border-ghost/8 bg-ghost/2 rounded-2xl border p-6 sm:p-8">
-            <h2 id="quote-result-heading" className="sr-only">
-              {t('results.custom.title')}
-            </h2>
-            <QuoteCard
-              note={t('results.custom.note')}
-              title={t('results.custom.title')}
-              description={t('results.custom.description')}
-            />
-          </section>
-          <ContactBanner plan={plan} />
-        </div>
-      )}
-
-      {/* Reset */}
-      {simulator.projectType && (
-        <div className="animate-fade-in-up flex justify-center pt-2">
-          <button
-            type="button"
-            onClick={simulator.reset}
-            className="border-ghost/15 text-ghost/55 hover:border-ghost hover:text-ghost focus-visible:ring-aerospace rounded-full border px-5 py-2 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:outline-none">
-            {t('reset')}
-          </button>
-        </div>
-      )}
+    <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,380px)]">
+      <PlanBuilder
+        currency={currency}
+        region={region}
+        selection={simulator.selection}
+        onToggleAddOn={simulator.toggleAddOn}
+        onToggleUpdates={simulator.toggleUpdates}
+        onPagesChange={simulator.setPages}
+        onUpdatesChange={simulator.setUpdates}
+      />
+      <PlanSummary
+        currency={currency}
+        region={region}
+        selection={simulator.selection}
+        total={simulator.total}
+        showQuoteHint={simulator.showQuoteHint}
+      />
     </div>
   );
 }

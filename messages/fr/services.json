@@ -1,157 +1,75 @@
 {
   "services": {
     "meta": {
-      "title": "Services de Développement Web & Mobile | Annecy · Genève | Go Cosmic",
-      "description": "Solutions complètes de développement web et mobile basées à Annecy, intervenant à Genève et en Haute-Savoie. React, React Native, Next.js, intégration IA."
+      "title": "Services & tarifs · Sites internet à Genève & Annecy | Cosmic Studio",
+      "description": "Sites vitrine, boutiques en ligne, applications et suivi, avec des prix affichés : un abonnement dès 10 € par mois, ou un projet sur devis. À Genève, à Annecy et à distance."
     },
-    "title": "Nos Services Cosmiques",
-    "subtitle": "Solutions techniques complètes pour propulser vos projets dans la stratosphère",
-    "stellar_development": {
-      "title": "Développement Stellaire",
-      "subtitle": "Excellence Web Moderne avec des Technologies de Pointe",
-      "description": "Notre expertise en développement exploite les dernières technologies pour créer des applications robustes, évolutives et performantes. Nous maîtrisons la stack complète du frontend au backend.",
-      "technologies": {
-        "title": "Technologies que nous maîtrisons",
-        "items": {
-          "frontend": "Frontend Moderne : React 19, Next.js 15, TypeScript, TailwindCSS 4.x",
-          "architecture": "Architecture Évolutive : Monorepo avec Turborepo, Librairies de Composants, Design Systems",
-          "quality": "Qualité du Code : ESLint 9.x, Prettier, Husky, Couverture de Tests 100% avec Vitest",
-          "performance": "Performance : Server-Side Rendering, Génération Statique, Optimisation d'Images"
-        }
-      },
-      "expertise": {
-        "title": "Notre Expertise en Développement",
-        "items": {
-          "workflow": "Workflows CI/CD avancés avec tests automatisés et déploiement",
-          "scalability": "Architecture microservices et solutions cloud-native",
-          "security": "Bonnes pratiques de sécurité avec scan de vulnérabilités et conformité",
-          "apis": "APIs RESTful et GraphQL avec documentation complète"
-        }
-      },
-      "features": {
-        "title": "Ce que nous livrons",
-        "items": {
-          "quality": "Code prêt pour la production avec 100% de couverture de tests et documentation complète",
-          "performance": "Applications ultra-rapides optimisées pour les Core Web Vitals",
-          "maintainability": "Architecture claire et modulaire qui évolue avec vos besoins métier",
-          "reliability": "Applications robustes avec gestion d'erreurs et intégration de monitoring"
+    "intro": {
+      "eyebrow": "[ Services & tarifs ]",
+      "title": "Un site qui tourne, <em>et quelqu'un qui s'en occupe.</em>",
+      "lead": "Nos prix sont affichés : vous savez tout de suite si c'est dans votre budget, sans demander de devis. Et tout commence par une maquette gratuite, sans engagement."
+    },
+    "simulator": {
+      "eyebrow": "[ Composez votre abonnement ]",
+      "title": "Commencez simple, <em>ajoutez le reste plus tard.</em>",
+      "lead": "La formule de base comprend une page vitrine en ligne et sécurisée, pour {price} par mois. Cochez les options qui vous intéressent pour voir le prix mensuel."
+    },
+    "trades": {
+      "eyebrow": "[ Nos métiers · 04 ]",
+      "title": "Quatre métiers, <em>un seul interlocuteur.</em>",
+      "items": {
+        "showcase": {
+          "title": "Sites vitrine",
+          "description": "Pour présenter votre activité, vos réalisations et vos horaires, et être trouvé sur Google par les gens près de chez vous.",
+          "tags": ["Artisans", "Associations", "Indépendants"]
+        },
+        "shops": {
+          "title": "Boutiques & réservations",
+          "description": "Pour vendre en ligne, prendre des rendez-vous ou gérer des adhésions, sans commission sur vos ventes.",
+          "tags": ["Vente en ligne", "Agenda", "Adhésions"]
+        },
+        "apps": {
+          "title": "Applications",
+          "description": "Un outil pour votre équipe, une application pour vos clients ou vos membres, un assistant qui répond aux questions fréquentes, sur le web ou sur téléphone.",
+          "tags": ["Web", "iOS", "Android"]
+        },
+        "care": {
+          "title": "Visibilité & suivi",
+          "description": "Référencement Google, hébergement, sauvegardes, mises à jour et modifications, avec une seule personne à contacter, qui connaît votre site.",
+          "tags": ["Google", "Suivi", "Formation"]
         }
       }
     },
-    "mystical_design": {
-      "title": "Design UI/UX Mystique",
-      "subtitle": "Expériences Immersives qui Captivent et Convertissent",
-      "description": "Nous créons des expériences numériques qui sont non seulement visuellement époustouflantes mais aussi intuitives, accessibles et orientées conversion. Notre philosophie de design combine esthétique cosmique et principes UX éprouvés.",
-      "approach": {
-        "title": "Notre approche Design",
-        "items": {
-          "systems": "Design Systems : Librairies de composants cohérentes et évolutives avec patterns documentés",
-          "accessibility": "Accessibilité Universelle : Conformité WCAG avec HTML sémantique et standards ARIA",
-          "responsive": "Responsive Mobile-First : Layouts fluides qui fonctionnent parfaitement sur tous appareils",
-          "performance": "Orienté Performance : Assets optimisés et animations fluides"
-        }
-      },
-      "tools": {
-        "title": "Outils Design & Développement",
-        "items": {
-          "components": "Primitives Radix UI avec Class Variance Authority pour un styling type-safe",
-          "styling": "TailwindCSS avec tokens de design personnalisés et approche utility-first",
-          "testing": "Storybook pour documentation de composants et tests visuels",
-          "prototyping": "Prototypes interactifs avec données réelles et composants prêts pour la production"
-        }
-      },
-      "outcomes": {
-        "title": "Résultats Design",
-        "items": {
-          "engagement": "Engagement utilisateur accru grâce à des interactions intuitives et plaisantes",
-          "conversion": "Taux de conversion plus élevés avec CTAs et parcours utilisateurs stratégiques",
-          "brand": "Identité de marque forte qui se distingue dans le paysage numérique cosmique",
-          "satisfaction": "Satisfaction utilisateur exceptionnelle grâce à la recherche UX et aux tests approfondis"
-        }
-      }
-    },
-    "ai_powered": {
-      "title": "Solutions Alimentées par l'IA",
-      "subtitle": "Fonctionnalités Intelligentes qui Transforment l'Expérience Utilisateur",
-      "description": "Nous intégrons des technologies IA de pointe pour créer des applications plus intelligentes et adaptatives. Nos solutions IA améliorent l'expérience utilisateur tout en maintenant la confidentialité et les standards éthiques.",
-      "capabilities": {
-        "title": "Capacités d'Intégration IA",
-        "items": {
-          "recommendations": "Moteurs de recommandation intelligents alimentés par des algorithmes de machine learning",
-          "automation": "Automatisation de processus et optimisation de workflows avec insights IA",
-          "analytics": "Analytics avancées et modélisation prédictive pour des décisions data-driven",
-          "nlp": "Traitement du Langage Naturel pour chatbots et analyse de contenu"
-        }
-      },
-      "implementation": {
-        "title": "Implémentation Technique",
-        "items": {
-          "apis": "Intégration fluide avec les plateformes IA leaders (OpenAI, Google AI, Azure Cognitive Services)",
-          "privacy": "Approche privacy-first avec traitement on-device quand possible",
-          "scalability": "Services IA cloud qui s'adaptent à votre base d'utilisateurs",
-          "monitoring": "Monitoring complet et optimisation de performance pour les fonctionnalités IA"
-        }
-      },
-      "use_cases": {
-        "title": "Cas d'Usage IA",
-        "items": {
-          "personalization": "Expériences utilisateur personnalisées basées sur le comportement et les préférences",
-          "support": "Support client intelligent avec réponses automatisées et escalade",
-          "optimization": "Optimisation de performance grâce à l'allocation prédictive de ressources",
-          "insights": "Business intelligence par analyse automatisée de données et reporting"
-        }
-      }
-    },
-    "cosmic_launch": {
-      "title": "Lancement Cosmique",
-      "subtitle": "Support de Lancement Complet du Développement à la Production",
-      "description": "Nous fournissons un support de lancement complet pour assurer que votre application atteigne la production avec succès et continue de performer de façon optimale. Notre expertise DevOps garantit un voyage fluide du code au cosmos.",
-      "process": {
-        "title": "Processus de Lancement",
-        "items": {
-          "testing": "Tests complets incluant tests unitaires, d'intégration et end-to-end",
-          "staging": "Configuration d'environnement de staging avec configurations similaires à la production",
-          "deployment": "Pipelines de déploiement automatisés avec capacités de rollback",
-          "monitoring": "Systèmes de monitoring en temps réel et d'alertes"
-        }
-      },
-      "infrastructure": {
-        "title": "Infrastructure & DevOps",
-        "items": {
-          "cloud": "Stratégies de déploiement multi-cloud (AWS, Vercel, Azure, Google Cloud)",
-          "cicd": "Pipelines CI/CD avancés avec tests automatisés et déploiement",
-          "security": "Scan de sécurité, évaluations de vulnérabilités et monitoring de conformité",
-          "scaling": "Infrastructure auto-scaling qui grandit avec votre succès"
-        }
-      },
-      "support": {
-        "title": "Support Continu",
-        "items": {
-          "monitoring": "Monitoring d'application 24/7 avec alertes intelligentes",
-          "optimization": "Optimisation continue de performance et gestion de ressources",
-          "updates": "Mises à jour de sécurité régulières et améliorations de fonctionnalités",
-          "consultation": "Consultation technique stratégique pour la croissance future"
+    "faq": {
+      "eyebrow": "[ Questions fréquentes ]",
+      "title": "Les questions qu'on nous pose <em>avant de signer.</em>",
+      "items": {
+        "ownership": {
+          "question": "Le site m'appartient-il ?",
+          "answer": "Vos textes, vos images et votre nom de domaine vous appartiennent dès le premier jour. Le code du site vous est cédé après {months} mois d'abonnement, ce qui nous permet de proposer un prix de départ aussi bas. Vous pouvez aussi le récupérer plus tôt, contre des frais de cession calculés sur la durée restante. Pour un projet sur devis, le code vous revient dès la livraison."
+        },
+        "edit": {
+          "question": "Puis-je modifier le site moi-même ?",
+          "answer": "Le plus simple est l'option « Modifications de contenu incluses » : vous nous envoyez vos textes, vos photos ou vos nouveaux horaires, et nous les mettons en ligne. Si vous préférez publier vous-même, c'est possible aussi ; nous en discutons, car cela demande un développement spécifique."
+        },
+        "timing": {
+          "question": "Combien de temps pour être en ligne ?",
+          "answer": "Comptez deux à trois semaines pour une page vitrine, à partir du moment où nous avons vos textes et vos photos, et quatre à six semaines pour un site de cinq pages. Nous fixons une date de mise en ligne au démarrage et nous la respectons."
+        },
+        "stop": {
+          "question": "Que se passe-t-il si j'arrête ?",
+          "answer": "Il suffit de nous prévenir : le site reste en ligne jusqu'à la fin de la période déjà payée, et vous repartez avec vos contenus et votre nom de domaine. Le code vous est cédé gratuitement après {months} mois d'abonnement ; avant, il vous est cédé contre des frais que nous vous indiquons dès le départ. Si votre abonnement comprend un nom de domaine ou une adresse e-mail, il court par périodes de 12 mois, et la période en cours va jusqu'à son terme."
+        },
+        "content": {
+          "question": "Faites-vous aussi les textes et les photos ?",
+          "answer": "Nous vous aidons à rédiger et nous relisons tout, en pensant aux mots que vos clients tapent sur Google. Pour les photos, nous utilisons les vôtres ou nous vous mettons en relation avec un ou une photographe de la région, dont la prestation n'est pas comprise dans l'abonnement."
         }
       }
     },
     "cta": {
-      "title": "Prêt à lancer votre prochain projet cosmique ?",
-      "description": "Discutons de la façon dont nos services complets peuvent transformer votre vision en réalité. Du développement stellaire au lancement cosmique, nous sommes là pour guider votre projet vers le succès.",
-      "primary_button": "Commencez votre voyage cosmique",
-      "geo_availability": "Disponible à Annecy, Genève, en Suisse romande, en Haute-Savoie et en remote.",
-      "local_page": "Découvrir notre page dédiée Annecy / Genève"
-    },
-    "eyebrow": "Services — Savoir-faire",
-    "hero": {
-      "cta": "Parlons de votre projet",
-      "secondary": "Voir les tarifs"
-    },
-    "explore": {
-      "eyebrow": "Prochaine étape",
-      "title": "Voir les réalisations, puis le budget",
-      "description": "Parcourez les projets déjà livrés, ou construisez votre estimation en deux clics.",
-      "projects": "Voir les réalisations",
-      "pricing": "Construire mon estimation"
+      "title": "Parlons de votre site.",
+      "description": "Présentez-nous votre activité en quelques lignes. Nous vous répondons rapidement, puis nous préparons votre maquette gratuite si vous le souhaitez.",
+      "primary_button": "Parler de mon projet"
     }
   }
 }

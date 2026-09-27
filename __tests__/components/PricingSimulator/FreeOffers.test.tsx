@@ -15,7 +15,7 @@ describe('FreeOffers', () => {
   it('is a labelled section holding a list of offers', () => {
     render(<FreeOffers />);
 
-    const section = screen.getByRole('region', { name: /before we even talk budget/i });
+    const section = screen.getByRole('region', { name: /before we talk budget/i });
     expect(section).toBeInTheDocument();
     expect(screen.getAllByRole('listitem')).toHaveLength(2);
   });

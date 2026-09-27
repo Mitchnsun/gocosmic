@@ -1,15 +1,8 @@
 {
   "pricing": {
-    "meta": {
-      "title": "Pricing - Go Cosmic",
-      "description": "Build your website from 10€ a month: you choose how many pages and which options. Free mockup and website review, no strings attached."
-    },
-    "eyebrow": "[ PRICING ]",
-    "title": "Build your plan",
-    "subtitle": "A clear starting price, then you add only what you actually need. The total updates as you go.",
     "free_offers": {
       "eyebrow": "Free, no commitment",
-      "title": "Before we even talk budget",
+      "title": "Before we talk budget",
       "items": {
         "mockup": {
           "title": "A mockup of your future website",
@@ -17,36 +10,19 @@
         },
         "audit": {
           "title": "A review of your current website",
-          "description": "What works, what loses you visitors, and whether people find you on Google."
+          "description": "What works, what drives visitors away, and how your site shows up on Google."
         }
       },
       "note": "Both are free and commit you to nothing."
-    },
-    "step1": {
-      "question": "What would you like to create?",
-      "options": {
-        "website": "A website",
-        "mobile": "A mobile app",
-        "both": "Both"
-      }
-    },
-    "step2": {
-      "question": "What kind of website do you need?",
-      "options": {
-        "showcase": "A site that presents my business",
-        "self_managed": "A site I want to edit myself",
-        "accounts": "A site with an area for my customers",
-        "ecommerce": "A site to sell online"
-      }
     },
     "builder": {
       "period": "/ month",
       "base": {
         "title": "Base plan",
         "includes": {
-          "page": "A single static showcase page presenting your business",
+          "page": "A showcase page presenting your business",
           "hosting": "Online around the clock, publishing included",
-          "security": "Secure HTTPS connection (the padlock in the browser)"
+          "security": "Secure connection (the padlock in the browser)"
         }
       },
       "options": {
@@ -57,7 +33,7 @@
         },
         "domain": {
           "label": "Managing your domain name",
-          "hint": "Your domain name, for example {domain} — registered and renewed for you."
+          "hint": "For example {domain}: we register it and renew it for you."
         },
         "swiss_hosting": {
           "label": "Website hosted in Switzerland",
@@ -80,7 +56,7 @@
       },
       "updates": {
         "label": "Content changes included",
-        "hint": "Your text, photos and opening hours updated by me, with nothing extra to pay each time.",
+        "hint": "We update your texts, photos and opening hours, with no extra charge for each request.",
         "off": "Not included",
         "slider_label": "Changes per year",
         "tiers": {
@@ -92,35 +68,63 @@
         }
       },
       "total": {
-        "label": "Your plan",
-        "note": "You can change these options at any time.",
-        "beyond": "Beyond these volumes, let's talk it through: I'll put together a proposal that fits."
+        "label": "Your estimate",
+        "note": "Indicative price, confirmed after a first conversation. You can add options at any time; once active, they stay part of your subscription (see the terms of sale).",
+        "cta": "Request my free mockup",
+        "question": "A question first? <link>Write to us</link>.",
+        "beyond": "Beyond these volumes, we will talk it through and make you a proposal."
       }
     },
-    "results": {
+    "columns": {
+      "eyebrow": "[ Pricing ]",
+      "title": "Four ways to work with us.",
+      "subscription": {
+        "title": "Subscription",
+        "label": "Site, hosting and care",
+        "price": "From {price}",
+        "period": "/ month",
+        "description": "Your site is online and kept up to date, without you having to deal with it. The price depends on your needs: number of pages, domain name, email address, changes.",
+        "features": {
+          "included": "Hosting, secure connection and basic Google visibility included",
+          "options": "Options to add when you need them",
+          "mockup": "A free mockup before you decide"
+        },
+        "cta": "Build my plan"
+      },
+      "guidance": {
+        "title": "Guidance",
+        "label": "Advice, UX/UI and design",
+        "price": "Day rate",
+        "description": "To go further than the free mockup without necessarily starting development: architecture, technical choices, UX/UI and design, with a designer on board.",
+        "features": {
+          "architecture": "Architecture and technical choices",
+          "design": "UX/UI, user journeys and detailed mockups",
+          "designer": "A designer working alongside the developer"
+        },
+        "cta": "Let's talk"
+      },
+      "reinforcement": {
+        "title": "Reinforcement",
+        "label": "Existing site, extra hands",
+        "price": "Day rate",
+        "description": "To improve an existing site, whether through technical work or new features, with one or several developers depending on the scope.",
+        "features": {
+          "technical": "Technical improvements: performance, security, updates",
+          "features": "New features on an existing site",
+          "team": "One or several developers depending on the scope"
+        },
+        "cta": "Let's talk"
+      },
       "custom": {
-        "note": "Custom project",
-        "title": "Let's talk it through",
-        "description": "This kind of project is priced case by case — what you need has little in common with a simple presentation site. Tell me about it and I will send you a detailed proposal, with no commitment."
+        "title": "Custom",
+        "label": "One-off project · quoted",
+        "description": "Online shop, members' area, mobile app or in-house tool: we define the project together, then send you a quote. After delivery, you can switch to a subscription for ongoing care.",
+        "features": {
+          "payment": "Payment in instalments, at each stage",
+          "ownership": "The code and the data belong to you"
+        },
+        "cta": "Ask for a quote"
       }
-    },
-    "contact": {
-      "title": "Let's discuss your project",
-      "description": "Write me a few lines and I'll come back with a clear proposal.",
-      "email": "prospect@gocosmic.dev",
-      "cta": "Request a quote",
-      "subject": "Pricing inquiry — Project quote",
-      "aria_label": "Send an email to prospect@gocosmic.dev for a project quote",
-      "privacy_notice": "By sending an email, you agree that your message and contact details are processed to prepare a quote and follow up on your project.",
-      "privacy_link": "Privacy policy",
-      "free_mockup_cta_label": "Get a free mockup",
-      "free_mockup_cta_aria_label": "Go to the free mockup request page"
-    },
-    "reset": "Start over",
-    "summary": {
-      "intro": "Hello, here is the summary of my simulation on your pricing page:",
-      "project": "Project",
-      "site_type": "Site type"
     }
   }
 }

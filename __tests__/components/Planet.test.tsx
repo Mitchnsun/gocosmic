@@ -56,14 +56,13 @@ describe('Planet', () => {
     delete (window as Window & { ontouchstart?: unknown }).ontouchstart;
   });
 
-  it('should render a hidden responsive planet with hero parallax variables', () => {
-    const { container } = render(<Planet size={240} parallaxMode="pointer" useHeroParallax />);
+  it('should render a hidden responsive planet with parallax variables', () => {
+    const { container } = render(<Planet size={240} parallaxMode="pointer" />);
     const wrapper = container.firstElementChild as HTMLElement;
 
     expect(wrapper).toHaveAttribute('aria-hidden', 'true');
     expect(wrapper).toHaveClass('will-change-transform');
     expect(wrapper).toHaveStyle({ width: '240px', height: '240px' });
-    expect(wrapper.style.transform).toContain('--hero-parallax-x');
     expect(wrapper.style.transform).toContain('--planet-scroll-y');
     expect(container.querySelector('.planet-body-surface')).toHaveClass('will-change-transform');
     expect(container.querySelectorAll('.planet-surface-spot')).toHaveLength(2);

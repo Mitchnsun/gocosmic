@@ -29,24 +29,6 @@ export const routing = defineRouting({
       it: '/servizi',
     },
 
-    // Journey page
-    '/journey': {
-      en: '/journey',
-      fr: '/voyage',
-      es: '/viaje',
-      de: '/reise',
-      it: '/viaggio',
-    },
-
-    // Offers page
-    '/offers': {
-      en: '/offers',
-      fr: '/nos-offres',
-      es: '/nuestras-ofertas',
-      de: '/unsere-angebote',
-      it: '/le-nostre-offerte',
-    },
-
     // Projects - Daily Fortune
     '/projects/daily-fortune': {
       en: '/projects/daily-fortune',
@@ -110,6 +92,15 @@ export const routing = defineRouting({
       it: '/note-legali',
     },
 
+    // Terms of sale
+    '/terms': {
+      en: '/terms',
+      fr: '/conditions-generales-de-vente',
+      es: '/condiciones-generales',
+      de: '/agb',
+      it: '/condizioni-generali',
+    },
+
     // Local SEO page
     '/local': {
       en: '/web-mobile-developer-annecy-geneva',
@@ -135,15 +126,6 @@ export const routing = defineRouting({
       es: '/maqueta-gratuita',
       de: '/kostenloses-mockup',
       it: '/mockup-gratuito',
-    },
-
-    // Pricing page
-    '/pricing': {
-      en: '/pricing',
-      fr: '/tarifs',
-      es: '/precios',
-      de: '/preise',
-      it: '/prezzi',
     },
   },
 });

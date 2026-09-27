@@ -3,6 +3,7 @@ import { act } from 'react';
 import { vi } from 'vitest';
 
 import CosmicCursor from '@/components/CosmicCursor';
+import { COARSE_POINTER_QUERY } from '@/components/CosmicCursor/useCosmicCursor';
 import { useMagneticElements } from '@/components/CosmicCursor/useMagneticElements';
 
 import { render } from '../test-utils';
@@ -92,12 +93,12 @@ describe('CosmicCursor', () => {
     ) as unknown as typeof HTMLCanvasElement.prototype.getContext;
   });
 
-  it('returns null and renders no canvas on touch devices', async () => {
+  it('returns null and renders no canvas without a fine pointer', async () => {
     // Override matchMedia to report a touch device
     Object.defineProperty(window, 'matchMedia', {
       writable: true,
       value: vi.fn().mockImplementation((query: string) => ({
-        matches: query === '(hover: none) and (pointer: coarse)',
+        matches: query === COARSE_POINTER_QUERY,
         media: query,
         onchange: null,
         addListener: vi.fn(),

@@ -1,88 +1,14 @@
 {
   "meta": {
-    "title": "Contattaci - Mettiti in Contatto con Go Cosmic",
-    "description": "Contatta Go Cosmic per richieste generali, supporto, domande tecniche o richieste commerciali. Scegli l'email giusta per le tue esigenze e ricevi assistenza personalizzata."
+    "title": "Contatti · Parliamo del tuo progetto | Cosmic Studio",
+    "description": "Racconta il tuo progetto a Cosmic Studio. Basta un messaggio: la persona che costruirà il tuo sito ti risponde rapidamente."
   },
   "contact": {
-    "title": "Contattaci",
-    "subtitle": "Inviaci un brief oppure scrivi direttamente alla casella giusta.",
-    "blocks": {
-      "general": {
-        "title": "Richieste Generali",
-        "email": "contact@gocosmic.dev",
-        "subject": "Richiesta generale",
-        "reasons": {
-          "title": "Contattaci per:",
-          "items": {
-            "generalQuestion": "Domande generali sul progetto o sull'azienda",
-            "partnership": "Proposte di partnership",
-            "feedback": "Feedback e esperienza dell'utente",
-            "suggestions": "Suggerimenti per miglioramenti",
-            "mission": "Domande sulla missione e i valori di Go Cosmic"
-          }
-        },
-        "cta": "Invia un'email",
-        "aria_label": "Invia un'email a contact@gocosmic.dev con oggetto: Richiesta generale"
-      },
-      "support": {
-        "title": "Supporto & Assistenza",
-        "email": "support@gocosmic.dev",
-        "subject": "Richiesta di supporto",
-        "reasons": {
-          "title": "Contattaci per:",
-          "items": {
-            "help": "Aiuto con un'applicazione o un servizio",
-            "bugs": "Segnalazione di bug o errori",
-            "access": "Problemi di connessione o accesso",
-            "technical": "Richieste di assistenza tecnica",
-            "troubleshooting": "Domande sulla risoluzione dei problemi"
-          }
-        },
-        "cta": "Richiedi supporto",
-        "aria_label": "Invia un'email a support@gocosmic.dev con oggetto: Richiesta di supporto"
-      },
-      "technical": {
-        "title": "Richieste Tecniche",
-        "email": "technique@gocosmic.dev",
-        "subject": "Domanda tecnica",
-        "reasons": {
-          "title": "Contattaci per:",
-          "items": {
-            "architecture": "Domande dettagliate sull'architettura o l'integrazione",
-            "documentation": "Richieste di documentazione tecnica",
-            "evolution": "Suggerimenti per l'evoluzione tecnica del prodotto",
-            "collaboration": "Collaborazione o contributo al codice",
-            "api": "Discussioni su API o integrazioni"
-          }
-        },
-        "cta": "Fai una domanda tecnica",
-        "aria_label": "Invia un'email a technique@gocosmic.dev con oggetto: Domanda tecnica"
-      },
-      "commercial": {
-        "title": "Richieste Commerciali",
-        "email": "prospect@gocosmic.dev",
-        "subject": "Richiesta commerciale",
-        "reasons": {
-          "title": "Contattaci per:",
-          "items": {
-            "quote": "Richieste commerciali o preventivi",
-            "pricing": "Informazioni su offerte e prezzi",
-            "demo": "Richieste di dimostrazione del prodotto",
-            "meeting": "Richieste di appuntamento con il team commerciale",
-            "purchase": "Domande prima dell'acquisto o dell'abbonamento"
-          }
-        },
-        "cta": "Mettersi in contatto",
-        "aria_label": "Invia un'email a prospect@gocosmic.dev con oggetto: Richiesta commerciale"
-      }
-    },
-    "privacyNotice": "I dati personali inviati tramite il modulo di contatto o per e-mail sono utilizzati solo per rispondere alla tua richiesta, gestire il seguito e conservare prova degli scambi per i periodi indicati nell'informativa sulla privacy.",
+    "title": "Parlaci <em>della tua attività.</em>",
+    "privacyNotice": "I tuoi dati servono solo a risponderti e a preparare un eventuale preventivo.",
     "privacyLink": "Informativa privacy",
-    "eyebrow": "Contatto — Briefing di missione",
+    "eyebrow": "[ Contatti ]",
     "form": {
-      "eyebrow": "Brief di progetto",
-      "title": "Raccontaci il tuo progetto",
-      "description": "Compila il modulo e ti risponderemo con i passi successivi. Preferisci l’e-mail? Gli indirizzi qui sotto arrivano direttamente nella casella giusta.",
       "optional": "facoltativo",
       "required_hint": "I campi contrassegnati con un asterisco sono obbligatori",
       "submit": "Invia il messaggio",
@@ -91,52 +17,82 @@
       "honeypot_label": "Lascia vuoto questo campo",
       "fields": {
         "name": {
-          "label": "Nome",
-          "placeholder": "Il tuo nome"
+          "label": "Il tuo nome",
+          "placeholder": "Giulia Rossi"
         },
         "email": {
-          "label": "E-mail",
-          "placeholder": "tu@esempio.com"
-        },
-        "subject": {
-          "label": "Oggetto",
-          "placeholder": "Sito vitrina, app mobile, restyling…"
+          "label": "Indirizzo e-mail",
+          "placeholder": "giulia@esempio.fr",
+          "placeholderSwiss": "giulia@esempio.ch"
         },
         "message": {
-          "label": "Messaggio",
-          "placeholder": "Descrivi il tuo progetto, le tempistiche e il budget se ne hai uno."
+          "label": "Il tuo messaggio",
+          "placeholder": "A che punto è il tuo progetto, cosa ti piacerebbe, cosa hai già (logo, foto, vecchio sito)…"
         },
         "phone": {
           "label": "Telefono",
-          "placeholder": "+39 333 123 4567"
+          "placeholder": "+33 6 12 34 56 78",
+          "placeholderSwiss": "+41 22 123 45 67"
         },
         "company": {
-          "label": "Azienda",
-          "placeholder": "La tua azienda o associazione"
+          "label": "La tua attività",
+          "placeholder": "Ebanista ad Annecy, associazione teatrale…",
+          "placeholderSwiss": "Ebanista a Ginevra, associazione teatrale…"
+        },
+        "need": {
+          "legend": "Di cosa hai bisogno",
+          "options": {
+            "showcase": "Sito vetrina",
+            "redesign": "Rifacimento di un sito esistente",
+            "shop": "Negozio online",
+            "app": "App",
+            "unsure": "Non lo so ancora"
+          }
         }
       },
       "errors": {
         "name_length": "Inserisci un nome da 2 a 100 caratteri.",
         "email_invalid": "Inserisci un indirizzo e-mail valido.",
-        "subject_length": "L’oggetto deve contenere tra 5 e 200 caratteri.",
         "message_length": "Il messaggio deve contenere tra 10 e 5000 caratteri.",
         "phone_invalid": "Inserisci un numero di telefono valido.",
-        "company_length": "Il nome dell’azienda è troppo lungo.",
-        "rate_limited": "Hai già inviato diversi messaggi. Riprova più tardi o scrivici per e-mail.",
-        "retry_later": "Il tuo messaggio non è stato inviato al momento. Riprova più tardi o scrivici per e-mail.",
-        "server": "Non è stato possibile inviare il messaggio. Riprova o scrivici per e-mail.",
-        "network": "Connessione perduta. Controlla la rete e riprova."
+        "company_length": "La descrizione della tua attività è troppo lunga.",
+        "rate_limited": "Hai già inviato diversi messaggi. Riprova più tardi o scrivici via e-mail.",
+        "retry_later": "Al momento non è stato possibile inviare il tuo messaggio. Riprova più tardi o scrivici via e-mail.",
+        "server": "Non è stato possibile inviare il messaggio. Riprova o scrivici via e-mail.",
+        "network": "Connessione persa. Controlla la rete e riprova.",
+        "need_invalid": "Scegli un'opzione dall'elenco."
       },
       "success": {
-        "title": "Grazie per averci scritto!",
-        "description": "Il tuo messaggio è stato inviato. Leggiamo ogni richiesta e ti risponderemo a breve.",
+        "title": "Grazie. Matthieu ti risponde rapidamente.",
+        "description": "Il tuo messaggio è arrivato. Matthieu ti scriverà per chiarire alcuni punti, poi ti proporrà un mockup gratuito, se ti interessa.",
         "back": "Invia un altro messaggio"
       }
     },
-    "direct": {
-      "eyebrow": "Linee dirette",
-      "title": "Scrivi alla casella giusta",
-      "description": "Ogni richiesta ha il suo indirizzo: scegli quello che corrisponde alla tua."
+    "lead": "Scrivici un messaggio o prenota una chiamata di 20 minuti. In entrambi i casi è Matthieu a risponderti rapidamente.",
+    "details": {
+      "aria_label": "Recapiti",
+      "email_label": "E-mail",
+      "support_label": "Già cliente · assistenza",
+      "where_label": "Dove",
+      "where": {
+        "ch": "Ginevra · Svizzera romanda · Alta Savoia, o in videochiamata",
+        "fr": "Annecy · Alta Savoia · Ginevra, o in videochiamata"
+      }
+    },
+    "modes": {
+      "label": "Come preferisci contattarci?",
+      "message": "Scrivi un messaggio",
+      "call": "Prenota una chiamata"
+    },
+    "booking": {
+      "title": "Scegli una fascia oraria di 20 minuti",
+      "via": "tramite Google Calendar",
+      "consent": "Il calendario delle prenotazioni è fornito da Google Calendar, che installa i propri cookie. Si carica solo se lo chiedi tu.",
+      "load": "Mostra il calendario",
+      "open": "Apri la pagina di prenotazione",
+      "iframe_title": "Calendario delle prenotazioni di Matthieu (Google Calendar)",
+      "note": "Prenoti direttamente nel calendario di Matthieu. Google Calendar ti invia la conferma e il link per la chiamata.",
+      "unavailable": "La prenotazione online non è ancora attiva. Scrivici un messaggio: ti proponiamo un orario in giornata."
     }
   }
 }

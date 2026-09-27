@@ -1,89 +1,63 @@
 {
   "meta": {
-    "title": "Über Go Cosmic - Web-Agentur in Annecy & Genf",
-    "description": "Entdecken Sie Go Cosmic, eine Web- und Mobile-Entwicklungsagentur mit Sitz in Annecy, tätig in Genf und Haute-Savoie. Lernen Sie Matthieu Compérat, unseren Entwickler, kennen."
+    "title": "Über uns · Cosmic Studio, Webstudio in Genf & Annecy",
+    "description": "Cosmic Studio ist ein Web- und App-Studio zwischen Genf und Annecy. Matthieu Compérat führt es und begleitet Ihr Projekt vom ersten Gespräch bis über den Start der Website hinaus."
   },
   "about": {
-    "developer": {
-      "bio": "Matthieu verbindet tiefgehende technische Expertise mit einer kreativen Vision, um digitale Lösungen zu gestalten, die die Grenzen des Möglichen erweitern. Sein 'kosmischer' Ansatz zielt darauf ab, Nutzererlebnisse zu schaffen, die leistungsstark, schön und innovativ sind.",
-      "description": "Leidenschaftlicher Entwickler mit Expertise in modernen Web- und mobilen Technologien.",
-      "expertise": {
-        "items": {
-          "aiTech": "KI-Integration und neue Technologien",
-          "architecture": "Softwarearchitektur und Best Practices der Entwicklung",
-          "leadership": "Technische Führung und Team-Mentoring",
-          "modernDev": "Moderne Webentwicklung (React, React-Native, Next.js, Expo, TypeScript, Tailwind CSS)"
-        },
-        "title": "Expertise"
+    "title": "Ein kleines Studio, <em>damit Ihre Kundschaft Sie findet.</em>",
+    "eyebrow": "[ Über uns ]",
+    "cta": {
+      "title": "Arbeiten wir zusammen.",
+      "description": "Erzählen Sie uns in ein paar Zeilen, was Sie machen. Matthieu antwortet Ihnen schnell.",
+      "button": "Mein Projekt besprechen"
+    },
+    "lead": "Cosmic Studio, das ist Matthieu Compérat, Entwickler in Chêne-Bougeries. Er erstellt Websites und Apps für Handwerksbetriebe, Vereine und Selbstständige, von Genf bis Annecy.",
+    "path": {
+      "eyebrow": "[ Werdegang ]",
+      "title": "Fünfzehn Jahre als Entwickler, <em>ein einziger Ansprechpartner.</em>",
+      "paragraphs": [
+        "Matthieu stammt aus Duingt am Annecy-See und entwickelt seit rund fünfzehn Jahren Websites und Apps. Zuerst arbeitete er für große Unternehmen und lernte dort, zuverlässige Werkzeuge zu bauen, die für alle zugänglich sind.",
+        "Mit Cosmic Studio stellt er diese Erfahrung in den Dienst von Handwerksbetrieben, Vereinen und Selbstständigen. Sie sprechen mit der Person, die Ihre Website baut, vom ersten Anruf bis zur laufenden Betreuung, Monat für Monat."
+      ],
+      "zones": {
+        "ch": [
+          "Chêne-Bougeries · Standort",
+          "Westschweiz · vor Ort",
+          "Hochsavoyen · vor Ort",
+          "Anderswo · aus der Ferne"
+        ],
+        "fr": [
+          "Chêne-Bougeries · Standort",
+          "Hochsavoyen · vor Ort",
+          "Westschweiz · vor Ort",
+          "Anderswo · aus der Ferne"
+        ]
       },
       "linkedin": "LinkedIn-Profil ansehen",
-      "linkedin_aria": "LinkedIn-Profil von Matthieu Compérat (öffnet in neuem Tab)",
-      "name": "Matthieu Compérat",
-      "subtitle": "Architekt für digitale Erlebnisse",
-      "title": "Lernen Sie den Entwickler kennen"
+      "linkedin_aria": "LinkedIn-Profil von Matthieu Compérat (öffnet in einem neuen Tab)"
     },
-    "legal": {
-      "ai": {
-        "items": {
-          "compliance": "Praktiken zum Umgang mit personenbezogenen Daten werden in der Datenschutzerklärung erläutert, statt hier pauschal erwähnt zu werden.",
-          "ethics": "Wir verpflichten uns zu einem ethischen und transparenten Einsatz von KI",
-          "integration": "Unsere Lösungen können KI-Modelle für fortschrittliche Funktionen integrieren",
-          "privacy": "Sensible Daten dürfen ohne dokumentierte Rechtsgrundlage oder erforderliche ausdrückliche Einwilligung nicht an Dritte weitergegeben werden."
+    "why": {
+      "eyebrow": "[ Warum dieser Weg ]",
+      "title": "Handwerksbetriebe und Vereine <em>verdienen mehr als eine Vorlage von der Stange.</em>",
+      "lead": "Große Agenturen arbeiten vor allem für große Unternehmen, und Website-Baukästen lassen Sie mit dem Werkzeug allein. Cosmic Studio ist für alle da, die dazwischen stehen.",
+      "reasons": {
+        "found": {
+          "title": "In der Nähe gefunden werden",
+          "description": "Ihre Kundschaft sucht Sie auf dem Handy, nur ein paar Kilometer von Ihnen entfernt. Eine schnelle, gut gebaute Website steht bei Google weiter oben."
         },
-        "title": "KI-Nutzung"
-      },
-      "contact": {
-        "link": "kontaktieren Sie uns",
-        "text": "Bei Fragen zu Datenschutz, Impressum oder KI-Nutzung,",
-        "subject": "Fragen zu Datenschutz, Impressum und KI-Nutzung",
-        "ariaLabel": "Eine E-Mail an support@gocosmic.dev senden",
-        "privacyLink": "Datenschutzerklärung",
-        "legalNoticeLink": "Impressum"
-      },
-      "intro": "Go Cosmic kann KI-gestützte Funktionen in Kundenprojekte integrieren und stellt dabei menschliche Prüfung und Transparenz in den Mittelpunkt.",
-      "responsibility": {
-        "items": {
-          "recommendations": "KI-basierte Empfehlungen sind informativ und ersetzen nicht das menschliche Urteilsvermögen",
-          "security": "Go Cosmic verpflichtet sich zu höchsten Standards in Sachen Sicherheit und Vertraulichkeit",
-          "testing": "Anwendungen werden nach den besten Branchenstandards getestet"
+        "price": {
+          "title": "Ein Preis, der mitwächst",
+          "description": "Ein Abonnement ab {price} im Monat, das sich mit Ihnen weiterentwickelt, statt einer großen Investition am Anfang."
         },
-        "title": "Verantwortung"
-      },
-      "title": "Rechtliche Hinweise und KI-Nutzung"
-    },
-    "mission": {
-      "conclusion": "Unsere Mission: Ihre Projekte mit Kreativität, Innovation und technischer Exzellenz in neue technologische Sphären zu bringen.",
-      "description": "Go Cosmic verwandelt Ihre Ideen in innovative Anwendungen, indem moderne Expertise mit künstlicher Intelligenz kombiniert wird.",
-      "location": {
-        "fr": "Mit Sitz in Annecy sind wir in Genf, der Westschweiz und Haute-Savoie verfügbar — vor Ort oder remote.",
-        "ch": "Mit Sitz in Chêne-Bougeries bei Genf sind wir in der ganzen Westschweiz und in der Region Annecy verfügbar — vor Ort oder remote."
-      },
-      "specialization": {
-        "items": {
-          "aiIntegration": "Fortschrittliche KI-Integration für intelligente Nutzererlebnisse",
-          "customSolutions": "Maßgeschneiderte Lösungen mit modernen Technologien (React, React-Native, Next.js, Expo, TypeScript, Tailwind CSS)",
-          "uiUxDesign": "Immersives UI/UX-Design mit einem einzigartigen kosmischen Ansatz",
-          "webMobile": "Entwicklung von Web- und Mobile-Anwendungen der nächsten Generation"
+        "answer": {
+          "title": "Jemand, der antwortet",
+          "description": "Kein Callcenter: Es antwortet Ihnen die Person, die Ihre Website gebaut hat, meist noch am selben Tag."
         },
-        "title": "Wir sind spezialisiert auf"
-      },
-      "title": "Go Cosmic — Kosmische Anwendungen mit KI erschaffen"
-    },
-    "subtitle": "Entdecken Sie unsere Mission, unser Team und unser Engagement für Exzellenz",
-    "title": "Über Go Cosmic",
-    "eyebrow": "Über uns — Studio",
-    "hero": {
-      "cta": "Kontakt aufnehmen"
-    },
-    "sections": {
-      "mission": "Mission",
-      "developer": "Entwickler",
-      "legal": "Transparenz"
-    },
-    "cta": {
-      "title": "Bereit für die Zusammenarbeit?",
-      "description": "Erzählen Sie uns von Ihrem Projekt — wir melden uns mit einem klaren Plan.",
-      "button": "Gespräch beginnen"
+        "ai": {
+          "title": "KI für mehr Tempo, immer gegengelesen",
+          "description": "Wir nutzen künstliche Intelligenz, um schneller zu arbeiten, und ein Mensch liest alles gegen, was sie erzeugt. Die Einzelheiten stehen in unserem Impressum."
+        }
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Space_Grotesk } from 'next/font/google';
+import { Inter, Space_Grotesk, Space_Mono } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
@@ -28,10 +28,15 @@ const inter = Inter({
   variable: '--font-body',
 });
 
+const spaceMono = Space_Mono({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-mono',
+});
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta' });
-  const languages = Object.fromEntries(routing.locales.map((localeCode) => [localeCode, `${SITE_URL}/${localeCode}/`]));
 
   const title = t('title');
   const description = t('description');
@@ -41,13 +46,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title,
     description,
     metadataBase: new URL(SITE_URL),
-    alternates: {
-      canonical: `/${locale}/`,
-      languages: {
-        ...languages,
-        'x-default': `${SITE_URL}/${routing.defaultLocale}/`,
-      },
-    },
     openGraph: {
       title,
       description,
@@ -79,13 +77,13 @@ export default async function LocaleLayout({
   const region = await getRegion();
 
   return (
-    <html lang={locale || 'en'} className={`${spaceGrotesk.variable} ${inter.variable}`}>
-      <body className="bg-slate-950">
+    <html lang={locale || 'en'} className={`${spaceGrotesk.variable} ${inter.variable} ${spaceMono.variable}`}>
+      <body className="bg-void">
         <NextIntlClientProvider>
           <CookieConsentProvider>
             <CosmicCursor />
             <StatusBar region={region} />
-            <Header />
+            <Header region={region} />
             <main id="main-content">{children}</main>
             <Footer region={region} />
             <WebsiteSeo />

@@ -1,34 +1,50 @@
 {
   "local": {
-    "hero": {
-      "title": "Web & Mobile Developer in Annecy, Geneva and French-speaking Switzerland",
-      "description": {
-        "fr": "Matthieu Compérat, freelance developer based in Annecy. I design and build modern web and mobile apps for companies in Annecy, Haute-Savoie, Geneva and French-speaking Switzerland (Romandy).",
-        "ch": "Matthieu Compérat, freelance developer based in Chêne-Bougeries, Geneva. I design and build modern web and mobile apps for companies across Geneva, French-speaking Switzerland (Romandy) and the Annecy area."
-      }
+    "meta": {
+      "title": "Web and mobile developer in Geneva and Annecy | Cosmic Studio",
+      "description": "Cosmic Studio builds websites and apps for craftspeople, associations and independents in Geneva, French-speaking Switzerland, Annecy and Haute-Savoie. Meetings in person or by video call."
     },
-    "services": {
-      "title": "Web and mobile development services for local businesses"
+    "intro": {
+      "eyebrow": "[ Geneva · Annecy ]",
+      "title": "Your web studio, <em>between Geneva and Annecy.</em>",
+      "lead": {
+        "ch": "Cosmic Studio is based in Chêne-Bougeries. We build websites and apps for craftspeople, associations and independents in Geneva and French-speaking Switzerland, and we come to meet you in person.",
+        "fr": "Cosmic Studio works between Annecy and Geneva. We build websites and apps for craftspeople, associations and independents in Haute-Savoie, and we come to meet you in person."
+      },
+      "primary": "Talk about my project",
+      "secondary": "See services and pricing"
     },
-    "zone": {
-      "title": "Coverage area",
-      "remote": "Remote collaboration available everywhere in France and Switzerland",
-      "locations": {
-        "annecy": "Annecy & Haute-Savoie",
-        "geneva": "Geneva & Lake Geneva region",
-        "suisse_romande": "French-speaking Switzerland (Vaud, Valais, Neuchâtel, Fribourg)"
+    "zones": {
+      "eyebrow": "[ Where we work ]",
+      "title": "In person when it helps, <em>remotely the rest of the time.</em>",
+      "items": {
+        "geneva": {
+          "title": "Geneva",
+          "description": "The studio is in Chêne-Bougeries. We meet at your place, your workshop or over a coffee."
+        },
+        "romandy": {
+          "title": "French-speaking Switzerland",
+          "description": "Vaud, Valais, Neuchâtel, Fribourg: we come over for the first meeting, then carry on by video call."
+        },
+        "annecy": {
+          "title": "Annecy and Haute-Savoie",
+          "description": "From Annecy to the French side of Geneva, terms and timelines are the same as in Geneva."
+        },
+        "remote": {
+          "title": "Elsewhere",
+          "description": "Anywhere in France or Switzerland, everything can be done remotely: video calls, a shared mockup, the launch."
+        }
       }
     },
     "projects": {
-      "title": {
-        "fr": "Recent projects delivered from Annecy",
-        "ch": "Recent projects delivered from Geneva"
-      }
+      "eyebrow": "[ Our work ]",
+      "title": "A few sites <em>already live.</em>",
+      "all": "All projects"
     },
-    "cta": "Contact your local web developer",
-    "meta": {
-      "title": "Web & Mobile Developer Annecy • Geneva • Romandy | Go Cosmic",
-      "description": "Matthieu Compérat, freelance developer based in Annecy and Geneva. Web and mobile app development for Annecy, Haute-Savoie, Geneva and French-speaking Switzerland."
+    "cta": {
+      "title": "A project close to home?",
+      "description": "Tell us in a few lines what you do. We reply quickly to set up a first conversation.",
+      "button": "Talk about my project"
     }
   }
 }

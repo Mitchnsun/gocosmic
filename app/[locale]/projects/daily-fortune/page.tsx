@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
-import { buildCaseStudyNavigation, CaseStudy } from '@/components/CaseStudy';
-import { getCanonicalUrl } from '@/i18n/canonical';
+import { buildCaseStudyMeta, buildCaseStudyNavigation, CaseStudy, PROJECTS_BY_SLUG } from '@/components/CaseStudy';
+import { getAlternates } from '@/i18n/canonical';
 import { getOgImages } from '@/lib/og';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -17,9 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title,
     description,
-    alternates: {
-      canonical: getCanonicalUrl(locale, '/projects/daily-fortune'),
-    },
+    alternates: getAlternates(locale, '/projects/daily-fortune'),
     openGraph: {
       title,
       description,
@@ -44,40 +42,35 @@ export default function DailyFortune() {
       eyebrow={tCommon('eyebrow')}
       title={t('title')}
       tagline={t('subtitle')}
-      accent="royal"
-      logo={{ src: '/projects/daily-fortune/app-icon.png', alt: t('title') }}
-      meta={['2026', 'React Native · Expo', 'Mobile']}
+      accent={PROJECTS_BY_SLUG['daily-fortune'].accent}
+      logo={{ src: PROJECTS_BY_SLUG['daily-fortune'].cover.src, alt: t('title') }}
+      meta={buildCaseStudyMeta('daily-fortune', tList)}
       sections={[
         {
-          id: 'overview',
-          title: t('overview.title'),
-          content: t('overview.description'),
-          secondary: t('overview.motivation'),
+          id: 'for-whom',
+          label: t('for_whom.label'),
+          title: t('for_whom.title'),
+          content: t('for_whom.description'),
         },
         {
-          id: 'features',
-          title: t('features.title'),
+          id: 'what-we-did',
+          label: t('what_we_did.label'),
+          title: t('what_we_did.title'),
+          content: t('what_we_did.description'),
           columns: 2,
           points: [
-            t('features.items.daily'),
-            t('features.items.motivation'),
-            t('features.items.modern'),
-            t('features.items.cosmic'),
+            t('what_we_did.items.daily_message'),
+            t('what_we_did.items.ai_messages'),
+            t('what_we_did.items.clean_design'),
+            t('what_we_did.items.stores'),
           ],
         },
         {
-          id: 'technology',
-          title: t('technology.title'),
-          content: t('technology.description'),
-          columns: 2,
-          points: [
-            t('technology.stack.nextjs'),
-            t('technology.stack.typescript'),
-            t('technology.stack.tailwind'),
-            t('technology.stack.native'),
-          ],
+          id: 'result',
+          label: t('result.label'),
+          title: t('result.title'),
+          content: t('result.description'),
         },
-        { id: 'ai', title: t('ai.title'), content: t('ai.description') },
       ]}
       cta={{
         title: t('cta.title'),

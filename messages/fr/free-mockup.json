@@ -1,37 +1,37 @@
 {
   "meta": {
-    "title": "Maquette gratuite - Go Cosmic | Annecy · Genève",
-    "description": "Recevez une maquette gratuite de votre futur site : choisissez vos couleurs, dites-nous vos envies, et découvrez une première proposition par email. Sans engagement."
+    "title": "Maquette gratuite de votre futur site | Cosmic Studio",
+    "description": "Demandez la maquette gratuite de votre futur site : choisissez une ambiance de couleurs, décrivez ce que vous avez en tête et recevez une première proposition par e-mail. Sans engagement."
   },
   "freeMockup": {
-    "eyebrow": "[ MAQUETTE GRATUITE ]",
+    "eyebrow": "[ Maquette gratuite ]",
     "title": "Voyez votre site avant de décider",
-    "intro": "Dites-nous où vous en êtes aujourd'hui et l'ambiance que vous avez en tête. Vous recevez une maquette de votre futur site — gratuite, et sans rien devoir engager.",
+    "intro": "Dites-nous où vous en êtes et l'ambiance que vous imaginez. Nous vous envoyons une maquette de votre futur site, gratuitement et sans engagement.",
     "steps": {
       "title": "Comment ça se passe",
       "items": {
         "brief": {
           "title": "Vous envoyez l'essentiel",
-          "description": "Votre email, la direction de couleurs qui vous plaît si vous en avez une, et votre site actuel si vous en avez un."
+          "description": "Votre adresse e-mail et, si vous le souhaitez, une ambiance de couleurs et l'adresse de votre site actuel."
         },
         "design": {
-          "title": "Nous dessinons une maquette",
-          "description": "Un premier aperçu de votre page d'accueil, construit à partir de ce que vous avez décrit."
+          "title": "Nous préparons la maquette",
+          "description": "Un premier aperçu de votre page d'accueil, à partir de ce que vous nous avez décrit."
         },
         "deliver": {
-          "title": "Vous décidez tranquillement",
-          "description": "La maquette arrive dans votre boîte mail. Si elle ne vous convient pas, la démarche s'arrête là."
+          "title": "Vous décidez ensuite",
+          "description": "Vous recevez la maquette par e-mail. Si elle ne vous convient pas, on en reste là, sans frais."
         }
       }
     },
-    "privacy_notice": "Votre email et votre message servent uniquement à préparer et à vous envoyer votre maquette.",
+    "privacy_notice": "Votre adresse e-mail et votre message servent uniquement à préparer et à vous envoyer votre maquette.",
     "privacy_link": "Politique de confidentialité",
     "form": {
       "heading": "Demandez votre maquette",
-      "lead": "Un email : tout le reste est facultatif.",
-      "email_label": "Votre email",
-      "email_placeholder": "vous@exemple.com",
-      "palette_label": "Direction de couleurs",
+      "lead": "Seule votre adresse e-mail est obligatoire.",
+      "email_label": "Votre adresse e-mail",
+      "email_placeholder": "vous@exemple.fr",
+      "palette_label": "Ambiance de couleurs",
       "website_label": "Votre site actuel",
       "website_placeholder": "votre-site.fr",
       "wishes_label": "Ce que vous avez en tête",
@@ -42,9 +42,9 @@
       "submitting": "Envoi en cours…",
       "reassurance": "Gratuit, sans engagement.",
       "success_title": "Demande bien reçue",
-      "success_message": "Merci — nous revenons vers vous par email avec votre maquette.",
-      "error_message": "Votre demande n'a pas pu être envoyée. Merci de réessayer dans un instant.",
-      "retry_later_message": "Votre demande n'a pas pu être envoyée pour le moment. Merci de réessayer plus tard.",
+      "success_message": "Merci. Nous vous enverrons votre maquette par e-mail.",
+      "error_message": "Votre demande n'a pas pu être envoyée. Réessayez dans un instant.",
+      "retry_later_message": "Votre demande n'a pas pu être envoyée pour le moment. Réessayez un peu plus tard.",
       "invalid_message": "Merci de vérifier les champs signalés.",
       "plan_attached": "Le résultat de votre simulation tarifaire sera joint à votre demande."
     },
@@ -61,7 +61,7 @@
     },
     "validation": {
       "required": "Ce champ est obligatoire.",
-      "email_invalid": "Merci d'indiquer une adresse email valide.",
+      "email_invalid": "Merci d'indiquer une adresse e-mail valide.",
       "url_invalid": "Merci d'indiquer une adresse de site valide, par exemple mon-site.fr.",
       "wishes_too_long": "Merci de rester sous 500 caractères."
     }

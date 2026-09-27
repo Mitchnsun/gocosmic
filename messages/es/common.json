@@ -1,70 +1,42 @@
 {
   "404": {
-    "description": "Quizá las estrellas aún no se han alineado.",
+    "description": "Puede que el enlace sea antiguo o que la página haya cambiado de dirección. Vuelve a empezar desde la página de inicio o dinos qué estabas buscando.",
     "link": "Volver al inicio",
-    "title": "Parece que te has perdido en el espacio"
-  },
-  "common": {
-    "loading": "Cargando tu viaje cósmico..."
+    "title": "Esta página se ha salido de su órbita.",
+    "eyebrow": "[ Error 404 ]",
+    "contact": "Dinos qué estabas buscando"
   },
   "meta": {
-    "title": "Desarrollo Web y Móvil | Annecy · Ginebra | Go Cosmic",
-    "description": "Agencia de desarrollo de aplicaciones web y móviles con sede en Annecy, con proyectos en Ginebra, la Suiza romanda y Alta Saboya. React, React Native, Next.js."
+    "title": "Creación de páginas web · Ginebra y Annecy | Cosmic Studio",
+    "description": "Creación de páginas web para artesanos, asociaciones y autónomos de Ginebra, Annecy y Alta Saboya. Una web que la gente encuentra en Google, y alguien que se ocupa de ella una vez publicada."
   },
   "language": {
     "current": "Idioma actual: {language}",
     "switchTo": "Cambiar a {language}"
   },
-  "pricing_teaser": {
-    "eyebrow": "Sitio web vitrina",
-    "price": {
-      "eur": "desde 10€",
-      "chf": "desde 10 CHF"
-    },
-    "price_period": "/ mes",
-    "tagline": "Todo incluido, sin sorpresas",
-    "scope_note": "Ideal para presentar su negocio, servicios y datos de contacto en línea — sin gestión de pedidos ni portal de clientes.",
-    "features": {
-      "page": "Una única página vitrina estática",
-      "redesign": "Rediseño gráfico de su sitio web vitrina",
-      "seo": "Optimización SEO",
-      "updates": "Actualizaciones técnicas regulares",
-      "hosting": "Alojamiento web",
-      "ssl": "Conexión segura HTTPS (el candado del navegador)",
-      "email": "1 dirección de correo profesional"
-    },
-    "footnote": {
-      "eur": "El nombre de dominio no está incluido: su gestión es una opción por +5€ al mes, al igual que las páginas adicionales y la dirección de correo.",
-      "chf": "El nombre de dominio no está incluido: su gestión es una opción por +5 CHF al mes, al igual que las páginas adicionales y la dirección de correo."
-    },
-    "footnote_scope": "Para una tienda e-commerce o portal de clientes, contáctenos para un presupuesto personalizado.",
-    "mockup_mention": "Solicite su maqueta sin compromiso",
-    "cta_simulate": "Simular mi tarifa",
-    "cta_contact": "Solicitar un presupuesto",
-    "cta_contact_email_subject": "Solicitud de presupuesto para mi proyecto",
-    "cta_contact_aria_label": "Enviar un email a prospect@gocosmic.dev para solicitar un presupuesto"
-  },
   "status_bar": {
-    "signal_stable": "SEÑAL ESTABLE",
-    "mission_control": "CONTROL DE MISIÓN",
-    "location": {
-      "fr": "ANNECY · ALT. 447M",
-      "ch": "CHÊNE-BOUGERIES · ALT. 424M"
+    "aria_label": "Disponibilidad del estudio",
+    "mission_control": "Centro de control",
+    "available": {
+      "label": "Disponible",
+      "detail": "Nuevos proyectos a partir de {month}"
     },
-    "aria_label": "Estado del control de misión",
-    "aria_signal": "Señal activa"
+    "booked": {
+      "label": "Completo",
+      "detail": "Próximas plazas en {month}"
+    }
   },
   "cookieConsent": {
     "title": "Preferencias de privacidad",
-    "description": "Usamos Vercel Analytics para medir la audiencia solo después de tu consentimiento. Rechazarlo no afecta al sitio.",
+    "description": "Si nos das tu consentimiento, medimos la audiencia del sitio con Vercel Analytics. Si lo rechazas, el sitio funciona exactamente igual.",
     "analyticsTitle": "Medición de audiencia",
-    "analyticsDescription": "Estadísticas anónimas de páginas vistas usadas para mejorar el sitio. Go Cosmic no carga rastreadores publicitarios.",
-    "accept": "Aceptar analíticas",
+    "analyticsDescription": "Estadísticas anónimas sobre las páginas visitadas, para mejorar el sitio. No se usa ningún rastreador publicitario.",
+    "accept": "Aceptar",
     "refuse": "Rechazar",
     "customize": "Personalizar",
     "save": "Guardar mi elección",
     "privacyLink": "Leer la política de privacidad",
-    "manage": "Ajustes de privacidad",
+    "manage": "Gestionar las cookies",
     "close": "Cerrar"
   },
   "case_study": {

@@ -1,90 +1,66 @@
 {
   "pricing": {
-    "meta": {
-      "title": "Tariffe - Go Cosmic",
-      "description": "Componga il suo sito a partire da 10€ al mese: sceglie il numero di pagine e le opzioni. Bozza e analisi del sito gratuite, senza impegno."
-    },
-    "eyebrow": "[ TARIFFE ]",
-    "title": "Componga la sua offerta",
-    "subtitle": "Un prezzo di partenza chiaro, poi aggiunge solo ciò che le serve davvero. Il totale si aggiorna man mano.",
     "free_offers": {
       "eyebrow": "Gratis e senza impegno",
-      "title": "Prima ancora di parlare di budget",
+      "title": "Prima di parlare di budget",
       "items": {
         "mockup": {
-          "title": "Una bozza del suo futuro sito",
-          "description": "Vede come potrebbe essere il suo sito prima di decidere qualsiasi cosa."
+          "title": "Un mockup del tuo futuro sito",
+          "description": "Vedi come potrebbe essere il tuo sito prima di decidere qualsiasi cosa."
         },
         "audit": {
-          "title": "Un'analisi del suo sito attuale",
-          "description": "Cosa funziona, cosa le fa perdere visitatori e se la si trova su Google."
+          "title": "Un'analisi del tuo sito attuale",
+          "description": "Cosa funziona, cosa fa scappare i visitatori e come appare il tuo sito su Google."
         }
       },
-      "note": "Entrambe sono gratuite e non la impegnano a nulla."
-    },
-    "step1": {
-      "question": "Cosa desidera creare?",
-      "options": {
-        "website": "Un sito internet",
-        "mobile": "Un'applicazione mobile",
-        "both": "Entrambi"
-      }
-    },
-    "step2": {
-      "question": "Che tipo di sito le serve?",
-      "options": {
-        "showcase": "Un sito che presenta la mia attività",
-        "self_managed": "Un sito che voglio modificare da solo",
-        "accounts": "Un sito con un'area per i miei clienti",
-        "ecommerce": "Un sito per vendere online"
-      }
+      "note": "Entrambe sono gratuite e non ti impegnano a nulla."
     },
     "builder": {
       "period": "/ mese",
       "base": {
         "title": "Formula base",
         "includes": {
-          "page": "Una sola pagina vetrina statica che presenta la sua attività",
+          "page": "Una pagina vetrina che presenta la tua attività",
           "hosting": "Online 24 ore su 24, pubblicazione compresa",
-          "security": "Connessione sicura HTTPS (il lucchetto nel browser)"
+          "security": "Connessione sicura (il lucchetto nel browser)"
         }
       },
       "options": {
-        "title": "Aggiunga ciò che le serve",
+        "title": "Aggiungi quello che ti serve",
         "example_domain": {
           "fr": "la-mia-impresa.it",
           "ch": "la-mia-impresa.ch"
         },
         "domain": {
-          "label": "Gestione del suo nome a dominio",
-          "hint": "Il suo nome a dominio, per esempio {domain} — registrato e rinnovato per lei."
+          "label": "Gestione del tuo nome a dominio",
+          "hint": "Per esempio {domain}: lo registriamo e lo rinnoviamo per te."
         },
         "swiss_hosting": {
           "label": "Sito ospitato in Svizzera",
-          "hint": "I suoi dati restano su un server situato in Svizzera."
+          "hint": "I tuoi dati restano su un server situato in Svizzera."
         },
         "email": {
-          "label": "Un indirizzo e-mail a suo nome",
-          "hint": "Per esempio contatto@{domain}, invece di un indirizzo gratuito."
+          "label": "Un indirizzo e-mail a tuo nome",
+          "hint": "Per esempio info@{domain}, invece di un indirizzo gratuito."
         }
       },
       "pages": {
         "label": "Numero di pagine",
         "tiers": {
           "one": "1 pagina (compresa)",
-          "two_four": "2 a 4 pagine",
-          "five_seven": "5 a 7 pagine",
-          "eight_nine": "8 a 9 pagine",
+          "two_four": "Da 2 a 4 pagine",
+          "five_seven": "Da 5 a 7 pagine",
+          "eight_nine": "8 o 9 pagine",
           "ten_plus": "10 pagine o più"
         }
       },
       "updates": {
         "label": "Modifiche ai contenuti comprese",
-        "hint": "I suoi testi, le foto e gli orari aggiornati da me, senza costi aggiuntivi ogni volta.",
+        "hint": "Aggiorniamo noi i tuoi testi, le foto e gli orari, senza costi aggiuntivi a ogni richiesta.",
         "off": "Non compreso",
         "slider_label": "Modifiche all'anno",
         "tiers": {
-          "few_per_year": "2 o 3 volte all’anno",
+          "few_per_year": "2 o 3 volte all'anno",
           "monthly": "1 volta al mese",
           "twice_monthly": "2 volte al mese",
           "weekly": "1 volta a settimana",
@@ -92,35 +68,63 @@
         }
       },
       "total": {
-        "label": "La sua offerta",
-        "note": "Può modificare queste opzioni in qualsiasi momento.",
-        "beyond": "Oltre questi volumi ne parliamo insieme: le preparo una proposta su misura."
+        "label": "La tua stima",
+        "note": "Prezzo indicativo, confermato dopo una prima conversazione. Puoi aggiungere opzioni in qualsiasi momento; una volta attivate, restano nel tuo abbonamento (vedi le condizioni generali di vendita).",
+        "beyond": "Oltre questi volumi, ne parliamo insieme per farti una proposta.",
+        "cta": "Richiedi il mio mockup gratuito",
+        "question": "Qualche domanda prima? <link>Scrivici</link>."
       }
     },
-    "results": {
+    "columns": {
+      "eyebrow": "[ Tariffe ]",
+      "title": "Quattro modi di lavorare con noi.",
+      "subscription": {
+        "title": "Abbonamento",
+        "label": "Sito, hosting e assistenza",
+        "price": "Da {price}",
+        "period": "/ mese",
+        "description": "Il tuo sito è online e sempre aggiornato, senza che tu debba occupartene. Il prezzo dipende dalle tue esigenze: numero di pagine, nome a dominio, indirizzo e-mail, modifiche.",
+        "features": {
+          "included": "Hosting, connessione sicura e visibilità di base su Google compresi",
+          "options": "Opzioni da aggiungere quando ti servono",
+          "mockup": "Un mockup gratuito prima di decidere"
+        },
+        "cta": "Componi il mio abbonamento"
+      },
+      "guidance": {
+        "title": "Accompagnamento",
+        "label": "Consulenza, UX/UI e design",
+        "price": "Tariffa a giornata",
+        "description": "Per andare oltre il mockup gratuito senza per forza avviare lo sviluppo: architettura, scelte tecniche, UX/UI e design, con un designer al nostro fianco.",
+        "features": {
+          "architecture": "Architettura e scelte tecniche",
+          "design": "UX/UI, percorsi utente e mockup dettagliati",
+          "designer": "Un designer che lavora al fianco dello sviluppatore"
+        },
+        "cta": "Parliamone"
+      },
+      "reinforcement": {
+        "title": "Rinforzo",
+        "label": "Sito esistente, squadra rinforzata",
+        "price": "Tariffa a giornata",
+        "description": "Per far evolvere un sito esistente, che si tratti di miglioramenti tecnici o di nuove funzionalità, con uno o più sviluppatori in base alla portata del progetto.",
+        "features": {
+          "technical": "Miglioramento tecnico: prestazioni, sicurezza, aggiornamenti",
+          "features": "Nuove funzionalità su un sito esistente",
+          "team": "Uno o più sviluppatori in base alla portata del progetto"
+        },
+        "cta": "Parliamone"
+      },
       "custom": {
-        "note": "Progetto su misura",
-        "title": "Parliamone",
-        "description": "Un progetto di questo tipo si valuta caso per caso: ciò che le serve ha poco a che vedere con un sito di presentazione. Mi descriva la sua esigenza e le invio una proposta dettagliata, senza impegno."
+        "title": "Su misura",
+        "label": "Progetto una tantum · su preventivo",
+        "description": "Negozio online, area soci, app mobile o strumento interno: definiamo insieme il progetto, poi ti mandiamo un preventivo. Dopo la consegna, puoi passare all'abbonamento per l'assistenza.",
+        "features": {
+          "payment": "Pagamento in più rate, una per ogni fase",
+          "ownership": "Il codice e i dati sono tuoi"
+        },
+        "cta": "Richiedi un preventivo"
       }
-    },
-    "contact": {
-      "title": "Parliamo del tuo progetto",
-      "description": "Mi scriva due righe: le rispondo con una proposta chiara.",
-      "email": "prospect@gocosmic.dev",
-      "cta": "Richiedi un preventivo",
-      "subject": "Richiesta prezzi — Preventivo progetto",
-      "aria_label": "Invia un'email a prospect@gocosmic.dev per un preventivo progetto",
-      "privacy_notice": "Inviando un'email accetti che il messaggio e i dati di contatto siano trattati per preparare un preventivo e seguire il progetto.",
-      "privacy_link": "Informativa privacy",
-      "free_mockup_cta_label": "Ricevi un mockup gratuito",
-      "free_mockup_cta_aria_label": "Vai alla pagina di richiesta del mockup gratuito"
-    },
-    "reset": "Ricominciare",
-    "summary": {
-      "intro": "Buongiorno, ecco il riepilogo della mia simulazione sulla vostra pagina prezzi:",
-      "project": "Progetto",
-      "site_type": "Tipo di sito"
     }
   }
 }

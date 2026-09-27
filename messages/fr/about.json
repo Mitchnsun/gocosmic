@@ -1,89 +1,63 @@
 {
   "meta": {
-    "title": "À propos de Go Cosmic - Agence Web à Annecy & Genève",
-    "description": "Découvrez Go Cosmic, agence de développement web et mobile basée à Annecy, intervenant à Genève et en Haute-Savoie. Rencontrez Matthieu Compérat, notre développeur."
+    "title": "À propos · Cosmic Studio, studio web à Genève & Annecy",
+    "description": "Cosmic Studio est un studio web et mobile entre Genève et Annecy, tenu par Matthieu Compérat, qui suit votre projet du premier échange jusqu'après la mise en ligne."
   },
   "about": {
-    "developer": {
-      "bio": "Matthieu allie une expertise technique approfondie à une vision créative pour concevoir des solutions numériques qui repoussent les limites du possible. Son approche \"cosmique\" vise à créer des expériences utilisateurs performantes, esthétiques et innovantes.",
-      "description": "Développeur passionné avec une expertise dans les technologies web et mobiles modernes.",
-      "expertise": {
-        "items": {
-          "aiTech": "Intégration de l'IA et technologies émergentes",
-          "architecture": "Architecture logicielle et bonnes pratiques de développement",
-          "leadership": "Leadership technique et mentorat d'équipe",
-          "modernDev": "Développement web moderne (React, React-Native, Next.js, Expo, TypeScript, Tailwind CSS)"
-        },
-        "title": "Expertise"
+    "eyebrow": "[ À propos ]",
+    "title": "Un petit studio, <em>pour que vos clients vous trouvent.</em>",
+    "lead": "Cosmic Studio, c'est Matthieu Compérat, développeur installé à Chêne-Bougeries. Il crée des sites et des applications pour les artisans, les associations et les indépendants, de Genève à Annecy.",
+    "path": {
+      "eyebrow": "[ Parcours ]",
+      "title": "Quinze ans de développement, <em>un seul interlocuteur.</em>",
+      "paragraphs": [
+        "Originaire de Duingt, au bord du lac d'Annecy, Matthieu développe des sites et des applications depuis une quinzaine d'années. Il a d'abord travaillé pour de grandes entreprises, où il a appris à construire des outils fiables et accessibles à tous.",
+        "Avec Cosmic Studio, il met cette expérience au service des artisans, des associations et des indépendants. Vous parlez à la personne qui construit votre site, du premier appel jusqu'au suivi, mois après mois."
+      ],
+      "zones": {
+        "ch": [
+          "Chêne-Bougeries · base",
+          "Suisse romande · sur place",
+          "Haute-Savoie · sur place",
+          "Ailleurs · à distance"
+        ],
+        "fr": [
+          "Chêne-Bougeries · base",
+          "Haute-Savoie · sur place",
+          "Suisse romande · sur place",
+          "Ailleurs · à distance"
+        ]
       },
       "linkedin": "Voir le profil LinkedIn",
-      "linkedin_aria": "Profil LinkedIn de Matthieu Compérat (s'ouvre dans un nouvel onglet)",
-      "name": "Matthieu Compérat",
-      "subtitle": "Architecte d'Expériences Digitales",
-      "title": "Rencontrez le Développeur"
+      "linkedin_aria": "Profil LinkedIn de Matthieu Compérat (s'ouvre dans un nouvel onglet)"
     },
-    "legal": {
-      "ai": {
-        "items": {
-          "compliance": "Les pratiques liées aux données personnelles sont détaillées dans la politique de confidentialité plutôt que résumées par une mention générique ici.",
-          "ethics": "Nous nous engageons à une utilisation éthique et transparente de l'intelligence artificielle",
-          "integration": "Nos solutions peuvent intégrer des modèles d'IA pour des fonctionnalités avancées",
-          "privacy": "Les données sensibles ne doivent pas être partagées avec des tiers sans base légale documentée ou consentement explicite lorsque celui-ci est requis."
+    "why": {
+      "eyebrow": "[ Pourquoi ce choix ]",
+      "title": "Les artisans et les associations <em>méritent mieux qu'un modèle tout fait.</em>",
+      "lead": "Les grandes agences travaillent surtout pour les grandes entreprises, et les créateurs de sites en ligne vous laissent vous débrouiller avec l'outil. Cosmic Studio s'adresse à toutes celles et ceux qui se trouvent entre les deux.",
+      "reasons": {
+        "found": {
+          "title": "Être trouvé près de chez soi",
+          "description": "Vos clients vous cherchent sur leur téléphone, à quelques kilomètres de chez vous. Un site rapide et bien construit remonte mieux sur Google."
         },
-        "title": "Utilisation de l'IA"
-      },
-      "contact": {
-        "link": "nous contacter",
-        "text": "Pour toute question sur la confidentialité, les mentions légales ou l'utilisation de l'IA,",
-        "subject": "Questions sur la confidentialité, les mentions légales et l’utilisation de l’IA",
-        "ariaLabel": "Envoyer un e-mail à support@gocosmic.dev",
-        "privacyLink": "Politique de confidentialité",
-        "legalNoticeLink": "Mentions légales"
-      },
-      "intro": "Go Cosmic peut intégrer des fonctionnalités assistées par IA dans les projets clients, avec revue humaine et transparence au cœur de la livraison.",
-      "responsibility": {
-        "items": {
-          "recommendations": "Les recommandations basées sur l'IA sont informatives et ne remplacent pas le jugement humain",
-          "security": "Go Cosmic s'engage à maintenir les plus hauts standards de sécurité et de confidentialité",
-          "testing": "Les applications sont testées selon les meilleures pratiques du secteur"
+        "price": {
+          "title": "Un prix qui suit votre activité",
+          "description": "Un abonnement dès {price} par mois, qui évolue avec vous, plutôt qu'un gros investissement de départ."
         },
-        "title": "Responsabilité"
-      },
-      "title": "Mentions légales et usage de l'IA"
-    },
-    "mission": {
-      "conclusion": "Notre mission : propulser vos projets vers de nouveaux horizons technologiques avec créativité, innovation et excellence technique.",
-      "description": "Go Cosmic transforme vos idées en applications innovantes en combinant expertise moderne et intelligence artificielle.",
-      "location": {
-        "fr": "Basé à Annecy, nous intervenons à Genève, en Suisse romande et en Haute-Savoie — en présentiel ou à distance.",
-        "ch": "Basé à Chêne-Bougeries, à Genève, nous intervenons dans toute la Suisse romande et dans le bassin annécien — en présentiel ou à distance."
-      },
-      "specialization": {
-        "items": {
-          "aiIntegration": "Intégration avancée de l'IA pour des expériences utilisateurs intelligentes",
-          "customSolutions": "Solutions sur-mesure avec les technologies modernes (React, React-Native, Next.js, Expo, TypeScript, Tailwind CSS)",
-          "uiUxDesign": "Design UI/UX immersif avec une approche cosmique unique",
-          "webMobile": "Développement d'applications web et mobiles de nouvelle génération"
+        "answer": {
+          "title": "Quelqu’un qui répond",
+          "description": "Pas de centre d'appels : c'est la personne qui a construit votre site qui vous répond, en général dans la journée."
         },
-        "title": "Nous sommes spécialisés dans"
-      },
-      "title": "Go Cosmic — Créer des applications cosmiques avec l'IA"
-    },
-    "subtitle": "Découvrez notre mission, notre équipe et notre engagement pour l'excellence",
-    "title": "À propos de Go Cosmic",
-    "eyebrow": "À propos — Studio",
-    "hero": {
-      "cta": "Nous contacter"
-    },
-    "sections": {
-      "mission": "Mission",
-      "developer": "Développeur",
-      "legal": "Transparence"
+        "ai": {
+          "title": "L'IA pour gagner du temps, toujours relue",
+          "description": "Nous utilisons l'intelligence artificielle pour aller plus vite, et une personne relit tout ce qu'elle produit. Les détails figurent dans nos mentions légales."
+        }
+      }
     },
     "cta": {
-      "title": "Prêt à travailler ensemble ?",
-      "description": "Parlez-nous de votre projet : nous revenons vers vous avec un plan clair.",
-      "button": "Démarrer la conversation"
+      "title": "Travaillons ensemble.",
+      "description": "Présentez-nous votre activité en quelques lignes. Matthieu vous répond rapidement.",
+      "button": "Parler de mon projet"
     }
   }
 }

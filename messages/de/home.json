@@ -1,157 +1,149 @@
 {
   "homepage": {
-    "ascii_labels": [
-      "Remote",
-      "Go Cosmic",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Apps mit Schub",
-      "Code, der liefert",
-      "Annecy",
-      "Tournette",
-      "Aravis",
-      "React",
-      "Expo",
-      "Null Bugs in Prod",
-      "Stabile Umlaufbahn",
-      "T-0. Abheben.",
-      "Houston, wir haben ein Problem."
-    ],
     "cta": {
-      "button": "Kontaktieren Sie uns",
-      "description": "Lassen Sie uns besprechen, wie wir Ihr Web- oder Mobile-Projekt zum Leben erwecken und etwas wirklich Außergewöhnliches schaffen können.",
-      "freeMockup": "Noch unentschlossen? Fordern Sie Ihr <link>kostenloses Mockup</link> an.",
-      "title": "Bereit für Go Cosmic?",
-      "viewOffers": "Unsere Angebote ansehen"
+      "button": "Mein Projekt besprechen",
+      "description": "Erzählen Sie uns in ein paar Zeilen, was Sie machen. Wir melden uns schnell, um darüber zu sprechen, bevor wir Ihnen irgendetwas vorschlagen.",
+      "freeMockup": "Noch unsicher? Beginnen Sie mit einem <link>kostenlosen Mockup</link>.",
+      "title": "Bringen wir Ihren Betrieb zum Strahlen."
     },
     "hero": {
-      "cta": "Beginnen Sie Ihre Reise",
-      "endWords": ["glänzen", "aufsteigen", "inspirieren", "transformieren", "erheben"],
-      "subtitle": "Lassen Sie uns Ihre Ideen in die Stratosphäre starten mit mystischem Design und kosmischen Funktionalitäten",
-      "title": "Wir entwickeln stellare Anwendungen, die"
-    },
-    "process": {
-      "eyebrow": "[ PROZESS ]",
-      "title": "Vier Phasen. <em>Kein Drama.</em>",
-      "subtitle": "Von der Idee zur Realität in 4 Phasen",
-      "discovery": {
-        "label": "T-45",
-        "title": "Entdeckung",
-        "description": "Audit, Ziele, Einschränkungen. Wir kartieren das Gebiet, bevor wir die Karte zeichnen."
+      "cta": "Go Cosmic",
+      "endWords": ["gesehen zu werden.", "gefunden zu werden.", "ausgewählt zu werden."],
+      "subtitle": "Cosmic Studio erstellt Websites und Apps für Handwerksbetriebe, Vereine und Selbstständige. Wir sorgen dafür, dass man Sie bei Google findet, und bleiben erreichbar, wenn Ihre Website online ist.",
+      "title": "Ihr Betrieb verdient es,",
+      "eyebrow": {
+        "ch": "Web- & App-Studio · Genf",
+        "fr": "Web- & App-Studio · Annecy"
       },
-      "design": {
-        "label": "T-30",
-        "title": "Design",
-        "description": "Wireframes, Prototypen, High-Fidelity. Schnelle Iterationen bis zum \"Ja\"."
-      },
-      "build": {
-        "label": "T-15",
-        "title": "Entwicklung",
-        "description": "TypeScript, Tests, Code-Reviews. Wir behandeln Code wie Infrastruktur."
-      },
-      "launch": {
-        "label": "T-0",
-        "title": "Launch",
-        "description": "In der Umlaufbahn. Monitoring, Performance, Analytics und Support nach dem Launch."
-      }
-    },
-    "services": {
-      "ai": {
-        "description": "Integration fortschrittlicher KI-Funktionen, um Ihre Anwendungen intelligenter, anpassungsfähiger und wirklich zukunftsweisend zu machen.",
-        "title": "KI-gesteuert",
-        "features": ["LLMs", "Embeddings", "Agents", "RAG"]
-      },
-      "design": {
-        "description": "Gestaltung intuitiver und bezaubernder Benutzererfahrungen, die fesseln und begeistern.",
-        "title": "Mystisches UI/UX Design",
-        "features": ["Figma", "Design Systems", "Motion", "Barrierefreiheit"]
-      },
-      "development": {
-        "description": "Entwicklung robuster und skalierbarer mobiler Anwendungen für iOS- und Android-Plattformen.",
-        "title": "Stellare Entwicklung",
-        "features": ["React", "Next.js", "TypeScript", "Expo"]
-      },
-      "launch": {
-        "description": "Begleitung Ihrer App durch den Startprozess und darüber hinaus, um einen erfolgreichen Start zu gewährleisten.",
-        "title": "Kosmischer Start",
-        "features": ["Vercel", "AWS", "Docker", "Sentry"]
-      },
-      "title": "Unsere Kosmischen Dienstleistungen",
-      "eyebrow": "[ SERVICES · 04 ]",
-      "subtitle": "Vier Säulen, um Ihr Produkt in die Umlaufbahn zu bringen — entwerfen, bauen, ausliefern, wachsen.",
-      "learnMore": "Mehr erfahren"
-    },
-    "zone": {
-      "title": "Einsatzgebiet",
-      "description": "Verfügbar in Annecy, Genf, Haute-Savoie und in der Westschweiz.",
-      "availability": "Verfügbar",
-      "locations": {
-        "annecy": "Annecy",
-        "geneva": "Genf",
-        "haute_savoie": "Haute-Savoie",
-        "suisse_romande": "Westschweiz"
-      },
-      "stations": {
-        "annecy": {
-          "meta": {
-            "fr": "Basis · 74",
-            "ch": "Frankreich"
-          }
+      "secondary": "Preise ansehen",
+      "facts": {
+        "price": {
+          "highlight": "Ab {price}",
+          "text": "/ Monat"
         },
-        "geneva": {
-          "meta": {
-            "fr": "Schweiz",
-            "ch": "Basis · GE"
-          }
+        "reply": {
+          "highlight": "Schnelle",
+          "text": "Antwort"
         },
-        "haute_savoie": {
-          "meta": {
-            "fr": "Frankreich",
-            "ch": "Frankreich"
-          }
+        "contact": {
+          "highlight": "Ein einziger",
+          "text": "Ansprechpartner"
         },
-        "suisse_romande": {
-          "meta": {
-            "fr": "Schweiz",
-            "ch": "Schweiz"
+        "area": {
+          "ch": {
+            "highlight": "Genf",
+            "text": "· Genferseeregion · Hochsavoyen · aus der Ferne"
+          },
+          "fr": {
+            "highlight": "Annecy",
+            "text": "· Hochsavoyen · Genf · aus der Ferne"
           }
         }
       }
     },
+    "process": {
+      "eyebrow": "[ Ablauf ]",
+      "title": "Vier Schritte, <em>ohne Überraschungen.</em>",
+      "subtitle": "Vom ersten Gespräch bis zum Start der Website wissen Sie, wo Ihr Projekt steht.",
+      "discovery": {
+        "label": "T-3 · Kennenlernen",
+        "title": "Wir lernen uns kennen",
+        "description": "Zwanzig Minuten am Telefon oder bei einem Kaffee in Genf oder Annecy, um über Ihre Arbeit, Ihre Kundschaft und das zu sprechen, was die Website Ihnen bringen soll."
+      },
+      "design": {
+        "label": "T-2 · Mockup",
+        "title": "Erst sehen, dann entscheiden",
+        "description": "Wir erstellen ein Mockup Ihrer Startseite mit Ihren Farben und Ihren Texten. Es ist kostenlos und verpflichtet Sie zu nichts."
+      },
+      "build": {
+        "label": "T-1 · Umsetzung",
+        "title": "Wir bauen die Website",
+        "description": "Rechnen Sie je nach Projekt mit zwei bis sechs Wochen. Über einen privaten Link verfolgen Sie den Fortschritt und geben uns laufend Rückmeldung."
+      },
+      "launch": {
+        "label": "T-0 · Start",
+        "title": "Wir bleiben auch nach dem Start da",
+        "description": "Wir schalten die Website online und zeigen Ihnen, wie sie funktioniert. Danach kümmern wir uns um Hosting, Datensicherungen und kleine Änderungen."
+      }
+    },
     "projects": {
-      "eyebrow": "[ AKTUELLE ARBEITEN · 04 ]",
-      "title": "Kürzlich <em>im Orbit.</em>",
-      "subtitle": "Eine Auswahl unserer neuesten Projekte",
-      "learnMore": "Projekt ansehen",
-      "loadMore": "Mehr Projekte laden",
-      "dailyFortune": {
-        "title": "Daily Fortune",
-        "tagline": "Mobil · iOS / Android",
-        "description": "Eine mystische mobile App, die täglich KI-gestützte Horoskope und motivierende Nachrichten liefert.",
-        "tags": ["KI", "Wellness"],
-        "imageAlt": "Vorschau der Daily Fortune App"
-      },
-      "mcomperat": {
-        "title": "mcomper.at",
-        "tagline": "Web · Next.js",
-        "description": "Ein moderner, responsiver Web-Lebenslauf, erstellt mit Next.js, TypeScript und vollständiger Internationalisierung.",
-        "tags": ["Persönlicher Lebenslauf"],
-        "imageAlt": "Vorschau der Website mcomper.at"
-      },
-      "pscSupersprint": {
-        "title": "PSC Supersprint",
-        "tagline": "Web · Echtzeit",
-        "description": "Eine Webanwendung zur Verwaltung und Echtzeitanzeige von Triathlonwettkampfergebnissen.",
-        "tags": ["Sport", "Live"],
-        "imageAlt": "Vorschau der PSC Supersprint Ergebnistafel"
-      },
-      "choeurDesPaysduMontBlanc": {
-        "title": "Chœur des Pays du Mont Blanc",
-        "tagline": "Web · Redaktionell",
-        "description": "Eine Website, die die Aktivitäten, Konzerte und das Repertoire des Chors in Haute-Savoie präsentiert.",
-        "tags": ["Kultur"],
-        "imageAlt": "Vorschau der Website des Chœur des Pays du Mont Blanc"
+      "eyebrow": "[ Referenzen ]",
+      "title": "Unsere neuesten <em>Arbeiten.</em>",
+      "all": "Alle Projekte"
+    },
+    "audience": {
+      "eyebrow": "[ Für wen ]",
+      "title": "Für alle, die schon einen Beruf haben <em>und keine Zeit, einen zweiten zu lernen.</em>",
+      "items": {
+        "artisans": {
+          "title": "Handwerksbetriebe",
+          "description": "Schreinerei, Sanitärbetrieb, Friseursalon, Partyservice … Eine Website, die zeigt, was Sie tun, wo Sie arbeiten und wie man Sie erreicht, und die gefunden wird, wenn jemand in der Nähe nach Ihrem Handwerk sucht."
+        },
+        "associations": {
+          "title": "Vereine",
+          "description": "Chor, Sportverein, Initiative … Ihre Veranstaltungen, Mitgliedschaften und Neuigkeiten an einem Ort, damit Ihre Aktivitäten bekannt werden und neue Mitglieder zu Ihnen finden."
+        },
+        "independents": {
+          "title": "Selbstständige, die gerade starten",
+          "description": "Therapeut:in, Berater:in, Fotograf:in … Eine professionelle Website von Anfang an, zu einem Preis, der mit Ihrer Tätigkeit mitwächst."
+        }
+      }
+    },
+    "why": {
+      "eyebrow": "[ Warum ein Studio ]",
+      "title": "Wix und WordPress sind praktisch, <em>zumindest am Anfang.</em>",
+      "lead": "Dann braucht man eine kostenpflichtige Erweiterung, ein Update legt eine Seite lahm, das Abo wird teurer. Wir schreiben den Code selbst. So bleibt Ihre Website schnell und kann wachsen, ohne dass Sie bei null anfangen müssen.",
+      "reasons": {
+        "ownership": {
+          "title": "Ihre Website gehört Ihnen",
+          "description": "Ihre Texte, Ihre Fotos und Ihr Domainname gehören Ihnen vom ersten Tag an. Der Code geht nach {months} Monaten Abonnement an Sie über, auf Wunsch auch früher gegen eine Übertragungsgebühr."
+        },
+        "fast": {
+          "title": "Schnell und bei Google gut platziert",
+          "description": "Ohne überladene Vorlage und ohne Erweiterungen laden Ihre Seiten auf dem Handy schnell, und das berücksichtigt Google in seinen Ergebnissen."
+        },
+        "person": {
+          "title": "Jemand, der Ihnen antwortet",
+          "description": "Sie sprechen mit Matthieu, der Ihre Website kennt, weil er sie gebaut hat."
+        },
+        "grows": {
+          "title": "Eine Website, die mit Ihnen mitwächst",
+          "description": "Heute eine Seite, später ein Onlineshop oder eine App, ohne alles neu zu bauen."
+        }
+      }
+    },
+    "apps": {
+      "eyebrow": "[ Unsere Apps ]",
+      "title": "Wir entwickeln auch <em>eigene Apps.</em>",
+      "lead": "Daran testen wir Werkzeuge, bevor wir sie für unsere Kundschaft einsetzen, und was wir dabei lernen, kommt danach Ihren Projekten zugute.",
+      "daily_fortune": {
+        "name": "Daily Fortune",
+        "badge": "iOS · Android",
+        "description": "Jeden Morgen eine kurze Nachricht für einen guten Start in den Tag. Es ist unsere erste App, erhältlich im App Store und bei Google Play.",
+        "link": "App entdecken",
+        "icon_alt": "App-Symbol von Daily Fortune"
+      }
+    },
+    "studio": {
+      "eyebrow": "[ Das Studio ]",
+      "title": "Hinter Cosmic Studio <em>steht Matthieu.</em>",
+      "paragraphs": [
+        "Ich heiße Matthieu Compérat. Ich stamme aus Duingt am Annecy-See und lebe heute in Chêne-Bougeries. Seit rund fünfzehn Jahren entwickle ich Websites und Apps, zuerst für große Unternehmen. Mit Cosmic Studio arbeite ich direkt mit Handwerksbetrieben, Vereinen und Selbstständigen zusammen.",
+        "Wenn Sie anrufen, nehme ich selbst ab, und auf Ihre Nachrichten bekommen Sie noch am selben Tag eine Antwort. Ich kenne die Website, die ich Ihnen übergebe, bis ins Detail. Das macht jede Änderung einfach und schnell."
+      ],
+      "zones": {
+        "ch": [
+          "Chêne-Bougeries · Standort",
+          "Westschweiz · vor Ort",
+          "Hochsavoyen · vor Ort",
+          "Anderswo · aus der Ferne"
+        ],
+        "fr": [
+          "Chêne-Bougeries · Standort",
+          "Hochsavoyen · vor Ort",
+          "Westschweiz · vor Ort",
+          "Anderswo · aus der Ferne"
+        ]
       }
     }
   }

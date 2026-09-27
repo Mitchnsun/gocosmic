@@ -43,14 +43,3 @@ export interface WishesTextareaProps {
   error?: FreeMockupErrorCode;
   onBlur?: () => void;
 }
-
-/** Props of the shared labelled field wrapper. */
-export interface FormFieldProps {
-  /** `id` of the control the label points at. */
-  id: string;
-  label: string;
-  /** Rendered next to the label for optional fields. */
-  hint?: string;
-  error?: string;
-  children: React.ReactNode;
-}

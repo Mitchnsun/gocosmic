@@ -5,9 +5,10 @@ import { motion } from 'motion/react';
 import { useLocale, useTranslations } from 'next-intl';
 import { useEffect, useTransition } from 'react';
 
-import { usePathname, useRouter } from '@/i18n/navigation';
+import { useSwitchLocale } from '@/components/LanguageSwitcher/useSwitchLocale';
 
-import { MOBILE_HEIGHT, MOBILE_MENU_DURATION_MS, MOBILE_MENU_STAGGER_MS, STATUS_BAR_HEIGHT } from './constants';
+import { HEADER_HEIGHT, MOBILE_MENU_DURATION_MS, MOBILE_MENU_STAGGER_MS } from './constants';
+import { useStatusBarOffset } from './useStatusBarOffset';
 
 export const LANG_DRAWER_LANGUAGES = {
   en: { name: 'English', flag: '🇬🇧' },
@@ -19,15 +20,14 @@ export const LANG_DRAWER_LANGUAGES = {
 
 interface MobileLangDrawerProps {
   onClose: () => void;
-  headerHeight?: number;
 }
 
-const MobileLangDrawer = ({ onClose, headerHeight = MOBILE_HEIGHT }: MobileLangDrawerProps) => {
+const MobileLangDrawer = ({ onClose }: MobileLangDrawerProps) => {
   const [isPending, startTransition] = useTransition();
   const t = useTranslations('navigation');
-  const router = useRouter();
   const locale = useLocale();
-  const pathname = usePathname();
+  const switchLocale = useSwitchLocale();
+  const statusBarOffset = useStatusBarOffset();
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -46,7 +46,7 @@ const MobileLangDrawer = ({ onClose, headerHeight = MOBILE_HEIGHT }: MobileLangD
 
   const handleSelect = (newLocale: string) => {
     startTransition(() => {
-      router.push(pathname, { locale: newLocale });
+      switchLocale(newLocale);
       onClose();
     });
   };
@@ -57,24 +57,24 @@ const MobileLangDrawer = ({ onClose, headerHeight = MOBILE_HEIGHT }: MobileLangD
       role="dialog"
       aria-modal="true"
       aria-label={t('switch_locale')}
-      className="fixed inset-0 z-40 flex flex-col bg-slate-950/95 backdrop-blur-xl"
+      className="bg-void/95 fixed inset-0 z-40 flex flex-col backdrop-blur-xl"
       initial={{ y: '-100%' }}
       animate={{ y: 0 }}
       exit={{ y: '-100%' }}
       transition={{ ease: [0.16, 1, 0.3, 1], duration: MOBILE_MENU_DURATION_MS / 1000 }}>
       <div
         aria-hidden="true"
-        style={{ height: `calc(${STATUS_BAR_HEIGHT}px + env(safe-area-inset-top, 0px) + ${headerHeight}px)` }}
+        style={{ height: `calc(${statusBarOffset}px + env(safe-area-inset-top, 0px) + ${HEADER_HEIGHT}px)` }}
         className="shrink-0"
       />
-      <div className="border-ghost/10 text-3xs flex items-center justify-between border-b px-4 py-3 tracking-widest text-slate-500 uppercase sm:px-6">
+      <div className="border-ghost/10 text-3xs text-ghost/45 flex items-center justify-between border-b px-4 py-3 tracking-widest uppercase sm:px-6">
         <span>{t('lang_drawer_title')}</span>
-        <button onClick={onClose} aria-label={t('menu_close')} className="p-1 transition-colors hover:text-slate-300">
+        <button onClick={onClose} aria-label={t('menu_close')} className="hover:text-ghost p-1 transition-colors">
           <XMarkIcon className="h-4 w-4" aria-hidden="true" />
         </button>
       </div>
       <nav className="flex flex-1 flex-col overflow-y-auto" aria-label={t('switch_locale')}>
-        <ul className="flex flex-col divide-y divide-slate-800">
+        <ul className="divide-ghost/8 flex flex-col divide-y">
           {Object.entries(LANG_DRAWER_LANGUAGES).map(([code, { name, flag }], index) => (
             <motion.li
               key={code}
@@ -89,7 +89,7 @@ const MobileLangDrawer = ({ onClose, headerHeight = MOBILE_HEIGHT }: MobileLangD
                   <span aria-hidden="true">{flag}</span>
                   {name}
                 </span>
-                {locale === code && <CheckIcon className="h-5 w-5 text-blue-400" aria-hidden="true" />}
+                {locale === code && <CheckIcon className="text-aerospace h-5 w-5" aria-hidden="true" />}
               </button>
             </motion.li>
           ))}

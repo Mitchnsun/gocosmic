@@ -3,7 +3,7 @@ import { getLocale, getMessages, getTranslations } from 'next-intl/server';
 
 import { FreeMockupPitch } from '@/components/FreeMockup';
 import { FreeMockupForm } from '@/components/FreeMockupForm';
-import { getCanonicalUrl } from '@/i18n/canonical';
+import { getAlternates } from '@/i18n/canonical';
 import { getOgImages } from '@/lib/og';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -17,9 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title,
     description,
-    alternates: {
-      canonical: getCanonicalUrl(locale, '/free-mockup'),
-    },
+    alternates: getAlternates(locale, '/free-mockup'),
     openGraph: {
       title,
       description,

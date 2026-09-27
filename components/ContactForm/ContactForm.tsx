@@ -6,12 +6,14 @@ import { useEffect } from 'react';
 
 import { buttonVariants } from '@/design-system/button.variants';
 import { cn } from '@/design-system/lib/utils';
-import { CONTACT_LIMITS } from '@/lib/contact/validation';
+import { CONTACT_LIMITS, CONTACT_NEEDS } from '@/lib/contact/validation';
+import { DEFAULT_REGION } from '@/lib/region';
 
 import { useContactForm } from './ContactForm.hooks';
 import type { ContactFormProps } from './ContactForm.types';
 import { ContactFormSuccess } from './ContactFormSuccess';
 import { FormField } from './FormField';
+import { NeedPicker } from './NeedPicker';
 
 /**
  * Contact form with client-side validation, a honeypot field, client and
@@ -22,11 +24,19 @@ import { FormField } from './FormField';
  *
  * @component
  */
-export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'contact-form' }: ContactFormProps) => {
+export const ContactForm = ({
+  variant = 'page',
+  region = DEFAULT_REGION,
+  onSuccess,
+  className,
+  id = 'contact-form',
+}: ContactFormProps) => {
   const t = useTranslations('contact.form');
   const { values, errors, status, formError, invalidFocus, handleChange, handleSubmit, reset } = useContactForm({
     onSuccess,
   });
+  const isSwiss = region === 'ch';
+  const placeholder = (field: string) => t(`fields.${field}.${isSwiss ? 'placeholderSwiss' : 'placeholder'}`);
 
   // Move focus to the first invalid field so screen-reader and keyboard users
   // hear why the submission did not go through.
@@ -82,7 +92,7 @@ export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'cont
             name="email"
             type="email"
             label={t('fields.email.label')}
-            placeholder={t('fields.email.placeholder')}
+            placeholder={placeholder('email')}
             value={values.email}
             onChange={handleChange}
             error={errors.email ? t(`errors.${errors.email}`) : undefined}
@@ -93,14 +103,41 @@ export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'cont
           />
         </div>
 
-        <FormField
-          name="subject"
-          label={`${t('fields.subject.label')} — ${t('optional')}`}
-          placeholder={t('fields.subject.placeholder')}
-          value={values.subject}
+        <div className="grid gap-6 md:grid-cols-2">
+          <FormField
+            name="phone"
+            type="tel"
+            label={t('fields.phone.label')}
+            hint={t('optional')}
+            placeholder={placeholder('phone')}
+            value={values.phone}
+            onChange={handleChange}
+            error={errors.phone ? t(`errors.${errors.phone}`) : undefined}
+            maxLength={CONTACT_LIMITS.phone.max}
+            disabled={isSending}
+            autoComplete="tel"
+          />
+          <FormField
+            name="company"
+            label={t('fields.company.label')}
+            hint={t('optional')}
+            placeholder={placeholder('company')}
+            value={values.company}
+            onChange={handleChange}
+            error={errors.company ? t(`errors.${errors.company}`) : undefined}
+            maxLength={CONTACT_LIMITS.company.max}
+            disabled={isSending}
+            autoComplete="organization"
+          />
+        </div>
+
+        <NeedPicker
+          legend={t('fields.need.legend')}
+          hint={t('optional')}
+          options={CONTACT_NEEDS.map((need) => ({ value: need, label: t(`fields.need.options.${need}`) }))}
+          value={values.need}
           onChange={handleChange}
-          error={errors.subject ? t(`errors.${errors.subject}`) : undefined}
-          maxLength={CONTACT_LIMITS.subject.max}
+          error={errors.need ? t(`errors.${errors.need}`) : undefined}
           disabled={isSending}
         />
 
@@ -117,32 +154,6 @@ export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'cont
           required
         />
 
-        <div className="grid gap-6 md:grid-cols-2">
-          <FormField
-            name="phone"
-            type="tel"
-            label={`${t('fields.phone.label')} — ${t('optional')}`}
-            placeholder={t('fields.phone.placeholder')}
-            value={values.phone}
-            onChange={handleChange}
-            error={errors.phone ? t(`errors.${errors.phone}`) : undefined}
-            maxLength={CONTACT_LIMITS.phone.max}
-            disabled={isSending}
-            autoComplete="tel"
-          />
-          <FormField
-            name="company"
-            label={`${t('fields.company.label')} — ${t('optional')}`}
-            placeholder={t('fields.company.placeholder')}
-            value={values.company}
-            onChange={handleChange}
-            error={errors.company ? t(`errors.${errors.company}`) : undefined}
-            maxLength={CONTACT_LIMITS.company.max}
-            disabled={isSending}
-            autoComplete="organization"
-          />
-        </div>
-
         {/* Anti-spam honeypot — hidden from humans and assistive technology. */}
         <div className="hidden" aria-hidden="true">
           <label htmlFor="honeypot">{t('honeypot_label')}</label>
@@ -158,7 +169,7 @@ export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'cont
         </div>
 
         {formError && (
-          <p role="alert" className="text-sm text-red-400">
+          <p role="alert" className="text-aerospace text-sm">
             {t(`errors.${formError}`)}
           </p>
         )}
@@ -168,7 +179,7 @@ export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'cont
             type="submit"
             disabled={isSending}
             className={cn(
-              buttonVariants({ variant: 'aerospace' }),
+              buttonVariants({ variant: 'primary' }),
               'focus-visible:ring-ghost focus-visible:ring-offset-void w-fit gap-2 py-3 transition-transform duration-300 ease-out hover:scale-105 focus-visible:ring-2 focus-visible:ring-offset-2 motion-reduce:scale-100! motion-reduce:transition-none!'
             )}>
             {isSending ? t('submitting') : t('submit')}

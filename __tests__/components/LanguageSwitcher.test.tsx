@@ -102,6 +102,19 @@ describe('LanguageSwitcher Component', () => {
     });
   });
 
+  it('keeps the query of the current page, such as a projects filter, when switching language', async () => {
+    window.history.replaceState(null, '', '/projects?type=mobile');
+    const { getByRole } = render(<LanguageSwitcher />);
+
+    fireEvent.click(getByRole('button', { name: /switch language/i }));
+    fireEvent.click(getByRole('menuitem', { name: /français/i }));
+
+    await waitFor(() => {
+      expect(mockPush).toHaveBeenCalledWith({ pathname: '/en', query: { type: 'mobile' } }, { locale: 'fr' });
+    });
+    window.history.replaceState(null, '', '/');
+  });
+
   it('should handle language change when selecting a different locale', async () => {
     const { getByRole, queryAllByRole } = render(<LanguageSwitcher />);
 

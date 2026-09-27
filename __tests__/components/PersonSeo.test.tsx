@@ -50,17 +50,16 @@ describe('PersonSeo', () => {
     );
   });
 
-  it('should include correct sameAs and address', () => {
+  it('should include correct sameAs and the Geneva home location', () => {
     render(<PersonSeo />);
 
     expect(jsonLdScriptMock).toHaveBeenCalledWith(
       expect.objectContaining({
         data: expect.objectContaining({
           sameAs: ['https://www.linkedin.com/in/matthieucomperat/'],
-          address: {
-            '@type': 'PostalAddress',
-            addressLocality: 'Annecy',
-            addressCountry: 'FR',
+          homeLocation: {
+            '@type': 'Place',
+            address: { '@type': 'PostalAddress', addressLocality: 'Chêne-Bougeries', addressCountry: 'CH' },
           },
         }),
       })
@@ -73,7 +72,7 @@ describe('PersonSeo', () => {
 
     expect(jsonLdScriptMock).toHaveBeenCalledWith(
       expect.objectContaining({
-        data: expect.objectContaining({ jobTitle: 'Freelance Web & Mobile Developer' }),
+        data: expect.objectContaining({ jobTitle: 'Founder of Cosmic Studio, web and mobile developer' }),
       })
     );
   });
@@ -84,7 +83,7 @@ describe('PersonSeo', () => {
 
     expect(jsonLdScriptMock).toHaveBeenCalledWith(
       expect.objectContaining({
-        data: expect.objectContaining({ jobTitle: 'Développeur Web & Mobile Freelance' }),
+        data: expect.objectContaining({ jobTitle: 'Fondateur de Cosmic Studio, développeur web et mobile' }),
       })
     );
   });
@@ -95,7 +94,7 @@ describe('PersonSeo', () => {
 
     expect(jsonLdScriptMock).toHaveBeenCalledWith(
       expect.objectContaining({
-        data: expect.objectContaining({ jobTitle: 'Desarrollador Web y Móvil Freelance' }),
+        data: expect.objectContaining({ jobTitle: 'Fundador de Cosmic Studio, desarrollador web y móvil' }),
       })
     );
   });
@@ -106,7 +105,7 @@ describe('PersonSeo', () => {
 
     expect(jsonLdScriptMock).toHaveBeenCalledWith(
       expect.objectContaining({
-        data: expect.objectContaining({ jobTitle: 'Freelancer für Web- und Mobile-Entwicklung' }),
+        data: expect.objectContaining({ jobTitle: 'Gründer von Cosmic Studio, Web- und App-Entwickler' }),
       })
     );
   });
@@ -117,7 +116,7 @@ describe('PersonSeo', () => {
 
     expect(jsonLdScriptMock).toHaveBeenCalledWith(
       expect.objectContaining({
-        data: expect.objectContaining({ jobTitle: 'Sviluppatore Web e Mobile Freelance' }),
+        data: expect.objectContaining({ jobTitle: 'Fondatore di Cosmic Studio, sviluppatore web e mobile' }),
       })
     );
   });
@@ -128,7 +127,7 @@ describe('PersonSeo', () => {
 
     expect(jsonLdScriptMock).toHaveBeenCalledWith(
       expect.objectContaining({
-        data: expect.objectContaining({ jobTitle: 'Développeur Web & Mobile Freelance' }),
+        data: expect.objectContaining({ jobTitle: 'Fondateur de Cosmic Studio, développeur web et mobile' }),
       })
     );
   });

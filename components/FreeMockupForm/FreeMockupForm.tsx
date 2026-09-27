@@ -4,10 +4,10 @@ import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import { useLocale, useTranslations } from 'next-intl';
 
 import { buttonVariants } from '@/design-system/button.variants';
+import { Field, FIELD_INPUT } from '@/design-system/field';
 import { cn } from '@/design-system/lib/utils';
 
 import { ColorPaletteSelect } from './ColorPaletteSelect';
-import { FormField } from './FormField';
 import { useFreeMockupForm } from './FreeMockupForm.hooks';
 import { HoneypotField } from './HoneypotField';
 import { SubmitFeedback } from './SubmitFeedback';
@@ -15,9 +15,6 @@ import { WishesTextarea } from './WishesTextarea';
 
 const EMAIL_ID = 'free-mockup-email';
 const WEBSITE_ID = 'free-mockup-website';
-
-const INPUT_CLASSES =
-  'border-ghost/8 bg-ghost/[0.02] text-ghost placeholder:text-ghost/25 focus-visible:border-aerospace/40 focus-visible:ring-aerospace min-h-11 w-full rounded-xl border px-3 py-2.5 text-sm transition-colors focus-visible:ring-1 focus-visible:outline-none';
 
 /**
  * Free mockup request form: four fields, a honeypot and a server action that
@@ -45,10 +42,7 @@ export function FreeMockupForm() {
           <input type="hidden" name="locale" value={locale} />
           {planCode && <input type="hidden" name="plan" value={planCode} />}
 
-          <FormField
-            id={EMAIL_ID}
-            label={t('form.email_label')}
-            error={errors.email && t(`validation.${errors.email}`)}>
+          <Field id={EMAIL_ID} label={t('form.email_label')} error={errors.email && t(`validation.${errors.email}`)}>
             <input
               id={EMAIL_ID}
               name="email"
@@ -61,9 +55,9 @@ export function FreeMockupForm() {
               placeholder={t('form.email_placeholder')}
               aria-invalid={errors.email ? true : undefined}
               aria-describedby={errors.email ? `${EMAIL_ID}-error` : undefined}
-              className={INPUT_CLASSES}
+              className={FIELD_INPUT}
             />
-          </FormField>
+          </Field>
 
           <ColorPaletteSelect
             value={values.colorPalette}
@@ -72,7 +66,7 @@ export function FreeMockupForm() {
             error={errors.colorPalette}
           />
 
-          <FormField
+          <Field
             id={WEBSITE_ID}
             label={t('form.website_label')}
             hint={t('form.optional')}
@@ -89,9 +83,9 @@ export function FreeMockupForm() {
               placeholder={t('form.website_placeholder')}
               aria-invalid={errors.websiteUrl ? true : undefined}
               aria-describedby={errors.websiteUrl ? `${WEBSITE_ID}-error` : undefined}
-              className={INPUT_CLASSES}
+              className={FIELD_INPUT}
             />
-          </FormField>
+          </Field>
 
           <WishesTextarea
             value={values.wishes}
@@ -107,7 +101,7 @@ export function FreeMockupForm() {
               type="submit"
               disabled={isPending}
               className={cn(
-                buttonVariants({ variant: 'aerospace', size: 'lg' }),
+                buttonVariants({ variant: 'primary', size: 'lg' }),
                 'focus-visible:ring-ghost focus-visible:ring-offset-void gap-2 focus-visible:ring-2 focus-visible:ring-offset-2'
               )}>
               {isPending ? t('form.submitting') : t('form.submit')}

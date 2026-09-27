@@ -2,94 +2,96 @@
   "legal": {
     "privacy": {
       "meta": {
-        "title": "Política de privacidad - Go Cosmic",
-        "description": "Cómo Go Cosmic trata los datos personales, la medición de audiencia, los contactos por email, los plazos de conservación, los derechos y las reclamaciones ante la CNIL."
+        "title": "Política de privacidad - Cosmic Studio",
+        "description": "Cómo trata Cosmic Studio los datos personales: formularios, reserva de citas, correos electrónicos, medición de audiencia, plazos de conservación y derechos."
       },
       "eyebrow": "RGPD",
       "title": "Política de privacidad",
-      "updated": "Última actualización: 23 de septiembre de 2026",
-      "intro": "Esta página explica cómo Go Cosmic trata los datos personales en este sitio web y cuando contactas con el estudio por email.",
+      "updated": "Última actualización: 27 de septiembre de 2026",
+      "intro": "Esta página explica cómo trata Cosmic Studio los datos personales recogidos en este sitio y en los intercambios por correo electrónico.",
       "legalNoticePrefix": "Para los datos del editor y del alojamiento, consulta el",
       "legalNoticeLink": "aviso legal",
       "sections": [
         {
           "title": "Responsable del tratamiento",
           "body": [
-            "El responsable del tratamiento es Go Cosmic, representado por Matthieu Compérat. El estudio puede contactarse en support@gocosmic.dev para solicitudes relativas a datos personales."
+            "El responsable del tratamiento es Cosmic Studio, representado por Matthieu Compérat. Para cualquier solicitud relativa a tus datos personales, escribe a support@gocosmic.dev."
           ]
         },
         {
           "title": "Datos recopilados",
           "body": [
-            "El sitio no ofrece área de cliente, pago, CAPTCHA ni píxel publicitario. Dos formularios se tratan en el servidor. La página de maqueta gratuita recoge tu dirección de email, la gama de colores elegida, la dirección de tu sitio actual si la indicas, tu mensaje y el idioma de la página. Si llegas desde el simulador de precios, la solicitud incluye también las opciones que elegiste allí —tipo de proyecto, tipo de sitio, número de páginas, opciones seleccionadas, frecuencia de actualizaciones y el precio mensual estimado resultante— para que el estudio pueda responderte con todo el contexto. El formulario de contacto recoge el nombre, la dirección de correo y el mensaje que escribes, además del asunto, el teléfono y la empresa opcionales. En ambos casos los campos se envían por email al buzón del estudio y no se guarda nada en una base de datos. Los mensajes enviados mediante enlaces mailto los gestiona tu cliente de email y el buzón destinatario.",
-            "Tu dirección IP se trata de forma temporal por el cortafuegos del proveedor de alojamiento, que limita ambos formularios — el de contacto y el de maqueta gratuita — a tres envíos cada diez minutos, junto con un campo antispam oculto en cada uno. El proveedor de alojamiento puede tratar datos técnicos para registros de seguridad y entrega. Vercel Analytics solo se carga tras el consentimiento para medir páginas vistas.",
-            "Se guardan dos elementos en tu navegador. La simulación de precios solo sirve para acompañarte desde el simulador hasta el formulario de maqueta gratuita: únicamente nos llega si envías ese formulario, se borra una vez enviada la solicitud y desaparece al cerrar la pestaña. Las fechas de tus últimos envíos del formulario de contacto sirven para limitar la frecuencia de envío desde ese navegador y permanecen en él hasta que borres los datos de navegación; nunca nos llegan."
+            "El sitio no ofrece área de cliente, ni pago, ni CAPTCHA, ni píxel publicitario. Dos formularios se procesan en el servidor. La página de maqueta gratuita recoge tu dirección de correo electrónico, la gama de colores elegida, la dirección de tu sitio actual si la indicas, tu mensaje y el idioma de la página. Si llegas desde el simulador de precios, la solicitud incluye también las opciones que elegiste allí (tipo de proyecto, tipo de sitio, número de páginas, opciones seleccionadas, frecuencia de actualizaciones y precio mensual estimado), para que el estudio pueda responderte con conocimiento de causa. El formulario de contacto recoge tu nombre, tu dirección de correo electrónico y tu mensaje, así como, si los indicas, tu teléfono, tu actividad y el tipo de necesidad elegido. En ambos casos, la información se envía por correo electrónico al buzón del estudio y no se guarda nada en una base de datos. Los mensajes enviados a través de los enlaces de correo del sitio los gestionan tu programa de correo y el buzón del destinatario.",
+            "El cortafuegos del proveedor de alojamiento trata tu dirección IP de forma temporal y limita cada uno de los dos formularios (contacto y maqueta gratuita) a tres envíos cada diez minutos, como complemento a un campo antispam oculto. El proveedor de alojamiento también puede tratar datos técnicos para sus registros de seguridad y de entrega. Vercel Analytics solo se carga tras tu consentimiento, para medir las páginas vistas.",
+            "Si reservas una llamada desde la página de contacto, Google Calendar transmite al estudio tu nombre, tu dirección de correo electrónico, el horario elegido y la información que introduzcas en el formulario de reserva. Esta información se conserva en la agenda del estudio, no en una base de datos.",
+            "Se guardan dos datos en tu navegador. La simulación de precios se guarda solo para trasladarla del simulador al formulario de maqueta gratuita: únicamente nos llega si envías ese formulario, se borra una vez enviada la solicitud y desaparece al cerrar la pestaña. Las fechas de tus últimos envíos del formulario de contacto sirven para limitar la frecuencia de envío desde ese navegador; permanecen en él hasta que borres tus datos de navegación y nunca nos llegan."
           ]
         },
         {
           "title": "Finalidades y bases jurídicas",
           "body": [
-            "Los emails se tratan para responder solicitudes, preparar presupuestos, prestar soporte y conservar prueba de los intercambios. Este tratamiento se basa en el interés legítimo y, cuando proceda, en medidas precontractuales solicitadas por ti. Las solicitudes de maqueta gratuita se tratan para preparar y enviarte la maqueta solicitada, y para responderte.",
-            "Los mensajes enviados mediante el formulario de contacto se tratan con las mismas finalidades. Limitar los envíos por dirección IP y filtrar los envíos automatizados se basan en el interés legítimo de proteger el servicio frente a abusos.",
-            "La medición de audiencia sirve para comprender el tráfico agregado y mejorar el sitio. Go Cosmic carga Vercel Analytics únicamente tras tu consentimiento. Los registros de seguridad se tratan por interés legítimo en proteger el servicio."
+            "Los correos electrónicos se tratan para responder a las solicitudes, preparar presupuestos, prestar soporte y conservar constancia de los intercambios. Este tratamiento se basa en el interés legítimo y, cuando proceda, en medidas precontractuales adoptadas a petición tuya. Las solicitudes de maqueta gratuita se tratan para preparar la maqueta, enviártela y responderte.",
+            "Los mensajes enviados mediante el formulario de contacto se tratan con las mismas finalidades. La limitación de envíos por dirección IP y el filtrado de envíos automatizados se basan en el interés legítimo en proteger el servicio frente a abusos.",
+            "La información enviada al reservar una llamada se trata para organizar la llamada y hacer su seguimiento, sobre la base de medidas precontractuales adoptadas a petición tuya.",
+            "La medición de audiencia sirve para conocer el tráfico global del sitio y mejorarlo. Cosmic Studio solo carga Vercel Analytics tras tu consentimiento. Los registros de seguridad se basan en el interés legítimo en proteger el servicio."
           ]
         },
         {
-          "title": "Destinatarios y encargados",
+          "title": "Destinatarios y encargados del tratamiento",
           "body": [
-            "Los datos pueden ser accesibles para Go Cosmic, el proveedor de email, Resend (que entrega los emails de solicitud de maqueta gratuita y del formulario de contacto), el proveedor de alojamiento y Vercel para alojamiento y analítica. LinkedIn es un sitio externo y puede tratar datos según su propia política después de hacer clic en un enlace saliente."
+            "Pueden tener acceso a los datos Cosmic Studio, su proveedor de correo electrónico, Resend (que entrega los correos del formulario de contacto y de las solicitudes de maqueta gratuita) y Vercel, para el alojamiento y la medición de audiencia. LinkedIn es un sitio externo que puede tratar datos según su propia política si haces clic en un enlace que lleve a él.",
+            "Si decides reservar una llamada desde la página de contacto, Google (Google Calendar) aloja la agenda de reservas del estudio y trata la información que introduces por su propia cuenta, según su propia política de privacidad: https://policies.google.com/privacy."
           ]
         },
         {
           "title": "Plazos de conservación",
           "body": [
-            "Los intercambios por email se conservan solo el tiempo necesario para tratar la solicitud y hacer seguimiento, y después se archivan o eliminan según necesidades legales, contables o de defensa de derechos. El consentimiento de analítica se almacena en tu navegador hasta que borres el almacenamiento local o cambies de navegador. Los logs de alojamiento siguen la configuración del proveedor.",
-            "Los envíos del formulario de contacto no se conservan en una base de datos: se entregan como correo electrónico y el intercambio resultante sigue los plazos descritos arriba."
+            "Los intercambios por correo electrónico se conservan el tiempo necesario para tramitar tu solicitud y hacer su seguimiento, y después se archivan o se eliminan según las obligaciones legales, contables o derivadas de posibles litigios. Tu elección sobre la medición de audiencia se guarda en tu navegador hasta que borres sus datos o cambies de navegador. Los registros de alojamiento siguen la configuración del proveedor de alojamiento.",
+            "Los envíos del formulario de contacto no se conservan en una base de datos: se envían por correo electrónico, y el intercambio que se derive de ellos sigue los plazos descritos arriba. Las reservas hechas mediante Google Calendar se conservan en la agenda del estudio el tiempo necesario para el seguimiento de la solicitud, con el mismo criterio."
           ]
         },
         {
           "title": "Transferencias internacionales",
           "body": [
-            "Algunos encargados, incluidos Vercel y proveedores de email, pueden implicar tratamientos fuera del Espacio Económico Europeo.",
-            "Vercel encuadra estas transferencias mediante cláusulas contractuales tipo aprobadas por la Comisión Europea. Para preguntas sobre las garantías aplicables, contacta con support@gocosmic.dev."
+            "Algunos encargados del tratamiento, entre ellos Vercel, los proveedores de correo electrónico y Google (Google Calendar), pueden tratar datos fuera del Espacio Económico Europeo.",
+            "Estas transferencias están amparadas por cláusulas contractuales tipo aprobadas por la Comisión Europea y, en el caso de Google, por el marco de protección de datos UE-EE. UU. (EU-US Data Privacy Framework). Para cualquier pregunta sobre las garantías aplicables, escribe a support@gocosmic.dev."
           ]
         },
         {
           "title": "Tus derechos",
           "body": [
-            "Puedes solicitar acceso, rectificación, supresión, limitación, oposición y portabilidad cuando proceda escribiendo a support@gocosmic.dev. También puedes presentar una reclamación ante la CNIL: https://www.cnil.fr/."
+            "Cuando estos derechos se apliquen, puedes solicitar el acceso a tus datos, su rectificación o su supresión, la limitación de su tratamiento o su portabilidad, u oponerte a su tratamiento, escribiendo a support@gocosmic.dev. También puedes presentar una reclamación ante la CNIL: https://www.cnil.fr/."
           ]
         },
         {
           "title": "Cookies y medición de audiencia",
           "body": [
-            "Go Cosmic no carga voluntariamente cookies publicitarias. Vercel Analytics se trata en este sitio como una herramienta de medición de audiencia no esencial y solo se carga tras tu consentimiento.",
-            "Puedes modificar o retirar tu consentimiento en cualquier momento mediante el botón de gestión de preferencias que aparece en la parte inferior de cada página."
+            "Cosmic Studio no carga ninguna cookie publicitaria. Vercel Analytics se considera una herramienta de medición de audiencia no esencial y solo se carga tras tu consentimiento.",
+            "Puedes modificar o retirar tu consentimiento en cualquier momento con el botón de gestión de cookies, en la parte inferior de cada página.",
+            "La agenda de reservas de Google Calendar de la página de contacto solo se carga si haces clic en «Mostrar la agenda»; entonces Google puede instalar sus propias cookies. Sin ese clic, no se carga nada desde Google, y puedes abrir la página de reservas en una nueva pestaña."
           ]
         }
       ]
     },
     "legalNotice": {
       "meta": {
-        "title": "Aviso legal - Go Cosmic",
-        "description": "Editor, alojamiento, propiedad intelectual, responsabilidad e información de contacto de Go Cosmic."
+        "title": "Aviso legal - Cosmic Studio",
+        "description": "Editor, alojamiento, propiedad intelectual, responsabilidad y contacto de Cosmic Studio."
       },
       "eyebrow": "Información legal",
       "title": "Aviso legal",
       "updated": "Última actualización: 26 de mayo de 2026",
-      "intro": "Este aviso legal identifica al editor del sitio y las principales responsabilidades vinculadas al uso de www.gocosmic.dev.",
+      "intro": "Este aviso legal identifica al editor del sitio www.gocosmic.dev y precisa las responsabilidades vinculadas a su uso.",
       "sections": [
         {
           "title": "Editor",
           "body": [
-            "Sitio: www.gocosmic.dev. Editor: Matthieu Compérat, que actúa bajo el nombre comercial Go Cosmic — empresario individual (Entreprise individuelle) registrado desde el 17 de octubre de 2016. SIRET: 823 200 365 00026. Dirección registrada: 485 route de la champanaise, 74410 Duingt, Francia. Contacto: support@gocosmic.dev."
+            "Sitio: www.gocosmic.dev. Editor: Matthieu Compérat, empresa individual (entreprise individuelle) registrada desde el 17 de octubre de 2016, con el nombre comercial Cosmic Studio (antes Go Cosmic). SIRET: 823 200 365 00026. Domicilio social: 485 route de la champanaise, 74410 Duingt, Francia. Contacto: support@gocosmic.dev."
           ]
         },
         {
           "title": "Director de publicación",
-          "body": [
-            "Director de publicación: Matthieu Compérat."
-          ]
+          "body": ["Director de publicación: Matthieu Compérat."]
         },
         {
           "title": "Alojamiento",
@@ -100,19 +102,112 @@
         {
           "title": "Propiedad intelectual",
           "body": [
-            "Los textos, elementos visuales, código fuente, diseño e identidad Go Cosmic están protegidos salvo mención contraria. Cualquier reproducción o reutilización requiere autorización previa por escrito."
+            "Salvo indicación en contrario, los textos, las imágenes, el código fuente, los elementos gráficos y la identidad de Cosmic Studio están protegidos. Cualquier reproducción o reutilización requiere una autorización previa por escrito."
           ]
         },
         {
           "title": "Responsabilidad",
           "body": [
-            "Go Cosmic procura mantener información exacta y disponible, pero no puede garantizar la ausencia de interrupciones, errores o contenido desactualizado. Los enlaces externos llevan a servicios de terceros regidos por sus propias condiciones y políticas."
+            "Cosmic Studio se esfuerza por mantener la información exacta y el sitio disponible, sin poder garantizar la ausencia de interrupciones, errores o contenidos desactualizados. Los enlaces externos llevan a servicios de terceros sujetos a sus propias condiciones."
+          ]
+        },
+        {
+          "title": "Uso de la inteligencia artificial",
+          "body": [
+            "Cosmic Studio puede integrar funciones basadas en la inteligencia artificial en los proyectos de sus clientes, y utiliza estas herramientas para redactar, traducir y desarrollar más rápido. Cada contenido y cada entrega los revisa una persona.",
+            "Las recomendaciones generadas por la IA tienen un valor informativo y no sustituyen el juicio humano. Las aplicaciones se prueban según las buenas prácticas del sector.",
+            "Los datos sensibles nunca se comparten con terceros sin una base jurídica documentada, o sin un consentimiento explícito cuando este sea necesario. El tratamiento de los datos personales se detalla en la política de privacidad."
           ]
         },
         {
           "title": "Contacto",
+          "body": ["Para cualquier cuestión jurídica, de privacidad o de seguridad, escribe a support@gocosmic.dev."]
+        }
+      ]
+    },
+    "terms": {
+      "meta": {
+        "title": "Condiciones generales de venta - Cosmic Studio",
+        "description": "Condiciones generales de venta de Cosmic Studio: suscripción, opciones, duración, cancelación y propiedad del código."
+      },
+      "eyebrow": "Condiciones de venta",
+      "title": "Condiciones generales de venta",
+      "updated": "Última actualización: 26 de septiembre de 2026",
+      "intro": "Estas condiciones generales de venta se aplican a la suscripción y a los servicios ofrecidos por Cosmic Studio en www.gocosmic.dev.",
+      "sections": [
+        {
+          "title": "Prestador",
           "body": [
-            "Para cuestiones legales, de privacidad o seguridad, contacta con support@gocosmic.dev."
+            "El prestador es Cosmic Studio, representado por Matthieu Compérat, empresa individual (entreprise individuelle) registrada desde el 17 de octubre de 2016 (SIRET 823 200 365 00026), 485 route de la champanaise, 74410 Duingt, Francia. Contacto: support@gocosmic.dev."
+          ]
+        },
+        {
+          "title": "Maqueta gratuita",
+          "body": [
+            "La maqueta y la revisión de tu sitio actual son gratuitas y no te comprometen a nada. Se elaboran a partir de la información que nos envías."
+          ]
+        },
+        {
+          "title": "Suscripción",
+          "body": [
+            "La suscripción se confirma por escrito tras una primera conversación, una vez que hayamos definido juntos tus necesidades (páginas, opciones, cambios). Entra en vigor cuando el sitio se publica."
+          ]
+        },
+        {
+          "title": "Precio y facturación",
+          "body": [
+            "Los precios de la suscripción son los que se muestran en la página Servicios y precios en el momento de suscribirte, según las opciones elegidas. La facturación es mensual, trimestral o anual, a tu elección.",
+            "El acompañamiento, el refuerzo de equipo y los proyectos a medida se facturan por tarifa diaria o según presupuesto, que se comunica antes de cualquier intervención."
+          ]
+        },
+        {
+          "title": "Duración y permanencia",
+          "body": [
+            "La suscripción es sin permanencia y puede cancelarse cada mes, siempre que no incluya la gestión de un nombre de dominio o de una dirección de correo.",
+            "En cuanto se activa una de estas dos opciones, la suscripción se contrata por periodos de 12 meses, renovados tácitamente, para cubrir el registro del nombre de dominio y de la dirección de correo."
+          ]
+        },
+        {
+          "title": "Opciones",
+          "body": [
+            "Puedes añadir una opción en cualquier momento; se aplica a partir del siguiente periodo de facturación.",
+            "El número de páginas, el nombre de dominio, el alojamiento en Suiza y la dirección de correo no se pueden retirar una vez activados, ya que corresponden a un compromiso asumido en tu nombre (páginas creadas, dominio registrado, buzón abierto). Solo la frecuencia de los cambios de contenido puede revisarse al alza o a la baja."
+          ]
+        },
+        {
+          "title": "Cancelación",
+          "body": [
+            "Puedes cancelar la suscripción en cualquier momento por escrito. El sitio sigue en línea hasta el final del periodo pagado en curso (fin del mes para una suscripción sin permanencia, fin del periodo de 12 meses en curso si incluye un nombre de dominio o una dirección de correo).",
+            "Te llevas tus contenidos y tu nombre de dominio."
+          ]
+        },
+        {
+          "title": "Propiedad",
+          "body": [
+            "Tus textos, tus imágenes y tu nombre de dominio te pertenecen desde el primer día. El código del sitio se te cede gratuitamente tras 36 meses de suscripción. Antes de ese plazo, se te puede ceder a cambio de unos gastos de cesión que dependen del tiempo restante.",
+            "En un proyecto puntual, el código te pertenece desde la entrega."
+          ]
+        },
+        {
+          "title": "Tus obligaciones",
+          "body": [
+            "Nos envías los textos, imágenes e información necesarios para crear o actualizar el sitio. Los plazos anunciados empiezan a contar desde su recepción."
+          ]
+        },
+        {
+          "title": "Responsabilidad y disponibilidad",
+          "body": [
+            "Cosmic Studio adopta medios razonables para asegurar la disponibilidad del sitio, sin poder garantizar la ausencia total de interrupciones. En caso de indisponibilidad prolongada imputable a Cosmic Studio, el periodo afectado podrá prorrogarse por el mismo tiempo."
+          ]
+        },
+        {
+          "title": "Datos personales",
+          "body": ["El tratamiento de los datos personales se detalla en la política de privacidad."]
+        },
+        {
+          "title": "Ley aplicable y litigios",
+          "body": [
+            "Estas condiciones se rigen por el derecho francés. En caso de litigio, se busca una solución amistosa antes de cualquier acción judicial; en su defecto, son competentes los tribunales correspondientes al domicilio social de Cosmic Studio."
           ]
         }
       ]

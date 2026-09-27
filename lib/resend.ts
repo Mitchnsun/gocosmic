@@ -1,10 +1,12 @@
 import { Resend } from 'resend';
 
+import { BRAND_NAME } from '@/lib/config';
+
 /** Inbox receiving the free mockup requests and contact form messages. */
 export const STUDIO_INBOX_EMAIL = 'prospect@gocosmic.dev';
 
 /** Sender used when `RESEND_FROM_EMAIL` is not configured. */
-export const DEFAULT_SENDER_EMAIL = 'Go Cosmic <noreply@gocosmic.dev>';
+export const DEFAULT_SENDER_EMAIL = `${BRAND_NAME} <noreply@gocosmic.dev>`;
 
 /**
  * Resolves the sender address, which must belong to a domain verified in the

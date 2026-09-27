@@ -57,42 +57,12 @@ The CSP keeps `eval()` disabled in production. In development only,
 `script-src` includes `'unsafe-eval'` because React development mode requires
 it for debugging features such as reconstructing call stacks.
 
-**Reference configuration:**
-
-```ts
-async headers() {
-  return [
-    {
-      source: '/(.*)',
-      headers: [
-        { key: 'X-Content-Type-Options', value: 'nosniff' },
-        { key: 'X-Frame-Options', value: 'DENY' },
-        { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
-        {
-          key: 'Permissions-Policy',
-          value: 'camera=(), microphone=(), geolocation=()',
-        },
-        {
-          key: 'Content-Security-Policy',
-          // Adjust script-src if you add third-party scripts.
-          // unsafe-inline is required for Next.js inline styles.
-          value: [
-            "default-src 'self'",
-            process.env.NODE_ENV === 'development'
-              ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com"
-              : "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com",
-            "style-src 'self' 'unsafe-inline'",
-            "img-src 'self' data: blob:",
-            "font-src 'self'",
-            "connect-src 'self' https://vitals.vercel-insights.com",
-            "frame-ancestors 'none'",
-          ].join('; '),
-        },
-      ],
-    },
-  ];
-},
-```
+**Reference:** the actual headers and CSP directives are built at the top of
+`next.config.ts` (`securityHeaders`, `cspDirectives`) — read that file directly
+rather than a copy here, since a duplicated snippet drifts. Current directives
+include `frame-src https://calendar.google.com` (the contact page's booking
+embed), `object-src 'none'` and `base-uri 'self'` in addition to the ones
+listed above. Adjust `script-src` there if you add a third-party script.
 
 > **Note on Vercel:** Vercel injects `X-Content-Type-Options: nosniff` and
 > `X-Frame-Options: SAMEORIGIN` automatically on all deployments. HSTS
@@ -242,8 +212,8 @@ Current third-party scripts: Vercel Analytics (`@vercel/analytics/next`).
 ### Dependency Management
 
 - Run `yarn audit` before every release; resolve HIGH and CRITICAL advisories.
-- Pin exact versions for packages with native binaries (Three.js, React Three
-  Fiber) to avoid unexpected binary downloads on CI.
+- Pin exact versions for any future dependency with native binaries, to avoid
+  unexpected binary downloads on CI.
 - The `resolutions` field in `package.json` is used to force a patched version
   of a transitive dependency — document the reason when adding an entry.
 - The checked-in Yarn binary (`.yarn/releases/yarn-*.cjs`) is the only trusted
@@ -254,10 +224,9 @@ Current third-party scripts: Vercel Analytics (`@vercel/analytics/next`).
 
 ### Clickjacking
 
-`X-Frame-Options: DENY` (or `frame-ancestors 'none'` in CSP) must be set if the
-site should never be embedded in an iframe. Until security headers are configured
-(see above), the site is theoretically embeddable — acceptable for a public
-marketing site with no auth, but should be addressed.
+`next.config.ts` sets both `X-Frame-Options: DENY` and `frame-ancestors 'none'`
+in the CSP, so the site cannot be embedded in an iframe. Keep both in sync if
+either is ever changed.
 
 ---
 

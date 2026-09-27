@@ -20,8 +20,31 @@ export function getCanonicalUrl(locale: string, routeKey: PathKey): string {
   const pathnames = routing.pathnames[routeKey];
   const localizedPath = getLocalizedPath(pathnames as string | Record<Locale, string>, locale);
 
+  // No trailing slash on the home page: `/fr/` permanently redirects to `/fr`, and a canonical URL must not redirect.
   if (localizedPath === '/') {
-    return `${SITE_URL}/${locale}/`;
+    return `${SITE_URL}/${locale}`;
   }
   return `${SITE_URL}/${locale}${localizedPath}`;
+}
+
+/**
+ * hreflang map for a route: its URL in every locale, plus `x-default` pointing
+ * to the default locale. Shared by page metadata and the sitemap.
+ */
+export function getLanguageAlternates(routeKey: PathKey): Record<string, string> {
+  return {
+    ...Object.fromEntries(routing.locales.map((locale) => [locale, getCanonicalUrl(locale, routeKey)])),
+    'x-default': getCanonicalUrl(routing.defaultLocale, routeKey),
+  };
+}
+
+/**
+ * `alternates` block of a page's metadata: canonical URL in the current locale
+ * and the hreflang links to its translations.
+ */
+export function getAlternates(locale: string, routeKey: PathKey) {
+  return {
+    canonical: getCanonicalUrl(locale, routeKey),
+    languages: getLanguageAlternates(routeKey),
+  };
 }

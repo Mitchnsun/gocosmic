@@ -1,158 +1,150 @@
 {
   "homepage": {
-    "ascii_labels": [
-      "Remote",
-      "Go Cosmic",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Des apps qui décollent",
-      "Du code qui livre",
-      "Annecy",
-      "Tournette",
-      "Aravis",
-      "React",
-      "Expo",
-      "Zéro bug en prod",
-      "En orbite stable",
-      "T-0. Décollage.",
-      "Houston, on a un problème !"
-    ],
-    "cta": {
-      "button": "Nous contacter",
-      "description": "Discutons de la façon dont nous pouvons donner vie à votre projet web ou mobile, pour créer quelque chose de vraiment hors du commun.",
-      "freeMockup": "Pas encore décidé ? Demandez votre <link>maquette gratuite</link>.",
-      "title": "Prêt pour Go Cosmic ?",
-      "viewOffers": "Consulter nos offres"
-    },
     "hero": {
-      "cta": "Commencez votre voyage",
-      "endWords": ["rayonnent", "s'envolent", "inspirent", "transforment", "élèvent"],
-      "subtitle": "Laissez-nous propulser vos idées dans la stratosphère avec un design mystique et des fonctionnalités cosmiques",
-      "title": "Nous créons des applications stellaires qui"
-    },
-    "process": {
-      "eyebrow": "[ PROCESSUS ]",
-      "title": "Quatre phases. <em>Sans drama.</em>",
-      "subtitle": "De l'idée à la réalité en 4 phases",
-      "discovery": {
-        "label": "T-45",
-        "title": "Découverte",
-        "description": "Audit, objectifs, contraintes. Nous cartographions le territoire avant de dessiner la carte."
+      "eyebrow": {
+        "ch": "Studio web & mobile · Genève",
+        "fr": "Studio web & mobile · Annecy"
       },
-      "design": {
-        "label": "T-30",
-        "title": "Design",
-        "description": "Maquettes, prototypes, haute-fidélité. Des itérations rapides jusqu'au « oui »."
-      },
-      "build": {
-        "label": "T-15",
-        "title": "Développement",
-        "description": "TypeScript, tests, revues de code. Nous traitons le code comme une infrastructure."
-      },
-      "launch": {
-        "label": "T-0",
-        "title": "Lancement",
-        "description": "Mise en orbite. Surveillance, performances, statistiques et accompagnement après lancement."
-      }
-    },
-    "services": {
-      "ai": {
-        "description": "Intégration de fonctionnalités IA avancées pour rendre vos applications plus intelligentes et plus adaptatives.",
-        "title": "Alimenté par l'IA",
-        "features": ["LLMs", "Embeddings", "Agents", "RAG"]
-      },
-      "design": {
-        "description": "Création d'expériences utilisateur intuitives et enchanteresses qui captivent et ravissent.",
-        "title": "Design UI/UX Mystique",
-        "features": ["Figma", "Design Systems", "Motion", "Accessibilité"]
-      },
-      "development": {
-        "description": "Création d'applications mobiles robustes et évolutives pour les plateformes iOS et Android.",
-        "title": "Développement Stellaire",
-        "features": ["React", "Next.js", "TypeScript", "Expo"]
-      },
-      "launch": {
-        "description": "Guidage de votre application à travers le processus de lancement et au-delà, assurant un décollage réussi.",
-        "title": "Lancement Cosmique",
-        "features": ["Vercel", "AWS", "Docker", "Sentry"]
-      },
-      "title": "Nos Services Cosmiques",
-      "eyebrow": "[ SERVICES · 04 ]",
-      "subtitle": "Quatre piliers pour mettre votre produit en orbite — concevoir, construire, livrer, faire grandir.",
-      "learnMore": "En savoir plus"
-    },
-    "zone": {
-      "title": "Zone d'intervention",
-      "description": "Disponible à Annecy, Genève, en Haute-Savoie et en Suisse romande.",
-      "availability": "Disponible",
-      "locations": {
-        "annecy": "Annecy",
-        "geneva": "Genève",
-        "haute_savoie": "Haute-Savoie",
-        "suisse_romande": "Suisse romande"
-      },
-      "stations": {
-        "annecy": {
-          "meta": {
-            "fr": "Base · 74",
-            "ch": "France"
-          }
+      "title": "Votre activité mérite d'être",
+      "endWords": ["vue.", "trouvée.", "choisie."],
+      "subtitle": "Cosmic Studio crée des sites et des applications pour les artisans, les associations et les indépendants. Nous faisons en sorte qu'on vous trouve sur Google, et nous restons joignables une fois le site en ligne.",
+      "cta": "Go Cosmic",
+      "secondary": "Voir les tarifs",
+      "facts": {
+        "price": {
+          "highlight": "Dès {price}",
+          "text": "/ mois"
         },
-        "geneva": {
-          "meta": {
-            "fr": "Suisse",
-            "ch": "Base · GE"
-          }
+        "reply": {
+          "highlight": "Réponse",
+          "text": "rapide"
         },
-        "haute_savoie": {
-          "meta": {
-            "fr": "France",
-            "ch": "France"
-          }
+        "contact": {
+          "highlight": "Un seul",
+          "text": "interlocuteur"
         },
-        "suisse_romande": {
-          "meta": {
-            "fr": "Suisse",
-            "ch": "Suisse"
+        "area": {
+          "ch": {
+            "highlight": "Genève",
+            "text": "· Arc lémanique · Haute-Savoie · à distance"
+          },
+          "fr": {
+            "highlight": "Annecy",
+            "text": "· Haute-Savoie · Genève · à distance"
           }
         }
       }
     },
-    "projects": {
-      "eyebrow": "[ TRAVAUX RÉCENTS · 04 ]",
-      "title": "Récemment <em>en orbite.</em>",
-      "subtitle": "Une sélection de nos derniers projets",
-      "learnMore": "Voir le projet",
-      "loadMore": "Voir plus de projets",
-      "dailyFortune": {
-        "title": "Daily Fortune",
-        "tagline": "Mobile · iOS / Android",
-        "description": "Une application mobile mystique délivrant des fortunes quotidiennes et des messages de motivation générés par l'IA.",
-        "tags": ["IA", "Bien-être"],
-        "imageAlt": "Aperçu de l'application Daily Fortune"
-      },
-      "mcomperat": {
-        "title": "mcomper.at",
-        "tagline": "Web · Next.js",
-        "description": "Un CV web moderne et responsive, conçu avec Next.js, TypeScript et une internationalisation complète.",
-        "tags": ["CV personnel"],
-        "imageAlt": "Aperçu du site mcomper.at"
-      },
-      "pscSupersprint": {
-        "title": "PSC Supersprint",
-        "tagline": "Web · Temps réel",
-        "description": "Une application web pour la gestion et l'affichage en temps réel des résultats de compétitions de triathlon.",
-        "tags": ["Sport", "Direct"],
-        "imageAlt": "Aperçu du tableau des résultats PSC Supersprint"
-      },
-      "choeurDesPaysduMontBlanc": {
-        "title": "Chœur des Pays du Mont Blanc",
-        "tagline": "Web · Éditorial",
-        "description": "Un site web présentant les activités, concerts et répertoire du chœur en Haute-Savoie.",
-        "tags": ["Culture"],
-        "imageAlt": "Aperçu du site du Chœur des Pays du Mont Blanc"
+    "audience": {
+      "eyebrow": "[ Pour qui ]",
+      "title": "Pour celles et ceux qui ont déjà un métier <em>et pas le temps d'en apprendre un autre.</em>",
+      "items": {
+        "artisans": {
+          "title": "Artisans",
+          "description": "Menuisier·ère, plombier·ère, coiffeur·se, traiteur… Un site qui dit ce que vous faites, où vous travaillez et comment vous joindre, et qu'on trouve quand on cherche votre métier près de chez soi."
+        },
+        "associations": {
+          "title": "Associations",
+          "description": "Chorale, club sportif, collectif… Vos événements, les adhésions et les nouvelles de l'association au même endroit, pour faire connaître vos activités et accueillir de nouveaux membres."
+        },
+        "independents": {
+          "title": "Indépendants qui se lancent",
+          "description": "Thérapeute, consultant·e, photographe… Un site professionnel dès vos débuts, à un prix qui suit le développement de votre activité."
+        }
       }
+    },
+    "why": {
+      "eyebrow": "[ Pourquoi un studio ]",
+      "title": "Wix et WordPress, c'est pratique <em>au début.</em>",
+      "lead": "Ensuite, il faut une extension payante, une mise à jour casse une page, l'abonnement augmente. Nous écrivons le code nous-mêmes : votre site reste rapide et peut évoluer sans repartir de zéro.",
+      "reasons": {
+        "ownership": {
+          "title": "Vous êtes propriétaire",
+          "description": "Vos textes, vos photos et votre nom de domaine vous appartiennent dès le premier jour. Le code vous est cédé après {months} mois d'abonnement, ou avant contre des frais de cession."
+        },
+        "fast": {
+          "title": "Rapide, et bien placé sur Google",
+          "description": "Sans thème lourd ni extensions, vos pages s'affichent vite sur téléphone, et Google en tient compte dans ses résultats."
+        },
+        "person": {
+          "title": "Quelqu'un qui vous répond",
+          "description": "Vous parlez à Matthieu, qui connaît votre site puisqu'il l'a construit."
+        },
+        "grows": {
+          "title": "Un site qui suit votre activité",
+          "description": "Une page aujourd'hui, une boutique ou une application plus tard, sans tout reconstruire."
+        }
+      }
+    },
+    "process": {
+      "eyebrow": "[ Processus ]",
+      "title": "Quatre étapes, <em>sans surprise.</em>",
+      "subtitle": "De la première discussion à la mise en ligne, vous savez où en est votre projet.",
+      "discovery": {
+        "label": "T-3 · Rencontre",
+        "title": "On fait connaissance",
+        "description": "Vingt minutes au téléphone ou autour d'un café, à Genève ou à Annecy, pour parler de votre métier, de vos clients et de ce que le site doit vous apporter."
+      },
+      "design": {
+        "label": "T-2 · Maquette",
+        "title": "Vous voyez avant de décider",
+        "description": "Nous préparons une maquette de votre page d'accueil, avec vos couleurs et vos textes. Elle est gratuite et ne vous engage à rien."
+      },
+      "build": {
+        "label": "T-1 · Réalisation",
+        "title": "Nous construisons le site",
+        "description": "Comptez deux à six semaines selon le projet. Vous suivez l'avancement sur un lien privé et vous nous faites vos retours au fur et à mesure."
+      },
+      "launch": {
+        "label": "T-0 · Mise en ligne",
+        "title": "Nous restons après le lancement",
+        "description": "Nous mettons le site en ligne et vous montrons comment il fonctionne. Ensuite, nous nous occupons de l'hébergement, des sauvegardes et des petites modifications."
+      }
+    },
+    "projects": {
+      "eyebrow": "[ Réalisations ]",
+      "title": "Nos dernières <em>réalisations.</em>",
+      "all": "Tous les projets"
+    },
+    "apps": {
+      "eyebrow": "[ Nos apps ]",
+      "title": "Nous développons aussi <em>nos propres applications.</em>",
+      "lead": "Nous y testons les outils avant de les utiliser pour nos clients, et ce que nous apprenons profite ensuite à vos projets.",
+      "daily_fortune": {
+        "name": "Daily Fortune",
+        "badge": "iOS · Android",
+        "description": "Un court message chaque matin pour bien démarrer la journée. C'est notre première application, disponible sur l'App Store et Google Play.",
+        "link": "Découvrir l'app",
+        "icon_alt": "Icône de l'application Daily Fortune"
+      }
+    },
+    "studio": {
+      "eyebrow": "[ Le studio ]",
+      "title": "Derrière Cosmic Studio, <em>il y a Matthieu.</em>",
+      "paragraphs": [
+        "Je m'appelle Matthieu Compérat. Originaire de Duingt, au bord du lac d'Annecy, je vis aujourd'hui à Chêne-Bougeries. Je développe des sites et des applications depuis une quinzaine d'années, d'abord pour de grandes entreprises. Avec Cosmic Studio, je travaille directement avec les artisans, les associations et les indépendants.",
+        "Quand vous appelez, c'est moi qui réponds, et vos messages ont une réponse dans la journée. Je connais en détail le site que je vous livre, ce qui rend chaque modification simple et rapide."
+      ],
+      "zones": {
+        "ch": [
+          "Chêne-Bougeries · base",
+          "Suisse romande · sur place",
+          "Haute-Savoie · sur place",
+          "Ailleurs · à distance"
+        ],
+        "fr": [
+          "Chêne-Bougeries · base",
+          "Haute-Savoie · sur place",
+          "Suisse romande · sur place",
+          "Ailleurs · à distance"
+        ]
+      }
+    },
+    "cta": {
+      "button": "Parler de mon projet",
+      "description": "Présentez-nous votre activité en quelques lignes. Nous vous répondons rapidement pour en parler, avant de vous proposer quoi que ce soit.",
+      "freeMockup": "Vous hésitez encore ? Commencez par une <link>maquette gratuite</link>.",
+      "title": "Faisons rayonner votre activité."
     }
   }
 }

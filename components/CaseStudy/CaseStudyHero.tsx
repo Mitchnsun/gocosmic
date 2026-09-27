@@ -49,7 +49,7 @@ export const CaseStudyHero = ({
         </div>
       )}
       <div
-        className="from-void via-void/70 pointer-events-none absolute inset-0 -z-10 bg-gradient-to-t to-transparent"
+        className="from-void via-void/70 pointer-events-none absolute inset-0 -z-10 bg-linear-to-t to-transparent"
         aria-hidden="true"
       />
 
@@ -74,7 +74,7 @@ export const CaseStudyHero = ({
             {title}
           </h1>
         </div>
-        <p className="text-ghost/55 max-w-2xl text-lg leading-8">{tagline}</p>
+        <p className="text-ghost/55 text-lg leading-8">{tagline}</p>
         {meta && meta.length > 0 && (
           <ul className="text-ghost/35 text-3xs flex flex-wrap gap-x-6 gap-y-2 font-mono tracking-[0.2em] uppercase">
             {meta.map((item) => (

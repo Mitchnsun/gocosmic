@@ -147,7 +147,7 @@ vi.mock('motion/react', () => ({
   useReducedMotion: (): boolean => false,
 }));
 
-// Mock ResizeObserver for @react-three/fiber Canvas component
+// Mock ResizeObserver, which jsdom does not implement
 global.ResizeObserver = class ResizeObserver {
   observe() {
     // Mock implementation

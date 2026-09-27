@@ -1,34 +1,50 @@
 {
   "local": {
-    "hero": {
-      "title": "Sviluppatore Web & Mobile ad Annecy, Ginevra e nella Svizzera romanda",
-      "description": {
-        "fr": "Matthieu Compérat, sviluppatore freelance con base ad Annecy. Progetto e sviluppo app web e mobile moderne per aziende ad Annecy, in Alta Savoia, a Ginevra e nella Svizzera romanda.",
-        "ch": "Matthieu Compérat, sviluppatore freelance con base a Chêne-Bougeries, Ginevra. Progetto e sviluppo app web e mobile moderne per aziende a Ginevra, nella Svizzera romanda e nella regione di Annecy."
-      }
+    "meta": {
+      "title": "Sviluppatore web e mobile a Ginevra e Annecy | Cosmic Studio",
+      "description": "Cosmic Studio crea siti e app per artigiani, associazioni e liberi professionisti a Ginevra, nella Svizzera romanda, ad Annecy e in Alta Savoia. Incontri di persona o in videochiamata."
     },
-    "services": {
-      "title": "Servizi di sviluppo web e mobile per aziende locali"
+    "intro": {
+      "eyebrow": "[ Ginevra · Annecy ]",
+      "title": "Il tuo studio web, <em>tra Ginevra e Annecy.</em>",
+      "lead": {
+        "ch": "Cosmic Studio ha sede a Chêne-Bougeries. Creiamo siti e app per artigiani, associazioni e liberi professionisti di Ginevra e della Svizzera romanda, e veniamo a trovarti di persona.",
+        "fr": "Cosmic Studio lavora tra Annecy e Ginevra. Creiamo siti e app per artigiani, associazioni e liberi professionisti dell'Alta Savoia, e veniamo a trovarti di persona."
+      },
+      "primary": "Parliamo del tuo progetto",
+      "secondary": "Vedi servizi e prezzi"
     },
-    "zone": {
-      "title": "Area di intervento",
-      "remote": "Collaborazione da remoto disponibile in tutta Francia e Svizzera",
-      "locations": {
-        "annecy": "Annecy e Alta Savoia",
-        "geneva": "Ginevra e area del Lemano",
-        "suisse_romande": "Svizzera romanda (Vaud, Vallese, Neuchâtel, Friburgo)"
+    "zones": {
+      "eyebrow": "[ Dove lavoriamo ]",
+      "title": "Di persona quando serve, <em>a distanza il resto del tempo.</em>",
+      "items": {
+        "geneva": {
+          "title": "Ginevra",
+          "description": "Lo studio è a Chêne-Bougeries. Ci vediamo da te, nel tuo laboratorio o davanti a un caffè."
+        },
+        "romandy": {
+          "title": "Svizzera romanda",
+          "description": "Vaud, Vallese, Neuchâtel, Friburgo: veniamo per il primo incontro, poi si prosegue in videochiamata."
+        },
+        "annecy": {
+          "title": "Annecy e l'Alta Savoia",
+          "description": "Dalla zona di Annecy al Genevese francese, condizioni e tempi sono gli stessi di Ginevra."
+        },
+        "remote": {
+          "title": "Altrove",
+          "description": "Ovunque in Francia e in Svizzera, tutto si può fare a distanza: videochiamate, mockup condiviso, messa online."
+        }
       }
     },
     "projects": {
-      "title": {
-        "fr": "Progetti recenti realizzati da Annecy",
-        "ch": "Progetti recenti realizzati da Ginevra"
-      }
+      "eyebrow": "[ Realizzazioni ]",
+      "title": "Alcuni siti <em>già online.</em>",
+      "all": "Tutti i progetti"
     },
-    "cta": "Contatta il tuo sviluppatore web locale",
-    "meta": {
-      "title": "Sviluppatore web e mobile Annecy • Ginevra • Svizzera romanda | Go Cosmic",
-      "description": "Matthieu Compérat, sviluppatore freelance con base ad Annecy e Ginevra. Sviluppo di applicazioni web e mobile per Annecy, l'Alta Savoia, Ginevra e la Svizzera romanda."
+    "cta": {
+      "title": "Un progetto dalle tue parti?",
+      "description": "Raccontaci in poche righe di cosa ti occupi. Ti rispondiamo rapidamente per fissare un primo incontro.",
+      "button": "Parliamo del tuo progetto"
     }
   }
 }

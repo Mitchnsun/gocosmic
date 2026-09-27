@@ -1,19 +1,19 @@
 import { describe, expect, it } from 'vitest';
 
-import { getCanonicalUrl, SITE_URL } from '@/i18n/canonical';
+import { getAlternates, getCanonicalUrl, getLanguageAlternates, SITE_URL } from '@/i18n/canonical';
 
 describe('getCanonicalUrl', () => {
   describe('home page (static pathname "/")', () => {
-    it('returns trailing-slash URL for English', () => {
-      expect(getCanonicalUrl('en', '/')).toBe(`${SITE_URL}/en/`);
+    it('returns the URL without trailing slash for English', () => {
+      expect(getCanonicalUrl('en', '/')).toBe(`${SITE_URL}/en`);
     });
 
-    it('returns trailing-slash URL for French', () => {
-      expect(getCanonicalUrl('fr', '/')).toBe(`${SITE_URL}/fr/`);
+    it('returns the URL without trailing slash for French', () => {
+      expect(getCanonicalUrl('fr', '/')).toBe(`${SITE_URL}/fr`);
     });
 
-    it('returns trailing-slash URL for German', () => {
-      expect(getCanonicalUrl('de', '/')).toBe(`${SITE_URL}/de/`);
+    it('returns the URL without trailing slash for German', () => {
+      expect(getCanonicalUrl('de', '/')).toBe(`${SITE_URL}/de`);
     });
   });
 
@@ -39,23 +39,10 @@ describe('getCanonicalUrl', () => {
     });
   });
 
-  describe('journey page (localized pathnames)', () => {
-    it('resolves French localized pathname /voyage', () => {
-      expect(getCanonicalUrl('fr', '/journey')).toBe(`${SITE_URL}/fr/voyage`);
-    });
-
-    it('resolves German localized pathname /reise', () => {
-      expect(getCanonicalUrl('de', '/journey')).toBe(`${SITE_URL}/de/reise`);
-    });
-  });
-
-  describe('offers page (localized pathnames)', () => {
-    it('resolves French localized pathname /nos-offres', () => {
-      expect(getCanonicalUrl('fr', '/offers')).toBe(`${SITE_URL}/fr/nos-offres`);
-    });
-
-    it('resolves German localized pathname /unsere-angebote', () => {
-      expect(getCanonicalUrl('de', '/offers')).toBe(`${SITE_URL}/de/unsere-angebote`);
+  describe('services & pricing page (localized pathnames)', () => {
+    it('resolves the Spanish and German localized pathnames', () => {
+      expect(getCanonicalUrl('es', '/services')).toBe(`${SITE_URL}/es/servicios`);
+      expect(getCanonicalUrl('de', '/services')).toBe(`${SITE_URL}/de/dienstleistungen`);
     });
   });
 
@@ -107,5 +94,25 @@ describe('getCanonicalUrl', () => {
         `${SITE_URL}/es/proyectos/choeurdespaysdumontblanc`
       );
     });
+  });
+});
+
+describe('getAlternates', () => {
+  it('pairs the canonical URL with the page in every locale and an x-default', () => {
+    expect(getAlternates('fr', '/about')).toEqual({
+      canonical: `${SITE_URL}/fr/a-propos`,
+      languages: {
+        en: `${SITE_URL}/en/about`,
+        fr: `${SITE_URL}/fr/a-propos`,
+        es: `${SITE_URL}/es/acerca-de`,
+        de: `${SITE_URL}/de/ueber-uns`,
+        it: `${SITE_URL}/it/chi-siamo`,
+        'x-default': `${SITE_URL}/en/about`,
+      },
+    });
+  });
+
+  it('gives the home page no trailing slash, since /en/ redirects to /en', () => {
+    expect(getLanguageAlternates('/')).toMatchObject({ de: `${SITE_URL}/de`, 'x-default': `${SITE_URL}/en` });
   });
 });

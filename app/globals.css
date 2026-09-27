@@ -4,6 +4,7 @@
   --color-aerospace: #ff4f00;
   --color-chocolate: #58111a;
   --color-cosmic-latte: #fff8e7;
+  --color-ember: #1c1012;
   --color-ghost: #f8f8ff;
   --color-jungle: #29ab87;
   --color-misty-rose: #ffe4e1;
@@ -13,6 +14,7 @@
   --color-void: #020617;
   --font-display: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, monospace;
   --text-2xs: 11px;
   --text-3xs: 10px;
 }
@@ -39,17 +41,6 @@ footer a {
   font-family: var(--font-display);
 }
 
-@keyframes fadeSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(1.5rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @keyframes reveal-line {
   from {
     opacity: 0;
@@ -58,28 +49,6 @@ footer a {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes end-word-pulse {
-  0%,
-  100% {
-    opacity: 0.92;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-}
-
-@keyframes glow-subtle {
-  0%,
-  100% {
-    text-shadow: 0 0 20px rgb(var(--hero-accent-rgb) / 0.3);
-  }
-  50% {
-    text-shadow: 0 0 34px rgb(var(--hero-accent-rgb) / 0.6);
   }
 }
 
@@ -121,15 +90,6 @@ footer a {
   }
 }
 
-@keyframes footer-ascii-marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
 @layer utilities {
   @keyframes planet-glow-pulse {
     0%,
@@ -149,32 +109,8 @@ footer a {
     }
   }
 
-  @keyframes planet-orbit-reverse {
-    to {
-      transform: translate(-50%, -50%) rotateX(72deg) rotateZ(-360deg);
-    }
-  }
-
   .timeline-dot {
     animation: dot-glow 2s ease-in-out infinite;
-  }
-
-  .animate-footer-ascii-marquee {
-    animation: footer-ascii-marquee 100s linear infinite;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .timeline-dot {
-      animation: none;
-    }
-
-    .animate-footer-ascii-marquee {
-      animation: none;
-    }
-  }
-
-  .animate-fade-in-up {
-    animation: fadeSlideIn 0.5s ease-out forwards;
   }
 
   .animate-planet-glow {
@@ -189,24 +125,29 @@ footer a {
     animation: planet-orbit 35s linear infinite;
   }
 
-  .animate-orbit-reverse {
-    animation: planet-orbit-reverse 28s linear infinite;
+  /* Without JavaScript, content waiting for its scroll reveal would stay invisible. */
+  @media (scripting: none) {
+    [data-visible='false'] {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* CSS-first guard: applies before hydration, so reduced-motion visitors never see the reveal. */
+  @media (prefers-reduced-motion: reduce) {
+    .timeline-dot,
+    .hero-reveal-line,
+    .word-exit,
+    .word-enter,
+    .animate-planet-glow,
+    .animate-orbit,
+    .animate-orbit-slow {
+      animation: none;
+    }
   }
 
   .hero-reveal-line {
     animation: reveal-line 0.8s cubic-bezier(0.2, 0.8, 0.3, 1) both;
-  }
-
-  .hero-end-word {
-    animation:
-      reveal-line 0.8s cubic-bezier(0.2, 0.8, 0.3, 1) 0.3s both,
-      end-word-pulse 4s ease-in-out 1.2s infinite,
-      glow-subtle 4s ease-in-out 1.2s infinite;
-  }
-
-  .hero-cta-magnetic {
-    transform: translate3d(var(--hero-cta-x), var(--hero-cta-y), 0);
-    transition: transform 180ms ease-out;
   }
 
   .word-exit {
@@ -253,8 +194,7 @@ footer a {
 
   [data-reduced-motion='true'] .animate-planet-glow,
   [data-reduced-motion='true'] .animate-orbit,
-  [data-reduced-motion='true'] .animate-orbit-slow,
-  [data-reduced-motion='true'] .animate-orbit-reverse {
+  [data-reduced-motion='true'] .animate-orbit-slow {
     animation: none;
   }
 
@@ -304,14 +244,8 @@ footer a {
   }
 }
 
-[data-reduced-motion='true'] .hero-reveal-line,
-[data-reduced-motion='true'] .hero-end-word {
+[data-reduced-motion='true'] .hero-reveal-line {
   animation: none;
-}
-
-[data-reduced-motion='true'] .hero-cta-magnetic {
-  transform: none;
-  transition: none;
 }
 
 [data-reduced-motion='true'] .word-exit,

@@ -1,37 +1,37 @@
 {
   "meta": {
-    "title": "Free mockup - Go Cosmic | Annecy · Geneva",
-    "description": "Get a free mockup of your future website: pick a colour direction, tell us what you have in mind, and receive a first design by email. No commitment."
+    "title": "A free mockup of your future website | Cosmic Studio",
+    "description": "Request a free mockup of your future website: pick a colour mood, describe what you have in mind and receive a first proposal by email. No commitment."
   },
   "freeMockup": {
-    "eyebrow": "[ FREE MOCKUP ]",
+    "eyebrow": "[ Free mockup ]",
     "title": "See your site before you decide",
-    "intro": "Tell us where you stand today and the mood you have in mind. You get a mockup of your future website — free, and with nothing to commit to.",
+    "intro": "Tell us where you stand and the mood you have in mind. We send you a mockup of your future website, free of charge and with no commitment.",
     "steps": {
       "title": "How it works",
       "items": {
         "brief": {
           "title": "You send the essentials",
-          "description": "Your email, the colour direction you like if you have one, and your current website if you have one."
+          "description": "Your email address and, if you like, a colour mood and the address of your current website."
         },
         "design": {
-          "title": "We design a mockup",
-          "description": "A first look at your home page, built from what you described."
+          "title": "We prepare the mockup",
+          "description": "A first look at your home page, based on what you told us."
         },
         "deliver": {
-          "title": "You decide, calmly",
-          "description": "The mockup lands in your inbox. If it is not for you, it stops there."
+          "title": "Then you decide",
+          "description": "The mockup arrives by email. If it is not for you, that is the end of it, at no cost."
         }
       }
     },
-    "privacy_notice": "Your email and your message are used only to prepare and send your mockup.",
+    "privacy_notice": "Your email address and your message are only used to prepare and send your mockup.",
     "privacy_link": "Privacy policy",
     "form": {
       "heading": "Request your mockup",
-      "lead": "One email — everything else is optional.",
-      "email_label": "Your email",
+      "lead": "Only your email address is required.",
+      "email_label": "Your email address",
       "email_placeholder": "you@example.com",
-      "palette_label": "Colour direction",
+      "palette_label": "Colour mood",
       "website_label": "Your current website",
       "website_placeholder": "your-website.com",
       "wishes_label": "What you have in mind",
@@ -42,9 +42,9 @@
       "submitting": "Sending…",
       "reassurance": "Free, no commitment.",
       "success_title": "Request received",
-      "success_message": "Thank you — we will come back to you by email with your mockup.",
+      "success_message": "Thank you. We will send you your mockup by email.",
       "error_message": "Your request could not be sent. Please try again in a moment.",
-      "retry_later_message": "Your request could not be sent right now. Please try again later.",
+      "retry_later_message": "Your request could not be sent right now. Please try again a little later.",
       "invalid_message": "Please check the highlighted fields.",
       "plan_attached": "The results of your pricing simulation will be included with your request."
     },

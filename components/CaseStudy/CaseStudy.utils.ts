@@ -1,6 +1,6 @@
 import type { CaseStudyProps } from './CaseStudy.types';
 import type { CaseStudySlug } from './constants';
-import { CASE_STUDY_HREFS, CASE_STUDY_TITLE_KEYS, getCaseStudyNeighbours } from './constants';
+import { getCaseStudyNeighbours, PROJECTS_BY_SLUG } from './constants';
 
 /** Localized labels of the previous / next navigation. */
 export interface CaseStudyNavigationLabels {
@@ -26,9 +26,8 @@ export const buildCaseStudyNavigation = (
   const toLink = (neighbour: CaseStudySlug | undefined) => {
     if (!neighbour) return undefined;
     // eslint-disable-next-line security/detect-object-injection
-    const titleKey = CASE_STUDY_TITLE_KEYS[neighbour];
-    // eslint-disable-next-line security/detect-object-injection
-    return { href: CASE_STUDY_HREFS[neighbour], title: resolveTitle(titleKey) };
+    const project = PROJECTS_BY_SLUG[neighbour];
+    return { href: project.href, title: resolveTitle(project.i18nKey) };
   };
 
   return {
@@ -38,4 +37,16 @@ export const buildCaseStudyNavigation = (
     previous: toLink(previous),
     next: toLink(next),
   };
+};
+
+/** Translator scoped to the `projectsList` namespace. */
+interface ProjectsTranslator {
+  (key: string): string;
+}
+
+/** Builds the mono HUD meta line (year, client, kind) of a case study page. */
+export const buildCaseStudyMeta = (slug: CaseStudySlug, tList: ProjectsTranslator): string[] => {
+  // eslint-disable-next-line security/detect-object-injection
+  const project = PROJECTS_BY_SLUG[slug];
+  return [String(project.year), tList(`items.${project.i18nKey}.client`), tList(`kinds.${project.kind}`)];
 };

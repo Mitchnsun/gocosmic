@@ -47,7 +47,18 @@ export function needsCustomQuote(selection: PlanSelection): boolean {
   return selection.pages === MAX_TIER_INDEX || (selection.updatesEnabled && selection.updates === MAX_TIER_INDEX);
 }
 
-/** Amounts are identical in both currencies — only the symbol changes. */
-export function formatAmount(amount: number, currency: Currency): string {
+/**
+ * Amounts are identical in both currencies — only the symbol changes.
+ * With a locale, the price follows that language's conventions (`10 €` in French, `€10` in English,
+ * `1 500 CHF`…); without one, it stays compact (`10€`), e.g. in the studio's internal emails.
+ */
+export function formatAmount(amount: number, currency: Currency, locale?: string): string {
+  if (locale) {
+    return new Intl.NumberFormat(locale, {
+      style: 'currency',
+      currency: currency === 'chf' ? 'CHF' : 'EUR',
+      maximumFractionDigits: 0,
+    }).format(amount);
+  }
   return currency === 'chf' ? `${amount} CHF` : `${amount}€`;
 }

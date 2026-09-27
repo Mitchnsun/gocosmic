@@ -10,7 +10,7 @@ The project uses a distinctive **cosmic theme** throughout all interfaces:
 - **Cosmic Theme** — Space-inspired palette: deep blacks, cosmic blues, stellar accents
 - **Accessibility First** — All components must meet WCAG standards; use Radix UI primitives for accessible primitives
 - **Responsive Design** — Mobile-first with fluid layouts and adaptive components
-- **Dark Mode Ready** — Components designed for both light and dark themes
+- **Dark by Default** — the site has no light theme; every component is designed for the dark `void` background (see `DESIGN_GUIDELINE.md`)
 - **Smooth Interactions** — Micro-interactions and animations that enhance the cosmic feel without hurting performance
 
 All UI components should evoke exploration and wonder while staying professionally usable.
@@ -27,16 +27,21 @@ All UI components should evoke exploration and wonder while staying professional
 
 Active plugins and their roles:
 
-| Plugin                             | Purpose                          |
-| ---------------------------------- | -------------------------------- |
-| `typescript-eslint`                | TypeScript-specific rules        |
-| `eslint-plugin-security`           | Vulnerability detection          |
-| `eslint-plugin-unicorn`            | Modern JS/TS best practices      |
-| `eslint-plugin-import`             | Import/export validation         |
-| `eslint-plugin-simple-import-sort` | Automatic import ordering        |
-| `eslint-plugin-unused-imports`     | Remove unused imports            |
-| `eslint-plugin-jsx-a11y`           | Accessibility enforcement in JSX |
-| `eslint-plugin-prettier`           | Formatting via Prettier          |
+| Plugin                                 | Purpose                                                                                       |
+| -------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `typescript-eslint`                    | TypeScript-specific rules                                                                     |
+| `eslint-plugin-security`               | Vulnerability detection                                                                       |
+| `eslint-plugin-unicorn`                | Modern JS/TS best practices                                                                   |
+| `eslint-plugin-import`                 | Import/export validation                                                                      |
+| `eslint-plugin-simple-import-sort`     | Automatic import ordering                                                                     |
+| `eslint-plugin-unused-imports`         | Remove unused imports                                                                         |
+| `eslint-plugin-jsx-a11y`               | Accessibility enforcement in JSX                                                              |
+| `eslint-plugin-prettier`               | Formatting via Prettier                                                                       |
+| `eslint-plugin-react` / `-react-hooks` | React and hooks correctness rules                                                             |
+| `@next/eslint-plugin-next`             | Next.js-specific rules                                                                        |
+| `eslint-plugin-only-warn`              | Downgrades rule severities to warnings (CI still fails on any warning via `--max-warnings 0`) |
+
+A repo-specific `no-restricted-syntax` rule also rejects raw Tailwind color utilities (`slate-*`, `gray-*`, `blue-*`…) outside the design-system tokens — see `DESIGN_GUIDELINE.md` §2.1.
 
 ### Component patterns
 
@@ -120,27 +125,26 @@ BREAKING CHANGE: remove deprecated Button API
 After making changes, validate the app manually:
 
 1. `yarn dev` → open http://localhost:3000
-2. Verify the "Go Cosmic" heading renders
-3. Click "Try me" button → alert should appear
-4. Click "Cosmic developer" link → opens external link
-5. Switch languages (EN → FR → ES → DE → IT):
+2. Verify the "Cosmic Studio" logo renders in the header
+3. Switch languages (EN → FR → ES → DE → IT):
    - URL should update to locale-prefixed format (`/fr/`, `/de/`, etc.)
    - Content should be fully translated
    - Browser back/forward navigation should work
-6. Navigate to each route and verify it renders:
+4. Navigate to each route and verify it renders:
    - `/about` — company overview and developer profile
-   - `/services` — all four service sections
-   - `/offers` — all three offer packages
-   - `/journey` — 3D starfield loads (WebGL)
-   - `/contact` — contact form renders
+   - `/services` — pricing columns, subscription simulator, trades, FAQ
+   - `/terms` — terms of sale
+   - `/privacy` and `/legal-notice` — legal pages
+   - `/contact` — contact details, message form, call booking tab
    - `/free-mockup` (locale-specific slug, e.g. `/fr/maquette-gratuite`) — form renders, palette picker is keyboard-navigable, character counter updates, validation errors appear
    - `/local` (locale-specific slug, e.g. `/en/web-mobile-developer-annecy-geneva`) — local SEO page
-   - `/projects` — project index renders
+   - `/projects` — project index renders, type filters work
    - `/projects/daily-fortune` — Daily Fortune showcase
    - `/projects/mcomperat` — mcomperat showcase
    - `/projects/psc-supersprint` — PSC Supersprint showcase
    - `/projects/choeurdespaysdumontblanc` — Choeur des Pays du Mont Blanc showcase
-7. `yarn test` — all tests must pass
+   - `/offers`, `/pricing`, `/journey` (and their old localized slugs) — permanent redirect to `/services#pricing`, `/services#simulator` and `/services`
+5. `yarn test` — all tests must pass
 
 ## Coverage System
 
@@ -155,6 +159,5 @@ After making changes, validate the app manually:
 - `**/*.config.*` — configuration files
 - `i18n/*.ts` — i18n routing/request configuration
 - `app/**` — server-component pages and layouts; unit-testing Next.js server components adds negligible value and the project guidance explicitly discourages page/view snapshots. App-level utilities (`app/robots.ts`, `app/sitemap.ts`, `app/not-found.tsx`) are **not** excluded and must maintain coverage.
-- `views/**` — complex view-layer files (e.g. the Journey 3D canvas) that are intentionally outside unit-test scope per project conventions.
 
 CI fails if any threshold drops below 90%. Add tests for any new code before opening a PR.

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { buildCaseStudyNavigation } from '@/components/CaseStudy';
+import { buildCaseStudyMeta, buildCaseStudyNavigation } from '@/components/CaseStudy';
 
 const labels = { previous: 'Previous project', next: 'Next project', ariaLabel: 'Case study navigation' };
 
@@ -12,7 +12,10 @@ describe('buildCaseStudyNavigation', () => {
     expect(navigation.nextLabel).toBe('Next project');
     expect(navigation.ariaLabel).toBe('Case study navigation');
     expect(navigation.previous).toEqual({ href: '/projects/daily-fortune', title: 'title:dailyFortune' });
-    expect(navigation.next).toEqual({ href: '/projects/psc-supersprint', title: 'title:pscSupersprint' });
+    expect(navigation.next).toEqual({
+      href: '/projects/psc-supersprint',
+      title: 'title:pscSupersprint',
+    });
   });
 
   it('leaves both links out for an unknown slug', () => {
@@ -20,5 +23,13 @@ describe('buildCaseStudyNavigation', () => {
 
     expect(navigation.previous).toBeUndefined();
     expect(navigation.next).toBeUndefined();
+  });
+});
+
+describe('buildCaseStudyMeta', () => {
+  it('builds the year, client and kind of the project', () => {
+    const tList = (key: string) => `t:${key}`;
+
+    expect(buildCaseStudyMeta('mcomperat', tList)).toEqual(['2026', 't:items.mcomperat.client', 't:kinds.site']);
   });
 });

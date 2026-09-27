@@ -1,29 +1,14 @@
-import projectsData from '@/data/projects.json';
+import { PROJECTS } from '@/data/projects';
 
-import type { LocalizedHref } from './CaseStudy.types';
+/** Registered case studies, in the order declared by `data/projects.ts`. */
+export const CASE_STUDY_SLUGS = PROJECTS.map((project) => project.slug);
 
-/** Localized route of each case study, as declared in `i18n/routing.ts`.
- *  A project is only shown once it has an entry here. */
-export const CASE_STUDY_HREFS = {
-  'daily-fortune': '/projects/daily-fortune',
-  mcomperat: '/projects/mcomperat',
-  'psc-supersprint': '/projects/psc-supersprint',
-  choeurdespaysdumontblanc: '/projects/choeurdespaysdumontblanc',
-} as const satisfies Record<string, LocalizedHref>;
+export type CaseStudySlug = (typeof PROJECTS)[number]['slug'];
 
-export type CaseStudySlug = keyof typeof CASE_STUDY_HREFS;
-
-const isCaseStudySlug = (id: string): id is CaseStudySlug => id in CASE_STUDY_HREFS;
-
-/** Registered case studies, in the order declared by `data/projects.json`. */
-export const CASE_STUDY_SLUGS: CaseStudySlug[] = projectsData
-  .map((project) => project.id)
-  .filter((id): id is CaseStudySlug => isCaseStudySlug(id));
-
-/** Translation key of each case study inside the `projectsList.items` namespace. */
-export const CASE_STUDY_TITLE_KEYS: Record<CaseStudySlug, string> = Object.fromEntries(
-  projectsData.filter((project) => isCaseStudySlug(project.id)).map((project) => [project.id, project.i18nKey])
-) as Record<CaseStudySlug, string>;
+/** Facts of every registered case study, keyed by slug. */
+export const PROJECTS_BY_SLUG = Object.fromEntries(PROJECTS.map((project) => [project.slug, project])) as {
+  [K in CaseStudySlug]: Extract<(typeof PROJECTS)[number], { slug: K }>;
+};
 
 /** Neighbouring case studies of `slug`, wrapping around the list. */
 export const getCaseStudyNeighbours = (slug: CaseStudySlug) => {
