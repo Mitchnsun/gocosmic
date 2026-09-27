@@ -454,6 +454,7 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 
 ## Documentation
 
+- Quick-read summary: [README_TLDR.md](./README_TLDR.md)
 - Bilingual policy: [DOCS_POLICY.md](./DOCS_POLICY.md)
 - Business glossary FR -> EN: [docs/glossary.md](./docs/glossary.md)
 - Main agent guide: [CLAUDE.md](./CLAUDE.md)

@@ -456,6 +456,7 @@ Pour des consignes de test détaillées, voir [`__tests__/TESTING.md`](./__tests
 
 ## Documentation
 
+- Résumé de lecture rapide : [README_TLDR.md](./README_TLDR.md)
 - Politique bilingue : [DOCS_POLICY.md](./DOCS_POLICY.md)
 - Glossaire métier FR -> EN : [docs/glossary.md](./docs/glossary.md)
 - Guide agent principal : [CLAUDE.md](./CLAUDE.md)
