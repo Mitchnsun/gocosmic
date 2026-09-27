@@ -21,9 +21,9 @@ export function ProjectCard({ project }: { project: ProjectCardContent }) {
               {project.title}
             </Link>
           </h3>
-          <span className="text-ghost/35 text-2xs font-mono">{project.year}</span>
+          <span className="text-ghost/50 text-2xs font-mono">{project.year}</span>
         </div>
-        <p className="text-ghost/45 text-3xs font-mono tracking-[0.16em] uppercase">{project.client}</p>
+        <p className="text-ghost/50 text-3xs font-mono tracking-[0.16em] uppercase">{project.client}</p>
         <p className="text-ghost/60 text-[15px] leading-normal">{project.description}</p>
         <ul className="flex flex-wrap gap-1.5 pt-1.5">
           {project.tags.map((tag) => (

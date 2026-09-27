@@ -4,7 +4,7 @@ import { cn } from './lib/utils';
 
 /** Input and textarea look: 48 px high, 12 px radius, orange focus ring and error border. */
 export const FIELD_CONTROL =
-  'bg-ghost/[0.03] border-ghost/15 text-ghost placeholder:text-ghost/35 focus:border-aerospace focus:ring-aerospace/30 aria-invalid:border-aerospace w-full rounded-xl border px-4 text-base transition-colors focus:ring-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60';
+  'bg-ghost/[0.03] border-ghost/15 text-ghost placeholder:text-ghost/50 focus:border-aerospace focus:ring-aerospace/30 aria-invalid:border-aerospace w-full rounded-xl border px-4 text-base transition-colors focus:ring-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60';
 
 /** Single-line control height; textareas grow with their rows instead. */
 export const FIELD_INPUT = cn(FIELD_CONTROL, 'h-12');
@@ -38,7 +38,7 @@ export function Field({ id, label, hint, required = false, error, children, clas
             </span>
           )}
         </span>
-        {hint && <span className="text-ghost/35 text-2xs font-mono tracking-widest uppercase">{hint}</span>}
+        {hint && <span className="text-ghost/50 text-2xs font-mono tracking-widest uppercase">{hint}</span>}
       </label>
       {children}
       {error && (

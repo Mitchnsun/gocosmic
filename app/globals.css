@@ -10,6 +10,8 @@
   --color-misty-rose: #ffe4e1;
   --color-outer-space: #414a4c;
   --color-royal: #7851a9;
+  /* Royal lifted towards ghost: the tone for royal text, which needs 4.5:1 on void. */
+  --color-royal-light: #9e83c3;
   --color-space: #1e2952;
   --color-void: #020617;
   --font-display: 'Space Grotesk', system-ui, sans-serif;

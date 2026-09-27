@@ -31,7 +31,7 @@ export function AudienceGrid({ eyebrow, title, items, id = 'audience' }: Audienc
           {items.map((item, index) => (
             <li key={item.title} className="bg-void">
               <Reveal delay={index * 50} className="flex h-full flex-col gap-3 p-8">
-                <span className="text-ghost/35 text-2xs font-mono" aria-hidden="true">
+                <span className="text-ghost/50 text-2xs font-mono" aria-hidden="true">
                   /{String(index + 1).padStart(2, '0')}
                 </span>
                 <h3 className="font-display text-[22px] font-semibold tracking-[-0.02em]">{item.title}</h3>

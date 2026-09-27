@@ -78,7 +78,7 @@ const LanguageSwitcher = ({ onOpen }: LanguageSwitcherProps = {}) => {
                 style={{ top: 'var(--header-h, 64px)' }}
                 className="border-ghost/10 bg-void/95 fixed right-0 z-40 flex w-80 flex-col rounded-bl-2xl border-b border-l shadow-2xl backdrop-blur-xl">
                 {/* Metadata row */}
-                <div className="border-ghost/10 text-3xs text-ghost/45 flex items-center justify-between border-b px-6 py-3 tracking-widest uppercase">
+                <div className="border-ghost/10 text-3xs text-ghost/50 flex items-center justify-between border-b px-6 py-3 tracking-widest uppercase">
                   <span>{t('lang_drawer_title')}</span>
                   <button
                     onClick={() => setIsOpen(false)}

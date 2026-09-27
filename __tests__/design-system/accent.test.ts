@@ -10,7 +10,7 @@ describe('accentClasses', () => {
       border: 'border-aerospace',
       rgb: '255 79 0',
     });
-    expect(accentClasses('royal').text).toBe('text-royal');
+    expect(accentClasses('royal').text).toBe('text-royal-light');
     expect(accentClasses('jungle').bg).toBe('bg-jungle');
     expect(accentClasses('ghost').border).toBe('border-ghost');
   });

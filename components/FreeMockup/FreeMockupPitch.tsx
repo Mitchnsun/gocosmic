@@ -28,7 +28,7 @@ export function FreeMockupPitch() {
         <ol className="mt-4 flex flex-col gap-4">
           {STEPS.map((step, index) => (
             <li key={step} className="flex gap-4">
-              <span className="text-ghost/35 pt-0.5 font-mono text-xs tracking-widest tabular-nums" aria-hidden="true">
+              <span className="text-ghost/50 pt-0.5 font-mono text-xs tracking-widest tabular-nums" aria-hidden="true">
                 {String(index + 1).padStart(2, '0')}
               </span>
               <span>
@@ -42,9 +42,9 @@ export function FreeMockupPitch() {
         </ol>
       </section>
 
-      <p className="text-ghost/35 text-sm">
+      <p className="text-ghost/50 text-sm">
         {t('privacy_notice')}{' '}
-        <Link href="/privacy" className="hover:text-ghost/55 underline transition">
+        <Link href="/privacy" className="hover:text-ghost/80 underline transition">
           {t('privacy_link')}
         </Link>
         .
