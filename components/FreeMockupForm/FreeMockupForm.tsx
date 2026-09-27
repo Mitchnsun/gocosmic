@@ -108,7 +108,7 @@ export function FreeMockupForm() {
               <ArrowRightIcon className="h-5 w-5" aria-hidden="true" />
             </button>
             {planCode && <p className="text-ghost/55 text-sm">{t('form.plan_attached')}</p>}
-            <p className="text-ghost/35 text-sm">{t('form.reassurance')}</p>
+            <p className="text-ghost/50 text-sm">{t('form.reassurance')}</p>
           </div>
         </form>
       )}

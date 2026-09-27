@@ -35,7 +35,7 @@ export function OptionToggle({ label, hint, price, checked, onChange, children }
         <span
           className={cn(
             'shrink-0 font-mono text-sm tracking-wider tabular-nums',
-            checked ? 'text-aerospace' : 'text-ghost/35'
+            checked ? 'text-aerospace' : 'text-ghost/50'
           )}>
           {price}
         </span>

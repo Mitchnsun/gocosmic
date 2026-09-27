@@ -119,7 +119,7 @@ const HeroSection = ({
           )}
         </div>
         {facts.length > 0 && (
-          <ul className="border-ghost/8 text-ghost/45 text-2xs flex flex-wrap gap-x-10 gap-y-3 border-t pt-6 font-mono tracking-[0.16em] uppercase">
+          <ul className="border-ghost/8 text-ghost/50 text-2xs flex flex-wrap gap-x-10 gap-y-3 border-t pt-6 font-mono tracking-[0.16em] uppercase">
             {facts.map((fact) => (
               <li key={fact.highlight}>
                 <span className="text-ghost">{fact.highlight}</span> {fact.text}

@@ -51,7 +51,7 @@ export function ColorPaletteSelect({ value, onChange, error, onBlur }: ColorPale
       className="flex flex-col gap-3">
       <legend id={LEGEND_ID} className="font-display text-ghost flex items-baseline gap-2 text-sm font-medium">
         {t('form.palette_label')}
-        <span className="text-ghost/35 text-2xs font-mono tracking-widest uppercase">{t('form.optional')}</span>
+        <span className="text-ghost/50 text-2xs font-mono tracking-widest uppercase">{t('form.optional')}</span>
       </legend>
       {/* Equal rows plus full-height cards: a name wrapping onto a second line
           must not make its card taller than the one beside it. */}

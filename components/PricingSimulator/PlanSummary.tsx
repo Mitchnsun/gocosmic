@@ -83,7 +83,7 @@ export function PlanSummary({ currency, region, selection, total, showQuoteHint 
         {t('builder.total.cta')}
         <ArrowRightIcon className="size-4" aria-hidden="true" />
       </Link>
-      <p className="text-ghost/45 text-center text-sm">
+      <p className="text-ghost/50 text-center text-sm">
         {t.rich('builder.total.question', {
           link: (chunks) => (
             <Link href="/contact" className="text-ghost/75 hover:text-ghost underline underline-offset-4">

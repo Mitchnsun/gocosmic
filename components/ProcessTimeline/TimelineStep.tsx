@@ -8,7 +8,7 @@ import type { TimelineStep } from './ProcessTimeline.types';
 
 const colorMap: Record<NonNullable<TimelineStep['color']>, string> = {
   aerospace: 'text-aerospace',
-  royal: 'text-royal',
+  royal: 'text-royal-light',
   jungle: 'text-jungle',
   default: 'text-ghost/60',
 };

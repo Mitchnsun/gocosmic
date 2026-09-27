@@ -76,7 +76,7 @@ export const CaseStudyHero = ({
         </div>
         <p className="text-ghost/55 text-lg leading-8">{tagline}</p>
         {meta && meta.length > 0 && (
-          <ul className="text-ghost/35 text-3xs flex flex-wrap gap-x-6 gap-y-2 font-mono tracking-[0.2em] uppercase">
+          <ul className="text-ghost/50 text-3xs flex flex-wrap gap-x-6 gap-y-2 font-mono tracking-[0.2em] uppercase">
             {meta.map((item) => (
               <li key={item}>{item}</li>
             ))}

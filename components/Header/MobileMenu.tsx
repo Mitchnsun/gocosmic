@@ -55,7 +55,7 @@ const MobileMenu = ({ onClose, items, region = DEFAULT_REGION }: MobileMenuProps
       </div>
 
       {/* Metadata row */}
-      <div className="border-ghost/8 text-3xs text-ghost/35 flex items-center justify-between border-b px-4 py-3 font-mono tracking-widest uppercase sm:px-6">
+      <div className="border-ghost/8 text-3xs text-ghost/50 flex items-center justify-between border-b px-4 py-3 font-mono tracking-widest uppercase sm:px-6">
         <span>{t('menu_title')}</span>
         <span>{altitude}</span>
       </div>
@@ -76,7 +76,7 @@ const MobileMenu = ({ onClose, items, region = DEFAULT_REGION }: MobileMenuProps
                 onClick={onClose}
                 className="group flex items-center justify-between px-4 py-5 sm:px-6">
                 <span className="font-display text-ghost text-2xl leading-none font-medium">{label}</span>
-                <span className="text-ghost/35 font-mono text-sm">/{String(index + 1).padStart(2, '0')}</span>
+                <span className="text-ghost/50 font-mono text-sm">/{String(index + 1).padStart(2, '0')}</span>
               </Link>
             </motion.li>
           ))}
@@ -88,7 +88,7 @@ const MobileMenu = ({ onClose, items, region = DEFAULT_REGION }: MobileMenuProps
         <HeaderCta onClick={onClose} className="h-12 w-full text-base" />
         <a
           href="mailto:contact@gocosmic.dev"
-          className="text-ghost/45 hover:text-ghost/80 font-mono text-xs transition-colors">
+          className="text-ghost/50 hover:text-ghost/80 font-mono text-xs transition-colors">
           contact@gocosmic.dev
         </a>
       </div>

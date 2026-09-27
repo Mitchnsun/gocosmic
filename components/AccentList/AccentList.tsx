@@ -42,7 +42,7 @@ export const AccentList = ({
   return (
     <div className={cn('w-full', className)}>
       {label && (
-        <LabelTag className="text-ghost/35 text-2xs mb-4 font-mono tracking-[0.24em] uppercase">{label}</LabelTag>
+        <LabelTag className="text-ghost/50 text-2xs mb-4 font-mono tracking-[0.24em] uppercase">{label}</LabelTag>
       )}
       <ul
         aria-label={label ? undefined : ariaLabel}

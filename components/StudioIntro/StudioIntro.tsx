@@ -52,7 +52,7 @@ export function StudioIntro({
               {paragraph}
             </p>
           ))}
-          <ul className="text-ghost/45 text-2xs flex flex-wrap gap-x-8 gap-y-3 pt-2 font-mono tracking-[0.16em] uppercase">
+          <ul className="text-ghost/50 text-2xs flex flex-wrap gap-x-8 gap-y-3 pt-2 font-mono tracking-[0.16em] uppercase">
             {zones.map((zone) => (
               <li key={zone}>{zone}</li>
             ))}

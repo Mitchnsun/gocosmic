@@ -30,7 +30,7 @@ export function FreeOffers() {
           </li>
         ))}
       </ul>
-      <p className="text-ghost/35 mt-4 text-sm">{t('free_offers.note')}</p>
+      <p className="text-ghost/50 mt-4 text-sm">{t('free_offers.note')}</p>
     </section>
   );
 }

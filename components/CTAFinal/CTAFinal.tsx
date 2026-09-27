@@ -164,7 +164,7 @@ const CTAFinal = ({
           </span>
         </h2>
         <p className={cn('max-w-xl', preset.description)}>{description}</p>
-        {note && <p className="text-ghost/45 max-w-xl text-sm">{note}</p>}
+        {note && <p className="text-ghost/50 max-w-xl text-sm">{note}</p>}
         <Link
           href={ctaHref}
           onClick={onCtaClick}

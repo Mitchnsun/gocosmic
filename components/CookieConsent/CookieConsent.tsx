@@ -42,7 +42,7 @@ export function CookieConsent() {
                 <button
                   type="button"
                   aria-label={t('close')}
-                  className="text-ghost/45 hover:text-ghost focus:ring-ghost shrink-0 rounded-full p-1 transition focus:ring-2 focus:outline-none"
+                  className="text-ghost/50 hover:text-ghost focus:ring-ghost shrink-0 rounded-full p-1 transition focus:ring-2 focus:outline-none"
                   onClick={closeManage}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
