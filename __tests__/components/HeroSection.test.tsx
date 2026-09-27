@@ -28,7 +28,7 @@ const renderHero = (props = {}) =>
       secondaryCta={{ text: 'See pricing', href: '/services' }}
       facts={[
         { highlight: 'From 10€', text: '/ month' },
-        { highlight: 'Reply', text: 'within 24 h' },
+        { highlight: 'Fast', text: 'reply' },
       ]}
       {...props}
     />

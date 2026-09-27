@@ -8,7 +8,7 @@
     "eyebrow": "[ Über uns ]",
     "cta": {
       "title": "Arbeiten wir zusammen.",
-      "description": "Erzählen Sie uns in ein paar Zeilen, was Sie machen. Matthieu antwortet Ihnen innerhalb eines Werktags.",
+      "description": "Erzählen Sie uns in ein paar Zeilen, was Sie machen. Matthieu antwortet Ihnen schnell.",
       "button": "Mein Projekt besprechen"
     },
     "lead": "Cosmic Studio, das ist Matthieu Compérat, Entwickler in Chêne-Bougeries. Er erstellt Websites und Apps für Handwerksbetriebe, Vereine und Selbstständige, von Genf bis Annecy.",
@@ -19,12 +19,20 @@
         "Matthieu stammt aus Duingt am Annecy-See und entwickelt seit rund fünfzehn Jahren Websites und Apps. Zuerst arbeitete er für große Unternehmen und lernte dort, zuverlässige Werkzeuge zu bauen, die für alle zugänglich sind.",
         "Mit Cosmic Studio stellt er diese Erfahrung in den Dienst von Handwerksbetrieben, Vereinen und Selbstständigen. Sie sprechen mit der Person, die Ihre Website baut, vom ersten Anruf bis zur laufenden Betreuung, Monat für Monat."
       ],
-      "zones": [
-        "Chêne-Bougeries · Standort",
-        "Westschweiz · vor Ort",
-        "Hochsavoyen · vor Ort",
-        "Anderswo · aus der Ferne"
-      ],
+      "zones": {
+        "ch": [
+          "Chêne-Bougeries · Standort",
+          "Westschweiz · vor Ort",
+          "Hochsavoyen · vor Ort",
+          "Anderswo · aus der Ferne"
+        ],
+        "fr": [
+          "Chêne-Bougeries · Standort",
+          "Hochsavoyen · vor Ort",
+          "Westschweiz · vor Ort",
+          "Anderswo · aus der Ferne"
+        ]
+      },
       "linkedin": "LinkedIn-Profil ansehen",
       "linkedin_aria": "LinkedIn-Profil von Matthieu Compérat (öffnet in einem neuen Tab)"
     },

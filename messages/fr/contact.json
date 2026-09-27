@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Contact · Parlons de votre projet | Cosmic Studio",
-    "description": "Parlez de votre projet à Cosmic Studio. Un message suffit : la personne qui construira votre site vous répond sous 24 h ouvrées."
+    "description": "Parlez de votre projet à Cosmic Studio. Un message suffit : la personne qui construira votre site vous répond rapidement."
   },
   "contact": {
     "title": "Parlez-nous <em>de votre activité.</em>",
@@ -22,7 +22,8 @@
         },
         "email": {
           "label": "Adresse e-mail",
-          "placeholder": "camille@exemple.fr"
+          "placeholder": "camille@exemple.fr",
+          "placeholderSwiss": "camille@exemple.ch"
         },
         "message": {
           "label": "Votre message",
@@ -30,11 +31,13 @@
         },
         "phone": {
           "label": "Téléphone",
-          "placeholder": "+41 22 123 45 67"
+          "placeholder": "+33 6 12 34 56 78",
+          "placeholderSwiss": "+41 22 123 45 67"
         },
         "company": {
           "label": "Votre activité",
-          "placeholder": "Ébéniste à Annecy, association de théâtre…"
+          "placeholder": "Ébéniste à Annecy, association de théâtre…",
+          "placeholderSwiss": "Ébéniste à Genève, association de théâtre…"
         },
         "need": {
           "legend": "Ce dont vous avez besoin",
@@ -60,18 +63,21 @@
         "need_invalid": "Merci de choisir une option dans la liste."
       },
       "success": {
-        "title": "Merci. Matthieu vous répond sous 24 h ouvrées.",
+        "title": "Merci. Matthieu vous répond rapidement.",
         "description": "Votre message est bien arrivé. Matthieu vous écrira pour préciser quelques points, puis vous proposera une maquette gratuite si vous le souhaitez.",
         "back": "Envoyer un autre message"
       }
     },
-    "lead": "Écrivez-nous un message ou réservez un appel de 20 minutes. Dans les deux cas, c'est Matthieu qui vous répond, sous 24 h ouvrées.",
+    "lead": "Écrivez-nous un message ou réservez un appel de 20 minutes. Dans les deux cas, c'est Matthieu qui vous répond rapidement.",
     "details": {
       "aria_label": "Coordonnées",
       "email_label": "E-mail",
       "support_label": "Déjà client · support",
       "where_label": "Où",
-      "where": "Genève · Suisse romande · Haute-Savoie, ou en visio"
+      "where": {
+        "ch": "Genève · Suisse romande · Haute-Savoie, ou en visio",
+        "fr": "Annecy · Haute-Savoie · Genève, ou en visio"
+      }
     },
     "modes": {
       "label": "Comment préférez-vous nous contacter ?",

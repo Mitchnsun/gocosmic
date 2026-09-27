@@ -21,7 +21,10 @@
 
 ## 2) Documentation folder structure conventions (GitHub)
 
-Use the following structure:
+Current structure — all `docs/` content is technical/agent-facing and stays
+English-only per the language matrix above; there is no French-only content
+today, so `docs/en/` and `docs/fr/` subfolders don't exist and should only be
+introduced once a French human-facing doc is actually added:
 
 ```text
 /
@@ -29,22 +32,18 @@ Use the following structure:
 ├── README.en.md              # English project entry (technical)
 ├── README.fr.md              # French project entry (onboarding/product)
 ├── DOCS_POLICY.md            # This policy
+├── CONTRIBUTING.md, SECURITY.md, GUIDELINES.md, DESIGN_GUIDELINE.md # English technical references
+├── CLAUDE.md, AGENTS.md, .github/copilot-instructions.md            # English AI-agent instructions
 └── docs/
-    ├── en/                   # English technical documentation
-    │   ├── architecture/
-    │   ├── devops/
-    │   └── prompts/
-    ├── fr/                   # French human-facing documentation
-    │   ├── onboarding/
-    │   └── produit/
-    └── glossary.md           # FR -> EN domain glossary
+    ├── glossary.md            # FR -> EN domain glossary
+    ├── lessons.md             # Persistent AI-agent lessons log
+    └── pricing-simulator.md   # Feature-specific technical reference
 ```
 
 Naming conventions:
 
 - Use lowercase kebab-case for file names under `docs/`.
-- Keep mirrored paths when a document exists in both languages.
-- Suffix bilingual twins by directory (`docs/en/...` and `docs/fr/...`) rather than mixing in one file.
+- If a French human-facing guide is added, put it under `docs/fr/` and its English counterpart under `docs/en/`, keeping mirrored paths — don't mix languages in one file.
 - Root-level documentation entry points may keep established names such as `README.md`, `README.en.md`, `README.fr.md`, and `DOCS_POLICY.md`.
 
 ## 3) Human docs vs agent/system docs coherence

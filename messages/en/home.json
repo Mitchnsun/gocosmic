@@ -1,7 +1,10 @@
 {
   "homepage": {
     "hero": {
-      "eyebrow": "Web & mobile studio · Geneva",
+      "eyebrow": {
+        "ch": "Web & mobile studio · Geneva",
+        "fr": "Web & mobile studio · Annecy"
+      },
       "title": "Your business deserves to be",
       "endWords": ["seen.", "found.", "chosen."],
       "subtitle": "Cosmic Studio builds websites and apps for craftspeople, associations and independents. We make sure people find you on Google, and we are still there once your site is live.",
@@ -13,21 +16,27 @@
           "text": "/ month"
         },
         "reply": {
-          "highlight": "Reply",
-          "text": "within 24 h"
+          "highlight": "Fast",
+          "text": "reply"
         },
         "contact": {
           "highlight": "One",
           "text": "point of contact"
         },
         "area": {
-          "highlight": "Geneva",
-          "text": "· Haute-Savoie · remote"
+          "ch": {
+            "highlight": "Geneva",
+            "text": "· Lake Geneva region · Haute-Savoie · remote"
+          },
+          "fr": {
+            "highlight": "Annecy",
+            "text": "· Haute-Savoie · Geneva · remote"
+          }
         }
       }
     },
     "audience": {
-      "eyebrow": "[ Who it's for · 03 ]",
+      "eyebrow": "[ Who it's for ]",
       "title": "For people who already have a trade <em>and no time to learn another.</em>",
       "items": {
         "artisans": {
@@ -68,7 +77,7 @@
       }
     },
     "process": {
-      "eyebrow": "[ Process · 04 ]",
+      "eyebrow": "[ Process ]",
       "title": "Four steps, <em>no surprises.</em>",
       "subtitle": "From the first conversation to launch day, you know where your project stands.",
       "discovery": {
@@ -116,16 +125,24 @@
         "I'm Matthieu Compérat. I come from Duingt, on the shores of Lake Annecy, and I now live in Chêne-Bougeries. I have been building websites and apps for about fifteen years, first for large companies. With Cosmic Studio, I work directly with craftspeople, associations and independents.",
         "When you call, I'm the one who picks up, and your messages get a reply the same day. I know the site I deliver inside out, which keeps every change quick and simple."
       ],
-      "zones": [
-        "Chêne-Bougeries · base",
-        "French-speaking Switzerland · on site",
-        "Haute-Savoie · on site",
-        "Elsewhere · remote"
-      ]
+      "zones": {
+        "ch": [
+          "Chêne-Bougeries · base",
+          "French-speaking Switzerland · on site",
+          "Haute-Savoie · on site",
+          "Elsewhere · remote"
+        ],
+        "fr": [
+          "Chêne-Bougeries · base",
+          "Haute-Savoie · on site",
+          "French-speaking Switzerland · on site",
+          "Elsewhere · remote"
+        ]
+      }
     },
     "cta": {
       "button": "Talk about my project",
-      "description": "Tell us about your business in a few lines. We reply within one working day to talk it through, before suggesting anything.",
+      "description": "Tell us about your business in a few lines. We reply quickly to talk it through, before suggesting anything.",
       "freeMockup": "Still unsure? Start with a <link>free mockup</link>.",
       "title": "Let's make your business shine."
     }

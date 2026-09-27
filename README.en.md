@@ -89,7 +89,7 @@ export default function Header() {
 
 ### Homepage
 
-- **Hero**: visibility promise ("Your business deserves to be seen / found / chosen", the last word cycling), an animated ringed planet behind the text on phones and larger alongside it on desktop, four key facts (starting monthly price, reply within 24 h, one point of contact, area served), the "Go Cosmic" call-to-action leading to the free mockup page and a secondary link to the pricing
+- **Hero**: visibility promise ("Your business deserves to be seen / found / chosen", the last word cycling), an animated ringed planet behind the text on phones and larger alongside it on desktop, four key facts (starting monthly price, fast reply, one point of contact, area served), the "Go Cosmic" call-to-action leading to the free mockup page and a secondary link to the pricing
 - **Audience**: who the studio works for (craftspeople, associations, independents starting out)
 - **Why a studio**: four reasons to choose a studio rather than a site builder
 - **Process**: four-step timeline (meeting, mockup, build, launch)
@@ -368,8 +368,7 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   │   ├── not-found.tsx # Localized 404 page
 │   │   └── page.tsx  # Homepage
 │   ├── actions/      # Server actions (contact form, free mockup request)
-│   ├── layout.tsx    # Root layout with i18n provider
-│   └── ...
+│   └── layout.tsx    # Root layout (viewport only; the i18n provider lives in `[locale]/layout.tsx`)
 ├── components/       # App-specific components
 │   ├── AudienceGrid/ # "Who it's for" cards
 │   ├── BookingEmbed/ # Google Calendar booking page, loaded on click
@@ -404,10 +403,13 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   ├── hairline-grid.tsx # Card grid with 1 px separators
 │   ├── field.tsx     # Form field frame and control styles
 │   ├── slider.tsx    # Slider used by the pricing simulator
+│   ├── accent.ts     # `accentClasses(token)` — utilities and RGB channels of an accent token
 │   └── lib/utils.ts  # `cn` helper (clsx + tailwind-merge)
-├── data/             # Static content (list and order of case studies)
+├── data/             # Static content (`projects.ts` — ordered case-study registry)
 ├── lib/              # Shared helpers
+│   ├── contact/      # Contact form email + validation helpers
 │   ├── pricing/      # Code handover delay (offers.ts) and the simulation passed to the free mockup form
+│   ├── hooks/        # Shared hooks (e.g. `usePrefersReducedMotion`)
 │   ├── redirects.ts  # Permanent redirects from retired pages to Services & pricing
 │   ├── region.ts     # Region (France or Switzerland) and currency
 │   ├── resend.ts     # Resend email client
@@ -437,7 +439,9 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   ├── navigation.ts # Client-side navigation utilities
 │   └── canonical.ts  # Canonical URL helpers
 ├── __tests__/        # Comprehensive unit tests
+│   ├── actions/      # Server action tests
 │   ├── components/   # Component tests
+│   ├── design-system/ # design-system primitives tests
 │   ├── i18n/         # i18n utility tests (canonical)
 │   ├── lib/          # Helper tests
 │   ├── pages/        # Page tests

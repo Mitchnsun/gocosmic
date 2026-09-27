@@ -3,11 +3,11 @@
     "privacy": {
       "meta": {
         "title": "Datenschutzerklärung - Cosmic Studio",
-        "description": "Wie Cosmic Studio personenbezogene Daten verarbeitet: Formulare, E-Mails, Reichweitenmessung, Aufbewahrungsfristen und Ihre Rechte."
+        "description": "Wie Cosmic Studio personenbezogene Daten verarbeitet: Formulare, Terminbuchung, E-Mails, Reichweitenmessung, Aufbewahrungsfristen und Ihre Rechte."
       },
       "eyebrow": "DSGVO",
       "title": "Datenschutzerklärung",
-      "updated": "Zuletzt aktualisiert: 23. September 2026",
+      "updated": "Zuletzt aktualisiert: 27. September 2026",
       "intro": "Diese Seite erklärt, wie Cosmic Studio personenbezogene Daten verarbeitet, die auf dieser Website und im E-Mail-Austausch erhoben werden.",
       "legalNoticePrefix": "Angaben zum Anbieter und zum Hosting finden Sie im",
       "legalNoticeLink": "Impressum",
@@ -23,6 +23,7 @@
           "body": [
             "Die Website hat weder einen Kundenbereich noch eine Bezahlfunktion und verwendet weder CAPTCHA noch Werbepixel. Zwei Formulare werden serverseitig verarbeitet. Die Seite für das kostenlose Mockup erfasst Ihre E-Mail-Adresse, die gewählte Farbstimmung, die Adresse Ihrer aktuellen Website, sofern Sie sie angeben, Ihre Nachricht und die Sprache der Seite. Wenn Sie vom Preissimulator kommen, enthält die Anfrage außerdem Ihre dortige Auswahl (Projektart, Art der Website, Seitenanzahl, gewählte Optionen, Häufigkeit der Aktualisierungen und den daraus geschätzten Monatspreis), damit das Studio Ihnen in voller Kenntnis Ihrer Wünsche antworten kann. Das Kontaktformular erfasst Ihren Namen, Ihre E-Mail-Adresse und Ihre Nachricht sowie, falls Sie diese angeben, Ihre Telefonnummer, Ihre Tätigkeit und die gewählte Art des Anliegens. In beiden Fällen werden die Angaben per E-Mail an das Postfach des Studios übermittelt, und es wird nichts in einer Datenbank gespeichert. Nachrichten, die Sie über die E-Mail-Links der Website senden, werden von Ihrem E-Mail-Programm und vom Empfängerpostfach verarbeitet.",
             "Ihre IP-Adresse wird vorübergehend von der Firewall des Hosting-Anbieters verarbeitet, die jedes der beiden Formulare (Kontakt und kostenloses Mockup) auf drei Absendungen alle zehn Minuten begrenzt, ergänzt durch ein verstecktes Anti-Spam-Feld. Der Hosting-Anbieter kann außerdem technische Daten für seine Sicherheits- und Bereitstellungsprotokolle verarbeiten. Vercel Analytics wird erst nach Ihrer Einwilligung geladen, um Seitenaufrufe zu messen.",
+            "Wenn Sie über die Kontaktseite ein Gespräch buchen, übermittelt Google Calendar dem Studio Ihren Namen, Ihre E-Mail-Adresse, den gewählten Termin und die Angaben, die Sie im Buchungsformular machen. Diese Angaben werden im Kalender des Studios gespeichert, nicht in einer Datenbank.",
             "Zwei Angaben werden in Ihrem Browser gespeichert. Die Preissimulation dient nur dazu, Ihre Auswahl vom Simulator in das Formular für das kostenlose Mockup zu übernehmen: Sie wird nur an uns übermittelt, wenn Sie dieses Formular absenden, wird nach dem Absenden der Anfrage gelöscht und verschwindet, sobald Sie den Tab schließen. Die Zeitpunkte Ihrer letzten Absendungen des Kontaktformulars dienen dazu, die Häufigkeit der Absendungen aus diesem Browser zu begrenzen; sie bleiben dort gespeichert, bis Sie Ihre Browserdaten löschen, und werden nie an uns übermittelt."
           ]
         },
@@ -31,6 +32,7 @@
           "body": [
             "E-Mails werden verarbeitet, um Anfragen zu beantworten, Angebote zu erstellen, Support zu leisten und den Austausch zu dokumentieren. Diese Verarbeitung beruht auf dem berechtigten Interesse und gegebenenfalls auf vorvertraglichen Maßnahmen, die auf Ihre Anfrage hin erfolgen. Anfragen für ein kostenloses Mockup werden verarbeitet, um das Mockup zu erstellen, es Ihnen zuzusenden und Ihnen zu antworten.",
             "Über das Kontaktformular gesendete Nachrichten werden zu denselben Zwecken verarbeitet. Die Begrenzung der Absendungen pro IP-Adresse und das Herausfiltern automatisierter Absendungen beruhen auf dem berechtigten Interesse, den Dienst vor Missbrauch zu schützen.",
+            "Bei einer Terminbuchung übermittelte Angaben werden verarbeitet, um das Gespräch zu organisieren und nachzuverfolgen, auf Grundlage vorvertraglicher Maßnahmen, die auf Ihre Anfrage hin erfolgen.",
             "Die Reichweitenmessung dient dazu, die Nutzung der Website insgesamt zu verstehen und sie zu verbessern. Cosmic Studio lädt Vercel Analytics erst nach Ihrer Einwilligung. Die Sicherheitsprotokolle beruhen auf dem berechtigten Interesse am Schutz des Dienstes."
           ]
         },
@@ -38,21 +40,21 @@
           "title": "Empfänger und Auftragsverarbeiter",
           "body": [
             "Zugriff auf die Daten können Cosmic Studio, sein E-Mail-Anbieter, Resend (das die E-Mails des Kontaktformulars und der Anfragen für ein kostenloses Mockup zustellt) und Vercel für Hosting und Reichweitenmessung haben. LinkedIn ist eine externe Website, die nach ihren eigenen Richtlinien Daten verarbeiten kann, wenn Sie auf einen Link dorthin klicken.",
-            "Wenn Sie über die Kontaktseite ein Gespräch buchen, stellt Google (Google Calendar) den Buchungskalender bereit und verarbeitet die eingegebenen Angaben nach seiner eigenen Datenschutzerklärung: https://policies.google.com/privacy."
+            "Wenn Sie über die Kontaktseite ein Gespräch buchen, hostet Google (Google Calendar) den Buchungskalender des Studios und verarbeitet die eingegebenen Angaben für eigene Zwecke nach seiner eigenen Datenschutzerklärung: https://policies.google.com/privacy."
           ]
         },
         {
           "title": "Aufbewahrungsfristen",
           "body": [
             "Der E-Mail-Austausch wird so lange aufbewahrt, wie es für die Bearbeitung Ihrer Anfrage und deren Nachverfolgung nötig ist, und danach entsprechend gesetzlichen und buchhalterischen Pflichten oder im Hinblick auf mögliche Rechtsstreitigkeiten archiviert oder gelöscht. Ihre Entscheidung zur Reichweitenmessung wird in Ihrem Browser gespeichert, bis Sie dessen Daten löschen oder den Browser wechseln. Die Hosting-Protokolle richten sich nach der Konfiguration des Hosting-Anbieters.",
-            "Absendungen des Kontaktformulars werden nicht in einer Datenbank gespeichert: Sie werden per E-Mail übermittelt, und für den daraus entstehenden Austausch gelten die oben beschriebenen Fristen."
+            "Absendungen des Kontaktformulars werden nicht in einer Datenbank gespeichert: Sie werden per E-Mail übermittelt, und für den daraus entstehenden Austausch gelten die oben beschriebenen Fristen. Über Google Calendar gebuchte Termine werden im Kalender des Studios so lange aufbewahrt, wie es für die Nachverfolgung der Anfrage nötig ist, nach denselben Grundsätzen."
           ]
         },
         {
           "title": "Internationale Übermittlungen",
           "body": [
-            "Einige Auftragsverarbeiter, darunter Vercel und E-Mail-Anbieter, können Daten außerhalb des Europäischen Wirtschaftsraums verarbeiten.",
-            "Vercel stützt diese Übermittlungen auf Standardvertragsklauseln, die von der Europäischen Kommission genehmigt wurden. Bei Fragen zu den geltenden Garantien wenden Sie sich an support@gocosmic.dev."
+            "Einige Auftragsverarbeiter, darunter Vercel, E-Mail-Anbieter und Google (Google Calendar), können Daten außerhalb des Europäischen Wirtschaftsraums verarbeiten.",
+            "Diese Übermittlungen stützen sich auf Standardvertragsklauseln, die von der Europäischen Kommission genehmigt wurden, und bei Google zusätzlich auf das EU-US Data Privacy Framework. Bei Fragen zu den geltenden Garantien wenden Sie sich an support@gocosmic.dev."
           ]
         },
         {

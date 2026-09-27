@@ -3,11 +3,11 @@
     "privacy": {
       "meta": {
         "title": "Informativa privacy - Cosmic Studio",
-        "description": "Come Cosmic Studio tratta i dati personali: moduli, e-mail, misurazione dell'audience, periodi di conservazione e diritti."
+        "description": "Come Cosmic Studio tratta i dati personali: moduli, prenotazione di appuntamenti, e-mail, misurazione dell'audience, periodi di conservazione e diritti."
       },
       "eyebrow": "GDPR",
       "title": "Informativa privacy",
-      "updated": "Ultimo aggiornamento: 23 settembre 2026",
+      "updated": "Ultimo aggiornamento: 27 settembre 2026",
       "intro": "Questa pagina spiega come Cosmic Studio tratta i dati personali raccolti su questo sito e negli scambi via e-mail.",
       "legalNoticePrefix": "Per i dati dell'editore e le informazioni sull'hosting, consulta le",
       "legalNoticeLink": "note legali",
@@ -23,6 +23,7 @@
           "body": [
             "Il sito non prevede area clienti, pagamenti, CAPTCHA né pixel pubblicitari. Due moduli vengono elaborati sul server. La pagina del mockup gratuito raccoglie il tuo indirizzo e-mail, la palette di colori scelta, l'indirizzo del tuo sito attuale se lo indichi, il tuo messaggio e la lingua della pagina. Se arrivi dal simulatore di prezzi, la richiesta include anche le scelte che vi hai fatto (tipo di progetto, tipo di sito, numero di pagine, opzioni selezionate, frequenza degli aggiornamenti e prezzo mensile stimato), così lo studio può risponderti con cognizione di causa. Il modulo di contatto raccoglie il tuo nome, il tuo indirizzo e-mail e il tuo messaggio e, se li indichi, il tuo numero di telefono, la tua attività e il tipo di esigenza scelto. In entrambi i casi le informazioni vengono inviate via e-mail alla casella dello studio e nulla viene conservato in un database. I messaggi inviati tramite i link e-mail del sito sono gestiti dal tuo programma di posta e dalla casella del destinatario.",
             "Il tuo indirizzo IP viene trattato temporaneamente dal firewall del fornitore di hosting, che limita ciascuno dei due moduli (contatto e mockup gratuito) a tre invii ogni dieci minuti, in aggiunta a un campo anti-spam nascosto. Il fornitore di hosting può anche trattare dati tecnici per i propri registri di sicurezza e di distribuzione. Vercel Analytics viene caricato solo dopo il tuo consenso, per contare le pagine visualizzate.",
+            "Se prenoti una chiamata dalla pagina Contatti, Google Calendar trasmette allo studio il tuo nome, il tuo indirizzo e-mail, l'orario scelto e le informazioni che inserisci nel modulo di prenotazione. Queste informazioni sono conservate nel calendario dello studio, non in un database.",
             "Nel tuo browser vengono conservate due informazioni. La simulazione dei prezzi serve solo a trasferire le tue scelte dal simulatore al modulo del mockup gratuito: ci viene trasmessa solo se invii quel modulo, viene cancellata una volta inviata la richiesta e scompare quando chiudi la scheda. Le date dei tuoi ultimi invii del modulo di contatto servono a limitare la frequenza degli invii da questo browser; vi restano finché non cancelli i tuoi dati di navigazione e non ci vengono mai trasmesse."
           ]
         },
@@ -31,6 +32,7 @@
           "body": [
             "Le e-mail sono trattate per rispondere alle richieste, preparare preventivi, fornire assistenza e conservare traccia della corrispondenza. Questo trattamento si basa sul legittimo interesse e, se del caso, su misure precontrattuali adottate su tua richiesta. Le richieste di mockup gratuito sono trattate per preparare il mockup, inviartelo e risponderti.",
             "I messaggi inviati tramite il modulo di contatto sono trattati per le stesse finalità. La limitazione degli invii per indirizzo IP e il filtraggio degli invii automatici si basano sul legittimo interesse a proteggere il servizio dagli abusi.",
+            "Le informazioni trasmesse al momento della prenotazione di una chiamata sono trattate per organizzare la chiamata e darle seguito, sulla base di misure precontrattuali adottate su tua richiesta.",
             "La misurazione dell'audience serve a capire il traffico complessivo del sito e a migliorarlo. Cosmic Studio carica Vercel Analytics solo dopo il tuo consenso. I registri di sicurezza si basano sul legittimo interesse a proteggere il servizio."
           ]
         },
@@ -38,21 +40,21 @@
           "title": "Destinatari e responsabili del trattamento",
           "body": [
             "I dati possono essere accessibili a Cosmic Studio, al suo fornitore di posta elettronica, a Resend (che recapita le e-mail del modulo di contatto e delle richieste di mockup gratuito) e a Vercel, per l'hosting e la misurazione dell'audience. LinkedIn è un sito esterno che può trattare dati secondo la propria informativa se clicchi su un link che vi rimanda.",
-            "Se scegli di prenotare una chiamata dalla pagina Contatti, il calendario delle prenotazioni è fornito da Google (Google Calendar), che tratta le informazioni inserite secondo la propria informativa sulla privacy: https://policies.google.com/privacy."
+            "Se scegli di prenotare una chiamata dalla pagina Contatti, Google (Google Calendar) ospita il calendario delle prenotazioni dello studio e tratta le informazioni inserite per finalità proprie, secondo la propria informativa sulla privacy: https://policies.google.com/privacy."
           ]
         },
         {
           "title": "Periodi di conservazione",
           "body": [
             "Gli scambi via e-mail sono conservati per il tempo necessario a gestire la tua richiesta e a darle seguito, poi archiviati o cancellati secondo gli obblighi legali, contabili o legati a eventuali contenziosi. La tua scelta sulla misurazione dell'audience è registrata nel tuo browser finché non ne cancelli i dati o non cambi browser. I registri dell'hosting seguono la configurazione del fornitore di hosting.",
-            "Gli invii del modulo di contatto non sono conservati in un database: vengono trasmessi via e-mail e lo scambio che ne segue rispetta i periodi descritti sopra."
+            "Gli invii del modulo di contatto non sono conservati in un database: vengono trasmessi via e-mail e lo scambio che ne segue rispetta i periodi descritti sopra. Le prenotazioni effettuate tramite Google Calendar sono conservate nel calendario dello studio per il tempo necessario a dare seguito alla richiesta, secondo lo stesso criterio."
           ]
         },
         {
           "title": "Trasferimenti internazionali",
           "body": [
-            "Alcuni responsabili del trattamento, tra cui Vercel e i fornitori di posta elettronica, possono trattare dati al di fuori dello Spazio economico europeo.",
-            "Vercel disciplina questi trasferimenti con clausole contrattuali standard approvate dalla Commissione europea. Per qualsiasi domanda sulle garanzie applicate, scrivi a support@gocosmic.dev."
+            "Alcuni responsabili del trattamento, tra cui Vercel, i fornitori di posta elettronica e Google (Google Calendar), possono trattare dati al di fuori dello Spazio economico europeo.",
+            "Questi trasferimenti sono disciplinati da clausole contrattuali standard approvate dalla Commissione europea e, per Google, dal quadro UE-USA per la protezione dei dati (EU-US Data Privacy Framework). Per qualsiasi domanda sulle garanzie applicate, scrivi a support@gocosmic.dev."
           ]
         },
         {

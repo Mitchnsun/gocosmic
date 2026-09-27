@@ -27,6 +27,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - The top bar now simply shows "Available" without a start month, and names the mission control base — Chêne-Bougeries for Swiss visitors, Annecy for everyone else
 - The Geneva and Annecy page now looks like the rest of the site and shows where the studio meets clients in person, and search results present the studio from its Geneva base while still naming Annecy and Haute-Savoie
 - The legal pages, now under the studio's current name, the cookie banner and the language picker use the site's own colours, links shared on social networks show a new preview image, and the custom cursor only appears with a mouse or trackpad
+- The homepage, contact and about pages now lead with Geneva for visitors in Switzerland and with Annecy for everyone else
+- The trades listed on the homepage and elsewhere on the site are now written to include both feminine and masculine forms
+- The reply-time promise is now worded as "fast" instead of naming a fixed number of hours
+- The contact form's email, phone and profession examples now show a Swiss address, number and city for visitors in Switzerland, and a French one for everyone else
+- The privacy policy now explains what happens to your details when you book a call through the calendar, including how long they're kept and where they may be processed
 
 ### Removed
 

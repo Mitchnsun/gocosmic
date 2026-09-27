@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Contatti · Parliamo del tuo progetto | Cosmic Studio",
-    "description": "Racconta il tuo progetto a Cosmic Studio. Basta un messaggio: la persona che costruirà il tuo sito ti risponde entro un giorno lavorativo."
+    "description": "Racconta il tuo progetto a Cosmic Studio. Basta un messaggio: la persona che costruirà il tuo sito ti risponde rapidamente."
   },
   "contact": {
     "title": "Parlaci <em>della tua attività.</em>",
@@ -22,7 +22,8 @@
         },
         "email": {
           "label": "Indirizzo e-mail",
-          "placeholder": "giulia@esempio.it"
+          "placeholder": "giulia@esempio.fr",
+          "placeholderSwiss": "giulia@esempio.ch"
         },
         "message": {
           "label": "Il tuo messaggio",
@@ -30,11 +31,13 @@
         },
         "phone": {
           "label": "Telefono",
-          "placeholder": "+41 22 123 45 67"
+          "placeholder": "+33 6 12 34 56 78",
+          "placeholderSwiss": "+41 22 123 45 67"
         },
         "company": {
           "label": "La tua attività",
-          "placeholder": "Ebanista ad Annecy, associazione teatrale…"
+          "placeholder": "Ebanista ad Annecy, associazione teatrale…",
+          "placeholderSwiss": "Ebanista a Ginevra, associazione teatrale…"
         },
         "need": {
           "legend": "Di cosa hai bisogno",
@@ -60,18 +63,21 @@
         "need_invalid": "Scegli un'opzione dall'elenco."
       },
       "success": {
-        "title": "Grazie. Matthieu ti risponde entro un giorno lavorativo.",
+        "title": "Grazie. Matthieu ti risponde rapidamente.",
         "description": "Il tuo messaggio è arrivato. Matthieu ti scriverà per chiarire alcuni punti, poi ti proporrà un mockup gratuito, se ti interessa.",
         "back": "Invia un altro messaggio"
       }
     },
-    "lead": "Scrivici un messaggio o prenota una chiamata di 20 minuti. In entrambi i casi è Matthieu a risponderti, entro un giorno lavorativo.",
+    "lead": "Scrivici un messaggio o prenota una chiamata di 20 minuti. In entrambi i casi è Matthieu a risponderti rapidamente.",
     "details": {
       "aria_label": "Recapiti",
       "email_label": "E-mail",
       "support_label": "Già cliente · assistenza",
       "where_label": "Dove",
-      "where": "Ginevra · Svizzera romanda · Alta Savoia, o in videochiamata"
+      "where": {
+        "ch": "Ginevra · Svizzera romanda · Alta Savoia, o in videochiamata",
+        "fr": "Annecy · Alta Savoia · Ginevra, o in videochiamata"
+      }
     },
     "modes": {
       "label": "Come preferisci contattarci?",

@@ -6,6 +6,7 @@ import { type KeyboardEvent, useId, useState } from 'react';
 import { BookingEmbed } from '@/components/BookingEmbed';
 import { ContactForm } from '@/components/ContactForm';
 import { cn } from '@/design-system/lib/utils';
+import { DEFAULT_REGION, type Region } from '@/lib/region';
 
 type ContactMode = 'message' | 'call';
 const MODES: ContactMode[] = ['message', 'call'];
@@ -13,13 +14,15 @@ const MODES: ContactMode[] = ['message', 'call'];
 interface ContactPanelProps {
   /** Validated Google Calendar embed URL, or `null` while no booking page exists. */
   bookingUrl: string | null;
+  /** Visitor region, for the Swiss vs. French contact form placeholders. Defaults to `fr`. */
+  region?: Region;
 }
 
 /**
  * Two ways to get in touch, as tabs: write a message, or book a call.
  * Arrow keys move between the tabs, as the ARIA tabs pattern expects.
  */
-export function ContactPanel({ bookingUrl }: ContactPanelProps) {
+export function ContactPanel({ bookingUrl, region = DEFAULT_REGION }: ContactPanelProps) {
   const t = useTranslations('contact.modes');
   const [mode, setMode] = useState<ContactMode>('message');
   const baseId = useId();
@@ -34,7 +37,7 @@ export function ContactPanel({ bookingUrl }: ContactPanelProps) {
   };
 
   return (
-    <div className="border-ghost/10 bg-ghost/[0.02] flex flex-col gap-6 rounded-3xl border p-[clamp(1.25rem,3vw,2.25rem)]">
+    <div className="border-ghost/10 bg-ghost/2 flex flex-col gap-6 rounded-3xl border p-[clamp(1.25rem,3vw,2.25rem)]">
       <div
         role="tablist"
         aria-label={t('label')}
@@ -61,7 +64,7 @@ export function ContactPanel({ bookingUrl }: ContactPanelProps) {
 
       {MODES.map((tab) => (
         <div key={tab} id={`${baseId}-${tab}-panel`} role="tabpanel" aria-labelledby={tabId(tab)} hidden={mode !== tab}>
-          {tab === 'message' ? <ContactForm variant="embedded" /> : <BookingEmbed url={bookingUrl} />}
+          {tab === 'message' ? <ContactForm variant="embedded" region={region} /> : <BookingEmbed url={bookingUrl} />}
         </div>
       ))}
     </div>

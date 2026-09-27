@@ -49,7 +49,7 @@ export const ContentSection = ({
     <section id={id} aria-labelledby={`${id}-heading`} className={cn('w-full scroll-mt-24', className)}>
       <div
         className={cn({
-          'border-ghost/8 bg-ghost/[0.02] rounded-2xl border p-6 sm:p-8 lg:p-10': !flat,
+          'border-ghost/8 bg-ghost/2 rounded-2xl border p-6 sm:p-8 lg:p-10': !flat,
         })}>
         {(eyebrow || index) && (
           <div className="mb-5 flex items-baseline justify-between gap-4">

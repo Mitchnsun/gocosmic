@@ -1,6 +1,6 @@
-import { CASE_STUDY_HREFS, CASE_STUDY_SLUGS, CASE_STUDY_TITLE_KEYS } from '@/components/CaseStudy';
+import { PROJECTS } from '@/data/projects';
 
-import { PROJECT_DEFINITIONS, PROJECT_FILTERS } from './ProjectGrid.constants';
+import { PROJECT_FILTERS } from './ProjectGrid.constants';
 import type { ProjectCardContent, ProjectKind } from './ProjectGrid.types';
 
 /** Translator scoped to the `projectsList` messages. */
@@ -9,29 +9,21 @@ interface ProjectsTranslator {
   raw: (key: string) => unknown;
 }
 
-/** Translated cards for every registered case study, in the order of `data/projects.json`. */
+/** Translated cards for every registered case study, in the order of `data/projects.ts`. */
 export function buildProjectCards(t: ProjectsTranslator): ProjectCardContent[] {
-  // Slugs come from CASE_STUDY_SLUGS, a fixed list mirrored by the three records below.
-  /* eslint-disable security/detect-object-injection */
-  return CASE_STUDY_SLUGS.map((slug) => {
-    const { kind, year, cover } = PROJECT_DEFINITIONS[slug];
-    const key = CASE_STUDY_TITLE_KEYS[slug];
-
-    return {
-      slug,
-      href: CASE_STUDY_HREFS[slug],
-      kind,
-      kindLabel: t(`kinds.${kind}`),
-      title: t(`items.${key}.title`),
-      year,
-      client: t(`items.${key}.client`),
-      description: t(`items.${key}.description`),
-      tags: t.raw(`items.${key}.tags`) as string[],
-      cover: cover && { ...cover, alt: t(`items.${key}.cover_alt`) },
-      linkLabel: t('view_project'),
-    };
-  });
-  /* eslint-enable security/detect-object-injection */
+  return PROJECTS.map(({ slug, href, kind, year, cover, i18nKey }) => ({
+    slug,
+    href,
+    kind,
+    kindLabel: t(`kinds.${kind}`),
+    title: t(`items.${i18nKey}.title`),
+    year,
+    client: t(`items.${i18nKey}.client`),
+    description: t(`items.${i18nKey}.description`),
+    tags: t.raw(`items.${i18nKey}.tags`) as string[],
+    cover: cover && { ...cover, alt: t(`items.${i18nKey}.cover_alt`) },
+    linkLabel: t('view_project'),
+  }));
 }
 
 export type ProjectFilter = ProjectKind | 'all';

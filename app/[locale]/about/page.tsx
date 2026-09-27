@@ -73,7 +73,7 @@ export default async function About() {
           eyebrow={t('path.eyebrow')}
           title={t.rich('path.title', { em })}
           paragraphs={t.raw('path.paragraphs') as string[]}
-          zones={t.raw('path.zones') as string[]}>
+          zones={t.raw(`path.zones.${region}`) as string[]}>
           <a
             href="https://www.linkedin.com/in/matthieucomperat/"
             target="_blank"

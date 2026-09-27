@@ -3,11 +3,11 @@
     "privacy": {
       "meta": {
         "title": "Politique de confidentialité - Cosmic Studio",
-        "description": "Comment Cosmic Studio traite les données personnelles : formulaires, e-mails, mesure d'audience, durées de conservation et droits."
+        "description": "Comment Cosmic Studio traite les données personnelles : formulaires, prise de rendez-vous, e-mails, mesure d'audience, durées de conservation et droits."
       },
       "eyebrow": "RGPD",
       "title": "Politique de confidentialité",
-      "updated": "Dernière mise à jour : 23 septembre 2026",
+      "updated": "Dernière mise à jour : 27 septembre 2026",
       "intro": "Cette page explique comment Cosmic Studio traite les données personnelles collectées sur ce site et lors des échanges par e-mail.",
       "legalNoticePrefix": "Pour les informations éditeur et hébergement, consultez les",
       "legalNoticeLink": "mentions légales",
@@ -23,6 +23,7 @@
           "body": [
             "Le site ne propose ni espace client, ni paiement, ni CAPTCHA, ni pixel publicitaire. Deux formulaires sont traités côté serveur. La page de maquette gratuite collecte votre adresse e-mail, l'ambiance de couleurs choisie, l'adresse de votre site actuel si vous la renseignez, votre message et la langue de la page. Si vous arrivez depuis le simulateur de tarifs, la demande inclut aussi les choix que vous y avez faits (type de projet, type de site, nombre de pages, options retenues, fréquence des mises à jour et prix mensuel estimé), afin que le studio puisse vous répondre en connaissance de cause. Le formulaire de contact collecte votre nom, votre adresse e-mail et votre message, ainsi que, si vous les renseignez, votre téléphone, votre activité et le type de besoin choisi. Dans les deux cas, les informations sont transmises par e-mail à la boîte du studio et rien n'est conservé en base de données. Les messages envoyés via les liens e-mail du site sont traités par votre messagerie et par la boîte destinataire.",
             "Votre adresse IP est traitée temporairement par le pare-feu de l'hébergeur, qui limite chacun des deux formulaires (contact et maquette gratuite) à trois envois toutes les dix minutes, en complément d'un champ anti-spam masqué. L'hébergeur peut aussi traiter des données techniques pour ses journaux de sécurité et de diffusion. Vercel Analytics n'est chargé qu'après votre consentement, pour mesurer les pages vues.",
+            "Si vous réservez un appel depuis la page contact, Google Calendar transmet au studio votre nom, votre adresse e-mail, le créneau choisi et les informations que vous saisissez dans le formulaire de réservation. Ces informations sont conservées dans l'agenda du studio, et non dans une base de données.",
             "Deux informations sont conservées dans votre navigateur. La simulation de tarifs sert uniquement à la reprendre du simulateur jusqu'au formulaire de maquette gratuite : elle ne nous est transmise que si vous envoyez ce formulaire, elle est effacée une fois la demande envoyée et disparaît à la fermeture de l'onglet. Les dates de vos derniers envois du formulaire de contact servent à limiter la fréquence d'envoi depuis ce navigateur ; elles y restent jusqu'à ce que vous effaciez vos données de navigation et ne nous sont jamais transmises."
           ]
         },
@@ -31,6 +32,7 @@
           "body": [
             "Les e-mails sont traités pour répondre aux demandes, préparer des devis, assurer le support et conserver une trace des échanges. Ce traitement repose sur l'intérêt légitime et, le cas échéant, sur des mesures précontractuelles prises à votre demande. Les demandes de maquette gratuite sont traitées pour préparer la maquette, vous l'envoyer et vous répondre.",
             "Les messages envoyés via le formulaire de contact sont traités pour les mêmes finalités. La limitation des envois par adresse IP et le filtrage des envois automatisés reposent sur l'intérêt légitime à protéger le service contre les abus.",
+            "Les informations transmises lors d'une prise de rendez-vous sont traitées pour organiser l'appel et en assurer le suivi, sur la base de mesures précontractuelles prises à votre demande.",
             "La mesure d'audience sert à comprendre la fréquentation globale du site et à l'améliorer. Cosmic Studio ne charge Vercel Analytics qu'après votre consentement. Les journaux de sécurité reposent sur l'intérêt légitime à protéger le service."
           ]
         },
@@ -38,21 +40,21 @@
           "title": "Destinataires et sous-traitants",
           "body": [
             "Les données peuvent être accessibles à Cosmic Studio, à son fournisseur de messagerie, à Resend (qui achemine les e-mails du formulaire de contact et des demandes de maquette gratuite) et à Vercel, pour l'hébergement et la mesure d'audience. LinkedIn est un site externe qui peut traiter des données selon sa propre politique si vous cliquez sur un lien qui y mène.",
-            "Si vous choisissez de réserver un appel depuis la page contact, l’agenda de réservation est fourni par Google (Google Calendar), qui traite les informations saisies selon sa propre politique de confidentialité : https://policies.google.com/privacy."
+            "Si vous choisissez de réserver un appel depuis la page contact, Google (Google Calendar) héberge l'agenda de réservation du studio et traite les informations saisies pour son propre compte selon sa politique de confidentialité : https://policies.google.com/privacy."
           ]
         },
         {
           "title": "Durées de conservation",
           "body": [
             "Les échanges par e-mail sont conservés le temps nécessaire au traitement de votre demande et à son suivi, puis archivés ou supprimés selon les obligations légales, comptables ou contentieuses. Votre choix concernant la mesure d'audience est enregistré dans votre navigateur jusqu'à ce que vous effaciez ses données ou changiez de navigateur. Les journaux d'hébergement suivent la configuration de l'hébergeur.",
-            "Les envois du formulaire de contact ne sont pas conservés en base de données : ils sont transmis par e-mail, et l'échange qui en découle suit les durées décrites ci-dessus."
+            "Les envois du formulaire de contact ne sont pas conservés en base de données : ils sont transmis par e-mail, et l'échange qui en découle suit les durées décrites ci-dessus. Les rendez-vous pris via Google Calendar sont conservés dans l'agenda du studio le temps nécessaire au suivi de la demande, selon les mêmes durées."
           ]
         },
         {
           "title": "Transferts internationaux",
           "body": [
-            "Certains sous-traitants, dont Vercel et les fournisseurs de messagerie, peuvent traiter des données hors de l'Espace économique européen.",
-            "Vercel encadre ces transferts par des clauses contractuelles types approuvées par la Commission européenne. Pour toute question sur les garanties en vigueur, contactez support@gocosmic.dev."
+            "Certains sous-traitants, dont Vercel, les fournisseurs de messagerie et Google (Google Calendar), peuvent traiter des données hors de l'Espace économique européen.",
+            "Ces transferts sont encadrés par des clauses contractuelles types approuvées par la Commission européenne et, pour Google, par le cadre de protection des données UE-États-Unis (EU-US Data Privacy Framework). Pour toute question sur les garanties en vigueur, contactez support@gocosmic.dev."
           ]
         },
         {

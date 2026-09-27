@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
-import { buildCaseStudyNavigation, CaseStudy } from '@/components/CaseStudy';
+import { buildCaseStudyMeta, buildCaseStudyNavigation, CaseStudy, PROJECTS_BY_SLUG } from '@/components/CaseStudy';
 import { getAlternates } from '@/i18n/canonical';
 import { getOgImages } from '@/lib/og';
 
@@ -42,9 +42,9 @@ export default function DailyFortune() {
       eyebrow={tCommon('eyebrow')}
       title={t('title')}
       tagline={t('subtitle')}
-      accent="royal"
-      logo={{ src: '/projects/daily-fortune/app-icon.png', alt: t('title') }}
-      meta={['2026', tList('items.dailyFortune.client'), tList('kinds.mobile')]}
+      accent={PROJECTS_BY_SLUG['daily-fortune'].accent}
+      logo={{ src: PROJECTS_BY_SLUG['daily-fortune'].cover.src, alt: t('title') }}
+      meta={buildCaseStudyMeta('daily-fortune', tList)}
       sections={[
         {
           id: 'for-whom',

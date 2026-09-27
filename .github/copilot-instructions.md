@@ -6,7 +6,7 @@
 
 **NEVER CANCEL BUILDS OR LONG-RUNNING COMMANDS.** If a command appears to hang, wait at least 15 minutes before considering alternatives.
 
-- Node.js ≥ 22 required (`.nvmrc` specifies v22; v20 works with warnings)
+- Node.js ≥ 24 required (`.nvmrc` specifies v24)
 - Package manager: `yarn` via Corepack (`corepack enable` on first use)
 
 ## Technology Stack
@@ -65,10 +65,9 @@ Scopes: `ui` `web` `config` `deps`
 
 ## Before Opening a PR
 
-1. Bump `version` in `package.json` (semver)
-2. Add entry to `CHANGELOG.md` under `## [X.Y.Z] - YYYY-MM-DD`
-3. For every PR-bound change, including follow-up commits after review, keep the changelog and package version updated before finishing
-4. All CI checks must pass: lint, types, tests, coverage ≥ 90%
+1. One version bump per PR, not per commit — bump `version` in `package.json` (semver) only on the first change of the branch
+2. Add entry to `CHANGELOG.md` under `## [X.Y.Z] - YYYY-MM-DD`; later commits on the same branch, including review follow-ups, add bullets to that same entry instead of bumping again
+3. All CI checks must pass: lint, tests, coverage ≥ 90% (CI does not run `check-types` or `build`; run them locally before opening a PR)
 
 ## UI & Coding Standards
 

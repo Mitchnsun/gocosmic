@@ -91,7 +91,7 @@ export default function Header() {
 
 ### Page d'accueil
 
-- **Hero** : promesse de visibilité (« Votre activité mérite d'être vue / trouvée / choisie », le dernier mot change en boucle), une planète animée avec anneaux derrière le texte sur mobile et à côté sur ordinateur, quatre repères (prix mensuel de départ, réponse sous 24 h, un seul interlocuteur, zone d'intervention), l'appel à l'action « Go Cosmic » vers la page maquette gratuite et un lien secondaire vers les tarifs
+- **Hero** : promesse de visibilité (« Votre activité mérite d'être vue / trouvée / choisie », le dernier mot change en boucle), une planète animée avec anneaux derrière le texte sur mobile et à côté sur ordinateur, quatre repères (prix mensuel de départ, réponse rapide, un seul interlocuteur, zone d'intervention), l'appel à l'action « Go Cosmic » vers la page maquette gratuite et un lien secondaire vers les tarifs
 - **Public** : pour qui travaille le studio (artisans, associations, indépendants qui se lancent)
 - **Pourquoi un studio** : quatre raisons de choisir un studio plutôt qu'un constructeur de sites
 - **Déroulé** : frise en quatre étapes (rencontre, maquette, réalisation, mise en ligne)
@@ -370,8 +370,7 @@ Pour des consignes de test détaillées, voir [`__tests__/TESTING.md`](./__tests
 │   │   ├── not-found.tsx # Page 404 localisée
 │   │   └── page.tsx  # Page d'accueil
 │   ├── actions/      # Server actions (formulaire de contact, demande de maquette gratuite)
-│   ├── layout.tsx    # Layout racine avec provider i18n
-│   └── ...
+│   └── layout.tsx    # Layout racine (viewport uniquement ; le provider i18n est dans `[locale]/layout.tsx`)
 ├── components/       # Composants spécifiques à l'application
 │   ├── AudienceGrid/ # Cartes « pour qui »
 │   ├── BookingEmbed/ # Page de réservation Google Calendar, chargée au clic
@@ -406,10 +405,13 @@ Pour des consignes de test détaillées, voir [`__tests__/TESTING.md`](./__tests
 │   ├── hairline-grid.tsx # Grille de cartes séparées par des filets de 1 px
 │   ├── field.tsx     # Cadre des champs de formulaire et styles des contrôles
 │   ├── slider.tsx    # Slider utilisé par le simulateur de prix
+│   ├── accent.ts     # `accentClasses(token)` — utilitaires et canaux RGB d'un token d'accent
 │   └── lib/utils.ts  # Helper `cn` (clsx + tailwind-merge)
-├── data/             # Contenu statique (liste et ordre des études de cas)
+├── data/             # Contenu statique (`projects.ts` — registre ordonné des études de cas)
 ├── lib/              # Helpers partagés
+│   ├── contact/      # Helpers d'email et de validation du formulaire de contact
 │   ├── pricing/      # Délai de remise du code (offers.ts) et simulation transmise au formulaire de maquette gratuite
+│   ├── hooks/        # Hooks partagés (ex. `usePrefersReducedMotion`)
 │   ├── redirects.ts  # Redirections permanentes des pages retirées vers Services & tarifs
 │   ├── region.ts     # Région (France ou Suisse) et devise
 │   ├── resend.ts     # Client email Resend
@@ -439,7 +441,9 @@ Pour des consignes de test détaillées, voir [`__tests__/TESTING.md`](./__tests
 │   ├── navigation.ts # Utilitaires de navigation côté client
 │   └── canonical.ts  # Helpers d'URL canoniques
 ├── __tests__/        # Tests unitaires complets
+│   ├── actions/      # Tests des server actions
 │   ├── components/   # Tests composants
+│   ├── design-system/ # Tests des primitives design-system
 │   ├── i18n/         # Tests utilitaires i18n (canonical)
 │   ├── lib/          # Tests des helpers
 │   ├── pages/        # Tests pages

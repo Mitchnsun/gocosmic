@@ -15,15 +15,6 @@ export interface ProjectCover {
   background: string;
 }
 
-/** Non-translatable facts about a project; the copy lives in `projectsList.items.<i18nKey>`. */
-export interface ProjectDefinition {
-  slug: CaseStudySlug;
-  kind: ProjectKind;
-  year: number;
-  /** Omitted until a screenshot is provided: the card then shows a typographic cover. */
-  cover?: ProjectCover;
-}
-
 /** Everything a card renders, already translated. */
 export interface ProjectCardContent {
   slug: CaseStudySlug;

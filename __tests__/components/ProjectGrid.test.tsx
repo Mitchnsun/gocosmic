@@ -18,19 +18,19 @@ describe('buildProjectCards', () => {
   it('builds one card per case study, client work first', () => {
     expect(cards.map((card) => card.slug)).toEqual([
       'choeurdespaysdumontblanc',
-      'psc-supersprint',
       'daily-fortune',
       'mcomperat',
+      'psc-supersprint',
     ]);
     expect(cards[0]).toMatchObject({
       kind: 'site',
       kindLabel: 'Website',
       client: 'Association · Haute-Savoie',
       href: '/projects/choeurdespaysdumontblanc',
-      year: 2025,
+      year: 2026,
     });
     expect(cards[0]?.cover?.alt).toBe('Chœur des Pays du Mont Blanc logo');
-    expect(cards[1]?.cover).toBeUndefined();
+    expect(cards[2]?.cover).toBeUndefined();
   });
 
   it('filters by kind and parses the query parameter defensively', () => {

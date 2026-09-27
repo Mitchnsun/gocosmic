@@ -51,16 +51,19 @@ export default async function Home() {
   return (
     <div className="bg-void text-ghost">
       <HeroSection
-        eyebrow={t('hero.eyebrow')}
+        eyebrow={t(`hero.eyebrow.${region}`)}
         title={t('hero.title')}
         endWords={t.raw('hero.endWords') as string[]}
         subtitle={t('hero.subtitle')}
         cta={{ text: t('hero.cta'), href: '/free-mockup' }}
         secondaryCta={{ text: t('hero.secondary'), href: { pathname: '/services', hash: 'pricing' } }}
-        facts={FACTS.map((fact) => ({
-          highlight: t(`hero.facts.${fact}.highlight`, { price: startingPrice }),
-          text: t(`hero.facts.${fact}.text`),
-        }))}
+        facts={FACTS.map((fact) => {
+          const key = fact === 'area' ? `area.${region}` : fact;
+          return {
+            highlight: t(`hero.facts.${key}.highlight`, { price: startingPrice }),
+            text: t(`hero.facts.${key}.text`),
+          };
+        })}
       />
 
       <AudienceGrid
@@ -137,7 +140,7 @@ export default async function Home() {
         eyebrow={t('studio.eyebrow')}
         title={t.rich('studio.title', { em })}
         paragraphs={t.raw('studio.paragraphs') as string[]}
-        zones={t.raw('studio.zones') as string[]}
+        zones={t.raw(`studio.zones.${region}`) as string[]}
       />
 
       <CTAFinal

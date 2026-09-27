@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Contacto · Hablemos de tu proyecto | Cosmic Studio",
-    "description": "Cuéntale tu proyecto a Cosmic Studio. Basta con un mensaje: la persona que construirá tu sitio te responde en 24 h laborables."
+    "description": "Cuéntale tu proyecto a Cosmic Studio. Basta con un mensaje: la persona que construirá tu sitio te responde rápidamente."
   },
   "contact": {
     "title": "Háblanos <em>de tu negocio.</em>",
@@ -22,7 +22,8 @@
         },
         "email": {
           "label": "Correo electrónico",
-          "placeholder": "camille@ejemplo.com"
+          "placeholder": "camille@ejemplo.fr",
+          "placeholderSwiss": "camille@ejemplo.ch"
         },
         "message": {
           "label": "Tu mensaje",
@@ -30,11 +31,13 @@
         },
         "phone": {
           "label": "Teléfono",
-          "placeholder": "+41 22 123 45 67"
+          "placeholder": "+33 6 12 34 56 78",
+          "placeholderSwiss": "+41 22 123 45 67"
         },
         "company": {
           "label": "Tu actividad",
-          "placeholder": "Ebanista en Annecy, asociación de teatro…"
+          "placeholder": "Ebanista en Annecy, asociación de teatro…",
+          "placeholderSwiss": "Ebanista en Ginebra, asociación de teatro…"
         },
         "need": {
           "legend": "Lo que necesitas",
@@ -60,18 +63,21 @@
         "need_invalid": "Elige una opción de la lista."
       },
       "success": {
-        "title": "Gracias. Matthieu te responderá en 24 h laborables.",
+        "title": "Gracias. Matthieu te responderá rápidamente.",
         "description": "Tu mensaje ha llegado correctamente. Matthieu te escribirá para aclarar algunos detalles y, después, te propondrá una maqueta gratuita si quieres.",
         "back": "Enviar otro mensaje"
       }
     },
-    "lead": "Escríbenos un mensaje o reserva una llamada de 20 minutos. En ambos casos te responde el propio Matthieu, en 24 h laborables.",
+    "lead": "Escríbenos un mensaje o reserva una llamada de 20 minutos. En ambos casos te responde el propio Matthieu, con rapidez.",
     "details": {
       "aria_label": "Datos de contacto",
       "email_label": "Correo",
       "support_label": "Clientes · soporte",
       "where_label": "Dónde",
-      "where": "Ginebra · Suiza romanda · Alta Saboya, o por videollamada"
+      "where": {
+        "ch": "Ginebra · Suiza romanda · Alta Saboya, o por videollamada",
+        "fr": "Annecy · Alta Saboya · Ginebra, o por videollamada"
+      }
     },
     "modes": {
       "label": "¿Cómo prefieres ponerte en contacto?",

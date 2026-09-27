@@ -6,7 +6,7 @@
     },
     "cta": {
       "title": "Parliamo del tuo sito.",
-      "description": "Presentaci la tua attività in poche righe. Ti rispondiamo entro un giorno lavorativo, poi prepariamo il tuo mockup gratuito, se ti va.",
+      "description": "Presentaci la tua attività in poche righe. Ti rispondiamo rapidamente, poi prepariamo il tuo mockup gratuito, se ti va.",
       "primary_button": "Parliamo del tuo progetto"
     },
     "intro": {
@@ -67,7 +67,7 @@
         },
         "content": {
           "question": "Vi occupate anche di testi e foto?",
-          "answer": "Ti aiutiamo a scrivere e rileggiamo tutto, pensando alle parole che i tuoi clienti cercano su Google. Per le foto usiamo le tue, oppure ti mettiamo in contatto con un fotografo della zona, il cui lavoro non è compreso nell'abbonamento."
+          "answer": "Ti aiutiamo a scrivere e rileggiamo tutto, pensando alle parole che i tuoi clienti cercano su Google. Per le foto usiamo le tue, oppure ti mettiamo in contatto con un fotografo o una fotografa della zona, il cui lavoro non è compreso nell'abbonamento."
         }
       }
     }

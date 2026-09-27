@@ -6,7 +6,7 @@
     },
     "cta": {
       "title": "Hablemos de tu sitio.",
-      "description": "Háblanos de tu negocio en unas pocas líneas. Te respondemos en 24 h laborables y después preparamos tu maqueta gratuita, si quieres.",
+      "description": "Háblanos de tu negocio en unas pocas líneas. Te respondemos rápidamente y después preparamos tu maqueta gratuita, si quieres.",
       "primary_button": "Hablar de mi proyecto"
     },
     "intro": {
@@ -67,7 +67,7 @@
         },
         "content": {
           "question": "¿También os encargáis de los textos y las fotos?",
-          "answer": "Te ayudamos a redactar y lo revisamos todo, pensando en las palabras que tus clientes escriben en Google. Para las fotos, usamos las tuyas o te ponemos en contacto con un fotógrafo de la zona, cuyo trabajo no está incluido en la suscripción."
+          "answer": "Te ayudamos a redactar y lo revisamos todo, pensando en las palabras que tus clientes escriben en Google. Para las fotos, usamos las tuyas o te ponemos en contacto con un fotógrafo o una fotógrafa de la zona, cuyo trabajo no está incluido en la suscripción."
         }
       }
     }

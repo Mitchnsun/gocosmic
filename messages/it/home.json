@@ -2,7 +2,7 @@
   "homepage": {
     "cta": {
       "button": "Parliamo del tuo progetto",
-      "description": "Presentaci la tua attività in poche righe. Ti rispondiamo entro un giorno lavorativo per parlarne, prima di proporti qualsiasi cosa.",
+      "description": "Presentaci la tua attività in poche righe. Ti rispondiamo rapidamente per parlarne, prima di proporti qualsiasi cosa.",
       "freeMockup": "Ci stai ancora pensando? Inizia con un <link>mockup gratuito</link>.",
       "title": "Facciamo brillare la tua attività."
     },
@@ -11,7 +11,10 @@
       "endWords": ["vista.", "trovata.", "scelta."],
       "subtitle": "Cosmic Studio crea siti e app per artigiani, associazioni e liberi professionisti. Facciamo in modo che ti trovino su Google, e restiamo raggiungibili anche dopo la messa online.",
       "title": "La tua attività merita di essere",
-      "eyebrow": "Studio web & mobile · Ginevra",
+      "eyebrow": {
+        "ch": "Studio web & mobile · Ginevra",
+        "fr": "Studio web & mobile · Annecy"
+      },
       "secondary": "Vedi i prezzi",
       "facts": {
         "price": {
@@ -20,20 +23,26 @@
         },
         "reply": {
           "highlight": "Risposta",
-          "text": "entro 24 ore"
+          "text": "rapida"
         },
         "contact": {
           "highlight": "Un unico",
           "text": "referente"
         },
         "area": {
-          "highlight": "Ginevra",
-          "text": "· Alta Savoia · da remoto"
+          "ch": {
+            "highlight": "Ginevra",
+            "text": "· Arco lemanico · Alta Savoia · da remoto"
+          },
+          "fr": {
+            "highlight": "Annecy",
+            "text": "· Alta Savoia · Ginevra · da remoto"
+          }
         }
       }
     },
     "process": {
-      "eyebrow": "[ Processo · 04 ]",
+      "eyebrow": "[ Processo ]",
       "title": "Quattro fasi, <em>nessuna sorpresa.</em>",
       "subtitle": "Dalla prima conversazione alla messa online, sai a che punto è il tuo progetto.",
       "discovery": {
@@ -63,12 +72,12 @@
       "all": "Tutti i progetti"
     },
     "audience": {
-      "eyebrow": "[ Per chi · 03 ]",
+      "eyebrow": "[ Per chi ]",
       "title": "Per chi ha già un mestiere <em>e non ha tempo di impararne un altro.</em>",
       "items": {
         "artisans": {
           "title": "Artigiani",
-          "description": "Falegname, idraulico, parrucchiera, catering… Un sito che dice cosa fai, dove lavori e come contattarti, e che la gente trova quando cerca il tuo mestiere in zona."
+          "description": "Falegname, idraulico/a, parrucchiere/a, catering… Un sito che dice cosa fai, dove lavori e come contattarti, e che la gente trova quando cerca il tuo mestiere in zona."
         },
         "associations": {
           "title": "Associazioni",
@@ -76,7 +85,7 @@
         },
         "independents": {
           "title": "Liberi professionisti agli inizi",
-          "description": "Terapeuta, consulente, fotografo… Un sito professionale fin dall'inizio, a un prezzo che segue la crescita della tua attività."
+          "description": "Terapeuta, consulente, fotografo/a… Un sito professionale fin dall'inizio, a un prezzo che segue la crescita della tua attività."
         }
       }
     },
@@ -122,12 +131,20 @@
         "Mi chiamo Matthieu Compérat. Sono originario di Duingt, sulle rive del lago di Annecy, e oggi vivo a Chêne-Bougeries. Sviluppo siti e app da una quindicina d'anni, all'inizio per grandi aziende. Con Cosmic Studio lavoro direttamente con artigiani, associazioni e liberi professionisti.",
         "Quando chiami, sono io a rispondere, e i tuoi messaggi ricevono una risposta in giornata. Conosco a fondo il sito che ti consegno, per questo ogni modifica è semplice e veloce."
       ],
-      "zones": [
-        "Chêne-Bougeries · sede",
-        "Svizzera romanda · in presenza",
-        "Alta Savoia · in presenza",
-        "Altrove · da remoto"
-      ]
+      "zones": {
+        "ch": [
+          "Chêne-Bougeries · sede",
+          "Svizzera romanda · in presenza",
+          "Alta Savoia · in presenza",
+          "Altrove · da remoto"
+        ],
+        "fr": [
+          "Chêne-Bougeries · sede",
+          "Alta Savoia · in presenza",
+          "Svizzera romanda · in presenza",
+          "Altrove · da remoto"
+        ]
+      }
     }
   }
 }

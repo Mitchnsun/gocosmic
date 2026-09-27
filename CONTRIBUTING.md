@@ -20,7 +20,7 @@ Each commit message should be structured as follows:
 
 ### Formatting Rules
 
-- **Description**: Use imperative mood, lowercase, no period, max 69 characters
+- **Description**: Use imperative mood, lowercase, no period, max 69 characters (recommended)
 - **Body**: Wrap at 72 characters, explain what and why (not how)
 - **Language**: All commit messages and documentation must be written in English (README files, code comments, JSDoc, inline docs, and any Markdown files added to the repository)
 - **Line breaks**: Use blank lines to separate description, body, and footer sections
@@ -45,11 +45,12 @@ The scope is optional and should be a noun describing a section of the codebase 
 
 Common scopes in this project include:
 
-- `ui` - Changes to the UI package
+- `ui` - Changes to the design system (`design-system/`)
 - `web` - Changes to the web application
-- `docs` - Changes to the docs application
 - `config` - Changes to configuration files
 - `deps` - Dependency updates
+
+Other nouns are used when they describe the change more precisely (e.g. `i18n`, `contact`, `pricing`) — commitlint does not restrict scopes.
 
 ### Examples
 
@@ -100,7 +101,7 @@ Minor changes
 feat: Adding a new component (wrong tense)
 fix(ui): Fix the button. (period at end, not imperative)
 FEAT(ui): Add button (wrong case)
-feat(ui): add a very long description that exceeds the fifty character limit (too long)
+feat(ui): add a very long description that exceeds the sixty-nine character limit (too long)
 ```
 
 ### Breaking Changes
@@ -118,10 +119,7 @@ Breaking changes should be indicated in the commit message:
 - Include tests for new features and bug fixes
 - Ensure all tests pass and linting is clean
 - Update documentation as needed
-- **Update version and changelog**: Before opening a PR, you must:
-  1. Increment the version number in `package.json` following [Semantic Versioning](https://semver.org/)
-  2. Add a new entry in `CHANGELOG.md` with the version number and current date
-  3. List all features, fixes, and changes under the appropriate sections (Added, Changed, Fixed, Removed)
+- **One version bump per PR, not per commit**: the first change on a branch increments the version number in `package.json` ([Semantic Versioning](https://semver.org/)) and adds a new entry in `CHANGELOG.md` with the version number and current date, listing all features, fixes, and changes under the appropriate sections (Added, Changed, Fixed, Removed). Later commits on the same branch, including review follow-ups, add bullets to that same entry instead of bumping again.
 
 ### PR Title Format
 
@@ -167,12 +165,12 @@ WIP: Working on new feature
 ### Development Workflow
 
 1. Fork the repository
-2. Create a feature branch from `main`
+2. Create a feature branch from `master`
 3. Make your changes following our coding standards
 4. Write or update tests as needed
-5. Ensure all tests pass: `npm run test`
-6. Ensure linting passes: `npm run lint`
-7. **Update version and changelog**:
+5. Ensure all tests pass: `yarn test`
+6. Ensure linting passes: `yarn lint`
+7. **Update version and changelog** (once per PR, not per commit):
    - Increment the version number in `package.json` following [Semantic Versioning](https://semver.org/):
      - **MAJOR** version for incompatible API changes
      - **MINOR** version for new functionality in a backwards compatible manner
@@ -232,9 +230,12 @@ messages/
   │   ├── about.json       # About page content
   │   ├── services.json    # Services & pricing page content
   │   ├── pricing.json     # Pricing columns and subscription simulator
+  │   ├── projects.json    # Project pages content
+  │   ├── contact.json     # Contact page content
   │   ├── free-mockup.json # Free mockup page content
+  │   ├── local.json       # Local SEO page content
   │   ├── legal.json       # Privacy policy, legal notice and terms of sale
-  │   └── projects.json    # Project pages content
+  │   └── psc-supersprint.json # PSC Supersprint case study content
 ```
 
 **Dynamic Loading**: The application intelligently loads only the necessary namespaces for each route:
@@ -308,19 +309,25 @@ Each project has its own case study page, built from the shared `CaseStudy` temp
 
 #### 1. Register the project in the data file
 
-Add a new entry to `data/projects.json`:
+Add a new entry to the `PROJECTS` array in `data/projects.ts`:
 
-```json
+```typescript
 {
-  "id": "your-project-id",
-  "i18nKey": "yourProjectKey"
-}
+  slug: 'your-project-id',
+  i18nKey: 'yourProjectKey',
+  href: '/projects/your-project-id',
+  kind: 'site', // 'site' | 'webapp' | 'mobile'
+  year: 2026,
+  accent: 'aerospace', // 'aerospace' | 'royal' | 'jungle'
+  cover: undefined, // or a ProjectCover once a screenshot/logo is provided
+},
 ```
 
-- **`id`**: Unique kebab-case identifier (must match the route folder name and the key used in `CASE_STUDY_HREFS`).
+- **`slug`**: Unique kebab-case identifier (must match the route folder name).
 - **`i18nKey`**: The key used in `messages/{locale}/projects.json` for the card translations (camelCase).
+- **`href`**: The localized route, as declared in `i18n/routing.ts` (step 2).
 
-The file order drives both the `/projects` index and the previous / next links at the bottom of each case study.
+The array order drives both the `/projects` index and the previous / next links at the bottom of each case study.
 
 #### 2. Register the localized route
 
@@ -335,17 +342,6 @@ Add localized pathnames to `i18n/routing.ts`:
   it: '/progetti/your-project-id',
 },
 ```
-
-Then map the slug to that route in `components/CaseStudy/constants.ts`:
-
-```typescript
-export const CASE_STUDY_HREFS = {
-  // existing entries...
-  'your-project-id': '/projects/your-project-id',
-} as const satisfies Record<string, LocalizedHref>;
-```
-
-A project without an entry here is skipped by the index and the navigation.
 
 #### 3. Add card translations for all locales
 

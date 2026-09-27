@@ -62,13 +62,13 @@
         },
         "content": {
           "question": "Faites-vous aussi les textes et les photos ?",
-          "answer": "Nous vous aidons à rédiger et nous relisons tout, en pensant aux mots que vos clients tapent sur Google. Pour les photos, nous utilisons les vôtres ou nous vous mettons en relation avec un photographe de la région, dont la prestation n'est pas comprise dans l'abonnement."
+          "answer": "Nous vous aidons à rédiger et nous relisons tout, en pensant aux mots que vos clients tapent sur Google. Pour les photos, nous utilisons les vôtres ou nous vous mettons en relation avec un ou une photographe de la région, dont la prestation n'est pas comprise dans l'abonnement."
         }
       }
     },
     "cta": {
       "title": "Parlons de votre site.",
-      "description": "Présentez-nous votre activité en quelques lignes. Nous vous répondons sous 24 h ouvrées, puis nous préparons votre maquette gratuite si vous le souhaitez.",
+      "description": "Présentez-nous votre activité en quelques lignes. Nous vous répondons rapidement, puis nous préparons votre maquette gratuite si vous le souhaitez.",
       "primary_button": "Parler de mon projet"
     }
   }

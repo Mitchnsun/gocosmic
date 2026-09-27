@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Contact · Let's talk about your project | Cosmic Studio",
-    "description": "Tell Cosmic Studio about your project. One message is enough: the person who will build your site replies within one working day."
+    "description": "Tell Cosmic Studio about your project. One message is enough: the person who will build your site replies quickly."
   },
   "contact": {
     "title": "Tell us <em>about your business.</em>",
@@ -22,7 +22,8 @@
         },
         "email": {
           "label": "Email address",
-          "placeholder": "camille@example.com"
+          "placeholder": "camille@example.fr",
+          "placeholderSwiss": "camille@example.ch"
         },
         "message": {
           "label": "Your message",
@@ -30,11 +31,13 @@
         },
         "phone": {
           "label": "Phone",
-          "placeholder": "+41 22 123 45 67"
+          "placeholder": "+33 6 12 34 56 78",
+          "placeholderSwiss": "+41 22 123 45 67"
         },
         "company": {
           "label": "Your business",
-          "placeholder": "Cabinetmaker in Annecy, theatre association…"
+          "placeholder": "Cabinetmaker in Annecy, theatre association…",
+          "placeholderSwiss": "Cabinetmaker in Geneva, theatre association…"
         },
         "need": {
           "legend": "What you need",
@@ -60,18 +63,21 @@
         "need_invalid": "Please pick an option from the list."
       },
       "success": {
-        "title": "Thank you. Matthieu will reply within one working day.",
+        "title": "Thank you. Matthieu will reply quickly.",
         "description": "Your message has arrived. Matthieu will write to you to clarify a few points, then offer you a free mockup if you would like one.",
         "back": "Send another message"
       }
     },
-    "lead": "Write us a message or book a 20-minute call. Either way, Matthieu is the one who answers, within one working day.",
+    "lead": "Write us a message or book a 20-minute call. Either way, Matthieu is the one who answers quickly.",
     "details": {
       "aria_label": "Contact details",
       "email_label": "Email",
       "support_label": "Existing client · support",
       "where_label": "Where",
-      "where": "Geneva · French-speaking Switzerland · Haute-Savoie, or by video call"
+      "where": {
+        "ch": "Geneva · French-speaking Switzerland · Haute-Savoie, or by video call",
+        "fr": "Annecy · Haute-Savoie · Geneva, or by video call"
+      }
     },
     "modes": {
       "label": "How would you like to get in touch?",

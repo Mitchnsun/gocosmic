@@ -52,15 +52,7 @@ Official tokens declared in `app/globals.css` under `@theme` (Tailwind v4 → av
 
 > ❌ **Never** use Tailwind's default palettes (`slate-*`, `gray-*`, `blue-*`, `amber-*`…). An ESLint rule (`no-restricted-syntax` in `eslint.config.js`) rejects them in `app/`, `components/`, `design-system/` and `lib/`: pick a token or a `ghost` opacity instead.
 
-**Accent glows** (radial-gradient, layered behind content):
-
-```css
---glow-aerospace: radial-gradient(circle at center, rgb(255 79 0 / 0.35), transparent 60%);
---glow-royal: radial-gradient(circle at center, rgb(120 81 169 / 0.45), transparent 60%);
---glow-jungle: radial-gradient(circle at center, rgb(41 171 135 / 0.4), transparent 60%);
-```
-
-Real CTA pattern: `radial-gradient(circle at 50% 60%, rgb(var(--cta-accent-rgb) / 0.22), transparent 60%)`.
+**Accent glows** (radial-gradient, layered behind content): built inline from a token's RGB channels — see `accentClasses(token).rgb` (`design-system/accent.ts`) for general use, and `ACCENT_RGB` (`components/CTAFinal/CTAFinal.constants.ts`) for the CTA's own accent variants. Real CTA pattern: `radial-gradient(circle at 50% 60%, rgb(var(--cta-accent-rgb) / 0.22), transparent 60%)`. There is no standalone `--glow-*` CSS variable — compose the gradient from the token's RGB, as the existing components do (`Planet`, `CTAFinal`).
 
 ### 2.2 Typography
 
@@ -103,10 +95,12 @@ Minimum readable size: **14px** for body text.
 
 ### 2.4 Motion
 
-| Token           | Curve                          | Usage                             |
-| --------------- | ------------------------------ | --------------------------------- |
-| `--ease-out`    | `cubic-bezier(.16, 1, .3, 1)`  | Enters, reveals, hovers (default) |
-| `--ease-in-out` | `cubic-bezier(.65, 0, .35, 1)` | Loops, symmetric transitions      |
+| Curve                         | Usage                                                                                              |
+| ----------------------------- | -------------------------------------------------------------------------------------------------- |
+| `cubic-bezier(.16, 1, .3, 1)` | Enters, reveals, hovers (default)                                                                  |
+| `ease-in-out` (CSS keyword)   | Loops, symmetric transitions (e.g. `dot-glow`, `planet-glow-pulse` keyframes in `app/globals.css`) |
+
+> Not declared as named CSS custom properties in `app/globals.css` — apply the curve directly (inline style or Tailwind's `ease-[cubic-bezier(...)]`).
 
 - **Durations**: micro-interactions 200–300ms; enters 400–900ms; stagger **50ms** per item (see `MOBILE_MENU_STAGGER_MS`).
 - **Signature patterns**: reveal-on-scroll (`opacity 0→1` + `translateY(28px→0)`), list stagger, soft pointer parallax, starfield warp on CTA hover, magnetic buttons, pulsing glow.
@@ -166,7 +160,7 @@ CTA heading: animated gradient `from-{accent} via-ghost to-{accent}` with `bg-cl
 
 To mark a location, category, or action: **geometric SVGs** (crosshair, diamond `◇`, stars `✶ ✦`, arrows) in `currentColor`, tinted by token. Emoji 📍/🚀/✨ are **forbidden**.
 
-### 3.9 Shared page primitives
+### 3.8 Shared page primitives
 
 Pages are assembled from shared building blocks — reuse them instead of re-implementing the patterns above:
 
@@ -189,9 +183,9 @@ Inner pages open with a plain `SectionHeading level={1}` intro — no starfield.
 
 Accent tokens accepted by all of them: `aerospace`, `royal`, `jungle`, `ghost`. One accent per zone (see §1, principle 2).
 
-### 3.8 Cards
+### 3.9 Cards
 
-Background `void` slightly lifted (`bg-ghost/[0.02]` or `void-2`), border `ghost/8`, `rounded-2xl`, hover that lightens the background and/or shifts an accent arrow. Card number in mono `ghost/35`, title `font-display`, tags as `Chip`s. List bullets are 6 px dots (`h-1.5 w-1.5`): `jungle` for what is included, `ghost/35` otherwise.
+Background `void` slightly lifted (`bg-ghost/[0.02]`), border `ghost/8`, `rounded-2xl`, hover that lightens the background and/or shifts an accent arrow. Card number in mono `ghost/35`, title `font-display`, tags as `Chip`s. List bullets are 6 px dots (`h-1.5 w-1.5`): `jungle` for what is included, `ghost/35` otherwise.
 
 ### 3.10 Form fields
 
@@ -203,14 +197,17 @@ Background `void` slightly lifted (`bg-ghost/[0.02]` or `void-2`), border `ghost
 
 Drawn from `CLAUDE.md` and `GUIDELINES.md`.
 
-**Folder structure** — `components/<Name>/`:
+**Folder structure** — `components/<Name>/` (see `CLAUDE.md` § Component architecture for the full convention):
 
 ```
-<Name>.tsx          ← rendering (presentation). 'use client' if interactive.
-<Name>.hook.ts      ← single hook; <Name>.hooks.ts if the file exports multiple hooks
-constants.ts        ← typed constants (durations, lists…) if needed
-index.ts            ← re-export surface
-README.md           ← (optional) props, design, a11y, reduced-motion notes
+<Name>.tsx           ← orchestrator: rendering (presentation). 'use client' if interactive.
+<Name>.types.ts       ← shared TypeScript types and enums, if any
+<Name>.utils.ts        ← pure helper functions (color maps, item lists, formatters), if any
+<Name>.hooks.ts         ← custom hooks, if any
+SubBar.tsx, SubBaz.tsx   ← each named visual sub-component in its own file
+constants.ts (or <Name>.constants.ts) ← typed constants (durations, lists…) if needed
+index.ts                ← re-export surface
+README.md               ← (optional) props, design, a11y, reduced-motion notes
 ```
 
 - **Strict rendering / logic separation**: no complex `useState`/`useEffect` in the `.tsx` → that lives in `.hooks.ts`. A purely static component has no hook file (see `SectionHeading`).
@@ -233,7 +230,7 @@ README.md           ← (optional) props, design, a11y, reduced-motion notes
 4. **Sub-heading** `text-ghost/55`, `max-w-2xl`.
 5. **Content** inside `max-w-7xl`, grid with `gap` (never inline flow for element alignment).
 6. **Accent**: one strong point only (CTA pill, number, `aerospace` glyph).
-7. **Motion**: scroll reveal + 50ms stagger, `--ease-out`, reduced-motion handled.
+7. **Motion**: scroll reveal + 50ms stagger, `cubic-bezier(.16, 1, .3, 1)` easing, reduced-motion handled.
 8. **HUD metadata** mono optionally for texture.
 
 ---
@@ -291,7 +288,7 @@ The words carry as much of the brand as the tokens. Copy targets **people with a
 **Tone.**
 
 - Address the reader as "vous" (FR), "you" (EN), "Sie" (DE), "tu" (IT, ES). Short sentences, everyday words, real trades as examples.
-- Say what we do, what it costs, who answers. Prices are visible; delays are concrete ("réponse sous 24 h", "deux à six semaines").
+- Say what we do, what it costs, who answers. Prices are visible; give concrete delays where we can commit to them ("deux à six semaines"), otherwise keep it general ("réponse rapide").
 - Every page ends with a single action: talk to Matthieu (`Parler de mon projet`).
 - Avoid gendered adjectives aimed at the reader in French ("Prêt ?" → "Démarrons votre projet."); agree with the business instead ("Votre activité mérite d'être vue").
 

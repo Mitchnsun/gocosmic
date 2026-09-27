@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
-import { buildCaseStudyNavigation, CaseStudy } from '@/components/CaseStudy';
+import { buildCaseStudyMeta, buildCaseStudyNavigation, CaseStudy, PROJECTS_BY_SLUG } from '@/components/CaseStudy';
 import { getAlternates } from '@/i18n/canonical';
 import { getOgImages } from '@/lib/og';
 
@@ -42,8 +42,8 @@ export default function PscSupersprint() {
       eyebrow={tCommon('eyebrow')}
       title={t('title')}
       tagline={t('subtitle')}
-      accent="jungle"
-      meta={['2026', tList('items.pscSupersprint.client'), tList('kinds.webapp')]}
+      accent={PROJECTS_BY_SLUG['psc-supersprint'].accent}
+      meta={buildCaseStudyMeta('psc-supersprint', tList)}
       sections={[
         {
           id: 'for-whom',

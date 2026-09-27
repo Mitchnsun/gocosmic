@@ -26,6 +26,28 @@ describe('ContactForm', () => {
     vi.restoreAllMocks();
   });
 
+  it('shows French placeholders by default', () => {
+    const { getByLabelText } = render(<ContactForm />);
+
+    expect(getByLabelText(/^Email/)).toHaveAttribute('placeholder', 'camille@example.fr');
+    expect(getByLabelText(/^Phone/)).toHaveAttribute('placeholder', '+33 6 12 34 56 78');
+    expect(getByLabelText(/^Your business/)).toHaveAttribute(
+      'placeholder',
+      'Cabinetmaker in Annecy, theatre association…'
+    );
+  });
+
+  it('shows Swiss placeholders for the ch region', () => {
+    const { getByLabelText } = render(<ContactForm region="ch" />);
+
+    expect(getByLabelText(/^Email/)).toHaveAttribute('placeholder', 'camille@example.ch');
+    expect(getByLabelText(/^Phone/)).toHaveAttribute('placeholder', '+41 22 123 45 67');
+    expect(getByLabelText(/^Your business/)).toHaveAttribute(
+      'placeholder',
+      'Cabinetmaker in Geneva, theatre association…'
+    );
+  });
+
   it('renders every field, the required hint and the honeypot', () => {
     const { getByLabelText, getByText, getByRole } = render(<ContactForm />);
 
@@ -70,9 +92,7 @@ describe('ContactForm', () => {
     await userEvent.click(getByRole('button', { name: /Send my message/ }));
 
     await waitFor(() => expect(getByRole('status')).toBeInTheDocument());
-    expect(
-      getByRole('heading', { level: 3, name: 'Thank you. Matthieu will reply within one working day.' })
-    ).toBeInTheDocument();
+    expect(getByRole('heading', { level: 3, name: 'Thank you. Matthieu will reply quickly.' })).toBeInTheDocument();
     expect(onSuccess).toHaveBeenCalledTimes(1);
 
     expect(submitContactMessage).toHaveBeenCalledWith(

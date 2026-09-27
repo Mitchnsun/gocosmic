@@ -2,7 +2,7 @@
   "homepage": {
     "cta": {
       "button": "Hablar de mi proyecto",
-      "description": "Háblanos de tu negocio en unas pocas líneas. Te respondemos en 24 h laborables para comentarlo contigo, antes de proponerte nada.",
+      "description": "Háblanos de tu negocio en unas pocas líneas. Te respondemos rápidamente para comentarlo contigo, antes de proponerte nada.",
       "freeMockup": "¿Aún no te decides? Empieza por una <link>maqueta gratuita</link>.",
       "title": "Hagamos brillar tu negocio."
     },
@@ -11,7 +11,10 @@
       "endWords": ["visto.", "encontrado.", "elegido."],
       "subtitle": "Cosmic Studio crea sitios web y aplicaciones para artesanos, asociaciones y autónomos. Nos encargamos de que te encuentren en Google y seguimos localizables una vez publicada la web.",
       "title": "Tu negocio merece ser",
-      "eyebrow": "Estudio web y móvil · Ginebra",
+      "eyebrow": {
+        "ch": "Estudio web y móvil · Ginebra",
+        "fr": "Estudio web y móvil · Annecy"
+      },
       "secondary": "Ver precios",
       "facts": {
         "price": {
@@ -20,20 +23,26 @@
         },
         "reply": {
           "highlight": "Respuesta",
-          "text": "en 24 h"
+          "text": "rápida"
         },
         "contact": {
           "highlight": "Un solo",
           "text": "interlocutor"
         },
         "area": {
-          "highlight": "Ginebra",
-          "text": "· Alta Saboya · a distancia"
+          "ch": {
+            "highlight": "Ginebra",
+            "text": "· Arco Lemánico · Alta Saboya · a distancia"
+          },
+          "fr": {
+            "highlight": "Annecy",
+            "text": "· Alta Saboya · Ginebra · a distancia"
+          }
         }
       }
     },
     "process": {
-      "eyebrow": "[ Proceso · 04 ]",
+      "eyebrow": "[ Proceso ]",
       "title": "Cuatro pasos, <em>sin sorpresas.</em>",
       "subtitle": "Desde la primera conversación hasta la publicación, sabes en qué punto está tu proyecto.",
       "discovery": {
@@ -63,12 +72,12 @@
       "all": "Todos los proyectos"
     },
     "audience": {
-      "eyebrow": "[ Para quién · 03 ]",
+      "eyebrow": "[ Para quién ]",
       "title": "Para quienes ya tienen un oficio <em>y no tienen tiempo de aprender otro.</em>",
       "items": {
         "artisans": {
           "title": "Artesanos",
-          "description": "Carpintero, fontanero, peluquera, catering… Un sitio que dice qué haces, dónde trabajas y cómo contactar contigo, y que la gente encuentra cuando busca tu oficio cerca de casa."
+          "description": "Carpintero/a, fontanero/a, peluquero/a, catering… Un sitio que dice qué haces, dónde trabajas y cómo contactar contigo, y que la gente encuentra cuando busca tu oficio cerca de casa."
         },
         "associations": {
           "title": "Asociaciones",
@@ -76,7 +85,7 @@
         },
         "independents": {
           "title": "Autónomos que empiezan",
-          "description": "Terapeuta, consultora, fotógrafo… Un sitio profesional desde el principio, a un precio que acompaña la evolución de tu negocio."
+          "description": "Terapeuta, consultor/a, fotógrafo/a… Un sitio profesional desde el principio, a un precio que acompaña la evolución de tu negocio."
         }
       }
     },
@@ -122,12 +131,20 @@
         "Me llamo Matthieu Compérat. Soy de Duingt, a orillas del lago de Annecy, y ahora vivo en Chêne-Bougeries. Llevo unos quince años desarrollando sitios web y aplicaciones, primero para grandes empresas. Con Cosmic Studio trabajo directamente con artesanos, asociaciones y autónomos.",
         "Cuando llamas, soy yo quien contesta, y tus mensajes reciben respuesta ese mismo día. Conozco al detalle el sitio que te entrego, así que cada cambio es rápido y sencillo."
       ],
-      "zones": [
-        "Chêne-Bougeries · base",
-        "Suiza romanda · en persona",
-        "Alta Saboya · en persona",
-        "Otras zonas · a distancia"
-      ]
+      "zones": {
+        "ch": [
+          "Chêne-Bougeries · base",
+          "Suiza romanda · en persona",
+          "Alta Saboya · en persona",
+          "Otras zonas · a distancia"
+        ],
+        "fr": [
+          "Chêne-Bougeries · base",
+          "Alta Saboya · en persona",
+          "Suiza romanda · en persona",
+          "Otras zonas · a distancia"
+        ]
+      }
     }
   }
 }

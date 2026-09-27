@@ -3,11 +3,11 @@
     "privacy": {
       "meta": {
         "title": "Privacy policy - Cosmic Studio",
-        "description": "How Cosmic Studio handles personal data: forms, emails, audience measurement, retention periods and your rights."
+        "description": "How Cosmic Studio handles personal data: forms, call booking, emails, audience measurement, retention periods and your rights."
       },
       "eyebrow": "GDPR",
       "title": "Privacy policy",
-      "updated": "Last updated: 23 September 2026",
+      "updated": "Last updated: 27 September 2026",
       "intro": "This page explains how Cosmic Studio handles the personal data collected on this website and in email exchanges.",
       "legalNoticePrefix": "For publisher and hosting details, see the",
       "legalNoticeLink": "legal notice",
@@ -23,6 +23,7 @@
           "body": [
             "The website has no customer account, payment, CAPTCHA or advertising pixel. Two forms are handled on the server. The free mockup page collects your email address, the colour mood you pick, the address of your current website if you provide it, your message and the language of the page. If you arrive from the pricing simulator, the request also includes the choices you made there (project type, site type, number of pages, selected options, update frequency and the resulting estimated monthly price), so the studio can reply with the full picture. The contact form collects your name, email address and message, plus your phone number, your business and the kind of need you picked, if you fill them in. In both cases, the information is sent by email to the studio's mailbox and nothing is stored in a database. Messages sent through the site's email links are handled by your email software and the recipient's mailbox.",
             "Your IP address is processed temporarily by the hosting provider's firewall, which limits each of the two forms (contact and free mockup) to three submissions every ten minutes, alongside a hidden anti-spam field. The hosting provider may also process technical data for its security and delivery logs. Vercel Analytics is only loaded after your consent, to count page views.",
+            "If you book a call from the contact page, Google Calendar passes the studio your name, email address, the chosen time slot and any information you enter in the booking form. This information is kept in the studio's calendar, not in a database.",
             "Two items are stored in your browser. The pricing simulation is kept only so it can follow you from the simulator to the free mockup form: it is sent to us only if you submit that form, is erased once the request is sent, and disappears when you close the tab. The dates of your recent contact form submissions are used to limit how often the form can be sent from the same browser and stay there until you clear your browser data; they are never sent to us."
           ]
         },
@@ -31,6 +32,7 @@
           "body": [
             "Emails are processed to answer requests, prepare quotes, provide support and keep a record of exchanges. This processing is based on legitimate interest and, where applicable, on pre-contractual steps taken at your request. Free mockup requests are processed to prepare the mockup, send it to you and reply to you.",
             "Messages sent through the contact form are processed for the same purposes. Limiting submissions per IP address and filtering automated submissions rely on the legitimate interest in protecting the service from abuse.",
+            "Information submitted when booking a call is processed to organise the call and follow it up, based on pre-contractual steps taken at your request.",
             "Audience measurement is used to understand overall traffic and improve the website. Cosmic Studio only loads Vercel Analytics after your consent. Security logs rely on the legitimate interest in protecting the service."
           ]
         },
@@ -38,21 +40,21 @@
           "title": "Recipients and processors",
           "body": [
             "Data may be accessed by Cosmic Studio, its email provider, Resend (which delivers the emails from the contact form and the free mockup requests) and Vercel, for hosting and audience measurement. LinkedIn is an external website that may process data under its own policy if you follow a link to it.",
-            "If you choose to book a call from the contact page, the booking calendar is provided by Google (Google Calendar), which processes the information you enter under its own privacy policy: https://policies.google.com/privacy."
+            "If you choose to book a call from the contact page, Google (Google Calendar) hosts the studio's booking calendar and processes the information you enter for its own purposes under its own privacy policy: https://policies.google.com/privacy."
           ]
         },
         {
           "title": "Retention periods",
           "body": [
             "Email exchanges are kept for as long as needed to handle your request and follow it up, then archived or deleted according to legal, accounting or litigation requirements. Your audience measurement choice is stored in your browser until you clear its data or switch browsers. Hosting logs follow the hosting provider's configuration.",
-            "Contact form submissions are not stored in a database: they are sent by email, and the exchange that follows is kept as described above."
+            "Contact form submissions are not stored in a database: they are sent by email, and the exchange that follows is kept as described above. Bookings made through Google Calendar are kept in the studio's calendar for as long as needed to follow up the request, on the same basis."
           ]
         },
         {
           "title": "International transfers",
           "body": [
-            "Some processors, including Vercel and email providers, may process data outside the European Economic Area.",
-            "Vercel frames these transfers using Standard Contractual Clauses approved by the European Commission. For questions about the applicable safeguards, contact support@gocosmic.dev."
+            "Some processors, including Vercel, email providers and Google (Google Calendar), may process data outside the European Economic Area.",
+            "These transfers are framed by Standard Contractual Clauses approved by the European Commission and, for Google, by the EU-US Data Privacy Framework. For questions about the applicable safeguards, contact support@gocosmic.dev."
           ]
         },
         {

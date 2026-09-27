@@ -14,19 +14,27 @@
         "Originaire de Duingt, au bord du lac d'Annecy, Matthieu développe des sites et des applications depuis une quinzaine d'années. Il a d'abord travaillé pour de grandes entreprises, où il a appris à construire des outils fiables et accessibles à tous.",
         "Avec Cosmic Studio, il met cette expérience au service des artisans, des associations et des indépendants. Vous parlez à la personne qui construit votre site, du premier appel jusqu'au suivi, mois après mois."
       ],
-      "zones": [
-        "Chêne-Bougeries · base",
-        "Suisse romande · sur place",
-        "Haute-Savoie · sur place",
-        "Ailleurs · à distance"
-      ],
+      "zones": {
+        "ch": [
+          "Chêne-Bougeries · base",
+          "Suisse romande · sur place",
+          "Haute-Savoie · sur place",
+          "Ailleurs · à distance"
+        ],
+        "fr": [
+          "Chêne-Bougeries · base",
+          "Haute-Savoie · sur place",
+          "Suisse romande · sur place",
+          "Ailleurs · à distance"
+        ]
+      },
       "linkedin": "Voir le profil LinkedIn",
       "linkedin_aria": "Profil LinkedIn de Matthieu Compérat (s'ouvre dans un nouvel onglet)"
     },
     "why": {
       "eyebrow": "[ Pourquoi ce choix ]",
       "title": "Les artisans et les associations <em>méritent mieux qu'un modèle tout fait.</em>",
-      "lead": "Les grandes agences travaillent surtout pour les grandes entreprises, et les créateurs de sites en ligne vous laissent vous débrouiller avec l'outil. Cosmic Studio s'adresse à tous ceux qui se trouvent entre les deux.",
+      "lead": "Les grandes agences travaillent surtout pour les grandes entreprises, et les créateurs de sites en ligne vous laissent vous débrouiller avec l'outil. Cosmic Studio s'adresse à toutes celles et ceux qui se trouvent entre les deux.",
       "reasons": {
         "found": {
           "title": "Être trouvé près de chez soi",
@@ -48,7 +56,7 @@
     },
     "cta": {
       "title": "Travaillons ensemble.",
-      "description": "Présentez-nous votre activité en quelques lignes. Matthieu vous répond sous 24 h ouvrées.",
+      "description": "Présentez-nous votre activité en quelques lignes. Matthieu vous répond rapidement.",
       "button": "Parler de mon projet"
     }
   }

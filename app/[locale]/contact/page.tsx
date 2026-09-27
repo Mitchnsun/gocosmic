@@ -13,6 +13,7 @@ import { CONTAINER, SECTION_Y } from '@/design-system/pill';
 import { getAlternates } from '@/i18n/canonical';
 import { Link } from '@/i18n/navigation';
 import { getOgImages } from '@/lib/og';
+import { getRegion } from '@/lib/region.server';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -47,6 +48,7 @@ export default async function Contact() {
   const tStatus = await getTranslations('status_bar');
   const locale = await getLocale();
   const messages = await getMessages();
+  const region = await getRegion();
   const { status, startMonth } = AVAILABILITY;
   const month = formatStartMonth(startMonth, locale);
 
@@ -72,7 +74,7 @@ export default async function Contact() {
                   value: 'support@gocosmic.dev',
                   href: 'mailto:support@gocosmic.dev',
                 },
-                { label: t('details.where_label'), value: t('details.where') },
+                { label: t('details.where_label'), value: t(`details.where.${region}`) },
               ]}
               status={`${tStatus(`${status}.label`)} · ${tStatus(`${status}.detail`, { month })}`}
               available={status === 'available'}
@@ -81,7 +83,7 @@ export default async function Contact() {
 
           <div className="flex flex-col gap-4">
             <NextIntlClientProvider locale={locale} messages={messages}>
-              <ContactPanel bookingUrl={toBookingEmbedUrl(process.env.NEXT_PUBLIC_GCAL_BOOKING_URL)} />
+              <ContactPanel bookingUrl={toBookingEmbedUrl(process.env.NEXT_PUBLIC_GCAL_BOOKING_URL)} region={region} />
             </NextIntlClientProvider>
             <p className="text-ghost/45 px-2 text-sm leading-relaxed">
               {t('privacyNotice')}{' '}

@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { buttonVariants } from '@/design-system/button.variants';
 import { cn } from '@/design-system/lib/utils';
 import { CONTACT_LIMITS, CONTACT_NEEDS } from '@/lib/contact/validation';
+import { DEFAULT_REGION } from '@/lib/region';
 
 import { useContactForm } from './ContactForm.hooks';
 import type { ContactFormProps } from './ContactForm.types';
@@ -23,11 +24,19 @@ import { NeedPicker } from './NeedPicker';
  *
  * @component
  */
-export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'contact-form' }: ContactFormProps) => {
+export const ContactForm = ({
+  variant = 'page',
+  region = DEFAULT_REGION,
+  onSuccess,
+  className,
+  id = 'contact-form',
+}: ContactFormProps) => {
   const t = useTranslations('contact.form');
   const { values, errors, status, formError, invalidFocus, handleChange, handleSubmit, reset } = useContactForm({
     onSuccess,
   });
+  const isSwiss = region === 'ch';
+  const placeholder = (field: string) => t(`fields.${field}.${isSwiss ? 'placeholderSwiss' : 'placeholder'}`);
 
   // Move focus to the first invalid field so screen-reader and keyboard users
   // hear why the submission did not go through.
@@ -83,7 +92,7 @@ export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'cont
             name="email"
             type="email"
             label={t('fields.email.label')}
-            placeholder={t('fields.email.placeholder')}
+            placeholder={placeholder('email')}
             value={values.email}
             onChange={handleChange}
             error={errors.email ? t(`errors.${errors.email}`) : undefined}
@@ -100,7 +109,7 @@ export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'cont
             type="tel"
             label={t('fields.phone.label')}
             hint={t('optional')}
-            placeholder={t('fields.phone.placeholder')}
+            placeholder={placeholder('phone')}
             value={values.phone}
             onChange={handleChange}
             error={errors.phone ? t(`errors.${errors.phone}`) : undefined}
@@ -112,7 +121,7 @@ export const ContactForm = ({ variant = 'page', onSuccess, className, id = 'cont
             name="company"
             label={t('fields.company.label')}
             hint={t('optional')}
-            placeholder={t('fields.company.placeholder')}
+            placeholder={placeholder('company')}
             value={values.company}
             onChange={handleChange}
             error={errors.company ? t(`errors.${errors.company}`) : undefined}

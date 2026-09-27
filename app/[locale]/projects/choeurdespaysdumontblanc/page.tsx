@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
-import { buildCaseStudyNavigation, CaseStudy } from '@/components/CaseStudy';
+import { buildCaseStudyMeta, buildCaseStudyNavigation, CaseStudy, PROJECTS_BY_SLUG } from '@/components/CaseStudy';
 import { getAlternates } from '@/i18n/canonical';
 import { getOgImages } from '@/lib/og';
 
@@ -42,9 +42,9 @@ export default function ChoeurDesPaysduMontBlanc() {
       eyebrow={tCommon('eyebrow')}
       title={t('title')}
       tagline={t('subtitle')}
-      accent="royal"
-      logo={{ src: '/projects/choeurdespaysdumontblanc/CPMB-logo-blanc.png', alt: t('title') }}
-      meta={['2025', tList('items.choeurDesPaysduMontBlanc.client'), tList('kinds.site')]}
+      accent={PROJECTS_BY_SLUG.choeurdespaysdumontblanc.accent}
+      logo={{ src: PROJECTS_BY_SLUG.choeurdespaysdumontblanc.cover.src, alt: t('title') }}
+      meta={buildCaseStudyMeta('choeurdespaysdumontblanc', tList)}
       sections={[
         {
           id: 'for-whom',

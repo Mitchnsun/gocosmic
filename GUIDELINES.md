@@ -10,7 +10,7 @@ The project uses a distinctive **cosmic theme** throughout all interfaces:
 - **Cosmic Theme** — Space-inspired palette: deep blacks, cosmic blues, stellar accents
 - **Accessibility First** — All components must meet WCAG standards; use Radix UI primitives for accessible primitives
 - **Responsive Design** — Mobile-first with fluid layouts and adaptive components
-- **Dark Mode Ready** — Components designed for both light and dark themes
+- **Dark by Default** — the site has no light theme; every component is designed for the dark `void` background (see `DESIGN_GUIDELINE.md`)
 - **Smooth Interactions** — Micro-interactions and animations that enhance the cosmic feel without hurting performance
 
 All UI components should evoke exploration and wonder while staying professionally usable.
@@ -27,16 +27,21 @@ All UI components should evoke exploration and wonder while staying professional
 
 Active plugins and their roles:
 
-| Plugin                             | Purpose                          |
-| ---------------------------------- | -------------------------------- |
-| `typescript-eslint`                | TypeScript-specific rules        |
-| `eslint-plugin-security`           | Vulnerability detection          |
-| `eslint-plugin-unicorn`            | Modern JS/TS best practices      |
-| `eslint-plugin-import`             | Import/export validation         |
-| `eslint-plugin-simple-import-sort` | Automatic import ordering        |
-| `eslint-plugin-unused-imports`     | Remove unused imports            |
-| `eslint-plugin-jsx-a11y`           | Accessibility enforcement in JSX |
-| `eslint-plugin-prettier`           | Formatting via Prettier          |
+| Plugin                                 | Purpose                                                                                       |
+| -------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `typescript-eslint`                    | TypeScript-specific rules                                                                     |
+| `eslint-plugin-security`               | Vulnerability detection                                                                       |
+| `eslint-plugin-unicorn`                | Modern JS/TS best practices                                                                   |
+| `eslint-plugin-import`                 | Import/export validation                                                                      |
+| `eslint-plugin-simple-import-sort`     | Automatic import ordering                                                                     |
+| `eslint-plugin-unused-imports`         | Remove unused imports                                                                         |
+| `eslint-plugin-jsx-a11y`               | Accessibility enforcement in JSX                                                              |
+| `eslint-plugin-prettier`               | Formatting via Prettier                                                                       |
+| `eslint-plugin-react` / `-react-hooks` | React and hooks correctness rules                                                             |
+| `@next/eslint-plugin-next`             | Next.js-specific rules                                                                        |
+| `eslint-plugin-only-warn`              | Downgrades rule severities to warnings (CI still fails on any warning via `--max-warnings 0`) |
+
+A repo-specific `no-restricted-syntax` rule also rejects raw Tailwind color utilities (`slate-*`, `gray-*`, `blue-*`…) outside the design-system tokens — see `DESIGN_GUIDELINE.md` §2.1.
 
 ### Component patterns
 

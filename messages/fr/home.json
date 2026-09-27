@@ -1,7 +1,10 @@
 {
   "homepage": {
     "hero": {
-      "eyebrow": "Studio web & mobile · Genève",
+      "eyebrow": {
+        "ch": "Studio web & mobile · Genève",
+        "fr": "Studio web & mobile · Annecy"
+      },
       "title": "Votre activité mérite d'être",
       "endWords": ["vue.", "trouvée.", "choisie."],
       "subtitle": "Cosmic Studio crée des sites et des applications pour les artisans, les associations et les indépendants. Nous faisons en sorte qu'on vous trouve sur Google, et nous restons joignables une fois le site en ligne.",
@@ -14,25 +17,31 @@
         },
         "reply": {
           "highlight": "Réponse",
-          "text": "sous 24 h"
+          "text": "rapide"
         },
         "contact": {
           "highlight": "Un seul",
           "text": "interlocuteur"
         },
         "area": {
-          "highlight": "Genève",
-          "text": "· Haute-Savoie · à distance"
+          "ch": {
+            "highlight": "Genève",
+            "text": "· Arc lémanique · Haute-Savoie · à distance"
+          },
+          "fr": {
+            "highlight": "Annecy",
+            "text": "· Haute-Savoie · Genève · à distance"
+          }
         }
       }
     },
     "audience": {
-      "eyebrow": "[ Pour qui · 03 ]",
-      "title": "Pour ceux qui ont déjà un métier <em>et pas le temps d'en apprendre un autre.</em>",
+      "eyebrow": "[ Pour qui ]",
+      "title": "Pour celles et ceux qui ont déjà un métier <em>et pas le temps d'en apprendre un autre.</em>",
       "items": {
         "artisans": {
           "title": "Artisans",
-          "description": "Menuisier, plombier, coiffeuse, traiteur… Un site qui dit ce que vous faites, où vous travaillez et comment vous joindre, et qu'on trouve quand on cherche votre métier près de chez soi."
+          "description": "Menuisier·ère, plombier·ère, coiffeur·se, traiteur… Un site qui dit ce que vous faites, où vous travaillez et comment vous joindre, et qu'on trouve quand on cherche votre métier près de chez soi."
         },
         "associations": {
           "title": "Associations",
@@ -40,7 +49,7 @@
         },
         "independents": {
           "title": "Indépendants qui se lancent",
-          "description": "Thérapeute, consultante, photographe… Un site professionnel dès vos débuts, à un prix qui suit le développement de votre activité."
+          "description": "Thérapeute, consultant·e, photographe… Un site professionnel dès vos débuts, à un prix qui suit le développement de votre activité."
         }
       }
     },
@@ -68,7 +77,7 @@
       }
     },
     "process": {
-      "eyebrow": "[ Processus · 04 ]",
+      "eyebrow": "[ Processus ]",
       "title": "Quatre étapes, <em>sans surprise.</em>",
       "subtitle": "De la première discussion à la mise en ligne, vous savez où en est votre projet.",
       "discovery": {
@@ -116,16 +125,24 @@
         "Je m'appelle Matthieu Compérat. Originaire de Duingt, au bord du lac d'Annecy, je vis aujourd'hui à Chêne-Bougeries. Je développe des sites et des applications depuis une quinzaine d'années, d'abord pour de grandes entreprises. Avec Cosmic Studio, je travaille directement avec les artisans, les associations et les indépendants.",
         "Quand vous appelez, c'est moi qui réponds, et vos messages ont une réponse dans la journée. Je connais en détail le site que je vous livre, ce qui rend chaque modification simple et rapide."
       ],
-      "zones": [
-        "Chêne-Bougeries · base",
-        "Suisse romande · sur place",
-        "Haute-Savoie · sur place",
-        "Ailleurs · à distance"
-      ]
+      "zones": {
+        "ch": [
+          "Chêne-Bougeries · base",
+          "Suisse romande · sur place",
+          "Haute-Savoie · sur place",
+          "Ailleurs · à distance"
+        ],
+        "fr": [
+          "Chêne-Bougeries · base",
+          "Haute-Savoie · sur place",
+          "Suisse romande · sur place",
+          "Ailleurs · à distance"
+        ]
+      }
     },
     "cta": {
       "button": "Parler de mon projet",
-      "description": "Présentez-nous votre activité en quelques lignes. Nous vous répondons sous 24 h ouvrées pour en parler, avant de vous proposer quoi que ce soit.",
+      "description": "Présentez-nous votre activité en quelques lignes. Nous vous répondons rapidement pour en parler, avant de vous proposer quoi que ce soit.",
       "freeMockup": "Vous hésitez encore ? Commencez par une <link>maquette gratuite</link>.",
       "title": "Faisons rayonner votre activité."
     }

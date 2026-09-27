@@ -19,7 +19,7 @@ components/PricingSimulator/
   constants.ts                  — the price table: base, add-ons, slider tiers
   PlanBuilder.tsx               — base plan card, add-on tick-boxes and sliders
   OptionToggle.tsx              — one tickable add-on row, may nest a slider
-  TierSlider.tsx                — five-position slider over a native range input
+  TierSlider.tsx                — five-position slider over the `Slider` primitive (design-system/slider, Radix)
   PlanSummary.tsx               — sticky recap: itemised lines, total, free mockup CTA
   PriceTotal.tsx                — live monthly total (an <output> announced politely)
   FreeOffers.tsx                — the two no-commitment freebies (rendered by the page)

@@ -8,7 +8,7 @@
     "eyebrow": "[ Acerca de ]",
     "cta": {
       "title": "Trabajemos juntos.",
-      "description": "Háblanos de tu negocio en unas pocas líneas. Matthieu te responde en 24 h laborables.",
+      "description": "Háblanos de tu negocio en unas pocas líneas. Matthieu te responde rápidamente.",
       "button": "Hablar de mi proyecto"
     },
     "lead": "Cosmic Studio es Matthieu Compérat, desarrollador afincado en Chêne-Bougeries. Crea sitios web y aplicaciones para artesanos, asociaciones y autónomos, de Ginebra a Annecy.",
@@ -19,19 +19,27 @@
         "Originario de Duingt, a orillas del lago de Annecy, Matthieu lleva unos quince años desarrollando sitios web y aplicaciones. Empezó trabajando para grandes empresas, donde aprendió a construir herramientas fiables y accesibles para todos.",
         "Con Cosmic Studio pone esa experiencia al servicio de artesanos, asociaciones y autónomos. Hablas con la persona que construye tu sitio, desde la primera llamada hasta el seguimiento, mes a mes."
       ],
-      "zones": [
-        "Chêne-Bougeries · base",
-        "Suiza romanda · en persona",
-        "Alta Saboya · en persona",
-        "Otras zonas · a distancia"
-      ],
+      "zones": {
+        "ch": [
+          "Chêne-Bougeries · base",
+          "Suiza romanda · en persona",
+          "Alta Saboya · en persona",
+          "Otras zonas · a distancia"
+        ],
+        "fr": [
+          "Chêne-Bougeries · base",
+          "Alta Saboya · en persona",
+          "Suiza romanda · en persona",
+          "Otras zonas · a distancia"
+        ]
+      },
       "linkedin": "Ver el perfil de LinkedIn",
       "linkedin_aria": "Perfil de LinkedIn de Matthieu Compérat (se abre en una nueva pestaña)"
     },
     "why": {
       "eyebrow": "[ Por qué este enfoque ]",
       "title": "Los artesanos y las asociaciones <em>merecen algo mejor que una plantilla.</em>",
-      "lead": "Las grandes agencias trabajan sobre todo para grandes empresas, y con las plataformas para crear webs tienes que arreglártelas solo con la herramienta. Cosmic Studio es para todos los que están en medio.",
+      "lead": "Las grandes agencias trabajan sobre todo para grandes empresas, y con las plataformas para crear webs tienes que arreglártelas solo con la herramienta. Cosmic Studio es para quienes están en medio.",
       "reasons": {
         "found": {
           "title": "Que te encuentren cerca de casa",

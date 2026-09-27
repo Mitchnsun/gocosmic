@@ -14,12 +14,20 @@
         "Matthieu comes from Duingt, on the shores of Lake Annecy, and has been building websites and apps for about fifteen years. He started out with large companies, where he learnt to build tools that are reliable and accessible to everyone.",
         "With Cosmic Studio, he puts that experience to work for craftspeople, associations and independents. You talk to the person who builds your site, from the first call to the ongoing care, month after month."
       ],
-      "zones": [
-        "Chêne-Bougeries · base",
-        "French-speaking Switzerland · on site",
-        "Haute-Savoie · on site",
-        "Elsewhere · remote"
-      ],
+      "zones": {
+        "ch": [
+          "Chêne-Bougeries · base",
+          "French-speaking Switzerland · on site",
+          "Haute-Savoie · on site",
+          "Elsewhere · remote"
+        ],
+        "fr": [
+          "Chêne-Bougeries · base",
+          "Haute-Savoie · on site",
+          "French-speaking Switzerland · on site",
+          "Elsewhere · remote"
+        ]
+      },
       "linkedin": "See the LinkedIn profile",
       "linkedin_aria": "Matthieu Compérat's LinkedIn profile (opens in a new tab)"
     },
@@ -48,7 +56,7 @@
     },
     "cta": {
       "title": "Let's work together.",
-      "description": "Tell us about your business in a few lines. Matthieu replies within one working day.",
+      "description": "Tell us about your business in a few lines. Matthieu replies quickly.",
       "button": "Talk about my project"
     }
   }

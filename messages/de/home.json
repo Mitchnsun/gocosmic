@@ -2,7 +2,7 @@
   "homepage": {
     "cta": {
       "button": "Mein Projekt besprechen",
-      "description": "Erzählen Sie uns in ein paar Zeilen, was Sie machen. Wir melden uns innerhalb eines Werktags, um darüber zu sprechen, bevor wir Ihnen irgendetwas vorschlagen.",
+      "description": "Erzählen Sie uns in ein paar Zeilen, was Sie machen. Wir melden uns schnell, um darüber zu sprechen, bevor wir Ihnen irgendetwas vorschlagen.",
       "freeMockup": "Noch unsicher? Beginnen Sie mit einem <link>kostenlosen Mockup</link>.",
       "title": "Bringen wir Ihren Betrieb zum Strahlen."
     },
@@ -11,7 +11,10 @@
       "endWords": ["gesehen zu werden.", "gefunden zu werden.", "ausgewählt zu werden."],
       "subtitle": "Cosmic Studio erstellt Websites und Apps für Handwerksbetriebe, Vereine und Selbstständige. Wir sorgen dafür, dass man Sie bei Google findet, und bleiben erreichbar, wenn Ihre Website online ist.",
       "title": "Ihr Betrieb verdient es,",
-      "eyebrow": "Web- & App-Studio · Genf",
+      "eyebrow": {
+        "ch": "Web- & App-Studio · Genf",
+        "fr": "Web- & App-Studio · Annecy"
+      },
       "secondary": "Preise ansehen",
       "facts": {
         "price": {
@@ -19,21 +22,27 @@
           "text": "/ Monat"
         },
         "reply": {
-          "highlight": "Antwort",
-          "text": "binnen 24 Std."
+          "highlight": "Schnelle",
+          "text": "Antwort"
         },
         "contact": {
           "highlight": "Ein einziger",
           "text": "Ansprechpartner"
         },
         "area": {
-          "highlight": "Genf",
-          "text": "· Hochsavoyen · aus der Ferne"
+          "ch": {
+            "highlight": "Genf",
+            "text": "· Genferseeregion · Hochsavoyen · aus der Ferne"
+          },
+          "fr": {
+            "highlight": "Annecy",
+            "text": "· Hochsavoyen · Genf · aus der Ferne"
+          }
         }
       }
     },
     "process": {
-      "eyebrow": "[ Ablauf · 04 ]",
+      "eyebrow": "[ Ablauf ]",
       "title": "Vier Schritte, <em>ohne Überraschungen.</em>",
       "subtitle": "Vom ersten Gespräch bis zum Start der Website wissen Sie, wo Ihr Projekt steht.",
       "discovery": {
@@ -63,7 +72,7 @@
       "all": "Alle Projekte"
     },
     "audience": {
-      "eyebrow": "[ Für wen · 03 ]",
+      "eyebrow": "[ Für wen ]",
       "title": "Für alle, die schon einen Beruf haben <em>und keine Zeit, einen zweiten zu lernen.</em>",
       "items": {
         "artisans": {
@@ -76,7 +85,7 @@
         },
         "independents": {
           "title": "Selbstständige, die gerade starten",
-          "description": "Therapeutin, Berater, Fotografin … Eine professionelle Website von Anfang an, zu einem Preis, der mit Ihrer Tätigkeit mitwächst."
+          "description": "Therapeut:in, Berater:in, Fotograf:in … Eine professionelle Website von Anfang an, zu einem Preis, der mit Ihrer Tätigkeit mitwächst."
         }
       }
     },
@@ -122,12 +131,20 @@
         "Ich heiße Matthieu Compérat. Ich stamme aus Duingt am Annecy-See und lebe heute in Chêne-Bougeries. Seit rund fünfzehn Jahren entwickle ich Websites und Apps, zuerst für große Unternehmen. Mit Cosmic Studio arbeite ich direkt mit Handwerksbetrieben, Vereinen und Selbstständigen zusammen.",
         "Wenn Sie anrufen, nehme ich selbst ab, und auf Ihre Nachrichten bekommen Sie noch am selben Tag eine Antwort. Ich kenne die Website, die ich Ihnen übergebe, bis ins Detail. Das macht jede Änderung einfach und schnell."
       ],
-      "zones": [
-        "Chêne-Bougeries · Standort",
-        "Westschweiz · vor Ort",
-        "Hochsavoyen · vor Ort",
-        "Anderswo · aus der Ferne"
-      ]
+      "zones": {
+        "ch": [
+          "Chêne-Bougeries · Standort",
+          "Westschweiz · vor Ort",
+          "Hochsavoyen · vor Ort",
+          "Anderswo · aus der Ferne"
+        ],
+        "fr": [
+          "Chêne-Bougeries · Standort",
+          "Hochsavoyen · vor Ort",
+          "Westschweiz · vor Ort",
+          "Anderswo · aus der Ferne"
+        ]
+      }
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Kontakt · Sprechen wir über Ihr Projekt | Cosmic Studio",
-    "description": "Erzählen Sie Cosmic Studio von Ihrem Projekt. Eine Nachricht genügt: Die Person, die Ihre Website bauen wird, antwortet Ihnen innerhalb eines Werktags."
+    "description": "Erzählen Sie Cosmic Studio von Ihrem Projekt. Eine Nachricht genügt: Die Person, die Ihre Website bauen wird, antwortet Ihnen schnell."
   },
   "contact": {
     "title": "Erzählen Sie uns, <em>was Sie machen.</em>",
@@ -22,7 +22,8 @@
         },
         "email": {
           "label": "E-Mail-Adresse",
-          "placeholder": "anna@beispiel.ch"
+          "placeholder": "anna@beispiel.fr",
+          "placeholderSwiss": "anna@beispiel.ch"
         },
         "message": {
           "label": "Ihre Nachricht",
@@ -30,11 +31,13 @@
         },
         "phone": {
           "label": "Telefon",
-          "placeholder": "+41 22 123 45 67"
+          "placeholder": "+33 6 12 34 56 78",
+          "placeholderSwiss": "+41 22 123 45 67"
         },
         "company": {
           "label": "Ihre Tätigkeit",
-          "placeholder": "Schreinerei in Annecy, Theaterverein …"
+          "placeholder": "Schreinerei in Annecy, Theaterverein …",
+          "placeholderSwiss": "Schreinerei in Genf, Theaterverein …"
         },
         "need": {
           "legend": "Was Sie brauchen",
@@ -60,18 +63,21 @@
         "need_invalid": "Bitte wählen Sie eine Option aus der Liste."
       },
       "success": {
-        "title": "Vielen Dank. Matthieu antwortet Ihnen innerhalb eines Werktags.",
+        "title": "Vielen Dank. Matthieu antwortet Ihnen schnell.",
         "description": "Ihre Nachricht ist angekommen. Matthieu schreibt Ihnen, um ein paar Punkte zu klären, und bietet Ihnen danach auf Wunsch ein kostenloses Mockup an.",
         "back": "Weitere Nachricht senden"
       }
     },
-    "lead": "Schreiben Sie uns eine Nachricht oder buchen Sie ein 20-minütiges Gespräch. In beiden Fällen antwortet Ihnen Matthieu selbst, und zwar innerhalb eines Werktags.",
+    "lead": "Schreiben Sie uns eine Nachricht oder buchen Sie ein 20-minütiges Gespräch. In beiden Fällen antwortet Ihnen Matthieu selbst, und zwar schnell.",
     "details": {
       "aria_label": "Kontaktdaten",
       "email_label": "E-Mail",
       "support_label": "Bestehende Kundschaft · Support",
       "where_label": "Wo",
-      "where": "Genf · Westschweiz · Hochsavoyen oder per Videogespräch"
+      "where": {
+        "ch": "Genf · Westschweiz · Hochsavoyen oder per Videogespräch",
+        "fr": "Annecy · Hochsavoyen · Genf oder per Videogespräch"
+      }
     },
     "modes": {
       "label": "Wie möchten Sie uns kontaktieren?",
