@@ -8,15 +8,10 @@ import { Link } from '@/i18n/navigation';
 import { STUDIO_BASES } from '@/lib/config';
 import { DEFAULT_REGION, type Region } from '@/lib/region';
 
-import {
-  HEADER_HEIGHT,
-  HeaderNavItem,
-  MOBILE_MENU_DURATION_MS,
-  MOBILE_MENU_STAGGER_MS,
-  STATUS_BAR_HEIGHT,
-} from './constants';
+import { HEADER_HEIGHT, HeaderNavItem, MOBILE_MENU_DURATION_MS, MOBILE_MENU_STAGGER_MS } from './constants';
 import HeaderCta from './HeaderCta';
 import MountainSkyline from './MountainSkyline';
+import { useStatusBarOffset } from './useStatusBarOffset';
 
 interface MobileMenuProps {
   onClose: () => void;
@@ -29,6 +24,7 @@ const MobileMenu = ({ onClose, items, region = DEFAULT_REGION }: MobileMenuProps
   // eslint-disable-next-line security/detect-object-injection -- region is the typed Region union
   const { altitude } = STUDIO_BASES[region];
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
+  const statusBarOffset = useStatusBarOffset();
 
   // Focus the first link on mount.
   useEffect(() => {
@@ -49,7 +45,7 @@ const MobileMenu = ({ onClose, items, region = DEFAULT_REGION }: MobileMenuProps
       {/* Spacer keeping the links clear of the status bar and the sticky header */}
       <div
         aria-hidden="true"
-        style={{ height: `calc(${STATUS_BAR_HEIGHT}px + env(safe-area-inset-top, 0px) + ${HEADER_HEIGHT}px)` }}
+        style={{ height: `calc(${statusBarOffset}px + env(safe-area-inset-top, 0px) + ${HEADER_HEIGHT}px)` }}
         className="shrink-0"
       />
 

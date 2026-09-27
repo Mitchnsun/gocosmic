@@ -7,7 +7,8 @@ import { useEffect, useTransition } from 'react';
 
 import { useSwitchLocale } from '@/components/LanguageSwitcher/useSwitchLocale';
 
-import { HEADER_HEIGHT, MOBILE_MENU_DURATION_MS, MOBILE_MENU_STAGGER_MS, STATUS_BAR_HEIGHT } from './constants';
+import { HEADER_HEIGHT, MOBILE_MENU_DURATION_MS, MOBILE_MENU_STAGGER_MS } from './constants';
+import { useStatusBarOffset } from './useStatusBarOffset';
 
 export const LANG_DRAWER_LANGUAGES = {
   en: { name: 'English', flag: '🇬🇧' },
@@ -26,6 +27,7 @@ const MobileLangDrawer = ({ onClose }: MobileLangDrawerProps) => {
   const t = useTranslations('navigation');
   const locale = useLocale();
   const switchLocale = useSwitchLocale();
+  const statusBarOffset = useStatusBarOffset();
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -62,7 +64,7 @@ const MobileLangDrawer = ({ onClose }: MobileLangDrawerProps) => {
       transition={{ ease: [0.16, 1, 0.3, 1], duration: MOBILE_MENU_DURATION_MS / 1000 }}>
       <div
         aria-hidden="true"
-        style={{ height: `calc(${STATUS_BAR_HEIGHT}px + env(safe-area-inset-top, 0px) + ${HEADER_HEIGHT}px)` }}
+        style={{ height: `calc(${statusBarOffset}px + env(safe-area-inset-top, 0px) + ${HEADER_HEIGHT}px)` }}
         className="shrink-0"
       />
       <div className="border-ghost/10 text-3xs text-ghost/45 flex items-center justify-between border-b px-4 py-3 tracking-widest uppercase sm:px-6">

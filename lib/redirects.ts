@@ -1,16 +1,16 @@
 import type { NextConfig } from 'next';
 
-type Redirect = Awaited<ReturnType<NonNullable<NextConfig['redirects']>>>[number];
-type Locale = 'en' | 'fr' | 'es' | 'de' | 'it';
+import type { Locale } from '@/i18n/canonical';
+import { routing } from '@/i18n/routing';
 
-/** Localized slug of the Services & pricing page, mirroring `i18n/routing.ts`. */
-const SERVICES_PATHS: Array<[Locale, string]> = [
-  ['en', '/services'],
-  ['fr', '/services'],
-  ['es', '/servicios'],
-  ['de', '/dienstleistungen'],
-  ['it', '/servizi'],
-];
+type Redirect = Awaited<ReturnType<NonNullable<NextConfig['redirects']>>>[number];
+
+/** Localized slug of the Services & pricing page, read from `i18n/routing.ts`. */
+const SERVICES_PATHS: Array<[Locale, string]> = routing.locales.map((locale) => [
+  locale,
+  // eslint-disable-next-line security/detect-object-injection -- locale is the typed Locale union
+  routing.pathnames['/services'][locale],
+]);
 
 interface RetiredPage {
   /** Former slug per locale. */

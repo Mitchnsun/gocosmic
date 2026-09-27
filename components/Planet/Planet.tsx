@@ -32,8 +32,6 @@ export interface PlanetProps {
   size?: number;
   /** Parallax source. */
   parallaxMode?: ParallaxMode;
-  /** Consume HeroSection pointer parallax CSS variables. */
-  useHeroParallax?: boolean;
   /** Maximum gyroscope tilt in pixels. */
   gyroAmplitude?: number;
   /** Scroll parallax speed. Set to 0 to disable it. */
@@ -47,7 +45,6 @@ export interface PlanetProps {
 const Planet = ({
   size = 480,
   parallaxMode = 'auto',
-  useHeroParallax = false,
   gyroAmplitude = 15,
   scrollFactor = 0.3,
   reducedMotion = false,
@@ -70,12 +67,7 @@ const Planet = ({
     orbit3Size,
     wrapperStyle,
   } = useMemo(() => {
-    const transform = useHeroParallax
-      ? `translate(
-            calc(var(--planet-tilt-x, 0px) + var(--hero-parallax-x, 0px)),
-            calc(var(--planet-tilt-y, 0px) + var(--hero-parallax-y, 0px) + var(--planet-scroll-y, 0px))
-          ) scale(var(--planet-reveal-scale, 1))`
-      : `translate(
+    const transform = `translate(
             var(--planet-tilt-x, 0px),
             calc(var(--planet-tilt-y, 0px) + var(--planet-scroll-y, 0px))
           ) scale(var(--planet-reveal-scale, 1))`;
@@ -100,7 +92,7 @@ const Planet = ({
         transform,
       } satisfies PlanetCssProperties,
     };
-  }, [size, useHeroParallax, reducedMotion]);
+  }, [size, reducedMotion]);
 
   return (
     <div

@@ -6,17 +6,10 @@ import { useLocale, useTranslations } from 'next-intl';
 import { useEffect, useRef, useState, useTransition } from 'react';
 
 import { MOBILE_MENU_DURATION_MS, MOBILE_MENU_STAGGER_MS } from '@/components/Header/constants';
+import { LANG_DRAWER_LANGUAGES } from '@/components/Header/MobileLangDrawer';
 import { cn } from '@/design-system/lib/utils';
 
 import { useSwitchLocale } from './useSwitchLocale';
-
-const languages = {
-  en: { name: 'English', flag: '🇬🇧' },
-  fr: { name: 'Français', flag: '🇫🇷' },
-  es: { name: 'Español', flag: '🇪🇸' },
-  de: { name: 'Deutsch', flag: '🇩🇪' },
-  it: { name: 'Italiano', flag: '🇮🇹' },
-} as const;
 
 interface LanguageSwitcherProps {
   onOpen?: () => void;
@@ -96,7 +89,7 @@ const LanguageSwitcher = ({ onOpen }: LanguageSwitcherProps = {}) => {
                 </div>
                 {/* Language list */}
                 <ul role="menu" aria-orientation="vertical" className="divide-ghost/8 divide-y">
-                  {Object.entries(languages).map(([code, { name, flag }], index) => (
+                  {Object.entries(LANG_DRAWER_LANGUAGES).map(([code, { name, flag }], index) => (
                     <motion.li
                       key={code}
                       initial={{ opacity: 0, y: 16 }}

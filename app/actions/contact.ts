@@ -2,7 +2,7 @@
 
 import type { ContactActionResult } from '@/components/ContactForm/ContactForm.types';
 import type { ContactNeed, ContactPayload } from '@/lib/contact/validation';
-import { toContactPayload, validateContact } from '@/lib/contact/validation';
+import { isContactNeed, toContactPayload, validateContact } from '@/lib/contact/validation';
 import { getResendClient, getSenderEmail, STUDIO_INBOX_EMAIL } from '@/lib/resend';
 
 /*
@@ -18,7 +18,11 @@ const NEED_LABELS: Record<ContactNeed, string> = {
 };
 
 /** Label of a validated need, or a dash when the visitor did not pick one. */
-const needLabel = (need: string) => Object.entries(NEED_LABELS).find(([key]) => key === need.trim())?.[1] ?? '—';
+const needLabel = (need: string) => {
+  const trimmed = need.trim();
+  // eslint-disable-next-line security/detect-object-injection -- trimmed is the typed ContactNeed union
+  return isContactNeed(trimmed) ? NEED_LABELS[trimmed] : '—';
+};
 
 /** Forwards the message by email. Returns `false` unless it was really sent. */
 const deliver = async (payload: ContactPayload): Promise<boolean> => {

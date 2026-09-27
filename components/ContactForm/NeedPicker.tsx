@@ -10,11 +10,12 @@ interface NeedPickerProps {
   value: string;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   disabled?: boolean;
+  error?: string;
 }
 
 /** "What you need" chips: native radio buttons styled as pills, so the keyboard and screen readers get a real radio group. */
-export const NeedPicker = ({ legend, hint, options, value, onChange, disabled = false }: NeedPickerProps) => (
-  <fieldset className="flex flex-col gap-3" disabled={disabled}>
+export const NeedPicker = ({ legend, hint, options, value, onChange, disabled = false, error }: NeedPickerProps) => (
+  <fieldset className="flex flex-col gap-3" disabled={disabled} aria-describedby={error ? 'need-error' : undefined}>
     <legend className="text-ghost font-display mb-3 flex items-baseline gap-2 text-sm font-medium">
       {legend}
       {hint && <span className="text-ghost/35 text-2xs font-mono tracking-widest uppercase">{hint}</span>}
@@ -37,5 +38,10 @@ export const NeedPicker = ({ legend, hint, options, value, onChange, disabled = 
         </label>
       ))}
     </div>
+    {error && (
+      <p id="need-error" className="text-aerospace text-sm">
+        {error}
+      </p>
+    )}
   </fieldset>
 );

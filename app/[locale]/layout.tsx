@@ -11,7 +11,6 @@ import { Header } from '@/components/Header';
 import LocalBusinessSeo from '@/components/JsonLd/LocalBusinessSeo';
 import WebsiteSeo from '@/components/JsonLd/WebsiteSeo';
 import { StatusBar } from '@/components/StatusBar';
-import { getAlternates } from '@/i18n/canonical';
 import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/config';
 import { getOgImages } from '@/lib/og';
@@ -47,8 +46,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title,
     description,
     metadataBase: new URL(SITE_URL),
-    // Home page alternates; every other page overrides them with its own.
-    alternates: getAlternates(locale, '/'),
     openGraph: {
       title,
       description,

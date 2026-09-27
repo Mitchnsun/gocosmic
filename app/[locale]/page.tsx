@@ -1,4 +1,5 @@
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
+import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
 import type { ReactNode } from 'react';
 
@@ -18,6 +19,7 @@ import { StudioIntro } from '@/components/StudioIntro';
 import { WhyStudio } from '@/components/WhyStudio';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, ghostPill, SECTION_Y } from '@/design-system/pill';
+import { getAlternates } from '@/i18n/canonical';
 import { Link } from '@/i18n/navigation';
 import { CODE_HANDOVER_MONTHS } from '@/lib/pricing/offers';
 import { getCurrency } from '@/lib/region';
@@ -30,6 +32,13 @@ const FACTS = ['price', 'reply', 'contact', 'area'] as const;
 const HOME_PROJECT_COUNT = 3;
 
 const em = (chunks: ReactNode) => <em>{chunks}</em>;
+
+// Canonical and hreflang for the home page. Kept out of the layout so a 404
+// (which renders under this same layout) doesn't inherit them.
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return { alternates: getAlternates(locale, '/') };
+}
 
 export default async function Home() {
   const t = await getTranslations('homepage');

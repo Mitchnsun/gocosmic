@@ -34,7 +34,8 @@ export const CONTACT_FIELD_ORDER: ContactField[] = ['name', 'email', 'phone', 'c
 export const CONTACT_NEEDS = ['showcase', 'redesign', 'shop', 'app', 'unsure'] as const;
 export type ContactNeed = (typeof CONTACT_NEEDS)[number];
 
-const isContactNeed = (value: string): value is ContactNeed => (CONTACT_NEEDS as readonly string[]).includes(value);
+export const isContactNeed = (value: string): value is ContactNeed =>
+  (CONTACT_NEEDS as readonly string[]).includes(value);
 
 /** Length boundaries enforced on both sides of the wire. */
 export const CONTACT_LIMITS = {

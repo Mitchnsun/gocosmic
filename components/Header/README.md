@@ -69,7 +69,7 @@ Below `lg` (1024 px), the desktop nav is hidden and two buttons appear in a flex
 - `role="dialog"`, `aria-modal="true"`, `id="mobile-menu"`.
 - Slide animation: `y: "-100%" → 0`, ease `[0.16, 1, 0.3, 1]`, duration `MOBILE_MENU_DURATION_MS / 1000` s.
 - Items: a Home link (`navigation.home_menu`) followed by the header links.
-- Top spacer: `STATUS_BAR_HEIGHT + safe-area-inset-top + HEADER_HEIGHT`, so the links start below the sticky header (this spacer sits under the opaque header, so it stays empty — decoration goes below it).
+- Top spacer: `useStatusBarOffset() + safe-area-inset-top + HEADER_HEIGHT`, so the links start below the sticky header (this spacer sits under the opaque header, so it stays empty — decoration goes below it). The offset shrinks the already-scrolled-away part of the status bar, read once on mount, so no empty band appears when the drawer opens mid-scroll.
 - `MountainSkyline` decoration: a short strip right below the spacer, still above the metadata row, so it's actually visible instead of hidden behind the sticky header.
 - Metadata row: `menu_title` i18n key on the left, the region-aware studio altitude (`STUDIO_BASES[region].altitude`) on the right.
 - Navigation links stagger in: each `motion.li` with `opacity 0→1 + y 16→0`, delay `index × MOBILE_MENU_STAGGER_MS / 1000` s.
@@ -81,7 +81,7 @@ Below `lg` (1024 px), the desktop nav is hidden and two buttons appear in a flex
 - Props: `onClose`
 - `role="dialog"`, `aria-modal="true"`, `id="lang-drawer"`.
 - Same slide animation as `MobileMenu` (y: "-100%" → 0).
-- Top spacer accounts for `STATUS_BAR_HEIGHT + safe-area-inset-top + HEADER_HEIGHT`.
+- Top spacer accounts for `useStatusBarOffset() + safe-area-inset-top + HEADER_HEIGHT` — see `MobileMenu` above.
 - Lists all 5 supported locales; clicking one switches the locale via `next-intl`'s router and closes the drawer.
 - Scroll lock and Escape key handler mirror `useMobileMenu` behaviour.
 - `AnimatePresence` is managed in `Header.tsx`, mutually exclusive with `MobileMenu`.

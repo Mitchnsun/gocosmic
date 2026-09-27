@@ -137,6 +137,7 @@ export const ContactForm = ({
           options={CONTACT_NEEDS.map((need) => ({ value: need, label: t(`fields.need.options.${need}`) }))}
           value={values.need}
           onChange={handleChange}
+          error={errors.need ? t(`errors.${errors.need}`) : undefined}
           disabled={isSending}
         />
 

@@ -29,12 +29,12 @@ yarn dev          # http://localhost:3000
 ```
 app/[locale]/       # Internationalized pages (server components by default)
 components/         # App-specific components
-design-system/       # Reusable UI primitives (button, eyebrow, chip, field…)
-data/projects.ts      # Case study registry
-lib/                    # Shared helpers
-messages/<locale>/       # Translations, one JSON file per namespace
-i18n/                     # Routing, request config, canonical URLs
-__tests__/                 # Unit tests, mirrors the source structure
+design-system/      # Reusable UI primitives (button, eyebrow, chip, field…)
+data/projects.ts    # Case study registry
+lib/                # Shared helpers
+messages/<locale>/  # Translations, one JSON file per namespace
+i18n/               # Routing, request config, canonical URLs
+__tests__/          # Unit tests, mirrors the source structure
 ```
 
 ## Essential Commands
@@ -81,6 +81,7 @@ bullets to that same entry instead of bumping again. See
 - **Services & pricing** (`/services`) — pricing columns, subscription simulator, trades, FAQ
 - **Contact** (`/contact`) — details, message form, call booking
 - **Free mockup** (`/free-mockup`) — lead-capture form
+- **Local** (`/local`) — Geneva / Annecy landing page (localized slugs)
 - **Projects** (`/projects/*`) — filterable index + case studies
 - **Legal** — `/privacy`, `/legal-notice`, `/terms`
 
@@ -106,6 +107,6 @@ bullets to that same entry instead of bumping again. See
 | [CONTRIBUTING.md](./CONTRIBUTING.md)                            | Contribution workflow                          |
 | [GUIDELINES.md](./GUIDELINES.md)                                | UI, ESLint, security, manual validation        |
 | [DESIGN_GUIDELINE.md](./DESIGN_GUIDELINE.md)                    | Design system tokens and patterns              |
-| [**tests**/TESTING.md](./__tests__/TESTING.md)                  | Testing patterns and conventions               |
+| [`__tests__/TESTING.md`](./__tests__/TESTING.md)                | Testing patterns and conventions               |
 | [SECURITY.md](./SECURITY.md)                                    | Security policy                                |
 | [CHANGELOG.md](./CHANGELOG.md)                                  | Version history                                |
