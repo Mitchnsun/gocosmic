@@ -1,7 +1,8 @@
 import type { NextConfig } from 'next';
 
-import type { Locale } from '@/i18n/canonical';
-import { routing } from '@/i18n/routing';
+// Relative imports: `next.config.ts` loads this module before path aliases exist.
+import type { Locale } from '../i18n/canonical';
+import { routing } from '../i18n/routing';
 
 type Redirect = Awaited<ReturnType<NonNullable<NextConfig['redirects']>>>[number];
 
