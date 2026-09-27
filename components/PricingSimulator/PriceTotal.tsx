@@ -28,7 +28,7 @@ export function PriceTotal({ label, amount, period, note }: PriceTotalProps) {
         </output>
         <span className="text-ghost/55 font-display text-base">{period}</span>
       </p>
-      <p className="text-ghost/35 mt-3 text-sm">{note}</p>
+      <p className="text-ghost/50 mt-3 text-sm">{note}</p>
     </div>
   );
 }

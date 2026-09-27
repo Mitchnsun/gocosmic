@@ -18,7 +18,7 @@ export const NeedPicker = ({ legend, hint, options, value, onChange, disabled = 
   <fieldset className="flex flex-col gap-3" disabled={disabled} aria-describedby={error ? 'need-error' : undefined}>
     <legend className="text-ghost font-display mb-3 flex items-baseline gap-2 text-sm font-medium">
       {legend}
-      {hint && <span className="text-ghost/35 text-2xs font-mono tracking-widest uppercase">{hint}</span>}
+      {hint && <span className="text-ghost/50 text-2xs font-mono tracking-widest uppercase">{hint}</span>}
     </legend>
     <div className="flex flex-wrap gap-2">
       {options.map((option, index) => (

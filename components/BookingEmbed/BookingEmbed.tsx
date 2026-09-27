@@ -36,7 +36,7 @@ export function BookingEmbed({ url }: BookingEmbedProps) {
     <div className="flex flex-col gap-4">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <p className="font-display font-semibold">{t('title')}</p>
-        <p className="text-ghost/45 text-3xs font-mono tracking-[0.16em] uppercase">{t('via')}</p>
+        <p className="text-ghost/50 text-3xs font-mono tracking-[0.16em] uppercase">{t('via')}</p>
       </div>
 
       {/* Phones and narrow tablets: straight to Google's own page. */}
@@ -66,7 +66,7 @@ export function BookingEmbed({ url }: BookingEmbedProps) {
         )}
       </div>
 
-      <p className="text-ghost/45 text-sm leading-relaxed">{t('note')}</p>
+      <p className="text-ghost/50 text-sm leading-relaxed">{t('note')}</p>
     </div>
   );
 }

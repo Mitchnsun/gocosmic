@@ -29,7 +29,7 @@ const Footer = ({ region }: FooterProps) => {
             <span className="text-aerospace">.</span>
           </p>
           <p className="text-ghost/60 max-w-[40ch] text-[15px] leading-relaxed">{t(`brand_desc.${region}`)}</p>
-          <p className="text-3xs text-ghost/35 font-mono tracking-[0.18em] uppercase">
+          <p className="text-3xs text-ghost/50 font-mono tracking-[0.18em] uppercase">
             gocosmic.dev ·{' '}
             <Link
               href="/local"
@@ -74,7 +74,7 @@ const Footer = ({ region }: FooterProps) => {
 
       {/* Bottom bar */}
       <div className="border-ghost/8 border-t">
-        <div className="text-3xs text-ghost/35 mx-auto flex max-w-7xl flex-wrap justify-between gap-2 px-4 py-4 font-mono tracking-[0.14em] uppercase sm:px-6 lg:px-8">
+        <div className="text-3xs text-ghost/50 mx-auto flex max-w-7xl flex-wrap justify-between gap-2 px-4 py-4 font-mono tracking-[0.14em] uppercase sm:px-6 lg:px-8">
           <p>{t('copyright', { year, brand: BRAND_NAME })}</p>
           <p>{t('status')}</p>
         </div>

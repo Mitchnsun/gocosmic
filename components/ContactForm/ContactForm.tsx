@@ -71,7 +71,7 @@ export const ContactForm = ({
   return (
     <div id={id} className={wrapperClassName}>
       <form noValidate onSubmit={handleSubmit} aria-describedby={`${id}-required-hint`} className="flex flex-col gap-6">
-        <p id={`${id}-required-hint`} className="text-ghost/35 text-2xs font-mono tracking-[0.2em] uppercase">
+        <p id={`${id}-required-hint`} className="text-ghost/50 text-2xs font-mono tracking-[0.2em] uppercase">
           {t('required_hint')}
         </p>
 

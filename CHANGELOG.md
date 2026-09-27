@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.0.1] - 2026-09-27
+
+### Fixed
+
+- Small grey labels, captions and form hints across the site are now easier to read, as are the purple section labels on project pages, meeting the accessibility contrast standard for text
+
 ## [2.0.0] - 2026-09-27
 
 ### Added

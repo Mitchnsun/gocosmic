@@ -42,7 +42,7 @@ export function WishesTextarea({ value, onChange, error, onBlur }: WishesTextare
         )}
         <span
           id={COUNTER_ID}
-          className={cn('font-mono text-xs tabular-nums', isAtLimit ? 'text-aerospace' : 'text-ghost/35')}>
+          className={cn('font-mono text-xs tabular-nums', isAtLimit ? 'text-aerospace' : 'text-ghost/50')}>
           {t('form.wishes_counter', { count, max })}
         </span>
       </div>

@@ -22,7 +22,7 @@ export function ContactDetails({ details, status, available, ariaLabel }: Contac
       <dl aria-label={ariaLabel} className="divide-ghost/10 flex flex-col divide-y">
         {details.map((detail) => (
           <div key={detail.label} className="grid gap-1 px-5 py-4 sm:grid-cols-[10rem_1fr] sm:items-baseline">
-            <dt className="text-ghost/45 text-3xs font-mono tracking-[0.16em] uppercase">{detail.label}</dt>
+            <dt className="text-ghost/50 text-3xs font-mono tracking-[0.16em] uppercase">{detail.label}</dt>
             <dd className="text-ghost/80">
               {detail.href ? (
                 <a

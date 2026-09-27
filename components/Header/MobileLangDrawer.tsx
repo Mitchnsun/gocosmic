@@ -67,7 +67,7 @@ const MobileLangDrawer = ({ onClose }: MobileLangDrawerProps) => {
         style={{ height: `calc(${statusBarOffset}px + env(safe-area-inset-top, 0px) + ${HEADER_HEIGHT}px)` }}
         className="shrink-0"
       />
-      <div className="border-ghost/10 text-3xs text-ghost/45 flex items-center justify-between border-b px-4 py-3 tracking-widest uppercase sm:px-6">
+      <div className="border-ghost/10 text-3xs text-ghost/50 flex items-center justify-between border-b px-4 py-3 tracking-widest uppercase sm:px-6">
         <span>{t('lang_drawer_title')}</span>
         <button onClick={onClose} aria-label={t('menu_close')} className="hover:text-ghost p-1 transition-colors">
           <XMarkIcon className="h-4 w-4" aria-hidden="true" />

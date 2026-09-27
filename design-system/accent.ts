@@ -14,7 +14,7 @@ export interface AccentClasses {
 
 const ACCENTS: Record<AccentToken, AccentClasses> = {
   aerospace: { text: 'text-aerospace', bg: 'bg-aerospace', border: 'border-aerospace', rgb: '255 79 0' },
-  royal: { text: 'text-royal', bg: 'bg-royal', border: 'border-royal', rgb: '120 81 169' },
+  royal: { text: 'text-royal-light', bg: 'bg-royal', border: 'border-royal', rgb: '120 81 169' },
   jungle: { text: 'text-jungle', bg: 'bg-jungle', border: 'border-jungle', rgb: '41 171 135' },
   ghost: { text: 'text-ghost', bg: 'bg-ghost', border: 'border-ghost', rgb: '248 248 255' },
 };

@@ -85,7 +85,7 @@ export default async function Contact() {
             <NextIntlClientProvider locale={locale} messages={messages}>
               <ContactPanel bookingUrl={toBookingEmbedUrl(process.env.NEXT_PUBLIC_GCAL_BOOKING_URL)} region={region} />
             </NextIntlClientProvider>
-            <p className="text-ghost/45 px-2 text-sm leading-relaxed">
+            <p className="text-ghost/50 px-2 text-sm leading-relaxed">
               {t('privacyNotice')}{' '}
               <Link
                 href="/privacy"
