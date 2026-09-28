@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-import { type Theme, useResolvedTheme } from '@/components/Theme';
+import type { Theme } from '@/components/Theme';
 
 import { useCosmicCursor } from './useCosmicCursor';
 
@@ -23,17 +23,20 @@ export interface CosmicCursorProps {
   trailSize?: number;
 }
 
-/** Colour the trail fades from, towards the accent: cosmic-latte in space, void ink under the star. */
-const TRAIL_BASE: Record<Theme, string> = {
-  dark: '#FFF8E7',
-  light: '#020617',
-};
-
 /** Parse a hex color into { r, g, b } */
 function hexToRgb(hex: string): { r: number; g: number; b: number } {
   const n = parseInt(hex.replace('#', ''), 16);
   return { r: (n >> 16) & 255, g: (n >> 8) & 255, b: n & 255 };
 }
+
+/**
+ * Colour the trail fades from, towards the accent, per surface under the pointer: cosmic-latte over
+ * dark surfaces (the dark theme and dark islands), void ink over the light theme.
+ */
+const TRAIL_BASE_RGB: Record<Theme, { r: number; g: number; b: number }> = {
+  dark: hexToRgb('#FFF8E7'),
+  light: hexToRgb('#020617'),
+};
 
 /**
  * CosmicCursor — canvas-based custom cursor with trailing and magnetic snap effects.
@@ -58,13 +61,6 @@ const CosmicCursor = ({
 }: CosmicCursorProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { stateRef, updateTrail } = useCosmicCursor({ trailLength, magneticRange, magneticEase });
-  // Read by the animation loop, so a theme switch recolours the trail without a DOM query per frame.
-  const theme = useResolvedTheme();
-  const trailBaseRef = useRef(hexToRgb(TRAIL_BASE.dark));
-  useEffect(() => {
-    // eslint-disable-next-line security/detect-object-injection -- theme is the typed Theme union
-    trailBaseRef.current = hexToRgb(TRAIL_BASE[theme]);
-  }, [theme]);
   // Tracks touch-device detection; updated after mount to avoid SSR hydration mismatches.
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
@@ -135,7 +131,7 @@ const CosmicCursor = ({
 
       const reduced = state.reducedMotion;
       const accentRgb = hexToRgb(state.accentColor);
-      const baseRgb = trailBaseRef.current;
+      const baseRgb = TRAIL_BASE_RGB[state.surfaceTheme];
 
       // Smooth cursor position toward target
       const ease = state.isMagnetic ? 0.25 : 0.5;

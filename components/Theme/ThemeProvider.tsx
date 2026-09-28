@@ -3,6 +3,7 @@
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import type { ReactNode } from 'react';
 
+import { BOOT_SCRIPT_TYPE } from './Theme.boot';
 import { DEFAULT_THEME, THEME_STORAGE_KEY, THEMES } from './Theme.constants';
 import { ThemeColorMeta } from './ThemeColorMeta';
 
@@ -17,7 +18,8 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       themes={[...THEMES]}
       defaultTheme={DEFAULT_THEME}
       enableSystem={false}
-      storageKey={THEME_STORAGE_KEY}>
+      storageKey={THEME_STORAGE_KEY}
+      scriptProps={{ type: BOOT_SCRIPT_TYPE }}>
       <ThemeColorMeta />
       {children}
     </NextThemesProvider>
