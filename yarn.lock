@@ -4950,6 +4950,7 @@ __metadata:
     next: "npm:16.2.6"
     next-intl: "npm:^4.12.0"
     next-seo: "npm:7.2.0"
+    next-themes: "npm:^0.4.6"
     postcss: "npm:^8.5.14"
     prettier: "npm:^3.8.3"
     prettier-plugin-tailwindcss: "npm:^0.8.0"
@@ -6405,6 +6406,16 @@ __metadata:
     next: ">=13.4.0"
     react: ">=18.2.0"
   checksum: 10c0/0d747cc8e5503eeae4ed2ee375382d4c1fa541e84370b69404111f84d496b704f8b7d8c7b28057a2a7dae5bf17162afd317b38701b6a3cb80e2e6f5d0c983574
+  languageName: node
+  linkType: hard
+
+"next-themes@npm:^0.4.6":
+  version: 0.4.6
+  resolution: "next-themes@npm:0.4.6"
+  peerDependencies:
+    react: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
+    react-dom: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
+  checksum: 10c0/83590c11d359ce7e4ced14f6ea9dd7a691d5ce6843fe2dc520fc27e29ae1c535118478d03e7f172609c41b1ef1b8da6b8dd2d2acd6cd79cac1abbdbd5b99f2c4
   languageName: node
   linkType: hard
 

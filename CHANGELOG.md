@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [2.1.0] - 2026-09-28
 
+### Added
+
+- A light theme: a sun and moon button in the header (and at the bottom of the mobile menu) switches the whole site between dark and light, and the site remembers the choice on the next visit
+
 ### Changed
 
 - Every colour on the site now comes from a shared set of named shades, the groundwork for the upcoming light theme; secondary and small grey texts are slightly brighter so they stay easy to read

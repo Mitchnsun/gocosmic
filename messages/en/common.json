@@ -45,5 +45,10 @@
     "next": "Next project",
     "nav_label": "Case study navigation",
     "contact_cta": "Discuss a similar project"
+  },
+  "theme": {
+    "label": "Theme",
+    "toggle_light": "Switch to the light theme",
+    "toggle_dark": "Switch to the dark theme"
   }
 }

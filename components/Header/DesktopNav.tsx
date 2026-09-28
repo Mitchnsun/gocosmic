@@ -6,10 +6,11 @@ import { cn } from '@/design-system/lib/utils';
 import { Link, usePathname } from '@/i18n/navigation';
 
 import LanguageSwitcher from '../LanguageSwitcher';
+import { ThemeToggle } from '../Theme';
 import { HeaderNavItem } from './constants';
 import HeaderCta from './HeaderCta';
 
-/** Inline navigation shown from `lg` (1024 px): text links, primary CTA and language switcher. */
+/** Inline navigation shown from `lg` (1024 px): text links, primary CTA, language switcher and theme toggle. */
 const DesktopNav = ({ items }: { items: HeaderNavItem[] }) => {
   const t = useTranslations('navigation');
   const pathname = usePathname();
@@ -42,6 +43,7 @@ const DesktopNav = ({ items }: { items: HeaderNavItem[] }) => {
       })}
       <HeaderCta />
       <LanguageSwitcher />
+      <ThemeToggle />
     </nav>
   );
 };

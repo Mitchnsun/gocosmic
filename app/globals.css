@@ -1,5 +1,8 @@
 @import 'tailwindcss';
 
+/* `light:` styles apply under the light theme, except inside a nested dark island (data-theme="dark"). */
+@custom-variant light (&:where([data-theme='light'], [data-theme='light'] *):not(:where([data-theme='dark'], [data-theme='dark'] *)));
+
 @theme {
   --color-aerospace: #ff4f00;
   --color-chocolate: #58111a;

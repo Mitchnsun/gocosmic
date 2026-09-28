@@ -8,6 +8,7 @@ import { Link } from '@/i18n/navigation';
 import { STUDIO_BASES } from '@/lib/config';
 import { DEFAULT_REGION, type Region } from '@/lib/region';
 
+import { ThemeToggle } from '../Theme';
 import { HEADER_HEIGHT, HeaderNavItem, MOBILE_MENU_DURATION_MS, MOBILE_MENU_STAGGER_MS } from './constants';
 import HeaderCta from './HeaderCta';
 import MountainSkyline from './MountainSkyline';
@@ -21,6 +22,7 @@ interface MobileMenuProps {
 
 const MobileMenu = ({ onClose, items, region = DEFAULT_REGION }: MobileMenuProps) => {
   const t = useTranslations('navigation');
+  const tTheme = useTranslations('theme');
   // eslint-disable-next-line security/detect-object-injection -- region is the typed Region union
   const { altitude } = STUDIO_BASES[region];
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
@@ -85,6 +87,10 @@ const MobileMenu = ({ onClose, items, region = DEFAULT_REGION }: MobileMenuProps
 
       {/* Primary action, always reachable at the bottom of the drawer */}
       <div className="border-line flex flex-col items-center gap-4 border-t px-4 pt-5 pb-[calc(1.25rem+env(safe-area-inset-bottom,0px))] sm:px-6">
+        <div className="flex w-full items-center justify-between">
+          <span className="text-fg-3 font-mono text-xs tracking-widest uppercase">{tTheme('label')}</span>
+          <ThemeToggle />
+        </div>
         <HeaderCta onClick={onClose} className="h-12 w-full text-base" />
         <a href="mailto:contact@gocosmic.dev" className="text-fg-3 hover:text-fg-2 font-mono text-xs transition-colors">
           contact@gocosmic.dev

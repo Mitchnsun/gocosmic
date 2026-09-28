@@ -81,4 +81,10 @@ describe('MobileMenu', () => {
     render(<MobileMenu onClose={onClose} items={items} />);
     expect(screen.queryByRole('button', { name: /switch language/i })).not.toBeInTheDocument();
   });
+
+  it('offers the theme toggle next to the call to action', () => {
+    render(<MobileMenu onClose={onClose} items={items} />);
+    expect(screen.getByText('Theme')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Switch to the light theme' })).toBeInTheDocument();
+  });
 });
