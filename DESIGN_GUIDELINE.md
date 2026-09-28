@@ -1,7 +1,7 @@
 # DESIGN_GUIDELINE.md — Cosmic Studio
 
 > Single design reference for building new components and pages **consistent with the homepage**.
-> Sources: `app/globals.css` (implemented tokens), shipped components (`Header`, `StatusBar`, `ProcessTimeline`, `CTAFinal`, `HeroSection`…), the EPIC redesign ticket [#58](https://github.com/Mitchnsun/gocosmic/issues/58) and the rebrand EPIC [#98](https://github.com/Mitchnsun/gocosmic/issues/98).
+> Sources: `app/globals.css` (implemented tokens), shipped components (`Header`, `StatusBar`, `ProcessTimeline`, `CTAFinal`, `HeroSection`…), the EPIC redesign ticket [#58](https://github.com/Mitchnsun/gocosmic/issues/58), the rebrand EPIC [#98](https://github.com/Mitchnsun/gocosmic/issues/98) and the light theme EPIC [#113](https://github.com/Mitchnsun/gocosmic/issues/113). Every primitive is shown in both themes on the internal `/design-system` page (noindex).
 >
 > **For an AI agent:** read this file **before** writing any JSX. The golden rule: never **reinvent** colors, fonts, or spacing — **reuse** the tokens and patterns described here. When in doubt, copy the nearest existing component.
 
@@ -13,7 +13,7 @@ Cosmic Studio (formerly Go Cosmic; "Go Cosmic" survives as the call-to-action si
 
 Four principles that resolve every design decision:
 
-1. **Dark by default.** The background is the `void`. Light comes from stars, accent glows, and `ghost` text. No large bright surfaces.
+1. **Two faces, dark by default.** The same universe seen from **space** (dark, the default: `void` background, stars, `ghost` ink) and from the light of a **star** (light: `cosmic-latte` background, the sun, `void` ink). Same content, components and interactions; only the background, the ink, the halos (royal/orange → warm sun) and the hero illustration (stars → sun) change. Always colour through the semantic tokens (§2.1) so both faces stay right. In the dark face, no large bright surfaces.
 2. **Accent is rare.** `aerospace` orange is a spotlight, not a paint bucket. One strong accent point per zone (a CTA, a gradient heading, a signal dot). Too much orange kills the orange.
 3. **Mono speaks "technical".** Eyebrows, coordinates, metadata, statuses use uppercase mono with wide letter-spacing — the site's "HUD" signature.
 4. **Restraint > decoration.** Every element must earn its place. No filler, no emoji, no made-up stats. See §7 (anti-slop).
@@ -158,6 +158,13 @@ Ambient mono metadata: studio base and altitude (`ALT. 424M`, from `STUDIO_BASES
 
 Immersive sections: `<Starfield>` at layer `-z-20` + a radial accent gradient or the animated ringed `Planet` at `-z-10`, content at `z-10`. Density/speed are configurable; the CTA shifts to "warp" on hover. Stars appear in the homepage hero and in the final `CTAFinal` only: **one immersive section per inner page** (its closing CTA). Everywhere else, keep a flat `bg-bg`.
 
+**In the light theme** (EPIC #113):
+
+- **The sun replaces the stars on the homepage only**: `<Sun>` (`components/Sun`, pure CSS disc + halo) rises top right in the hero over a misty-rose floor (`.rose-floor`), and the immersive `CTAFinal` swaps its stars for a warm halo (`.sun-glow`). The sun belongs to the hero and the closing CTA only — **never two suns on a page**.
+- **Dark islands**: the sober `CTAFinal` of the inner pages and the case study heroes keep their stars and stay dark in both themes, through `data-theme="dark"` on the section (the tokens re-scope for the subtree). Use an island for anything whose colours cannot follow the theme (a canvas, a dark brand visual).
+- **Pick the scene in CSS first**: the `light:` variant (`light:hidden`, `hidden light:block`) is right from the first paint, then `useResolvedTheme()` unmounts what the theme hides so canvases and animation loops stop. `light:` never applies inside a dark island.
+- **Switching theme**: colours cross-fade over 300 ms and the sun rises into place (`theme-fade` / `theme-rise` on `<html>` during a switch only, see `useThemeSwitch`); both are skipped under reduced motion. The choice is stored in `localStorage['cs-theme']`; first visits are always dark, whatever the OS prefers.
+
 ### 3.5 Buttons
 
 **Pill** shape (`rounded-full`), `font-display` 500, optional arrow icon (`→`).
@@ -204,7 +211,7 @@ Background slightly lifted (`bg-surface`), border `line`, `rounded-2xl`, hover t
 
 ### 3.10 Form fields
 
-48 px high inputs (`h-12`), 12 px radius (`rounded-xl`), `border-line-2` on `bg-field`, orange border and ring on focus, orange border and message on error (`aria-invalid` + `aria-describedby="{id}-error"`). Build every field with `Field` and the `FIELD_INPUT` / `FIELD_TEXTAREA` classes.
+48 px high inputs (`h-12`), 12 px radius (`rounded-xl`), `border-line-2` on `bg-field`, orange border and ring on focus, orange border and message on error (`aria-invalid` + `aria-describedby="{id}-error"`). Build every field with `Field` and the `FIELD_INPUT` / `FIELD_TEXTAREA` classes. Checkboxes stay native `<input>`s styled with `CHECKBOX_CONTROL` (20 px box, `fg-3` border for a 3:1 outline, orange fill and void tick when checked). Striped placeholders use `.bg-stripes` (ink at 3 %). Google's booking iframe is the one surface that stays white in both themes.
 
 ---
 

@@ -14,6 +14,12 @@ The Cosmic Studio website serves as the primary business interface with the foll
 
 ## Current Features
 
+### Dark and Light Themes
+
+- **Two faces of one universe**: dark ("space", the default) and light ("star"), with the same content and components
+- **Theme toggle**: a sun / moon button in the header and the mobile menu; the choice is remembered in the browser and applied before the first paint, with no flash
+- **Accessible in both themes**: every text colour reaches WCAG AA contrast, checked by unit tests and by an axe audit of every page (`yarn qa`)
+
 ### Internationalization (i18n)
 
 - **5 Languages**: Complete support for English, French, Spanish, German, and Italian
@@ -32,7 +38,7 @@ Translations are organized into namespace-based files for improved organization 
 ```
 messages/
   ├── en/              # English translations
-  │   ├── common.json        # Shared strings (404, meta, language switcher)
+  │   ├── common.json        # Shared strings (404, meta, language switcher, theme toggle)
   │   ├── navigation.json    # Header navigation labels
   │   ├── footer.json        # Footer content
   │   ├── home.json          # Homepage content
@@ -44,7 +50,8 @@ messages/
   │   ├── free-mockup.json   # Free mockup page content
   │   ├── local.json         # Local SEO page content
   │   ├── legal.json         # Privacy policy, legal notice and terms of sale
-  │   └── psc-supersprint.json # PSC Supersprint case study content
+  │   ├── psc-supersprint.json # PSC Supersprint case study content
+  │   └── design-system.json # Internal design system page (noindex)
   ├── fr/              # French (same structure)
   ├── es/              # Spanish (same structure)
   ├── de/              # German (same structure)
@@ -236,6 +243,7 @@ yarn check-types
 yarn test           # Run unit tests
 yarn test:watch     # Run tests in watch mode
 yarn coverage       # Generate test coverage report
+yarn qa             # Local QA: accessibility audit of every page in both themes (Playwright)
 ```
 
 ### Adding New Routes
@@ -376,7 +384,8 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   ├── ContactDetails/ # Contact lines and availability
 │   ├── ContactForm/  # Contact form
 │   ├── ContactPanel/ # "Write a message" / "Book a call" tabs
-│   ├── CTAFinal/     # Closing call-to-action with star field
+│   ├── CTAFinal/     # Closing call-to-action with star field (warm sun halo in the light theme)
+│   ├── DesignSystemShowcase/ # Every primitive side by side in both themes (/design-system)
 │   ├── Faq/          # FAQ accordion
 │   ├── Footer/       # Site footer
 │   ├── FreeMockupForm/ # Free mockup request form
@@ -392,6 +401,8 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   ├── Reveal/       # Fade-in on scroll
 │   ├── SectionHeading/ # Eyebrow, title and lead opening each section
 │   ├── StudioIntro/  # Who is behind the studio
+│   ├── Sun/          # The light theme's sun (pure CSS disc and halo)
+│   ├── Theme/        # Theme provider (next-themes), toggle and theme hooks
 │   ├── WhyStudio/    # Numbered reasons to choose the studio
 │   ├── ...           # Other components (ProcessTimeline, ServicesGrid, StatusBar, CookieConsent…)
 │   └── icons/        # Reusable SVG icons
@@ -416,7 +427,7 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   └── validation/   # Form validation schemas
 ├── messages/         # Translation files organized by namespace
 │   ├── en/           # English translations
-│   │   ├── common.json        # Common UI strings (404, meta, language)
+│   │   ├── common.json        # Common UI strings (404, meta, language, theme)
 │   │   ├── navigation.json    # Header navigation
 │   │   ├── footer.json        # Footer content
 │   │   ├── home.json          # Homepage content
@@ -428,7 +439,8 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   │   ├── free-mockup.json   # Free mockup page content
 │   │   ├── local.json         # Local SEO page content
 │   │   ├── legal.json         # Privacy policy, legal notice and terms of sale
-│   │   └── psc-supersprint.json # PSC Supersprint case study
+│   │   ├── psc-supersprint.json # PSC Supersprint case study
+│   │   └── design-system.json # Internal design system page
 │   ├── fr/           # French translations (same structure)
 │   ├── es/           # Spanish translations (same structure)
 │   ├── de/           # German translations (same structure)
