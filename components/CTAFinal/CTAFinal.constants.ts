@@ -7,9 +7,9 @@ export const ACCENT_RGB: Record<AccentColor, string> = {
   jungle: '41 171 135',
 };
 
-/** Tailwind background utility for the headline gradient per accent colour. */
+/** Tailwind background utility for the headline gradient per accent colour (orange ends use the text shade). */
 export const ACCENT_GRADIENT: Record<AccentColor, string> = {
-  aerospace: 'from-aerospace via-fg to-aerospace',
+  aerospace: 'from-aerospace-ink via-fg to-aerospace-ink',
   royal: 'from-royal via-fg to-royal',
   jungle: 'from-ok via-fg to-ok',
 };
@@ -23,8 +23,8 @@ export const DENSITY_STAR_COUNT: Record<StarfieldDensity, number> = {
 
 /** Base background per visual variant (rendered behind the starfield). */
 export const VARIANT_BACKGROUND: Record<Variant, string> = {
-  dark: 'bg-bg',
-  light: 'bg-bg-alt',
+  base: 'bg-bg',
+  alt: 'bg-bg-alt',
   gradient: 'bg-gradient-to-b from-bg via-bg-alt to-bg',
 };
 
@@ -39,6 +39,7 @@ export const TONE_PRESETS: Record<Tone, TonePreset> = {
     density: 'high',
     warp: true,
     halo: true,
+    darkIsland: false,
     gradientHeadline: true,
     glowButton: true,
     buttonSize: 'lg',
@@ -55,6 +56,7 @@ export const TONE_PRESETS: Record<Tone, TonePreset> = {
     density: 'low',
     warp: false,
     halo: false,
+    darkIsland: true,
     gradientHeadline: false,
     glowButton: false,
     buttonSize: 'default',

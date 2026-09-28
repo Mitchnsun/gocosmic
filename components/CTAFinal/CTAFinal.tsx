@@ -3,7 +3,7 @@
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import type { ComponentProps, CSSProperties, ReactNode } from 'react';
 
-import Starfield from '@/components/Starfield';
+import { useResolvedTheme } from '@/components/Theme';
 import { buttonVariants } from '@/design-system/button.variants';
 import { cn } from '@/design-system/lib/utils';
 import { Link } from '@/i18n/navigation';
@@ -20,6 +20,7 @@ import {
   WARP_DENSITY_MULTIPLIER,
 } from './CTAFinal.constants';
 import type { AccentColor, StarfieldDensity, Tone, Variant } from './CTAFinal.types';
+import { CTAFinalBackdrop } from './CTAFinalBackdrop';
 import { useWarpEffect } from './useWarpEffect';
 
 type LocalizedHref = ComponentProps<typeof Link>['href'];
@@ -50,7 +51,7 @@ export interface CTAFinalProps {
   warpOnHover?: boolean;
   /** Accent colour for the headline gradient and button glow. Defaults to `'aerospace'`. */
   accentColor?: AccentColor;
-  /** Visual variant controlling the base background. Defaults to `'dark'`. */
+  /** Base background behind the starfield. Defaults to `'base'`. */
   variant?: Variant;
   /** Visual intensity: `'immersive'` for the homepage, `'sober'` for inner pages. Defaults to `'immersive'`. */
   tone?: Tone;
@@ -68,7 +69,9 @@ export interface CTAFinalProps {
 
 /**
  * Final homepage call-to-action with an animated starfield background that
- * enters "warp speed" when the CTA button is hovered or focused.
+ * enters "warp speed" when the CTA button is hovered or focused. In the light
+ * theme the immersive tone shows a warm sun halo instead, while the sober tone
+ * stays a dark island, stars included.
  *
  * The headline uses an animated accent gradient and the button pulses with a
  * glow effect. All motion is disabled when the user prefers reduced motion and
@@ -89,7 +92,7 @@ const CTAFinal = ({
   starfieldWarpSpeed = 0.8,
   warpOnHover,
   accentColor = 'aerospace',
-  variant = 'dark',
+  variant = 'base',
   tone = 'immersive',
   respectReducedMotion = true,
   onCtaClick,
@@ -100,7 +103,9 @@ const CTAFinal = ({
   const prefersReducedMotion = usePrefersReducedMotion(respectReducedMotion);
   // eslint-disable-next-line security/detect-object-injection
   const preset = TONE_PRESETS[tone];
-  const warpEnabled = (warpOnHover ?? preset.warp) && !prefersReducedMotion;
+  // In the light theme the immersive tone trades its stars for a sun halo, so there is nothing to warp.
+  const solar = useResolvedTheme() === 'light' && !preset.darkIsland;
+  const warpEnabled = (warpOnHover ?? preset.warp) && !prefersReducedMotion && !solar;
   const { isWarping, startWarp, stopWarp } = useWarpEffect(warpEnabled);
 
   const restSpeed = clamp(starfieldSpeed, 0, 1) * SPEED_SCALE;
@@ -127,31 +132,20 @@ const CTAFinal = ({
       data-reduced-motion={prefersReducedMotion ? 'true' : 'false'}
       data-warping={isWarping ? 'true' : 'false'}
       data-tone={tone}
+      data-theme={preset.darkIsland ? 'dark' : undefined}
       className={cn(
         'group text-fg relative isolate overflow-hidden px-4 sm:px-6',
         preset.section,
         variantBackground,
         className
       )}>
-      <div className="absolute inset-0 -z-20" aria-hidden="true">
-        <Starfield
-          className={cn('h-full w-full', preset.starfield, {
-            'transition-opacity duration-300 group-hover:opacity-100': preset.starfieldHover,
-          })}
-          starCount={currentStarCount}
-          speed={currentSpeed}
-          respectReducedMotion={respectReducedMotion}
-        />
-      </div>
-      {preset.halo && (
-        <div
-          className="pointer-events-none absolute inset-0 -z-10 opacity-60 transition-opacity duration-300 group-hover:opacity-100"
-          style={{
-            backgroundImage: 'radial-gradient(circle at 50% 60%, rgb(var(--cta-accent-rgb) / 0.22), transparent 60%)',
-          }}
-          aria-hidden="true"
-        />
-      )}
+      <CTAFinalBackdrop
+        preset={preset}
+        starCount={currentStarCount}
+        speed={currentSpeed}
+        respectReducedMotion={respectReducedMotion}
+        solar={solar}
+      />
 
       <div className="relative z-10 m-auto flex max-w-5xl flex-col items-center gap-6 text-center">
         <h2 className={cn('font-display leading-[1.05] font-bold tracking-[-0.04em] text-balance', preset.headline)}>

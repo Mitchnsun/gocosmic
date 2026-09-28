@@ -14,7 +14,8 @@ type CaseStudyHeroProps = Pick<CaseStudyProps, 'eyebrow' | 'title' | 'tagline' |
 
 /**
  * Case study hero: full-bleed project image when available, starfield
- * otherwise, with the project name and tagline overlaid.
+ * otherwise, with the project name and tagline overlaid. It stays dark in the
+ * light theme.
  *
  * @component
  */
@@ -31,8 +32,10 @@ export const CaseStudyHero = ({
   const { text, bg } = accentClasses(accent);
 
   return (
+    // A dark island in both themes: the starfield (or the dimmed project image) stays night-coloured.
     <section
       aria-labelledby={headingId}
+      data-theme="dark"
       className="bg-bg text-fg relative isolate flex min-h-72 items-end overflow-hidden p-4 sm:min-h-88 sm:p-6 lg:min-h-112 lg:p-8">
       {heroImage ? (
         <Image

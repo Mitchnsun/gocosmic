@@ -34,6 +34,11 @@ describe('CaseStudy', () => {
     expect(getAllByRole('listitem').length).toBeGreaterThanOrEqual(4);
   });
 
+  it('keeps the hero a dark island in both themes', () => {
+    const { getByRole } = render(<CaseStudy {...baseProps} />);
+    expect(getByRole('heading', { level: 1 }).closest('section')).toHaveAttribute('data-theme', 'dark');
+  });
+
   it('renders the hero image and the logo when provided', () => {
     const { getByAltText } = render(
       <CaseStudy

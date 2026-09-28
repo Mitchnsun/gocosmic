@@ -4,9 +4,8 @@ import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import type { ComponentProps } from 'react';
 
 import AnimatedEndWord from '@/components/HeroSection/AnimatedEndWord';
+import HeroIllustration from '@/components/HeroSection/HeroIllustration';
 import { useWordCycler } from '@/components/HeroSection/HeroSection.hooks';
-import Planet from '@/components/Planet';
-import Starfield from '@/components/Starfield';
 import { Eyebrow } from '@/design-system/eyebrow';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, ghostPill, primaryPill } from '@/design-system/pill';
@@ -51,7 +50,8 @@ export interface HeroSectionProps {
 /**
  * Editorial homepage hero: left-aligned headline with an italic emphasis that
  * cycles through the promise, over a discreet starfield and an animated
- * ringed planet. Everything freezes when the visitor prefers reduced motion.
+ * ringed planet (dark theme) or a rising sun (light theme). Everything freezes
+ * when the visitor prefers reduced motion.
  */
 const HeroSection = ({
   eyebrow,
@@ -76,23 +76,7 @@ const HeroSection = ({
         className
       )}
       data-reduced-motion={prefersReducedMotion ? 'true' : 'false'}>
-      <div className="absolute inset-0 -z-20" aria-hidden="true">
-        <Starfield className="h-full w-full opacity-70" starCount={260} speed={0.6} respectReducedMotion />
-      </div>
-      <div
-        className="pointer-events-none absolute top-1/2 -right-30 -z-10 hidden -translate-y-1/2 lg:block"
-        aria-hidden="true">
-        <Planet size={480} parallaxMode="pointer" scrollFactor={0.3} reducedMotion={prefersReducedMotion} />
-      </div>
-      <div className="pointer-events-none absolute -top-16 -right-24 -z-10 opacity-40 lg:hidden" aria-hidden="true">
-        <Planet
-          size={240}
-          parallaxMode="gyro"
-          gyroAmplitude={15}
-          scrollFactor={0.3}
-          reducedMotion={prefersReducedMotion}
-        />
-      </div>
+      <HeroIllustration reducedMotion={prefersReducedMotion} />
 
       <div className={cn(CONTAINER, 'flex flex-col gap-8')}>
         <Eyebrow className="hero-reveal-line">{eyebrow}</Eyebrow>

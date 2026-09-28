@@ -226,6 +226,31 @@ footer a {
     animation: word-enter 400ms cubic-bezier(0.2, 0.8, 0.3, 1) forwards;
   }
 
+  /* Light theme illustrations (EPIC #113): the sun that replaces the starfield, its halo, and the
+     misty-rose floor at the bottom of the immersive sections. Static paint, no filter. */
+  .sun-disc {
+    background: radial-gradient(
+      circle at 42% 42%,
+      #fff 0%,
+      #fff3d1 22%,
+      #ffd9a0 45%,
+      #ffb38a 68%,
+      rgb(255 79 0 / 0) 100%
+    );
+  }
+
+  .sun-halo {
+    box-shadow: 0 0 160px 60px rgb(255 179 138 / calc(0.45 * var(--sun-intensity, 1)));
+  }
+
+  .sun-glow {
+    background: radial-gradient(circle, rgb(255 179 138 / 0.55), transparent 60%);
+  }
+
+  .rose-floor {
+    background: radial-gradient(ellipse at 50% 120%, rgb(255 228 225 / 0.9), transparent 60%);
+  }
+
   .planet-glow {
     background: radial-gradient(circle at center, rgb(120 81 169 / 0.45), transparent 60%);
   }

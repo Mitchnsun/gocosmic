@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Added
 
 - A light theme: a sun and moon button in the header (and at the bottom of the mobile menu) switches the whole site between dark and light, and the site remembers the choice on the next visit
+- In the light theme, the homepage opens under a rising sun instead of the starry sky and its planet, and closes on a warm glow, while the starry bands at the bottom of the other pages and the project headers stay night-coloured
 
 ### Changed
 
