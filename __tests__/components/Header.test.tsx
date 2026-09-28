@@ -49,7 +49,7 @@ describe('Header Component', () => {
 
     const header = getByRole('banner');
     expect(header).toBeInTheDocument();
-    expect(header).toHaveClass('text-ghost', 'sticky', 'top-0', 'backdrop-blur-md');
+    expect(header).toHaveClass('text-fg', 'sticky', 'top-0', 'backdrop-blur-md');
     expectHeaderHeight(header, 64);
 
     const heading = getByRole('heading', { level: 1 });
@@ -122,8 +122,8 @@ describe('Header Component', () => {
     );
     const link = getByRole('link', { name: 'Services' });
     expect(link).toHaveAttribute('aria-current', 'page');
-    expect(link).toHaveClass('text-ghost');
-    expect(link).not.toHaveClass('text-ghost/75');
+    expect(link).toHaveClass('text-fg');
+    expect(link).not.toHaveClass('text-fg-2');
   });
 
   it('marks a nav item active when pathname equals the href', () => {

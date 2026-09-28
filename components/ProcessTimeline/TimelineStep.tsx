@@ -7,17 +7,17 @@ import { cn } from '@/design-system/lib/utils';
 import type { TimelineStep } from './ProcessTimeline.types';
 
 const colorMap: Record<NonNullable<TimelineStep['color']>, string> = {
-  aerospace: 'text-aerospace',
-  royal: 'text-royal',
-  jungle: 'text-jungle',
-  default: 'text-ghost/60',
+  aerospace: 'text-aerospace-ink',
+  royal: 'text-royal-ink',
+  jungle: 'text-ok',
+  default: 'text-fg-2',
 };
 
 const dotColorMap: Record<NonNullable<TimelineStep['color']>, string> = {
   aerospace: 'bg-aerospace shadow-aerospace/40',
   royal: 'bg-royal shadow-royal/40',
-  jungle: 'bg-jungle shadow-jungle/40',
-  default: 'bg-ghost/60 shadow-ghost/20',
+  jungle: 'bg-ok shadow-ok/40',
+  default: 'bg-fg-2 shadow-fg/20',
 };
 
 interface TimelineStepProps {
@@ -112,7 +112,7 @@ export function TimelineStepItem({
         <div className="relative z-10 flex shrink-0 flex-col items-center">
           <div
             data-testid={`dot-${step.id}`}
-            className={cn('border-ghost/15 h-3 w-3 rounded-full border-2', dotColor, {
+            className={cn('border-line-2 h-3 w-3 rounded-full border-2', dotColor, {
               'timeline-dot': !reducedMotion,
             })}
             aria-hidden="true"
@@ -129,12 +129,12 @@ export function TimelineStepItem({
             transition: `opacity 300ms ease-out, transform 300ms ease-out`,
           }}>
           <span className={`font-mono text-sm font-medium tracking-widest uppercase ${labelColor}`}>{step.label}</span>
-          <h3 className="text-ghost mt-1 text-xl font-bold">{step.title}</h3>
-          {showDescription && step.description && <p className="text-ghost/60 mt-2 text-sm">{step.description}</p>}
+          <h3 className="text-fg mt-1 text-xl font-bold">{step.title}</h3>
+          {showDescription && step.description && <p className="text-fg-2 mt-2 text-sm">{step.description}</p>}
           {showDescription && step.features && step.features.length > 0 && (
             <ul className="mt-3 space-y-1" aria-label={`${step.title} features`}>
               {step.features.map((feature) => (
-                <li key={feature} className="text-ghost/60 flex items-center gap-2 text-sm">
+                <li key={feature} className="text-fg-2 flex items-center gap-2 text-sm">
                   <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${dotColor}`} aria-hidden="true" />
                   {feature}
                 </li>
@@ -158,7 +158,7 @@ export function TimelineStepItem({
           <span className={cn('font-mono text-xs font-medium tracking-widest uppercase', labelColor)}>
             {step.label}
           </span>
-          <p className="text-ghost text-sm font-semibold">{step.title}</p>
+          <p className="text-fg text-sm font-semibold">{step.title}</p>
         </div>
       </div>
     );
@@ -181,7 +181,7 @@ export function TimelineStepItem({
         />
         <div
           ref={lineRef}
-          className="bg-ghost/15 h-px flex-1 origin-left"
+          className="bg-line-2 h-px flex-1 origin-left"
           aria-hidden="true"
           style={{
             transform: reducedMotion ? 'scaleX(1)' : 'scaleX(0)',
@@ -199,12 +199,12 @@ export function TimelineStepItem({
           transform: reducedMotion ? 'none' : 'translateY(8px)',
           transition: `opacity 300ms ease-out, transform 300ms ease-out`,
         }}>
-        <h3 className="text-ghost text-xl font-bold">{step.title}</h3>
-        {showDescription && step.description && <p className="text-ghost/60 mt-2 text-sm">{step.description}</p>}
+        <h3 className="text-fg text-xl font-bold">{step.title}</h3>
+        {showDescription && step.description && <p className="text-fg-2 mt-2 text-sm">{step.description}</p>}
         {showDescription && step.features && step.features.length > 0 && (
           <ul className="mt-3 space-y-1" aria-label={`${step.title} features`}>
             {step.features.map((feature) => (
-              <li key={feature} className="text-ghost/60 flex items-center gap-2 text-sm">
+              <li key={feature} className="text-fg-2 flex items-center gap-2 text-sm">
                 <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${dotColor}`} aria-hidden="true" />
                 {feature}
               </li>

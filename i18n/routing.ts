@@ -93,6 +93,9 @@ export const routing = defineRouting({
     },
 
     // Terms of sale
+    // Internal design system page: noindex, left out of the sitemap
+    '/design-system': '/design-system',
+
     '/terms': {
       en: '/terms',
       fr: '/conditions-generales-de-vente',

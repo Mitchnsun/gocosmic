@@ -197,6 +197,51 @@ describe('CosmicCursor render loop', () => {
     document.head.querySelector('style[data-cosmic-cursor]')?.remove();
   });
 
+  it('fades the trail from the ink of the surface under the pointer, dark islands included', () => {
+    const fills: string[] = [];
+    Object.defineProperty(mockCtx, 'fillStyle', {
+      configurable: true,
+      get: () => '',
+      set: (value: string) => fills.push(String(value)),
+    });
+    const island = document.createElement('section');
+    island.dataset.theme = 'dark';
+    island.innerHTML = '<p>Case study</p>';
+    document.body.append(island);
+    const moveOver = (target: Element) => {
+      fills.length = 0;
+      for (let x = 100; x < 200; x += 10) {
+        act(() => {
+          target.dispatchEvent(new MouseEvent('mousemove', { clientX: x, clientY: 100, bubbles: true }));
+        });
+        act(() => {
+          capturedFrame!(performance.now() + 16);
+        });
+      }
+    };
+    const CREAM = 'rgba(255,248,231,0)';
+    const INK = 'rgba(2,6,23,0)';
+
+    render(<CosmicCursor />);
+
+    document.documentElement.dataset.theme = 'dark';
+    moveOver(document.body);
+    expect(fills).toContain(CREAM);
+
+    document.documentElement.dataset.theme = 'light';
+    moveOver(document.body);
+    expect(fills).toContain(INK);
+    expect(fills).not.toContain(CREAM);
+
+    moveOver(island.querySelector('p')!);
+    expect(fills).toContain(CREAM);
+    expect(fills).not.toContain(INK);
+
+    island.remove();
+    delete document.documentElement.dataset.theme;
+    Object.defineProperty(mockCtx, 'fillStyle', { configurable: true, writable: true, value: '' });
+  });
+
   it('calls clearRect on each animation frame', () => {
     render(<CosmicCursor />);
     expect(capturedFrame).not.toBeNull();

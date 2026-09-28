@@ -53,7 +53,7 @@ export default async function Contact() {
   const month = formatStartMonth(startMonth, locale);
 
   return (
-    <div className="bg-void text-ghost">
+    <div className="bg-bg text-fg">
       <section aria-labelledby="contact-heading" className={SECTION_Y}>
         <div className={cn(CONTAINER, 'grid items-start gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]')}>
           <div className="flex flex-col gap-8">
@@ -85,11 +85,11 @@ export default async function Contact() {
             <NextIntlClientProvider locale={locale} messages={messages}>
               <ContactPanel bookingUrl={toBookingEmbedUrl(process.env.NEXT_PUBLIC_GCAL_BOOKING_URL)} region={region} />
             </NextIntlClientProvider>
-            <p className="text-ghost/45 px-2 text-sm leading-relaxed">
+            <p className="text-fg-3 px-2 text-sm leading-relaxed">
               {t('privacyNotice')}{' '}
               <Link
                 href="/privacy"
-                className="text-ghost/70 hover:text-ghost focus-visible:ring-aerospace/70 rounded underline underline-offset-4 transition-colors focus-visible:ring-2 focus-visible:outline-none">
+                className="text-fg-2 hover:text-fg focus-visible:ring-aerospace-ink rounded underline underline-offset-4 transition-colors focus-visible:ring-2 focus-visible:outline-none">
                 {t('privacyLink')}
               </Link>
               .

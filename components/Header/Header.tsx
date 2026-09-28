@@ -49,12 +49,12 @@ const Header = ({ logo = DEFAULT_LOGO, navItems, className, id, region }: Header
     <>
       <a
         href="#main-content"
-        className="focus:text-ghost focus:ring-aerospace focus:bg-void sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-60 focus:rounded-md focus:px-4 focus:py-2 focus:ring-2 focus:outline-none">
+        className="focus:text-fg focus:ring-aerospace-ink focus:bg-bg sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-60 focus:rounded-md focus:px-4 focus:py-2 focus:ring-2 focus:outline-none">
         {t('skip_to_content')}
       </a>
       <header
         id={id}
-        className={cn('text-ghost border-ghost/8 bg-void/85 sticky top-0 z-50 border-b backdrop-blur-md', className)}
+        className={cn('text-fg border-line bg-bg/88 sticky top-0 z-50 border-b backdrop-blur-md', className)}
         style={
           {
             height: `calc(${HEADER_HEIGHT}px + env(safe-area-inset-top, 0px))`,
@@ -67,8 +67,10 @@ const Header = ({ logo = DEFAULT_LOGO, navItems, className, id, region }: Header
             <Link
               href="/"
               aria-label={t('home', { brand: logo })}
-              className="font-display hover:text-ghost/90 focus-visible:ring-aerospace/70 inline-flex items-baseline text-xl font-bold tracking-[-0.02em] transition-colors duration-300 focus-visible:ring-2 focus-visible:outline-none motion-reduce:duration-0">
+              className="font-display hover:text-fg focus-visible:ring-aerospace-ink inline-flex items-baseline text-xl font-bold tracking-[-0.02em] transition-colors duration-300 focus-visible:ring-2 focus-visible:outline-none motion-reduce:duration-0">
               {logo}
+              {/* Logotype, exempt from text contrast: the dot keeps the brand orange in both themes. */}
+              {/* eslint-disable-next-line no-restricted-syntax */}
               <span className="text-aerospace">.</span>
             </Link>
           </h1>

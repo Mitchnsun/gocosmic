@@ -26,21 +26,21 @@ const StatusBar = ({ availability = AVAILABILITY, region = DEFAULT_REGION }: Sta
       role="status"
       aria-label={t('aria_label')}
       aria-live="off"
-      className="border-ghost/8 bg-void text-ghost/35 text-3xs relative z-50 flex h-8 w-full items-center border-b font-mono tracking-[0.18em] uppercase">
+      className="border-line bg-bg text-fg-3 text-3xs relative z-50 flex h-8 w-full items-center border-b font-mono tracking-[0.18em] uppercase">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <p className="flex min-w-0 items-center gap-2">
           <span className="relative flex h-2 w-2 shrink-0" aria-hidden="true">
             {isAvailable && (
-              <span className="bg-jungle absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 motion-reduce:animate-none" />
+              <span className="bg-ok absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 motion-reduce:animate-none" />
             )}
             <span
               className={cn('relative inline-flex h-2 w-2 rounded-full', {
-                'bg-jungle': isAvailable,
-                'bg-ghost/40': !isAvailable,
+                'bg-ok': isAvailable,
+                'bg-fg-3': !isAvailable,
               })}
             />
           </span>
-          <span className="text-ghost/60 shrink-0">{t(`${status}.label`)}</span>
+          <span className="text-fg-2 shrink-0">{t(`${status}.label`)}</span>
         </p>
         <p className="hidden shrink-0 sm:block">
           {t('mission_control')} · {city} · {altitude}

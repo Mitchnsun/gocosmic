@@ -47,7 +47,7 @@ export default async function Projects() {
   const projects = buildProjectCards(t);
 
   return (
-    <div className="bg-void text-ghost">
+    <div className="bg-bg text-fg">
       <section aria-labelledby="projects-intro" className={cn('pb-0', SECTION_Y)}>
         <div className={cn(CONTAINER, 'flex flex-col gap-10')}>
           <SectionHeading

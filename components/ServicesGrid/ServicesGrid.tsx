@@ -30,13 +30,13 @@ export function ServicesGrid({ eyebrow, title, services, id = 'trades' }: Servic
         <SectionHeading eyebrow={eyebrow} title={title} titleId={titleId} />
         <HairlineGrid className="sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service, index) => (
-            <li key={service.title} className="bg-void">
+            <li key={service.title} className="bg-bg">
               <Reveal delay={index * 50} className="flex h-full flex-col gap-3 p-7">
-                <span className="text-ghost/35 text-2xs font-mono" aria-hidden="true">
+                <span className="text-fg-3 text-2xs font-mono" aria-hidden="true">
                   /{String(index + 1).padStart(2, '0')}
                 </span>
                 <h3 className="font-display text-xl font-semibold tracking-[-0.02em]">{service.title}</h3>
-                <p className="text-ghost/60 text-[15px] leading-relaxed">{service.description}</p>
+                <p className="text-fg-2 text-[15px] leading-relaxed">{service.description}</p>
                 <ul className="mt-auto flex flex-wrap gap-1.5 pt-2">
                   {service.tags.map((tag) => (
                     <li key={tag}>

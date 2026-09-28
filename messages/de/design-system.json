@@ -1,0 +1,35 @@
+{
+  "design-system": {
+    "meta": {
+      "title": "Design system · Cosmic Studio",
+      "description": "Interne Seite, die jeden Baustein der Website im dunklen und im hellen Farbschema zeigt."
+    },
+    "eyebrow": "[ Design system ]",
+    "title": "Jeder Baustein, <em>in beiden Farbschemas.</em>",
+    "intro": "Interne Seite: jedes Element nebeneinander im dunklen (Weltraum) und im hellen Farbschema (Stern). Sie wird von Suchmaschinen nicht erfasst.",
+    "dark": "Dunkel · Weltraum",
+    "light": "Hell · Stern",
+    "tokens": "Farben",
+    "buttons": "Schaltflächen",
+    "tags": "Eyebrow und Chips",
+    "fields": "Formularfelder",
+    "grid": "Raster mit Haarlinien",
+    "sample": {
+      "primary": "Hauptaktion",
+      "secondary": "Nebenaktion",
+      "link": "Textlink",
+      "neutral": "Neutral",
+      "eyebrow": "[ Abschnittslabel ]",
+      "chip": "Schlagwort",
+      "chip_ok": "Inklusive",
+      "name_label": "Ihr Name",
+      "name_placeholder": "Camille Durand",
+      "email_label": "E-Mail-Adresse",
+      "email_error": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "optional": "Optional",
+      "checkbox": "Eine monatliche Option hinzufügen",
+      "slider": "Anzahl der Seiten",
+      "cell": "Zelle"
+    }
+  }
+}

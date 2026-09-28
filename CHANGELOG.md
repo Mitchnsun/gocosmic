@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.1.0] - 2026-09-28
+
+### Added
+
+- A light theme: a sun and moon button in the header (and at the bottom of the mobile menu) switches the whole site between dark and light, with a soft fade and a sun that rises into place, and the site remembers the choice on the next visit (as the privacy policy now explains), down to the colour of the browser bar on phones
+- In the light theme, the homepage opens under a rising sun instead of the starry sky and its planet, and closes on a warm glow, while the starry bands at the bottom of the other pages and the project headers stay night-coloured
+
+### Changed
+
+- Secondary and small grey texts are slightly brighter in the dark theme, and every text on the site now meets the recommended reading contrast in both themes
+- Purple labels on the project pages are lighter in the dark theme, the pricing simulator's tick boxes match the site's style, and the custom cursor's trail stays visible on every background, light or dark
+- Keyboard focus outlines are now full orange, easier to spot, and selected text is highlighted in the studio's orange
+
 ## [2.0.0] - 2026-09-27
 
 ### Added

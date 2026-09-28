@@ -7,7 +7,7 @@
       },
       "eyebrow": "GDPR",
       "title": "Privacy policy",
-      "updated": "Last updated: 27 September 2026",
+      "updated": "Last updated: 28 September 2026",
       "intro": "This page explains how Cosmic Studio handles the personal data collected on this website and in email exchanges.",
       "legalNoticePrefix": "For publisher and hosting details, see the",
       "legalNoticeLink": "legal notice",
@@ -24,7 +24,7 @@
             "The website has no customer account, payment, CAPTCHA or advertising pixel. Two forms are handled on the server. The free mockup page collects your email address, the colour mood you pick, the address of your current website if you provide it, your message and the language of the page. If you arrive from the pricing simulator, the request also includes the choices you made there (project type, site type, number of pages, selected options, update frequency and the resulting estimated monthly price), so the studio can reply with the full picture. The contact form collects your name, email address and message, plus your phone number, your business and the kind of need you picked, if you fill them in. In both cases, the information is sent by email to the studio's mailbox and nothing is stored in a database. Messages sent through the site's email links are handled by your email software and the recipient's mailbox.",
             "Your IP address is processed temporarily by the hosting provider's firewall, which limits each of the two forms (contact and free mockup) to three submissions every ten minutes, alongside a hidden anti-spam field. The hosting provider may also process technical data for its security and delivery logs. Vercel Analytics is only loaded after your consent, to count page views.",
             "If you book a call from the contact page, Google Calendar passes the studio your name, email address, the chosen time slot and any information you enter in the booking form. This information is kept in the studio's calendar, not in a database.",
-            "Two items are stored in your browser. The pricing simulation is kept only so it can follow you from the simulator to the free mockup form: it is sent to us only if you submit that form, is erased once the request is sent, and disappears when you close the tab. The dates of your recent contact form submissions are used to limit how often the form can be sent from the same browser and stay there until you clear your browser data; they are never sent to us."
+            "Three items are stored in your browser. The pricing simulation is kept only so it can follow you from the simulator to the free mockup form: it is sent to us only if you submit that form, is erased once the request is sent, and disappears when you close the tab. The dates of your recent contact form submissions are used to limit how often the form can be sent from the same browser and stay there until you clear your browser data; they are never sent to us. Your choice of light or dark theme is kept so the site opens the way you left it; it is never sent to us."
           ]
         },
         {

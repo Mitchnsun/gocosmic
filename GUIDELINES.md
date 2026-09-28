@@ -10,7 +10,7 @@ The project uses a distinctive **cosmic theme** throughout all interfaces:
 - **Cosmic Theme** — Space-inspired palette: deep blacks, cosmic blues, stellar accents
 - **Accessibility First** — All components must meet WCAG standards; use Radix UI primitives for accessible primitives
 - **Responsive Design** — Mobile-first with fluid layouts and adaptive components
-- **Dark by Default** — the site has no light theme; every component is designed for the dark `void` background (see `DESIGN_GUIDELINE.md`)
+- **Two themes, dark by default** — dark ("space") and light ("star") share every component; colours come from the semantic tokens (`bg`, `fg`, `line`…) so each class renders in both themes (see `DESIGN_GUIDELINE.md` §2.1)
 - **Smooth Interactions** — Micro-interactions and animations that enhance the cosmic feel without hurting performance
 
 All UI components should evoke exploration and wonder while staying professionally usable.

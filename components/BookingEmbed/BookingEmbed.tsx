@@ -22,7 +22,7 @@ export function BookingEmbed({ url }: BookingEmbedProps) {
   const [loaded, setLoaded] = useState(false);
 
   if (!url) {
-    return <p className="text-ghost/70 leading-relaxed">{t('unavailable')}</p>;
+    return <p className="text-fg-2 leading-relaxed">{t('unavailable')}</p>;
   }
 
   const openLink = (
@@ -36,7 +36,7 @@ export function BookingEmbed({ url }: BookingEmbedProps) {
     <div className="flex flex-col gap-4">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <p className="font-display font-semibold">{t('title')}</p>
-        <p className="text-ghost/45 text-3xs font-mono tracking-[0.16em] uppercase">{t('via')}</p>
+        <p className="text-fg-3 text-3xs font-mono tracking-[0.16em] uppercase">{t('via')}</p>
       </div>
 
       {/* Phones and narrow tablets: straight to Google's own page. */}
@@ -44,18 +44,19 @@ export function BookingEmbed({ url }: BookingEmbedProps) {
 
       <div className="hidden min-[900px]:block">
         {loaded ? (
+          // Google's page cannot follow the site theme: the frame stays white in both themes.
           <iframe
             src={url}
             title={t('iframe_title')}
             loading="lazy"
-            className="h-[clamp(420px,60vh,600px)] w-full rounded-2xl border-0 bg-white"
+            className="border-line-2 h-[clamp(420px,60vh,600px)] w-full rounded-2xl border bg-white scheme-light"
           />
         ) : (
           <div
             className={cn(
-              'border-ghost/15 flex h-[clamp(420px,60vh,600px)] flex-col items-center justify-center gap-5 rounded-2xl border border-dashed p-8 text-center'
+              'border-line-2 flex h-[clamp(420px,60vh,600px)] flex-col items-center justify-center gap-5 rounded-2xl border border-dashed p-8 text-center'
             )}>
-            <p className="text-ghost/70 max-w-[46ch] leading-relaxed">{t('consent')}</p>
+            <p className="text-fg-2 max-w-[46ch] leading-relaxed">{t('consent')}</p>
             <div className="flex flex-wrap justify-center gap-3">
               <button type="button" onClick={() => setLoaded(true)} className={primaryPill()}>
                 {t('load')}
@@ -66,7 +67,7 @@ export function BookingEmbed({ url }: BookingEmbedProps) {
         )}
       </div>
 
-      <p className="text-ghost/45 text-sm leading-relaxed">{t('note')}</p>
+      <p className="text-fg-3 text-sm leading-relaxed">{t('note')}</p>
     </div>
   );
 }

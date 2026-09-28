@@ -45,5 +45,7 @@ describe('BookingEmbed', () => {
     expect(iframe).toHaveAttribute('src', url);
     expect(iframe).toHaveAttribute('title', "Matthieu's booking calendar (Google Calendar)");
     expect(iframe).toHaveAttribute('loading', 'lazy');
+    // Google's page cannot follow the site theme: the frame stays white, in a light colour scheme.
+    expect(iframe).toHaveClass('bg-white', 'scheme-light', 'border-line-2');
   });
 });

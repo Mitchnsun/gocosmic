@@ -3,7 +3,7 @@ import { cn } from './lib/utils';
 
 /** Hover lift of the primary pill; reduced motion keeps the pill still. */
 const PRIMARY_MOTION =
-  'transition-transform duration-200 ease-[cubic-bezier(.16,1,.3,1)] hover:scale-[1.04] focus-visible:ring-2 focus-visible:ring-ghost focus-visible:ring-offset-2 focus-visible:ring-offset-void focus-visible:outline-none motion-reduce:transition-none motion-reduce:hover:scale-100';
+  'transition-transform duration-200 ease-[cubic-bezier(.16,1,.3,1)] hover:scale-[1.04] focus-visible:ring-2 focus-visible:ring-fg focus-visible:ring-offset-2 focus-visible:ring-offset-bg focus-visible:outline-none motion-reduce:transition-none motion-reduce:hover:scale-100';
 
 /** The one primary action of a screen: orange pill, dark label, soft glow. */
 export const primaryPill = (className?: string) =>
@@ -13,7 +13,7 @@ export const primaryPill = (className?: string) =>
 export const ghostPill = (className?: string) =>
   cn(
     buttonVariants({ variant: 'ghost', size: 'pill' }),
-    'font-medium focus-visible:ring-2 focus-visible:ring-ghost focus-visible:outline-none',
+    'font-medium focus-visible:ring-2 focus-visible:ring-fg focus-visible:outline-none',
     className
   );
 

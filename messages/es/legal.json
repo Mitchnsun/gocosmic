@@ -7,7 +7,7 @@
       },
       "eyebrow": "RGPD",
       "title": "Política de privacidad",
-      "updated": "Última actualización: 27 de septiembre de 2026",
+      "updated": "Última actualización: 28 de septiembre de 2026",
       "intro": "Esta página explica cómo trata Cosmic Studio los datos personales recogidos en este sitio y en los intercambios por correo electrónico.",
       "legalNoticePrefix": "Para los datos del editor y del alojamiento, consulta el",
       "legalNoticeLink": "aviso legal",
@@ -24,7 +24,7 @@
             "El sitio no ofrece área de cliente, ni pago, ni CAPTCHA, ni píxel publicitario. Dos formularios se procesan en el servidor. La página de maqueta gratuita recoge tu dirección de correo electrónico, la gama de colores elegida, la dirección de tu sitio actual si la indicas, tu mensaje y el idioma de la página. Si llegas desde el simulador de precios, la solicitud incluye también las opciones que elegiste allí (tipo de proyecto, tipo de sitio, número de páginas, opciones seleccionadas, frecuencia de actualizaciones y precio mensual estimado), para que el estudio pueda responderte con conocimiento de causa. El formulario de contacto recoge tu nombre, tu dirección de correo electrónico y tu mensaje, así como, si los indicas, tu teléfono, tu actividad y el tipo de necesidad elegido. En ambos casos, la información se envía por correo electrónico al buzón del estudio y no se guarda nada en una base de datos. Los mensajes enviados a través de los enlaces de correo del sitio los gestionan tu programa de correo y el buzón del destinatario.",
             "El cortafuegos del proveedor de alojamiento trata tu dirección IP de forma temporal y limita cada uno de los dos formularios (contacto y maqueta gratuita) a tres envíos cada diez minutos, como complemento a un campo antispam oculto. El proveedor de alojamiento también puede tratar datos técnicos para sus registros de seguridad y de entrega. Vercel Analytics solo se carga tras tu consentimiento, para medir las páginas vistas.",
             "Si reservas una llamada desde la página de contacto, Google Calendar transmite al estudio tu nombre, tu dirección de correo electrónico, el horario elegido y la información que introduzcas en el formulario de reserva. Esta información se conserva en la agenda del estudio, no en una base de datos.",
-            "Se guardan dos datos en tu navegador. La simulación de precios se guarda solo para trasladarla del simulador al formulario de maqueta gratuita: únicamente nos llega si envías ese formulario, se borra una vez enviada la solicitud y desaparece al cerrar la pestaña. Las fechas de tus últimos envíos del formulario de contacto sirven para limitar la frecuencia de envío desde ese navegador; permanecen en él hasta que borres tus datos de navegación y nunca nos llegan."
+            "Se guardan tres datos en tu navegador. La simulación de precios se guarda solo para trasladarla del simulador al formulario de maqueta gratuita: únicamente nos llega si envías ese formulario, se borra una vez enviada la solicitud y desaparece al cerrar la pestaña. Las fechas de tus últimos envíos del formulario de contacto sirven para limitar la frecuencia de envío desde ese navegador; permanecen en él hasta que borres tus datos de navegación y nunca nos llegan. Tu elección de tema claro u oscuro se guarda para que el sitio se abra tal como lo dejaste; nunca nos llega."
           ]
         },
         {

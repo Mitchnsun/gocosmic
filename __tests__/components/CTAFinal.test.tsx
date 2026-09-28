@@ -1,6 +1,7 @@
 import { vi } from 'vitest';
 
 import CTAFinal from '@/components/CTAFinal';
+import { THEME_STORAGE_KEY, ThemeProvider } from '@/components/Theme';
 
 import { fireEvent, render } from '../test-utils';
 
@@ -51,8 +52,10 @@ describe('CTAFinal', () => {
     starfieldMock.mockClear();
     window.matchMedia = vi.fn().mockReturnValue({
       addEventListener: vi.fn(),
+      addListener: vi.fn(),
       matches: false,
       removeEventListener: vi.fn(),
+      removeListener: vi.fn(),
     });
   });
 
@@ -214,10 +217,10 @@ describe('CTAFinal', () => {
     const { getByRole, getByText } = renderCTA({ accentColor: 'jungle' });
 
     const cta = getByRole('link', { name: /Contact us/ });
-    expect(cta).toHaveClass('bg-jungle', 'cta-final-glow');
+    expect(cta).toHaveClass('bg-ok', 'cta-final-glow');
 
     const headline = getByText('Ready to Go Cosmic?');
-    expect(headline).toHaveClass('cta-final-headline', 'from-jungle');
+    expect(headline).toHaveClass('cta-final-headline', 'from-ok');
   });
 
   it('should expose the accent colour as a CSS variable', () => {
@@ -274,5 +277,48 @@ describe('CTAFinal', () => {
       fireEvent.pointerEnter(getByRole('link', { name: /Contact us/ }));
       expect(lastStarfieldProps().starCount).toBe(780);
     });
+  });
+
+  describe('light theme', () => {
+    const renderLight = (props = {}) => {
+      localStorage.setItem(THEME_STORAGE_KEY, 'light');
+      return render(
+        <ThemeProvider>
+          <CTAFinal headline="Ready?" description="Talk to us." ctaText="Contact us" ctaHref="/contact" {...props} />
+        </ThemeProvider>
+      );
+    };
+
+    afterEach(() => localStorage.clear());
+
+    it('swaps the stars for a warm sun halo on the immersive tone, with nothing left to warp', () => {
+      const { container, getByRole } = renderLight({ warpOnHover: true });
+
+      expect(container.querySelector('canvas')).not.toBeInTheDocument();
+      expect(container.querySelector('.sun-glow')).toBeInTheDocument();
+      expect(container.querySelector('.rose-floor')).toBeInTheDocument();
+      fireEvent.pointerEnter(getByRole('link', { name: /Contact us/ }));
+      expect(container.querySelector('section')).toHaveAttribute('data-warping', 'false');
+      expect(container.querySelector('section')).not.toHaveAttribute('data-theme');
+    });
+
+    it('keeps the sober tone as a dark island, stars included', () => {
+      const { container } = renderLight({ tone: 'sober' });
+
+      expect(container.querySelector('section')).toHaveAttribute('data-theme', 'dark');
+      expect(container.querySelector('canvas')).toBeInTheDocument();
+      expect(container.querySelector('.sun-glow')).not.toBeInTheDocument();
+    });
+  });
+
+  it('marks only the sober tone as a dark island', () => {
+    const { container } = renderCTA();
+    expect(container.querySelector('section')).not.toHaveAttribute('data-theme');
+    expect(container.querySelector('.sun-glow')).toHaveClass('hidden', 'light:block');
+  });
+
+  it('paints the alternate background with the alt variant', () => {
+    const { container } = renderCTA({ variant: 'alt' });
+    expect(container.querySelector('section')).toHaveClass('bg-bg-alt');
   });
 });

@@ -6,10 +6,11 @@ import { cn } from '@/design-system/lib/utils';
 import { Link, usePathname } from '@/i18n/navigation';
 
 import LanguageSwitcher from '../LanguageSwitcher';
+import { ThemeToggle } from '../Theme';
 import { HeaderNavItem } from './constants';
 import HeaderCta from './HeaderCta';
 
-/** Inline navigation shown from `lg` (1024 px): text links, primary CTA and language switcher. */
+/** Inline navigation shown from `lg` (1024 px): text links, primary CTA, language switcher and theme toggle. */
 const DesktopNav = ({ items }: { items: HeaderNavItem[] }) => {
   const t = useTranslations('navigation');
   const pathname = usePathname();
@@ -24,8 +25,8 @@ const DesktopNav = ({ items }: { items: HeaderNavItem[] }) => {
             key={href}
             href={href}
             className={cn(
-              'group focus-visible:ring-aerospace/70 text-ghost/75 hover:text-ghost focus-visible:text-ghost relative rounded py-2 transition-colors duration-300 focus-visible:ring-2 focus-visible:outline-none motion-reduce:duration-0',
-              { 'text-ghost': active }
+              'group focus-visible:ring-aerospace-ink text-fg-2 hover:text-fg focus-visible:text-fg relative rounded py-2 transition-colors duration-300 focus-visible:ring-2 focus-visible:outline-none motion-reduce:duration-0',
+              { 'text-fg': active }
             )}
             aria-label={ariaLabel}
             aria-current={active ? 'page' : undefined}>
@@ -42,6 +43,7 @@ const DesktopNav = ({ items }: { items: HeaderNavItem[] }) => {
       })}
       <HeaderCta />
       <LanguageSwitcher />
+      <ThemeToggle />
     </nav>
   );
 };

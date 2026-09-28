@@ -28,16 +28,16 @@ export function SubmitFeedback({ status, hasInvalidFields, reason }: SubmitFeedb
   return (
     <div aria-live="polite" aria-atomic="true">
       {status === 'success' && (
-        <div className="border-jungle/25 bg-jungle/[0.06] rounded-2xl border p-6">
-          <p className="text-jungle text-2xs flex items-center gap-2 font-mono tracking-[0.24em] uppercase">
-            <span className="bg-jungle h-2 w-2 shrink-0 rounded-full" aria-hidden="true" />
+        <div className="border-ok/25 bg-ok/[0.06] rounded-2xl border p-6">
+          <p className="text-ok text-2xs flex items-center gap-2 font-mono tracking-[0.24em] uppercase">
+            <span className="bg-ok h-2 w-2 shrink-0 rounded-full" aria-hidden="true" />
             {t('form.success_title')}
           </p>
-          <p className="text-ghost/70 mt-3 text-sm">{t('form.success_message')}</p>
+          <p className="text-fg-2 mt-3 text-sm">{t('form.success_message')}</p>
         </div>
       )}
       {status === 'error' && (
-        <p className="border-aerospace/30 bg-aerospace/[0.06] text-ghost/70 rounded-xl border p-4 text-sm">
+        <p className="border-aerospace/30 bg-aerospace/[0.06] text-fg-2 rounded-xl border p-4 text-sm">
           {errorMessage}
         </p>
       )}

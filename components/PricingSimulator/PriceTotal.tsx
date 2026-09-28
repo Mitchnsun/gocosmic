@@ -15,20 +15,20 @@ export function PriceTotal({ label, amount, period, note }: PriceTotalProps) {
   const labelId = useId();
 
   return (
-    <div className="border-ghost/8 bg-ghost/[0.02] rounded-2xl border p-6">
-      <p id={labelId} className="text-ghost/55 text-2xs font-mono tracking-[0.24em] uppercase">
+    <div className="border-line-2 bg-bg rounded-2xl border p-6">
+      <p id={labelId} className="text-fg-2 text-2xs font-mono tracking-[0.24em] uppercase">
         {label}
       </p>
       <p className="mt-3 flex items-baseline gap-2">
         <output
           aria-labelledby={labelId}
           aria-live="polite"
-          className="text-aerospace font-display text-5xl font-bold tabular-nums">
+          className="text-aerospace-ink font-display text-5xl font-bold tabular-nums">
           {amount}
         </output>
-        <span className="text-ghost/55 font-display text-base">{period}</span>
+        <span className="text-fg-2 font-display text-base">{period}</span>
       </p>
-      <p className="text-ghost/35 mt-3 text-sm">{note}</p>
+      <p className="text-fg-3 mt-3 text-sm">{note}</p>
     </div>
   );
 }

@@ -41,14 +41,12 @@ export const AccentList = ({
 
   return (
     <div className={cn('w-full', className)}>
-      {label && (
-        <LabelTag className="text-ghost/35 text-2xs mb-4 font-mono tracking-[0.24em] uppercase">{label}</LabelTag>
-      )}
+      {label && <LabelTag className="text-fg-3 text-2xs mb-4 font-mono tracking-[0.24em] uppercase">{label}</LabelTag>}
       <ul
         aria-label={label ? undefined : ariaLabel}
         className={cn('grid gap-3', { 'md:grid-cols-2 md:gap-x-8': columns === 2 })}>
         {items.map((item) => (
-          <li key={item} className="text-ghost/80 flex items-start gap-3 text-base leading-7">
+          <li key={item} className="text-fg-2 flex items-start gap-3 text-base leading-7">
             <span className={cn('mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full', bg)} aria-hidden="true" />
             <span>{item}</span>
           </li>

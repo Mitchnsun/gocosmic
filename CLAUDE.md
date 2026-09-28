@@ -18,6 +18,7 @@ yarn check-types      # TypeScript type check via tsconfig.check.json (~9s)
 yarn test             # Run all Vitest tests (~9s, ~690 tests / 87 files)
 yarn test:watch       # Vitest in watch mode
 yarn coverage         # Generate coverage report (must stay ≥90% on all metrics)
+yarn qa               # Local Playwright QA: axe audit of every route in both themes (not in CI)
 ```
 
 **Before committing**, always run: `yarn format && yarn lint && yarn check-types && yarn test && yarn coverage`
@@ -72,6 +73,11 @@ This is a single Next.js 16 app (App Router) with full internationalization via 
   4. Map the route to its translation namespace(s) in `getNamespacesForPath` (`i18n/request.ts`)
   5. Add translation keys to all 5 locale namespace files under `messages/`
 - `proxy.ts` handles locale detection and redirects at the middleware level.
+
+### Themes
+
+- Two themes, dark (default) and light, set by `next-themes` as `data-theme` on `<html>` (`components/Theme`). Colour only with the semantic tokens of `DESIGN_GUIDELINE.md` §2.1 (`bg`, `fg`, `fg-2`, `line`, `ok`, `aerospace-ink`…); ESLint rejects the theme-dependent nominal classes (`bg-void`, `text-ghost`…).
+- Theme-specific visuals use the `light:` variant first (no flash), then `useResolvedTheme()` to unmount what is hidden. A section that must stay dark sets `data-theme="dark"`.
 - **Inclusive writing for trades/professions**: when copy lists or names a profession in a gendered language, write both forms. FR uses the median dot (`coiffeur·se`, `consultant·e`); ES/IT use a slash (`fontanero/a`, `parrucchiere/a`); DE uses a colon (`Berater:in`). Generic plural nouns that already read as neutral (e.g. "artisans", "indépendants", "artigiani") don't need doubling — only actual profession names do. When in doubt about which professions to list or how to phrase a specific sentence, ask for confirmation rather than guessing.
 
 ### Component architecture

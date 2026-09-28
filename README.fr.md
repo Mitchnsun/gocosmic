@@ -16,6 +16,12 @@ Le site Cosmic Studio a pour objectifs :
 
 ## Fonctionnalités actuelles
 
+### Thèmes sombre et clair
+
+- **Deux faces d'un même univers** : sombre (« l'espace », par défaut) et clair (« l'étoile »), avec le même contenu et les mêmes composants
+- **Bascule de thème** : un bouton soleil / lune dans l'en-tête et le menu mobile ; le choix est mémorisé dans le navigateur et appliqué avant le premier affichage, sans flash
+- **Accessible dans les deux thèmes** : chaque couleur de texte atteint le contraste WCAG AA, vérifié par des tests unitaires et par un audit axe de chaque page (`yarn qa`)
+
 ### Internationalisation (i18n)
 
 - **5 langues** : anglais, français, espagnol, allemand, italien
@@ -34,7 +40,7 @@ Les traductions sont organisées en fichiers par namespace pour une meilleure li
 ```
 messages/
   ├── en/              # Traductions anglaises
-  │   ├── common.json        # Chaînes partagées (404, meta, sélecteur de langue)
+  │   ├── common.json        # Chaînes partagées (404, meta, sélecteur de langue, bascule de thème)
   │   ├── navigation.json    # Labels de navigation du header
   │   ├── footer.json        # Contenu du footer
   │   ├── home.json          # Contenu de la page d'accueil
@@ -46,7 +52,8 @@ messages/
   │   ├── free-mockup.json   # Contenu de la page maquette gratuite
   │   ├── local.json         # Contenu de la page SEO locale
   │   ├── legal.json         # Politique de confidentialité, mentions légales et CGV
-  │   └── psc-supersprint.json # Contenu de l'étude de cas PSC Supersprint
+  │   ├── psc-supersprint.json # Contenu de l'étude de cas PSC Supersprint
+  │   └── design-system.json # Page interne du design system (noindex)
   ├── fr/              # Français (même structure)
   ├── es/              # Espagnol (même structure)
   ├── de/              # Allemand (même structure)
@@ -238,6 +245,7 @@ yarn check-types
 yarn test           # Exécuter les tests unitaires
 yarn test:watch     # Tests en mode watch
 yarn coverage       # Rapport de couverture de tests
+yarn qa             # QA locale : audit d'accessibilité de chaque page dans les deux thèmes (Playwright)
 ```
 
 ### Ajouter une nouvelle route
@@ -378,7 +386,8 @@ Pour des consignes de test détaillées, voir [`__tests__/TESTING.md`](./__tests
 │   ├── ContactDetails/ # Coordonnées et disponibilité
 │   ├── ContactForm/  # Formulaire de contact
 │   ├── ContactPanel/ # Onglets « Écrire un message » / « Réserver un appel »
-│   ├── CTAFinal/     # Appel à l'action final avec champ d'étoiles
+│   ├── CTAFinal/     # Appel à l'action final avec champ d'étoiles (halo solaire chaud dans le thème clair)
+│   ├── DesignSystemShowcase/ # Chaque primitive côte à côte dans les deux thèmes (/design-system)
 │   ├── Faq/          # Accordéon FAQ
 │   ├── Footer/       # Pied de page du site
 │   ├── FreeMockupForm/ # Formulaire de demande de maquette gratuite
@@ -394,6 +403,8 @@ Pour des consignes de test détaillées, voir [`__tests__/TESTING.md`](./__tests
 │   ├── Reveal/       # Apparition au défilement
 │   ├── SectionHeading/ # Surtitre, titre et chapô en tête de chaque section
 │   ├── StudioIntro/  # Qui est derrière le studio
+│   ├── Sun/          # Le soleil du thème clair (disque et halo en CSS pur)
+│   ├── Theme/        # Provider de thème (next-themes), bascule et hooks de thème
 │   ├── WhyStudio/    # Raisons numérotées de choisir le studio
 │   ├── ...           # Autres composants (ProcessTimeline, ServicesGrid, StatusBar, CookieConsent…)
 │   └── icons/        # Icônes SVG réutilisables
@@ -418,7 +429,7 @@ Pour des consignes de test détaillées, voir [`__tests__/TESTING.md`](./__tests
 │   └── validation/   # Schémas de validation des formulaires
 ├── messages/         # Fichiers de traduction organisés par namespace
 │   ├── en/           # Traductions anglaises
-│   │   ├── common.json        # Chaînes communes (404, meta, langue)
+│   │   ├── common.json        # Chaînes communes (404, meta, langue, thème)
 │   │   ├── navigation.json    # Navigation du header
 │   │   ├── footer.json        # Contenu du footer
 │   │   ├── home.json          # Contenu de l'accueil
@@ -430,7 +441,8 @@ Pour des consignes de test détaillées, voir [`__tests__/TESTING.md`](./__tests
 │   │   ├── free-mockup.json   # Contenu maquette gratuite
 │   │   ├── local.json         # Contenu SEO local
 │   │   ├── legal.json         # Confidentialité, mentions légales et CGV
-│   │   └── psc-supersprint.json # Étude de cas PSC Supersprint
+│   │   ├── psc-supersprint.json # Étude de cas PSC Supersprint
+│   │   └── design-system.json # Page interne du design system
 │   ├── fr/           # Français (même structure)
 │   ├── es/           # Espagnol (même structure)
 │   ├── de/           # Allemand (même structure)

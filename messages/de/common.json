@@ -45,5 +45,10 @@
     "next": "Nächstes Projekt",
     "nav_label": "Navigation zwischen Fallstudien",
     "contact_cta": "Ähnliches Projekt besprechen"
+  },
+  "theme": {
+    "label": "Farbschema",
+    "toggle_light": "Zum hellen Farbschema wechseln",
+    "toggle_dark": "Zum dunklen Farbschema wechseln"
   }
 }

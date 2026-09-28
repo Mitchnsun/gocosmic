@@ -44,7 +44,7 @@ export default async function LocalPage() {
   const projects = buildProjectCards(tProjects).slice(0, PROJECT_COUNT);
 
   return (
-    <div className="bg-void text-ghost">
+    <div className="bg-bg text-fg">
       <section aria-labelledby="local-intro" className="pt-[clamp(3.5rem,8vw,7rem)]">
         <div className={cn(CONTAINER, 'flex flex-col gap-8')}>
           <SectionHeading
@@ -76,7 +76,7 @@ export default async function LocalPage() {
         }))}
       />
 
-      <section aria-labelledby="local-projects" className={cn('border-ghost/8 border-t', SECTION_Y)}>
+      <section aria-labelledby="local-projects" className={cn('border-line border-t', SECTION_Y)}>
         <div className={cn(CONTAINER, 'flex flex-col gap-10')}>
           <div className="flex flex-wrap items-end justify-between gap-4">
             <SectionHeading

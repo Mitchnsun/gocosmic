@@ -57,7 +57,7 @@ const MobileLangDrawer = ({ onClose }: MobileLangDrawerProps) => {
       role="dialog"
       aria-modal="true"
       aria-label={t('switch_locale')}
-      className="bg-void/95 fixed inset-0 z-40 flex flex-col backdrop-blur-xl"
+      className="bg-bg/95 fixed inset-0 z-40 flex flex-col backdrop-blur-xl"
       initial={{ y: '-100%' }}
       animate={{ y: 0 }}
       exit={{ y: '-100%' }}
@@ -67,14 +67,14 @@ const MobileLangDrawer = ({ onClose }: MobileLangDrawerProps) => {
         style={{ height: `calc(${statusBarOffset}px + env(safe-area-inset-top, 0px) + ${HEADER_HEIGHT}px)` }}
         className="shrink-0"
       />
-      <div className="border-ghost/10 text-3xs text-ghost/45 flex items-center justify-between border-b px-4 py-3 tracking-widest uppercase sm:px-6">
+      <div className="border-line text-3xs text-fg-3 flex items-center justify-between border-b px-4 py-3 tracking-widest uppercase sm:px-6">
         <span>{t('lang_drawer_title')}</span>
-        <button onClick={onClose} aria-label={t('menu_close')} className="hover:text-ghost p-1 transition-colors">
+        <button onClick={onClose} aria-label={t('menu_close')} className="hover:text-fg p-1 transition-colors">
           <XMarkIcon className="h-4 w-4" aria-hidden="true" />
         </button>
       </div>
       <nav className="flex flex-1 flex-col overflow-y-auto" aria-label={t('switch_locale')}>
-        <ul className="divide-ghost/8 flex flex-col divide-y">
+        <ul className="divide-line flex flex-col divide-y">
           {Object.entries(LANG_DRAWER_LANGUAGES).map(([code, { name, flag }], index) => (
             <motion.li
               key={code}
@@ -85,11 +85,11 @@ const MobileLangDrawer = ({ onClose }: MobileLangDrawerProps) => {
                 onClick={() => handleSelect(code)}
                 disabled={isPending}
                 className="group flex w-full items-center justify-between px-4 py-6 sm:px-6">
-                <span className="font-display text-ghost flex items-center gap-4 text-[2rem] leading-none font-medium">
+                <span className="font-display text-fg flex items-center gap-4 text-[2rem] leading-none font-medium">
                   <span aria-hidden="true">{flag}</span>
                   {name}
                 </span>
-                {locale === code && <CheckIcon className="text-aerospace h-5 w-5" aria-hidden="true" />}
+                {locale === code && <CheckIcon className="text-aerospace-ink h-5 w-5" aria-hidden="true" />}
               </button>
             </motion.li>
           ))}

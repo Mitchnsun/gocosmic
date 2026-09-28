@@ -11,6 +11,8 @@ export interface CaseStudyImage {
   alt: string;
   width?: number;
   height?: number;
+  /** Fixed brand colour painted behind the image in both themes, e.g. `space` behind a white logo. */
+  background?: string;
 }
 
 /** One content section of a case study (overview, challenge, solution…). */

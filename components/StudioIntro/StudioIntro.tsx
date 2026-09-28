@@ -42,17 +42,17 @@ export function StudioIntro({
             alt={portrait.alt}
             width={portrait.width}
             height={portrait.height}
-            className="border-ghost/10 aspect-[4/5] w-full max-w-[420px] rounded-3xl border object-cover"
+            className="border-line-2 aspect-[4/5] w-full max-w-[420px] rounded-3xl border object-cover"
           />
         )}
         <div className="flex max-w-3xl flex-col gap-5">
           <SectionHeading eyebrow={eyebrow} title={title} titleId={titleId} />
           {paragraphs.map((paragraph) => (
-            <p key={paragraph} className="text-ghost/70 leading-relaxed">
+            <p key={paragraph} className="text-fg-2 leading-relaxed">
               {paragraph}
             </p>
           ))}
-          <ul className="text-ghost/45 text-2xs flex flex-wrap gap-x-8 gap-y-3 pt-2 font-mono tracking-[0.16em] uppercase">
+          <ul className="text-fg-3 text-2xs flex flex-wrap gap-x-8 gap-y-3 pt-2 font-mono tracking-[0.16em] uppercase">
             {zones.map((zone) => (
               <li key={zone}>{zone}</li>
             ))}
