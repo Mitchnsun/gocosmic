@@ -5,11 +5,18 @@ import { routing } from '@/i18n/routing';
 
 type RouteKey = keyof typeof routing.pathnames;
 
+/** Internal pages kept out of search engines (they are also noindex). */
+export const UNLISTED_ROUTES: readonly RouteKey[] = ['/design-system'];
+
 /** One entry per route and locale, each listing its translations as hreflang alternates. */
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
-  return (Object.keys(routing.pathnames) as RouteKey[]).flatMap((routeKey) => {
+  const listed = (Object.keys(routing.pathnames) as RouteKey[]).filter(
+    (routeKey) => !UNLISTED_ROUTES.includes(routeKey)
+  );
+
+  return listed.flatMap((routeKey) => {
     const languages = getLanguageAlternates(routeKey);
 
     return routing.locales.map((locale) => ({

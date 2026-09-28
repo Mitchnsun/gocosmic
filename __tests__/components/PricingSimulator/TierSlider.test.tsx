@@ -46,6 +46,8 @@ describe('TierSlider', () => {
     render(<TierSlider label="Number of pages" tiers={tiers} value={0} onChange={() => {}} disabled />);
 
     expect(screen.getByRole('slider')).toHaveAttribute('data-disabled');
+    // Announced as an inactive group, which also exempts the dimmed text from contrast checks.
+    expect(screen.getByRole('group', { name: 'Number of pages' })).toHaveAttribute('aria-disabled', 'true');
   });
 
   it('reflects the selected tier as the current slider value', () => {
