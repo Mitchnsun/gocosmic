@@ -11,7 +11,7 @@ import { Header } from '@/components/Header';
 import LocalBusinessSeo from '@/components/JsonLd/LocalBusinessSeo';
 import WebsiteSeo from '@/components/JsonLd/WebsiteSeo';
 import { StatusBar } from '@/components/StatusBar';
-import { ThemeProvider } from '@/components/Theme';
+import { ThemeColorBoot, ThemeProvider } from '@/components/Theme';
 import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/config';
 import { getOgImages } from '@/lib/og';
@@ -84,6 +84,7 @@ export default async function LocaleLayout({
       className={`${spaceGrotesk.variable} ${inter.variable} ${spaceMono.variable}`}
       suppressHydrationWarning>
       <body className="bg-bg">
+        <ThemeColorBoot />
         <ThemeProvider>
           <NextIntlClientProvider>
             <CookieConsentProvider>
