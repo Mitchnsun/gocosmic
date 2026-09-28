@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-import { asReturningVisitor, LOCALE } from './helpers';
+import { asReturningVisitor, LOCALE, THEME_LABELS } from './helpers';
 
 const CREAM = 'rgb(255, 248, 231)';
 const VOID = 'rgb(2, 6, 23)';
@@ -41,10 +41,7 @@ test('without any stored choice the site opens dark, whatever the OS prefers', a
 test('the toggle switches the theme, the browser chrome and remembers the choice', async ({ context, page }) => {
   await asReturningVisitor(context, 'dark');
   await page.goto(`/${LOCALE}`);
-  await page
-    .locator('header nav')
-    .getByRole('button', { name: /th[eè]me clair|light theme/i })
-    .click();
+  await page.locator('header nav').getByRole('button', { name: THEME_LABELS.toggle_light }).click();
 
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
   await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute('content', '#fff8e7');
