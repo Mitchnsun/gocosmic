@@ -3,6 +3,8 @@
 import { Analytics } from '@vercel/analytics/next';
 import { useTranslations } from 'next-intl';
 
+import { CHECKBOX_CONTROL } from '@/design-system/field';
+import { cn } from '@/design-system/lib/utils';
 import { Link } from '@/i18n/navigation';
 
 import { useCookieConsent } from './CookieConsentContext';
@@ -67,7 +69,7 @@ export function CookieConsent() {
                 <input
                   id="analytics-consent"
                   type="checkbox"
-                  className="mt-1"
+                  className={cn(CHECKBOX_CONTROL, 'mt-0.5')}
                   checked={analyticsEnabled}
                   onChange={(event) => setAnalyticsEnabled(event.target.checked)}
                 />

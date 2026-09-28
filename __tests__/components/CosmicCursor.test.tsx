@@ -5,6 +5,7 @@ import { vi } from 'vitest';
 import CosmicCursor from '@/components/CosmicCursor';
 import { COARSE_POINTER_QUERY } from '@/components/CosmicCursor/useCosmicCursor';
 import { useMagneticElements } from '@/components/CosmicCursor/useMagneticElements';
+import { THEME_STORAGE_KEY, ThemeProvider } from '@/components/Theme';
 
 import { render } from '../test-utils';
 
@@ -195,6 +196,43 @@ describe('CosmicCursor render loop', () => {
     capturedFrame = null;
     // Clean up any injected style tags
     document.head.querySelector('style[data-cosmic-cursor]')?.remove();
+  });
+
+  it('fades the trail from the theme ink: cream in the dark theme, void in the light one', () => {
+    const fills: string[] = [];
+    Object.defineProperty(mockCtx, 'fillStyle', {
+      configurable: true,
+      get: () => '',
+      set: (value: string) => fills.push(String(value)),
+    });
+    const drawFrames = () => {
+      for (let x = 100; x < 200; x += 10) {
+        act(() => {
+          document.dispatchEvent(new MouseEvent('mousemove', { clientX: x, clientY: 100, bubbles: true }));
+        });
+        act(() => {
+          capturedFrame!(performance.now() + 16);
+        });
+      }
+    };
+
+    const { unmount } = render(<CosmicCursor />);
+    drawFrames();
+    expect(fills).toContain('rgba(255,248,231,0)');
+    unmount();
+
+    fills.length = 0;
+    localStorage.setItem(THEME_STORAGE_KEY, 'light');
+    render(
+      <ThemeProvider>
+        <CosmicCursor />
+      </ThemeProvider>
+    );
+    drawFrames();
+    expect(fills).toContain('rgba(2,6,23,0)');
+    expect(fills).not.toContain('rgba(255,248,231,0)');
+    localStorage.clear();
+    Object.defineProperty(mockCtx, 'fillStyle', { configurable: true, writable: true, value: '' });
   });
 
   it('calls clearRect on each animation frame', () => {

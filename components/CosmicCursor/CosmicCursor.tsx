@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+import { type Theme, useResolvedTheme } from '@/components/Theme';
+
 import { useCosmicCursor } from './useCosmicCursor';
 
 /** Props for the CosmicCursor component */
@@ -21,9 +23,10 @@ export interface CosmicCursorProps {
   trailSize?: number;
 }
 
-const COLORS = {
-  aerospace: '#FF4F00',
-  cosmicLatte: '#FFF8E7',
+/** Colour the trail fades from, towards the accent: cosmic-latte in space, void ink under the star. */
+const TRAIL_BASE: Record<Theme, string> = {
+  dark: '#FFF8E7',
+  light: '#020617',
 };
 
 /** Parse a hex color into { r, g, b } */
@@ -55,6 +58,13 @@ const CosmicCursor = ({
 }: CosmicCursorProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { stateRef, updateTrail } = useCosmicCursor({ trailLength, magneticRange, magneticEase });
+  // Read by the animation loop, so a theme switch recolours the trail without a DOM query per frame.
+  const theme = useResolvedTheme();
+  const trailBaseRef = useRef(hexToRgb(TRAIL_BASE.dark));
+  useEffect(() => {
+    // eslint-disable-next-line security/detect-object-injection -- theme is the typed Theme union
+    trailBaseRef.current = hexToRgb(TRAIL_BASE[theme]);
+  }, [theme]);
   // Tracks touch-device detection; updated after mount to avoid SSR hydration mismatches.
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
@@ -125,7 +135,7 @@ const CosmicCursor = ({
 
       const reduced = state.reducedMotion;
       const accentRgb = hexToRgb(state.accentColor);
-      const latteRgb = hexToRgb(COLORS.cosmicLatte);
+      const baseRgb = trailBaseRef.current;
 
       // Smooth cursor position toward target
       const ease = state.isMagnetic ? 0.25 : 0.5;
@@ -141,10 +151,10 @@ const CosmicCursor = ({
           const alpha = t * 0.6;
           const radius = trailSize * (0.4 + t * 0.6);
 
-          // Color: interpolate cosmicLatte → aerospace
-          const r = Math.round(latteRgb.r + (accentRgb.r - latteRgb.r) * t);
-          const g = Math.round(latteRgb.g + (accentRgb.g - latteRgb.g) * t);
-          const b = Math.round(latteRgb.b + (accentRgb.b - latteRgb.b) * t);
+          // Color: interpolate the theme's trail base → accent
+          const r = Math.round(baseRgb.r + (accentRgb.r - baseRgb.r) * t);
+          const g = Math.round(baseRgb.g + (accentRgb.g - baseRgb.g) * t);
+          const b = Math.round(baseRgb.b + (accentRgb.b - baseRgb.b) * t);
 
           ctx.beginPath();
           ctx.arc(point.x, point.y, Math.max(0.5, radius), 0, Math.PI * 2);
