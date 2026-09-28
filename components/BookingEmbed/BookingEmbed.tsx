@@ -44,11 +44,12 @@ export function BookingEmbed({ url }: BookingEmbedProps) {
 
       <div className="hidden min-[900px]:block">
         {loaded ? (
+          // Google's page cannot follow the site theme: the frame stays white in both themes.
           <iframe
             src={url}
             title={t('iframe_title')}
             loading="lazy"
-            className="h-[clamp(420px,60vh,600px)] w-full rounded-2xl border-0 bg-white"
+            className="border-line-2 h-[clamp(420px,60vh,600px)] w-full rounded-2xl border bg-white scheme-light"
           />
         ) : (
           <div
