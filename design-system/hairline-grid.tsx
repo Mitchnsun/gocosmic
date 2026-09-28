@@ -16,7 +16,7 @@ interface HairlineGridProps {
  */
 export function HairlineGrid({ children, as: Tag = 'ul', className }: HairlineGridProps) {
   return (
-    <Tag className={cn('bg-ghost/8 border-ghost/8 grid gap-px overflow-hidden rounded-[20px] border', className)}>
+    <Tag className={cn('bg-line border-line grid gap-px overflow-hidden rounded-[20px] border', className)}>
       {children}
     </Tag>
   );

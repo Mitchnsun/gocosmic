@@ -4,8 +4,8 @@ import { cn } from './lib/utils';
 
 interface ChipProps {
   children: ReactNode;
-  /** `jungle` marks what is included; `default` is a neutral tag. */
-  variant?: 'default' | 'jungle';
+  /** `ok` marks what is included; `default` is a neutral tag. */
+  variant?: 'default' | 'ok';
   className?: string;
 }
 
@@ -16,8 +16,8 @@ export function Chip({ children, variant = 'default', className }: ChipProps) {
       className={cn(
         'text-3xs inline-flex items-center rounded-full border px-2.5 py-1 font-mono tracking-[0.12em] uppercase',
         {
-          'border-ghost/15 text-ghost/60': variant === 'default',
-          'border-jungle/50 text-jungle': variant === 'jungle',
+          'border-line-2 text-fg-2': variant === 'default',
+          'border-ok/50 text-ok': variant === 'ok',
         },
         className
       )}>

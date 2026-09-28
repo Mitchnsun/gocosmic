@@ -58,7 +58,7 @@ export default async function Home() {
   const projects = buildProjectCards(tProjects).slice(0, HOME_PROJECT_COUNT);
 
   return (
-    <div className="bg-void text-ghost">
+    <div className="bg-bg text-fg">
       <HeroSection
         eyebrow={t(`hero.eyebrow.${region}`)}
         title={t('hero.title')}
@@ -108,13 +108,13 @@ export default async function Home() {
       </div>
 
       <PricingColumns
-        className="border-ghost/8 border-t"
+        className="border-line border-t"
         eyebrow={tPricing('eyebrow')}
         title={tPricing('title')}
         columns={pricing}
       />
 
-      <section id="projects" aria-labelledby="projects-heading" className={cn('border-ghost/8 border-t', SECTION_Y)}>
+      <section id="projects" aria-labelledby="projects-heading" className={cn('border-line border-t', SECTION_Y)}>
         <div className={cn(CONTAINER, 'flex flex-col gap-10')}>
           <div className="flex flex-wrap items-end justify-between gap-4">
             <SectionHeading
@@ -158,9 +158,7 @@ export default async function Home() {
         description={t('cta.description')}
         note={t.rich('cta.freeMockup', {
           link: (chunks) => (
-            <Link
-              href="/free-mockup"
-              className="text-ghost/70 hover:text-ghost underline underline-offset-4 transition">
+            <Link href="/free-mockup" className="text-fg-2 hover:text-fg underline underline-offset-4 transition">
               {chunks}
             </Link>
           ),

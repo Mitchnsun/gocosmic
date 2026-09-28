@@ -11,6 +11,7 @@ import { Header } from '@/components/Header';
 import LocalBusinessSeo from '@/components/JsonLd/LocalBusinessSeo';
 import WebsiteSeo from '@/components/JsonLd/WebsiteSeo';
 import { StatusBar } from '@/components/StatusBar';
+import { ThemeProvider } from '@/components/Theme';
 import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/config';
 import { getOgImages } from '@/lib/og';
@@ -77,20 +78,26 @@ export default async function LocaleLayout({
   const region = await getRegion();
 
   return (
-    <html lang={locale || 'en'} className={`${spaceGrotesk.variable} ${inter.variable} ${spaceMono.variable}`}>
-      <body className="bg-void">
-        <NextIntlClientProvider>
-          <CookieConsentProvider>
-            <CosmicCursor />
-            <StatusBar region={region} />
-            <Header region={region} />
-            <main id="main-content">{children}</main>
-            <Footer region={region} />
-            <WebsiteSeo />
-            <CookieConsent />
-            <LocalBusinessSeo locale={locale} />
-          </CookieConsentProvider>
-        </NextIntlClientProvider>
+    // next-themes sets data-theme on <html> before hydration, hence suppressHydrationWarning.
+    <html
+      lang={locale || 'en'}
+      className={`${spaceGrotesk.variable} ${inter.variable} ${spaceMono.variable}`}
+      suppressHydrationWarning>
+      <body className="bg-bg">
+        <ThemeProvider>
+          <NextIntlClientProvider>
+            <CookieConsentProvider>
+              <CosmicCursor />
+              <StatusBar region={region} />
+              <Header region={region} />
+              <main id="main-content">{children}</main>
+              <Footer region={region} />
+              <WebsiteSeo />
+              <CookieConsent />
+              <LocalBusinessSeo locale={locale} />
+            </CookieConsentProvider>
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

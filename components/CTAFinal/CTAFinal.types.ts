@@ -1,7 +1,7 @@
 export type AccentColor = 'aerospace' | 'royal' | 'jungle';
 export type StarfieldDensity = 'low' | 'medium' | 'high';
-/** Base background rendered behind the starfield. */
-export type Variant = 'dark' | 'light' | 'gradient';
+/** Base background rendered behind the starfield: page (`bg`), alternate (`bg-alt`) or a blend of both. */
+export type Variant = 'base' | 'alt' | 'gradient';
 /** Visual intensity: `immersive` for the homepage, `sober` for inner pages. */
 export type Tone = 'immersive' | 'sober';
 
@@ -13,6 +13,9 @@ export interface TonePreset {
   warp: boolean;
   /** Whether the accent halo is rendered behind the content. */
   halo: boolean;
+  /** Keeps the section dark in the light theme (`data-theme="dark"`), stars included. When `false`,
+   *  the light theme swaps the starfield for a warm sun halo. */
+  darkIsland: boolean;
   /** Whether the headline uses the animated accent gradient. */
   gradientHeadline: boolean;
   /** Whether the CTA button pulses with a glow. */

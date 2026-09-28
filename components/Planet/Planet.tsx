@@ -126,7 +126,7 @@ const Planet = ({
       <div
         className="animate-orbit-slow planet-orbit-plane absolute rounded-full border border-white/10"
         style={{ width: orbit2Size, height: orbit2Size }}>
-        <span className="bg-jungle absolute -top-1.5 left-1/2 -translate-x-1/2 rounded-full" style={moonStyleJungle} />
+        <span className="bg-ok absolute -top-1.5 left-1/2 -translate-x-1/2 rounded-full" style={moonStyleJungle} />
       </div>
 
       <div

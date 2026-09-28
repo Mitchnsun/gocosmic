@@ -55,7 +55,7 @@ export default async function About() {
   return (
     <>
       <PersonSeo />
-      <div className="bg-void text-ghost">
+      <div className="bg-bg text-fg">
         <section aria-labelledby="about-intro" className="pt-[clamp(3.5rem,8vw,7rem)]">
           <div className={CONTAINER}>
             <SectionHeading

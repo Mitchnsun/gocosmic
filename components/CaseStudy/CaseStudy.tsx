@@ -32,7 +32,7 @@ export const CaseStudy = ({
   const total = String(sections.length).padStart(2, '0');
 
   return (
-    <div className="bg-void text-ghost relative">
+    <div className="bg-bg text-fg relative">
       <CaseStudyHero
         headingId={HEADING_ID}
         eyebrow={eyebrow}

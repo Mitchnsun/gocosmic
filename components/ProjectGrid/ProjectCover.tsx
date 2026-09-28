@@ -8,19 +8,15 @@ import type { ProjectCardContent } from './ProjectGrid.types';
 export function ProjectCover({ cover, title }: Pick<ProjectCardContent, 'cover' | 'title'>) {
   if (!cover) {
     return (
-      <div
-        aria-hidden="true"
-        className="border-ghost/8 grid aspect-[16/10] place-items-center border-b bg-[repeating-linear-gradient(135deg,rgb(248_248_255/0.03)_0_12px,transparent_12px_24px)] px-6">
-        <span className="font-display text-ghost/70 text-center text-2xl font-semibold tracking-[-0.02em]">
-          {title}
-        </span>
+      <div aria-hidden="true" className="border-line bg-stripes grid aspect-[16/10] place-items-center border-b px-6">
+        <span className="font-display text-fg-2 text-center text-2xl font-semibold tracking-[-0.02em]">{title}</span>
       </div>
     );
   }
 
   return (
     <div
-      className="border-ghost/8 grid aspect-[16/10] place-items-center border-b"
+      className="border-line grid aspect-[16/10] place-items-center border-b"
       style={{ background: cover.background }}>
       <Image
         src={cover.src}

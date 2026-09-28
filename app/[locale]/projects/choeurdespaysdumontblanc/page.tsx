@@ -43,7 +43,12 @@ export default function ChoeurDesPaysduMontBlanc() {
       title={t('title')}
       tagline={t('subtitle')}
       accent={PROJECTS_BY_SLUG.choeurdespaysdumontblanc.accent}
-      logo={{ src: PROJECTS_BY_SLUG.choeurdespaysdumontblanc.cover.src, alt: t('title') }}
+      logo={{
+        src: PROJECTS_BY_SLUG.choeurdespaysdumontblanc.cover.src,
+        alt: t('title'),
+        // The white logo keeps its space background in both themes.
+        background: PROJECTS_BY_SLUG.choeurdespaysdumontblanc.cover.background,
+      }}
       meta={buildCaseStudyMeta('choeurdespaysdumontblanc', tList)}
       sections={[
         {

@@ -2,6 +2,7 @@ import { act } from '@testing-library/react';
 import { vi } from 'vitest';
 
 import HeroSection from '@/components/HeroSection';
+import { THEME_STORAGE_KEY, ThemeProvider } from '@/components/Theme';
 
 import { render, screen } from '../test-utils';
 
@@ -14,7 +15,13 @@ vi.mock('@/components/Starfield', () => ({ default: starfieldMock }));
 vi.mock('@/components/Planet', () => ({ default: planetMock }));
 
 const mockReducedMotion = (matches: boolean) => {
-  window.matchMedia = vi.fn().mockReturnValue({ addEventListener: vi.fn(), matches, removeEventListener: vi.fn() });
+  window.matchMedia = vi.fn().mockReturnValue({
+    addEventListener: vi.fn(),
+    addListener: vi.fn(),
+    matches,
+    removeEventListener: vi.fn(),
+    removeListener: vi.fn(),
+  });
 };
 
 const renderHero = (props = {}) =>
@@ -131,5 +138,37 @@ describe('HeroSection', () => {
     renderHero();
 
     expect(planetMock.mock.calls.every(([props]) => props.reducedMotion === true)).toBe(true);
+  });
+
+  describe('theme scenes', () => {
+    afterEach(() => localStorage.clear());
+
+    it('shows the stars and the planet in the dark theme, the sun only in CSS for the light one', () => {
+      const { container } = renderHero();
+
+      expect(starfieldMock).toHaveBeenCalled();
+      expect(screen.getAllByTestId('planet')).toHaveLength(2);
+      expect(container.querySelector('.sun-disc')?.parentElement).toHaveClass('hidden', 'light:block');
+      expect(container.querySelector('canvas')?.parentElement).toHaveClass('light:hidden');
+    });
+
+    it('unmounts the stars and the planet in the light theme', () => {
+      localStorage.setItem(THEME_STORAGE_KEY, 'light');
+      render(
+        <ThemeProvider>
+          <HeroSection
+            eyebrow="Eyebrow"
+            title="Title"
+            endWords={['seen.']}
+            subtitle="Subtitle"
+            cta={{ text: 'Go Cosmic', href: '/free-mockup' }}
+          />
+        </ThemeProvider>
+      );
+
+      expect(screen.queryByTestId('planet')).not.toBeInTheDocument();
+      expect(document.querySelector('canvas')).not.toBeInTheDocument();
+      expect(document.querySelector('.sun-disc')).toBeInTheDocument();
+    });
   });
 });

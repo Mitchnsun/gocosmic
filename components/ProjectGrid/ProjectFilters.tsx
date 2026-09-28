@@ -27,10 +27,10 @@ export function ProjectFilters({ active, labels, groupLabel, onChange }: Project
             aria-pressed={pressed}
             onClick={() => onChange(filter)}
             className={cn(
-              'font-display focus-visible:ring-aerospace/70 h-11 cursor-pointer rounded-full border px-5 text-sm transition-colors focus-visible:ring-2 focus-visible:outline-none',
+              'font-display focus-visible:ring-aerospace-ink h-11 cursor-pointer rounded-full border px-5 text-sm transition-colors focus-visible:ring-2 focus-visible:outline-none',
               {
                 'bg-aerospace border-aerospace text-void': pressed,
-                'border-ghost/15 text-ghost/75 hover:border-ghost/40 hover:text-ghost': !pressed,
+                'border-line-2 text-fg-2 hover:border-fg-3 hover:text-fg': !pressed,
               }
             )}>
             {/* eslint-disable-next-line security/detect-object-injection -- filter comes from PROJECT_FILTERS */}

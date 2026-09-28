@@ -19,12 +19,13 @@ const OFF_PALETTE =
   '/(^|[\\s:-])(slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-[0-9]{2,3}/';
 
 /**
- * Text classes fainter than `text-ghost/50`, e.g. `text-ghost/35`, `text-ghost/[0.35]` or
- * `text-ghost/[35%]`, which fall under the 4.5:1 WCAG AA contrast ratio on the dark backgrounds.
- * `\x2F` stands for the slash, which esquery regexes cannot hold.
+ * Class names drawing on a nominal colour that depends on the theme, e.g. `bg-void` or `hover:text-ghost/70`.
+ * Components use the semantic tokens instead (`bg-bg`, `text-fg`, `border-line`…), see DESIGN_GUIDELINE.md §2.1.
+ * `text-void` stays allowed: it is the dark label on orange fills, identical in both themes. Orange and purple
+ * text use `text-aerospace-ink` / `text-royal-ink`, tuned per theme so small labels keep a 4.5:1 contrast.
  */
-const FAINT_TEXT =
-  '/(^|[\\s:])text-ghost\\x2F(([0-9]|[1-4][0-9])($|[^0-9])|\\[(0|0?\\.[0-4][0-9]*|([0-9]|[1-4][0-9])(\\.[0-9]+)?%)\\])/';
+const THEME_NOMINAL =
+  '/(^|[\\s:])((bg|border|border-[trblxy]|divide|ring|ring-offset|outline|from|via|to|shadow|fill|stroke|placeholder|caret|decoration)-(void|ghost|space|ember|jungle)|text-(ghost|space|ember|jungle|aerospace|royal))(?![\\w-])/';
 
 /**
  * A shared ESLint configuration for the repository.
@@ -68,8 +69,8 @@ const config = [
     },
   },
   {
-    // Colours come from the theme tokens (void, space, ember, ghost, aerospace, jungle…), never from
-    // Tailwind's default palettes. See DESIGN_GUIDELINE.md §2.1.
+    // Colours come from the semantic theme tokens (bg, fg, line, ok…) plus aerospace, never from
+    // Tailwind's default palettes nor from theme-dependent nominal tokens. See DESIGN_GUIDELINE.md §2.1.
     files: ['app/**/*.{ts,tsx}', 'components/**/*.{ts,tsx}', 'design-system/**/*.{ts,tsx}', 'lib/**/*.{ts,tsx}'],
     rules: {
       'no-restricted-syntax': [
@@ -79,9 +80,9 @@ const config = [
           message: 'Use a theme colour token instead of a default Tailwind palette (slate, gray, blue…).',
         },
         {
-          selector: `Literal[value=${FAINT_TEXT}], TemplateElement[value.raw=${FAINT_TEXT}]`,
+          selector: `Literal[value=${THEME_NOMINAL}], TemplateElement[value.raw=${THEME_NOMINAL}]`,
           message:
-            'Text below text-ghost/50 fails WCAG AA contrast (4.5:1) on dark backgrounds: use text-ghost/50 or more.',
+            'Use a semantic colour token (bg, bg-alt, surface, fg, fg-2, fg-3, line, line-2, ok…) so the class follows the theme.',
         },
       ],
     },

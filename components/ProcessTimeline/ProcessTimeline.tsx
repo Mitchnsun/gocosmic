@@ -41,7 +41,7 @@ export function ProcessTimeline({
       {(eyebrow || title || subtitle) && (
         <div className="mb-12 max-w-7xl md:px-8">
           {eyebrow && (
-            <p className="text-aerospace mb-4 flex items-center gap-2 font-mono text-sm font-medium tracking-widest uppercase">
+            <p className="text-aerospace-ink mb-4 flex items-center gap-2 font-mono text-sm font-medium tracking-widest uppercase">
               <span className="bg-aerospace h-2 w-2 rounded-full" aria-hidden="true" />
               {eyebrow}
             </p>
@@ -49,11 +49,11 @@ export function ProcessTimeline({
           {title && (
             <h2
               id={`${id ?? 'process-timeline'}-heading`}
-              className="text-ghost text-4xl font-extrabold sm:text-5xl lg:text-6xl">
+              className="text-fg text-4xl font-extrabold sm:text-5xl lg:text-6xl">
               {title}
             </h2>
           )}
-          {subtitle && <p className="text-ghost/60 mt-4 max-w-2xl text-lg">{subtitle}</p>}
+          {subtitle && <p className="text-fg-2 mt-4 max-w-2xl text-lg">{subtitle}</p>}
         </div>
       )}
 
