@@ -54,7 +54,7 @@ const Header = ({ logo = DEFAULT_LOGO, navItems, className, id, region }: Header
       </a>
       <header
         id={id}
-        className={cn('text-fg border-line bg-bg/85 sticky top-0 z-50 border-b backdrop-blur-md', className)}
+        className={cn('text-fg border-line bg-bg/88 sticky top-0 z-50 border-b backdrop-blur-md', className)}
         style={
           {
             height: `calc(${HEADER_HEIGHT}px + env(safe-area-inset-top, 0px))`,
@@ -69,7 +69,9 @@ const Header = ({ logo = DEFAULT_LOGO, navItems, className, id, region }: Header
               aria-label={t('home', { brand: logo })}
               className="font-display hover:text-fg focus-visible:ring-aerospace-ink inline-flex items-baseline text-xl font-bold tracking-[-0.02em] transition-colors duration-300 focus-visible:ring-2 focus-visible:outline-none motion-reduce:duration-0">
               {logo}
-              <span className="text-aerospace-ink">.</span>
+              {/* Logotype, exempt from text contrast: the dot keeps the brand orange in both themes. */}
+              {/* eslint-disable-next-line no-restricted-syntax */}
+              <span className="text-aerospace">.</span>
             </Link>
           </h1>
           <DesktopNav items={items} />

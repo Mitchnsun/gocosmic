@@ -26,7 +26,9 @@ const Footer = ({ region }: FooterProps) => {
         <div className="flex flex-col gap-3.5 sm:col-span-2 lg:col-span-1">
           <p className="font-display text-xl font-bold tracking-[-0.02em]">
             {BRAND_NAME}
-            <span className="text-aerospace-ink">.</span>
+            {/* Logotype, exempt from text contrast: the dot keeps the brand orange in both themes. */}
+            {/* eslint-disable-next-line no-restricted-syntax */}
+            <span className="text-aerospace">.</span>
           </p>
           <p className="text-fg-2 max-w-[40ch] text-[15px] leading-relaxed">{t(`brand_desc.${region}`)}</p>
           <p className="text-3xs text-fg-3 font-mono tracking-[0.18em] uppercase">
