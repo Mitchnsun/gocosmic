@@ -11,8 +11,8 @@ describe('accentClasses', () => {
       rgb: '255 79 0',
     });
     expect(accentClasses('royal').text).toBe('text-royal');
-    expect(accentClasses('jungle').bg).toBe('bg-jungle');
-    expect(accentClasses('ghost').border).toBe('border-ghost');
+    expect(accentClasses('jungle').bg).toBe('bg-ok');
+    expect(accentClasses('ghost').border).toBe('border-fg');
   });
 
   it('defaults to aerospace', () => {

@@ -21,6 +21,8 @@ function PaletteSwatch({ paletteKey }: { paletteKey: ColorPaletteKey }) {
   return (
     <span className="flex shrink-0 items-center -space-x-1.5" aria-hidden="true">
       {colors.map((color) => (
+        // Content colours, not theme colours: a fixed dark rim keeps the pale swatches visible in both themes.
+        // eslint-disable-next-line no-restricted-syntax
         <span key={color} className="border-void/40 h-5 w-5 rounded-full border" style={{ backgroundColor: color }} />
       ))}
     </span>
@@ -49,9 +51,9 @@ export function ColorPaletteSelect({ value, onChange, error, onBlur }: ColorPale
       aria-invalid={error ? true : undefined}
       aria-describedby={error ? ERROR_ID : undefined}
       className="flex flex-col gap-3">
-      <legend id={LEGEND_ID} className="font-display text-ghost flex items-baseline gap-2 text-sm font-medium">
+      <legend id={LEGEND_ID} className="font-display text-fg flex items-baseline gap-2 text-sm font-medium">
         {t('form.palette_label')}
-        <span className="text-ghost/35 text-2xs font-mono tracking-widest uppercase">{t('form.optional')}</span>
+        <span className="text-fg-3 text-2xs font-mono tracking-widest uppercase">{t('form.optional')}</span>
       </legend>
       {/* Equal rows plus full-height cards: a name wrapping onto a second line
           must not make its card taller than the one beside it. */}
@@ -73,13 +75,11 @@ export function ColorPaletteSelect({ value, onChange, error, onBlur }: ColorPale
               />
               <span
                 className={cn(
-                  'peer-focus-visible:ring-aerospace peer-focus-visible:ring-offset-void flex h-full min-h-11 items-center gap-3 rounded-xl border p-3 transition-colors duration-200 peer-focus-visible:ring-2 peer-focus-visible:ring-offset-2',
-                  isSelected
-                    ? 'border-aerospace/40 bg-aerospace/[0.06]'
-                    : 'border-ghost/8 bg-ghost/[0.02] hover:border-ghost/15'
+                  'peer-focus-visible:ring-aerospace peer-focus-visible:ring-offset-bg flex h-full min-h-11 items-center gap-3 rounded-xl border p-3 transition-colors duration-200 peer-focus-visible:ring-2 peer-focus-visible:ring-offset-2',
+                  isSelected ? 'border-aerospace/40 bg-aerospace/[0.06]' : 'border-line bg-surface hover:border-line-2'
                 )}>
                 {!isNoPreference && <PaletteSwatch paletteKey={choice as ColorPaletteKey} />}
-                <span className={cn('flex-1 text-sm', isSelected ? 'text-ghost' : 'text-ghost/55')}>
+                <span className={cn('flex-1 text-sm', isSelected ? 'text-fg' : 'text-fg-2')}>
                   {t(`palette.options.${choice}`)}
                 </span>
                 <CheckCircleIcon

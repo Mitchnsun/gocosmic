@@ -37,7 +37,7 @@ const MobileMenu = ({ onClose, items, region = DEFAULT_REGION }: MobileMenuProps
       role="dialog"
       aria-modal="true"
       aria-label={t('menu_title')}
-      className="bg-void/95 fixed inset-0 z-40 flex flex-col backdrop-blur-xl"
+      className="bg-bg/95 fixed inset-0 z-40 flex flex-col backdrop-blur-xl"
       initial={{ y: '-100%' }}
       animate={{ y: 0 }}
       exit={{ y: '-100%' }}
@@ -55,14 +55,14 @@ const MobileMenu = ({ onClose, items, region = DEFAULT_REGION }: MobileMenuProps
       </div>
 
       {/* Metadata row */}
-      <div className="border-ghost/8 text-3xs text-ghost/35 flex items-center justify-between border-b px-4 py-3 font-mono tracking-widest uppercase sm:px-6">
+      <div className="border-line text-3xs text-fg-3 flex items-center justify-between border-b px-4 py-3 font-mono tracking-widest uppercase sm:px-6">
         <span>{t('menu_title')}</span>
         <span>{altitude}</span>
       </div>
 
       {/* Navigation links */}
       <nav className="flex flex-1 flex-col overflow-y-auto" aria-label={t('label')}>
-        <ul className="divide-ghost/8 flex flex-col divide-y">
+        <ul className="divide-line flex flex-col divide-y">
           {items.map(({ label, href, ariaLabel }, index) => (
             <motion.li
               key={href}
@@ -75,8 +75,8 @@ const MobileMenu = ({ onClose, items, region = DEFAULT_REGION }: MobileMenuProps
                 aria-label={ariaLabel}
                 onClick={onClose}
                 className="group flex items-center justify-between px-4 py-5 sm:px-6">
-                <span className="font-display text-ghost text-2xl leading-none font-medium">{label}</span>
-                <span className="text-ghost/35 font-mono text-sm">/{String(index + 1).padStart(2, '0')}</span>
+                <span className="font-display text-fg text-2xl leading-none font-medium">{label}</span>
+                <span className="text-fg-3 font-mono text-sm">/{String(index + 1).padStart(2, '0')}</span>
               </Link>
             </motion.li>
           ))}
@@ -84,11 +84,9 @@ const MobileMenu = ({ onClose, items, region = DEFAULT_REGION }: MobileMenuProps
       </nav>
 
       {/* Primary action, always reachable at the bottom of the drawer */}
-      <div className="border-ghost/8 flex flex-col items-center gap-4 border-t px-4 pt-5 pb-[calc(1.25rem+env(safe-area-inset-bottom,0px))] sm:px-6">
+      <div className="border-line flex flex-col items-center gap-4 border-t px-4 pt-5 pb-[calc(1.25rem+env(safe-area-inset-bottom,0px))] sm:px-6">
         <HeaderCta onClick={onClose} className="h-12 w-full text-base" />
-        <a
-          href="mailto:contact@gocosmic.dev"
-          className="text-ghost/45 hover:text-ghost/80 font-mono text-xs transition-colors">
+        <a href="mailto:contact@gocosmic.dev" className="text-fg-3 hover:text-fg-2 font-mono text-xs transition-colors">
           contact@gocosmic.dev
         </a>
       </div>

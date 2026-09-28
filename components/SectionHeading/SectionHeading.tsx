@@ -37,7 +37,7 @@ export function SectionHeading({
       <Heading
         id={titleId}
         className={cn(
-          'font-display text-ghost [&_em]:text-ghost/55 font-semibold text-balance [&_em]:font-light',
+          'font-display text-fg [&_em]:text-fg-2 font-semibold text-balance [&_em]:font-light',
           // Size and line height travel together: tailwind-merge drops a `leading-*` placed before a `text-*` size.
           {
             'text-[clamp(2.25rem,6vw,5rem)] leading-[0.98] tracking-[-0.035em]': level === 1,
@@ -47,7 +47,7 @@ export function SectionHeading({
         )}>
         {title}
       </Heading>
-      {lead && <p className="text-ghost/70 max-w-[56ch] text-base leading-relaxed text-pretty sm:text-lg">{lead}</p>}
+      {lead && <p className="text-fg-2 max-w-[56ch] text-base leading-relaxed text-pretty sm:text-lg">{lead}</p>}
     </div>
   );
 }

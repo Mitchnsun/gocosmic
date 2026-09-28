@@ -37,11 +37,11 @@ export function ContactPanel({ bookingUrl, region = DEFAULT_REGION }: ContactPan
   };
 
   return (
-    <div className="border-ghost/10 bg-ghost/2 flex flex-col gap-6 rounded-3xl border p-[clamp(1.25rem,3vw,2.25rem)]">
+    <div className="border-line bg-surface flex flex-col gap-6 rounded-3xl border p-[clamp(1.25rem,3vw,2.25rem)]">
       <div
         role="tablist"
         aria-label={t('label')}
-        className="border-ghost/10 bg-void grid grid-cols-2 gap-1 rounded-full border p-1">
+        className="border-line bg-bg grid grid-cols-2 gap-1 rounded-full border p-1">
         {MODES.map((tab) => (
           <button
             key={tab}
@@ -55,7 +55,7 @@ export function ContactPanel({ bookingUrl, region = DEFAULT_REGION }: ContactPan
             onKeyDown={handleKeyDown}
             className={cn(
               'font-display focus-visible:ring-aerospace/70 h-11 cursor-pointer rounded-full text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:outline-none',
-              { 'bg-ghost text-void': mode === tab, 'text-ghost/70 hover:text-ghost': mode !== tab }
+              { 'bg-fg text-bg': mode === tab, 'text-fg-2 hover:text-fg': mode !== tab }
             )}>
             {t(tab)}
           </button>

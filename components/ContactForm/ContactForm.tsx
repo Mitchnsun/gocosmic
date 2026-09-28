@@ -51,7 +51,7 @@ export const ContactForm = ({
 
   const wrapperClassName = cn(
     'w-full',
-    { 'border-ghost/8 bg-ghost/[0.02] rounded-2xl border p-6 sm:p-8 lg:p-10': variant === 'page' },
+    { 'border-line bg-surface rounded-2xl border p-6 sm:p-8 lg:p-10': variant === 'page' },
     className
   );
 
@@ -71,7 +71,7 @@ export const ContactForm = ({
   return (
     <div id={id} className={wrapperClassName}>
       <form noValidate onSubmit={handleSubmit} aria-describedby={`${id}-required-hint`} className="flex flex-col gap-6">
-        <p id={`${id}-required-hint`} className="text-ghost/35 text-2xs font-mono tracking-[0.2em] uppercase">
+        <p id={`${id}-required-hint`} className="text-fg-3 text-2xs font-mono tracking-[0.2em] uppercase">
           {t('required_hint')}
         </p>
 
@@ -180,7 +180,7 @@ export const ContactForm = ({
             disabled={isSending}
             className={cn(
               buttonVariants({ variant: 'primary' }),
-              'focus-visible:ring-ghost focus-visible:ring-offset-void w-fit gap-2 py-3 transition-transform duration-300 ease-out hover:scale-105 focus-visible:ring-2 focus-visible:ring-offset-2 motion-reduce:scale-100! motion-reduce:transition-none!'
+              'focus-visible:ring-fg focus-visible:ring-offset-bg w-fit gap-2 py-3 transition-transform duration-300 ease-out hover:scale-105 focus-visible:ring-2 focus-visible:ring-offset-2 motion-reduce:scale-100! motion-reduce:transition-none!'
             )}>
             {isSending ? t('submitting') : t('submit')}
             <PaperAirplaneIcon className="size-4" aria-hidden="true" />
@@ -189,7 +189,7 @@ export const ContactForm = ({
             type="button"
             onClick={reset}
             disabled={isSending}
-            className="text-ghost/55 hover:text-ghost focus-visible:ring-ghost font-display w-fit cursor-pointer rounded-full px-4 py-3 text-sm transition-colors focus-visible:ring-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50">
+            className="text-fg-2 hover:text-fg focus-visible:ring-fg font-display w-fit cursor-pointer rounded-full px-4 py-3 text-sm transition-colors focus-visible:ring-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50">
             {t('clear')}
           </button>
         </div>

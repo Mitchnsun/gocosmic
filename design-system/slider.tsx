@@ -25,17 +25,17 @@ const Slider = React.forwardRef<React.ElementRef<typeof SliderPrimitive.Root>, S
         className
       )}
       {...props}>
-      <SliderPrimitive.Track className="bg-ghost/10 relative h-1.5 w-full grow rounded-full">
+      <SliderPrimitive.Track className="bg-line relative h-1.5 w-full grow rounded-full">
         <SliderPrimitive.Range className={cn('bg-aerospace absolute h-full rounded-full', GLIDE)} />
       </SliderPrimitive.Track>
       <SliderPrimitive.Thumb
         aria-labelledby={ariaLabelledBy}
         aria-valuetext={ariaValueText}
         className={cn(
-          'bg-ghost ring-aerospace block h-4 w-4 rounded-full ring-2',
+          'bg-fg ring-aerospace block h-4 w-4 rounded-full ring-2',
           'shadow-[0_0_0_4px_rgba(255,79,0,0.2)]',
           'hover:scale-110 active:scale-95',
-          'focus-visible:ring-offset-void focus-visible:ring-offset-2 focus-visible:outline-none',
+          'focus-visible:ring-offset-bg focus-visible:ring-offset-2 focus-visible:outline-none',
           'cursor-grab active:cursor-grabbing',
           GLIDE
         )}

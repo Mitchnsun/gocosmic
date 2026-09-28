@@ -17,13 +17,13 @@ describe('Chip', () => {
   it('renders a neutral tag by default', () => {
     const { getByText } = render(<Chip>Multilingual</Chip>);
 
-    expect(getByText('Multilingual')).toHaveClass('border-ghost/15', 'text-ghost/60', 'font-mono');
+    expect(getByText('Multilingual')).toHaveClass('border-line-2', 'text-fg-2', 'font-mono');
   });
 
   it('switches to green for what is included', () => {
     const { getByText } = render(<Chip variant="jungle">Free</Chip>);
 
-    expect(getByText('Free')).toHaveClass('border-jungle/50', 'text-jungle');
+    expect(getByText('Free')).toHaveClass('border-ok/50', 'text-ok');
   });
 });
 

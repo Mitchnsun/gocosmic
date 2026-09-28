@@ -72,7 +72,7 @@ const HeroSection = ({
     <section
       id={id}
       className={cn(
-        'bg-void text-ghost relative isolate overflow-hidden pt-[clamp(4.5rem,12vw,9.5rem)] pb-[clamp(4rem,9vw,7.5rem)]',
+        'bg-bg text-fg relative isolate overflow-hidden pt-[clamp(4.5rem,12vw,9.5rem)] pb-[clamp(4rem,9vw,7.5rem)]',
         className
       )}
       data-reduced-motion={prefersReducedMotion ? 'true' : 'false'}>
@@ -100,11 +100,11 @@ const HeroSection = ({
           className="font-display max-w-[16ch] text-[clamp(2.5rem,7.2vw,6.5rem)] leading-[0.98] font-semibold tracking-[-0.035em] text-balance"
           aria-label={`${title} ${currentWord}`}>
           <span className="hero-reveal-line [animation-delay:120ms]">{title} </span>
-          <em className="hero-reveal-line text-ghost/55 inline-block font-light [animation-delay:300ms]">
+          <em className="hero-reveal-line text-fg-2 inline-block font-light [animation-delay:300ms]">
             <AnimatedEndWord word={currentWord} prefersReducedMotion={prefersReducedMotion} />
           </em>
         </h1>
-        <p className="hero-reveal-line text-ghost/70 max-w-[56ch] text-[clamp(1rem,1.4vw,1.1875rem)] leading-relaxed text-pretty [animation-delay:400ms]">
+        <p className="hero-reveal-line text-fg-2 max-w-[56ch] text-[clamp(1rem,1.4vw,1.1875rem)] leading-relaxed text-pretty [animation-delay:400ms]">
           {subtitle}
         </p>
         <div className="hero-reveal-line flex flex-wrap items-center gap-3 [animation-delay:600ms]">
@@ -119,10 +119,10 @@ const HeroSection = ({
           )}
         </div>
         {facts.length > 0 && (
-          <ul className="border-ghost/8 text-ghost/45 text-2xs flex flex-wrap gap-x-10 gap-y-3 border-t pt-6 font-mono tracking-[0.16em] uppercase">
+          <ul className="border-line text-fg-3 text-2xs flex flex-wrap gap-x-10 gap-y-3 border-t pt-6 font-mono tracking-[0.16em] uppercase">
             {facts.map((fact) => (
               <li key={fact.highlight}>
-                <span className="text-ghost">{fact.highlight}</span> {fact.text}
+                <span className="text-fg">{fact.highlight}</span> {fact.text}
               </li>
             ))}
           </ul>

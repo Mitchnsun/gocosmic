@@ -17,7 +17,7 @@ export function PricingColumn({ column, highlighted = false }: PricingColumnProp
     <article
       className={cn('relative flex flex-col gap-5 overflow-hidden rounded-3xl border p-[clamp(1.5rem,3vw,2.5rem)]', {
         'border-aerospace/40 bg-aerospace/[0.04]': highlighted,
-        'border-ghost/10 bg-ghost/[0.02]': !highlighted,
+        'border-line bg-surface': !highlighted,
       })}>
       {highlighted && (
         <div
@@ -28,7 +28,7 @@ export function PricingColumn({ column, highlighted = false }: PricingColumnProp
       <p
         className={cn('text-3xs font-mono tracking-[0.22em] uppercase', {
           'text-aerospace': highlighted,
-          'text-ghost/45': !highlighted,
+          'text-fg-3': !highlighted,
         })}>
         {column.label}
       </p>
@@ -36,20 +36,18 @@ export function PricingColumn({ column, highlighted = false }: PricingColumnProp
       {column.price && (
         <p className="font-display text-[clamp(1.75rem,3vw,2.5rem)] leading-none font-semibold tracking-[-0.03em]">
           {column.price}
-          {column.period && (
-            <span className="text-ghost/55 ml-1 text-lg font-normal tracking-normal">{column.period}</span>
-          )}
+          {column.period && <span className="text-fg-2 ml-1 text-lg font-normal tracking-normal">{column.period}</span>}
         </p>
       )}
-      <p className="text-ghost/70 leading-relaxed">{column.description}</p>
+      <p className="text-fg-2 leading-relaxed">{column.description}</p>
       <ul className="flex flex-col gap-2.5 text-[15px]">
         {column.features.map((feature) => (
           <li key={feature} className="flex items-baseline gap-2.5">
             <span
               aria-hidden="true"
               className={cn('h-1.5 w-1.5 shrink-0 -translate-y-0.5 rounded-full', {
-                'bg-jungle': highlighted,
-                'bg-ghost/40': !highlighted,
+                'bg-ok': highlighted,
+                'bg-fg-3': !highlighted,
               })}
             />
             {feature}

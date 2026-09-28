@@ -214,10 +214,10 @@ describe('CTAFinal', () => {
     const { getByRole, getByText } = renderCTA({ accentColor: 'jungle' });
 
     const cta = getByRole('link', { name: /Contact us/ });
-    expect(cta).toHaveClass('bg-jungle', 'cta-final-glow');
+    expect(cta).toHaveClass('bg-ok', 'cta-final-glow');
 
     const headline = getByText('Ready to Go Cosmic?');
-    expect(headline).toHaveClass('cta-final-headline', 'from-jungle');
+    expect(headline).toHaveClass('cta-final-headline', 'from-ok');
   });
 
   it('should expose the accent colour as a CSS variable', () => {

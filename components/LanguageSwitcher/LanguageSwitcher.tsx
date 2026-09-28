@@ -56,10 +56,10 @@ const LanguageSwitcher = ({ onOpen }: LanguageSwitcherProps = {}) => {
     <div className="relative" ref={menuRef}>
       <button
         onClick={() => (onOpen ? onOpen() : setIsOpen(!isOpen))}
-        className="border-ghost/15 hover:border-ghost/40 hover:text-ghost flex items-center gap-2 rounded-full border px-2 py-1 transition-colors"
+        className="border-line-2 hover:border-fg-3 hover:text-fg flex items-center gap-2 rounded-full border px-2 py-1 transition-colors"
         aria-label={t('switch_locale')}
         disabled={isPending}>
-        <span className="bg-jungle h-2 w-2 rounded-full" aria-hidden="true" />
+        <span className="bg-ok h-2 w-2 rounded-full" aria-hidden="true" />
         <span className="text-3xs uppercase">{locale}</span>
       </button>
 
@@ -76,19 +76,19 @@ const LanguageSwitcher = ({ onOpen }: LanguageSwitcherProps = {}) => {
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ ease: [0.16, 1, 0.3, 1], duration: MOBILE_MENU_DURATION_MS / 1000 }}
                 style={{ top: 'var(--header-h, 64px)' }}
-                className="border-ghost/10 bg-void/95 fixed right-0 z-40 flex w-80 flex-col rounded-bl-2xl border-b border-l shadow-2xl backdrop-blur-xl">
+                className="border-line bg-bg/95 fixed right-0 z-40 flex w-80 flex-col rounded-bl-2xl border-b border-l shadow-2xl backdrop-blur-xl">
                 {/* Metadata row */}
-                <div className="border-ghost/10 text-3xs text-ghost/45 flex items-center justify-between border-b px-6 py-3 tracking-widest uppercase">
+                <div className="border-line text-3xs text-fg-3 flex items-center justify-between border-b px-6 py-3 tracking-widest uppercase">
                   <span>{t('lang_drawer_title')}</span>
                   <button
                     onClick={() => setIsOpen(false)}
                     aria-label={t('menu_close')}
-                    className="hover:text-ghost p-1 transition-colors">
+                    className="hover:text-fg p-1 transition-colors">
                     <XMarkIcon className="h-4 w-4" aria-hidden="true" />
                   </button>
                 </div>
                 {/* Language list */}
-                <ul role="menu" aria-orientation="vertical" className="divide-ghost/8 divide-y">
+                <ul role="menu" aria-orientation="vertical" className="divide-line divide-y">
                   {Object.entries(LANG_DRAWER_LANGUAGES).map(([code, { name, flag }], index) => (
                     <motion.li
                       key={code}
@@ -100,8 +100,8 @@ const LanguageSwitcher = ({ onOpen }: LanguageSwitcherProps = {}) => {
                         disabled={isPending}
                         role="menuitem"
                         className={cn(
-                          'group hover:bg-ghost/5 flex w-full items-center justify-between px-6 py-4 transition-colors',
-                          locale === code ? 'text-aerospace' : 'text-ghost'
+                          'group hover:bg-line flex w-full items-center justify-between px-6 py-4 transition-colors',
+                          locale === code ? 'text-aerospace' : 'text-fg'
                         )}>
                         <span className="font-display flex items-center gap-3 text-lg leading-none font-medium">
                           <span aria-hidden="true">{flag}</span>

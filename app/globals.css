@@ -19,6 +19,57 @@
   --text-3xs: 10px;
 }
 
+/*
+ * Semantic colour tokens (EPIC #113): components use these, never the nominal tokens above, so the
+ * same class renders in both themes. Values come from the --t-* variables below. `inline` makes each
+ * utility read the variable where it is used, so a nested [data-theme] (a dark island on a light
+ * page) re-scopes the tokens for its subtree.
+ * fg-2, fg-3, line, line-2, surface and field are already translucent: never add an opacity modifier.
+ */
+@theme inline {
+  --color-bg: var(--t-bg);
+  --color-bg-alt: var(--t-bg-alt);
+  --color-surface: var(--t-surface);
+  --color-field: var(--t-field);
+  --color-fg: var(--t-fg);
+  --color-fg-2: var(--t-fg-2);
+  --color-fg-3: var(--t-fg-3);
+  --color-line: var(--t-line);
+  --color-line-2: var(--t-line-2);
+  --color-ok: var(--t-ok);
+}
+
+/* Dark ("space") is the default: no attribute, no JavaScript and first paint all resolve here. */
+:root,
+[data-theme='dark'] {
+  color-scheme: dark;
+  --t-bg: #020617;
+  --t-bg-alt: #1c1012;
+  --t-surface: rgb(248 248 255 / 0.02);
+  --t-field: rgb(248 248 255 / 0.03);
+  --t-fg: #f8f8ff;
+  --t-fg-2: rgb(248 248 255 / 0.7);
+  --t-fg-3: rgb(248 248 255 / 0.5);
+  --t-line: rgb(248 248 255 / 0.08);
+  --t-line-2: rgb(248 248 255 / 0.15);
+  --t-ok: #29ab87;
+}
+
+/* Light ("star"): cosmic-latte page, misty-rose alternate sections, void ink. */
+[data-theme='light'] {
+  color-scheme: light;
+  --t-bg: #fff8e7;
+  --t-bg-alt: #ffe4e1;
+  --t-surface: rgb(2 6 23 / 0.02);
+  --t-field: #fff8e7;
+  --t-fg: #020617;
+  --t-fg-2: rgb(2 6 23 / 0.7);
+  --t-fg-3: rgb(2 6 23 / 0.6);
+  --t-line: rgb(2 6 23 / 0.08);
+  --t-line-2: rgb(2 6 23 / 0.15);
+  --t-ok: #16745a;
+}
+
 :root {
   --header-height: 64px;
 }

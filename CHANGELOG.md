@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.1.0] - 2026-09-28
+
+### Changed
+
+- Every colour on the site now comes from a shared set of named shades, the groundwork for the upcoming light theme; secondary and small grey texts are slightly brighter so they stay easy to read
+
 ## [2.0.0] - 2026-09-27
 
 ### Added

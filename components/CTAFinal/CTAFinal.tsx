@@ -128,7 +128,7 @@ const CTAFinal = ({
       data-warping={isWarping ? 'true' : 'false'}
       data-tone={tone}
       className={cn(
-        'group text-ghost relative isolate overflow-hidden px-4 sm:px-6',
+        'group text-fg relative isolate overflow-hidden px-4 sm:px-6',
         preset.section,
         variantBackground,
         className
@@ -164,7 +164,7 @@ const CTAFinal = ({
           </span>
         </h2>
         <p className={cn('max-w-xl', preset.description)}>{description}</p>
-        {note && <p className="text-ghost/45 max-w-xl text-sm">{note}</p>}
+        {note && <p className="text-fg-3 max-w-xl text-sm">{note}</p>}
         <Link
           href={ctaHref}
           onClick={onCtaClick}
@@ -174,7 +174,7 @@ const CTAFinal = ({
           onBlur={stopWarp}
           className={cn(
             buttonVariants({ variant: accentColor, size: preset.buttonSize }),
-            'focus-visible:ring-ghost focus-visible:ring-offset-void focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-100',
+            'focus-visible:ring-fg focus-visible:ring-offset-bg focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-100',
             preset.button,
             {
               'cta-final-glow': preset.glowButton,

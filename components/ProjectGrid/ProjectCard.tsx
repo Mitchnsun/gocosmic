@@ -9,10 +9,10 @@ import type { ProjectCardContent } from './ProjectGrid.types';
 /** One project: visual, type badge, title and year, client line, summary, tags and a link to the case study. */
 export function ProjectCard({ project }: { project: ProjectCardContent }) {
   return (
-    <article className="group border-ghost/8 bg-ghost/[0.02] hover:bg-ghost/[0.04] has-[a:focus-visible]:ring-aerospace/70 relative flex h-full flex-col overflow-hidden rounded-[20px] border transition-colors has-[a:focus-visible]:ring-2">
+    <article className="group border-line bg-surface hover:bg-line has-[a:focus-visible]:ring-aerospace/70 relative flex h-full flex-col overflow-hidden rounded-[20px] border transition-colors has-[a:focus-visible]:ring-2">
       <div className="relative">
         <ProjectCover cover={project.cover} title={project.title} />
-        <Chip className="bg-void/80 text-ghost/75 absolute top-3 left-3 backdrop-blur-sm">{project.kindLabel}</Chip>
+        <Chip className="bg-bg/80 text-fg-2 absolute top-3 left-3 backdrop-blur-sm">{project.kindLabel}</Chip>
       </div>
       <div className="flex flex-1 flex-col gap-2.5 p-6">
         <div className="flex items-baseline justify-between gap-3">
@@ -21,10 +21,10 @@ export function ProjectCard({ project }: { project: ProjectCardContent }) {
               {project.title}
             </Link>
           </h3>
-          <span className="text-ghost/35 text-2xs font-mono">{project.year}</span>
+          <span className="text-fg-3 text-2xs font-mono">{project.year}</span>
         </div>
-        <p className="text-ghost/45 text-3xs font-mono tracking-[0.16em] uppercase">{project.client}</p>
-        <p className="text-ghost/60 text-[15px] leading-normal">{project.description}</p>
+        <p className="text-fg-3 text-3xs font-mono tracking-[0.16em] uppercase">{project.client}</p>
+        <p className="text-fg-2 text-[15px] leading-normal">{project.description}</p>
         <ul className="flex flex-wrap gap-1.5 pt-1.5">
           {project.tags.map((tag) => (
             <li key={tag}>

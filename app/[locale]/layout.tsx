@@ -78,7 +78,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale || 'en'} className={`${spaceGrotesk.variable} ${inter.variable} ${spaceMono.variable}`}>
-      <body className="bg-void">
+      <body className="bg-bg">
         <NextIntlClientProvider>
           <CookieConsentProvider>
             <CosmicCursor />

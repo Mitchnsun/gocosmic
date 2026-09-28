@@ -31,14 +31,14 @@ export function Faq({ eyebrow, title, items, defaultOpen = 0, id = 'faq' }: FaqP
     <section id={id} aria-labelledby={titleId} className={cn('scroll-mt-20', SECTION_Y)}>
       <div className={cn(CONTAINER, 'grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]')}>
         <SectionHeading eyebrow={eyebrow} title={title} titleId={titleId} />
-        <ul className="border-ghost/10 flex flex-col border-t">
+        <ul className="border-line flex flex-col border-t">
           {items.map((item, index) => {
             const isOpen = open === index;
             const buttonId = `${baseId}-question-${index}`;
             const panelId = `${baseId}-answer-${index}`;
 
             return (
-              <li key={item.question} className="border-ghost/10 border-b">
+              <li key={item.question} className="border-line border-b">
                 <h3>
                   <button
                     id={buttonId}
@@ -58,7 +58,7 @@ export function Faq({ eyebrow, title, items, defaultOpen = 0, id = 'faq' }: FaqP
                   role="region"
                   aria-labelledby={buttonId}
                   hidden={!isOpen}
-                  className="text-ghost/70 max-w-[65ch] pb-6 leading-relaxed">
+                  className="text-fg-2 max-w-[65ch] pb-6 leading-relaxed">
                   {item.answer}
                 </div>
               </li>

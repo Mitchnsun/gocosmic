@@ -36,7 +36,7 @@ const FooterLanguages = () => {
               {code === locale ? (
                 <span
                   aria-current="true"
-                  className="border-ghost/15 text-ghost mr-2 inline-flex rounded-full border px-2 py-0.5">
+                  className="border-line-2 text-fg mr-2 inline-flex rounded-full border px-2 py-0.5">
                   <span className="sr-only" lang={code}>
                     {name}
                   </span>
@@ -50,7 +50,7 @@ const FooterLanguages = () => {
                   hrefLang={code}
                   lang={code}
                   aria-label={`${name} (${code.toUpperCase()})`}
-                  className="text-ghost/45 hover:text-ghost focus-visible:ring-aerospace/70 inline-flex h-11 min-w-11 items-center justify-center rounded transition-colors focus-visible:ring-2 focus-visible:outline-none">
+                  className="text-fg-3 hover:text-fg focus-visible:ring-aerospace/70 inline-flex h-11 min-w-11 items-center justify-center rounded transition-colors focus-visible:ring-2 focus-visible:outline-none">
                   {code}
                 </Link>
               )}

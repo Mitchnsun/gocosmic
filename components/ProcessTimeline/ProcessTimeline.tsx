@@ -49,11 +49,11 @@ export function ProcessTimeline({
           {title && (
             <h2
               id={`${id ?? 'process-timeline'}-heading`}
-              className="text-ghost text-4xl font-extrabold sm:text-5xl lg:text-6xl">
+              className="text-fg text-4xl font-extrabold sm:text-5xl lg:text-6xl">
               {title}
             </h2>
           )}
-          {subtitle && <p className="text-ghost/60 mt-4 max-w-2xl text-lg">{subtitle}</p>}
+          {subtitle && <p className="text-fg-2 mt-4 max-w-2xl text-lg">{subtitle}</p>}
         </div>
       )}
 

@@ -32,10 +32,10 @@ export function TierSlider({ label, tiers, value, onChange, disabled = false }: 
   return (
     <div className={cn('transition-opacity duration-200', disabled && 'pointer-events-none opacity-40')}>
       <div className="flex items-baseline justify-between gap-4">
-        <span id={id} className="text-ghost/55 text-2xs font-mono tracking-[0.2em] uppercase">
+        <span id={id} className="text-fg-2 text-2xs font-mono tracking-[0.2em] uppercase">
           {label}
         </span>
-        <p className="font-display text-ghost text-sm font-medium">
+        <p className="font-display text-fg text-sm font-medium">
           {current?.label}
           <span className="text-aerospace ml-2 font-mono text-xs tabular-nums">{current?.price}</span>
         </p>

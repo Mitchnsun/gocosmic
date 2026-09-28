@@ -31,12 +31,12 @@ export function OwnApps({ eyebrow, title, lead, app, id = 'apps' }: OwnAppsProps
   const titleId = `${id}-heading`;
 
   return (
-    <section id={id} aria-labelledby={titleId} className={cn('bg-ember scroll-mt-20', SECTION_Y)}>
+    <section id={id} aria-labelledby={titleId} className={cn('bg-bg-alt scroll-mt-20', SECTION_Y)}>
       <div className={cn(CONTAINER, 'grid items-center gap-[clamp(2rem,5vw,5rem)] lg:grid-cols-2')}>
         <SectionHeading eyebrow={eyebrow} title={title} titleId={titleId} lead={lead} />
         <Link
           href={app.href}
-          className="group border-ghost/12 bg-void/50 hover:border-ghost/30 focus-visible:ring-aerospace/70 grid grid-cols-[auto_1fr] items-center gap-6 rounded-3xl border p-7 transition-colors focus-visible:ring-2 focus-visible:outline-none">
+          className="group border-line-2 bg-bg/50 hover:border-fg-3 focus-visible:ring-aerospace/70 grid grid-cols-[auto_1fr] items-center gap-6 rounded-3xl border p-7 transition-colors focus-visible:ring-2 focus-visible:outline-none">
           <Image
             src={app.icon.src}
             alt={app.icon.alt}
@@ -49,7 +49,7 @@ export function OwnApps({ eyebrow, title, lead, app, id = 'apps' }: OwnAppsProps
               <h3 className="font-display text-2xl font-semibold tracking-[-0.02em]">{app.name}</h3>
               <Chip variant="jungle">{app.badge}</Chip>
             </div>
-            <p className="text-ghost/65 leading-normal">{app.description}</p>
+            <p className="text-fg-2 leading-normal">{app.description}</p>
             <span className="font-display text-aerospace inline-flex items-center gap-1.5 text-[15px] font-medium">
               {app.linkLabel}
               <ArrowRightIcon

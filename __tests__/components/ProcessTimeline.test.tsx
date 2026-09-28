@@ -183,19 +183,19 @@ describe('ProcessTimeline', () => {
     it('applies jungle color class when specified', () => {
       const steps = [{ id: 'step1', label: 'T-1', title: 'Step', color: 'jungle' as const }];
       const { getByTestId } = render(<ProcessTimeline steps={steps} />);
-      expect(getByTestId('dot-step1').className).toContain('bg-jungle');
+      expect(getByTestId('dot-step1').className).toContain('bg-ok');
     });
 
     it('applies default color class when color is default', () => {
       const steps = [{ id: 'step1', label: 'T-1', title: 'Step', color: 'default' as const }];
       const { getByTestId } = render(<ProcessTimeline steps={steps} />);
-      expect(getByTestId('dot-step1').className).toContain('bg-ghost/60');
+      expect(getByTestId('dot-step1').className).toContain('bg-fg-2');
     });
 
     it('applies default color when no color specified', () => {
       const steps = [{ id: 'step1', label: 'T-1', title: 'Step' }];
       const { getByTestId } = render(<ProcessTimeline steps={steps} />);
-      expect(getByTestId('dot-step1').className).toContain('bg-ghost/60');
+      expect(getByTestId('dot-step1').className).toContain('bg-fg-2');
     });
   });
 

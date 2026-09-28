@@ -59,20 +59,20 @@ export function PlanBuilder({
   return (
     <div className="space-y-6">
       {/* Base plan */}
-      <section aria-labelledby="plan-base-heading" className="border-ghost/8 bg-ghost/[0.02] rounded-2xl border p-6">
+      <section aria-labelledby="plan-base-heading" className="border-line bg-surface rounded-2xl border p-6">
         <div className="flex flex-wrap items-baseline justify-between gap-3">
-          <h3 id="plan-base-heading" className="font-display text-ghost text-xl font-semibold">
+          <h3 id="plan-base-heading" className="font-display text-fg text-xl font-semibold">
             {t('builder.base.title')}
           </h3>
-          <p className="font-display text-ghost text-lg font-medium tabular-nums">
+          <p className="font-display text-fg text-lg font-medium tabular-nums">
             {formatAmount(BASE_PRICE, currency, locale)}
-            <span className="text-ghost/55 ml-1 text-sm">{t('builder.period')}</span>
+            <span className="text-fg-2 ml-1 text-sm">{t('builder.period')}</span>
           </p>
         </div>
         <ul className="mt-4 space-y-2">
           {(['page', 'hosting', 'security'] as const).map((item) => (
-            <li key={item} className="text-ghost/55 flex items-start gap-3 text-sm">
-              <span className="bg-jungle mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" aria-hidden="true" />
+            <li key={item} className="text-fg-2 flex items-start gap-3 text-sm">
+              <span className="bg-ok mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" aria-hidden="true" />
               {t(`builder.base.includes.${item}`)}
             </li>
           ))}
@@ -81,11 +81,11 @@ export function PlanBuilder({
 
       {/* Composable options */}
       <section aria-labelledby="plan-options-heading" className="space-y-3">
-        <h3 id="plan-options-heading" className="text-ghost/55 text-2xs font-mono tracking-[0.24em] uppercase">
+        <h3 id="plan-options-heading" className="text-fg-2 text-2xs font-mono tracking-[0.24em] uppercase">
           {t('builder.options.title')}
         </h3>
 
-        <div className="border-ghost/8 bg-ghost/[0.02] rounded-xl border p-4">
+        <div className="border-line bg-surface rounded-xl border p-4">
           <TierSlider
             label={t('builder.pages.label')}
             tiers={pageTiers}
@@ -112,7 +112,7 @@ export function PlanBuilder({
           price={selection.updatesEnabled ? surcharge(getUpdateTierPrice(selection.updates)) : t('builder.updates.off')}
           checked={selection.updatesEnabled}
           onChange={onToggleUpdates}>
-          <div className="border-ghost/8 border-t px-4 py-4">
+          <div className="border-line border-t px-4 py-4">
             <TierSlider
               label={t('builder.updates.slider_label')}
               tiers={updateTiers}

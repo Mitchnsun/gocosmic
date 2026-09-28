@@ -33,7 +33,7 @@ export const CaseStudyHero = ({
   return (
     <section
       aria-labelledby={headingId}
-      className="bg-void text-ghost relative isolate flex min-h-72 items-end overflow-hidden p-4 sm:min-h-88 sm:p-6 lg:min-h-112 lg:p-8">
+      className="bg-bg text-fg relative isolate flex min-h-72 items-end overflow-hidden p-4 sm:min-h-88 sm:p-6 lg:min-h-112 lg:p-8">
       {heroImage ? (
         <Image
           src={heroImage.src}
@@ -49,7 +49,7 @@ export const CaseStudyHero = ({
         </div>
       )}
       <div
-        className="from-void via-void/70 pointer-events-none absolute inset-0 -z-10 bg-linear-to-t to-transparent"
+        className="from-bg via-bg/70 pointer-events-none absolute inset-0 -z-10 bg-linear-to-t to-transparent"
         aria-hidden="true"
       />
 
@@ -65,7 +65,7 @@ export const CaseStudyHero = ({
               alt={logo.alt}
               width={logo.width ?? 72}
               height={logo.height ?? 72}
-              className="border-ghost/8 bg-void/60 h-16 w-16 rounded-2xl border object-contain p-2"
+              className="border-line bg-bg/60 h-16 w-16 rounded-2xl border object-contain p-2"
             />
           )}
           <h1
@@ -74,9 +74,9 @@ export const CaseStudyHero = ({
             {title}
           </h1>
         </div>
-        <p className="text-ghost/55 text-lg leading-8">{tagline}</p>
+        <p className="text-fg-2 text-lg leading-8">{tagline}</p>
         {meta && meta.length > 0 && (
-          <ul className="text-ghost/35 text-3xs flex flex-wrap gap-x-6 gap-y-2 font-mono tracking-[0.2em] uppercase">
+          <ul className="text-fg-3 text-3xs flex flex-wrap gap-x-6 gap-y-2 font-mono tracking-[0.2em] uppercase">
             {meta.map((item) => (
               <li key={item}>{item}</li>
             ))}

@@ -34,7 +34,7 @@ export function FreeMockupForm() {
   const isSent = feedback.status === 'success';
 
   return (
-    <div className="border-ghost/8 bg-ghost/2 flex w-full flex-col gap-6 rounded-2xl border p-6 sm:p-8">
+    <div className="border-line bg-surface flex w-full flex-col gap-6 rounded-2xl border p-6 sm:p-8">
       <SubmitFeedback status={feedback.status} hasInvalidFields={feedback.hasInvalidFields} reason={feedback.reason} />
 
       {!isSent && (
@@ -102,13 +102,13 @@ export function FreeMockupForm() {
               disabled={isPending}
               className={cn(
                 buttonVariants({ variant: 'primary', size: 'lg' }),
-                'focus-visible:ring-ghost focus-visible:ring-offset-void gap-2 focus-visible:ring-2 focus-visible:ring-offset-2'
+                'focus-visible:ring-fg focus-visible:ring-offset-bg gap-2 focus-visible:ring-2 focus-visible:ring-offset-2'
               )}>
               {isPending ? t('form.submitting') : t('form.submit')}
               <ArrowRightIcon className="h-5 w-5" aria-hidden="true" />
             </button>
-            {planCode && <p className="text-ghost/55 text-sm">{t('form.plan_attached')}</p>}
-            <p className="text-ghost/35 text-sm">{t('form.reassurance')}</p>
+            {planCode && <p className="text-fg-2 text-sm">{t('form.plan_attached')}</p>}
+            <p className="text-fg-3 text-sm">{t('form.reassurance')}</p>
           </div>
         </form>
       )}
