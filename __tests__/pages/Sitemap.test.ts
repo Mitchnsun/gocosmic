@@ -1,4 +1,4 @@
-import sitemap from '@/app/sitemap';
+import sitemap, { UNLISTED_ROUTES } from '@/app/sitemap';
 import { routing } from '@/i18n/routing';
 
 describe('sitemap', () => {
@@ -12,7 +12,7 @@ describe('sitemap', () => {
   it('should generate entries for all locales and routes', () => {
     const result = sitemap();
     const { locales, pathnames } = routing;
-    const routeCount = Object.keys(pathnames).length;
+    const routeCount = Object.keys(pathnames).length - UNLISTED_ROUTES.length;
 
     expect(result).toHaveLength(locales.length * routeCount);
   });
@@ -22,6 +22,7 @@ describe('sitemap', () => {
     const { locales, pathnames } = routing;
 
     for (const [routeKey, localePaths] of Object.entries(pathnames)) {
+      if ((UNLISTED_ROUTES as readonly string[]).includes(routeKey)) continue;
       for (const locale of locales) {
         let localizedPath: string;
 
@@ -94,5 +95,9 @@ describe('sitemap', () => {
     const urls = sitemap().map((entry) => entry.url);
 
     expect(urls.some((url) => /\/(offers|pricing|journey|tarifs|nos-offres|voyage)$/.test(url))).toBe(false);
+  });
+
+  it('leaves the internal design system page out', () => {
+    expect(sitemap().some((entry) => entry.url.includes('/design-system'))).toBe(false);
   });
 });
