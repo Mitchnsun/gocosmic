@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Changed
 
 - Secondary and small grey texts are slightly brighter in the dark theme, and every text on the site now meets the recommended reading contrast in both themes
-- Purple labels on the project pages are lighter in the dark theme, the pricing simulator's tick boxes match the site's style, and the custom cursor's trail stays visible on the light background
+- Purple labels on the project pages are lighter in the dark theme, the pricing simulator's tick boxes match the site's style, and the custom cursor's trail stays visible on every background, light or dark
 - Keyboard focus outlines are now full orange, easier to spot, and selected text is highlighted in the studio's orange
 
 ## [2.0.0] - 2026-09-27
