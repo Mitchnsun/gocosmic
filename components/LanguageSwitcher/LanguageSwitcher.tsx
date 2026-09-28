@@ -76,7 +76,7 @@ const LanguageSwitcher = ({ onOpen }: LanguageSwitcherProps = {}) => {
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ ease: [0.16, 1, 0.3, 1], duration: MOBILE_MENU_DURATION_MS / 1000 }}
                 style={{ top: 'var(--header-h, 64px)' }}
-                className="border-line bg-bg/95 fixed right-0 z-40 flex w-80 flex-col rounded-bl-2xl border-b border-l shadow-2xl backdrop-blur-xl">
+                className="border-line bg-bg/95 fixed right-0 z-40 flex w-80 flex-col rounded-bl-2xl border-b border-l backdrop-blur-xl">
                 {/* Metadata row */}
                 <div className="border-line text-3xs text-fg-3 flex items-center justify-between border-b px-6 py-3 tracking-widest uppercase">
                   <span>{t('lang_drawer_title')}</span>
@@ -101,7 +101,7 @@ const LanguageSwitcher = ({ onOpen }: LanguageSwitcherProps = {}) => {
                         role="menuitem"
                         className={cn(
                           'group hover:bg-line flex w-full items-center justify-between px-6 py-4 transition-colors',
-                          locale === code ? 'text-aerospace' : 'text-fg'
+                          locale === code ? 'text-aerospace-ink' : 'text-fg'
                         )}>
                         <span className="font-display flex items-center gap-3 text-lg leading-none font-medium">
                           <span aria-hidden="true">{flag}</span>

@@ -89,7 +89,7 @@ export default async function Contact() {
               {t('privacyNotice')}{' '}
               <Link
                 href="/privacy"
-                className="text-fg-2 hover:text-fg focus-visible:ring-aerospace/70 rounded underline underline-offset-4 transition-colors focus-visible:ring-2 focus-visible:outline-none">
+                className="text-fg-2 hover:text-fg focus-visible:ring-aerospace-ink rounded underline underline-offset-4 transition-colors focus-visible:ring-2 focus-visible:outline-none">
                 {t('privacyLink')}
               </Link>
               .

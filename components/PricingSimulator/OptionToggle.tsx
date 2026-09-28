@@ -26,7 +26,7 @@ export function OptionToggle({ label, hint, price, checked, onChange, children }
           type="checkbox"
           checked={checked}
           onChange={onChange}
-          className="accent-aerospace focus-visible:ring-aerospace mt-1 h-5 w-5 shrink-0 cursor-pointer rounded focus-visible:ring-2 focus-visible:outline-none"
+          className="accent-aerospace focus-visible:ring-aerospace-ink mt-1 h-5 w-5 shrink-0 cursor-pointer rounded focus-visible:ring-2 focus-visible:outline-none"
         />
         <span className="min-w-0 flex-1">
           <span className="font-display text-fg block text-base font-medium">{label}</span>
@@ -35,7 +35,7 @@ export function OptionToggle({ label, hint, price, checked, onChange, children }
         <span
           className={cn(
             'shrink-0 font-mono text-sm tracking-wider tabular-nums',
-            checked ? 'text-aerospace' : 'text-fg-3'
+            checked ? 'text-aerospace-ink' : 'text-fg-3'
           )}>
           {price}
         </span>

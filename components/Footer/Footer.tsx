@@ -26,14 +26,14 @@ const Footer = ({ region }: FooterProps) => {
         <div className="flex flex-col gap-3.5 sm:col-span-2 lg:col-span-1">
           <p className="font-display text-xl font-bold tracking-[-0.02em]">
             {BRAND_NAME}
-            <span className="text-aerospace">.</span>
+            <span className="text-aerospace-ink">.</span>
           </p>
           <p className="text-fg-2 max-w-[40ch] text-[15px] leading-relaxed">{t(`brand_desc.${region}`)}</p>
           <p className="text-3xs text-fg-3 font-mono tracking-[0.18em] uppercase">
             gocosmic.dev ·{' '}
             <Link
               href="/local"
-              className="hover:text-fg focus-visible:ring-aerospace/70 rounded transition-colors focus-visible:ring-2 focus-visible:outline-none">
+              className="hover:text-fg focus-visible:ring-aerospace-ink rounded transition-colors focus-visible:ring-2 focus-visible:outline-none">
               {t('local_page')}
             </Link>
           </p>

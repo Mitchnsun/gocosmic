@@ -37,7 +37,7 @@ export function TierSlider({ label, tiers, value, onChange, disabled = false }: 
         </span>
         <p className="font-display text-fg text-sm font-medium">
           {current?.label}
-          <span className="text-aerospace ml-2 font-mono text-xs tabular-nums">{current?.price}</span>
+          <span className="text-aerospace-ink ml-2 font-mono text-xs tabular-nums">{current?.price}</span>
         </p>
       </div>
 

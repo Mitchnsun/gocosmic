@@ -28,7 +28,7 @@ export function CookieConsent() {
       {choice === 'accepted' && <Analytics />}
       {choice === null && (
         <section
-          className="border-line-2 bg-bg text-fg fixed right-4 bottom-4 left-4 z-50 m-auto max-w-2xl rounded-2xl border p-5 shadow-2xl md:left-auto"
+          className="border-line-2 bg-bg text-fg fixed right-4 bottom-4 left-4 z-50 m-auto max-w-2xl rounded-2xl border p-5 md:left-auto"
           aria-labelledby="cookie-consent-title">
           <div className="space-y-4">
             <div className="flex items-start justify-between gap-4">

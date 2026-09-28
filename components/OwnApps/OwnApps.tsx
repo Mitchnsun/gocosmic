@@ -36,7 +36,7 @@ export function OwnApps({ eyebrow, title, lead, app, id = 'apps' }: OwnAppsProps
         <SectionHeading eyebrow={eyebrow} title={title} titleId={titleId} lead={lead} />
         <Link
           href={app.href}
-          className="group border-line-2 bg-bg/50 hover:border-fg-3 focus-visible:ring-aerospace/70 grid grid-cols-[auto_1fr] items-center gap-6 rounded-3xl border p-7 transition-colors focus-visible:ring-2 focus-visible:outline-none">
+          className="group border-line-2 bg-bg/50 hover:border-fg-3 focus-visible:ring-aerospace-ink grid grid-cols-[auto_1fr] items-center gap-6 rounded-3xl border p-7 transition-colors focus-visible:ring-2 focus-visible:outline-none">
           <Image
             src={app.icon.src}
             alt={app.icon.alt}
@@ -50,7 +50,7 @@ export function OwnApps({ eyebrow, title, lead, app, id = 'apps' }: OwnAppsProps
               <Chip variant="jungle">{app.badge}</Chip>
             </div>
             <p className="text-fg-2 leading-normal">{app.description}</p>
-            <span className="font-display text-aerospace inline-flex items-center gap-1.5 text-[15px] font-medium">
+            <span className="font-display text-aerospace-ink inline-flex items-center gap-1.5 text-[15px] font-medium">
               {app.linkLabel}
               <ArrowRightIcon
                 className="size-4 transition-transform group-hover:translate-x-1 motion-reduce:transition-none"

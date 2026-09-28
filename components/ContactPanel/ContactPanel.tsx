@@ -54,7 +54,7 @@ export function ContactPanel({ bookingUrl, region = DEFAULT_REGION }: ContactPan
             onClick={() => setMode(tab)}
             onKeyDown={handleKeyDown}
             className={cn(
-              'font-display focus-visible:ring-aerospace/70 h-11 cursor-pointer rounded-full text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:outline-none',
+              'font-display focus-visible:ring-aerospace-ink h-11 cursor-pointer rounded-full text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:outline-none',
               { 'bg-fg text-bg': mode === tab, 'text-fg-2 hover:text-fg': mode !== tab }
             )}>
             {t(tab)}

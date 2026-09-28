@@ -21,10 +21,11 @@ const OFF_PALETTE =
 /**
  * Class names drawing on a nominal colour that depends on the theme, e.g. `bg-void` or `hover:text-ghost/70`.
  * Components use the semantic tokens instead (`bg-bg`, `text-fg`, `border-line`…), see DESIGN_GUIDELINE.md §2.1.
- * `text-void` stays allowed: it is the dark label on orange fills, identical in both themes.
+ * `text-void` stays allowed: it is the dark label on orange fills, identical in both themes. Orange text
+ * uses `text-aerospace-ink`, darkened in the light theme so small labels keep a 4.5:1 contrast.
  */
 const THEME_NOMINAL =
-  '/(^|[\\s:])((bg|border|border-[trblxy]|divide|ring|ring-offset|outline|from|via|to|shadow|fill|stroke|placeholder|caret|decoration)-(void|ghost|space|ember|jungle)|text-(ghost|space|ember|jungle))(?![\\w-])/';
+  '/(^|[\\s:])((bg|border|border-[trblxy]|divide|ring|ring-offset|outline|from|via|to|shadow|fill|stroke|placeholder|caret|decoration)-(void|ghost|space|ember|jungle)|text-(ghost|space|ember|jungle|aerospace))(?![\\w-])/';
 
 /**
  * A shared ESLint configuration for the repository.

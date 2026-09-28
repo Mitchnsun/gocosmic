@@ -169,7 +169,7 @@ export const ContactForm = ({
         </div>
 
         {formError && (
-          <p role="alert" className="text-aerospace text-sm">
+          <p role="alert" className="text-aerospace-ink text-sm">
             {t(`errors.${formError}`)}
           </p>
         )}

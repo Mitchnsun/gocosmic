@@ -27,7 +27,7 @@ export function ContactDetails({ details, status, available, ariaLabel }: Contac
               {detail.href ? (
                 <a
                   href={detail.href}
-                  className="hover:text-aerospace focus-visible:ring-aerospace/70 rounded underline-offset-4 transition-colors hover:underline focus-visible:ring-2 focus-visible:outline-none">
+                  className="hover:text-aerospace-ink focus-visible:ring-aerospace-ink rounded underline-offset-4 transition-colors hover:underline focus-visible:ring-2 focus-visible:outline-none">
                   {detail.value}
                 </a>
               ) : (

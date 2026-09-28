@@ -33,7 +33,7 @@ export function Field({ id, label, hint, required = false, error, children, clas
         <span>
           {label}
           {required && (
-            <span className="text-aerospace ml-1" aria-hidden="true">
+            <span className="text-aerospace-ink ml-1" aria-hidden="true">
               *
             </span>
           )}
@@ -42,7 +42,7 @@ export function Field({ id, label, hint, required = false, error, children, clas
       </label>
       {children}
       {error && (
-        <p id={`${id}-error`} className="text-aerospace text-sm">
+        <p id={`${id}-error`} className="text-aerospace-ink text-sm">
           {error}
         </p>
       )}

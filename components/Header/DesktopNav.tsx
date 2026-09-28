@@ -24,7 +24,7 @@ const DesktopNav = ({ items }: { items: HeaderNavItem[] }) => {
             key={href}
             href={href}
             className={cn(
-              'group focus-visible:ring-aerospace/70 text-fg-2 hover:text-fg focus-visible:text-fg relative rounded py-2 transition-colors duration-300 focus-visible:ring-2 focus-visible:outline-none motion-reduce:duration-0',
+              'group focus-visible:ring-aerospace-ink text-fg-2 hover:text-fg focus-visible:text-fg relative rounded py-2 transition-colors duration-300 focus-visible:ring-2 focus-visible:outline-none motion-reduce:duration-0',
               { 'text-fg': active }
             )}
             aria-label={ariaLabel}

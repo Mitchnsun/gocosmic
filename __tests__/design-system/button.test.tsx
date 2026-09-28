@@ -75,10 +75,10 @@ describe('<Button />', () => {
       default: ['bg-line', 'text-fg', 'hover:bg-line-2'],
       primary: ['bg-aerospace', 'text-void', 'shadow-[0_0_32px_rgb(255_79_0/0.4)]'],
       ghost: ['border', 'border-line-2', 'bg-transparent', 'text-fg'],
-      link: ['text-aerospace', 'hover:underline'],
+      link: ['text-aerospace-ink', 'hover:underline'],
       aerospace: ['bg-aerospace', 'text-void', 'hover:bg-aerospace/90'],
       royal: ['bg-royal', 'text-ghost', 'hover:bg-royal/90'],
-      jungle: ['bg-ok', 'text-void', 'hover:bg-ok/90'],
+      jungle: ['bg-ok', 'text-on-ok', 'hover:bg-ok/90'],
     };
 
     it.each(variants)('should apply correct classes for %s variant', (variant) => {

@@ -27,7 +27,7 @@ export function PricingColumn({ column, highlighted = false }: PricingColumnProp
       )}
       <p
         className={cn('text-3xs font-mono tracking-[0.22em] uppercase', {
-          'text-aerospace': highlighted,
+          'text-aerospace-ink': highlighted,
           'text-fg-3': !highlighted,
         })}>
         {column.label}

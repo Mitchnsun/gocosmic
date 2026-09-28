@@ -5,7 +5,7 @@ import { accentClasses } from '@/design-system/accent';
 describe('accentClasses', () => {
   it('returns the utilities of each token', () => {
     expect(accentClasses('aerospace')).toEqual({
-      text: 'text-aerospace',
+      text: 'text-aerospace-ink',
       bg: 'bg-aerospace',
       border: 'border-aerospace',
       rgb: '255 79 0',

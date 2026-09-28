@@ -50,7 +50,7 @@ const FooterLanguages = () => {
                   hrefLang={code}
                   lang={code}
                   aria-label={`${name} (${code.toUpperCase()})`}
-                  className="text-fg-3 hover:text-fg focus-visible:ring-aerospace/70 inline-flex h-11 min-w-11 items-center justify-center rounded transition-colors focus-visible:ring-2 focus-visible:outline-none">
+                  className="text-fg-3 hover:text-fg focus-visible:ring-aerospace-ink inline-flex h-11 min-w-11 items-center justify-center rounded transition-colors focus-visible:ring-2 focus-visible:outline-none">
                   {code}
                 </Link>
               )}

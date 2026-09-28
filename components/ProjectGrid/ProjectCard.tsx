@@ -9,7 +9,7 @@ import type { ProjectCardContent } from './ProjectGrid.types';
 /** One project: visual, type badge, title and year, client line, summary, tags and a link to the case study. */
 export function ProjectCard({ project }: { project: ProjectCardContent }) {
   return (
-    <article className="group border-line bg-surface hover:bg-line has-[a:focus-visible]:ring-aerospace/70 relative flex h-full flex-col overflow-hidden rounded-[20px] border transition-colors has-[a:focus-visible]:ring-2">
+    <article className="group border-line bg-surface hover:bg-line has-[a:focus-visible]:ring-aerospace-ink relative flex h-full flex-col overflow-hidden rounded-[20px] border transition-colors has-[a:focus-visible]:ring-2">
       <div className="relative">
         <ProjectCover cover={project.cover} title={project.title} />
         <Chip className="bg-bg/80 text-fg-2 absolute top-3 left-3 backdrop-blur-sm">{project.kindLabel}</Chip>
@@ -34,7 +34,7 @@ export function ProjectCard({ project }: { project: ProjectCardContent }) {
         </ul>
         <span
           aria-hidden="true"
-          className="font-display text-aerospace mt-auto inline-flex items-center gap-1.5 pt-2 text-[15px] font-medium">
+          className="font-display text-aerospace-ink mt-auto inline-flex items-center gap-1.5 pt-2 text-[15px] font-medium">
           {project.linkLabel}
           <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-1 motion-reduce:transition-none" />
         </span>

@@ -11,6 +11,7 @@
   --color-outer-space: #414a4c;
   --color-royal: #7851a9;
   --color-space: #1e2952;
+  --color-sun: #ffb38a;
   --color-void: #020617;
   --font-display: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
@@ -37,6 +38,8 @@
   --color-line: var(--t-line);
   --color-line-2: var(--t-line-2);
   --color-ok: var(--t-ok);
+  --color-on-ok: var(--t-on-ok);
+  --color-aerospace-ink: var(--t-aerospace-ink);
 }
 
 /* Dark ("space") is the default: no attribute, no JavaScript and first paint all resolve here. */
@@ -53,6 +56,8 @@
   --t-line: rgb(248 248 255 / 0.08);
   --t-line-2: rgb(248 248 255 / 0.15);
   --t-ok: #29ab87;
+  --t-on-ok: #020617;
+  --t-aerospace-ink: #ff4f00;
 }
 
 /* Light ("star"): cosmic-latte page, misty-rose alternate sections, void ink. */
@@ -67,7 +72,11 @@
   --t-fg-3: rgb(2 6 23 / 0.6);
   --t-line: rgb(2 6 23 / 0.08);
   --t-line-2: rgb(2 6 23 / 0.15);
+  /* jungle darkened for AA on cream (5.4:1) and misty-rose (4.7:1); cream label on it */
   --t-ok: #16745a;
+  --t-on-ok: #fff8e7;
+  /* aerospace darkened for AA text on cream (5.4:1) and misty-rose (4.8:1); fills keep #ff4f00 */
+  --t-aerospace-ink: #b83a00;
 }
 
 :root {
@@ -76,6 +85,11 @@
 
 body {
   font-family: var(--font-body);
+}
+
+::selection {
+  background-color: rgb(255 79 0 / 0.3);
+  color: var(--t-fg);
 }
 
 h1,

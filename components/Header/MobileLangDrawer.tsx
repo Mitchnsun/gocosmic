@@ -89,7 +89,7 @@ const MobileLangDrawer = ({ onClose }: MobileLangDrawerProps) => {
                   <span aria-hidden="true">{flag}</span>
                   {name}
                 </span>
-                {locale === code && <CheckIcon className="text-aerospace h-5 w-5" aria-hidden="true" />}
+                {locale === code && <CheckIcon className="text-aerospace-ink h-5 w-5" aria-hidden="true" />}
               </button>
             </motion.li>
           ))}

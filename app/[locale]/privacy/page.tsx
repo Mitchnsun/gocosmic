@@ -30,7 +30,7 @@ export default async function PrivacyPage() {
         {t('privacy.legalNoticePrefix')}{' '}
         <Link
           href="/legal-notice"
-          className="text-fg hover:text-aerospace underline underline-offset-4 transition-colors">
+          className="text-fg hover:text-aerospace-ink underline underline-offset-4 transition-colors">
           {t('privacy.legalNoticeLink')}
         </Link>
         .

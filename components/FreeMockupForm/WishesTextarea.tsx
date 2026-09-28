@@ -34,7 +34,7 @@ export function WishesTextarea({ value, onChange, error, onBlur }: WishesTextare
       />
       <div className="flex items-baseline justify-between gap-3">
         {error ? (
-          <p id={ERROR_ID} className="text-aerospace text-sm">
+          <p id={ERROR_ID} className="text-aerospace-ink text-sm">
             {t(`validation.${error}`)}
           </p>
         ) : (
@@ -42,7 +42,7 @@ export function WishesTextarea({ value, onChange, error, onBlur }: WishesTextare
         )}
         <span
           id={COUNTER_ID}
-          className={cn('font-mono text-xs tabular-nums', isAtLimit ? 'text-aerospace' : 'text-fg-3')}>
+          className={cn('font-mono text-xs tabular-nums', isAtLimit ? 'text-aerospace-ink' : 'text-fg-3')}>
           {t('form.wishes_counter', { count, max })}
         </span>
       </div>

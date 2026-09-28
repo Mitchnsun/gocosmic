@@ -46,9 +46,9 @@ export function Faq({ eyebrow, title, items, defaultOpen = 0, id = 'faq' }: FaqP
                     aria-expanded={isOpen}
                     aria-controls={panelId}
                     onClick={() => setOpen(isOpen ? -1 : index)}
-                    className="font-display focus-visible:ring-aerospace/70 flex min-h-11 w-full cursor-pointer items-center justify-between gap-6 py-5 text-left text-lg font-medium focus-visible:ring-2 focus-visible:outline-none">
+                    className="font-display focus-visible:ring-aerospace-ink flex min-h-11 w-full cursor-pointer items-center justify-between gap-6 py-5 text-left text-lg font-medium focus-visible:ring-2 focus-visible:outline-none">
                     {item.question}
-                    <span aria-hidden="true" className="text-aerospace font-mono text-xl">
+                    <span aria-hidden="true" className="text-aerospace-ink font-mono text-xl">
                       {isOpen ? '−' : '+'}
                     </span>
                   </button>

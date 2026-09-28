@@ -32,14 +32,14 @@ export const NeedPicker = ({ legend, hint, options, value, onChange, disabled = 
             onChange={onChange}
             className="peer sr-only"
           />
-          <span className="font-display border-line-2 text-fg-2 hover:border-fg-3 peer-checked:bg-aerospace peer-checked:border-aerospace peer-checked:text-void peer-focus-visible:ring-aerospace/70 inline-flex h-11 items-center rounded-full border px-4 text-sm transition-colors peer-focus-visible:ring-2">
+          <span className="font-display border-line-2 text-fg-2 hover:border-fg-3 peer-checked:bg-aerospace peer-checked:border-aerospace peer-checked:text-void peer-focus-visible:ring-aerospace-ink inline-flex h-11 items-center rounded-full border px-4 text-sm transition-colors peer-focus-visible:ring-2">
             {option.label}
           </span>
         </label>
       ))}
     </div>
     {error && (
-      <p id="need-error" className="text-aerospace text-sm">
+      <p id="need-error" className="text-aerospace-ink text-sm">
         {error}
       </p>
     )}

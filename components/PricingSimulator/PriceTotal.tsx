@@ -23,7 +23,7 @@ export function PriceTotal({ label, amount, period, note }: PriceTotalProps) {
         <output
           aria-labelledby={labelId}
           aria-live="polite"
-          className="text-aerospace font-display text-5xl font-bold tabular-nums">
+          className="text-aerospace-ink font-display text-5xl font-bold tabular-nums">
           {amount}
         </output>
         <span className="text-fg-2 font-display text-base">{period}</span>

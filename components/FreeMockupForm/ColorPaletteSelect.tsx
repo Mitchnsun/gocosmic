@@ -75,7 +75,7 @@ export function ColorPaletteSelect({ value, onChange, error, onBlur }: ColorPale
               />
               <span
                 className={cn(
-                  'peer-focus-visible:ring-aerospace peer-focus-visible:ring-offset-bg flex h-full min-h-11 items-center gap-3 rounded-xl border p-3 transition-colors duration-200 peer-focus-visible:ring-2 peer-focus-visible:ring-offset-2',
+                  'peer-focus-visible:ring-aerospace-ink peer-focus-visible:ring-offset-bg flex h-full min-h-11 items-center gap-3 rounded-xl border p-3 transition-colors duration-200 peer-focus-visible:ring-2 peer-focus-visible:ring-offset-2',
                   isSelected ? 'border-aerospace/40 bg-aerospace/[0.06]' : 'border-line bg-surface hover:border-line-2'
                 )}>
                 {!isNoPreference && <PaletteSwatch paletteKey={choice as ColorPaletteKey} />}
@@ -84,7 +84,7 @@ export function ColorPaletteSelect({ value, onChange, error, onBlur }: ColorPale
                 </span>
                 <CheckCircleIcon
                   className={cn(
-                    'text-aerospace h-5 w-5 shrink-0 transition-opacity',
+                    'text-aerospace-ink h-5 w-5 shrink-0 transition-opacity',
                     isSelected ? 'opacity-100' : 'opacity-0'
                   )}
                   aria-hidden="true"
@@ -95,7 +95,7 @@ export function ColorPaletteSelect({ value, onChange, error, onBlur }: ColorPale
         })}
       </div>
       {error && (
-        <p id={ERROR_ID} className="text-aerospace text-sm">
+        <p id={ERROR_ID} className="text-aerospace-ink text-sm">
           {t(`validation.${error}`)}
         </p>
       )}

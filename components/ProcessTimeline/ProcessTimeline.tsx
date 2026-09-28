@@ -41,7 +41,7 @@ export function ProcessTimeline({
       {(eyebrow || title || subtitle) && (
         <div className="mb-12 max-w-7xl md:px-8">
           {eyebrow && (
-            <p className="text-aerospace mb-4 flex items-center gap-2 font-mono text-sm font-medium tracking-widest uppercase">
+            <p className="text-aerospace-ink mb-4 flex items-center gap-2 font-mono text-sm font-medium tracking-widest uppercase">
               <span className="bg-aerospace h-2 w-2 rounded-full" aria-hidden="true" />
               {eyebrow}
             </p>

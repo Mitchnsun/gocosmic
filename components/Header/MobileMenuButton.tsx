@@ -30,7 +30,7 @@ const MobileMenuButton = ({ isOpen, onToggle, buttonRef, className }: MobileMenu
       aria-expanded={isOpen}
       aria-controls="mobile-menu"
       className={cn(
-        'border-line-2 hover:border-fg-3 focus-visible:ring-aerospace/70 flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border transition-colors focus-visible:ring-2 focus-visible:outline-none',
+        'border-line-2 hover:border-fg-3 focus-visible:ring-aerospace-ink flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border transition-colors focus-visible:ring-2 focus-visible:outline-none',
         className
       )}>
       <motion.span

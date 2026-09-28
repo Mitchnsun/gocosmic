@@ -8,7 +8,7 @@ describe('Eyebrow', () => {
   it('renders the label after a decorative signal dot', () => {
     const { getByText, container } = render(<Eyebrow className="extra">[ Pour qui ]</Eyebrow>);
 
-    expect(getByText('[ Pour qui ]')).toHaveClass('font-mono', 'text-aerospace', 'extra');
+    expect(getByText('[ Pour qui ]')).toHaveClass('font-mono', 'text-aerospace-ink', 'extra');
     expect(container.querySelector('[aria-hidden="true"]')).toHaveClass('bg-aerospace', 'rounded-full');
   });
 });
