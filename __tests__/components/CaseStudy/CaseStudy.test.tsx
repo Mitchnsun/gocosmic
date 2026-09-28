@@ -52,6 +52,13 @@ describe('CaseStudy', () => {
     expect(getByAltText('Daily Fortune icon')).toBeInTheDocument();
   });
 
+  it('paints a fixed brand background behind the logo when given', () => {
+    const { getByAltText } = render(
+      <CaseStudy {...baseProps} logo={{ src: '/logo.png', alt: 'White logo', background: '#1E2952' }} />
+    );
+    expect(getByAltText('White logo')).toHaveStyle({ backgroundColor: '#1E2952' });
+  });
+
   it('links the call-to-action to the live project', () => {
     const { getByRole } = render(
       <CaseStudy

@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Changed
 
 - Every colour on the site now comes from a shared set of named shades, the groundwork for the upcoming light theme; secondary and small grey texts are slightly brighter so they stay easy to read
+- Purple labels on the project pages are lighter in the dark theme so they are easier to read
 - Keyboard focus outlines are now full orange, easier to spot, and selected text is highlighted in the studio's orange
 
 ## [2.0.0] - 2026-09-27

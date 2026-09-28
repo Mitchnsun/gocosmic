@@ -95,12 +95,13 @@ describe.each(Object.entries(THEMES))('%s theme tokens', (_theme, tokens) => {
         'ok',
         'on-ok',
         'aerospace-ink',
+        'royal-ink',
       ])
     );
   });
 
   describe.each(Object.entries(backgrounds))('on %s', (_name, background) => {
-    it.each(['fg', 'fg-2', 'fg-3', 'ok', 'aerospace-ink'])('%s text reaches AA', (text) => {
+    it.each(['fg', 'fg-2', 'fg-3', 'ok', 'aerospace-ink', 'royal-ink'])('%s text reaches AA', (text) => {
       expect(contrast(color(text), background)).toBeGreaterThanOrEqual(AA);
     });
   });
