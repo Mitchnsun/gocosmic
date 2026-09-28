@@ -1,13 +1,12 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { useTheme } from 'next-themes';
 
 import MoonIcon from '@/components/icons/MoonIcon';
 import SunIcon from '@/components/icons/SunIcon';
 import { cn } from '@/design-system/lib/utils';
 
-import { useResolvedTheme } from './Theme.hooks';
+import { useThemeSwitch } from './Theme.hooks';
 
 /**
  * 44 px pill switching between the dark and light themes. The label names the action ("Switch to the
@@ -16,13 +15,13 @@ import { useResolvedTheme } from './Theme.hooks';
  */
 export function ThemeToggle({ className }: { className?: string }) {
   const t = useTranslations('theme');
-  const { setTheme } = useTheme();
-  const isLight = useResolvedTheme() === 'light';
+  const { theme, switchTheme } = useThemeSwitch();
+  const isLight = theme === 'light';
 
   return (
     <button
       type="button"
-      onClick={() => setTheme(isLight ? 'dark' : 'light')}
+      onClick={switchTheme}
       aria-label={t(isLight ? 'toggle_dark' : 'toggle_light')}
       className={cn(
         'border-line-2 hover:border-fg-3 focus-visible:ring-aerospace-ink text-fg flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border transition-colors focus-visible:ring-2 focus-visible:outline-none',

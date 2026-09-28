@@ -84,4 +84,54 @@ describe('ThemeToggle', () => {
     });
     expect(meta()).toHaveAttribute('content', '#fff8e7');
   });
+
+  describe('switch animation', () => {
+    const originalMatchMedia = window.matchMedia;
+    const mockReducedMotion = (reduce: boolean) => {
+      window.matchMedia = vi.fn().mockImplementation((query: string) => ({
+        matches: reduce && query.includes('reduce'),
+        media: query,
+        addListener: vi.fn(),
+        removeListener: vi.fn(),
+        addEventListener: vi.fn(),
+        removeEventListener: vi.fn(),
+      }));
+    };
+
+    afterEach(() => {
+      window.matchMedia = originalMatchMedia;
+      vi.useRealTimers();
+      document.documentElement.classList.remove('theme-fade', 'theme-rise');
+    });
+
+    it('cross-fades the colours and raises the sun on the way to light, then cleans up', () => {
+      vi.useFakeTimers();
+      mockReducedMotion(false);
+      renderToggle();
+      const root = document.documentElement;
+
+      fireEvent.click(screen.getByRole('button', { name: 'Switch to the light theme' }));
+      expect(root).toHaveClass('theme-fade', 'theme-rise');
+
+      act(() => vi.advanceTimersByTime(350));
+      expect(root).not.toHaveClass('theme-fade');
+      expect(root).toHaveClass('theme-rise');
+      act(() => vi.advanceTimersByTime(650));
+      expect(root).not.toHaveClass('theme-rise');
+
+      fireEvent.click(screen.getByRole('button', { name: 'Switch to the dark theme' }));
+      expect(root).toHaveClass('theme-fade');
+      expect(root).not.toHaveClass('theme-rise');
+    });
+
+    it('switches instantly when the visitor prefers reduced motion', () => {
+      mockReducedMotion(true);
+      renderToggle();
+
+      fireEvent.click(screen.getByRole('button', { name: 'Switch to the light theme' }));
+      expect(document.documentElement).toHaveAttribute('data-theme', 'light');
+      expect(document.documentElement).not.toHaveClass('theme-fade');
+      expect(document.documentElement).not.toHaveClass('theme-rise');
+    });
+  });
 });

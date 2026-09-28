@@ -9,13 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Added
 
-- A light theme: a sun and moon button in the header (and at the bottom of the mobile menu) switches the whole site between dark and light, and the site remembers the choice on the next visit
+- A light theme: a sun and moon button in the header (and at the bottom of the mobile menu) switches the whole site between dark and light, with a soft fade and a sun that rises into place, and the site remembers the choice on the next visit
 - In the light theme, the homepage opens under a rising sun instead of the starry sky and its planet, and closes on a warm glow, while the starry bands at the bottom of the other pages and the project headers stay night-coloured
 
 ### Changed
 
-- Every colour on the site now comes from a shared set of named shades, the groundwork for the upcoming light theme; secondary and small grey texts are slightly brighter so they stay easy to read
-- Purple labels on the project pages are lighter in the dark theme so they are easier to read
+- Secondary and small grey texts are slightly brighter in the dark theme, and every text on the site now meets the recommended reading contrast in both themes
+- Purple labels on the project pages are lighter in the dark theme, the pricing simulator's tick boxes match the site's style, and the custom cursor's trail stays visible on the light background
 - Keyboard focus outlines are now full orange, easier to spot, and selected text is highlighted in the studio's orange
 
 ## [2.0.0] - 2026-09-27

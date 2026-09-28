@@ -17,8 +17,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       themes={[...THEMES]}
       defaultTheme={DEFAULT_THEME}
       enableSystem={false}
-      storageKey={THEME_STORAGE_KEY}
-      disableTransitionOnChange>
+      storageKey={THEME_STORAGE_KEY}>
       <ThemeColorMeta />
       {children}
     </NextThemesProvider>
