@@ -247,6 +247,15 @@ footer a {
     background: radial-gradient(circle, rgb(255 179 138 / 0.55), transparent 60%);
   }
 
+  /* Striped placeholder (a visual still to come): ink at 3 % in either theme. */
+  .bg-stripes {
+    background-image: repeating-linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--t-fg) 3%, transparent) 0 12px,
+      transparent 12px 24px
+    );
+  }
+
   .rose-floor {
     background: radial-gradient(ellipse at 50% 120%, rgb(255 228 225 / 0.9), transparent 60%);
   }

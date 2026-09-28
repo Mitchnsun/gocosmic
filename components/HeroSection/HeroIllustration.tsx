@@ -41,7 +41,11 @@ const HeroIllustration = ({ reducedMotion }: { reducedMotion: boolean }) => {
         </>
       )}
       <div className="rose-floor light:block pointer-events-none absolute inset-0 -z-20 hidden" aria-hidden="true" />
-      <Sun className="light:block absolute -top-[38%] -right-[6%] -z-10 hidden" />
+      {/* Phones: a smaller, dimmer sun tucked in the corner, like the planet in the dark theme. */}
+      <Sun
+        size="clamp(240px, 56vw, 700px)"
+        className="light:block absolute -top-28 -right-24 -z-10 hidden opacity-60 lg:-top-[38%] lg:-right-[6%] lg:opacity-100"
+      />
     </>
   );
 };

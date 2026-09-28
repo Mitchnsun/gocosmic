@@ -36,7 +36,7 @@ export function OwnApps({ eyebrow, title, lead, app, id = 'apps' }: OwnAppsProps
         <SectionHeading eyebrow={eyebrow} title={title} titleId={titleId} lead={lead} />
         <Link
           href={app.href}
-          className="group border-line-2 bg-bg/50 hover:border-fg-3 focus-visible:ring-aerospace-ink grid grid-cols-[auto_1fr] items-center gap-6 rounded-3xl border p-7 transition-colors focus-visible:ring-2 focus-visible:outline-none">
+          className="group border-line-2 bg-bg/60 hover:border-fg-3 focus-visible:ring-aerospace-ink grid grid-cols-[auto_1fr] items-center gap-6 rounded-3xl border p-7 transition-colors focus-visible:ring-2 focus-visible:outline-none">
           <Image
             src={app.icon.src}
             alt={app.icon.alt}

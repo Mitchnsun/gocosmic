@@ -42,7 +42,7 @@ export function StudioIntro({
             alt={portrait.alt}
             width={portrait.width}
             height={portrait.height}
-            className="border-line aspect-[4/5] w-full max-w-[420px] rounded-3xl border object-cover"
+            className="border-line-2 aspect-[4/5] w-full max-w-[420px] rounded-3xl border object-cover"
           />
         )}
         <div className="flex max-w-3xl flex-col gap-5">
