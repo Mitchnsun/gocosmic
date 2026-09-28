@@ -50,3 +50,8 @@ next-env.d.ts
 
 # IDE
 .vscode/
+
+# Playwright (local QA: yarn qa)
+/test-results
+/playwright-report
+/e2e/screenshots
