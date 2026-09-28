@@ -59,7 +59,7 @@ describe('PricingColumns', () => {
     const articles = getAllByRole('article');
     expect(articles).toHaveLength(4);
     expect(articles[0]).toHaveClass('border-aerospace/40');
-    expect(articles[1]).toHaveClass('border-line');
+    expect(articles[1]).toHaveClass('border-line-2');
     expect(getByText('/ month')).toBeInTheDocument();
     expect(getByRole('heading', { name: 'Custom' })).toBeInTheDocument();
     expect(queryByText('Custom price')).not.toBeInTheDocument();

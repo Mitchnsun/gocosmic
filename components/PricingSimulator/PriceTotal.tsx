@@ -15,7 +15,7 @@ export function PriceTotal({ label, amount, period, note }: PriceTotalProps) {
   const labelId = useId();
 
   return (
-    <div className="border-line bg-surface rounded-2xl border p-6">
+    <div className="border-line-2 bg-bg rounded-2xl border p-6">
       <p id={labelId} className="text-fg-2 text-2xs font-mono tracking-[0.24em] uppercase">
         {label}
       </p>

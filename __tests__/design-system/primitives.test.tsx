@@ -21,7 +21,7 @@ describe('Chip', () => {
   });
 
   it('switches to green for what is included', () => {
-    const { getByText } = render(<Chip variant="jungle">Free</Chip>);
+    const { getByText } = render(<Chip variant="ok">Free</Chip>);
 
     expect(getByText('Free')).toHaveClass('border-ok/50', 'text-ok');
   });

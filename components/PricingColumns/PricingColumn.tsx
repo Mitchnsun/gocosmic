@@ -17,7 +17,7 @@ export function PricingColumn({ column, highlighted = false }: PricingColumnProp
     <article
       className={cn('relative flex flex-col gap-5 overflow-hidden rounded-3xl border p-[clamp(1.5rem,3vw,2.5rem)]', {
         'border-aerospace/40 bg-aerospace/[0.04]': highlighted,
-        'border-line bg-surface': !highlighted,
+        'border-line-2 bg-surface': !highlighted,
       })}>
       {highlighted && (
         <div

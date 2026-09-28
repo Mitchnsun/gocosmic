@@ -6,6 +6,13 @@ import { cn } from './lib/utils';
 export const FIELD_CONTROL =
   'bg-field border-line-2 text-fg placeholder:text-fg-3 focus:border-aerospace focus:ring-aerospace/30 aria-invalid:border-aerospace w-full rounded-xl border px-4 text-base transition-colors focus:ring-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60';
 
+/**
+ * Native checkbox restyled for both themes: a 20 px box whose border reaches 3:1, filled orange with a
+ * dark check when ticked. It stays a real <input>, so labels, keyboard and the custom cursor keep working.
+ */
+export const CHECKBOX_CONTROL =
+  'check-mark border-fg-3 bg-field checked:border-aerospace checked:bg-aerospace focus-visible:ring-aerospace-ink h-5 w-5 shrink-0 cursor-pointer appearance-none rounded border transition-colors focus-visible:ring-2 focus-visible:outline-none';
+
 /** Single-line control height; textareas grow with their rows instead. */
 export const FIELD_INPUT = cn(FIELD_CONTROL, 'h-12');
 export const FIELD_TEXTAREA = cn(FIELD_CONTROL, 'py-3');

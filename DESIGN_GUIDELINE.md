@@ -184,7 +184,7 @@ Pages are assembled from shared building blocks — reuse them instead of re-imp
 | `components/Reveal`           | Fade-and-lift on scroll, `delay={index * 50}` for a 50 ms stagger; CSS-first reduced-motion guard     |
 | `design-system/pill.ts`       | `primaryPill()`, `ghostPill()`, plus `CONTAINER` (1280 px, fluid gutters) and `SECTION_Y` (64–120 px) |
 | `design-system/eyebrow`       | Orange dot + uppercase mono label opening a section                                                   |
-| `design-system/chip`          | Bordered mono tag; `variant="jungle"` (the `ok` token) marks what is included                         |
+| `design-system/chip`          | Bordered mono tag; `variant="ok"` marks what is included                                              |
 | `design-system/hairline-grid` | `gap-px` card grid with 1 px separators (`as="ol"` for ordered content)                               |
 | `design-system/field`         | `Field` (label, optional hint, required asterisk, error) + `FIELD_INPUT` / `FIELD_TEXTAREA` controls  |
 | `components/LegalDocument`    | Legal notice, privacy policy and terms of sale layout: intro, one card per section                    |

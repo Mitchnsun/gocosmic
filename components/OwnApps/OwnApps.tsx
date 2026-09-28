@@ -47,7 +47,7 @@ export function OwnApps({ eyebrow, title, lead, app, id = 'apps' }: OwnAppsProps
           <div className="flex flex-col gap-2">
             <div className="flex flex-wrap items-center gap-2">
               <h3 className="font-display text-2xl font-semibold tracking-[-0.02em]">{app.name}</h3>
-              <Chip variant="jungle">{app.badge}</Chip>
+              <Chip variant="ok">{app.badge}</Chip>
             </div>
             <p className="text-fg-2 leading-normal">{app.description}</p>
             <span className="font-display text-aerospace-ink inline-flex items-center gap-1.5 text-[15px] font-medium">

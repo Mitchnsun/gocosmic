@@ -27,6 +27,15 @@ describe('OptionToggle', () => {
     expect(screen.getByRole('checkbox', { name: /email/i })).toBeChecked();
   });
 
+  it('keeps a real checkbox, restyled for both themes, and outlines the ticked row in orange', () => {
+    const { rerender } = render(<OptionToggle label="Email" price="+10€" checked={false} onChange={() => {}} />);
+    const checkbox = screen.getByRole('checkbox', { name: /email/i });
+    expect(checkbox).toHaveClass('appearance-none', 'check-mark', 'border-fg-3', 'checked:bg-aerospace');
+
+    rerender(<OptionToggle label="Email" price="+10€" checked onChange={() => {}} />);
+    expect(checkbox.closest('div')).toHaveClass('border-aerospace', 'bg-aerospace/[0.06]');
+  });
+
   it('calls onChange when toggled', () => {
     const onChange = vi.fn();
     render(<OptionToggle label="Email" price="+10€" checked={false} onChange={onChange} />);

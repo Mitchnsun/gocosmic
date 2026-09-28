@@ -1,5 +1,6 @@
 'use client';
 
+import { CHECKBOX_CONTROL } from '@/design-system/field';
 import { cn } from '@/design-system/lib/utils';
 
 interface OptionToggleProps {
@@ -19,15 +20,10 @@ export function OptionToggle({ label, hint, price, checked, onChange, children }
     <div
       className={cn(
         'rounded-xl border transition-colors duration-200',
-        checked ? 'border-aerospace/40 bg-aerospace/[0.04]' : 'border-line bg-surface hover:border-line-2'
+        checked ? 'border-aerospace bg-aerospace/[0.06]' : 'border-line bg-surface hover:border-line-2'
       )}>
       <label className="flex cursor-pointer items-start gap-4 p-4">
-        <input
-          type="checkbox"
-          checked={checked}
-          onChange={onChange}
-          className="accent-aerospace focus-visible:ring-aerospace-ink mt-1 h-5 w-5 shrink-0 cursor-pointer rounded focus-visible:ring-2 focus-visible:outline-none"
-        />
+        <input type="checkbox" checked={checked} onChange={onChange} className={cn(CHECKBOX_CONTROL, 'mt-1')} />
         <span className="min-w-0 flex-1">
           <span className="font-display text-fg block text-base font-medium">{label}</span>
           {hint && <span className="text-fg-2 mt-1 block text-sm">{hint}</span>}
