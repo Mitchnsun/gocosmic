@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useRef } from 'react';
 
+import type { Theme } from '@/components/Theme';
+
 /** Matches when the primary pointer is not a precise one such as a mouse or trackpad. */
 export const COARSE_POINTER_QUERY = 'not all and (pointer: fine)';
 
@@ -29,6 +31,8 @@ export interface CosmicCursorState {
   isMagnetic: boolean;
   /** True when hovering a form control that shows its own native cursor (text caret, hand, grab…) — hide the canvas dot */
   usesNativeCursor: boolean;
+  /** Theme of the surface under the pointer: the page theme, or `dark` over a dark island */
+  surfaceTheme: Theme;
 }
 
 export interface UseCosmicCursorOptions {
@@ -98,6 +102,7 @@ export function useCosmicCursor({
     accentColor: COLORS.aerospace,
     isMagnetic: false,
     usesNativeCursor: false,
+    surfaceTheme: 'dark',
   });
 
   // Ref holding magnetic element list — populated at mount and on DOM mutations
@@ -169,6 +174,11 @@ export function useCosmicCursor({
           target.tagName.toLowerCase() === 'select' ||
           target.getAttribute('contenteditable') === 'true' ||
           target.closest('[role="slider"]') !== null);
+
+      // The nearest data-theme is <html> (set by next-themes) or a dark island such as a case
+      // study hero, so the trail stays visible on whatever surface the pointer is over.
+      state.surfaceTheme =
+        isElement && target.closest('[data-theme]')?.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
 
       // Magnetic detection — scan [data-magnetic] elements and find the closest
       // Use cached rects (invalidated on scroll/resize) to avoid layout thrashing

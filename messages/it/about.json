@@ -47,7 +47,7 @@
         },
         "price": {
           "title": "Un prezzo che segue la tua attività",
-          "description": "Un abbonamento da {price} al mese, che si adatta alle tue esigenze, invece di un grosso investimento iniziale."
+          "description": "Un abbonamento da {price} al mese IVA esclusa, che si adatta alle tue esigenze, invece di un grosso investimento iniziale."
         },
         "answer": {
           "title": "Qualcuno che risponde",

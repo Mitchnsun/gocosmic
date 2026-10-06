@@ -28,7 +28,7 @@ describe('AccentList', () => {
   it('applies the accent colour to the bullets', () => {
     const { container } = render(<AccentList items={['First']} accent="jungle" ariaLabel="Items" />);
 
-    expect(container.querySelector('.bg-jungle')).toBeInTheDocument();
+    expect(container.querySelector('.bg-ok')).toBeInTheDocument();
   });
 
   it('renders the label as a paragraph by default', () => {

@@ -47,7 +47,7 @@
         },
         "price": {
           "title": "Ein Preis, der mitwächst",
-          "description": "Ein Abonnement ab {price} im Monat, das sich mit Ihnen weiterentwickelt, statt einer großen Investition am Anfang."
+          "description": "Ein Abonnement ab {price} im Monat zzgl. MwSt., das sich mit Ihnen weiterentwickelt, statt einer großen Investition am Anfang."
         },
         "answer": {
           "title": "Jemand, der antwortet",

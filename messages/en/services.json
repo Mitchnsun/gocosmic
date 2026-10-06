@@ -2,7 +2,7 @@
   "services": {
     "meta": {
       "title": "Services & pricing · Websites in Geneva & Annecy | Cosmic Studio",
-      "description": "Showcase sites, online shops, apps and ongoing care, with prices on display: a subscription from €10 a month, or a quoted project. In Geneva, in Annecy and remotely."
+      "description": "Showcase sites, online shops, apps and ongoing care, with prices on display: a subscription from €10 a month excl. VAT, or a quoted project. In Geneva, in Annecy and remotely."
     },
     "intro": {
       "eyebrow": "[ Services & pricing ]",
@@ -12,7 +12,7 @@
     "simulator": {
       "eyebrow": "[ Build your plan ]",
       "title": "Start simple, <em>add the rest later.</em>",
-      "lead": "The base plan covers a showcase page, online and secure, for {price} a month. Tick the options you want to see the monthly price."
+      "lead": "The base plan covers a showcase page, online and secure, for {price} a month excl. VAT. Tick the options you want to see the monthly price."
     },
     "trades": {
       "eyebrow": "[ What we do · 04 ]",

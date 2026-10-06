@@ -17,9 +17,9 @@ describe('<Button />', () => {
       'cursor-pointer',
       'rounded-full',
       'transition-colors',
-      'bg-ghost/10',
-      'text-ghost',
-      'hover:bg-ghost/15',
+      'bg-line',
+      'text-fg',
+      'hover:bg-line-2',
       'font-normal',
       'text-base',
       'px-6',
@@ -72,13 +72,13 @@ describe('<Button />', () => {
     ];
 
     const variantClasses = {
-      default: ['bg-ghost/10', 'text-ghost', 'hover:bg-ghost/15'],
+      default: ['bg-line', 'text-fg', 'hover:bg-line-2'],
       primary: ['bg-aerospace', 'text-void', 'shadow-[0_0_32px_rgb(255_79_0/0.4)]'],
-      ghost: ['border', 'border-ghost/15', 'bg-transparent', 'text-ghost'],
-      link: ['text-aerospace', 'hover:underline'],
+      ghost: ['border', 'border-line-2', 'bg-transparent', 'text-fg'],
+      link: ['text-aerospace-ink', 'hover:underline'],
       aerospace: ['bg-aerospace', 'text-void', 'hover:bg-aerospace/90'],
       royal: ['bg-royal', 'text-ghost', 'hover:bg-royal/90'],
-      jungle: ['bg-jungle', 'text-void', 'hover:bg-jungle/90'],
+      jungle: ['bg-ok', 'text-on-ok', 'hover:bg-ok/90'],
     };
 
     it.each(variants)('should apply correct classes for %s variant', (variant) => {

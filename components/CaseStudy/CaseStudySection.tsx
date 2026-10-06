@@ -40,7 +40,7 @@ export const CaseStudySection = ({ section, index, accent }: CaseStudySectionPro
           columns={section.columns ?? 1}
         />
       )}
-      {section.secondary && <p className="text-ghost/70 mt-6 text-base leading-7">{section.secondary}</p>}
+      {section.secondary && <p className="text-fg-2 mt-6 text-base leading-7">{section.secondary}</p>}
     </ContentSection>
   );
 };

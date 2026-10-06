@@ -16,7 +16,7 @@
       "note": "Ces deux prestations sont gratuites et ne vous engagent à rien."
     },
     "builder": {
-      "period": "/ mois",
+      "period": "HT / mois",
       "base": {
         "title": "Formule de base",
         "includes": {
@@ -46,6 +46,7 @@
       },
       "pages": {
         "label": "Nombre de pages",
+        "or_more": "{price} ou plus",
         "tiers": {
           "one": "1 page (comprise)",
           "two_four": "2 à 4 pages",
@@ -69,7 +70,7 @@
       },
       "total": {
         "label": "Votre estimation",
-        "note": "Prix indicatif, confirmé après un premier échange. Vous pouvez ajouter des options à tout moment ; une fois activées, elles restent dans votre abonnement (voir les conditions générales de vente).",
+        "note": "Prix indicatif hors taxes, confirmé après un premier échange. Vous pouvez ajouter des options à tout moment ; une fois activées, elles restent dans votre abonnement (voir les conditions générales de vente).",
         "cta": "Demander ma maquette gratuite",
         "question": "Une question avant ? <link>Écrivez-nous</link>.",
         "beyond": "Au-delà de ces volumes, nous en parlons ensemble pour vous faire une proposition."
@@ -82,7 +83,7 @@
         "title": "Abonnement",
         "label": "Site, hébergement et suivi",
         "price": "Dès {price}",
-        "period": "/ mois",
+        "period": "HT / mois",
         "description": "Votre site est en ligne et tenu à jour, sans que vous ayez à vous en occuper. Le prix dépend de vos besoins : nombre de pages, nom de domaine, adresse e-mail, modifications.",
         "features": {
           "included": "Hébergement, connexion sécurisée et référencement de base compris",

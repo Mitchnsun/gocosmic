@@ -2,7 +2,7 @@
   "services": {
     "meta": {
       "title": "Servicios y precios · Páginas web en Ginebra y Annecy | Cosmic Studio",
-      "description": "Sitios de presentación, tiendas en línea, aplicaciones y seguimiento, con precios a la vista: una suscripción desde 10 € al mes o un proyecto según presupuesto. En Ginebra, en Annecy y a distancia."
+      "description": "Sitios de presentación, tiendas en línea, aplicaciones y seguimiento, con precios a la vista: una suscripción desde 10 € al mes sin IVA o un proyecto según presupuesto. En Ginebra, en Annecy y a distancia."
     },
     "cta": {
       "title": "Hablemos de tu sitio.",
@@ -17,7 +17,7 @@
     "simulator": {
       "eyebrow": "[ Configura tu suscripción ]",
       "title": "Empieza por lo básico <em>y añade el resto más adelante.</em>",
-      "lead": "El plan base incluye una página de presentación en línea y con conexión segura, por {price} al mes. Marca las opciones que te interesen para ver el precio mensual."
+      "lead": "El plan base incluye una página de presentación en línea y con conexión segura, por {price} al mes sin IVA. Marca las opciones que te interesen para ver el precio mensual."
     },
     "trades": {
       "eyebrow": "[ Lo que hacemos · 04 ]",

@@ -9,7 +9,7 @@ import { encodePlanCode } from '@/lib/pricing/plan-code';
 import { storePlanCode } from '@/lib/pricing/plan-storage';
 import type { Currency, Region } from '@/lib/region';
 
-import { ADD_ON_KEYS, BASE_PRICE, PAGE_TIER_KEYS } from './constants';
+import { ADD_ON_KEYS, BASE_PRICE, MAX_TIER_INDEX, PAGE_TIER_KEYS } from './constants';
 import { PriceTotal } from './PriceTotal';
 import type { PlanSelection } from './PricingSimulator.types';
 import { formatAmount, getAddOnPrice, getPageTierPrice, getUpdateTierPrice } from './PricingSimulator.utils';
@@ -33,24 +33,21 @@ export function PlanSummary({ currency, region, selection, total, showQuoteHint 
 
   // Keys come from the fixed ADD_ON_KEYS / PAGE_TIER_KEYS lists.
   /* eslint-disable security/detect-object-injection */
-  const lines = [
-    { label: t('builder.base.title'), amount: price(BASE_PRICE) },
-    ...(selection.pages > 0
-      ? [
-          {
-            label: t(`builder.pages.tiers.${PAGE_TIER_KEYS[selection.pages]}`),
-            amount: `+${price(getPageTierPrice(selection.pages))}`,
-          },
-        ]
-      : []),
-    ...ADD_ON_KEYS.filter((key) => selection.addOns[key]).map((key) => ({
-      label: t(`builder.options.${key}.label`),
-      amount: `+${price(getAddOnPrice(key))}`,
-    })),
-    ...(selection.updatesEnabled
-      ? [{ label: t('builder.updates.label'), amount: `+${price(getUpdateTierPrice(selection.updates))}` }]
-      : []),
-  ];
+  const lines = [{ label: t('builder.base.title'), amount: price(BASE_PRICE) }];
+  if (selection.pages > 0) {
+    const amount = `+${price(getPageTierPrice(selection.pages))}`;
+    lines.push({
+      label: t(`builder.pages.tiers.${PAGE_TIER_KEYS[selection.pages]}`),
+      amount: selection.pages === MAX_TIER_INDEX ? t('builder.pages.or_more', { price: amount }) : amount,
+    });
+  }
+  for (const key of ADD_ON_KEYS) {
+    if (selection.addOns[key])
+      lines.push({ label: t(`builder.options.${key}.label`), amount: `+${price(getAddOnPrice(key))}` });
+  }
+  if (selection.updatesEnabled) {
+    lines.push({ label: t('builder.updates.label'), amount: `+${price(getUpdateTierPrice(selection.updates))}` });
+  }
   /* eslint-enable security/detect-object-injection */
 
   return (
@@ -61,16 +58,16 @@ export function PlanSummary({ currency, region, selection, total, showQuoteHint 
         period={t('builder.period')}
         note={t('builder.total.note')}
       />
-      <ul className="border-ghost/8 text-ghost/70 flex flex-col gap-2 border-t pt-4 text-sm">
+      <ul className="border-line text-fg-2 flex flex-col gap-2 border-t pt-4 text-sm">
         {lines.map((line) => (
           <li key={line.label} className="flex justify-between gap-4">
             <span>{line.label}</span>
-            <span className="text-ghost font-mono tabular-nums">{line.amount}</span>
+            <span className="text-fg font-mono tabular-nums">{line.amount}</span>
           </li>
         ))}
       </ul>
       {showQuoteHint && (
-        <p className="border-aerospace/30 bg-aerospace/[0.04] text-ghost/70 rounded-xl border px-4 py-3 text-sm">
+        <p className="border-aerospace/30 bg-aerospace/[0.04] text-fg-2 rounded-xl border px-4 py-3 text-sm">
           {t('builder.total.beyond')}
         </p>
       )}
@@ -83,10 +80,10 @@ export function PlanSummary({ currency, region, selection, total, showQuoteHint 
         {t('builder.total.cta')}
         <ArrowRightIcon className="size-4" aria-hidden="true" />
       </Link>
-      <p className="text-ghost/50 text-center text-sm">
+      <p className="text-fg-3 text-center text-sm">
         {t.rich('builder.total.question', {
           link: (chunks) => (
-            <Link href="/contact" className="text-ghost/75 hover:text-ghost underline underline-offset-4">
+            <Link href="/contact" className="text-fg-2 hover:text-fg underline underline-offset-4">
               {chunks}
             </Link>
           ),

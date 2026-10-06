@@ -12,7 +12,7 @@ export default function NotFound() {
   return (
     <section
       aria-labelledby="not-found-heading"
-      className={cn('bg-void text-ghost', SECTION_Y)}
+      className={cn('bg-bg text-fg', SECTION_Y)}
       style={{ minHeight: 'calc(100vh - var(--header-height))' }}>
       <div className={cn(CONTAINER, 'flex flex-col gap-8')}>
         <SectionHeading

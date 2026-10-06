@@ -233,3 +233,13 @@ Grep `components/CosmicCursor/` for the native selector being replaced (`input[t
 **Root cause**: Repository-level policy documents need explicit exceptions for established root files, and any duplicated technical metadata becomes stale unless it is checked against the source of truth.
 
 **Correct pattern**: When documenting naming or language rules, explicitly carve out root-level documentation entry points if they intentionally break the general convention. When listing scripts or dependency versions in README files, verify them against `package.json` (or reference the canonical source directly) before merging.
+
+---
+
+## CSS / Animation
+
+### A global `!important` transition override silently kills component transitions
+
+**Mistake**: The theme switch thumb did not slide because `.theme-fade *` forces `transition-property` (colours only) with `!important` during a switch. A first fix listed `transform`, but Tailwind v4 moves elements with the `translate` property, so the thumb still jumped.
+
+**Correct pattern**: When an element must animate during `theme-fade`, give it a hook class and override `transition-property` with higher specificity, listing the exact properties Tailwind v4 uses (`translate`, `scale`, `rotate`, `transform`). Check the emitted CSS, not the assumed property.

@@ -16,7 +16,7 @@
       "note": "Both are free and commit you to nothing."
     },
     "builder": {
-      "period": "/ month",
+      "period": "excl. VAT / month",
       "base": {
         "title": "Base plan",
         "includes": {
@@ -46,6 +46,7 @@
       },
       "pages": {
         "label": "Number of pages",
+        "or_more": "{price} or more",
         "tiers": {
           "one": "1 page (included)",
           "two_four": "2 to 4 pages",
@@ -69,7 +70,7 @@
       },
       "total": {
         "label": "Your estimate",
-        "note": "Indicative price, confirmed after a first conversation. You can add options at any time; once active, they stay part of your subscription (see the terms of sale).",
+        "note": "Indicative price excl. VAT, confirmed after a first conversation. You can add options at any time; once active, they stay part of your subscription (see the terms of sale).",
         "cta": "Request my free mockup",
         "question": "A question first? <link>Write to us</link>.",
         "beyond": "Beyond these volumes, we will talk it through and make you a proposal."
@@ -82,7 +83,7 @@
         "title": "Subscription",
         "label": "Site, hosting and care",
         "price": "From {price}",
-        "period": "/ month",
+        "period": "excl. VAT / month",
         "description": "Your site is online and kept up to date, without you having to deal with it. The price depends on your needs: number of pages, domain name, email address, changes.",
         "features": {
           "included": "Hosting, secure connection and basic Google visibility included",

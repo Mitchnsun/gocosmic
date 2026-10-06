@@ -1,7 +1,7 @@
 export type AccentColor = 'aerospace' | 'royal' | 'jungle';
 export type StarfieldDensity = 'low' | 'medium' | 'high';
-/** Base background rendered behind the starfield. */
-export type Variant = 'dark' | 'light' | 'gradient';
+/** Base background rendered behind the starfield: page (`bg`), alternate (`bg-alt`) or a blend of both. */
+export type Variant = 'base' | 'alt' | 'gradient';
 /** Visual intensity: `immersive` for the homepage, `sober` for inner pages. */
 export type Tone = 'immersive' | 'sober';
 

@@ -40,8 +40,7 @@ export function TimelineSVG({ steps, duration, reducedMotion }: TimelineSVGProps
       height={totalHeight}
       viewBox={`0 0 2 ${totalHeight}`}
       aria-hidden="true"
-      // eslint-disable-next-line no-restricted-syntax -- stroke colour of a decorative line, not text
-      className="text-ghost/20 absolute top-0 left-1/2 -translate-x-1/2 overflow-visible">
+      className="text-line-2 absolute top-0 left-1/2 -translate-x-1/2 overflow-visible">
       <line
         ref={lineRef}
         x1="1"

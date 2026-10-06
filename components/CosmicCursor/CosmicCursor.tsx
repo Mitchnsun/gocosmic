@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+import type { Theme } from '@/components/Theme';
+
 import { useCosmicCursor } from './useCosmicCursor';
 
 /** Props for the CosmicCursor component */
@@ -21,16 +23,20 @@ export interface CosmicCursorProps {
   trailSize?: number;
 }
 
-const COLORS = {
-  aerospace: '#FF4F00',
-  cosmicLatte: '#FFF8E7',
-};
-
 /** Parse a hex color into { r, g, b } */
 function hexToRgb(hex: string): { r: number; g: number; b: number } {
   const n = parseInt(hex.replace('#', ''), 16);
   return { r: (n >> 16) & 255, g: (n >> 8) & 255, b: n & 255 };
 }
+
+/**
+ * Colour the trail fades from, towards the accent, per surface under the pointer: cosmic-latte over
+ * dark surfaces (the dark theme and dark islands), void ink over the light theme.
+ */
+const TRAIL_BASE_RGB: Record<Theme, { r: number; g: number; b: number }> = {
+  dark: hexToRgb('#FFF8E7'),
+  light: hexToRgb('#020617'),
+};
 
 /**
  * CosmicCursor — canvas-based custom cursor with trailing and magnetic snap effects.
@@ -125,7 +131,7 @@ const CosmicCursor = ({
 
       const reduced = state.reducedMotion;
       const accentRgb = hexToRgb(state.accentColor);
-      const latteRgb = hexToRgb(COLORS.cosmicLatte);
+      const baseRgb = TRAIL_BASE_RGB[state.surfaceTheme];
 
       // Smooth cursor position toward target
       const ease = state.isMagnetic ? 0.25 : 0.5;
@@ -141,10 +147,10 @@ const CosmicCursor = ({
           const alpha = t * 0.6;
           const radius = trailSize * (0.4 + t * 0.6);
 
-          // Color: interpolate cosmicLatte → aerospace
-          const r = Math.round(latteRgb.r + (accentRgb.r - latteRgb.r) * t);
-          const g = Math.round(latteRgb.g + (accentRgb.g - latteRgb.g) * t);
-          const b = Math.round(latteRgb.b + (accentRgb.b - latteRgb.b) * t);
+          // Color: interpolate the theme's trail base → accent
+          const r = Math.round(baseRgb.r + (accentRgb.r - baseRgb.r) * t);
+          const g = Math.round(baseRgb.g + (accentRgb.g - baseRgb.g) * t);
+          const b = Math.round(baseRgb.b + (accentRgb.b - baseRgb.b) * t);
 
           ctx.beginPath();
           ctx.arc(point.x, point.y, Math.max(0.5, radius), 0, Math.PI * 2);

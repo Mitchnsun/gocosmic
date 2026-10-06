@@ -25,6 +25,9 @@ export interface StarfieldProps {
   respectReducedMotion?: boolean;
 }
 
+const BACKGROUND = 'rgb(2, 6, 23)';
+const STAR_RGB = '255, 255, 255';
+
 const DEFAULT_STAR_COUNT = 500;
 const DEFAULT_SPEED = 2;
 
@@ -87,8 +90,7 @@ const Starfield = ({
     let animationId: number | null = null;
 
     const draw = () => {
-      // Deep space background — the `void` colour token (#020617)
-      ctx.fillStyle = 'rgb(2, 6, 23)';
+      ctx.fillStyle = BACKGROUND;
       ctx.fillRect(0, 0, width, height);
 
       const cx = width / 2;
@@ -124,13 +126,13 @@ const Starfield = ({
         if (frozen) {
           // No movement means no streak to draw: paint each star as a dot so a
           // frozen starfield is still a starfield.
-          ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+          ctx.fillStyle = `rgba(${STAR_RGB}, ${opacity})`;
           ctx.fillRect(sx, sy, lineWidth, lineWidth);
         } else {
           ctx.beginPath();
           ctx.moveTo(prevSx, prevSy);
           ctx.lineTo(sx, sy);
-          ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+          ctx.strokeStyle = `rgba(${STAR_RGB}, ${opacity})`;
           ctx.lineWidth = lineWidth;
           ctx.stroke();
         }

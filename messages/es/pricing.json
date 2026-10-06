@@ -16,7 +16,7 @@
       "note": "Ambas son gratuitas y no te comprometen a nada."
     },
     "builder": {
-      "period": "/ mes",
+      "period": "/ mes sin IVA",
       "base": {
         "title": "Plan base",
         "includes": {
@@ -46,6 +46,7 @@
       },
       "pages": {
         "label": "Número de páginas",
+        "or_more": "{price} o más",
         "tiers": {
           "one": "1 página (incluida)",
           "two_four": "2 a 4 páginas",
@@ -69,7 +70,7 @@
       },
       "total": {
         "label": "Tu estimación",
-        "note": "Precio orientativo, que confirmamos tras una primera conversación. Puedes añadir opciones en cualquier momento; una vez activadas, se mantienen en tu suscripción (consulta las condiciones generales de venta).",
+        "note": "Precio orientativo sin IVA, que confirmamos tras una primera conversación. Puedes añadir opciones en cualquier momento; una vez activadas, se mantienen en tu suscripción (consulta las condiciones generales de venta).",
         "beyond": "Si necesitas más, lo hablamos y te hacemos una propuesta.",
         "cta": "Pedir mi maqueta gratuita",
         "question": "¿Alguna pregunta antes? <link>Escríbenos</link>."
@@ -82,7 +83,7 @@
         "title": "Suscripción",
         "label": "Sitio, alojamiento y seguimiento",
         "price": "Desde {price}",
-        "period": "/ mes",
+        "period": "/ mes sin IVA",
         "description": "Tu sitio está en línea y al día sin que tengas que ocuparte de nada. El precio depende de lo que necesites: número de páginas, nombre de dominio, dirección de correo, cambios.",
         "features": {
           "included": "Alojamiento, conexión segura y posicionamiento básico en Google incluidos",

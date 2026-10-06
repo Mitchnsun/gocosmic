@@ -5,14 +5,14 @@ import { accentClasses } from '@/design-system/accent';
 describe('accentClasses', () => {
   it('returns the utilities of each token', () => {
     expect(accentClasses('aerospace')).toEqual({
-      text: 'text-aerospace',
+      text: 'text-aerospace-ink',
       bg: 'bg-aerospace',
       border: 'border-aerospace',
       rgb: '255 79 0',
     });
-    expect(accentClasses('royal').text).toBe('text-royal-light');
-    expect(accentClasses('jungle').bg).toBe('bg-jungle');
-    expect(accentClasses('ghost').border).toBe('border-ghost');
+    expect(accentClasses('royal').text).toBe('text-royal-ink');
+    expect(accentClasses('jungle').bg).toBe('bg-ok');
+    expect(accentClasses('ghost').border).toBe('border-fg');
   });
 
   it('defaults to aerospace', () => {

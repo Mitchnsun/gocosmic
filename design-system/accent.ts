@@ -13,10 +13,10 @@ export interface AccentClasses {
 }
 
 const ACCENTS: Record<AccentToken, AccentClasses> = {
-  aerospace: { text: 'text-aerospace', bg: 'bg-aerospace', border: 'border-aerospace', rgb: '255 79 0' },
-  royal: { text: 'text-royal-light', bg: 'bg-royal', border: 'border-royal', rgb: '120 81 169' },
-  jungle: { text: 'text-jungle', bg: 'bg-jungle', border: 'border-jungle', rgb: '41 171 135' },
-  ghost: { text: 'text-ghost', bg: 'bg-ghost', border: 'border-ghost', rgb: '248 248 255' },
+  aerospace: { text: 'text-aerospace-ink', bg: 'bg-aerospace', border: 'border-aerospace', rgb: '255 79 0' },
+  royal: { text: 'text-royal-ink', bg: 'bg-royal', border: 'border-royal', rgb: '120 81 169' },
+  jungle: { text: 'text-ok', bg: 'bg-ok', border: 'border-ok', rgb: '41 171 135' },
+  ghost: { text: 'text-fg', bg: 'bg-fg', border: 'border-fg', rgb: '248 248 255' },
 };
 
 /**

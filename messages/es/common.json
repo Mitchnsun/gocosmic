@@ -45,5 +45,10 @@
     "next": "Proyecto siguiente",
     "nav_label": "Navegación entre casos prácticos",
     "contact_cta": "Hablar de un proyecto similar"
+  },
+  "theme": {
+    "label": "Tema",
+    "toggle_light": "Cambiar al tema claro",
+    "toggle_dark": "Cambiar al tema oscuro"
   }
 }

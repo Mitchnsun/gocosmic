@@ -24,19 +24,19 @@ export function WhyStudio({ eyebrow, title, lead, reasons, id = 'why-studio' }: 
   const titleId = `${id}-heading`;
 
   return (
-    <section id={id} aria-labelledby={titleId} className={cn('bg-ember', SECTION_Y)}>
+    <section id={id} aria-labelledby={titleId} className={cn('bg-bg-alt', SECTION_Y)}>
       <div className={cn(CONTAINER, 'grid items-start gap-[clamp(2rem,5vw,5rem)] lg:grid-cols-2')}>
         <SectionHeading eyebrow={eyebrow} title={title} titleId={titleId} lead={lead} />
         <HairlineGrid as="ol">
           {reasons.map((reason, index) => (
-            <li key={reason.title} className="bg-ember">
+            <li key={reason.title} className="bg-bg-alt">
               <Reveal delay={index * 50} className="grid grid-cols-[auto_1fr] items-baseline gap-4 px-6 py-5">
-                <span className="text-jungle text-2xs font-mono" aria-hidden="true">
+                <span className="text-ok text-2xs font-mono" aria-hidden="true">
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <div>
                   <h3 className="font-display font-semibold">{reason.title}</h3>
-                  <p className="text-ghost/65 mt-1 leading-normal">{reason.description}</p>
+                  <p className="text-fg-2 mt-1 leading-normal">{reason.description}</p>
                 </div>
               </Reveal>
             </li>

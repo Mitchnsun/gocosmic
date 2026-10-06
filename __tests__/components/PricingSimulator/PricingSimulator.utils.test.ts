@@ -38,18 +38,18 @@ describe('toTierIndex', () => {
 describe('tier prices', () => {
   it('leaves the first page free and charges the top tier', () => {
     expect(getPageTierPrice(0)).toBe(0);
-    expect(getPageTierPrice(4)).toBe(25);
+    expect(getPageTierPrice(4)).toBe(40);
   });
 
   it('charges from the first update tier upwards', () => {
     expect(getUpdateTierPrice(0)).toBe(5);
-    expect(getUpdateTierPrice(4)).toBe(100);
+    expect(getUpdateTierPrice(4)).toBe(200);
   });
 
   it('exposes each add-on price', () => {
     expect(getAddOnPrice('domain')).toBe(5);
     expect(getAddOnPrice('swiss_hosting')).toBe(10);
-    expect(getAddOnPrice('email')).toBe(10);
+    expect(getAddOnPrice('email')).toBe(15);
   });
 });
 
@@ -60,24 +60,24 @@ describe('getMonthlyTotal', () => {
   });
 
   it('adds every ticked add-on', () => {
-    expect(getMonthlyTotal(plan({ addOns: { domain: true, swiss_hosting: true, email: true } }))).toBe(35);
+    expect(getMonthlyTotal(plan({ addOns: { domain: true, swiss_hosting: true, email: true } }))).toBe(40);
   });
 
   it('adds the page tier', () => {
-    expect(getMonthlyTotal(plan({ pages: 3 }))).toBe(30);
+    expect(getMonthlyTotal(plan({ pages: 3 }))).toBe(35);
   });
 
   it('ignores the update slider until the package is enabled', () => {
     expect(getMonthlyTotal(plan({ updates: 4 }))).toBe(BASE_PRICE);
-    expect(getMonthlyTotal(plan({ updates: 4, updatesEnabled: true }))).toBe(110);
+    expect(getMonthlyTotal(plan({ updates: 4, updatesEnabled: true }))).toBe(210);
   });
 
   it('sums add-ons, pages and updates together', () => {
     const total = getMonthlyTotal(
       plan({ addOns: { domain: true, swiss_hosting: false, email: true }, pages: 2, updatesEnabled: true, updates: 1 })
     );
-    // 10 base + 5 domain + 10 email + 10 pages + 15 updates
-    expect(total).toBe(50);
+    // 10 base + 5 domain + 15 email + 15 pages + 20 updates
+    expect(total).toBe(65);
   });
 });
 

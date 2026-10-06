@@ -24,7 +24,7 @@ interface LegalDocumentProps {
 /** Layout shared by the legal notice, privacy policy and terms of sale: readable column, one card per section. */
 export function LegalDocument({ eyebrow, title, updated, intro, sections, children }: LegalDocumentProps) {
   return (
-    <div className="bg-void text-ghost pt-[clamp(3.5rem,8vw,7rem)] pb-[clamp(4rem,8vw,7.5rem)]">
+    <div className="bg-bg text-fg pt-[clamp(3rem,6.5vw,5.5rem)] pb-[clamp(3.5rem,6.5vw,6rem)]">
       <div className={cn(CONTAINER, 'flex max-w-4xl flex-col gap-10')}>
         <div className="flex flex-col gap-4">
           <SectionHeading
@@ -34,15 +34,15 @@ export function LegalDocument({ eyebrow, title, updated, intro, sections, childr
             titleId="legal-title"
             titleClassName="text-[clamp(2.25rem,5vw,3.75rem)] leading-[1.02]"
           />
-          <p className="text-ghost/50 text-2xs font-mono tracking-[0.16em] uppercase">{updated}</p>
-          <p className="text-ghost/70 max-w-[64ch] text-lg leading-relaxed text-pretty">{intro}</p>
+          <p className="text-fg-3 text-2xs font-mono tracking-[0.16em] uppercase">{updated}</p>
+          <p className="text-fg-2 max-w-[64ch] text-lg leading-relaxed text-pretty">{intro}</p>
         </div>
 
         <div className="flex flex-col gap-4">
           {sections.map((section) => (
-            <section key={section.title} className="border-ghost/8 bg-ghost/[0.02] rounded-2xl border p-6 sm:p-8">
+            <section key={section.title} className="border-line bg-surface rounded-2xl border p-6 sm:p-8">
               <h2 className="font-display mb-4 text-xl font-semibold tracking-[-0.01em]">{section.title}</h2>
-              <div className="text-ghost/70 flex flex-col gap-3 leading-relaxed">
+              <div className="text-fg-2 flex flex-col gap-3 leading-relaxed">
                 {section.body.map((paragraph, index) => (
                   <p key={`${section.title}-${index}`}>{renderWithLinks(paragraph)}</p>
                 ))}

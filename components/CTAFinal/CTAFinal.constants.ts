@@ -7,11 +7,11 @@ export const ACCENT_RGB: Record<AccentColor, string> = {
   jungle: '41 171 135',
 };
 
-/** Tailwind background utility for the headline gradient per accent colour. */
+/** Tailwind background utility for the headline gradient per accent colour (orange ends use the text shade). */
 export const ACCENT_GRADIENT: Record<AccentColor, string> = {
-  aerospace: 'from-aerospace via-ghost to-aerospace',
-  royal: 'from-royal via-ghost to-royal',
-  jungle: 'from-jungle via-ghost to-jungle',
+  aerospace: 'from-aerospace-ink via-fg to-aerospace-ink',
+  royal: 'from-royal via-fg to-royal',
+  jungle: 'from-ok via-fg to-ok',
 };
 
 /** Rest star count for each density level. */
@@ -23,9 +23,9 @@ export const DENSITY_STAR_COUNT: Record<StarfieldDensity, number> = {
 
 /** Base background per visual variant (rendered behind the starfield). */
 export const VARIANT_BACKGROUND: Record<Variant, string> = {
-  dark: 'bg-void',
-  light: 'bg-ember',
-  gradient: 'bg-gradient-to-b from-void via-ember to-void',
+  base: 'bg-bg',
+  alt: 'bg-bg-alt',
+  gradient: 'bg-gradient-to-b from-bg via-bg-alt to-bg',
 };
 
 /** Scales the conceptual 0–1 speed props to the Starfield's pixels-per-frame units. */
@@ -46,7 +46,7 @@ export const TONE_PRESETS: Record<Tone, TonePreset> = {
     section: 'py-12 sm:py-16 lg:py-24',
     starfield: 'opacity-80',
     headline: 'text-[clamp(2.25rem,8vw,6rem)]',
-    description: 'text-ghost/70 text-lg leading-8 sm:text-xl',
+    description: 'text-fg-2 text-lg leading-8 sm:text-xl',
     button: 'mt-2 gap-3',
     buttonMotion: 'hover:scale-[1.08] focus-visible:scale-[1.08]',
     arrow: 'size-5',
@@ -61,8 +61,8 @@ export const TONE_PRESETS: Record<Tone, TonePreset> = {
     starfieldHover: false,
     section: 'py-10 sm:py-12 lg:py-16',
     starfield: 'opacity-50',
-    headline: 'text-ghost text-[clamp(1.75rem,4vw,3rem)]',
-    description: 'text-ghost/60 text-base leading-7 sm:text-lg',
+    headline: 'text-fg text-[clamp(1.75rem,4vw,3rem)]',
+    description: 'text-fg-2 text-base leading-7 sm:text-lg',
     button: 'gap-2',
     buttonMotion: 'hover:scale-[1.03] focus-visible:scale-[1.03]',
     arrow: 'size-4',

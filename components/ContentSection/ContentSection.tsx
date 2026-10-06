@@ -49,7 +49,7 @@ export const ContentSection = ({
     <section id={id} aria-labelledby={`${id}-heading`} className={cn('w-full scroll-mt-24', className)}>
       <div
         className={cn({
-          'border-ghost/8 bg-ghost/2 rounded-2xl border p-6 sm:p-8 lg:p-10': !flat,
+          'border-line bg-surface rounded-2xl border p-6 sm:p-8 lg:p-10': !flat,
         })}>
         {(eyebrow || index) && (
           <div className="mb-5 flex items-baseline justify-between gap-4">
@@ -59,7 +59,7 @@ export const ContentSection = ({
                 {eyebrow}
               </p>
             )}
-            {index && <span className="text-ghost/50 text-3xs font-mono tracking-[0.2em]">{index}</span>}
+            {index && <span className="text-fg-3 text-3xs font-mono tracking-[0.2em]">{index}</span>}
           </div>
         )}
         <h2
@@ -67,7 +67,7 @@ export const ContentSection = ({
           className="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] leading-[1.1] font-semibold tracking-[-0.03em] text-pretty">
           {title}
         </h2>
-        {lead && <p className="text-ghost/55 mt-4 max-w-3xl text-lg leading-8">{lead}</p>}
+        {lead && <p className="text-fg-2 mt-4 max-w-3xl text-lg leading-8">{lead}</p>}
         {children && <div className="mt-8">{children}</div>}
       </div>
     </section>

@@ -34,7 +34,7 @@ Just before the `<header>`, a `href="#main-content"` link is rendered invisibly 
 
 ### Desktop navigation (`hidden lg:flex`)
 
-On viewports ≥ 1024 px, `DesktopNav` shows Services · Projects · Contact, the `HeaderCta` pill (`bg-aerospace text-void`, 44 px high, leads to `/free-mockup`: the free mockup request is the main lead source, the Contact link stays next to it) and the `LanguageSwitcher`. About and Pricing live in the footer. Below `lg`, the nav is hidden and the mobile menu takes over: three links plus a CTA do not fit comfortably on a 768 px tablet.
+On viewports ≥ 1024 px, `DesktopNav` shows Services · Projects · Contact, the `HeaderCta` pill (`bg-aerospace text-void`, 44 px high, leads to `/free-mockup`: the free mockup request is the main lead source, the Contact link stays next to it) the `LanguageSwitcher` and the `ThemeToggle` (`components/Theme`, 44 px high comet/sun switch for the dark and light themes). About and Pricing live in the footer. Below `lg`, the nav is hidden and the mobile menu takes over: three links plus a CTA do not fit comfortably on a 768 px tablet.
 
 ### Active navigation link
 
@@ -73,7 +73,7 @@ Below `lg` (1024 px), the desktop nav is hidden and two buttons appear in a flex
 - `MountainSkyline` decoration: a short strip right below the spacer, still above the metadata row, so it's actually visible instead of hidden behind the sticky header.
 - Metadata row: `menu_title` i18n key on the left, the region-aware studio altitude (`STUDIO_BASES[region].altitude`) on the right.
 - Navigation links stagger in: each `motion.li` with `opacity 0→1 + y 16→0`, delay `index × MOBILE_MENU_STAGGER_MS / 1000` s.
-- Footer: the full-width `HeaderCta` (closes the menu on click), then `contact@gocosmic.dev` in monospace (no `LanguageSwitcher` — language switching is handled by `MobileLangDrawer`).
+- Footer: a « Theme » row with the `ThemeToggle`, the full-width `HeaderCta` (closes the menu on click), then `contact@gocosmic.dev` in monospace (no `LanguageSwitcher` — language switching is handled by `MobileLangDrawer`).
 - `AnimatePresence` is managed in `Header.tsx` so exit animations work correctly.
 
 ### `MobileLangDrawer`

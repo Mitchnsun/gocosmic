@@ -12,7 +12,7 @@ describe('StatusBar', () => {
     );
     expect(getByText('Available')).toBeInTheDocument();
     const ping = container.querySelector('.animate-ping');
-    expect(ping).toHaveClass('bg-jungle', 'motion-reduce:animate-none');
+    expect(ping).toHaveClass('bg-ok', 'motion-reduce:animate-none');
     expect(ping?.parentElement).toHaveAttribute('aria-hidden', 'true');
   });
 
@@ -23,7 +23,7 @@ describe('StatusBar', () => {
     expect(getByText('Fully booked')).toBeInTheDocument();
     expect(queryByText(/January/)).not.toBeInTheDocument();
     expect(container.querySelector('.animate-ping')).not.toBeInTheDocument();
-    expect(container.querySelector('.bg-ghost\\/40')).toBeInTheDocument();
+    expect(container.querySelector('.bg-fg-3')).toBeInTheDocument();
   });
 
   it('uses the studio schedule by default', () => {

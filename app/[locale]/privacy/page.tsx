@@ -26,11 +26,11 @@ export default async function PrivacyPage() {
       updated={t('privacy.updated')}
       intro={t('privacy.intro')}
       sections={t.raw('privacy.sections') as LegalSection[]}>
-      <p className="border-ghost/15 text-ghost/70 rounded-2xl border p-5">
+      <p className="border-line-2 text-fg-2 rounded-2xl border p-5">
         {t('privacy.legalNoticePrefix')}{' '}
         <Link
           href="/legal-notice"
-          className="text-ghost hover:text-aerospace underline underline-offset-4 transition-colors">
+          className="text-fg hover:text-aerospace-ink underline underline-offset-4 transition-colors">
           {t('privacy.legalNoticeLink')}
         </Link>
         .

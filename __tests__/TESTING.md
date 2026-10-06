@@ -131,6 +131,9 @@ vi.mock('next/font/google', () => ({
 - `yarn test:watch` - Run tests in watch mode
 - `yarn coverage` - Generate coverage report and validate coverage thresholds
 - `yarn check-types` - TypeScript type checking
+- `yarn qa` - Local QA of the production build with Playwright (`e2e/`, not run in CI): axe WCAG 2.1 A/AA audit of every route in both themes, the no-flash and theme toggle checks, and review screenshots at 360 / 768 / 1280 / 1440 px written to `e2e/screenshots/` (git-ignored). It builds and starts the app on port 3100, or reuses a server already there. First run on a machine: `yarn playwright install chromium`. `QA_LOCALE=en yarn qa` audits another locale.
+
+Two unit tests guard the themes: `__tests__/design-system/theme-contrast.test.ts` checks the WCAG contrast of every semantic colour token read from `app/globals.css`, and `__tests__/design-system/theme-guard.test.ts` keeps raw theme colours (hex or RGB of ghost, void, cosmic-latte…) out of component code. Theme-dependent class names are guarded by ESLint.
 
 ## Coverage Requirements
 

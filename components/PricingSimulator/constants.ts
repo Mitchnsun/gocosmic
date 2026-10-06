@@ -7,20 +7,20 @@ export const BASE_PRICE = 10;
 export const ADD_ON_PRICES: Record<AddOnKey, number> = {
   domain: 5,
   swiss_hosting: 10,
-  email: 10,
+  email: 15,
 };
 
 /** Order the add-ons are listed in. */
 export const ADD_ON_KEYS: AddOnKey[] = ['domain', 'swiss_hosting', 'email'];
 
 /** Monthly surcharge per position of the "number of pages" slider. */
-export const PAGE_TIER_PRICES = [0, 5, 10, 20, 25] as const;
+export const PAGE_TIER_PRICES = [0, 5, 15, 25, 40] as const;
 
 /** Translation keys naming each position of the "number of pages" slider. */
 export const PAGE_TIER_KEYS = ['one', 'two_four', 'five_seven', 'eight_nine', 'ten_plus'] as const;
 
 /** Monthly surcharge per position of the "content updates" slider. */
-export const UPDATE_TIER_PRICES = [5, 15, 25, 50, 100] as const;
+export const UPDATE_TIER_PRICES = [5, 20, 30, 60, 200] as const;
 
 /** Translation keys naming each position of the "content updates" slider. */
 export const UPDATE_TIER_KEYS = ['few_per_year', 'monthly', 'twice_monthly', 'weekly', 'unlimited'] as const;

@@ -18,7 +18,7 @@
       "secondary": "Preise ansehen",
       "facts": {
         "price": {
-          "highlight": "Ab {price}",
+          "highlight": "Ab {price} zzgl. MwSt.",
           "text": "/ Monat"
         },
         "reply": {

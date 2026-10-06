@@ -1,7 +1,7 @@
 /// <reference types="vitest" />
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import { defineConfig } from 'vitest/config';
+import { configDefaults, defineConfig } from 'vitest/config';
 
 export default defineConfig({
   plugins: [react()],
@@ -9,6 +9,8 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['./__tests__/test-setup.tsx'],
     globals: true,
+    // e2e/ holds the Playwright QA suite (yarn qa), not Vitest tests.
+    exclude: [...configDefaults.exclude, 'e2e/**'],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
@@ -28,6 +30,7 @@ export default defineConfig({
         'i18n/*.ts',
         'app/**',
         'views/**',
+        'e2e/**',
       ],
       thresholds: {
         lines: 90,

@@ -63,8 +63,8 @@ export default async function Services() {
   const months = String(CODE_HANDOVER_MONTHS);
 
   return (
-    <div className="bg-void text-ghost">
-      <section aria-labelledby="services-intro" className="pt-[clamp(3.5rem,8vw,7rem)]">
+    <div className="bg-bg text-fg">
+      <section aria-labelledby="services-intro" className="pt-[clamp(3rem,6.5vw,5.5rem)]">
         <div className={CONTAINER}>
           <SectionHeading
             level={1}
@@ -78,7 +78,7 @@ export default async function Services() {
 
       <PricingColumns eyebrow={tPricing('eyebrow')} title={tPricing('title')} columns={pricing} />
 
-      <section id="simulator" aria-labelledby="simulator-heading" className={cn('bg-ember scroll-mt-20', SECTION_Y)}>
+      <section id="simulator" aria-labelledby="simulator-heading" className={cn('bg-bg-alt scroll-mt-20', SECTION_Y)}>
         <div className={cn(CONTAINER, 'flex flex-col gap-10')}>
           <SectionHeading
             eyebrow={t('simulator.eyebrow')}

@@ -24,7 +24,7 @@ export function FilterableProjectGrid({ projects }: { projects: ProjectCardConte
     <div className="flex flex-col gap-8">
       <div className="flex flex-wrap items-center justify-between gap-4">
         <ProjectFilters active={filter} labels={labels} groupLabel={t('label')} onChange={setFilter} />
-        <p aria-live="polite" className="text-ghost/50 text-2xs font-mono tracking-[0.16em] uppercase">
+        <p aria-live="polite" className="text-fg-3 text-2xs font-mono tracking-[0.16em] uppercase">
           {t('count', { count: visible.length })}
         </p>
       </div>

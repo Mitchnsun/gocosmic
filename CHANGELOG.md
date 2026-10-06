@@ -5,7 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [2.0.1] - 2026-10-06
+## [2.1.0] - 2026-10-06
+
+### Added
+
+- A light theme: a comet and sun switch in the header (and at the bottom of the mobile menu) switches the whole site between dark and light, with a soft fade and a sun that rises into place, and the site remembers the choice on the next visit (as the privacy policy now explains), down to the colour of the browser bar on phones
+- In the light theme, the homepage opens under a rising sun instead of the starry sky and its planet, and closes on a warm glow, while on the other pages the starry band at the bottom turns into a plain cream band, and only the project headers stay night-coloured
+
+### Changed
+
+- Secondary and small grey texts are slightly brighter in the dark theme, and every text on the site now meets the recommended reading contrast in both themes
+- Purple labels on the project pages are lighter in the dark theme, the pricing simulator's tick boxes match the site's style, and the custom cursor's trail stays visible on every background, light or dark
+- The highlight in the theme switch now glides from one icon to the other when changing theme
+- Keyboard focus outlines are now full orange, easier to spot, and selected text is highlighted in the studio's orange
+- Updated subscription prices for the email address, page count and content update options, now shown excluding VAT everywhere on the site, as the terms of sale and legal notice now state (both show a new update date)
+- Tighter spacing between the large sections of every page, and more room between the buttons and the section border at the top of the local page
 
 ### Fixed
 

@@ -12,7 +12,7 @@
       "secondary": "Voir les tarifs",
       "facts": {
         "price": {
-          "highlight": "Dès {price}",
+          "highlight": "Dès {price} HT",
           "text": "/ mois"
         },
         "reply": {

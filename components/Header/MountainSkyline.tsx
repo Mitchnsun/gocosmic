@@ -12,8 +12,7 @@ const MountainSkyline = ({ className }: MountainSkylineProps) => (
     viewBox="0 0 400 48"
     preserveAspectRatio="none"
     height={48}
-    // eslint-disable-next-line no-restricted-syntax -- stroke colour of a decorative drawing, not text
-    className={cn('text-ghost/30 w-full', className)}
+    className={cn('text-fg-3 w-full', className)}
     xmlns="http://www.w3.org/2000/svg">
     <polyline
       fill="none"

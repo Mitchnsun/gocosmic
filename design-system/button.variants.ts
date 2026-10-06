@@ -10,17 +10,19 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         /** Quiet neutral action. */
-        default: 'bg-ghost/10 text-ghost hover:bg-ghost/15',
+        default: 'bg-line text-fg hover:bg-line-2',
         /** The one main action of a screen. Dark text on orange: white only reaches 3.2:1, below WCAG AA. */
         primary: 'bg-aerospace text-void shadow-[0_0_32px_rgb(255_79_0/0.4)] hover:bg-aerospace/90',
         /** Secondary action: outlined, no fill. */
-        ghost: 'border border-ghost/15 bg-transparent text-ghost hover:border-ghost hover:bg-ghost/5',
+        ghost: 'border border-line-2 bg-transparent text-fg hover:border-fg hover:bg-line',
         /** Text action inside content, followed by an arrow. Pair with the `inline` size. */
-        link: 'text-aerospace rounded-none underline-offset-4 hover:underline',
+        link: 'text-aerospace-ink rounded-none underline-offset-4 hover:underline',
         /* Plain accent fills, picked by the closing call-to-action's `accentColor`. */
         aerospace: 'bg-aerospace text-void hover:bg-aerospace/90',
+        // Light label on royal in both themes: dark ink would drop to 3.4:1.
+        // eslint-disable-next-line no-restricted-syntax
         royal: 'bg-royal text-ghost hover:bg-royal/90',
-        jungle: 'bg-jungle text-void hover:bg-jungle/90',
+        jungle: 'bg-ok text-on-ok hover:bg-ok/90',
       },
       size: {
         default: 'font-normal text-base px-6 py-2',

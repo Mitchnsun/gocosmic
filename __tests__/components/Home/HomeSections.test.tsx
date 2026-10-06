@@ -42,7 +42,7 @@ describe('WhyStudio', () => {
     );
 
     const section = getByRole('region', { name: 'Why a studio' });
-    expect(section).toHaveClass('bg-ember');
+    expect(section).toHaveClass('bg-bg-alt');
     expect(getByText('Because.')).toBeInTheDocument();
     expect(getAllByRole('listitem')).toHaveLength(2);
     expect(getByText('02')).toBeInTheDocument();

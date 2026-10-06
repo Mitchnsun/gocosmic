@@ -12,7 +12,7 @@
       "secondary": "See pricing",
       "facts": {
         "price": {
-          "highlight": "From {price}",
+          "highlight": "From {price} excl. VAT",
           "text": "/ month"
         },
         "reply": {

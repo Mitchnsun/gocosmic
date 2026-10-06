@@ -20,20 +20,22 @@ const Footer = ({ region }: FooterProps) => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-ghost/8 bg-void text-ghost w-full border-t">
+    <footer className="border-line bg-bg text-fg w-full border-t">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 pt-12 pb-8 sm:grid-cols-2 sm:px-6 lg:grid-cols-[2fr_1fr_1fr] lg:px-8 lg:pt-20">
         {/* Brand */}
         <div className="flex flex-col gap-3.5 sm:col-span-2 lg:col-span-1">
           <p className="font-display text-xl font-bold tracking-[-0.02em]">
             {BRAND_NAME}
+            {/* Logotype, exempt from text contrast: the dot keeps the brand orange in both themes. */}
+            {/* eslint-disable-next-line no-restricted-syntax */}
             <span className="text-aerospace">.</span>
           </p>
-          <p className="text-ghost/60 max-w-[40ch] text-[15px] leading-relaxed">{t(`brand_desc.${region}`)}</p>
-          <p className="text-3xs text-ghost/50 font-mono tracking-[0.18em] uppercase">
+          <p className="text-fg-2 max-w-[40ch] text-[15px] leading-relaxed">{t(`brand_desc.${region}`)}</p>
+          <p className="text-3xs text-fg-3 font-mono tracking-[0.18em] uppercase">
             gocosmic.dev ·{' '}
             <Link
               href="/local"
-              className="hover:text-ghost focus-visible:ring-aerospace/70 rounded transition-colors focus-visible:ring-2 focus-visible:outline-none">
+              className="hover:text-fg focus-visible:ring-aerospace-ink rounded transition-colors focus-visible:ring-2 focus-visible:outline-none">
               {t('local_page')}
             </Link>
           </p>
@@ -73,8 +75,8 @@ const Footer = ({ region }: FooterProps) => {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-ghost/8 border-t">
-        <div className="text-3xs text-ghost/50 mx-auto flex max-w-7xl flex-wrap justify-between gap-2 px-4 py-4 font-mono tracking-[0.14em] uppercase sm:px-6 lg:px-8">
+      <div className="border-line border-t">
+        <div className="text-3xs text-fg-3 mx-auto flex max-w-7xl flex-wrap justify-between gap-2 px-4 py-4 font-mono tracking-[0.14em] uppercase sm:px-6 lg:px-8">
           <p>{t('copyright', { year, brand: BRAND_NAME })}</p>
           <p>{t('status')}</p>
         </div>

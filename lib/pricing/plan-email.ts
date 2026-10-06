@@ -83,9 +83,14 @@ export function buildPlanEmailRows(plan: DecodedPlan): Array<[string, string]> {
     (key) => `${ADD_ON_LABELS[key]} (+${money(getAddOnPrice(key))})`
   );
 
+  const pagesSurcharge =
+    selection.pages === PAGE_TIER_PRICES.length - 1
+      ? `+${money(PAGE_TIER_PRICES[selection.pages])} or more`
+      : `+${money(PAGE_TIER_PRICES[selection.pages])}`;
+
   rows.push(
-    [`${LABEL_PREFIX} — base plan`, `${money(BASE_PRICE)} / month`],
-    [`${LABEL_PREFIX} — pages`, `${PAGE_TIER_LABELS[selection.pages]} (+${money(PAGE_TIER_PRICES[selection.pages])})`],
+    [`${LABEL_PREFIX} — base plan`, `${money(BASE_PRICE)} / month excl. VAT`],
+    [`${LABEL_PREFIX} — pages`, `${PAGE_TIER_LABELS[selection.pages]} (${pagesSurcharge})`],
     [`${LABEL_PREFIX} — add-ons`, addOns.length > 0 ? addOns.join(', ') : 'None'],
     [
       `${LABEL_PREFIX} — content updates`,
@@ -93,7 +98,7 @@ export function buildPlanEmailRows(plan: DecodedPlan): Array<[string, string]> {
         ? `${UPDATE_TIER_LABELS[selection.updates]} (+${money(UPDATE_TIER_PRICES[selection.updates])})`
         : 'Not included',
     ],
-    [`${LABEL_PREFIX} — monthly total`, `${money(getMonthlyTotal(selection))} / month`]
+    [`${LABEL_PREFIX} — monthly total`, `${money(getMonthlyTotal(selection))} / month excl. VAT`]
   );
   /* eslint-enable security/detect-object-injection */
 

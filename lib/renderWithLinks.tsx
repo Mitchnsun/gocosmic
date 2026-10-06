@@ -10,7 +10,7 @@ export function renderWithLinks(text: string) {
           href={clean}
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-ghost underline underline-offset-4 transition-colors">
+          className="hover:text-fg underline underline-offset-4 transition-colors">
           {clean}
         </a>
         {trailing}
