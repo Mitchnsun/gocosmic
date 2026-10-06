@@ -60,6 +60,28 @@ describe('sitemap', () => {
     }
   });
 
+  it('dates every entry with the build date rather than the request time', () => {
+    vi.stubEnv('BUILD_DATE', '2026-10-01T08:00:00.000Z');
+    try {
+      for (const entry of sitemap()) {
+        expect(entry.lastModified).toEqual(new Date('2026-10-01T08:00:00.000Z'));
+      }
+    } finally {
+      vi.unstubAllEnvs();
+    }
+  });
+
+  it('falls back to the current date when the build date is missing or invalid', () => {
+    vi.stubEnv('BUILD_DATE', 'not-a-date');
+    try {
+      for (const entry of sitemap()) {
+        expect(Number.isNaN((entry.lastModified as Date).getTime())).toBe(false);
+      }
+    } finally {
+      vi.unstubAllEnvs();
+    }
+  });
+
   it('should generate correct URL for home page across all locales', () => {
     const result = sitemap();
 

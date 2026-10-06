@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.1.1] - 2026-10-06
+
+### Fixed
+
+- The sitemap given to search engines now shows the date of the last site update instead of changing every few minutes, so search engines can trust it to know when pages have changed
+
 ## [2.1.0] - 2026-10-06
 
 ### Added

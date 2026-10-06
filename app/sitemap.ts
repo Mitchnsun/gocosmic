@@ -8,9 +8,15 @@ type RouteKey = keyof typeof routing.pathnames;
 /** Internal pages kept out of search engines (they are also noindex). */
 export const UNLISTED_ROUTES: readonly RouteKey[] = ['/design-system'];
 
+/** Date of the deployment, set in `next.config.ts`; falls back to now outside a Next build (tests). */
+function getLastModified(): Date {
+  const buildDate = process.env.BUILD_DATE ? new Date(process.env.BUILD_DATE) : undefined;
+  return buildDate && !Number.isNaN(buildDate.getTime()) ? buildDate : new Date();
+}
+
 /** One entry per route and locale, each listing its translations as hreflang alternates. */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
+  const lastModified = getLastModified();
 
   const listed = (Object.keys(routing.pathnames) as RouteKey[]).filter(
     (routeKey) => !UNLISTED_ROUTES.includes(routeKey)
