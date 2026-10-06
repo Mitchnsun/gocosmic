@@ -5,7 +5,7 @@
         "title": "Datenschutzerklärung | Cosmic Studio",
         "description": "Wie Cosmic Studio personenbezogene Daten verarbeitet: Formulare, Terminbuchung, E-Mails, Reichweitenmessung, Aufbewahrungsfristen und Ihre Rechte."
       },
-      "eyebrow": "DSGVO",
+      "eyebrow": "nDSG · DSGVO",
       "title": "Datenschutzerklärung",
       "updated": "Zuletzt aktualisiert: 6. Oktober 2026",
       "intro": "Diese Seite erklärt, wie Cosmic Studio personenbezogene Daten verarbeitet, die auf dieser Website und im E-Mail-Austausch erhoben werden.",
@@ -53,7 +53,7 @@
         {
           "title": "Internationale Übermittlungen",
           "body": [
-            "Einige Auftragsverarbeiter, darunter Vercel, E-Mail-Anbieter und Google (Google Calendar), können Daten außerhalb des Europäischen Wirtschaftsraums verarbeiten.",
+            "Einige Auftragsverarbeiter, darunter Vercel, E-Mail-Anbieter und Google (Google Calendar), können Daten außerhalb der Schweiz und des Europäischen Wirtschaftsraums verarbeiten.",
             "Diese Übermittlungen stützen sich auf Standardvertragsklauseln, die von der Europäischen Kommission genehmigt wurden, und bei Google zusätzlich auf das EU-US Data Privacy Framework. Bei Fragen zu den geltenden Garantien wenden Sie sich an support@gocosmic.dev."
           ]
         },
@@ -216,7 +216,8 @@
         {
           "title": "Anwendbares Recht und Streitigkeiten",
           "body": [
-            "Diese Bedingungen unterliegen schweizerischem Recht, wenn die Kundschaft in der Schweiz ansässig ist, und französischem Recht, wenn sie in Frankreich ansässig ist. Im Streitfall wird vor jedem Gerichtsverfahren eine gütliche Einigung angestrebt; andernfalls sind die Gerichte am Wohnsitz der Kundschaft zuständig."
+            "Diese Bedingungen unterliegen schweizerischem Recht, wenn die Kundschaft in der Schweiz ansässig ist, und französischem Recht, wenn sie in Frankreich ansässig ist. Im Streitfall wird vor jedem Gerichtsverfahren eine gütliche Einigung angestrebt; andernfalls sind die Gerichte am Wohnsitz der Kundschaft zuständig.",
+            "In allen anderen Fällen gilt schweizerisches Recht, und zuständig sind die Gerichte des Kantons Genf."
           ]
         }
       ]

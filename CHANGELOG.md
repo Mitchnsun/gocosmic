@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [2.1.1] - 2026-10-06
+## [2.2.0] - 2026-10-06
 
 ### Added
 
@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Changed
 
 - The studio is now declared in Switzerland, in Chêne-Bougeries near Geneva, as a sole proprietorship whose registration is in progress: the legal notice and terms of sale no longer show the former French registration, and search engines see the same address, with Annecy and Haute-Savoie still among the areas served
-- The terms of sale now apply Swiss law to clients based in Switzerland and French law to clients based in France, and the privacy policy also names the Swiss data protection authority for complaints
+- The terms of sale now apply Swiss law to clients based in Switzerland and French law to clients based in France (Swiss law otherwise), and the privacy policy now covers Swiss as well as European data protection rules, including the Swiss authority for complaints
 - Shorter page titles and descriptions in all five languages, so search results show them in full, and each project page now names the project and its type
 - Links shared on social networks now show each page's own title, address and language, with a description of the image, including for the legal pages
 - Search engines now get the site's name, the breadcrumb trail of each project page and the list of projects, along with the studio's contact email and founder

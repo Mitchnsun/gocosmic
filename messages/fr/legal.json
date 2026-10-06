@@ -5,7 +5,7 @@
         "title": "Politique de confidentialité | Cosmic Studio",
         "description": "Comment Cosmic Studio traite les données personnelles : formulaires, prise de rendez-vous, e-mails, mesure d'audience, durées de conservation et droits."
       },
-      "eyebrow": "RGPD",
+      "eyebrow": "nLPD · RGPD",
       "title": "Politique de confidentialité",
       "updated": "Dernière mise à jour : 6 octobre 2026",
       "intro": "Cette page explique comment Cosmic Studio traite les données personnelles collectées sur ce site et lors des échanges par e-mail.",
@@ -53,7 +53,7 @@
         {
           "title": "Transferts internationaux",
           "body": [
-            "Certains sous-traitants, dont Vercel, les fournisseurs de messagerie et Google (Google Calendar), peuvent traiter des données hors de l'Espace économique européen.",
+            "Certains sous-traitants, dont Vercel, les fournisseurs de messagerie et Google (Google Calendar), peuvent traiter des données hors de Suisse et de l'Espace économique européen.",
             "Ces transferts sont encadrés par des clauses contractuelles types approuvées par la Commission européenne et, pour Google, par le cadre de protection des données UE-États-Unis (EU-US Data Privacy Framework). Pour toute question sur les garanties en vigueur, contactez support@gocosmic.dev."
           ]
         },
@@ -217,7 +217,8 @@
         {
           "title": "Droit applicable et litiges",
           "body": [
-            "Les présentes conditions sont soumises au droit suisse pour les clients établis en Suisse, et au droit français pour les clients établis en France. En cas de litige, une solution amiable est recherchée avant toute action en justice ; à défaut, les tribunaux compétents sont ceux du domicile du client."
+            "Les présentes conditions sont soumises au droit suisse pour les clients établis en Suisse, et au droit français pour les clients établis en France. En cas de litige, une solution amiable est recherchée avant toute action en justice ; à défaut, les tribunaux compétents sont ceux du domicile du client.",
+            "Dans les autres cas, le droit suisse s'applique et les tribunaux du canton de Genève sont compétents."
           ]
         }
       ]

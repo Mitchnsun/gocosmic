@@ -5,7 +5,7 @@
         "title": "Política de privacidad | Cosmic Studio",
         "description": "Cómo trata Cosmic Studio los datos personales: formularios, reserva de citas, correos electrónicos, medición de audiencia, plazos de conservación y derechos."
       },
-      "eyebrow": "RGPD",
+      "eyebrow": "nLPD · RGPD",
       "title": "Política de privacidad",
       "updated": "Última actualización: 6 de octubre de 2026",
       "intro": "Esta página explica cómo trata Cosmic Studio los datos personales recogidos en este sitio y en los intercambios por correo electrónico.",
@@ -53,7 +53,7 @@
         {
           "title": "Transferencias internacionales",
           "body": [
-            "Algunos encargados del tratamiento, entre ellos Vercel, los proveedores de correo electrónico y Google (Google Calendar), pueden tratar datos fuera del Espacio Económico Europeo.",
+            "Algunos encargados del tratamiento, entre ellos Vercel, los proveedores de correo electrónico y Google (Google Calendar), pueden tratar datos fuera de Suiza y del Espacio Económico Europeo.",
             "Estas transferencias están amparadas por cláusulas contractuales tipo aprobadas por la Comisión Europea y, en el caso de Google, por el marco de protección de datos UE-EE. UU. (EU-US Data Privacy Framework). Para cualquier pregunta sobre las garantías aplicables, escribe a support@gocosmic.dev."
           ]
         },
@@ -214,7 +214,8 @@
         {
           "title": "Ley aplicable y litigios",
           "body": [
-            "Estas condiciones se rigen por el derecho suizo para los clientes establecidos en Suiza, y por el derecho francés para los clientes establecidos en Francia. En caso de litigio, se busca una solución amistosa antes de cualquier acción judicial; en su defecto, son competentes los tribunales del domicilio del cliente."
+            "Estas condiciones se rigen por el derecho suizo para los clientes establecidos en Suiza, y por el derecho francés para los clientes establecidos en Francia. En caso de litigio, se busca una solución amistosa antes de cualquier acción judicial; en su defecto, son competentes los tribunales del domicilio del cliente.",
+            "En los demás casos, se aplica el derecho suizo y son competentes los tribunales del cantón de Ginebra."
           ]
         }
       ]

@@ -5,7 +5,7 @@
         "title": "Privacy policy | Cosmic Studio",
         "description": "How Cosmic Studio handles personal data: forms, call booking, emails, audience measurement, retention periods and your rights."
       },
-      "eyebrow": "GDPR",
+      "eyebrow": "nFADP · GDPR",
       "title": "Privacy policy",
       "updated": "Last updated: 6 October 2026",
       "intro": "This page explains how Cosmic Studio handles the personal data collected on this website and in email exchanges.",
@@ -53,7 +53,7 @@
         {
           "title": "International transfers",
           "body": [
-            "Some processors, including Vercel, email providers and Google (Google Calendar), may process data outside the European Economic Area.",
+            "Some processors, including Vercel, email providers and Google (Google Calendar), may process data outside Switzerland and the European Economic Area.",
             "These transfers are framed by Standard Contractual Clauses approved by the European Commission and, for Google, by the EU-US Data Privacy Framework. For questions about the applicable safeguards, contact support@gocosmic.dev."
           ]
         },
@@ -212,7 +212,8 @@
         {
           "title": "Governing law and disputes",
           "body": [
-            "These terms are governed by Swiss law for clients based in Switzerland, and by French law for clients based in France. In the event of a dispute, an amicable solution is sought before any legal action; failing that, the competent courts are those of the client's place of residence."
+            "These terms are governed by Swiss law for clients based in Switzerland, and by French law for clients based in France. In the event of a dispute, an amicable solution is sought before any legal action; failing that, the competent courts are those of the client's place of residence.",
+            "In all other cases, Swiss law applies and the courts of the canton of Geneva have jurisdiction."
           ]
         }
       ]

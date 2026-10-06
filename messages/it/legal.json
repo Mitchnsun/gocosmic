@@ -5,7 +5,7 @@
         "title": "Informativa privacy | Cosmic Studio",
         "description": "Come Cosmic Studio tratta i dati personali: moduli, prenotazione di appuntamenti, e-mail, misurazione dell'audience, periodi di conservazione e diritti."
       },
-      "eyebrow": "GDPR",
+      "eyebrow": "nLPD · GDPR",
       "title": "Informativa privacy",
       "updated": "Ultimo aggiornamento: 6 ottobre 2026",
       "intro": "Questa pagina spiega come Cosmic Studio tratta i dati personali raccolti su questo sito e negli scambi via e-mail.",
@@ -53,7 +53,7 @@
         {
           "title": "Trasferimenti internazionali",
           "body": [
-            "Alcuni responsabili del trattamento, tra cui Vercel, i fornitori di posta elettronica e Google (Google Calendar), possono trattare dati al di fuori dello Spazio economico europeo.",
+            "Alcuni responsabili del trattamento, tra cui Vercel, i fornitori di posta elettronica e Google (Google Calendar), possono trattare dati al di fuori della Svizzera e dello Spazio economico europeo.",
             "Questi trasferimenti sono disciplinati da clausole contrattuali standard approvate dalla Commissione europea e, per Google, dal quadro UE-USA per la protezione dei dati (EU-US Data Privacy Framework). Per qualsiasi domanda sulle garanzie applicate, scrivi a support@gocosmic.dev."
           ]
         },
@@ -212,7 +212,8 @@
         {
           "title": "Legge applicabile e controversie",
           "body": [
-            "Le presenti condizioni sono regolate dal diritto svizzero per i clienti stabiliti in Svizzera e dal diritto francese per i clienti stabiliti in Francia. In caso di controversia, si cerca una soluzione amichevole prima di qualsiasi azione legale; in mancanza, sono competenti i tribunali del domicilio del cliente."
+            "Le presenti condizioni sono regolate dal diritto svizzero per i clienti stabiliti in Svizzera e dal diritto francese per i clienti stabiliti in Francia. In caso di controversia, si cerca una soluzione amichevole prima di qualsiasi azione legale; in mancanza, sono competenti i tribunali del domicilio del cliente.",
+            "In tutti gli altri casi si applica il diritto svizzero e sono competenti i tribunali del Cantone di Ginevra."
           ]
         }
       ]
