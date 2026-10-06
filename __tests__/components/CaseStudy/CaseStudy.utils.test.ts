@@ -32,4 +32,10 @@ describe('buildCaseStudyMeta', () => {
 
     expect(buildCaseStudyMeta('mcomperat', tList)).toEqual(['2026', 't:items.mcomperat.client', 't:kinds.site']);
   });
+
+  it('dates Daily Fortune to its release year', () => {
+    const tList = (key: string) => `t:${key}`;
+
+    expect(buildCaseStudyMeta('daily-fortune', tList)[0]).toBe('2025');
+  });
 });

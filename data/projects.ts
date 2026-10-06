@@ -39,7 +39,7 @@ export const PROJECTS = [
     i18nKey: 'dailyFortune',
     href: '/projects/daily-fortune',
     kind: 'mobile',
-    year: 2026,
+    year: 2025,
     accent: 'royal',
     cover: {
       src: '/projects/daily-fortune/app-icon.png',
