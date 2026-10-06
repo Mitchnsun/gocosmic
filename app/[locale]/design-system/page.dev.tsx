@@ -1,50 +1,40 @@
 import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
 
-import { DesignSystemShowcase, type ShowcaseLabels } from '@/components/DesignSystemShowcase';
+import { DesignSystemShowcase } from '@/components/DesignSystemShowcase';
 import { SectionHeading } from '@/components/SectionHeading';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, SECTION_Y } from '@/design-system/pill';
 import { getAlternates } from '@/i18n/canonical';
 
+/** Internal page (`.dev.tsx`, served by `yarn dev` only), in English like the rest of the docs. */
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'design-system' });
 
   return {
-    title: t('meta.title'),
-    description: t('meta.description'),
+    title: 'Design system · Cosmic Studio',
+    description: 'Internal reference: tokens, typography, components and rules in the dark and the light theme.',
     alternates: getAlternates(locale, '/design-system'),
-    // Internal page (`.dev.tsx`, served by `yarn dev` only), also kept out of search engines and the sitemap.
+    // Belt and braces: kept out of search engines and out of the sitemap too.
     robots: { index: false, follow: false },
   };
 }
 
-export default async function DesignSystemPage() {
-  const t = await getTranslations('design-system');
-  const labels: ShowcaseLabels = {
-    tokens: t('tokens'),
-    buttons: t('buttons'),
-    tags: t('tags'),
-    fields: t('fields'),
-    grid: t('grid'),
-    sample: t.raw('sample') as ShowcaseLabels['sample'],
-  };
-
+export default function DesignSystemPage() {
   return (
     <div className={cn('bg-bg text-fg', SECTION_Y)}>
-      <div className={cn(CONTAINER, 'flex flex-col gap-10')}>
+      <div className={cn(CONTAINER, 'flex flex-col gap-12')}>
         <SectionHeading
           level={1}
-          eyebrow={t('eyebrow')}
-          title={t.rich('title', { em: (chunks) => <em>{chunks}</em> })}
+          eyebrow="[ Design system · Cosmic Studio v1 ]"
+          title={
+            <>
+              Rules for the pages <em>without a mockup.</em>
+            </>
+          }
           titleId="design-system-title"
-          lead={t('intro')}
+          lead="Same tokens as globals.css, the cosmic dose one notch down, concrete words, the work before the technique. Each section shows the dark face, the light face, or both."
         />
-        <div className="grid gap-6 xl:grid-cols-2">
-          <DesignSystemShowcase theme="dark" title={t('dark')} labels={labels} />
-          <DesignSystemShowcase theme="light" title={t('light')} labels={labels} />
-        </div>
+        <DesignSystemShowcase />
       </div>
     </div>
   );

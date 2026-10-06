@@ -50,8 +50,7 @@ messages/
   │   ├── free-mockup.json   # Free mockup page content
   │   ├── local.json         # Local SEO page content
   │   ├── legal.json         # Privacy policy, legal notice and terms of sale
-  │   ├── psc-supersprint.json # PSC Supersprint case study content
-  │   └── design-system.json # Internal design system page (`yarn dev` only)
+  │   └── psc-supersprint.json # PSC Supersprint case study content
   ├── fr/              # French (same structure)
   ├── es/              # Spanish (same structure)
   ├── de/              # German (same structure)
@@ -168,6 +167,10 @@ All three share the `LegalDocument` layout: an introduction, then one card per s
 ### Not Found Page
 
 Localized 404 page with links back to the homepage and to the contact page. Unknown paths under a locale prefix are routed to it.
+
+### Design System Page (`/design-system`, internal)
+
+Reference of the colour tokens (with their contrast ratios), typography, components, layout rules, voice, illustrations and theme exceptions, shown in the dark theme, the light theme or side by side. Served by `yarn dev` only (open `http://localhost:3000/en/design-system`): production builds leave it out and answer 404. See [`DESIGN_GUIDELINE.md`](DESIGN_GUIDELINE.md).
 
 ### Retired Pages
 
@@ -385,7 +388,7 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   ├── ContactForm/  # Contact form
 │   ├── ContactPanel/ # "Write a message" / "Book a call" tabs
 │   ├── CTAFinal/     # Closing call-to-action with star field (warm sun halo in the light theme)
-│   ├── DesignSystemShowcase/ # Every primitive side by side in both themes (/design-system)
+│   ├── DesignSystemShowcase/ # Internal design system reference, dark and light (/design-system, `yarn dev` only)
 │   ├── Faq/          # FAQ accordion
 │   ├── Footer/       # Site footer
 │   ├── FreeMockupForm/ # Free mockup request form
@@ -439,8 +442,7 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   │   ├── free-mockup.json   # Free mockup page content
 │   │   ├── local.json         # Local SEO page content
 │   │   ├── legal.json         # Privacy policy, legal notice and terms of sale
-│   │   ├── psc-supersprint.json # PSC Supersprint case study
-│   │   └── design-system.json # Internal design system page
+│   │   └── psc-supersprint.json # PSC Supersprint case study
 │   ├── fr/           # French translations (same structure)
 │   ├── es/           # Spanish translations (same structure)
 │   ├── de/           # German translations (same structure)

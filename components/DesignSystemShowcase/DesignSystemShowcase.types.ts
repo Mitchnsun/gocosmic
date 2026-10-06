@@ -1,28 +1,19 @@
-/** Sample texts of the showcase, translated by the page (`design-system.sample`). */
-export interface ShowcaseSamples {
-  primary: string;
-  secondary: string;
-  link: string;
-  neutral: string;
-  eyebrow: string;
-  chip: string;
-  chip_ok: string;
-  name_label: string;
-  name_placeholder: string;
-  email_label: string;
-  email_error: string;
-  optional: string;
-  checkbox: string;
-  slider: string;
-  cell: string;
+import type { ThemeFace } from '@/design-system/tokens';
+
+/** What the toolbar shows: one theme, or both side by side. */
+export type ShowcaseMode = ThemeFace | 'both';
+
+/** Anchor of a showcase section, used by the table of contents. */
+export type SectionId = 'colors' | 'typography' | 'components' | 'layout' | 'voice' | 'illustrations' | 'exceptions';
+
+export interface ShowcaseSection {
+  id: SectionId;
+  title: string;
+  lead: string;
 }
 
-/** Section titles and samples of one theme panel. */
-export interface ShowcaseLabels {
-  tokens: string;
-  buttons: string;
-  tags: string;
-  fields: string;
-  grid: string;
-  sample: ShowcaseSamples;
+/** A layout or voice rule card: a title and its bullet points. */
+export interface RuleCard {
+  title: string;
+  items: readonly string[];
 }

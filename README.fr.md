@@ -52,8 +52,7 @@ messages/
   │   ├── free-mockup.json   # Contenu de la page maquette gratuite
   │   ├── local.json         # Contenu de la page SEO locale
   │   ├── legal.json         # Politique de confidentialité, mentions légales et CGV
-  │   ├── psc-supersprint.json # Contenu de l'étude de cas PSC Supersprint
-  │   └── design-system.json # Page interne du design system (`yarn dev` uniquement)
+  │   └── psc-supersprint.json # Contenu de l'étude de cas PSC Supersprint
   ├── fr/              # Français (même structure)
   ├── es/              # Espagnol (même structure)
   ├── de/              # Allemand (même structure)
@@ -170,6 +169,10 @@ Les trois partagent la mise en page `LegalDocument` : une introduction, puis une
 ### Page introuvable
 
 Page 404 localisée avec des liens vers la page d'accueil et vers la page contact. Les chemins inconnus sous un préfixe de locale affichent cette page.
+
+### Page Design system (`/design-system`, interne)
+
+Référence des tokens de couleur (avec leurs ratios de contraste), de la typographie, des composants, des règles de mise en page, de la voix, des illustrations et des exceptions de thème, en thème sombre, clair ou côte à côte. Servie uniquement par `yarn dev` (ouvrir `http://localhost:3000/fr/design-system`) : les builds de production l'excluent et répondent 404. Voir [`DESIGN_GUIDELINE.md`](DESIGN_GUIDELINE.md).
 
 ### Pages retirées
 
@@ -387,7 +390,7 @@ Pour des consignes de test détaillées, voir [`__tests__/TESTING.md`](./__tests
 │   ├── ContactForm/  # Formulaire de contact
 │   ├── ContactPanel/ # Onglets « Écrire un message » / « Réserver un appel »
 │   ├── CTAFinal/     # Appel à l'action final avec champ d'étoiles (halo solaire chaud dans le thème clair)
-│   ├── DesignSystemShowcase/ # Chaque primitive côte à côte dans les deux thèmes (/design-system)
+│   ├── DesignSystemShowcase/ # Référence interne du design system, sombre et clair (/design-system, `yarn dev` uniquement)
 │   ├── Faq/          # Accordéon FAQ
 │   ├── Footer/       # Pied de page du site
 │   ├── FreeMockupForm/ # Formulaire de demande de maquette gratuite
@@ -441,8 +444,7 @@ Pour des consignes de test détaillées, voir [`__tests__/TESTING.md`](./__tests
 │   │   ├── free-mockup.json   # Contenu maquette gratuite
 │   │   ├── local.json         # Contenu SEO local
 │   │   ├── legal.json         # Confidentialité, mentions légales et CGV
-│   │   ├── psc-supersprint.json # Étude de cas PSC Supersprint
-│   │   └── design-system.json # Page interne du design system
+│   │   └── psc-supersprint.json # Étude de cas PSC Supersprint
 │   ├── fr/           # Français (même structure)
 │   ├── es/           # Espagnol (même structure)
 │   ├── de/           # Allemand (même structure)
