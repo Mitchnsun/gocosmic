@@ -243,3 +243,13 @@ Grep `components/CosmicCursor/` for the native selector being replaced (`input[t
 **Mistake**: The theme switch thumb did not slide because `.theme-fade *` forces `transition-property` (colours only) with `!important` during a switch. A first fix listed `transform`, but Tailwind v4 moves elements with the `translate` property, so the thumb still jumped.
 
 **Correct pattern**: When an element must animate during `theme-fade`, give it a hook class and override `transition-property` with higher specificity, listing the exact properties Tailwind v4 uses (`translate`, `scale`, `rotate`, `transform`). Check the emitted CSS, not the assumed property.
+
+---
+
+## Pull requests
+
+### A follow-up PR of leftovers does not always get its own version bump
+
+**Mistake**: A small PR carrying two leftovers of an already released change (a restored anchor decoding and a test wording fix) was bumped to a patch version with its own changelog entry, as the PR checklist asks for every PR. The owner did not want a version bump for it.
+
+**Correct pattern**: For a follow-up PR that only tidies up a change already released, ask the owner before bumping the version and adding a changelog entry, instead of applying the one-bump-per-PR rule automatically.

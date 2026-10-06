@@ -18,6 +18,16 @@ export function readCurrentQuery(): Record<string, string> | undefined {
  */
 let pendingHash: { hash: string; locale: string; pathname: string } | null = null;
 
+/** Element id targeted by an anchor; a malformed escape such as `#%` falls back to the raw text instead of throwing. */
+function anchorId(hash: string): string {
+  const raw = hash.slice(1);
+  try {
+    return decodeURIComponent(raw);
+  } catch {
+    return raw;
+  }
+}
+
 /** Puts the anchor back in the URL and scrolls to its section, once the same page is shown in the target language. */
 function restorePendingHash(locale: string, pathname: string) {
   if (pendingHash?.locale !== locale || pendingHash.pathname !== pathname) return;
@@ -25,7 +35,7 @@ function restorePendingHash(locale: string, pathname: string) {
   pendingHash = null;
   const { pathname: path, search } = window.location;
   window.history.replaceState(window.history.state, '', `${path}${search}${hash}`);
-  document.getElementById(hash.slice(1))?.scrollIntoView();
+  document.getElementById(anchorId(hash))?.scrollIntoView();
 }
 
 /**
