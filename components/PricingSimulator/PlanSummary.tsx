@@ -33,27 +33,21 @@ export function PlanSummary({ currency, region, selection, total, showQuoteHint 
 
   // Keys come from the fixed ADD_ON_KEYS / PAGE_TIER_KEYS lists.
   /* eslint-disable security/detect-object-injection */
-  const lines = [
-    { label: t('builder.base.title'), amount: price(BASE_PRICE) },
-    ...(selection.pages > 0
-      ? [
-          {
-            label: t(`builder.pages.tiers.${PAGE_TIER_KEYS[selection.pages]}`),
-            amount:
-              selection.pages === MAX_TIER_INDEX
-                ? t('builder.pages.or_more', { price: `+${price(getPageTierPrice(selection.pages))}` })
-                : `+${price(getPageTierPrice(selection.pages))}`,
-          },
-        ]
-      : []),
-    ...ADD_ON_KEYS.filter((key) => selection.addOns[key]).map((key) => ({
-      label: t(`builder.options.${key}.label`),
-      amount: `+${price(getAddOnPrice(key))}`,
-    })),
-    ...(selection.updatesEnabled
-      ? [{ label: t('builder.updates.label'), amount: `+${price(getUpdateTierPrice(selection.updates))}` }]
-      : []),
-  ];
+  const lines = [{ label: t('builder.base.title'), amount: price(BASE_PRICE) }];
+  if (selection.pages > 0) {
+    const amount = `+${price(getPageTierPrice(selection.pages))}`;
+    lines.push({
+      label: t(`builder.pages.tiers.${PAGE_TIER_KEYS[selection.pages]}`),
+      amount: selection.pages === MAX_TIER_INDEX ? t('builder.pages.or_more', { price: amount }) : amount,
+    });
+  }
+  for (const key of ADD_ON_KEYS) {
+    if (selection.addOns[key])
+      lines.push({ label: t(`builder.options.${key}.label`), amount: `+${price(getAddOnPrice(key))}` });
+  }
+  if (selection.updatesEnabled) {
+    lines.push({ label: t('builder.updates.label'), amount: `+${price(getUpdateTierPrice(selection.updates))}` });
+  }
   /* eslint-enable security/detect-object-injection */
 
   return (

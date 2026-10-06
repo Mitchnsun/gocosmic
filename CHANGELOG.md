@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [2.1.0] - 2026-09-29
+## [2.1.0] - 2026-10-06
 
 ### Added
 
@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - Secondary and small grey texts are slightly brighter in the dark theme, and every text on the site now meets the recommended reading contrast in both themes
 - Purple labels on the project pages are lighter in the dark theme, the pricing simulator's tick boxes match the site's style, and the custom cursor's trail stays visible on every background, light or dark
+- The highlight in the theme switch now glides from one icon to the other when changing theme
 - Keyboard focus outlines are now full orange, easier to spot, and selected text is highlighted in the studio's orange
 - Updated subscription prices for the email address, page count and content update options, now shown excluding VAT everywhere on the site, as the terms of sale and legal notice now state
 - Tighter spacing between the large sections of every page, and more room between the buttons and the section border at the top of the local page

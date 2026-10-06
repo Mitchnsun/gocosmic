@@ -30,7 +30,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       )}>
       <span
         aria-hidden="true"
-        className="bg-fg/10 light:translate-x-9 absolute top-1/2 left-[3px] h-9 w-9 -translate-y-1/2 rounded-full transition-transform duration-300 motion-reduce:transition-none"
+        className="theme-toggle-thumb bg-fg/10 light:translate-x-9 absolute top-1/2 left-[3px] h-9 w-9 -translate-y-1/2 rounded-full transition-transform duration-300 motion-reduce:transition-none"
       />
       <CometIcon className="text-fg light:text-fg-3 relative h-5 w-9 shrink-0 px-2" />
       <SunIcon className="text-fg-3 light:text-fg relative h-5 w-9 shrink-0 px-2" />
