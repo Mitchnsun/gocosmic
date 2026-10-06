@@ -22,6 +22,12 @@ This file records lessons learned from past mistakes and corrections made during
 
 **Correct pattern**: Any change that is intended to land through a PR, including review feedback after the PR already exists, must include a package version bump and a dated `CHANGELOG.md` entry before the work is marked complete.
 
+### A small fix on the day of a release may not get its own version
+
+**Mistake**: A one-file sitemap fix opened right after the 2.1.0 release (same day) was given its own 2.1.1 bump; the user asked not to bump.
+
+**Correct pattern**: When the current version was released that same day and the change is a small fix, ask before bumping, or add the bullet to the existing entry and leave `version` untouched. If the user says not to bump, add the bullet to the latest entry in `CHANGELOG.md`.
+
 ## CSS / TailwindCSS 4
 
 ### `--font-display` and `--font-body` must be declared in `@theme`

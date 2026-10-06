@@ -39,6 +39,11 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  env: {
+    // Frozen at build time and inlined in the bundle, so the sitemap's lastmod
+    // only moves on a new deployment, not each time Vercel regenerates the file.
+    BUILD_DATE: new Date().toISOString(),
+  },
   async redirects() {
     return getLegacyRedirects();
   },

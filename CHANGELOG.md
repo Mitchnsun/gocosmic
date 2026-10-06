@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Fixed
 
 - Small grey labels, captions and form hints across the site are now easier to read, as are the purple section labels on project pages, meeting the accessibility contrast standard for text
+- The sitemap given to search engines now shows the date of the last site update instead of changing every few minutes, so search engines can trust it to know when pages have changed
 
 ## [2.0.0] - 2026-09-27
 
