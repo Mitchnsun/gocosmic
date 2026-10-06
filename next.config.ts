@@ -39,6 +39,9 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  // `*.dev.tsx` routes (e.g. the internal design system page) only exist under `yarn dev`:
+  // a production build ignores them, so they answer 404.
+  pageExtensions: isDevelopment ? ['dev.tsx', 'tsx', 'ts', 'jsx', 'js'] : ['tsx', 'ts', 'jsx', 'js'],
   env: {
     // Frozen at build time and inlined in the bundle, so the sitemap's lastmod
     // only moves on a new deployment, not each time Vercel regenerates the file.

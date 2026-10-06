@@ -1,51 +1,127 @@
-import { render, screen, within } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
+import { vi } from 'vitest';
 
-import { DesignSystemShowcase, type ShowcaseLabels } from '@/components/DesignSystemShowcase';
+import { DesignSystemShowcase } from '@/components/DesignSystemShowcase';
+import { IMMERSIVE, SAMPLE, SECTIONS, THEME_LABELS } from '@/components/DesignSystemShowcase/DesignSystemShowcase.copy';
+import { describeType } from '@/components/DesignSystemShowcase/DesignSystemShowcase.hooks';
+import { DESIGN_TOKENS } from '@/design-system/tokens';
 
-import messages from '../../../messages/en/design-system.json';
+// jsdom has no canvas: the starfield is replaced by a marker.
+vi.mock('@/components/Starfield', () => ({ default: () => <div data-testid="starfield" /> }));
 
-const copy = messages['design-system'];
-const labels: ShowcaseLabels = {
-  tokens: copy.tokens,
-  buttons: copy.buttons,
-  tags: copy.tags,
-  fields: copy.fields,
-  grid: copy.grid,
-  sample: copy.sample,
-};
-
-const renderBoth = () =>
-  render(
-    <>
-      <DesignSystemShowcase theme="dark" title={copy.dark} labels={labels} />
-      <DesignSystemShowcase theme="light" title={copy.light} labels={labels} />
-    </>
+/** Panel of a section in one theme, e.g. `Colors · Light · star`. */
+const panel = (title: string, theme: 'dark' | 'light') =>
+  within(
+    screen.getByRole('group', { name: `${title} · ${theme === 'dark' ? THEME_LABELS.dark : THEME_LABELS.light}` })
   );
 
 describe('DesignSystemShowcase', () => {
-  it('renders each panel as a theme island', () => {
-    renderBoth();
-    expect(screen.getByRole('region', { name: copy.dark })).toHaveAttribute('data-theme', 'dark');
-    expect(screen.getByRole('region', { name: copy.light })).toHaveAttribute('data-theme', 'light');
+  it('shows every section in both themes side by side by default', () => {
+    render(<DesignSystemShowcase />);
+
+    expect(screen.getByRole('button', { name: 'Side by side' })).toHaveAttribute('aria-pressed', 'true');
+    for (const { title } of SECTIONS) {
+      expect(screen.getByRole('heading', { level: 2, name: title })).toBeInTheDocument();
+      expect(screen.getByRole('group', { name: `${title} · ${THEME_LABELS.dark}` })).toHaveAttribute(
+        'data-theme',
+        'dark'
+      );
+      expect(screen.getByRole('group', { name: `${title} · ${THEME_LABELS.light}` })).toHaveAttribute(
+        'data-theme',
+        'light'
+      );
+    }
   });
 
-  it('shows every primitive in a panel: tokens, buttons, chips, fields, slider and grid', () => {
-    renderBoth();
-    const panel = within(screen.getByRole('region', { name: copy.light }));
+  it('switches to a single theme from the toolbar', () => {
+    render(<DesignSystemShowcase />);
 
-    expect(panel.getByText('aerospace-ink')).toBeInTheDocument();
-    expect(panel.getByRole('button', { name: copy.sample.primary })).toBeInTheDocument();
-    expect(panel.getByRole('button', { name: copy.sample.secondary })).toBeInTheDocument();
-    expect(panel.getByText(copy.sample.chip_ok)).toHaveClass('text-ok');
-    expect(panel.getByRole('checkbox', { name: copy.sample.checkbox })).toBeChecked();
-    expect(panel.getByRole('slider')).toBeInTheDocument();
-    expect(panel.getByText(`${copy.sample.cell} 3`)).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Light' }));
+    expect(screen.getByRole('button', { name: 'Light' })).toHaveAttribute('aria-pressed', 'true');
+    expect(screen.queryByRole('group', { name: `Colors · ${THEME_LABELS.dark}` })).not.toBeInTheDocument();
+    expect(screen.getByRole('group', { name: `Colors · ${THEME_LABELS.light}` })).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: 'Dark' }));
+    expect(screen.queryByRole('group', { name: `Colors · ${THEME_LABELS.light}` })).not.toBeInTheDocument();
+    expect(screen.getByRole('group', { name: `Colors · ${THEME_LABELS.dark}` })).toBeInTheDocument();
   });
 
-  it('keeps field ids unique across the two panels and wires the error message', () => {
-    renderBoth();
-    const emails = screen.getAllByRole('textbox', { name: /Email address/ });
-    expect(emails.map((input) => input.id)).toEqual(['dark-email', 'light-email']);
-    expect(emails[1]).toHaveAccessibleDescription(copy.sample.email_error);
+  it('links each section from the table of contents', () => {
+    render(<DesignSystemShowcase />);
+    const toc = within(screen.getByRole('navigation', { name: 'Design system sections' }));
+
+    SECTIONS.forEach(({ id, title }, index) => {
+      const link = toc.getByRole('link', { name: `${String(index + 1).padStart(2, '0')} · ${title}` });
+      expect(link).toHaveAttribute('href', `#${id}`);
+      expect(document.getElementById(id)).toBeInTheDocument();
+    });
+  });
+
+  it('lists every token with its value and an AA ratio for each text token', () => {
+    render(<DesignSystemShowcase />);
+
+    for (const theme of ['dark', 'light'] as const) {
+      const colors = panel('Colors', theme);
+      for (const { name } of DESIGN_TOKENS) expect(colors.getByText(name)).toBeInTheDocument();
+      expect(colors.getAllByText(/:1 · AA$/)).toHaveLength(DESIGN_TOKENS.filter((token) => token.readOn).length);
+      expect(colors.queryByText(/Fail$/)).not.toBeInTheDocument();
+    }
+    expect(panel('Colors', 'light').getByText('#b83a00')).toBeInTheDocument();
+    expect(panel('Colors', 'light').getByText('rgb(2 6 23 / 0.6) → #67676a')).toBeInTheDocument();
+  });
+
+  it('shows the five text styles with their computed values', () => {
+    render(<DesignSystemShowcase />);
+    const typography = panel('Typography', 'dark');
+
+    for (const label of ['H1', 'H2', 'H3', 'Body', 'Eyebrow']) expect(typography.getByText(label)).toBeInTheDocument();
+    expect(typography.getAllByText(/^computed: (?!…)/)).toHaveLength(5);
+    expect(typography.getByRole('heading', { level: 1 })).toHaveAttribute('id', 'dark-type-h1');
+  });
+
+  it('renders the real components in each theme', () => {
+    render(<DesignSystemShowcase />);
+    const components = panel('Components', 'light');
+
+    expect(components.getByRole('button', { name: SAMPLE.primary })).toBeInTheDocument();
+    expect(components.getByText(SAMPLE.chipOk)).toHaveClass('text-ok');
+    expect(components.getByText(SAMPLE.available)).toBeInTheDocument();
+    expect(components.getByRole('checkbox', { name: SAMPLE.checkbox })).toBeChecked();
+    expect(components.getByRole('slider')).toBeInTheDocument();
+    expect(components.getByLabelText(SAMPLE.emailLabel, { exact: false })).toHaveAttribute('aria-invalid', 'true');
+  });
+
+  it('adapts the immersive rule and the illustration to each theme', () => {
+    render(<DesignSystemShowcase />);
+
+    expect(panel('Voice & cosmic universe', 'dark').getByText(IMMERSIVE.dark)).toBeInTheDocument();
+    expect(panel('Voice & cosmic universe', 'light').getByText(IMMERSIVE.light)).toBeInTheDocument();
+    expect(panel('Illustrations', 'dark').getByTestId('starfield')).toBeInTheDocument();
+    expect(panel('Illustrations', 'light').queryByTestId('starfield')).not.toBeInTheDocument();
+  });
+
+  it('renders each theme exception with its reason', () => {
+    render(<DesignSystemShowcase />);
+    const exceptions = panel('Theme exceptions', 'light');
+
+    expect(exceptions.getByRole('heading', { name: 'Orange button' })).toBeInTheDocument();
+    expect(exceptions.getByText('calendar.google.com').parentElement).toHaveAttribute('data-theme', 'light');
+    expect(exceptions.getAllByRole('img')).toHaveLength(2);
+    expect(exceptions.getByText('data-theme="dark"')).toHaveAttribute('data-theme', 'dark');
+  });
+});
+
+describe('describeType', () => {
+  it('summarises a computed style', () => {
+    const style = {
+      fontFamily: '"Space Grotesk", system-ui',
+      fontWeight: '600',
+      fontSize: '56px',
+      lineHeight: '56px',
+      letterSpacing: '-1.68px',
+    } as CSSStyleDeclaration;
+
+    expect(describeType(style)).toBe('Space Grotesk 600 · 56px / 56px · -1.68px');
+    expect(describeType({ ...style, fontFamily: '' } as CSSStyleDeclaration)).toMatch(/^inherit 600/);
   });
 });

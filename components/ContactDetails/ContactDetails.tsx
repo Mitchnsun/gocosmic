@@ -1,4 +1,4 @@
-import { cn } from '@/design-system/lib/utils';
+import { SignalDot } from '@/design-system/signal-dot';
 
 export interface ContactDetail {
   label: string;
@@ -38,17 +38,7 @@ export function ContactDetails({ details, status, available, ariaLabel }: Contac
         ))}
       </dl>
       <p className="text-fg-2 flex items-center gap-2.5 px-5 py-4 text-sm">
-        <span aria-hidden="true" className="relative flex h-2 w-2 shrink-0">
-          {available && (
-            <span className="bg-ok absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 motion-reduce:animate-none" />
-          )}
-          <span
-            className={cn('relative inline-flex h-2 w-2 rounded-full', {
-              'bg-ok': available,
-              'bg-fg-3': !available,
-            })}
-          />
-        </span>
+        <SignalDot active={available} />
         {status}
       </p>
     </div>

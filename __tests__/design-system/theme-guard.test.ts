@@ -19,6 +19,7 @@ const ALLOWED: Record<string, string> = {
   'components/Theme/Theme.constants.ts': 'browser chrome colour per theme',
   'components/FreeMockupForm/FreeMockupForm.utils.ts': 'palette swatches are content, not theme colours',
   'design-system/accent.ts': "RGB channels of the 'ghost' accent, kept for inline glows",
+  'design-system/tokens.ts': 'documents the theme values for /design-system, checked against globals.css',
 };
 
 const ROOTS = ['app', 'components', 'design-system', 'lib'];

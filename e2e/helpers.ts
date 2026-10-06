@@ -31,9 +31,14 @@ export function localizedUrl(routeKey: RouteKey): string {
   return `/${LOCALE}${localized === '/' ? '' : localized}`;
 }
 
-/** Every route of the site in the audited locale, plus a missing page. */
+/** Routes backed by a `page.dev.tsx`, absent from the production build audited here. */
+const DEV_ONLY_ROUTES: readonly RouteKey[] = ['/design-system'];
+
+/** Every public route of the site in the audited locale, plus a missing page. */
 export const ROUTES: string[] = [
-  ...(Object.keys(routing.pathnames) as RouteKey[]).map(localizedUrl),
+  ...(Object.keys(routing.pathnames) as RouteKey[])
+    .filter((route) => !DEV_ONLY_ROUTES.includes(route))
+    .map(localizedUrl),
   `/${LOCALE}/cette-page-n-existe-pas`,
 ];
 

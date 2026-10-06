@@ -1,59 +1,52 @@
-import { Chip } from '@/design-system/chip';
-import { Eyebrow } from '@/design-system/eyebrow';
-import { HairlineGrid } from '@/design-system/hairline-grid';
+'use client';
 
-import { ButtonGallery } from './ButtonGallery';
-import type { ShowcaseLabels } from './DesignSystemShowcase.types';
-import { FormGallery } from './FormGallery';
-import { ShowcaseGroup } from './ShowcaseGroup';
+import { type ReactNode, useState } from 'react';
+
+import type { ThemeFace } from '@/design-system/tokens';
+
+import { ComponentGallery } from './ComponentGallery';
+import { SECTIONS } from './DesignSystemShowcase.copy';
+import type { SectionId, ShowcaseMode } from './DesignSystemShowcase.types';
+import { Illustrations } from './Illustrations';
+import { LayoutRules } from './LayoutRules';
+import { ShowcaseToc } from './ShowcaseToc';
+import { ShowcaseToolbar } from './ShowcaseToolbar';
+import { ThemedSection } from './ThemedSection';
+import { ThemeExceptions } from './ThemeExceptions';
 import { TokenSwatches } from './TokenSwatches';
+import { TypeSpecimens } from './TypeSpecimens';
+import { VoiceRules } from './VoiceRules';
 
-interface DesignSystemShowcaseProps {
-  /** `dark` or `light`: the panel is a `data-theme` island, whatever the page theme. */
-  theme: 'dark' | 'light';
-  /** Panel title, e.g. `Dark · space`. */
-  title: string;
-  labels: ShowcaseLabels;
-}
+const CONTENT: Record<SectionId, (theme: ThemeFace) => ReactNode> = {
+  colors: (theme) => <TokenSwatches theme={theme} />,
+  typography: (theme) => <TypeSpecimens theme={theme} />,
+  components: (theme) => <ComponentGallery theme={theme} />,
+  layout: () => <LayoutRules />,
+  voice: (theme) => <VoiceRules theme={theme} />,
+  illustrations: (theme) => <Illustrations theme={theme} />,
+  exceptions: () => <ThemeExceptions />,
+};
 
 /**
- * Every design-system primitive rendered inside a `data-theme` island, so the page can show the dark
- * and the light theme side by side (DoD of EPIC #113).
+ * The internal design system reference (#111, #112): every section in a `data-theme` panel, the
+ * dark face, the light face or both side by side, as picked in the sticky toolbar.
  */
-export function DesignSystemShowcase({ theme, title, labels }: DesignSystemShowcaseProps) {
-  const { sample } = labels;
+export function DesignSystemShowcase() {
+  const [mode, setMode] = useState<ShowcaseMode>('both');
 
   return (
-    <section
-      data-theme={theme}
-      aria-label={title}
-      className="bg-bg text-fg border-line-2 flex flex-col gap-10 rounded-3xl border p-[clamp(1.25rem,3vw,2rem)]">
-      <p className="text-fg-3 text-2xs font-mono tracking-[0.22em] uppercase">{title}</p>
-      <ShowcaseGroup title={labels.tokens}>
-        <TokenSwatches />
-      </ShowcaseGroup>
-      <ShowcaseGroup title={labels.buttons}>
-        <ButtonGallery sample={sample} />
-      </ShowcaseGroup>
-      <ShowcaseGroup title={labels.tags}>
-        <Eyebrow>{sample.eyebrow}</Eyebrow>
-        <div className="flex flex-wrap gap-2">
-          <Chip>{sample.chip}</Chip>
-          <Chip variant="ok">{sample.chip_ok}</Chip>
-        </div>
-      </ShowcaseGroup>
-      <ShowcaseGroup title={labels.fields}>
-        <FormGallery sample={sample} idPrefix={theme} />
-      </ShowcaseGroup>
-      <ShowcaseGroup title={labels.grid}>
-        <HairlineGrid className="grid-cols-3">
-          {[1, 2, 3].map((n) => (
-            <li key={n} className="bg-bg-alt text-fg-2 p-5 text-sm">
-              {sample.cell} {n}
-            </li>
+    <div className="flex flex-col gap-10">
+      <ShowcaseToolbar mode={mode} onChange={setMode} />
+      <div className="grid gap-10 lg:grid-cols-[11rem_minmax(0,1fr)]">
+        <ShowcaseToc />
+        <div className="flex min-w-0 flex-col gap-20">
+          {SECTIONS.map((section, index) => (
+            <ThemedSection key={section.id} section={section} index={index} mode={mode}>
+              {CONTENT[section.id]}
+            </ThemedSection>
           ))}
-        </HairlineGrid>
-      </ShowcaseGroup>
-    </section>
+        </div>
+      </div>
+    </div>
   );
 }

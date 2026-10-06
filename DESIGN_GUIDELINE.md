@@ -1,7 +1,7 @@
 # DESIGN_GUIDELINE.md — Cosmic Studio
 
 > Single design reference for building new components and pages **consistent with the homepage**.
-> Sources: `app/globals.css` (implemented tokens), shipped components (`Header`, `StatusBar`, `ProcessTimeline`, `CTAFinal`, `HeroSection`…), the EPIC redesign ticket [#58](https://github.com/Mitchnsun/gocosmic/issues/58), the rebrand EPIC [#98](https://github.com/Mitchnsun/gocosmic/issues/98) and the light theme EPIC [#113](https://github.com/Mitchnsun/gocosmic/issues/113). Every primitive is shown in both themes on the internal `/design-system` page (noindex).
+> Sources: `app/globals.css` (implemented tokens), shipped components (`Header`, `StatusBar`, `ProcessTimeline`, `CTAFinal`, `HeroSection`…), the EPIC redesign ticket [#58](https://github.com/Mitchnsun/gocosmic/issues/58), the rebrand EPIC [#98](https://github.com/Mitchnsun/gocosmic/issues/98) and the light theme EPIC [#113](https://github.com/Mitchnsun/gocosmic/issues/113). Every primitive is shown in both themes on the internal `/design-system` page (served by `yarn dev` only).
 >
 > **For an AI agent:** read this file **before** writing any JSX. The golden rule: never **reinvent** colors, fonts, or spacing — **reuse** the tokens and patterns described here. When in doubt, copy the nearest existing component.
 
@@ -139,16 +139,13 @@ Common text format: `[ NAME · NN ]` or `SECTOR — STUDIO`.
 
 ### 3.2 Signal dot (availability / status)
 
-`ok` dot with pulsing `animate-ping` halo = "online / available". Strong semantic meaning, reused from `StatusBar`.
+`ok` dot with pulsing `animate-ping` halo = "online / available". Strong semantic meaning, used by `StatusBar` and `ContactDetails`. Use the `SignalDot` primitive (`design-system/signal-dot.tsx`); `active={false}` gives the still grey dot.
 
 ```tsx
-<span className="relative flex h-2 w-2" aria-hidden="true">
-  <span className="bg-ok absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 motion-reduce:animate-none" />
-  <span className="bg-ok relative inline-flex h-2 w-2 rounded-full" />
-</span>
+<SignalDot active={isAvailable} />
 ```
 
-> Cut `animate-ping` under reduced-motion. Meaning is carried by **visible text**, not the dot (which is `aria-hidden`).
+> `animate-ping` is cut under reduced motion. Meaning is carried by **visible text**, not the dot (which is `aria-hidden`).
 
 ### 3.3 HUD labels / coordinates
 
@@ -162,6 +159,15 @@ Immersive sections: `<Starfield>` at layer `-z-20` + a radial accent gradient or
 
 - **The sun replaces the stars on the homepage only**: `<Sun>` (`components/Sun`, pure CSS disc + halo) rises top right in the hero over a misty-rose floor (`.rose-floor`), and the immersive `CTAFinal` swaps its stars for a warm halo (`.sun-glow`). The sun belongs to the hero and the closing CTA only — **never two suns on a page**.
 - **Sober `CTAFinal`** (inner pages): stars in the dark theme only; in the light theme it is a flat `bg-bg` (a dark-on-cream starfield never rendered well).
+- **Theme exceptions** (rendered in section "Theme exceptions" of `/design-system`):
+
+  | Element                        | Stays                                       | Why                                           |
+  | ------------------------------ | ------------------------------------------- | --------------------------------------------- |
+  | Label and glow of orange fills | `text-void`, orange glow                    | White on orange only reaches 3.3:1            |
+  | Google booking frame           | White (`bg-white scheme-light`)             | Google's calendar has no dark mode            |
+  | Project covers                 | Their brand background (`data/projects.ts`) | Daily Fortune `#0d0420`, CPMB logo on `space` |
+  | Case study heroes              | Dark, through `data-theme="dark"`           | Stars and dark brand visuals (see below)      |
+
 - **Dark islands**: the case study heroes keep their stars and stay dark in both themes, through `data-theme="dark"` on the section (the tokens re-scope for the subtree). Use an island for anything whose colours cannot follow the theme (a canvas, a dark brand visual).
 - **Pick the scene in CSS first**: the `light:` variant (`light:hidden`, `hidden light:block`) is right from the first paint, then `useResolvedTheme()` unmounts what the theme hides so canvases and animation loops stop. `light:` never applies inside a dark island.
 - **Switching theme**: colours cross-fade over 300 ms and the sun rises into place (`theme-fade` / `theme-rise` on `<html>` during a switch only, see `useThemeSwitch`); both are skipped under reduced motion. The choice is stored in `localStorage['cs-theme']`; first visits are always dark, whatever the OS prefers.
@@ -194,6 +200,7 @@ Pages are assembled from shared building blocks — reuse them instead of re-imp
 | `design-system/pill.ts`       | `primaryPill()`, `ghostPill()`, plus `CONTAINER` (1280 px, fluid gutters) and `SECTION_Y` (56–96 px) |
 | `design-system/eyebrow`       | Orange dot + uppercase mono label opening a section                                                  |
 | `design-system/chip`          | Bordered mono tag; `variant="ok"` marks what is included                                             |
+| `design-system/signal-dot`    | Green pulsing status dot, grey when inactive (§3.2)                                                  |
 | `design-system/hairline-grid` | `gap-px` card grid with 1 px separators (`as="ol"` for ordered content)                              |
 | `design-system/field`         | `Field` (label, optional hint, required asterisk, error) + `FIELD_INPUT` / `FIELD_TEXTAREA` controls |
 | `components/LegalDocument`    | Legal notice, privacy policy and terms of sale layout: intro, one card per section                   |
@@ -255,6 +262,27 @@ README.md               ← (optional) props, design, a11y, reduced-motion notes
 6. **Accent**: one strong point only (CTA pill, number, `aerospace` glyph).
 7. **Motion**: scroll reveal + 50ms stagger, `cubic-bezier(.16, 1, .3, 1)` easing, reduced-motion handled.
 8. **HUD metadata** mono optionally for texture.
+
+### 5.1 The `/design-system` page
+
+`app/[locale]/design-system/page.dev.tsx` is the living reference of this guideline. It is served by `yarn dev` only (`.dev.tsx` pages are dropped from production builds by `pageExtensions` in `next.config.ts`) and written in English. A sticky toolbar shows the dark face, the light face or both side by side; every section renders inside a `data-theme` panel, so it also checks that the tokens re-scope on a local wrapper. The custom cursor is off on this page.
+
+| Section          | Source                                                                                                                  |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Colors           | `DESIGN_TOKENS` (`design-system/tokens.ts`), with the WCAG ratio from `contrastRatio` (`design-system/lib/contrast.ts`) |
+| Typography       | The real `SectionHeading`, `Eyebrow` and text classes, with the browser's computed values                               |
+| Components       | The design-system primitives, imported (never copied as HTML)                                                           |
+| Layout, voice    | §2.3 and §8 of this file, with the live `CONTAINER` / `SECTION_Y` values                                                |
+| Illustrations    | `<Starfield>` + royal glow, `<Sun>` + rose floor                                                                        |
+| Theme exceptions | The table in §3.4                                                                                                       |
+
+**Adding a component to the page:**
+
+1. Build and test the primitive first (`design-system/` or `components/`), using semantic tokens only.
+2. Render it in `components/DesignSystemShowcase/ComponentGallery.tsx` inside a `ShowcaseGroup`, with its sample texts in `DesignSystemShowcase.copy.ts`. Pass the `theme` down if it needs unique ids.
+3. A new section goes in `SECTIONS` (`DesignSystemShowcase.copy.ts`) and `CONTENT` (`DesignSystemShowcase.tsx`); the table of contents and both theme panels follow.
+4. A new colour token is added to `app/globals.css` **and** `DESIGN_TOKENS`; `__tests__/design-system/tokens.test.ts` fails until both agree.
+5. Check it with `yarn dev` in the three toolbar modes.
 
 ---
 
