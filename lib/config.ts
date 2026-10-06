@@ -14,23 +14,11 @@ export const FOUNDER_NAME = 'Matthieu Compérat';
 /** Public contact address, shown on the contact page and declared in structured data. */
 export const CONTACT_EMAIL = 'contact@gocosmic.dev';
 
-/** Registration facts of the sole-trader business, as on the legal notice. */
-export const COMPANY_REGISTRATION = {
-  foundingDate: '2016-10-17',
-  siret: '82320036500026',
-} as const;
-
 /** Registered office declared in structured data, at the town level, as on the legal notice. */
 export const STUDIO_ADDRESS = {
-  addressLocality: 'Duingt',
-  postalCode: '74410',
-  addressRegion: 'Auvergne-Rhône-Alpes',
-  addressCountry: 'FR',
-} as const;
-
-/** Where the founder lives, declared as his home location in structured data. */
-export const FOUNDER_HOME = {
   addressLocality: 'Chêne-Bougeries',
+  postalCode: '1224',
+  addressRegion: 'GE',
   addressCountry: 'CH',
 } as const;
 

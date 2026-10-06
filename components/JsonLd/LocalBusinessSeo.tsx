@@ -1,50 +1,43 @@
 import { JsonLdScript } from 'next-seo';
 
 import { getCanonicalUrl, SITE_URL } from '@/i18n/canonical';
-import {
-  BRAND_NAME,
-  COMPANY_REGISTRATION,
-  CONTACT_EMAIL,
-  FOUNDER_NAME,
-  LEGACY_BRAND_NAME,
-  STUDIO_ADDRESS,
-} from '@/lib/config';
+import { BRAND_NAME, CONTACT_EMAIL, FOUNDER_NAME, LEGACY_BRAND_NAME, STUDIO_ADDRESS } from '@/lib/config';
 
 type LocalBusinessSeoProps = {
   locale: string;
 };
 
 /*
- * The studio is declared at its registered office in Duingt, on Lake Annecy, while Geneva and
- * French-speaking Switzerland stay named in the description and the served areas.
+ * The studio is declared at its Geneva base, while Annecy stays named in the
+ * description and the served areas for local searches on the French side.
  */
 function getLocalizedLocalBusinessData(locale: string) {
   switch (locale) {
     case 'fr': {
       return {
         description:
-          'Studio web et mobile basé à Duingt, au bord du lac d’Annecy. Sites et applications pour les artisans, associations et indépendants de Haute-Savoie, de Genève et de Suisse romande.',
+          'Studio web et mobile installé à Chêne-Bougeries, près de Genève. Sites et applications pour les artisans, associations et indépendants de Suisse romande et de Haute-Savoie, notamment à Annecy.',
         areaServed: ['Genève', 'Suisse romande', 'Haute-Savoie', 'Annecy'],
       };
     }
     case 'es': {
       return {
         description:
-          'Estudio web y móvil con sede en Duingt, a orillas del lago de Annecy. Sitios web y aplicaciones para artesanos, asociaciones y profesionales independientes de la Alta Saboya, Ginebra y la Suiza romanda.',
+          'Estudio web y móvil con sede en Chêne-Bougeries, cerca de Ginebra. Sitios web y aplicaciones para artesanos, asociaciones y profesionales independientes de la Suiza romanda y la Alta Saboya, en particular en Annecy.',
         areaServed: ['Ginebra', 'Suiza romanda', 'Alta Saboya', 'Annecy'],
       };
     }
     case 'de': {
       return {
         description:
-          'Web- und App-Studio in Duingt am Annecy-See. Websites und Apps für Handwerksbetriebe, Vereine und Selbstständige in Hochsavoyen, Genf und der Westschweiz.',
+          'Web- und App-Studio in Chêne-Bougeries bei Genf. Websites und Apps für Handwerksbetriebe, Vereine und Selbstständige in der Westschweiz und in Hochsavoyen, insbesondere in Annecy.',
         areaServed: ['Genf', 'Westschweiz', 'Hochsavoyen', 'Annecy'],
       };
     }
     case 'it': {
       return {
         description:
-          'Studio web e mobile con sede a Duingt, sulle rive del lago di Annecy. Siti e app per artigiani, associazioni e liberi professionisti dell’Alta Savoia, di Ginevra e della Svizzera romanda.',
+          'Studio web e mobile con sede a Chêne-Bougeries, vicino a Ginevra. Siti e app per artigiani, associazioni e liberi professionisti della Svizzera romanda e dell’Alta Savoia, in particolare ad Annecy.',
         areaServed: ['Ginevra', 'Svizzera romanda', 'Alta Savoia', 'Annecy'],
       };
     }
@@ -52,7 +45,7 @@ function getLocalizedLocalBusinessData(locale: string) {
     default: {
       return {
         description:
-          'Web and mobile studio based in Duingt, on the shores of Lake Annecy. Websites and apps for craftspeople, associations and independents in Haute-Savoie, Geneva and French-speaking Switzerland.',
+          'Web and mobile studio based in Chêne-Bougeries, near Geneva. Websites and apps for craftspeople, associations and independents in French-speaking Switzerland and Haute-Savoie, including Annecy.',
         areaServed: ['Geneva', 'French-speaking Switzerland', 'Haute-Savoie', 'Annecy'],
       };
     }
@@ -75,8 +68,6 @@ export default function LocalBusinessSeo({ locale }: LocalBusinessSeoProps) {
         url: getCanonicalUrl(locale, '/'),
         image: `${SITE_URL}/og-default.jpg`,
         email: CONTACT_EMAIL,
-        foundingDate: COMPANY_REGISTRATION.foundingDate,
-        identifier: { '@type': 'PropertyValue', propertyID: 'SIRET', value: COMPANY_REGISTRATION.siret },
         founder: { '@type': 'Person', '@id': `${SITE_URL}/#person`, name: FOUNDER_NAME },
         address: { '@type': 'PostalAddress', ...STUDIO_ADDRESS },
         areaServed,

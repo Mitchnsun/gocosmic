@@ -30,19 +30,17 @@ describe('LocalBusinessSeo', () => {
         name: 'Cosmic Studio',
         alternateName: 'Go Cosmic',
         description:
-          'Web and mobile studio based in Duingt, on the shores of Lake Annecy. Websites and apps for craftspeople, associations and independents in Haute-Savoie, Geneva and French-speaking Switzerland.',
+          'Web and mobile studio based in Chêne-Bougeries, near Geneva. Websites and apps for craftspeople, associations and independents in French-speaking Switzerland and Haute-Savoie, including Annecy.',
         url: 'https://www.gocosmic.dev/en',
         image: 'https://www.gocosmic.dev/og-default.jpg',
         email: 'contact@gocosmic.dev',
-        foundingDate: '2016-10-17',
-        identifier: { '@type': 'PropertyValue', propertyID: 'SIRET', value: '82320036500026' },
         founder: { '@type': 'Person', '@id': 'https://www.gocosmic.dev/#person', name: 'Matthieu Compérat' },
         address: {
           '@type': 'PostalAddress',
-          addressLocality: 'Duingt',
-          postalCode: '74410',
-          addressRegion: 'Auvergne-Rhône-Alpes',
-          addressCountry: 'FR',
+          addressLocality: 'Chêne-Bougeries',
+          postalCode: '1224',
+          addressRegion: 'GE',
+          addressCountry: 'CH',
         },
         areaServed: ['Geneva', 'French-speaking Switzerland', 'Haute-Savoie', 'Annecy'],
         sameAs: ['https://www.linkedin.com/in/matthieucomperat/'],
@@ -57,7 +55,7 @@ describe('LocalBusinessSeo', () => {
       expect.objectContaining({
         data: expect.objectContaining({
           description:
-            'Studio web et mobile basé à Duingt, au bord du lac d’Annecy. Sites et applications pour les artisans, associations et indépendants de Haute-Savoie, de Genève et de Suisse romande.',
+            'Studio web et mobile installé à Chêne-Bougeries, près de Genève. Sites et applications pour les artisans, associations et indépendants de Suisse romande et de Haute-Savoie, notamment à Annecy.',
           url: 'https://www.gocosmic.dev/fr',
           areaServed: ['Genève', 'Suisse romande', 'Haute-Savoie', 'Annecy'],
         }),

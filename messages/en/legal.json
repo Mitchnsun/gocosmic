@@ -7,7 +7,7 @@
       },
       "eyebrow": "GDPR",
       "title": "Privacy policy",
-      "updated": "Last updated: 28 September 2026",
+      "updated": "Last updated: 6 October 2026",
       "intro": "This page explains how Cosmic Studio handles the personal data collected on this website and in email exchanges.",
       "legalNoticePrefix": "For publisher and hosting details, see the",
       "legalNoticeLink": "legal notice",
@@ -60,7 +60,7 @@
         {
           "title": "Your rights",
           "body": [
-            "Where these rights apply, you can ask to access, correct or erase your data, restrict or object to its processing, or receive it in a portable format, by writing to support@gocosmic.dev. You can also lodge a complaint with the CNIL: https://www.cnil.fr/."
+            "Where these rights apply, you can ask to access, correct or erase your data, restrict or object to its processing, or receive it in a portable format, by writing to support@gocosmic.dev. You can also lodge a complaint with the Swiss Federal Data Protection and Information Commissioner (FDPIC): https://www.edoeb.admin.ch/, or, if you live in France, with the CNIL: https://www.cnil.fr/."
           ]
         },
         {
@@ -86,7 +86,7 @@
         {
           "title": "Publisher",
           "body": [
-            "Website: www.gocosmic.dev. Publisher: Matthieu Compérat, sole trader (entreprise individuelle) registered since 17 October 2016, trading as Cosmic Studio (formerly Go Cosmic). SIRET: 823 200 365 00026. Registered address: 485 route de la champanaise, 74410 Duingt, France. Contact: support@gocosmic.dev."
+            "Website: www.gocosmic.dev. Publisher: Matthieu Compérat, sole proprietorship (raison individuelle), registration in progress, trading as Cosmic Studio (formerly Go Cosmic). Registered address: 1224 Chêne-Bougeries, Switzerland. Contact: support@gocosmic.dev."
           ]
         },
         {
@@ -142,7 +142,7 @@
         {
           "title": "Provider",
           "body": [
-            "The provider is Cosmic Studio, represented by Matthieu Compérat, sole trader (Entreprise individuelle) registered since 17 October 2016 (SIRET 823 200 365 00026), 485 route de la champanaise, 74410 Duingt, France. Contact: support@gocosmic.dev."
+            "The provider is Cosmic Studio, represented by Matthieu Compérat, sole proprietorship (raison individuelle), registration in progress, 1224 Chêne-Bougeries, Switzerland. Contact: support@gocosmic.dev."
           ]
         },
         {
@@ -212,7 +212,7 @@
         {
           "title": "Governing law and disputes",
           "body": [
-            "These terms are governed by French law. In the event of a dispute, an amicable solution is sought before any legal action; failing that, the competent courts are those of Cosmic Studio's registered address."
+            "These terms are governed by Swiss law for clients based in Switzerland, and by French law for clients based in France. In the event of a dispute, an amicable solution is sought before any legal action; failing that, the competent courts are those of the client's place of residence."
           ]
         }
       ]
