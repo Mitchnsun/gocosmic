@@ -8,15 +8,15 @@ type LocalBusinessSeoProps = {
 };
 
 /*
- * The studio is declared at its Geneva base, while Annecy stays named in the
- * description and the served areas for local searches on the French side.
+ * The studio is declared at its registered office in Duingt, on Lake Annecy, while Geneva and
+ * French-speaking Switzerland stay named in the description and the served areas.
  */
 function getLocalizedLocalBusinessData(locale: string) {
   switch (locale) {
     case 'fr': {
       return {
         description:
-          'Studio web et mobile installé à Chêne-Bougeries, près de Genève. Sites et applications pour les artisans, associations et indépendants de Suisse romande et de Haute-Savoie, notamment à Annecy.',
+          'Studio web et mobile basé à Duingt, au bord du lac d’Annecy. Sites et applications pour les artisans, associations et indépendants de Haute-Savoie, de Genève et de Suisse romande.',
         areaServed: ['Genève', 'Suisse romande', 'Haute-Savoie', 'Annecy'],
         inLanguage: 'fr',
       };
@@ -24,7 +24,7 @@ function getLocalizedLocalBusinessData(locale: string) {
     case 'es': {
       return {
         description:
-          'Estudio web y móvil con sede en Chêne-Bougeries, cerca de Ginebra. Sitios web y aplicaciones para artesanos, asociaciones y profesionales independientes de la Suiza romanda y la Alta Saboya, en particular en Annecy.',
+          'Estudio web y móvil con sede en Duingt, a orillas del lago de Annecy. Sitios web y aplicaciones para artesanos, asociaciones y profesionales independientes de la Alta Saboya, Ginebra y la Suiza romanda.',
         areaServed: ['Ginebra', 'Suiza romanda', 'Alta Saboya', 'Annecy'],
         inLanguage: 'es',
       };
@@ -32,7 +32,7 @@ function getLocalizedLocalBusinessData(locale: string) {
     case 'de': {
       return {
         description:
-          'Web- und App-Studio in Chêne-Bougeries bei Genf. Websites und Apps für Handwerksbetriebe, Vereine und Selbstständige in der Westschweiz und in Hochsavoyen, insbesondere in Annecy.',
+          'Web- und App-Studio in Duingt am Annecy-See. Websites und Apps für Handwerksbetriebe, Vereine und Selbstständige in Hochsavoyen, Genf und der Westschweiz.',
         areaServed: ['Genf', 'Westschweiz', 'Hochsavoyen', 'Annecy'],
         inLanguage: 'de',
       };
@@ -40,7 +40,7 @@ function getLocalizedLocalBusinessData(locale: string) {
     case 'it': {
       return {
         description:
-          'Studio web e mobile con sede a Chêne-Bougeries, vicino a Ginevra. Siti e app per artigiani, associazioni e liberi professionisti della Svizzera romanda e dell’Alta Savoia, in particolare ad Annecy.',
+          'Studio web e mobile con sede a Duingt, sulle rive del lago di Annecy. Siti e app per artigiani, associazioni e liberi professionisti dell’Alta Savoia, di Ginevra e della Svizzera romanda.',
         areaServed: ['Ginevra', 'Svizzera romanda', 'Alta Savoia', 'Annecy'],
         inLanguage: 'it',
       };
@@ -49,7 +49,7 @@ function getLocalizedLocalBusinessData(locale: string) {
     default: {
       return {
         description:
-          'Web and mobile studio based in Chêne-Bougeries, near Geneva. Websites and apps for craftspeople, associations and independents in French-speaking Switzerland and Haute-Savoie, including Annecy.',
+          'Web and mobile studio based in Duingt, on the shores of Lake Annecy. Websites and apps for craftspeople, associations and independents in Haute-Savoie, Geneva and French-speaking Switzerland.',
         areaServed: ['Geneva', 'French-speaking Switzerland', 'Haute-Savoie', 'Annecy'],
         inLanguage: 'en',
       };
@@ -59,7 +59,6 @@ function getLocalizedLocalBusinessData(locale: string) {
 
 export default function LocalBusinessSeo({ locale }: LocalBusinessSeoProps) {
   const { description, areaServed, inLanguage } = getLocalizedLocalBusinessData(locale);
-  const { geo, ...address } = STUDIO_ADDRESS;
 
   return (
     <JsonLdScript
@@ -74,8 +73,7 @@ export default function LocalBusinessSeo({ locale }: LocalBusinessSeoProps) {
         url: SITE_URL,
         image: `${SITE_URL}/og-default.jpg`,
         inLanguage,
-        address: { '@type': 'PostalAddress', ...address },
-        geo: { '@type': 'GeoCoordinates', ...geo },
+        address: { '@type': 'PostalAddress', ...STUDIO_ADDRESS },
         areaServed,
         sameAs: ['https://www.linkedin.com/in/matthieucomperat/'],
       }}

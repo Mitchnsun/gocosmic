@@ -30,21 +30,16 @@ describe('LocalBusinessSeo', () => {
         name: 'Cosmic Studio',
         alternateName: 'Go Cosmic',
         description:
-          'Web and mobile studio based in Chêne-Bougeries, near Geneva. Websites and apps for craftspeople, associations and independents in French-speaking Switzerland and Haute-Savoie, including Annecy.',
+          'Web and mobile studio based in Duingt, on the shores of Lake Annecy. Websites and apps for craftspeople, associations and independents in Haute-Savoie, Geneva and French-speaking Switzerland.',
         url: 'https://www.gocosmic.dev',
         image: 'https://www.gocosmic.dev/og-default.jpg',
         inLanguage: 'en',
         address: {
           '@type': 'PostalAddress',
-          addressLocality: 'Chêne-Bougeries',
-          postalCode: '1224',
-          addressRegion: 'GE',
-          addressCountry: 'CH',
-        },
-        geo: {
-          '@type': 'GeoCoordinates',
-          latitude: 46.195,
-          longitude: 6.186,
+          addressLocality: 'Duingt',
+          postalCode: '74410',
+          addressRegion: 'Auvergne-Rhône-Alpes',
+          addressCountry: 'FR',
         },
         areaServed: ['Geneva', 'French-speaking Switzerland', 'Haute-Savoie', 'Annecy'],
         sameAs: ['https://www.linkedin.com/in/matthieucomperat/'],
@@ -59,7 +54,7 @@ describe('LocalBusinessSeo', () => {
       expect.objectContaining({
         data: expect.objectContaining({
           description:
-            'Studio web et mobile installé à Chêne-Bougeries, près de Genève. Sites et applications pour les artisans, associations et indépendants de Suisse romande et de Haute-Savoie, notamment à Annecy.',
+            'Studio web et mobile basé à Duingt, au bord du lac d’Annecy. Sites et applications pour les artisans, associations et indépendants de Haute-Savoie, de Genève et de Suisse romande.',
           inLanguage: 'fr',
           areaServed: ['Genève', 'Suisse romande', 'Haute-Savoie', 'Annecy'],
         }),

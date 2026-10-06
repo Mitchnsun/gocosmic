@@ -2,7 +2,7 @@ import { useLocale } from 'next-intl';
 import { JsonLdScript } from 'next-seo';
 
 import { getCanonicalUrl } from '@/i18n/canonical';
-import { BRAND_NAME, SITE_URL, STUDIO_ADDRESS } from '@/lib/config';
+import { BRAND_NAME, FOUNDER_HOME, SITE_URL } from '@/lib/config';
 
 function getJobTitleByLocale(locale: string): string {
   switch (locale) {
@@ -27,7 +27,6 @@ function getJobTitleByLocale(locale: string): string {
 
 export default function PersonSeo() {
   const locale = useLocale();
-  const { addressLocality, addressCountry } = STUDIO_ADDRESS;
   const personJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -45,7 +44,7 @@ export default function PersonSeo() {
     ],
     homeLocation: {
       '@type': 'Place',
-      address: { '@type': 'PostalAddress', addressLocality, addressCountry },
+      address: { '@type': 'PostalAddress', ...FOUNDER_HOME },
     },
   };
 
