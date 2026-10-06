@@ -4,11 +4,12 @@
     "link": "Volver al inicio",
     "title": "Esta página se ha salido de su órbita.",
     "eyebrow": "[ Error 404 ]",
-    "contact": "Dinos qué estabas buscando"
+    "contact": "Dinos qué estabas buscando",
+    "meta_title": "Página no encontrada | Cosmic Studio"
   },
   "meta": {
     "title": "Creación de páginas web · Ginebra y Annecy | Cosmic Studio",
-    "description": "Creación de páginas web para artesanos, asociaciones y autónomos de Ginebra, Annecy y Alta Saboya. Una web que la gente encuentra en Google, y alguien que se ocupa de ella una vez publicada."
+    "description": "Creación de páginas web para artesanos, asociaciones y autónomos de Ginebra, Annecy y Alta Saboya. Una web que se encuentra en Google, y alguien que la cuida."
   },
   "language": {
     "current": "Idioma actual: {language}",
@@ -50,5 +51,8 @@
     "label": "Tema",
     "toggle_light": "Cambiar al tema claro",
     "toggle_dark": "Cambiar al tema oscuro"
+  },
+  "og": {
+    "image_alt": "Cosmic Studio · Tu negocio merece ser visto."
   }
 }

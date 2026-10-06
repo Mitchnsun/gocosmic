@@ -8,6 +8,18 @@ export const BRAND_NAME = 'Cosmic Studio';
 /** Former studio name, still declared to search engines as an alternate name. */
 export const LEGACY_BRAND_NAME = 'Go Cosmic';
 
+/** Founder of the studio, declared as a person in structured data. */
+export const FOUNDER_NAME = 'Matthieu Compérat';
+
+/** Public contact address, shown on the contact page and declared in structured data. */
+export const CONTACT_EMAIL = 'contact@gocosmic.dev';
+
+/** Registration facts of the sole-trader business, as on the legal notice. */
+export const COMPANY_REGISTRATION = {
+  foundingDate: '2016-10-17',
+  siret: '82320036500026',
+} as const;
+
 /** Registered office declared in structured data, at the town level, as on the legal notice. */
 export const STUDIO_ADDRESS = {
   addressLocality: 'Duingt',

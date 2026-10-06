@@ -4,11 +4,12 @@
     "link": "Zurück zur Startseite",
     "title": "Diese Seite ist aus der Umlaufbahn geraten.",
     "eyebrow": "[ Fehler 404 ]",
-    "contact": "Sagen Sie uns, was Sie gesucht haben"
+    "contact": "Sagen Sie uns, was Sie gesucht haben",
+    "meta_title": "Seite nicht gefunden | Cosmic Studio"
   },
   "meta": {
     "title": "Website erstellen lassen · Genf & Annecy | Cosmic Studio",
-    "description": "Websites für Handwerksbetriebe, Vereine und Selbstständige in Genf, Annecy und Hochsavoyen. Eine Website, die man bei Google findet, und ein Mensch, der sich auch nach dem Start darum kümmert."
+    "description": "Websites für Handwerksbetriebe, Vereine und Selbstständige in Genf, Annecy und Hochsavoyen. Bei Google auffindbar und auch nach dem Start betreut."
   },
   "language": {
     "current": "Aktuelle Sprache: {language}",
@@ -50,5 +51,8 @@
     "label": "Farbschema",
     "toggle_light": "Zum hellen Farbschema wechseln",
     "toggle_dark": "Zum dunklen Farbschema wechseln"
+  },
+  "og": {
+    "image_alt": "Cosmic Studio · Ihr Betrieb verdient es, gesehen zu werden."
   }
 }

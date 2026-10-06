@@ -31,9 +31,12 @@ describe('LocalBusinessSeo', () => {
         alternateName: 'Go Cosmic',
         description:
           'Web and mobile studio based in Duingt, on the shores of Lake Annecy. Websites and apps for craftspeople, associations and independents in Haute-Savoie, Geneva and French-speaking Switzerland.',
-        url: 'https://www.gocosmic.dev',
+        url: 'https://www.gocosmic.dev/en',
         image: 'https://www.gocosmic.dev/og-default.jpg',
-        inLanguage: 'en',
+        email: 'contact@gocosmic.dev',
+        foundingDate: '2016-10-17',
+        identifier: { '@type': 'PropertyValue', propertyID: 'SIRET', value: '82320036500026' },
+        founder: { '@type': 'Person', '@id': 'https://www.gocosmic.dev/#person', name: 'Matthieu Compérat' },
         address: {
           '@type': 'PostalAddress',
           addressLocality: 'Duingt',
@@ -55,7 +58,7 @@ describe('LocalBusinessSeo', () => {
         data: expect.objectContaining({
           description:
             'Studio web et mobile basé à Duingt, au bord du lac d’Annecy. Sites et applications pour les artisans, associations et indépendants de Haute-Savoie, de Genève et de Suisse romande.',
-          inLanguage: 'fr',
+          url: 'https://www.gocosmic.dev/fr',
           areaServed: ['Genève', 'Suisse romande', 'Haute-Savoie', 'Annecy'],
         }),
       })
@@ -70,7 +73,9 @@ describe('LocalBusinessSeo', () => {
     render(<LocalBusinessSeo locale={locale} />);
 
     expect(jsonLdScriptMock).toHaveBeenCalledWith(
-      expect.objectContaining({ data: expect.objectContaining({ inLanguage: locale, areaServed }) })
+      expect.objectContaining({
+        data: expect.objectContaining({ url: `https://www.gocosmic.dev/${locale}`, areaServed }),
+      })
     );
   });
 });

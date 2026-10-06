@@ -2,7 +2,7 @@
   "legal": {
     "privacy": {
       "meta": {
-        "title": "Datenschutzerklärung - Cosmic Studio",
+        "title": "Datenschutzerklärung | Cosmic Studio",
         "description": "Wie Cosmic Studio personenbezogene Daten verarbeitet: Formulare, Terminbuchung, E-Mails, Reichweitenmessung, Aufbewahrungsfristen und Ihre Rechte."
       },
       "eyebrow": "DSGVO",
@@ -75,7 +75,7 @@
     },
     "legalNotice": {
       "meta": {
-        "title": "Impressum - Cosmic Studio",
+        "title": "Impressum | Cosmic Studio",
         "description": "Anbieter, Hosting, geistiges Eigentum, Haftung und Kontakt von Cosmic Studio."
       },
       "eyebrow": "Rechtliche Informationen",
@@ -135,7 +135,7 @@
     },
     "terms": {
       "meta": {
-        "title": "Allgemeine Geschäftsbedingungen - Cosmic Studio",
+        "title": "Allgemeine Geschäftsbedingungen | Cosmic Studio",
         "description": "Allgemeine Geschäftsbedingungen von Cosmic Studio: Abonnement, Optionen, Laufzeit, Kündigung und Eigentum am Code."
       },
       "eyebrow": "Geschäftsbedingungen",

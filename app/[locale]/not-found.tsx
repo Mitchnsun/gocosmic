@@ -1,10 +1,19 @@
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
+import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
 import { SectionHeading } from '@/components/SectionHeading';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, ghostPill, primaryPill, SECTION_Y } from '@/design-system/pill';
 import { Link } from '@/i18n/navigation';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('404');
+
+  // No canonical: the layout's points to the homepage, which a missing page is not.
+  return { title: t('meta_title'), robots: { index: false, follow: true }, alternates: null };
+}
 
 export default function NotFound() {
   const t = useTranslations('404');

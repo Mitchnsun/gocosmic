@@ -26,7 +26,7 @@ The `Component.tsx` / `Component.hook.ts` (or `use*.ts`) split is intentional: c
 
 ### Logo
 
-The logo is an `<h1>` link pointing to `/`: the studio name (`BRAND_NAME` from `lib/config.ts`, overridable with the `logo` prop) in Space Grotesk 700 with `-0.02em` tracking, followed by an `aerospace` dot. Its accessible name contains the visible text (`navigation.home`, e.g. "Cosmic Studio, home"), as WCAG 2.5.3 requires.
+The logo is a link pointing to `/`, not a heading (each page has its own single `<h1>`): the studio name (`BRAND_NAME` from `lib/config.ts`, overridable with the `logo` prop) in Space Grotesk 700 with `-0.02em` tracking, followed by an `aerospace` dot. Its accessible name contains the visible text (`navigation.home`, e.g. "Cosmic Studio, home"), as WCAG 2.5.3 requires.
 
 ### Skip-to-content link (keyboard accessibility)
 

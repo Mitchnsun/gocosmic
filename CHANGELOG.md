@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Changed
 
 - Search engines now see the studio at its registered office in Duingt, on Lake Annecy, matching the legal notice, while still listing Geneva and French-speaking Switzerland among the areas served
+- Shorter page titles and descriptions in all five languages, so search results show them in full, and each project page now names the project and its type
+- Links shared on social networks now show each page's own title, address and language, with a description of the image, including for the legal pages
+- Search engines now get the site's name, the breadcrumb trail of each project page and the list of projects, along with the studio's contact email, registration date and business number
+- The legal pages (privacy policy, legal notice, terms of sale) no longer appear in search results, and a missing page no longer passes itself off as the homepage
 
 ## [2.1.0] - 2026-10-06
 

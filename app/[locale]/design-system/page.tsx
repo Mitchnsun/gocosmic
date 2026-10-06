@@ -5,19 +5,20 @@ import { DesignSystemShowcase, type ShowcaseLabels } from '@/components/DesignSy
 import { SectionHeading } from '@/components/SectionHeading';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, SECTION_Y } from '@/design-system/pill';
-import { getAlternates } from '@/i18n/canonical';
+import { buildPageMetadata } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'design-system' });
 
-  return {
+  return buildPageMetadata({
+    locale,
+    routeKey: '/design-system',
     title: t('meta.title'),
     description: t('meta.description'),
-    alternates: getAlternates(locale, '/design-system'),
     // Internal page: kept out of search engines and out of the sitemap.
     robots: { index: false, follow: false },
-  };
+  });
 }
 
 export default async function DesignSystemPage() {

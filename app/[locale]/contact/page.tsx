@@ -1,4 +1,5 @@
-import { createTranslator, NextIntlClientProvider } from 'next-intl';
+import type { Metadata } from 'next';
+import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages, getTranslations } from 'next-intl/server';
 import type { ReactNode } from 'react';
 
@@ -10,35 +11,20 @@ import { AVAILABILITY } from '@/components/StatusBar/StatusBar.constants';
 import { formatStartMonth } from '@/components/StatusBar/StatusBar.utils';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, SECTION_Y } from '@/design-system/pill';
-import { getAlternates } from '@/i18n/canonical';
 import { Link } from '@/i18n/navigation';
-import { getOgImages } from '@/lib/og';
 import { getRegion } from '@/lib/region.server';
+import { buildPageMetadata } from '@/lib/seo';
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const messages = await getMessages();
-  const t = createTranslator({ messages, locale });
-  const title = t('meta.title');
-  const description = t('meta.description');
-  const { og, twitter } = getOgImages(locale);
+  const t = await getTranslations({ locale, namespace: 'meta' });
 
-  return {
-    title,
-    description,
-    alternates: getAlternates(locale, '/contact'),
-    openGraph: {
-      title,
-      description,
-      images: [og],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: [twitter],
-    },
-  };
+  return buildPageMetadata({
+    locale,
+    routeKey: '/contact',
+    title: t('title'),
+    description: t('description'),
+  });
 }
 
 const em = (chunks: ReactNode) => <em>{chunks}</em>;

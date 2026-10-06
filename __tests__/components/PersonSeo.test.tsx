@@ -44,7 +44,9 @@ describe('PersonSeo', () => {
         data: expect.objectContaining({
           '@context': 'https://schema.org',
           '@type': 'Person',
+          '@id': 'https://www.gocosmic.dev/#person',
           name: 'Matthieu Compérat',
+          worksFor: { '@id': 'https://www.gocosmic.dev/#company' },
         }),
       })
     );
@@ -121,13 +123,13 @@ describe('PersonSeo', () => {
     );
   });
 
-  it('should default to French job title for unknown locale', () => {
+  it('should default to the English job title for unknown locale', () => {
     vi.mocked(useLocale).mockReturnValue('ja' as ReturnType<typeof useLocale>);
     render(<PersonSeo />);
 
     expect(jsonLdScriptMock).toHaveBeenCalledWith(
       expect.objectContaining({
-        data: expect.objectContaining({ jobTitle: 'Fondateur de Cosmic Studio, développeur web et mobile' }),
+        data: expect.objectContaining({ jobTitle: 'Founder of Cosmic Studio, web and mobile developer' }),
       })
     );
   });

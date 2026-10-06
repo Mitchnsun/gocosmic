@@ -45,16 +45,17 @@ describe('Header Component', () => {
   });
 
   it('should render the header correctly', () => {
-    const { getByRole } = render(<Header />);
+    const { getByRole, queryByRole } = render(<Header />);
 
     const header = getByRole('banner');
     expect(header).toBeInTheDocument();
     expect(header).toHaveClass('text-fg', 'sticky', 'top-0', 'backdrop-blur-md');
     expectHeaderHeight(header, 64);
 
-    const heading = getByRole('heading', { level: 1 });
-    expect(heading).toHaveTextContent('Cosmic Studio.');
+    // The logo is not a heading: each page has its own single h1.
+    expect(queryByRole('heading')).not.toBeInTheDocument();
     expect(getByRole('link', { name: 'Cosmic Studio, home' })).toHaveAttribute('href', '/');
+    expect(getByRole('link', { name: 'Cosmic Studio, home' })).toHaveTextContent('Cosmic Studio.');
     expect(getByRole('link', { name: /skip to main content/i })).toHaveAttribute('href', '#main-content');
   });
 
