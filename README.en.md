@@ -51,7 +51,7 @@ messages/
   │   ├── local.json         # Local SEO page content
   │   ├── legal.json         # Privacy policy, legal notice and terms of sale
   │   ├── psc-supersprint.json # PSC Supersprint case study content
-  │   └── design-system.json # Internal design system page (noindex)
+  │   └── design-system.json # Internal design system page (`yarn dev` only)
   ├── fr/              # French (same structure)
   ├── es/              # Spanish (same structure)
   ├── de/              # German (same structure)

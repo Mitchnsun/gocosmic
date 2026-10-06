@@ -1,7 +1,7 @@
 # DESIGN_GUIDELINE.md — Cosmic Studio
 
 > Single design reference for building new components and pages **consistent with the homepage**.
-> Sources: `app/globals.css` (implemented tokens), shipped components (`Header`, `StatusBar`, `ProcessTimeline`, `CTAFinal`, `HeroSection`…), the EPIC redesign ticket [#58](https://github.com/Mitchnsun/gocosmic/issues/58), the rebrand EPIC [#98](https://github.com/Mitchnsun/gocosmic/issues/98) and the light theme EPIC [#113](https://github.com/Mitchnsun/gocosmic/issues/113). Every primitive is shown in both themes on the internal `/design-system` page (noindex).
+> Sources: `app/globals.css` (implemented tokens), shipped components (`Header`, `StatusBar`, `ProcessTimeline`, `CTAFinal`, `HeroSection`…), the EPIC redesign ticket [#58](https://github.com/Mitchnsun/gocosmic/issues/58), the rebrand EPIC [#98](https://github.com/Mitchnsun/gocosmic/issues/98) and the light theme EPIC [#113](https://github.com/Mitchnsun/gocosmic/issues/113). Every primitive is shown in both themes on the internal `/design-system` page (served by `yarn dev` only).
 >
 > **For an AI agent:** read this file **before** writing any JSX. The golden rule: never **reinvent** colors, fonts, or spacing — **reuse** the tokens and patterns described here. When in doubt, copy the nearest existing component.
 

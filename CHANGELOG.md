@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.1.1] - 2026-10-06
+
+### Fixed
+
+- The internal design system page is no longer reachable on the live site: it now shows the "page not found" screen there and stays available only on a developer's machine
+
 ## [2.1.0] - 2026-10-06
 
 ### Added
