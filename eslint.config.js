@@ -19,10 +19,12 @@ const OFF_PALETTE =
   '/(^|[\\s:-])(slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-[0-9]{2,3}/';
 
 /**
- * Text classes fainter than `text-ghost/50`, e.g. `text-ghost/35`, which fall under the 4.5:1 WCAG AA
- * contrast ratio on the dark backgrounds. `\x2F` stands for the slash, which esquery regexes cannot hold.
+ * Text classes fainter than `text-ghost/50`, e.g. `text-ghost/35`, `text-ghost/[0.35]` or
+ * `text-ghost/[35%]`, which fall under the 4.5:1 WCAG AA contrast ratio on the dark backgrounds.
+ * `\x2F` stands for the slash, which esquery regexes cannot hold.
  */
-const FAINT_TEXT = '/(^|[\\s:])text-ghost\\x2F([0-9]|[1-4][0-9])($|[^0-9])/';
+const FAINT_TEXT =
+  '/(^|[\\s:])text-ghost\\x2F(([0-9]|[1-4][0-9])($|[^0-9])|\\[(0|0?\\.[0-4][0-9]*|([0-9]|[1-4][0-9])(\\.[0-9]+)?%)\\])/';
 
 /**
  * A shared ESLint configuration for the repository.
