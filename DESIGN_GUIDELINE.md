@@ -34,6 +34,7 @@ Official tokens declared in `app/globals.css` under `@theme` (Tailwind v4 → av
 | `ghost`        | `#F8F8FF` | **Primary text** on dark backgrounds                                            |
 | `aerospace`    | `#FF4F00` | **Primary accent** — CTA, attention signal, heading gradients                   |
 | `royal`        | `#7851A9` | Secondary accent — planet, glows, variants                                      |
+| `royal-light`  | `#9E83C3` | Royal for **text** (labels, eyebrows): plain `royal` is only 3.4:1 on `void`    |
 | `jungle`       | `#29AB87` | "System" accent — **availability / online / success**                           |
 | `cosmic-latte` | `#FFF8E7` | Soft accent / warm off-white (rare)                                             |
 | `chocolate`    | `#58111A` | Deep brown, orange gradient support (rare)                                      |
@@ -47,8 +48,10 @@ Official tokens declared in `app/globals.css` under `@theme` (Tailwind v4 → av
 | Subtle border / hairline | `rgba(248,248,255,.08)` | `border-ghost/8`  |
 | Stronger border          | `rgba(248,248,255,.16)` | `border-ghost/15` |
 | Secondary text           | `rgba(248,248,255,.55)` | `text-ghost/55`   |
-| Tertiary / meta text     | `rgba(248,248,255,.35)` | `text-ghost/35`   |
+| Tertiary / meta text     | `rgba(248,248,255,.50)` | `text-ghost/50`   |
 | Card surface on void     | `rgba(248,248,255,.02)` | `bg-ghost/[0.02]` |
+
+> ♿ **Contrast floor**: `text-ghost/50` is the faintest text allowed. It reaches 5:1 on `void`, `ember` and cards, above the 4.5:1 WCAG AA minimum, whereas `/45` and below fail. An ESLint rule rejects fainter `text-ghost` classes; decorative graphics that borrow the text colour (`currentColor` strokes) disable it with a reason.
 
 > ❌ **Never** use Tailwind's default palettes (`slate-*`, `gray-*`, `blue-*`, `amber-*`…). An ESLint rule (`no-restricted-syntax` in `eslint.config.js`) rejects them in `app/`, `components/`, `design-system/` and `lib/`: pick a token or a `ghost` opacity instead.
 
@@ -137,7 +140,7 @@ Common text format: `[ NAME · NN ]` or `SECTOR — STUDIO`.
 
 ### 3.3 HUD labels / coordinates
 
-Ambient mono metadata: studio base and altitude (`ALT. 424M`, from `STUDIO_BASES` in `lib/config.ts`, region-aware), versions (`v2.026.05`), counters (`[ 01 / 04 ]`), statuses (`DISPONIBLE`). Color `text-ghost/35`, discreet, placed in corners or at the bottom of blocks. Use sparingly for "mission-control" texture.
+Ambient mono metadata: studio base and altitude (`ALT. 424M`, from `STUDIO_BASES` in `lib/config.ts`, region-aware), versions (`v2.026.05`), counters (`[ 01 / 04 ]`), statuses (`DISPONIBLE`). Color `text-ghost/50`, discreet, placed in corners or at the bottom of blocks. Use sparingly for "mission-control" texture.
 
 ### 3.4 Starfield background + glow
 
@@ -185,7 +188,7 @@ Accent tokens accepted by all of them: `aerospace`, `royal`, `jungle`, `ghost`. 
 
 ### 3.9 Cards
 
-Background `void` slightly lifted (`bg-ghost/[0.02]`), border `ghost/8`, `rounded-2xl`, hover that lightens the background and/or shifts an accent arrow. Card number in mono `ghost/35`, title `font-display`, tags as `Chip`s. List bullets are 6 px dots (`h-1.5 w-1.5`): `jungle` for what is included, `ghost/35` otherwise.
+Background `void` slightly lifted (`bg-ghost/[0.02]`), border `ghost/8`, `rounded-2xl`, hover that lightens the background and/or shifts an accent arrow. Card number in mono `ghost/50`, title `font-display`, tags as `Chip`s. List bullets are 6 px dots (`h-1.5 w-1.5`): `jungle` for what is included, `ghost/35` otherwise.
 
 ### 3.10 Form fields
 
@@ -239,7 +242,7 @@ README.md               ← (optional) props, design, a11y, reduced-motion notes
 
 ```
 Background ........ bg-void
-Text .............. text-ghost / secondary text-ghost/55 / meta text-ghost/35
+Text .............. text-ghost / secondary text-ghost/55 / meta text-ghost/50
 Accent ............ text-aerospace · bg-aerospace (rare, 1 per zone)
 Availability ...... jungle + pulsing signal dot
 Border ............ border-ghost/8 (subtle) · /15 (strong)

@@ -41,7 +41,7 @@ Active plugins and their roles:
 | `@next/eslint-plugin-next`             | Next.js-specific rules                                                                        |
 | `eslint-plugin-only-warn`              | Downgrades rule severities to warnings (CI still fails on any warning via `--max-warnings 0`) |
 
-A repo-specific `no-restricted-syntax` rule also rejects raw Tailwind color utilities (`slate-*`, `gray-*`, `blue-*`…) outside the design-system tokens — see `DESIGN_GUIDELINE.md` §2.1.
+A repo-specific `no-restricted-syntax` rule also rejects raw Tailwind color utilities (`slate-*`, `gray-*`, `blue-*`…) outside the design-system tokens, and `text-ghost` below `/50`, which fails WCAG AA contrast — see `DESIGN_GUIDELINE.md` §2.1.
 
 ### Component patterns
 

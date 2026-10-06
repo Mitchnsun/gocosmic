@@ -34,7 +34,7 @@ export function LegalDocument({ eyebrow, title, updated, intro, sections, childr
             titleId="legal-title"
             titleClassName="text-[clamp(2.25rem,5vw,3.75rem)] leading-[1.02]"
           />
-          <p className="text-ghost/45 text-2xs font-mono tracking-[0.16em] uppercase">{updated}</p>
+          <p className="text-ghost/50 text-2xs font-mono tracking-[0.16em] uppercase">{updated}</p>
           <p className="text-ghost/70 max-w-[64ch] text-lg leading-relaxed text-pretty">{intro}</p>
         </div>
 

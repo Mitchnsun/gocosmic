@@ -26,7 +26,7 @@ const StatusBar = ({ availability = AVAILABILITY, region = DEFAULT_REGION }: Sta
       role="status"
       aria-label={t('aria_label')}
       aria-live="off"
-      className="border-ghost/8 bg-void text-ghost/35 text-3xs relative z-50 flex h-8 w-full items-center border-b font-mono tracking-[0.18em] uppercase">
+      className="border-ghost/8 bg-void text-ghost/50 text-3xs relative z-50 flex h-8 w-full items-center border-b font-mono tracking-[0.18em] uppercase">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <p className="flex min-w-0 items-center gap-2">
           <span className="relative flex h-2 w-2 shrink-0" aria-hidden="true">

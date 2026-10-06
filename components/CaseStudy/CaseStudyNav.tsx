@@ -27,7 +27,7 @@ export const CaseStudyNav = ({ navigation }: CaseStudyNavProps) => {
     <nav aria-label={ariaLabel} className="grid gap-4 md:grid-cols-2">
       {previous && (
         <Link href={previous.href} className={cardClassName}>
-          <span className="text-ghost/35 text-2xs flex items-center gap-2 font-mono tracking-[0.24em] uppercase">
+          <span className="text-ghost/50 text-2xs flex items-center gap-2 font-mono tracking-[0.24em] uppercase">
             <ArrowLeftIcon className="size-3" aria-hidden="true" />
             {previousLabel}
           </span>
@@ -36,7 +36,7 @@ export const CaseStudyNav = ({ navigation }: CaseStudyNavProps) => {
       )}
       {next && (
         <Link href={next.href} className={cn(cardClassName, { 'md:col-start-2 md:items-end md:text-right': true })}>
-          <span className="text-ghost/35 text-2xs flex items-center gap-2 font-mono tracking-[0.24em] uppercase">
+          <span className="text-ghost/50 text-2xs flex items-center gap-2 font-mono tracking-[0.24em] uppercase">
             {nextLabel}
             <ArrowRightIcon className="size-3" aria-hidden="true" />
           </span>

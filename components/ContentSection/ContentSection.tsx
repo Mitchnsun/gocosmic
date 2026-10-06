@@ -59,7 +59,7 @@ export const ContentSection = ({
                 {eyebrow}
               </p>
             )}
-            {index && <span className="text-ghost/35 text-3xs font-mono tracking-[0.2em]">{index}</span>}
+            {index && <span className="text-ghost/50 text-3xs font-mono tracking-[0.2em]">{index}</span>}
           </div>
         )}
         <h2
