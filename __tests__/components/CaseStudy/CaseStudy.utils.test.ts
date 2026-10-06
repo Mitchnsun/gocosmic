@@ -44,7 +44,7 @@ describe('formatReleaseDate', () => {
   it.each([
     ['fr', '28 février 2026'],
     ['de', '28. Februar 2026'],
-    ['en', 'February 28, 2026'],
+    ['en', '28 February 2026'],
   ])('writes the release date in full in %s', (locale, expected) => {
     expect(formatReleaseDate('2026-02-28', locale)).toBe(expected);
   });

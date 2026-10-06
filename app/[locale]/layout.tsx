@@ -89,7 +89,7 @@ export default async function LocaleLayout({
               <Header region={region} />
               <main id="main-content">{children}</main>
               <Footer region={region} />
-              <WebsiteSeo locale={locale} />
+              <WebsiteSeo />
               <CookieConsent />
               <LocalBusinessSeo locale={locale} />
             </CookieConsentProvider>

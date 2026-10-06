@@ -51,6 +51,11 @@ export const buildCaseStudyMeta = (slug: CaseStudySlug, tList: ProjectsTranslato
   return [String(project.year), tList(`items.${project.i18nKey}.client`), tList(`kinds.${project.kind}`)];
 };
 
-/** Long date of a release (`YYYY-MM-DD`) in the page locale, e.g. "28 février 2026"; read in UTC so it never shifts a day. */
+/**
+ * Long date of a release (`YYYY-MM-DD`) in the page locale, e.g. "28 février 2026"; read in UTC so it never shifts
+ * a day. English uses the British order ("28 February 2026"), like the rest of the English pages.
+ */
 export const formatReleaseDate = (date: string, locale: string): string =>
-  new Intl.DateTimeFormat(locale, { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(`${date}T00:00:00Z`));
+  new Intl.DateTimeFormat(locale === 'en' ? 'en-GB' : locale, { dateStyle: 'long', timeZone: 'UTC' }).format(
+    new Date(`${date}T00:00:00Z`)
+  );

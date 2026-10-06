@@ -31,7 +31,7 @@ describe('LocalBusinessSeo', () => {
         alternateName: 'Go Cosmic',
         description:
           'Web and mobile studio based in Chêne-Bougeries, near Geneva. Websites and apps for craftspeople, associations and independents in French-speaking Switzerland and Haute-Savoie, including Annecy.',
-        url: 'https://www.gocosmic.dev/en',
+        url: 'https://www.gocosmic.dev',
         image: 'https://www.gocosmic.dev/og-default.jpg',
         email: 'contact@gocosmic.dev',
         founder: { '@type': 'Person', '@id': 'https://www.gocosmic.dev/#person', name: 'Matthieu Compérat' },
@@ -56,7 +56,6 @@ describe('LocalBusinessSeo', () => {
         data: expect.objectContaining({
           description:
             'Studio web et mobile installé à Chêne-Bougeries, près de Genève. Sites et applications pour les artisans, associations et indépendants de Suisse romande et de Haute-Savoie, notamment à Annecy.',
-          url: 'https://www.gocosmic.dev/fr',
           areaServed: ['Genève', 'Suisse romande', 'Haute-Savoie', 'Annecy'],
         }),
       })
@@ -72,7 +71,7 @@ describe('LocalBusinessSeo', () => {
 
     expect(jsonLdScriptMock).toHaveBeenCalledWith(
       expect.objectContaining({
-        data: expect.objectContaining({ url: `https://www.gocosmic.dev/${locale}`, areaServed }),
+        data: expect.objectContaining({ url: 'https://www.gocosmic.dev', areaServed }),
       })
     );
   });

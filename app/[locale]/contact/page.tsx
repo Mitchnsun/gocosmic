@@ -12,6 +12,7 @@ import { formatStartMonth } from '@/components/StatusBar/StatusBar.utils';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, SECTION_Y } from '@/design-system/pill';
 import { Link } from '@/i18n/navigation';
+import { CONTACT_EMAIL } from '@/lib/config';
 import { getRegion } from '@/lib/region.server';
 import { buildPageMetadata } from '@/lib/seo';
 
@@ -54,7 +55,7 @@ export default async function Contact() {
             <ContactDetails
               ariaLabel={t('details.aria_label')}
               details={[
-                { label: t('details.email_label'), value: 'contact@gocosmic.dev', href: 'mailto:contact@gocosmic.dev' },
+                { label: t('details.email_label'), value: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}` },
                 {
                   label: t('details.support_label'),
                   value: 'support@gocosmic.dev',

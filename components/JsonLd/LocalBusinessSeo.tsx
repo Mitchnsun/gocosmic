@@ -1,6 +1,6 @@
 import { JsonLdScript } from 'next-seo';
 
-import { getCanonicalUrl, SITE_URL } from '@/i18n/canonical';
+import { SITE_URL } from '@/i18n/canonical';
 import { BRAND_NAME, CONTACT_EMAIL, FOUNDER_NAME, LEGACY_BRAND_NAME, STUDIO_ADDRESS } from '@/lib/config';
 
 type LocalBusinessSeoProps = {
@@ -65,7 +65,7 @@ export default function LocalBusinessSeo({ locale }: LocalBusinessSeoProps) {
         name: BRAND_NAME,
         alternateName: LEGACY_BRAND_NAME,
         description,
-        url: getCanonicalUrl(locale, '/'),
+        url: SITE_URL,
         image: `${SITE_URL}/og-default.jpg`,
         email: CONTACT_EMAIL,
         founder: { '@type': 'Person', '@id': `${SITE_URL}/#person`, name: FOUNDER_NAME },

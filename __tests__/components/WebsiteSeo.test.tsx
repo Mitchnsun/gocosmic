@@ -18,7 +18,7 @@ describe('WebsiteSeo', () => {
   });
 
   it('should render WebSite JSON-LD', () => {
-    const { getByTestId } = render(<WebsiteSeo locale="fr" />);
+    const { getByTestId } = render(<WebsiteSeo />);
 
     expect(getByTestId('website-json-ld')).toBeInTheDocument();
     expect(jsonLdScriptMock).toHaveBeenCalledWith({
@@ -30,7 +30,7 @@ describe('WebsiteSeo', () => {
         url: 'https://www.gocosmic.dev',
         name: 'Cosmic Studio',
         alternateName: 'Go Cosmic',
-        inLanguage: 'fr',
+        inLanguage: ['en', 'fr', 'es', 'de', 'it'],
         publisher: { '@id': 'https://www.gocosmic.dev/#company' },
       },
     });

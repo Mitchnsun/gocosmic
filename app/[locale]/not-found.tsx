@@ -11,8 +11,8 @@ import { Link } from '@/i18n/navigation';
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('404');
 
-  // No canonical: the layout's points to the homepage, which a missing page is not.
-  return { title: t('meta_title'), robots: { index: false, follow: true }, alternates: null };
+  // Its own title and description, and no social card: the layout's describes the homepage.
+  return { title: t('meta_title'), description: t('description'), openGraph: null, twitter: null };
 }
 
 export default function NotFound() {
