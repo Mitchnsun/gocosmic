@@ -71,7 +71,7 @@ export interface CTAFinalProps {
  * Final homepage call-to-action with an animated starfield background that
  * enters "warp speed" when the CTA button is hovered or focused. In the light
  * theme the immersive tone shows a warm sun halo instead, while the sober tone
- * stays a dark island, stars included.
+ * keeps its stars, drawn dark on the light background.
  *
  * The headline uses an animated accent gradient and the button pulses with a
  * glow effect. All motion is disabled when the user prefers reduced motion and
@@ -103,8 +103,9 @@ const CTAFinal = ({
   const prefersReducedMotion = usePrefersReducedMotion(respectReducedMotion);
   // eslint-disable-next-line security/detect-object-injection
   const preset = TONE_PRESETS[tone];
+  const light = useResolvedTheme() === 'light';
   // In the light theme the immersive tone trades its stars for a sun halo, so there is nothing to warp.
-  const solar = useResolvedTheme() === 'light' && !preset.darkIsland;
+  const solar = light && preset.halo;
   const warpEnabled = (warpOnHover ?? preset.warp) && !prefersReducedMotion && !solar;
   const { isWarping, startWarp, stopWarp } = useWarpEffect(warpEnabled);
 
@@ -132,7 +133,6 @@ const CTAFinal = ({
       data-reduced-motion={prefersReducedMotion ? 'true' : 'false'}
       data-warping={isWarping ? 'true' : 'false'}
       data-tone={tone}
-      data-theme={preset.darkIsland ? 'dark' : undefined}
       className={cn(
         'group text-fg relative isolate overflow-hidden px-4 sm:px-6',
         preset.section,
@@ -145,6 +145,7 @@ const CTAFinal = ({
         speed={currentSpeed}
         respectReducedMotion={respectReducedMotion}
         solar={solar}
+        tone={light ? 'light' : 'dark'}
       />
 
       <div className="relative z-10 m-auto flex max-w-5xl flex-col items-center gap-6 text-center">

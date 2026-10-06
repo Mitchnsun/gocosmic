@@ -80,7 +80,7 @@
       },
       "eyebrow": "Informazioni legali",
       "title": "Note legali",
-      "updated": "Ultimo aggiornamento: 26 maggio 2026",
+      "updated": "Ultimo aggiornamento: 28 settembre 2026",
       "intro": "Queste note legali identificano l'editore del sito www.gocosmic.dev e precisano le responsabilità legate al suo utilizzo.",
       "sections": [
         {
@@ -120,6 +120,10 @@
           ]
         },
         {
+          "title": "Prezzi",
+          "body": ["I prezzi indicati sul sito sono IVA esclusa; l'IVA all'aliquota vigente viene aggiunta in fattura."]
+        },
+        {
           "title": "Contatti",
           "body": ["Per qualsiasi domanda legale, sulla privacy o sulla sicurezza, scrivi a support@gocosmic.dev."]
         }
@@ -132,7 +136,7 @@
       },
       "eyebrow": "Condizioni di vendita",
       "title": "Condizioni generali di vendita",
-      "updated": "Ultimo aggiornamento: 26 settembre 2026",
+      "updated": "Ultimo aggiornamento: 28 settembre 2026",
       "intro": "Le presenti condizioni generali di vendita si applicano all'abbonamento e ai servizi offerti da Cosmic Studio su www.gocosmic.dev.",
       "sections": [
         {
@@ -157,7 +161,8 @@
           "title": "Prezzo e fatturazione",
           "body": [
             "I prezzi dell'abbonamento sono quelli indicati nella pagina Servizi & prezzi al momento della sottoscrizione, in base alle opzioni scelte. La fatturazione è mensile, trimestrale o annuale, a tua scelta.",
-            "L'accompagnamento, il rinforzo del team e i progetti su misura sono fatturati alla tariffa a giornata o su preventivo, comunicato prima di qualsiasi intervento."
+            "L'accompagnamento, il rinforzo del team e i progetti su misura sono fatturati alla tariffa a giornata o su preventivo, comunicato prima di qualsiasi intervento.",
+            "Tutti i prezzi indicati sono IVA esclusa; l'IVA all'aliquota vigente viene aggiunta in fattura."
           ]
         },
         {

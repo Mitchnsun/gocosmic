@@ -9,7 +9,7 @@ import { encodePlanCode } from '@/lib/pricing/plan-code';
 import { storePlanCode } from '@/lib/pricing/plan-storage';
 import type { Currency, Region } from '@/lib/region';
 
-import { ADD_ON_KEYS, BASE_PRICE, PAGE_TIER_KEYS } from './constants';
+import { ADD_ON_KEYS, BASE_PRICE, MAX_TIER_INDEX, PAGE_TIER_KEYS } from './constants';
 import { PriceTotal } from './PriceTotal';
 import type { PlanSelection } from './PricingSimulator.types';
 import { formatAmount, getAddOnPrice, getPageTierPrice, getUpdateTierPrice } from './PricingSimulator.utils';
@@ -39,7 +39,10 @@ export function PlanSummary({ currency, region, selection, total, showQuoteHint 
       ? [
           {
             label: t(`builder.pages.tiers.${PAGE_TIER_KEYS[selection.pages]}`),
-            amount: `+${price(getPageTierPrice(selection.pages))}`,
+            amount:
+              selection.pages === MAX_TIER_INDEX
+                ? t('builder.pages.or_more', { price: `+${price(getPageTierPrice(selection.pages))}` })
+                : `+${price(getPageTierPrice(selection.pages))}`,
           },
         ]
       : []),

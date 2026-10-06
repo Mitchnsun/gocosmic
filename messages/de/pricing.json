@@ -16,7 +16,7 @@
       "note": "Beides ist kostenlos und verpflichtet Sie zu nichts."
     },
     "builder": {
-      "period": "/ Monat",
+      "period": "zzgl. MwSt. / Monat",
       "base": {
         "title": "Grundpaket",
         "includes": {
@@ -46,6 +46,7 @@
       },
       "pages": {
         "label": "Anzahl der Seiten",
+        "or_more": "{price} oder mehr",
         "tiers": {
           "one": "1 Seite (inklusive)",
           "two_four": "2 bis 4 Seiten",
@@ -69,7 +70,7 @@
       },
       "total": {
         "label": "Ihre Kostenschätzung",
-        "note": "Richtpreis, den wir nach einem ersten Gespräch bestätigen. Sie können jederzeit Optionen hinzufügen; einmal aktiviert, bleiben sie Teil Ihres Abonnements (siehe Allgemeine Geschäftsbedingungen).",
+        "note": "Richtpreis zzgl. MwSt., den wir nach einem ersten Gespräch bestätigen. Sie können jederzeit Optionen hinzufügen; einmal aktiviert, bleiben sie Teil Ihres Abonnements (siehe Allgemeine Geschäftsbedingungen).",
         "beyond": "Bei größerem Umfang sprechen wir gemeinsam darüber und machen Ihnen einen Vorschlag.",
         "cta": "Mein kostenloses Mockup anfordern",
         "question": "Vorher noch eine Frage? <link>Schreiben Sie uns</link>."
@@ -82,7 +83,7 @@
         "title": "Abonnement",
         "label": "Website, Hosting und Betreuung",
         "price": "Ab {price}",
-        "period": "/ Monat",
+        "period": "zzgl. MwSt. / Monat",
         "description": "Ihre Website ist online und bleibt aktuell, ohne dass Sie sich darum kümmern müssen. Der Preis richtet sich nach Ihrem Bedarf: Anzahl der Seiten, Domainname, E-Mail-Adresse, Änderungen.",
         "features": {
           "included": "Hosting, sichere Verbindung und grundlegende Auffindbarkeit bei Google inklusive",

@@ -45,7 +45,7 @@ export default async function LocalPage() {
 
   return (
     <div className="bg-bg text-fg">
-      <section aria-labelledby="local-intro" className="pt-[clamp(3.5rem,8vw,7rem)]">
+      <section aria-labelledby="local-intro" className="pt-[clamp(3rem,6.5vw,5.5rem)] pb-[clamp(3rem,6vw,4.5rem)]">
         <div className={cn(CONTAINER, 'flex flex-col gap-8')}>
           <SectionHeading
             level={1}

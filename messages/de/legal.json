@@ -80,7 +80,7 @@
       },
       "eyebrow": "Rechtliche Informationen",
       "title": "Impressum",
-      "updated": "Zuletzt aktualisiert: 26. Mai 2026",
+      "updated": "Zuletzt aktualisiert: 28. September 2026",
       "intro": "Dieses Impressum nennt den Anbieter der Website www.gocosmic.dev und legt die Verantwortlichkeiten bei ihrer Nutzung dar.",
       "sections": [
         {
@@ -120,6 +120,12 @@
           ]
         },
         {
+          "title": "Preise",
+          "body": [
+            "Die auf der Website angezeigten Preise sind Nettopreise; die MwSt. zum jeweils gültigen Satz wird auf der Rechnung hinzugefügt."
+          ]
+        },
+        {
           "title": "Kontakt",
           "body": [
             "Für rechtliche Fragen und Fragen zu Datenschutz oder Sicherheit schreiben Sie an support@gocosmic.dev."
@@ -134,7 +140,7 @@
       },
       "eyebrow": "Geschäftsbedingungen",
       "title": "Allgemeine Geschäftsbedingungen",
-      "updated": "Zuletzt aktualisiert: 26. September 2026",
+      "updated": "Zuletzt aktualisiert: 28. September 2026",
       "intro": "Diese Allgemeinen Geschäftsbedingungen gelten für das Abonnement und die Leistungen, die Cosmic Studio auf www.gocosmic.dev anbietet.",
       "sections": [
         {
@@ -159,7 +165,8 @@
           "title": "Preis und Abrechnung",
           "body": [
             "Es gelten die Abonnementpreise, die zum Zeitpunkt des Abschlusses auf der Seite Leistungen & Preise angezeigt werden, je nach gewählten Optionen. Die Abrechnung erfolgt nach Ihrer Wahl monatlich, vierteljährlich oder jährlich.",
-            "Begleitung, Teamverstärkung und individuelle Projekte werden nach Tagessatz oder nach Angebot abgerechnet; beides wird Ihnen vor jedem Einsatz mitgeteilt."
+            "Begleitung, Teamverstärkung und individuelle Projekte werden nach Tagessatz oder nach Angebot abgerechnet; beides wird Ihnen vor jedem Einsatz mitgeteilt.",
+            "Alle angezeigten Preise sind Nettopreise zzgl. der jeweils gültigen MwSt., die auf der Rechnung ausgewiesen wird."
           ]
         },
         {

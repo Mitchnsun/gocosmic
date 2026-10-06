@@ -72,7 +72,7 @@ const HeroSection = ({
     <section
       id={id}
       className={cn(
-        'bg-bg text-fg relative isolate overflow-hidden pt-[clamp(4.5rem,12vw,9.5rem)] pb-[clamp(4rem,9vw,7.5rem)]',
+        'bg-bg text-fg relative isolate overflow-hidden pt-[clamp(4rem,10vw,8rem)] pb-[clamp(3.5rem,7.5vw,6rem)]',
         className
       )}
       data-reduced-motion={prefersReducedMotion ? 'true' : 'false'}>

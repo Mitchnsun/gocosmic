@@ -64,7 +64,7 @@ export default async function Services() {
 
   return (
     <div className="bg-bg text-fg">
-      <section aria-labelledby="services-intro" className="pt-[clamp(3.5rem,8vw,7rem)]">
+      <section aria-labelledby="services-intro" className="pt-[clamp(3rem,6.5vw,5.5rem)]">
         <div className={CONTAINER}>
           <SectionHeading
             level={1}

@@ -101,7 +101,7 @@ Minimum readable size: **14px** for body text.
 ### 2.3 Spacing, layout, radii
 
 - **Container**: `max-w-7xl` centered (`m-auto`), horizontal padding `px-4 sm:px-6 lg:px-8`.
-- **Vertical section rhythm**: `SECTION_Y` from `design-system/pill.ts` — `clamp(64px, 8vw, 120px)` top and bottom. Sections need room to breathe.
+- **Vertical section rhythm**: `SECTION_Y` from `design-system/pill.ts` — `clamp(56px, 6.5vw, 96px)` top and bottom. Sections need room to breathe.
 - **Alternate sections**: at most one section in three on `bg-bg-alt` (ember in dark, misty-rose in light), the rest on `bg-bg`. `space` is kept for brand backgrounds.
 - **Radii**: pills `rounded-full` (buttons, chips, badges); cards/containers `rounded-xl` → `rounded-2xl` (12–24px). No sharp corners on interactive surfaces.
 - **Borders**: always via `line` / `line-2` (see §2.1), never an opaque grey.
@@ -161,7 +161,8 @@ Immersive sections: `<Starfield>` at layer `-z-20` + a radial accent gradient or
 **In the light theme** (EPIC #113):
 
 - **The sun replaces the stars on the homepage only**: `<Sun>` (`components/Sun`, pure CSS disc + halo) rises top right in the hero over a misty-rose floor (`.rose-floor`), and the immersive `CTAFinal` swaps its stars for a warm halo (`.sun-glow`). The sun belongs to the hero and the closing CTA only — **never two suns on a page**.
-- **Dark islands**: the sober `CTAFinal` of the inner pages and the case study heroes keep their stars and stay dark in both themes, through `data-theme="dark"` on the section (the tokens re-scope for the subtree). Use an island for anything whose colours cannot follow the theme (a canvas, a dark brand visual).
+- **Sober `CTAFinal`** (inner pages): keeps its stars in both themes; in the light theme `<Starfield tone="light">` draws dark blue stars on the cosmic-latte page colour.
+- **Dark islands**: the case study heroes keep their stars and stay dark in both themes, through `data-theme="dark"` on the section (the tokens re-scope for the subtree). Use an island for anything whose colours cannot follow the theme (a canvas, a dark brand visual).
 - **Pick the scene in CSS first**: the `light:` variant (`light:hidden`, `hidden light:block`) is right from the first paint, then `useResolvedTheme()` unmounts what the theme hides so canvases and animation loops stop. `light:` never applies inside a dark island.
 - **Switching theme**: colours cross-fade over 300 ms and the sun rises into place (`theme-fade` / `theme-rise` on `<html>` during a switch only, see `useThemeSwitch`); both are skipped under reduced motion. The choice is stored in `localStorage['cs-theme']`; first visits are always dark, whatever the OS prefers.
 
@@ -186,20 +187,20 @@ To mark a location, category, or action: **geometric SVGs** (crosshair, diamond 
 
 Pages are assembled from shared building blocks — reuse them instead of re-implementing the patterns above:
 
-| Component                     | Role                                                                                                  |
-| ----------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `components/SectionHeading`   | Eyebrow → title with light italic `<em>` emphasis → 56ch lead; `level={1}` for page intros            |
-| `components/Reveal`           | Fade-and-lift on scroll, `delay={index * 50}` for a 50 ms stagger; CSS-first reduced-motion guard     |
-| `design-system/pill.ts`       | `primaryPill()`, `ghostPill()`, plus `CONTAINER` (1280 px, fluid gutters) and `SECTION_Y` (64–120 px) |
-| `design-system/eyebrow`       | Orange dot + uppercase mono label opening a section                                                   |
-| `design-system/chip`          | Bordered mono tag; `variant="ok"` marks what is included                                              |
-| `design-system/hairline-grid` | `gap-px` card grid with 1 px separators (`as="ol"` for ordered content)                               |
-| `design-system/field`         | `Field` (label, optional hint, required asterisk, error) + `FIELD_INPUT` / `FIELD_TEXTAREA` controls  |
-| `components/LegalDocument`    | Legal notice, privacy policy and terms of sale layout: intro, one card per section                    |
-| `components/ContentSection`   | Card-shaped section: eyebrow + HUD counter, `h2` bound via `aria-labelledby`, lead, body              |
-| `components/AccentList`       | Bullet list with accent dots, optional mono label, 1 or 2 columns                                     |
-| `components/CaseStudy`        | Full project case study: hero, ordered sections, CTA card, previous / next navigation                 |
-| `design-system/accent.ts`     | `accentClasses(token)` → the text / bg / border utilities and RGB channels of a token                 |
+| Component                     | Role                                                                                                 |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `components/SectionHeading`   | Eyebrow → title with light italic `<em>` emphasis → 56ch lead; `level={1}` for page intros           |
+| `components/Reveal`           | Fade-and-lift on scroll, `delay={index * 50}` for a 50 ms stagger; CSS-first reduced-motion guard    |
+| `design-system/pill.ts`       | `primaryPill()`, `ghostPill()`, plus `CONTAINER` (1280 px, fluid gutters) and `SECTION_Y` (56–96 px) |
+| `design-system/eyebrow`       | Orange dot + uppercase mono label opening a section                                                  |
+| `design-system/chip`          | Bordered mono tag; `variant="ok"` marks what is included                                             |
+| `design-system/hairline-grid` | `gap-px` card grid with 1 px separators (`as="ol"` for ordered content)                              |
+| `design-system/field`         | `Field` (label, optional hint, required asterisk, error) + `FIELD_INPUT` / `FIELD_TEXTAREA` controls |
+| `components/LegalDocument`    | Legal notice, privacy policy and terms of sale layout: intro, one card per section                   |
+| `components/ContentSection`   | Card-shaped section: eyebrow + HUD counter, `h2` bound via `aria-labelledby`, lead, body             |
+| `components/AccentList`       | Bullet list with accent dots, optional mono label, 1 or 2 columns                                    |
+| `components/CaseStudy`        | Full project case study: hero, ordered sections, CTA card, previous / next navigation                |
+| `design-system/accent.ts`     | `accentClasses(token)` → the text / bg / border utilities and RGB channels of a token                |
 
 Inner pages open with a plain `SectionHeading level={1}` intro — no starfield. The one immersive moment per page is the homepage hero or the final `CTAFinal`.
 

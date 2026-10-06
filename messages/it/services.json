@@ -2,7 +2,7 @@
   "services": {
     "meta": {
       "title": "Servizi & prezzi · Siti internet a Ginevra & Annecy | Cosmic Studio",
-      "description": "Siti vetrina, negozi online, app e assistenza, con i prezzi in chiaro: un abbonamento da 10 € al mese, o un progetto su preventivo. A Ginevra, ad Annecy e a distanza."
+      "description": "Siti vetrina, negozi online, app e assistenza, con i prezzi in chiaro: un abbonamento da 10 € al mese IVA esclusa, o un progetto su preventivo. A Ginevra, ad Annecy e a distanza."
     },
     "cta": {
       "title": "Parliamo del tuo sito.",
@@ -17,7 +17,7 @@
     "simulator": {
       "eyebrow": "[ Componi il tuo abbonamento ]",
       "title": "Parti semplice, <em>il resto lo aggiungi dopo.</em>",
-      "lead": "La formula base comprende una pagina vetrina online e sicura, a {price} al mese. Seleziona le opzioni che ti interessano per vedere il prezzo mensile."
+      "lead": "La formula base comprende una pagina vetrina online e sicura, a {price} al mese IVA esclusa. Seleziona le opzioni che ti interessano per vedere il prezzo mensile."
     },
     "trades": {
       "eyebrow": "[ I nostri mestieri · 04 ]",

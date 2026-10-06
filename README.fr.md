@@ -119,7 +119,7 @@ Remplace les anciennes pages services, offres et tarifs.
 - **FAQ** : accordéon qui répond à cinq questions fréquentes (propriété du site, modification par le client, délai de mise en ligne, arrêt de l'abonnement, textes et photos)
 - **Appel à l'action final** : lien vers la page contact
 
-Les prix s'affichent en euros, ou en francs suisses pour les visiteurs situés en Suisse (détectés via l'en-tête pays de Vercel). La page d'accueil et la page à propos suivent la même règle.
+Les prix s'affichent en euros, ou en francs suisses pour les visiteurs situés en Suisse (détectés via l'en-tête pays de Vercel), et toujours hors taxes. La page d'accueil et la page à propos suivent la même règle.
 
 ### Page Projets (`/projects`)
 

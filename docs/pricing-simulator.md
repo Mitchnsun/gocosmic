@@ -39,23 +39,26 @@ whose form sends the simulation along with the request. The plan code keeps its
 
 ## Price table
 
-Source of truth: `constants.ts`. Amounts are monthly.
+Source of truth: `constants.ts`. Amounts are monthly and shown **excl. VAT** everywhere
+they appear (`pricing.builder.period`, the legal notice and the terms of sale).
 
 | Item                             | Price                       |
 | -------------------------------- | --------------------------- |
 | Base plan (1 page, hosting, TLS) | 10                          |
 | Managing the domain name         | +5                          |
 | Hosting on a Swiss server        | +10                         |
-| Email address on the domain      | +10                         |
-| Pages slider (5 positions)       | +0 / +5 / +10 / +20 / +25   |
-| Updates slider (5 positions)     | +5 / +15 / +25 / +50 / +100 |
+| Email address on the domain      | +15                         |
+| Pages slider (5 positions)       | +0 / +5 / +15 / +25 / +40   |
+| Updates slider (5 positions)     | +5 / +20 / +30 / +60 / +200 |
 
 Two rules the tables alone do not carry:
 
 - **The updates package is opt-in.** Its slider starts at +5, so gating it behind a tick-box
   is what keeps the advertised 10 base price actually reachable.
 - **The top position of either slider is still priced**, and additionally surfaces a note
-  saying that anything beyond it is quoted personally.
+  saying that anything beyond it is quoted personally. The pages slider's top position also
+  reads "+40 € or more" (`pricing.builder.pages.or_more`), since "10 pages or more" has no
+  fixed ceiling.
 
 Both currencies quote the same number — only the symbol changes (`formatAmount`), matching
 how the rest of the site handles `eur` / `chf` (see `lib/region.ts`). Pages pass their locale

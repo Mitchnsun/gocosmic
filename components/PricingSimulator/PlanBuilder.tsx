@@ -7,6 +7,7 @@ import type { Currency, Region } from '@/lib/region';
 import {
   ADD_ON_KEYS,
   BASE_PRICE,
+  MAX_TIER_INDEX,
   PAGE_TIER_KEYS,
   PAGE_TIER_PRICES,
   TIER_INDEXES,
@@ -47,7 +48,10 @@ export function PlanBuilder({
   /* eslint-disable security/detect-object-injection */
   const pageTiers = TIER_INDEXES.map((index) => ({
     label: t(`builder.pages.tiers.${PAGE_TIER_KEYS[index]}`),
-    price: surcharge(PAGE_TIER_PRICES[index]),
+    price:
+      index === MAX_TIER_INDEX
+        ? t('builder.pages.or_more', { price: surcharge(PAGE_TIER_PRICES[index]) })
+        : surcharge(PAGE_TIER_PRICES[index]),
   }));
 
   const updateTiers = TIER_INDEXES.map((index) => ({

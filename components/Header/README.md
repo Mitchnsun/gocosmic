@@ -34,7 +34,7 @@ Just before the `<header>`, a `href="#main-content"` link is rendered invisibly 
 
 ### Desktop navigation (`hidden lg:flex`)
 
-On viewports ≥ 1024 px, `DesktopNav` shows Services · Projects · Contact, the `HeaderCta` pill (`bg-aerospace text-void`, 44 px high, leads to `/free-mockup`: the free mockup request is the main lead source, the Contact link stays next to it) the `LanguageSwitcher` and the `ThemeToggle` (`components/Theme`, 44 px pill switching between the dark and light themes). About and Pricing live in the footer. Below `lg`, the nav is hidden and the mobile menu takes over: three links plus a CTA do not fit comfortably on a 768 px tablet.
+On viewports ≥ 1024 px, `DesktopNav` shows Services · Projects · Contact, the `HeaderCta` pill (`bg-aerospace text-void`, 44 px high, leads to `/free-mockup`: the free mockup request is the main lead source, the Contact link stays next to it) the `LanguageSwitcher` and the `ThemeToggle` (`components/Theme`, 44 px high comet/sun switch for the dark and light themes). About and Pricing live in the footer. Below `lg`, the nav is hidden and the mobile menu takes over: three links plus a CTA do not fit comfortably on a 768 px tablet.
 
 ### Active navigation link
 

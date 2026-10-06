@@ -42,7 +42,7 @@
         },
         "price": {
           "title": "A price that follows your business",
-          "description": "A subscription from {price} a month that evolves with you, rather than a large upfront investment."
+          "description": "A subscription from {price} a month excl. VAT that evolves with you, rather than a large upfront investment."
         },
         "answer": {
           "title": "Someone who answers",

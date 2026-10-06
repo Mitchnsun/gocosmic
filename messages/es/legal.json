@@ -80,7 +80,7 @@
       },
       "eyebrow": "Información legal",
       "title": "Aviso legal",
-      "updated": "Última actualización: 26 de mayo de 2026",
+      "updated": "Última actualización: 28 de septiembre de 2026",
       "intro": "Este aviso legal identifica al editor del sitio www.gocosmic.dev y precisa las responsabilidades vinculadas a su uso.",
       "sections": [
         {
@@ -120,6 +120,12 @@
           ]
         },
         {
+          "title": "Precios",
+          "body": [
+            "Los precios mostrados en el sitio no incluyen el IVA; el IVA al tipo vigente se añade en la factura."
+          ]
+        },
+        {
           "title": "Contacto",
           "body": ["Para cualquier cuestión jurídica, de privacidad o de seguridad, escribe a support@gocosmic.dev."]
         }
@@ -132,7 +138,7 @@
       },
       "eyebrow": "Condiciones de venta",
       "title": "Condiciones generales de venta",
-      "updated": "Última actualización: 26 de septiembre de 2026",
+      "updated": "Última actualización: 28 de septiembre de 2026",
       "intro": "Estas condiciones generales de venta se aplican a la suscripción y a los servicios ofrecidos por Cosmic Studio en www.gocosmic.dev.",
       "sections": [
         {
@@ -157,7 +163,8 @@
           "title": "Precio y facturación",
           "body": [
             "Los precios de la suscripción son los que se muestran en la página Servicios y precios en el momento de suscribirte, según las opciones elegidas. La facturación es mensual, trimestral o anual, a tu elección.",
-            "El acompañamiento, el refuerzo de equipo y los proyectos a medida se facturan por tarifa diaria o según presupuesto, que se comunica antes de cualquier intervención."
+            "El acompañamiento, el refuerzo de equipo y los proyectos a medida se facturan por tarifa diaria o según presupuesto, que se comunica antes de cualquier intervención.",
+            "Todos los precios mostrados no incluyen el IVA; el IVA al tipo vigente se añade en la factura."
           ]
         },
         {

@@ -12,17 +12,20 @@ const { starfieldMock } = vi.hoisted(() => ({
       speed,
       starCount,
       respectReducedMotion,
+      tone,
     }: {
       className?: string;
       speed?: number;
       starCount?: number;
       respectReducedMotion?: boolean;
+      tone?: string;
     }) => (
       <canvas
         aria-hidden="true"
         className={className}
         data-speed={speed}
         data-star-count={starCount}
+        data-tone={tone}
         data-respect-reduced-motion={respectReducedMotion ? 'true' : 'false'}
       />
     )
@@ -302,19 +305,21 @@ describe('CTAFinal', () => {
       expect(container.querySelector('section')).not.toHaveAttribute('data-theme');
     });
 
-    it('keeps the sober tone as a dark island, stars included', () => {
+    it('keeps the stars on the sober tone, drawn dark on the light page', () => {
       const { container } = renderLight({ tone: 'sober' });
 
-      expect(container.querySelector('section')).toHaveAttribute('data-theme', 'dark');
-      expect(container.querySelector('canvas')).toBeInTheDocument();
+      expect(container.querySelector('section')).not.toHaveAttribute('data-theme');
+      expect(container.querySelector('canvas')).toHaveAttribute('data-tone', 'light');
+      expect(container.querySelector('canvas')?.parentElement).not.toHaveClass('light:hidden');
       expect(container.querySelector('.sun-glow')).not.toBeInTheDocument();
     });
   });
 
-  it('marks only the sober tone as a dark island', () => {
+  it('gives the immersive tone a CSS-first sun scene and white stars in the dark theme', () => {
     const { container } = renderCTA();
     expect(container.querySelector('section')).not.toHaveAttribute('data-theme');
     expect(container.querySelector('.sun-glow')).toHaveClass('hidden', 'light:block');
+    expect(container.querySelector('canvas')).toHaveAttribute('data-tone', 'dark');
   });
 
   it('paints the alternate background with the alt variant', () => {

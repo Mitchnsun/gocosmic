@@ -80,7 +80,7 @@
       },
       "eyebrow": "Legal information",
       "title": "Legal notice",
-      "updated": "Last updated: 26 May 2026",
+      "updated": "Last updated: 28 September 2026",
       "intro": "This legal notice identifies the publisher of www.gocosmic.dev and sets out the responsibilities linked to using it.",
       "sections": [
         {
@@ -120,6 +120,10 @@
           ]
         },
         {
+          "title": "Pricing",
+          "body": ["Prices shown on the site are excl. VAT; VAT at the applicable rate is added on the invoice."]
+        },
+        {
           "title": "Contact",
           "body": ["For any legal, privacy or security question, write to support@gocosmic.dev."]
         }
@@ -132,7 +136,7 @@
       },
       "eyebrow": "Terms of sale",
       "title": "Terms of sale",
-      "updated": "Last updated: 26 September 2026",
+      "updated": "Last updated: 28 September 2026",
       "intro": "These terms of sale apply to the subscription and services offered by Cosmic Studio on www.gocosmic.dev.",
       "sections": [
         {
@@ -157,7 +161,8 @@
           "title": "Price and billing",
           "body": [
             "Subscription prices are those shown on the Services & pricing page at the time of subscription, based on the options chosen. Billing is monthly, quarterly or annual, whichever you prefer.",
-            "Guidance, team reinforcement and custom projects are billed at the day rate or on a quote, provided before any work starts."
+            "Guidance, team reinforcement and custom projects are billed at the day rate or on a quote, provided before any work starts.",
+            "All prices shown are excl. VAT; VAT at the applicable rate is added on the invoice."
           ]
         },
         {

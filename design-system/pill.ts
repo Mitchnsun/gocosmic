@@ -19,4 +19,4 @@ export const ghostPill = (className?: string) =>
 
 /** Layout rhythm shared by the page sections: 1280 px container and fluid vertical padding. */
 export const CONTAINER = 'mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8';
-export const SECTION_Y = 'py-[clamp(4rem,8vw,7.5rem)]';
+export const SECTION_Y = 'py-[clamp(3.5rem,6.5vw,6rem)]';

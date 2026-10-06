@@ -42,7 +42,7 @@
         },
         "price": {
           "title": "Un prix qui suit votre activité",
-          "description": "Un abonnement dès {price} par mois, qui évolue avec vous, plutôt qu'un gros investissement de départ."
+          "description": "Un abonnement dès {price} HT par mois, qui évolue avec vous, plutôt qu'un gros investissement de départ."
         },
         "answer": {
           "title": "Quelqu’un qui répond",

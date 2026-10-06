@@ -54,13 +54,14 @@ describe('ThemeToggle', () => {
     expect(document.documentElement).toHaveAttribute('data-theme', 'dark');
   });
 
-  it('is a 44 px pill with both icons, the right one shown by the light: variant', () => {
+  it('is a 44 px switch with a comet and a sun, the thumb moved by the light: variant', () => {
     renderToggle();
     const button = screen.getByRole('button', { name: 'Switch to the light theme' });
-    expect(button).toHaveClass('h-11', 'w-11', 'rounded-full');
-    const [sun, moon] = button.querySelectorAll('svg');
-    expect(sun).toHaveClass('light:hidden');
-    expect(moon).toHaveClass('hidden', 'light:block');
+    expect(button).toHaveClass('h-11', 'rounded-full');
+    const [comet, sun] = button.querySelectorAll('svg');
+    expect(comet).toHaveClass('text-fg', 'light:text-fg-3');
+    expect(sun).toHaveClass('text-fg-3', 'light:text-fg');
+    expect(button.querySelector('span')).toHaveClass('light:translate-x-9');
   });
 
   it('renders the dark-theme label on the server, whatever was stored', () => {

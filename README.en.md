@@ -117,7 +117,7 @@ Replaces the former services, offers and pricing pages.
 - **FAQ**: accordion answering five common questions (ownership, editing the site, time to go live, stopping the subscription, texts and photos)
 - **Closing call-to-action**: link to the contact page
 
-Prices are shown in euros, or in Swiss francs for visitors located in Switzerland (detected from the Vercel country header). The homepage and the about page follow the same rule.
+Prices are shown in euros, or in Swiss francs for visitors located in Switzerland (detected from the Vercel country header), and always excl. VAT. The homepage and the about page follow the same rule.
 
 ### Projects Page (`/projects`)
 

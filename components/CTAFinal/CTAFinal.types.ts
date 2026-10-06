@@ -13,9 +13,6 @@ export interface TonePreset {
   warp: boolean;
   /** Whether the accent halo is rendered behind the content. */
   halo: boolean;
-  /** Keeps the section dark in the light theme (`data-theme="dark"`), stars included. When `false`,
-   *  the light theme swaps the starfield for a warm sun halo. */
-  darkIsland: boolean;
   /** Whether the headline uses the animated accent gradient. */
   gradientHeadline: boolean;
   /** Whether the CTA button pulses with a glow. */

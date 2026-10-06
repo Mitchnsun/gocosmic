@@ -16,7 +16,7 @@
       "note": "Entrambe sono gratuite e non ti impegnano a nulla."
     },
     "builder": {
-      "period": "/ mese",
+      "period": "/ mese IVA esclusa",
       "base": {
         "title": "Formula base",
         "includes": {
@@ -46,6 +46,7 @@
       },
       "pages": {
         "label": "Numero di pagine",
+        "or_more": "{price} o più",
         "tiers": {
           "one": "1 pagina (compresa)",
           "two_four": "Da 2 a 4 pagine",
@@ -69,7 +70,7 @@
       },
       "total": {
         "label": "La tua stima",
-        "note": "Prezzo indicativo, confermato dopo una prima conversazione. Puoi aggiungere opzioni in qualsiasi momento; una volta attivate, restano nel tuo abbonamento (vedi le condizioni generali di vendita).",
+        "note": "Prezzo indicativo IVA esclusa, confermato dopo una prima conversazione. Puoi aggiungere opzioni in qualsiasi momento; una volta attivate, restano nel tuo abbonamento (vedi le condizioni generali di vendita).",
         "beyond": "Oltre questi volumi, ne parliamo insieme per farti una proposta.",
         "cta": "Richiedi il mio mockup gratuito",
         "question": "Qualche domanda prima? <link>Scrivici</link>."
@@ -82,7 +83,7 @@
         "title": "Abbonamento",
         "label": "Sito, hosting e assistenza",
         "price": "Da {price}",
-        "period": "/ mese",
+        "period": "/ mese IVA esclusa",
         "description": "Il tuo sito è online e sempre aggiornato, senza che tu debba occupartene. Il prezzo dipende dalle tue esigenze: numero di pagine, nome a dominio, indirizzo e-mail, modifiche.",
         "features": {
           "included": "Hosting, connessione sicura e visibilità di base su Google compresi",

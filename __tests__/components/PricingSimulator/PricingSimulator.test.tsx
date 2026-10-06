@@ -46,7 +46,7 @@ describe('PricingSimulator', () => {
     fireEvent.click(screen.getByRole('checkbox', { name: /managing your domain name/i }));
     fireEvent.click(screen.getByRole('checkbox', { name: /email address in your own name/i }));
 
-    expect(total()).toHaveTextContent('€25');
+    expect(total()).toHaveTextContent('€30');
   });
 
   it('raises the total and lists the page tier when the pages slider moves', () => {
@@ -56,7 +56,7 @@ describe('PricingSimulator', () => {
     fireEvent.keyDown(slider, { key: 'ArrowRight' });
     fireEvent.keyDown(slider, { key: 'ArrowRight' });
 
-    expect(total()).toHaveTextContent('€20');
+    expect(total()).toHaveTextContent('€25');
     expect(within(recap()).getByText('5 to 7 pages')).toBeInTheDocument();
   });
 
@@ -82,7 +82,7 @@ describe('PricingSimulator', () => {
     fireEvent.keyDown(slider, { key: 'ArrowRight' });
     fireEvent.keyDown(slider, { key: 'ArrowRight' });
 
-    expect(total()).toHaveTextContent('€60');
+    expect(total()).toHaveTextContent('€70');
   });
 
   it('invites a conversation once a slider hits its top position', () => {
