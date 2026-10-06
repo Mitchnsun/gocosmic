@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { buildCaseStudyMeta, buildCaseStudyNavigation } from '@/components/CaseStudy';
+import { buildCaseStudyMeta, buildCaseStudyNavigation, formatReleaseDate } from '@/components/CaseStudy';
 
 const labels = { previous: 'Previous project', next: 'Next project', ariaLabel: 'Case study navigation' };
 
@@ -37,5 +37,19 @@ describe('buildCaseStudyMeta', () => {
     const tList = (key: string) => `t:${key}`;
 
     expect(buildCaseStudyMeta('daily-fortune', tList)[0]).toBe('2025');
+  });
+});
+
+describe('formatReleaseDate', () => {
+  it.each([
+    ['fr', '28 février 2026'],
+    ['de', '28. Februar 2026'],
+    ['en', 'February 28, 2026'],
+  ])('writes the release date in full in %s', (locale, expected) => {
+    expect(formatReleaseDate('2026-02-28', locale)).toBe(expected);
+  });
+
+  it('keeps the day whatever the time zone', () => {
+    expect(formatReleaseDate('2026-01-01', 'fr')).toBe('1 janvier 2026');
   });
 });

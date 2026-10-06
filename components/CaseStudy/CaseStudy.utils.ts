@@ -50,3 +50,7 @@ export const buildCaseStudyMeta = (slug: CaseStudySlug, tList: ProjectsTranslato
   const project = PROJECTS_BY_SLUG[slug];
   return [String(project.year), tList(`items.${project.i18nKey}.client`), tList(`kinds.${project.kind}`)];
 };
+
+/** Long date of a release (`YYYY-MM-DD`) in the page locale, e.g. "28 février 2026"; read in UTC so it never shifts a day. */
+export const formatReleaseDate = (date: string, locale: string): string =>
+  new Intl.DateTimeFormat(locale, { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(`${date}T00:00:00Z`));

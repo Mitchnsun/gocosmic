@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Added
 
 - Light-theme versions of the social sharing images in all five languages, ready to share by hand (link previews keep the dark image)
+- The Daily Fortune project page now says the app is still kept up to date, with its latest version and release date
 
 ### Changed
 

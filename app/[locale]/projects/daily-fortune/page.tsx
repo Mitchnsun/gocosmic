@@ -1,7 +1,13 @@
 import type { Metadata } from 'next';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
-import { buildCaseStudyMeta, buildCaseStudyNavigation, CaseStudy, PROJECTS_BY_SLUG } from '@/components/CaseStudy';
+import {
+  buildCaseStudyMeta,
+  buildCaseStudyNavigation,
+  CaseStudy,
+  formatReleaseDate,
+  PROJECTS_BY_SLUG,
+} from '@/components/CaseStudy';
 import { buildCaseStudyMetadata } from '@/components/CaseStudy/CaseStudy.metadata';
 import CaseStudySeo from '@/components/JsonLd/CaseStudySeo';
 
@@ -14,6 +20,12 @@ export default function DailyFortune() {
   const t = useTranslations('dailyFortune');
   const tCommon = useTranslations('case_study');
   const tList = useTranslations('projectsList');
+  const locale = useLocale();
+  const { latestRelease } = PROJECTS_BY_SLUG['daily-fortune'];
+  const maintained = t('result.maintained', {
+    version: latestRelease.version,
+    date: formatReleaseDate(latestRelease.date, locale),
+  });
 
   return (
     <>
@@ -48,7 +60,7 @@ export default function DailyFortune() {
             id: 'result',
             label: t('result.label'),
             title: t('result.title'),
-            content: t('result.description'),
+            content: `${t('result.description')} ${maintained}`,
           },
         ]}
         cta={{

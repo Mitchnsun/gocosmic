@@ -37,6 +37,10 @@ export default function CaseStudySeo({ slug }: CaseStudySeoProps) {
             description: t(`items.${project.i18nKey}.description`),
             genre: t(`kinds.${project.kind}`),
             dateCreated: String(project.year),
+            ...('latestRelease' in project && {
+              version: project.latestRelease.version,
+              dateModified: project.latestRelease.date,
+            }),
             url,
             inLanguage: locale,
             creator: { '@id': `${SITE_URL}/#company` },

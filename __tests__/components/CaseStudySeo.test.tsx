@@ -55,4 +55,18 @@ describe('CaseStudySeo', () => {
       },
     });
   });
+
+  it('declares the latest version of a project that keeps being updated', () => {
+    render(<CaseStudySeo slug="daily-fortune" />);
+
+    expect(jsonLdScriptMock).toHaveBeenCalledWith(
+      expect.objectContaining({
+        data: expect.objectContaining({
+          '@graph': expect.arrayContaining([
+            expect.objectContaining({ dateCreated: '2025', version: '1.4.0', dateModified: '2026-02-28' }),
+          ]),
+        }),
+      })
+    );
+  });
 });
