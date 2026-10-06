@@ -14,7 +14,7 @@ const RAW_THEME_COLOUR =
   /248[\s,_]+248[\s,_]+255|#f8f8ff|\b2[\s,_]+6[\s,_]+23\b|#020617|#fff8e7|255[\s,_]+248[\s,_]+231|#1c1012|#ffe4e1/i;
 
 const ALLOWED: Record<string, string> = {
-  'components/Starfield/Starfield.tsx': 'the canvas paints its own sky: void, or cosmic-latte for the light tone',
+  'components/Starfield/Starfield.tsx': 'the starfield paints deep space and only lives in dark scenes',
   'components/CosmicCursor/CosmicCursor.tsx': 'per-theme trail colours, picked from the resolved theme',
   'components/Theme/Theme.constants.ts': 'browser chrome colour per theme',
   'components/FreeMockupForm/FreeMockupForm.utils.ts': 'palette swatches are content, not theme colours',

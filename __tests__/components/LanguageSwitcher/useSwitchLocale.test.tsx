@@ -107,6 +107,24 @@ describe('useSwitchLocale', () => {
     expect(window.location.hash).toBe('');
   });
 
+  it('scrolls to the section of a percent-encoded anchor', () => {
+    const section = document.createElement('section');
+    section.id = 'étape';
+    section.scrollIntoView = vi.fn();
+    document.body.append(section);
+    window.history.replaceState(null, '', '/en/services#%C3%A9tape');
+    const { result, rerender } = renderHook(() => useSwitchLocale());
+    act(() => result.current('fr'));
+
+    window.history.replaceState(null, '', '/fr/services');
+    mockLocale = 'fr';
+    rerender();
+
+    expect(window.location.hash).toBe('#%C3%A9tape');
+    expect(section.scrollIntoView).toHaveBeenCalledTimes(1);
+    section.remove();
+  });
+
   it('restores a malformed anchor as is instead of throwing', () => {
     window.history.replaceState(null, '', '/en/services#%');
     const { result, rerender } = renderHook(() => useSwitchLocale());
