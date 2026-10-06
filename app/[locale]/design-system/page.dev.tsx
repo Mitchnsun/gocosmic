@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 
 import { DesignSystemShowcase, type ShowcaseLabels } from '@/components/DesignSystemShowcase';
@@ -8,13 +7,7 @@ import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, SECTION_Y } from '@/design-system/pill';
 import { getAlternates } from '@/i18n/canonical';
 
-/** Internal page, served only by `yarn dev`: a production build answers 404. */
-function assertDevOnly() {
-  if (process.env.NODE_ENV === 'production') notFound();
-}
-
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-  assertDevOnly();
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'design-system' });
 
@@ -22,13 +15,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t('meta.title'),
     description: t('meta.description'),
     alternates: getAlternates(locale, '/design-system'),
-    // Belt and braces: kept out of search engines and out of the sitemap too.
+    // Internal page (`.dev.tsx`, served by `yarn dev` only), also kept out of search engines and the sitemap.
     robots: { index: false, follow: false },
   };
 }
 
 export default async function DesignSystemPage() {
-  assertDevOnly();
   const t = await getTranslations('design-system');
   const labels: ShowcaseLabels = {
     tokens: t('tokens'),

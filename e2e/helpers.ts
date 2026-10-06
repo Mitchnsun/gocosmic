@@ -31,7 +31,7 @@ export function localizedUrl(routeKey: RouteKey): string {
   return `/${LOCALE}${localized === '/' ? '' : localized}`;
 }
 
-/** Dev-only routes, answering 404 on the production build audited here. */
+/** Routes backed by a `page.dev.tsx`, absent from the production build audited here. */
 const DEV_ONLY_ROUTES: readonly RouteKey[] = ['/design-system'];
 
 /** Every public route of the site in the audited locale, plus a missing page. */

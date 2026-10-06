@@ -5,12 +5,6 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [2.1.1] - 2026-10-06
-
-### Fixed
-
-- The internal design system page is no longer reachable on the live site: it now shows the "page not found" screen there and stays available only on a developer's machine
-
 ## [2.1.0] - 2026-10-06
 
 ### Added
@@ -31,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - Small grey labels, captions and form hints across the site are now easier to read, as are the purple section labels on project pages, meeting the accessibility contrast standard for text
 - The sitemap given to search engines now shows the date of the last site update instead of changing every few minutes, so search engines can trust it to know when pages have changed
+- The internal design system page is no longer reachable on the live site: it now shows the "page not found" screen there and stays available only on a developer's machine
 
 ## [2.0.0] - 2026-09-27
 

@@ -48,6 +48,7 @@ This is a single Next.js 16 app (App Router) with full internationalization via 
 ### Key directories
 
 - `app/[locale]/` — All routes are under the dynamic `[locale]` segment. Pages export metadata and use server components by default.
+  A `page.dev.tsx` (e.g. `design-system/`) is an internal route served by `yarn dev` only: `pageExtensions` in `next.config.ts` drops it from production builds.
 - `components/` — App-specific components, one folder per component (`Header`, `Footer`, `LanguageSwitcher`, `JsonLd`, `Planet`, `PricingColumns`, `PricingSimulator`, `CaseStudy`, `ContactForm`, `ProjectGrid`, icons, and more).
 - `design-system/` — Reusable UI primitives: `button.tsx` + `button.variants.ts` using CVA, plus `eyebrow.tsx`, `chip.tsx`, `field.tsx`, `hairline-grid.tsx`, `pill.ts`, `slider.tsx`, `accent.ts`. Components use `@radix-ui/react-slot` for polymorphism. `design-system/lib/utils.ts` exports `cn` (clsx + tailwind-merge) — **always use `cn` for conditional Tailwind classes**, never string interpolation. Prefer the object form (`cn({ 'class': condition })`) over `condition && 'class'`.
 - `lib/` — Standalone helpers shared across the app (`clamp.ts`, `config.ts`, `og.ts`, `renderWithLinks.tsx`, plus `contact/`, `pricing/`, `validation/`, `hooks/` subfolders). Distinct from `design-system/lib/`.
