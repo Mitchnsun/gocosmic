@@ -10,30 +10,21 @@ interface CTAFinalBackdropProps {
   starCount: number;
   speed: number;
   respectReducedMotion: boolean;
-  /** Light theme outside a dark island: the warm sun halo replaces the stars. */
-  solar: boolean;
-  /** Star colours: dark stars on a light page, white stars otherwise. */
-  tone: 'dark' | 'light';
+  /** Light theme: no stars, the page colour (and, on the immersive tone, the sun halo) takes over. */
+  light: boolean;
 }
 
 /**
  * Layers behind the closing call-to-action: the starfield and the accent halo, or, in the light theme,
- * a warm sun halo over a misty-rose floor (immersive tone only; the sober tone keeps its stars in both
- * themes). The `light:` CSS variant picks the scene from the first paint, then the starfield unmounts once the light theme is
- * known so its animation loop stops.
+ * no stars and, on the immersive tone, a warm sun halo over a misty-rose floor. The `light:` CSS variant
+ * picks the scene from the first paint, then the starfield unmounts once the light theme is known so its
+ * animation loop stops.
  */
-export function CTAFinalBackdrop({
-  preset,
-  starCount,
-  speed,
-  respectReducedMotion,
-  solar,
-  tone,
-}: CTAFinalBackdropProps) {
+export function CTAFinalBackdrop({ preset, starCount, speed, respectReducedMotion, light }: CTAFinalBackdropProps) {
   return (
     <>
-      {!solar && (
-        <div className={cn('absolute inset-0 -z-20', { 'light:hidden': preset.halo })} aria-hidden="true">
+      {!light && (
+        <div className="light:hidden absolute inset-0 -z-20" aria-hidden="true">
           <Starfield
             className={cn('h-full w-full', preset.starfield, {
               'transition-opacity duration-300 group-hover:opacity-100': preset.starfieldHover,
@@ -41,7 +32,6 @@ export function CTAFinalBackdrop({
             starCount={starCount}
             speed={speed}
             respectReducedMotion={respectReducedMotion}
-            tone={tone}
           />
         </div>
       )}

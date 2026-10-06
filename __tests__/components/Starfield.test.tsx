@@ -65,18 +65,11 @@ describe('Starfield Component', () => {
     expect(mockCtx.fillRect).toHaveBeenCalled();
   });
 
-  it('should draw white stars on the void background by default', () => {
+  it('should draw white stars on the void background', () => {
     render(<Starfield starCount={20} speed={4} />);
 
     expect(mockCtx.strokeStyle).toMatch(/^rgba\(255, 255, 255,/);
     expect(mockCtx.fillStyle).toBe('rgb(2, 6, 23)');
-  });
-
-  it('should draw dark stars on the cosmic-latte background in the light tone', () => {
-    render(<Starfield starCount={20} speed={4} tone="light" />);
-
-    expect(mockCtx.strokeStyle).toMatch(/^rgba\(30, 41, 82,/);
-    expect(mockCtx.fillStyle).toBe('rgb(255, 248, 231)');
   });
 
   it('should cancel the animation frame on unmount', () => {

@@ -60,7 +60,7 @@ export const TONE_PRESETS: Record<Tone, TonePreset> = {
     buttonSize: 'default',
     starfieldHover: false,
     section: 'py-10 sm:py-12 lg:py-16',
-    starfield: 'opacity-50 light:opacity-100',
+    starfield: 'opacity-50',
     headline: 'text-fg text-[clamp(1.75rem,4vw,3rem)]',
     description: 'text-fg-2 text-base leading-7 sm:text-lg',
     button: 'gap-2',

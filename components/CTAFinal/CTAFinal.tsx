@@ -70,8 +70,8 @@ export interface CTAFinalProps {
 /**
  * Final homepage call-to-action with an animated starfield background that
  * enters "warp speed" when the CTA button is hovered or focused. In the light
- * theme the immersive tone shows a warm sun halo instead, while the sober tone
- * keeps its stars, drawn dark on the light background.
+ * theme there are no stars: the immersive tone shows a warm sun halo instead, and the sober tone
+ * stays a flat background.
  *
  * The headline uses an animated accent gradient and the button pulses with a
  * glow effect. All motion is disabled when the user prefers reduced motion and
@@ -104,9 +104,8 @@ const CTAFinal = ({
   // eslint-disable-next-line security/detect-object-injection
   const preset = TONE_PRESETS[tone];
   const light = useResolvedTheme() === 'light';
-  // In the light theme the immersive tone trades its stars for a sun halo, so there is nothing to warp.
-  const solar = light && preset.halo;
-  const warpEnabled = (warpOnHover ?? preset.warp) && !prefersReducedMotion && !solar;
+  // The light theme has no stars, so there is nothing to warp.
+  const warpEnabled = (warpOnHover ?? preset.warp) && !prefersReducedMotion && !light;
   const { isWarping, startWarp, stopWarp } = useWarpEffect(warpEnabled);
 
   const restSpeed = clamp(starfieldSpeed, 0, 1) * SPEED_SCALE;
@@ -144,8 +143,7 @@ const CTAFinal = ({
         starCount={currentStarCount}
         speed={currentSpeed}
         respectReducedMotion={respectReducedMotion}
-        solar={solar}
-        tone={light ? 'light' : 'dark'}
+        light={light}
       />
 
       <div className="relative z-10 m-auto flex max-w-5xl flex-col items-center gap-6 text-center">

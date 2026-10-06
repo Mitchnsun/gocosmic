@@ -161,7 +161,7 @@ Immersive sections: `<Starfield>` at layer `-z-20` + a radial accent gradient or
 **In the light theme** (EPIC #113):
 
 - **The sun replaces the stars on the homepage only**: `<Sun>` (`components/Sun`, pure CSS disc + halo) rises top right in the hero over a misty-rose floor (`.rose-floor`), and the immersive `CTAFinal` swaps its stars for a warm halo (`.sun-glow`). The sun belongs to the hero and the closing CTA only — **never two suns on a page**.
-- **Sober `CTAFinal`** (inner pages): keeps its stars in both themes; in the light theme `<Starfield tone="light">` draws dark blue stars on the cosmic-latte page colour.
+- **Sober `CTAFinal`** (inner pages): stars in the dark theme only; in the light theme it is a flat `bg-bg` (a dark-on-cream starfield never rendered well).
 - **Dark islands**: the case study heroes keep their stars and stay dark in both themes, through `data-theme="dark"` on the section (the tokens re-scope for the subtree). Use an island for anything whose colours cannot follow the theme (a canvas, a dark brand visual).
 - **Pick the scene in CSS first**: the `light:` variant (`light:hidden`, `hidden light:block`) is right from the first paint, then `useResolvedTheme()` unmounts what the theme hides so canvases and animation loops stop. `light:` never applies inside a dark island.
 - **Switching theme**: colours cross-fade over 300 ms and the sun rises into place (`theme-fade` / `theme-rise` on `<html>` during a switch only, see `useThemeSwitch`); both are skipped under reduced motion. The choice is stored in `localStorage['cs-theme']`; first visits are always dark, whatever the OS prefers.

@@ -23,15 +23,10 @@ export interface StarfieldProps {
   /** Freezes the stars when the visitor prefers reduced motion. Defaults to `false`,
    *  leaving the caller in charge of the preference. */
   respectReducedMotion?: boolean;
-  /** `dark` (default): white stars on the `void` background. `light`: `space` (dark blue) stars on the cosmic-latte page colour. */
-  tone?: 'dark' | 'light';
 }
 
-const TONE_COLORS = {
-  dark: { background: 'rgb(2, 6, 23)', star: '255, 255, 255', weight: 1, minOpacity: 0 },
-  // Dark stars on a light page read thinner than white ones on black: draw them heavier.
-  light: { background: 'rgb(255, 248, 231)', star: '30, 41, 82', weight: 1.8, minOpacity: 0.65 },
-} as const;
+const BACKGROUND = 'rgb(2, 6, 23)';
+const STAR_RGB = '255, 255, 255';
 
 const DEFAULT_STAR_COUNT = 500;
 const DEFAULT_SPEED = 2;
@@ -56,7 +51,6 @@ const Starfield = ({
   speed = DEFAULT_SPEED,
   className,
   respectReducedMotion = false,
-  tone = 'dark',
 }: StarfieldProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const frozen = usePrefersReducedMotion(respectReducedMotion);
@@ -91,14 +85,12 @@ const Starfield = ({
       prevZ: width,
     });
 
-    // eslint-disable-next-line security/detect-object-injection
-    const { background, star: starRgb, weight, minOpacity } = TONE_COLORS[tone];
     const stars: Star[] = Array.from({ length: starCountRef.current }, createStar);
 
     let animationId: number | null = null;
 
     const draw = () => {
-      ctx.fillStyle = background;
+      ctx.fillStyle = BACKGROUND;
       ctx.fillRect(0, 0, width, height);
 
       const cx = width / 2;
@@ -128,19 +120,19 @@ const Starfield = ({
         const prevSx = (star.x / star.prevZ) * focalLength + cx;
         const prevSy = (star.y / star.prevZ) * focalLength + cy;
 
-        const opacity = Math.max(minOpacity, Math.min(1, 1 - star.z / width));
-        const lineWidth = Math.max(0.5, (1 - star.z / width) * 2.5) * weight;
+        const opacity = Math.min(1, 1 - star.z / width);
+        const lineWidth = Math.max(0.5, (1 - star.z / width) * 2.5);
 
         if (frozen) {
           // No movement means no streak to draw: paint each star as a dot so a
           // frozen starfield is still a starfield.
-          ctx.fillStyle = `rgba(${starRgb}, ${opacity})`;
+          ctx.fillStyle = `rgba(${STAR_RGB}, ${opacity})`;
           ctx.fillRect(sx, sy, lineWidth, lineWidth);
         } else {
           ctx.beginPath();
           ctx.moveTo(prevSx, prevSy);
           ctx.lineTo(sx, sy);
-          ctx.strokeStyle = `rgba(${starRgb}, ${opacity})`;
+          ctx.strokeStyle = `rgba(${STAR_RGB}, ${opacity})`;
           ctx.lineWidth = lineWidth;
           ctx.stroke();
         }
@@ -184,7 +176,7 @@ const Starfield = ({
       if (resizeTimer !== null) clearTimeout(resizeTimer);
       window.removeEventListener('resize', handleResize);
     };
-  }, [frozen, tone]);
+  }, [frozen]);
 
   return <canvas ref={canvasRef} className={className} aria-hidden="true" />;
 };

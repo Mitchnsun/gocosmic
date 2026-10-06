@@ -305,21 +305,20 @@ describe('CTAFinal', () => {
       expect(container.querySelector('section')).not.toHaveAttribute('data-theme');
     });
 
-    it('keeps the stars on the sober tone, drawn dark on the light page', () => {
+    it('draws no stars on the sober tone, which stays a flat background', () => {
       const { container } = renderLight({ tone: 'sober' });
 
       expect(container.querySelector('section')).not.toHaveAttribute('data-theme');
-      expect(container.querySelector('canvas')).toHaveAttribute('data-tone', 'light');
-      expect(container.querySelector('canvas')?.parentElement).not.toHaveClass('light:hidden');
+      expect(container.querySelector('canvas')).not.toBeInTheDocument();
       expect(container.querySelector('.sun-glow')).not.toBeInTheDocument();
     });
   });
 
-  it('gives the immersive tone a CSS-first sun scene and white stars in the dark theme', () => {
+  it('hides the stars in CSS from the first paint and gives the immersive tone a CSS-first sun scene', () => {
     const { container } = renderCTA();
     expect(container.querySelector('section')).not.toHaveAttribute('data-theme');
     expect(container.querySelector('.sun-glow')).toHaveClass('hidden', 'light:block');
-    expect(container.querySelector('canvas')).toHaveAttribute('data-tone', 'dark');
+    expect(container.querySelector('canvas')?.parentElement).toHaveClass('light:hidden');
   });
 
   it('paints the alternate background with the alt variant', () => {
