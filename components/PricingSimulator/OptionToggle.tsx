@@ -58,8 +58,11 @@ export function OptionToggle({
 
   return (
     <div
+      // The orange price must keep 4.5:1 on the tint: lighter in the light theme, and nested rows
+      // add no second tint on top of their parent's.
       className={cn('rounded-xl border transition-colors duration-200', {
-        'border-aerospace bg-aerospace/[0.06]': checked,
+        'border-aerospace': checked,
+        'bg-aerospace/[0.06] light:bg-aerospace/[0.03]': checked && !nested,
         'border-line bg-surface hover:border-line-2': !checked,
         'rounded-lg': nested,
       })}>

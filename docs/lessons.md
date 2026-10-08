@@ -252,6 +252,16 @@ Grep `components/CosmicCursor/` for the native selector being replaced (`input[t
 
 ---
 
+## Accessibility
+
+### The axe audit only sees each page as it loads
+
+**Mistake**: `yarn qa` passed on `/services`, yet a ticked option of the pricing simulator showed its orange price at 4.48:1 on the light theme's tinted row, below the 4.5:1 AA threshold. The audit loads each route and analyses it without any interaction, so ticked rows, nested rows and open bubbles were never checked.
+
+**Correct pattern**: When a component changes colours or reveals content on interaction (ticked rows, tabs, popovers, nested options), run an axe check on those states too (a short Playwright script ticking the options and opening a bubble before `AxeBuilder.analyze()`), in both themes. Stacked translucent tints (a nested ticked row inside a ticked parent) lower contrast further: avoid tinting nested rows.
+
+---
+
 ## Pull requests
 
 ### A follow-up PR of leftovers does not always get its own version bump

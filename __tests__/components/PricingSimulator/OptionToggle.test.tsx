@@ -35,7 +35,14 @@ describe('OptionToggle', () => {
     expect(checkbox).toHaveClass('appearance-none', 'check-mark', 'border-fg-3', 'checked:bg-aerospace');
 
     rerender(<OptionToggle label="Email" price="+10€" checked onChange={() => {}} />);
-    expect(container.firstChild).toHaveClass('border-aerospace', 'bg-aerospace/[0.06]');
+    expect(container.firstChild).toHaveClass('border-aerospace', 'bg-aerospace/[0.06]', 'light:bg-aerospace/[0.03]');
+  });
+
+  it('adds no second tint to a ticked row nested in a ticked parent, so the orange price stays readable', () => {
+    const { container } = render(<OptionToggle label="Redirects" price="+5€" checked nested onChange={() => {}} />);
+
+    expect(container.firstChild).toHaveClass('border-aerospace');
+    expect(container.firstChild).not.toHaveClass('bg-aerospace/[0.06]');
   });
 
   it('names the checkbox by its label and describes it with the hint and the price', () => {
