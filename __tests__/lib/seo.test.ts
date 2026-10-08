@@ -5,8 +5,9 @@ import { buildPageMetadata, OG_LOCALES } from '@/lib/seo';
 
 vi.mock('next-intl/server', () => ({
   getTranslations: async ({ locale, namespace }: { locale: string; namespace: string }) => {
-    const { default: messages } = await import(`../../messages/${locale}/common.json`);
-    return createTranslator({ locale, messages, namespace });
+    const { MESSAGES_BY_LOCALE } = await import('../messages-by-locale');
+    // eslint-disable-next-line security/detect-object-injection
+    return createTranslator({ locale, messages: MESSAGES_BY_LOCALE[locale], namespace });
   },
 }));
 

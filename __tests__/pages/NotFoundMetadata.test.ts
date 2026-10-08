@@ -12,8 +12,9 @@ vi.mock('next/font/google', () => {
 vi.mock('next-intl/server', () => ({
   getTranslations: async (options: string | { locale?: string; namespace: string }) => {
     const { locale = 'fr', namespace } = typeof options === 'string' ? { namespace: options } : options;
-    const { default: messages } = await import(`../../messages/${locale}/common.json`);
-    return createTranslator({ locale, messages, namespace });
+    const { MESSAGES_BY_LOCALE } = await import('../messages-by-locale');
+    // eslint-disable-next-line security/detect-object-injection
+    return createTranslator({ locale, messages: MESSAGES_BY_LOCALE[locale], namespace });
   },
 }));
 

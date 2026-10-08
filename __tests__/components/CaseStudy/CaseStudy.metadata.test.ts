@@ -5,9 +5,9 @@ import { buildCaseStudyMetadata } from '@/components/CaseStudy/CaseStudy.metadat
 
 vi.mock('next-intl/server', () => ({
   getTranslations: async ({ locale, namespace }: { locale: string; namespace: string }) => {
-    const { default: common } = await import(`../../../messages/${locale}/common.json`);
-    const { default: projects } = await import(`../../../messages/${locale}/projects.json`);
-    return createTranslator({ locale, messages: { ...common, ...projects }, namespace });
+    const { MESSAGES_BY_LOCALE } = await import('../../messages-by-locale');
+    // eslint-disable-next-line security/detect-object-injection
+    return createTranslator({ locale, messages: MESSAGES_BY_LOCALE[locale], namespace });
   },
 }));
 
