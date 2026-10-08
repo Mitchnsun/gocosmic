@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { useEffect, useRef } from 'react';
 
 import { Link } from '@/i18n/navigation';
-import { STUDIO_BASES } from '@/lib/config';
+import { CONTACT_EMAIL, STUDIO_BASES } from '@/lib/config';
 import { DEFAULT_REGION, type Region } from '@/lib/region';
 
 import { ThemeToggle } from '../Theme';
@@ -92,8 +92,8 @@ const MobileMenu = ({ onClose, items, region = DEFAULT_REGION }: MobileMenuProps
           <ThemeToggle />
         </div>
         <HeaderCta onClick={onClose} className="h-12 w-full text-base" />
-        <a href="mailto:contact@gocosmic.dev" className="text-fg-3 hover:text-fg-2 font-mono text-xs transition-colors">
-          contact@gocosmic.dev
+        <a href={`mailto:${CONTACT_EMAIL}`} className="text-fg-3 hover:text-fg-2 font-mono text-xs transition-colors">
+          {CONTACT_EMAIL}
         </a>
       </div>
     </motion.div>

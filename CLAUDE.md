@@ -150,7 +150,7 @@ All documentation must be written in **English**: README files, code comments, J
 ### Helper files
 
 - `tasks/todo.md` — ephemeral planning scratch-pad (`.gitignore`d, never committed)
-- `docs/lessons.md` — persistent lessons log; update it after each correction and commit it when the user asks for a commit
+- `docs/lessons.md` — persistent lessons log; update it after each correction and commit it with the rest of the work
 
 ### Planning
 
@@ -166,7 +166,7 @@ All documentation must be written in **English**: README files, code comments, J
 
 ### Self-improvement loop
 
-- After any correction from the user: update `docs/lessons.md` with the pattern (commit it only when the user asks to commit)
+- After any correction from the user: update `docs/lessons.md` with the pattern and commit it with the rest of the work
 - Review `docs/lessons.md` at the start of each session for relevant context
 
 ### Verification before done

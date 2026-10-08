@@ -26,7 +26,12 @@ describe('WebsiteSeo', () => {
       data: {
         '@context': 'https://schema.org',
         '@type': 'WebSite',
+        '@id': 'https://www.gocosmic.dev/#website',
         url: 'https://www.gocosmic.dev',
+        name: 'Cosmic Studio',
+        alternateName: 'Go Cosmic',
+        inLanguage: ['en', 'fr', 'es', 'de', 'it'],
+        publisher: { '@id': 'https://www.gocosmic.dev/#company' },
       },
     });
   });

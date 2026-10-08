@@ -1,6 +1,6 @@
 import { type MetadataRoute } from 'next';
 
-const SITE_URL = 'https://www.gocosmic.dev';
+import { SITE_URL } from '@/lib/config';
 
 export default function robots(): MetadataRoute.Robots {
   return {

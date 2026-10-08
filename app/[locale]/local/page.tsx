@@ -9,25 +9,20 @@ import { buildProjectCards, ProjectGrid } from '@/components/ProjectGrid';
 import { SectionHeading } from '@/components/SectionHeading';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, ghostPill, primaryPill, SECTION_Y } from '@/design-system/pill';
-import { getAlternates } from '@/i18n/canonical';
 import { Link } from '@/i18n/navigation';
-import { getOgImages } from '@/lib/og';
 import { getRegion } from '@/lib/region.server';
+import { buildPageMetadata } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'local' });
-  const title = t('meta.title');
-  const description = t('meta.description');
-  const { og, twitter } = getOgImages(locale);
 
-  return {
-    title,
-    description,
-    alternates: getAlternates(locale, '/local'),
-    openGraph: { title, description, images: [og] },
-    twitter: { card: 'summary_large_image', title, description, images: [twitter] },
-  };
+  return buildPageMetadata({
+    locale,
+    routeKey: '/local',
+    title: t('meta.title'),
+    description: t('meta.description'),
+  });
 }
 
 const ZONES = ['geneva', 'romandy', 'annecy', 'remote'] as const;

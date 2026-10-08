@@ -2,12 +2,12 @@
   "legal": {
     "privacy": {
       "meta": {
-        "title": "Política de privacidad - Cosmic Studio",
+        "title": "Política de privacidad | Cosmic Studio",
         "description": "Cómo trata Cosmic Studio los datos personales: formularios, reserva de citas, correos electrónicos, medición de audiencia, plazos de conservación y derechos."
       },
-      "eyebrow": "RGPD",
+      "eyebrow": "nLPD · RGPD",
       "title": "Política de privacidad",
-      "updated": "Última actualización: 28 de septiembre de 2026",
+      "updated": "Última actualización: 6 de octubre de 2026",
       "intro": "Esta página explica cómo trata Cosmic Studio los datos personales recogidos en este sitio y en los intercambios por correo electrónico.",
       "legalNoticePrefix": "Para los datos del editor y del alojamiento, consulta el",
       "legalNoticeLink": "aviso legal",
@@ -53,14 +53,14 @@
         {
           "title": "Transferencias internacionales",
           "body": [
-            "Algunos encargados del tratamiento, entre ellos Vercel, los proveedores de correo electrónico y Google (Google Calendar), pueden tratar datos fuera del Espacio Económico Europeo.",
+            "Algunos encargados del tratamiento, entre ellos Vercel, los proveedores de correo electrónico y Google (Google Calendar), pueden tratar datos fuera de Suiza y del Espacio Económico Europeo.",
             "Estas transferencias están amparadas por cláusulas contractuales tipo aprobadas por la Comisión Europea y, en el caso de Google, por el marco de protección de datos UE-EE. UU. (EU-US Data Privacy Framework). Para cualquier pregunta sobre las garantías aplicables, escribe a support@gocosmic.dev."
           ]
         },
         {
           "title": "Tus derechos",
           "body": [
-            "Cuando estos derechos se apliquen, puedes solicitar el acceso a tus datos, su rectificación o su supresión, la limitación de su tratamiento o su portabilidad, u oponerte a su tratamiento, escribiendo a support@gocosmic.dev. También puedes presentar una reclamación ante la CNIL: https://www.cnil.fr/."
+            "Cuando estos derechos se apliquen, puedes solicitar el acceso a tus datos, su rectificación o su supresión, la limitación de su tratamiento o su portabilidad, u oponerte a su tratamiento, escribiendo a support@gocosmic.dev. También puedes presentar una reclamación ante el Encargado federal de protección de datos y de transparencia de Suiza (PFPDT): https://www.edoeb.admin.ch/, o, si resides en Francia, ante la CNIL: https://www.cnil.fr/."
           ]
         },
         {
@@ -75,7 +75,7 @@
     },
     "legalNotice": {
       "meta": {
-        "title": "Aviso legal - Cosmic Studio",
+        "title": "Aviso legal | Cosmic Studio",
         "description": "Editor, alojamiento, propiedad intelectual, responsabilidad y contacto de Cosmic Studio."
       },
       "eyebrow": "Información legal",
@@ -86,7 +86,7 @@
         {
           "title": "Editor",
           "body": [
-            "Sitio: www.gocosmic.dev. Editor: Matthieu Compérat, empresa individual (entreprise individuelle) registrada desde el 17 de octubre de 2016, con el nombre comercial Cosmic Studio (antes Go Cosmic). SIRET: 823 200 365 00026. Domicilio social: 485 route de la champanaise, 74410 Duingt, Francia. Contacto: support@gocosmic.dev."
+            "Sitio: www.gocosmic.dev. Editor: Matthieu Compérat, empresa individual (raison individuelle) en proceso de inscripción, con el nombre comercial Cosmic Studio (antes Go Cosmic). Domicilio social: 1224 Chêne-Bougeries, Suiza. Contacto: support@gocosmic.dev."
           ]
         },
         {
@@ -133,7 +133,7 @@
     },
     "terms": {
       "meta": {
-        "title": "Condiciones generales de venta - Cosmic Studio",
+        "title": "Condiciones generales de venta | Cosmic Studio",
         "description": "Condiciones generales de venta de Cosmic Studio: suscripción, opciones, duración, cancelación y propiedad del código."
       },
       "eyebrow": "Condiciones de venta",
@@ -144,7 +144,7 @@
         {
           "title": "Prestador",
           "body": [
-            "El prestador es Cosmic Studio, representado por Matthieu Compérat, empresa individual (entreprise individuelle) registrada desde el 17 de octubre de 2016 (SIRET 823 200 365 00026), 485 route de la champanaise, 74410 Duingt, Francia. Contacto: support@gocosmic.dev."
+            "El prestador es Cosmic Studio, representado por Matthieu Compérat, empresa individual (raison individuelle) en proceso de inscripción, 1224 Chêne-Bougeries, Suiza. Contacto: support@gocosmic.dev."
           ]
         },
         {
@@ -214,7 +214,8 @@
         {
           "title": "Ley aplicable y litigios",
           "body": [
-            "Estas condiciones se rigen por el derecho francés. En caso de litigio, se busca una solución amistosa antes de cualquier acción judicial; en su defecto, son competentes los tribunales correspondientes al domicilio social de Cosmic Studio."
+            "Estas condiciones se rigen por el derecho suizo para los clientes establecidos en Suiza, y por el derecho francés para los clientes establecidos en Francia. En caso de litigio, se busca una solución amistosa antes de cualquier acción judicial; en su defecto, son competentes los tribunales del domicilio del cliente.",
+            "En los demás casos, se aplica el derecho suizo y son competentes los tribunales del cantón de Ginebra."
           ]
         }
       ]

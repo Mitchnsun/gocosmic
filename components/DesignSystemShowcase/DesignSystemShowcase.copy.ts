@@ -40,7 +40,7 @@ export const SECTIONS: readonly ShowcaseSection[] = [
   {
     id: 'illustrations',
     title: 'Illustrations',
-    lead: 'Stars and a glow in the dark theme, the sun in the light theme. Homepage hero and final call to action only.',
+    lead: 'Stars and a glow in the dark theme, the sun in the light theme. Homepage hero, final call to action and case study heroes only.',
   },
   {
     id: 'exceptions',
@@ -140,7 +140,8 @@ export const VOICE: Record<'keep' | 'stop' | 'tone', RuleCard> = {
 /** The immersive moment of each face, added to the “Keep” card. */
 export const IMMERSIVE: Record<ThemeFace, string> = {
   dark: 'Discreet stars in the hero and the final call to action, one immersive section per page',
-  light: 'The sun in the hero, a warm halo on the final call to action, never two suns on a page',
+  light:
+    'The sun in the hero, a warm halo on the final call to action, a sunrise on case study heroes, never two suns on a page',
 };
 
 export const EXCEPTIONS = {
@@ -153,5 +154,8 @@ export const EXCEPTIONS = {
     title: 'Project covers',
     reason: 'Brand backgrounds: Daily Fortune’s deep purple, space blue behind the white CPMB logo.',
   },
-  island: { title: 'Dark islands', reason: 'Case study heroes stay dark in both themes through data-theme="dark".' },
+  island: {
+    title: 'Dark islands',
+    reason: 'Case study heroes with a project image stay dark in both themes through data-theme="dark".',
+  },
 } as const;

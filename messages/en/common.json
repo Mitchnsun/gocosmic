@@ -4,11 +4,12 @@
     "title": "This page has drifted out of orbit.",
     "description": "The link may be old, or the page has moved. Start again from the homepage, or tell us what you were looking for.",
     "link": "Back to the homepage",
-    "contact": "Tell us what you were looking for"
+    "contact": "Tell us what you were looking for",
+    "meta_title": "Page not found | Cosmic Studio"
   },
   "meta": {
-    "title": "Websites for local businesses · Geneva & Annecy | Cosmic Studio",
-    "description": "Websites for craftspeople, associations and independents in Geneva, Annecy and Haute-Savoie. A site people find on Google, and someone who looks after it once it is live."
+    "title": "Local business websites · Geneva & Annecy | Cosmic Studio",
+    "description": "Websites for craftspeople, associations and independents in Geneva, Annecy and Haute-Savoie. A site people find on Google, and someone who looks after it."
   },
   "language": {
     "current": "Current language: {language}",
@@ -50,5 +51,8 @@
     "label": "Theme",
     "toggle_light": "Switch to the light theme",
     "toggle_dark": "Switch to the dark theme"
+  },
+  "og": {
+    "image_alt": "Cosmic Studio · Your business deserves to be seen."
   }
 }

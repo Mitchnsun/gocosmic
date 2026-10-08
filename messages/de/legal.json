@@ -2,12 +2,12 @@
   "legal": {
     "privacy": {
       "meta": {
-        "title": "Datenschutzerklärung - Cosmic Studio",
+        "title": "Datenschutzerklärung | Cosmic Studio",
         "description": "Wie Cosmic Studio personenbezogene Daten verarbeitet: Formulare, Terminbuchung, E-Mails, Reichweitenmessung, Aufbewahrungsfristen und Ihre Rechte."
       },
-      "eyebrow": "DSGVO",
+      "eyebrow": "nDSG · DSGVO",
       "title": "Datenschutzerklärung",
-      "updated": "Zuletzt aktualisiert: 28. September 2026",
+      "updated": "Zuletzt aktualisiert: 6. Oktober 2026",
       "intro": "Diese Seite erklärt, wie Cosmic Studio personenbezogene Daten verarbeitet, die auf dieser Website und im E-Mail-Austausch erhoben werden.",
       "legalNoticePrefix": "Angaben zum Anbieter und zum Hosting finden Sie im",
       "legalNoticeLink": "Impressum",
@@ -53,14 +53,14 @@
         {
           "title": "Internationale Übermittlungen",
           "body": [
-            "Einige Auftragsverarbeiter, darunter Vercel, E-Mail-Anbieter und Google (Google Calendar), können Daten außerhalb des Europäischen Wirtschaftsraums verarbeiten.",
+            "Einige Auftragsverarbeiter, darunter Vercel, E-Mail-Anbieter und Google (Google Calendar), können Daten außerhalb der Schweiz und des Europäischen Wirtschaftsraums verarbeiten.",
             "Diese Übermittlungen stützen sich auf Standardvertragsklauseln, die von der Europäischen Kommission genehmigt wurden, und bei Google zusätzlich auf das EU-US Data Privacy Framework. Bei Fragen zu den geltenden Garantien wenden Sie sich an support@gocosmic.dev."
           ]
         },
         {
           "title": "Ihre Rechte",
           "body": [
-            "Soweit diese Rechte anwendbar sind, können Sie Auskunft über Ihre Daten sowie deren Berichtigung, Löschung oder die Einschränkung ihrer Verarbeitung verlangen, der Verarbeitung widersprechen oder die Übertragung Ihrer Daten verlangen, indem Sie an support@gocosmic.dev schreiben. Außerdem können Sie eine Beschwerde bei der CNIL einreichen: https://www.cnil.fr/."
+            "Soweit diese Rechte anwendbar sind, können Sie Auskunft über Ihre Daten sowie deren Berichtigung, Löschung oder die Einschränkung ihrer Verarbeitung verlangen, der Verarbeitung widersprechen oder die Übertragung Ihrer Daten verlangen, indem Sie an support@gocosmic.dev schreiben. Außerdem können Sie eine Beschwerde beim Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB) einreichen: https://www.edoeb.admin.ch/, oder, wenn Sie in Frankreich wohnen, bei der CNIL: https://www.cnil.fr/."
           ]
         },
         {
@@ -75,7 +75,7 @@
     },
     "legalNotice": {
       "meta": {
-        "title": "Impressum - Cosmic Studio",
+        "title": "Impressum | Cosmic Studio",
         "description": "Anbieter, Hosting, geistiges Eigentum, Haftung und Kontakt von Cosmic Studio."
       },
       "eyebrow": "Rechtliche Informationen",
@@ -86,7 +86,7 @@
         {
           "title": "Anbieter",
           "body": [
-            "Website: www.gocosmic.dev. Anbieter: Matthieu Compérat, Einzelunternehmer (entreprise individuelle), eingetragen seit dem 17. Oktober 2016, tätig unter dem Handelsnamen Cosmic Studio (vormals Go Cosmic). SIRET: 823 200 365 00026. Geschäftsanschrift: 485 route de la champanaise, 74410 Duingt, Frankreich. Kontakt: support@gocosmic.dev."
+            "Website: www.gocosmic.dev. Anbieter: Matthieu Compérat, Einzelunternehmen (raison individuelle), Eintragung in Bearbeitung, tätig unter dem Handelsnamen Cosmic Studio (vormals Go Cosmic). Geschäftsanschrift: 1224 Chêne-Bougeries, Schweiz. Kontakt: support@gocosmic.dev."
           ]
         },
         {
@@ -135,7 +135,7 @@
     },
     "terms": {
       "meta": {
-        "title": "Allgemeine Geschäftsbedingungen - Cosmic Studio",
+        "title": "Allgemeine Geschäftsbedingungen | Cosmic Studio",
         "description": "Allgemeine Geschäftsbedingungen von Cosmic Studio: Abonnement, Optionen, Laufzeit, Kündigung und Eigentum am Code."
       },
       "eyebrow": "Geschäftsbedingungen",
@@ -146,7 +146,7 @@
         {
           "title": "Anbieter",
           "body": [
-            "Anbieter ist Cosmic Studio, vertreten durch Matthieu Compérat, Einzelunternehmen (entreprise individuelle), eingetragen seit dem 17. Oktober 2016 (SIRET 823 200 365 00026), 485 route de la champanaise, 74410 Duingt, Frankreich. Kontakt: support@gocosmic.dev."
+            "Anbieter ist Cosmic Studio, vertreten durch Matthieu Compérat, Einzelunternehmen (raison individuelle), Eintragung in Bearbeitung, 1224 Chêne-Bougeries, Schweiz. Kontakt: support@gocosmic.dev."
           ]
         },
         {
@@ -216,7 +216,8 @@
         {
           "title": "Anwendbares Recht und Streitigkeiten",
           "body": [
-            "Diese Bedingungen unterliegen französischem Recht. Im Streitfall wird vor jedem Gerichtsverfahren eine gütliche Einigung angestrebt; andernfalls sind die Gerichte am Sitz von Cosmic Studio zuständig."
+            "Diese Bedingungen unterliegen schweizerischem Recht, wenn die Kundschaft in der Schweiz ansässig ist, und französischem Recht, wenn sie in Frankreich ansässig ist. Im Streitfall wird vor jedem Gerichtsverfahren eine gütliche Einigung angestrebt; andernfalls sind die Gerichte am Wohnsitz der Kundschaft zuständig.",
+            "In allen anderen Fällen gilt schweizerisches Recht, und zuständig sind die Gerichte des Kantons Genf."
           ]
         }
       ]

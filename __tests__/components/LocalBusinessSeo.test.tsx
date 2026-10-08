@@ -33,18 +33,14 @@ describe('LocalBusinessSeo', () => {
           'Web and mobile studio based in Chêne-Bougeries, near Geneva. Websites and apps for craftspeople, associations and independents in French-speaking Switzerland and Haute-Savoie, including Annecy.',
         url: 'https://www.gocosmic.dev',
         image: 'https://www.gocosmic.dev/og-default.jpg',
-        inLanguage: 'en',
+        email: 'contact@gocosmic.dev',
+        founder: { '@type': 'Person', '@id': 'https://www.gocosmic.dev/#person', name: 'Matthieu Compérat' },
         address: {
           '@type': 'PostalAddress',
           addressLocality: 'Chêne-Bougeries',
           postalCode: '1224',
           addressRegion: 'GE',
           addressCountry: 'CH',
-        },
-        geo: {
-          '@type': 'GeoCoordinates',
-          latitude: 46.195,
-          longitude: 6.186,
         },
         areaServed: ['Geneva', 'French-speaking Switzerland', 'Haute-Savoie', 'Annecy'],
         sameAs: ['https://www.linkedin.com/in/matthieucomperat/'],
@@ -60,7 +56,6 @@ describe('LocalBusinessSeo', () => {
         data: expect.objectContaining({
           description:
             'Studio web et mobile installé à Chêne-Bougeries, près de Genève. Sites et applications pour les artisans, associations et indépendants de Suisse romande et de Haute-Savoie, notamment à Annecy.',
-          inLanguage: 'fr',
           areaServed: ['Genève', 'Suisse romande', 'Haute-Savoie', 'Annecy'],
         }),
       })
@@ -75,7 +70,9 @@ describe('LocalBusinessSeo', () => {
     render(<LocalBusinessSeo locale={locale} />);
 
     expect(jsonLdScriptMock).toHaveBeenCalledWith(
-      expect.objectContaining({ data: expect.objectContaining({ inLanguage: locale, areaServed }) })
+      expect.objectContaining({
+        data: expect.objectContaining({ url: 'https://www.gocosmic.dev', areaServed }),
+      })
     );
   });
 });

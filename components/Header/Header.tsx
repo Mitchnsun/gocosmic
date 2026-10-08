@@ -63,7 +63,7 @@ const Header = ({ logo = DEFAULT_LOGO, navItems, className, id, region }: Header
           } as React.CSSProperties
         }>
         <div className="mx-auto flex h-full w-full max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
-          <h1 className="shrink-0">
+          <div className="shrink-0">
             <Link
               href="/"
               aria-label={t('home', { brand: logo })}
@@ -73,7 +73,7 @@ const Header = ({ logo = DEFAULT_LOGO, navItems, className, id, region }: Header
               {/* eslint-disable-next-line no-restricted-syntax */}
               <span className="text-aerospace">.</span>
             </Link>
-          </h1>
+          </div>
           <DesktopNav items={items} />
           <div className="flex items-center gap-2 lg:hidden">
             <LanguageSwitcher onOpen={handleOpenLang} />

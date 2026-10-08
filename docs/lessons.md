@@ -259,3 +259,23 @@ Grep `components/CosmicCursor/` for the native selector being replaced (`input[t
 **Mistake**: A small PR carrying two leftovers of an already released change (a restored anchor decoding and a test wording fix) was bumped to a patch version with its own changelog entry, as the PR checklist asks for every PR. The owner did not want a version bump for it.
 
 **Correct pattern**: For a follow-up PR that only tidies up a change already released, ask the owner before bumping the version and adding a changelog entry, instead of applying the one-bump-per-PR rule automatically.
+
+---
+
+## Legal and business facts
+
+### Ask what is changing before treating a legal page as the source of truth
+
+**Mistake**: The legal notice (Duingt, SIRET, French law) and the structured data (Chêne-Bougeries) disagreed. The two options offered were to switch everything to one existing address or the other, and the studio was moved to Duingt. In fact the owner is registering a new Swiss sole proprietorship in Chêne-Bougeries, and the French registration was the one to remove.
+
+**Correct pattern**: When legal pages and other declarations disagree, ask which one reflects the current situation, or whether it is changing (new registration, move), before offering to align on the existing text. Legal pages can be the outdated side.
+
+---
+
+## Testing
+
+### Check the exit code of `yarn coverage`, not just its summary line
+
+**Mistake**: Three new tests mocked `next-intl/server` with a template-string `import()` of message files. Vite turned it into a `\0vite` helper module, and the coverage HTML report crashed on that path after every test had passed. Grepping only for the "All files" line hid the failure locally, so CI was the first to catch it.
+
+**Correct pattern**: In tests, import message files statically (see `__tests__/messages-by-locale.ts`), never through `import(`…${locale}…`)`. After `yarn coverage`, check its exit code (`echo $?`) as well as the thresholds.

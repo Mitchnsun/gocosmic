@@ -122,4 +122,10 @@ describe('sitemap', () => {
   it('leaves the internal design system page out', () => {
     expect(sitemap().some((entry) => entry.url.includes('/design-system'))).toBe(false);
   });
+
+  it('leaves the noindex legal pages out', () => {
+    expect(sitemap().some((entry) => /privacy|legal-notice|\/terms|mentions-legales|impressum/.test(entry.url))).toBe(
+      false
+    );
+  });
 });

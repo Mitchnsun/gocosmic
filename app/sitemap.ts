@@ -5,8 +5,8 @@ import { routing } from '@/i18n/routing';
 
 type RouteKey = keyof typeof routing.pathnames;
 
-/** Internal pages kept out of search engines (they are also noindex). */
-export const UNLISTED_ROUTES: readonly RouteKey[] = ['/design-system'];
+/** Internal and legal pages kept out of search engines (they are also noindex). */
+export const UNLISTED_ROUTES: readonly RouteKey[] = ['/design-system', '/privacy', '/legal-notice', '/terms'];
 
 /** Date of the deployment, set in `next.config.ts`; falls back to now outside a Next build (tests). */
 function getLastModified(): Date {

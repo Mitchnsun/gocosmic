@@ -19,11 +19,11 @@ import { StudioIntro } from '@/components/StudioIntro';
 import { WhyStudio } from '@/components/WhyStudio';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, ghostPill, SECTION_Y } from '@/design-system/pill';
-import { getAlternates } from '@/i18n/canonical';
 import { Link } from '@/i18n/navigation';
 import { CODE_HANDOVER_MONTHS } from '@/lib/pricing/offers';
 import { getCurrency } from '@/lib/region';
 import { getRegion } from '@/lib/region.server';
+import { buildPageMetadata } from '@/lib/seo';
 
 const AUDIENCES = ['artisans', 'associations', 'independents'] as const;
 const REASONS = ['ownership', 'fast', 'person', 'grows'] as const;
@@ -37,7 +37,9 @@ const em = (chunks: ReactNode) => <em>{chunks}</em>;
 // (which renders under this same layout) doesn't inherit them.
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return { alternates: getAlternates(locale, '/') };
+  const t = await getTranslations({ locale, namespace: 'meta' });
+
+  return buildPageMetadata({ locale, routeKey: '/', title: t('title'), description: t('description') });
 }
 
 export default async function Home() {

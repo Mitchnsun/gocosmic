@@ -85,7 +85,8 @@
     "result": {
       "label": "Risultato",
       "title": "La nostra prima app online",
-      "description": "Daily Fortune è disponibile sull'App Store e su Google Play, e i suoi utenti ricevono un nuovo messaggio ogni giorno. Per te è la prova che sappiamo portare un'app dall'idea fino alla pubblicazione."
+      "description": "Daily Fortune è disponibile sull'App Store e su Google Play, e i suoi utenti ricevono un nuovo messaggio ogni giorno. Per te è la prova che sappiamo portare un'app dall'idea fino alla pubblicazione.",
+      "maintained": "Continua a essere aggiornata: la versione {version} è uscita il {date}."
     }
   },
   "mcomperat": {

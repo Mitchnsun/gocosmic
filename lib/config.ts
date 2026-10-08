@@ -8,13 +8,18 @@ export const BRAND_NAME = 'Cosmic Studio';
 /** Former studio name, still declared to search engines as an alternate name. */
 export const LEGACY_BRAND_NAME = 'Go Cosmic';
 
-/** Studio base declared in structured data. Coordinates are approximate, at the town level. */
+/** Founder of the studio, declared as a person in structured data. */
+export const FOUNDER_NAME = 'Matthieu Compérat';
+
+/** Public contact address, shown on the contact page and declared in structured data. */
+export const CONTACT_EMAIL = 'contact@gocosmic.dev';
+
+/** Registered office declared in structured data, at the town level, as on the legal notice. */
 export const STUDIO_ADDRESS = {
   addressLocality: 'Chêne-Bougeries',
   postalCode: '1224',
   addressRegion: 'GE',
   addressCountry: 'CH',
-  geo: { latitude: 46.195, longitude: 6.186 },
 } as const;
 
 /** Studio base per region, shown as HUD metadata in the status bar and the mobile menu. */

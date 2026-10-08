@@ -1,41 +1,26 @@
 import type { Metadata } from 'next';
-import { createTranslator, NextIntlClientProvider } from 'next-intl';
+import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages, getTranslations } from 'next-intl/server';
 import type { ReactNode } from 'react';
 
 import CTAFinal from '@/components/CTAFinal';
+import ProjectsListSeo from '@/components/JsonLd/ProjectsListSeo';
 import { buildProjectCards, FilterableProjectGrid } from '@/components/ProjectGrid';
 import { SectionHeading } from '@/components/SectionHeading';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, SECTION_Y } from '@/design-system/pill';
-import { getAlternates } from '@/i18n/canonical';
-import { getOgImages } from '@/lib/og';
+import { buildPageMetadata } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const messages = await getMessages();
-  const t = createTranslator({ messages, locale });
+  const t = await getTranslations({ locale, namespace: 'projectsList' });
 
-  const title = t('projectsList.meta.title');
-  const description = t('projectsList.meta.description');
-  const { og, twitter } = getOgImages(locale);
-
-  return {
-    title,
-    description,
-    alternates: getAlternates(locale, '/projects'),
-    openGraph: {
-      title,
-      description,
-      images: [og],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: [twitter],
-    },
-  };
+  return buildPageMetadata({
+    locale,
+    routeKey: '/projects',
+    title: t('meta.title'),
+    description: t('meta.description'),
+  });
 }
 
 const em = (chunks: ReactNode) => <em>{chunks}</em>;
@@ -72,6 +57,7 @@ export default async function Projects() {
         accentColor="aerospace"
         tone="sober"
       />
+      <ProjectsListSeo />
     </div>
   );
 }

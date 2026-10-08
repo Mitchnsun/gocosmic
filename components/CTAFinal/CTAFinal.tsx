@@ -143,7 +143,6 @@ const CTAFinal = ({
         starCount={currentStarCount}
         speed={currentSpeed}
         respectReducedMotion={respectReducedMotion}
-        light={light}
       />
 
       <div className="relative z-10 m-auto flex max-w-5xl flex-col items-center gap-6 text-center">

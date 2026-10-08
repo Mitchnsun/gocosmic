@@ -7,6 +7,10 @@ export const routing = defineRouting({
   // Used when no locale matches
   defaultLocale: 'en',
 
+  // hreflang links come from each page's metadata and the sitemap; the middleware's `Link` header
+  // pointed x-default to an unprefixed URL that redirects, so it is turned off.
+  alternateLinks: false,
+
   pathnames: {
     // Home page
     '/': '/',

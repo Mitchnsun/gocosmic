@@ -14,8 +14,8 @@ import { StatusBar } from '@/components/StatusBar';
 import { ThemeColorBoot, ThemeProvider } from '@/components/Theme';
 import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/config';
-import { getOgImages } from '@/lib/og';
 import { getRegion } from '@/lib/region.server';
+import { buildPageMetadata } from '@/lib/seo';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -39,25 +39,21 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta' });
 
-  const title = t('title');
-  const description = t('description');
-  const { og, twitter } = getOgImages(locale);
+  const { title, description, openGraph, twitter } = await buildPageMetadata({
+    locale,
+    routeKey: '/',
+    title: t('title'),
+    description: t('description'),
+  });
 
+  // Fallback for the 404, as every route sets its own metadata: without the homepage's canonical
+  // URL, hreflang links and Open Graph URL, which a missing page must not claim.
   return {
+    metadataBase: new URL(SITE_URL),
     title,
     description,
-    metadataBase: new URL(SITE_URL),
-    openGraph: {
-      title,
-      description,
-      images: [og],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: [twitter],
-    },
+    openGraph: { ...openGraph, url: undefined },
+    twitter,
   };
 }
 

@@ -85,7 +85,8 @@
     "result": {
       "label": "Résultat",
       "title": "Notre première application en ligne",
-      "description": "Daily Fortune est disponible sur l'App Store et Google Play, et ses utilisateurs reçoivent un nouveau message chaque jour. Pour vous, c'est la preuve que nous savons mener une application de l'idée jusqu'à sa publication."
+      "description": "Daily Fortune est disponible sur l'App Store et Google Play, et ses utilisateurs reçoivent un nouveau message chaque jour. Pour vous, c'est la preuve que nous savons mener une application de l'idée jusqu'à sa publication.",
+      "maintained": "Elle est toujours mise à jour : la version {version} est sortie le {date}."
     }
   },
   "mcomperat": {

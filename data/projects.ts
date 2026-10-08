@@ -10,7 +10,10 @@ export interface Project {
   /** Localized route, as declared in `i18n/routing.ts`. */
   href: LocalizedHref;
   kind: ProjectKind;
+  /** Year the project was first released. */
   year: number;
+  /** Latest version shipped, for projects that keep being updated (date as `YYYY-MM-DD`). */
+  latestRelease?: { version: string; date: string };
   /** Accent colour for the case study page and its badge. */
   accent: AccentToken;
   /** Omitted until a screenshot is provided: the card then shows a typographic cover. */
@@ -39,7 +42,8 @@ export const PROJECTS = [
     i18nKey: 'dailyFortune',
     href: '/projects/daily-fortune',
     kind: 'mobile',
-    year: 2026,
+    year: 2025,
+    latestRelease: { version: '1.4.0', date: '2026-02-28' },
     accent: 'royal',
     cover: {
       src: '/projects/daily-fortune/app-icon.png',

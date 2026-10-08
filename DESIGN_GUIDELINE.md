@@ -31,7 +31,7 @@ The site has two themes — dark ("space", the default) and light ("star") — d
 | Token           | Role                                                                     | Dark                                  | Light                              | Tailwind                                   |
 | --------------- | ------------------------------------------------------------------------ | ------------------------------------- | ---------------------------------- | ------------------------------------------ |
 | `bg`            | Page background                                                          | `void #020617`                        | `cosmic-latte #FFF8E7`             | `bg-bg`                                    |
-| `bg-alt`        | Alternate section (≤ 1 section in 3)                                     | `ember #1C1012`                       | `misty-rose #FFE4E1`               | `bg-bg-alt`                                |
+| `bg-alt`        | Alternate section (≤ 1 section in 3)                                     | `indigo-ink #10122B`                  | `misty-rose #FFE4E1`               | `bg-bg-alt`                                |
 | `surface`       | Card lifted from the background                                          | ghost 2 %                             | void 2 %                           | `bg-surface`                               |
 | `field`         | Form control background                                                  | ghost 3 %                             | `cosmic-latte`                     | `bg-field`                                 |
 | `fg`            | Primary text, strong borders, inverted fill                              | `ghost #F8F8FF`                       | `void #020617`                     | `text-fg`                                  |
@@ -58,7 +58,7 @@ The site has two themes — dark ("space", the default) and light ("star") — d
 | `space`        | `#1E2952` | Brand backgrounds, e.g. the white CPMB logo cover (from `data/projects.ts`)                 |
 | `sun`          | `#FFB38A` | Warm halo of the light theme (sun, CTA glow)                                                |
 | `royal`        | `#7851A9` | Secondary accent — planet, project accents                                                  |
-| `ember`        | `#1C1012` | Source of the dark `bg-alt`                                                                 |
+| `indigo-ink`   | `#10122B` | Source of the dark `bg-alt`                                                                 |
 | `jungle`       | `#29AB87` | Source of the dark `ok`                                                                     |
 | `cosmic-latte` | `#FFF8E7` | Source of the light `bg`                                                                    |
 | `misty-rose`   | `#FFE4E1` | Source of the light `bg-alt`                                                                |
@@ -102,7 +102,7 @@ Minimum readable size: **14px** for body text.
 
 - **Container**: `max-w-7xl` centered (`m-auto`), horizontal padding `px-4 sm:px-6 lg:px-8`.
 - **Vertical section rhythm**: `SECTION_Y` from `design-system/pill.ts` — `clamp(56px, 6.5vw, 96px)` top and bottom. Sections need room to breathe.
-- **Alternate sections**: at most one section in three on `bg-bg-alt` (ember in dark, misty-rose in light), the rest on `bg-bg`. `space` is kept for brand backgrounds.
+- **Alternate sections**: at most one section in three on `bg-bg-alt` (indigo-ink in dark, misty-rose in light), the rest on `bg-bg`. `space` is kept for brand backgrounds.
 - **Radii**: pills `rounded-full` (buttons, chips, badges); cards/containers `rounded-xl` → `rounded-2xl` (12–24px). No sharp corners on interactive surfaces.
 - **Borders**: always via `line` / `line-2` (see §2.1), never an opaque grey.
 - **Card grids**: `grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))]` (260–320 px minimum per card) lets cards wrap without breakpoints.
@@ -157,7 +157,7 @@ Immersive sections: `<Starfield>` at layer `-z-20` + a radial accent gradient or
 
 **In the light theme** (EPIC #113):
 
-- **The sun replaces the stars on the homepage only**: `<Sun>` (`components/Sun`, pure CSS disc + halo) rises top right in the hero over a misty-rose floor (`.rose-floor`), and the immersive `CTAFinal` swaps its stars for a warm halo (`.sun-glow`). The sun belongs to the hero and the closing CTA only — **never two suns on a page**.
+- **The sun replaces the stars in the homepage, the closing CTA and the case study heroes**: `<Sun>` (`components/Sun`, pure CSS disc + halo) rises top right in the homepage hero over a misty-rose floor (`.rose-floor`), the immersive `CTAFinal` swaps its stars for a warm halo, and case study heroes without a project image swap theirs for a glow rising in the top right corner (both through `<SunGlow>`, `.sun-glow`). **Never two suns on a page.**
 - **Sober `CTAFinal`** (inner pages): stars in the dark theme only; in the light theme it is a flat `bg-bg` (a dark-on-cream starfield never rendered well).
 - **Theme exceptions** (rendered in section "Theme exceptions" of `/design-system`):
 
@@ -166,10 +166,10 @@ Immersive sections: `<Starfield>` at layer `-z-20` + a radial accent gradient or
   | Label and glow of orange fills | `text-void`, orange glow                    | White on orange only reaches 3.3:1            |
   | Google booking frame           | White (`bg-white scheme-light`)             | Google's calendar has no dark mode            |
   | Project covers                 | Their brand background (`data/projects.ts`) | Daily Fortune `#0d0420`, CPMB logo on `space` |
-  | Case study heroes              | Dark, through `data-theme="dark"`           | Stars and dark brand visuals (see below)      |
+  | Case study heroes with image   | Dark, through `data-theme="dark"`           | The dimmed photo needs the night gradient     |
 
-- **Dark islands**: the case study heroes keep their stars and stay dark in both themes, through `data-theme="dark"` on the section (the tokens re-scope for the subtree). Use an island for anything whose colours cannot follow the theme (a canvas, a dark brand visual).
-- **Pick the scene in CSS first**: the `light:` variant (`light:hidden`, `hidden light:block`) is right from the first paint, then `useResolvedTheme()` unmounts what the theme hides so canvases and animation loops stop. `light:` never applies inside a dark island.
+- **Dark islands**: a section that cannot follow the theme (a canvas, a dark brand visual, a dimmed photo) sets `data-theme="dark"` and the tokens re-scope for the subtree. `light:` never applies inside a dark island.
+- **Pick the scene in CSS first**: the `light:` variant (`light:hidden`, `hidden light:block`) is right from the first paint, then `useResolvedTheme()` unmounts what the theme hides so canvases and animation loops stop.
 - **Switching theme**: colours cross-fade over 300 ms and the sun rises into place (`theme-fade` / `theme-rise` on `<html>` during a switch only, see `useThemeSwitch`); both are skipped under reduced motion. The choice is stored in `localStorage['cs-theme']`; first visits are always dark, whatever the OS prefers.
 
 ### 3.5 Buttons
