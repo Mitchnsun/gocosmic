@@ -7,6 +7,7 @@ import type { Region } from '@/lib/region';
 import { AddOnOption } from './AddOnOption';
 import { EmailExtras } from './EmailExtras';
 import { OptionGroup } from './OptionGroup';
+import { isAddOnOffered } from './PricingSimulator.rules';
 import type { OptionGroupProps } from './PricingSimulator.types';
 
 /** "Your address on the web": domain, email address (with its extras) and, for Swiss visitors only, Swiss hosting. */
@@ -30,7 +31,9 @@ export function AddressOptions({
         {...common}>
         {plan.addOns.email && <EmailExtras plan={plan} actions={actions} surcharge={surcharge} domain={domain} />}
       </AddOnOption>
-      {region === 'ch' && <AddOnOption id="swiss_hosting" checked={plan.addOns.swiss_hosting} {...common} />}
+      {isAddOnOffered('swiss_hosting', region) && (
+        <AddOnOption id="swiss_hosting" checked={plan.addOns.swiss_hosting} {...common} />
+      )}
     </OptionGroup>
   );
 }

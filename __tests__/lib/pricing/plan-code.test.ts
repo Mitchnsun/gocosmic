@@ -8,29 +8,32 @@ const showcase = makePlan(
   'ch'
 );
 
-const everything = makePlan({
-  formula: 'managed',
-  addOns: {
-    domain: true,
-    swiss_hosting: true,
-    email: true,
-    contact_form: true,
-    booking: true,
-    reviews: true,
-    english: true,
-    news: true,
-    monitoring: true,
-    detailed_analytics: true,
-    redirects: true,
+const everything = makePlan(
+  {
+    formula: 'managed',
+    addOns: {
+      domain: true,
+      swiss_hosting: true,
+      email: true,
+      contact_form: true,
+      booking: true,
+      reviews: true,
+      english: true,
+      news: true,
+      monitoring: true,
+      detailed_analytics: true,
+      redirects: true,
+    },
+    pages: 4,
+    updatesEnabled: true,
+    updates: 4,
+    analytics: 2,
+    seo: 1,
+    articles: 2,
+    mailboxes: 5,
   },
-  pages: 4,
-  updatesEnabled: true,
-  updates: 4,
-  analytics: 2,
-  seo: 1,
-  articles: 2,
-  mailboxes: 5,
-});
+  'ch'
+);
 
 describe('plan code', () => {
   it('encodes a showcase plan with every segment', () => {
@@ -47,6 +50,12 @@ describe('plan code', () => {
     const plan = makePlan({ formula: 'self_service', addOns: { news: true }, articles: 0 });
 
     expect(encodePlanCode(plan)).toBe('website~showcase~self_service~p0~u1~a-~s-~r0~m0~-~fr');
+  });
+
+  it('drops Swiss hosting outside Switzerland', () => {
+    const plan = makePlan({ addOns: { domain: true, swiss_hosting: true } }, 'fr');
+
+    expect(encodePlanCode(plan)).toBe('website~showcase~managed~p0~u-~a-~s-~r-~m0~domain~fr');
   });
 
   it('keeps every option within the length limit', () => {
@@ -89,6 +98,7 @@ describe('plan code', () => {
     ['mailboxes without an email address', 'website~showcase~managed~p0~u-~a-~s-~r-~m2~domain~fr'],
     ['the news section charged in "You stay in control"', 'website~showcase~self_service~p0~u-~a-~s-~r-~m0~news~fr'],
     ['updates below the article rhythm', 'website~showcase~managed~p0~u0~a-~s-~r1~m0~-~fr'],
+    ['Swiss hosting outside Switzerland', 'website~showcase~managed~p0~u-~a-~s-~r-~m0~swiss_hosting~fr'],
     ['an oversized code', `website~showcase~managed~p0~u-~a-~s-~r-~m0~${'domain.'.repeat(30)}~fr`],
   ])('rejects %s', (_label, raw) => {
     expect(decodePlanCode(raw)).toBeNull();
