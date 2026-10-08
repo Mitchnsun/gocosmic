@@ -50,6 +50,16 @@ describe('TierSlider', () => {
     expect(screen.getByRole('group', { name: 'Number of pages' })).toHaveAttribute('aria-disabled', 'true');
   });
 
+  it('adapts its range to the number of tiers and can point at a note', () => {
+    render(
+      <TierSlider label="Report" tiers={tiers.slice(0, 3)} value={1} onChange={() => {}} describedBy="report-note" />
+    );
+
+    const slider = screen.getByRole('slider', { name: 'Report' });
+    expect(slider).toHaveAttribute('aria-valuemax', '2');
+    expect(slider).toHaveAttribute('aria-describedby', 'report-note');
+  });
+
   it('reflects the selected tier as the current slider value', () => {
     render(<TierSlider label="Number of pages" tiers={tiers} value={2} onChange={() => {}} />);
 

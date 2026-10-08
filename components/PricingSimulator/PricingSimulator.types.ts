@@ -1,4 +1,5 @@
 import type { ARTICLE_TIERS, PAGE_TIERS, REPORT_TIERS, SEO_TIERS, UPDATE_TIERS } from './constants';
+import type { SimulatorActions } from './PricingSimulator.hooks';
 
 export type ProjectType = 'website' | 'mobile' | 'both';
 
@@ -63,4 +64,12 @@ export interface PlanItem {
   tier?: string;
   /** Number of extra mailboxes. */
   count?: number;
+}
+
+/** What every option group of the builder receives. */
+export interface OptionGroupProps {
+  plan: PlanSelection;
+  actions: SimulatorActions;
+  /** Formats a monthly surcharge, e.g. `+5 €`. */
+  surcharge: (amount: number) => string;
 }

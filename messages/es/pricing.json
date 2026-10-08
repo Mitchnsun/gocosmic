@@ -18,11 +18,21 @@
     "builder": {
       "period": "/ mes sin IVA",
       "base": {
-        "title": "Plan base",
+        "title": "Incluido en el plan",
         "includes": {
           "page": "Una página de presentación de tu negocio",
           "hosting": "En línea las 24 horas, publicación incluida",
-          "security": "Conexión segura (el candado que aparece en el navegador)"
+          "security": "Conexión segura (el candado que aparece en el navegador)",
+          "legal": "Tu aviso legal y tu política de privacidad",
+          "email_button": "Un botón «Escríbenos» que abre el correo de tus visitantes",
+          "yearly_update": "Un cambio de contenido al año",
+          "editor": "Un espacio de edición para tus noticias y tus horarios",
+          "news": "Una sección de noticias"
+        },
+        "info": {
+          "legal": "Todo sitio debe indicar quién lo edita y qué hace con los datos de sus visitantes. Preparamos estas páginas con la información que nos das; tú las revisas y las validas, porque sigues siendo responsable de ellas.",
+          "editor": "Publicas una noticia o cambias tus horarios cuando quieras, sin esperarnos. Instalamos una herramienta de edición conectada a tu sitio y te enseñamos a usarla. El resto de tus páginas queda en nuestras manos. Si ya tienes una herramienta de edición, la retomamos cuando es posible; esa recuperación y el traslado de tus contenidos se presupuestan aparte. Este plan se contrata por periodos de 12 meses.",
+          "news": "Una sección al día muestra a tus visitantes que tu negocio está vivo: últimas obras, próximos conciertos, nueva temporada. Publicas tú mismo/a desde tu espacio de edición."
         }
       },
       "options": {
@@ -41,7 +51,92 @@
         },
         "email": {
           "label": "Una dirección de correo con tu nombre",
-          "hint": "Por ejemplo contacto@{domain}, en lugar de una dirección gratuita."
+          "hint": "Por ejemplo contacto@{domain}, en lugar de una dirección gratuita.",
+          "note": "Tu dirección de correo usa tu nombre de dominio: por eso añadimos también su gestión."
+        },
+        "mailboxes": {
+          "label": "Buzones de correo adicionales",
+          "hint": "Un buzón más por persona o por uso, por ejemplo oficina@{domain}, con su propia contraseña.",
+          "price": "{price} por buzón",
+          "count": "{count, plural, =0 {Ningún buzón adicional} one {# buzón adicional} other {# buzones adicionales}}",
+          "decrease": "Un buzón menos",
+          "increase": "Un buzón más"
+        },
+        "redirects": {
+          "label": "5 redirecciones",
+          "hint": "Hasta 5 direcciones que reenvían a un buzón existente, por ejemplo facturas@{domain}."
+        },
+        "email_extras": {
+          "info": "Si trabajáis varias personas, o para la junta de una asociación, cada uno puede tener su propio buzón con tu nombre. Una redirección, en cambio, no tiene buzón: los mensajes llegan a un buzón que ya tienes. Estas direcciones se contratan por periodos de 12 meses; puedes darlas de baja al final de un periodo."
+        },
+        "contact_form": {
+          "label": "Un formulario de contacto",
+          "hint": "Tus visitantes te escriben desde tu sitio y sus mensajes llegan a tu correo.",
+          "info": "Sin esta opción, un botón de tu sitio abre el correo de tu visitante, que te escribe desde su propia dirección. Con ella, tus visitantes te escriben directamente desde tu sitio, a cualquier hora: cada mensaje va a tu correo y no guardamos ninguna copia. Un mensaje en pantalla confirma el envío, y una breve nota bajo el formulario explica qué pasa con los datos."
+        },
+        "booking": {
+          "label": "Reserva de citas en línea",
+          "hint": "Tus clientes reservan una cita en tu agenda de Google, directamente desde tu sitio.",
+          "info": "Tus clientes ven tus huecos libres y reservan a cualquier hora, sin llamarte; no necesitan cuenta de Google. Creas tu página de reservas en Google Calendar siguiendo nuestras indicaciones y luego la añadimos a tu sitio. Google envía la confirmación y los recordatorios. Necesitas una cuenta de Google, y algunas funciones de Google requieren una suscripción de pago a Google, que no está incluida."
+        },
+        "reviews": {
+          "label": "Las opiniones de tus clientes en tu sitio",
+          "hint": "Una selección de opiniones de tus clientes, con su fecha, actualizada cada mes.",
+          "info": "Las opiniones de otros clientes tranquilizan a quien duda en contactarte. Cada mes seleccionamos las mejores opiniones, de tu ficha de Google o de testimonios que hayas recibido, y las copiamos en tu sitio con su fecha. En Francia, la ley exige indicar si las opiniones se verifican y por qué algunas no se publican: añadimos esa mención."
+        },
+        "english": {
+          "label": "Tu sitio en inglés",
+          "hint": "Una versión completa en inglés de tu sitio, al día con su versión principal.",
+          "info": "Una versión en inglés permite que los visitantes que no leen el idioma principal de tu sitio te entiendan y te contacten. Traducimos nosotros todas tus páginas, añadimos un selector de idioma y traducimos también tus cambios sin contarlos dos veces. Para otro idioma, o una traducción a cargo de un traductor/a profesional, te hacemos un presupuesto aparte. Esta opción se contrata por periodos de 12 meses."
+        },
+        "news": {
+          "label": "Una sección de noticias",
+          "hint": "Una página que muestra que tu negocio está vivo: trabajos, eventos, novedades.",
+          "info": "Una sección al día muestra a tus visitantes que tu negocio está vivo: últimas obras, próximos conciertos, nueva temporada. Creamos la sección y publicamos lo que nos envías por correo; cada publicación cuenta como un cambio de contenido. Esta opción se contrata por periodos de 12 meses."
+        },
+        "seo": {
+          "label": "Seguimiento del posicionamiento local",
+          "hint": "Seguimos cómo aparece tu sitio en Google para tu oficio y tu ciudad, y lo ajustamos.",
+          "slider_label": "Ritmo del seguimiento",
+          "tiers": {
+            "quarterly": "Cada tres meses",
+            "monthly": "Cada mes"
+          },
+          "info": "Tu plan incluye un posicionamiento básico; esta opción lo mantiene vivo en el tiempo. Al ritmo elegido, revisamos cómo aparece tu sitio en búsquedas como «tu oficio + tu ciudad», ajustamos tus páginas y te enviamos un informe escrito. Tu ficha de Google Maps y los directorios siguen a tu cargo. No prometemos ninguna posición concreta en Google. Esta opción se contrata por periodos de 12 meses."
+        },
+        "analytics": {
+          "label": "Estadísticas de visitas",
+          "hint": "Sabes cuántas personas visitan tu sitio y qué páginas leen, con un informe escrito.",
+          "slider_label": "Informe",
+          "tiers": {
+            "yearly": "Una vez al año",
+            "quarterly": "Cada tres meses",
+            "monthly": "Cada mes"
+          },
+          "info": "Las cifras te muestran si tu sitio se consulta y qué páginas interesan a tus visitantes. Contamos las visitas y las páginas más vistas de forma anónima, sin ningún aviso que tus visitantes tengan que aceptar, y te enviamos un informe escrito, con palabras sencillas, al ritmo que elijas. Esta opción se contrata por periodos de 12 meses."
+        },
+        "detailed_analytics": {
+          "label": "Medición detallada",
+          "hint": "Una medición más completa, con un aviso que pide el consentimiento de tus visitantes.",
+          "info": "La medición detallada te dice también de dónde vienen tus visitantes, en qué dispositivo te leen y cuántos pulsan «Llamar», «Cómo llegar» o envían tu formulario. Instala cookies: la ley exige entonces el consentimiento de tus visitantes, y añadimos un aviso para pedirlo. Los visitantes que lo rechazan no se cuentan en esta medición."
+        },
+        "articles": {
+          "label": "Artículos redactados con ayuda de la IA",
+          "hint": "Redactamos artículos para tu sitio con ayuda de la inteligencia artificial.",
+          "slider_label": "Ritmo",
+          "tiers": {
+            "monthly": "1 artículo al mes",
+            "weekly": "1 artículo por semana",
+            "daily": "1 artículo al día"
+          },
+          "info": "Escribir artículos con regularidad lleva tiempo. Los redactamos por ti con ayuda de la inteligencia artificial, a partir de la información sobre tu negocio. Eliges revisar cada artículo antes de publicarlo o dejar que lo publiquemos directamente. Cada artículo publicado cuenta como un cambio de contenido. Puedes reducir el ritmo con un mes de preaviso; la baja completa se hace al final de un periodo de 12 meses.",
+          "info_tool": "Según tu herramienta de edición, podemos usar un servicio especializado que elige los temas a partir de lo que la gente busca en Google.",
+          "raised": "Cada artículo publicado cuenta como un cambio: hemos ajustado tus cambios de contenido en consecuencia."
+        },
+        "monitoring": {
+          "label": "Vigilancia de tu sitio",
+          "hint": "Recibimos un aviso automático si tu sitio deja de responder.",
+          "info": "Una herramienta comprueba con regularidad que tu sitio responde y nos avisa en cuanto deja de hacerlo. Así podemos intervenir sin esperar a que tú o tus clientes nos señaléis la avería. No nos comprometemos a un plazo para volver a poner el sitio en línea."
         }
       },
       "pages": {
@@ -57,8 +152,8 @@
       },
       "updates": {
         "label": "Cambios de contenido incluidos",
-        "hint": "Actualizamos tus textos, tus fotos y tus horarios, sin coste adicional por cada petición.",
-        "off": "No incluido",
+        "hint": "Nos envías tus cambios por correo: textos, fotos, horarios. Los publicamos sin coste adicional por cada petición.",
+        "off": "1 vez al año (incluido)",
         "slider_label": "Cambios al año",
         "tiers": {
           "few_per_year": "2 o 3 veces al año",
@@ -66,14 +161,35 @@
           "twice_monthly": "2 veces al mes",
           "weekly": "1 vez por semana",
           "unlimited": "Tantas veces como haga falta"
-        }
+        },
+        "hint_self_service": "Para todo lo que no publicas tú mismo/a: nos envías tus cambios por correo y los publicamos."
       },
       "total": {
         "label": "Tu estimación",
-        "note": "Precio orientativo sin IVA, que confirmamos tras una primera conversación. Puedes añadir opciones en cualquier momento; una vez activadas, se mantienen en tu suscripción (consulta las condiciones generales de venta).",
+        "note": "Precio orientativo sin IVA, que confirmamos tras una primera conversación. Puedes añadir opciones en cualquier momento. El número de páginas, el nombre de dominio, el alojamiento en Suiza y tu dirección de correo se mantienen en tu suscripción una vez activados. Las opciones marcadas «Compromiso de 1 año» se dan de baja al final de cada periodo de 12 meses, las demás con un mes de preaviso (consulta las condiciones generales de venta).",
         "beyond": "Si necesitas más, lo hablamos y te hacemos una propuesta.",
         "cta": "Pedir mi maqueta gratuita",
         "question": "¿Alguna pregunta antes? <link>Escríbenos</link>."
+      },
+      "info_label": "Más información: {option}",
+      "commitment": "Compromiso de 1 año",
+      "from": "desde {price}",
+      "formulas": {
+        "label": "Elige tu plan",
+        "managed": {
+          "label": "Nos encargamos de todo",
+          "lead": "Nos escribes y actualizamos tu sitio."
+        },
+        "self_service": {
+          "label": "Tú tienes el control",
+          "lead": "Publicas tú mismo/a tus noticias y tus horarios; nosotros nos ocupamos del resto."
+        }
+      },
+      "groups": {
+        "site": "Tu sitio",
+        "address": "Tu dirección en internet",
+        "visibility": "Que te encuentren y medir tus visitas",
+        "care": "Actualizaciones y seguimiento"
       }
     },
     "columns": {

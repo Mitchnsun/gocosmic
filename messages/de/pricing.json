@@ -18,11 +18,21 @@
     "builder": {
       "period": "zzgl. MwSt. / Monat",
       "base": {
-        "title": "Grundpaket",
+        "title": "Im Paket enthalten",
         "includes": {
           "page": "Eine Präsentationsseite, die Ihre Tätigkeit vorstellt",
           "hosting": "Rund um die Uhr online, Veröffentlichung inklusive",
-          "security": "Sichere Verbindung (das Schloss-Symbol im Browser)"
+          "security": "Sichere Verbindung (das Schloss-Symbol im Browser)",
+          "legal": "Ihr Impressum und Ihre Datenschutzerklärung",
+          "email_button": "Ein Button „Schreiben Sie uns“, der das E-Mail-Programm Ihrer Besucher:innen öffnet",
+          "yearly_update": "Eine Inhaltsänderung pro Jahr",
+          "editor": "Ein Bearbeitungsbereich für Ihre Neuigkeiten und Öffnungszeiten",
+          "news": "Ein Bereich für Neuigkeiten"
+        },
+        "info": {
+          "legal": "Jede Website muss angeben, wer sie herausgibt und was mit den Daten ihrer Besucher:innen geschieht. Wir erstellen diese Seiten anhand Ihrer Angaben; Sie lesen sie und geben sie frei, denn Sie bleiben dafür verantwortlich.",
+          "editor": "Sie veröffentlichen Neuigkeiten oder ändern Ihre Öffnungszeiten, wann Sie wollen, ohne auf uns zu warten. Wir richten ein Bearbeitungswerkzeug ein, das mit Ihrer Website verbunden ist, und zeigen Ihnen, wie es funktioniert. Der Rest Ihrer Seiten bleibt in unseren Händen. Haben Sie bereits ein Bearbeitungswerkzeug, übernehmen wir es, wenn möglich; diese Übernahme und der Umzug Ihrer Inhalte werden separat angeboten. Dieses Paket läuft in Zeiträumen von 12 Monaten.",
+          "news": "Ein aktueller Bereich für Neuigkeiten zeigt Ihren Besucher:innen, dass Ihr Betrieb lebt: neueste Arbeiten, kommende Konzerte, neue Saison. Sie veröffentlichen dort selbst, in Ihrem Bearbeitungsbereich."
         }
       },
       "options": {
@@ -41,7 +51,92 @@
         },
         "email": {
           "label": "Eine E-Mail-Adresse auf Ihren Namen",
-          "hint": "Zum Beispiel kontakt@{domain} statt einer kostenlosen Adresse."
+          "hint": "Zum Beispiel kontakt@{domain} statt einer kostenlosen Adresse.",
+          "note": "Ihre E-Mail-Adresse nutzt Ihren Domainnamen: Deshalb fügen wir auch seine Verwaltung hinzu."
+        },
+        "mailboxes": {
+          "label": "Zusätzliche Postfächer",
+          "hint": "Ein weiteres Postfach pro Person oder Zweck, zum Beispiel buero@{domain}, mit eigenem Passwort.",
+          "price": "{price} pro Postfach",
+          "count": "{count, plural, =0 {Kein zusätzliches Postfach} one {# zusätzliches Postfach} other {# zusätzliche Postfächer}}",
+          "decrease": "Ein Postfach weniger",
+          "increase": "Ein Postfach mehr"
+        },
+        "redirects": {
+          "label": "5 Weiterleitungen",
+          "hint": "Bis zu 5 Adressen, die an ein bestehendes Postfach weiterleiten, zum Beispiel rechnungen@{domain}."
+        },
+        "email_extras": {
+          "info": "Wenn Sie zu mehreren arbeiten oder für den Vorstand eines Vereins kann jede Person ein eigenes Postfach auf Ihren Namen haben. Eine Weiterleitung hat dagegen kein Postfach: Die Nachrichten landen in einem Postfach, das Sie schon haben. Diese Adressen laufen in Zeiträumen von 12 Monaten; Sie können sie am Ende eines Zeitraums kündigen."
+        },
+        "contact_form": {
+          "label": "Ein Kontaktformular",
+          "hint": "Ihre Besucher:innen schreiben Ihnen über Ihre Website, und ihre Nachrichten landen in Ihrem Postfach.",
+          "info": "Ohne diese Option öffnet ein Button auf Ihrer Website das E-Mail-Programm Ihrer Besucher:innen, die Ihnen dann von ihrer eigenen Adresse schreiben. Mit der Option schreiben sie Ihnen direkt über Ihre Website, zu jeder Uhrzeit: Jede Nachricht geht an Ihr Postfach, und wir behalten keine Kopie. Eine Meldung auf dem Bildschirm bestätigt den Versand, und ein kurzer Hinweis unter dem Formular erklärt, was mit den Daten geschieht."
+        },
+        "booking": {
+          "label": "Online-Terminbuchung",
+          "hint": "Ihre Kund:innen buchen direkt auf Ihrer Website einen Termin in Ihrem Google-Kalender.",
+          "info": "Ihre Kund:innen sehen Ihre freien Termine und buchen zu jeder Uhrzeit, ohne Sie anzurufen; sie brauchen kein Google-Konto. Sie erstellen Ihre Buchungsseite in Google Kalender nach unserer Anleitung, dann binden wir sie in Ihre Website ein. Google verschickt die Bestätigung und die Erinnerungen. Sie brauchen ein Google-Konto, und manche Google-Funktionen setzen ein kostenpflichtiges Google-Abonnement voraus, das nicht enthalten ist."
+        },
+        "reviews": {
+          "label": "Bewertungen Ihrer Kund:innen auf Ihrer Website",
+          "hint": "Eine Auswahl von Bewertungen Ihrer Kund:innen, mit Datum, jeden Monat aktualisiert.",
+          "info": "Bewertungen anderer Kund:innen geben Sicherheit, wenn jemand zögert, Sie zu kontaktieren. Jeden Monat wählen wir die besten Bewertungen aus Ihrem Google-Eintrag oder aus erhaltenen Rückmeldungen aus und übernehmen sie mit Datum auf Ihre Website. In Frankreich verlangt das Gesetz die Angabe, ob Bewertungen geprüft werden und warum manche nicht veröffentlicht werden: Diesen Hinweis fügen wir hinzu."
+        },
+        "english": {
+          "label": "Ihre Website auf Englisch",
+          "hint": "Eine vollständige englische Version Ihrer Website, die mit der Hauptversion Schritt hält.",
+          "info": "Mit einer englischen Version verstehen Sie auch Besucher:innen, die die Hauptsprache Ihrer Website nicht lesen, und können Sie kontaktieren. Wir übersetzen alle Ihre Seiten selbst, fügen eine Sprachauswahl hinzu und übersetzen auch Ihre Änderungen, ohne sie doppelt zu zählen. Für eine andere Sprache oder eine Übersetzung durch eine:n professionelle:n Übersetzer:in erstellen wir Ihnen ein separates Angebot. Diese Option läuft in Zeiträumen von 12 Monaten."
+        },
+        "news": {
+          "label": "Ein Bereich für Neuigkeiten",
+          "hint": "Eine Seite, die zeigt, dass Ihr Betrieb lebt: Arbeiten, Veranstaltungen, Neuheiten.",
+          "info": "Ein aktueller Bereich für Neuigkeiten zeigt Ihren Besucher:innen, dass Ihr Betrieb lebt: neueste Arbeiten, kommende Konzerte, neue Saison. Wir richten den Bereich ein und veröffentlichen, was Sie uns per E-Mail schicken; jede Veröffentlichung zählt als Inhaltsänderung. Diese Option läuft in Zeiträumen von 12 Monaten."
+        },
+        "seo": {
+          "label": "Lokale Suchbetreuung",
+          "hint": "Wir verfolgen, wie Ihre Website bei Google für Ihr Handwerk und Ihren Ort erscheint, und passen sie an.",
+          "slider_label": "Rhythmus",
+          "tiers": {
+            "quarterly": "Alle drei Monate",
+            "monthly": "Jeden Monat"
+          },
+          "info": "Ihr Paket enthält eine Grundoptimierung für Suchmaschinen; diese Option hält sie dauerhaft lebendig. Im gewählten Rhythmus prüfen wir, wie Ihre Website bei Suchen wie „Ihr Handwerk + Ihr Ort“ erscheint, passen Ihre Seiten an und schicken Ihnen einen schriftlichen Bericht. Ihren Google-Maps-Eintrag und die Verzeichnisse verwalten Sie selbst. Wir versprechen keine bestimmte Position bei Google. Diese Option läuft in Zeiträumen von 12 Monaten."
+        },
+        "analytics": {
+          "label": "Besuchsstatistiken",
+          "hint": "Sie wissen, wie viele Personen Ihre Website besuchen und welche Seiten sie lesen, mit einem schriftlichen Bericht.",
+          "slider_label": "Bericht",
+          "tiers": {
+            "yearly": "Einmal im Jahr",
+            "quarterly": "Alle drei Monate",
+            "monthly": "Jeden Monat"
+          },
+          "info": "Die Zahlen zeigen Ihnen, ob Ihre Website besucht wird und welche Seiten Ihre Besucher:innen interessieren. Wir zählen die Besuche und die meistgesehenen Seiten anonym, ohne Banner, das Ihre Besucher:innen bestätigen müssen, und schicken Ihnen in dem gewählten Rhythmus einen schriftlichen Bericht in einfachen Worten. Diese Option läuft in Zeiträumen von 12 Monaten."
+        },
+        "detailed_analytics": {
+          "label": "Ausführliche Messung",
+          "hint": "Eine umfassendere Messung, mit einem Banner, das um die Einwilligung Ihrer Besucher:innen bittet.",
+          "info": "Die ausführliche Messung zeigt Ihnen auch, woher Ihre Besucher:innen kommen, auf welchem Gerät sie Sie lesen und wie viele auf „Anrufen“ oder „Route“ tippen oder Ihr Formular senden. Sie setzt Cookies: Dafür verlangt das Gesetz die Einwilligung Ihrer Besucher:innen, und wir fügen ein Banner hinzu, um sie einzuholen. Wer ablehnt, wird in dieser Messung nicht gezählt."
+        },
+        "articles": {
+          "label": "Artikel, mit KI-Unterstützung geschrieben",
+          "hint": "Wir schreiben Artikel für Ihre Website, mit Unterstützung künstlicher Intelligenz.",
+          "slider_label": "Rhythmus",
+          "tiers": {
+            "monthly": "1 Artikel pro Monat",
+            "weekly": "1 Artikel pro Woche",
+            "daily": "1 Artikel pro Tag"
+          },
+          "info": "Regelmäßig Artikel zu schreiben, kostet Zeit. Wir schreiben sie für Sie mit Unterstützung künstlicher Intelligenz, anhand der Informationen über Ihren Betrieb. Sie entscheiden, ob Sie jeden Artikel vor der Veröffentlichung lesen oder ob wir ihn direkt veröffentlichen. Jeder veröffentlichte Artikel zählt als Inhaltsänderung. Sie können den Rhythmus mit einem Monat Frist verringern; ganz beenden lässt sich die Option am Ende eines Zeitraums von 12 Monaten.",
+          "info_tool": "Je nach Ihrem Bearbeitungswerkzeug können wir einen spezialisierten Dienst nutzen, der die Themen nach den Suchanfragen bei Google auswählt.",
+          "raised": "Jeder veröffentlichte Artikel zählt als Änderung: Wir haben Ihre Inhaltsänderungen entsprechend angepasst."
+        },
+        "monitoring": {
+          "label": "Überwachung Ihrer Website",
+          "hint": "Wir werden automatisch benachrichtigt, wenn Ihre Website nicht mehr antwortet.",
+          "info": "Ein Werkzeug prüft regelmäßig, ob Ihre Website antwortet, und benachrichtigt uns, sobald sie es nicht mehr tut. So können wir eingreifen, ohne zu warten, bis Sie oder Ihre Kund:innen uns den Ausfall melden. Wir sagen keine bestimmte Frist für die Wiederherstellung zu."
         }
       },
       "pages": {
@@ -57,8 +152,8 @@
       },
       "updates": {
         "label": "Inhaltsänderungen inklusive",
-        "hint": "Wir aktualisieren Ihre Texte, Fotos und Öffnungszeiten, ohne dass jede Anfrage extra kostet.",
-        "off": "Nicht enthalten",
+        "hint": "Sie schicken uns Ihre Änderungen per E-Mail: Texte, Fotos, Öffnungszeiten. Wir stellen sie online, ohne dass jede Anfrage extra kostet.",
+        "off": "Einmal im Jahr (inklusive)",
         "slider_label": "Änderungen pro Jahr",
         "tiers": {
           "few_per_year": "Zwei- bis dreimal im Jahr",
@@ -66,14 +161,35 @@
           "twice_monthly": "Zweimal im Monat",
           "weekly": "Einmal pro Woche",
           "unlimited": "So oft wie nötig"
-        }
+        },
+        "hint_self_service": "Für alles, was Sie nicht selbst veröffentlichen: Sie schicken uns Ihre Änderungen per E-Mail, und wir stellen sie online."
       },
       "total": {
         "label": "Ihre Kostenschätzung",
-        "note": "Richtpreis zzgl. MwSt., den wir nach einem ersten Gespräch bestätigen. Sie können jederzeit Optionen hinzufügen; einmal aktiviert, bleiben sie Teil Ihres Abonnements (siehe Allgemeine Geschäftsbedingungen).",
+        "note": "Richtpreis zzgl. MwSt., den wir nach einem ersten Gespräch bestätigen. Sie können jederzeit Optionen hinzufügen. Seitenzahl, Domainname, Hosting in der Schweiz und Ihre E-Mail-Adresse bleiben nach der Aktivierung Teil Ihres Abonnements. Optionen mit dem Hinweis „1 Jahr Laufzeit“ lassen sich zum Ende jedes Zeitraums von 12 Monaten kündigen, die übrigen mit einem Monat Frist (siehe Allgemeine Geschäftsbedingungen).",
         "beyond": "Bei größerem Umfang sprechen wir gemeinsam darüber und machen Ihnen einen Vorschlag.",
         "cta": "Mein kostenloses Mockup anfordern",
         "question": "Vorher noch eine Frage? <link>Schreiben Sie uns</link>."
+      },
+      "info_label": "Mehr dazu: {option}",
+      "commitment": "1 Jahr Laufzeit",
+      "from": "ab {price}",
+      "formulas": {
+        "label": "Wählen Sie Ihr Paket",
+        "managed": {
+          "label": "Wir kümmern uns um alles",
+          "lead": "Sie schreiben uns, wir aktualisieren Ihre Website."
+        },
+        "self_service": {
+          "label": "Sie behalten die Kontrolle",
+          "lead": "Sie veröffentlichen Ihre Neuigkeiten und Öffnungszeiten selbst; um den Rest kümmern wir uns."
+        }
+      },
+      "groups": {
+        "site": "Ihre Website",
+        "address": "Ihre Adresse im Internet",
+        "visibility": "Gefunden werden und Besuche messen",
+        "care": "Aktualisierungen und Betreuung"
       }
     },
     "columns": {
