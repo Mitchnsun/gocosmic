@@ -1,60 +1,26 @@
-import { ADD_ON_KEYS, BASE_PRICE, PAGE_TIER_PRICES, UPDATE_TIER_PRICES } from '@/components/PricingSimulator/constants';
-import type {
-  AddOnKey,
-  ProjectType,
-  TierIndex,
-  WebsiteType,
-} from '@/components/PricingSimulator/PricingSimulator.types';
+import { FORMULA_PRICES } from '@/components/PricingSimulator/constants';
+import { normalizePlan } from '@/components/PricingSimulator/PricingSimulator.rules';
+import type { AddOnKey, PlanItem } from '@/components/PricingSimulator/PricingSimulator.types';
 import {
   formatAmount,
-  getAddOnPrice,
   getMonthlyTotal,
+  getPlanItems,
   needsCustomQuote,
 } from '@/components/PricingSimulator/PricingSimulator.utils';
 import type { DecodedPlan } from '@/lib/pricing/plan-code';
+import {
+  ADD_ON_LABELS,
+  FORMULA_LABELS,
+  PROJECT_TYPE_LABELS,
+  TIER_LABELS,
+  WEBSITE_TYPE_LABELS,
+} from '@/lib/pricing/plan-labels';
 import { getCurrency } from '@/lib/region';
 
-/*
- * Labels are kept in one fixed language on purpose: the email is read by the
- * studio, not by the visitor, and a server-side map cannot be spoofed by a
- * crafted payload (same reasoning as the palette labels of the mockup email).
- */
-const PROJECT_TYPE_LABELS: Record<ProjectType, string> = {
-  website: 'A website',
-  mobile: 'A mobile app',
-  both: 'Both',
-};
-
-const WEBSITE_TYPE_LABELS: Record<WebsiteType, string> = {
-  showcase: 'Showcase site presenting the business',
-  self_managed: 'Site the visitor wants to edit themselves',
-  accounts: 'Site with a customer area',
-  ecommerce: 'Online shop',
-};
-
-const ADD_ON_LABELS: Record<AddOnKey, string> = {
-  domain: 'Domain name management',
-  swiss_hosting: 'Hosting in Switzerland',
-  email: 'Email address on the domain',
-};
-
-const PAGE_TIER_LABELS: Record<TierIndex, string> = {
-  0: '1 page (included)',
-  1: '2 to 4 pages',
-  2: '5 to 7 pages',
-  3: '8 to 9 pages',
-  4: '10 pages or more',
-};
-
-const UPDATE_TIER_LABELS: Record<TierIndex, string> = {
-  0: '2 to 3 times a year',
-  1: 'Once a month',
-  2: 'Twice a month',
-  3: 'Once a week',
-  4: 'As often as needed',
-};
-
 const LABEL_PREFIX = 'Simulation';
+const MONTHLY = '/ month excl. VAT';
+
+const isAddOn = (id: PlanItem['id']): id is AddOnKey => id in ADD_ON_LABELS;
 
 /**
  * Turns a decoded pricing simulation into `[label, value]` rows for the studio
@@ -62,11 +28,10 @@ const LABEL_PREFIX = 'Simulation';
  * visitor saw is never transmitted, so it cannot be forged.
  */
 export function buildPlanEmailRows(plan: DecodedPlan): Array<[string, string]> {
-  const { projectType, websiteType, selection, region } = plan;
-  const currency = getCurrency(region);
-  const money = (amount: number) => formatAmount(amount, currency);
+  const { projectType, websiteType, region } = plan;
+  const money = (amount: number) => formatAmount(amount, getCurrency(region));
 
-  /* eslint-disable security/detect-object-injection -- every index is a validated union or tier */
+  /* eslint-disable security/detect-object-injection -- every index is a validated union or tier key */
   const rows: Array<[string, string]> = [[`${LABEL_PREFIX} — project`, PROJECT_TYPE_LABELS[projectType]]];
 
   if (websiteType) {
@@ -79,31 +44,43 @@ export function buildPlanEmailRows(plan: DecodedPlan): Array<[string, string]> {
     return rows;
   }
 
-  const addOns = ADD_ON_KEYS.filter((key) => selection.addOns[key]).map(
-    (key) => `${ADD_ON_LABELS[key]} (+${money(getAddOnPrice(key))})`
-  );
+  const selection = normalizePlan(plan.selection);
+  const items = getPlanItems(selection);
+  const find = (id: PlanItem['id']) => items.find((item) => item.id === id);
+  const tiered = (id: 'updates' | 'analytics' | 'seo' | 'articles', fallback: string) => {
+    const item = find(id);
+    return item?.tier ? `${TIER_LABELS[id][item.tier]} (+${money(item.amount)})` : fallback;
+  };
 
-  const pagesSurcharge =
-    selection.pages === PAGE_TIER_PRICES.length - 1
-      ? `+${money(PAGE_TIER_PRICES[selection.pages])} or more`
-      : `+${money(PAGE_TIER_PRICES[selection.pages])}`;
+  const pages = find('pages');
+  const addOns = items.flatMap((item) => {
+    if (isAddOn(item.id)) return [`${ADD_ON_LABELS[item.id]} (+${money(item.amount)})`];
+    if (item.id === 'mailboxes') return [`${item.count} extra mailbox(es) (+${money(item.amount)})`];
+    return [];
+  });
 
   rows.push(
-    [`${LABEL_PREFIX} — base plan`, `${money(BASE_PRICE)} / month excl. VAT`],
-    [`${LABEL_PREFIX} — pages`, `${PAGE_TIER_LABELS[selection.pages]} (${pagesSurcharge})`],
-    [`${LABEL_PREFIX} — add-ons`, addOns.length > 0 ? addOns.join(', ') : 'None'],
     [
-      `${LABEL_PREFIX} — content updates`,
-      selection.updatesEnabled
-        ? `${UPDATE_TIER_LABELS[selection.updates]} (+${money(UPDATE_TIER_PRICES[selection.updates])})`
-        : 'Not included',
+      `${LABEL_PREFIX} — formula`,
+      `${FORMULA_LABELS[selection.formula]}: ${money(FORMULA_PRICES[selection.formula])} ${MONTHLY}`,
     ],
-    [`${LABEL_PREFIX} — monthly total`, `${money(getMonthlyTotal(selection))} / month excl. VAT`]
+    [
+      `${LABEL_PREFIX} — pages`,
+      pages?.tier
+        ? `${TIER_LABELS.pages[pages.tier]} (+${money(pages.amount)}${pages.tier === 'ten_plus' ? ' or more' : ''})`
+        : '1 page (included)',
+    ],
+    [`${LABEL_PREFIX} — add-ons`, addOns.length > 0 ? addOns.join(', ') : 'None'],
+    [`${LABEL_PREFIX} — local search follow-up`, tiered('seo', 'Not included')],
+    [`${LABEL_PREFIX} — visit statistics`, tiered('analytics', 'Not included')],
+    [`${LABEL_PREFIX} — content updates`, tiered('updates', 'Once a year (included)')],
+    [`${LABEL_PREFIX} — AI-assisted articles`, tiered('articles', 'Not included')],
+    [`${LABEL_PREFIX} — monthly total`, `${money(getMonthlyTotal(selection))} ${MONTHLY}`]
   );
   /* eslint-enable security/detect-object-injection */
 
   if (needsCustomQuote(selection)) {
-    rows.push([`${LABEL_PREFIX} — note`, 'Top slider position reached: needs a personal quote']);
+    rows.push([`${LABEL_PREFIX} — note`, 'Top position reached (pages, updates or mailboxes): needs a personal quote']);
   }
 
   return rows;

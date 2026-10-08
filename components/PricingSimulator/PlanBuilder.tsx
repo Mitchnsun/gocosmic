@@ -4,19 +4,10 @@ import { useLocale, useTranslations } from 'next-intl';
 
 import type { Currency, Region } from '@/lib/region';
 
-import {
-  ADD_ON_KEYS,
-  BASE_PRICE,
-  MAX_TIER_INDEX,
-  PAGE_TIER_KEYS,
-  PAGE_TIER_PRICES,
-  TIER_INDEXES,
-  UPDATE_TIER_KEYS,
-  UPDATE_TIER_PRICES,
-} from './constants';
+import { BASE_PRICE, PAGE_TIERS, UPDATE_TIERS } from './constants';
 import { OptionToggle } from './OptionToggle';
 import type { AddOnKey, PlanSelection } from './PricingSimulator.types';
-import { formatAmount, getAddOnPrice, getUpdateTierPrice } from './PricingSimulator.utils';
+import { formatAmount, getAddOnPrice } from './PricingSimulator.utils';
 import { TierSlider } from './TierSlider';
 
 interface PlanBuilderProps {
@@ -44,21 +35,18 @@ export function PlanBuilder({
   const surcharge = (amount: number) => `+${formatAmount(amount, currency, locale)}`;
   const exampleDomain = t(`builder.options.example_domain.${region}`);
 
-  // Indexes come from TIER_INDEXES, a fixed list of slider positions.
-  /* eslint-disable security/detect-object-injection */
-  const pageTiers = TIER_INDEXES.map((index) => ({
-    label: t(`builder.pages.tiers.${PAGE_TIER_KEYS[index]}`),
+  const pageTiers = PAGE_TIERS.map((tier, index) => ({
+    label: t(`builder.pages.tiers.${tier.key}`),
     price:
-      index === MAX_TIER_INDEX
-        ? t('builder.pages.or_more', { price: surcharge(PAGE_TIER_PRICES[index]) })
-        : surcharge(PAGE_TIER_PRICES[index]),
+      index === PAGE_TIERS.length - 1
+        ? t('builder.pages.or_more', { price: surcharge(tier.price) })
+        : surcharge(tier.price),
   }));
 
-  const updateTiers = TIER_INDEXES.map((index) => ({
-    label: t(`builder.updates.tiers.${UPDATE_TIER_KEYS[index]}`),
-    price: surcharge(UPDATE_TIER_PRICES[index]),
+  const updateTiers = UPDATE_TIERS.map((tier) => ({
+    label: t(`builder.updates.tiers.${tier.key}`),
+    price: surcharge(tier.price),
   }));
-  /* eslint-enable security/detect-object-injection */
 
   return (
     <div className="space-y-6">
@@ -98,13 +86,13 @@ export function PlanBuilder({
           />
         </div>
 
-        {ADD_ON_KEYS.map((key) => (
+        {(['domain', 'swiss_hosting', 'email'] as const).map((key) => (
           <OptionToggle
             key={key}
             label={t(`builder.options.${key}.label`)}
             hint={t(`builder.options.${key}.hint`, { domain: exampleDomain })}
             price={surcharge(getAddOnPrice(key))}
-            // eslint-disable-next-line security/detect-object-injection -- key comes from ADD_ON_KEYS
+            // eslint-disable-next-line security/detect-object-injection -- key comes from a fixed list
             checked={selection.addOns[key]}
             onChange={() => onToggleAddOn(key)}
           />
@@ -113,7 +101,7 @@ export function PlanBuilder({
         <OptionToggle
           label={t('builder.updates.label')}
           hint={t('builder.updates.hint')}
-          price={selection.updatesEnabled ? surcharge(getUpdateTierPrice(selection.updates)) : t('builder.updates.off')}
+          price={selection.updatesEnabled ? surcharge(UPDATE_TIERS[selection.updates].price) : t('builder.updates.off')}
           checked={selection.updatesEnabled}
           onChange={onToggleUpdates}>
           <div className="border-line border-t px-4 py-4">

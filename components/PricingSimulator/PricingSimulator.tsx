@@ -23,16 +23,16 @@ export function PricingSimulator({ region }: PricingSimulatorProps) {
       <PlanBuilder
         currency={currency}
         region={region}
-        selection={simulator.selection}
-        onToggleAddOn={simulator.toggleAddOn}
-        onToggleUpdates={simulator.toggleUpdates}
-        onPagesChange={simulator.setPages}
-        onUpdatesChange={simulator.setUpdates}
+        selection={simulator.plan}
+        onToggleAddOn={simulator.actions.toggleAddOn}
+        onToggleUpdates={simulator.actions.toggleUpdates}
+        onPagesChange={simulator.actions.setPages}
+        onUpdatesChange={simulator.actions.setUpdates}
       />
       <PlanSummary
         currency={currency}
         region={region}
-        selection={simulator.selection}
+        selection={simulator.plan}
         total={simulator.total}
         showQuoteHint={simulator.showQuoteHint}
       />

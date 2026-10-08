@@ -1,8 +1,13 @@
 import { afterEach, beforeEach, vi } from 'vitest';
 
+import { encodePlanCode } from '@/lib/pricing/plan-code';
 import { clearStoredPlanCode, PLAN_STORAGE_KEY, readStoredPlanCode, storePlanCode } from '@/lib/pricing/plan-storage';
 
-const CODE = 'website~showcase~p2~u3~domain.email~fr';
+import { makePlan } from './plan-fixtures';
+
+const CODE = encodePlanCode(
+  makePlan({ addOns: { domain: true, email: true }, pages: 2, updatesEnabled: true, updates: 3 })
+);
 
 describe('plan storage', () => {
   beforeEach(() => {

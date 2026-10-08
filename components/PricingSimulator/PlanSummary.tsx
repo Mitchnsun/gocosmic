@@ -9,10 +9,9 @@ import { encodePlanCode } from '@/lib/pricing/plan-code';
 import { storePlanCode } from '@/lib/pricing/plan-storage';
 import type { Currency, Region } from '@/lib/region';
 
-import { ADD_ON_KEYS, BASE_PRICE, MAX_TIER_INDEX, PAGE_TIER_KEYS } from './constants';
 import { PriceTotal } from './PriceTotal';
-import type { PlanSelection } from './PricingSimulator.types';
-import { formatAmount, getAddOnPrice, getPageTierPrice, getUpdateTierPrice } from './PricingSimulator.utils';
+import type { PlanItem, PlanSelection } from './PricingSimulator.types';
+import { formatAmount, getPlanItems } from './PricingSimulator.utils';
 
 interface PlanSummaryProps {
   currency: Currency;
@@ -31,24 +30,17 @@ export function PlanSummary({ currency, region, selection, total, showQuoteHint 
   const locale = useLocale();
   const price = (amount: number) => formatAmount(amount, currency, locale);
 
-  // Keys come from the fixed ADD_ON_KEYS / PAGE_TIER_KEYS lists.
-  /* eslint-disable security/detect-object-injection */
-  const lines = [{ label: t('builder.base.title'), amount: price(BASE_PRICE) }];
-  if (selection.pages > 0) {
-    const amount = `+${price(getPageTierPrice(selection.pages))}`;
-    lines.push({
-      label: t(`builder.pages.tiers.${PAGE_TIER_KEYS[selection.pages]}`),
-      amount: selection.pages === MAX_TIER_INDEX ? t('builder.pages.or_more', { price: amount }) : amount,
-    });
-  }
-  for (const key of ADD_ON_KEYS) {
-    if (selection.addOns[key])
-      lines.push({ label: t(`builder.options.${key}.label`), amount: `+${price(getAddOnPrice(key))}` });
-  }
-  if (selection.updatesEnabled) {
-    lines.push({ label: t('builder.updates.label'), amount: `+${price(getUpdateTierPrice(selection.updates))}` });
-  }
-  /* eslint-enable security/detect-object-injection */
+  const label = (item: PlanItem) => {
+    if (item.id === 'formula') return t('builder.base.title');
+    if (item.id === 'pages') return t(`builder.pages.tiers.${item.tier}`);
+    if (item.id === 'updates') return t('builder.updates.label');
+    return t(`builder.options.${item.id}.label`);
+  };
+  const amount = (item: PlanItem) => {
+    if (item.id === 'formula') return price(item.amount);
+    const surcharge = `+${price(item.amount)}`;
+    return item.tier === 'ten_plus' ? t('builder.pages.or_more', { price: surcharge }) : surcharge;
+  };
 
   return (
     <aside aria-label={t('builder.total.label')} className="flex flex-col gap-4 lg:sticky lg:top-24">
@@ -59,10 +51,10 @@ export function PlanSummary({ currency, region, selection, total, showQuoteHint 
         note={t('builder.total.note')}
       />
       <ul className="border-line text-fg-2 flex flex-col gap-2 border-t pt-4 text-sm">
-        {lines.map((line) => (
-          <li key={line.label} className="flex justify-between gap-4">
-            <span>{line.label}</span>
-            <span className="text-fg font-mono tabular-nums">{line.amount}</span>
+        {getPlanItems(selection).map((item) => (
+          <li key={item.id} className="flex justify-between gap-4">
+            <span>{label(item)}</span>
+            <span className="text-fg font-mono tabular-nums">{amount(item)}</span>
           </li>
         ))}
       </ul>

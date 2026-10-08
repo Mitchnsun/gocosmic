@@ -5,27 +5,27 @@ import { useId } from 'react';
 import { cn } from '@/design-system/lib/utils';
 import { Slider } from '@/design-system/slider';
 
-import { MAX_TIER_INDEX } from './constants';
-import type { TierIndex } from './PricingSimulator.types';
-
 interface TierSliderProps {
   label: string;
   /** One entry per slider position, in order. */
   tiers: { label: string; price: string }[];
-  value: TierIndex;
+  /** Current position, already clamped onto `tiers`. */
+  value: number;
   onChange: (value: number) => void;
   disabled?: boolean;
+  /** Id of a note that explains the current position (e.g. raised by another option). */
+  describedBy?: string;
 }
 
 /**
- * Five-position slider snapping onto fixed pricing tiers. Built on the Radix
+ * Slider snapping onto fixed pricing tiers, one position per tier. Built on the Radix
  * `Slider` primitive, which gives pointer-accurate dragging, click-to-seek and
  * full keyboard support for free; `aria-valuetext` reads out the tier wording
  * rather than the raw index.
  */
-export function TierSlider({ label, tiers, value, onChange, disabled = false }: TierSliderProps) {
+export function TierSlider({ label, tiers, value, onChange, disabled = false, describedBy }: TierSliderProps) {
   const id = useId();
-  // `value` is a TierIndex, already clamped onto a valid position.
+  // `value` is already clamped onto a valid position.
   // eslint-disable-next-line security/detect-object-injection
   const current = tiers[value];
 
@@ -51,10 +51,11 @@ export function TierSlider({ label, tiers, value, onChange, disabled = false }: 
           value={[value]}
           onValueChange={([next]) => next !== undefined && onChange(next)}
           min={0}
-          max={MAX_TIER_INDEX}
+          max={tiers.length - 1}
           step={1}
           disabled={disabled}
           aria-labelledby={id}
+          aria-describedby={describedBy}
           aria-valuetext={current ? `${current.label} — ${current.price}` : undefined}
         />
       </div>

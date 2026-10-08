@@ -1,11 +1,13 @@
 import { beforeEach, vi } from 'vitest';
 
 import { FreeMockupForm } from '@/components/FreeMockupForm';
+import { encodePlanCode } from '@/lib/pricing/plan-code';
 import { PLAN_STORAGE_KEY } from '@/lib/pricing/plan-storage';
 
+import { makePlan } from '../../lib/pricing/plan-fixtures';
 import { fireEvent, render, waitFor } from '../../test-utils';
 
-const PLAN_CODE = 'website~showcase~p0~u-~-~fr';
+const PLAN_CODE = encodePlanCode(makePlan());
 
 const submitFreeMockupRequest = vi.hoisted(() => vi.fn());
 
