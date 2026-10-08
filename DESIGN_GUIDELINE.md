@@ -39,14 +39,15 @@ The site has two themes — dark ("space", the default) and light ("star") — d
 | `fg-3`          | Meta / mono labels, placeholders                                         | ghost 50 %                            | void 60 %                          | `text-fg-3`                                |
 | `line`          | Hairline, subtle border, hover tint                                      | ghost 8 %                             | void 8 %                           | `border-line`, `bg-line`                   |
 | `line-2`        | Stronger border                                                          | ghost 15 %                            | void 15 %                          | `border-line-2`                            |
+| `line-3`        | Form field outline (3:1, WCAG 1.4.11)                                    | ghost 40 %                            | void 50 %                          | `border-line-3`                            |
 | `ok`            | Availability / online / success                                          | `jungle #29AB87`                      | `#16745A` (jungle darkened, AA)    | `text-ok`, `bg-ok`                         |
 | `on-ok`         | Label on an `ok` fill                                                    | `void`                                | `cosmic-latte`                     | `text-on-ok`                               |
 | `aerospace-ink` | Orange **text** (eyebrows, links, prices, errors) and orange focus rings | `aerospace #FF4F00`                   | `#B83A00` (aerospace darkened, AA) | `text-aerospace-ink`, `ring-aerospace-ink` |
 | `royal-ink`     | Purple **text** (project accents)                                        | `#B97BFF` (the planet's light purple) | `royal #7851A9`                    | `text-royal-ink`                           |
 
-`fg-2`, `fg-3`, `ok`, `aerospace-ink` and `royal-ink` pass WCAG AA (≥ 4.5:1) on `bg`, `bg-alt` and `surface` in both themes, including 10–11 px mono labels; `__tests__/design-system/theme-contrast.test.ts` checks the whole matrix from `app/globals.css`. Orange **fills** (buttons, dots, glows, borders) stay `aerospace` in both themes; orange **text** is always `text-aerospace-ink` (plain `#FF4F00` only reaches 3.1:1 on cream). Focus rings use `ring-fg` or `ring-aerospace-ink`, with `ring-offset-bg`. Pick the step by role, never by eyeballing an opacity: strong text `fg`, secondary `fg-2`, meta `fg-3`; hairlines `line`, stronger borders `line-2`, hover borders `fg-3` or `fg`.
+`fg-2`, `fg-3`, `ok`, `aerospace-ink` and `royal-ink` pass WCAG AA (≥ 4.5:1) on `bg`, `bg-alt` and `surface` in both themes, including 10–11 px mono labels; `line-3` reaches the 3:1 non-text contrast on `bg`, `bg-alt`, `surface` and `field`, so a form field's edge stays visible. `__tests__/design-system/theme-contrast.test.ts` checks the whole matrix from `app/globals.css`. Orange **fills** (buttons, dots, glows, borders) stay `aerospace` in both themes; orange **text** is always `text-aerospace-ink` (plain `#FF4F00` only reaches 3.1:1 on cream). Focus rings use `ring-fg` or `ring-aerospace-ink`, with `ring-offset-bg`. Pick the step by role, never by eyeballing an opacity: strong text `fg`, secondary `fg-2`, meta `fg-3`; hairlines `line`, stronger borders `line-2`, form field outlines `line-3`, hover borders `fg-3` or `fg`.
 
-> ⚠️ `fg-2`, `fg-3`, `line`, `line-2`, `surface` and `field` are already translucent: **never** add an opacity modifier to them (`text-fg-3/80` multiplies the alphas). Modifiers are fine on the opaque tokens (`bg-bg/95`, `bg-ok/20`).
+> ⚠️ `fg-2`, `fg-3`, `line`, `line-2`, `line-3`, `surface` and `field` are already translucent: **never** add an opacity modifier to them (`text-fg-3/80` multiplies the alphas). Modifiers are fine on the opaque tokens (`bg-bg/95`, `bg-ok/20`).
 
 **Nominal brand palette** (`@theme`): the raw colours the semantic tokens are built from. They do not follow the theme, so they only appear in components where a colour is intentionally fixed:
 
@@ -221,7 +222,7 @@ Background slightly lifted (`bg-surface`), border `line`, `rounded-2xl`, hover t
 
 ### 3.10 Form fields
 
-48 px high inputs (`h-12`), 12 px radius (`rounded-xl`), `border-line-2` on `bg-field`, orange border and ring on focus, orange border and message on error (`aria-invalid` + `aria-describedby="{id}-error"`). Build every field with `Field` and the `FIELD_INPUT` / `FIELD_TEXTAREA` classes. Checkboxes stay native `<input>`s styled with `CHECKBOX_CONTROL` (20 px box, `fg-3` border for a 3:1 outline, orange fill and void tick when checked). Striped placeholders use `.bg-stripes` (ink at 3 %). Google's booking iframe is the one surface that stays white in both themes.
+48 px high inputs (`h-12`), 12 px radius (`rounded-xl`), `border-line-3` on `bg-field` (a 3:1 outline), orange border and ring on focus, orange border and message on error (`aria-invalid` + `aria-describedby="{id}-error"`). Build every field with `Field` and the `FIELD_INPUT` / `FIELD_TEXTAREA` classes. Checkboxes stay native `<input>`s styled with `CHECKBOX_CONTROL` (20 px box, `fg-3` border for a 3:1 outline, orange fill and void tick when checked). Striped placeholders use `.bg-stripes` (ink at 3 %). Google's booking iframe is the one surface that stays white in both themes.
 
 ---
 
@@ -295,7 +296,7 @@ Background ........ bg-bg (alternate: bg-bg-alt)
 Text .............. text-fg / secondary text-fg-2 / meta text-fg-3
 Accent ............ text-aerospace · bg-aerospace (rare, 1 per zone)
 Availability ...... ok + pulsing signal dot
-Border ............ border-line (subtle) · border-line-2 (strong)
+Border ............ border-line (subtle) · border-line-2 (strong) · border-line-3 (form field)
 Heading ........... font-display, font-medium/bold, tracking-[-.03em], clamp()
 Eyebrow / meta .... font-mono, uppercase, tracking-widest, + aerospace dot
 Body .............. font-body (Inter), ≥14px

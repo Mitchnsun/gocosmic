@@ -38,6 +38,7 @@ describe.each(Object.entries(THEMES))('%s theme tokens', (_theme, tokens) => {
         'fg-3',
         'line',
         'line-2',
+        'line-3',
         'ok',
         'on-ok',
         'aerospace-ink',
@@ -57,6 +58,16 @@ describe.each(Object.entries(THEMES))('%s theme tokens', (_theme, tokens) => {
       expect(contrast(color('fg-3'), over(color('field'), background))).toBeGreaterThanOrEqual(AA);
     }
   });
+
+  it.each(Object.entries(backgrounds))(
+    'keeps form field outlines visible on %s (3:1 for non-text contrast)',
+    (_name, background) => {
+      const inside = over(color('field'), background);
+      const outline = over(color('line-3'), inside);
+      expect(contrast(outline, background)).toBeGreaterThanOrEqual(3);
+      expect(contrast(outline, inside)).toBeGreaterThanOrEqual(3);
+    }
+  );
 
   it('keeps labels readable on the green and orange fills', () => {
     expect(contrast(color('on-ok'), color('ok'))).toBeGreaterThanOrEqual(AA);

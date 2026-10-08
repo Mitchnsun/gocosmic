@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.3.1] - 2026-10-08
+
+### Changed
+
+- Form fields now have a clearly visible outline in both themes, so they are easier to spot
+- The privacy policy now says that your theme choice is only kept if you switch themes, and that it stays in your browser until you clear its data
+
 ## [2.3.0] - 2026-10-08
 
 ### Added

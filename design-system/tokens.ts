@@ -71,6 +71,12 @@ export const DESIGN_TOKENS: readonly DesignToken[] = [
     values: { dark: 'rgb(248 248 255 / 0.15)', light: 'rgb(2 6 23 / 0.15)' },
   },
   {
+    name: 'line-3',
+    swatch: 'bg-line-3',
+    role: 'Form field outline, 3:1',
+    values: { dark: 'rgb(248 248 255 / 0.4)', light: 'rgb(2 6 23 / 0.5)' },
+  },
+  {
     name: 'ok',
     swatch: 'bg-ok',
     role: 'Available, included, success',
