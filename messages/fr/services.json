@@ -12,7 +12,7 @@
     "simulator": {
       "eyebrow": "[ Composez votre abonnement ]",
       "title": "Commencez simple, <em>ajoutez le reste plus tard.</em>",
-      "lead": "La formule de base comprend une page vitrine en ligne et sécurisée, pour {price} HT par mois. Cochez les options qui vous intéressent pour voir le prix mensuel."
+      "lead": "Deux formules : « On s'occupe de tout », dès {price} HT par mois, ou « Vous gardez la main », à {selfServicePrice} HT par mois, si vous voulez publier vous-même vos actualités. Cochez les options qui vous intéressent pour voir le prix mensuel."
     },
     "trades": {
       "eyebrow": "[ Nos métiers · 04 ]",
@@ -50,7 +50,7 @@
         },
         "edit": {
           "question": "Puis-je modifier le site moi-même ?",
-          "answer": "Le plus simple est l'option « Modifications de contenu incluses » : vous nous envoyez vos textes, vos photos ou vos nouveaux horaires, et nous les mettons en ligne. Si vous préférez publier vous-même, c'est possible aussi ; nous en discutons, car cela demande un développement spécifique."
+          "answer": "Oui, avec la formule « Vous gardez la main » : vous publiez vous-même vos actualités et changez vos horaires depuis un espace d'édition simple, et nous vous montrons comment l'utiliser. Si vous préférez tout nous confier, la formule « On s'occupe de tout » suffit : vous nous envoyez vos changements par e-mail, et nous les mettons en ligne."
         },
         "timing": {
           "question": "Combien de temps pour être en ligne ?",
@@ -58,7 +58,7 @@
         },
         "stop": {
           "question": "Que se passe-t-il si j'arrête ?",
-          "answer": "Il suffit de nous prévenir : le site reste en ligne jusqu'à la fin de la période déjà payée, et vous repartez avec vos contenus et votre nom de domaine. Le code vous est cédé gratuitement après {months} mois d'abonnement ; avant, il vous est cédé contre des frais que nous vous indiquons dès le départ. Si votre abonnement comprend un nom de domaine ou une adresse e-mail, il court par périodes de 12 mois, et la période en cours va jusqu'à son terme."
+          "answer": "Il suffit de nous prévenir : le site reste en ligne jusqu'à la fin de la période déjà payée, et vous repartez avec vos contenus et votre nom de domaine. Le code vous est cédé gratuitement après {months} mois d'abonnement ; avant, il vous est cédé contre des frais que nous vous indiquons dès le départ. Si votre abonnement comprend un nom de domaine, une adresse e-mail, la formule « Vous gardez la main » ou une option marquée « Engagement 1 an », il court par périodes de 12 mois, et la période en cours va jusqu'à son terme."
         },
         "content": {
           "question": "Faites-vous aussi les textes et les photos ?",

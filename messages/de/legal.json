@@ -7,7 +7,7 @@
       },
       "eyebrow": "nDSG · DSGVO",
       "title": "Datenschutzerklärung",
-      "updated": "Zuletzt aktualisiert: 6. Oktober 2026",
+      "updated": "Zuletzt aktualisiert: 8. Oktober 2026",
       "intro": "Diese Seite erklärt, wie Cosmic Studio personenbezogene Daten verarbeitet, die auf dieser Website und im E-Mail-Austausch erhoben werden.",
       "legalNoticePrefix": "Angaben zum Anbieter und zum Hosting finden Sie im",
       "legalNoticeLink": "Impressum",
@@ -21,7 +21,7 @@
         {
           "title": "Erhobene Daten",
           "body": [
-            "Die Website hat weder einen Kundenbereich noch eine Bezahlfunktion und verwendet weder CAPTCHA noch Werbepixel. Zwei Formulare werden serverseitig verarbeitet. Die Seite für das kostenlose Mockup erfasst Ihre E-Mail-Adresse, die gewählte Farbstimmung, die Adresse Ihrer aktuellen Website, sofern Sie sie angeben, Ihre Nachricht und die Sprache der Seite. Wenn Sie vom Preissimulator kommen, enthält die Anfrage außerdem Ihre dortige Auswahl (Projektart, Art der Website, Seitenanzahl, gewählte Optionen, Häufigkeit der Aktualisierungen und den daraus geschätzten Monatspreis), damit das Studio Ihnen in voller Kenntnis Ihrer Wünsche antworten kann. Das Kontaktformular erfasst Ihren Namen, Ihre E-Mail-Adresse und Ihre Nachricht sowie, falls Sie diese angeben, Ihre Telefonnummer, Ihre Tätigkeit und die gewählte Art des Anliegens. In beiden Fällen werden die Angaben per E-Mail an das Postfach des Studios übermittelt, und es wird nichts in einer Datenbank gespeichert. Nachrichten, die Sie über die E-Mail-Links der Website senden, werden von Ihrem E-Mail-Programm und vom Empfängerpostfach verarbeitet.",
+            "Die Website hat weder einen Kundenbereich noch eine Bezahlfunktion und verwendet weder CAPTCHA noch Werbepixel. Zwei Formulare werden serverseitig verarbeitet. Die Seite für das kostenlose Mockup erfasst Ihre E-Mail-Adresse, die gewählte Farbstimmung, die Adresse Ihrer aktuellen Website, sofern Sie sie angeben, Ihre Nachricht und die Sprache der Seite. Wenn Sie vom Preissimulator kommen, enthält die Anfrage außerdem Ihre dortige Auswahl (Paket, Projektart, Art der Website, Seitenanzahl, gewählte Optionen und ihre Einstellungen, Häufigkeit der Aktualisierungen und den daraus geschätzten Monatspreis), damit das Studio Ihnen in voller Kenntnis Ihrer Wünsche antworten kann. Das Kontaktformular erfasst Ihren Namen, Ihre E-Mail-Adresse und Ihre Nachricht sowie, falls Sie diese angeben, Ihre Telefonnummer, Ihre Tätigkeit und die gewählte Art des Anliegens. In beiden Fällen werden die Angaben per E-Mail an das Postfach des Studios übermittelt, und es wird nichts in einer Datenbank gespeichert. Nachrichten, die Sie über die E-Mail-Links der Website senden, werden von Ihrem E-Mail-Programm und vom Empfängerpostfach verarbeitet.",
             "Ihre IP-Adresse wird vorübergehend von der Firewall des Hosting-Anbieters verarbeitet, die jedes der beiden Formulare (Kontakt und kostenloses Mockup) auf drei Absendungen alle zehn Minuten begrenzt, ergänzt durch ein verstecktes Anti-Spam-Feld. Der Hosting-Anbieter kann außerdem technische Daten für seine Sicherheits- und Bereitstellungsprotokolle verarbeiten. Vercel Analytics wird erst nach Ihrer Einwilligung geladen, um Seitenaufrufe zu messen.",
             "Wenn Sie über die Kontaktseite ein Gespräch buchen, übermittelt Google Calendar dem Studio Ihren Namen, Ihre E-Mail-Adresse, den gewählten Termin und die Angaben, die Sie im Buchungsformular machen. Diese Angaben werden im Kalender des Studios gespeichert, nicht in einer Datenbank.",
             "Drei Angaben werden in Ihrem Browser gespeichert. Die Preissimulation dient nur dazu, Ihre Auswahl vom Simulator in das Formular für das kostenlose Mockup zu übernehmen: Sie wird nur an uns übermittelt, wenn Sie dieses Formular absenden, wird nach dem Absenden der Anfrage gelöscht und verschwindet, sobald Sie den Tab schließen. Die Zeitpunkte Ihrer letzten Absendungen des Kontaktformulars dienen dazu, die Häufigkeit der Absendungen aus diesem Browser zu begrenzen; sie bleiben dort gespeichert, bis Sie Ihre Browserdaten löschen, und werden nie an uns übermittelt. Ihre Wahl zwischen hellem und dunklem Farbschema wird gespeichert, damit die Website so öffnet, wie Sie sie verlassen haben; sie wird nie an uns übermittelt."
@@ -140,7 +140,7 @@
       },
       "eyebrow": "Geschäftsbedingungen",
       "title": "Allgemeine Geschäftsbedingungen",
-      "updated": "Zuletzt aktualisiert: 6. Oktober 2026",
+      "updated": "Zuletzt aktualisiert: 8. Oktober 2026",
       "intro": "Diese Allgemeinen Geschäftsbedingungen gelten für das Abonnement und die Leistungen, die Cosmic Studio auf www.gocosmic.dev anbietet.",
       "sections": [
         {
@@ -158,7 +158,8 @@
         {
           "title": "Abschluss des Abonnements",
           "body": [
-            "Das Abonnement wird nach einem ersten Gespräch schriftlich bestätigt, sobald Ihr Bedarf (Seiten, Optionen, Änderungen) gemeinsam festgelegt wurde. Es tritt mit der Veröffentlichung der Website in Kraft."
+            "Das Abonnement wird nach einem ersten Gespräch schriftlich bestätigt, sobald Ihr Bedarf (Seiten, Optionen, Änderungen) gemeinsam festgelegt wurde. Es tritt mit der Veröffentlichung der Website in Kraft.",
+            "Es gibt zwei Pakete: „Wir kümmern uns um alles“, bei dem wir die Änderungen umsetzen, die Sie uns per E-Mail schicken, und „Sie behalten die Kontrolle“, das ein Bearbeitungswerkzeug enthält, mit dem Sie Ihre Neuigkeiten und Öffnungszeiten selbst veröffentlichen, sowie einen Bereich für Neuigkeiten."
           ]
         },
         {
@@ -172,21 +173,25 @@
         {
           "title": "Laufzeit und Bindung",
           "body": [
-            "Das Abonnement hat keine Mindestlaufzeit und kann jeden Monat gekündigt werden, solange es keine Verwaltung eines Domainnamens oder einer E-Mail-Adresse umfasst.",
-            "Sobald eine dieser beiden Optionen aktiv ist, wird das Abonnement für Zeiträume von 12 Monaten abgeschlossen, die sich stillschweigend verlängern, um die Reservierung des Domainnamens und der E-Mail-Adresse abzudecken."
+            "Das Abonnement hat keine Mindestlaufzeit und kann jeden Monat gekündigt werden, solange es nichts enthält, was in Zeiträumen von 12 Monaten abgeschlossen wird: das Paket „Sie behalten die Kontrolle“, die Verwaltung eines Domainnamens, eine E-Mail-Adresse oder eine im Simulator mit „1 Jahr Laufzeit“ gekennzeichnete Option.",
+            "Sobald eines dieser Elemente aktiv ist, wird das Abonnement für Zeiträume von 12 Monaten abgeschlossen, die sich stillschweigend verlängern, um die Reservierung des Domainnamens und der E-Mail-Adresse sowie die Einrichtung des Bearbeitungswerkzeugs und der betreffenden Optionen abzudecken.",
+            "Sie können jederzeit zum Paket „Sie behalten die Kontrolle“ wechseln. Die Rückkehr zum Paket „Wir kümmern uns um alles“ wird zum Ende des laufenden 12-Monats-Zeitraums wirksam, da das Bearbeitungswerkzeug nicht vorher entfernt werden kann."
           ]
         },
         {
           "title": "Optionen",
           "body": [
             "Sie können jederzeit eine Option hinzufügen; sie gilt ab dem nächsten Abrechnungszeitraum.",
-            "Die Anzahl der Seiten, der Domainname, das Hosting in der Schweiz und die E-Mail-Adresse können nach der Aktivierung nicht mehr entfernt werden, da sie jeweils einer für Sie eingegangenen Verpflichtung entsprechen (erstellte Seiten, reservierte Domain, eingerichtetes Postfach). Nur die Häufigkeit der Inhaltsänderungen kann nach oben oder unten angepasst werden."
+            "Die Anzahl der Seiten, der Domainname, das Hosting in der Schweiz und die Haupt-E-Mail-Adresse können nach der Aktivierung nicht mehr entfernt werden, da sie jeweils einer für Sie eingegangenen Verpflichtung entsprechen (erstellte Seiten, reservierte Domain, eingerichtetes Postfach). Die Häufigkeit der Inhaltsänderungen kann nach oben oder unten angepasst werden.",
+            "Optionen mit dem Hinweis „1 Jahr Laufzeit“ (Bereich für Neuigkeiten, Website auf Englisch, lokale Suchbetreuung, Besuchsstatistiken und ausführliche Messung, mit KI-Unterstützung geschriebene Artikel, zusätzliche Postfächer und Weiterleitungen) werden für Zeiträume von 12 Monaten abgeschlossen und können zum Ende eines Zeitraums entfernt werden. Der Rhythmus der Artikel kann mit einem Monat Frist verringert werden.",
+            "Die übrigen Optionen (Kontaktformular, Online-Terminbuchung, Kundenbewertungen, Überwachung der Website) können mit einem Monat Frist entfernt werden.",
+            "Wird eine Option entfernt, verschwinden die zugehörigen Inhalte von der Website, zum Beispiel der Bereich für Neuigkeiten mit seinen Beiträgen oder die englische Version."
           ]
         },
         {
           "title": "Kündigung",
           "body": [
-            "Sie können jederzeit schriftlich kündigen. Die Website bleibt bis zum Ende des laufenden bezahlten Zeitraums online (Ende des Monats bei einem Abonnement ohne Mindestlaufzeit, Ende des laufenden 12-Monats-Zeitraums, wenn ein Domainname oder eine E-Mail-Adresse enthalten ist).",
+            "Sie können jederzeit schriftlich kündigen. Die Website bleibt bis zum Ende des laufenden bezahlten Zeitraums online (Ende des Monats bei einem Abonnement ohne Mindestlaufzeit, Ende des laufenden 12-Monats-Zeitraums, wenn etwas enthalten ist, das in Zeiträumen von 12 Monaten abgeschlossen wird).",
             "Sie behalten Ihre Inhalte und Ihren Domainnamen."
           ]
         },
@@ -200,7 +205,8 @@
         {
           "title": "Ihre Pflichten",
           "body": [
-            "Sie stellen uns die Texte, Bilder und Informationen zur Verfügung, die für die Erstellung oder Aktualisierung der Website nötig sind. Die genannten Fristen beginnen mit deren Eingang."
+            "Sie stellen uns die Texte, Bilder und Informationen zur Verfügung, die für die Erstellung oder Aktualisierung der Website nötig sind. Die genannten Fristen beginnen mit deren Eingang.",
+            "Wir erstellen Ihr Impressum und Ihre Datenschutzerklärung anhand der Informationen, die Sie uns geben; Sie lesen sie, geben sie frei und bleiben dafür verantwortlich."
           ]
         },
         {

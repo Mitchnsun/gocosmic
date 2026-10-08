@@ -12,7 +12,7 @@
     "simulator": {
       "eyebrow": "[ Build your plan ]",
       "title": "Start simple, <em>add the rest later.</em>",
-      "lead": "The base plan covers a showcase page, online and secure, for {price} a month excl. VAT. Tick the options you want to see the monthly price."
+      "lead": "Two plans: “We take care of everything”, from {price} a month excl. VAT, or “You stay in control”, at {selfServicePrice} a month excl. VAT, if you want to publish your news yourself. Tick the options you want to see the monthly price."
     },
     "trades": {
       "eyebrow": "[ What we do · 04 ]",
@@ -50,7 +50,7 @@
         },
         "edit": {
           "question": "Can I edit the site myself?",
-          "answer": "The simplest way is the “Content changes included” option: you send us your texts, photos or new opening hours, and we put them online. If you would rather publish yourself, that is possible too; we will talk it through, as it needs some specific development."
+          "answer": "Yes, with the “You stay in control” plan: you publish your news and change your opening hours yourself from a simple editing space, and we show you how to use it. If you would rather leave it all to us, the “We take care of everything” plan is enough: you email us your changes, and we put them online."
         },
         "timing": {
           "question": "How long until I am online?",
@@ -58,7 +58,7 @@
         },
         "stop": {
           "question": "What happens if I stop?",
-          "answer": "Just let us know: the site stays online until the end of the period already paid, and you leave with your content and your domain name. The code is transferred to you free of charge after {months} months of subscription; before that, it is transferred for a fee we tell you about from the start. If your subscription includes a domain name or an email address, it runs in 12-month periods, and the current period runs to its end."
+          "answer": "Just let us know: the site stays online until the end of the period already paid, and you leave with your content and your domain name. The code is transferred to you free of charge after {months} months of subscription; before that, it is transferred for a fee we tell you about from the start. If your subscription includes a domain name, an email address, the “You stay in control” plan or an option marked “1-year commitment”, it runs in 12-month periods, and the current period runs to its end."
         },
         "content": {
           "question": "Do you also write the texts and take the photos?",

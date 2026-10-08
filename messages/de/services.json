@@ -17,7 +17,7 @@
     "simulator": {
       "eyebrow": "[ Abonnement zusammenstellen ]",
       "title": "Fangen Sie klein an, <em>den Rest ergänzen Sie später.</em>",
-      "lead": "Das Grundpaket umfasst eine Präsentationsseite, online und sicher, für {price} im Monat zzgl. MwSt. Kreuzen Sie die Optionen an, die Sie interessieren, und Sie sehen den Monatspreis."
+      "lead": "Zwei Pakete: „Wir kümmern uns um alles“ ab {price} im Monat zzgl. MwSt. oder „Sie behalten die Kontrolle“ für {selfServicePrice} im Monat zzgl. MwSt., wenn Sie Ihre Neuigkeiten selbst veröffentlichen möchten. Kreuzen Sie die Optionen an, die Sie interessieren, und Sie sehen den Monatspreis."
     },
     "trades": {
       "eyebrow": "[ Unsere Fachgebiete · 04 ]",
@@ -55,7 +55,7 @@
         },
         "edit": {
           "question": "Kann ich die Website selbst ändern?",
-          "answer": "Am einfachsten ist die Option „Inhaltsänderungen inklusive“: Sie schicken uns Ihre Texte, Fotos oder neuen Öffnungszeiten, und wir stellen sie online. Wenn Sie lieber selbst veröffentlichen möchten, geht das auch; darüber sprechen wir gemeinsam, denn dafür muss eigens etwas entwickelt werden."
+          "answer": "Ja, mit dem Paket „Sie behalten die Kontrolle“: Sie veröffentlichen Ihre Neuigkeiten und ändern Ihre Öffnungszeiten selbst in einem einfachen Bearbeitungsbereich, und wir zeigen Ihnen, wie er funktioniert. Wenn Sie uns lieber alles überlassen, genügt das Paket „Wir kümmern uns um alles“: Sie schicken uns Ihre Änderungen per E-Mail, und wir stellen sie online."
         },
         "timing": {
           "question": "Wie lange dauert es, bis ich online bin?",
@@ -63,7 +63,7 @@
         },
         "stop": {
           "question": "Was passiert, wenn ich kündige?",
-          "answer": "Sagen Sie uns einfach Bescheid: Die Website bleibt bis zum Ende des bereits bezahlten Zeitraums online, und Sie nehmen Ihre Inhalte und Ihren Domainnamen mit. Der Code wird Ihnen nach {months} Monaten Abonnement kostenlos übertragen; davor gegen eine Gebühr, die wir Ihnen von Anfang an nennen. Enthält Ihr Abonnement einen Domainnamen oder eine E-Mail-Adresse, läuft es in Zeiträumen von jeweils 12 Monaten, und der aktuelle Zeitraum wird bis zu seinem Ende weitergeführt."
+          "answer": "Sagen Sie uns einfach Bescheid: Die Website bleibt bis zum Ende des bereits bezahlten Zeitraums online, und Sie nehmen Ihre Inhalte und Ihren Domainnamen mit. Der Code wird Ihnen nach {months} Monaten Abonnement kostenlos übertragen; davor gegen eine Gebühr, die wir Ihnen von Anfang an nennen. Enthält Ihr Abonnement einen Domainnamen, eine E-Mail-Adresse, das Paket „Sie behalten die Kontrolle“ oder eine Option mit „1 Jahr Laufzeit“, läuft es in Zeiträumen von jeweils 12 Monaten, und der aktuelle Zeitraum wird bis zu seinem Ende weitergeführt."
         },
         "content": {
           "question": "Kümmern Sie sich auch um Texte und Fotos?",

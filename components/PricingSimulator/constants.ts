@@ -91,6 +91,7 @@ export const ONE_YEAR_OPTIONS: ReadonlySet<AddOnKey | TieredKey | 'mailboxes'> =
   'redirects',
   'mailboxes',
   'analytics',
+  'detailed_analytics',
   'seo',
   'articles',
 ]);

@@ -8,7 +8,7 @@ import { Faq } from '@/components/Faq';
 import { PricingColumns } from '@/components/PricingColumns';
 import { buildPricingColumns } from '@/components/PricingColumns/PricingColumns.utils';
 import { FreeOffers, PricingSimulator } from '@/components/PricingSimulator';
-import { BASE_PRICE } from '@/components/PricingSimulator/constants';
+import { BASE_PRICE, FORMULA_PRICES } from '@/components/PricingSimulator/constants';
 import { formatAmount } from '@/components/PricingSimulator/PricingSimulator.utils';
 import { SectionHeading } from '@/components/SectionHeading';
 import { ServicesGrid } from '@/components/ServicesGrid';
@@ -69,7 +69,10 @@ export default async function Services() {
             eyebrow={t('simulator.eyebrow')}
             title={t.rich('simulator.title', { em })}
             titleId="simulator-heading"
-            lead={t('simulator.lead', { price: formatAmount(BASE_PRICE, currency, locale) })}
+            lead={t('simulator.lead', {
+              price: formatAmount(BASE_PRICE, currency, locale),
+              selfServicePrice: formatAmount(FORMULA_PRICES.self_service, currency, locale),
+            })}
           />
           <NextIntlClientProvider locale={locale} messages={messages}>
             <PricingSimulator region={region} />

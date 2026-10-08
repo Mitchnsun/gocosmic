@@ -7,7 +7,7 @@
       },
       "eyebrow": "nLPD · GDPR",
       "title": "Informativa privacy",
-      "updated": "Ultimo aggiornamento: 6 ottobre 2026",
+      "updated": "Ultimo aggiornamento: 8 ottobre 2026",
       "intro": "Questa pagina spiega come Cosmic Studio tratta i dati personali raccolti su questo sito e negli scambi via e-mail.",
       "legalNoticePrefix": "Per i dati dell'editore e le informazioni sull'hosting, consulta le",
       "legalNoticeLink": "note legali",
@@ -21,7 +21,7 @@
         {
           "title": "Dati raccolti",
           "body": [
-            "Il sito non prevede area clienti, pagamenti, CAPTCHA né pixel pubblicitari. Due moduli vengono elaborati sul server. La pagina del mockup gratuito raccoglie il tuo indirizzo e-mail, la palette di colori scelta, l'indirizzo del tuo sito attuale se lo indichi, il tuo messaggio e la lingua della pagina. Se arrivi dal simulatore di prezzi, la richiesta include anche le scelte che vi hai fatto (tipo di progetto, tipo di sito, numero di pagine, opzioni selezionate, frequenza degli aggiornamenti e prezzo mensile stimato), così lo studio può risponderti con cognizione di causa. Il modulo di contatto raccoglie il tuo nome, il tuo indirizzo e-mail e il tuo messaggio e, se li indichi, il tuo numero di telefono, la tua attività e il tipo di esigenza scelto. In entrambi i casi le informazioni vengono inviate via e-mail alla casella dello studio e nulla viene conservato in un database. I messaggi inviati tramite i link e-mail del sito sono gestiti dal tuo programma di posta e dalla casella del destinatario.",
+            "Il sito non prevede area clienti, pagamenti, CAPTCHA né pixel pubblicitari. Due moduli vengono elaborati sul server. La pagina del mockup gratuito raccoglie il tuo indirizzo e-mail, la palette di colori scelta, l'indirizzo del tuo sito attuale se lo indichi, il tuo messaggio e la lingua della pagina. Se arrivi dal simulatore di prezzi, la richiesta include anche le scelte che vi hai fatto (formula, tipo di progetto, tipo di sito, numero di pagine, opzioni selezionate e relative impostazioni, frequenza degli aggiornamenti e prezzo mensile stimato), così lo studio può risponderti con cognizione di causa. Il modulo di contatto raccoglie il tuo nome, il tuo indirizzo e-mail e il tuo messaggio e, se li indichi, il tuo numero di telefono, la tua attività e il tipo di esigenza scelto. In entrambi i casi le informazioni vengono inviate via e-mail alla casella dello studio e nulla viene conservato in un database. I messaggi inviati tramite i link e-mail del sito sono gestiti dal tuo programma di posta e dalla casella del destinatario.",
             "Il tuo indirizzo IP viene trattato temporaneamente dal firewall del fornitore di hosting, che limita ciascuno dei due moduli (contatto e mockup gratuito) a tre invii ogni dieci minuti, in aggiunta a un campo anti-spam nascosto. Il fornitore di hosting può anche trattare dati tecnici per i propri registri di sicurezza e di distribuzione. Vercel Analytics viene caricato solo dopo il tuo consenso, per contare le pagine visualizzate.",
             "Se prenoti una chiamata dalla pagina Contatti, Google Calendar trasmette allo studio il tuo nome, il tuo indirizzo e-mail, l'orario scelto e le informazioni che inserisci nel modulo di prenotazione. Queste informazioni sono conservate nel calendario dello studio, non in un database.",
             "Nel tuo browser vengono conservate tre informazioni. La simulazione dei prezzi serve solo a trasferire le tue scelte dal simulatore al modulo del mockup gratuito: ci viene trasmessa solo se invii quel modulo, viene cancellata una volta inviata la richiesta e scompare quando chiudi la scheda. Le date dei tuoi ultimi invii del modulo di contatto servono a limitare la frequenza degli invii da questo browser; vi restano finché non cancelli i tuoi dati di navigazione e non ci vengono mai trasmesse. La tua scelta tra tema chiaro e scuro viene conservata perché il sito si apra come l'hai lasciato; non ci viene mai trasmessa."
@@ -136,7 +136,7 @@
       },
       "eyebrow": "Condizioni di vendita",
       "title": "Condizioni generali di vendita",
-      "updated": "Ultimo aggiornamento: 6 ottobre 2026",
+      "updated": "Ultimo aggiornamento: 8 ottobre 2026",
       "intro": "Le presenti condizioni generali di vendita si applicano all'abbonamento e ai servizi offerti da Cosmic Studio su www.gocosmic.dev.",
       "sections": [
         {
@@ -154,7 +154,8 @@
         {
           "title": "Sottoscrizione",
           "body": [
-            "L'abbonamento viene confermato per iscritto dopo un primo colloquio, una volta definite insieme le tue esigenze (pagine, opzioni, modifiche). Decorre dalla messa online del sito."
+            "L'abbonamento viene confermato per iscritto dopo un primo colloquio, una volta definite insieme le tue esigenze (pagine, opzioni, modifiche). Decorre dalla messa online del sito.",
+            "Sono proposte due formule: «Ci pensiamo noi», in cui facciamo le modifiche che ci mandi per e-mail, e «Hai tu il controllo», che comprende uno strumento di modifica per pubblicare da te notizie e orari, oltre a una sezione notizie."
           ]
         },
         {
@@ -168,21 +169,25 @@
         {
           "title": "Durata e impegno",
           "body": [
-            "L'abbonamento non prevede un periodo minimo ed è disdicibile ogni mese, a condizione che non includa la gestione di un nome a dominio o di un indirizzo e-mail.",
-            "Non appena una di queste due opzioni è attiva, l'abbonamento è sottoscritto per periodi di 12 mesi, rinnovati tacitamente, per coprire la registrazione del nome a dominio e dell'indirizzo e-mail."
+            "L'abbonamento non prevede un periodo minimo ed è disdicibile ogni mese, a condizione che non includa nulla di sottoscritto per periodi di 12 mesi: la formula «Hai tu il controllo», la gestione di un nome a dominio, un indirizzo e-mail o un'opzione indicata con «Impegno di 1 anno» nel simulatore.",
+            "Non appena uno di questi elementi è attivo, l'abbonamento è sottoscritto per periodi di 12 mesi, rinnovati tacitamente, per coprire la registrazione del nome a dominio e dell'indirizzo e-mail, e la messa in opera dello strumento di modifica e delle opzioni interessate.",
+            "Puoi passare alla formula «Hai tu il controllo» in qualsiasi momento. Il ritorno alla formula «Ci pensiamo noi» decorre dalla fine del periodo di 12 mesi in corso, perché lo strumento di modifica non può essere rimosso prima."
           ]
         },
         {
           "title": "Opzioni",
           "body": [
             "Puoi aggiungere un'opzione in qualsiasi momento; si applica a partire dal periodo di fatturazione successivo.",
-            "Il numero di pagine, il nome a dominio, l'hosting in Svizzera e l'indirizzo e-mail non possono essere rimossi una volta attivati, perché corrispondono a un impegno assunto per tuo conto (pagine create, dominio registrato, casella e-mail aperta). Solo la frequenza delle modifiche ai contenuti può essere rivista al rialzo o al ribasso."
+            "Il numero di pagine, il nome a dominio, l'hosting in Svizzera e l'indirizzo e-mail principale non possono essere rimossi una volta attivati, perché corrispondono a un impegno assunto per tuo conto (pagine create, dominio registrato, casella e-mail aperta). La frequenza delle modifiche ai contenuti può essere rivista al rialzo o al ribasso.",
+            "Le opzioni con «Impegno di 1 anno» (sezione notizie, sito in inglese, posizionamento locale seguito, statistiche delle visite e misurazione dettagliata, articoli scritti con l'aiuto dell'IA, caselle e inoltri e-mail in più) si sottoscrivono per periodi di 12 mesi e possono essere rimosse alla fine di un periodo. Il ritmo degli articoli può essere ridotto con un mese di preavviso.",
+            "Le altre opzioni (modulo di contatto, prenotazione online, recensioni dei clienti, sorveglianza del sito) possono essere rimosse con un mese di preavviso.",
+            "Quando un'opzione viene rimossa, i contenuti collegati scompaiono dal sito, per esempio la sezione notizie e le sue pubblicazioni, o la versione inglese."
           ]
         },
         {
           "title": "Disdetta",
           "body": [
-            "Puoi disdire l'abbonamento in qualsiasi momento per iscritto. Il sito resta online fino alla fine del periodo in corso già pagato (fine del mese per un abbonamento senza vincolo di durata, fine del periodo di 12 mesi in corso se comprende un nome a dominio o un indirizzo e-mail).",
+            "Puoi disdire l'abbonamento in qualsiasi momento per iscritto. Il sito resta online fino alla fine del periodo in corso già pagato (fine del mese per un abbonamento senza vincolo di durata, fine del periodo di 12 mesi in corso se comprende qualcosa sottoscritto per periodi di 12 mesi).",
             "Porti con te i tuoi contenuti e il tuo nome a dominio."
           ]
         },
@@ -196,7 +201,8 @@
         {
           "title": "I tuoi obblighi",
           "body": [
-            "Ci fornisci i testi, le immagini e le informazioni necessari alla realizzazione o all'aggiornamento del sito. I tempi indicati decorrono da quando li riceviamo."
+            "Ci fornisci i testi, le immagini e le informazioni necessari alla realizzazione o all'aggiornamento del sito. I tempi indicati decorrono da quando li riceviamo.",
+            "Prepariamo le tue note legali e la tua informativa sulla privacy con le informazioni che ci fornisci; tu le rileggi, le approvi e ne resti responsabile."
           ]
         },
         {

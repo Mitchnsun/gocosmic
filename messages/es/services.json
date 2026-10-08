@@ -17,7 +17,7 @@
     "simulator": {
       "eyebrow": "[ Configura tu suscripción ]",
       "title": "Empieza por lo básico <em>y añade el resto más adelante.</em>",
-      "lead": "El plan base incluye una página de presentación en línea y con conexión segura, por {price} al mes sin IVA. Marca las opciones que te interesen para ver el precio mensual."
+      "lead": "Dos planes: «Nos encargamos de todo», desde {price} al mes sin IVA, o «Tú tienes el control», por {selfServicePrice} al mes sin IVA, si quieres publicar tú mismo/a tus noticias. Marca las opciones que te interesen para ver el precio mensual."
     },
     "trades": {
       "eyebrow": "[ Lo que hacemos · 04 ]",
@@ -55,7 +55,7 @@
         },
         "edit": {
           "question": "¿Puedo modificar el sitio por mi cuenta?",
-          "answer": "Lo más sencillo es la opción «Cambios de contenido incluidos»: nos envías tus textos, tus fotos o tus nuevos horarios, y nosotros los publicamos. Si prefieres publicar por tu cuenta, también es posible; lo hablamos, porque requiere un desarrollo específico."
+          "answer": "Sí, con el plan «Tú tienes el control»: publicas tú mismo/a tus noticias y cambias tus horarios desde un espacio de edición sencillo, y te enseñamos a usarlo. Si prefieres dejarlo todo en nuestras manos, basta con el plan «Nos encargamos de todo»: nos envías tus cambios por correo y los publicamos."
         },
         "timing": {
           "question": "¿Cuánto se tarda en publicar el sitio?",
@@ -63,7 +63,7 @@
         },
         "stop": {
           "question": "¿Qué pasa si lo dejo?",
-          "answer": "Basta con avisarnos: el sitio sigue en línea hasta el final del periodo ya pagado, y te llevas tus contenidos y tu nombre de dominio. El código se te cede gratis después de {months} meses de suscripción; antes de ese plazo, la cesión tiene un coste que te indicamos desde el principio. Si tu suscripción incluye un nombre de dominio o una dirección de correo, se contrata por periodos de 12 meses, y el periodo en curso se mantiene hasta su vencimiento."
+          "answer": "Basta con avisarnos: el sitio sigue en línea hasta el final del periodo ya pagado, y te llevas tus contenidos y tu nombre de dominio. El código se te cede gratis después de {months} meses de suscripción; antes de ese plazo, la cesión tiene un coste que te indicamos desde el principio. Si tu suscripción incluye un nombre de dominio, una dirección de correo, el plan «Tú tienes el control» o una opción marcada «Compromiso de 1 año», se contrata por periodos de 12 meses, y el periodo en curso se mantiene hasta su vencimiento."
         },
         "content": {
           "question": "¿También os encargáis de los textos y las fotos?",
