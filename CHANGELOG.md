@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.3.1] - 2026-10-08
+
+### Fixed
+
+- A simulation sent from outside Switzerland can no longer ask for hosting in Switzerland, which is offered to Swiss visitors only
+
 ## [2.3.0] - 2026-10-08
 
 ### Added
