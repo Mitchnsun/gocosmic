@@ -87,7 +87,7 @@
           "hint": "Hasta 5 direcciones que reenvían a un buzón existente, por ejemplo facturas@{domain}."
         },
         "email_extras": {
-          "info": "Si trabajáis varias personas, o para la junta de una asociación, cada uno puede tener su propio buzón con tu nombre. Una redirección, en cambio, no tiene buzón: los mensajes llegan a un buzón que ya tienes. Estas direcciones se contratan por periodos de 12 meses; puedes darlas de baja al final de un periodo."
+          "info": "Si trabajan varias personas, o para la junta de una asociación, cada persona puede tener su propio buzón con tu nombre. Una redirección, en cambio, no tiene buzón: los mensajes llegan a un buzón que ya tienes. Estas direcciones se contratan por periodos de 12 meses; puedes darlas de baja al final de un periodo."
         },
         "contact_form": {
           "label": "Un formulario de contacto",
@@ -151,7 +151,8 @@
           },
           "info": "Escribir artículos con regularidad lleva tiempo. Los redactamos por ti con ayuda de la inteligencia artificial, a partir de la información sobre tu negocio. Eliges revisar cada artículo antes de publicarlo o dejar que lo publiquemos directamente. Cada artículo publicado cuenta como un cambio de contenido. Puedes reducir el ritmo con un mes de preaviso; la baja completa se hace al final de un periodo de 12 meses.",
           "info_tool": "Según tu herramienta de edición, podemos usar un servicio especializado que elige los temas a partir de lo que la gente busca en Google.",
-          "raised": "Cada artículo publicado cuenta como un cambio: hemos ajustado tus cambios de contenido en consecuencia."
+          "raised": "Cada artículo publicado cuenta como un cambio: hemos ajustado tus cambios de contenido en consecuencia.",
+          "locked": "Cada artículo publicado cuenta como un cambio: tus cambios de contenido siguen incluidos mientras haya artículos previstos."
         },
         "monitoring": {
           "label": "Vigilancia de tu sitio",

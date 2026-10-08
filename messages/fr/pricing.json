@@ -151,7 +151,8 @@
           },
           "info": "Écrire des articles régulièrement prend du temps. Nous les rédigeons pour vous avec l'aide de l'intelligence artificielle, à partir des informations sur votre activité. Vous choisissez de relire chaque article avant sa publication, ou de nous laisser le publier directement. Chaque article publié compte comme une modification de contenu. Vous pouvez réduire le rythme avec un mois de préavis ; l'arrêt complet se fait à la fin d'une période de 12 mois.",
           "info_tool": "Selon votre outil d'édition, nous pouvons utiliser un service spécialisé qui choisit les sujets d'après les recherches faites sur Google.",
-          "raised": "Chaque article publié compte comme une modification : nous avons ajusté vos modifications en conséquence."
+          "raised": "Chaque article publié compte comme une modification : nous avons ajusté vos modifications en conséquence.",
+          "locked": "Chaque article publié compte comme une modification : vos modifications restent incluses tant que des articles sont prévus."
         },
         "monitoring": {
           "label": "Surveillance de votre site",

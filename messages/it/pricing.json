@@ -151,7 +151,8 @@
           },
           "info": "Scrivere articoli con regolarità richiede tempo. Li scriviamo per te con l'aiuto dell'intelligenza artificiale, a partire dalle informazioni sulla tua attività. Scegli se rileggere ogni articolo prima della pubblicazione o lasciarcelo pubblicare direttamente. Ogni articolo pubblicato conta come una modifica ai contenuti. Puoi ridurre il ritmo con un mese di preavviso; la disdetta completa avviene alla fine di un periodo di 12 mesi.",
           "info_tool": "A seconda del tuo strumento di modifica, possiamo usare un servizio specializzato che sceglie gli argomenti in base alle ricerche fatte su Google.",
-          "raised": "Ogni articolo pubblicato conta come una modifica: abbiamo adeguato le tue modifiche di conseguenza."
+          "raised": "Ogni articolo pubblicato conta come una modifica: abbiamo adeguato le tue modifiche di conseguenza.",
+          "locked": "Ogni articolo pubblicato conta come una modifica: le tue modifiche ai contenuti restano comprese finché sono previsti articoli."
         },
         "monitoring": {
           "label": "Sorveglianza del tuo sito",

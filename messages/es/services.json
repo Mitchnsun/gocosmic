@@ -17,7 +17,7 @@
     "simulator": {
       "eyebrow": "[ Configura tu suscripción ]",
       "title": "Empieza por lo básico <em>y añade el resto más adelante.</em>",
-      "lead": "Dos planes: «Nos encargamos de todo», desde {price} al mes sin IVA, o «Tú tienes el control», por {selfServicePrice} al mes sin IVA, si quieres publicar tú mismo/a tus noticias. Marca las opciones que te interesen para ver el precio mensual."
+      "lead": "Dos planes: «Nos encargamos de todo», desde {price} al mes sin IVA, o «Tú tienes el control», desde {selfServicePrice} al mes sin IVA, si quieres publicar tú mismo/a tus noticias. Marca las opciones que te interesen para ver el precio mensual."
     },
     "trades": {
       "eyebrow": "[ Lo que hacemos · 04 ]",

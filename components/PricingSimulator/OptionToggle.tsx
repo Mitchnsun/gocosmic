@@ -2,10 +2,11 @@
 
 import { type ReactNode, useId } from 'react';
 
-import { Chip } from '@/design-system/chip';
 import { CHECKBOX_CONTROL } from '@/design-system/field';
 import { InfoPopover } from '@/design-system/info-popover';
 import { cn } from '@/design-system/lib/utils';
+
+import { OptionText } from './OptionText';
 
 interface OptionToggleProps {
   label: string;
@@ -82,34 +83,15 @@ export function OptionToggle({
             aria-describedby={describedBy}
             className={cn(CHECKBOX_CONTROL, 'mt-1 disabled:cursor-not-allowed disabled:opacity-60')}
           />
-          {/* The price sits next to the label and wraps under it on narrow screens, so the hint keeps the full width. */}
-          <span className="min-w-0 flex-1">
-            <span className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-              <span
-                id={`${id}-label`}
-                className={cn('font-display text-fg font-medium', { 'text-base': !nested, 'text-sm': nested })}>
-                {label}
-              </span>
-              <span
-                id={`${id}-price`}
-                className={cn('font-mono text-sm tracking-wider tabular-nums', {
-                  'text-aerospace-ink': checked,
-                  'text-fg-3': !checked,
-                })}>
-                {price}
-              </span>
-            </span>
-            {hint && (
-              <span id={`${id}-hint`} className="text-fg-2 mt-1 block text-sm">
-                {hint}
-              </span>
-            )}
-            {commitment && (
-              <span id={`${id}-commitment`} className="mt-2 block">
-                <Chip>{commitment}</Chip>
-              </span>
-            )}
-          </span>
+          <OptionText
+            id={id}
+            label={label}
+            price={price}
+            hint={hint}
+            commitment={commitment}
+            checked={checked}
+            nested={nested}
+          />
         </label>
         {info && (
           <InfoPopover label={info.label} title={label} className="mt-2.5 mr-1.5">
@@ -117,7 +99,8 @@ export function OptionToggle({
           </InfoPopover>
         )}
       </div>
-      <p id={ownNoteId} aria-live="polite" className="text-fg-2 px-4 pb-4 text-sm empty:hidden">
+      {/* Always displayed, even empty, so screen readers announce the sentence when it appears. */}
+      <p id={ownNoteId} aria-live="polite" className={cn('text-fg-2 text-sm', { 'px-4 pb-4': note })}>
         {note}
       </p>
       {children}

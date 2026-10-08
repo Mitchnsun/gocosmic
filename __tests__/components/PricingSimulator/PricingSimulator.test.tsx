@@ -157,9 +157,38 @@ describe('PricingSimulator', () => {
     // One a week: 15 articles + 60 weekly updates.
     expect(total()).toHaveTextContent('€85');
 
+    // Pushing the update slider below the article rhythm changes nothing, even once articles are gone.
+    fireEvent.keyDown(screen.getByRole('slider', { name: /changes per year/i }), { key: 'Home' });
+    expect(total()).toHaveTextContent('€85');
+
     tick(/ai-assisted articles/i);
     expect(screen.getByRole('checkbox', { name: /content changes included/i })).not.toBeChecked();
     expect(total()).toHaveTextContent('€10');
+  });
+
+  it('explains the locked update package even when its rhythm was already high enough', () => {
+    render(<PricingSimulator region="fr" />);
+    tick(/content changes included/i);
+    fireEvent.keyDown(screen.getByRole('slider', { name: /changes per year/i }), { key: 'End' });
+
+    tick(/ai-assisted articles/i);
+
+    const updates = screen.getByRole('checkbox', { name: /content changes included/i });
+    expect(updates).toBeDisabled();
+    expect(updates).toHaveAccessibleDescription(/stay included as long as articles are planned/i);
+    expect(screen.queryByText(/we have adjusted/i)).not.toBeInTheDocument();
+  });
+
+  it('mentions the topic-picking service only for articles in "You stay in control"', () => {
+    render(<PricingSimulator region="fr" />);
+    fireEvent.click(screen.getByRole('button', { name: 'More about: AI-assisted articles' }));
+    expect(screen.getByRole('dialog')).not.toHaveTextContent(/specialised service/i);
+    fireEvent.keyDown(screen.getByRole('dialog'), { key: 'Escape' });
+
+    openTab('You stay in control');
+    fireEvent.click(screen.getByRole('button', { name: 'More about: AI-assisted articles' }));
+
+    expect(screen.getByRole('dialog')).toHaveTextContent(/specialised service/i);
   });
 
   it('prices statistics by report rhythm, with an optional detailed measurement', () => {
@@ -182,7 +211,10 @@ describe('PricingSimulator', () => {
     render(<PricingSimulator region="fr" />);
 
     expect(screen.getByRole('checkbox', { name: /local search follow-up/i })).toHaveAccessibleDescription(
-      /1-year commitment|from/
+      /1-year commitment/
+    );
+    expect(screen.getByRole('checkbox', { name: /a contact form/i })).not.toHaveAccessibleDescription(
+      /1-year commitment/
     );
     expect(screen.getAllByText('1-year commitment').length).toBeGreaterThan(0);
 

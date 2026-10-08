@@ -65,9 +65,15 @@ export function toggleUpdates(selection: PlanSelection): PlanSelection {
   return { ...selection, updatesEnabled: !selection.updatesEnabled };
 }
 
-/** Moving the slider means the visitor wants the package, even when articles had switched it on. */
+/**
+ * Moving the slider means the visitor wants the package, even when articles had switched it on.
+ * A position below what the articles need is ignored, so it cannot linger once they are removed.
+ */
 export function setUpdates(selection: PlanSelection, value: number): PlanSelection {
-  return { ...selection, updatesEnabled: true, updates: clampTier(value, UPDATE_TIERS) };
+  const updates = clampTier(value, UPDATE_TIERS);
+  const floor = getUpdatesFloor(selection.articles);
+  if (floor !== null && updates < floor) return selection;
+  return { ...selection, updatesEnabled: true, updates };
 }
 
 /** Lowest update tier the chosen article rhythm needs, since each published article counts as a change. */

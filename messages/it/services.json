@@ -17,7 +17,7 @@
     "simulator": {
       "eyebrow": "[ Componi il tuo abbonamento ]",
       "title": "Parti semplice, <em>il resto lo aggiungi dopo.</em>",
-      "lead": "Due formule: «Ci pensiamo noi», da {price} al mese IVA esclusa, oppure «Hai tu il controllo», a {selfServicePrice} al mese IVA esclusa, se vuoi pubblicare da te le tue notizie. Seleziona le opzioni che ti interessano per vedere il prezzo mensile."
+      "lead": "Due formule: «Ci pensiamo noi», da {price} al mese IVA esclusa, oppure «Hai tu il controllo», da {selfServicePrice} al mese IVA esclusa, se vuoi pubblicare da te le tue notizie. Seleziona le opzioni che ti interessano per vedere il prezzo mensile."
     },
     "trades": {
       "eyebrow": "[ I nostri mestieri · 04 ]",

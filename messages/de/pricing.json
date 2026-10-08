@@ -87,7 +87,7 @@
           "hint": "Bis zu 5 Adressen, die an ein bestehendes Postfach weiterleiten, zum Beispiel rechnungen@{domain}."
         },
         "email_extras": {
-          "info": "Wenn Sie zu mehreren arbeiten oder für den Vorstand eines Vereins kann jede Person ein eigenes Postfach auf Ihren Namen haben. Eine Weiterleitung hat dagegen kein Postfach: Die Nachrichten landen in einem Postfach, das Sie schon haben. Diese Adressen laufen in Zeiträumen von 12 Monaten; Sie können sie am Ende eines Zeitraums kündigen."
+          "info": "Wenn Sie zu mehreren arbeiten oder für den Vorstand eines Vereins, kann jede Person ein eigenes Postfach auf Ihren Namen haben. Eine Weiterleitung hat dagegen kein Postfach: Die Nachrichten landen in einem Postfach, das Sie schon haben. Diese Adressen laufen in Zeiträumen von 12 Monaten; Sie können sie am Ende eines Zeitraums kündigen."
         },
         "contact_form": {
           "label": "Ein Kontaktformular",
@@ -107,7 +107,7 @@
         "english": {
           "label": "Ihre Website auf Englisch",
           "hint": "Eine vollständige englische Version Ihrer Website, die mit der Hauptversion Schritt hält.",
-          "info": "Mit einer englischen Version verstehen Sie auch Besucher:innen, die die Hauptsprache Ihrer Website nicht lesen, und können Sie kontaktieren. Wir übersetzen alle Ihre Seiten selbst, fügen eine Sprachauswahl hinzu und übersetzen auch Ihre Änderungen, ohne sie doppelt zu zählen. Für eine andere Sprache oder eine Übersetzung durch eine:n professionelle:n Übersetzer:in erstellen wir Ihnen ein separates Angebot. Diese Option läuft in Zeiträumen von 12 Monaten."
+          "info": "Mit einer englischen Version können auch Besucher:innen, die die Hauptsprache Ihrer Website nicht lesen, Sie verstehen und kontaktieren. Wir übersetzen alle Ihre Seiten selbst, fügen eine Sprachauswahl hinzu und übersetzen auch Ihre Änderungen, ohne sie doppelt zu zählen. Für eine andere Sprache oder eine Übersetzung durch eine:n professionelle:n Übersetzer:in erstellen wir Ihnen ein separates Angebot. Diese Option läuft in Zeiträumen von 12 Monaten."
         },
         "news": {
           "label": "Ein Bereich für Neuigkeiten",
@@ -116,13 +116,13 @@
         },
         "seo": {
           "label": "Lokale Suchbetreuung",
-          "hint": "Wir verfolgen, wie Ihre Website bei Google für Ihr Handwerk und Ihren Ort erscheint, und passen sie an.",
+          "hint": "Wir verfolgen, wie Ihre Website bei Google für Ihren Beruf und Ihren Ort erscheint, und passen sie an.",
           "slider_label": "Rhythmus",
           "tiers": {
             "quarterly": "Alle drei Monate",
             "monthly": "Jeden Monat"
           },
-          "info": "Ihr Paket enthält eine Grundoptimierung für Suchmaschinen; diese Option hält sie dauerhaft lebendig. Im gewählten Rhythmus prüfen wir, wie Ihre Website bei Suchen wie „Ihr Handwerk + Ihr Ort“ erscheint, passen Ihre Seiten an und schicken Ihnen einen schriftlichen Bericht. Ihren Google-Maps-Eintrag und die Verzeichnisse verwalten Sie selbst. Wir versprechen keine bestimmte Position bei Google. Diese Option läuft in Zeiträumen von 12 Monaten."
+          "info": "Ihr Paket enthält eine Grundoptimierung für Suchmaschinen; diese Option hält sie dauerhaft lebendig. Im gewählten Rhythmus prüfen wir, wie Ihre Website bei Suchen wie „Ihr Beruf + Ihr Ort“ erscheint, passen Ihre Seiten an und schicken Ihnen einen schriftlichen Bericht. Ihren Google-Maps-Eintrag und die Verzeichnisse verwalten Sie selbst. Wir versprechen keine bestimmte Position bei Google. Diese Option läuft in Zeiträumen von 12 Monaten."
         },
         "analytics": {
           "label": "Besuchsstatistiken",
@@ -151,7 +151,8 @@
           },
           "info": "Regelmäßig Artikel zu schreiben, kostet Zeit. Wir schreiben sie für Sie mit Unterstützung künstlicher Intelligenz, anhand der Informationen über Ihren Betrieb. Sie entscheiden, ob Sie jeden Artikel vor der Veröffentlichung lesen oder ob wir ihn direkt veröffentlichen. Jeder veröffentlichte Artikel zählt als Inhaltsänderung. Sie können den Rhythmus mit einem Monat Frist verringern; ganz beenden lässt sich die Option am Ende eines Zeitraums von 12 Monaten.",
           "info_tool": "Je nach Ihrem Bearbeitungswerkzeug können wir einen spezialisierten Dienst nutzen, der die Themen nach den Suchanfragen bei Google auswählt.",
-          "raised": "Jeder veröffentlichte Artikel zählt als Änderung: Wir haben Ihre Inhaltsänderungen entsprechend angepasst."
+          "raised": "Jeder veröffentlichte Artikel zählt als Änderung: Wir haben Ihre Inhaltsänderungen entsprechend angepasst.",
+          "locked": "Jeder veröffentlichte Artikel zählt als Änderung: Ihre Inhaltsänderungen bleiben enthalten, solange Artikel vorgesehen sind."
         },
         "monitoring": {
           "label": "Überwachung Ihrer Website",

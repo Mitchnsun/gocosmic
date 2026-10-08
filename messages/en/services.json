@@ -12,7 +12,7 @@
     "simulator": {
       "eyebrow": "[ Build your plan ]",
       "title": "Start simple, <em>add the rest later.</em>",
-      "lead": "Two plans: “We take care of everything”, from {price} a month excl. VAT, or “You stay in control”, at {selfServicePrice} a month excl. VAT, if you want to publish your news yourself. Tick the options you want to see the monthly price."
+      "lead": "Two plans: “We take care of everything”, from {price} a month excl. VAT, or “You stay in control”, from {selfServicePrice} a month excl. VAT, if you want to publish your news yourself. Tick the options you want to see the monthly price."
     },
     "trades": {
       "eyebrow": "[ What we do · 04 ]",

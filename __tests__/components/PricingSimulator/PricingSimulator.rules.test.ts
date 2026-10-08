@@ -82,6 +82,13 @@ describe('visitor actions', () => {
     expect(toggleUpdates(plan()).updatesEnabled).toBe(true);
   });
 
+  it('ignores an update position below what the articles need', () => {
+    const withArticles = plan({ articles: 1 });
+
+    expect(setUpdates(withArticles, 0)).toBe(withArticles);
+    expect(setUpdates(withArticles, 4)).toMatchObject({ updatesEnabled: true, updates: 4 });
+  });
+
   it('only counts extra mailboxes with an email address', () => {
     expect(setMailboxes(plan(), 3).mailboxes).toBe(0);
     expect(setMailboxes(plan({ addOns: { domain: true, email: true } }), 3).mailboxes).toBe(3);

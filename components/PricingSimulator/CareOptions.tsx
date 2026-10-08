@@ -23,6 +23,9 @@ export function CareOptions({
 }: OptionGroupProps & { updatesRaised: boolean }) {
   const t = useTranslations('pricing.builder');
   const noteId = useId();
+  // Articles lock the package: say why, and whether its rhythm had to be raised.
+  const articlesNote =
+    plan.articles === null ? undefined : t(updatesRaised ? 'options.articles.raised' : 'options.articles.locked');
   const updateTiers = UPDATE_TIERS.map((tier) => ({
     label: t(`updates.tiers.${tier.key}`),
     price: surcharge(tier.price),
@@ -37,7 +40,7 @@ export function CareOptions({
         checked={plan.updatesEnabled}
         onChange={actions.toggleUpdates}
         disabled={plan.articles !== null}
-        note={updatesRaised ? t('options.articles.raised') : undefined}
+        note={articlesNote}
         noteId={noteId}>
         <div className="border-line border-t px-4 py-4">
           <TierSlider
@@ -46,7 +49,7 @@ export function CareOptions({
             value={plan.updates}
             onChange={actions.setUpdates}
             disabled={!plan.updatesEnabled}
-            describedBy={updatesRaised ? noteId : undefined}
+            describedBy={articlesNote ? noteId : undefined}
           />
         </div>
       </OptionToggle>

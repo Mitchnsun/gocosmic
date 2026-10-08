@@ -1,6 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/design-system/tabs';
 
-import { fireEvent, render, waitFor } from '../test-utils';
+import { act, fireEvent, render, waitFor } from '../test-utils';
 
 const renderTabs = () =>
   render(
@@ -39,7 +39,7 @@ describe('<Tabs />', () => {
     const { getByRole } = renderTabs();
     const first = getByRole('tab', { name: 'First' });
 
-    first.focus();
+    act(() => first.focus());
     fireEvent.keyDown(first, { key: 'ArrowRight' });
 
     // Radix moves the focus on the next tick.

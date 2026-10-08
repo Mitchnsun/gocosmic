@@ -17,7 +17,7 @@
     "simulator": {
       "eyebrow": "[ Abonnement zusammenstellen ]",
       "title": "Fangen Sie klein an, <em>den Rest ergänzen Sie später.</em>",
-      "lead": "Zwei Pakete: „Wir kümmern uns um alles“ ab {price} im Monat zzgl. MwSt. oder „Sie behalten die Kontrolle“ für {selfServicePrice} im Monat zzgl. MwSt., wenn Sie Ihre Neuigkeiten selbst veröffentlichen möchten. Kreuzen Sie die Optionen an, die Sie interessieren, und Sie sehen den Monatspreis."
+      "lead": "Zwei Pakete: „Wir kümmern uns um alles“ ab {price} im Monat zzgl. MwSt. oder „Sie behalten die Kontrolle“ ab {selfServicePrice} im Monat zzgl. MwSt., wenn Sie Ihre Neuigkeiten selbst veröffentlichen möchten. Kreuzen Sie die Optionen an, die Sie interessieren, und Sie sehen den Monatspreis."
     },
     "trades": {
       "eyebrow": "[ Unsere Fachgebiete · 04 ]",

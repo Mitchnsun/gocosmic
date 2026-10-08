@@ -35,7 +35,7 @@ export function TierSlider({ label, tiers, value, onChange, disabled = false, de
       role="group"
       aria-labelledby={id}
       aria-disabled={disabled || undefined}
-      className={cn('transition-opacity duration-200', disabled && 'pointer-events-none opacity-40')}>
+      className={cn('transition-opacity duration-200', { 'pointer-events-none opacity-40': disabled })}>
       <div className="flex items-baseline justify-between gap-4">
         <span id={id} className="text-fg-2 text-2xs font-mono tracking-[0.2em] uppercase">
           {label}

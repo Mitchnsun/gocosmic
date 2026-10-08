@@ -151,7 +151,8 @@
           },
           "info": "Writing articles regularly takes time. We write them for you with the help of artificial intelligence, from information about your business. You choose to read each article before it goes live, or to let us publish it directly. Each published article counts as a content change. You can lower the rhythm with one month's notice; stopping altogether happens at the end of a 12-month period.",
           "info_tool": "Depending on your editing tool, we can use a specialised service that picks topics from what people search for on Google.",
-          "raised": "Each published article counts as a change: we have adjusted your content changes accordingly."
+          "raised": "Each published article counts as a change: we have adjusted your content changes accordingly.",
+          "locked": "Each published article counts as a change: your content changes stay included as long as articles are planned."
         },
         "monitoring": {
           "label": "Site monitoring",
