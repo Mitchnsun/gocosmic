@@ -111,7 +111,7 @@ Replaces the former services, offers and pricing pages.
 
 - **Introduction**: what the studio offers, a site that runs and someone who looks after it
 - **Pricing columns**: four ways to work together — a monthly subscription (site, hosting and care), day-rate guidance (architecture, UX/UI and design), day-rate reinforcement (technical work on an existing site) and a custom one-off project quoted on request
-- **Subscription simulator**: base plan plus options (number of pages, domain name, hosting in Switzerland, email address, content changes), with a sticky recap showing the live monthly total; its "Request my free mockup" button carries the simulation over to the free mockup form, and a block below it presents the two free offers (a mockup and a review of the current website)
+- **Subscription simulator**: two plans as tabs — "We take care of everything" (the studio makes every change sent by email) and "You stay in control" (an editing tool and a news section to publish news and opening hours yourself) — each with what it includes, then options grouped by purpose (pages, contact form, booking, reviews, English version, news, domain, email with extra mailboxes and redirects, Swiss hosting, local search follow-up, visit statistics, content changes, AI-assisted articles, monitoring), each with an info bubble and a one-year commitment badge where it applies; a sticky recap shows the live monthly total, and its "Request my free mockup" button carries the simulation over to the free mockup form, while a block below presents the two free offers (a mockup and a review of the current website)
 - **Trades**: four cards (showcase sites, shops and bookings, apps, visibility and care)
 - **FAQ**: accordion answering five common questions (ownership, editing the site, time to go live, stopping the subscription, texts and photos)
 - **Closing call-to-action**: link to the contact page
@@ -417,6 +417,8 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   ├── hairline-grid.tsx # Card grid with 1 px separators
 │   ├── field.tsx     # Form field frame and control styles
 │   ├── slider.tsx    # Slider used by the pricing simulator
+│   ├── tabs.tsx      # Pill tabs (Radix Tabs), e.g. the two plans of the simulator
+│   ├── info-popover.tsx # "i" button opening a bubble of context on click or tap (Radix Popover)
 │   ├── accent.ts     # `accentClasses(token)` — utilities and RGB channels of an accent token
 │   └── lib/utils.ts  # `cn` helper (clsx + tailwind-merge)
 ├── data/             # Static content (`projects.ts` — ordered case-study registry)
