@@ -15,6 +15,26 @@
       },
       "note": "Ambas son gratuitas y no te comprometen a nada."
     },
+    "quoted_services": {
+      "eyebrow": "Fuera de la suscripción · con presupuesto",
+      "title": "Para tu comunicación",
+      "items": {
+        "logo": {
+          "title": "Un logotipo",
+          "description": "Un logotipo a tu imagen, para tu sitio y todos tus soportes."
+        },
+        "print": {
+          "title": "Carteles y folletos",
+          "description": "Para anunciar una apertura, un evento o una promoción."
+        },
+        "photo_video": {
+          "title": "Fotos y vídeos",
+          "description": "Tus trabajos, tu local y tu equipo en imágenes, para tu sitio y tus redes."
+        }
+      },
+      "note": "Los realizamos con colaboradores de la zona (diseñador/a gráfico/a, fotógrafo/a, videógrafo/a) y nos ocupamos de la relación con ellos. Cada servicio se presupuesta aparte.",
+      "cta": "Pedir un presupuesto"
+    },
     "builder": {
       "period": "/ mes sin IVA",
       "base": {

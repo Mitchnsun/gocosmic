@@ -15,6 +15,26 @@
       },
       "note": "Beides ist kostenlos und verpflichtet Sie zu nichts."
     },
+    "quoted_services": {
+      "eyebrow": "Außerhalb des Abonnements · auf Angebot",
+      "title": "Für Ihre Kommunikation",
+      "items": {
+        "logo": {
+          "title": "Ein Logo",
+          "description": "Ein Logo, das zu Ihnen passt, für Ihre Website und alle Ihre Unterlagen."
+        },
+        "print": {
+          "title": "Plakate und Flyer",
+          "description": "Um eine Eröffnung, eine Veranstaltung oder eine Aktion anzukündigen."
+        },
+        "photo_video": {
+          "title": "Fotos und Videos",
+          "description": "Ihre Arbeiten, Ihre Räume und Ihr Team in Bildern, für Ihre Website und Ihre sozialen Netzwerke."
+        }
+      },
+      "note": "Wir setzen sie mit Partner:innen aus der Region um (Grafiker:in, Fotograf:in, Videograf:in) und kümmern uns um die Zusammenarbeit mit ihnen. Für jede Leistung gibt es ein eigenes Angebot.",
+      "cta": "Angebot anfragen"
+    },
     "builder": {
       "period": "zzgl. MwSt. / Monat",
       "base": {

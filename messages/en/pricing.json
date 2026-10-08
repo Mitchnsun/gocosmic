@@ -15,6 +15,26 @@
       },
       "note": "Both are free and commit you to nothing."
     },
+    "quoted_services": {
+      "eyebrow": "Outside the subscription · on a quote",
+      "title": "For your communication",
+      "items": {
+        "logo": {
+          "title": "A logo",
+          "description": "A logo that looks like you, for your site and all your materials."
+        },
+        "print": {
+          "title": "Posters and flyers",
+          "description": "To announce an opening, an event or a special offer."
+        },
+        "photo_video": {
+          "title": "Photos and videos",
+          "description": "Your work, your premises and your team in pictures, for your site and your social media."
+        }
+      },
+      "note": "We make them with local partners (designer, photographer, videographer) and handle the relationship with them. Each service is quoted separately.",
+      "cta": "Request a quote"
+    },
     "builder": {
       "period": "excl. VAT / month",
       "base": {

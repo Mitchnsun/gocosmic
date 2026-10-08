@@ -15,6 +15,26 @@
       },
       "note": "Ces deux prestations sont gratuites et ne vous engagent à rien."
     },
+    "quoted_services": {
+      "eyebrow": "En dehors de l'abonnement · sur devis",
+      "title": "Pour votre communication",
+      "items": {
+        "logo": {
+          "title": "Un logo",
+          "description": "Un logo à votre image, pour votre site et tous vos supports."
+        },
+        "print": {
+          "title": "Des affiches et des flyers",
+          "description": "Pour annoncer une ouverture, un événement ou une promotion."
+        },
+        "photo_video": {
+          "title": "Des photos et des vidéos",
+          "description": "Vos réalisations, vos locaux et votre équipe en images, pour votre site et vos réseaux."
+        }
+      },
+      "note": "Nous les réalisons avec des partenaires de la région (graphiste, photographe, vidéaste), et nous nous occupons de la relation avec eux. Chaque prestation fait l'objet d'un devis.",
+      "cta": "Demander un devis"
+    },
     "builder": {
       "period": "HT / mois",
       "base": {

@@ -7,7 +7,7 @@ import CTAFinal from '@/components/CTAFinal';
 import { Faq } from '@/components/Faq';
 import { PricingColumns } from '@/components/PricingColumns';
 import { buildPricingColumns } from '@/components/PricingColumns/PricingColumns.utils';
-import { FreeOffers, PricingSimulator } from '@/components/PricingSimulator';
+import { FreeOffers, PricingSimulator, QuotedServices } from '@/components/PricingSimulator';
 import { BASE_PRICE, FORMULA_PRICES } from '@/components/PricingSimulator/constants';
 import { formatAmount } from '@/components/PricingSimulator/PricingSimulator.utils';
 import { SectionHeading } from '@/components/SectionHeading';
@@ -77,6 +77,7 @@ export default async function Services() {
           <NextIntlClientProvider locale={locale} messages={messages}>
             <PricingSimulator region={region} />
             <FreeOffers />
+            <QuotedServices />
           </NextIntlClientProvider>
         </div>
       </section>

@@ -15,6 +15,26 @@
       },
       "note": "Entrambe sono gratuite e non ti impegnano a nulla."
     },
+    "quoted_services": {
+      "eyebrow": "Fuori dall'abbonamento · su preventivo",
+      "title": "Per la tua comunicazione",
+      "items": {
+        "logo": {
+          "title": "Un logo",
+          "description": "Un logo che ti somiglia, per il tuo sito e tutti i tuoi supporti."
+        },
+        "print": {
+          "title": "Manifesti e volantini",
+          "description": "Per annunciare un'apertura, un evento o una promozione."
+        },
+        "photo_video": {
+          "title": "Foto e video",
+          "description": "I tuoi lavori, i tuoi locali e il tuo team in immagini, per il sito e i social."
+        }
+      },
+      "note": "Li realizziamo con partner della zona (grafico/a, fotografo/a, videomaker) e ci occupiamo noi dei rapporti con loro. Ogni servizio è oggetto di un preventivo.",
+      "cta": "Richiedi un preventivo"
+    },
     "builder": {
       "period": "/ mese IVA esclusa",
       "base": {

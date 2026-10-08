@@ -51,6 +51,7 @@ components/PricingSimulator/
   PlanSummary.tsx             — sticky recap: itemised lines, total, free mockup CTA
   PriceTotal.tsx              — live monthly total (an <output> announced politely)
   FreeOffers.tsx              — the two no-commitment freebies (rendered by the page)
+  QuotedServices.tsx          — services quoted outside the subscription, made with partners (rendered by the page)
 ```
 
 The hook keeps the visitor's **raw choices** and derives `plan = normalizePlan(choices)`. Total,
@@ -149,6 +150,7 @@ Keys live under `pricing.*` in `messages/<locale>/pricing.json` (5 locales, kept
 | Key                       | Used by                                                                                                              |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | `free_offers.*`           | `FreeOffers`, rendered under the simulator                                                                           |
+| `quoted_services.*`       | `QuotedServices`, rendered under the free offers                                                                     |
 | `builder.formulas.*`      | `FormulaTabs`, `BaseCard` heading, recap                                                                             |
 | `builder.base.*`          | `BaseCard`: what each formula includes and its info bubbles                                                          |
 | `builder.groups.*`        | Option group titles                                                                                                  |
