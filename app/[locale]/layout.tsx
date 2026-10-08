@@ -5,7 +5,7 @@ import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
 import { CookieConsent, CookieConsentProvider } from '@/components/CookieConsent';
-import { CosmicCursor } from '@/components/CosmicCursor';
+import { CosmicCursorGate } from '@/components/CosmicCursor';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import LocalBusinessSeo from '@/components/JsonLd/LocalBusinessSeo';
@@ -84,7 +84,7 @@ export default async function LocaleLayout({
         <ThemeProvider>
           <NextIntlClientProvider>
             <CookieConsentProvider>
-              <CosmicCursor />
+              <CosmicCursorGate />
               <StatusBar region={region} />
               <Header region={region} />
               <main id="main-content">{children}</main>

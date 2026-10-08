@@ -65,8 +65,6 @@ const getNamespacesForPath = (pathname: string): string[] => {
     pathWithoutLocale.startsWith('/contatto')
   ) {
     return ['contact'];
-  } else if (pathWithoutLocale.startsWith('/design-system')) {
-    return ['design-system'];
   } else if (
     pathWithoutLocale.startsWith('/privacy') ||
     pathWithoutLocale.startsWith('/confidentialite') ||

@@ -1,6 +1,7 @@
 import { Chip } from '@/design-system/chip';
 import { Eyebrow } from '@/design-system/eyebrow';
 import { HairlineGrid } from '@/design-system/hairline-grid';
+import { SignalDot } from '@/design-system/signal-dot';
 
 import { render } from '../test-utils';
 
@@ -47,5 +48,23 @@ describe('HairlineGrid', () => {
     );
 
     expect(getByRole('list').tagName).toBe('OL');
+  });
+});
+
+describe('SignalDot', () => {
+  it('pulses in green when active', () => {
+    const { container } = render(<SignalDot className="extra" />);
+    const dot = container.firstElementChild;
+
+    expect(dot).toHaveAttribute('aria-hidden', 'true');
+    expect(dot).toHaveClass('extra');
+    expect(container.querySelector('.animate-ping')).toHaveClass('bg-ok', 'motion-reduce:animate-none');
+  });
+
+  it('stays still and grey when inactive', () => {
+    const { container } = render(<SignalDot active={false} />);
+
+    expect(container.querySelector('.animate-ping')).toBeNull();
+    expect(container.querySelector('.bg-fg-3')).toBeInTheDocument();
   });
 });

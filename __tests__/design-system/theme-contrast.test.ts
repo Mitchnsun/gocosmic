@@ -1,6 +1,8 @@
-import { readFileSync } from 'node:fs';
-
 import { describe, expect, it } from 'vitest';
+
+import { contrastRatio as contrast, over, parseColor } from '@/design-system/lib/contrast';
+
+import { THEME_TOKENS } from './globals-css';
 
 /**
  * WCAG AA contrast matrix of the semantic colour tokens, read straight from `app/globals.css` so a
@@ -8,64 +10,8 @@ import { describe, expect, it } from 'vitest';
  * so every text token must reach 4.5:1 on every background it sits on, in both themes.
  */
 
-type Rgba = [number, number, number, number];
-
-// Vitest runs from the repository root.
-const css = readFileSync('app/globals.css', 'utf8');
-
-/** Returns the `--t-*` variables declared in the rule whose selector ends with `selector`. */
-const readThemeTokens = (selector: string): Map<string, string> => {
-  const start = css.indexOf(`${selector} {`);
-  if (start === -1) throw new Error(`No rule for ${selector} in globals.css`);
-  const body = css.slice(start, css.indexOf('}', start));
-  return new Map(
-    [...body.matchAll(/--t-([\w-]+):\s*([^;]+);/g)].map(([, name = '', value = '']) => [name, value.trim()])
-  );
-};
-
-/** Parses `#rrggbb` or `rgb(r g b / a)`, the two notations used by the theme variables. */
-const parseColor = (value: string): Rgba => {
-  if (value.startsWith('#') && value.length === 7) {
-    const n = Number.parseInt(value.slice(1), 16);
-    return [(n >> 16) & 255, (n >> 8) & 255, n & 255, 1];
-  }
-  if (value.startsWith('rgb(')) {
-    const [r = 0, g = 0, b = 0, a = 1] = value
-      .slice(4, -1)
-      .split(/[\s/]+/)
-      .filter(Boolean)
-      .map(Number);
-    return [r, g, b, a];
-  }
-  throw new Error(`Unsupported colour ${value}`);
-};
-
-/** Paints a translucent colour over an opaque one. */
-const over = ([r, g, b, a]: Rgba, [br, bg, bb]: Rgba): Rgba => [
-  r * a + br * (1 - a),
-  g * a + bg * (1 - a),
-  b * a + bb * (1 - a),
-  1,
-];
-
-const luminance = ([r, g, b]: Rgba) => {
-  const channel = (c: number) => {
-    const s = c / 255;
-    return s <= 0.039_28 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
-  };
-  return 0.2126 * channel(r) + 0.7152 * channel(g) + 0.0722 * channel(b);
-};
-
-const contrast = (text: Rgba, background: Rgba) => {
-  const [a, b] = [luminance(over(text, background)), luminance(background)];
-  return (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
-};
-
 const AA = 4.5;
-const THEMES = {
-  dark: readThemeTokens("[data-theme='dark']"),
-  light: readThemeTokens("[data-theme='light']"),
-};
+const THEMES = THEME_TOKENS;
 const ORANGE = parseColor('#ff4f00');
 const VOID = parseColor('#020617');
 
