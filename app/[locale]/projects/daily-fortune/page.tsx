@@ -34,7 +34,12 @@ export default function DailyFortune() {
         title={t('title')}
         tagline={t('subtitle')}
         accent={PROJECTS_BY_SLUG['daily-fortune'].accent}
-        logo={{ src: PROJECTS_BY_SLUG['daily-fortune'].cover.src, alt: t('title') }}
+        logo={{
+          src: PROJECTS_BY_SLUG['daily-fortune'].cover.src,
+          alt: t('title'),
+          // The icon keeps its deep purple background in both themes.
+          background: PROJECTS_BY_SLUG['daily-fortune'].cover.background,
+        }}
         meta={buildCaseStudyMeta('daily-fortune', tList)}
         sections={[
           {

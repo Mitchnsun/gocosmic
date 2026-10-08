@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
-import Starfield from '@/components/Starfield';
+import NightStarfield from '@/components/Starfield/NightStarfield';
+import { SunGlow } from '@/components/Sun';
 import { accentClasses } from '@/design-system/accent';
 import { cn } from '@/design-system/lib/utils';
 
@@ -13,9 +14,9 @@ type CaseStudyHeroProps = Pick<CaseStudyProps, 'eyebrow' | 'title' | 'tagline' |
 };
 
 /**
- * Case study hero: full-bleed project image when available, starfield
- * otherwise, with the project name and tagline overlaid. It stays dark in the
- * light theme.
+ * Case study hero: full-bleed project image when available (a dark island in
+ * both themes), otherwise a starfield in the dark theme and a sun glow in the
+ * light theme, with the project name and tagline overlaid.
  *
  * @component
  */
@@ -32,10 +33,10 @@ export const CaseStudyHero = ({
   const { text, bg } = accentClasses(accent);
 
   return (
-    // A dark island in both themes: the starfield (or the dimmed project image) stays night-coloured.
+    // The dimmed project image needs the night-coloured gradient in both themes, so it stays a dark island.
     <section
       aria-labelledby={headingId}
-      data-theme="dark"
+      data-theme={heroImage ? 'dark' : undefined}
       className="bg-bg text-fg relative isolate flex min-h-72 items-end overflow-hidden p-4 sm:min-h-88 sm:p-6 lg:min-h-112 lg:p-8">
       {heroImage ? (
         <Image
@@ -47,9 +48,10 @@ export const CaseStudyHero = ({
           className="-z-20 object-cover opacity-50"
         />
       ) : (
-        <div className="absolute inset-0 -z-20" aria-hidden="true">
-          <Starfield className="h-full w-full opacity-60" starCount={180} speed={1} respectReducedMotion />
-        </div>
+        <>
+          <NightStarfield className="h-full w-full opacity-60" starCount={180} speed={1} respectReducedMotion />
+          <SunGlow className="top-0 right-0 -z-20 w-[min(90vw,900px)] translate-x-1/3 -translate-y-1/2" />
+        </>
       )}
       <div
         className="from-bg via-bg/70 pointer-events-none absolute inset-0 -z-10 bg-linear-to-t to-transparent"

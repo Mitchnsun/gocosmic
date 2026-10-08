@@ -23,7 +23,7 @@ export const DESIGN_TOKENS: readonly DesignToken[] = [
     name: 'bg-alt',
     swatch: 'bg-bg-alt',
     role: 'Alternate section, one in three at most',
-    values: { dark: '#1c1012', light: '#ffe4e1' },
+    values: { dark: '#10122b', light: '#ffe4e1' },
   },
   {
     name: 'surface',

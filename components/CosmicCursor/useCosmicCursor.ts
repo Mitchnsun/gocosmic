@@ -176,7 +176,7 @@ export function useCosmicCursor({
           target.closest('[role="slider"]') !== null);
 
       // The nearest data-theme is <html> (set by next-themes) or a dark island such as a case
-      // study hero, so the trail stays visible on whatever surface the pointer is over.
+      // study hero with a project image, so the trail stays visible on whatever surface the pointer is over.
       state.surfaceTheme =
         isElement && target.closest('[data-theme]')?.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
 

@@ -1,6 +1,7 @@
 'use client';
 
-import Starfield from '@/components/Starfield';
+import NightStarfield from '@/components/Starfield/NightStarfield';
+import { SunGlow } from '@/components/Sun';
 import { cn } from '@/design-system/lib/utils';
 
 import type { TonePreset } from './CTAFinal.types';
@@ -10,8 +11,6 @@ interface CTAFinalBackdropProps {
   starCount: number;
   speed: number;
   respectReducedMotion: boolean;
-  /** Light theme: no stars, the page colour (and, on the immersive tone, the sun halo) takes over. */
-  light: boolean;
 }
 
 /**
@@ -20,21 +19,17 @@ interface CTAFinalBackdropProps {
  * picks the scene from the first paint, then the starfield unmounts once the light theme is known so its
  * animation loop stops.
  */
-export function CTAFinalBackdrop({ preset, starCount, speed, respectReducedMotion, light }: CTAFinalBackdropProps) {
+export function CTAFinalBackdrop({ preset, starCount, speed, respectReducedMotion }: CTAFinalBackdropProps) {
   return (
     <>
-      {!light && (
-        <div className="light:hidden absolute inset-0 -z-20" aria-hidden="true">
-          <Starfield
-            className={cn('h-full w-full', preset.starfield, {
-              'transition-opacity duration-300 group-hover:opacity-100': preset.starfieldHover,
-            })}
-            starCount={starCount}
-            speed={speed}
-            respectReducedMotion={respectReducedMotion}
-          />
-        </div>
-      )}
+      <NightStarfield
+        className={cn('h-full w-full', preset.starfield, {
+          'transition-opacity duration-300 group-hover:opacity-100': preset.starfieldHover,
+        })}
+        starCount={starCount}
+        speed={speed}
+        respectReducedMotion={respectReducedMotion}
+      />
       {preset.halo && (
         <div
           className="light:hidden pointer-events-none absolute inset-0 -z-10 opacity-60 transition-opacity duration-300 group-hover:opacity-100"
@@ -50,10 +45,7 @@ export function CTAFinalBackdrop({ preset, starCount, speed, respectReducedMotio
             className="rose-floor light:block pointer-events-none absolute inset-0 -z-20 hidden"
             aria-hidden="true"
           />
-          <div
-            className="sun-glow light:block pointer-events-none absolute top-[60%] left-1/2 -z-10 hidden aspect-square w-[min(70vw,900px)] -translate-x-1/2 -translate-y-1/2 rounded-full"
-            aria-hidden="true"
-          />
+          <SunGlow className="top-[60%] left-1/2 -z-10 w-[min(70vw,900px)] -translate-x-1/2 -translate-y-1/2" />
         </>
       )}
     </>

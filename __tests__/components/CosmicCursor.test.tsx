@@ -206,7 +206,7 @@ describe('CosmicCursor render loop', () => {
     });
     const island = document.createElement('section');
     island.dataset.theme = 'dark';
-    island.innerHTML = '<p>Case study</p>';
+    island.innerHTML = '<p>Dark island</p>';
     document.body.append(island);
     const moveOver = (target: Element) => {
       fills.length = 0;
