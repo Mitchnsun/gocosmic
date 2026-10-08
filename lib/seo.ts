@@ -16,6 +16,11 @@ export const OG_LOCALES: Record<Locale, string> = {
   es: 'es_ES',
   de: 'de_DE',
   it: 'it_IT',
+  'en-CH': 'en_CH',
+  'fr-CH': 'fr_CH',
+  'es-CH': 'es_CH',
+  'de-CH': 'de_CH',
+  'it-CH': 'it_CH',
 };
 
 /** Size of every social image in `public/`. */

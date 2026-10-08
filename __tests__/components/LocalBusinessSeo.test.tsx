@@ -66,6 +66,8 @@ describe('LocalBusinessSeo', () => {
     ['de', ['Genf', 'Westschweiz', 'Hochsavoyen', 'Annecy']],
     ['it', ['Ginevra', 'Svizzera romanda', 'Alta Savoia', 'Annecy']],
     ['es', ['Ginebra', 'Suiza romanda', 'Alta Saboya', 'Annecy']],
+    ['fr-CH', ['Genève', 'Suisse romande', 'Haute-Savoie', 'Annecy']],
+    ['de-CH', ['Genf', 'Westschweiz', 'Hochsavoyen', 'Annecy']],
   ])('should name the served areas in %s', (locale, areaServed) => {
     render(<LocalBusinessSeo locale={locale} />);
 

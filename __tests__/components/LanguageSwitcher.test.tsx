@@ -1,7 +1,10 @@
+import { NextIntlClientProvider } from 'next-intl';
+import type { ReactNode } from 'react';
 import { vi } from 'vitest';
 
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 
+import navigation from '../../messages/en/navigation.json';
 import { fireEvent, render, waitFor } from '../test-utils';
 
 // Mock the i18n navigation functions
@@ -133,6 +136,25 @@ describe('LanguageSwitcher Component', () => {
     // Verify dropdown closes after selection
     await waitFor(() => {
       expect(queryAllByRole('menuitem')).toHaveLength(0);
+    });
+  });
+
+  it('shows the language of a Swiss page and keeps the Swiss version when switching', async () => {
+    const swiss = ({ children }: { children: ReactNode }) => (
+      <NextIntlClientProvider locale="de-CH" messages={navigation}>
+        {children}
+      </NextIntlClientProvider>
+    );
+    const { getByRole } = render(<LanguageSwitcher />, { wrapper: swiss });
+
+    const button = getByRole('button', { name: /switch language/i });
+    expect(button).toHaveTextContent('de');
+    fireEvent.click(button);
+    expect(getByRole('menuitem', { name: /deutsch/i }).querySelector('svg')).not.toBeNull();
+    fireEvent.click(getByRole('menuitem', { name: /français/i }));
+
+    await waitFor(() => {
+      expect(mockPush).toHaveBeenCalledWith('/en', { locale: 'fr-CH' });
     });
   });
 

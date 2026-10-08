@@ -5,10 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [2.3.1] - 2026-10-09
+## [2.4.0] - 2026-10-09
+
+### Added
+
+- A Swiss version of the site in every language (for example gocosmic.dev/fr-ch or gocosmic.dev/de-ch), always showing the Geneva base and prices in Swiss francs, which search engines can now show to people searching from Switzerland; the German one follows Swiss spelling
 
 ### Changed
 
+- Visitors whose browser is set up for Switzerland now arrive on the Swiss version, and changing language there keeps them on it
+- In search results, the Services page now quotes its starting price in Swiss francs on the Swiss version
 - The cursor turns navy while it hovers an orange button, so it no longer disappears into it
 - The cookie banner buttons are now laid out on two rows: accept and refuse first, then customise and privacy policy
 - Pages load faster on mobile, the homepage and the free mockup page above all, and the cookie banner now appears together with the page instead of a moment later

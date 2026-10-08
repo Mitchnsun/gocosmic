@@ -1,10 +1,11 @@
 /**
  * Business regions the site adapts to.
  *
- * `ch` is served to visitors located in Switzerland: the Geneva base and Swiss
- * francs. `fr` is the fallback for everyone else: the Annecy base and euros.
- * These are ISO 3166-1 country codes, not locales — language and region are
- * independent, so a Swiss visitor may well browse the site in English.
+ * `ch` is served on the Swiss URLs (`/fr-ch`…) and to visitors located in
+ * Switzerland: the Geneva base and Swiss francs. `fr` is the fallback for
+ * everyone else: the Annecy base and euros. These are ISO 3166-1 country codes,
+ * not locales — language and region are independent, so a Swiss visitor may
+ * well browse the site in English.
  */
 export type Region = 'fr' | 'ch';
 

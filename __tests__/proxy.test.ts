@@ -1,9 +1,14 @@
+import { NextRequest } from 'next/server';
 import { vi } from 'vitest';
 
+import { LOCALES } from '@/i18n/locales';
 import { routing } from '@/i18n/routing';
 
-// Mock next-intl/middleware
-const mockCreateMiddleware = vi.fn();
+// Mock next-intl/middleware: the routing handler it creates answers with an empty response.
+const { mockCreateMiddleware, mockHandleI18nRouting } = vi.hoisted(() => {
+  const mockHandleI18nRouting = vi.fn<(request: Request) => Response>(() => new Response(null));
+  return { mockHandleI18nRouting, mockCreateMiddleware: vi.fn(() => mockHandleI18nRouting) };
+});
 vi.mock('next-intl/middleware', () => ({
   default: mockCreateMiddleware,
 }));
@@ -22,8 +27,45 @@ describe('proxy', () => {
   });
 
   it('should have correct routing configuration', () => {
-    expect(routing.locales).toEqual(['en', 'fr', 'es', 'de', 'it']);
+    expect(routing.locales).toEqual(LOCALES);
+    expect(routing.locales).toEqual(['en', 'fr', 'es', 'de', 'it', 'en-CH', 'fr-CH', 'es-CH', 'de-CH', 'it-CH']);
     expect(routing.defaultLocale).toBe('en');
+    expect(routing.localePrefix).toMatchObject({ mode: 'always', prefixes: { 'fr-CH': '/fr-ch' } });
+  });
+
+  it('lets only a Swiss browser setting pick a Swiss locale', async () => {
+    const { default: proxy } = await import('../proxy');
+    const visit = (acceptLanguage: string) => {
+      proxy(new NextRequest('https://www.gocosmic.dev/', { headers: { 'accept-language': acceptLanguage } }));
+      return mockHandleI18nRouting.mock.lastCall?.[0].headers.get('accept-language');
+    };
+
+    expect(visit('de-AT,de;q=0.9')).toBe('de,de;q=0.9');
+    expect(visit('fr-CH,fr;q=0.9')).toBe('fr-CH,fr;q=0.9');
+  });
+
+  it('hands any other request over as it is', async () => {
+    const { default: proxy } = await import('../proxy');
+    const post = new NextRequest('https://www.gocosmic.dev/fr/contact', {
+      method: 'POST',
+      headers: { 'accept-language': 'de-AT' },
+      body: 'form',
+    });
+    const bare = new NextRequest('https://www.gocosmic.dev/');
+
+    proxy(post);
+    proxy(bare);
+
+    expect(mockHandleI18nRouting.mock.calls[0]?.[0]).toBe(post);
+    expect(mockHandleI18nRouting.mock.calls[1]?.[0]).toBe(bare);
+  });
+
+  it('passes the requested path on to the request config', async () => {
+    const { default: proxy } = await import('../proxy');
+
+    const response = proxy(new NextRequest('https://www.gocosmic.dev/fr-ch/a-propos'));
+
+    expect(response.headers.get('x-pathname')).toBe('/fr-ch/a-propos');
   });
 
   it('should have correct matcher configuration', async () => {

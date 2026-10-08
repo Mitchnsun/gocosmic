@@ -76,6 +76,18 @@ describe('getCanonicalUrl', () => {
     });
   });
 
+  describe('Swiss locales', () => {
+    it('prefixes the URL with the locale in lowercase', () => {
+      expect(getCanonicalUrl('fr-CH', '/')).toBe(`${SITE_URL}/fr-ch`);
+      expect(getCanonicalUrl('de-CH', '/services')).toBe(`${SITE_URL}/de-ch/dienstleistungen`);
+    });
+
+    it('shares the translated slug of their language', () => {
+      expect(getCanonicalUrl('fr-CH', '/about')).toBe(`${SITE_URL}/fr-ch/a-propos`);
+      expect(getCanonicalUrl('it-CH', '/local')).toBe(`${SITE_URL}/it-ch/sviluppatore-web-mobile-annecy-ginevra`);
+    });
+  });
+
   describe('project sub-pages', () => {
     it('resolves French daily-fortune pathname', () => {
       expect(getCanonicalUrl('fr', '/projects/daily-fortune')).toBe(`${SITE_URL}/fr/projets/daily-fortune`);
@@ -107,9 +119,21 @@ describe('getAlternates', () => {
         es: `${SITE_URL}/es/acerca-de`,
         de: `${SITE_URL}/de/ueber-uns`,
         it: `${SITE_URL}/it/chi-siamo`,
+        'en-CH': `${SITE_URL}/en-ch/about`,
+        'fr-CH': `${SITE_URL}/fr-ch/a-propos`,
+        'es-CH': `${SITE_URL}/es-ch/acerca-de`,
+        'de-CH': `${SITE_URL}/de-ch/ueber-uns`,
+        'it-CH': `${SITE_URL}/it-ch/chi-siamo`,
         'x-default': `${SITE_URL}/en/about`,
       },
     });
+  });
+
+  it('points a Swiss page to its own URL while listing the same translations', () => {
+    const alternates = getAlternates('de-CH', '/about');
+
+    expect(alternates.canonical).toBe(`${SITE_URL}/de-ch/ueber-uns`);
+    expect(alternates.languages).toEqual(getLanguageAlternates('/about'));
   });
 
   it('gives the home page no trailing slash, since /en/ redirects to /en', () => {

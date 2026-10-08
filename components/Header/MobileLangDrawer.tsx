@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { useEffect, useTransition } from 'react';
 
 import { useSwitchLocale } from '@/components/LanguageSwitcher/useSwitchLocale';
+import { getLanguage } from '@/i18n/locales';
 
 import { HEADER_HEIGHT, MOBILE_MENU_DURATION_MS, MOBILE_MENU_STAGGER_MS } from './constants';
 import { useStatusBarOffset } from './useStatusBarOffset';
@@ -25,7 +26,7 @@ interface MobileLangDrawerProps {
 const MobileLangDrawer = ({ onClose }: MobileLangDrawerProps) => {
   const [isPending, startTransition] = useTransition();
   const t = useTranslations('navigation');
-  const locale = useLocale();
+  const language = getLanguage(useLocale());
   const switchLocale = useSwitchLocale();
   const statusBarOffset = useStatusBarOffset();
 
@@ -89,7 +90,7 @@ const MobileLangDrawer = ({ onClose }: MobileLangDrawerProps) => {
                   <span aria-hidden="true">{flag}</span>
                   {name}
                 </span>
-                {locale === code && <CheckIcon className="text-aerospace-ink h-5 w-5" aria-hidden="true" />}
+                {language === code && <CheckIcon className="text-aerospace-ink h-5 w-5" aria-hidden="true" />}
               </button>
             </m.li>
           ))}

@@ -3,6 +3,7 @@
 import { useLocale } from 'next-intl';
 import { useEffect } from 'react';
 
+import { localeWithLanguage } from '@/i18n/locales';
 import { usePathname, useRouter } from '@/i18n/navigation';
 
 /** Query parameters of the current page, read when the visitor picks a language (e.g. `?type=mobile`). */
@@ -39,11 +40,13 @@ function restorePendingHash(locale: string, pathname: string) {
 }
 
 /**
- * Opens the current page in another language and keeps what the visitor had
- * chosen on it: query parameters, such as the projects filter, and the section
- * anchor, such as `#simulator`. Both are read at click time, since filters and
- * in-page links update the URL without a navigation. The next-intl router
- * performs the switch, which also keeps the locale cookie in sync.
+ * Opens the current page in the language picked (e.g. `de`) and keeps what the
+ * visitor had chosen on it: the region, so a Swiss page stays Swiss (`/fr-ch` →
+ * `/de-ch`), query parameters, such as the projects filter, and the section
+ * anchor, such as `#simulator`. The query and the anchor are read at click
+ * time, since filters and in-page links update the URL without a navigation.
+ * The next-intl router performs the switch, which also keeps the locale cookie
+ * in sync.
  */
 export function useSwitchLocale() {
   const router = useRouter();
@@ -55,7 +58,8 @@ export function useSwitchLocale() {
     restorePendingHash(currentLocale, pathname);
   }, [pathname, currentLocale]);
 
-  return (locale: string) => {
+  return (language: string) => {
+    const locale = localeWithLanguage(currentLocale, language);
     // Picking the language already shown changes nothing: stay put, keeping the query and the anchor.
     if (locale === currentLocale) return;
     const query = readCurrentQuery();

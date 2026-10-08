@@ -2,15 +2,17 @@ import { headers } from 'next/headers';
 import { hasLocale } from 'next-intl';
 import { getRequestConfig } from 'next-intl/server';
 
+import { getLanguage } from './locales';
 import { routing } from './routing';
+import { toSwissSpelling } from './swiss-spelling';
 
 /**
  * Map pathname patterns to required namespaces.
  * Common, navigation, and footer are always loaded for all pages.
  */
 const getNamespacesForPath = (pathname: string): string[] => {
-  // Remove locale prefix (e.g., /en/about -> /about)
-  const pathWithoutLocale = pathname.replace(/^\/(en|fr|es|de|it)/, '');
+  // Remove locale prefix (e.g., /en/about -> /about, /fr-ch/a-propos -> /a-propos)
+  const pathWithoutLocale = pathname.replace(/^\/(en|fr|es|de|it)(-ch)?(?=\/|$)/, '');
 
   // Map routes to their specific namespaces
   if (pathWithoutLocale === '/' || pathWithoutLocale === '') {
@@ -105,8 +107,10 @@ const getNamespacesForPath = (pathname: string): string[] => {
 /**
  * Load translation messages organized by namespace.
  * Only loads namespaces needed for the current route for optimal performance.
+ * A Swiss locale reads its language's files, in Swiss spelling for German.
  */
 async function loadMessages(locale: string, namespaces: string[]) {
+  const language = getLanguage(locale);
   // Always load common, navigation, and footer (shared across all pages)
   const sharedNamespaces = ['common', 'navigation', 'footer'];
   const allNamespaces = [...new Set([...sharedNamespaces, ...namespaces])];
@@ -116,14 +120,14 @@ async function loadMessages(locale: string, namespaces: string[]) {
   // Load each namespace dynamically
   for (const namespace of allNamespaces) {
     try {
-      const namespaceMessages = await import(`../messages/${locale}/${namespace}.json`);
+      const namespaceMessages = await import(`../messages/${language}/${namespace}.json`);
       Object.assign(messages, namespaceMessages.default);
     } catch {
       console.warn(`Failed to load namespace ${namespace} for locale ${locale}`);
     }
   }
 
-  return messages;
+  return locale === 'de-CH' ? toSwissSpelling(messages) : messages;
 }
 
 export default getRequestConfig(async ({ requestLocale }) => {

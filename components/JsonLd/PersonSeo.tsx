@@ -2,10 +2,11 @@ import { useLocale } from 'next-intl';
 import { JsonLdScript } from 'next-seo';
 
 import { getCanonicalUrl } from '@/i18n/canonical';
+import { getLanguage } from '@/i18n/locales';
 import { FOUNDER_NAME, SITE_URL, STUDIO_ADDRESS } from '@/lib/config';
 
 function getJobTitleByLocale(locale: string): string {
-  switch (locale) {
+  switch (getLanguage(locale)) {
     case 'es': {
       return 'Fundador de Cosmic Studio, desarrollador web y móvil';
     }
@@ -18,8 +19,7 @@ function getJobTitleByLocale(locale: string): string {
     case 'fr': {
       return 'Fondateur de Cosmic Studio, développeur web et mobile';
     }
-    case 'en':
-    default: {
+    case 'en': {
       return 'Founder of Cosmic Studio, web and mobile developer';
     }
   }

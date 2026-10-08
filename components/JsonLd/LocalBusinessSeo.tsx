@@ -1,6 +1,7 @@
 import { JsonLdScript } from 'next-seo';
 
 import { SITE_URL } from '@/i18n/canonical';
+import { getLanguage } from '@/i18n/locales';
 import { BRAND_NAME, CONTACT_EMAIL, FOUNDER_NAME, LEGACY_BRAND_NAME, STUDIO_ADDRESS } from '@/lib/config';
 
 type LocalBusinessSeoProps = {
@@ -12,7 +13,7 @@ type LocalBusinessSeoProps = {
  * description and the served areas for local searches on the French side.
  */
 function getLocalizedLocalBusinessData(locale: string) {
-  switch (locale) {
+  switch (getLanguage(locale)) {
     case 'fr': {
       return {
         description:
@@ -41,8 +42,7 @@ function getLocalizedLocalBusinessData(locale: string) {
         areaServed: ['Ginevra', 'Svizzera romanda', 'Alta Savoia', 'Annecy'],
       };
     }
-    case 'en':
-    default: {
+    case 'en': {
       return {
         description:
           'Web and mobile studio based in Chêne-Bougeries, near Geneva. Websites and apps for craftspeople, associations and independents in French-speaking Switzerland and Haute-Savoie, including Annecy.',

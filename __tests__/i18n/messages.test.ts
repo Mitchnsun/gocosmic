@@ -4,16 +4,17 @@ import path from 'node:path';
 
 import { describe, expect, it } from 'vitest';
 
-import { routing } from '@/i18n/routing';
+import { LANGUAGES } from '@/i18n/locales';
 
 /**
- * Every locale must offer the same message keys, with the same `{placeholders}`, as the English
+ * Every language must offer the same message keys, with the same `{placeholders}`, as the English
  * files: a missing key only shows up at runtime, on the page that needs it. Arrays (tags, legal
  * paragraphs) are compared as single values, since their length may differ between languages.
+ * Swiss locales read their language's files, so they have none of their own.
  */
 const MESSAGES_DIR = path.join(process.cwd(), 'messages');
 const REFERENCE = 'en';
-const OTHER_LOCALES = routing.locales.filter((locale) => locale !== REFERENCE);
+const OTHER_LOCALES = LANGUAGES.filter((language) => language !== REFERENCE);
 const NAMESPACES = readdirSync(path.join(MESSAGES_DIR, REFERENCE)).filter((file) => file.endsWith('.json'));
 
 /** ICU argument names: `{price}`, `{count, plural, …}`. Plural branches (`{# box}`) are skipped. */

@@ -28,8 +28,9 @@ Le site Cosmic Studio a pour objectifs :
 - **Traductions typées** : validation TypeScript des clés à la compilation
 - **SEO localisé** : métadonnées et attributs `lang` par locale
 - **URLs propres** : routage préfixé (`/en/`, `/fr/`, `/es/`, `/de/`, `/it/`)
+- **Versions suisses** : chaque page existe aussi pour la Suisse dans chaque langue (`/fr-ch/`, `/de-ch/`, `/it-ch/`, `/en-ch/`, `/es-ch/`), toujours avec la base de Genève et les prix en francs suisses, dans l'orthographe suisse pour l'allemand (`ss` pour `ß`), et reliée aux autres versions par `hreflang` pour que les moteurs de recherche la montrent aux personnes qui cherchent depuis la Suisse (voir `i18n/locales.ts`)
 - **Slugs traduits** : chemins localisés (ex. `/en/about` → `/fr/a-propos`, `/en/projects` → `/de/projekte`)
-- **Détection navigateur** : locale automatique selon préférences utilisateur
+- **Détection navigateur** : locale automatique selon préférences utilisateur ; seul un navigateur réglé sur une locale suisse (ex. `fr-CH`) arrive sur une version suisse
 - **Language switcher** : menu de changement de langue avec indication visuelle
 - **Organisation par namespace** : fichiers de traduction organisés par espace de noms pour une meilleure maintenabilité
 
@@ -118,7 +119,7 @@ Remplace les anciennes pages services, offres et tarifs.
 - **FAQ** : accordéon qui répond à cinq questions fréquentes (propriété du site, modification par le client, délai de mise en ligne, arrêt de l'abonnement, textes et photos)
 - **Appel à l'action final** : lien vers la page contact
 
-Les prix s'affichent en euros, ou en francs suisses pour les visiteurs situés en Suisse (détectés via l'en-tête pays de Vercel), et toujours hors taxes. La page d'accueil et la page à propos suivent la même règle.
+Les prix s'affichent en euros, ou en francs suisses sur les versions suisses du site et pour les visiteurs situés en Suisse (détectés via l'en-tête pays de Vercel), et toujours hors taxes. La page d'accueil, la page à propos et la description de la page affichée dans les résultats de recherche suivent la même règle.
 
 ### Page Projets (`/projects`)
 
@@ -156,7 +157,7 @@ Page de capture de prospects où un visiteur demande une maquette gratuite de so
 
 ### Page SEO locale (`/local`)
 
-Page d'atterrissage locale ciblant les recherches géolocalisées (ex. `/en/web-mobile-developer-annecy-geneva`, `/fr/developpeur-web-mobile-annecy-geneve`). Elle s'ouvre sur une introduction qui suit la région du visiteur (base de Genève pour la Suisse, Annecy sinon), liste les quatre zones d'intervention, montre trois projets récents et se termine par une invitation à parler de son projet.
+Page d'atterrissage locale ciblant les recherches géolocalisées (ex. `/en/web-mobile-developer-annecy-geneva`, `/fr/developpeur-web-mobile-annecy-geneve`). Elle s'ouvre sur une introduction qui suit la région (base de Genève sur les versions suisses et pour les visiteurs en Suisse, Annecy sinon), liste les quatre zones d'intervention, montre trois projets récents et se termine par une invitation à parler de son projet.
 
 ### Pages légales
 
@@ -257,17 +258,17 @@ Pour conserver la cohérence i18n :
 
 1. **Créer la route** : ajouter le composant de page dans `app/[locale]/your-route/page.tsx`
 
-2. **Configurer les chemins traduits** : mettre à jour `i18n/routing.ts` :
+2. **Configurer les chemins traduits** : mettre à jour `i18n/routing.ts` (les versions suisses reprennent le slug de leur langue) :
 
    ```typescript
    pathnames: {
-     '/your-route': {
+     '/your-route': localized({
        en: '/your-route',
        fr: '/votre-route',
        es: '/tu-ruta',
        de: '/ihre-route',
        it: '/la-tua-route',
-     },
+     }),
    }
    ```
 
@@ -452,7 +453,9 @@ Pour des consignes de test détaillées, voir [`__tests__/TESTING.md`](./__tests
 │   ├── de/           # Allemand (même structure)
 │   └── it/           # Italien (même structure)
 ├── i18n/             # Configuration de l'internationalisation
+│   ├── locales.ts    # Langues, variantes suisses et préfixes d'URL
 │   ├── routing.ts    # Routage avec chemins traduits par locale
+│   ├── swiss-spelling.ts # Orthographe suisse des messages en allemand
 │   ├── request.ts    # Configuration i18n côté serveur
 │   ├── navigation.ts # Utilitaires de navigation côté client
 │   └── canonical.ts  # Helpers d'URL canoniques
@@ -460,7 +463,7 @@ Pour des consignes de test détaillées, voir [`__tests__/TESTING.md`](./__tests
 │   ├── actions/      # Tests des server actions
 │   ├── components/   # Tests composants
 │   ├── design-system/ # Tests des primitives design-system
-│   ├── i18n/         # Tests utilitaires i18n (canonical)
+│   ├── i18n/         # Tests utilitaires i18n (canonical, locales, messages)
 │   ├── lib/          # Tests des helpers
 │   ├── pages/        # Tests pages
 │   ├── proxy.test.ts # Tests middleware/proxy

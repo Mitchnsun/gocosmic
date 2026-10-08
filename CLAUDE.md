@@ -54,7 +54,7 @@ This is a single Next.js 16 app (App Router) with full internationalization via 
 - `lib/` — Standalone helpers shared across the app (`clamp.ts`, `config.ts`, `og.ts`, `renderWithLinks.tsx`, plus `contact/`, `pricing/`, `validation/`, `hooks/` subfolders). Distinct from `design-system/lib/`.
 - `data/` — Static content sources (`projects.ts` exports `PROJECTS`, the ordered case-study registry backing the projects pages).
 - `messages/<locale>/` — Translation files split by namespace: `common`, `navigation`, `footer`, `home`, `about`, `services`, `pricing`, `projects`, `contact`, `free-mockup`, `local`, `legal`, `psc-supersprint`.
-- `i18n/routing.ts` — Defines supported locales (`en`, `fr`, `es`, `de`, `it`) and all translated pathnames.
+- `i18n/routing.ts` — Defines supported locales and all translated pathnames. `i18n/locales.ts` lists them: the five languages (`en`, `fr`, `es`, `de`, `it`) plus a Swiss variant of each (`fr-CH`…, served under `/fr-ch`…), which shares its language's messages and slugs and always shows the Swiss region (see `getRegion` in `lib/region.server.ts`).
 - `i18n/request.ts` — Server-side i18n setup (namespace loading per route).
 - `__tests__/` — Mirrors source structure (`components/`, `pages/`). `test-utils.tsx` provides a custom `render` that wraps with `NextIntlClientProvider`.
 
@@ -69,7 +69,7 @@ This is a single Next.js 16 app (App Router) with full internationalization via 
 - `i18n/routing.ts` maps canonical paths to localized slugs (e.g., `/about` → `/fr/a-propos`).
 - When adding a new route:
   1. Create `app/[locale]/your-route/page.tsx`
-  2. Add translated pathnames in `i18n/routing.ts`
+  2. Add translated pathnames in `i18n/routing.ts`, wrapped in `localized()` so the Swiss locales get them too
   3. Export `generateMetadata` with `alternates.canonical` set via `getCanonicalUrl` (`i18n/canonical.ts`) to the locale-agnostic path
   4. Map the route to its translation namespace(s) in `getNamespacesForPath` (`i18n/request.ts`)
   5. Add translation keys to all 5 locale namespace files under `messages/`

@@ -23,12 +23,14 @@ import { buildPageMetadata } from '@/lib/seo';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'services' });
+  // Search results quote the starting price in the page's currency: Swiss francs on the Swiss URLs.
+  const price = formatAmount(BASE_PRICE, getCurrency(await getRegion()), locale);
 
   return buildPageMetadata({
     locale,
     routeKey: '/services',
     title: t('meta.title'),
-    description: t('meta.description'),
+    description: t('meta.description', { price }),
   });
 }
 

@@ -1,3 +1,4 @@
+import { getLocalePrefix } from '@/i18n/locales';
 import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/config';
 
@@ -14,22 +15,25 @@ function getLocalizedPath(pathnames: string | Record<Locale, string>, locale: st
 /**
  * Returns the canonical URL for a given locale and route pathname key.
  * e.g. getCanonicalUrl('fr', '/about') => 'https://www.gocosmic.dev/fr/a-propos'
+ * and getCanonicalUrl('fr-CH', '/about') => 'https://www.gocosmic.dev/fr-ch/a-propos'
  */
 export function getCanonicalUrl(locale: string, routeKey: PathKey): string {
   // eslint-disable-next-line security/detect-object-injection
   const pathnames = routing.pathnames[routeKey];
   const localizedPath = getLocalizedPath(pathnames as string | Record<Locale, string>, locale);
+  const prefix = getLocalePrefix(locale);
 
   // No trailing slash on the home page: `/fr/` permanently redirects to `/fr`, and a canonical URL must not redirect.
   if (localizedPath === '/') {
-    return `${SITE_URL}/${locale}`;
+    return `${SITE_URL}${prefix}`;
   }
-  return `${SITE_URL}/${locale}${localizedPath}`;
+  return `${SITE_URL}${prefix}${localizedPath}`;
 }
 
 /**
- * hreflang map for a route: its URL in every locale, plus `x-default` pointing
- * to the default locale. Shared by page metadata and the sitemap.
+ * hreflang map for a route: its URL in every locale, Swiss variants included
+ * (`fr-CH`…), plus `x-default` pointing to the default locale. Shared by page
+ * metadata and the sitemap.
  */
 export function getLanguageAlternates(routeKey: PathKey): Record<string, string> {
   return {

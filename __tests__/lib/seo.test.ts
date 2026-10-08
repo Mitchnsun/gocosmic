@@ -1,13 +1,15 @@
 import { createTranslator } from 'next-intl';
 import { describe, expect, it, vi } from 'vitest';
 
+import { routing } from '@/i18n/routing';
 import { buildPageMetadata, OG_LOCALES } from '@/lib/seo';
 
 vi.mock('next-intl/server', () => ({
   getTranslations: async ({ locale, namespace }: { locale: string; namespace: string }) => {
     const { MESSAGES_BY_LOCALE } = await import('../messages-by-locale');
-    // eslint-disable-next-line security/detect-object-injection
-    return createTranslator({ locale, messages: MESSAGES_BY_LOCALE[locale], namespace });
+    const { getLanguage } = await import('@/i18n/locales');
+    // A Swiss locale reads its language's messages, as in i18n/request.ts.
+    return createTranslator({ locale, messages: MESSAGES_BY_LOCALE[getLanguage(locale)], namespace });
   },
 }));
 
@@ -32,7 +34,7 @@ describe('buildPageMetadata', () => {
       type: 'website',
       siteName: 'Cosmic Studio',
       locale: 'fr_FR',
-      alternateLocale: ['en_US', 'es_ES', 'de_DE', 'it_IT'],
+      alternateLocale: ['en_US', 'es_ES', 'de_DE', 'it_IT', 'en_CH', 'fr_CH', 'es_CH', 'de_CH', 'it_CH'],
       images: [
         {
           url: '/og-default-fr.jpg',
@@ -71,7 +73,23 @@ describe('buildPageMetadata', () => {
     expect(metadata.openGraph).toMatchObject({ locale: 'en_US' });
   });
 
+  it('gives a Swiss page its own URL and Open Graph locale, with its language images', async () => {
+    const metadata = await buildPageMetadata({ locale: 'fr-CH', routeKey: '/about', title: 'T', description: 'D' });
+
+    expect(metadata.alternates?.canonical).toBe('https://www.gocosmic.dev/fr-ch/a-propos');
+    expect(metadata.alternates?.languages).toMatchObject({
+      fr: 'https://www.gocosmic.dev/fr/a-propos',
+      'fr-CH': 'https://www.gocosmic.dev/fr-ch/a-propos',
+    });
+    expect(metadata.openGraph).toMatchObject({
+      url: 'https://www.gocosmic.dev/fr-ch/a-propos',
+      locale: 'fr_CH',
+      images: [{ url: '/og-default-fr.jpg', alt: 'Cosmic Studio · Votre activité mérite d’être vue.' }],
+    });
+    expect((metadata.openGraph as { alternateLocale: string[] }).alternateLocale).toContain('fr_FR');
+  });
+
   it('maps every site locale to an Open Graph locale', () => {
-    expect(Object.keys(OG_LOCALES)).toEqual(['en', 'fr', 'es', 'de', 'it']);
+    expect(Object.keys(OG_LOCALES)).toEqual([...routing.locales]);
   });
 });

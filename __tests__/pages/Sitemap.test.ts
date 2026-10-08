@@ -1,4 +1,5 @@
 import sitemap, { UNLISTED_ROUTES } from '@/app/sitemap';
+import { getLocalePrefix } from '@/i18n/locales';
 import { routing } from '@/i18n/routing';
 
 describe('sitemap', () => {
@@ -34,10 +35,11 @@ describe('sitemap', () => {
           localizedPath = entry![1];
         }
 
+        const prefix = getLocalePrefix(locale);
         const expectedUrl =
           localizedPath === '/'
-            ? `https://www.gocosmic.dev/${locale}`
-            : `https://www.gocosmic.dev/${locale}${localizedPath}`;
+            ? `https://www.gocosmic.dev${prefix}`
+            : `https://www.gocosmic.dev${prefix}${localizedPath}`;
 
         expect(result.some((entry) => entry.url === expectedUrl)).toBe(true);
       }
@@ -111,6 +113,17 @@ describe('sitemap', () => {
       it: 'https://www.gocosmic.dev/it/chi-siamo',
       'x-default': 'https://www.gocosmic.dev/en/about',
     });
+  });
+
+  it('lists the Swiss version of every page, linked to its translations', () => {
+    const swissAbout = sitemap().find((entry) => entry.url === 'https://www.gocosmic.dev/fr-ch/a-propos');
+
+    expect(swissAbout?.alternates?.languages).toMatchObject({
+      fr: 'https://www.gocosmic.dev/fr/a-propos',
+      'fr-CH': 'https://www.gocosmic.dev/fr-ch/a-propos',
+      'de-CH': 'https://www.gocosmic.dev/de-ch/ueber-uns',
+    });
+    expect(sitemap().some((entry) => entry.url === 'https://www.gocosmic.dev/it-ch')).toBe(true);
   });
 
   it('no longer lists the retired offers, pricing and journey pages', () => {

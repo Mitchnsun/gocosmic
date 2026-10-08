@@ -38,6 +38,13 @@ describe('getOgImages', () => {
     });
   });
 
+  it('shares the language images with the Swiss locales', () => {
+    expect(getOgImages('de-CH')).toEqual({
+      og: '/og-default-de.jpg',
+      twitter: '/twitter-card-de.jpg',
+    });
+  });
+
   it('falls back to en for unknown locale', () => {
     expect(getOgImages('zh')).toEqual({
       og: '/og-default-en.jpg',

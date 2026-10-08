@@ -123,6 +123,17 @@ describe('PersonSeo', () => {
     );
   });
 
+  it('should use the job title of the language on a Swiss page', () => {
+    vi.mocked(useLocale).mockReturnValue('it-CH');
+    render(<PersonSeo />);
+
+    expect(jsonLdScriptMock).toHaveBeenCalledWith(
+      expect.objectContaining({
+        data: expect.objectContaining({ jobTitle: 'Fondatore di Cosmic Studio, sviluppatore web e mobile' }),
+      })
+    );
+  });
+
   it('should default to the English job title for unknown locale', () => {
     vi.mocked(useLocale).mockReturnValue('ja' as ReturnType<typeof useLocale>);
     render(<PersonSeo />);

@@ -1,7 +1,7 @@
 import { JsonLdScript } from 'next-seo';
 
 import { SITE_URL } from '@/i18n/canonical';
-import { routing } from '@/i18n/routing';
+import { LANGUAGES } from '@/i18n/locales';
 import { BRAND_NAME, LEGACY_BRAND_NAME } from '@/lib/config';
 
 /**
@@ -19,7 +19,8 @@ export default function WebsiteSeo() {
         url: SITE_URL,
         name: BRAND_NAME,
         alternateName: LEGACY_BRAND_NAME,
-        inLanguage: routing.locales,
+        // Languages only: the Swiss locales (`fr-CH`…) carry the same languages.
+        inLanguage: LANGUAGES,
         publisher: { '@id': `${SITE_URL}/#company` },
       }}
     />

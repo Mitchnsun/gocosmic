@@ -27,6 +27,17 @@ describe('useSwitchLocale', () => {
     expect(mockPush).toHaveBeenCalledWith('/services', { locale: 'fr' });
   });
 
+  it('stays on the Swiss version from a Swiss page', () => {
+    mockLocale = 'fr-CH';
+    const { result } = renderHook(() => useSwitchLocale());
+
+    act(() => result.current('de'));
+    act(() => result.current('fr'));
+
+    expect(mockPush).toHaveBeenCalledTimes(1);
+    expect(mockPush).toHaveBeenCalledWith('/services', { locale: 'de-CH' });
+  });
+
   it('keeps the query, such as the projects filter', () => {
     mockPathname = '/projects';
     window.history.replaceState(null, '', '/en/projects?type=mobile');
