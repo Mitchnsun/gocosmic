@@ -66,6 +66,13 @@ export const SAMPLE = {
   optional: 'Optional',
   checkbox: 'Add a monthly option',
   slider: 'Number of pages',
+  tabsLabel: 'Plan',
+  tabManaged: 'We take care of everything',
+  tabSelfService: 'You stay in control',
+  panelManaged: 'You email us your changes, we put them online.',
+  panelSelfService: 'You publish your news and opening hours yourself.',
+  infoOption: 'Contact form',
+  infoBody: 'Your visitors write to you from your site, and each message lands in your inbox.',
   cell: 'Cell',
 } as const;
 

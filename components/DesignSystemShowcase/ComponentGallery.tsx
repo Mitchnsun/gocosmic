@@ -8,6 +8,7 @@ import { ButtonGallery } from './ButtonGallery';
 import { CardGallery } from './CardGallery';
 import { SAMPLE } from './DesignSystemShowcase.copy';
 import { FormGallery } from './FormGallery';
+import { PanelGallery } from './PanelGallery';
 import { ShowcaseGroup } from './ShowcaseGroup';
 
 /** Every design-system primitive, as the pages use it. */
@@ -33,6 +34,9 @@ export function ComponentGallery({ theme }: { theme: ThemeFace }) {
       </ShowcaseGroup>
       <ShowcaseGroup title="Form fields">
         <FormGallery idPrefix={theme} />
+      </ShowcaseGroup>
+      <ShowcaseGroup title="Tabs and info bubble">
+        <PanelGallery />
       </ShowcaseGroup>
       <ShowcaseGroup title="Hairline grid">
         <HairlineGrid className="grid-cols-3">
