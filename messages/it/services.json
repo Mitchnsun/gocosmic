@@ -17,7 +17,7 @@
     "simulator": {
       "eyebrow": "[ Componi il tuo abbonamento ]",
       "title": "Parti semplice, <em>il resto lo aggiungi dopo.</em>",
-      "lead": "La formula base comprende una pagina vetrina online e sicura, a {price} al mese IVA esclusa. Seleziona le opzioni che ti interessano per vedere il prezzo mensile."
+      "lead": "Due formule: «Ci pensiamo noi», da {price} al mese IVA esclusa, oppure «Hai tu il controllo», da {selfServicePrice} al mese IVA esclusa, se vuoi pubblicare da te le tue notizie. Seleziona le opzioni che ti interessano per vedere il prezzo mensile."
     },
     "trades": {
       "eyebrow": "[ I nostri mestieri · 04 ]",
@@ -55,7 +55,7 @@
         },
         "edit": {
           "question": "Posso modificare il sito da solo?",
-          "answer": "Il modo più semplice è l'opzione «Modifiche ai contenuti comprese»: ci mandi testi, foto o nuovi orari e li mettiamo online noi. Se preferisci pubblicare da solo, si può fare anche questo; ne parliamo insieme, perché richiede uno sviluppo specifico."
+          "answer": "Sì, con la formula «Hai tu il controllo»: pubblichi da te le tue notizie e cambi i tuoi orari da uno spazio di modifica semplice, e ti mostriamo come usarlo. Se preferisci lasciare fare tutto a noi, basta la formula «Ci pensiamo noi»: ci mandi le modifiche per e-mail e le mettiamo online."
         },
         "timing": {
           "question": "Quanto tempo serve per andare online?",
@@ -63,11 +63,11 @@
         },
         "stop": {
           "question": "Cosa succede se smetto?",
-          "answer": "Basta avvisarci: il sito resta online fino alla fine del periodo già pagato, e porti con te i tuoi contenuti e il tuo nome a dominio. Il codice ti viene ceduto gratuitamente dopo {months} mesi di abbonamento; prima di allora, puoi averlo a un costo che ti comunichiamo fin dall'inizio. Se il tuo abbonamento comprende un nome a dominio o un indirizzo e-mail, dura 12 mesi alla volta, e il periodo in corso va fino alla sua scadenza."
+          "answer": "Basta avvisarci: il sito resta online fino alla fine del periodo già pagato, e porti con te i tuoi contenuti e il tuo nome a dominio. Il codice ti viene ceduto gratuitamente dopo {months} mesi di abbonamento; prima di allora, puoi averlo a un costo che ti comunichiamo fin dall'inizio. Se il tuo abbonamento comprende un nome a dominio, un indirizzo e-mail, la formula «Hai tu il controllo» o un'opzione con «Impegno di 1 anno», dura 12 mesi alla volta, e il periodo in corso va fino alla sua scadenza."
         },
         "content": {
           "question": "Vi occupate anche di testi e foto?",
-          "answer": "Ti aiutiamo a scrivere e rileggiamo tutto, pensando alle parole che i tuoi clienti cercano su Google. Per le foto usiamo le tue, oppure ti mettiamo in contatto con un fotografo o una fotografa della zona, il cui lavoro non è compreso nell'abbonamento."
+          "answer": "Ti aiutiamo a scrivere e rileggiamo tutto, pensando alle parole che i tuoi clienti cercano su Google. Per le foto e i video usiamo i tuoi, oppure li facciamo realizzare su preventivo da un/una professionista della zona, con cui gestiamo noi i rapporti."
         }
       }
     }

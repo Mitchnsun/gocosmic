@@ -5,10 +5,11 @@ import type { ReactNode } from 'react';
 
 import CTAFinal from '@/components/CTAFinal';
 import { Faq } from '@/components/Faq';
+import FaqSeo from '@/components/JsonLd/FaqSeo';
 import { PricingColumns } from '@/components/PricingColumns';
 import { buildPricingColumns } from '@/components/PricingColumns/PricingColumns.utils';
-import { FreeOffers, PricingSimulator } from '@/components/PricingSimulator';
-import { BASE_PRICE } from '@/components/PricingSimulator/constants';
+import { FreeOffers, PricingSimulator, QuotedServices } from '@/components/PricingSimulator';
+import { BASE_PRICE, FORMULA_PRICES } from '@/components/PricingSimulator/constants';
 import { formatAmount } from '@/components/PricingSimulator/PricingSimulator.utils';
 import { SectionHeading } from '@/components/SectionHeading';
 import { ServicesGrid } from '@/components/ServicesGrid';
@@ -46,6 +47,10 @@ export default async function Services() {
   const currency = getCurrency(region);
   const pricing = buildPricingColumns(tPricing, region, locale);
   const months = String(CODE_HANDOVER_MONTHS);
+  const faqItems = QUESTIONS.map((question) => ({
+    question: t(`faq.items.${question}.question`),
+    answer: t(`faq.items.${question}.answer`, { months }),
+  }));
 
   return (
     <div className="bg-bg text-fg">
@@ -69,11 +74,15 @@ export default async function Services() {
             eyebrow={t('simulator.eyebrow')}
             title={t.rich('simulator.title', { em })}
             titleId="simulator-heading"
-            lead={t('simulator.lead', { price: formatAmount(BASE_PRICE, currency, locale) })}
+            lead={t('simulator.lead', {
+              price: formatAmount(BASE_PRICE, currency, locale),
+              selfServicePrice: formatAmount(FORMULA_PRICES.self_service, currency, locale),
+            })}
           />
           <NextIntlClientProvider locale={locale} messages={messages}>
             <PricingSimulator region={region} />
             <FreeOffers />
+            <QuotedServices />
           </NextIntlClientProvider>
         </div>
       </section>
@@ -88,14 +97,8 @@ export default async function Services() {
         }))}
       />
 
-      <Faq
-        eyebrow={t('faq.eyebrow')}
-        title={t.rich('faq.title', { em })}
-        items={QUESTIONS.map((question) => ({
-          question: t(`faq.items.${question}.question`),
-          answer: t(`faq.items.${question}.answer`, { months }),
-        }))}
-      />
+      <Faq eyebrow={t('faq.eyebrow')} title={t.rich('faq.title', { em })} items={faqItems} />
+      <FaqSeo items={faqItems} />
 
       <CTAFinal
         id="services-cta"

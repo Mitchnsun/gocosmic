@@ -202,6 +202,8 @@ Pages are assembled from shared building blocks — reuse them instead of re-imp
 | `design-system/chip`          | Bordered mono tag; `variant="ok"` marks what is included                                             |
 | `design-system/signal-dot`    | Green pulsing status dot, grey when inactive (§3.2)                                                  |
 | `design-system/hairline-grid` | `gap-px` card grid with 1 px separators (`as="ol"` for ordered content)                              |
+| `design-system/tabs`          | Pill tabs (Radix): the active one filled `bg-fg`, labels may wrap on two lines, focus ring on panel  |
+| `design-system/info-popover`  | 44 px "i" button opening a titled bubble on click or tap (Radix Popover), never inside a `<label>`   |
 | `design-system/field`         | `Field` (label, optional hint, required asterisk, error) + `FIELD_INPUT` / `FIELD_TEXTAREA` controls |
 | `components/LegalDocument`    | Legal notice, privacy policy and terms of sale layout: intro, one card per section                   |
 | `components/ContentSection`   | Card-shaped section: eyebrow + HUD counter, `h2` bound via `aria-labelledby`, lead, body             |

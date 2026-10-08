@@ -113,7 +113,7 @@ Remplace les anciennes pages services, offres et tarifs.
 
 - **Introduction** : ce que propose le studio, un site qui tourne et quelqu'un qui s'en occupe
 - **Colonnes de tarifs** : quatre façons de travailler ensemble — un abonnement mensuel (site, hébergement et suivi), du conseil à la journée (architecture, UX/UI et design), du renfort à la journée (travail technique sur un site existant) et un projet ponctuel sur devis
-- **Simulateur d'abonnement** : formule de base et options (nombre de pages, nom de domaine, hébergement en Suisse, adresse e-mail, modifications de contenu), avec un récapitulatif fixe qui affiche le total mensuel en direct ; son bouton « Demander ma maquette gratuite » transmet la simulation au formulaire de maquette gratuite, et un bloc en dessous présente les deux offres gratuites (une maquette et un état des lieux du site actuel)
+- **Simulateur d'abonnement** : deux formules en onglets — « On s'occupe de tout » (le studio fait toutes les modifications envoyées par e-mail) et « Vous gardez la main » (un outil d'édition et une rubrique d'actualités pour publier soi-même actualités et horaires) — chacune avec ce qu'elle comprend, puis les options regroupées par usage (pages, formulaire de contact, prise de rendez-vous, avis clients, version anglaise, actualités, nom de domaine, adresse e-mail avec boîtes et redirections en plus, hébergement en Suisse, référencement local suivi, statistiques de visites, modifications de contenu, articles rédigés avec l'aide de l'IA, surveillance), chacune avec une infobulle et une mention d'engagement d'un an quand elle s'applique ; un récapitulatif fixe affiche le total mensuel en direct, et son bouton « Demander ma maquette gratuite » transmet la simulation au formulaire de maquette gratuite, tandis que des blocs en dessous présentent les deux offres gratuites (une maquette et un état des lieux du site actuel) et les prestations sur devis hors abonnement, réalisées avec des partenaires (logo, affiches et flyers, photos et vidéos)
 - **Métiers** : quatre cartes (sites vitrine, boutiques et réservations, applications, visibilité et suivi)
 - **FAQ** : accordéon qui répond à cinq questions fréquentes (propriété du site, modification par le client, délai de mise en ligne, arrêt de l'abonnement, textes et photos)
 - **Appel à l'action final** : lien vers la page contact
@@ -419,6 +419,8 @@ Pour des consignes de test détaillées, voir [`__tests__/TESTING.md`](./__tests
 │   ├── hairline-grid.tsx # Grille de cartes séparées par des filets de 1 px
 │   ├── field.tsx     # Cadre des champs de formulaire et styles des contrôles
 │   ├── slider.tsx    # Slider utilisé par le simulateur de prix
+│   ├── tabs.tsx      # Onglets en pilule (Radix Tabs), par exemple les deux formules du simulateur
+│   ├── info-popover.tsx # Bouton « i » qui ouvre une bulle de contexte au clic ou au toucher (Radix Popover)
 │   ├── accent.ts     # `accentClasses(token)` — utilitaires et canaux RGB d'un token d'accent
 │   └── lib/utils.ts  # Helper `cn` (clsx + tailwind-merge)
 ├── data/             # Contenu statique (`projects.ts` — registre ordonné des études de cas)

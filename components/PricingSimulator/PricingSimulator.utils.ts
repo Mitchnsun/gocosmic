@@ -1,50 +1,93 @@
 import type { Currency } from '@/lib/region';
 
-import { ADD_ON_PRICES, BASE_PRICE, MAX_TIER_INDEX, PAGE_TIER_PRICES, UPDATE_TIER_PRICES } from './constants';
-import type { AddOnKey, PlanSelection, TierIndex } from './PricingSimulator.types';
+import {
+  ADD_ON_PRICES,
+  EXTRA_MAILBOX_PRICE,
+  FORMULA_PRICES,
+  MAX_EXTRA_MAILBOXES,
+  PAGE_TIERS,
+  TIERED_TABLES,
+  UPDATE_TIERS,
+} from './constants';
+import type { AddOnKey, PlanItem, PlanSelection, TieredKey } from './PricingSimulator.types';
 
-/** Clamp any number coming from a range input onto a valid slider position. */
-export function toTierIndex(value: number): TierIndex {
-  const rounded = Math.round(value);
-  if (Number.isNaN(rounded) || rounded < 0) return 0;
-  if (rounded > MAX_TIER_INDEX) return MAX_TIER_INDEX;
-  return rounded as TierIndex;
-}
-
-// The indexes below are narrow unions (`TierIndex`, `AddOnKey`), never free-form input.
-export function getPageTierPrice(tier: TierIndex): number {
-  // eslint-disable-next-line security/detect-object-injection
-  return PAGE_TIER_PRICES[tier];
-}
-
-export function getUpdateTierPrice(tier: TierIndex): number {
-  // eslint-disable-next-line security/detect-object-injection
-  return UPDATE_TIER_PRICES[tier];
-}
+// The indexes below are narrow unions (tier positions, `AddOnKey`), never free-form input.
+/* eslint-disable security/detect-object-injection */
 
 export function getAddOnPrice(key: AddOnKey): number {
-  // eslint-disable-next-line security/detect-object-injection
   return ADD_ON_PRICES[key];
 }
 
-/** Monthly total of a composed plan: base + ticked add-ons + both sliders. */
-export function getMonthlyTotal(selection: PlanSelection): number {
-  const addOns = (Object.keys(ADD_ON_PRICES) as AddOnKey[]).reduce(
-    // eslint-disable-next-line security/detect-object-injection
-    (sum, key) => (selection.addOns[key] ? sum + getAddOnPrice(key) : sum),
-    0
-  );
-  const updates = selection.updatesEnabled ? getUpdateTierPrice(selection.updates) : 0;
+/** Price and tier key of a tick box + slider option, or `null` while it is unticked. */
+function getTieredLine(plan: PlanSelection, key: TieredKey): { price: number; key: string } | null {
+  const index = plan[key];
+  return index === null ? null : (TIERED_TABLES[key][index] ?? null);
+}
 
-  return BASE_PRICE + addOns + getPageTierPrice(selection.pages) + updates;
+/** Order of the recap lines, following the groups of the builder. */
+const ITEM_ORDER: readonly PlanItem['id'][] = [
+  'formula',
+  'pages',
+  'contact_form',
+  'booking',
+  'reviews',
+  'english',
+  'news',
+  'domain',
+  'email',
+  'mailboxes',
+  'redirects',
+  'swiss_hosting',
+  'seo',
+  'analytics',
+  'detailed_analytics',
+  'updates',
+  'articles',
+  'monitoring',
+];
+
+/**
+ * Lines of a normalised plan (see `normalizePlan`), shared by the recap and the studio email: the
+ * formula, then every paid choice. Unticked options and the included first page are left out.
+ */
+export function getPlanItems(plan: PlanSelection): PlanItem[] {
+  const items: PlanItem[] = [];
+  for (const id of ITEM_ORDER) {
+    if (id === 'formula') items.push({ id, amount: FORMULA_PRICES[plan.formula] });
+    else if (id === 'pages') {
+      if (plan.pages > 0) items.push({ id, amount: PAGE_TIERS[plan.pages].price, tier: PAGE_TIERS[plan.pages].key });
+    } else if (id === 'updates') {
+      if (plan.updatesEnabled)
+        items.push({ id, amount: UPDATE_TIERS[plan.updates].price, tier: UPDATE_TIERS[plan.updates].key });
+    } else if (id === 'mailboxes') {
+      if (plan.mailboxes > 0) items.push({ id, amount: plan.mailboxes * EXTRA_MAILBOX_PRICE, count: plan.mailboxes });
+    } else if (id === 'analytics' || id === 'seo' || id === 'articles') {
+      const line = getTieredLine(plan, id);
+      if (line) items.push({ id, amount: line.price, tier: line.key });
+    } else if (plan.addOns[id]) {
+      items.push({ id, amount: getAddOnPrice(id) });
+    }
+  }
+  return items;
+}
+
+/* eslint-enable security/detect-object-injection */
+
+/** Monthly total of a normalised plan: the sum of its lines. */
+export function getMonthlyTotal(plan: PlanSelection): number {
+  return getPlanItems(plan).reduce((sum, item) => sum + item.amount, 0);
 }
 
 /**
- * True once a slider sits on its top position: the plan still has a price, but
- * anything larger has to be quoted personally.
+ * True once a volume sits on its top position (pages, updates, mailboxes): the plan still has a
+ * price, but anything larger has to be quoted personally.
  */
-export function needsCustomQuote(selection: PlanSelection): boolean {
-  return selection.pages === MAX_TIER_INDEX || (selection.updatesEnabled && selection.updates === MAX_TIER_INDEX);
+export function needsCustomQuote(plan: PlanSelection): boolean {
+  return (
+    plan.pages === PAGE_TIERS.length - 1 ||
+    (plan.updatesEnabled && plan.updates === UPDATE_TIERS.length - 1) ||
+    plan.mailboxes === MAX_EXTRA_MAILBOXES
+  );
 }
 
 /**

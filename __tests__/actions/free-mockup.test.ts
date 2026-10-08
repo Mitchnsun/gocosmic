@@ -2,6 +2,9 @@ import { beforeEach, vi } from 'vitest';
 
 import { submitFreeMockupRequest } from '@/app/actions/free-mockup';
 import type { FreeMockupFormState } from '@/components/FreeMockupForm/FreeMockupForm.types';
+import { encodePlanCode } from '@/lib/pricing/plan-code';
+
+import { makePlan } from '../lib/pricing/plan-fixtures';
 
 const send = vi.hoisted(() => vi.fn());
 
@@ -40,7 +43,10 @@ describe('submitFreeMockupRequest', () => {
   });
 
   it('appends a valid pricing simulation to the email', async () => {
-    await submitFreeMockupRequest(INITIAL, buildFormData({ plan: 'website~showcase~p2~u-~domain~ch' }));
+    await submitFreeMockupRequest(
+      INITIAL,
+      buildFormData({ plan: encodePlanCode(makePlan({ addOns: { domain: true }, pages: 2 }, 'ch')) })
+    );
 
     const payload = send.mock.calls[0]?.[0] as { text: string };
     expect(payload.text).toContain('Simulation — pages: 5 to 7 pages (+15 CHF)');

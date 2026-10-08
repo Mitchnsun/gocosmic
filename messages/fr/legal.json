@@ -7,7 +7,7 @@
       },
       "eyebrow": "nLPD · RGPD",
       "title": "Politique de confidentialité",
-      "updated": "Dernière mise à jour : 6 octobre 2026",
+      "updated": "Dernière mise à jour : 8 octobre 2026",
       "intro": "Cette page explique comment Cosmic Studio traite les données personnelles collectées sur ce site et lors des échanges par e-mail.",
       "legalNoticePrefix": "Pour les informations éditeur et hébergement, consultez les",
       "legalNoticeLink": "mentions légales",
@@ -21,7 +21,7 @@
         {
           "title": "Données collectées",
           "body": [
-            "Le site ne propose ni espace client, ni paiement, ni CAPTCHA, ni pixel publicitaire. Deux formulaires sont traités côté serveur. La page de maquette gratuite collecte votre adresse e-mail, l'ambiance de couleurs choisie, l'adresse de votre site actuel si vous la renseignez, votre message et la langue de la page. Si vous arrivez depuis le simulateur de tarifs, la demande inclut aussi les choix que vous y avez faits (type de projet, type de site, nombre de pages, options retenues, fréquence des mises à jour et prix mensuel estimé), afin que le studio puisse vous répondre en connaissance de cause. Le formulaire de contact collecte votre nom, votre adresse e-mail et votre message, ainsi que, si vous les renseignez, votre téléphone, votre activité et le type de besoin choisi. Dans les deux cas, les informations sont transmises par e-mail à la boîte du studio et rien n'est conservé en base de données. Les messages envoyés via les liens e-mail du site sont traités par votre messagerie et par la boîte destinataire.",
+            "Le site ne propose ni espace client, ni paiement, ni CAPTCHA, ni pixel publicitaire. Deux formulaires sont traités côté serveur. La page de maquette gratuite collecte votre adresse e-mail, l'ambiance de couleurs choisie, l'adresse de votre site actuel si vous la renseignez, votre message et la langue de la page. Si vous arrivez depuis le simulateur de tarifs, la demande inclut aussi les choix que vous y avez faits (formule, type de projet, type de site, nombre de pages, options retenues et leurs réglages, fréquence des mises à jour et prix mensuel estimé), afin que le studio puisse vous répondre en connaissance de cause. Le formulaire de contact collecte votre nom, votre adresse e-mail et votre message, ainsi que, si vous les renseignez, votre téléphone, votre activité et le type de besoin choisi. Dans les deux cas, les informations sont transmises par e-mail à la boîte du studio et rien n'est conservé en base de données. Les messages envoyés via les liens e-mail du site sont traités par votre messagerie et par la boîte destinataire.",
             "Votre adresse IP est traitée temporairement par le pare-feu de l'hébergeur, qui limite chacun des deux formulaires (contact et maquette gratuite) à trois envois toutes les dix minutes, en complément d'un champ anti-spam masqué. L'hébergeur peut aussi traiter des données techniques pour ses journaux de sécurité et de diffusion. Vercel Analytics n'est chargé qu'après votre consentement, pour mesurer les pages vues.",
             "Si vous réservez un appel depuis la page contact, Google Calendar transmet au studio votre nom, votre adresse e-mail, le créneau choisi et les informations que vous saisissez dans le formulaire de réservation. Ces informations sont conservées dans l'agenda du studio, et non dans une base de données.",
             "Trois informations sont conservées dans votre navigateur. La simulation de tarifs sert uniquement à la reprendre du simulateur jusqu'au formulaire de maquette gratuite : elle ne nous est transmise que si vous envoyez ce formulaire, elle est effacée une fois la demande envoyée et disparaît à la fermeture de l'onglet. Les dates de vos derniers envois du formulaire de contact servent à limiter la fréquence d'envoi depuis ce navigateur ; elles y restent jusqu'à ce que vous effaciez vos données de navigation et ne nous sont jamais transmises. Votre choix de thème clair ou sombre est conservé pour que le site s'ouvre tel que vous l'avez laissé ; il ne nous est jamais transmis."
@@ -141,7 +141,7 @@
       },
       "eyebrow": "Conditions de vente",
       "title": "Conditions générales de vente",
-      "updated": "Dernière mise à jour : 6 octobre 2026",
+      "updated": "Dernière mise à jour : 8 octobre 2026",
       "intro": "Ces conditions générales de vente s'appliquent à l'abonnement et aux prestations proposées par Cosmic Studio sur www.gocosmic.dev.",
       "sections": [
         {
@@ -159,7 +159,8 @@
         {
           "title": "Souscription",
           "body": [
-            "L'abonnement est confirmé par écrit après un premier échange, une fois vos besoins (pages, options, modifications) définis ensemble. Il prend effet à la mise en ligne du site."
+            "L'abonnement est confirmé par écrit après un premier échange, une fois vos besoins (pages, options, modifications) définis ensemble. Il prend effet à la mise en ligne du site.",
+            "Deux formules sont proposées : « On s'occupe de tout », où nous faisons les modifications que vous nous envoyez par e-mail, et « Vous gardez la main », qui comprend un outil d'édition pour publier vous-même vos actualités et vos horaires, ainsi qu'une rubrique d'actualités."
           ]
         },
         {
@@ -173,21 +174,26 @@
         {
           "title": "Durée et engagement",
           "body": [
-            "L'abonnement est sans engagement de durée et résiliable chaque mois, tant qu'il ne comprend pas la gestion d'un nom de domaine ou d'une adresse e-mail.",
-            "Dès que l'une de ces deux options est activée, l'abonnement est souscrit par périodes de 12 mois, renouvelées tacitement, afin de couvrir la réservation du nom de domaine et de l'adresse e-mail."
+            "L'abonnement est sans engagement de durée et résiliable chaque mois, tant qu'il ne comprend aucun élément souscrit par périodes de 12 mois : la formule « Vous gardez la main », la gestion d'un nom de domaine, une adresse e-mail ou une option marquée « Engagement 1 an » dans le simulateur.",
+            "Dès que l'un de ces éléments est activé, l'abonnement est souscrit par périodes de 12 mois, renouvelées tacitement, afin de couvrir la réservation du nom de domaine et de l'adresse e-mail, et la mise en place de l'outil d'édition et des options concernées.",
+            "Vous pouvez passer à la formule « Vous gardez la main » à tout moment. Le retour à la formule « On s'occupe de tout » prend effet à la fin de la période de 12 mois en cours, car l'outil d'édition ne peut pas être retiré avant."
           ]
         },
         {
           "title": "Options",
           "body": [
             "Vous pouvez ajouter une option à tout moment ; elle s'applique à partir de la période de facturation suivante.",
-            "Le nombre de pages, le nom de domaine, l'hébergement en Suisse et l'adresse e-mail ne peuvent pas être retirés une fois activés, car ils correspondent à un engagement pris pour vous (pages créées, domaine réservé, boîte e-mail ouverte). Seule la fréquence des modifications de contenu peut être revue à la hausse ou à la baisse."
+            "Le nombre de pages, le nom de domaine, l'hébergement en Suisse et l'adresse e-mail principale ne peuvent pas être retirés une fois activés, car ils correspondent à un engagement pris pour vous (pages créées, domaine réservé, boîte e-mail ouverte). La fréquence des modifications de contenu peut être revue à la hausse ou à la baisse.",
+            "Les options marquées « Engagement 1 an » (rubrique d'actualités, site en anglais, référencement local suivi, statistiques de visites et mesure détaillée, articles rédigés avec l'aide de l'IA, boîtes e-mail et redirections en plus) sont souscrites par périodes de 12 mois et peuvent être retirées à la fin d'une période. Le rythme des articles peut être réduit avec un mois de préavis.",
+            "Les autres options (formulaire de contact, prise de rendez-vous en ligne, avis clients, surveillance du site) peuvent être retirées avec un mois de préavis.",
+            "Lorsqu'une option est retirée, le contenu qui lui est associé disparaît du site, par exemple la rubrique d'actualités et ses publications, ou la version anglaise.",
+            "Par défaut, votre site est hébergé dans l'Union européenne. Si cette localisation ne vous convient pas, vous pouvez nous demander un hébergement dans un autre pays ; nous vous indiquons alors si c'est possible et à quel prix."
           ]
         },
         {
           "title": "Résiliation",
           "body": [
-            "Vous pouvez résilier à tout moment par écrit. Le site reste en ligne jusqu'à la fin de la période payée en cours (fin du mois pour un abonnement sans engagement, fin de la période de 12 mois en cours si elle comprend un nom de domaine ou une adresse e-mail).",
+            "Vous pouvez résilier à tout moment par écrit. Le site reste en ligne jusqu'à la fin de la période payée en cours (fin du mois pour un abonnement sans engagement, fin de la période de 12 mois en cours s'il comprend un élément souscrit par périodes de 12 mois).",
             "Vous repartez avec vos contenus et votre nom de domaine."
           ]
         },
@@ -201,7 +207,8 @@
         {
           "title": "Vos obligations",
           "body": [
-            "Vous nous transmettez les textes, images et informations nécessaires à la réalisation ou à la mise à jour du site. Les délais annoncés courent à partir de leur réception."
+            "Vous nous transmettez les textes, images et informations nécessaires à la réalisation ou à la mise à jour du site. Les délais annoncés courent à partir de leur réception.",
+            "Nous mettons en place vos mentions légales et votre politique de confidentialité à partir des informations que vous nous transmettez ; vous les relisez, vous les validez et vous en restez responsable."
           ]
         },
         {

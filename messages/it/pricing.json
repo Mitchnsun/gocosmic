@@ -15,14 +15,44 @@
       },
       "note": "Entrambe sono gratuite e non ti impegnano a nulla."
     },
+    "quoted_services": {
+      "eyebrow": "Fuori dall'abbonamento · su preventivo",
+      "title": "Per la tua comunicazione",
+      "items": {
+        "logo": {
+          "title": "Un logo",
+          "description": "Un logo che ti somiglia, per il tuo sito e tutti i tuoi supporti."
+        },
+        "print": {
+          "title": "Manifesti e volantini",
+          "description": "Per annunciare un'apertura, un evento o una promozione."
+        },
+        "photo_video": {
+          "title": "Foto e video",
+          "description": "I tuoi lavori, i tuoi locali e il tuo team in immagini, per il sito e i social."
+        }
+      },
+      "note": "Li realizziamo con partner della zona (grafico/a, fotografo/a, videomaker) e ci occupiamo noi dei rapporti con loro. Ogni servizio è oggetto di un preventivo.",
+      "cta": "Richiedi un preventivo"
+    },
     "builder": {
       "period": "/ mese IVA esclusa",
       "base": {
-        "title": "Formula base",
+        "title": "Compreso nella formula",
         "includes": {
           "page": "Una pagina vetrina che presenta la tua attività",
           "hosting": "Online 24 ore su 24, pubblicazione compresa",
-          "security": "Connessione sicura (il lucchetto nel browser)"
+          "security": "Connessione sicura (il lucchetto nel browser)",
+          "legal": "Le tue note legali e la tua informativa sulla privacy",
+          "email_button": "Un pulsante «Scrivici» che apre la posta dei tuoi visitatori",
+          "yearly_update": "Una modifica ai contenuti all'anno",
+          "editor": "Uno spazio di modifica per le tue notizie e i tuoi orari",
+          "news": "Una sezione notizie"
+        },
+        "info": {
+          "legal": "Ogni sito deve indicare chi lo pubblica e cosa fa dei dati dei visitatori. Prepariamo queste pagine con le informazioni che ci dai; tu le rileggi e le approvi, perché ne resti responsabile.",
+          "editor": "Pubblichi una notizia o cambi i tuoi orari quando vuoi, senza aspettarci. Installiamo uno strumento di modifica collegato al tuo sito e ti mostriamo come usarlo. Il resto delle pagine resta nelle nostre mani. Se hai già uno strumento di modifica, lo riprendiamo quando possibile; questa ripresa e il trasferimento dei contenuti sono oggetto di un preventivo a parte. Questa formula si sottoscrive per periodi di 12 mesi.",
+          "news": "Una sezione aggiornata mostra ai visitatori che la tua attività è viva: ultimi lavori, prossimi concerti, nuova stagione. Pubblichi tu, dal tuo spazio di modifica."
         }
       },
       "options": {
@@ -41,14 +71,101 @@
         },
         "email": {
           "label": "Un indirizzo e-mail a tuo nome",
-          "hint": "Per esempio info@{domain}, invece di un indirizzo gratuito."
+          "hint": "Per esempio info@{domain}, invece di un indirizzo gratuito.",
+          "note": "Il tuo indirizzo e-mail usa il tuo nome a dominio: per questo aggiungiamo anche la sua gestione."
+        },
+        "mailboxes": {
+          "label": "Caselle e-mail in più",
+          "hint": "Una casella in più per persona o per uso, per esempio segreteria@{domain}, con la sua password.",
+          "price": "{price} per casella",
+          "count": "{count, plural, =0 {Nessuna casella in più} one {# casella in più} other {# caselle in più}}",
+          "decrease": "Una casella in meno",
+          "increase": "Una casella in più"
+        },
+        "redirects": {
+          "label": "5 inoltri",
+          "hint": "Fino a 5 indirizzi che inoltrano a una casella esistente, per esempio fatture@{domain}."
+        },
+        "email_extras": {
+          "info": "Se lavorate in più persone, o per il consiglio di un'associazione, ognuno può avere la sua casella a tuo nome. Un inoltro, invece, non ha una casella: i messaggi arrivano in una casella che hai già. Questi indirizzi si sottoscrivono per periodi di 12 mesi; puoi disdirli alla fine di un periodo."
+        },
+        "contact_form": {
+          "label": "Un modulo di contatto",
+          "hint": "I tuoi visitatori ti scrivono dal tuo sito e i loro messaggi arrivano nella tua casella.",
+          "info": "Senza questa opzione, un pulsante del tuo sito apre la posta del visitatore, che ti scrive dal suo indirizzo. Con l'opzione, i visitatori ti scrivono direttamente dal tuo sito, a qualsiasi ora: ogni messaggio arriva nella tua casella e non ne conserviamo copia. Un messaggio sullo schermo conferma l'invio, e una breve nota sotto il modulo spiega cosa succede ai dati."
+        },
+        "booking": {
+          "label": "La prenotazione online",
+          "hint": "I tuoi clienti prenotano un appuntamento nel tuo calendario Google, direttamente dal tuo sito.",
+          "info": "I tuoi clienti vedono gli orari liberi e prenotano a qualsiasi ora, senza chiamarti; non serve loro un account Google. Crei la tua pagina di prenotazione in Google Calendar seguendo le nostre indicazioni, poi la aggiungiamo al tuo sito. Google invia la conferma e i promemoria. Ti serve un account Google, e alcune funzioni di Google richiedono un abbonamento Google a pagamento, che non è compreso."
+        },
+        "reviews": {
+          "label": "Le recensioni dei tuoi clienti sul tuo sito",
+          "hint": "Una selezione di recensioni dei tuoi clienti, con la loro data, aggiornata ogni mese.",
+          "info": "Le recensioni di altri clienti rassicurano chi esita a contattarti. Ogni mese selezioniamo le recensioni migliori, dalla tua scheda Google o dalle testimonianze che hai ricevuto, e le riportiamo sul tuo sito con la loro data. In Francia la legge chiede di indicare se le recensioni sono verificate e perché alcune non vengono pubblicate: aggiungiamo questa nota."
+        },
+        "english": {
+          "label": "Il tuo sito in inglese",
+          "hint": "Una versione inglese completa del tuo sito, aggiornata insieme alla versione principale.",
+          "info": "Una versione inglese permette ai visitatori che non leggono la lingua principale del tuo sito di capirti e di contattarti. Traduciamo noi tutte le pagine, aggiungiamo un selettore di lingua e traduciamo anche le tue modifiche senza contarle due volte. Per un'altra lingua, o una traduzione affidata a un traduttore/trice professionista, ti facciamo un preventivo a parte. Questa opzione si sottoscrive per periodi di 12 mesi."
+        },
+        "news": {
+          "label": "Una sezione notizie",
+          "hint": "Una pagina che mostra che la tua attività è viva: lavori, eventi, novità.",
+          "info": "Una sezione aggiornata mostra ai visitatori che la tua attività è viva: ultimi lavori, prossimi concerti, nuova stagione. Creiamo la sezione e pubblichiamo quello che ci mandi per e-mail; ogni pubblicazione conta come una modifica ai contenuti. Questa opzione si sottoscrive per periodi di 12 mesi."
+        },
+        "seo": {
+          "label": "Posizionamento locale seguito",
+          "hint": "Seguiamo come appare il tuo sito su Google per il tuo mestiere e la tua città, e lo miglioriamo.",
+          "slider_label": "Ritmo",
+          "tiers": {
+            "quarterly": "Ogni tre mesi",
+            "monthly": "Ogni mese"
+          },
+          "info": "La tua formula comprende un posizionamento di base; questa opzione lo mantiene vivo nel tempo. Al ritmo scelto controlliamo come appare il tuo sito nelle ricerche come «il tuo mestiere + la tua città», aggiorniamo le pagine e ti mandiamo un resoconto scritto. La tua scheda Google Maps e gli elenchi restano gestiti da te. Non promettiamo una posizione precisa su Google. Questa opzione si sottoscrive per periodi di 12 mesi."
+        },
+        "analytics": {
+          "label": "Statistiche delle visite",
+          "hint": "Sai quante persone visitano il tuo sito e quali pagine leggono, con un resoconto scritto.",
+          "slider_label": "Resoconto",
+          "tiers": {
+            "yearly": "Una volta all'anno",
+            "quarterly": "Ogni tre mesi",
+            "monthly": "Ogni mese"
+          },
+          "info": "I numeri ti mostrano se il tuo sito viene consultato e quali pagine interessano i visitatori. Contiamo le visite e le pagine più viste in modo anonimo, senza banner da far accettare ai visitatori, poi ti mandiamo un resoconto scritto, in parole semplici, al ritmo che scegli. Questa opzione si sottoscrive per periodi di 12 mesi."
+        },
+        "detailed_analytics": {
+          "label": "Misurazione dettagliata",
+          "hint": "Una misurazione più completa, con un banner che chiede il consenso dei visitatori.",
+          "info": "La misurazione dettagliata ti dice anche da dove arrivano i visitatori, su quale dispositivo ti leggono e quanti toccano «Chiama», «Indicazioni» o inviano il tuo modulo. Usa i cookie: la legge chiede quindi il consenso dei visitatori, e aggiungiamo un banner per raccoglierlo. Chi rifiuta non viene contato in questa misurazione."
+        },
+        "articles": {
+          "label": "Articoli scritti con l'aiuto dell'IA",
+          "hint": "Scriviamo articoli per il tuo sito con l'aiuto dell'intelligenza artificiale.",
+          "slider_label": "Ritmo",
+          "tiers": {
+            "monthly": "1 articolo al mese",
+            "weekly": "1 articolo a settimana",
+            "daily": "1 articolo al giorno"
+          },
+          "info": "Scrivere articoli con regolarità richiede tempo. Li scriviamo per te con l'aiuto dell'intelligenza artificiale, a partire dalle informazioni sulla tua attività. Scegli se rileggere ogni articolo prima della pubblicazione o lasciarcelo pubblicare direttamente. Ogni articolo pubblicato conta come una modifica ai contenuti. Puoi ridurre il ritmo con un mese di preavviso; la disdetta completa avviene alla fine di un periodo di 12 mesi.",
+          "info_tool": "A seconda del tuo strumento di modifica, possiamo usare un servizio specializzato che sceglie gli argomenti in base alle ricerche fatte su Google.",
+          "raised": "Ogni articolo pubblicato conta come una modifica: abbiamo adeguato le tue modifiche di conseguenza.",
+          "locked": "Ogni articolo pubblicato conta come una modifica: le tue modifiche ai contenuti restano comprese finché sono previsti articoli."
+        },
+        "monitoring": {
+          "label": "Sorveglianza del tuo sito",
+          "hint": "Veniamo avvisati automaticamente se il tuo sito non risponde più.",
+          "info": "Uno strumento controlla regolarmente che il tuo sito risponda e ci avvisa appena smette di farlo. Così possiamo intervenire senza aspettare che tu o i tuoi clienti ci segnaliate il guasto. Non ci impegniamo su un tempo di ripristino."
         }
       },
       "pages": {
         "label": "Numero di pagine",
+        "info": "Le note legali e l'informativa sulla privacy non rientrano nel numero di pagine.",
         "or_more": "{price} o più",
         "tiers": {
-          "one": "1 pagina (compresa)",
+          "one": "Homepage compresa",
           "two_four": "Da 2 a 4 pagine",
           "five_seven": "Da 5 a 7 pagine",
           "eight_nine": "8 o 9 pagine",
@@ -57,8 +174,8 @@
       },
       "updates": {
         "label": "Modifiche ai contenuti comprese",
-        "hint": "Aggiorniamo noi i tuoi testi, le foto e gli orari, senza costi aggiuntivi a ogni richiesta.",
-        "off": "Non compreso",
+        "hint": "Ci mandi le tue modifiche per e-mail: testi, foto, orari. Le pubblichiamo noi, senza costi aggiuntivi a ogni richiesta.",
+        "off": "1 volta all'anno (compreso)",
         "slider_label": "Modifiche all'anno",
         "tiers": {
           "few_per_year": "2 o 3 volte all'anno",
@@ -66,14 +183,35 @@
           "twice_monthly": "2 volte al mese",
           "weekly": "1 volta a settimana",
           "unlimited": "Tutte le volte che serve"
-        }
+        },
+        "hint_self_service": "Per tutto ciò che non pubblichi tu: ci mandi le modifiche per e-mail e le pubblichiamo noi."
       },
       "total": {
         "label": "La tua stima",
-        "note": "Prezzo indicativo IVA esclusa, confermato dopo una prima conversazione. Puoi aggiungere opzioni in qualsiasi momento; una volta attivate, restano nel tuo abbonamento (vedi le condizioni generali di vendita).",
+        "note": "Prezzo indicativo IVA esclusa, confermato dopo una prima conversazione. Puoi aggiungere opzioni in qualsiasi momento. Il numero di pagine, il nome a dominio, l'hosting in Svizzera e il tuo indirizzo e-mail restano nel tuo abbonamento una volta attivati. Le opzioni con «Impegno di 1 anno» si disdicono alla fine di ogni periodo di 12 mesi, le altre con un mese di preavviso (vedi le condizioni generali di vendita).",
         "beyond": "Oltre questi volumi, ne parliamo insieme per farti una proposta.",
         "cta": "Richiedi il mio mockup gratuito",
         "question": "Qualche domanda prima? <link>Scrivici</link>."
+      },
+      "info_label": "Per saperne di più: {option}",
+      "commitment": "Impegno di 1 anno",
+      "from": "da {price}",
+      "formulas": {
+        "label": "Scegli la tua formula",
+        "managed": {
+          "label": "Ci pensiamo noi",
+          "lead": "Ci scrivi e aggiorniamo il tuo sito."
+        },
+        "self_service": {
+          "label": "Hai tu il controllo",
+          "lead": "Pubblichi tu le tue notizie e i tuoi orari; al resto pensiamo noi."
+        }
+      },
+      "groups": {
+        "site": "Il tuo sito",
+        "address": "Il tuo indirizzo su internet",
+        "visibility": "Farsi trovare e misurare le visite",
+        "care": "Aggiornamenti e assistenza"
       }
     },
     "columns": {

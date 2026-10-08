@@ -5,6 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.3.0] - 2026-10-08
+
+### Added
+
+- The pricing simulator now offers two plans side by side: "We take care of everything", where the studio makes every change you email, and "You stay in control", which adds an editing space to publish your news and opening hours yourself
+- Ten new options to add to a plan, with their monthly price: a contact form, online booking, customer reviews, an English version, a news section, extra mailboxes and redirects, local search follow-up, visit statistics with an optional detailed measurement, AI-assisted articles and site monitoring
+- Each option now has a small "i" button that opens a short explanation of what it covers, and options subscribed for a year are clearly marked
+- Under the simulator, a new block presents services quoted separately and made with local partners: logo design, posters and flyers, and photos and videos
+- The questions on the Services page can now appear directly in Google search results
+
+### Changed
+
+- Option prices in the pricing simulator now use the regular font, which is easier to read
+- The page count now starts at "Homepage included", with a note that the legal notice and privacy policy are not counted
+- Hosting in Switzerland is now offered to visitors from Switzerland only, and the terms of sale state that sites are hosted in the European Union by default, with other countries available on request
+- Every plan now includes the legal notice and privacy policy, a "Write to us" button and one content change a year, and choosing an email address also adds the domain name it needs
+- The terms of sale, the privacy policy, the questions on the Services page and the homepage now describe the two plans, which options run for a year and which can be removed with a month's notice
+
+### Fixed
+
+- In the light theme, the price of a ticked option in the pricing simulator is now easier to read
+
 ## [2.2.0] - 2026-10-08
 
 ### Added

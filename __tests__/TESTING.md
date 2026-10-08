@@ -107,6 +107,7 @@ import { render, fireEvent } from '@testing-library/react';
 - Check proper heading hierarchy
 - Validate screen reader compatibility
 - Test keyboard navigation support
+- Radix tabs switch on mouse down and keyboard, not on `click`: use `fireEvent.mouseDown(tab)` (or `userEvent.click`). Radix moves focus on the next tick (arrow keys, closing a popover), so assert focus inside `waitFor`
 
 ### Mocking Patterns
 

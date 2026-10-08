@@ -50,9 +50,35 @@ describe('TierSlider', () => {
     expect(screen.getByRole('group', { name: 'Number of pages' })).toHaveAttribute('aria-disabled', 'true');
   });
 
+  it('adapts its range to the number of tiers and can point at a note', () => {
+    render(
+      <TierSlider label="Report" tiers={tiers.slice(0, 3)} value={1} onChange={() => {}} describedBy="report-note" />
+    );
+
+    const slider = screen.getByRole('slider', { name: 'Report' });
+    expect(slider).toHaveAttribute('aria-valuemax', '2');
+    expect(slider).toHaveAttribute('aria-describedby', 'report-note');
+  });
+
   it('reflects the selected tier as the current slider value', () => {
     render(<TierSlider label="Number of pages" tiers={tiers} value={2} onChange={() => {}} />);
 
     expect(screen.getByRole('slider', { name: 'Number of pages' })).toHaveAttribute('aria-valuenow', '2');
+  });
+
+  it('shows an info button only when an explanation is given', () => {
+    const { rerender } = render(<TierSlider label="Number of pages" tiers={tiers} value={0} onChange={() => {}} />);
+    expect(screen.queryByRole('button', { name: 'More about pages' })).not.toBeInTheDocument();
+
+    rerender(
+      <TierSlider
+        label="Number of pages"
+        tiers={tiers}
+        value={0}
+        onChange={() => {}}
+        info={{ label: 'More about pages', text: 'Legal pages are not counted.' }}
+      />
+    );
+    expect(screen.getByRole('button', { name: 'More about pages' })).toBeInTheDocument();
   });
 });

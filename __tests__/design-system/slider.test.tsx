@@ -28,7 +28,7 @@ describe('<Slider />', () => {
     expect(getByRole('slider')).toHaveAttribute('data-disabled');
   });
 
-  it('should forward aria-labelledby and aria-valuetext to the thumb', () => {
+  it('should forward aria-labelledby, aria-describedby and aria-valuetext to the thumb', () => {
     const { getByRole } = render(
       <Slider
         value={[3]}
@@ -37,12 +37,14 @@ describe('<Slider />', () => {
         step={1}
         onValueChange={() => {}}
         aria-labelledby="slider-label"
+        aria-describedby="slider-note"
         aria-valuetext="6 to 8 pages"
       />
     );
 
     const slider = getByRole('slider');
     expect(slider).toHaveAttribute('aria-labelledby', 'slider-label');
+    expect(slider).toHaveAttribute('aria-describedby', 'slider-note');
     expect(slider).toHaveAttribute('aria-valuetext', '6 to 8 pages');
   });
 

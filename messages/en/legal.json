@@ -7,7 +7,7 @@
       },
       "eyebrow": "nFADP · GDPR",
       "title": "Privacy policy",
-      "updated": "Last updated: 6 October 2026",
+      "updated": "Last updated: 8 October 2026",
       "intro": "This page explains how Cosmic Studio handles the personal data collected on this website and in email exchanges.",
       "legalNoticePrefix": "For publisher and hosting details, see the",
       "legalNoticeLink": "legal notice",
@@ -21,7 +21,7 @@
         {
           "title": "Data collected",
           "body": [
-            "The website has no customer account, payment, CAPTCHA or advertising pixel. Two forms are handled on the server. The free mockup page collects your email address, the colour mood you pick, the address of your current website if you provide it, your message and the language of the page. If you arrive from the pricing simulator, the request also includes the choices you made there (project type, site type, number of pages, selected options, update frequency and the resulting estimated monthly price), so the studio can reply with the full picture. The contact form collects your name, email address and message, plus your phone number, your business and the kind of need you picked, if you fill them in. In both cases, the information is sent by email to the studio's mailbox and nothing is stored in a database. Messages sent through the site's email links are handled by your email software and the recipient's mailbox.",
+            "The website has no customer account, payment, CAPTCHA or advertising pixel. Two forms are handled on the server. The free mockup page collects your email address, the colour mood you pick, the address of your current website if you provide it, your message and the language of the page. If you arrive from the pricing simulator, the request also includes the choices you made there (plan, project type, site type, number of pages, selected options and their settings, update frequency and the resulting estimated monthly price), so the studio can reply with the full picture. The contact form collects your name, email address and message, plus your phone number, your business and the kind of need you picked, if you fill them in. In both cases, the information is sent by email to the studio's mailbox and nothing is stored in a database. Messages sent through the site's email links are handled by your email software and the recipient's mailbox.",
             "Your IP address is processed temporarily by the hosting provider's firewall, which limits each of the two forms (contact and free mockup) to three submissions every ten minutes, alongside a hidden anti-spam field. The hosting provider may also process technical data for its security and delivery logs. Vercel Analytics is only loaded after your consent, to count page views.",
             "If you book a call from the contact page, Google Calendar passes the studio your name, email address, the chosen time slot and any information you enter in the booking form. This information is kept in the studio's calendar, not in a database.",
             "Three items are stored in your browser. The pricing simulation is kept only so it can follow you from the simulator to the free mockup form: it is sent to us only if you submit that form, is erased once the request is sent, and disappears when you close the tab. The dates of your recent contact form submissions are used to limit how often the form can be sent from the same browser and stay there until you clear your browser data; they are never sent to us. Your choice of light or dark theme is kept so the site opens the way you left it; it is never sent to us."
@@ -136,7 +136,7 @@
       },
       "eyebrow": "Terms of sale",
       "title": "Terms of sale",
-      "updated": "Last updated: 6 October 2026",
+      "updated": "Last updated: 8 October 2026",
       "intro": "These terms of sale apply to the subscription and services offered by Cosmic Studio on www.gocosmic.dev.",
       "sections": [
         {
@@ -154,7 +154,8 @@
         {
           "title": "Subscribing",
           "body": [
-            "The subscription is confirmed in writing after a first conversation, once your needs (pages, options, changes) have been defined together. It takes effect when the site goes live."
+            "The subscription is confirmed in writing after a first conversation, once your needs (pages, options, changes) have been defined together. It takes effect when the site goes live.",
+            "Two plans are offered: “We take care of everything”, where we make the changes you email us, and “You stay in control”, which includes an editing tool to publish your news and opening hours yourself, along with a news section."
           ]
         },
         {
@@ -168,21 +169,26 @@
         {
           "title": "Duration and commitment",
           "body": [
-            "The subscription has no minimum term and can be cancelled every month, as long as it does not include domain name or email management.",
-            "As soon as either of these two options is active, the subscription runs in 12-month periods, renewed automatically, to cover the registration of the domain name and the email address."
+            "The subscription has no minimum term and can be cancelled every month, as long as it includes nothing subscribed for 12-month periods: the “You stay in control” plan, domain name management, an email address or an option marked “1-year commitment” in the simulator.",
+            "As soon as one of these is active, the subscription runs in 12-month periods, renewed automatically, to cover the registration of the domain name and the email address, and the setup of the editing tool and of the options concerned.",
+            "You can switch to the “You stay in control” plan at any time. Switching back to “We take care of everything” takes effect at the end of the current 12-month period, as the editing tool cannot be removed before then."
           ]
         },
         {
           "title": "Options",
           "body": [
             "You can add an option at any time; it takes effect from the next billing period.",
-            "The number of pages, the domain name, Swiss hosting and the email address cannot be removed once active, because each one is a commitment made on your behalf (pages built, domain registered, mailbox opened). Only the frequency of content changes can be adjusted up or down."
+            "The number of pages, the domain name, Swiss hosting and the main email address cannot be removed once active, because each one is a commitment made on your behalf (pages built, domain registered, mailbox opened). The frequency of content changes can be adjusted up or down.",
+            "Options marked “1-year commitment” (news section, English version, local search follow-up, visit statistics and detailed measurement, AI-assisted articles, extra mailboxes and redirects) are subscribed for 12-month periods and can be removed at the end of a period. The rhythm of the articles can be lowered with one month's notice.",
+            "The other options (contact form, online booking, customer reviews, site monitoring) can be removed with one month's notice.",
+            "When an option is removed, the content that goes with it disappears from the site, for example the news section and its posts, or the English version.",
+            "By default, your website is hosted in the European Union. If this location does not suit you, you can ask us for hosting in another country; we will then tell you whether it is possible and at what price."
           ]
         },
         {
           "title": "Cancellation",
           "body": [
-            "You can cancel at any time in writing. The site stays online until the end of the current paid period (end of the month for a subscription with no minimum term, end of the current 12-month period if it includes a domain name or an email address).",
+            "You can cancel at any time in writing. The site stays online until the end of the current paid period (end of the month for a subscription with no minimum term, end of the current 12-month period if it includes something subscribed for 12-month periods).",
             "You leave with your content and your domain name."
           ]
         },
@@ -196,7 +202,8 @@
         {
           "title": "Your commitments",
           "body": [
-            "You provide the texts, images and information needed to build or update the site. Announced timelines start once we have received them."
+            "You provide the texts, images and information needed to build or update the site. Announced timelines start once we have received them.",
+            "We set up your legal notice and privacy policy from the information you provide; you read them over, approve them and remain responsible for them."
           ]
         },
         {

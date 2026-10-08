@@ -89,6 +89,9 @@ describe('DesignSystemShowcase', () => {
     expect(components.getByRole('checkbox', { name: SAMPLE.checkbox })).toBeChecked();
     expect(components.getByRole('slider')).toBeInTheDocument();
     expect(components.getByLabelText(SAMPLE.emailLabel, { exact: false })).toHaveAttribute('aria-invalid', 'true');
+    expect(components.getByRole('tab', { name: SAMPLE.tabManaged })).toHaveAttribute('aria-selected', 'true');
+    expect(components.getByRole('tabpanel')).toHaveTextContent(SAMPLE.panelManaged);
+    expect(components.getByRole('button', { name: `More about: ${SAMPLE.infoOption}` })).toBeInTheDocument();
   });
 
   it('adapts the immersive rule and the illustration to each theme', () => {

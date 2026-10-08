@@ -11,11 +11,21 @@ const GLIDE = 'transition-transform duration-150 ease-[cubic-bezier(0.16,1,0.3,1
 export type SliderProps = React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> & {
   /** Forwarded to the (single) thumb — Radix reads slider text off the thumb, not the root. */
   'aria-labelledby'?: string;
+  'aria-describedby'?: string;
   'aria-valuetext'?: string;
 };
 
 const Slider = React.forwardRef<React.ElementRef<typeof SliderPrimitive.Root>, SliderProps>(
-  ({ className, 'aria-labelledby': ariaLabelledBy, 'aria-valuetext': ariaValueText, ...props }, ref) => (
+  (
+    {
+      className,
+      'aria-labelledby': ariaLabelledBy,
+      'aria-describedby': ariaDescribedBy,
+      'aria-valuetext': ariaValueText,
+      ...props
+    },
+    ref
+  ) => (
     <SliderPrimitive.Root
       ref={ref}
       className={cn(
@@ -30,6 +40,7 @@ const Slider = React.forwardRef<React.ElementRef<typeof SliderPrimitive.Root>, S
       </SliderPrimitive.Track>
       <SliderPrimitive.Thumb
         aria-labelledby={ariaLabelledBy}
+        aria-describedby={ariaDescribedBy}
         aria-valuetext={ariaValueText}
         className={cn(
           'bg-fg ring-aerospace block h-4 w-4 rounded-full ring-2',

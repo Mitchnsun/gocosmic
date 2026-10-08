@@ -1,5 +1,7 @@
 import { buildFreeMockupEmail, escapeHtml } from '@/lib/free-mockup-email';
 
+import { makePlan } from './pricing/plan-fixtures';
+
 describe('escapeHtml', () => {
   it('escapes every character that could break out of an HTML node', () => {
     expect(escapeHtml(`<img src="x" onerror='alert(1)'> & done`)).toBe(
@@ -54,17 +56,7 @@ describe('buildFreeMockupEmail', () => {
 
 describe('buildFreeMockupEmail with a pricing simulation', () => {
   const input = { email: 'prospect@example.com', colorPalette: 'sober' as const, locale: 'fr' };
-  const plan = {
-    projectType: 'website' as const,
-    websiteType: 'showcase' as const,
-    selection: {
-      addOns: { domain: true, swiss_hosting: false, email: false },
-      pages: 1 as const,
-      updatesEnabled: false,
-      updates: 0 as const,
-    },
-    region: 'fr' as const,
-  };
+  const plan = makePlan({ addOns: { domain: true }, pages: 1 });
 
   it('adds the simulation rows to the text and html bodies', () => {
     const { text, html } = buildFreeMockupEmail({ ...input, plan });

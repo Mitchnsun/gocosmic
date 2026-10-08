@@ -15,14 +15,44 @@
       },
       "note": "Ces deux prestations sont gratuites et ne vous engagent à rien."
     },
+    "quoted_services": {
+      "eyebrow": "En dehors de l'abonnement · sur devis",
+      "title": "Pour votre communication",
+      "items": {
+        "logo": {
+          "title": "Un logo",
+          "description": "Un logo à votre image, pour votre site et tous vos supports."
+        },
+        "print": {
+          "title": "Des affiches et des flyers",
+          "description": "Pour annoncer une ouverture, un événement ou une promotion."
+        },
+        "photo_video": {
+          "title": "Des photos et des vidéos",
+          "description": "Vos réalisations, vos locaux et votre équipe en images, pour votre site et vos réseaux."
+        }
+      },
+      "note": "Nous les réalisons avec des partenaires de la région (graphiste, photographe, vidéaste), et nous nous occupons de la relation avec eux. Chaque prestation fait l'objet d'un devis.",
+      "cta": "Demander un devis"
+    },
     "builder": {
       "period": "HT / mois",
       "base": {
-        "title": "Formule de base",
+        "title": "Compris dans la formule",
         "includes": {
           "page": "Une page vitrine qui présente votre activité",
           "hosting": "Site en ligne 24 h/24, mise en ligne comprise",
-          "security": "Connexion sécurisée (le cadenas dans le navigateur)"
+          "security": "Connexion sécurisée (le cadenas dans le navigateur)",
+          "legal": "Vos mentions légales et votre politique de confidentialité",
+          "email_button": "Un bouton « Nous écrire » qui ouvre la messagerie de vos visiteurs",
+          "yearly_update": "Une modification de vos contenus par an",
+          "editor": "Un espace d'édition pour vos actualités et vos horaires",
+          "news": "Une rubrique d'actualités"
+        },
+        "info": {
+          "legal": "Tout site doit indiquer qui l'édite et ce qu'il fait des données de ses visiteurs. Nous mettons ces pages en place à partir des informations que vous nous donnez ; vous les relisez et les validez, car vous en restez responsable.",
+          "editor": "Vous publiez une actualité ou changez vos horaires quand vous le voulez, sans nous attendre. Nous mettons en place un outil d'édition relié à votre site, et nous vous montrons comment l'utiliser. Le reste de vos pages reste entre nos mains. Si vous avez déjà un outil d'édition, nous le reprenons quand c'est possible ; cette reprise et le transfert de vos contenus font l'objet d'une proposition à part, sur devis. Cette formule est souscrite par périodes de 12 mois.",
+          "news": "Une rubrique à jour montre à vos visiteurs que votre activité vit : derniers chantiers, prochains concerts, nouvelle saison. Vous y publiez vous-même, depuis votre espace d'édition."
         }
       },
       "options": {
@@ -41,14 +71,101 @@
         },
         "email": {
           "label": "Une adresse e-mail à votre nom",
-          "hint": "Par exemple contact@{domain}, au lieu d'une adresse gratuite."
+          "hint": "Par exemple contact@{domain}, au lieu d'une adresse gratuite.",
+          "note": "Votre adresse e-mail utilise votre nom de domaine : nous ajoutons donc aussi sa gestion."
+        },
+        "mailboxes": {
+          "label": "Boîtes e-mail en plus",
+          "hint": "Une boîte de plus par personne ou par usage, par exemple secretariat@{domain}, avec son propre mot de passe.",
+          "price": "{price} par boîte",
+          "count": "{count, plural, =0 {Aucune boîte en plus} one {# boîte en plus} other {# boîtes en plus}}",
+          "decrease": "Une boîte de moins",
+          "increase": "Une boîte de plus"
+        },
+        "redirects": {
+          "label": "5 redirections",
+          "hint": "Jusqu'à 5 adresses qui renvoient vers une boîte existante, par exemple factures@{domain}."
+        },
+        "email_extras": {
+          "info": "Quand vous travaillez à plusieurs, ou pour le bureau d'une association, chacun peut avoir sa propre boîte à votre nom. Une redirection, elle, n'a pas de boîte : les messages arrivent dans une boîte que vous avez déjà. Ces adresses sont souscrites par périodes de 12 mois ; vous pouvez les retirer à la fin d'une période."
+        },
+        "contact_form": {
+          "label": "Un formulaire de contact",
+          "hint": "Vos visiteurs vous écrivent depuis votre site, et leurs messages arrivent dans votre boîte e-mail.",
+          "info": "Sans cette option, un bouton de votre site ouvre la messagerie de votre visiteur, qui vous écrit depuis sa propre adresse. Avec elle, vos visiteurs vous écrivent directement depuis votre site, à toute heure : chaque message part dans votre boîte e-mail, et nous n'en gardons aucune copie. Un message à l'écran confirme l'envoi, et une courte mention sous le formulaire explique ce que deviennent les données."
+        },
+        "booking": {
+          "label": "La prise de rendez-vous en ligne",
+          "hint": "Vos clients réservent un créneau dans votre agenda Google, directement depuis votre site.",
+          "info": "Vos clients voient vos créneaux libres et réservent à toute heure, sans vous appeler ; ils n'ont pas besoin de compte Google. Vous créez votre page de réservation dans Google Agenda en suivant nos indications, puis nous l'ajoutons à votre site. Google envoie la confirmation et les rappels. Il vous faut un compte Google, et certaines fonctions de Google demandent un abonnement Google payant, qui n'est pas compris."
+        },
+        "reviews": {
+          "label": "Les avis de vos clients sur votre site",
+          "hint": "Une sélection d'avis de vos clients, avec leur date, mise à jour chaque mois.",
+          "info": "Les avis d'autres clients rassurent un visiteur qui hésite à vous contacter. Chaque mois, nous sélectionnons les meilleurs avis, ceux de votre fiche Google ou des témoignages que vous avez reçus, et nous les recopions sur votre site avec leur date. En France, la loi demande d'indiquer si les avis sont contrôlés et pourquoi certains ne sont pas publiés : nous ajoutons cette mention."
+        },
+        "english": {
+          "label": "Votre site en anglais",
+          "hint": "Une version anglaise complète de votre site, tenue à jour avec la version française.",
+          "info": "Une version anglaise permet aux visiteurs qui ne lisent pas le français de vous comprendre et de vous contacter. Nous traduisons nous-mêmes toutes vos pages, nous ajoutons un sélecteur de langue, et nous traduisons aussi vos modifications sans les compter deux fois. Pour une autre langue, ou une traduction confiée à un·e traducteur·rice professionnel·le, nous vous faisons une proposition à part, sur devis. Cette option est souscrite par périodes de 12 mois."
+        },
+        "news": {
+          "label": "Une rubrique d'actualités",
+          "hint": "Une page qui montre que votre activité vit : réalisations, événements, nouveautés.",
+          "info": "Une rubrique à jour montre à vos visiteurs que votre activité vit : derniers chantiers, prochains concerts, nouvelle saison. Nous créons la rubrique, puis nous publions ce que vous nous envoyez par e-mail ; chaque publication compte comme une modification de contenu. Cette option est souscrite par périodes de 12 mois."
+        },
+        "seo": {
+          "label": "Référencement local suivi",
+          "hint": "Nous suivons comment votre site ressort sur Google pour votre métier et votre ville, et nous l'ajustons.",
+          "slider_label": "Rythme du suivi",
+          "tiers": {
+            "quarterly": "Tous les trois mois",
+            "monthly": "Chaque mois"
+          },
+          "info": "Votre formule comprend un référencement de base ; cette option le fait vivre dans la durée. Au rythme choisi, nous regardons comment votre site ressort sur des recherches comme « votre métier + votre ville », nous ajustons vos pages et nous vous envoyons un bilan écrit. Votre fiche Google Maps et les annuaires restent gérés par vous. Nous ne promettons pas de place précise sur Google. Cette option est souscrite par périodes de 12 mois."
+        },
+        "analytics": {
+          "label": "Statistiques de visites",
+          "hint": "Vous savez combien de personnes visitent votre site et quelles pages elles lisent, avec un bilan écrit.",
+          "slider_label": "Bilan",
+          "tiers": {
+            "yearly": "Une fois par an",
+            "quarterly": "Tous les trois mois",
+            "monthly": "Chaque mois"
+          },
+          "info": "Les chiffres vous montrent si votre site est consulté, et quelles pages intéressent vos visiteurs. Nous comptons les visites et les pages les plus vues de façon anonyme, sans bandeau à faire accepter à vos visiteurs, puis nous vous envoyons un bilan écrit, en mots simples, au rythme que vous choisissez. Cette option est souscrite par périodes de 12 mois."
+        },
+        "detailed_analytics": {
+          "label": "Mesure détaillée",
+          "hint": "Une mesure plus complète, avec un bandeau qui demande l'accord de vos visiteurs.",
+          "info": "La mesure détaillée vous dit aussi d'où viennent vos visiteurs, sur quel appareil ils vous lisent, et combien cliquent sur « Appeler », « Itinéraire » ou envoient votre formulaire. Elle dépose des cookies : la loi demande alors l'accord de vos visiteurs, et nous ajoutons un bandeau pour le recueillir. Les visiteurs qui refusent ne sont pas comptés dans cette mesure."
+        },
+        "articles": {
+          "label": "Des articles rédigés avec l'aide de l'IA",
+          "hint": "Nous rédigeons des articles pour votre site, avec l'aide de l'intelligence artificielle.",
+          "slider_label": "Rythme",
+          "tiers": {
+            "monthly": "1 article par mois",
+            "weekly": "1 article par semaine",
+            "daily": "1 article par jour"
+          },
+          "info": "Écrire des articles régulièrement prend du temps. Nous les rédigeons pour vous avec l'aide de l'intelligence artificielle, à partir des informations sur votre activité. Vous choisissez de relire chaque article avant sa publication, ou de nous laisser le publier directement. Chaque article publié compte comme une modification de contenu. Vous pouvez réduire le rythme avec un mois de préavis ; l'arrêt complet se fait à la fin d'une période de 12 mois.",
+          "info_tool": "Selon votre outil d'édition, nous pouvons utiliser un service spécialisé qui choisit les sujets d'après les recherches faites sur Google.",
+          "raised": "Chaque article publié compte comme une modification : nous avons ajusté vos modifications en conséquence.",
+          "locked": "Chaque article publié compte comme une modification : vos modifications restent incluses tant que des articles sont prévus."
+        },
+        "monitoring": {
+          "label": "Surveillance de votre site",
+          "hint": "Nous sommes prévenus automatiquement si votre site ne répond plus.",
+          "info": "Un outil vérifie régulièrement que votre site répond, et nous alerte dès qu'il ne répond plus. Nous pouvons ainsi intervenir sans attendre que vous ou vos clients nous signaliez la panne. Nous ne nous engageons pas sur un délai de remise en ligne."
         }
       },
       "pages": {
         "label": "Nombre de pages",
+        "info": "Les mentions légales et la politique de confidentialité ne sont pas comptées dans le nombre de pages.",
         "or_more": "{price} ou plus",
         "tiers": {
-          "one": "1 page (comprise)",
+          "one": "Page d'accueil comprise",
           "two_four": "2 à 4 pages",
           "five_seven": "5 à 7 pages",
           "eight_nine": "8 à 9 pages",
@@ -57,8 +174,8 @@
       },
       "updates": {
         "label": "Modifications de contenu incluses",
-        "hint": "Nous mettons à jour vos textes, vos photos et vos horaires, sans frais supplémentaires à chaque demande.",
-        "off": "Non inclus",
+        "hint": "Vous nous envoyez vos changements par e-mail : textes, photos, horaires. Nous les mettons en ligne, sans frais supplémentaires à chaque demande.",
+        "off": "1 fois par an (compris)",
         "slider_label": "Modifications par an",
         "tiers": {
           "few_per_year": "2 à 3 fois par an",
@@ -66,14 +183,35 @@
           "twice_monthly": "2 fois par mois",
           "weekly": "1 fois par semaine",
           "unlimited": "Autant que nécessaire"
-        }
+        },
+        "hint_self_service": "Pour tout ce que vous ne publiez pas vous-même : vous nous envoyez vos changements par e-mail, et nous les mettons en ligne."
       },
       "total": {
         "label": "Votre estimation",
-        "note": "Prix indicatif hors taxes, confirmé après un premier échange. Vous pouvez ajouter des options à tout moment ; une fois activées, elles restent dans votre abonnement (voir les conditions générales de vente).",
+        "note": "Prix indicatif hors taxes, confirmé après un premier échange. Vous pouvez ajouter des options à tout moment. Le nombre de pages, le nom de domaine, l'hébergement en Suisse et votre adresse e-mail restent dans votre abonnement une fois activés. Les options marquées « Engagement 1 an » se retirent à la fin de chaque période de 12 mois, les autres avec un mois de préavis (voir les conditions générales de vente).",
         "cta": "Demander ma maquette gratuite",
         "question": "Une question avant ? <link>Écrivez-nous</link>.",
         "beyond": "Au-delà de ces volumes, nous en parlons ensemble pour vous faire une proposition."
+      },
+      "info_label": "En savoir plus : {option}",
+      "commitment": "Engagement 1 an",
+      "from": "dès {price}",
+      "formulas": {
+        "label": "Choisissez votre formule",
+        "managed": {
+          "label": "On s'occupe de tout",
+          "lead": "Vous nous écrivez, nous mettons votre site à jour."
+        },
+        "self_service": {
+          "label": "Vous gardez la main",
+          "lead": "Vous publiez vous-même vos actualités et vos horaires ; nous nous occupons du reste."
+        }
+      },
+      "groups": {
+        "site": "Votre site",
+        "address": "Votre adresse sur internet",
+        "visibility": "Être trouvé et mesurer vos visites",
+        "care": "Mises à jour et suivi"
       }
     },
     "columns": {

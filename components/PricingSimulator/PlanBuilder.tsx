@@ -1,131 +1,45 @@
 'use client';
 
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
+import { useId } from 'react';
 
 import type { Currency, Region } from '@/lib/region';
 
-import {
-  ADD_ON_KEYS,
-  BASE_PRICE,
-  MAX_TIER_INDEX,
-  PAGE_TIER_KEYS,
-  PAGE_TIER_PRICES,
-  TIER_INDEXES,
-  UPDATE_TIER_KEYS,
-  UPDATE_TIER_PRICES,
-} from './constants';
-import { OptionToggle } from './OptionToggle';
-import type { AddOnKey, PlanSelection } from './PricingSimulator.types';
-import { formatAmount, getAddOnPrice, getUpdateTierPrice } from './PricingSimulator.utils';
-import { TierSlider } from './TierSlider';
+import { AddressOptions } from './AddressOptions';
+import { BaseCard } from './BaseCard';
+import { CareOptions } from './CareOptions';
+import { type SimulatorActions, usePriceFormat } from './PricingSimulator.hooks';
+import type { PlanSelection } from './PricingSimulator.types';
+import { SiteOptions } from './SiteOptions';
+import { VisibilityOptions } from './VisibilityOptions';
 
 interface PlanBuilderProps {
   currency: Currency;
   region: Region;
-  selection: PlanSelection;
-  onToggleAddOn: (key: AddOnKey) => void;
-  onToggleUpdates: () => void;
-  onPagesChange: (value: number) => void;
-  onUpdatesChange: (value: number) => void;
+  plan: PlanSelection;
+  updatesRaised: boolean;
+  actions: SimulatorActions;
 }
 
-/** Composable showcase plan: a base price the visitor grows with add-ons and sliders. The total lives in `PlanSummary`. */
-export function PlanBuilder({
-  currency,
-  region,
-  selection,
-  onToggleAddOn,
-  onToggleUpdates,
-  onPagesChange,
-  onUpdatesChange,
-}: PlanBuilderProps) {
-  const t = useTranslations('pricing');
-  const locale = useLocale();
-  const surcharge = (amount: number) => `+${formatAmount(amount, currency, locale)}`;
-  const exampleDomain = t(`builder.options.example_domain.${region}`);
-
-  // Indexes come from TIER_INDEXES, a fixed list of slider positions.
-  /* eslint-disable security/detect-object-injection */
-  const pageTiers = TIER_INDEXES.map((index) => ({
-    label: t(`builder.pages.tiers.${PAGE_TIER_KEYS[index]}`),
-    price:
-      index === MAX_TIER_INDEX
-        ? t('builder.pages.or_more', { price: surcharge(PAGE_TIER_PRICES[index]) })
-        : surcharge(PAGE_TIER_PRICES[index]),
-  }));
-
-  const updateTiers = TIER_INDEXES.map((index) => ({
-    label: t(`builder.updates.tiers.${UPDATE_TIER_KEYS[index]}`),
-    price: surcharge(UPDATE_TIER_PRICES[index]),
-  }));
-  /* eslint-enable security/detect-object-injection */
+/** Composable plan: the formula and what it includes, then the options grouped by purpose. The total lives in `PlanSummary`. */
+export function PlanBuilder({ currency, region, plan, updatesRaised, actions }: PlanBuilderProps) {
+  const t = useTranslations('pricing.builder');
+  const { surcharge } = usePriceFormat(currency);
+  const headingId = useId();
+  const group = { plan, actions, surcharge };
+  const domain = t(`options.example_domain.${region}`);
 
   return (
     <div className="space-y-6">
-      {/* Base plan */}
-      <section aria-labelledby="plan-base-heading" className="border-line bg-surface rounded-2xl border p-6">
-        <div className="flex flex-wrap items-baseline justify-between gap-3">
-          <h3 id="plan-base-heading" className="font-display text-fg text-xl font-semibold">
-            {t('builder.base.title')}
-          </h3>
-          <p className="font-display text-fg text-lg font-medium tabular-nums">
-            {formatAmount(BASE_PRICE, currency, locale)}
-            <span className="text-fg-2 ml-1 text-sm">{t('builder.period')}</span>
-          </p>
-        </div>
-        <ul className="mt-4 space-y-2">
-          {(['page', 'hosting', 'security'] as const).map((item) => (
-            <li key={item} className="text-fg-2 flex items-start gap-3 text-sm">
-              <span className="bg-ok mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" aria-hidden="true" />
-              {t(`builder.base.includes.${item}`)}
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      {/* Composable options */}
-      <section aria-labelledby="plan-options-heading" className="space-y-3">
-        <h3 id="plan-options-heading" className="text-fg-2 text-2xs font-mono tracking-[0.24em] uppercase">
-          {t('builder.options.title')}
+      <BaseCard formula={plan.formula} currency={currency} />
+      <section aria-labelledby={headingId} className="space-y-6">
+        <h3 id={headingId} className="text-fg-2 text-2xs font-mono tracking-[0.24em] uppercase">
+          {t('options.title')}
         </h3>
-
-        <div className="border-line bg-surface rounded-xl border p-4">
-          <TierSlider
-            label={t('builder.pages.label')}
-            tiers={pageTiers}
-            value={selection.pages}
-            onChange={onPagesChange}
-          />
-        </div>
-
-        {ADD_ON_KEYS.map((key) => (
-          <OptionToggle
-            key={key}
-            label={t(`builder.options.${key}.label`)}
-            hint={t(`builder.options.${key}.hint`, { domain: exampleDomain })}
-            price={surcharge(getAddOnPrice(key))}
-            // eslint-disable-next-line security/detect-object-injection -- key comes from ADD_ON_KEYS
-            checked={selection.addOns[key]}
-            onChange={() => onToggleAddOn(key)}
-          />
-        ))}
-
-        <OptionToggle
-          label={t('builder.updates.label')}
-          hint={t('builder.updates.hint')}
-          price={selection.updatesEnabled ? surcharge(getUpdateTierPrice(selection.updates)) : t('builder.updates.off')}
-          checked={selection.updatesEnabled}
-          onChange={onToggleUpdates}>
-          <div className="border-line border-t px-4 py-4">
-            <TierSlider
-              label={t('builder.updates.slider_label')}
-              tiers={updateTiers}
-              value={selection.updates}
-              onChange={onUpdatesChange}
-              disabled={!selection.updatesEnabled}
-            />
-          </div>
-        </OptionToggle>
+        <SiteOptions {...group} />
+        <AddressOptions {...group} domain={domain} region={region} />
+        <VisibilityOptions {...group} />
+        <CareOptions {...group} updatesRaised={updatesRaised} />
       </section>
     </div>
   );

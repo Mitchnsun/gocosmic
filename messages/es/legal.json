@@ -7,7 +7,7 @@
       },
       "eyebrow": "nLPD · RGPD",
       "title": "Política de privacidad",
-      "updated": "Última actualización: 6 de octubre de 2026",
+      "updated": "Última actualización: 8 de octubre de 2026",
       "intro": "Esta página explica cómo trata Cosmic Studio los datos personales recogidos en este sitio y en los intercambios por correo electrónico.",
       "legalNoticePrefix": "Para los datos del editor y del alojamiento, consulta el",
       "legalNoticeLink": "aviso legal",
@@ -21,7 +21,7 @@
         {
           "title": "Datos recopilados",
           "body": [
-            "El sitio no ofrece área de cliente, ni pago, ni CAPTCHA, ni píxel publicitario. Dos formularios se procesan en el servidor. La página de maqueta gratuita recoge tu dirección de correo electrónico, la gama de colores elegida, la dirección de tu sitio actual si la indicas, tu mensaje y el idioma de la página. Si llegas desde el simulador de precios, la solicitud incluye también las opciones que elegiste allí (tipo de proyecto, tipo de sitio, número de páginas, opciones seleccionadas, frecuencia de actualizaciones y precio mensual estimado), para que el estudio pueda responderte con conocimiento de causa. El formulario de contacto recoge tu nombre, tu dirección de correo electrónico y tu mensaje, así como, si los indicas, tu teléfono, tu actividad y el tipo de necesidad elegido. En ambos casos, la información se envía por correo electrónico al buzón del estudio y no se guarda nada en una base de datos. Los mensajes enviados a través de los enlaces de correo del sitio los gestionan tu programa de correo y el buzón del destinatario.",
+            "El sitio no ofrece área de cliente, ni pago, ni CAPTCHA, ni píxel publicitario. Dos formularios se procesan en el servidor. La página de maqueta gratuita recoge tu dirección de correo electrónico, la gama de colores elegida, la dirección de tu sitio actual si la indicas, tu mensaje y el idioma de la página. Si llegas desde el simulador de precios, la solicitud incluye también las opciones que elegiste allí (plan, tipo de proyecto, tipo de sitio, número de páginas, opciones seleccionadas y sus ajustes, frecuencia de actualizaciones y precio mensual estimado), para que el estudio pueda responderte con conocimiento de causa. El formulario de contacto recoge tu nombre, tu dirección de correo electrónico y tu mensaje, así como, si los indicas, tu teléfono, tu actividad y el tipo de necesidad elegido. En ambos casos, la información se envía por correo electrónico al buzón del estudio y no se guarda nada en una base de datos. Los mensajes enviados a través de los enlaces de correo del sitio los gestionan tu programa de correo y el buzón del destinatario.",
             "El cortafuegos del proveedor de alojamiento trata tu dirección IP de forma temporal y limita cada uno de los dos formularios (contacto y maqueta gratuita) a tres envíos cada diez minutos, como complemento a un campo antispam oculto. El proveedor de alojamiento también puede tratar datos técnicos para sus registros de seguridad y de entrega. Vercel Analytics solo se carga tras tu consentimiento, para medir las páginas vistas.",
             "Si reservas una llamada desde la página de contacto, Google Calendar transmite al estudio tu nombre, tu dirección de correo electrónico, el horario elegido y la información que introduzcas en el formulario de reserva. Esta información se conserva en la agenda del estudio, no en una base de datos.",
             "Se guardan tres datos en tu navegador. La simulación de precios se guarda solo para trasladarla del simulador al formulario de maqueta gratuita: únicamente nos llega si envías ese formulario, se borra una vez enviada la solicitud y desaparece al cerrar la pestaña. Las fechas de tus últimos envíos del formulario de contacto sirven para limitar la frecuencia de envío desde ese navegador; permanecen en él hasta que borres tus datos de navegación y nunca nos llegan. Tu elección de tema claro u oscuro se guarda para que el sitio se abra tal como lo dejaste; nunca nos llega."
@@ -138,7 +138,7 @@
       },
       "eyebrow": "Condiciones de venta",
       "title": "Condiciones generales de venta",
-      "updated": "Última actualización: 6 de octubre de 2026",
+      "updated": "Última actualización: 8 de octubre de 2026",
       "intro": "Estas condiciones generales de venta se aplican a la suscripción y a los servicios ofrecidos por Cosmic Studio en www.gocosmic.dev.",
       "sections": [
         {
@@ -156,7 +156,8 @@
         {
           "title": "Suscripción",
           "body": [
-            "La suscripción se confirma por escrito tras una primera conversación, una vez que hayamos definido juntos tus necesidades (páginas, opciones, cambios). Entra en vigor cuando el sitio se publica."
+            "La suscripción se confirma por escrito tras una primera conversación, una vez que hayamos definido juntos tus necesidades (páginas, opciones, cambios). Entra en vigor cuando el sitio se publica.",
+            "Se ofrecen dos planes: «Nos encargamos de todo», en el que hacemos los cambios que nos envías por correo, y «Tú tienes el control», que incluye una herramienta de edición para publicar tú mismo/a tus noticias y tus horarios, además de una sección de noticias."
           ]
         },
         {
@@ -170,21 +171,26 @@
         {
           "title": "Duración y permanencia",
           "body": [
-            "La suscripción es sin permanencia y puede cancelarse cada mes, siempre que no incluya la gestión de un nombre de dominio o de una dirección de correo.",
-            "En cuanto se activa una de estas dos opciones, la suscripción se contrata por periodos de 12 meses, renovados tácitamente, para cubrir el registro del nombre de dominio y de la dirección de correo."
+            "La suscripción es sin permanencia y puede cancelarse cada mes, siempre que no incluya ningún elemento contratado por periodos de 12 meses: el plan «Tú tienes el control», la gestión de un nombre de dominio, una dirección de correo o una opción marcada «Compromiso de 1 año» en el simulador.",
+            "En cuanto se activa uno de estos elementos, la suscripción se contrata por periodos de 12 meses, renovados tácitamente, para cubrir el registro del nombre de dominio y de la dirección de correo, y la puesta en marcha de la herramienta de edición y de las opciones correspondientes.",
+            "Puedes pasar al plan «Tú tienes el control» en cualquier momento. La vuelta al plan «Nos encargamos de todo» se aplica al final del periodo de 12 meses en curso, ya que la herramienta de edición no puede retirarse antes."
           ]
         },
         {
           "title": "Opciones",
           "body": [
             "Puedes añadir una opción en cualquier momento; se aplica a partir del siguiente periodo de facturación.",
-            "El número de páginas, el nombre de dominio, el alojamiento en Suiza y la dirección de correo no se pueden retirar una vez activados, ya que corresponden a un compromiso asumido en tu nombre (páginas creadas, dominio registrado, buzón abierto). Solo la frecuencia de los cambios de contenido puede revisarse al alza o a la baja."
+            "El número de páginas, el nombre de dominio, el alojamiento en Suiza y la dirección de correo principal no se pueden retirar una vez activados, ya que corresponden a un compromiso asumido en tu nombre (páginas creadas, dominio registrado, buzón abierto). La frecuencia de los cambios de contenido puede revisarse al alza o a la baja.",
+            "Las opciones marcadas «Compromiso de 1 año» (sección de noticias, sitio en inglés, seguimiento del posicionamiento local, estadísticas de visitas y medición detallada, artículos redactados con ayuda de la IA, buzones y redirecciones adicionales) se contratan por periodos de 12 meses y pueden retirarse al final de un periodo. El ritmo de los artículos puede reducirse con un mes de preaviso.",
+            "Las demás opciones (formulario de contacto, reserva de citas en línea, opiniones de clientes, vigilancia del sitio) pueden retirarse con un mes de preaviso.",
+            "Cuando se retira una opción, el contenido asociado desaparece del sitio, por ejemplo la sección de noticias y sus publicaciones, o la versión en inglés.",
+            "De forma predeterminada, su sitio web se aloja en la Unión Europea. Si esta ubicación no le conviene, puede solicitarnos un alojamiento en otro país; le indicaremos entonces si es posible y a qué precio."
           ]
         },
         {
           "title": "Cancelación",
           "body": [
-            "Puedes cancelar la suscripción en cualquier momento por escrito. El sitio sigue en línea hasta el final del periodo pagado en curso (fin del mes para una suscripción sin permanencia, fin del periodo de 12 meses en curso si incluye un nombre de dominio o una dirección de correo).",
+            "Puedes cancelar la suscripción en cualquier momento por escrito. El sitio sigue en línea hasta el final del periodo pagado en curso (fin del mes para una suscripción sin permanencia, fin del periodo de 12 meses en curso si incluye algún elemento contratado por periodos de 12 meses).",
             "Te llevas tus contenidos y tu nombre de dominio."
           ]
         },
@@ -198,7 +204,8 @@
         {
           "title": "Tus obligaciones",
           "body": [
-            "Nos envías los textos, imágenes e información necesarios para crear o actualizar el sitio. Los plazos anunciados empiezan a contar desde su recepción."
+            "Nos envías los textos, imágenes e información necesarios para crear o actualizar el sitio. Los plazos anunciados empiezan a contar desde su recepción.",
+            "Preparamos tu aviso legal y tu política de privacidad con la información que nos envías; tú los revisas, los validas y sigues siendo responsable de ellos."
           ]
         },
         {
