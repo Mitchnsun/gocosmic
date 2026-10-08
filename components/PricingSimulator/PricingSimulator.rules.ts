@@ -1,3 +1,5 @@
+import type { Region } from '@/lib/region';
+
 import { ARTICLE_TIERS, MAX_EXTRA_MAILBOXES, PAGE_TIERS, TIERED_TABLES, UPDATE_TIERS } from './constants';
 import type {
   AddOnKey,
@@ -112,6 +114,11 @@ export function normalizePlan(choices: PlanSelection): PlanSelection {
     updatesEnabled: choices.updatesEnabled || floor !== null,
     updates,
   };
+}
+
+/** Swiss hosting is offered to visitors from Switzerland only; every other add-on, everywhere. */
+export function isAddOnOffered(key: AddOnKey, region: Region): boolean {
+  return key !== 'swiss_hosting' || region === 'ch';
 }
 
 /** True when articles pushed the update package above what the visitor had chosen. */

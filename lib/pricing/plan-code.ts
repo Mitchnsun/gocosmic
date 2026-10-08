@@ -7,7 +7,7 @@ import {
   TIERED_TABLES,
   UPDATE_TIERS,
 } from '@/components/PricingSimulator/constants';
-import { normalizePlan } from '@/components/PricingSimulator/PricingSimulator.rules';
+import { isAddOnOffered, normalizePlan } from '@/components/PricingSimulator/PricingSimulator.rules';
 import type {
   AddOnKey,
   PlanSelection,
@@ -52,7 +52,8 @@ const tierSegment = (prefix: string, value: number | null) => `${prefix}${value 
  * Serialises a simulation into a short URL-safe code, e.g.
  * `website~showcase~managed~p2~u3~a1~s-~r-~m0~domain.email~fr`:
  * formula, pages, content updates, statistics report, local search, articles, extra mailboxes,
- * ticked add-ons, region. The plan is normalised first, so the code always follows the rules.
+ * ticked add-ons, region. The plan is normalised first, and add-ons not offered in its region are
+ * dropped, so the code always follows the rules.
  *
  * Only what the visitor chose is encoded: prices are never part of the code, the
  * receiving side recomputes them from the price table.
@@ -60,7 +61,7 @@ const tierSegment = (prefix: string, value: number | null) => `${prefix}${value 
 export function encodePlanCode({ projectType, websiteType, selection, region }: DecodedPlan): string {
   const plan = normalizePlan(selection);
   // eslint-disable-next-line security/detect-object-injection -- keys come from ADD_ON_KEYS
-  const addOns = ADD_ON_KEYS.filter((key) => plan.addOns[key]);
+  const addOns = ADD_ON_KEYS.filter((key) => plan.addOns[key] && isAddOnOffered(key, region));
 
   return [
     projectType,

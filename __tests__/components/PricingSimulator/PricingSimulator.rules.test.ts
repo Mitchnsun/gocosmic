@@ -5,6 +5,7 @@ import {
   clampMailboxes,
   clampTier,
   getUpdatesFloor,
+  isAddOnOffered,
   isUpdatesRaised,
   normalizePlan,
   setFormula,
@@ -157,5 +158,17 @@ describe('isUpdatesRaised', () => {
     expect(isUpdatesRaised(plan({ articles: 0 }))).toBe(true);
     expect(isUpdatesRaised(plan({ articles: 0, updatesEnabled: true, updates: 0 }))).toBe(true);
     expect(isUpdatesRaised(plan({ articles: 0, updatesEnabled: true, updates: 2 }))).toBe(false);
+  });
+});
+
+describe('isAddOnOffered', () => {
+  it('offers Swiss hosting in Switzerland only', () => {
+    expect(isAddOnOffered('swiss_hosting', 'ch')).toBe(true);
+    expect(isAddOnOffered('swiss_hosting', 'fr')).toBe(false);
+  });
+
+  it('offers every other add-on everywhere', () => {
+    expect(isAddOnOffered('domain', 'fr')).toBe(true);
+    expect(isAddOnOffered('domain', 'ch')).toBe(true);
   });
 });

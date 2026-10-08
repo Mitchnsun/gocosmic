@@ -83,7 +83,7 @@ appear (`pricing.builder.period`, the legal notice and the terms of sale).
 | Email address on the domain           | +15                         | permanent          |
 | Extra mailboxes (0 to 5)              | +10 each                    | 1 year             |
 | 5 redirects                           | +5                          | 1 year             |
-| Hosting on a Swiss server             | +10                         | permanent          |
+| Hosting on a Swiss server (`ch` only) | +10                         | permanent          |
 | Local search follow-up (2 positions)  | +5 / +15                    | 1 year             |
 | Visit statistics (3 report rhythms)   | +5 / +15 / +50              | 1 year             |
 | Detailed measurement (consent banner) | +5                          | 1 year             |
@@ -136,7 +136,8 @@ project  site    formula pages updates statistics seo articles mailboxes add-ons
 
 `-` marks an unticked tier or an empty list. `encodePlanCode` normalises the plan first, and
 `decodePlanCode` only accepts canonical codes (`encode(decode(x)) === x`): a code that breaks a
-rule (email without domain, news charged in `self_service`, updates below the article rhythm…)
+rule (email without domain, news charged in `self_service`, updates below the article rhythm,
+Swiss hosting outside the `ch` region…)
 is rejected and the request is sent without the simulation. Prices are never encoded: the studio
 email (`lib/pricing/plan-email.ts`, labels in `plan-labels.ts`) recomputes them from the table.
 
