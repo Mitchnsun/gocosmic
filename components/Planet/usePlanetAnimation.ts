@@ -9,7 +9,6 @@ const GYRO_BETA_OFFSET = 30;
 const GYRO_BETA_SENSITIVITY = 0.3;
 const GYRO_LERP_FACTOR = 0.08;
 const GYRO_SNAP_EPSILON = 0.01;
-const PLANET_ROTATION_DEG_PER_FRAME = 0.036;
 const FALLBACK_DELAY_MS = 1500;
 const FALLBACK_TIME_INCREMENT = 0.008;
 const FALLBACK_X_AMPLITUDE = 8;
@@ -33,28 +32,7 @@ export const usePlanetAnimation = ({
   scrollFactor = 0.3,
   reducedMotion = false,
 }: UsePlanetAnimationOptions = {}) => {
-  const planetRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (reducedMotion) return;
-
-    const element = planetRef.current;
-    if (!element) return;
-
-    let frame: number;
-    let angle = 0;
-
-    const tick = () => {
-      angle = (angle + PLANET_ROTATION_DEG_PER_FRAME) % 360;
-      element.style.transform = `rotate(${angle}deg)`;
-      frame = requestAnimationFrame(tick);
-    };
-
-    frame = requestAnimationFrame(tick);
-
-    return () => cancelAnimationFrame(frame);
-  }, [reducedMotion]);
 
   useEffect(() => {
     if (reducedMotion) return;
@@ -93,11 +71,18 @@ export const usePlanetAnimation = ({
 
     let currentX = 0;
     let currentY = 0;
-    let frame: number;
-    let fallbackFrame: number | null = null;
+    let frame: number | null = null;
+    let floating = false;
+    let time = 0;
     const target = { x: 0, y: 0 };
 
+    // One loop eases the tilt towards its target and, without a gyroscope, makes that target float.
     const commit = () => {
+      if (floating) {
+        time += FALLBACK_TIME_INCREMENT;
+        target.x = Math.sin(time) * FALLBACK_X_AMPLITUDE;
+        target.y = Math.cos(time * FALLBACK_Y_FREQUENCY) * FALLBACK_Y_AMPLITUDE;
+      }
       const distanceX = target.x - currentX;
       const distanceY = target.y - currentY;
       currentX = Math.abs(distanceX) < GYRO_SNAP_EPSILON ? target.x : currentX + distanceX * GYRO_LERP_FACTOR;
@@ -107,7 +92,16 @@ export const usePlanetAnimation = ({
       frame = requestAnimationFrame(commit);
     };
 
-    frame = requestAnimationFrame(commit);
+    // The loop runs only while the planet is on screen: a planet hidden at this breakpoint never starts it.
+    const visibility = new IntersectionObserver((entries) => {
+      if (entries.at(-1)?.isIntersecting) {
+        frame ??= requestAnimationFrame(commit);
+      } else if (frame !== null) {
+        cancelAnimationFrame(frame);
+        frame = null;
+      }
+    });
+    visibility.observe(element);
 
     let hasGyro = false;
     const handleOrientation = (event: DeviceOrientationEvent) => {
@@ -122,22 +116,12 @@ export const usePlanetAnimation = ({
     window.addEventListener('deviceorientation', handleOrientation);
 
     const fallbackTimerId = window.setTimeout(() => {
-      if (hasGyro) return;
-
-      let time = 0;
-      const floatLoop = () => {
-        time += FALLBACK_TIME_INCREMENT;
-        target.x = Math.sin(time) * FALLBACK_X_AMPLITUDE;
-        target.y = Math.cos(time * FALLBACK_Y_FREQUENCY) * FALLBACK_Y_AMPLITUDE;
-        fallbackFrame = requestAnimationFrame(floatLoop);
-      };
-
-      fallbackFrame = requestAnimationFrame(floatLoop);
+      floating = !hasGyro;
     }, FALLBACK_DELAY_MS);
 
     return () => {
-      cancelAnimationFrame(frame);
-      if (fallbackFrame !== null) cancelAnimationFrame(fallbackFrame);
+      if (frame !== null) cancelAnimationFrame(frame);
+      visibility.disconnect();
       window.clearTimeout(fallbackTimerId);
       window.removeEventListener('deviceorientation', handleOrientation);
     };
@@ -159,5 +143,5 @@ export const usePlanetAnimation = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, [reducedMotion, scrollFactor]);
 
-  return { planetRef, wrapperRef };
+  return { wrapperRef };
 };

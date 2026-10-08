@@ -28,12 +28,6 @@ describe('Planet', () => {
     );
   };
 
-  const getRotationAngle = (element: HTMLElement) => {
-    const match = /rotate\(([\d.]+)deg\)/.exec(element.style.transform);
-
-    return Number.parseFloat(match?.[1] ?? '0');
-  };
-
   const runAnimationFrames = (count: number) => {
     for (let index = 0; index < count; index++) {
       const nextFrame = frameCallbacks.entries().next().value;
@@ -68,34 +62,64 @@ describe('Planet', () => {
     expect(container.querySelectorAll('.planet-surface-spot')).toHaveLength(2);
   });
 
-  it('should reveal and rotate the planet with requestAnimationFrame', () => {
+  it('should reveal the planet with requestAnimationFrame and spin it in CSS', () => {
     const { container } = render(<Planet size={240} parallaxMode="pointer" />);
     const wrapper = container.firstElementChild as HTMLElement;
     const body = container.querySelector('.planet-body-surface') as HTMLElement;
 
     expect(wrapper.style.opacity).toBe('0');
     expect(wrapper.style.getPropertyValue('--planet-reveal-scale')).toBe('0.72');
+    expect(body).toHaveClass('animate-planet-spin');
 
     runAnimationFrames(1);
-    const firstAngle = getRotationAngle(body);
-    runAnimationFrames(2);
-    const secondAngle = getRotationAngle(body);
 
-    expect(body.style.transform).toContain('rotate(');
-    expect(secondAngle).toBeGreaterThan(firstAngle);
     expect(wrapper.style.opacity).toBe('1');
     expect(wrapper.style.getPropertyValue('--planet-reveal-scale')).toBe('1');
-
-    runAnimationFrames(2100);
-
-    expect(getRotationAngle(body)).toBeGreaterThanOrEqual(0);
-    expect(getRotationAngle(body)).toBeLessThan(360);
+    expect(body.style.transform).toBe('');
+    expect(frameCallbacks.size).toBe(0);
 
     fireEvent.transitionEnd(wrapper);
 
     expect(wrapper.style.opacity).toBe('');
     expect(wrapper.style.getPropertyValue('--planet-reveal-scale')).toBe('');
     expect(wrapper.style.transition).toBe('');
+  });
+
+  it('should keep the tilt loop stopped while the planet is off screen', () => {
+    let reportVisibility: (isIntersecting: boolean) => void = () => {};
+    const disconnect = vi.fn();
+    vi.stubGlobal(
+      'IntersectionObserver',
+      class {
+        constructor(callback: IntersectionObserverCallback) {
+          reportVisibility = (isIntersecting) =>
+            callback([{ isIntersecting } as IntersectionObserverEntry], this as unknown as IntersectionObserver);
+        }
+        observe() {
+          reportVisibility(false);
+        }
+        disconnect = disconnect;
+      }
+    );
+
+    const { unmount } = render(<Planet size={240} parallaxMode="gyro" />);
+    // Only the reveal frame is queued: a hidden planet (e.g. the phone one on a desktop) never ticks.
+    expect(requestAnimationFrame).toHaveBeenCalledTimes(1);
+
+    act(() => reportVisibility(true));
+    expect(requestAnimationFrame).toHaveBeenCalledTimes(2);
+
+    act(() => reportVisibility(false));
+    expect(cancelAnimationFrame).toHaveBeenCalledWith(2);
+
+    unmount();
+    expect(disconnect).toHaveBeenCalled();
+  });
+
+  it('should not spin when reduced motion is enabled', () => {
+    const { container } = render(<Planet size={240} reducedMotion />);
+
+    expect(container.querySelector('.planet-body-surface')).not.toHaveClass('animate-planet-spin');
   });
 
   it('should attach and clean up gyro and scroll listeners', () => {

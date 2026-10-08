@@ -1,4 +1,7 @@
-import { z } from 'zod';
+// zod/mini with named imports: the form validates in the browser too, and the full `zod` namespace would
+// ship every locale's error messages with it.
+import type { infer as Infer } from 'zod/mini';
+import { email, enum as oneOf, literal, maxLength, object, optional, regexes, string, union, url } from 'zod/mini';
 
 /**
  * Colour palettes a prospect can pick from. The list is closed: it drives the
@@ -40,18 +43,15 @@ export const WISHES_MAX_LENGTH = 500;
  *
  * `honeypot` must stay empty: it is filled in only by bots.
  */
-export const freeMockupSchema = z.object({
-  email: z.email(),
-  colorPalette: z.enum(COLOR_PALETTE_CHOICES).optional().or(z.literal('')),
-  websiteUrl: z
-    .url({ protocol: /^https?$/, hostname: z.regexes.domain })
-    .optional()
-    .or(z.literal('')),
-  wishes: z.string().max(WISHES_MAX_LENGTH).optional(),
-  honeypot: z.string().max(0),
+export const freeMockupSchema = object({
+  email: email(),
+  colorPalette: union([optional(oneOf(COLOR_PALETTE_CHOICES)), literal('')]),
+  websiteUrl: union([optional(url({ protocol: /^https?$/, hostname: regexes.domain })), literal('')]),
+  wishes: optional(string().check(maxLength(WISHES_MAX_LENGTH))),
+  honeypot: string().check(maxLength(0)),
 });
 
-export type FreeMockupRequest = z.infer<typeof freeMockupSchema>;
+export type FreeMockupRequest = Infer<typeof freeMockupSchema>;
 
 /** Form fields a visitor can get an inline error on (the honeypot is never shown). */
 export type FreeMockupFieldName = 'email' | 'colorPalette' | 'websiteUrl' | 'wishes';

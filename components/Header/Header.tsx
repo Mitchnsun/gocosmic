@@ -1,6 +1,6 @@
 'use client';
 
-import { AnimatePresence } from 'motion/react';
+import { AnimatePresence, LazyMotion } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import React, { useMemo, useState } from 'react';
 
@@ -14,6 +14,13 @@ import MobileLangDrawer from './MobileLangDrawer';
 import MobileMenu from './MobileMenu';
 import MobileMenuButton from './MobileMenuButton';
 import { useMobileMenu } from './useMobileMenu';
+
+/**
+ * The drawers and the burger use the light `m` components; their animation features load in a
+ * separate chunk right after hydration, which keeps the `motion` runtime out of every page's first load.
+ * No retry on failure: Turbopack's chunk loader caches a failed chunk, so a second import fails as well.
+ */
+const loadMotionFeatures = () => import('./motionFeatures').then((module) => module.default);
 
 const Header = ({ logo = DEFAULT_LOGO, navItems, className, id, region }: HeaderProps = {}) => {
   const t = useTranslations('navigation');
@@ -46,7 +53,7 @@ const Header = ({ logo = DEFAULT_LOGO, navItems, className, id, region }: Header
   );
 
   return (
-    <>
+    <LazyMotion features={loadMotionFeatures} strict>
       <a
         href="#main-content"
         className="focus:text-fg focus:ring-aerospace-ink focus:bg-bg sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-60 focus:rounded-md focus:px-4 focus:py-2 focus:ring-2 focus:outline-none">
@@ -85,7 +92,7 @@ const Header = ({ logo = DEFAULT_LOGO, navItems, className, id, region }: Header
         {isOpen && <MobileMenu onClose={handleToggleNav} items={mobileItems} region={region} />}
       </AnimatePresence>
       <AnimatePresence>{isLangOpen && <MobileLangDrawer onClose={() => setIsLangOpen(false)} />}</AnimatePresence>
-    </>
+    </LazyMotion>
   );
 };
 

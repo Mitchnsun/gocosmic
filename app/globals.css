@@ -185,6 +185,12 @@ footer a {
     }
   }
 
+  @keyframes planet-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
   .timeline-dot {
     animation: dot-glow 2s ease-in-out infinite;
   }
@@ -199,6 +205,11 @@ footer a {
 
   .animate-orbit-slow {
     animation: planet-orbit 35s linear infinite;
+  }
+
+  /* 2.16° per second, the pace of the former 0.036° per frame at 60 fps. */
+  .animate-planet-spin {
+    animation: planet-spin 166s linear infinite;
   }
 
   /* Without JavaScript, content waiting for its scroll reveal would stay invisible. */
@@ -216,6 +227,7 @@ footer a {
     .word-exit,
     .word-enter,
     .animate-planet-glow,
+    .animate-planet-spin,
     .animate-orbit,
     .animate-orbit-slow {
       animation: none;
@@ -341,6 +353,7 @@ footer a {
   }
 
   [data-reduced-motion='true'] .animate-planet-glow,
+  [data-reduced-motion='true'] .animate-planet-spin,
   [data-reduced-motion='true'] .animate-orbit,
   [data-reduced-motion='true'] .animate-orbit-slow {
     animation: none;

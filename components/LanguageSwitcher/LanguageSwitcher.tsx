@@ -1,7 +1,7 @@
 'use client';
 
 import { CheckIcon, XMarkIcon } from '@heroicons/react/24/outline';
-import { AnimatePresence, motion } from 'motion/react';
+import { AnimatePresence, m } from 'motion/react';
 import { useLocale, useTranslations } from 'next-intl';
 import { useEffect, useRef, useState, useTransition } from 'react';
 
@@ -70,7 +70,7 @@ const LanguageSwitcher = ({ onOpen }: LanguageSwitcherProps = {}) => {
               {/* Backdrop — closes on click and keeps menuRef.contains() checks correct */}
               <div className="fixed inset-0 z-30" onClick={() => setIsOpen(false)} aria-hidden="true" />
               {/* Drawer panel */}
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
@@ -90,7 +90,7 @@ const LanguageSwitcher = ({ onOpen }: LanguageSwitcherProps = {}) => {
                 {/* Language list */}
                 <ul role="menu" aria-orientation="vertical" className="divide-line divide-y">
                   {Object.entries(LANG_DRAWER_LANGUAGES).map(([code, { name, flag }], index) => (
-                    <motion.li
+                    <m.li
                       key={code}
                       initial={{ opacity: 0, y: 16 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -109,10 +109,10 @@ const LanguageSwitcher = ({ onOpen }: LanguageSwitcherProps = {}) => {
                         </span>
                         {locale === code && <CheckIcon className="h-4 w-4 shrink-0" aria-hidden="true" />}
                       </button>
-                    </motion.li>
+                    </m.li>
                   ))}
                 </ul>
-              </motion.div>
+              </m.div>
             </>
           )}
         </AnimatePresence>

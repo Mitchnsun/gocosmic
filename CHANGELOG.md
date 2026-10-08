@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Changed
 
+- Pages load faster on mobile, the homepage and the free mockup page above all, and the cookie banner now appears together with the page instead of a moment later
 - Form fields now have a clearly visible outline in both themes, so they are easier to spot
 - The privacy policy now says that your theme choice is only kept if you switch themes, and that it stays in your browser until you clear its data
 

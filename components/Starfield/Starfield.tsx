@@ -32,11 +32,22 @@ const DEFAULT_STAR_COUNT = 500;
 const DEFAULT_SPEED = 2;
 
 /**
+ * Stars are drawn in depth bands, one path per band, instead of one path per star: a few canvas calls
+ * per frame whatever the star count. Nearer bands are brighter and thicker.
+ */
+const DEPTH_BANDS = 12;
+const BAND_STYLES = Array.from({ length: DEPTH_BANDS }, (_, band) => {
+  const nearness = (band + 0.5) / DEPTH_BANDS;
+  return { color: `rgba(${STAR_RGB}, ${nearness})`, width: Math.max(0.5, nearness * 2.5) };
+});
+
+/**
  * Starfield component that renders an animated 2D canvas-based starfield.
  *
  * Creates a performant perspective (warp-speed) starfield effect using the HTML5
  * Canvas 2D API. Zero external dependencies, targets 60fps via requestAnimationFrame.
- * Fully configurable and resizes automatically with the viewport.
+ * Fully configurable and resizes automatically with the viewport. The loop only runs
+ * while the canvas is on screen, and stars are stroked per depth band, not one by one.
  *
  * With {@link StarfieldProps.respectReducedMotion} enabled and a visitor who
  * asks for reduced motion, a single static frame of still stars is drawn and
@@ -88,6 +99,7 @@ const Starfield = ({
     const stars: Star[] = Array.from({ length: starCountRef.current }, createStar);
 
     let animationId: number | null = null;
+    const bands = BAND_STYLES.map((style) => ({ ...style, stars: [] as Star[] }));
 
     const draw = () => {
       ctx.fillStyle = BACKGROUND;
@@ -104,6 +116,8 @@ const Starfield = ({
         stars.splice(starCountRef.current);
       }
 
+      for (const band of bands) band.stars.length = 0;
+
       for (const star of stars) {
         star.prevZ = star.z;
         star.z -= speedRef.current;
@@ -115,35 +129,55 @@ const Starfield = ({
           star.prevZ = width;
         }
 
-        const sx = (star.x / star.z) * focalLength + cx;
-        const sy = (star.y / star.z) * focalLength + cy;
-        const prevSx = (star.x / star.prevZ) * focalLength + cx;
-        const prevSy = (star.y / star.prevZ) * focalLength + cy;
+        const nearness = 1 - star.z / width;
+        bands.at(Math.min(DEPTH_BANDS - 1, Math.max(0, Math.floor(nearness * DEPTH_BANDS))))?.stars.push(star);
+      }
 
-        const opacity = Math.min(1, 1 - star.z / width);
-        const lineWidth = Math.max(0.5, (1 - star.z / width) * 2.5);
+      for (const { color, width: lineWidth, stars: bandStars } of bands) {
+        if (bandStars.length === 0) continue;
 
         if (frozen) {
           // No movement means no streak to draw: paint each star as a dot so a
           // frozen starfield is still a starfield.
-          ctx.fillStyle = `rgba(${STAR_RGB}, ${opacity})`;
-          ctx.fillRect(sx, sy, lineWidth, lineWidth);
-        } else {
-          ctx.beginPath();
-          ctx.moveTo(prevSx, prevSy);
-          ctx.lineTo(sx, sy);
-          ctx.strokeStyle = `rgba(${STAR_RGB}, ${opacity})`;
-          ctx.lineWidth = lineWidth;
-          ctx.stroke();
+          ctx.fillStyle = color;
+          for (const { x, y, z } of bandStars) {
+            ctx.fillRect((x / z) * focalLength + cx, (y / z) * focalLength + cy, lineWidth, lineWidth);
+          }
+          continue;
         }
-      }
 
-      // Frozen starfield: the frame just drawn stays on screen instead of
-      // running a 60fps loop that would not move anything.
-      if (!frozen) animationId = requestAnimationFrame(draw);
+        ctx.beginPath();
+        for (const { x, y, z, prevZ } of bandStars) {
+          ctx.moveTo((x / prevZ) * focalLength + cx, (y / prevZ) * focalLength + cy);
+          ctx.lineTo((x / z) * focalLength + cx, (y / z) * focalLength + cy);
+        }
+        ctx.strokeStyle = color;
+        ctx.lineWidth = lineWidth;
+        ctx.stroke();
+      }
     };
 
+    const loop = () => {
+      draw();
+      animationId = requestAnimationFrame(loop);
+    };
+
+    const pause = () => {
+      if (animationId !== null) cancelAnimationFrame(animationId);
+      animationId = null;
+    };
+
+    // The first frame is painted right away; a frozen starfield stops there. A moving one
+    // animates only while the canvas is on screen, so an off-screen field costs nothing.
     draw();
+    const visibility = frozen
+      ? null
+      : new IntersectionObserver((entries) => {
+          // Batched records: the last one is the canvas's current state.
+          if (!entries.at(-1)?.isIntersecting) pause();
+          else if (animationId === null) animationId = requestAnimationFrame(loop);
+        });
+    visibility?.observe(canvas);
 
     let resizeTimer: ReturnType<typeof setTimeout> | null = null;
 
@@ -162,17 +196,17 @@ const Starfield = ({
           star.prevZ = width;
         }
 
-        // Resizing the canvas clears its bitmap. While frozen no frame is
-        // pending, so repaint the single static frame here — the running loop
-        // takes care of it otherwise.
-        if (frozen) draw();
+        // Resizing the canvas clears its bitmap. Unless the loop is running and
+        // repaints it on its next frame, paint the current frame here.
+        if (animationId === null) draw();
       }, 100);
     };
 
     window.addEventListener('resize', handleResize);
 
     return () => {
-      if (animationId !== null) cancelAnimationFrame(animationId);
+      pause();
+      visibility?.disconnect();
       if (resizeTimer !== null) clearTimeout(resizeTimer);
       window.removeEventListener('resize', handleResize);
     };

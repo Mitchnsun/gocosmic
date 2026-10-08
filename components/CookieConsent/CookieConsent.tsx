@@ -7,12 +7,17 @@ import { CHECKBOX_CONTROL } from '@/design-system/field';
 import { cn } from '@/design-system/lib/utils';
 import { Link } from '@/i18n/navigation';
 
+import { BANNER_STARTS_HIDDEN } from './CookieConsent.boot';
+import { CookieConsentBoot } from './CookieConsentBoot';
 import { useCookieConsent } from './CookieConsentContext';
 
+/**
+ * Consent banner, rendered on the server so it paints with the page. The server copy starts hidden and
+ * the inline script that follows it reveals it once parsed, unless the visitor already answered.
+ */
 export function CookieConsent() {
   const t = useTranslations('cookieConsent');
   const {
-    isReady,
     choice,
     isCustomizing,
     isDismissable,
@@ -23,13 +28,14 @@ export function CookieConsent() {
     setAnalyticsEnabled,
   } = useCookieConsent();
 
-  if (!isReady) return null;
-
   return (
     <>
       {choice === 'accepted' && <Analytics />}
       {choice === null && (
         <section
+          data-cookie-banner
+          hidden={BANNER_STARTS_HIDDEN}
+          suppressHydrationWarning
           className="border-line-2 bg-bg text-fg fixed right-4 bottom-4 left-4 z-50 m-auto max-w-2xl rounded-2xl border p-5 md:left-auto"
           aria-labelledby="cookie-consent-title">
           <div className="space-y-4">
@@ -114,6 +120,7 @@ export function CookieConsent() {
           </div>
         </section>
       )}
+      {choice === null && <CookieConsentBoot />}
     </>
   );
 }
