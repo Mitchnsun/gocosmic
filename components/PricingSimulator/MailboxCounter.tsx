@@ -45,7 +45,7 @@ export function MailboxCounter({ value, onChange, surcharge, domain }: MailboxCo
             <p id={`${id}-label`} className="font-display text-fg text-sm font-medium">
               {label}
             </p>
-            <p className="text-fg-3 font-mono text-sm tracking-wider tabular-nums">
+            <p className="text-fg-3 text-sm tabular-nums">
               {t('options.mailboxes.price', { price: surcharge(EXTRA_MAILBOX_PRICE) })}
             </p>
           </div>

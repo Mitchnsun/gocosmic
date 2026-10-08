@@ -27,7 +27,7 @@ export function OptionText({ id, label, price, hint, commitment, checked, nested
         </span>
         <span
           id={`${id}-price`}
-          className={cn('font-mono text-sm tracking-wider tabular-nums', {
+          className={cn('text-sm tabular-nums', {
             'text-aerospace-ink': checked,
             'text-fg-3': !checked,
           })}>

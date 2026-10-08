@@ -162,9 +162,10 @@
       },
       "pages": {
         "label": "Anzahl der Seiten",
+        "info": "Impressum und Datenschutzerklärung zählen nicht zur Seitenanzahl.",
         "or_more": "{price} oder mehr",
         "tiers": {
-          "one": "1 Seite (inklusive)",
+          "one": "Startseite inklusive",
           "two_four": "2 bis 4 Seiten",
           "five_seven": "5 bis 7 Seiten",
           "eight_nine": "8 bis 9 Seiten",

@@ -162,9 +162,10 @@
       },
       "pages": {
         "label": "Number of pages",
+        "info": "The legal notice and the privacy policy are not counted in the number of pages.",
         "or_more": "{price} or more",
         "tiers": {
-          "one": "1 page (included)",
+          "one": "Homepage included",
           "two_four": "2 to 4 pages",
           "five_seven": "5 to 7 pages",
           "eight_nine": "8 to 9 pages",

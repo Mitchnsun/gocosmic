@@ -23,7 +23,13 @@ export function SiteOptions({ plan, actions, surcharge }: OptionGroupProps) {
   return (
     <OptionGroup title={t('groups.site')}>
       <div className="border-line bg-surface rounded-xl border p-4">
-        <TierSlider label={t('pages.label')} tiers={pageTiers} value={plan.pages} onChange={actions.setPages} />
+        <TierSlider
+          label={t('pages.label')}
+          tiers={pageTiers}
+          value={plan.pages}
+          onChange={actions.setPages}
+          info={{ label: t('info_label', { option: t('pages.label') }), text: t('pages.info') }}
+        />
       </div>
       {addOns.map((id) => (
         <AddOnOption

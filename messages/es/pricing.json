@@ -162,9 +162,10 @@
       },
       "pages": {
         "label": "Número de páginas",
+        "info": "El aviso legal y la política de privacidad no se cuentan en el número de páginas.",
         "or_more": "{price} o más",
         "tiers": {
-          "one": "1 página (incluida)",
+          "one": "Página de inicio incluida",
           "two_four": "2 a 4 páginas",
           "five_seven": "5 a 7 páginas",
           "eight_nine": "8 o 9 páginas",

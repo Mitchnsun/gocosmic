@@ -2,6 +2,7 @@
 
 import { useId } from 'react';
 
+import { InfoPopover } from '@/design-system/info-popover';
 import { cn } from '@/design-system/lib/utils';
 import { Slider } from '@/design-system/slider';
 
@@ -15,6 +16,8 @@ interface TierSliderProps {
   disabled?: boolean;
   /** Id of a note that explains the current position (e.g. raised by another option). */
   describedBy?: string;
+  /** Optional explanation shown in an info bubble next to the label. */
+  info?: { label: string; text: string };
 }
 
 /**
@@ -23,7 +26,7 @@ interface TierSliderProps {
  * full keyboard support for free; `aria-valuetext` reads out the tier wording
  * rather than the raw index.
  */
-export function TierSlider({ label, tiers, value, onChange, disabled = false, describedBy }: TierSliderProps) {
+export function TierSlider({ label, tiers, value, onChange, disabled = false, describedBy, info }: TierSliderProps) {
   const id = useId();
   // `value` is already clamped onto a valid position.
   // eslint-disable-next-line security/detect-object-injection
@@ -37,12 +40,19 @@ export function TierSlider({ label, tiers, value, onChange, disabled = false, de
       aria-disabled={disabled || undefined}
       className={cn('transition-opacity duration-200', { 'pointer-events-none opacity-40': disabled })}>
       <div className="flex items-baseline justify-between gap-4">
-        <span id={id} className="text-fg-2 text-2xs font-mono tracking-[0.2em] uppercase">
-          {label}
+        <span className="flex items-center gap-1">
+          <span id={id} className="text-fg-2 text-2xs font-mono tracking-[0.2em] uppercase">
+            {label}
+          </span>
+          {info && (
+            <InfoPopover label={info.label} title={label} className="-my-2">
+              <p>{info.text}</p>
+            </InfoPopover>
+          )}
         </span>
         <p className="font-display text-fg text-sm font-medium">
           {current?.label}
-          <span className="text-aerospace-ink ml-2 font-mono text-xs tabular-nums">{current?.price}</span>
+          <span className="text-aerospace-ink ml-2 text-xs tabular-nums">{current?.price}</span>
         </p>
       </div>
 

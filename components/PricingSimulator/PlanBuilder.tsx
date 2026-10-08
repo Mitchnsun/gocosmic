@@ -37,7 +37,7 @@ export function PlanBuilder({ currency, region, plan, updatesRaised, actions }: 
           {t('options.title')}
         </h3>
         <SiteOptions {...group} />
-        <AddressOptions {...group} domain={domain} />
+        <AddressOptions {...group} domain={domain} region={region} />
         <VisibilityOptions {...group} />
         <CareOptions {...group} updatesRaised={updatesRaised} />
       </section>

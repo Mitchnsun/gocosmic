@@ -233,6 +233,15 @@ describe('PricingSimulator', () => {
     expect(screen.getByText(/beyond these volumes/i)).toBeInTheDocument();
   });
 
+  it('offers Swiss hosting to Swiss visitors only', () => {
+    const { unmount } = render(<PricingSimulator region="fr" />);
+    expect(screen.queryByRole('checkbox', { name: /hosted in switzerland/i })).not.toBeInTheDocument();
+    unmount();
+
+    render(<PricingSimulator region="ch" />);
+    expect(screen.getByRole('checkbox', { name: /hosted in switzerland/i })).toBeInTheDocument();
+  });
+
   it('quotes the plan in francs for Swiss visitors', () => {
     render(<PricingSimulator region="ch" />);
 

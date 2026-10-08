@@ -65,4 +65,20 @@ describe('TierSlider', () => {
 
     expect(screen.getByRole('slider', { name: 'Number of pages' })).toHaveAttribute('aria-valuenow', '2');
   });
+
+  it('shows an info button only when an explanation is given', () => {
+    const { rerender } = render(<TierSlider label="Number of pages" tiers={tiers} value={0} onChange={() => {}} />);
+    expect(screen.queryByRole('button', { name: 'More about pages' })).not.toBeInTheDocument();
+
+    rerender(
+      <TierSlider
+        label="Number of pages"
+        tiers={tiers}
+        value={0}
+        onChange={() => {}}
+        info={{ label: 'More about pages', text: 'Legal pages are not counted.' }}
+      />
+    );
+    expect(screen.getByRole('button', { name: 'More about pages' })).toBeInTheDocument();
+  });
 });
