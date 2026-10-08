@@ -51,7 +51,7 @@
 [data-theme='dark'] {
   color-scheme: dark;
   --t-bg: #020617;
-  --t-bg-alt: #1c1012;
+  --t-bg-alt: #10122b; /* indigo-ink */
   --t-surface: rgb(248 248 255 / 0.02);
   --t-field: rgb(248 248 255 / 0.03);
   --t-fg: #f8f8ff;

@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - The studio is now declared in Switzerland, in Chêne-Bougeries near Geneva, as a sole proprietorship whose registration is in progress: the legal notice and terms of sale no longer show the former French registration, and search engines see the same address, with Annecy and Haute-Savoie still among the areas served
 - The terms of sale now apply Swiss law to clients based in Switzerland and French law to clients based in France (Swiss law otherwise), and the privacy policy now covers Swiss as well as European data protection rules, including the Swiss authority for complaints
 - Better presence in search results and on social networks: shorter titles and descriptions in all five languages, each page shared with its own title and image description, project pages named with their type and placed within the site, and the legal pages and missing pages kept out of search results
+- Alternate sections of the dark theme now use a deep indigo-ink blue instead of the previous dark brown
 
 ### Fixed
 

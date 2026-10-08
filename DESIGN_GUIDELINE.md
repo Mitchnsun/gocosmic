@@ -31,7 +31,7 @@ The site has two themes — dark ("space", the default) and light ("star") — d
 | Token           | Role                                                                     | Dark                                  | Light                              | Tailwind                                   |
 | --------------- | ------------------------------------------------------------------------ | ------------------------------------- | ---------------------------------- | ------------------------------------------ |
 | `bg`            | Page background                                                          | `void #020617`                        | `cosmic-latte #FFF8E7`             | `bg-bg`                                    |
-| `bg-alt`        | Alternate section (≤ 1 section in 3)                                     | `ember #1C1012`                       | `misty-rose #FFE4E1`               | `bg-bg-alt`                                |
+| `bg-alt`        | Alternate section (≤ 1 section in 3)                                     | `indigo-ink #10122B`                  | `misty-rose #FFE4E1`               | `bg-bg-alt`                                |
 | `surface`       | Card lifted from the background                                          | ghost 2 %                             | void 2 %                           | `bg-surface`                               |
 | `field`         | Form control background                                                  | ghost 3 %                             | `cosmic-latte`                     | `bg-field`                                 |
 | `fg`            | Primary text, strong borders, inverted fill                              | `ghost #F8F8FF`                       | `void #020617`                     | `text-fg`                                  |
@@ -58,7 +58,7 @@ The site has two themes — dark ("space", the default) and light ("star") — d
 | `space`        | `#1E2952` | Brand backgrounds, e.g. the white CPMB logo cover (from `data/projects.ts`)                 |
 | `sun`          | `#FFB38A` | Warm halo of the light theme (sun, CTA glow)                                                |
 | `royal`        | `#7851A9` | Secondary accent — planet, project accents                                                  |
-| `ember`        | `#1C1012` | Source of the dark `bg-alt`                                                                 |
+| `indigo-ink`   | `#10122B` | Source of the dark `bg-alt`                                                                 |
 | `jungle`       | `#29AB87` | Source of the dark `ok`                                                                     |
 | `cosmic-latte` | `#FFF8E7` | Source of the light `bg`                                                                    |
 | `misty-rose`   | `#FFE4E1` | Source of the light `bg-alt`                                                                |
@@ -102,7 +102,7 @@ Minimum readable size: **14px** for body text.
 
 - **Container**: `max-w-7xl` centered (`m-auto`), horizontal padding `px-4 sm:px-6 lg:px-8`.
 - **Vertical section rhythm**: `SECTION_Y` from `design-system/pill.ts` — `clamp(56px, 6.5vw, 96px)` top and bottom. Sections need room to breathe.
-- **Alternate sections**: at most one section in three on `bg-bg-alt` (ember in dark, misty-rose in light), the rest on `bg-bg`. `space` is kept for brand backgrounds.
+- **Alternate sections**: at most one section in three on `bg-bg-alt` (indigo-ink in dark, misty-rose in light), the rest on `bg-bg`. `space` is kept for brand backgrounds.
 - **Radii**: pills `rounded-full` (buttons, chips, badges); cards/containers `rounded-xl` → `rounded-2xl` (12–24px). No sharp corners on interactive surfaces.
 - **Borders**: always via `line` / `line-2` (see §2.1), never an opaque grey.
 - **Card grids**: `grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))]` (260–320 px minimum per card) lets cards wrap without breakpoints.
