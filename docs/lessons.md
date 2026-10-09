@@ -28,6 +28,8 @@ This file records lessons learned from past mistakes and corrections made during
 
 **Correct pattern**: When the current version was released that same day and the change is a small fix, ask before bumping, or add the bullet to the existing entry and leave `version` untouched. If the user says not to bump, add the bullet to the latest entry in `CHANGELOG.md`.
 
+**Recurrence (2026-10-09)**: The Next.js 16.4 upgrade, rebased onto a `master` that had just merged 2.4.0, was bumped to 2.4.1 on the grounds that a security upgrade is not a small fix. The owner had not created the 2.4.0 release yet and asked to reuse it. A version merged on `master` is not necessarily released: when `master`'s latest changelog entry is dated today, check whether it has been released (a `v2.4.0` tag or GitHub release) or ask. If it hasn't, fold the change into that entry and keep `master`'s version, whatever the size of the change.
+
 ## CSS / TailwindCSS 4
 
 ### `--font-display` and `--font-body` must be declared in `@theme`
