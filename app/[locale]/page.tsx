@@ -5,6 +5,8 @@ import type { ReactNode } from 'react';
 
 import { AudienceGrid } from '@/components/AudienceGrid';
 import CTAFinal from '@/components/CTAFinal';
+import { buildHeroFacts } from '@/components/FactsLine';
+import { freeMockupNote } from '@/components/FreeMockup';
 import HeroSection from '@/components/HeroSection';
 import { OwnApps } from '@/components/OwnApps';
 import { PricingColumns } from '@/components/PricingColumns';
@@ -27,7 +29,6 @@ import { buildPageMetadata } from '@/lib/seo';
 
 const AUDIENCES = ['artisans', 'associations', 'independents'] as const;
 const REASONS = ['ownership', 'fast', 'person', 'grows'] as const;
-const FACTS = ['price', 'reply', 'contact', 'area'] as const;
 /** Projects featured on the homepage; the full list lives on /projects. */
 const HOME_PROJECT_COUNT = 3;
 
@@ -68,13 +69,7 @@ export default async function Home() {
         subtitle={t('hero.subtitle')}
         cta={{ text: t('hero.cta'), href: '/free-mockup' }}
         secondaryCta={{ text: t('hero.secondary'), href: { pathname: '/services', hash: 'pricing' } }}
-        facts={FACTS.map((fact) => {
-          const key = fact === 'area' ? `area.${region}` : fact;
-          return {
-            highlight: t(`hero.facts.${key}.highlight`, { price: startingPrice }),
-            text: t(`hero.facts.${key}.text`),
-          };
-        })}
+        facts={buildHeroFacts(t, region, startingPrice)}
       />
 
       <AudienceGrid
@@ -158,13 +153,7 @@ export default async function Home() {
         id="cta"
         headline={t('cta.title')}
         description={t('cta.description')}
-        note={t.rich('cta.freeMockup', {
-          link: (chunks) => (
-            <Link href="/free-mockup" className="text-fg-2 hover:text-fg underline underline-offset-4 transition">
-              {chunks}
-            </Link>
-          ),
-        })}
+        note={freeMockupNote(t)}
         ctaText={t('cta.button')}
         ctaHref="/contact"
         accentColor="aerospace"

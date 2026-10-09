@@ -1,7 +1,7 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { useEffect } from 'react';
+import { type MouseEvent, useEffect } from 'react';
 
 import { usePathname, useRouter } from '@/i18n/navigation';
 
@@ -39,11 +39,12 @@ function restorePendingHash(locale: string, pathname: string) {
 }
 
 /**
- * Opens the current page in another language and keeps what the visitor had
- * chosen on it: query parameters, such as the projects filter, and the section
- * anchor, such as `#simulator`. Both are read at click time, since filters and
- * in-page links update the URL without a navigation. The next-intl router
- * performs the switch, which also keeps the locale cookie in sync.
+ * Opens the current page in the locale picked (e.g. `de-CH`) and keeps what the
+ * visitor had chosen on it: query parameters, such as the projects filter, and the
+ * section anchor, such as `#simulator`. The query and the anchor are read at click
+ * time, since filters and in-page links update the URL without a navigation.
+ * The next-intl router performs the switch, which also keeps the locale cookie
+ * in sync.
  */
 export function useSwitchLocale() {
   const router = useRouter();
@@ -56,7 +57,7 @@ export function useSwitchLocale() {
   }, [pathname, currentLocale]);
 
   return (locale: string) => {
-    // Picking the language already shown changes nothing: stay put, keeping the query and the anchor.
+    // Picking the locale already shown changes nothing: stay put, keeping the query and the anchor.
     if (locale === currentLocale) return;
     const query = readCurrentQuery();
     const href = query ? { pathname, query } : pathname;
@@ -65,5 +66,20 @@ export function useSwitchLocale() {
 
     // With an anchor, scrolling is left to the anchor restore, instead of jumping to the top of the new page first.
     router.push(href, hash ? { locale, scroll: false } : { locale });
+  };
+}
+
+/**
+ * Click handler for a link to the current page in another locale. The link targets the bare page, so a plain
+ * click also keeps the current query and section anchor, while a click opening a new tab keeps the link's own address.
+ */
+export function useLocaleLinkClick() {
+  const switchLocale = useSwitchLocale();
+
+  return (event: MouseEvent<HTMLAnchorElement>, locale: string) => {
+    const isPlainClick = event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey;
+    if (!isPlainClick || (!readCurrentQuery() && !window.location.hash)) return;
+    event.preventDefault();
+    switchLocale(locale);
   };
 }

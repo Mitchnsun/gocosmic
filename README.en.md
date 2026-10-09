@@ -26,8 +26,9 @@ The Cosmic Studio website serves as the primary business interface with the foll
 - **Type-Safe Translations**: Full TypeScript integration with compile-time validation
 - **SEO Optimization**: Dynamic metadata and lang attributes per locale
 - **Clean URLs**: Locale-prefixed routing (`/en/`, `/fr/`, `/es/`, `/de/`, `/it/`)
+- **Swiss versions**: every page also exists for Switzerland in each language (`/fr-ch/`, `/de-ch/`, `/it-ch/`, `/en-ch/`, `/es-ch/`), always with the Geneva base and prices in Swiss francs, in Swiss spelling for German (`ss` for `ß`), and linked to the other versions through `hreflang` so that search engines show it to people searching from Switzerland (see `i18n/locales.ts`). The URL decides the version: language-only pages always show the Annecy base and euros, and a footer switch moves between the two versions in the same language
 - **Translated Pathnames**: Route paths are localized for better SEO and UX (e.g., `/en/about` → `/fr/a-propos`, `/en/projects` → `/de/projekte`)
-- **Browser Detection**: Automatic locale detection based on user preferences
+- **Browser Detection**: Automatic locale detection based on user preferences; visitors located in Switzerland (detected from the Vercel country header) and browsers set to a Swiss locale (e.g. `fr-CH`) land on the Swiss version
 - **Language Switcher**: Intuitive dropdown component with flag icons and current language indication
 - **Namespace Organization**: Translation files are organized by namespace for better maintainability and scalability
 
@@ -116,7 +117,7 @@ Replaces the former services, offers and pricing pages.
 - **FAQ**: accordion answering five common questions (ownership, editing the site, time to go live, stopping the subscription, texts and photos)
 - **Closing call-to-action**: link to the contact page
 
-Prices are shown in euros, or in Swiss francs for visitors located in Switzerland (detected from the Vercel country header), and always excl. VAT. The homepage and the about page follow the same rule.
+Prices are shown in euros, or in Swiss francs on the Swiss version of the site, and always excl. VAT. The homepage, the about page and the page description shown in search results follow the same rule.
 
 ### Projects Page (`/projects`)
 
@@ -154,7 +155,7 @@ Lead-capture page where a prospect asks for a free mockup of their future websit
 
 ### Local SEO Page (`/local`)
 
-Locale-specific landing page targeting local searches (e.g., `/en/web-mobile-developer-annecy-geneva`, `/fr/developpeur-web-mobile-annecy-geneve`). It opens with a lead that follows the visitor's region (Geneva base for Swiss visitors, Annecy otherwise), then lists the four areas served, shows three recent projects and ends with a call to talk about a project.
+Locale-specific landing page targeting local searches for website creation (e.g., `/en/website-design-geneva-annecy`, `/fr/creation-site-internet-geneve-annecy`; the former slugs redirect permanently). It opens with a lead that follows the region (Geneva base on the Swiss version, Annecy otherwise) and the facts line of the homepage, then lists the four areas served and the audiences, shows three recent projects and ends with a call to talk about a project, with the free mockup note.
 
 ### Legal Pages
 
@@ -255,17 +256,17 @@ When adding new routes to the application, follow this procedure to maintain int
 
 1. **Create the route**: Add the new page component in `app/[locale]/your-route/page.tsx`
 
-2. **Configure translated pathnames**: Update `i18n/routing.ts` to add localized route paths:
+2. **Configure translated pathnames**: Update `i18n/routing.ts` to add localized route paths (the Swiss versions reuse the slug of their language):
 
    ```typescript
    pathnames: {
-     '/your-route': {
+     '/your-route': localized({
        en: '/your-route',
        fr: '/votre-route',
        es: '/tu-ruta',
        de: '/ihre-route',
        it: '/la-tua-route',
-     },
+     }),
    }
    ```
 
@@ -450,7 +451,9 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   ├── de/           # German translations (same structure)
 │   └── it/           # Italian translations (same structure)
 ├── i18n/             # Internationalization configuration
+│   ├── locales.ts    # Languages, their Swiss variants and URL prefixes
 │   ├── routing.ts    # Locale routing setup with translated pathnames
+│   ├── swiss-spelling.ts # Swiss German spelling of the messages
 │   ├── request.ts    # Server-side i18n configuration
 │   ├── navigation.ts # Client-side navigation utilities
 │   └── canonical.ts  # Canonical URL helpers
@@ -458,7 +461,7 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   ├── actions/      # Server action tests
 │   ├── components/   # Component tests
 │   ├── design-system/ # design-system primitives tests
-│   ├── i18n/         # i18n utility tests (canonical)
+│   ├── i18n/         # i18n utility tests (canonical, locales, messages)
 │   ├── lib/          # Helper tests
 │   ├── pages/        # Page tests
 │   ├── proxy.test.ts # Middleware/proxy tests

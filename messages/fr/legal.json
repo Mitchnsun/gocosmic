@@ -141,7 +141,7 @@
       },
       "eyebrow": "Conditions de vente",
       "title": "Conditions générales de vente",
-      "updated": "Dernière mise à jour : 8 octobre 2026",
+      "updated": "Dernière mise à jour : 9 octobre 2026",
       "intro": "Ces conditions générales de vente s'appliquent à l'abonnement et aux prestations proposées par Cosmic Studio sur www.gocosmic.dev.",
       "sections": [
         {
@@ -168,7 +168,8 @@
           "body": [
             "Les prix de l'abonnement sont ceux affichés sur la page Services & tarifs au moment de la souscription, selon les options choisies. La facturation est mensuelle, trimestrielle ou annuelle, à votre choix.",
             "L'accompagnement, le renforcement d'équipe et les projets sur mesure sont facturés au tarif journalier ou sur devis, communiqué avant toute intervention.",
-            "Tous les prix affichés sont hors taxes ; la TVA au taux en vigueur est ajoutée sur la facture."
+            "Tous les prix affichés sont hors taxes ; la TVA au taux en vigueur est ajoutée sur la facture.",
+            "Les prix en euros (EUR) s'appliquent aux entreprises qui ne sont pas domiciliées en Suisse. Pour les entreprises domiciliées en Suisse, les prix sont en francs suisses (CHF)."
           ]
         },
         {

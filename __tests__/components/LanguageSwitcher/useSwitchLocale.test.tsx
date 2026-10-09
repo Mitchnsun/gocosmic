@@ -27,6 +27,17 @@ describe('useSwitchLocale', () => {
     expect(mockPush).toHaveBeenCalledWith('/services', { locale: 'fr' });
   });
 
+  it('switches between the Swiss version and the rest of the site, in the same language', () => {
+    mockLocale = 'fr-CH';
+    const { result } = renderHook(() => useSwitchLocale());
+
+    act(() => result.current('fr'));
+    act(() => result.current('fr-CH'));
+
+    expect(mockPush).toHaveBeenCalledTimes(1);
+    expect(mockPush).toHaveBeenCalledWith('/services', { locale: 'fr' });
+  });
+
   it('keeps the query, such as the projects filter', () => {
     mockPathname = '/projects';
     window.history.replaceState(null, '', '/en/projects?type=mobile');

@@ -101,8 +101,8 @@
         },
         "reviews": {
           "label": "Your customers' reviews on your site",
-          "hint": "A selection of your customers' reviews, with their date, updated every month.",
-          "info": "Other customers' reviews reassure a visitor who hesitates to contact you. Every month, we pick the best reviews, from your Google listing or testimonials you have received, and copy them onto your site with their date. In France, the law requires saying whether reviews are checked and why some are not published: we add that notice."
+          "hint": "A selection of your customers' reviews, with their date, updated regularly.",
+          "info": "Other customers' reviews reassure a visitor who hesitates to contact you. Regularly, we pick the best reviews, from your Google listing or testimonials you have received, and copy them onto your site with their date. In France, the law requires saying whether reviews are checked and why some are not published: we add that notice."
         },
         "english": {
           "label": "Your site in English",

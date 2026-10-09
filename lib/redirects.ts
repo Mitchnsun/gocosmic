@@ -1,14 +1,14 @@
 import type { NextConfig } from 'next';
 
 // Relative imports: `next.config.ts` loads this module before path aliases exist.
-import type { Locale } from '../i18n/canonical';
+import { getLanguage, getLocalePrefix, type Language, LANGUAGES, LOCALES } from '../i18n/locales';
 import { routing } from '../i18n/routing';
 
 type Redirect = Awaited<ReturnType<NonNullable<NextConfig['redirects']>>>[number];
 
 interface RetiredPage {
-  /** Former slug per locale. */
-  slugs: Record<Locale, string>;
+  /** Former slug per language. */
+  slugs: Record<Language, string>;
   /** Section of the Services & pricing page that now holds the content, if any. */
   hash?: string;
 }
@@ -54,17 +54,18 @@ const RETIRED_PAGES: RetiredPage[] = [
 
 /**
  * Permanent redirects from the retired pages to Services & pricing, in every
- * locale. The English slug is also caught under each locale prefix and without
- * any prefix, since older links used both forms.
+ * language. The English slug is also caught under each language prefix and
+ * without any prefix, since older links used both forms. The Swiss URLs came
+ * after these pages were retired, so they have nothing to redirect.
  */
 export function getLegacyRedirects(): Redirect[] {
   return RETIRED_PAGES.flatMap(({ slugs, hash = '' }) => {
     const english = slugs.en;
-    /* eslint-disable security/detect-object-injection -- locale is the typed Locale union */
-    const localized = routing.locales.flatMap((locale) =>
-      [...new Set([slugs[locale], english])].map((slug) => ({
-        source: `/${locale}${slug}`,
-        destination: `/${locale}${routing.pathnames['/services'][locale]}${hash}`,
+    /* eslint-disable security/detect-object-injection -- language is the typed Language union */
+    const localized = LANGUAGES.flatMap((language) =>
+      [...new Set([slugs[language], english])].map((slug) => ({
+        source: `/${language}${slug}`,
+        destination: `/${language}${routing.pathnames['/services'][language]}${hash}`,
         permanent: true,
       }))
     );
@@ -72,4 +73,27 @@ export function getLegacyRedirects(): Redirect[] {
 
     return [{ source: english, destination: `/services${hash}`, permanent: true }, ...localized];
   });
+}
+
+/** Slugs of the local page before it was retargeted at "website creation" and put Geneva first. */
+const FORMER_LOCAL_SLUGS: Record<Language, string> = {
+  en: '/web-mobile-developer-annecy-geneva',
+  fr: '/developpeur-web-mobile-annecy-geneve',
+  es: '/desarrollador-web-movil-annecy-ginebra',
+  de: '/web-mobile-entwickler-annecy-genf',
+  it: '/sviluppatore-web-mobile-annecy-ginevra',
+};
+
+/** Permanent redirects from the former local page slugs to the current ones, under every locale prefix (Swiss ones included). */
+export function getLocalPageRedirects(): Redirect[] {
+  /* eslint-disable security/detect-object-injection -- language is the typed Language union */
+  return LOCALES.map((locale) => {
+    const language = getLanguage(locale);
+    return {
+      source: `${getLocalePrefix(locale)}${FORMER_LOCAL_SLUGS[language]}`,
+      destination: `${getLocalePrefix(locale)}${routing.pathnames['/local'][locale]}`,
+      permanent: true,
+    };
+  });
+  /* eslint-enable security/detect-object-injection */
 }

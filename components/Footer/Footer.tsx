@@ -9,6 +9,7 @@ import type { Region } from '@/lib/region';
 import { FOOTER_LINK_CLASS, LEGAL_LINKS, STUDIO_LINKS } from './Footer.constants';
 import FooterColumnHeading from './FooterColumnHeading';
 import FooterLanguages from './FooterLanguages';
+import FooterRegion from './FooterRegion';
 
 interface FooterProps {
   /** Drives which base the studio baseline claims. */
@@ -70,7 +71,10 @@ const Footer = ({ region }: FooterProps) => {
               <CookieManageButton className={cn(FOOTER_LINK_CLASS, 'no-underline')} />
             </li>
           </ul>
-          <FooterLanguages />
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <FooterLanguages />
+            <FooterRegion />
+          </div>
         </div>
       </div>
 

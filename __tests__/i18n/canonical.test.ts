@@ -68,11 +68,23 @@ describe('getCanonicalUrl', () => {
 
   describe('local seo page (localized pathnames)', () => {
     it('resolves French localized pathname', () => {
-      expect(getCanonicalUrl('fr', '/local')).toBe(`${SITE_URL}/fr/developpeur-web-mobile-annecy-geneve`);
+      expect(getCanonicalUrl('fr', '/local')).toBe(`${SITE_URL}/fr/creation-site-internet-geneve-annecy`);
     });
 
     it('resolves German localized pathname', () => {
-      expect(getCanonicalUrl('de', '/local')).toBe(`${SITE_URL}/de/web-mobile-entwickler-annecy-genf`);
+      expect(getCanonicalUrl('de', '/local')).toBe(`${SITE_URL}/de/website-erstellen-lassen-genf-annecy`);
+    });
+  });
+
+  describe('Swiss locales', () => {
+    it('prefixes the URL with the locale in lowercase', () => {
+      expect(getCanonicalUrl('fr-CH', '/')).toBe(`${SITE_URL}/fr-ch`);
+      expect(getCanonicalUrl('de-CH', '/services')).toBe(`${SITE_URL}/de-ch/dienstleistungen`);
+    });
+
+    it('shares the translated slug of their language', () => {
+      expect(getCanonicalUrl('fr-CH', '/about')).toBe(`${SITE_URL}/fr-ch/a-propos`);
+      expect(getCanonicalUrl('it-CH', '/local')).toBe(`${SITE_URL}/it-ch/creazione-siti-internet-ginevra-annecy`);
     });
   });
 
@@ -107,9 +119,21 @@ describe('getAlternates', () => {
         es: `${SITE_URL}/es/acerca-de`,
         de: `${SITE_URL}/de/ueber-uns`,
         it: `${SITE_URL}/it/chi-siamo`,
+        'en-CH': `${SITE_URL}/en-ch/about`,
+        'fr-CH': `${SITE_URL}/fr-ch/a-propos`,
+        'es-CH': `${SITE_URL}/es-ch/acerca-de`,
+        'de-CH': `${SITE_URL}/de-ch/ueber-uns`,
+        'it-CH': `${SITE_URL}/it-ch/chi-siamo`,
         'x-default': `${SITE_URL}/en/about`,
       },
     });
+  });
+
+  it('points a Swiss page to its own URL while listing the same translations', () => {
+    const alternates = getAlternates('de-CH', '/about');
+
+    expect(alternates.canonical).toBe(`${SITE_URL}/de-ch/ueber-uns`);
+    expect(alternates.languages).toEqual(getLanguageAlternates('/about'));
   });
 
   it('gives the home page no trailing slash, since /en/ redirects to /en', () => {

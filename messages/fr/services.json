@@ -2,7 +2,7 @@
   "services": {
     "meta": {
       "title": "Services & tarifs · Genève & Annecy | Cosmic Studio",
-      "description": "Sites vitrine, boutiques en ligne, applications et suivi, à prix affichés : un abonnement dès 10 € HT par mois, ou un projet sur devis."
+      "description": "Sites vitrine, boutiques en ligne, applications et suivi, à prix affichés : un abonnement dès {price} HT par mois, ou un projet sur devis."
     },
     "intro": {
       "eyebrow": "[ Services & tarifs ]",

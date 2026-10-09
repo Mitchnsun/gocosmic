@@ -1,8 +1,10 @@
 import { fireEvent, within } from '@testing-library/react';
+import { NextIntlClientProvider } from 'next-intl';
 import type { MouseEvent, ReactNode } from 'react';
 
 import FooterLanguages from '@/components/Footer/FooterLanguages';
 
+import navigation from '../../messages/en/navigation.json';
 import { render } from '../test-utils';
 
 const mockPush = vi.fn();
@@ -72,6 +74,25 @@ describe('FooterLanguages', () => {
     fireEvent.click(link, { button: 0 });
 
     expect(mockPush).not.toHaveBeenCalled();
+  });
+
+  it('links a Swiss page to the Swiss version in every other language', () => {
+    const swiss = ({ children }: { children: ReactNode }) => (
+      <NextIntlClientProvider locale="fr-CH" messages={navigation}>
+        {children}
+      </NextIntlClientProvider>
+    );
+    const { getByRole } = render(<FooterLanguages />, { wrapper: swiss });
+    const nav = within(getByRole('navigation', { name: 'Switch language' }));
+
+    expect(nav.getByText('Français', { selector: '[lang="fr"]' }).parentElement).toHaveAttribute(
+      'aria-current',
+      'true'
+    );
+    const german = nav.getByRole('link', { name: 'Deutsch (DE)' });
+    expect(german).toHaveAttribute('href', '/de-CH/projects');
+    expect(german).toHaveAttribute('hreflang', 'de-CH');
+    expect(german).toHaveAttribute('lang', 'de');
   });
 
   it('leaves a click that opens a new tab to the browser', () => {

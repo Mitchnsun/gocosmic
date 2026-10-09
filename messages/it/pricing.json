@@ -101,8 +101,8 @@
         },
         "reviews": {
           "label": "Le recensioni dei tuoi clienti sul tuo sito",
-          "hint": "Una selezione di recensioni dei tuoi clienti, con la loro data, aggiornata ogni mese.",
-          "info": "Le recensioni di altri clienti rassicurano chi esita a contattarti. Ogni mese selezioniamo le recensioni migliori, dalla tua scheda Google o dalle testimonianze che hai ricevuto, e le riportiamo sul tuo sito con la loro data. In Francia la legge chiede di indicare se le recensioni sono verificate e perché alcune non vengono pubblicate: aggiungiamo questa nota."
+          "hint": "Una selezione di recensioni dei tuoi clienti, con la loro data, aggiornata regolarmente.",
+          "info": "Le recensioni di altri clienti rassicurano chi esita a contattarti. Periodicamente selezioniamo le recensioni migliori, dalla tua scheda Google o dalle testimonianze che hai ricevuto, e le riportiamo sul tuo sito con la loro data. In Francia la legge chiede di indicare se le recensioni sono verificate e perché alcune non vengono pubblicate: aggiungiamo questa nota."
         },
         "english": {
           "label": "Il tuo sito in inglese",

@@ -101,8 +101,8 @@
         },
         "reviews": {
           "label": "Las opiniones de tus clientes en tu sitio",
-          "hint": "Una selección de opiniones de tus clientes, con su fecha, actualizada cada mes.",
-          "info": "Las opiniones de otros clientes tranquilizan a quien duda en contactarte. Cada mes seleccionamos las mejores opiniones, de tu ficha de Google o de testimonios que hayas recibido, y las copiamos en tu sitio con su fecha. En Francia, la ley exige indicar si las opiniones se verifican y por qué algunas no se publican: añadimos esa mención."
+          "hint": "Una selección de opiniones de tus clientes, con su fecha, actualizada con regularidad.",
+          "info": "Las opiniones de otros clientes tranquilizan a quien duda en contactarte. Periódicamente seleccionamos las mejores opiniones, de tu ficha de Google o de testimonios que hayas recibido, y las copiamos en tu sitio con su fecha. En Francia, la ley exige indicar si las opiniones se verifican y por qué algunas no se publican: añadimos esa mención."
         },
         "english": {
           "label": "Tu sitio en inglés",

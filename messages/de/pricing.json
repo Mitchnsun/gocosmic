@@ -101,8 +101,8 @@
         },
         "reviews": {
           "label": "Bewertungen Ihrer Kund:innen auf Ihrer Website",
-          "hint": "Eine Auswahl von Bewertungen Ihrer Kund:innen, mit Datum, jeden Monat aktualisiert.",
-          "info": "Bewertungen anderer Kund:innen geben Sicherheit, wenn jemand zögert, Sie zu kontaktieren. Jeden Monat wählen wir die besten Bewertungen aus Ihrem Google-Eintrag oder aus erhaltenen Rückmeldungen aus und übernehmen sie mit Datum auf Ihre Website. In Frankreich verlangt das Gesetz die Angabe, ob Bewertungen geprüft werden und warum manche nicht veröffentlicht werden: Diesen Hinweis fügen wir hinzu."
+          "hint": "Eine Auswahl von Bewertungen Ihrer Kund:innen, mit Datum, regelmäßig aktualisiert.",
+          "info": "Bewertungen anderer Kund:innen geben Sicherheit, wenn jemand zögert, Sie zu kontaktieren. Regelmäßig wählen wir die besten Bewertungen aus Ihrem Google-Eintrag oder aus erhaltenen Rückmeldungen aus und übernehmen sie mit Datum auf Ihre Website. In Frankreich verlangt das Gesetz die Angabe, ob Bewertungen geprüft werden und warum manche nicht veröffentlicht werden: Diesen Hinweis fügen wir hinzu."
         },
         "english": {
           "label": "Ihre Website auf Englisch",

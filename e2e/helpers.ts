@@ -1,5 +1,6 @@
 import type { BrowserContext } from '@playwright/test';
 
+import { getLanguage, getLocalePrefix } from '../i18n/locales';
 import { routing } from '../i18n/routing';
 import de from '../messages/de/common.json' with { type: 'json' };
 import en from '../messages/en/common.json' with { type: 'json' };
@@ -17,8 +18,7 @@ if (!routing.locales.includes(LOCALE)) {
 }
 
 /** Theme toggle labels in the audited locale, e.g. `Passer au thème clair`. */
-// eslint-disable-next-line security/detect-object-injection -- LOCALE is a typed locale
-export const THEME_LABELS = { de, en, es, fr, it }[LOCALE].theme;
+export const THEME_LABELS = { de, en, es, fr, it }[getLanguage(LOCALE)].theme;
 
 export type RouteKey = keyof typeof routing.pathnames;
 
@@ -28,7 +28,7 @@ export function localizedUrl(routeKey: RouteKey): string {
   const path = routing.pathnames[routeKey];
   // eslint-disable-next-line security/detect-object-injection -- LOCALE is a typed locale
   const localized = typeof path === 'string' ? path : path[LOCALE];
-  return `/${LOCALE}${localized === '/' ? '' : localized}`;
+  return `${getLocalePrefix(LOCALE)}${localized === '/' ? '' : localized}`;
 }
 
 /** Routes backed by a `page.dev.tsx`, absent from the production build audited here. */

@@ -7,7 +7,9 @@ import { useEffect, useRef, useState, useTransition } from 'react';
 
 import { MOBILE_MENU_DURATION_MS, MOBILE_MENU_STAGGER_MS } from '@/components/Header/constants';
 import { LANG_DRAWER_LANGUAGES } from '@/components/Header/MobileLangDrawer';
+import FlagIcon from '@/components/icons/FlagIcon';
 import { cn } from '@/design-system/lib/utils';
+import { getLanguage, localeWithLanguage } from '@/i18n/locales';
 
 import { useSwitchLocale } from './useSwitchLocale';
 
@@ -21,6 +23,7 @@ const LanguageSwitcher = ({ onOpen }: LanguageSwitcherProps = {}) => {
   const menuRef = useRef<HTMLDivElement>(null);
   const t = useTranslations('navigation');
   const locale = useLocale();
+  const language = getLanguage(locale);
   const switchLocale = useSwitchLocale();
 
   // Close menu when clicking outside
@@ -47,7 +50,7 @@ const LanguageSwitcher = ({ onOpen }: LanguageSwitcherProps = {}) => {
     startTransition(() => {
       // For more robust locale switching, especially with default locale,
       // we ensure the router properly handles the navigation
-      switchLocale(newLocale);
+      switchLocale(localeWithLanguage(locale, newLocale));
       setIsOpen(false);
     });
   };
@@ -60,7 +63,7 @@ const LanguageSwitcher = ({ onOpen }: LanguageSwitcherProps = {}) => {
         aria-label={t('switch_locale')}
         disabled={isPending}>
         <span className="bg-ok h-2 w-2 rounded-full" aria-hidden="true" />
-        <span className="text-3xs uppercase">{locale}</span>
+        <span className="text-3xs uppercase">{language}</span>
       </button>
 
       {!onOpen && (
@@ -101,13 +104,13 @@ const LanguageSwitcher = ({ onOpen }: LanguageSwitcherProps = {}) => {
                         role="menuitem"
                         className={cn(
                           'group hover:bg-line flex w-full items-center justify-between px-6 py-4 transition-colors',
-                          locale === code ? 'text-aerospace-ink' : 'text-fg'
+                          language === code ? 'text-aerospace-ink' : 'text-fg'
                         )}>
                         <span className="font-display flex items-center gap-3 text-lg leading-none font-medium">
-                          <span aria-hidden="true">{flag}</span>
+                          <FlagIcon code={flag} className="h-4 w-6" />
                           {name}
                         </span>
-                        {locale === code && <CheckIcon className="h-4 w-4 shrink-0" aria-hidden="true" />}
+                        {language === code && <CheckIcon className="h-4 w-4 shrink-0" aria-hidden="true" />}
                       </button>
                     </m.li>
                   ))}

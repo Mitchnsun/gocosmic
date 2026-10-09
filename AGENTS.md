@@ -15,8 +15,8 @@ Codex instructions for working in this repository.
 - Single Next.js 16 App Router application using React 19, TypeScript, Tailwind CSS 4, and `next-intl`.
 - Package manager is Yarn 4 via Corepack. Use `yarn`, not `npm`, for project scripts.
 - Node.js must be `>=24`.
-- Routes live under `app/[locale]/`; supported locales are `en`, `fr`, `es`, `de`, and `it`.
-- Translation namespaces live in `messages/<locale>/` and are loaded on demand by `i18n/request.ts`.
+- Routes live under `app/[locale]/`; supported locales are the five languages `en`, `fr`, `es`, `de`, and `it`, plus a Swiss variant of each (`fr-CH`…, served under `/fr-ch`…) listed in `i18n/locales.ts`. A Swiss locale shares its language's messages and slugs and always shows the Swiss region, while language-only locales always show the default one (see `getRegion` in `lib/region.server.ts`). The visitor's country only picks the version they land on, in `proxy.ts`.
+- Translation namespaces live in `messages/<language>/` and are loaded on demand by `i18n/request.ts`.
 - Reusable primitives live in `design-system/`; app-specific components live in `components/`.
 
 ## Codex Workflow
@@ -35,10 +35,10 @@ Codex instructions for working in this repository.
 - Use server components by default in `app/[locale]/` pages unless client behavior is required.
 - When adding or changing a route:
   - add/update the page under `app/[locale]/`;
-  - update localized pathnames in `i18n/routing.ts`;
+  - update localized pathnames in `i18n/routing.ts`, wrapped in `localized()` so the Swiss locales get them too;
   - update namespace loading in `i18n/request.ts` when the route needs a new or changed translation namespace;
   - keep canonical metadata locale-agnostic;
-  - add all required translation keys for all five locales;
+  - add all required translation keys for all five languages;
   - add or update tests under `__tests__/`.
 - When touching translated UI, check all locale files in the affected namespace, not only English or French.
 - When testing components that use translations, import `render` from `__tests__/test-utils.tsx`, not directly from React Testing Library.

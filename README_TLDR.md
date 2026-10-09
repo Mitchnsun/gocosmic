@@ -21,7 +21,7 @@ yarn dev          # http://localhost:3000
 ## Tech Stack
 
 - **Next.js 16** + **React 19** + **TypeScript 5.9**
-- **TailwindCSS 4** for styling, **next-intl** for i18n (5 locales)
+- **TailwindCSS 4** for styling, **next-intl** for i18n (5 languages, each with a Swiss version)
 - **Vitest** + **React Testing Library** for testing
 
 ## Project Structure

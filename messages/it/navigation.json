@@ -12,6 +12,8 @@
     "services": "Servizi",
     "skip_to_content": "Vai al contenuto principale",
     "switch_locale": "Cambia lingua",
+    "switch_region": "Cambia regione",
+    "region": { "ch": "Svizzera · CHF", "eu": "Europa · EUR" },
     "lang_drawer_title": "LINGUA · SELEZIONE",
     "menu_title": "Menu",
     "home_menu": "Home",
