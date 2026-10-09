@@ -7,8 +7,6 @@ import { toBookingEmbedUrl } from '@/components/BookingEmbed';
 import { ContactDetails } from '@/components/ContactDetails';
 import { ContactPanel } from '@/components/ContactPanel';
 import { SectionHeading } from '@/components/SectionHeading';
-import { AVAILABILITY } from '@/components/StatusBar/StatusBar.constants';
-import { formatStartMonth } from '@/components/StatusBar/StatusBar.utils';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, SECTION_Y } from '@/design-system/pill';
 import { Link } from '@/i18n/navigation';
@@ -36,8 +34,6 @@ export default async function Contact() {
   const locale = await getLocale();
   const messages = await getMessages();
   const region = await getRegion();
-  const { status, startMonth } = AVAILABILITY;
-  const month = formatStartMonth(startMonth, locale);
 
   return (
     <div className="bg-bg text-fg">
@@ -63,8 +59,7 @@ export default async function Contact() {
                 },
                 { label: t('details.where_label'), value: t(`details.where.${region}`) },
               ]}
-              status={`${tStatus(`${status}.label`)} · ${tStatus(`${status}.detail`, { month })}`}
-              available={status === 'available'}
+              status={tStatus('available')}
             />
           </div>
 
