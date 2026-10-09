@@ -50,7 +50,7 @@ const Planet = ({
   reducedMotion = false,
   className,
 }: PlanetProps) => {
-  const { planetRef, wrapperRef } = usePlanetAnimation({
+  const { wrapperRef } = usePlanetAnimation({
     parallaxMode,
     gyroAmplitude,
     scrollFactor,
@@ -102,9 +102,11 @@ const Planet = ({
       aria-hidden="true">
       <div className="animate-planet-glow planet-glow absolute rounded-full blur-2xl" style={{ inset: glowInset }} />
 
+      {/* The slow spin is a CSS animation, run by the compositor rather than a JavaScript loop. */}
       <div
-        ref={planetRef}
-        className="planet-body-surface absolute overflow-hidden rounded-full will-change-transform"
+        className={cn('planet-body-surface absolute overflow-hidden rounded-full will-change-transform', {
+          'animate-planet-spin': !reducedMotion,
+        })}
         style={{ inset: bodyInset }}>
         <div className="planet-band-warm absolute top-[25%] right-[-10%] left-[-10%] h-[14%] rounded-[50%] opacity-35" />
         <div className="planet-band-shadow absolute top-1/2 right-[-10%] left-[-10%] h-[8%] rounded-[50%] opacity-80" />

@@ -18,14 +18,7 @@
   "status_bar": {
     "aria_label": "Verfügbarkeit des Studios",
     "mission_control": "Kontrollzentrum",
-    "available": {
-      "label": "Verfügbar",
-      "detail": "Neue Projekte ab {month}"
-    },
-    "booked": {
-      "label": "Ausgebucht",
-      "detail": "Freie Plätze ab {month}"
-    }
+    "available": "Verfügbar"
   },
   "cookieConsent": {
     "title": "Datenschutzeinstellungen",

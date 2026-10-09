@@ -9,14 +9,13 @@ export interface ContactDetail {
 
 interface ContactDetailsProps {
   details: ContactDetail[];
-  /** Availability line, e.g. `Disponible · Nouveaux projets dès octobre`. */
+  /** Availability line, e.g. `Disponible`. */
   status: string;
-  available: boolean;
   ariaLabel: string;
 }
 
 /** Direct contact lines next to the form: addresses, area served and current availability. */
-export function ContactDetails({ details, status, available, ariaLabel }: ContactDetailsProps) {
+export function ContactDetails({ details, status, ariaLabel }: ContactDetailsProps) {
   return (
     <div className="border-line divide-line flex flex-col divide-y rounded-2xl border">
       <dl aria-label={ariaLabel} className="divide-line flex flex-col divide-y">
@@ -38,7 +37,7 @@ export function ContactDetails({ details, status, available, ariaLabel }: Contac
         ))}
       </dl>
       <p className="text-fg-2 flex items-center gap-2.5 px-5 py-4 text-sm">
-        <SignalDot active={available} />
+        <SignalDot />
         {status}
       </p>
     </div>

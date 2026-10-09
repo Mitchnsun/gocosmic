@@ -39,14 +39,15 @@ The site has two themes — dark ("space", the default) and light ("star") — d
 | `fg-3`          | Meta / mono labels, placeholders                                         | ghost 50 %                            | void 60 %                          | `text-fg-3`                                |
 | `line`          | Hairline, subtle border, hover tint                                      | ghost 8 %                             | void 8 %                           | `border-line`, `bg-line`                   |
 | `line-2`        | Stronger border                                                          | ghost 15 %                            | void 15 %                          | `border-line-2`                            |
+| `line-3`        | Form field outline (3:1, WCAG 1.4.11)                                    | ghost 40 %                            | void 50 %                          | `border-line-3`                            |
 | `ok`            | Availability / online / success                                          | `jungle #29AB87`                      | `#16745A` (jungle darkened, AA)    | `text-ok`, `bg-ok`                         |
 | `on-ok`         | Label on an `ok` fill                                                    | `void`                                | `cosmic-latte`                     | `text-on-ok`                               |
 | `aerospace-ink` | Orange **text** (eyebrows, links, prices, errors) and orange focus rings | `aerospace #FF4F00`                   | `#B83A00` (aerospace darkened, AA) | `text-aerospace-ink`, `ring-aerospace-ink` |
 | `royal-ink`     | Purple **text** (project accents)                                        | `#B97BFF` (the planet's light purple) | `royal #7851A9`                    | `text-royal-ink`                           |
 
-`fg-2`, `fg-3`, `ok`, `aerospace-ink` and `royal-ink` pass WCAG AA (≥ 4.5:1) on `bg`, `bg-alt` and `surface` in both themes, including 10–11 px mono labels; `__tests__/design-system/theme-contrast.test.ts` checks the whole matrix from `app/globals.css`. Orange **fills** (buttons, dots, glows, borders) stay `aerospace` in both themes; orange **text** is always `text-aerospace-ink` (plain `#FF4F00` only reaches 3.1:1 on cream). Focus rings use `ring-fg` or `ring-aerospace-ink`, with `ring-offset-bg`. Pick the step by role, never by eyeballing an opacity: strong text `fg`, secondary `fg-2`, meta `fg-3`; hairlines `line`, stronger borders `line-2`, hover borders `fg-3` or `fg`.
+`fg-2`, `fg-3`, `ok`, `aerospace-ink` and `royal-ink` pass WCAG AA (≥ 4.5:1) on `bg`, `bg-alt` and `surface` in both themes, including 10–11 px mono labels; `line-3` reaches the 3:1 non-text contrast on `bg`, `bg-alt`, `surface` and `field`, so a form field's edge stays visible. `__tests__/design-system/theme-contrast.test.ts` checks the whole matrix from `app/globals.css`. Orange **fills** (buttons, dots, glows, borders) stay `aerospace` in both themes; orange **text** is always `text-aerospace-ink` (plain `#FF4F00` only reaches 3.1:1 on cream). Focus rings use `ring-fg` or `ring-aerospace-ink`, with `ring-offset-bg`. Pick the step by role, never by eyeballing an opacity: strong text `fg`, secondary `fg-2`, meta `fg-3`; hairlines `line`, stronger borders `line-2`, form field outlines `line-3`, hover borders `fg-3` or `fg`.
 
-> ⚠️ `fg-2`, `fg-3`, `line`, `line-2`, `surface` and `field` are already translucent: **never** add an opacity modifier to them (`text-fg-3/80` multiplies the alphas). Modifiers are fine on the opaque tokens (`bg-bg/95`, `bg-ok/20`).
+> ⚠️ `fg-2`, `fg-3`, `line`, `line-2`, `line-3`, `surface` and `field` are already translucent: **never** add an opacity modifier to them (`text-fg-3/80` multiplies the alphas). Modifiers are fine on the opaque tokens (`bg-bg/95`, `bg-ok/20`).
 
 **Nominal brand palette** (`@theme`): the raw colours the semantic tokens are built from. They do not follow the theme, so they only appear in components where a colour is intentionally fixed:
 
@@ -120,6 +121,7 @@ Minimum readable size: **14px** for body text.
 - **Durations**: micro-interactions 200–300ms; enters 400–900ms; stagger **50ms** per item (see `MOBILE_MENU_STAGGER_MS`).
 - **Signature patterns**: reveal-on-scroll (`opacity 0→1` + `translateY(28px→0)`), list stagger, soft pointer parallax, starfield warp on CTA hover, magnetic buttons, pulsing glow.
 - **`prefers-reduced-motion` is mandatory.** Every animated component exposes `respectReducedMotion` (default `true`) and disables animations when requested. Repo pattern: `useState` + `matchMedia('(prefers-reduced-motion: reduce)')` (see `StatusBar`, `ProcessTimeline`) or `usePrefersReducedMotion()`. The data attribute `[data-reduced-motion='true']` disables keyframes in CSS.
+- **Cheap on the main thread.** Continuous loops that move nothing but a transform (a slow spin, an orbit) are CSS keyframes, run by the compositor, not `requestAnimationFrame`. A JavaScript loop (canvas starfield, planet tilt) runs only while its element is on screen (`IntersectionObserver`), so a hidden or scrolled-away scene costs nothing, and a canvas draws in a few batched paths per frame, never one per particle.
 
 ---
 
@@ -221,7 +223,7 @@ Background slightly lifted (`bg-surface`), border `line`, `rounded-2xl`, hover t
 
 ### 3.10 Form fields
 
-48 px high inputs (`h-12`), 12 px radius (`rounded-xl`), `border-line-2` on `bg-field`, orange border and ring on focus, orange border and message on error (`aria-invalid` + `aria-describedby="{id}-error"`). Build every field with `Field` and the `FIELD_INPUT` / `FIELD_TEXTAREA` classes. Checkboxes stay native `<input>`s styled with `CHECKBOX_CONTROL` (20 px box, `fg-3` border for a 3:1 outline, orange fill and void tick when checked). Striped placeholders use `.bg-stripes` (ink at 3 %). Google's booking iframe is the one surface that stays white in both themes.
+48 px high inputs (`h-12`), 12 px radius (`rounded-xl`), `border-line-3` on `bg-field` (a 3:1 outline), orange border and ring on focus, orange border and message on error (`aria-invalid` + `aria-describedby="{id}-error"`). Build every field with `Field` and the `FIELD_INPUT` / `FIELD_TEXTAREA` classes. Checkboxes stay native `<input>`s styled with `CHECKBOX_CONTROL` (20 px box, `fg-3` border for a 3:1 outline, orange fill and void tick when checked). Striped placeholders use `.bg-stripes` (ink at 3 %). Google's booking iframe is the one surface that stays white in both themes.
 
 ---
 
@@ -246,7 +248,7 @@ README.md               ← (optional) props, design, a11y, reduced-motion notes
 - **i18n**: all text goes through `next-intl` (`useTranslations`), keys in `messages/{en,fr,es,de,it}/<namespace>.json`. **All 5 locales** are updated together.
 - **Styling**: Tailwind v4 + `@theme` tokens. Compose classes with `cn()` (`design-system/lib/utils`). No raw CSS except global keyframes in `globals.css`.
 - **Accessibility**: semantic HTML (`section[aria-labelledby]`, lists for collections), complete `aria-*` on interactives (`aria-expanded`, `aria-controls`, `role="dialog"` + `aria-modal`…), touch targets **≥ 44×44px**, visible focus (`focus-visible:ring`), decorative elements as `aria-hidden`.
-- **Animation**: `motion/react` for rich animations (`AnimatePresence`, variants, stagger); CSS for simple ones. Always handle reduced-motion.
+- **Animation**: `motion/react` for rich animations (`AnimatePresence`, variants, stagger); CSS for simple ones. Always handle reduced-motion. Use the light `m.*` components under a `LazyMotion` whose features load in a separate chunk (see `Header`), never `motion.*`: the full runtime would ship in every page's first load.
 - **Tests**: `__tests__/components/<Name>.test.tsx`, **coverage ≥ 90%**. Verify rendering, i18n content, a11y, states, reduced-motion.
 - **Quality before commit**: `yarn format && yarn lint && yarn check-types && yarn test && yarn coverage` — zero errors, zero warnings. For PR/release preparation only: bump `package.json` (semver) and add a `CHANGELOG.md` entry; local commits do not require a version bump. Follow conventional commits for all PRs: `feat(ui): …`.
 
@@ -295,7 +297,7 @@ Background ........ bg-bg (alternate: bg-bg-alt)
 Text .............. text-fg / secondary text-fg-2 / meta text-fg-3
 Accent ............ text-aerospace · bg-aerospace (rare, 1 per zone)
 Availability ...... ok + pulsing signal dot
-Border ............ border-line (subtle) · border-line-2 (strong)
+Border ............ border-line (subtle) · border-line-2 (strong) · border-line-3 (form field)
 Heading ........... font-display, font-medium/bold, tracking-[-.03em], clamp()
 Eyebrow / meta .... font-mono, uppercase, tracking-widest, + aerospace dot
 Body .............. font-body (Inter), ≥14px

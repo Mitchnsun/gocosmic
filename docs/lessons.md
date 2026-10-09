@@ -289,3 +289,19 @@ Grep `components/CosmicCursor/` for the native selector being replaced (`input[t
 **Mistake**: Three new tests mocked `next-intl/server` with a template-string `import()` of message files. Vite turned it into a `\0vite` helper module, and the coverage HTML report crashed on that path after every test had passed. Grepping only for the "All files" line hid the failure locally, so CI was the first to catch it.
 
 **Correct pattern**: In tests, import message files statically (see `__tests__/messages-by-locale.ts`), never through `import(`…${locale}…`)`. After `yarn coverage`, check its exit code (`echo $?`) as well as the thresholds.
+
+---
+
+## Performance
+
+### A server-rendered banner fixed to the bottom can shift while the page is still parsing
+
+**Mistake**: The cookie banner was moved from a client-only render to the server HTML so it would paint with the page. On a loaded CPU, Lighthouse caught a 0.13 layout shift: the browser painted the banner after parsing only its opening tags (42 px of padding), then the rest of its HTML arrived and the banner, anchored with `bottom-4`, grew upwards to 336 px.
+
+**Correct pattern**: Render such an element `hidden` on the server and reveal it with an inline script placed right after it (it runs once the element is fully parsed), as `CookieConsentBoot` does. Check a layout change with Lighthouse under artificial CPU load (busy loops on every core) and `--save-assets`, then read the `LayoutShift` events' `old_rect` / `new_rect` in the trace: an idle machine rarely reproduces it.
+
+### Do not retry a failed dynamic import with Turbopack
+
+**Mistake**: A `.catch(() => import(...))` retry was added for the header's lazy animation features. Turbopack's chunk loader caches the failed chunk, so the second import rejects at once without any request (checked by aborting the chunk in Playwright).
+
+**Correct pattern**: Verify a fallback by actually failing the request before shipping it. A retry needs another mechanism (a reload, or a fallback that does not depend on the chunk).

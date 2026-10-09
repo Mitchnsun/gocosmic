@@ -28,7 +28,7 @@
  * same class renders in both themes. Values come from the --t-* variables below. `inline` makes each
  * utility read the variable where it is used, so a nested [data-theme] (a dark island on a light
  * page) re-scopes the tokens for its subtree.
- * fg-2, fg-3, line, line-2, surface and field are already translucent: never add an opacity modifier.
+ * fg-2, fg-3, line, line-2, line-3, surface and field are already translucent: never add an opacity modifier.
  */
 @theme inline {
   --color-bg: var(--t-bg);
@@ -40,6 +40,7 @@
   --color-fg-3: var(--t-fg-3);
   --color-line: var(--t-line);
   --color-line-2: var(--t-line-2);
+  --color-line-3: var(--t-line-3);
   --color-ok: var(--t-ok);
   --color-on-ok: var(--t-on-ok);
   --color-aerospace-ink: var(--t-aerospace-ink);
@@ -59,6 +60,8 @@
   --t-fg-3: rgb(248 248 255 / 0.5);
   --t-line: rgb(248 248 255 / 0.08);
   --t-line-2: rgb(248 248 255 / 0.15);
+  /* form field outline: 3:1 on bg, bg-alt and field (WCAG 1.4.11) */
+  --t-line-3: rgb(248 248 255 / 0.4);
   --t-ok: #29ab87;
   --t-on-ok: #020617;
   --t-aerospace-ink: #ff4f00;
@@ -78,6 +81,7 @@
   --t-fg-3: rgb(2 6 23 / 0.6);
   --t-line: rgb(2 6 23 / 0.08);
   --t-line-2: rgb(2 6 23 / 0.15);
+  --t-line-3: rgb(2 6 23 / 0.5);
   /* jungle darkened for AA on cream (5.4:1) and misty-rose (4.7:1); cream label on it */
   --t-ok: #16745a;
   --t-on-ok: #fff8e7;
@@ -181,6 +185,12 @@ footer a {
     }
   }
 
+  @keyframes planet-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
   .timeline-dot {
     animation: dot-glow 2s ease-in-out infinite;
   }
@@ -195,6 +205,11 @@ footer a {
 
   .animate-orbit-slow {
     animation: planet-orbit 35s linear infinite;
+  }
+
+  /* 2.16° per second, the pace of the former 0.036° per frame at 60 fps. */
+  .animate-planet-spin {
+    animation: planet-spin 166s linear infinite;
   }
 
   /* Without JavaScript, content waiting for its scroll reveal would stay invisible. */
@@ -212,6 +227,7 @@ footer a {
     .word-exit,
     .word-enter,
     .animate-planet-glow,
+    .animate-planet-spin,
     .animate-orbit,
     .animate-orbit-slow {
       animation: none;
@@ -337,6 +353,7 @@ footer a {
   }
 
   [data-reduced-motion='true'] .animate-planet-glow,
+  [data-reduced-motion='true'] .animate-planet-spin,
   [data-reduced-motion='true'] .animate-orbit,
   [data-reduced-motion='true'] .animate-orbit-slow {
     animation: none;

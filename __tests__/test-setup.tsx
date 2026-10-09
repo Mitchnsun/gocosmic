@@ -40,8 +40,8 @@ vi.mock('@/i18n/navigation', () => ({
 }));
 
 // Mock motion/react so JSDOM doesn't process animation props
-vi.mock('motion/react', () => ({
-  motion: {
+vi.mock('motion/react', () => {
+  const components = {
     span: ({
       children,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -142,10 +142,21 @@ vi.mock('motion/react', () => ({
       custom?: unknown;
       [key: string]: unknown;
     }) => <ul {...(rest as React.HTMLAttributes<HTMLUListElement>)}>{children}</ul>,
-  },
-  AnimatePresence: ({ children }: { children: React.ReactNode }) => <>{children}</>,
-  useReducedMotion: (): boolean => false,
-}));
+  };
+
+  return {
+    motion: components,
+    m: components,
+    AnimatePresence: ({ children }: { children: React.ReactNode }) => <>{children}</>,
+    // Fetches lazy features like the real one, so the loader is exercised, then renders as a fragment.
+    LazyMotion: ({ children, features }: { children: React.ReactNode; features?: unknown }) => {
+      if (typeof features === 'function') void features();
+      return <>{children}</>;
+    },
+    domAnimation: {},
+    useReducedMotion: (): boolean => false,
+  };
+});
 
 // Mock ResizeObserver, which jsdom does not implement
 global.ResizeObserver = class ResizeObserver {

@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useReducedMotion } from 'motion/react';
+import { m, useReducedMotion } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import { RefObject } from 'react';
 
@@ -33,12 +33,12 @@ const MobileMenuButton = ({ isOpen, onToggle, buttonRef, className }: MobileMenu
         'border-line-2 hover:border-fg-3 focus-visible:ring-aerospace-ink flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border transition-colors focus-visible:ring-2 focus-visible:outline-none',
         className
       )}>
-      <motion.span
+      <m.span
         className="block h-0.5 w-5 rounded-full bg-current"
         animate={isOpen ? { y: 4, rotate: 45 } : { y: 0, rotate: 0 }}
         transition={transition}
       />
-      <motion.span
+      <m.span
         className="block h-0.5 w-5 rounded-full bg-current"
         animate={isOpen ? { y: -4, rotate: -45 } : { y: 0, rotate: 0 }}
         transition={transition}

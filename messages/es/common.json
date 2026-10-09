@@ -18,14 +18,7 @@
   "status_bar": {
     "aria_label": "Disponibilidad del estudio",
     "mission_control": "Centro de control",
-    "available": {
-      "label": "Disponible",
-      "detail": "Nuevos proyectos a partir de {month}"
-    },
-    "booked": {
-      "label": "Completo",
-      "detail": "Próximas plazas en {month}"
-    }
+    "available": "Disponible"
   },
   "cookieConsent": {
     "title": "Preferencias de privacidad",

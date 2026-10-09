@@ -1,7 +1,7 @@
 'use client';
 
 import { CheckIcon, XMarkIcon } from '@heroicons/react/24/outline';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { useLocale, useTranslations } from 'next-intl';
 import { useEffect, useTransition } from 'react';
 
@@ -52,7 +52,7 @@ const MobileLangDrawer = ({ onClose }: MobileLangDrawerProps) => {
   };
 
   return (
-    <motion.div
+    <m.div
       id="lang-drawer"
       role="dialog"
       aria-modal="true"
@@ -76,7 +76,7 @@ const MobileLangDrawer = ({ onClose }: MobileLangDrawerProps) => {
       <nav className="flex flex-1 flex-col overflow-y-auto" aria-label={t('switch_locale')}>
         <ul className="divide-line flex flex-col divide-y">
           {Object.entries(LANG_DRAWER_LANGUAGES).map(([code, { name, flag }], index) => (
-            <motion.li
+            <m.li
               key={code}
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -91,11 +91,11 @@ const MobileLangDrawer = ({ onClose }: MobileLangDrawerProps) => {
                 </span>
                 {locale === code && <CheckIcon className="text-aerospace-ink h-5 w-5" aria-hidden="true" />}
               </button>
-            </motion.li>
+            </m.li>
           ))}
         </ul>
       </nav>
-    </motion.div>
+    </m.div>
   );
 };
 

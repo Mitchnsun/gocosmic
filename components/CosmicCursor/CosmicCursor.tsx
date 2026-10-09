@@ -140,7 +140,7 @@ const CosmicCursor = ({
 
       // ── Trailing dots ────────────────────────────────────────────────────
       if (!reduced && !state.usesNativeCursor) {
-        updateTrail();
+        updateTrail(smoothX, smoothY);
         const trail = state.trail;
         for (const [i, point] of trail.entries()) {
           const t = i / trail.length; // 0 = oldest, 1 = newest

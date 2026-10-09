@@ -58,7 +58,7 @@ Below `lg` (1024 px), the desktop nav is hidden and two buttons appear in a flex
 ### `MobileMenuButton`
 
 - Props: `isOpen`, `onToggle`, `buttonRef`, `className`
-- Two `motion.span` bars animate to form a ✕ when `isOpen` is `true` (`translateY + rotate`).
+- Two `m.span` bars animate to form a ✕ when `isOpen` is `true` (`translateY + rotate`).
 - Aria: `aria-label` switches between `menu_open` / `menu_close`, `aria-expanded`, `aria-controls="mobile-menu"`.
 - Hit target: 44 × 44 px minimum.
 - Respects `prefers-reduced-motion` via `useReducedMotion()` — duration drops to 0 when true.
@@ -72,9 +72,10 @@ Below `lg` (1024 px), the desktop nav is hidden and two buttons appear in a flex
 - Top spacer: `useStatusBarOffset() + safe-area-inset-top + HEADER_HEIGHT`, so the links start below the sticky header (this spacer sits under the opaque header, so it stays empty — decoration goes below it). The offset shrinks the already-scrolled-away part of the status bar, read once on mount, so no empty band appears when the drawer opens mid-scroll.
 - `MountainSkyline` decoration: a short strip right below the spacer, still above the metadata row, so it's actually visible instead of hidden behind the sticky header.
 - Metadata row: `menu_title` i18n key on the left, the region-aware studio altitude (`STUDIO_BASES[region].altitude`) on the right.
-- Navigation links stagger in: each `motion.li` with `opacity 0→1 + y 16→0`, delay `index × MOBILE_MENU_STAGGER_MS / 1000` s.
+- Navigation links stagger in: each `m.li` with `opacity 0→1 + y 16→0`, delay `index × MOBILE_MENU_STAGGER_MS / 1000` s.
 - Footer: a « Theme » row with the `ThemeToggle`, the full-width `HeaderCta` (closes the menu on click), then `contact@gocosmic.dev` in monospace (no `LanguageSwitcher` — language switching is handled by `MobileLangDrawer`).
 - `AnimatePresence` is managed in `Header.tsx` so exit animations work correctly.
+- `Header.tsx` wraps everything in `LazyMotion` (`strict`): the `m` components ship without the animation runtime, whose features (`motionFeatures.ts`) load in a separate chunk after the first render. Use `m.*`, never `motion.*`, inside the header.
 
 ### `MobileLangDrawer`
 

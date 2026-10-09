@@ -7,12 +7,17 @@ import { CHECKBOX_CONTROL } from '@/design-system/field';
 import { cn } from '@/design-system/lib/utils';
 import { Link } from '@/i18n/navigation';
 
+import { BANNER_STARTS_HIDDEN } from './CookieConsent.boot';
+import { CookieConsentBoot } from './CookieConsentBoot';
 import { useCookieConsent } from './CookieConsentContext';
 
+/**
+ * Consent banner, rendered on the server so it paints with the page. The server copy starts hidden and
+ * the inline script that follows it reveals it once parsed, unless the visitor already answered.
+ */
 export function CookieConsent() {
   const t = useTranslations('cookieConsent');
   const {
-    isReady,
     choice,
     isCustomizing,
     isDismissable,
@@ -23,13 +28,14 @@ export function CookieConsent() {
     setAnalyticsEnabled,
   } = useCookieConsent();
 
-  if (!isReady) return null;
-
   return (
     <>
       {choice === 'accepted' && <Analytics />}
       {choice === null && (
         <section
+          data-cookie-banner
+          hidden={BANNER_STARTS_HIDDEN}
+          suppressHydrationWarning
           className="border-line-2 bg-bg text-fg fixed right-4 bottom-4 left-4 z-50 m-auto max-w-2xl rounded-2xl border p-5 md:left-auto"
           aria-labelledby="cookie-consent-title">
           <div className="space-y-4">
@@ -80,40 +86,45 @@ export function CookieConsent() {
               </div>
             )}
 
-            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <button
-                type="button"
-                className="font-display bg-aerospace text-void hover:bg-aerospace/90 focus:ring-fg rounded-full px-4 py-2 text-sm font-semibold transition focus:ring-2 focus:outline-none"
-                onClick={() => saveChoice('accepted')}>
-                {t('accept')}
-              </button>
-              <button
-                type="button"
-                className="font-display border-line-2 text-fg hover:border-fg hover:bg-line focus:ring-fg rounded-full border px-4 py-2 text-sm font-semibold transition focus:ring-2 focus:outline-none"
-                onClick={() => saveChoice('refused')}>
-                {t('refuse')}
-              </button>
-              <button
-                type="button"
-                className="font-display text-fg-2 hover:text-fg focus:ring-fg rounded-full px-4 py-2 text-sm font-semibold underline underline-offset-4 transition focus:ring-2 focus:outline-none"
-                onClick={() => {
-                  if (isCustomizing) {
-                    saveChoice(analyticsEnabled ? 'accepted' : 'refused');
-                  } else {
-                    setIsCustomizing(true);
-                  }
-                }}>
-                {isCustomizing ? t('save') : t('customize')}
-              </button>
-              <Link
-                href="/privacy"
-                className="font-display text-fg-2 hover:text-fg focus:ring-fg rounded-full px-4 py-2 text-sm font-semibold underline underline-offset-4 transition focus:ring-2 focus:outline-none">
-                {t('privacyLink')}
-              </Link>
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:px-4">
+                <button
+                  type="button"
+                  className="font-display bg-aerospace text-void hover:bg-aerospace/90 focus:ring-fg rounded-full px-4 py-2 text-sm font-semibold transition focus:ring-2 focus:outline-none"
+                  onClick={() => saveChoice('accepted')}>
+                  {t('accept')}
+                </button>
+                <button
+                  type="button"
+                  className="font-display border-line-2 text-fg hover:border-fg hover:bg-line focus:ring-fg rounded-full border px-4 py-2 text-sm font-semibold transition focus:ring-2 focus:outline-none"
+                  onClick={() => saveChoice('refused')}>
+                  {t('refuse')}
+                </button>
+              </div>
+              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <button
+                  type="button"
+                  className="font-display text-fg-2 hover:text-fg focus:ring-fg rounded-full px-4 py-2 text-sm font-semibold underline underline-offset-4 transition focus:ring-2 focus:outline-none"
+                  onClick={() => {
+                    if (isCustomizing) {
+                      saveChoice(analyticsEnabled ? 'accepted' : 'refused');
+                    } else {
+                      setIsCustomizing(true);
+                    }
+                  }}>
+                  {isCustomizing ? t('save') : t('customize')}
+                </button>
+                <Link
+                  href="/privacy"
+                  className="font-display text-fg-2 hover:text-fg focus:ring-fg rounded-full px-4 py-2 text-center text-sm font-semibold underline underline-offset-4 transition focus:ring-2 focus:outline-none">
+                  {t('privacyLink')}
+                </Link>
+              </div>
             </div>
           </div>
         </section>
       )}
+      {choice === null && <CookieConsentBoot />}
     </>
   );
 }

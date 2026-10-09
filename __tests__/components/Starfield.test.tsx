@@ -94,6 +94,70 @@ describe('Starfield Component', () => {
     expect(() => render(<Starfield starCount={50} speed={5} />)).not.toThrow();
   });
 
+  it('should stroke stars per depth band, not one by one', () => {
+    render(<Starfield starCount={400} speed={4} />);
+
+    // One frame: a single stroke per depth band, whatever the star count.
+    expect(mockCtx.stroke.mock.calls.length).toBeGreaterThan(0);
+    expect(mockCtx.stroke.mock.calls.length).toBeLessThanOrEqual(12);
+    expect(mockCtx.lineTo).toHaveBeenCalledTimes(400);
+  });
+
+  it('should keep drawing frame after frame, following the star count', () => {
+    const { rerender } = render(<Starfield starCount={20} speed={4} />);
+    const runFrame = () => {
+      const [[loop]] = vi.mocked(requestAnimationFrame).mock.calls.slice(-1) as [[FrameRequestCallback]];
+      vi.clearAllMocks();
+      loop(performance.now());
+    };
+
+    rerender(<Starfield starCount={30} speed={4} />);
+    runFrame();
+    expect(mockCtx.lineTo).toHaveBeenCalledTimes(30);
+    expect(requestAnimationFrame).toHaveBeenCalledTimes(1);
+
+    rerender(<Starfield starCount={10} speed={4} />);
+    runFrame();
+    expect(mockCtx.lineTo).toHaveBeenCalledTimes(10);
+  });
+
+  it('should only animate while the canvas is on screen', () => {
+    let reportVisibility: (isIntersecting: boolean) => void = () => {};
+    const disconnect = vi.fn();
+    const { IntersectionObserver } = globalThis;
+    Object.defineProperty(globalThis, 'IntersectionObserver', {
+      configurable: true,
+      writable: true,
+      value: class {
+        constructor(callback: IntersectionObserverCallback) {
+          reportVisibility = (isIntersecting) =>
+            callback([{ isIntersecting } as IntersectionObserverEntry], this as unknown as IntersectionObserver);
+        }
+        observe() {
+          reportVisibility(false);
+        }
+        disconnect = disconnect;
+      },
+    });
+
+    const { unmount } = render(<Starfield />);
+    // The first frame is painted, but no loop runs off screen.
+    expect(mockCtx.fillRect).toHaveBeenCalled();
+    expect(requestAnimationFrame).not.toHaveBeenCalled();
+
+    reportVisibility(true);
+    expect(requestAnimationFrame).toHaveBeenCalledTimes(1);
+    reportVisibility(true);
+    expect(requestAnimationFrame).toHaveBeenCalledTimes(1);
+
+    reportVisibility(false);
+    expect(cancelAnimationFrame).toHaveBeenCalledWith(1);
+
+    unmount();
+    expect(disconnect).toHaveBeenCalled();
+    globalThis.IntersectionObserver = IntersectionObserver;
+  });
+
   it('should keep one animation instance when speed and starCount props change', () => {
     const addSpy = vi.spyOn(window, 'addEventListener');
     const { rerender, unmount } = render(<Starfield starCount={50} speed={2} />);

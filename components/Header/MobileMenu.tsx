@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import { useEffect, useRef } from 'react';
 
@@ -34,7 +34,7 @@ const MobileMenu = ({ onClose, items, region = DEFAULT_REGION }: MobileMenuProps
   }, []);
 
   return (
-    <motion.div
+    <m.div
       id="mobile-menu"
       role="dialog"
       aria-modal="true"
@@ -66,7 +66,7 @@ const MobileMenu = ({ onClose, items, region = DEFAULT_REGION }: MobileMenuProps
       <nav className="flex flex-1 flex-col overflow-y-auto" aria-label={t('label')}>
         <ul className="divide-line flex flex-col divide-y">
           {items.map(({ label, href, ariaLabel }, index) => (
-            <motion.li
+            <m.li
               key={href}
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -80,7 +80,7 @@ const MobileMenu = ({ onClose, items, region = DEFAULT_REGION }: MobileMenuProps
                 <span className="font-display text-fg text-2xl leading-none font-medium">{label}</span>
                 <span className="text-fg-3 font-mono text-sm">/{String(index + 1).padStart(2, '0')}</span>
               </Link>
-            </motion.li>
+            </m.li>
           ))}
         </ul>
       </nav>
@@ -96,7 +96,7 @@ const MobileMenu = ({ onClose, items, region = DEFAULT_REGION }: MobileMenuProps
           {CONTACT_EMAIL}
         </a>
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 

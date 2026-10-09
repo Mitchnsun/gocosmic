@@ -18,14 +18,7 @@
   "status_bar": {
     "aria_label": "Studio availability",
     "mission_control": "Mission control",
-    "available": {
-      "label": "Available",
-      "detail": "New projects from {month}"
-    },
-    "booked": {
-      "label": "Fully booked",
-      "detail": "Next openings in {month}"
-    }
+    "available": "Available"
   },
   "cookieConsent": {
     "title": "Privacy preferences",
