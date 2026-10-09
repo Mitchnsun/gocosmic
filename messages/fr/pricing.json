@@ -101,8 +101,8 @@
         },
         "reviews": {
           "label": "Les avis de vos clients sur votre site",
-          "hint": "Une sélection d'avis de vos clients, avec leur date, mise à jour chaque mois.",
-          "info": "Les avis d'autres clients rassurent un visiteur qui hésite à vous contacter. Chaque mois, nous sélectionnons les meilleurs avis, ceux de votre fiche Google ou des témoignages que vous avez reçus, et nous les recopions sur votre site avec leur date. En France, la loi demande d'indiquer si les avis sont contrôlés et pourquoi certains ne sont pas publiés : nous ajoutons cette mention."
+          "hint": "Une sélection d'avis de vos clients, avec leur date, mise à jour régulièrement.",
+          "info": "Les avis d'autres clients rassurent un visiteur qui hésite à vous contacter. Régulièrement, nous sélectionnons les meilleurs avis, ceux de votre fiche Google ou des témoignages que vous avez reçus, et nous les recopions sur votre site avec leur date. En France, la loi demande d'indiquer si les avis sont contrôlés et pourquoi certains ne sont pas publiés : nous ajoutons cette mention."
         },
         "english": {
           "label": "Votre site en anglais",

@@ -19,6 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Language and region flags are now drawn the same way on every device, instead of depending on the phone or computer
 - Visitors whose browser is set up for Switzerland now arrive on the Swiss version, and changing language there keeps them on it
 - In search results, the Services page now quotes its starting price in Swiss francs on the Swiss version
+- The terms of sale now state that prices in euros apply to businesses not based in Switzerland, and that businesses based in Switzerland are charged in Swiss francs
+- The customer reviews option in the pricing simulator now says reviews are updated regularly, instead of every month
 - The cursor turns navy while it hovers an orange button, so it no longer disappears into it
 - The cookie banner buttons are now laid out on two rows: accept and refuse first, then customise and privacy policy
 - Pages load faster on mobile, the homepage and the free mockup page above all, and the cookie banner now appears together with the page instead of a moment later
