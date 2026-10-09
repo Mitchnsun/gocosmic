@@ -1,7 +1,7 @@
 import { NextRequest } from 'next/server';
 import createMiddleware from 'next-intl/middleware';
 
-import { DEFAULT_LANGUAGE, normalizeAcceptLanguage } from './i18n/locales';
+import { normalizeAcceptLanguage } from './i18n/locales';
 import { routing } from './i18n/routing';
 import { resolveRegion } from './lib/region';
 
@@ -19,11 +19,11 @@ function withNormalizedLanguages(request: NextRequest): NextRequest {
   if (!['GET', 'HEAD'].includes(request.method)) return request;
 
   const inSwitzerland = resolveRegion(request.headers.get(COUNTRY_HEADER)) === 'ch';
-  const acceptLanguage = request.headers.get('accept-language') ?? (inSwitzerland ? DEFAULT_LANGUAGE : null);
-  if (!acceptLanguage) return request;
+  const acceptLanguage = request.headers.get('accept-language');
+  if (acceptLanguage === null && !inSwitzerland) return request;
 
   const headers = new Headers(request.headers);
-  headers.set('accept-language', normalizeAcceptLanguage(acceptLanguage, inSwitzerland));
+  headers.set('accept-language', normalizeAcceptLanguage(acceptLanguage ?? '', inSwitzerland));
   return new NextRequest(request, { headers });
 }
 

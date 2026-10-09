@@ -85,14 +85,16 @@ describe('normalizeAcceptLanguage', () => {
     expect(normalizeAcceptLanguage('de-Latn-CH')).toBe('de-CH');
   });
 
-  it('leaves bare languages and the wildcard alone', () => {
+  it('leaves bare languages alone and drops what is not a language, such as the wildcard', () => {
     expect(normalizeAcceptLanguage('it')).toBe('it');
-    expect(normalizeAcceptLanguage('*')).toBe('*');
+    expect(normalizeAcceptLanguage('fr, *;q=0.5')).toBe('fr');
+    expect(normalizeAcceptLanguage('*')).toBe('');
   });
 
-  it('turns every language Swiss for a visitor located in Switzerland', () => {
-    expect(normalizeAcceptLanguage('fr-FR,fr;q=0.9,en;q=0.8', true)).toBe('fr-CH,fr-CH;q=0.9,en-CH;q=0.8');
-    expect(normalizeAcceptLanguage('de-CH', true)).toBe('de-CH');
-    expect(normalizeAcceptLanguage('*', true)).toBe('*');
+  it('turns every language Swiss for a visitor located in Switzerland, with Swiss English as a last resort', () => {
+    expect(normalizeAcceptLanguage('fr-FR,fr;q=0.9,en;q=0.8', true)).toBe('fr-CH,fr-CH;q=0.9,en-CH;q=0.8,en-CH;q=0.01');
+    expect(normalizeAcceptLanguage('zh-CN', true)).toBe('zh-CH,en-CH;q=0.01');
+    expect(normalizeAcceptLanguage('*', true)).toBe('en-CH;q=0.01');
+    expect(normalizeAcceptLanguage('', true)).toBe('en-CH;q=0.01');
   });
 });

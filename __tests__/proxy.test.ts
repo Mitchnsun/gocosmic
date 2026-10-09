@@ -42,8 +42,10 @@ describe('proxy', () => {
 
     expect(visit({ 'accept-language': 'de-AT,de;q=0.9' })).toBe('de,de;q=0.9');
     expect(visit({ 'accept-language': 'fr-CH,fr;q=0.9' })).toBe('fr-CH,fr;q=0.9');
-    expect(visit({ 'accept-language': 'fr-FR,fr;q=0.9', 'x-vercel-ip-country': 'CH' })).toBe('fr-CH,fr-CH;q=0.9');
-    expect(visit({ 'x-vercel-ip-country': 'CH' })).toBe('en-CH');
+    expect(visit({ 'accept-language': 'fr-FR,fr;q=0.9', 'x-vercel-ip-country': 'CH' })).toBe(
+      'fr-CH,fr-CH;q=0.9,en-CH;q=0.01'
+    );
+    expect(visit({ 'x-vercel-ip-country': 'CH' })).toBe('en-CH;q=0.01');
   });
 
   it('hands any other request over as it is', async () => {

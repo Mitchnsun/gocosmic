@@ -57,15 +57,16 @@ export const LOCALE_PREFIXES = Object.fromEntries(
  * Switzerland or a browser set to a Swiss locale (`fr-CH`, `gsw-CH`) does.
  */
 export function normalizeAcceptLanguage(header: string, inSwitzerland = false): string {
-  return header
-    .split(',')
-    .map((entry) => {
-      const [range = '', ...params] = entry.trim().split(';');
-      const [language = '', ...subtags] = range.trim().split('-');
-      // A language subtag has two or three letters; the `*` wildcard stays as is.
-      const isLanguage = /^[a-z]{2,3}$/i.test(language);
-      const isSwiss = isLanguage && (inSwitzerland || subtags.some((subtag) => subtag.toUpperCase() === 'CH'));
-      return [isSwiss ? `${language}-CH` : language, ...params].join(';');
-    })
-    .join(',');
+  const entries = header.split(',').flatMap((entry) => {
+    const [range = '', ...params] = entry.trim().split(';');
+    const [language = '', ...subtags] = range.trim().split('-');
+    // Only a language subtag (two or three letters) can match a locale; anything else, such as the `*` wildcard,
+    // makes the matcher throw and lose the whole header.
+    if (!/^[a-z]{2,3}$/i.test(language)) return [];
+    const isSwiss = inSwitzerland || subtags.some((subtag) => subtag.toUpperCase() === 'CH');
+    return [[isSwiss ? `${language}-CH` : language, ...params].join(';')];
+  });
+  // Last resort in Switzerland, so that an unsupported language (`zh`, `pt`) still lands on the Swiss version.
+  if (inSwitzerland) entries.push(`${DEFAULT_LANGUAGE}-CH;q=0.01`);
+  return entries.join(',');
 }
