@@ -1,4 +1,3 @@
-/// <reference types="vitest" />
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import { configDefaults, defineConfig } from 'vitest/config';
@@ -24,12 +23,8 @@ export default defineConfig({
         '**/*.config.*',
         '**/*.test.*',
         '**/*.spec.*',
-        'next.config.ts',
-        'postcss.config.mjs',
-        'eslint.config.js',
         'i18n/*.ts',
         'app/**',
-        'views/**',
         'e2e/**',
       ],
       thresholds: {

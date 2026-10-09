@@ -1,8 +1,7 @@
-import { JsonLdScript } from 'next-seo';
-
-import { SITE_URL } from '@/i18n/canonical';
 import { getLanguage } from '@/i18n/locales';
-import { BRAND_NAME, CONTACT_EMAIL, FOUNDER_NAME, LEGACY_BRAND_NAME, STUDIO_ADDRESS } from '@/lib/config';
+import { BRAND_NAME, CONTACT_EMAIL, FOUNDER_NAME, LEGACY_BRAND_NAME, SITE_URL, STUDIO_ADDRESS } from '@/lib/config';
+
+import { JsonLd } from './JsonLd';
 
 type LocalBusinessSeoProps = {
   locale: string;
@@ -56,7 +55,7 @@ export default function LocalBusinessSeo({ locale }: LocalBusinessSeoProps) {
   const { description, areaServed } = getLocalizedLocalBusinessData(locale);
 
   return (
-    <JsonLdScript
+    <JsonLd
       scriptKey="local-business-json-ld"
       data={{
         '@context': 'https://schema.org',

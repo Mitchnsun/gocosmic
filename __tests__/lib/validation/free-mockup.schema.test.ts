@@ -6,7 +6,7 @@ import {
   hasFieldErrors,
   normalizeFreeMockupValues,
   normalizeWebsiteUrl,
-  readFreeMockupField,
+  readField,
   readFreeMockupValues,
   WISHES_MAX_LENGTH,
 } from '@/lib/validation/free-mockup.schema';
@@ -187,12 +187,12 @@ describe('readFreeMockupValues', () => {
   });
 });
 
-describe('readFreeMockupField', () => {
+describe('readField', () => {
   it('reads a single field by name', () => {
     const formData = new FormData();
     formData.set('locale', 'fr');
 
-    expect(readFreeMockupField(formData, 'locale')).toBe('fr');
-    expect(readFreeMockupField(formData, 'company')).toBe('');
+    expect(readField(formData, 'locale')).toBe('fr');
+    expect(readField(formData, 'company')).toBe('');
   });
 });

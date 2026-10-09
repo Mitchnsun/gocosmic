@@ -3,7 +3,7 @@ import type { CaseStudySlug } from './constants';
 import { getCaseStudyNeighbours, PROJECTS_BY_SLUG } from './constants';
 
 /** Localized labels of the previous / next navigation. */
-export interface CaseStudyNavigationLabels {
+interface CaseStudyNavigationLabels {
   previous: string;
   next: string;
   ariaLabel: string;
@@ -25,7 +25,6 @@ export const buildCaseStudyNavigation = (
 
   const toLink = (neighbour: CaseStudySlug | undefined) => {
     if (!neighbour) return undefined;
-    // eslint-disable-next-line security/detect-object-injection
     const project = PROJECTS_BY_SLUG[neighbour];
     return { href: project.href, title: resolveTitle(project.i18nKey) };
   };
@@ -46,7 +45,6 @@ interface ProjectsTranslator {
 
 /** Builds the mono HUD meta line (year, client, kind) of a case study page. */
 export const buildCaseStudyMeta = (slug: CaseStudySlug, tList: ProjectsTranslator): string[] => {
-  // eslint-disable-next-line security/detect-object-injection
   const project = PROJECTS_BY_SLUG[slug];
   return [String(project.year), tList(`items.${project.i18nKey}.client`), tList(`kinds.${project.kind}`)];
 };

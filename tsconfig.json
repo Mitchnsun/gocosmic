@@ -2,8 +2,6 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "allowJs": true,
-    "declaration": true,
-    "declarationMap": true,
     "esModuleInterop": true,
     "incremental": false,
     "isolatedModules": true,
@@ -19,14 +17,7 @@
     "strict": true,
     "target": "ES2022",
     "paths": {
-      "@/app/*": ["./app/*"],
-      "@/components/*": ["./components/*"],
-      "@/data/*": ["./data/*"],
-      "@/design-system/*": ["./design-system/*"],
-      "@/i18n/*": ["./i18n/*"],
-      "@/lib/*": ["./lib/*"],
-      "@/tests/*": ["./__tests__/*"],
-      "@/views/*": ["./views/*"]
+      "@/*": ["./*"]
     },
     "plugins": [
       {

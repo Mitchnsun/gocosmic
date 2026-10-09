@@ -6,7 +6,7 @@ import type { Link } from '@/i18n/navigation';
 export type LocalizedHref = ComponentProps<typeof Link>['href'];
 
 /** Image rendered in the case study hero. */
-export interface CaseStudyImage {
+interface CaseStudyImage {
   src: string;
   alt: string;
   width?: number;
@@ -38,7 +38,7 @@ export interface CaseStudySectionData {
 }
 
 /** Closing call-to-action of a case study. */
-export interface CaseStudyCta {
+interface CaseStudyCta {
   title: string;
   description: string;
   /** Label of the primary button. */
@@ -50,7 +50,7 @@ export interface CaseStudyCta {
 }
 
 /** Link to the previous or next case study. */
-export interface CaseStudyNavLink {
+interface CaseStudyNavLink {
   /** Localized route of the neighbouring case study. */
   href: LocalizedHref;
   /** Project name. */

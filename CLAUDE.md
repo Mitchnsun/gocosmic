@@ -21,7 +21,7 @@ yarn coverage         # Generate coverage report (must stay ≥90% on all metric
 yarn qa               # Local Playwright QA: axe audit of every route in both themes (not in CI)
 ```
 
-**Before committing**, always run: `yarn format && yarn lint && yarn check-types && yarn test && yarn coverage`
+**Before committing**, always run: `yarn format && yarn lint && yarn check-types && yarn coverage`
 
 To run a single test file: `yarn test __tests__/components/MyComponent.test.tsx`
 
@@ -50,8 +50,8 @@ This is a single Next.js 16 app (App Router) with full internationalization via 
 - `app/[locale]/` — All routes are under the dynamic `[locale]` segment. Pages export metadata and use server components by default.
   A `page.dev.tsx` (e.g. `design-system/`) is an internal route served by `yarn dev` only: `pageExtensions` in `next.config.ts` drops it from production builds.
 - `components/` — App-specific components, one folder per component (`Header`, `Footer`, `LanguageSwitcher`, `JsonLd`, `Planet`, `PricingColumns`, `PricingSimulator`, `CaseStudy`, `ContactForm`, `ProjectGrid`, icons, and more).
-- `design-system/` — Reusable UI primitives: `button.tsx` + `button.variants.ts` using CVA, plus `eyebrow.tsx`, `chip.tsx`, `field.tsx`, `hairline-grid.tsx`, `pill.ts`, `slider.tsx`, `tabs.tsx`, `info-popover.tsx`, `accent.ts`. Components use `@radix-ui/react-slot` for polymorphism; sliders, tabs and info bubbles wrap the matching Radix primitives. `design-system/lib/utils.ts` exports `cn` (clsx + tailwind-merge) — **always use `cn` for conditional Tailwind classes**, never string interpolation. Prefer the object form (`cn({ 'class': condition })`) over `condition && 'class'`.
-- `lib/` — Standalone helpers shared across the app (`clamp.ts`, `config.ts`, `og.ts`, `renderWithLinks.tsx`, plus `contact/`, `pricing/`, `validation/`, `hooks/` subfolders). Distinct from `design-system/lib/`.
+- `design-system/` — Reusable UI primitives: `button.variants.ts` using CVA, plus `eyebrow.tsx`, `chip.tsx`, `field.tsx`, `hairline-grid.tsx`, `pill.ts`, `slider.tsx`, `tabs.tsx`, `info-popover.tsx`, `accent.ts`. Sliders, tabs and info bubbles wrap the matching Radix primitives. `design-system/lib/utils.ts` exports `cn` (clsx + tailwind-merge) — **always use `cn` for conditional Tailwind classes**, never string interpolation. Prefer the object form (`cn({ 'class': condition })`) over `condition && 'class'`.
+- `lib/` — Standalone helpers shared across the app (`config.ts`, `seo.ts`, `renderWithLinks.tsx`, plus `contact/`, `pricing/`, `validation/`, `hooks/` subfolders). Distinct from `design-system/lib/`.
 - `data/` — Static content sources (`projects.ts` exports `PROJECTS`, the ordered case-study registry backing the projects pages).
 - `messages/<locale>/` — Translation files split by namespace: `common`, `navigation`, `footer`, `home`, `about`, `services`, `pricing`, `projects`, `contact`, `free-mockup`, `local`, `legal`, `psc-supersprint`.
 - `i18n/routing.ts` — Defines supported locales and all translated pathnames. `i18n/locales.ts` lists them: the five languages (`en`, `fr`, `es`, `de`, `it`) plus a Swiss variant of each (`fr-CH`…, served under `/fr-ch`…), which shares its language's messages and slugs and always shows the Swiss region, while language-only locales always show the default one (see `getRegion` in `lib/region.server.ts`). The visitor's country only picks the version they land on, in `proxy.ts`.

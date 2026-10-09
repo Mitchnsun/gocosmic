@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 import { hasLocale } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
-import { getAlternates, type Locale } from '@/i18n/canonical';
+import { getAlternates } from '@/i18n/canonical';
+import { getLanguage, type Locale } from '@/i18n/locales';
 import { routing } from '@/i18n/routing';
 import { BRAND_NAME } from '@/lib/config';
-import { getOgImages } from '@/lib/og';
 
 type RouteKey = keyof typeof routing.pathnames;
 
@@ -52,7 +52,8 @@ export async function buildPageMetadata({
   const safeLocale: Locale = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
   const t = await getTranslations({ locale: safeLocale, namespace: 'og' });
   const alternates = getAlternates(safeLocale, routeKey);
-  const { og, twitter } = getOgImages(safeLocale);
+  // A Swiss locale shares its language's social images.
+  const language = getLanguage(safeLocale);
   const alt = t('image_alt');
 
   return {
@@ -66,19 +67,15 @@ export async function buildPageMetadata({
       url: alternates.canonical,
       type,
       siteName: BRAND_NAME,
-      // eslint-disable-next-line security/detect-object-injection
       locale: OG_LOCALES[safeLocale],
-      alternateLocale: routing.locales
-        .filter((other) => other !== safeLocale)
-        // eslint-disable-next-line security/detect-object-injection
-        .map((other) => OG_LOCALES[other]),
-      images: [{ url: og, ...OG_IMAGE_SIZE, alt }],
+      alternateLocale: routing.locales.filter((other) => other !== safeLocale).map((other) => OG_LOCALES[other]),
+      images: [{ url: `/og-default-${language}.jpg`, ...OG_IMAGE_SIZE, alt }],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: [{ url: twitter, alt }],
+      images: [{ url: `/twitter-card-${language}.jpg`, alt }],
     },
   };
 }

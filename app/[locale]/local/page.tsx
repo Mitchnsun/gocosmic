@@ -115,7 +115,6 @@ export default async function LocalPage() {
         note={freeMockupNote(tHome)}
         ctaText={t('cta.button')}
         ctaHref="/contact"
-        accentColor="aerospace"
         tone="sober"
       />
     </div>

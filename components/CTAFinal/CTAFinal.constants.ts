@@ -1,42 +1,15 @@
-import type { AccentColor, StarfieldDensity, Tone, TonePreset, Variant } from './CTAFinal.types';
+import type { Tone, TonePreset } from './CTAFinal.types';
 
-/** Accent colours expressed as space-separated RGB channels for `rgb()`. */
-export const ACCENT_RGB: Record<AccentColor, string> = {
-  aerospace: '255 79 0',
-  royal: '120 81 169',
-  jungle: '41 171 135',
-};
-
-/** Tailwind background utility for the headline gradient per accent colour (orange ends use the text shade). */
-export const ACCENT_GRADIENT: Record<AccentColor, string> = {
-  aerospace: 'from-aerospace-ink via-fg to-aerospace-ink',
-  royal: 'from-royal via-fg to-royal',
-  jungle: 'from-ok via-fg to-ok',
-};
-
-/** Rest star count for each density level. */
-export const DENSITY_STAR_COUNT: Record<StarfieldDensity, number> = {
-  low: 250,
-  medium: 400,
-  high: 600,
-};
-
-/** Base background per visual variant (rendered behind the starfield). */
-export const VARIANT_BACKGROUND: Record<Variant, string> = {
-  base: 'bg-bg',
-  alt: 'bg-bg-alt',
-  gradient: 'bg-gradient-to-b from-bg via-bg-alt to-bg',
-};
-
-/** Scales the conceptual 0–1 speed props to the Starfield's pixels-per-frame units. */
-export const SPEED_SCALE = 10;
+/** Starfield speed at rest and while warping, in the Starfield's pixels-per-frame units. */
+export const REST_SPEED = 2;
+export const WARP_SPEED = 8;
 /** Density multiplier applied to the star count while warping. */
 export const WARP_DENSITY_MULTIPLIER = 1.3;
 
-/** Defaults and class names per tone. Explicit props always win over these. */
+/** Behaviour and class names per tone. */
 export const TONE_PRESETS: Record<Tone, TonePreset> = {
   immersive: {
-    density: 'high',
+    starCount: 600,
     warp: true,
     halo: true,
     gradientHeadline: true,
@@ -52,7 +25,7 @@ export const TONE_PRESETS: Record<Tone, TonePreset> = {
     arrow: 'size-5',
   },
   sober: {
-    density: 'low',
+    starCount: 250,
     warp: false,
     halo: false,
     gradientHeadline: false,

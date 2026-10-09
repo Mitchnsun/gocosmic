@@ -27,7 +27,7 @@ const NO_PALETTE_LABEL = 'No preference';
 const EMPTY_VALUE = '—';
 
 /** Fields of a free mockup request, as they reach the email builder. */
-export interface FreeMockupEmailInput {
+interface FreeMockupEmailInput {
   email: string;
   /** Empty when the visitor left the colour question untouched. */
   colorPalette?: ColorPaletteChoice | '';
@@ -40,7 +40,7 @@ export interface FreeMockupEmailInput {
 }
 
 /** Rendered email, ready to hand over to the mail provider. */
-export interface FreeMockupEmail {
+interface FreeMockupEmail {
   subject: string;
   text: string;
   html: string;
@@ -71,7 +71,6 @@ export function buildFreeMockupEmail({
 }: FreeMockupEmailInput): FreeMockupEmail {
   const pickedPalette =
     colorPalette && colorPalette !== NO_PALETTE_PREFERENCE ? (colorPalette as ColorPaletteKey) : undefined;
-  // eslint-disable-next-line security/detect-object-injection
   const palette = pickedPalette ? `${PALETTE_LABELS[pickedPalette]} (${pickedPalette})` : NO_PALETTE_LABEL;
   const website = websiteUrl?.trim() || EMPTY_VALUE;
   const wishesText = wishes?.trim() || EMPTY_VALUE;

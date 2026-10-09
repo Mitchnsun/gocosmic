@@ -29,7 +29,6 @@ interface TierSliderProps {
 export function TierSlider({ label, tiers, value, onChange, disabled = false, describedBy, info }: TierSliderProps) {
   const id = useId();
   // `value` is already clamped onto a valid position.
-  // eslint-disable-next-line security/detect-object-injection
   const current = tiers[value];
 
   return (

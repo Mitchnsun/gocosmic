@@ -108,7 +108,6 @@ export default async function Services() {
         description={t('cta.description')}
         ctaText={t('cta.primary_button')}
         ctaHref="/contact"
-        accentColor="aerospace"
         tone="sober"
       />
     </div>

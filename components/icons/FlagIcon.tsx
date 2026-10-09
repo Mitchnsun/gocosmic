@@ -62,7 +62,6 @@ export default function FlagIcon({
 }: Omit<SVGProps<SVGSVGElement>, 'children' | 'ref'> & { code: FlagCode }) {
   return (
     <svg className={cn('shrink-0 rounded-[2px]', className)} viewBox="0 0 30 20" aria-hidden="true" {...props}>
-      {/* eslint-disable-next-line security/detect-object-injection -- code is a typed union */}
       {FLAGS[code]}
     </svg>
   );

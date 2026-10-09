@@ -11,7 +11,6 @@ import { type CaseStudySlug, PROJECTS_BY_SLUG } from './constants';
  * as the title and the card's description. Server only, so it stays out of the `index.ts` surface.
  */
 export async function buildCaseStudyMetadata(locale: string, slug: CaseStudySlug): Promise<Metadata> {
-  // eslint-disable-next-line security/detect-object-injection
   const project = PROJECTS_BY_SLUG[slug];
   const t = await getTranslations({ locale, namespace: 'projectsList' });
 

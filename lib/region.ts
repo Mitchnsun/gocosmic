@@ -19,10 +19,5 @@ export function resolveRegion(countryCode?: string | null): Region {
 }
 
 export function getCurrency(region: Region): Currency {
-  switch (region) {
-    case 'ch':
-      return 'chf';
-    case 'fr':
-      return 'eur';
-  }
+  return region === 'ch' ? 'chf' : 'eur';
 }

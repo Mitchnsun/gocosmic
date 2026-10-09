@@ -8,13 +8,13 @@ import type { Theme } from '@/components/Theme';
 export const COARSE_POINTER_QUERY = 'not all and (pointer: fine)';
 
 /** Represents a single trailing dot position */
-export interface TrailPoint {
+interface TrailPoint {
   x: number;
   y: number;
 }
 
 /** State managed by the cosmic cursor hook */
-export interface CosmicCursorState {
+interface CosmicCursorState {
   /** Current mouse position */
   mouse: { x: number; y: number };
   /** True when mouse is on the page */
@@ -25,9 +25,9 @@ export interface CosmicCursorState {
   isTouchDevice: boolean;
   /** Trailing dot history */
   trail: TrailPoint[];
-  /** Current accent color hex (reacts to data-accent) */
+  /** Current accent color hex */
   accentColor: string;
-  /** True when snapping toward a magnetic element */
+  /** True when snapping toward a link or a button */
   isMagnetic: boolean;
   /** True when hovering a form control that shows its own native cursor (text caret, hand, grab…) — hide the canvas dot */
   usesNativeCursor: boolean;
@@ -35,52 +35,35 @@ export interface CosmicCursorState {
   surfaceTheme: Theme;
 }
 
-export interface UseCosmicCursorOptions {
-  trailLength?: number;
-  magneticRange?: number;
-  magneticEase?: number;
-}
+/** Number of trailing dots. */
+const TRAIL_LENGTH = 8;
+/** Magnetic pull range, in pixels. */
+const MAGNETIC_RANGE = 80;
+/** Magnetic easing factor (0–1). */
+const MAGNETIC_EASE = 0.15;
 
 const COLORS = {
   aerospace: '#FF4F00',
-  royal: '#7851A9',
-  jungle: '#29AB87',
   space: '#1E2952',
 } as const;
-
-type AccentKey = keyof typeof COLORS;
-
-function resolveAccent(key: string | null): string {
-  if (key && key in COLORS) return COLORS[key as AccentKey];
-  return COLORS.aerospace;
-}
 
 /**
  * Apply magnetic snapping toward an element center.
  *
- * The positional pull is only applied when the pointer is within `range` of the element's
+ * The positional pull is only applied when the pointer is within `MAGNETIC_RANGE` of the element's
  * center. Without this guard, a wide element (e.g. a full-row link) would drag the drawn
- * cursor far from the pointer toward its center — the accent color and magnetic ring still
- * activate outside `range` so hovering the element remains visible, just without moving the
+ * cursor far from the pointer toward its center — the magnetic ring still
+ * activates outside the range so hovering the element remains visible, just without moving the
  * cursor away from what the user is actually pointing at.
  */
-function applySnap(
-  state: CosmicCursorState,
-  rect: DOMRect,
-  rawX: number,
-  rawY: number,
-  ease: number,
-  range: number,
-  accent: string | null
-) {
+function applySnap(state: CosmicCursorState, rect: DOMRect, rawX: number, rawY: number) {
   const cx = rect.left + rect.width / 2;
   const cy = rect.top + rect.height / 2;
   const dist = Math.sqrt((cx - rawX) ** 2 + (cy - rawY) ** 2);
-  if (dist < range) {
-    state.mouse.x += (cx - rawX) * ease;
-    state.mouse.y += (cy - rawY) * ease;
+  if (dist < MAGNETIC_RANGE) {
+    state.mouse.x += (cx - rawX) * MAGNETIC_EASE;
+    state.mouse.y += (cy - rawY) * MAGNETIC_EASE;
   }
-  state.accentColor = resolveAccent(accent);
   state.isMagnetic = true;
 }
 
@@ -89,11 +72,7 @@ function applySnap(
  * Returns a ref to the mutable state object so the canvas render loop can read it
  * without triggering React re-renders.
  */
-export function useCosmicCursor({
-  trailLength = 8,
-  magneticRange = 80,
-  magneticEase = 0.15,
-}: UseCosmicCursorOptions = {}) {
+export function useCosmicCursor() {
   const stateRef = useRef<CosmicCursorState>({
     mouse: { x: -200, y: -200 },
     isVisible: false,
@@ -105,9 +84,6 @@ export function useCosmicCursor({
     usesNativeCursor: false,
     surfaceTheme: 'dark',
   });
-
-  // Ref holding magnetic element list — populated at mount and on DOM mutations
-  const magneticElementsRef = useRef<Element[]>([]);
 
   useEffect(() => {
     const state = stateRef.current;
@@ -125,34 +101,8 @@ export function useCosmicCursor({
     };
     mq.addEventListener('change', onMqChange);
 
-    // Cache of element → last measured bounding rect, invalidated on scroll/resize/DOM change
-    const rectCache = new Map<Element, DOMRect>();
-    const invalidateRectCache = () => rectCache.clear();
-
-    // Scan magnetic elements
-    const scanMagnetic = () => {
-      magneticElementsRef.current = Array.from(document.querySelectorAll('[data-magnetic]'));
-      // Invalidate rect cache when the element list changes
-      rectCache.clear();
-    };
-    scanMagnetic();
-
-    window.addEventListener('scroll', invalidateRectCache, { passive: true });
-    window.addEventListener('resize', invalidateRectCache, { passive: true });
-
-    // Observe DOM mutations to keep the magnetic list fresh.
-    // Also watch attribute changes so that elements marked by useMagneticElements
-    // (or declaratively via data-magnetic) are picked up without a full DOM insertion.
-    const observer = new MutationObserver(scanMagnetic);
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
-      attributes: true,
-      attributeFilter: ['data-magnetic', 'data-accent'],
-    });
-
     // Trail initialization
-    state.trail = Array.from({ length: trailLength }, () => ({ x: -200, y: -200 }));
+    state.trail = Array.from({ length: TRAIL_LENGTH }, () => ({ x: -200, y: -200 }));
 
     const onMouseMove = (e: MouseEvent) => {
       state.mouse.x = e.clientX;
@@ -181,58 +131,11 @@ export function useCosmicCursor({
       state.surfaceTheme =
         isElement && target.closest('[data-theme]')?.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
 
-      // Magnetic detection — scan [data-magnetic] elements and find the closest
-      // Use cached rects (invalidated on scroll/resize) to avoid layout thrashing
-      let closestDist = Infinity;
-      let closestEl: Element | null = null;
-      let closestRect: DOMRect | null = null;
-
-      for (const el of magneticElementsRef.current) {
-        let rect = rectCache.get(el);
-        if (!rect) {
-          rect = el.getBoundingClientRect();
-          rectCache.set(el, rect);
-        }
-        const cx = rect.left + rect.width / 2;
-        const cy = rect.top + rect.height / 2;
-        const dist = Math.sqrt((e.clientX - cx) ** 2 + (e.clientY - cy) ** 2);
-        if (dist < closestDist) {
-          closestDist = dist;
-          closestEl = el;
-          closestRect = rect;
-        }
-      }
-
+      // Links and buttons pull the dot toward their center.
       const hovered = isElement ? target.closest('a, button') : null;
-
-      if (closestEl && closestRect && closestDist < magneticRange) {
-        // Explicit [data-magnetic] element: snap and change accent
-        applySnap(
-          state,
-          closestRect,
-          e.clientX,
-          e.clientY,
-          magneticEase,
-          magneticRange,
-          closestEl.getAttribute('data-accent')
-        );
-      } else {
-        state.isMagnetic = false;
-        state.accentColor = COLORS.aerospace;
-
-        // Auto-magnetic for <a> and <button> — apply snapping for consistency
-        if (hovered) {
-          applySnap(
-            state,
-            hovered.getBoundingClientRect(),
-            e.clientX,
-            e.clientY,
-            magneticEase,
-            magneticRange,
-            hovered.getAttribute('data-accent')
-          );
-        }
-      }
+      state.isMagnetic = false;
+      state.accentColor = COLORS.aerospace;
+      if (hovered) applySnap(state, hovered.getBoundingClientRect(), e.clientX, e.clientY);
 
       // Orange fill under the pointer: switch to space so the dot stays visible.
       if (hovered?.classList.contains('bg-aerospace')) state.accentColor = COLORS.space;
@@ -253,12 +156,9 @@ export function useCosmicCursor({
       document.removeEventListener('mousemove', onMouseMove);
       document.removeEventListener('mouseleave', onMouseLeave);
       document.removeEventListener('mouseenter', onMouseEnter);
-      window.removeEventListener('scroll', invalidateRectCache);
-      window.removeEventListener('resize', invalidateRectCache);
       mq.removeEventListener('change', onMqChange);
-      observer.disconnect();
     };
-  }, [trailLength, magneticRange, magneticEase]);
+  }, []);
 
   /** Called each frame with the drawn dot position, so the trail follows the dot. */
   const updateTrail = useCallback((x: number, y: number) => {

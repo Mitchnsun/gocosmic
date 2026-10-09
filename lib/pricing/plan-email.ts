@@ -31,7 +31,6 @@ export function buildPlanEmailRows(plan: DecodedPlan): Array<[string, string]> {
   const { projectType, websiteType, region } = plan;
   const money = (amount: number) => formatAmount(amount, getCurrency(region));
 
-  /* eslint-disable security/detect-object-injection -- every index is a validated union or tier key */
   const rows: Array<[string, string]> = [[`${LABEL_PREFIX} — project`, PROJECT_TYPE_LABELS[projectType]]];
 
   if (websiteType) {
@@ -77,7 +76,6 @@ export function buildPlanEmailRows(plan: DecodedPlan): Array<[string, string]> {
     [`${LABEL_PREFIX} — AI-assisted articles`, tiered('articles', 'Not included')],
     [`${LABEL_PREFIX} — monthly total`, `${money(getMonthlyTotal(selection))} ${MONTHLY}`]
   );
-  /* eslint-enable security/detect-object-injection */
 
   if (needsCustomQuote(selection)) {
     rows.push([`${LABEL_PREFIX} — note`, 'Top position reached (pages, updates or mailboxes): needs a personal quote']);

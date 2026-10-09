@@ -3,15 +3,12 @@ import pluginNext from '@next/eslint-plugin-next';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import importPlugin from 'eslint-plugin-import';
 import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
-import onlyWarn from 'eslint-plugin-only-warn';
 import prettierPlugin from 'eslint-plugin-prettier';
 import pluginReact from 'eslint-plugin-react';
 import pluginReactHooks from 'eslint-plugin-react-hooks';
 import securityPlugin from 'eslint-plugin-security';
 import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort';
-import unicornPlugin from 'eslint-plugin-unicorn';
 import unusedImportsPlugin from 'eslint-plugin-unused-imports';
-import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 /** Class names drawing on a default Tailwind palette, e.g. `text-slate-400` or `hover:bg-blue-500/50`. */
@@ -41,7 +38,6 @@ const config = [
     plugins: {
       prettier: prettierPlugin,
       import: importPlugin,
-      unicorn: unicornPlugin,
       'unused-imports': unusedImportsPlugin,
       'simple-import-sort': simpleImportSortPlugin,
     },
@@ -53,8 +49,8 @@ const config = [
       'import/first': 'error',
       'import/newline-after-import': 'error',
       'import/no-duplicates': 'error',
-      'unicorn/prevent-abbreviations': 'off',
-      'unicorn/filename-case': 'off',
+      // Flags every typed-key lookup (`record[key]`) in a strict TypeScript codebase: noise, not signal.
+      'security/detect-object-injection': 'off',
       'no-restricted-imports': [
         'error',
         {
@@ -93,15 +89,7 @@ const config = [
       'no-restricted-imports': 'off',
     },
   },
-  {
-    ...pluginReact.configs.flat.recommended,
-    languageOptions: {
-      ...pluginReact.configs.flat.recommended.languageOptions,
-      globals: {
-        ...globals.serviceworker,
-      },
-    },
-  },
+  pluginReact.configs.flat.recommended,
   pluginJsxA11y.flatConfigs.recommended,
   {
     plugins: {
@@ -124,34 +112,13 @@ const config = [
     },
   },
   {
-    plugins: {
-      onlyWarn,
-    },
-  },
-  {
     files: ['__tests__/**/*', '**/*.test.*', '**/*.spec.*'],
     rules: {
       '@next/next/no-html-link-for-pages': 'off',
     },
   },
   {
-    files: ['next-env.d.ts'],
-    rules: {
-      '@typescript-eslint/triple-slash-reference': 'off',
-    },
-  },
-  {
-    ignores: [
-      'dist/**',
-      '.next/**',
-      'node_modules/**',
-      'coverage/**',
-      '**/__snapshots__/**',
-      'messages/**',
-      'public/**',
-      'next-env.d.ts',
-      '.eslintcache',
-    ],
+    ignores: ['.next/**', 'coverage/**', 'messages/**', 'public/**', 'next-env.d.ts'],
   },
 ];
 

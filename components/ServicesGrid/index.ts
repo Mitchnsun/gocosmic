@@ -1,1 +1,1 @@
-export { type ServiceItem, ServicesGrid } from './ServicesGrid';
+export { ServicesGrid } from './ServicesGrid';

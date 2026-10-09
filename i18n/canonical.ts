@@ -1,15 +1,12 @@
-import { getLocalePrefix } from '@/i18n/locales';
+import { getLocalePrefix, type Locale } from '@/i18n/locales';
 import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/config';
 
-export { SITE_URL };
-
-export type Locale = (typeof routing.locales)[number];
 type PathKey = keyof typeof routing.pathnames;
 
 function getLocalizedPath(pathnames: string | Record<Locale, string>, locale: string): string {
   if (typeof pathnames === 'string') return pathnames;
-  return Object.entries(pathnames).find(([key]) => key === locale)?.[1] ?? '/';
+  return pathnames[locale as Locale] ?? '/';
 }
 
 /**
@@ -18,16 +15,12 @@ function getLocalizedPath(pathnames: string | Record<Locale, string>, locale: st
  * and getCanonicalUrl('fr-CH', '/about') => 'https://www.gocosmic.dev/fr-ch/a-propos'
  */
 export function getCanonicalUrl(locale: string, routeKey: PathKey): string {
-  // eslint-disable-next-line security/detect-object-injection
   const pathnames = routing.pathnames[routeKey];
   const localizedPath = getLocalizedPath(pathnames as string | Record<Locale, string>, locale);
   const prefix = getLocalePrefix(locale);
 
   // No trailing slash on the home page: `/fr/` permanently redirects to `/fr`, and a canonical URL must not redirect.
-  if (localizedPath === '/') {
-    return `${SITE_URL}${prefix}`;
-  }
-  return `${SITE_URL}${prefix}${localizedPath}`;
+  return `${SITE_URL}${prefix}${localizedPath === '/' ? '' : localizedPath}`;
 }
 
 /**

@@ -8,8 +8,8 @@ const jsonLdScriptMock = vi.fn((props: unknown) => (
   <script data-testid="projects-list-json-ld" data-props={JSON.stringify(props)} />
 ));
 
-vi.mock('next-seo', () => ({
-  JsonLdScript: (props: unknown) => jsonLdScriptMock(props),
+vi.mock('@/components/JsonLd/JsonLd', () => ({
+  JsonLd: (props: unknown) => jsonLdScriptMock(props),
 }));
 
 describe('ProjectsListSeo', () => {

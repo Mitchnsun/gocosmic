@@ -40,9 +40,7 @@ export function TimelineStepItem({
   const stepRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
   const color = step.color ?? 'default';
-  // eslint-disable-next-line security/detect-object-injection
   const labelColor = colorMap[color];
-  // eslint-disable-next-line security/detect-object-injection
   const dotColor = dotColorMap[color];
   const delay = reducedMotion ? 0 : index * staggerDelay;
 

@@ -61,7 +61,6 @@ const RETIRED_PAGES: RetiredPage[] = [
 export function getLegacyRedirects(): Redirect[] {
   return RETIRED_PAGES.flatMap(({ slugs, hash = '' }) => {
     const english = slugs.en;
-    /* eslint-disable security/detect-object-injection -- language is the typed Language union */
     const localized = LANGUAGES.flatMap((language) =>
       [...new Set([slugs[language], english])].map((slug) => ({
         source: `/${language}${slug}`,
@@ -69,7 +68,6 @@ export function getLegacyRedirects(): Redirect[] {
         permanent: true,
       }))
     );
-    /* eslint-enable security/detect-object-injection */
 
     return [{ source: english, destination: `/services${hash}`, permanent: true }, ...localized];
   });
@@ -86,7 +84,6 @@ const FORMER_LOCAL_SLUGS: Record<Language, string> = {
 
 /** Permanent redirects from the former local page slugs to the current ones, under every locale prefix (Swiss ones included). */
 export function getLocalPageRedirects(): Redirect[] {
-  /* eslint-disable security/detect-object-injection -- language is the typed Language union */
   return LOCALES.map((locale) => {
     const language = getLanguage(locale);
     return {
@@ -95,5 +92,4 @@ export function getLocalPageRedirects(): Redirect[] {
       permanent: true,
     };
   });
-  /* eslint-enable security/detect-object-injection */
 }

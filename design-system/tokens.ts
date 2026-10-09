@@ -1,7 +1,7 @@
 /** Theme faces of the site, as set by `data-theme` (DESIGN_GUIDELINE.md §1). */
 export type ThemeFace = 'dark' | 'light';
 
-export interface DesignToken {
+interface DesignToken {
   /** Token name, i.e. the `--t-*` variable and the Tailwind colour, e.g. `fg-2`. */
   name: string;
   /** Background utility painting the swatch, spelled out so Tailwind generates it. */

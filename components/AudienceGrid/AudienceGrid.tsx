@@ -6,7 +6,7 @@ import { HairlineGrid } from '@/design-system/hairline-grid';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, SECTION_Y } from '@/design-system/pill';
 
-export interface AudienceItem {
+interface AudienceItem {
   title: string;
   description: string;
 }

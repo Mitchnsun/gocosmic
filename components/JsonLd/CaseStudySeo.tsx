@@ -1,8 +1,10 @@
 import { useLocale, useTranslations } from 'next-intl';
-import { JsonLdScript } from 'next-seo';
 
 import { type CaseStudySlug, PROJECTS_BY_SLUG } from '@/components/CaseStudy';
-import { getCanonicalUrl, SITE_URL } from '@/i18n/canonical';
+import { getCanonicalUrl } from '@/i18n/canonical';
+import { SITE_URL } from '@/lib/config';
+
+import { JsonLd } from './JsonLd';
 
 type CaseStudySeoProps = {
   slug: CaseStudySlug;
@@ -13,7 +15,6 @@ export default function CaseStudySeo({ slug }: CaseStudySeoProps) {
   const locale = useLocale();
   const t = useTranslations('projectsList');
   const tNav = useTranslations('navigation');
-  // eslint-disable-next-line security/detect-object-injection
   const project = PROJECTS_BY_SLUG[slug];
   const url = getCanonicalUrl(locale, project.href);
   const name = t(`items.${project.i18nKey}.title`);
@@ -25,7 +26,7 @@ export default function CaseStudySeo({ slug }: CaseStudySeoProps) {
   ];
 
   return (
-    <JsonLdScript
+    <JsonLd
       scriptKey={`case-study-json-ld-${slug}`}
       data={{
         '@context': 'https://schema.org',

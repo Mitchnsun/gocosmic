@@ -15,7 +15,6 @@ const ERROR_ID = 'free-mockup-palette-error';
 
 /** Three dots previewing the mood of a palette. Purely decorative. */
 function PaletteSwatch({ paletteKey }: { paletteKey: ColorPaletteKey }) {
-  // eslint-disable-next-line security/detect-object-injection
   const colors = PALETTE_SWATCHES[paletteKey];
 
   return (

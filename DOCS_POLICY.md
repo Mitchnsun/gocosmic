@@ -31,7 +31,6 @@ introduced once a French human-facing doc is actually added:
 ├── README.md                 # Bilingual minimal entry point (navigation + links)
 ├── README.en.md              # English project entry (technical)
 ├── README.fr.md              # French project entry (onboarding/product)
-├── README_TLDR.md            # English, lightweight quick-read summary
 ├── DOCS_POLICY.md            # This policy
 ├── CONTRIBUTING.md, SECURITY.md, GUIDELINES.md, DESIGN_GUIDELINE.md # English technical references
 ├── CLAUDE.md, AGENTS.md, .github/copilot-instructions.md            # English AI-agent instructions

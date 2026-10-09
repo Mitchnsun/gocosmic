@@ -68,7 +68,7 @@ The site has two themes — dark ("space", the default) and light ("star") — d
 
 > ❌ **Never** use Tailwind's default palettes (`slate-*`, `gray-*`, `blue-*`, `amber-*`…) nor the theme-dependent nominal tokens (`bg-void`, `text-ghost`, `border-ghost/8`, `bg-ember`, `text-jungle`, `space`…). ESLint rules (`no-restricted-syntax` in `eslint.config.js`) reject both in `app/`, `components/`, `design-system/` and `lib/`. The rare intentional exception carries an `eslint-disable-next-line no-restricted-syntax` with a comment saying why the colour is fixed.
 
-**Accent glows** (radial-gradient, layered behind content): built inline from a token's RGB channels — see `accentClasses(token).rgb` (`design-system/accent.ts`) for general use, and `ACCENT_RGB` (`components/CTAFinal/CTAFinal.constants.ts`) for the CTA's own accent variants. Real CTA pattern: `radial-gradient(circle at 50% 60%, rgb(var(--cta-accent-rgb) / 0.22), transparent 60%)`. There is no standalone `--glow-*` CSS variable — compose the gradient from the token's RGB, as the existing components do (`Planet`, `CTAFinal`).
+**Accent glows** (radial-gradient, layered behind content): built inline from a token's RGB channels — see `accentClasses(token).rgb` (`design-system/accent.ts`). Real CTA pattern: `radial-gradient(circle at 50% 60%, rgb(255 79 0 / 0.22), transparent 60%)`. There is no standalone `--glow-*` CSS variable — compose the gradient from the token's RGB, as the existing components do (`Planet`, `CTAFinal`).
 
 ### 2.2 Typography
 
@@ -250,7 +250,7 @@ README.md               ← (optional) props, design, a11y, reduced-motion notes
 - **Accessibility**: semantic HTML (`section[aria-labelledby]`, lists for collections), complete `aria-*` on interactives (`aria-expanded`, `aria-controls`, `role="dialog"` + `aria-modal`…), touch targets **≥ 44×44px**, visible focus (`focus-visible:ring`), decorative elements as `aria-hidden`.
 - **Animation**: `motion/react` for rich animations (`AnimatePresence`, variants, stagger); CSS for simple ones. Always handle reduced-motion. Use the light `m.*` components under a `LazyMotion` whose features load in a separate chunk (see `Header`), never `motion.*`: the full runtime would ship in every page's first load.
 - **Tests**: `__tests__/components/<Name>.test.tsx`, **coverage ≥ 90%**. Verify rendering, i18n content, a11y, states, reduced-motion.
-- **Quality before commit**: `yarn format && yarn lint && yarn check-types && yarn test && yarn coverage` — zero errors, zero warnings. For PR/release preparation only: bump `package.json` (semver) and add a `CHANGELOG.md` entry; local commits do not require a version bump. Follow conventional commits for all PRs: `feat(ui): …`.
+- **Quality before commit**: `yarn format && yarn lint && yarn check-types && yarn coverage` — zero errors, zero warnings. For PR/release preparation only: bump `package.json` (semver) and add a `CHANGELOG.md` entry; local commits do not require a version bump. Follow conventional commits for all PRs: `feat(ui): …`.
 
 **Recurring props to plan for**: `className?`, `id?`, `respectReducedMotion?` (default `true`), and pre-localized content props (pass translated strings, not keys).
 
