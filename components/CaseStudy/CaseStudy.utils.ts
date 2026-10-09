@@ -39,9 +39,7 @@ export const buildCaseStudyNavigation = (
 };
 
 /** Translator scoped to the `projectsList` namespace. */
-interface ProjectsTranslator {
-  (key: string): string;
-}
+type ProjectsTranslator = (key: string) => string;
 
 /** Builds the mono HUD meta line (year, client, kind) of a case study page. */
 export const buildCaseStudyMeta = (slug: CaseStudySlug, tList: ProjectsTranslator): string[] => {

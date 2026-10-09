@@ -27,11 +27,11 @@ const isAddOn = (id: PlanItem['id']): id is AddOnKey => id in ADD_ON_LABELS;
  * email. The monthly total is recomputed from the price table: the figure the
  * visitor saw is never transmitted, so it cannot be forged.
  */
-export function buildPlanEmailRows(plan: DecodedPlan): Array<[string, string]> {
+export function buildPlanEmailRows(plan: DecodedPlan): [string, string][] {
   const { projectType, websiteType, region } = plan;
   const money = (amount: number) => formatAmount(amount, getCurrency(region));
 
-  const rows: Array<[string, string]> = [[`${LABEL_PREFIX} — project`, PROJECT_TYPE_LABELS[projectType]]];
+  const rows: [string, string][] = [[`${LABEL_PREFIX} — project`, PROJECT_TYPE_LABELS[projectType]]];
 
   if (websiteType) {
     rows.push([`${LABEL_PREFIX} — site type`, WEBSITE_TYPE_LABELS[websiteType]]);

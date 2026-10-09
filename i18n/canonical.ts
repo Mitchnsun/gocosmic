@@ -1,12 +1,12 @@
-import { getLocalePrefix, type Locale } from '@/i18n/locales';
+import { getLocalePrefix } from '@/i18n/locales';
 import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/config';
 
 type PathKey = keyof typeof routing.pathnames;
 
-function getLocalizedPath(pathnames: string | Record<Locale, string>, locale: string): string {
+function getLocalizedPath(pathnames: string | Record<string, string>, locale: string): string {
   if (typeof pathnames === 'string') return pathnames;
-  return pathnames[locale as Locale] ?? '/';
+  return pathnames[locale] ?? '/';
 }
 
 /**
@@ -16,7 +16,7 @@ function getLocalizedPath(pathnames: string | Record<Locale, string>, locale: st
  */
 export function getCanonicalUrl(locale: string, routeKey: PathKey): string {
   const pathnames = routing.pathnames[routeKey];
-  const localizedPath = getLocalizedPath(pathnames as string | Record<Locale, string>, locale);
+  const localizedPath = getLocalizedPath(pathnames, locale);
   const prefix = getLocalePrefix(locale);
 
   // No trailing slash on the home page: `/fr/` permanently redirects to `/fr`, and a canonical URL must not redirect.

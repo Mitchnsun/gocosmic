@@ -103,6 +103,7 @@ Minimum readable size: **14px** for body text.
 
 - **Container**: `max-w-7xl` centered (`m-auto`), horizontal padding `px-4 sm:px-6 lg:px-8`.
 - **Vertical section rhythm**: `SECTION_Y` from `design-system/pill.ts` — `clamp(56px, 6.5vw, 96px)` top and bottom. Sections need room to breathe.
+- **Page top**: `PAGE_TOP` from `design-system/pill.ts` — 40 px, 48 px from `lg`, between the header and the first heading of a page. Do not open a page with `SECTION_Y`: it leaves too much space under the header on desktop.
 - **Alternate sections**: at most one section in three on `bg-bg-alt` (indigo-ink in dark, misty-rose in light), the rest on `bg-bg`. `space` is kept for brand backgrounds.
 - **Radii**: pills `rounded-full` (buttons, chips, badges); cards/containers `rounded-xl` → `rounded-2xl` (12–24px). No sharp corners on interactive surfaces.
 - **Borders**: always via `line` / `line-2` (see §2.1), never an opaque grey.
@@ -195,23 +196,23 @@ To mark a location, category, or action: **geometric SVGs** (crosshair, diamond 
 
 Pages are assembled from shared building blocks — reuse them instead of re-implementing the patterns above:
 
-| Component                     | Role                                                                                                 |
-| ----------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `components/SectionHeading`   | Eyebrow → title with light italic `<em>` emphasis → 56ch lead; `level={1}` for page intros           |
-| `components/Reveal`           | Fade-and-lift on scroll, `delay={index * 50}` for a 50 ms stagger; CSS-first reduced-motion guard    |
-| `design-system/pill.ts`       | `primaryPill()`, `ghostPill()`, plus `CONTAINER` (1280 px, fluid gutters) and `SECTION_Y` (56–96 px) |
-| `design-system/eyebrow`       | Orange dot + uppercase mono label opening a section                                                  |
-| `design-system/chip`          | Bordered mono tag; `variant="ok"` marks what is included                                             |
-| `design-system/signal-dot`    | Green pulsing status dot, grey when inactive (§3.2)                                                  |
-| `design-system/hairline-grid` | `gap-px` card grid with 1 px separators (`as="ol"` for ordered content)                              |
-| `design-system/tabs`          | Pill tabs (Radix): the active one filled `bg-fg`, labels may wrap on two lines, focus ring on panel  |
-| `design-system/info-popover`  | 44 px "i" button opening a titled bubble on click or tap (Radix Popover), never inside a `<label>`   |
-| `design-system/field`         | `Field` (label, optional hint, required asterisk, error) + `FIELD_INPUT` / `FIELD_TEXTAREA` controls |
-| `components/LegalDocument`    | Legal notice, privacy policy and terms of sale layout: intro, one card per section                   |
-| `components/ContentSection`   | Card-shaped section: eyebrow + HUD counter, `h2` bound via `aria-labelledby`, lead, body             |
-| `components/AccentList`       | Bullet list with accent dots, optional mono label, 1 or 2 columns                                    |
-| `components/CaseStudy`        | Full project case study: hero, ordered sections, CTA card, previous / next navigation                |
-| `design-system/accent.ts`     | `accentClasses(token)` → the text / bg / border utilities and RGB channels of a token                |
+| Component                     | Role                                                                                                                        |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `components/SectionHeading`   | Eyebrow → title with light italic `<em>` emphasis → 56ch lead; `level={1}` for page intros                                  |
+| `components/Reveal`           | Fade-and-lift on scroll, `delay={index * 50}` for a 50 ms stagger; CSS-first reduced-motion guard                           |
+| `design-system/pill.ts`       | `primaryPill()`, `ghostPill()`, plus `CONTAINER` (1280 px, fluid gutters), `SECTION_Y` (56–96 px) and `PAGE_TOP` (40–48 px) |
+| `design-system/eyebrow`       | Orange dot + uppercase mono label opening a section                                                                         |
+| `design-system/chip`          | Bordered mono tag; `variant="ok"` marks what is included                                                                    |
+| `design-system/signal-dot`    | Green pulsing status dot, grey when inactive (§3.2)                                                                         |
+| `design-system/hairline-grid` | `gap-px` card grid with 1 px separators (`as="ol"` for ordered content)                                                     |
+| `design-system/tabs`          | Pill tabs (Radix): the active one filled `bg-fg`, labels may wrap on two lines, focus ring on panel                         |
+| `design-system/info-popover`  | 44 px "i" button opening a titled bubble on click or tap (Radix Popover), never inside a `<label>`                          |
+| `design-system/field`         | `Field` (label, optional hint, required asterisk, error) + `FIELD_INPUT` / `FIELD_TEXTAREA` controls                        |
+| `components/LegalDocument`    | Legal notice, privacy policy and terms of sale layout: intro, one card per section                                          |
+| `components/ContentSection`   | Card-shaped section: eyebrow + HUD counter, `h2` bound via `aria-labelledby`, lead, body                                    |
+| `components/AccentList`       | Bullet list with accent dots, optional mono label, 1 or 2 columns                                                           |
+| `components/CaseStudy`        | Full project case study: hero, ordered sections, CTA card, previous / next navigation                                       |
+| `design-system/accent.ts`     | `accentClasses(token)` → the text / bg / border utilities and RGB channels of a token                                       |
 
 Inner pages open with a plain `SectionHeading level={1}` intro — no starfield. The one immersive moment per page is the homepage hero or the final `CTAFinal`.
 
@@ -276,7 +277,7 @@ README.md               ← (optional) props, design, a11y, reduced-motion notes
 | Colors           | `DESIGN_TOKENS` (`design-system/tokens.ts`), with the WCAG ratio from `contrastRatio` (`design-system/lib/contrast.ts`) |
 | Typography       | The real `SectionHeading`, `Eyebrow` and text classes, with the browser's computed values                               |
 | Components       | The design-system primitives, imported (never copied as HTML)                                                           |
-| Layout, voice    | §2.3 and §8 of this file, with the live `CONTAINER` / `SECTION_Y` values                                                |
+| Layout, voice    | §2.3 and §8 of this file, with the live `CONTAINER` / `SECTION_Y` / `PAGE_TOP` values                                   |
 | Illustrations    | `<Starfield>` + royal glow, `<Sun>` + rose floor                                                                        |
 | Theme exceptions | The table in §3.4                                                                                                       |
 

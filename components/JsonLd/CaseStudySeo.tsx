@@ -5,10 +5,11 @@ import { getCanonicalUrl } from '@/i18n/canonical';
 import { SITE_URL } from '@/lib/config';
 
 import { JsonLd } from './JsonLd';
+import { toItemList } from './JsonLd.utils';
 
-type CaseStudySeoProps = {
+interface CaseStudySeoProps {
   slug: CaseStudySlug;
-};
+}
 
 /** A case study as a creative work by the studio, with its breadcrumb trail (Home › Projects › case). */
 export default function CaseStudySeo({ slug }: CaseStudySeoProps) {
@@ -48,7 +49,7 @@ export default function CaseStudySeo({ slug }: CaseStudySeoProps) {
           },
           {
             '@type': 'BreadcrumbList',
-            itemListElement: trail.map((step, index) => ({ '@type': 'ListItem', position: index + 1, ...step })),
+            itemListElement: toItemList(trail),
           },
         ],
       }}

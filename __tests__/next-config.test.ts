@@ -4,14 +4,14 @@ vi.mock('next-intl/plugin', () => ({
   default: () => (config: NextConfigWithHeaders) => config,
 }));
 
-type NextConfigWithHeaders = {
+interface NextConfigWithHeaders {
   headers?: () => Promise<
     {
       headers: { key: string; value: string }[];
       source: string;
     }[]
   >;
-};
+}
 
 const getCspForEnvironment = async (nodeEnvironment: string) => {
   vi.resetModules();

@@ -41,108 +41,18 @@ vi.mock('@/i18n/navigation', () => ({
 
 // Mock motion/react so JSDOM doesn't process animation props
 vi.mock('motion/react', () => {
-  const components = {
-    span: ({
-      children,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      animate,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      initial,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      exit,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      transition,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      variants,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      custom,
-      ...rest
-    }: {
-      children?: React.ReactNode;
-      animate?: unknown;
-      initial?: unknown;
-      exit?: unknown;
-      transition?: unknown;
-      variants?: unknown;
-      custom?: unknown;
-      [key: string]: unknown;
-    }) => <span {...(rest as React.HTMLAttributes<HTMLSpanElement>)}>{children}</span>,
-    div: ({
-      children,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      animate,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      initial,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      exit,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      transition,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      variants,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      custom,
-      ...rest
-    }: {
-      children?: React.ReactNode;
-      animate?: unknown;
-      initial?: unknown;
-      exit?: unknown;
-      transition?: unknown;
-      variants?: unknown;
-      custom?: unknown;
-      [key: string]: unknown;
-    }) => <div {...(rest as React.HTMLAttributes<HTMLDivElement>)}>{children}</div>,
-    li: ({
-      children,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      animate,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      initial,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      exit,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      transition,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      variants,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      custom,
-      ...rest
-    }: {
-      children?: React.ReactNode;
-      animate?: unknown;
-      initial?: unknown;
-      exit?: unknown;
-      transition?: unknown;
-      variants?: unknown;
-      custom?: unknown;
-      [key: string]: unknown;
-    }) => <li {...(rest as React.HTMLAttributes<HTMLLIElement>)}>{children}</li>,
-    ul: ({
-      children,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      animate,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      initial,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      exit,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      transition,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      variants,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      custom,
-      ...rest
-    }: {
-      children?: React.ReactNode;
-      animate?: unknown;
-      initial?: unknown;
-      exit?: unknown;
-      transition?: unknown;
-      variants?: unknown;
-      custom?: unknown;
-      [key: string]: unknown;
-    }) => <ul {...(rest as React.HTMLAttributes<HTMLUListElement>)}>{children}</ul>,
+  type StrippedProps = Record<'animate' | 'initial' | 'exit' | 'transition' | 'variants' | 'custom', unknown> & {
+    children?: React.ReactNode;
+    [key: string]: unknown;
   };
+  const strip = (Tag: 'span' | 'div' | 'li' | 'ul') => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars -- animation props must not reach the DOM
+    const Stripped = ({ children, animate, initial, exit, transition, variants, custom, ...rest }: StrippedProps) => (
+      <Tag {...rest}>{children}</Tag>
+    );
+    return Stripped;
+  };
+  const components = { span: strip('span'), div: strip('div'), li: strip('li'), ul: strip('ul') };
 
   return {
     motion: components,
@@ -171,13 +81,16 @@ global.ResizeObserver = class ResizeObserver {
   }
 };
 
+// Stub the canvas context, which jsdom does not implement; tests that draw override it
+HTMLCanvasElement.prototype.getContext = vi.fn(() => null);
+
 // Mock IntersectionObserver for scroll-based components
 global.IntersectionObserver = class MockIntersectionObserver {
   private callback: IntersectionObserverCallback;
   readonly root: Element | Document | null = null;
   readonly rootMargin: string = '';
   readonly scrollMargin: string = '';
-  readonly thresholds: ReadonlyArray<number> = [];
+  readonly thresholds: readonly number[] = [];
 
   constructor(callback: IntersectionObserverCallback, options?: IntersectionObserverInit) {
     this.callback = callback;
@@ -202,21 +115,19 @@ global.IntersectionObserver = class MockIntersectionObserver {
   takeRecords(): IntersectionObserverEntry[] {
     return [];
   }
-} as unknown as typeof IntersectionObserver;
+};
 
 // Mock window.matchMedia for components that use prefers-reduced-motion
-if (!window.matchMedia) {
-  Object.defineProperty(window, 'matchMedia', {
-    writable: true,
-    value: (query: string) => ({
-      matches: false,
-      media: query,
-      onchange: null,
-      addListener: vi.fn(),
-      removeListener: vi.fn(),
-      addEventListener: vi.fn(),
-      removeEventListener: vi.fn(),
-      dispatchEvent: vi.fn(),
-    }),
-  });
-}
+Object.defineProperty(window, 'matchMedia', {
+  writable: true,
+  value: (query: string) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: vi.fn(),
+    removeListener: vi.fn(),
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+    dispatchEvent: vi.fn(),
+  }),
+});

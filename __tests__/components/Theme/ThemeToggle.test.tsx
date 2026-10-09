@@ -114,10 +114,14 @@ describe('ThemeToggle', () => {
       fireEvent.click(screen.getByRole('button', { name: 'Switch to the light theme' }));
       expect(root).toHaveClass('theme-fade', 'theme-rise');
 
-      act(() => vi.advanceTimersByTime(350));
+      act(() => {
+        vi.advanceTimersByTime(350);
+      });
       expect(root).not.toHaveClass('theme-fade');
       expect(root).toHaveClass('theme-rise');
-      act(() => vi.advanceTimersByTime(650));
+      act(() => {
+        vi.advanceTimersByTime(650);
+      });
       expect(root).not.toHaveClass('theme-rise');
 
       fireEvent.click(screen.getByRole('button', { name: 'Switch to the dark theme' }));

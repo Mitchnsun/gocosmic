@@ -69,13 +69,12 @@ export function buildFreeMockupEmail({
   locale,
   plan,
 }: FreeMockupEmailInput): FreeMockupEmail {
-  const pickedPalette =
-    colorPalette && colorPalette !== NO_PALETTE_PREFERENCE ? (colorPalette as ColorPaletteKey) : undefined;
+  const pickedPalette = colorPalette && colorPalette !== NO_PALETTE_PREFERENCE ? colorPalette : undefined;
   const palette = pickedPalette ? `${PALETTE_LABELS[pickedPalette]} (${pickedPalette})` : NO_PALETTE_LABEL;
   const website = websiteUrl?.trim() || EMPTY_VALUE;
   const wishesText = wishes?.trim() || EMPTY_VALUE;
 
-  const rows: Array<[string, string]> = [
+  const rows: [string, string][] = [
     ['Email', email],
     ['Colour palette', palette],
     ['Current website', website],

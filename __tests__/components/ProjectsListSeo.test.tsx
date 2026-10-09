@@ -5,7 +5,7 @@ import ProjectsListSeo from '@/components/JsonLd/ProjectsListSeo';
 import { render } from '../test-utils';
 
 const jsonLdScriptMock = vi.fn((props: unknown) => (
-  <script data-testid="projects-list-json-ld" data-props={JSON.stringify(props)} />
+  <div data-testid="projects-list-json-ld" data-props={JSON.stringify(props)} />
 ));
 
 vi.mock('@/components/JsonLd/JsonLd', () => ({

@@ -78,7 +78,7 @@ export function useFreeMockupForm() {
       }
 
       const result = await submitFreeMockupRequest(previousState, payload).catch(
-        (error): FreeMockupFormState => ({
+        (error: unknown): FreeMockupFormState => ({
           status: 'error',
           reason: isRetryLaterError(error) ? 'retry_later' : undefined,
         })

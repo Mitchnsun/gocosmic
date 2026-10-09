@@ -6,9 +6,10 @@ import type { ReactNode } from 'react';
 import { toBookingEmbedUrl } from '@/components/BookingEmbed';
 import { ContactDetails } from '@/components/ContactDetails';
 import { ContactPanel } from '@/components/ContactPanel';
+import BreadcrumbSeo from '@/components/JsonLd/BreadcrumbSeo';
 import { SectionHeading } from '@/components/SectionHeading';
 import { cn } from '@/design-system/lib/utils';
-import { CONTAINER, SECTION_Y } from '@/design-system/pill';
+import { CONTAINER, PAGE_TOP } from '@/design-system/pill';
 import { Link } from '@/i18n/navigation';
 import { CONTACT_EMAIL } from '@/lib/config';
 import { getRegion } from '@/lib/region.server';
@@ -37,7 +38,7 @@ export default async function Contact() {
 
   return (
     <div className="bg-bg text-fg">
-      <section aria-labelledby="contact-heading" className={SECTION_Y}>
+      <section aria-labelledby="contact-heading" className={cn(PAGE_TOP, 'pb-20')}>
         <div className={cn(CONTAINER, 'grid items-start gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]')}>
           <div className="flex flex-col gap-8">
             <SectionHeading
@@ -79,6 +80,7 @@ export default async function Contact() {
           </div>
         </div>
       </section>
+      <BreadcrumbSeo route="/contact" />
     </div>
   );
 }

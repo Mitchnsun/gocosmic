@@ -183,8 +183,7 @@ export function TimelineStepItem({
           aria-hidden="true"
           style={{
             transform: reducedMotion ? 'scaleX(1)' : 'scaleX(0)',
-            transition: `transform ${reducedMotion ? 0 : 600}ms ease-out`,
-            transitionDelay: `${delay}ms`,
+            transition: `transform ${reducedMotion ? 0 : 600}ms ease-out ${delay}ms`,
           }}
         />
       </div>

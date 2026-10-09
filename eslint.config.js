@@ -32,7 +32,12 @@ const THEME_NOMINAL =
 const config = [
   js.configs.recommended,
   eslintConfigPrettier,
-  ...tseslint.configs.recommended,
+  ...tseslint.configs.strictTypeChecked,
+  ...tseslint.configs.stylisticTypeChecked,
+  {
+    // tsconfig.check.json covers the tests too, unlike tsconfig.json.
+    languageOptions: { parserOptions: { project: './tsconfig.check.json', tsconfigRootDir: import.meta.dirname } },
+  },
   securityPlugin.configs.recommended,
   {
     plugins: {
@@ -51,6 +56,14 @@ const config = [
       'import/no-duplicates': 'error',
       // Flags every typed-key lookup (`record[key]`) in a strict TypeScript codebase: noise, not signal.
       'security/detect-object-injection': 'off',
+      // `() => setOpen(false)` is idiomatic in handlers.
+      '@typescript-eslint/no-confusing-void-expression': ['error', { ignoreArrowShorthand: true }],
+      '@typescript-eslint/restrict-template-expressions': ['error', { allowNumber: true }],
+      '@typescript-eslint/no-empty-function': ['error', { allow: ['arrowFunctions'] }],
+      // `||` on a string also falls back on the empty one, which env variables and form fields rely on.
+      '@typescript-eslint/prefer-nullish-coalescing': ['error', { ignorePrimitives: { string: true } }],
+      // Next.js expects `async redirects()` / `async headers()` even without an await.
+      '@typescript-eslint/require-await': 'off',
       'no-restricted-imports': [
         'error',
         {
@@ -115,7 +128,19 @@ const config = [
     files: ['__tests__/**/*', '**/*.test.*', '**/*.spec.*'],
     rules: {
       '@next/next/no-html-link-for-pages': 'off',
+      // Mocks and DOM lookups in tests are loosely typed on purpose.
+      '@typescript-eslint/no-non-null-assertion': 'off',
+      '@typescript-eslint/no-unsafe-assignment': 'off',
+      '@typescript-eslint/no-unsafe-member-access': 'off',
+      '@typescript-eslint/no-unsafe-call': 'off',
+      '@typescript-eslint/no-unsafe-return': 'off',
+      '@typescript-eslint/unbound-method': 'off',
     },
+  },
+  {
+    // Plain JavaScript files sit outside the TypeScript project.
+    files: ['**/*.js', '**/*.mjs', '**/*.cjs'],
+    ...tseslint.configs.disableTypeChecked,
   },
   {
     ignores: ['.next/**', 'coverage/**', 'messages/**', 'public/**', 'next-env.d.ts'],

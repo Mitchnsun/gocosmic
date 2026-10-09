@@ -2,9 +2,9 @@ import type { FaqItem } from '@/components/Faq';
 
 import { JsonLd } from './JsonLd';
 
-type FaqSeoProps = {
+interface FaqSeoProps {
   items: FaqItem[];
-};
+}
 
 /** FAQPage structured data, fed with the same items as the visible FAQ so the two cannot drift. */
 export default function FaqSeo({ items }: FaqSeoProps) {

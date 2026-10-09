@@ -68,7 +68,7 @@ describe('CosmicCursor', () => {
 
   it('applies fixed positioning and pointer-events:none via inline style', () => {
     const { container } = render(<CosmicCursor />);
-    const canvas = container.querySelector('canvas') as HTMLCanvasElement;
+    const canvas = container.querySelector('canvas')!;
     expect(canvas.style.position).toBe('fixed');
     expect(canvas.style.pointerEvents).toBe('none');
     expect(canvas.style.zIndex).toBe('9999');
@@ -80,9 +80,7 @@ describe('CosmicCursor', () => {
   });
 
   it('does not start animation loop when getContext returns null', () => {
-    HTMLCanvasElement.prototype.getContext = vi.fn(
-      () => null
-    ) as unknown as typeof HTMLCanvasElement.prototype.getContext;
+    HTMLCanvasElement.prototype.getContext = vi.fn(() => null);
     render(<CosmicCursor />);
     expect(requestAnimationFrame).not.toHaveBeenCalled();
     // Restore mock for subsequent tests
@@ -194,7 +192,7 @@ describe('CosmicCursor render loop', () => {
     Object.defineProperty(mockCtx, 'fillStyle', {
       configurable: true,
       get: () => '',
-      set: (value: string) => fills.push(String(value)),
+      set: (value: string) => fills.push(value),
     });
     const island = document.createElement('section');
     island.dataset.theme = 'dark';
@@ -239,7 +237,7 @@ describe('CosmicCursor render loop', () => {
     Object.defineProperty(mockCtx, 'fillStyle', {
       configurable: true,
       get: () => '',
-      set: (value: string) => fills.push(String(value)),
+      set: (value: string) => fills.push(value),
     });
     const orange = document.createElement('button');
     orange.className = 'bg-aerospace hover:bg-aerospace/90';
@@ -373,7 +371,7 @@ describe('CosmicCursor render loop', () => {
       x: 0,
       y: 400,
       toJSON: () => ({}),
-    } as DOMRect);
+    });
 
     const coreRadius = 3; // the 6 px core dot — trail dots stay below this radius, the ring and glow above
     render(<CosmicCursor />);

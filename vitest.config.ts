@@ -26,6 +26,8 @@ export default defineConfig({
         'i18n/*.ts',
         'app/**',
         'e2e/**',
+        // Vite's virtual helper for the dynamic message imports: its `\0vite/` path crashes the HTML report.
+        '**/dynamic-import-helper.js',
       ],
       thresholds: {
         lines: 90,

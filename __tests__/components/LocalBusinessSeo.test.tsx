@@ -5,7 +5,7 @@ import LocalBusinessSeo from '@/components/JsonLd/LocalBusinessSeo';
 import { render } from '../test-utils';
 
 const jsonLdScriptMock = vi.fn((props: unknown) => (
-  <script data-testid="local-business-json-ld" data-props={JSON.stringify(props)} />
+  <div data-testid="local-business-json-ld" data-props={JSON.stringify(props)} />
 ));
 
 vi.mock('@/components/JsonLd/JsonLd', () => ({

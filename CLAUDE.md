@@ -12,10 +12,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ```bash
 yarn dev              # Start dev server on :3000 (Next.js + Turbopack)
 yarn build            # Production build (~34s)
-yarn lint             # ESLint with zero-warnings policy (~7s)
+yarn lint             # ESLint with zero-warnings policy, type-aware (~16s)
 yarn format           # Prettier write on all .ts/.tsx/.md
 yarn check-types      # TypeScript type check via tsconfig.check.json (~9s)
-yarn test             # Run all Vitest tests (~9s, ~690 tests / 87 files)
+yarn test             # Run all Vitest tests (~9s, ~1010 tests / 116 files)
 yarn test:watch       # Vitest in watch mode
 yarn coverage         # Generate coverage report (must stay ≥90% on all metrics)
 yarn qa               # Local Playwright QA: axe audit of every route in both themes (not in CI)

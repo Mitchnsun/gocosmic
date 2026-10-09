@@ -10,7 +10,7 @@
     "dev": "next dev --turbopack --port 3000",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --cache --cache-location .eslintcache --cache-strategy content --max-warnings 0",
+    "lint": "eslint . --max-warnings 0",
     "check-types": "tsc --project tsconfig.check.json",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "test": "vitest run",
@@ -21,7 +21,7 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "eslint --fix --cache --cache-location .eslintcache --cache-strategy content --max-warnings 0",
+      "eslint --fix --max-warnings 0",
       "prettier --write"
     ],
     "**/*.{md,json}": [

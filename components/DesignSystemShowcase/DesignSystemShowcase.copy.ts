@@ -87,7 +87,12 @@ export const TYPE_SPECS = {
 export const LAYOUT_RULES: readonly RuleCard[] = [
   {
     title: 'Container',
-    items: ['1280 px max, fluid gutters 16 → 32 px', 'Sections 56 → 96 px top and bottom', 'Hero padding under 150 px'],
+    items: [
+      '1280 px max, fluid gutters 16 → 32 px',
+      'Sections 56 → 96 px top and bottom',
+      'Page top 40 → 48 px under the header',
+      'Hero padding under 150 px',
+    ],
   },
   {
     title: 'Grids',

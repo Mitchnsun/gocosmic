@@ -29,9 +29,8 @@ Active plugins and their roles:
 
 | Plugin                                 | Purpose                           |
 | -------------------------------------- | --------------------------------- |
-| `typescript-eslint`                    | TypeScript-specific rules         |
+| `typescript-eslint`                    | Strict, type-aware TS rules       |
 | `eslint-plugin-security`               | Vulnerability detection           |
-| `eslint-plugin-unicorn`                | Modern JS/TS best practices       |
 | `eslint-plugin-import`                 | Import/export validation          |
 | `eslint-plugin-simple-import-sort`     | Automatic import ordering         |
 | `eslint-plugin-unused-imports`         | Remove unused imports             |

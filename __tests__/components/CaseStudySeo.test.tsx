@@ -5,7 +5,7 @@ import CaseStudySeo from '@/components/JsonLd/CaseStudySeo';
 import { render } from '../test-utils';
 
 const jsonLdScriptMock = vi.fn((props: unknown) => (
-  <script data-testid="case-study-json-ld" data-props={JSON.stringify(props)} />
+  <div data-testid="case-study-json-ld" data-props={JSON.stringify(props)} />
 ));
 
 vi.mock('@/components/JsonLd/JsonLd', () => ({

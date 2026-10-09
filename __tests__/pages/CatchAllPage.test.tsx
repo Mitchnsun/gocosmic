@@ -15,14 +15,10 @@ describe('CatchAllPage', () => {
   });
 
   it('should call notFound function', () => {
-    const result = CatchAllPage();
+    CatchAllPage();
 
     expect(mockNotFound).toHaveBeenCalledTimes(1);
     expect(mockNotFound).toHaveBeenCalledWith();
-
-    // The component calls notFound() which should throw/redirect
-    // so we don't expect any return value
-    expect(result).toBeUndefined();
   });
 
   it('should handle multiple calls consistently', () => {

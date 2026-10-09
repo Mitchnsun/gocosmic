@@ -5,11 +5,7 @@ import { DEFAULT_SENDER_EMAIL, getSenderEmail, STUDIO_INBOX_EMAIL } from '@/lib/
 const resendConstructor = vi.hoisted(() => vi.fn());
 
 vi.mock('resend', () => ({
-  Resend: class {
-    constructor(apiKey: string) {
-      resendConstructor(apiKey);
-    }
-  },
+  Resend: resendConstructor,
 }));
 
 describe('getResendClient', () => {

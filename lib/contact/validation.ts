@@ -98,7 +98,7 @@ export const validateContact = (payload: ContactPayload): ContactErrors => {
 export const toContactPayload = (input: unknown): ContactPayload => {
   const source = (typeof input === 'object' && input !== null ? input : {}) as Record<string, unknown>;
   const read = (key: string) => {
-    const value = source[String(key)];
+    const value = source[key];
     return typeof value === 'string' ? value.slice(0, 6000) : '';
   };
 

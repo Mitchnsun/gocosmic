@@ -4,13 +4,14 @@ import type { ReactNode } from 'react';
 
 import CTAFinal from '@/components/CTAFinal';
 import LinkedInIcon from '@/components/icons/LinkedInIcon';
+import BreadcrumbSeo from '@/components/JsonLd/BreadcrumbSeo';
 import PersonSeo from '@/components/JsonLd/PersonSeo';
 import { BASE_PRICE } from '@/components/PricingSimulator/constants';
 import { formatAmount } from '@/components/PricingSimulator/PricingSimulator.utils';
 import { SectionHeading } from '@/components/SectionHeading';
 import { StudioIntro } from '@/components/StudioIntro';
 import { WhyStudio } from '@/components/WhyStudio';
-import { CONTAINER, ghostPill } from '@/design-system/pill';
+import { CONTAINER, ghostPill, PAGE_TOP } from '@/design-system/pill';
 import { getCurrency } from '@/lib/region';
 import { getRegion } from '@/lib/region.server';
 import { buildPageMetadata } from '@/lib/seo';
@@ -40,8 +41,9 @@ export default async function About() {
   return (
     <>
       <PersonSeo />
+      <BreadcrumbSeo route="/about" />
       <div className="bg-bg text-fg">
-        <section aria-labelledby="about-intro" className="pt-[clamp(3rem,6.5vw,5.5rem)]">
+        <section aria-labelledby="about-intro" className={PAGE_TOP}>
           <div className={CONTAINER}>
             <SectionHeading
               level={1}

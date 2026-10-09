@@ -6,11 +6,15 @@ import { getLanguage } from './locales';
 import { routing } from './routing';
 import { toSwissSpelling } from './swiss-spelling';
 
+type Pathnames = typeof routing.pathnames;
+/** Routes with one slug per locale: a plain-string route (`/`) would match every pathname. */
+type LocalizedRoute = { [K in keyof Pathnames]: Pathnames[K] extends string ? never : K }[keyof Pathnames];
+
 /**
  * Namespaces of each route, on top of the shared ones (common, navigation, footer). Slugs come from
  * `routing.pathnames`. Most specific first: `/projects/psc-supersprint` must win over `/projects`.
  */
-const ROUTE_NAMESPACES: [keyof typeof routing.pathnames, string[]][] = [
+const ROUTE_NAMESPACES: [LocalizedRoute, string[]][] = [
   ['/about', ['about']],
   // Services & pricing embeds the subscription simulator.
   ['/services', ['services', 'pricing']],
@@ -57,7 +61,9 @@ async function loadMessages(locale: string, namespaces: string[]) {
   // Load each namespace dynamically
   for (const namespace of allNamespaces) {
     try {
-      const namespaceMessages = await import(`../messages/${language}/${namespace}.json`);
+      const namespaceMessages = (await import(`../messages/${language}/${namespace}.json`)) as {
+        default: Record<string, unknown>;
+      };
       Object.assign(messages, namespaceMessages.default);
     } catch {
       console.warn(`Failed to load namespace ${namespace} for locale ${locale}`);

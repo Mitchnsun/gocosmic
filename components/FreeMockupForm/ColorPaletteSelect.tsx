@@ -77,7 +77,7 @@ export function ColorPaletteSelect({ value, onChange, error, onBlur }: ColorPale
                   'peer-focus-visible:ring-aerospace-ink peer-focus-visible:ring-offset-bg flex h-full min-h-11 items-center gap-3 rounded-xl border p-3 transition-colors duration-200 peer-focus-visible:ring-2 peer-focus-visible:ring-offset-2',
                   isSelected ? 'border-aerospace/40 bg-aerospace/[0.06]' : 'border-line bg-surface hover:border-line-2'
                 )}>
-                {!isNoPreference && <PaletteSwatch paletteKey={choice as ColorPaletteKey} />}
+                {!isNoPreference && <PaletteSwatch paletteKey={choice} />}
                 <span className={cn('flex-1 text-sm', isSelected ? 'text-fg' : 'text-fg-2')}>
                   {t(`palette.options.${choice}`)}
                 </span>
