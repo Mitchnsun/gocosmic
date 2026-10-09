@@ -76,7 +76,8 @@ describe('FreeMockupForm', () => {
 
     await findByText('Request received');
     expect((submitFreeMockupRequest.mock.calls[0]?.[1] as FormData).get('plan')).toBe(PLAN_CODE);
-    expect(window.sessionStorage.getItem(PLAN_STORAGE_KEY)).toBeNull();
+    // The simulation is cleared by an effect, which may run after the confirmation is already on screen.
+    await waitFor(() => expect(window.sessionStorage.getItem(PLAN_STORAGE_KEY)).toBeNull());
   });
 
   it('keeps the stored simulation when the request fails', async () => {
