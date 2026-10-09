@@ -1,10 +1,9 @@
 'use client';
 
 import { useLocale, useTranslations } from 'next-intl';
-import type { MouseEvent } from 'react';
 
 import { LANG_DRAWER_LANGUAGES } from '@/components/Header/MobileLangDrawer';
-import { readCurrentQuery, useSwitchLocale } from '@/components/LanguageSwitcher/useSwitchLocale';
+import { useLocaleLinkClick } from '@/components/LanguageSwitcher/useSwitchLocale';
 import { getLanguage, localeWithLanguage } from '@/i18n/locales';
 import { Link, usePathname } from '@/i18n/navigation';
 
@@ -14,16 +13,7 @@ const FooterLanguages = () => {
   const locale = useLocale();
   const language = getLanguage(locale);
   const pathname = usePathname();
-  const switchLocale = useSwitchLocale();
-
-  // The link targets the bare page; a plain click also keeps the current query (e.g. a projects filter)
-  // and section anchor, while a click opening a new tab keeps the link's own address.
-  const handleClick = (event: MouseEvent<HTMLAnchorElement>, code: string) => {
-    const isPlainClick = event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey;
-    if (!isPlainClick || (!readCurrentQuery() && !window.location.hash)) return;
-    event.preventDefault();
-    switchLocale(code);
-  };
+  const handleClick = useLocaleLinkClick();
   // Current language first, as in "FR · EN DE IT ES".
   const languages = Object.entries(LANG_DRAWER_LANGUAGES).sort(
     ([a], [b]) => Number(b === language) - Number(a === language)
@@ -50,7 +40,7 @@ const FooterLanguages = () => {
                 <Link
                   href={pathname}
                   locale={target}
-                  onClick={(event) => handleClick(event, code)}
+                  onClick={(event) => handleClick(event, target)}
                   hrefLang={target}
                   lang={code}
                   aria-label={`${name} (${code.toUpperCase()})`}

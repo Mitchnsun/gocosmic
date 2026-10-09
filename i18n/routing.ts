@@ -121,11 +121,11 @@ export const routing = defineRouting({
 
     // Local SEO page
     '/local': localized({
-      en: '/web-mobile-developer-annecy-geneva',
-      fr: '/developpeur-web-mobile-annecy-geneve',
-      es: '/desarrollador-web-movil-annecy-ginebra',
-      de: '/web-mobile-entwickler-annecy-genf',
-      it: '/sviluppatore-web-mobile-annecy-ginevra',
+      en: '/website-design-geneva-annecy',
+      fr: '/creation-site-internet-geneve-annecy',
+      es: '/creacion-paginas-web-ginebra-annecy',
+      de: '/website-erstellen-lassen-genf-annecy',
+      it: '/creazione-siti-internet-ginevra-annecy',
     }),
 
     // Projects index page

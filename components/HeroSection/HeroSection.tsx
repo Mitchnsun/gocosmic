@@ -3,6 +3,7 @@
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import type { ComponentProps } from 'react';
 
+import { type Fact, FactsLine } from '@/components/FactsLine';
 import AnimatedEndWord from '@/components/HeroSection/AnimatedEndWord';
 import HeroIllustration from '@/components/HeroSection/HeroIllustration';
 import { useWordCycler } from '@/components/HeroSection/HeroSection.hooks';
@@ -17,12 +18,6 @@ type LocalizedHref = ComponentProps<typeof Link>['href'];
 interface HeroLink {
   text: string;
   href: LocalizedHref;
-}
-
-/** One entry of the mono facts line, e.g. `Dès 10€` + `/ mois`. */
-export interface HeroFact {
-  highlight: string;
-  text: string;
 }
 
 /** Props for the editorial homepage hero. */
@@ -40,7 +35,7 @@ export interface HeroSectionProps {
   /** Secondary, outlined call-to-action. */
   secondaryCta?: HeroLink;
   /** Mono facts line closing the hero. */
-  facts?: HeroFact[];
+  facts?: Fact[];
   /** Milliseconds between word changes. Defaults to 4000. */
   wordInterval?: number;
   className?: string;
@@ -102,15 +97,7 @@ const HeroSection = ({
             </Link>
           )}
         </div>
-        {facts.length > 0 && (
-          <ul className="border-line text-fg-3 text-2xs flex flex-wrap gap-x-10 gap-y-3 border-t pt-6 font-mono tracking-[0.16em] uppercase">
-            {facts.map((fact) => (
-              <li key={fact.highlight}>
-                <span className="text-fg">{fact.highlight}</span> {fact.text}
-              </li>
-            ))}
-          </ul>
-        )}
+        {facts.length > 0 && <FactsLine facts={facts} />}
       </div>
     </section>
   );

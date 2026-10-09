@@ -42,7 +42,7 @@ describe('LocalBusinessSeo', () => {
           addressRegion: 'GE',
           addressCountry: 'CH',
         },
-        areaServed: ['Geneva', 'French-speaking Switzerland', 'Haute-Savoie', 'Annecy'],
+        areaServed: ['Geneva', 'Annecy', 'Haute-Savoie', 'French-speaking Switzerland'],
         sameAs: ['https://www.linkedin.com/in/matthieucomperat/'],
       },
     });
@@ -56,18 +56,18 @@ describe('LocalBusinessSeo', () => {
         data: expect.objectContaining({
           description:
             'Studio web et mobile installé à Chêne-Bougeries, près de Genève. Sites et applications pour les artisans, associations et indépendants de Suisse romande et de Haute-Savoie, notamment à Annecy.',
-          areaServed: ['Genève', 'Suisse romande', 'Haute-Savoie', 'Annecy'],
+          areaServed: ['Genève', 'Annecy', 'Haute-Savoie', 'Suisse romande'],
         }),
       })
     );
   });
 
   it.each([
-    ['de', ['Genf', 'Westschweiz', 'Hochsavoyen', 'Annecy']],
-    ['it', ['Ginevra', 'Svizzera romanda', 'Alta Savoia', 'Annecy']],
-    ['es', ['Ginebra', 'Suiza romanda', 'Alta Saboya', 'Annecy']],
-    ['fr-CH', ['Genève', 'Suisse romande', 'Haute-Savoie', 'Annecy']],
-    ['de-CH', ['Genf', 'Westschweiz', 'Hochsavoyen', 'Annecy']],
+    ['de', ['Genf', 'Annecy', 'Hochsavoyen', 'Westschweiz']],
+    ['it', ['Ginevra', 'Annecy', 'Alta Savoia', 'Svizzera romanda']],
+    ['es', ['Ginebra', 'Annecy', 'Alta Saboya', 'Suiza romanda']],
+    ['fr-CH', ['Genève', 'Annecy', 'Haute-Savoie', 'Suisse romande']],
+    ['de-CH', ['Genf', 'Annecy', 'Hochsavoyen', 'Westschweiz']],
   ])('should name the served areas in %s', (locale, areaServed) => {
     render(<LocalBusinessSeo locale={locale} />);
 

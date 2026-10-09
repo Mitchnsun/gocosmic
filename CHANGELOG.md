@@ -10,9 +10,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Added
 
 - A Swiss version of the site in every language (for example gocosmic.dev/fr-ch or gocosmic.dev/de-ch), always showing the Geneva base and prices in Swiss francs, which search engines can now show to people searching from Switzerland; the German one follows Swiss spelling
+- A Switzerland / Europe switch in the footer, to see the site with the Swiss base and prices or the European ones in the same language
 
 ### Changed
 
+- The Geneva · Annecy page now speaks of website creation like the rest of the site, puts Geneva first, and adds the starting price, the audiences served and the free mockup; its web address changes, and the old one redirects to it
+- The homepage title in search results no longer mentions the cities, which now belong to the Geneva · Annecy page
+- Language and region flags are now drawn the same way on every device, instead of depending on the phone or computer
 - Visitors whose browser is set up for Switzerland now arrive on the Swiss version, and changing language there keeps them on it
 - In search results, the Services page now quotes its starting price in Swiss francs on the Swiss version
 - The cursor turns navy while it hovers an orange button, so it no longer disappears into it

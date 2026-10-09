@@ -1,15 +1,20 @@
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import type { ReactNode } from 'react';
 
 import { AudienceGrid } from '@/components/AudienceGrid';
 import CTAFinal from '@/components/CTAFinal';
+import { buildHeroFacts, FactsLine } from '@/components/FactsLine';
+import { freeMockupNote } from '@/components/FreeMockup';
+import { BASE_PRICE } from '@/components/PricingSimulator/constants';
+import { formatAmount } from '@/components/PricingSimulator/PricingSimulator.utils';
 import { buildProjectCards, ProjectGrid } from '@/components/ProjectGrid';
 import { SectionHeading } from '@/components/SectionHeading';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, ghostPill, primaryPill, SECTION_Y } from '@/design-system/pill';
 import { Link } from '@/i18n/navigation';
+import { getCurrency } from '@/lib/region';
 import { getRegion } from '@/lib/region.server';
 import { buildPageMetadata } from '@/lib/seo';
 
@@ -25,6 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   });
 }
 
+const AUDIENCES = ['artisans', 'associations', 'independents'] as const;
 const ZONES = ['geneva', 'romandy', 'annecy', 'remote'] as const;
 /** Projects featured on this page; the full list lives on /projects. */
 const PROJECT_COUNT = 3;
@@ -35,7 +41,10 @@ const em = (chunks: ReactNode) => <em>{chunks}</em>;
 export default async function LocalPage() {
   const t = await getTranslations('local');
   const tProjects = await getTranslations('projectsList');
+  const tHome = await getTranslations('homepage');
+  const locale = await getLocale();
   const region = await getRegion();
+  const startingPrice = formatAmount(BASE_PRICE, getCurrency(region), locale);
   const projects = buildProjectCards(tProjects).slice(0, PROJECT_COUNT);
 
   return (
@@ -58,6 +67,7 @@ export default async function LocalPage() {
               {t('intro.secondary')}
             </Link>
           </div>
+          <FactsLine facts={buildHeroFacts(tHome, region, startingPrice)} />
         </div>
       </section>
 
@@ -68,6 +78,16 @@ export default async function LocalPage() {
         items={ZONES.map((zone) => ({
           title: t(`zones.items.${zone}.title`),
           description: t(`zones.items.${zone}.description`),
+        }))}
+      />
+
+      <AudienceGrid
+        id="audience"
+        eyebrow={tHome('audience.eyebrow')}
+        title={tHome.rich('audience.title', { em })}
+        items={AUDIENCES.map((audience) => ({
+          title: tHome(`audience.items.${audience}.title`),
+          description: tHome(`audience.items.${audience}.description`),
         }))}
       />
 
@@ -92,6 +112,7 @@ export default async function LocalPage() {
         id="local-cta"
         headline={t('cta.title')}
         description={t('cta.description')}
+        note={freeMockupNote(tHome)}
         ctaText={t('cta.button')}
         ctaHref="/contact"
         accentColor="aerospace"

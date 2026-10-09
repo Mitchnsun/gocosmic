@@ -1,7 +1,7 @@
 import type { NextConfig } from 'next';
 
 // Relative imports: `next.config.ts` loads this module before path aliases exist.
-import { type Language, LANGUAGES } from '../i18n/locales';
+import { getLanguage, getLocalePrefix, type Language, LANGUAGES, LOCALES } from '../i18n/locales';
 import { routing } from '../i18n/routing';
 
 type Redirect = Awaited<ReturnType<NonNullable<NextConfig['redirects']>>>[number];
@@ -73,4 +73,27 @@ export function getLegacyRedirects(): Redirect[] {
 
     return [{ source: english, destination: `/services${hash}`, permanent: true }, ...localized];
   });
+}
+
+/** Slugs of the local page before it was retargeted at "website creation" and put Geneva first. */
+const FORMER_LOCAL_SLUGS: Record<Language, string> = {
+  en: '/web-mobile-developer-annecy-geneva',
+  fr: '/developpeur-web-mobile-annecy-geneve',
+  es: '/desarrollador-web-movil-annecy-ginebra',
+  de: '/web-mobile-entwickler-annecy-genf',
+  it: '/sviluppatore-web-mobile-annecy-ginevra',
+};
+
+/** Permanent redirects from the former local page slugs to the current ones, under every locale prefix (Swiss ones included). */
+export function getLocalPageRedirects(): Redirect[] {
+  /* eslint-disable security/detect-object-injection -- language is the typed Language union */
+  return LOCALES.map((locale) => {
+    const language = getLanguage(locale);
+    return {
+      source: `${getLocalePrefix(locale)}${FORMER_LOCAL_SLUGS[language]}`,
+      destination: `${getLocalePrefix(locale)}${routing.pathnames['/local'][locale]}`,
+      permanent: true,
+    };
+  });
+  /* eslint-enable security/detect-object-injection */
 }

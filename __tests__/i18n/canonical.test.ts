@@ -68,11 +68,11 @@ describe('getCanonicalUrl', () => {
 
   describe('local seo page (localized pathnames)', () => {
     it('resolves French localized pathname', () => {
-      expect(getCanonicalUrl('fr', '/local')).toBe(`${SITE_URL}/fr/developpeur-web-mobile-annecy-geneve`);
+      expect(getCanonicalUrl('fr', '/local')).toBe(`${SITE_URL}/fr/creation-site-internet-geneve-annecy`);
     });
 
     it('resolves German localized pathname', () => {
-      expect(getCanonicalUrl('de', '/local')).toBe(`${SITE_URL}/de/web-mobile-entwickler-annecy-genf`);
+      expect(getCanonicalUrl('de', '/local')).toBe(`${SITE_URL}/de/website-erstellen-lassen-genf-annecy`);
     });
   });
 
@@ -84,7 +84,7 @@ describe('getCanonicalUrl', () => {
 
     it('shares the translated slug of their language', () => {
       expect(getCanonicalUrl('fr-CH', '/about')).toBe(`${SITE_URL}/fr-ch/a-propos`);
-      expect(getCanonicalUrl('it-CH', '/local')).toBe(`${SITE_URL}/it-ch/sviluppatore-web-mobile-annecy-ginevra`);
+      expect(getCanonicalUrl('it-CH', '/local')).toBe(`${SITE_URL}/it-ch/creazione-siti-internet-ginevra-annecy`);
     });
   });
 

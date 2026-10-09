@@ -12,6 +12,8 @@
     "services": "Leistungen",
     "skip_to_content": "Zum Hauptinhalt springen",
     "switch_locale": "Sprache wechseln",
+    "switch_region": "Region wechseln",
+    "region": { "ch": "Schweiz · CHF", "eu": "Europa · EUR" },
     "lang_drawer_title": "SPRACHE · AUSWAHL",
     "menu_title": "Menü",
     "home_menu": "Startseite",

@@ -5,18 +5,19 @@ import { m } from 'motion/react';
 import { useLocale, useTranslations } from 'next-intl';
 import { useEffect, useTransition } from 'react';
 
+import FlagIcon from '@/components/icons/FlagIcon';
 import { useSwitchLocale } from '@/components/LanguageSwitcher/useSwitchLocale';
-import { getLanguage } from '@/i18n/locales';
+import { getLanguage, localeWithLanguage } from '@/i18n/locales';
 
 import { HEADER_HEIGHT, MOBILE_MENU_DURATION_MS, MOBILE_MENU_STAGGER_MS } from './constants';
 import { useStatusBarOffset } from './useStatusBarOffset';
 
 export const LANG_DRAWER_LANGUAGES = {
-  en: { name: 'English', flag: '🇬🇧' },
-  fr: { name: 'Français', flag: '🇫🇷' },
-  es: { name: 'Español', flag: '🇪🇸' },
-  de: { name: 'Deutsch', flag: '🇩🇪' },
-  it: { name: 'Italiano', flag: '🇮🇹' },
+  en: { name: 'English', flag: 'gb' },
+  fr: { name: 'Français', flag: 'fr' },
+  es: { name: 'Español', flag: 'es' },
+  de: { name: 'Deutsch', flag: 'de' },
+  it: { name: 'Italiano', flag: 'it' },
 } as const;
 
 interface MobileLangDrawerProps {
@@ -26,7 +27,8 @@ interface MobileLangDrawerProps {
 const MobileLangDrawer = ({ onClose }: MobileLangDrawerProps) => {
   const [isPending, startTransition] = useTransition();
   const t = useTranslations('navigation');
-  const language = getLanguage(useLocale());
+  const locale = useLocale();
+  const language = getLanguage(locale);
   const switchLocale = useSwitchLocale();
   const statusBarOffset = useStatusBarOffset();
 
@@ -47,7 +49,7 @@ const MobileLangDrawer = ({ onClose }: MobileLangDrawerProps) => {
 
   const handleSelect = (newLocale: string) => {
     startTransition(() => {
-      switchLocale(newLocale);
+      switchLocale(localeWithLanguage(locale, newLocale));
       onClose();
     });
   };
@@ -87,7 +89,7 @@ const MobileLangDrawer = ({ onClose }: MobileLangDrawerProps) => {
                 disabled={isPending}
                 className="group flex w-full items-center justify-between px-4 py-6 sm:px-6">
                 <span className="font-display text-fg flex items-center gap-4 text-[2rem] leading-none font-medium">
-                  <span aria-hidden="true">{flag}</span>
+                  <FlagIcon code={flag} className="h-6 w-9" />
                   {name}
                 </span>
                 {language === code && <CheckIcon className="text-aerospace-ink h-5 w-5" aria-hidden="true" />}

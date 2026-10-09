@@ -75,7 +75,28 @@ describe('next config legacy redirects', () => {
     expect(find('/offers')?.destination).toBe('/services#pricing');
     expect(find('/journey')?.destination).toBe('/services');
     expect(redirects.every((redirect) => redirect.permanent)).toBe(true);
-    // 3 pages × (1 unprefixed + 1 for en + 2 per other locale).
-    expect(redirects).toHaveLength(3 * (1 + 1 + 2 * 4));
+    // 3 retired pages × (1 unprefixed + 1 for en + 2 per other locale), then the local page under each of the 10 prefixes.
+    expect(redirects).toHaveLength(3 * (1 + 1 + 2 * 4) + 10);
+  });
+
+  it('sends the former local page slugs to the current ones, Swiss prefixes included', async () => {
+    vi.resetModules();
+    const { default: nextConfig } = (await import('../next.config')) as {
+      default: { redirects: () => Promise<{ source: string; destination: string; permanent: boolean }[]> };
+    };
+    const redirects = await nextConfig.redirects();
+    const find = (source: string) => redirects.find((redirect) => redirect.source === source);
+
+    expect(find('/fr/developpeur-web-mobile-annecy-geneve')).toEqual({
+      source: '/fr/developpeur-web-mobile-annecy-geneve',
+      destination: '/fr/creation-site-internet-geneve-annecy',
+      permanent: true,
+    });
+    expect(find('/fr-ch/developpeur-web-mobile-annecy-geneve')?.destination).toBe(
+      '/fr-ch/creation-site-internet-geneve-annecy'
+    );
+    expect(find('/de-ch/web-mobile-entwickler-annecy-genf')?.destination).toBe(
+      '/de-ch/website-erstellen-lassen-genf-annecy'
+    );
   });
 });

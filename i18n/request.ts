@@ -35,14 +35,14 @@ const getNamespacesForPath = (pathname: string): string[] => {
     // Services & pricing embeds the subscription simulator.
     return ['services', 'pricing'];
   } else if (
-    pathWithoutLocale.startsWith('/web-mobile-developer-annecy-geneva') ||
-    pathWithoutLocale.startsWith('/developpeur-web-mobile-annecy-geneve') ||
-    pathWithoutLocale.startsWith('/desarrollador-web-movil-annecy-ginebra') ||
-    pathWithoutLocale.startsWith('/web-mobile-entwickler-annecy-genf') ||
-    pathWithoutLocale.startsWith('/sviluppatore-web-mobile-annecy-ginevra')
+    pathWithoutLocale.startsWith('/website-design-geneva-annecy') ||
+    pathWithoutLocale.startsWith('/creation-site-internet-geneve-annecy') ||
+    pathWithoutLocale.startsWith('/creacion-paginas-web-ginebra-annecy') ||
+    pathWithoutLocale.startsWith('/website-erstellen-lassen-genf-annecy') ||
+    pathWithoutLocale.startsWith('/creazione-siti-internet-ginevra-annecy')
   ) {
-    // The local page also shows the latest project cards.
-    return ['local', 'projects'];
+    // The local page reuses the homepage's facts and audiences, and shows the latest project cards.
+    return ['local', 'home', 'projects'];
   } else if (
     pathWithoutLocale.startsWith('/projects/psc-supersprint') ||
     pathWithoutLocale.startsWith('/projets/psc-supersprint') ||

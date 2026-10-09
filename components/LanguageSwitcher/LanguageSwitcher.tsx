@@ -7,8 +7,9 @@ import { useEffect, useRef, useState, useTransition } from 'react';
 
 import { MOBILE_MENU_DURATION_MS, MOBILE_MENU_STAGGER_MS } from '@/components/Header/constants';
 import { LANG_DRAWER_LANGUAGES } from '@/components/Header/MobileLangDrawer';
+import FlagIcon from '@/components/icons/FlagIcon';
 import { cn } from '@/design-system/lib/utils';
-import { getLanguage } from '@/i18n/locales';
+import { getLanguage, localeWithLanguage } from '@/i18n/locales';
 
 import { useSwitchLocale } from './useSwitchLocale';
 
@@ -21,7 +22,8 @@ const LanguageSwitcher = ({ onOpen }: LanguageSwitcherProps = {}) => {
   const [isPending, startTransition] = useTransition();
   const menuRef = useRef<HTMLDivElement>(null);
   const t = useTranslations('navigation');
-  const language = getLanguage(useLocale());
+  const locale = useLocale();
+  const language = getLanguage(locale);
   const switchLocale = useSwitchLocale();
 
   // Close menu when clicking outside
@@ -48,7 +50,7 @@ const LanguageSwitcher = ({ onOpen }: LanguageSwitcherProps = {}) => {
     startTransition(() => {
       // For more robust locale switching, especially with default locale,
       // we ensure the router properly handles the navigation
-      switchLocale(newLocale);
+      switchLocale(localeWithLanguage(locale, newLocale));
       setIsOpen(false);
     });
   };
@@ -105,7 +107,7 @@ const LanguageSwitcher = ({ onOpen }: LanguageSwitcherProps = {}) => {
                           language === code ? 'text-aerospace-ink' : 'text-fg'
                         )}>
                         <span className="font-display flex items-center gap-3 text-lg leading-none font-medium">
-                          <span aria-hidden="true">{flag}</span>
+                          <FlagIcon code={flag} className="h-4 w-6" />
                           {name}
                         </span>
                         {language === code && <CheckIcon className="h-4 w-4 shrink-0" aria-hidden="true" />}

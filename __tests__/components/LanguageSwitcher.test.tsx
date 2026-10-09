@@ -66,7 +66,7 @@ describe('LanguageSwitcher Component', () => {
     fireEvent.click(button);
 
     const englishOption = getByRole('menuitem', { name: /english/i });
-    expect(englishOption).toHaveTextContent('🇬🇧English');
+    expect(englishOption).toHaveTextContent('English');
   });
 
   it('should close dropdown when clicking outside', async () => {
@@ -150,7 +150,7 @@ describe('LanguageSwitcher Component', () => {
     const button = getByRole('button', { name: /switch language/i });
     expect(button).toHaveTextContent('de');
     fireEvent.click(button);
-    expect(getByRole('menuitem', { name: /deutsch/i }).querySelector('svg')).not.toBeNull();
+    expect(getByRole('menuitem', { name: /deutsch/i }).querySelectorAll('svg')).toHaveLength(2);
     fireEvent.click(getByRole('menuitem', { name: /français/i }));
 
     await waitFor(() => {

@@ -46,8 +46,8 @@ describe('MobileLangDrawer', () => {
     );
     render(<MobileLangDrawer onClose={onClose} />, { wrapper: swiss });
 
-    expect(screen.getByRole('button', { name: /italiano/i }).querySelector('svg')).not.toBeNull();
-    expect(screen.getByRole('button', { name: /english/i }).querySelector('svg')).toBeNull();
+    expect(screen.getByRole('button', { name: /italiano/i }).querySelectorAll('svg')).toHaveLength(2);
+    expect(screen.getByRole('button', { name: /english/i }).querySelectorAll('svg')).toHaveLength(1);
   });
 
   it('calls onClose when the close button is clicked', () => {

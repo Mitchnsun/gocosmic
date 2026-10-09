@@ -19,7 +19,7 @@ describe('Footer Component', () => {
     expect(getByRole('contentinfo')).toBeInTheDocument();
     expect(getByText('Cosmic Studio')).toHaveTextContent('Cosmic Studio.');
     expect(getByText(/^Web and mobile development studio between Geneva and Annecy\./)).toBeInTheDocument();
-    expect(getByRole('link', { name: 'Chêne-Bougeries · Annecy' })).toHaveAttribute('href', '/local');
+    expect(getByRole('link', { name: 'Website design · Geneva, Annecy' })).toHaveAttribute('href', '/local');
     expect(getByText(/gocosmic\.dev ·/)).toBeInTheDocument();
   });
 
