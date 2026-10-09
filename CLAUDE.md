@@ -54,7 +54,7 @@ This is a single Next.js 16 app (App Router) with full internationalization via 
 - `lib/` — Standalone helpers shared across the app (`clamp.ts`, `config.ts`, `og.ts`, `renderWithLinks.tsx`, plus `contact/`, `pricing/`, `validation/`, `hooks/` subfolders). Distinct from `design-system/lib/`.
 - `data/` — Static content sources (`projects.ts` exports `PROJECTS`, the ordered case-study registry backing the projects pages).
 - `messages/<locale>/` — Translation files split by namespace: `common`, `navigation`, `footer`, `home`, `about`, `services`, `pricing`, `projects`, `contact`, `free-mockup`, `local`, `legal`, `psc-supersprint`.
-- `i18n/routing.ts` — Defines supported locales and all translated pathnames. `i18n/locales.ts` lists them: the five languages (`en`, `fr`, `es`, `de`, `it`) plus a Swiss variant of each (`fr-CH`…, served under `/fr-ch`…), which shares its language's messages and slugs and always shows the Swiss region (see `getRegion` in `lib/region.server.ts`).
+- `i18n/routing.ts` — Defines supported locales and all translated pathnames. `i18n/locales.ts` lists them: the five languages (`en`, `fr`, `es`, `de`, `it`) plus a Swiss variant of each (`fr-CH`…, served under `/fr-ch`…), which shares its language's messages and slugs and always shows the Swiss region, while language-only locales always show the default one (see `getRegion` in `lib/region.server.ts`). The visitor's country only picks the version they land on, in `proxy.ts`.
 - `i18n/request.ts` — Server-side i18n setup (namespace loading per route).
 - `__tests__/` — Mirrors source structure (`components/`, `pages/`). `test-utils.tsx` provides a custom `render` that wraps with `NextIntlClientProvider`.
 

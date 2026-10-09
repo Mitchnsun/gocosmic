@@ -28,9 +28,9 @@ Le site Cosmic Studio a pour objectifs :
 - **Traductions typées** : validation TypeScript des clés à la compilation
 - **SEO localisé** : métadonnées et attributs `lang` par locale
 - **URLs propres** : routage préfixé (`/en/`, `/fr/`, `/es/`, `/de/`, `/it/`)
-- **Versions suisses** : chaque page existe aussi pour la Suisse dans chaque langue (`/fr-ch/`, `/de-ch/`, `/it-ch/`, `/en-ch/`, `/es-ch/`), toujours avec la base de Genève et les prix en francs suisses, dans l'orthographe suisse pour l'allemand (`ss` pour `ß`), et reliée aux autres versions par `hreflang` pour que les moteurs de recherche la montrent aux personnes qui cherchent depuis la Suisse (voir `i18n/locales.ts`)
+- **Versions suisses** : chaque page existe aussi pour la Suisse dans chaque langue (`/fr-ch/`, `/de-ch/`, `/it-ch/`, `/en-ch/`, `/es-ch/`), toujours avec la base de Genève et les prix en francs suisses, dans l'orthographe suisse pour l'allemand (`ss` pour `ß`), et reliée aux autres versions par `hreflang` pour que les moteurs de recherche la montrent aux personnes qui cherchent depuis la Suisse (voir `i18n/locales.ts`). L'URL décide de la version : les pages sans région affichent toujours la base d'Annecy et les euros, et une bascule dans le pied de page passe d'une version à l'autre dans la même langue
 - **Slugs traduits** : chemins localisés (ex. `/en/about` → `/fr/a-propos`, `/en/projects` → `/de/projekte`)
-- **Détection navigateur** : locale automatique selon préférences utilisateur ; seul un navigateur réglé sur une locale suisse (ex. `fr-CH`) arrive sur une version suisse
+- **Détection navigateur** : locale automatique selon préférences utilisateur ; les visiteurs situés en Suisse (détectés via l'en-tête pays de Vercel) et les navigateurs réglés sur une locale suisse (ex. `fr-CH`) arrivent sur la version suisse
 - **Language switcher** : menu de changement de langue avec indication visuelle
 - **Organisation par namespace** : fichiers de traduction organisés par espace de noms pour une meilleure maintenabilité
 
@@ -119,7 +119,7 @@ Remplace les anciennes pages services, offres et tarifs.
 - **FAQ** : accordéon qui répond à cinq questions fréquentes (propriété du site, modification par le client, délai de mise en ligne, arrêt de l'abonnement, textes et photos)
 - **Appel à l'action final** : lien vers la page contact
 
-Les prix s'affichent en euros, ou en francs suisses sur les versions suisses du site et pour les visiteurs situés en Suisse (détectés via l'en-tête pays de Vercel), et toujours hors taxes. La page d'accueil, la page à propos et la description de la page affichée dans les résultats de recherche suivent la même règle.
+Les prix s'affichent en euros, ou en francs suisses sur la version suisse du site, et toujours hors taxes. La page d'accueil, la page à propos et la description de la page affichée dans les résultats de recherche suivent la même règle.
 
 ### Page Projets (`/projects`)
 
@@ -157,7 +157,7 @@ Page de capture de prospects où un visiteur demande une maquette gratuite de so
 
 ### Page SEO locale (`/local`)
 
-Page d'atterrissage locale ciblant les recherches géolocalisées (ex. `/en/web-mobile-developer-annecy-geneva`, `/fr/developpeur-web-mobile-annecy-geneve`). Elle s'ouvre sur une introduction qui suit la région (base de Genève sur les versions suisses et pour les visiteurs en Suisse, Annecy sinon), liste les quatre zones d'intervention, montre trois projets récents et se termine par une invitation à parler de son projet.
+Page d'atterrissage locale ciblant les recherches géolocalisées de création de site (ex. `/en/website-design-geneva-annecy`, `/fr/creation-site-internet-geneve-annecy` ; les anciens slugs redirigent de façon permanente). Elle s'ouvre sur une introduction qui suit la région (base de Genève sur la version suisse, Annecy sinon) et la ligne de repères de la page d'accueil, liste les quatre zones d'intervention et les publics, montre trois projets récents et se termine par une invitation à parler de son projet, avec la mention de la maquette gratuite.
 
 ### Pages légales
 

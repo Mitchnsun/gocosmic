@@ -26,9 +26,9 @@ The Cosmic Studio website serves as the primary business interface with the foll
 - **Type-Safe Translations**: Full TypeScript integration with compile-time validation
 - **SEO Optimization**: Dynamic metadata and lang attributes per locale
 - **Clean URLs**: Locale-prefixed routing (`/en/`, `/fr/`, `/es/`, `/de/`, `/it/`)
-- **Swiss versions**: every page also exists for Switzerland in each language (`/fr-ch/`, `/de-ch/`, `/it-ch/`, `/en-ch/`, `/es-ch/`), always with the Geneva base and prices in Swiss francs, in Swiss spelling for German (`ss` for `ß`), and linked to the other versions through `hreflang` so that search engines show it to people searching from Switzerland (see `i18n/locales.ts`)
+- **Swiss versions**: every page also exists for Switzerland in each language (`/fr-ch/`, `/de-ch/`, `/it-ch/`, `/en-ch/`, `/es-ch/`), always with the Geneva base and prices in Swiss francs, in Swiss spelling for German (`ss` for `ß`), and linked to the other versions through `hreflang` so that search engines show it to people searching from Switzerland (see `i18n/locales.ts`). The URL decides the version: language-only pages always show the Annecy base and euros, and a footer switch moves between the two versions in the same language
 - **Translated Pathnames**: Route paths are localized for better SEO and UX (e.g., `/en/about` → `/fr/a-propos`, `/en/projects` → `/de/projekte`)
-- **Browser Detection**: Automatic locale detection based on user preferences; only a browser set to a Swiss locale (e.g. `fr-CH`) lands on a Swiss version
+- **Browser Detection**: Automatic locale detection based on user preferences; visitors located in Switzerland (detected from the Vercel country header) and browsers set to a Swiss locale (e.g. `fr-CH`) land on the Swiss version
 - **Language Switcher**: Intuitive dropdown component with flag icons and current language indication
 - **Namespace Organization**: Translation files are organized by namespace for better maintainability and scalability
 
@@ -117,7 +117,7 @@ Replaces the former services, offers and pricing pages.
 - **FAQ**: accordion answering five common questions (ownership, editing the site, time to go live, stopping the subscription, texts and photos)
 - **Closing call-to-action**: link to the contact page
 
-Prices are shown in euros, or in Swiss francs on the Swiss versions of the site and for visitors located in Switzerland (detected from the Vercel country header), and always excl. VAT. The homepage, the about page and the page description shown in search results follow the same rule.
+Prices are shown in euros, or in Swiss francs on the Swiss version of the site, and always excl. VAT. The homepage, the about page and the page description shown in search results follow the same rule.
 
 ### Projects Page (`/projects`)
 
@@ -155,7 +155,7 @@ Lead-capture page where a prospect asks for a free mockup of their future websit
 
 ### Local SEO Page (`/local`)
 
-Locale-specific landing page targeting local searches (e.g., `/en/web-mobile-developer-annecy-geneva`, `/fr/developpeur-web-mobile-annecy-geneve`). It opens with a lead that follows the region (Geneva base on the Swiss versions and for Swiss visitors, Annecy otherwise), then lists the four areas served, shows three recent projects and ends with a call to talk about a project.
+Locale-specific landing page targeting local searches for website creation (e.g., `/en/website-design-geneva-annecy`, `/fr/creation-site-internet-geneve-annecy`; the former slugs redirect permanently). It opens with a lead that follows the region (Geneva base on the Swiss version, Annecy otherwise) and the facts line of the homepage, then lists the four areas served and the audiences, shows three recent projects and ends with a call to talk about a project, with the free mockup note.
 
 ### Legal Pages
 

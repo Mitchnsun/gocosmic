@@ -33,15 +33,17 @@ describe('proxy', () => {
     expect(routing.localePrefix).toMatchObject({ mode: 'always', prefixes: { 'fr-CH': '/fr-ch' } });
   });
 
-  it('lets only a Swiss browser setting pick a Swiss locale', async () => {
+  it('lets only a visitor in Switzerland or a Swiss browser setting pick a Swiss locale', async () => {
     const { default: proxy } = await import('../proxy');
-    const visit = (acceptLanguage: string) => {
-      proxy(new NextRequest('https://www.gocosmic.dev/', { headers: { 'accept-language': acceptLanguage } }));
+    const visit = (headers: Record<string, string>) => {
+      proxy(new NextRequest('https://www.gocosmic.dev/', { headers }));
       return mockHandleI18nRouting.mock.lastCall?.[0].headers.get('accept-language');
     };
 
-    expect(visit('de-AT,de;q=0.9')).toBe('de,de;q=0.9');
-    expect(visit('fr-CH,fr;q=0.9')).toBe('fr-CH,fr;q=0.9');
+    expect(visit({ 'accept-language': 'de-AT,de;q=0.9' })).toBe('de,de;q=0.9');
+    expect(visit({ 'accept-language': 'fr-CH,fr;q=0.9' })).toBe('fr-CH,fr;q=0.9');
+    expect(visit({ 'accept-language': 'fr-FR,fr;q=0.9', 'x-vercel-ip-country': 'CH' })).toBe('fr-CH,fr-CH;q=0.9');
+    expect(visit({ 'x-vercel-ip-country': 'CH' })).toBe('en-CH');
   });
 
   it('hands any other request over as it is', async () => {

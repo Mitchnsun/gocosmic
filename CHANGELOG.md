@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - The Geneva · Annecy page now speaks of website creation like the rest of the site, puts Geneva first, and adds the starting price, the audiences served and the free mockup; its web address changes, and the old one redirects to it
 - The homepage title in search results no longer mentions the cities, which now belong to the Geneva · Annecy page
 - Language and region flags are now drawn the same way on every device, instead of depending on the phone or computer
-- Visitors whose browser is set up for Switzerland now arrive on the Swiss version, and changing language there keeps them on it
+- Visitors from Switzerland now arrive on the Swiss version, while the rest of the site always shows the Annecy base and prices in euros, and changing language keeps the version you are on
 - In search results, the Services page now quotes its starting price in Swiss francs on the Swiss version
 - The terms of sale now state that prices in euros apply to businesses not based in Switzerland, and that businesses based in Switzerland are charged in Swiss francs
 - The customer reviews option in the pricing simulator now says reviews are updated regularly, instead of every month

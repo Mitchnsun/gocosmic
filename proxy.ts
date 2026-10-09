@@ -1,19 +1,29 @@
 import { NextRequest } from 'next/server';
 import createMiddleware from 'next-intl/middleware';
 
-import { normalizeAcceptLanguage } from './i18n/locales';
+import { DEFAULT_LANGUAGE, normalizeAcceptLanguage } from './i18n/locales';
 import { routing } from './i18n/routing';
+import { resolveRegion } from './lib/region';
 
 const handleI18nRouting = createMiddleware(routing);
 
-/** The request with its `Accept-Language` reduced so that only a Swiss browser setting picks a Swiss locale. */
+/** Visitor country resolved by the Vercel edge network. */
+const COUNTRY_HEADER = 'x-vercel-ip-country';
+
+/**
+ * The request with its `Accept-Language` reduced for locale detection: a visitor located in Switzerland, or a
+ * browser set to a Swiss locale, lands on the Swiss version of the site; everyone else on the language-only one.
+ */
 function withNormalizedLanguages(request: NextRequest): NextRequest {
-  const acceptLanguage = request.headers.get('accept-language');
   // Only page loads need locale detection; any other request (a Server Action post) keeps its body untouched.
-  if (!acceptLanguage || !['GET', 'HEAD'].includes(request.method)) return request;
+  if (!['GET', 'HEAD'].includes(request.method)) return request;
+
+  const inSwitzerland = resolveRegion(request.headers.get(COUNTRY_HEADER)) === 'ch';
+  const acceptLanguage = request.headers.get('accept-language') ?? (inSwitzerland ? DEFAULT_LANGUAGE : null);
+  if (!acceptLanguage) return request;
 
   const headers = new Headers(request.headers);
-  headers.set('accept-language', normalizeAcceptLanguage(acceptLanguage));
+  headers.set('accept-language', normalizeAcceptLanguage(acceptLanguage, inSwitzerland));
   return new NextRequest(request, { headers });
 }
 

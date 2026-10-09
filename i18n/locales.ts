@@ -8,9 +8,9 @@ export const DEFAULT_LANGUAGE: Language = 'en';
 
 /**
  * Swiss variant of every language, served under its own URL (`/fr-ch`, `/de-ch`…) and always shown with the
- * Swiss region: the Geneva base and Swiss francs. Language-only locales (`/fr`) follow the visitor's country
- * instead, which search engines never see from Switzerland, so these variants are what gets the Swiss content
- * indexed. They share their language's messages and translated slugs.
+ * Swiss region: the Geneva base and Swiss francs. Language-only locales (`/fr`) always show the default region,
+ * so each version has a stable URL for search engines to index. They share their language's messages and
+ * translated slugs.
  */
 export const SWISS_LOCALES = [
   'en-CH',
@@ -51,17 +51,20 @@ export const LOCALE_PREFIXES = Object.fromEntries(
 ) as Record<SwissLocale, string>;
 
 /**
- * `Accept-Language` reduced to what locale detection should act on: the language of each entry, with its
- * region kept only when it is Switzerland. Detection favours regional locales, so `de-AT` or `en-GB` would
- * otherwise land on the Swiss version; this way only a browser set to a Swiss locale (`fr-CH`, `gsw-CH`) does.
+ * `Accept-Language` reduced to what locale detection should act on: the language of each entry, with the Swiss
+ * region kept, or added to every language for a visitor located in Switzerland. Detection favours regional
+ * locales, so `de-AT` or `en-GB` would otherwise land on the Swiss version; this way only a visitor in
+ * Switzerland or a browser set to a Swiss locale (`fr-CH`, `gsw-CH`) does.
  */
-export function normalizeAcceptLanguage(header: string): string {
+export function normalizeAcceptLanguage(header: string, inSwitzerland = false): string {
   return header
     .split(',')
     .map((entry) => {
       const [range = '', ...params] = entry.trim().split(';');
-      const [language, ...subtags] = range.trim().split('-');
-      const isSwiss = subtags.some((subtag) => subtag.toUpperCase() === 'CH');
+      const [language = '', ...subtags] = range.trim().split('-');
+      // A language subtag has two or three letters; the `*` wildcard stays as is.
+      const isLanguage = /^[a-z]{2,3}$/i.test(language);
+      const isSwiss = isLanguage && (inSwitzerland || subtags.some((subtag) => subtag.toUpperCase() === 'CH'));
       return [isSwiss ? `${language}-CH` : language, ...params].join(';');
     })
     .join(',');

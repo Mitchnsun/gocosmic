@@ -15,7 +15,7 @@ Codex instructions for working in this repository.
 - Single Next.js 16 App Router application using React 19, TypeScript, Tailwind CSS 4, and `next-intl`.
 - Package manager is Yarn 4 via Corepack. Use `yarn`, not `npm`, for project scripts.
 - Node.js must be `>=24`.
-- Routes live under `app/[locale]/`; supported locales are the five languages `en`, `fr`, `es`, `de`, and `it`, plus a Swiss variant of each (`fr-CH`…, served under `/fr-ch`…) listed in `i18n/locales.ts`. A Swiss locale shares its language's messages and slugs and always shows the Swiss region (see `getRegion` in `lib/region.server.ts`).
+- Routes live under `app/[locale]/`; supported locales are the five languages `en`, `fr`, `es`, `de`, and `it`, plus a Swiss variant of each (`fr-CH`…, served under `/fr-ch`…) listed in `i18n/locales.ts`. A Swiss locale shares its language's messages and slugs and always shows the Swiss region, while language-only locales always show the default one (see `getRegion` in `lib/region.server.ts`). The visitor's country only picks the version they land on, in `proxy.ts`.
 - Translation namespaces live in `messages/<language>/` and are loaded on demand by `i18n/request.ts`.
 - Reusable primitives live in `design-system/`; app-specific components live in `components/`.
 

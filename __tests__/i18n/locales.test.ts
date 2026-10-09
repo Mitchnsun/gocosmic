@@ -89,4 +89,10 @@ describe('normalizeAcceptLanguage', () => {
     expect(normalizeAcceptLanguage('it')).toBe('it');
     expect(normalizeAcceptLanguage('*')).toBe('*');
   });
+
+  it('turns every language Swiss for a visitor located in Switzerland', () => {
+    expect(normalizeAcceptLanguage('fr-FR,fr;q=0.9,en;q=0.8', true)).toBe('fr-CH,fr-CH;q=0.9,en-CH;q=0.8');
+    expect(normalizeAcceptLanguage('de-CH', true)).toBe('de-CH');
+    expect(normalizeAcceptLanguage('*', true)).toBe('*');
+  });
 });
