@@ -1,6 +1,6 @@
 import { SignalDot } from '@/design-system/signal-dot';
 
-export interface ContactDetail {
+interface ContactDetail {
   label: string;
   value: string;
   /** `mailto:` or external link; the value is then rendered as a link. */

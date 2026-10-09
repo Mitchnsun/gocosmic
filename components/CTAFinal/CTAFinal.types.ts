@@ -1,15 +1,11 @@
-export type AccentColor = 'aerospace' | 'royal' | 'jungle';
-export type StarfieldDensity = 'low' | 'medium' | 'high';
-/** Base background rendered behind the starfield: page (`bg`), alternate (`bg-alt`) or a blend of both. */
-export type Variant = 'base' | 'alt' | 'gradient';
 /** Visual intensity: `immersive` for the homepage, `sober` for inner pages. */
 export type Tone = 'immersive' | 'sober';
 
 /** Defaults and class names driven by a {@link Tone}. */
 export interface TonePreset {
-  /** Default starfield density. */
-  density: StarfieldDensity;
-  /** Whether hovering or focusing the CTA warps the starfield by default. */
+  /** Stars drawn at rest. */
+  starCount: number;
+  /** Whether hovering or focusing the CTA warps the starfield. */
   warp: boolean;
   /** Whether the accent halo is rendered behind the content. */
   halo: boolean;

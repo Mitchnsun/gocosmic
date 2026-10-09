@@ -307,3 +307,13 @@ Grep `components/CosmicCursor/` for the native selector being replaced (`input[t
 **Mistake**: A `.catch(() => import(...))` retry was added for the header's lazy animation features. Turbopack's chunk loader caches the failed chunk, so the second import rejects at once without any request (checked by aborting the chunk in Playwright).
 
 **Correct pattern**: Verify a fallback by actually failing the request before shipping it. A retry needs another mechanism (a reload, or a fallback that does not depend on the chunk).
+
+---
+
+## Layout
+
+### Aligning one page with the others: ask which side is the reference, value by value
+
+**Mistake**: Asked to align the free mockup page with the other pages, its tight top margin (40–48 px) was replaced by the larger fluid one the other pages used. The owner wanted the opposite: the other pages had too much space under the header on desktop, and the free mockup value was the one to spread.
+
+**Correct pattern**: When two layouts differ, do not assume the majority is right. List each differing value and confirm which side wins before editing. Page intros use `PAGE_TOP` from `design-system/pill.ts`, never `SECTION_Y`.

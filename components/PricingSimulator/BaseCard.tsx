@@ -37,7 +37,6 @@ export function BaseCard({ formula, currency }: { formula: Formula; currency: Cu
         </h3>
         <div className="flex flex-col items-end gap-1.5">
           <p className="font-display text-fg text-lg font-medium tabular-nums">
-            {/* eslint-disable-next-line security/detect-object-injection -- formula is a Formula */}
             {price(FORMULA_PRICES[formula])}
             <span className="text-fg-2 ml-1 text-sm">{t('period')}</span>
           </p>
@@ -46,7 +45,6 @@ export function BaseCard({ formula, currency }: { formula: Formula; currency: Cu
       </div>
       <p className="text-fg-3 text-2xs mt-4 font-mono tracking-[0.2em] uppercase">{t('base.title')}</p>
       <ul className="mt-3 space-y-2">
-        {/* eslint-disable-next-line security/detect-object-injection -- formula is a Formula */}
         {INCLUDED[formula].map((item) => {
           const label = t(`base.includes.${item}`);
           return (

@@ -23,7 +23,6 @@ interface MobileMenuProps {
 const MobileMenu = ({ onClose, items, region = DEFAULT_REGION }: MobileMenuProps) => {
   const t = useTranslations('navigation');
   const tTheme = useTranslations('theme');
-  // eslint-disable-next-line security/detect-object-injection -- region is the typed Region union
   const { altitude } = STUDIO_BASES[region];
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
   const statusBarOffset = useStatusBarOffset();

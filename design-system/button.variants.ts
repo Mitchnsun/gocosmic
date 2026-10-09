@@ -26,9 +26,7 @@ export const buttonVariants = cva(
       },
       size: {
         default: 'font-normal text-base px-6 py-2',
-        sm: 'font-light text-sm px-4 py-1',
         lg: 'font-bold text-lg px-8 py-2',
-        icon: 'h-10 w-10',
         pill: 'h-12 gap-2.5 px-6 font-display text-base font-semibold',
         inline: 'gap-1.5 p-0 font-display font-semibold',
       },

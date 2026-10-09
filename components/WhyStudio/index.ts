@@ -1,1 +1,1 @@
-export { WhyStudio, type WhyStudioReason } from './WhyStudio';
+export { WhyStudio } from './WhyStudio';

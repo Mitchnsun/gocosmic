@@ -33,7 +33,6 @@ export function ProjectFilters({ active, labels, groupLabel, onChange }: Project
                 'border-line-2 text-fg-2 hover:border-fg-3 hover:text-fg': !pressed,
               }
             )}>
-            {/* eslint-disable-next-line security/detect-object-injection -- filter comes from PROJECT_FILTERS */}
             {labels[filter]}
           </button>
         );

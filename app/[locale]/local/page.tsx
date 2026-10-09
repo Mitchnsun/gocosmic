@@ -7,12 +7,13 @@ import { AudienceGrid } from '@/components/AudienceGrid';
 import CTAFinal from '@/components/CTAFinal';
 import { buildHeroFacts, FactsLine } from '@/components/FactsLine';
 import { freeMockupNote } from '@/components/FreeMockup';
+import BreadcrumbSeo from '@/components/JsonLd/BreadcrumbSeo';
 import { BASE_PRICE } from '@/components/PricingSimulator/constants';
 import { formatAmount } from '@/components/PricingSimulator/PricingSimulator.utils';
 import { buildProjectCards, ProjectGrid } from '@/components/ProjectGrid';
 import { SectionHeading } from '@/components/SectionHeading';
 import { cn } from '@/design-system/lib/utils';
-import { CONTAINER, ghostPill, primaryPill, SECTION_Y } from '@/design-system/pill';
+import { CONTAINER, ghostPill, PAGE_TOP, primaryPill, SECTION_Y } from '@/design-system/pill';
 import { Link } from '@/i18n/navigation';
 import { getCurrency } from '@/lib/region';
 import { getRegion } from '@/lib/region.server';
@@ -49,7 +50,7 @@ export default async function LocalPage() {
 
   return (
     <div className="bg-bg text-fg">
-      <section aria-labelledby="local-intro" className="pt-[clamp(3rem,6.5vw,5.5rem)] pb-[clamp(3rem,6vw,4.5rem)]">
+      <section aria-labelledby="local-intro" className={cn(PAGE_TOP, 'pb-[clamp(3rem,6vw,4.5rem)]')}>
         <div className={cn(CONTAINER, 'flex flex-col gap-8')}>
           <SectionHeading
             level={1}
@@ -115,9 +116,9 @@ export default async function LocalPage() {
         note={freeMockupNote(tHome)}
         ctaText={t('cta.button')}
         ctaHref="/contact"
-        accentColor="aerospace"
         tone="sober"
       />
+      <BreadcrumbSeo route="/local" />
     </div>
   );
 }

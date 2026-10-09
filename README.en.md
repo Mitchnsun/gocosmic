@@ -411,7 +411,7 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   ├── ...           # Other components (ProcessTimeline, ServicesGrid, StatusBar, CookieConsent…)
 │   └── icons/        # Reusable SVG icons
 ├── design-system/    # Reusable UI primitives
-│   ├── button.tsx    # Button with CVA variants (primary, ghost, link…)
+│   ├── button.variants.ts # Button styles as CVA variants (primary, ghost, link…)
 │   ├── pill.ts       # Pill link styles and shared layout constants
 │   ├── eyebrow.tsx   # Mono section label with the orange dot
 │   ├── chip.tsx      # Bordered mono tag
@@ -473,7 +473,6 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 
 ## Documentation
 
-- Quick-read summary: [README_TLDR.md](./README_TLDR.md)
 - Bilingual policy: [DOCS_POLICY.md](./DOCS_POLICY.md)
 - Business glossary FR -> EN: [docs/glossary.md](./docs/glossary.md)
 - Main agent guide: [CLAUDE.md](./CLAUDE.md)

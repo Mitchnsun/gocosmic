@@ -21,7 +21,7 @@ interface HeroLink {
 }
 
 /** Props for the editorial homepage hero. */
-export interface HeroSectionProps {
+interface HeroSectionProps {
   /** Mono eyebrow above the headline. */
   eyebrow: string;
   /** Headline copy before the emphasised final word. */

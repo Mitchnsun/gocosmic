@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import type { ContactPayload } from '@/lib/contact/validation';
-import { emptyContactPayload, isContactPayloadValid, validateContact } from '@/lib/contact/validation';
+import { emptyContactPayload, validateContact } from '@/lib/contact/validation';
 
 const validPayload = (overrides: Partial<ContactPayload> = {}): ContactPayload => ({
   ...emptyContactPayload(),
@@ -14,7 +14,6 @@ const validPayload = (overrides: Partial<ContactPayload> = {}): ContactPayload =
 describe('validateContact', () => {
   it('accepts a minimal valid payload', () => {
     expect(validateContact(validPayload())).toEqual({});
-    expect(isContactPayloadValid(validPayload())).toBe(true);
   });
 
   it('rejects an empty payload on the three required fields', () => {
@@ -67,6 +66,6 @@ describe('validateContact', () => {
   });
 
   it('ignores the honeypot field', () => {
-    expect(isContactPayloadValid(validPayload({ honeypot: 'bot' }))).toBe(true);
+    expect(validateContact(validPayload({ honeypot: 'bot' }))).toEqual({});
   });
 });

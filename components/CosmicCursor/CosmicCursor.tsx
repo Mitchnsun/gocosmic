@@ -6,22 +6,10 @@ import type { Theme } from '@/components/Theme';
 
 import { useCosmicCursor } from './useCosmicCursor';
 
-/** Props for the CosmicCursor component */
-export interface CosmicCursorProps {
-  /** Number of trailing dots. Defaults to 8. */
-  trailLength?: number;
-  /** Magnetic pull range (px). Defaults to 80. */
-  magneticRange?: number;
-  /** Magnetic easing factor (0–1). Defaults to 0.15. */
-  magneticEase?: number;
-  /**
-   * Core cursor size in pixels (diameter). The arc is drawn at `coreSize / 2` radius,
-   * so `coreSize={6}` renders a 6px-wide dot. Defaults to 6.
-   */
-  coreSize?: number;
-  /** Trailing dot size in pixels (diameter). Defaults to 3. */
-  trailSize?: number;
-}
+/** Core dot diameter in pixels: the arc is drawn at `CORE_SIZE / 2` radius. */
+const CORE_SIZE = 6;
+/** Trailing dot diameter in pixels. */
+const TRAIL_SIZE = 3;
 
 /** Parse a hex color into { r, g, b } */
 function hexToRgb(hex: string): { r: number; g: number; b: number } {
@@ -52,15 +40,9 @@ const TRAIL_BASE_RGB: Record<Theme, { r: number; g: number; b: number }> = {
  *
  * @component
  */
-const CosmicCursor = ({
-  trailLength = 8,
-  magneticRange = 80,
-  magneticEase = 0.15,
-  coreSize = 6,
-  trailSize = 3,
-}: CosmicCursorProps) => {
+const CosmicCursor = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const { stateRef, updateTrail } = useCosmicCursor({ trailLength, magneticRange, magneticEase });
+  const { stateRef, updateTrail } = useCosmicCursor();
   // Tracks touch-device detection; updated after mount to avoid SSR hydration mismatches.
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
@@ -145,7 +127,7 @@ const CosmicCursor = ({
         for (const [i, point] of trail.entries()) {
           const t = i / trail.length; // 0 = oldest, 1 = newest
           const alpha = t * 0.6;
-          const radius = trailSize * (0.4 + t * 0.6);
+          const radius = TRAIL_SIZE * (0.4 + t * 0.6);
 
           // Color: interpolate the theme's trail base → accent
           const r = Math.round(baseRgb.r + (accentRgb.r - baseRgb.r) * t);
@@ -161,7 +143,7 @@ const CosmicCursor = ({
 
       // ── Core dot + glow ──────────────────────────────────────────────────
       if (!state.usesNativeCursor) {
-        const glowSize = state.isMagnetic ? coreSize * 5 : coreSize * 3;
+        const glowSize = state.isMagnetic ? CORE_SIZE * 5 : CORE_SIZE * 3;
         const gradient = ctx.createRadialGradient(smoothX, smoothY, 0, smoothX, smoothY, glowSize);
         gradient.addColorStop(0, `rgba(${accentRgb.r},${accentRgb.g},${accentRgb.b},0.5)`);
         gradient.addColorStop(1, `rgba(${accentRgb.r},${accentRgb.g},${accentRgb.b},0)`);
@@ -173,14 +155,14 @@ const CosmicCursor = ({
 
         // Solid core
         ctx.beginPath();
-        ctx.arc(smoothX, smoothY, coreSize / 2, 0, Math.PI * 2);
+        ctx.arc(smoothX, smoothY, CORE_SIZE / 2, 0, Math.PI * 2);
         ctx.fillStyle = `rgb(${accentRgb.r},${accentRgb.g},${accentRgb.b})`;
         ctx.fill();
 
         // Magnetic ring
         if (state.isMagnetic && !reduced) {
           ctx.beginPath();
-          ctx.arc(smoothX, smoothY, coreSize * 3, 0, Math.PI * 2);
+          ctx.arc(smoothX, smoothY, CORE_SIZE * 3, 0, Math.PI * 2);
           ctx.strokeStyle = `rgba(${accentRgb.r},${accentRgb.g},${accentRgb.b},0.4)`;
           ctx.lineWidth = 1;
           ctx.stroke();
@@ -197,7 +179,7 @@ const CosmicCursor = ({
       window.removeEventListener('resize', resize);
       styleEl.remove();
     };
-  }, [stateRef, updateTrail, coreSize, trailSize]);
+  }, [stateRef, updateTrail]);
 
   // On touch devices, return null after mount detection so no canvas is present in the DOM
   if (isTouchDevice) return null;

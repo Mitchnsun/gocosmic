@@ -1,6 +1,6 @@
 'use client';
 
-import type { ChangeEvent, FormEvent } from 'react';
+import type { ChangeEvent, SubmitEvent } from 'react';
 import { useCallback, useRef, useState } from 'react';
 
 import { submitContactMessage } from '@/app/actions/contact';
@@ -41,7 +41,7 @@ export const useContactForm = ({ onSuccess }: UseContactFormOptions) => {
     setErrors((current) => {
       if (!(name in current)) return current;
       const next = { ...current };
-      delete next[name as ContactField];
+      Reflect.deleteProperty(next, name);
       return next;
     });
   }, []);
@@ -57,7 +57,7 @@ export const useContactForm = ({ onSuccess }: UseContactFormOptions) => {
   }, []);
 
   const handleSubmit = useCallback(
-    async (event: FormEvent<HTMLFormElement>) => {
+    async (event: SubmitEvent<HTMLFormElement>) => {
       event.preventDefault();
       // A second submit while the first is in flight would deliver twice.
       if (inFlightRef.current) return;

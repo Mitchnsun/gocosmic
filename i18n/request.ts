@@ -6,102 +6,43 @@ import { getLanguage } from './locales';
 import { routing } from './routing';
 import { toSwissSpelling } from './swiss-spelling';
 
+type Pathnames = typeof routing.pathnames;
+/** Routes with one slug per locale: a plain-string route (`/`) would match every pathname. */
+type LocalizedRoute = { [K in keyof Pathnames]: Pathnames[K] extends string ? never : K }[keyof Pathnames];
+
 /**
- * Map pathname patterns to required namespaces.
- * Common, navigation, and footer are always loaded for all pages.
+ * Namespaces of each route, on top of the shared ones (common, navigation, footer). Slugs come from
+ * `routing.pathnames`. Most specific first: `/projects/psc-supersprint` must win over `/projects`.
  */
-const getNamespacesForPath = (pathname: string): string[] => {
+const ROUTE_NAMESPACES: [LocalizedRoute, string[]][] = [
+  ['/about', ['about']],
+  // Services & pricing embeds the subscription simulator.
+  ['/services', ['services', 'pricing']],
+  // The local page reuses the homepage's facts and audiences, and shows the latest project cards.
+  ['/local', ['local', 'home', 'projects']],
+  // The case study template needs the project titles for its prev/next links.
+  ['/projects/psc-supersprint', ['psc-supersprint', 'projects']],
+  ['/projects', ['projects']],
+  ['/contact', ['contact']],
+  ['/privacy', ['legal']],
+  ['/legal-notice', ['legal']],
+  ['/terms', ['legal']],
+  ['/free-mockup', ['free-mockup']],
+];
+
+/** Namespaces a pathname needs, e.g. `/fr-ch/a-propos` → `['about']`. Unknown routes get the homepage's. */
+export const getNamespacesForPath = (pathname: string): string[] => {
   // Remove locale prefix (e.g., /en/about -> /about, /fr-ch/a-propos -> /a-propos)
   const pathWithoutLocale = pathname.replace(/^\/(en|fr|es|de|it)(-ch)?(?=\/|$)/, '');
 
-  // Map routes to their specific namespaces
-  if (pathWithoutLocale === '/' || pathWithoutLocale === '') {
-    // The homepage also shows the pricing columns and the latest project cards.
-    return ['home', 'pricing', 'projects'];
-  } else if (
-    pathWithoutLocale.startsWith('/about') ||
-    pathWithoutLocale.startsWith('/a-propos') ||
-    pathWithoutLocale.startsWith('/acerca-de') ||
-    pathWithoutLocale.startsWith('/ueber-uns') ||
-    pathWithoutLocale.startsWith('/chi-siamo')
-  ) {
-    return ['about'];
-  } else if (
-    pathWithoutLocale.startsWith('/services') ||
-    pathWithoutLocale.startsWith('/servicios') ||
-    pathWithoutLocale.startsWith('/dienstleistungen') ||
-    pathWithoutLocale.startsWith('/servizi')
-  ) {
-    // Services & pricing embeds the subscription simulator.
-    return ['services', 'pricing'];
-  } else if (
-    pathWithoutLocale.startsWith('/website-design-geneva-annecy') ||
-    pathWithoutLocale.startsWith('/creation-site-internet-geneve-annecy') ||
-    pathWithoutLocale.startsWith('/creacion-paginas-web-ginebra-annecy') ||
-    pathWithoutLocale.startsWith('/website-erstellen-lassen-genf-annecy') ||
-    pathWithoutLocale.startsWith('/creazione-siti-internet-ginevra-annecy')
-  ) {
-    // The local page reuses the homepage's facts and audiences, and shows the latest project cards.
-    return ['local', 'home', 'projects'];
-  } else if (
-    pathWithoutLocale.startsWith('/projects/psc-supersprint') ||
-    pathWithoutLocale.startsWith('/projets/psc-supersprint') ||
-    pathWithoutLocale.startsWith('/proyectos/psc-supersprint') ||
-    pathWithoutLocale.startsWith('/projekte/psc-supersprint') ||
-    pathWithoutLocale.startsWith('/progetti/psc-supersprint')
-  ) {
-    // The case study template needs the project titles for its prev/next links.
-    return ['psc-supersprint', 'projects'];
-  } else if (
-    pathWithoutLocale.startsWith('/projects') ||
-    pathWithoutLocale.startsWith('/projets') ||
-    pathWithoutLocale.startsWith('/proyectos') ||
-    pathWithoutLocale.startsWith('/projekte') ||
-    pathWithoutLocale.startsWith('/progetti')
-  ) {
-    return ['projects'];
-  } else if (
-    pathWithoutLocale.startsWith('/contact') ||
-    pathWithoutLocale.startsWith('/contacto') ||
-    pathWithoutLocale.startsWith('/kontakt') ||
-    pathWithoutLocale.startsWith('/contatto')
-  ) {
-    return ['contact'];
-  } else if (
-    pathWithoutLocale.startsWith('/privacy') ||
-    pathWithoutLocale.startsWith('/confidentialite') ||
-    pathWithoutLocale.startsWith('/privacidad') ||
-    pathWithoutLocale.startsWith('/datenschutz')
-  ) {
-    return ['legal'];
-  } else if (
-    pathWithoutLocale.startsWith('/legal-notice') ||
-    pathWithoutLocale.startsWith('/mentions-legales') ||
-    pathWithoutLocale.startsWith('/aviso-legal') ||
-    pathWithoutLocale.startsWith('/impressum') ||
-    pathWithoutLocale.startsWith('/note-legali')
-  ) {
-    return ['legal'];
-  } else if (
-    pathWithoutLocale.startsWith('/terms') ||
-    pathWithoutLocale.startsWith('/conditions-generales-de-vente') ||
-    pathWithoutLocale.startsWith('/condiciones-generales') ||
-    pathWithoutLocale.startsWith('/agb') ||
-    pathWithoutLocale.startsWith('/condizioni-generali')
-  ) {
-    return ['legal'];
-  } else if (
-    pathWithoutLocale.startsWith('/free-mockup') ||
-    pathWithoutLocale.startsWith('/maquette-gratuite') ||
-    pathWithoutLocale.startsWith('/maqueta-gratuita') ||
-    pathWithoutLocale.startsWith('/kostenloses-mockup') ||
-    pathWithoutLocale.startsWith('/mockup-gratuito')
-  ) {
-    return ['free-mockup'];
-  }
+  // The homepage also shows the pricing columns and the latest project cards.
+  if (pathWithoutLocale === '/' || pathWithoutLocale === '') return ['home', 'pricing', 'projects'];
 
-  // Default to home for unknown routes
-  return ['home'];
+  const match = ROUTE_NAMESPACES.find(([route]) =>
+    Object.values(routing.pathnames[route]).some((slug) => pathWithoutLocale.startsWith(slug))
+  );
+
+  return match?.[1] ?? ['home'];
 };
 
 /**
@@ -120,7 +61,9 @@ async function loadMessages(locale: string, namespaces: string[]) {
   // Load each namespace dynamically
   for (const namespace of allNamespaces) {
     try {
-      const namespaceMessages = await import(`../messages/${language}/${namespace}.json`);
+      const namespaceMessages = (await import(`../messages/${language}/${namespace}.json`)) as {
+        default: Record<string, unknown>;
+      };
       Object.assign(messages, namespaceMessages.default);
     } catch {
       console.warn(`Failed to load namespace ${namespace} for locale ${locale}`);

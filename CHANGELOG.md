@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.4.1] - 2026-10-09
+
+### Added
+
+- Search engines now receive the path to each main page (Home › Services, and so on) and the starting monthly price of the services, excluding VAT, in euros or Swiss francs depending on the version of the site
+
+### Changed
+
+- Internal cleanup of unused code and tools, with no visible change for visitors
+- The free mockup page now uses the same width and title style as the other pages, and the contact page ends with the same bottom spacing
+- Every page now starts closer to the header, with the same spacing everywhere, instead of leaving a large gap on wide screens
+
 ## [2.4.0] - 2026-10-09
 
 ### Added

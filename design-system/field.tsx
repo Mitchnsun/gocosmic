@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { cn } from './lib/utils';
 
 /** Input and textarea look: 48 px high, 12 px radius, 3:1 outline, orange focus ring and error border. */
-export const FIELD_CONTROL =
+const FIELD_CONTROL =
   'bg-field border-line-3 text-fg placeholder:text-fg-3 focus:border-aerospace focus:ring-aerospace/30 aria-invalid:border-aerospace w-full rounded-xl border px-4 text-base transition-colors focus:ring-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60';
 
 /**

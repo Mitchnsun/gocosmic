@@ -6,11 +6,11 @@ import PersonSeo from '@/components/JsonLd/PersonSeo';
 import { render } from '../test-utils';
 
 const jsonLdScriptMock = vi.fn((props: unknown) => (
-  <script data-testid="person-json-ld" data-props={JSON.stringify(props)} />
+  <div data-testid="person-json-ld" data-props={JSON.stringify(props)} />
 ));
 
-vi.mock('next-seo', () => ({
-  JsonLdScript: (props: unknown) => jsonLdScriptMock(props),
+vi.mock('@/components/JsonLd/JsonLd', () => ({
+  JsonLd: (props: unknown) => jsonLdScriptMock(props),
 }));
 
 vi.mock('next-intl', async (importOriginal) => {
@@ -135,7 +135,7 @@ describe('PersonSeo', () => {
   });
 
   it('should default to the English job title for unknown locale', () => {
-    vi.mocked(useLocale).mockReturnValue('ja' as ReturnType<typeof useLocale>);
+    vi.mocked(useLocale).mockReturnValue('ja');
     render(<PersonSeo />);
 
     expect(jsonLdScriptMock).toHaveBeenCalledWith(

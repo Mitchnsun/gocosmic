@@ -373,13 +373,13 @@ footer a {
     0%,
     100% {
       box-shadow:
-        0 0 20px rgb(var(--cta-accent-rgb) / 0.4),
-        inset 0 0 20px rgb(var(--cta-accent-rgb) / 0.1);
+        0 0 20px rgb(255 79 0 / 0.4),
+        inset 0 0 20px rgb(255 79 0 / 0.1);
     }
     50% {
       box-shadow:
-        0 0 40px rgb(var(--cta-accent-rgb) / 0.8),
-        inset 0 0 30px rgb(var(--cta-accent-rgb) / 0.2);
+        0 0 40px rgb(255 79 0 / 0.8),
+        inset 0 0 30px rgb(255 79 0 / 0.2);
     }
   }
 

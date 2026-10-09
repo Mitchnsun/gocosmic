@@ -156,9 +156,6 @@ export default async function Home() {
         note={freeMockupNote(t)}
         ctaText={t('cta.button')}
         ctaHref="/contact"
-        accentColor="aerospace"
-        starfieldWarpSpeed={0.8}
-        warpOnHover
       />
     </div>
   );

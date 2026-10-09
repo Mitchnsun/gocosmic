@@ -7,7 +7,7 @@ import { cn } from '@/design-system/lib/utils';
 import { usePrefersReducedMotion } from '@/lib/hooks/usePrefersReducedMotion';
 
 /** Props for the post-submission confirmation panel. */
-export interface ContactFormSuccessProps {
+interface ContactFormSuccessProps {
   /** Confirmation headline. */
   title: string;
   /** Supporting sentence. */

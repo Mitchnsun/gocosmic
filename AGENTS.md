@@ -44,7 +44,7 @@ Codex instructions for working in this repository.
 - When testing components that use translations, import `render` from `__tests__/test-utils.tsx`, not directly from React Testing Library.
 - Do not write snapshot tests for components, pages, or views unless the user explicitly requests it and the rendered output change is intentional.
 - Keep accessibility visible in implementation and tests: semantic headings, roles, ARIA labels, focus states, and keyboard behavior where relevant.
-- Use existing design-system patterns: CVA variants, `@radix-ui/react-slot` for polymorphic composition, and `cn` from `@/design-system/lib/utils` for all conditional Tailwind class merging. Do not build conditional Tailwind classes with template literals or string concatenation.
+- Use existing design-system patterns: CVA variants and `cn` from `@/design-system/lib/utils` for all conditional Tailwind class merging. Do not build conditional Tailwind classes with template literals or string concatenation.
 - Keep component files focused. When a component grows past roughly 100 lines or starts exporting multiple visual units, split cohesive pieces into the established `Foo/Foo.tsx`, `Foo.types.ts`, `Foo.utils.ts`, `Foo.hooks.ts`, sub-component files, and `index.ts` layout.
 - For client components that call `useTranslations`, make sure the owning page provides a page-level `NextIntlClientProvider` seeded with `getMessages()` and `getLocale()` when the namespace is route-loaded.
 - Use Next.js client-side navigation for internal links: `next/link` or `@/i18n/navigation`. Raw `<a>` tags are only for external, `mailto:`, and `tel:` links.
@@ -68,7 +68,7 @@ yarn build
 Before committing or opening a PR, follow `CLAUDE.md` and run:
 
 ```bash
-yarn format && yarn lint && yarn check-types && yarn test && yarn coverage
+yarn format && yarn lint && yarn check-types && yarn coverage
 ```
 
 For documentation-only edits, at minimum ensure Markdown formatting is clean. If a commit is requested, still follow the full pre-commit verification rule from `CLAUDE.md`.

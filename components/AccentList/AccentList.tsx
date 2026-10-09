@@ -3,7 +3,7 @@ import { accentClasses } from '@/design-system/accent';
 import { cn } from '@/design-system/lib/utils';
 
 /** Props for a token-accented bullet list. */
-export interface AccentListProps {
+interface AccentListProps {
   /** List entries, already localized. */
   items: string[];
   /** Optional mono label rendered above the list. */

@@ -3,7 +3,7 @@ import type { ChangeEvent } from 'react';
 import { Field, FIELD_INPUT, FIELD_TEXTAREA } from '@/design-system/field';
 
 /** Props for a labelled contact form field. */
-export interface FormFieldProps {
+interface FormFieldProps {
   /** Field name — matches the payload key. */
   name: string;
   /** Visible label. */

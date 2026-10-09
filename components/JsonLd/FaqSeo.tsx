@@ -1,15 +1,15 @@
-import { JsonLdScript } from 'next-seo';
-
 import type { FaqItem } from '@/components/Faq';
 
-type FaqSeoProps = {
+import { JsonLd } from './JsonLd';
+
+interface FaqSeoProps {
   items: FaqItem[];
-};
+}
 
 /** FAQPage structured data, fed with the same items as the visible FAQ so the two cannot drift. */
 export default function FaqSeo({ items }: FaqSeoProps) {
   return (
-    <JsonLdScript
+    <JsonLd
       scriptKey="faq-json-ld"
       data={{
         '@context': 'https://schema.org',

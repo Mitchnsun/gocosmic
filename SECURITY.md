@@ -132,9 +132,8 @@ for them and for any action added later:
   serverless instance keeps its own counter and a cold start clears it — it
   would protect nothing while looking like it does.
 
-  **Known limitation:** the rule lives in the Vercel dashboard, not in
-  `vercel.json` or anywhere else in this repo, so it is invisible and
-  unversioned here. Before relying on it, confirm in the Vercel dashboard that
+  **Known limitation:** the rule lives in the Vercel dashboard, not
+  anywhere in this repo, so it is invisible and unversioned here. Before relying on it, confirm in the Vercel dashboard that
   it is still active for this project.
 
   A blocked `429` is returned by the edge before the Server Action runs, so it

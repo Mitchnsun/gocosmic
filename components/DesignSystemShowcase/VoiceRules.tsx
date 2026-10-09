@@ -5,7 +5,6 @@ import { RuleCards } from './RuleCards';
 
 /** Keep / stop / tone cards; the immersive moment differs per theme (stars or sun). */
 export function VoiceRules({ theme }: { theme: ThemeFace }) {
-  // eslint-disable-next-line security/detect-object-injection -- typed theme face
   const immersive = IMMERSIVE[theme];
 
   return (

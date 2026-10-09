@@ -11,7 +11,7 @@ import {
   freeMockupSchema,
   getFieldErrors,
   normalizeFreeMockupValues,
-  readFreeMockupField,
+  readField,
   readFreeMockupValues,
 } from '@/lib/validation/free-mockup.schema';
 
@@ -31,7 +31,7 @@ export async function submitFreeMockupRequest(
   _prevState: FreeMockupFormState,
   formData: FormData
 ): Promise<FreeMockupFormState> {
-  const honeypot = readFreeMockupField(formData, HONEYPOT_FIELD);
+  const honeypot = readField(formData, HONEYPOT_FIELD);
 
   // A filled honeypot means a bot: drop the request without telling it so.
   if (honeypot !== '') {
@@ -46,11 +46,11 @@ export async function submitFreeMockupRequest(
     return { status: 'error', fieldErrors: getFieldErrors(values) };
   }
 
-  const requestLocale = readFreeMockupField(formData, 'locale');
+  const requestLocale = readField(formData, 'locale');
   const locale = hasLocale(routing.locales, requestLocale) ? requestLocale : routing.defaultLocale;
 
   // The simulation is a bonus, not a form field: an invalid code is ignored.
-  const plan = decodePlanCode(readFreeMockupField(formData, 'plan')) ?? undefined;
+  const plan = decodePlanCode(readField(formData, 'plan')) ?? undefined;
 
   const { subject, text, html } = buildFreeMockupEmail({
     email: parsed.data.email,

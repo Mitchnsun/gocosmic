@@ -1,10 +1,8 @@
-import { renderHook } from '@testing-library/react';
 import { act } from 'react';
 import { vi } from 'vitest';
 
-import CosmicCursor from '@/components/CosmicCursor';
+import CosmicCursor from '@/components/CosmicCursor/CosmicCursor';
 import { COARSE_POINTER_QUERY } from '@/components/CosmicCursor/useCosmicCursor';
-import { useMagneticElements } from '@/components/CosmicCursor/useMagneticElements';
 
 import { render } from '../test-utils';
 
@@ -70,7 +68,7 @@ describe('CosmicCursor', () => {
 
   it('applies fixed positioning and pointer-events:none via inline style', () => {
     const { container } = render(<CosmicCursor />);
-    const canvas = container.querySelector('canvas') as HTMLCanvasElement;
+    const canvas = container.querySelector('canvas')!;
     expect(canvas.style.position).toBe('fixed');
     expect(canvas.style.pointerEvents).toBe('none');
     expect(canvas.style.zIndex).toBe('9999');
@@ -82,9 +80,7 @@ describe('CosmicCursor', () => {
   });
 
   it('does not start animation loop when getContext returns null', () => {
-    HTMLCanvasElement.prototype.getContext = vi.fn(
-      () => null
-    ) as unknown as typeof HTMLCanvasElement.prototype.getContext;
+    HTMLCanvasElement.prototype.getContext = vi.fn(() => null);
     render(<CosmicCursor />);
     expect(requestAnimationFrame).not.toHaveBeenCalled();
     // Restore mock for subsequent tests
@@ -166,12 +162,6 @@ describe('CosmicCursor', () => {
     unmount();
     expect(removeSpy).toHaveBeenCalledWith('resize', expect.any(Function));
   });
-
-  it('accepts all custom prop overrides without throwing', () => {
-    expect(() =>
-      render(<CosmicCursor trailLength={12} magneticRange={100} magneticEase={0.2} coreSize={8} trailSize={4} />)
-    ).not.toThrow();
-  });
 });
 
 // ─── Render loop ─────────────────────────────────────────────────────────────
@@ -202,7 +192,7 @@ describe('CosmicCursor render loop', () => {
     Object.defineProperty(mockCtx, 'fillStyle', {
       configurable: true,
       get: () => '',
-      set: (value: string) => fills.push(String(value)),
+      set: (value: string) => fills.push(value),
     });
     const island = document.createElement('section');
     island.dataset.theme = 'dark';
@@ -247,7 +237,7 @@ describe('CosmicCursor render loop', () => {
     Object.defineProperty(mockCtx, 'fillStyle', {
       configurable: true,
       get: () => '',
-      set: (value: string) => fills.push(String(value)),
+      set: (value: string) => fills.push(value),
     });
     const orange = document.createElement('button');
     orange.className = 'bg-aerospace hover:bg-aerospace/90';
@@ -365,44 +355,10 @@ describe('CosmicCursor render loop', () => {
     expect(mockCtx.arc).toHaveBeenCalled();
   });
 
-  it('applies magnetic snap when a [data-magnetic] element is within range', () => {
-    // Place a magnetic element somewhere in the document
-    const btn = document.createElement('button');
-    btn.setAttribute('data-magnetic', '');
-    btn.setAttribute('data-accent', 'royal');
-    document.body.appendChild(btn);
-
-    // Mock getBoundingClientRect so jsdom returns a usable rect
-    vi.spyOn(btn, 'getBoundingClientRect').mockReturnValue({
-      left: 50,
-      top: 50,
-      width: 100,
-      height: 40,
-      right: 150,
-      bottom: 90,
-      x: 50,
-      y: 50,
-      toJSON: () => ({}),
-    } as DOMRect);
-
-    render(<CosmicCursor magneticRange={200} />);
-
-    act(() => {
-      document.dispatchEvent(new MouseEvent('mousemove', { clientX: 90, clientY: 70, bubbles: true }));
-    });
-    act(() => {
-      capturedFrame!(performance.now() + 16);
-    });
-    expect(mockCtx.arc).toHaveBeenCalled();
-
-    document.body.removeChild(btn);
-  });
-
   it('does not snap the cursor toward the center of a wide link', () => {
     // A full-row link far wider than the magnetic range — its center sits well away
     // from where the pointer actually hovers (e.g. the trailing arrow icon).
     const link = document.createElement('a');
-    link.setAttribute('data-magnetic', '');
     document.body.appendChild(link);
 
     vi.spyOn(link, 'getBoundingClientRect').mockReturnValue({
@@ -415,10 +371,10 @@ describe('CosmicCursor render loop', () => {
       x: 0,
       y: 400,
       toJSON: () => ({}),
-    } as DOMRect);
+    });
 
-    const coreSize = 20; // radius 10 — distinct from trail dot radii so it's identifiable
-    render(<CosmicCursor coreSize={coreSize} />);
+    const coreRadius = 3; // the 6 px core dot — trail dots stay below this radius, the ring and glow above
+    render(<CosmicCursor />);
 
     const pointerX = 1150;
     const pointerY = 440;
@@ -433,77 +389,12 @@ describe('CosmicCursor render loop', () => {
       });
     }
 
-    const coreCalls = mockCtx.arc.mock.calls.filter((call) => call[2] === coreSize / 2);
+    const coreCalls = mockCtx.arc.mock.calls.filter((call) => call[2] === coreRadius);
     expect(coreCalls.length).toBeGreaterThan(0);
     const [lastX, lastY] = coreCalls[coreCalls.length - 1] as [number, number, number];
     expect(lastX).toBeGreaterThan(pointerX - 5);
     expect(lastY).toBeGreaterThan(pointerY - 5);
 
     document.body.removeChild(link);
-  });
-});
-
-// ─── useMagneticElements ─────────────────────────────────────────────────────
-
-describe('useMagneticElements', () => {
-  it('returns a ref object', () => {
-    const { result } = renderHook(() => useMagneticElements([{ selector: 'button', accent: 'aerospace' }]));
-    expect(result.current).toHaveProperty('current');
-  });
-
-  it('adds data-magnetic and data-accent to matched elements in the document', () => {
-    const btn = document.createElement('button');
-    btn.className = 'magnetic-test';
-    document.body.appendChild(btn);
-
-    const { unmount } = renderHook(() => useMagneticElements([{ selector: 'button.magnetic-test', accent: 'royal' }]));
-
-    expect(btn).toHaveAttribute('data-magnetic');
-    expect(btn).toHaveAttribute('data-accent', 'royal');
-
-    unmount();
-
-    expect(btn).not.toHaveAttribute('data-magnetic');
-    expect(btn).not.toHaveAttribute('data-accent');
-
-    document.body.removeChild(btn);
-  });
-
-  it('adds data-magnetic without data-accent when no accent is provided', () => {
-    const link = document.createElement('a');
-    link.className = 'magnetic-link-test';
-    document.body.appendChild(link);
-
-    const { unmount } = renderHook(() => useMagneticElements([{ selector: 'a.magnetic-link-test' }]));
-
-    expect(link).toHaveAttribute('data-magnetic');
-    expect(link).not.toHaveAttribute('data-accent');
-
-    unmount();
-    document.body.removeChild(link);
-  });
-
-  it('preserves pre-existing data-magnetic and restores data-accent on unmount', () => {
-    const btn = document.createElement('button');
-    btn.className = 'pre-existing-magnetic';
-    btn.setAttribute('data-magnetic', '');
-    btn.setAttribute('data-accent', 'royal');
-    document.body.appendChild(btn);
-
-    const { unmount } = renderHook(() =>
-      useMagneticElements([{ selector: 'button.pre-existing-magnetic', accent: 'aerospace' }])
-    );
-
-    // The hook overwrites data-accent while active
-    expect(btn).toHaveAttribute('data-accent', 'aerospace');
-
-    unmount();
-
-    // data-magnetic was there before — must still be there
-    expect(btn).toHaveAttribute('data-magnetic');
-    // data-accent must be restored to the original value
-    expect(btn).toHaveAttribute('data-accent', 'royal');
-
-    document.body.removeChild(btn);
   });
 });

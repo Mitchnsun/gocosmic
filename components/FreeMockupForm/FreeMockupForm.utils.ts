@@ -38,7 +38,7 @@ export const PALETTE_SWATCHES: Record<ColorPaletteKey, readonly [string, string,
 };
 
 /** Live counter state for the wishes textarea. */
-export interface WishesCounter {
+interface WishesCounter {
   count: number;
   max: number;
   /** True once the visitor reaches the cap, used to highlight the counter. */

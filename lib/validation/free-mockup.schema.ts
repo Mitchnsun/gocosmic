@@ -1,6 +1,5 @@
 // zod/mini with named imports: the form validates in the browser too, and the full `zod` namespace would
 // ship every locale's error messages with it.
-import type { infer as Infer } from 'zod/mini';
 import { email, enum as oneOf, literal, maxLength, object, optional, regexes, string, union, url } from 'zod/mini';
 
 /**
@@ -50,8 +49,6 @@ export const freeMockupSchema = object({
   wishes: optional(string().check(maxLength(WISHES_MAX_LENGTH))),
   honeypot: string().check(maxLength(0)),
 });
-
-export type FreeMockupRequest = Infer<typeof freeMockupSchema>;
 
 /** Form fields a visitor can get an inline error on (the honeypot is never shown). */
 export type FreeMockupFieldName = 'email' | 'colorPalette' | 'websiteUrl' | 'wishes';
@@ -133,7 +130,8 @@ export function getFieldErrors(values: FreeMockupValues): FreeMockupFieldErrors 
   return errors;
 }
 
-const readField = (formData: FormData, name: string): string => {
+/** Reads a single field by name, defaulting to an empty string. */
+export const readField = (formData: FormData, name: string): string => {
   const value = formData.get(name);
   return typeof value === 'string' ? value : '';
 };
@@ -146,11 +144,6 @@ export function readFreeMockupValues(formData: FormData): FreeMockupValues {
     websiteUrl: readField(formData, 'websiteUrl'),
     wishes: readField(formData, 'wishes'),
   };
-}
-
-/** Reads a single field by name, used for the honeypot and the locale hint. */
-export function readFreeMockupField(formData: FormData, name: string): string {
-  return readField(formData, name);
 }
 
 /** True when at least one field carries an error. */

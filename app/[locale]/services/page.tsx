@@ -5,7 +5,9 @@ import type { ReactNode } from 'react';
 
 import CTAFinal from '@/components/CTAFinal';
 import { Faq } from '@/components/Faq';
+import BreadcrumbSeo from '@/components/JsonLd/BreadcrumbSeo';
 import FaqSeo from '@/components/JsonLd/FaqSeo';
+import ServiceSeo from '@/components/JsonLd/ServiceSeo';
 import { PricingColumns } from '@/components/PricingColumns';
 import { buildPricingColumns } from '@/components/PricingColumns/PricingColumns.utils';
 import { FreeOffers, PricingSimulator, QuotedServices } from '@/components/PricingSimulator';
@@ -14,23 +16,28 @@ import { formatAmount } from '@/components/PricingSimulator/PricingSimulator.uti
 import { SectionHeading } from '@/components/SectionHeading';
 import { ServicesGrid } from '@/components/ServicesGrid';
 import { cn } from '@/design-system/lib/utils';
-import { CONTAINER, SECTION_Y } from '@/design-system/pill';
+import { CONTAINER, PAGE_TOP, SECTION_Y } from '@/design-system/pill';
 import { CODE_HANDOVER_MONTHS } from '@/lib/pricing/offers';
-import { getCurrency } from '@/lib/region';
+import { type Currency, getCurrency } from '@/lib/region';
 import { getRegion } from '@/lib/region.server';
 import { buildPageMetadata } from '@/lib/seo';
+
+type ServicesTranslator = Awaited<ReturnType<typeof getTranslations<'services'>>>;
+
+/** One description for search results and structured data, quoting the starting price in the page's currency. */
+const describeServices = (t: ServicesTranslator, currency: Currency, locale: string) =>
+  t('meta.description', { price: formatAmount(BASE_PRICE, currency, locale) });
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'services' });
-  // Search results quote the starting price in the page's currency: Swiss francs on the Swiss URLs.
-  const price = formatAmount(BASE_PRICE, getCurrency(await getRegion()), locale);
 
   return buildPageMetadata({
     locale,
     routeKey: '/services',
     title: t('meta.title'),
-    description: t('meta.description', { price }),
+    // Swiss francs on the Swiss URLs.
+    description: describeServices(t, getCurrency(await getRegion()), locale),
   });
 }
 
@@ -56,7 +63,7 @@ export default async function Services() {
 
   return (
     <div className="bg-bg text-fg">
-      <section aria-labelledby="services-intro" className="pt-[clamp(3rem,6.5vw,5.5rem)]">
+      <section aria-labelledby="services-intro" className={PAGE_TOP}>
         <div className={CONTAINER}>
           <SectionHeading
             level={1}
@@ -101,6 +108,8 @@ export default async function Services() {
 
       <Faq eyebrow={t('faq.eyebrow')} title={t.rich('faq.title', { em })} items={faqItems} />
       <FaqSeo items={faqItems} />
+      <BreadcrumbSeo route="/services" />
+      <ServiceSeo description={describeServices(t, currency, locale)} currency={currency} />
 
       <CTAFinal
         id="services-cta"
@@ -108,7 +117,6 @@ export default async function Services() {
         description={t('cta.description')}
         ctaText={t('cta.primary_button')}
         ctaHref="/contact"
-        accentColor="aerospace"
         tone="sober"
       />
     </div>

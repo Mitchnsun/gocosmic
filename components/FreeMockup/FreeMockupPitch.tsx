@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 
-import { Eyebrow } from '@/design-system/eyebrow';
+import { SectionHeading } from '@/components/SectionHeading';
 import { Link } from '@/i18n/navigation';
 
 /** The three moments of a free mockup, announced next to the form. */
@@ -15,11 +15,14 @@ export function FreeMockupPitch() {
 
   return (
     <div className="flex flex-col gap-6">
-      <Eyebrow>{t('eyebrow')}</Eyebrow>
-      <h1 className="font-display text-[clamp(2.25rem,6vw,4rem)] leading-[1.05] font-bold tracking-[-0.03em] text-balance">
-        {t('title')}
-      </h1>
-      <p className="text-fg-2 max-w-xl text-lg">{t('intro')}</p>
+      <SectionHeading
+        level={1}
+        eyebrow={t('eyebrow')}
+        title={t('title')}
+        titleId="free-mockup-heading"
+        titleClassName="text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.02]"
+        lead={t('intro')}
+      />
 
       <section aria-labelledby="free-mockup-steps-heading" className="border-line rounded-2xl border p-6">
         <h2 id="free-mockup-steps-heading" className="font-display text-fg text-base font-semibold">
@@ -42,7 +45,9 @@ export function FreeMockupPitch() {
 
       <p className="text-fg-3 text-sm">
         {t('privacy_notice')}{' '}
-        <Link href="/privacy" className="hover:text-fg-2 underline transition">
+        <Link
+          href="/privacy"
+          className="text-fg-2 hover:text-fg focus-visible:ring-aerospace-ink rounded underline underline-offset-4 transition-colors focus-visible:ring-2 focus-visible:outline-none">
           {t('privacy_link')}
         </Link>
         .

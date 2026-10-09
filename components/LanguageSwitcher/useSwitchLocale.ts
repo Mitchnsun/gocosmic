@@ -6,7 +6,7 @@ import { type MouseEvent, useEffect } from 'react';
 import { usePathname, useRouter } from '@/i18n/navigation';
 
 /** Query parameters of the current page, read when the visitor picks a language (e.g. `?type=mobile`). */
-export function readCurrentQuery(): Record<string, string> | undefined {
+function readCurrentQuery(): Record<string, string> | undefined {
   const query = Object.fromEntries(new URLSearchParams(window.location.search));
   return Object.keys(query).length > 0 ? query : undefined;
 }

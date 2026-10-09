@@ -14,7 +14,6 @@ export function ContrastBadge({ ratio }: { ratio: number }) {
         'text-aerospace-ink': level !== 'aa',
         'font-bold': level === 'fail',
       })}>
-      {/* eslint-disable-next-line security/detect-object-injection -- typed contrast level */}
       {ratio.toFixed(2)}:1 · {LEVEL_LABELS[level]}
     </span>
   );

@@ -1,5 +1,5 @@
 /** RGB channels (0–255) and alpha (0–1). */
-export type Rgba = [number, number, number, number];
+type Rgba = [number, number, number, number];
 
 /** Parses `#rrggbb` or `rgb(r g b / a)`, the two notations of the theme variables in `app/globals.css`. */
 export const parseColor = (value: string): Rgba => {
@@ -43,7 +43,7 @@ export const contrastRatio = (foreground: Rgba | string, background: Rgba | stri
 };
 
 /** WCAG AA verdict: `aa` for body text (≥ 4.5), `large` for large text and UI parts (≥ 3), `fail` otherwise. */
-export type ContrastLevel = 'aa' | 'large' | 'fail';
+type ContrastLevel = 'aa' | 'large' | 'fail';
 
 export const contrastLevel = (ratio: number): ContrastLevel => {
   if (ratio >= 4.5) return 'aa';
