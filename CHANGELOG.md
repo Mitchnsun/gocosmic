@@ -27,6 +27,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - The top bar and the contact page now simply say "Available", without a start date
 - Form fields now have a clearly visible outline in both themes, so they are easier to spot
 - The privacy policy now says that your theme choice is only kept if you switch themes, and that it stays in your browser until you clear its data
+- The site now runs on the latest version of its web framework, which makes pages a little lighter to download
+
+### Fixed
+
+- Several known security flaws in the web framework, three of them critical, are now closed
 
 ## [2.3.0] - 2026-10-08
 
