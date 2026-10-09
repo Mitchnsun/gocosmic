@@ -242,6 +242,42 @@ describe('CosmicCursor render loop', () => {
     Object.defineProperty(mockCtx, 'fillStyle', { configurable: true, writable: true, value: '' });
   });
 
+  it('turns the core space blue over an orange-filled button only', () => {
+    const fills: string[] = [];
+    Object.defineProperty(mockCtx, 'fillStyle', {
+      configurable: true,
+      get: () => '',
+      set: (value: string) => fills.push(String(value)),
+    });
+    const orange = document.createElement('button');
+    orange.className = 'bg-aerospace hover:bg-aerospace/90';
+    const plain = document.createElement('button');
+    plain.className = 'hover:bg-aerospace';
+    document.body.append(orange, plain);
+    const moveOver = (target: Element) => {
+      fills.length = 0;
+      act(() => {
+        target.dispatchEvent(new MouseEvent('mousemove', { clientX: 100, clientY: 100, bubbles: true }));
+      });
+      act(() => {
+        capturedFrame!(performance.now() + 16);
+      });
+    };
+
+    render(<CosmicCursor />);
+
+    moveOver(orange);
+    expect(fills).toContain('rgb(30,41,82)');
+
+    moveOver(plain);
+    expect(fills).toContain('rgb(255,79,0)');
+    expect(fills).not.toContain('rgb(30,41,82)');
+
+    orange.remove();
+    plain.remove();
+    Object.defineProperty(mockCtx, 'fillStyle', { configurable: true, writable: true, value: '' });
+  });
+
   it('calls clearRect on each animation frame', () => {
     render(<CosmicCursor />);
     expect(capturedFrame).not.toBeNull();

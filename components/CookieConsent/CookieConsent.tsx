@@ -86,36 +86,40 @@ export function CookieConsent() {
               </div>
             )}
 
-            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <button
-                type="button"
-                className="font-display bg-aerospace text-void hover:bg-aerospace/90 focus:ring-fg rounded-full px-4 py-2 text-sm font-semibold transition focus:ring-2 focus:outline-none"
-                onClick={() => saveChoice('accepted')}>
-                {t('accept')}
-              </button>
-              <button
-                type="button"
-                className="font-display border-line-2 text-fg hover:border-fg hover:bg-line focus:ring-fg rounded-full border px-4 py-2 text-sm font-semibold transition focus:ring-2 focus:outline-none"
-                onClick={() => saveChoice('refused')}>
-                {t('refuse')}
-              </button>
-              <button
-                type="button"
-                className="font-display text-fg-2 hover:text-fg focus:ring-fg rounded-full px-4 py-2 text-sm font-semibold underline underline-offset-4 transition focus:ring-2 focus:outline-none"
-                onClick={() => {
-                  if (isCustomizing) {
-                    saveChoice(analyticsEnabled ? 'accepted' : 'refused');
-                  } else {
-                    setIsCustomizing(true);
-                  }
-                }}>
-                {isCustomizing ? t('save') : t('customize')}
-              </button>
-              <Link
-                href="/privacy"
-                className="font-display text-fg-2 hover:text-fg focus:ring-fg rounded-full px-4 py-2 text-sm font-semibold underline underline-offset-4 transition focus:ring-2 focus:outline-none">
-                {t('privacyLink')}
-              </Link>
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:px-4">
+                <button
+                  type="button"
+                  className="font-display bg-aerospace text-void hover:bg-aerospace/90 focus:ring-fg rounded-full px-4 py-2 text-sm font-semibold transition focus:ring-2 focus:outline-none"
+                  onClick={() => saveChoice('accepted')}>
+                  {t('accept')}
+                </button>
+                <button
+                  type="button"
+                  className="font-display border-line-2 text-fg hover:border-fg hover:bg-line focus:ring-fg rounded-full border px-4 py-2 text-sm font-semibold transition focus:ring-2 focus:outline-none"
+                  onClick={() => saveChoice('refused')}>
+                  {t('refuse')}
+                </button>
+              </div>
+              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <button
+                  type="button"
+                  className="font-display text-fg-2 hover:text-fg focus:ring-fg rounded-full px-4 py-2 text-sm font-semibold underline underline-offset-4 transition focus:ring-2 focus:outline-none"
+                  onClick={() => {
+                    if (isCustomizing) {
+                      saveChoice(analyticsEnabled ? 'accepted' : 'refused');
+                    } else {
+                      setIsCustomizing(true);
+                    }
+                  }}>
+                  {isCustomizing ? t('save') : t('customize')}
+                </button>
+                <Link
+                  href="/privacy"
+                  className="font-display text-fg-2 hover:text-fg focus:ring-fg rounded-full px-4 py-2 text-center text-sm font-semibold underline underline-offset-4 transition focus:ring-2 focus:outline-none">
+                  {t('privacyLink')}
+                </Link>
+              </div>
             </div>
           </div>
         </section>

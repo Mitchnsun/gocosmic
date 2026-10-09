@@ -45,6 +45,7 @@ const COLORS = {
   aerospace: '#FF4F00',
   royal: '#7851A9',
   jungle: '#29AB87',
+  space: '#1E2952',
 } as const;
 
 type AccentKey = keyof typeof COLORS;
@@ -202,6 +203,8 @@ export function useCosmicCursor({
         }
       }
 
+      const hovered = isElement ? target.closest('a, button') : null;
+
       if (closestEl && closestRect && closestDist < magneticRange) {
         // Explicit [data-magnetic] element: snap and change accent
         applySnap(
@@ -218,22 +221,21 @@ export function useCosmicCursor({
         state.accentColor = COLORS.aerospace;
 
         // Auto-magnetic for <a> and <button> — apply snapping for consistency
-        if (isElement) {
-          const closest = target.closest('a, button');
-          if (closest) {
-            const rect = closest.getBoundingClientRect();
-            applySnap(
-              state,
-              rect,
-              e.clientX,
-              e.clientY,
-              magneticEase,
-              magneticRange,
-              closest.getAttribute('data-accent')
-            );
-          }
+        if (hovered) {
+          applySnap(
+            state,
+            hovered.getBoundingClientRect(),
+            e.clientX,
+            e.clientY,
+            magneticEase,
+            magneticRange,
+            hovered.getAttribute('data-accent')
+          );
         }
       }
+
+      // Orange fill under the pointer: switch to space so the dot stays visible.
+      if (hovered?.classList.contains('bg-aerospace')) state.accentColor = COLORS.space;
     };
 
     const onMouseLeave = () => {
@@ -258,13 +260,13 @@ export function useCosmicCursor({
     };
   }, [trailLength, magneticRange, magneticEase]);
 
-  /** Update the trail queue — called each animation frame */
-  const updateTrail = useCallback(() => {
+  /** Called each frame with the drawn dot position, so the trail follows the dot. */
+  const updateTrail = useCallback((x: number, y: number) => {
     const state = stateRef.current;
     if (state.trail.length === 0) return;
     // Shift: oldest point becomes newest
     state.trail.shift();
-    state.trail.push({ x: state.mouse.x, y: state.mouse.y });
+    state.trail.push({ x, y });
   }, []);
 
   return { stateRef, updateTrail };
