@@ -68,7 +68,7 @@
         "back": "Enviar otro mensaje"
       }
     },
-    "lead": "Escríbenos un mensaje o reserva una llamada de 20 minutos. En ambos casos te responde el propio Matthieu, con rapidez.",
+    "lead": "Escríbenos un mensaje o reserva una llamada de 20 minutos. En ambos casos tratas con Matthieu.",
     "details": {
       "aria_label": "Datos de contacto",
       "email_label": "Correo",
@@ -92,7 +92,7 @@
       "open": "Abrir la página de reservas",
       "iframe_title": "Agenda de reservas de Matthieu (Google Calendar)",
       "note": "La franja se reserva directamente en la agenda de Matthieu. Google Calendar te envía la confirmación y el enlace de la llamada.",
-      "unavailable": "La reserva en línea aún no está disponible. Escríbenos un mensaje y te propondremos una franja ese mismo día."
+      "unavailable": "La reserva en línea aún no está disponible. Escríbenos un mensaje y te propondremos una franja, normalmente en el mismo día."
     }
   }
 }

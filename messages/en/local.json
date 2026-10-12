@@ -2,14 +2,14 @@
   "local": {
     "meta": {
       "title": "Website design · Geneva, Annecy, Haute-Savoie | Cosmic Studio",
-      "description": "Website creation in Geneva, Annecy and Haute-Savoie for craftspeople, associations and independents. Prices on display and a free mockup, with no commitment."
+      "description": "Websites in Geneva, Annecy and Haute-Savoie for craftspeople, small businesses, independents and associations. Prices on display, free mockup, no commitment."
     },
     "intro": {
       "eyebrow": "[ Geneva · Annecy · Haute-Savoie ]",
-      "title": "Your web studio, <em>between Geneva and Annecy.</em>",
+      "title": "A web studio <em>between Geneva and Annecy.</em>",
       "lead": {
-        "ch": "Cosmic Studio is based in Chêne-Bougeries, near Geneva. We build websites and apps for craftspeople, associations and independents in Geneva, Annecy and Haute-Savoie, and we come to meet you in person.",
-        "fr": "Cosmic Studio works between Annecy and Geneva. We build websites and apps for craftspeople, associations and independents in Haute-Savoie, and we come to meet you in person."
+        "ch": "Cosmic Studio is based in Chêne-Bougeries, near Geneva. We build websites and apps for craftspeople, businesses, professional practices and associations in Geneva, Annecy and Haute-Savoie, and we come to meet you in person.",
+        "fr": "Cosmic Studio works between Annecy and Geneva. We build websites and apps for craftspeople, businesses, professional practices and associations in Haute-Savoie, and we come to meet you in person."
       },
       "primary": "Talk about my project",
       "secondary": "See services and pricing"
@@ -20,7 +20,7 @@
       "items": {
         "geneva": {
           "title": "Geneva",
-          "description": "The studio is in Chêne-Bougeries. We meet at your place, your workshop or over a coffee."
+          "description": "The studio is in Chêne-Bougeries. We meet at your workshop, in your offices or over a coffee."
         },
         "romandy": {
           "title": "French-speaking Switzerland",

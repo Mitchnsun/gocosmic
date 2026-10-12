@@ -1,11 +1,9 @@
 import {
-  COLOR_PALETTE_KEYS,
   EMPTY_FREE_MOCKUP_VALUES,
-  getWishesCounter,
   INITIAL_FREE_MOCKUP_STATE,
   PALETTE_SWATCHES,
-  WISHES_MAX_LENGTH,
 } from '@/components/FreeMockupForm/FreeMockupForm.utils';
+import { COLOR_PALETTE_KEYS } from '@/lib/validation/free-mockup.schema';
 
 describe('FreeMockupForm utils', () => {
   it('starts idle with empty values', () => {
@@ -20,19 +18,5 @@ describe('FreeMockupForm utils', () => {
     for (const [, colors] of swatches) {
       expect(colors).toHaveLength(3);
     }
-  });
-
-  describe('getWishesCounter', () => {
-    it('counts an empty value', () => {
-      expect(getWishesCounter('')).toEqual({ count: 0, max: WISHES_MAX_LENGTH, isAtLimit: false });
-    });
-
-    it('counts a partial value', () => {
-      expect(getWishesCounter('hello')).toEqual({ count: 5, max: WISHES_MAX_LENGTH, isAtLimit: false });
-    });
-
-    it('flags the limit once it is reached', () => {
-      expect(getWishesCounter('a'.repeat(WISHES_MAX_LENGTH)).isAtLimit).toBe(true);
-    });
   });
 });

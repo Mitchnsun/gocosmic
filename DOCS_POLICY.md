@@ -6,7 +6,7 @@
 
 - **Canonical language is English** for any document tied to code, configuration, DevOps, CI/CD, architecture, troubleshooting, and AI prompts.
 - **French is prioritized** for user onboarding guides, product presentations, and internal non-technical alignment.
-- **No mixed-language pages**: one page, one language, except the root `README.md` which is the repository's bilingual navigation entry point.
+- **No mixed-language pages**: one page, one language.
 
 ### Language matrix
 
@@ -28,10 +28,7 @@ introduced once a French human-facing doc is actually added:
 
 ```text
 /
-├── README.md                 # Bilingual minimal entry point (navigation + links)
-├── README.en.md              # English project entry (technical)
-├── README.fr.md              # French project entry (onboarding/product)
-├── README_TLDR.md            # English, lightweight quick-read summary
+├── README.md                 # English project entry (technical)
 ├── DOCS_POLICY.md            # This policy
 ├── CONTRIBUTING.md, SECURITY.md, GUIDELINES.md, DESIGN_GUIDELINE.md # English technical references
 ├── CLAUDE.md, AGENTS.md, .github/copilot-instructions.md            # English AI-agent instructions
@@ -45,7 +42,7 @@ Naming conventions:
 
 - Use lowercase kebab-case for file names under `docs/`.
 - If a French human-facing guide is added, put it under `docs/fr/` and its English counterpart under `docs/en/`, keeping mirrored paths — don't mix languages in one file.
-- Root-level documentation entry points may keep established names such as `README.md`, `README.en.md`, `README.fr.md`, and `DOCS_POLICY.md`.
+- Root-level documentation entry points may keep established names such as `README.md` and `DOCS_POLICY.md`.
 
 ## 3) Human docs vs agent/system docs coherence
 
@@ -74,8 +71,7 @@ For each documentation change:
 2. Write in the canonical language for that type.
 3. Add cross-links between EN and FR equivalents when both exist.
 4. Keep terminology aligned with `docs/glossary.md`.
-5. `README.en.md` and `README.fr.md` are the same document in two languages: any change to one must be applied to the other in the same commit (same sections, same heading order, same content). English is canonical if they disagree.
-6. Validate Markdown formatting and link integrity.
+5. Validate Markdown formatting and link integrity.
 
 ## 5) Governance
 

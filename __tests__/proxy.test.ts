@@ -85,14 +85,14 @@ describe('proxy', () => {
     expect(middlewareModule.config.matcher).toContain('(?!api|_next|_vercel');
 
     // Test specific paths that should be excluded
-    expect('/api/test'.match(/^\/api/)).toBeTruthy();
-    expect('/_next/static'.match(/^\/_next/)).toBeTruthy();
-    expect('/_vercel/test'.match(/^\/_vercel/)).toBeTruthy();
+    expect(/^\/api/.exec('/api/test')).toBeTruthy();
+    expect(/^\/_next/.exec('/_next/static')).toBeTruthy();
+    expect(/^\/_vercel/.exec('/_vercel/test')).toBeTruthy();
     expect('/favicon.ico'.includes('.')).toBeTruthy();
 
     // Test paths that should be included (not matching exclusion patterns)
-    expect('/en'.match(/^\/api/)).toBeFalsy();
-    expect('/fr/about'.match(/^\/api/)).toBeFalsy();
+    expect(/^\/api/.exec('/en')).toBeFalsy();
+    expect(/^\/api/.exec('/fr/about')).toBeFalsy();
     expect('/contact'.includes('.')).toBeFalsy();
   });
 });

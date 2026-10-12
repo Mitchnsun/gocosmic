@@ -4,11 +4,12 @@ import { getLocale, getMessages, getTranslations } from 'next-intl/server';
 import type { ReactNode } from 'react';
 
 import CTAFinal from '@/components/CTAFinal';
+import BreadcrumbSeo from '@/components/JsonLd/BreadcrumbSeo';
 import ProjectsListSeo from '@/components/JsonLd/ProjectsListSeo';
 import { buildProjectCards, FilterableProjectGrid } from '@/components/ProjectGrid';
 import { SectionHeading } from '@/components/SectionHeading';
 import { cn } from '@/design-system/lib/utils';
-import { CONTAINER, SECTION_Y } from '@/design-system/pill';
+import { CONTAINER, PAGE_TOP, SECTION_Y } from '@/design-system/pill';
 import { buildPageMetadata } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -33,7 +34,7 @@ export default async function Projects() {
 
   return (
     <div className="bg-bg text-fg">
-      <section aria-labelledby="projects-intro" className={cn('pb-0', SECTION_Y)}>
+      <section aria-labelledby="projects-intro" className={cn(SECTION_Y, PAGE_TOP)}>
         <div className={cn(CONTAINER, 'flex flex-col gap-10')}>
           <SectionHeading
             level={1}
@@ -54,10 +55,10 @@ export default async function Projects() {
         description={t('cta.description')}
         ctaText={t('cta.button')}
         ctaHref="/contact"
-        accentColor="aerospace"
         tone="sober"
       />
       <ProjectsListSeo />
+      <BreadcrumbSeo route="/projects" />
     </div>
   );
 }

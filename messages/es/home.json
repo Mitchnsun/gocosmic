@@ -3,13 +3,13 @@
     "cta": {
       "button": "Hablar de mi proyecto",
       "description": "Háblanos de tu negocio en unas pocas líneas. Te respondemos rápidamente para comentarlo contigo, antes de proponerte nada.",
-      "freeMockup": "¿Aún no te decides? Empieza por una <link>maqueta gratuita</link>.",
+      "freeMockup": "Si prefieres ver antes de hablar, pide una <link>maqueta gratuita</link>.",
       "title": "Hagamos brillar tu negocio."
     },
     "hero": {
       "cta": "Go Cosmic",
       "endWords": ["visto.", "encontrado.", "elegido."],
-      "subtitle": "Cosmic Studio crea sitios web y aplicaciones para artesanos, asociaciones y autónomos. Nos encargamos de que te encuentren en Google y seguimos localizables una vez publicada la web.",
+      "subtitle": "Cosmic Studio crea sitios web y aplicaciones para pequeñas empresas, autónomos y asociaciones. Nos encargamos de que te encuentren en Google y seguimos localizables una vez publicada la web.",
       "title": "Tu negocio merece ser",
       "eyebrow": {
         "ch": "Estudio web y móvil · Ginebra",
@@ -43,7 +43,7 @@
     },
     "process": {
       "eyebrow": "[ Proceso ]",
-      "title": "Cuatro pasos, <em>sin sorpresas.</em>",
+      "title": "Cuatro pasos, <em>y una fecha fijada al empezar.</em>",
       "subtitle": "Desde la primera conversación hasta la publicación, sabes en qué punto está tu proyecto.",
       "discovery": {
         "label": "T-3 · Primer contacto",
@@ -53,7 +53,7 @@
       "design": {
         "label": "T-2 · Maqueta",
         "title": "Lo ves antes de decidir",
-        "description": "Preparamos una maqueta de tu página de inicio, con tus colores y tus textos. Es gratuita y no te compromete a nada."
+        "description": "Preparamos una maqueta de tu página de inicio. Si ya tienes un sitio, retoma sus colores y sus textos; si no, parte de la paleta y de las indicaciones que nos hayas dado. Es gratuita y no te compromete a nada."
       },
       "build": {
         "label": "T-1 · Construcción",
@@ -68,7 +68,7 @@
     },
     "projects": {
       "eyebrow": "[ Trabajos ]",
-      "title": "Nuestros últimos <em>proyectos.</em>",
+      "title": "Lo que ya <em>hemos publicado.</em>",
       "all": "Todos los proyectos"
     },
     "audience": {
@@ -84,8 +84,12 @@
           "description": "Coro, club deportivo, colectivo… Tus eventos, las inscripciones y las novedades de la asociación en un solo lugar, para dar a conocer tus actividades y sumar nuevos socios."
         },
         "independents": {
-          "title": "Autónomos que empiezan",
-          "description": "Terapeuta, consultor/a, fotógrafo/a… Un sitio profesional desde el principio, a un precio que acompaña la evolución de tu negocio."
+          "title": "Autónomos y profesiones liberales",
+          "description": "Abogado/a, arquitecto/a, osteópata, consultor/a… Alguien te recomienda, y antes de llamarte miran tu sitio. Ese sitio presenta tu trabajo y tu trayectoria, y explica cómo pedir cita."
+        },
+        "companies": {
+          "title": "Pequeñas empresas",
+          "description": "Empresa de construcción, oficina técnica, taller mecánico, agencia de unas pocas personas… Tu sitio muestra lo que sabes hacer tanto a un futuro cliente como a alguien a quien te gustaría contratar."
         }
       }
     },
@@ -99,7 +103,7 @@
           "description": "Tus textos, tus fotos y tu nombre de dominio te pertenecen desde el primer día. El código pasa a ser tuyo tras {months} meses de suscripción, o antes a cambio de unos gastos de cesión."
         },
         "fast": {
-          "title": "Rápido y bien posicionado en Google",
+          "title": "Rápido en el móvil",
           "description": "Sin temas pesados ni complementos, tus páginas cargan rápido en el móvil, y Google lo tiene en cuenta en sus resultados."
         },
         "person": {
@@ -107,15 +111,15 @@
           "description": "Hablas con Matthieu, que conoce tu sitio porque lo construyó él."
         },
         "grows": {
-          "title": "Un sitio que evoluciona contigo",
-          "description": "Una página hoy, una tienda o una aplicación más adelante, sin rehacerlo todo."
+          "title": "Añadimos sin rehacerlo todo",
+          "description": "Empiezas con una página. El día que necesites la reserva de citas, una versión en inglés o una tienda, la añadimos al sitio que ya tienes."
         }
       }
     },
     "apps": {
-      "eyebrow": "[ Nuestras apps ]",
-      "title": "También desarrollamos <em>nuestras propias aplicaciones.</em>",
-      "lead": "Nos sirven para probar las herramientas antes de usarlas con nuestros clientes, y lo que aprendemos acaba beneficiando a tus proyectos.",
+      "eyebrow": "[ Nuestra aplicación ]",
+      "title": "También desarrollamos <em>nuestra propia aplicación.</em>",
+      "lead": "En ella probamos nuestras herramientas antes de usarlas en tus proyectos.",
       "daily_fortune": {
         "name": "Daily Fortune",
         "badge": "iOS · Android",
@@ -128,8 +132,8 @@
       "eyebrow": "[ El estudio ]",
       "title": "Detrás de Cosmic Studio <em>está Matthieu.</em>",
       "paragraphs": [
-        "Me llamo Matthieu Compérat. Soy de Duingt, a orillas del lago de Annecy, y ahora vivo en Chêne-Bougeries. Llevo unos quince años desarrollando sitios web y aplicaciones, primero para grandes empresas. Con Cosmic Studio trabajo directamente con artesanos, asociaciones y autónomos.",
-        "Cuando llamas, soy yo quien contesta, y tus mensajes reciben respuesta ese mismo día. Conozco al detalle el sitio que te entrego, así que cada cambio es rápido y sencillo."
+        "Matthieu Compérat es de Duingt, a orillas del lago de Annecy, y ahora vive en Chêne-Bougeries. Lleva unos quince años desarrollando sitios web y aplicaciones, primero para grandes empresas. Con Cosmic Studio hace este oficio para negocios más pequeños, y trabaja directamente con la persona que los lleva.",
+        "Cuando llamas, es él quien contesta, y tus mensajes reciben respuesta normalmente en el mismo día. Conoce al detalle el sitio que te entrega, así que cada cambio es rápido y sencillo."
       ],
       "zones": {
         "ch": [

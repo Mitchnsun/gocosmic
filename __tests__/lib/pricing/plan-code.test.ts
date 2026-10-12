@@ -56,11 +56,11 @@ describe('plan code', () => {
     expect(decodePlanCode(code)).toEqual(everything);
   });
 
-  it.each([
+  it.each<DecodedPlan>([
     showcase,
     makePlan({ formula: 'self_service', addOns: { domain: true, email: true }, mailboxes: 2, seo: 0 }),
-    { projectType: 'website', websiteType: 'self_managed', selection: INITIAL_SELECTION, region: 'fr' } as DecodedPlan,
-    { projectType: 'both', websiteType: null, selection: INITIAL_SELECTION, region: 'fr' } as DecodedPlan,
+    { projectType: 'website', websiteType: 'self_managed', selection: INITIAL_SELECTION, region: 'fr' },
+    { projectType: 'both', websiteType: null, selection: INITIAL_SELECTION, region: 'fr' },
   ])('round-trips %o', (plan) => {
     expect(decodePlanCode(encodePlanCode(plan))).toEqual(plan);
   });

@@ -242,6 +242,12 @@ Grep `components/CosmicCursor/` for the native selector being replaced (`input[t
 
 **Correct pattern**: When documenting naming or language rules, explicitly carve out root-level documentation entry points if they intentionally break the general convention. When listing scripts or dependency versions in README files, verify them against `package.json` (or reference the canonical source directly) before merging.
 
+### Replacing a document with a pointer: check every rule, one by one
+
+**Mistake**: `AGENTS.md` was cut down to a pointer to `CLAUDE.md` after checking only a few of its rules. Four of them existed nowhere else (API routes and CSP in the `SECURITY.md` reminder, preserving user changes, no version bump for local work) and were lost until a review caught it.
+
+**Correct pattern**: Before deleting a duplicated document, grep each of its rules in the documents meant to replace it, and move the ones that are missing. Likewise, moving server-only strings into the `common` messages ships them to the browser on every page: keep data read only by server components out of the client messages.
+
 ---
 
 ## CSS / Animation
@@ -307,3 +313,13 @@ Grep `components/CosmicCursor/` for the native selector being replaced (`input[t
 **Mistake**: A `.catch(() => import(...))` retry was added for the header's lazy animation features. Turbopack's chunk loader caches the failed chunk, so the second import rejects at once without any request (checked by aborting the chunk in Playwright).
 
 **Correct pattern**: Verify a fallback by actually failing the request before shipping it. A retry needs another mechanism (a reload, or a fallback that does not depend on the chunk).
+
+---
+
+## Layout
+
+### Aligning one page with the others: ask which side is the reference, value by value
+
+**Mistake**: Asked to align the free mockup page with the other pages, its tight top margin (40–48 px) was replaced by the larger fluid one the other pages used. The owner wanted the opposite: the other pages had too much space under the header on desktop, and the free mockup value was the one to spread.
+
+**Correct pattern**: When two layouts differ, do not assume the majority is right. List each differing value and confirm which side wins before editing. Page intros use `PAGE_TOP` from `design-system/pill.ts`, never `SECTION_Y`.

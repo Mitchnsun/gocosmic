@@ -10,8 +10,7 @@ import {
   type FreeMockupFieldName,
   type FreeMockupValues,
   getFieldErrors,
-  hasFieldErrors,
-  readFreeMockupField,
+  readField,
 } from '@/lib/validation/free-mockup.schema';
 
 import type { FreeMockupFormState } from './FreeMockupForm.types';
@@ -63,22 +62,22 @@ export function useFreeMockupForm() {
       payload.set('colorPalette', values.colorPalette);
       payload.set('websiteUrl', values.websiteUrl);
       payload.set('wishes', values.wishes);
-      payload.set('locale', readFreeMockupField(submitted, 'locale'));
-      payload.set('plan', readFreeMockupField(submitted, 'plan'));
-      payload.set('company', readFreeMockupField(submitted, HONEYPOT_FIELD));
+      payload.set('locale', readField(submitted, 'locale'));
+      payload.set('plan', readField(submitted, 'plan'));
+      payload.set('company', readField(submitted, HONEYPOT_FIELD));
 
       // The flag is cleared where each answer is produced, never when an attempt
       // starts: clearing it up front would un-retire the previous banner for the
       // whole flight, and edits made while in flight predate the answer they
       // would otherwise retire.
       const clientErrors = getFieldErrors(values);
-      if (hasFieldErrors(clientErrors)) {
+      if (Object.keys(clientErrors).length > 0) {
         setHasEditedSinceSubmit(false);
         return { status: 'error', fieldErrors: clientErrors };
       }
 
       const result = await submitFreeMockupRequest(previousState, payload).catch(
-        (error): FreeMockupFormState => ({
+        (error: unknown): FreeMockupFormState => ({
           status: 'error',
           reason: isRetryLaterError(error) ? 'retry_later' : undefined,
         })
@@ -146,7 +145,7 @@ export function useFreeMockupForm() {
 
     return {
       status: isStaleFailure ? ('idle' as const) : state.status,
-      hasInvalidFields: hasFieldErrors(state.fieldErrors ?? {}),
+      hasInvalidFields: Object.keys(state.fieldErrors ?? {}).length > 0,
       reason: isStaleFailure ? undefined : state.reason,
     };
   }, [hasEditedSinceSubmit, isPending, state.fieldErrors, state.reason, state.status]);

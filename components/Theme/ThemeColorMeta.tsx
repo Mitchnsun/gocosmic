@@ -15,6 +15,5 @@ export function ThemeColorMeta() {
     if (theme === 'light') document.head.querySelector(`meta[${THEME_COLOR_BOOT_ATTRIBUTE}]`)?.remove();
   }, [theme]);
 
-  // eslint-disable-next-line security/detect-object-injection -- theme is the typed Theme union
   return <meta name="theme-color" content={THEME_COLORS[theme]} />;
 }

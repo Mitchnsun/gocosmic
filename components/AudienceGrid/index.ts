@@ -1,1 +1,1 @@
-export { AudienceGrid, type AudienceItem } from './AudienceGrid';
+export { AudienceGrid } from './AudienceGrid';

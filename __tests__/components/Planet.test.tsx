@@ -65,7 +65,7 @@ describe('Planet', () => {
   it('should reveal the planet with requestAnimationFrame and spin it in CSS', () => {
     const { container } = render(<Planet size={240} parallaxMode="pointer" />);
     const wrapper = container.firstElementChild as HTMLElement;
-    const body = container.querySelector('.planet-body-surface') as HTMLElement;
+    const body = container.querySelector<HTMLElement>('.planet-body-surface')!;
 
     expect(wrapper.style.opacity).toBe('0');
     expect(wrapper.style.getPropertyValue('--planet-reveal-scale')).toBe('0.72');

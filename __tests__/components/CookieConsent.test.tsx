@@ -176,6 +176,7 @@ describe('revealConsentBanner', () => {
     Object.defineProperty(document, 'currentScript', { configurable: true, value: script });
 
     // Runs the inline script as the browser would, with nothing from this module in scope.
+    // eslint-disable-next-line @typescript-eslint/no-implied-eval -- evaluating the script is the point of the test
     new Function(CONSENT_REVEAL_SCRIPT)();
 
     expect(CONSENT_REVEAL_SCRIPT).toContain('"gocosmic.analytics-consent"');

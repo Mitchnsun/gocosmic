@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 const css = readFileSync('app/globals.css', 'utf8');
 
 /** Returns the `--t-*` variables declared in the rule whose selector ends with `selector`. */
-export const readThemeTokens = (selector: string): Map<string, string> => {
+const readThemeTokens = (selector: string): Map<string, string> => {
   const start = css.indexOf(`${selector} {`);
   if (start === -1) throw new Error(`No rule for ${selector} in globals.css`);
   const body = css.slice(start, css.indexOf('}', start));

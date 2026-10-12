@@ -9,7 +9,7 @@ const Tabs = TabsPrimitive.Root;
 
 /** Pill track holding the triggers side by side, each taking an equal share of the width. */
 const TabsList = React.forwardRef<
-  React.ElementRef<typeof TabsPrimitive.List>,
+  React.ComponentRef<typeof TabsPrimitive.List>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
 >(({ className, ...props }, ref) => (
   <TabsPrimitive.List
@@ -25,7 +25,7 @@ TabsList.displayName = 'TabsList';
  * Radix switches tabs on mouse down and keyboard, so tests must not rely on `click` alone.
  */
 const TabsTrigger = React.forwardRef<
-  React.ElementRef<typeof TabsPrimitive.Trigger>,
+  React.ComponentRef<typeof TabsPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>
 >(({ className, ...props }, ref) => (
   <TabsPrimitive.Trigger
@@ -44,7 +44,7 @@ TabsTrigger.displayName = 'TabsTrigger';
 
 /** Panel of the active tab; Radix makes it focusable, so it gets the same visible focus ring. */
 const TabsContent = React.forwardRef<
-  React.ElementRef<typeof TabsPrimitive.Content>,
+  React.ComponentRef<typeof TabsPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content>
 >(({ className, ...props }, ref) => (
   <TabsPrimitive.Content

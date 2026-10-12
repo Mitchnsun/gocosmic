@@ -7,7 +7,7 @@
       },
       "title": "Your business deserves to be",
       "endWords": ["seen.", "found.", "chosen."],
-      "subtitle": "Cosmic Studio builds websites and apps for craftspeople, associations and independents. We make sure people find you on Google, and we are still there once your site is live.",
+      "subtitle": "Cosmic Studio builds websites and apps for small businesses, independents and associations. We make sure people find you on Google, and we are still there once your site is live.",
       "cta": "Go Cosmic",
       "secondary": "See pricing",
       "facts": {
@@ -48,8 +48,12 @@
           "description": "Choir, sports club, collective… Your events, memberships and news in one place, to make your activities known and welcome new members."
         },
         "independents": {
-          "title": "Independents starting out",
-          "description": "Therapist, consultant, photographer… A professional site from the start, at a price that keeps pace with your business."
+          "title": "Independents and professional practices",
+          "description": "Lawyer, architect, osteopath, consultant… Someone recommends you, then people look at your site before they call. It presents your practice and your background, and says how to book an appointment."
+        },
+        "companies": {
+          "title": "Small businesses",
+          "description": "Building firm, engineering consultancy, garage, an agency of a few people… Your site shows what you can do, to a future client as much as to someone you would like to hire."
         }
       }
     },
@@ -63,7 +67,7 @@
           "description": "Your texts, your photos and your domain name belong to you from day one. The code is transferred to you after {months} months of subscription, or earlier for a transfer fee."
         },
         "fast": {
-          "title": "Fast, and well placed on Google",
+          "title": "Fast on a phone",
           "description": "Without a heavy theme or plugins, your pages load quickly on a phone, and Google takes that into account in its results."
         },
         "person": {
@@ -71,14 +75,14 @@
           "description": "You talk to Matthieu, who knows your site because he built it."
         },
         "grows": {
-          "title": "A site that keeps pace with you",
-          "description": "A page today, a shop or an app later, without rebuilding everything."
+          "title": "We add on, without starting over",
+          "description": "You start with one page. The day you need appointment booking, an English version or a shop, we add it to the existing site."
         }
       }
     },
     "process": {
       "eyebrow": "[ Process ]",
-      "title": "Four steps, <em>no surprises.</em>",
+      "title": "Four steps, <em>and a date set at the start.</em>",
       "subtitle": "From the first conversation to launch day, you know where your project stands.",
       "discovery": {
         "label": "T-3 · Meeting",
@@ -88,7 +92,7 @@
       "design": {
         "label": "T-2 · Mockup",
         "title": "You see it before you decide",
-        "description": "We prepare a mockup of your home page with your colours and your texts. It is free and commits you to nothing."
+        "description": "We prepare a mockup of your home page. If you already have a site, it reuses its colours and texts; otherwise, it starts from the palette and the pointers you gave us. It is free and commits you to nothing."
       },
       "build": {
         "label": "T-1 · Build",
@@ -103,13 +107,13 @@
     },
     "projects": {
       "eyebrow": "[ Work ]",
-      "title": "Our latest <em>work.</em>",
+      "title": "What we have <em>already put online.</em>",
       "all": "All projects"
     },
     "apps": {
-      "eyebrow": "[ Our apps ]",
-      "title": "We also build <em>our own apps.</em>",
-      "lead": "We use them to try out tools before using them for clients, and what we learn then goes into your projects.",
+      "eyebrow": "[ Our app ]",
+      "title": "We also build <em>our own app.</em>",
+      "lead": "We use it to try out our tools before using them on your projects.",
       "daily_fortune": {
         "name": "Daily Fortune",
         "badge": "iOS · Android",
@@ -122,8 +126,8 @@
       "eyebrow": "[ The studio ]",
       "title": "Behind Cosmic Studio, <em>there is Matthieu.</em>",
       "paragraphs": [
-        "I'm Matthieu Compérat. I come from Duingt, on the shores of Lake Annecy, and I now live in Chêne-Bougeries. I have been building websites and apps for about fifteen years, first for large companies. With Cosmic Studio, I work directly with craftspeople, associations and independents.",
-        "When you call, I'm the one who picks up, and your messages get a reply the same day. I know the site I deliver inside out, which keeps every change quick and simple."
+        "Matthieu Compérat comes from Duingt, on the shores of Lake Annecy, and now lives in Chêne-Bougeries. He has been building websites and apps for about fifteen years, first for large companies. With Cosmic Studio, he does the same job for smaller businesses, and works directly with the person who runs them.",
+        "When you call, he is the one who picks up, and your messages usually get a reply the same day. He knows the site he delivers inside out, which keeps every change quick and simple."
       ],
       "zones": {
         "ch": [
@@ -143,7 +147,7 @@
     "cta": {
       "button": "Talk about my project",
       "description": "Tell us about your business in a few lines. We reply quickly to talk it through, before suggesting anything.",
-      "freeMockup": "Still unsure? Start with a <link>free mockup</link>.",
+      "freeMockup": "If you would rather see before you talk, ask for a <link>free mockup</link>.",
       "title": "Let's make your business shine."
     }
   }

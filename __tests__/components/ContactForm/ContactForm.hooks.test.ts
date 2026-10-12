@@ -1,5 +1,5 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
-import type { FormEvent } from 'react';
+import type { SubmitEvent } from 'react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { useContactForm } from '@/components/ContactForm/ContactForm.hooks';
@@ -9,7 +9,7 @@ const submitContactMessage = vi.hoisted(() => vi.fn());
 
 vi.mock('@/app/actions/contact', () => ({ submitContactMessage }));
 
-const submitEvent = () => ({ preventDefault: vi.fn() }) as unknown as FormEvent<HTMLFormElement>;
+const submitEvent = () => ({ preventDefault: vi.fn() }) as unknown as SubmitEvent<HTMLFormElement>;
 
 const fillValidValues = (result: { current: ReturnType<typeof useContactForm> }) => {
   const set = (name: string, value: string) =>

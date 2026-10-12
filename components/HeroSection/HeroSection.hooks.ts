@@ -15,6 +15,5 @@ export const useWordCycler = (words: string[], interval: number, disabled: boole
     return () => clearInterval(id);
   }, [words.length, interval, disabled]);
 
-  // eslint-disable-next-line security/detect-object-injection
   return wordsRef.current[index] ?? wordsRef.current[0] ?? '';
 };

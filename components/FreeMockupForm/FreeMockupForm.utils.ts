@@ -1,14 +1,6 @@
-import {
-  COLOR_PALETTE_CHOICES,
-  COLOR_PALETTE_KEYS,
-  type ColorPaletteKey,
-  type FreeMockupValues,
-  WISHES_MAX_LENGTH,
-} from '@/lib/validation/free-mockup.schema';
+import type { ColorPaletteKey, FreeMockupValues } from '@/lib/validation/free-mockup.schema';
 
 import type { FreeMockupFormState } from './FreeMockupForm.types';
-
-export { COLOR_PALETTE_CHOICES, COLOR_PALETTE_KEYS, WISHES_MAX_LENGTH };
 
 /** State the form starts from, before any submission. */
 export const INITIAL_FREE_MOCKUP_STATE: FreeMockupFormState = { status: 'idle' };
@@ -36,23 +28,3 @@ export const PALETTE_SWATCHES: Record<ColorPaletteKey, readonly [string, string,
   starryNight: ['#E8E4FF', '#7851A9', '#0B1026'],
   terracottaStone: ['#E8D5BC', '#C4703F', '#5C4033'],
 };
-
-/** Live counter state for the wishes textarea. */
-export interface WishesCounter {
-  count: number;
-  max: number;
-  /** True once the visitor reaches the cap, used to highlight the counter. */
-  isAtLimit: boolean;
-}
-
-/**
- * Computes the character counter shown under the wishes textarea.
- * Lengths are measured in UTF-16 code units, like `maxLength` and the schema.
- */
-export function getWishesCounter(value: string): WishesCounter {
-  return {
-    count: value.length,
-    max: WISHES_MAX_LENGTH,
-    isAtLimit: value.length >= WISHES_MAX_LENGTH,
-  };
-}

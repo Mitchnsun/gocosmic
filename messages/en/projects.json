@@ -2,10 +2,10 @@
   "projectsList": {
     "meta": {
       "title": "Work · Websites and apps | Cosmic Studio",
-      "description": "Websites and apps built by Cosmic Studio for a choir, a triathlon club and independents, in Geneva and Haute-Savoie."
+      "description": "Websites and apps built by Cosmic Studio: a choir's website, live results for a triathlon club and the studio's own projects."
     },
-    "title": "Websites and apps <em>in daily use.</em>",
-    "subtitle": "A selection of projects built for our clients and for the studio. Each page explains who we worked for, what we did and what changed.",
+    "title": "Websites and apps <em>that get used.</em>",
+    "subtitle": "Some were built for clients, others for the studio itself. Each page explains who we worked for, what we did and what changed.",
     "items": {
       "choeurDesPaysduMontBlanc": {
         "title": "Chœur des Pays du Mont Blanc",
@@ -37,8 +37,8 @@
       }
     },
     "cta": {
-      "title": "Your project could be the next one on this list.",
-      "description": "Tell us about your business in a few lines. We reply quickly.",
+      "title": "Tell us about yours.",
+      "description": "Describe your business in a few lines, and give us your site's address if you already have one.",
       "button": "Talk about my project"
     },
     "eyebrow": "[ Work · {count} ]",
@@ -69,23 +69,23 @@
     "for_whom": {
       "label": "Who it's for",
       "title": "A small boost every morning",
-      "description": "Daily Fortune is not a client project: it is our studio's own app, designed and published by us. It is for anyone looking for a little lift in the morning, a phrase to stay on track or a message to share."
+      "description": "Daily Fortune is the studio's own app, designed and published by us. It is for anyone looking for a little lift in the morning, a phrase to stay on track or a message to share."
     },
     "what_we_did": {
       "label": "What we did",
       "title": "A mobile app, from idea to publication",
-      "description": "We did everything ourselves, from the first idea to the release on the app stores.",
+      "description": "We did everything ourselves.",
       "items": {
         "daily_message": "A new message every day: a motivational quote, a positive affirmation or a fortune-cookie saying",
-        "ai_messages": "Varied messages created with the help of AI, in tune with everyone's daily life and hopes",
-        "clean_design": "A clean screen that reacts quickly, with smooth animations",
+        "ai_messages": "Varied messages created with the help of AI",
+        "clean_design": "A screen that is easy to read, with a few animations",
         "stores": "Published on the App Store and Google Play, for iPhone and Android"
       }
     },
     "result": {
       "label": "Result",
       "title": "Our first app, live",
-      "description": "Daily Fortune is available on the App Store and Google Play, and its users get a new message every day. For you, it shows that we can take an app from the first idea all the way to publication.",
+      "description": "Daily Fortune is available on the App Store and Google Play, and its users get a new message every day. It shows that we can take an app from the first idea all the way to publication.",
       "maintained": "It is still kept up to date: version {version} came out on {date}."
     }
   },
@@ -100,18 +100,18 @@
     },
     "for_whom": {
       "label": "Who it's for",
-      "title": "An online résumé, and our testing ground",
-      "description": "mcomper.at is the online résumé of Matthieu Compérat, your contact at Cosmic Studio: his background and skills on a single page. It is also where we test the tools we then use for our clients."
+      "title": "An online résumé",
+      "description": "mcomper.at is the online résumé of Matthieu Compérat, your contact at Cosmic Studio. His background and skills fit on a single page."
     },
     "what_we_did": {
       "label": "What we did",
       "title": "A clear, fast résumé in two languages",
-      "description": "We built a site that is easy to read and easy to update, which also lets us try out our working methods before applying them to your projects.",
+      "description": "We built a site that is easy to read and easy to update.",
       "items": {
         "two_languages": "Available in French and English, with texts written for each language",
         "found_on_google": "Pages prepared to be found on Google",
         "fast_on_phone": "Pages that load quickly and are easy to read on a phone",
-        "accessible": "A site accessible to everyone, following good practice",
+        "accessible": "A site accessible to everyone",
         "ai_with_review": "AI as an assistant for writing and translating, with every text reviewed by a person"
       }
     },
@@ -123,7 +123,7 @@
   },
   "choeurDesPaysduMontBlanc": {
     "title": "Chœur des Pays du Mont Blanc",
-    "subtitle": "The website of an amateur choir in Haute-Savoie: concerts, repertoire and rehearsals in one place.",
+    "subtitle": "The website of an amateur choir in Haute-Savoie, with its concerts, repertoire and rehearsals.",
     "cta": {
       "title": "Discover the choir",
       "description": "Upcoming concerts, repertoire, rehearsals: it is all on the choir's website.",
@@ -133,7 +133,7 @@
     "for_whom": {
       "label": "Who it's for",
       "title": "An amateur choir in Haute-Savoie",
-      "description": "The Chœur des Pays du Mont Blanc is an association of amateur singers in Haute-Savoie. It needed one place to keep its members informed, make its concerts known and welcome new voices."
+      "description": "The Chœur des Pays du Mont Blanc is an association of amateur singers in Haute-Savoie. It needed a site that serves its members as much as people who do not know it yet."
     },
     "what_we_did": {
       "label": "What we did",
@@ -149,7 +149,7 @@
     "result": {
       "label": "Result",
       "title": "One place to follow the choir",
-      "description": "The site has become the choir's main meeting point: members find rehearsal times and news, the public discovers upcoming concerts, and anyone who wants to sing knows how to join."
+      "description": "Members find their rehearsal times and news there, the public finds upcoming concerts, and anyone who wants to sing finds out how to join the choir."
     }
   }
 }

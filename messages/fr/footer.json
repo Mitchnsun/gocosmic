@@ -1,8 +1,8 @@
 {
   "footer": {
     "brand_desc": {
-      "fr": "Studio de développement web et mobile entre Genève et Annecy. Sites, applications et suivi pour les artisans, les associations et les indépendants.",
-      "ch": "Studio de développement web et mobile à Genève. Sites, applications et suivi pour les artisans, les associations et les indépendants."
+      "fr": "Studio de développement web et mobile entre Genève et Annecy. Sites, applications et suivi, à prix affichés.",
+      "ch": "Studio de développement web et mobile à Genève. Sites, applications et suivi, à prix affichés."
     },
     "nav_title": "Studio",
     "link_services": "Services & tarifs",
@@ -11,9 +11,10 @@
     "link_contact": "Contact",
     "copyright": "© {year} {brand}",
     "local_page": "Création de sites · Genève, Annecy",
+    "free_mockup_page": "Maquette gratuite",
     "privacy": "Politique de confidentialité",
     "legal_notice": "Mentions légales",
-    "link_apps": "Nos apps",
+    "link_apps": "Notre application",
     "legal_title": "Légal",
     "status": "Tous systèmes nominaux",
     "terms": "Conditions générales de vente"

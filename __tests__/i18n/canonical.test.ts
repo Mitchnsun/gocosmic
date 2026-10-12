@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { getAlternates, getCanonicalUrl, getLanguageAlternates, SITE_URL } from '@/i18n/canonical';
+import { getAlternates, getCanonicalUrl, getLanguageAlternates } from '@/i18n/canonical';
+import { SITE_URL } from '@/lib/config';
 
 describe('getCanonicalUrl', () => {
   describe('home page (static pathname "/")', () => {

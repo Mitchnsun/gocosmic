@@ -1,4 +1,4 @@
-import type { ARTICLE_TIERS, PAGE_TIERS, REPORT_TIERS, SEO_TIERS, UPDATE_TIERS } from './constants';
+import type { ADD_ON_PRICES, ARTICLE_TIERS, PAGE_TIERS, REPORT_TIERS, SEO_TIERS, UPDATE_TIERS } from './constants';
 import type { SimulatorActions } from './PricingSimulator.hooks';
 
 export type ProjectType = 'website' | 'mobile' | 'both';
@@ -14,26 +14,15 @@ export type WebsiteType = 'showcase' | 'self_managed' | 'accounts' | 'ecommerce'
 export type Formula = 'managed' | 'self_service';
 
 /** Add-ons the visitor ticks. `redirects` only exists with `email`, `detailed_analytics` with analytics. */
-export type AddOnKey =
-  | 'domain'
-  | 'swiss_hosting'
-  | 'email'
-  | 'contact_form'
-  | 'booking'
-  | 'reviews'
-  | 'english'
-  | 'news'
-  | 'monitoring'
-  | 'detailed_analytics'
-  | 'redirects';
+export type AddOnKey = keyof typeof ADD_ON_PRICES;
 
 /** Zero-based position in a fixed tier table, e.g. `0 | 1 | 2` for a three-tier table. */
 export type TierIndexOf<T extends readonly unknown[]> = Exclude<Partial<T>['length'], T['length']>;
 
-export type PageTier = TierIndexOf<typeof PAGE_TIERS>;
+type PageTier = TierIndexOf<typeof PAGE_TIERS>;
 export type UpdateTier = TierIndexOf<typeof UPDATE_TIERS>;
-export type ReportTier = TierIndexOf<typeof REPORT_TIERS>;
-export type SeoTier = TierIndexOf<typeof SEO_TIERS>;
+type ReportTier = TierIndexOf<typeof REPORT_TIERS>;
+type SeoTier = TierIndexOf<typeof SEO_TIERS>;
 export type ArticleTier = TierIndexOf<typeof ARTICLE_TIERS>;
 
 /** Options made of a tick box and a slider: `null` while unticked. */

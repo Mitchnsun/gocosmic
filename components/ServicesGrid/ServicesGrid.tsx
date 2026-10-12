@@ -7,7 +7,7 @@ import { HairlineGrid } from '@/design-system/hairline-grid';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, SECTION_Y } from '@/design-system/pill';
 
-export interface ServiceItem {
+interface ServiceItem {
   title: string;
   description: string;
   tags: string[];

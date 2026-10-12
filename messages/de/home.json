@@ -3,13 +3,13 @@
     "cta": {
       "button": "Mein Projekt besprechen",
       "description": "Erzählen Sie uns in ein paar Zeilen, was Sie machen. Wir melden uns schnell, um darüber zu sprechen, bevor wir Ihnen irgendetwas vorschlagen.",
-      "freeMockup": "Noch unsicher? Beginnen Sie mit einem <link>kostenlosen Mockup</link>.",
+      "freeMockup": "Wenn Sie lieber erst etwas sehen möchten, bevor wir sprechen, fragen Sie ein <link>kostenloses Mockup</link> an.",
       "title": "Bringen wir Ihren Betrieb zum Strahlen."
     },
     "hero": {
       "cta": "Go Cosmic",
       "endWords": ["gesehen zu werden.", "gefunden zu werden.", "ausgewählt zu werden."],
-      "subtitle": "Cosmic Studio erstellt Websites und Apps für Handwerksbetriebe, Vereine und Selbstständige. Wir sorgen dafür, dass man Sie bei Google findet, und bleiben erreichbar, wenn Ihre Website online ist.",
+      "subtitle": "Cosmic Studio erstellt Websites und Apps für kleine Unternehmen, Selbstständige und Vereine. Wir sorgen dafür, dass man Sie bei Google findet, und bleiben erreichbar, wenn Ihre Website online ist.",
       "title": "Ihr Betrieb verdient es,",
       "eyebrow": {
         "ch": "Web- & App-Studio · Genf",
@@ -43,7 +43,7 @@
     },
     "process": {
       "eyebrow": "[ Ablauf ]",
-      "title": "Vier Schritte, <em>ohne Überraschungen.</em>",
+      "title": "Vier Schritte, <em>und ein Starttermin, den wir zu Beginn festlegen.</em>",
       "subtitle": "Vom ersten Gespräch bis zum Start der Website wissen Sie, wo Ihr Projekt steht.",
       "discovery": {
         "label": "T-3 · Kennenlernen",
@@ -53,7 +53,7 @@
       "design": {
         "label": "T-2 · Mockup",
         "title": "Erst sehen, dann entscheiden",
-        "description": "Wir erstellen ein Mockup Ihrer Startseite mit Ihren Farben und Ihren Texten. Es ist kostenlos und verpflichtet Sie zu nichts."
+        "description": "Wir erstellen ein Mockup Ihrer Startseite. Wenn Sie schon eine Website haben, übernimmt es deren Farben und Texte; sonst gehen wir von der Farbpalette und den Angaben aus, die Sie uns gegeben haben. Es ist kostenlos und verpflichtet Sie zu nichts."
       },
       "build": {
         "label": "T-1 · Umsetzung",
@@ -68,7 +68,7 @@
     },
     "projects": {
       "eyebrow": "[ Referenzen ]",
-      "title": "Unsere neuesten <em>Arbeiten.</em>",
+      "title": "Was wir <em>schon online gestellt haben.</em>",
       "all": "Alle Projekte"
     },
     "audience": {
@@ -84,8 +84,12 @@
           "description": "Chor, Sportverein, Initiative … Ihre Veranstaltungen, Mitgliedschaften und Neuigkeiten an einem Ort, damit Ihre Aktivitäten bekannt werden und neue Mitglieder zu Ihnen finden."
         },
         "independents": {
-          "title": "Selbstständige, die gerade starten",
-          "description": "Therapeut:in, Berater:in, Fotograf:in … Eine professionelle Website von Anfang an, zu einem Preis, der mit Ihrer Tätigkeit mitwächst."
+          "title": "Selbstständige und freie Berufe",
+          "description": "Anwält:in, Architekt:in, Osteopath:in, Berater:in … Sie werden empfohlen, und vor dem Anruf schaut man sich Ihre Website an. Sie stellt Ihre Arbeit und Ihren Werdegang vor und sagt, wie man einen Termin bekommt."
+        },
+        "companies": {
+          "title": "Kleine Unternehmen",
+          "description": "Bauunternehmen, Ingenieurbüro, Autowerkstatt, Agentur mit ein paar Leuten … Ihre Website zeigt künftiger Kundschaft, was Sie können, und ebenso den Leuten, die Sie gern einstellen würden."
         }
       }
     },
@@ -99,7 +103,7 @@
           "description": "Ihre Texte, Ihre Fotos und Ihr Domainname gehören Ihnen vom ersten Tag an. Der Code geht nach {months} Monaten Abonnement an Sie über, auf Wunsch auch früher gegen eine Übertragungsgebühr."
         },
         "fast": {
-          "title": "Schnell und bei Google gut platziert",
+          "title": "Schnell auf dem Handy",
           "description": "Ohne überladene Vorlage und ohne Erweiterungen laden Ihre Seiten auf dem Handy schnell, und das berücksichtigt Google in seinen Ergebnissen."
         },
         "person": {
@@ -107,15 +111,15 @@
           "description": "Sie sprechen mit Matthieu, der Ihre Website kennt, weil er sie gebaut hat."
         },
         "grows": {
-          "title": "Eine Website, die mit Ihnen mitwächst",
-          "description": "Heute eine Seite, später ein Onlineshop oder eine App, ohne alles neu zu bauen."
+          "title": "Erweitern, ohne neu zu bauen",
+          "description": "Sie beginnen mit einer Seite. Wenn Sie eines Tages eine Terminbuchung, eine englische Version oder einen Onlineshop brauchen, ergänzen wir das auf der bestehenden Website."
         }
       }
     },
     "apps": {
-      "eyebrow": "[ Unsere Apps ]",
-      "title": "Wir entwickeln auch <em>eigene Apps.</em>",
-      "lead": "Daran testen wir Werkzeuge, bevor wir sie für unsere Kundschaft einsetzen, und was wir dabei lernen, kommt danach Ihren Projekten zugute.",
+      "eyebrow": "[ Unsere App ]",
+      "title": "Wir entwickeln auch <em>eine eigene App.</em>",
+      "lead": "Daran testen wir unsere Werkzeuge, bevor wir sie in Ihren Projekten einsetzen.",
       "daily_fortune": {
         "name": "Daily Fortune",
         "badge": "iOS · Android",
@@ -128,8 +132,8 @@
       "eyebrow": "[ Das Studio ]",
       "title": "Hinter Cosmic Studio <em>steht Matthieu.</em>",
       "paragraphs": [
-        "Ich heiße Matthieu Compérat. Ich stamme aus Duingt am Annecy-See und lebe heute in Chêne-Bougeries. Seit rund fünfzehn Jahren entwickle ich Websites und Apps, zuerst für große Unternehmen. Mit Cosmic Studio arbeite ich direkt mit Handwerksbetrieben, Vereinen und Selbstständigen zusammen.",
-        "Wenn Sie anrufen, nehme ich selbst ab, und auf Ihre Nachrichten bekommen Sie noch am selben Tag eine Antwort. Ich kenne die Website, die ich Ihnen übergebe, bis ins Detail. Das macht jede Änderung einfach und schnell."
+        "Matthieu Compérat stammt aus Duingt am Annecy-See und lebt heute in Chêne-Bougeries. Seit rund fünfzehn Jahren entwickelt er Websites und Apps, zuerst für große Unternehmen. Mit Cosmic Studio macht er diese Arbeit für kleinere Betriebe und arbeitet direkt mit der Person zusammen, die sie führt.",
+        "Wenn Sie anrufen, nimmt er selbst ab, und auf Ihre Nachrichten bekommen Sie meist noch am selben Tag eine Antwort. Er kennt die Website, die er Ihnen übergibt, bis ins Detail. Das macht jede Änderung einfach und schnell."
       ],
       "zones": {
         "ch": [

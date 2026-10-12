@@ -36,7 +36,6 @@ export function ThemedSection({ section, index, mode, children }: ThemedSectionP
       </div>
       <div className={cn('grid gap-6', { 'lg:grid-cols-2': themes.length === 2 })}>
         {themes.map((theme) => {
-          // eslint-disable-next-line security/detect-object-injection -- typed theme face
           const label = THEME_LABELS[theme];
           return (
             <div

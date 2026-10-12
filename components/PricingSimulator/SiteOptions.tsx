@@ -32,14 +32,7 @@ export function SiteOptions({ plan, actions, surcharge }: OptionGroupProps) {
         />
       </div>
       {addOns.map((id) => (
-        <AddOnOption
-          key={id}
-          id={id}
-          // eslint-disable-next-line security/detect-object-injection -- id comes from a fixed list
-          checked={plan.addOns[id]}
-          onToggle={actions.toggleAddOn}
-          surcharge={surcharge}
-        />
+        <AddOnOption key={id} id={id} checked={plan.addOns[id]} onToggle={actions.toggleAddOn} surcharge={surcharge} />
       ))}
     </OptionGroup>
   );

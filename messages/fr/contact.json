@@ -68,7 +68,7 @@
         "back": "Envoyer un autre message"
       }
     },
-    "lead": "Écrivez-nous un message ou réservez un appel de 20 minutes. Dans les deux cas, c'est Matthieu qui vous répond rapidement.",
+    "lead": "Écrivez-nous un message ou réservez un appel de 20 minutes. Dans les deux cas, vous avez affaire à Matthieu.",
     "details": {
       "aria_label": "Coordonnées",
       "email_label": "E-mail",
@@ -92,7 +92,7 @@
       "open": "Ouvrir la page de réservation",
       "iframe_title": "Agenda de réservation de Matthieu (Google Calendar)",
       "note": "Le créneau se réserve directement dans l'agenda de Matthieu. La confirmation et le lien d'appel vous sont envoyés par Google Calendar.",
-      "unavailable": "La réservation en ligne n'est pas encore ouverte. Écrivez-nous un message : nous vous proposons un créneau dans la journée."
+      "unavailable": "La réservation en ligne n'est pas encore ouverte. Écrivez-nous un message : nous vous proposons un créneau, en général dans la journée."
     }
   }
 }

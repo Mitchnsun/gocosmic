@@ -1,15 +1,15 @@
 {
   "local": {
     "meta": {
-      "title": "Website erstellen lassen · Genf, Annecy, Hochsavoyen | Cosmic Studio",
-      "description": "Websites für Handwerksbetriebe, Vereine und Selbstständige in Genf, Annecy und Hochsavoyen. Preise auf einen Blick und ein kostenloses, unverbindliches Mockup."
+      "title": "Website erstellen lassen in Genf und Annecy | Cosmic Studio",
+      "description": "Websites für Handwerksbetriebe, KMU, Selbstständige und Vereine in Genf, Annecy und Hochsavoyen. Offen genannte Preise, kostenloses, unverbindliches Mockup."
     },
     "intro": {
       "eyebrow": "[ Genf · Annecy · Hochsavoyen ]",
-      "title": "Ihr Webstudio <em>zwischen Genf und Annecy.</em>",
+      "title": "Ein Webstudio <em>zwischen Genf und Annecy.</em>",
       "lead": {
-        "ch": "Cosmic Studio ist in Chêne-Bougeries bei Genf zu Hause. Wir erstellen Websites und Apps für Handwerksbetriebe, Vereine und Selbstständige in Genf, Annecy und Hochsavoyen und kommen gern bei Ihnen vorbei.",
-        "fr": "Cosmic Studio arbeitet zwischen Annecy und Genf. Wir erstellen Websites und Apps für Handwerksbetriebe, Vereine und Selbstständige in Hochsavoyen und kommen gern bei Ihnen vorbei."
+        "ch": "Cosmic Studio ist in Chêne-Bougeries bei Genf zu Hause. Wir erstellen Websites und Apps für Handwerksbetriebe, Unternehmen, Praxen, Kanzleien und Vereine in Genf, Annecy und Hochsavoyen und kommen gern bei Ihnen vorbei.",
+        "fr": "Cosmic Studio arbeitet zwischen Annecy und Genf. Wir erstellen Websites und Apps für Handwerksbetriebe, Unternehmen, Praxen, Kanzleien und Vereine in Hochsavoyen und kommen gern bei Ihnen vorbei."
       },
       "primary": "Mein Projekt besprechen",
       "secondary": "Leistungen und Preise ansehen"
@@ -20,7 +20,7 @@
       "items": {
         "geneva": {
           "title": "Genf",
-          "description": "Das Studio liegt in Chêne-Bougeries. Wir treffen uns bei Ihnen, in Ihrer Werkstatt oder bei einem Kaffee."
+          "description": "Das Studio liegt in Chêne-Bougeries. Wir treffen uns in Ihrer Werkstatt, in Ihrem Büro oder bei einem Kaffee."
         },
         "romandy": {
           "title": "Westschweiz",

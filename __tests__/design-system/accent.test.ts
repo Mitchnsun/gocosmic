@@ -7,19 +7,14 @@ describe('accentClasses', () => {
     expect(accentClasses('aerospace')).toEqual({
       text: 'text-aerospace-ink',
       bg: 'bg-aerospace',
-      border: 'border-aerospace',
       rgb: '255 79 0',
     });
     expect(accentClasses('royal').text).toBe('text-royal-ink');
     expect(accentClasses('jungle').bg).toBe('bg-ok');
-    expect(accentClasses('ghost').border).toBe('border-fg');
+    expect(accentClasses('ghost').text).toBe('text-fg');
   });
 
   it('defaults to aerospace', () => {
     expect(accentClasses()).toEqual(accentClasses('aerospace'));
-  });
-
-  it('falls back to aerospace for an unknown token', () => {
-    expect(accentClasses('nebula' as 'royal')).toEqual(accentClasses('aerospace'));
   });
 });

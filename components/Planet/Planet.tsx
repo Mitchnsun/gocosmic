@@ -27,7 +27,7 @@ interface PlanetCssProperties extends CSSProperties {
   '--planet-tilt-y': string;
 }
 
-export interface PlanetProps {
+interface PlanetProps {
   /** Wrapper size in pixels. */
   size?: number;
   /** Parallax source. */

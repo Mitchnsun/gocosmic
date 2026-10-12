@@ -40,8 +40,3 @@ export function getResendClient(): Resend {
 
   return client;
 }
-
-/** Test-only helper: drops the memoised client so a new API key can be picked up. */
-export function resetResendClient(): void {
-  client = undefined;
-}

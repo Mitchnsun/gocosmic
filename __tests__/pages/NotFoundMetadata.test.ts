@@ -13,7 +13,6 @@ vi.mock('next-intl/server', () => ({
   getTranslations: async (options: string | { locale?: string; namespace: string }) => {
     const { locale = 'fr', namespace } = typeof options === 'string' ? { namespace: options } : options;
     const { MESSAGES_BY_LOCALE } = await import('../messages-by-locale');
-    // eslint-disable-next-line security/detect-object-injection
     return createTranslator({ locale, messages: MESSAGES_BY_LOCALE[locale], namespace });
   },
 }));
@@ -34,7 +33,7 @@ describe('layout fallback metadata', () => {
     const metadata = await generateLayoutMetadata({ params: Promise.resolve({ locale: 'en' }) });
 
     expect(metadata.metadataBase?.toString()).toBe('https://www.gocosmic.dev/');
-    expect(metadata.title).toBe('Websites for craftspeople, associations and independents | Cosmic Studio');
+    expect(metadata.title).toBe('Websites for SMEs, craftspeople and associations | Cosmic Studio');
     expect(metadata.alternates).toBeUndefined();
     expect(metadata.openGraph).toMatchObject({ siteName: 'Cosmic Studio', locale: 'en_US', url: undefined });
     expect(metadata.twitter).toMatchObject({ card: 'summary_large_image' });

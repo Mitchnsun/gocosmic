@@ -64,7 +64,7 @@ const Starfield = ({
   respectReducedMotion = false,
 }: StarfieldProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const frozen = usePrefersReducedMotion(respectReducedMotion);
+  const frozen = usePrefersReducedMotion() && respectReducedMotion;
   const effectiveSpeed = frozen ? 0 : speed;
   const speedRef = useRef(effectiveSpeed);
   const starCountRef = useRef(starCount);
@@ -175,7 +175,7 @@ const Starfield = ({
       : new IntersectionObserver((entries) => {
           // Batched records: the last one is the canvas's current state.
           if (!entries.at(-1)?.isIntersecting) pause();
-          else if (animationId === null) animationId = requestAnimationFrame(loop);
+          else animationId ??= requestAnimationFrame(loop);
         });
     visibility?.observe(canvas);
 

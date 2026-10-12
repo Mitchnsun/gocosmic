@@ -1,2 +1,2 @@
-export { Sun, type SunProps } from './Sun';
+export { Sun } from './Sun';
 export { SunGlow } from './SunGlow';

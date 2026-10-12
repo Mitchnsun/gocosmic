@@ -7,7 +7,7 @@ import { cn } from '@/design-system/lib/utils';
 import { usePrefersReducedMotion } from '@/lib/hooks/usePrefersReducedMotion';
 
 /** Props for the post-submission confirmation panel. */
-export interface ContactFormSuccessProps {
+interface ContactFormSuccessProps {
   /** Confirmation headline. */
   title: string;
   /** Supporting sentence. */
@@ -29,7 +29,7 @@ export interface ContactFormSuccessProps {
  */
 export const ContactFormSuccess = ({ title, description, backLabel, onBack, className }: ContactFormSuccessProps) => {
   const panelRef = useRef<HTMLDivElement>(null);
-  const prefersReducedMotion = usePrefersReducedMotion(true);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
     panelRef.current?.focus();

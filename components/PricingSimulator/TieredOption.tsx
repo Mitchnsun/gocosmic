@@ -24,11 +24,9 @@ interface TieredOptionProps {
 /** Tick box revealing a slider of tiers (statistics report, local search rhythm, articles). */
 export function TieredOption({ id, value, onToggle, onTierChange, surcharge, extraInfo, children }: TieredOptionProps) {
   const t = useTranslations('pricing.builder');
-  // eslint-disable-next-line security/detect-object-injection -- id is a TieredKey
   const table = TIERED_TABLES[id];
   const tiers = table.map((tier) => ({ label: t(`options.${id}.tiers.${tier.key}`), price: surcharge(tier.price) }));
   const label = t(`options.${id}.label`);
-  // eslint-disable-next-line security/detect-object-injection -- value is a clamped tier position
   const current = value === null ? undefined : tiers[value];
 
   return (

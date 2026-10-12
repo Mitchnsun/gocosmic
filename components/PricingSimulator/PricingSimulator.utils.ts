@@ -11,9 +11,6 @@ import {
 } from './constants';
 import type { AddOnKey, PlanItem, PlanSelection, TieredKey } from './PricingSimulator.types';
 
-// The indexes below are narrow unions (tier positions, `AddOnKey`), never free-form input.
-/* eslint-disable security/detect-object-injection */
-
 export function getAddOnPrice(key: AddOnKey): number {
   return ADD_ON_PRICES[key];
 }
@@ -70,8 +67,6 @@ export function getPlanItems(plan: PlanSelection): PlanItem[] {
   }
   return items;
 }
-
-/* eslint-enable security/detect-object-injection */
 
 /** Monthly total of a normalised plan: the sum of its lines. */
 export function getMonthlyTotal(plan: PlanSelection): number {

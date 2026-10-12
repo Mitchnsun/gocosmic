@@ -1,8 +1,8 @@
 {
   "footer": {
     "brand_desc": {
-      "fr": "Estudio de desarrollo web y móvil entre Ginebra y Annecy. Páginas web, aplicaciones y seguimiento para artesanos, asociaciones y autónomos.",
-      "ch": "Estudio de desarrollo web y móvil en Ginebra. Páginas web, aplicaciones y seguimiento para artesanos, asociaciones y autónomos."
+      "fr": "Estudio de desarrollo web y móvil entre Ginebra y Annecy. Páginas web, aplicaciones y seguimiento, con precios a la vista.",
+      "ch": "Estudio de desarrollo web y móvil en Ginebra. Páginas web, aplicaciones y seguimiento, con precios a la vista."
     },
     "nav_title": "Estudio",
     "link_services": "Servicios y precios",
@@ -11,9 +11,10 @@
     "link_contact": "Contacto",
     "copyright": "© {year} {brand}",
     "local_page": "Creación de páginas web · Ginebra, Annecy",
+    "free_mockup_page": "Maqueta gratuita",
     "privacy": "Política de privacidad",
     "legal_notice": "Aviso legal",
-    "link_apps": "Nuestras aplicaciones",
+    "link_apps": "Nuestra aplicación",
     "legal_title": "Legal",
     "status": "Todos los sistemas en orden",
     "terms": "Condiciones generales de venta"

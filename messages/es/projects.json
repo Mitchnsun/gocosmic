@@ -2,10 +2,10 @@
   "projectsList": {
     "meta": {
       "title": "Proyectos · Sitios web y aplicaciones | Cosmic Studio",
-      "description": "Sitios web y aplicaciones creados por Cosmic Studio para un coro, un club de triatlón y autónomos, en Ginebra y Alta Saboya."
+      "description": "Sitios web y aplicaciones creados por Cosmic Studio: el sitio de un coro, los resultados en directo de un club de triatlón y los proyectos del estudio."
     },
-    "title": "Sitios web y aplicaciones <em>que se usan a diario.</em>",
-    "subtitle": "Una selección de proyectos hechos para nuestros clientes y para el estudio. Cada ficha explica para quién trabajamos, qué hicimos y qué cambió.",
+    "title": "Sitios web y aplicaciones <em>que se usan.</em>",
+    "subtitle": "Algunos se hicieron para clientes, otros para el propio estudio. Cada ficha explica para quién trabajamos, qué hicimos y qué cambió.",
     "items": {
       "dailyFortune": {
         "title": "Daily Fortune",
@@ -37,8 +37,8 @@
       }
     },
     "cta": {
-      "title": "Tu proyecto podría ser el siguiente de esta lista.",
-      "description": "Háblanos de tu negocio en unas pocas líneas. Te respondemos rápidamente.",
+      "title": "Cuéntanos el tuyo.",
+      "description": "Describe tu negocio en unas pocas líneas e indica la dirección de tu sitio si ya tienes uno.",
       "button": "Hablar de mi proyecto"
     },
     "eyebrow": "[ Trabajos · {count} ]",
@@ -69,23 +69,23 @@
     "for_whom": {
       "label": "Para quién",
       "title": "Un pequeño empujón cada mañana",
-      "description": "Daily Fortune no es un proyecto para un cliente: es la aplicación del estudio, diseñada y publicada por nosotros. Está pensada para cualquiera que busque un pequeño impulso por la mañana, una frase para no perder el rumbo o un mensaje para compartir."
+      "description": "Daily Fortune es la aplicación del estudio, diseñada y publicada por nosotros. Está pensada para cualquiera que busque un pequeño impulso por la mañana, una frase para no perder el rumbo o un mensaje para compartir."
     },
     "what_we_did": {
       "label": "Lo que hicimos",
       "title": "Una aplicación móvil, de la idea a la publicación",
-      "description": "Lo hicimos todo nosotros, desde la primera idea hasta la publicación en las tiendas de aplicaciones.",
+      "description": "Lo hicimos todo nosotros.",
       "items": {
         "daily_message": "Un mensaje nuevo cada día: una cita motivadora, una afirmación positiva o una frase de galleta de la fortuna",
-        "ai_messages": "Mensajes variados, creados con ayuda de la IA, que hablan del día a día y de las ilusiones de cada uno",
-        "clean_design": "Una pantalla sencilla y ágil, con animaciones fluidas",
+        "ai_messages": "Mensajes variados, creados con ayuda de la IA",
+        "clean_design": "Una pantalla fácil de leer, con algunas animaciones",
         "stores": "Publicada en App Store y Google Play, para iPhone y Android"
       }
     },
     "result": {
       "label": "Resultado",
       "title": "Nuestra primera aplicación publicada",
-      "description": "Daily Fortune está disponible en App Store y Google Play, y sus usuarios reciben un mensaje nuevo cada día. Para ti, es la prueba de que sabemos llevar una aplicación desde la idea hasta su publicación.",
+      "description": "Daily Fortune está disponible en App Store y Google Play, y sus usuarios reciben un mensaje nuevo cada día. Muestra que sabemos llevar una aplicación desde la idea hasta su publicación.",
       "maintained": "Sigue actualizándose: la versión {version} salió el {date}."
     }
   },
@@ -100,18 +100,18 @@
     },
     "for_whom": {
       "label": "Para quién",
-      "title": "Un currículum en línea y nuestro banco de pruebas",
-      "description": "mcomper.at es el currículum en línea de Matthieu Compérat, tu interlocutor en Cosmic Studio: su trayectoria y sus competencias, en una sola página. También es donde probamos las herramientas que luego usamos para nuestros clientes."
+      "title": "Un currículum en línea",
+      "description": "mcomper.at es el currículum en línea de Matthieu Compérat, tu interlocutor en Cosmic Studio. Su trayectoria y sus competencias caben en una sola página."
     },
     "what_we_did": {
       "label": "Lo que hicimos",
       "title": "Un currículum claro, rápido y en dos idiomas",
-      "description": "Diseñamos un sitio fácil de leer y de actualizar, que también nos sirve para probar nuestros métodos de trabajo antes de aplicarlos a tus proyectos.",
+      "description": "Diseñamos un sitio fácil de leer y de actualizar.",
       "items": {
         "two_languages": "Un sitio disponible en francés y en inglés, con textos propios para cada idioma",
         "found_on_google": "Páginas preparadas para aparecer en Google",
         "fast_on_phone": "Páginas que cargan rápido y se leen bien en el móvil",
-        "accessible": "Un sitio accesible para todos, siguiendo las buenas prácticas",
+        "accessible": "Un sitio accesible para todos",
         "ai_with_review": "La IA como asistente para redactar y traducir los textos, siempre revisados por una persona"
       }
     },
@@ -123,7 +123,7 @@
   },
   "choeurDesPaysduMontBlanc": {
     "title": "Chœur des Pays du Mont Blanc",
-    "subtitle": "El sitio de un coro amateur de Alta Saboya: conciertos, repertorio y ensayos, en un mismo lugar.",
+    "subtitle": "El sitio de un coro amateur de Alta Saboya, con sus conciertos, su repertorio y sus ensayos.",
     "cta": {
       "title": "Descubre el coro",
       "description": "Próximos conciertos, repertorio, ensayos: todo está en el sitio del coro.",
@@ -133,7 +133,7 @@
     "for_whom": {
       "label": "Para quién",
       "title": "Un coro amateur de Alta Saboya",
-      "description": "El Chœur des Pays du Mont Blanc es una asociación de cantantes aficionados de Alta Saboya. Necesitaba un único lugar para informar a sus miembros, dar a conocer sus conciertos y acoger nuevas voces."
+      "description": "El Chœur des Pays du Mont Blanc es una asociación de cantantes aficionados de Alta Saboya. Necesitaba un sitio que sirviera tanto a sus miembros como a quienes aún no lo conocen."
     },
     "what_we_did": {
       "label": "Lo que hicimos",
@@ -149,7 +149,7 @@
     "result": {
       "label": "Resultado",
       "title": "Un único lugar para seguir al coro",
-      "description": "El sitio se ha convertido en el principal punto de encuentro del coro: los miembros encuentran horarios y noticias, el público descubre los próximos conciertos, y quien quiera cantar sabe cómo unirse."
+      "description": "Los miembros encuentran en él sus horarios y las noticias, el público los próximos conciertos, y quien quiera cantar, los pasos para unirse al coro."
     }
   }
 }

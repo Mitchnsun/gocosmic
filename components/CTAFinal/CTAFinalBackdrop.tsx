@@ -8,9 +8,10 @@ import type { TonePreset } from './CTAFinal.types';
 
 interface CTAFinalBackdropProps {
   preset: TonePreset;
+  /** Immersive tone: the starfield brightens on hover and the accent halo is drawn. */
+  immersive: boolean;
   starCount: number;
   speed: number;
-  respectReducedMotion: boolean;
 }
 
 /**
@@ -19,28 +20,26 @@ interface CTAFinalBackdropProps {
  * picks the scene from the first paint, then the starfield unmounts once the light theme is known so its
  * animation loop stops.
  */
-export function CTAFinalBackdrop({ preset, starCount, speed, respectReducedMotion }: CTAFinalBackdropProps) {
+export function CTAFinalBackdrop({ preset, immersive, starCount, speed }: CTAFinalBackdropProps) {
   return (
     <>
       <NightStarfield
         className={cn('h-full w-full', preset.starfield, {
-          'transition-opacity duration-300 group-hover:opacity-100': preset.starfieldHover,
+          'transition-opacity duration-300 group-hover:opacity-100': immersive,
         })}
         starCount={starCount}
         speed={speed}
-        respectReducedMotion={respectReducedMotion}
+        respectReducedMotion
       />
-      {preset.halo && (
-        <div
-          className="light:hidden pointer-events-none absolute inset-0 -z-10 opacity-60 transition-opacity duration-300 group-hover:opacity-100"
-          style={{
-            backgroundImage: 'radial-gradient(circle at 50% 60%, rgb(var(--cta-accent-rgb) / 0.22), transparent 60%)',
-          }}
-          aria-hidden="true"
-        />
-      )}
-      {preset.halo && (
+      {immersive && (
         <>
+          <div
+            className="light:hidden pointer-events-none absolute inset-0 -z-10 opacity-60 transition-opacity duration-300 group-hover:opacity-100"
+            style={{
+              backgroundImage: 'radial-gradient(circle at 50% 60%, rgb(255 79 0 / 0.22), transparent 60%)',
+            }}
+            aria-hidden="true"
+          />
           <div
             className="rose-floor light:block pointer-events-none absolute inset-0 -z-20 hidden"
             aria-hidden="true"

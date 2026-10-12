@@ -3,13 +3,13 @@
     "cta": {
       "button": "Parliamo del tuo progetto",
       "description": "Presentaci la tua attività in poche righe. Ti rispondiamo rapidamente per parlarne, prima di proporti qualsiasi cosa.",
-      "freeMockup": "Ci stai ancora pensando? Inizia con un <link>mockup gratuito</link>.",
+      "freeMockup": "Se preferisci vedere prima di parlare, chiedi un <link>mockup gratuito</link>.",
       "title": "Facciamo brillare la tua attività."
     },
     "hero": {
       "cta": "Go Cosmic",
       "endWords": ["vista.", "trovata.", "scelta."],
-      "subtitle": "Cosmic Studio crea siti e app per artigiani, associazioni e liberi professionisti. Facciamo in modo che ti trovino su Google, e restiamo raggiungibili anche dopo la messa online.",
+      "subtitle": "Cosmic Studio crea siti e app per piccole imprese, indipendenti e associazioni. Facciamo in modo che ti trovino su Google, e restiamo raggiungibili anche dopo la messa online.",
       "title": "La tua attività merita di essere",
       "eyebrow": {
         "ch": "Studio web & mobile · Ginevra",
@@ -43,7 +43,7 @@
     },
     "process": {
       "eyebrow": "[ Processo ]",
-      "title": "Quattro fasi, <em>nessuna sorpresa.</em>",
+      "title": "Quattro fasi, <em>e una data fissata fin dall'inizio.</em>",
       "subtitle": "Dalla prima conversazione alla messa online, sai a che punto è il tuo progetto.",
       "discovery": {
         "label": "T-3 · Incontro",
@@ -53,7 +53,7 @@
       "design": {
         "label": "T-2 · Mockup",
         "title": "Prima vedi, poi decidi",
-        "description": "Prepariamo un mockup della tua home page, con i tuoi colori e i tuoi testi. È gratuito e non ti impegna a nulla."
+        "description": "Prepariamo un mockup della tua home page. Se hai già un sito, ne riprende i colori e i testi; altrimenti parte dalla palette e dalle indicazioni che ci hai dato. È gratuito e non ti impegna a nulla."
       },
       "build": {
         "label": "T-1 · Realizzazione",
@@ -68,7 +68,7 @@
     },
     "projects": {
       "eyebrow": "[ Realizzazioni ]",
-      "title": "I nostri ultimi <em>lavori.</em>",
+      "title": "Quello che abbiamo <em>già messo online.</em>",
       "all": "Tutti i progetti"
     },
     "audience": {
@@ -84,8 +84,12 @@
           "description": "Coro, club sportivo, collettivo… Gli eventi, le iscrizioni e le notizie dell'associazione in un unico posto, per far conoscere le tue attività e accogliere nuovi soci."
         },
         "independents": {
-          "title": "Liberi professionisti agli inizi",
-          "description": "Terapeuta, consulente, fotografo/a… Un sito professionale fin dall'inizio, a un prezzo che segue la crescita della tua attività."
+          "title": "Indipendenti e liberi professionisti",
+          "description": "Avvocato/a, architetto/a, osteopata, consulente… Qualcuno fa il tuo nome, e prima di chiamarti la gente guarda il tuo sito. Il sito presenta la tua attività e il tuo percorso, e spiega come prendere appuntamento."
+        },
+        "companies": {
+          "title": "Piccole imprese",
+          "description": "Impresa edile, studio tecnico, officina, agenzia di poche persone… Il tuo sito mostra quello che sai fare a un futuro cliente come a qualcuno che vorresti assumere."
         }
       }
     },
@@ -99,7 +103,7 @@
           "description": "Testi, foto e nome a dominio ti appartengono dal primo giorno. Il codice passa a te dopo {months} mesi di abbonamento, oppure prima, pagando un costo di cessione."
         },
         "fast": {
-          "title": "Veloce e ben posizionato su Google",
+          "title": "Veloce sul telefono",
           "description": "Senza temi pesanti né estensioni, le tue pagine si aprono in fretta sul telefono, e Google ne tiene conto nei risultati."
         },
         "person": {
@@ -107,15 +111,15 @@
           "description": "Parli con Matthieu, che conosce il tuo sito perché l'ha costruito lui."
         },
         "grows": {
-          "title": "Un sito che cresce con la tua attività",
-          "description": "Una pagina oggi, un negozio online o un'app più avanti, senza dover rifare tutto."
+          "title": "Si aggiunge senza rifare tutto",
+          "description": "Cominci con una pagina. Il giorno in cui ti servono la prenotazione degli appuntamenti, una versione inglese o un negozio online, li aggiungiamo al sito che hai già."
         }
       }
     },
     "apps": {
-      "eyebrow": "[ Le nostre app ]",
-      "title": "Sviluppiamo anche <em>le nostre app.</em>",
-      "lead": "Ci servono per provare gli strumenti prima di usarli per i clienti, e quello che impariamo va poi a vantaggio dei tuoi progetti.",
+      "eyebrow": "[ La nostra app ]",
+      "title": "Sviluppiamo anche <em>la nostra app.</em>",
+      "lead": "Ci serve per provare i nostri strumenti prima di usarli sui tuoi progetti.",
       "daily_fortune": {
         "name": "Daily Fortune",
         "badge": "iOS · Android",
@@ -128,8 +132,8 @@
       "eyebrow": "[ Lo studio ]",
       "title": "Dietro Cosmic Studio <em>c'è Matthieu.</em>",
       "paragraphs": [
-        "Mi chiamo Matthieu Compérat. Sono originario di Duingt, sulle rive del lago di Annecy, e oggi vivo a Chêne-Bougeries. Sviluppo siti e app da una quindicina d'anni, all'inizio per grandi aziende. Con Cosmic Studio lavoro direttamente con artigiani, associazioni e liberi professionisti.",
-        "Quando chiami, sono io a rispondere, e i tuoi messaggi ricevono una risposta in giornata. Conosco a fondo il sito che ti consegno, per questo ogni modifica è semplice e veloce."
+        "Matthieu Compérat è originario di Duingt, sulle rive del lago di Annecy, e oggi vive a Chêne-Bougeries. Sviluppa siti e app da una quindicina d'anni, all'inizio per grandi aziende. Con Cosmic Studio fa questo mestiere per attività più piccole, e lavora direttamente con chi le manda avanti.",
+        "Quando chiami, è lui a rispondere, e i tuoi messaggi ricevono di solito una risposta in giornata. Conosce a fondo il sito che ti consegna, per questo ogni modifica è semplice e veloce."
       ],
       "zones": {
         "ch": [

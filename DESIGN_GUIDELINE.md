@@ -9,7 +9,7 @@
 
 ## 1. Essence & principles
 
-Cosmic Studio (formerly Go Cosmic; "Go Cosmic" survives as the call-to-action signature) is a web/mobile studio for craftspeople, associations and independents. The visual universe is **spatial / mission-control**: deep near-black background, starfield, orange "ignition" accents, technical mono labels, and a touch of immersion (parallax, warp, reveals). Yet the overall feel stays **sober and premium** — never gimmicky.
+Cosmic Studio (formerly Go Cosmic; "Go Cosmic" survives as the call-to-action signature) is a web/mobile studio for small businesses, craftspeople, independents and associations. The visual universe is **spatial / mission-control**: deep near-black background, starfield, orange "ignition" accents, technical mono labels, and a touch of immersion (parallax, warp, reveals). Yet the overall feel stays **sober and premium** — never gimmicky.
 
 Four principles that resolve every design decision:
 
@@ -68,7 +68,7 @@ The site has two themes — dark ("space", the default) and light ("star") — d
 
 > ❌ **Never** use Tailwind's default palettes (`slate-*`, `gray-*`, `blue-*`, `amber-*`…) nor the theme-dependent nominal tokens (`bg-void`, `text-ghost`, `border-ghost/8`, `bg-ember`, `text-jungle`, `space`…). ESLint rules (`no-restricted-syntax` in `eslint.config.js`) reject both in `app/`, `components/`, `design-system/` and `lib/`. The rare intentional exception carries an `eslint-disable-next-line no-restricted-syntax` with a comment saying why the colour is fixed.
 
-**Accent glows** (radial-gradient, layered behind content): built inline from a token's RGB channels — see `accentClasses(token).rgb` (`design-system/accent.ts`) for general use, and `ACCENT_RGB` (`components/CTAFinal/CTAFinal.constants.ts`) for the CTA's own accent variants. Real CTA pattern: `radial-gradient(circle at 50% 60%, rgb(var(--cta-accent-rgb) / 0.22), transparent 60%)`. There is no standalone `--glow-*` CSS variable — compose the gradient from the token's RGB, as the existing components do (`Planet`, `CTAFinal`).
+**Accent glows** (radial-gradient, layered behind content): built inline from a token's RGB channels — see `accentClasses(token).rgb` (`design-system/accent.ts`). Real CTA pattern: `radial-gradient(circle at 50% 60%, rgb(255 79 0 / 0.22), transparent 60%)`. There is no standalone `--glow-*` CSS variable — compose the gradient from the token's RGB, as the existing components do (`Planet`, `CTAFinal`).
 
 ### 2.2 Typography
 
@@ -103,6 +103,7 @@ Minimum readable size: **14px** for body text.
 
 - **Container**: `max-w-7xl` centered (`m-auto`), horizontal padding `px-4 sm:px-6 lg:px-8`.
 - **Vertical section rhythm**: `SECTION_Y` from `design-system/pill.ts` — `clamp(56px, 6.5vw, 96px)` top and bottom. Sections need room to breathe.
+- **Page top**: `PAGE_TOP` from `design-system/pill.ts` — 40 px, 48 px from `lg`, between the header and the first heading of a page. Do not open a page with `SECTION_Y`: it leaves too much space under the header on desktop.
 - **Alternate sections**: at most one section in three on `bg-bg-alt` (indigo-ink in dark, misty-rose in light), the rest on `bg-bg`. `space` is kept for brand backgrounds.
 - **Radii**: pills `rounded-full` (buttons, chips, badges); cards/containers `rounded-xl` → `rounded-2xl` (12–24px). No sharp corners on interactive surfaces.
 - **Borders**: always via `line` / `line-2` (see §2.1), never an opaque grey.
@@ -195,23 +196,23 @@ To mark a location, category, or action: **geometric SVGs** (crosshair, diamond 
 
 Pages are assembled from shared building blocks — reuse them instead of re-implementing the patterns above:
 
-| Component                     | Role                                                                                                 |
-| ----------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `components/SectionHeading`   | Eyebrow → title with light italic `<em>` emphasis → 56ch lead; `level={1}` for page intros           |
-| `components/Reveal`           | Fade-and-lift on scroll, `delay={index * 50}` for a 50 ms stagger; CSS-first reduced-motion guard    |
-| `design-system/pill.ts`       | `primaryPill()`, `ghostPill()`, plus `CONTAINER` (1280 px, fluid gutters) and `SECTION_Y` (56–96 px) |
-| `design-system/eyebrow`       | Orange dot + uppercase mono label opening a section                                                  |
-| `design-system/chip`          | Bordered mono tag; `variant="ok"` marks what is included                                             |
-| `design-system/signal-dot`    | Green pulsing status dot, grey when inactive (§3.2)                                                  |
-| `design-system/hairline-grid` | `gap-px` card grid with 1 px separators (`as="ol"` for ordered content)                              |
-| `design-system/tabs`          | Pill tabs (Radix): the active one filled `bg-fg`, labels may wrap on two lines, focus ring on panel  |
-| `design-system/info-popover`  | 44 px "i" button opening a titled bubble on click or tap (Radix Popover), never inside a `<label>`   |
-| `design-system/field`         | `Field` (label, optional hint, required asterisk, error) + `FIELD_INPUT` / `FIELD_TEXTAREA` controls |
-| `components/LegalDocument`    | Legal notice, privacy policy and terms of sale layout: intro, one card per section                   |
-| `components/ContentSection`   | Card-shaped section: eyebrow + HUD counter, `h2` bound via `aria-labelledby`, lead, body             |
-| `components/AccentList`       | Bullet list with accent dots, optional mono label, 1 or 2 columns                                    |
-| `components/CaseStudy`        | Full project case study: hero, ordered sections, CTA card, previous / next navigation                |
-| `design-system/accent.ts`     | `accentClasses(token)` → the text / bg / border utilities and RGB channels of a token                |
+| Component                     | Role                                                                                                                        |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `components/SectionHeading`   | Eyebrow → title with light italic `<em>` emphasis → 56ch lead; `level={1}` for page intros                                  |
+| `components/Reveal`           | Fade-and-lift on scroll, `delay={index * 50}` for a 50 ms stagger; CSS-first reduced-motion guard                           |
+| `design-system/pill.ts`       | `primaryPill()`, `ghostPill()`, plus `CONTAINER` (1280 px, fluid gutters), `SECTION_Y` (56–96 px) and `PAGE_TOP` (40–48 px) |
+| `design-system/eyebrow`       | Orange dot + uppercase mono label opening a section                                                                         |
+| `design-system/chip`          | Bordered mono tag; `variant="ok"` marks what is included                                                                    |
+| `design-system/signal-dot`    | Green pulsing status dot, grey when inactive (§3.2)                                                                         |
+| `design-system/hairline-grid` | `gap-px` card grid with 1 px separators (`as="ol"` for ordered content)                                                     |
+| `design-system/tabs`          | Pill tabs (Radix): the active one filled `bg-fg`, labels may wrap on two lines, focus ring on panel                         |
+| `design-system/info-popover`  | 44 px "i" button opening a titled bubble on click or tap (Radix Popover), never inside a `<label>`                          |
+| `design-system/field`         | `Field` (label, optional hint, required asterisk, error) + `FIELD_INPUT` / `FIELD_TEXTAREA` controls                        |
+| `components/LegalDocument`    | Legal notice, privacy policy and terms of sale layout: intro, one card per section                                          |
+| `components/ContentSection`   | Card-shaped section: eyebrow + HUD counter, `h2` bound via `aria-labelledby`, lead, body                                    |
+| `components/AccentList`       | Bullet list with accent dots, optional mono label, 1 or 2 columns                                                           |
+| `components/CaseStudy`        | Full project case study: hero, ordered sections, CTA card, previous / next navigation                                       |
+| `design-system/accent.ts`     | `accentClasses(token)` → the text / bg / border utilities and RGB channels of a token                                       |
 
 Inner pages open with a plain `SectionHeading level={1}` intro — no starfield. The one immersive moment per page is the homepage hero or the final `CTAFinal`.
 
@@ -250,7 +251,7 @@ README.md               ← (optional) props, design, a11y, reduced-motion notes
 - **Accessibility**: semantic HTML (`section[aria-labelledby]`, lists for collections), complete `aria-*` on interactives (`aria-expanded`, `aria-controls`, `role="dialog"` + `aria-modal`…), touch targets **≥ 44×44px**, visible focus (`focus-visible:ring`), decorative elements as `aria-hidden`.
 - **Animation**: `motion/react` for rich animations (`AnimatePresence`, variants, stagger); CSS for simple ones. Always handle reduced-motion. Use the light `m.*` components under a `LazyMotion` whose features load in a separate chunk (see `Header`), never `motion.*`: the full runtime would ship in every page's first load.
 - **Tests**: `__tests__/components/<Name>.test.tsx`, **coverage ≥ 90%**. Verify rendering, i18n content, a11y, states, reduced-motion.
-- **Quality before commit**: `yarn format && yarn lint && yarn check-types && yarn test && yarn coverage` — zero errors, zero warnings. For PR/release preparation only: bump `package.json` (semver) and add a `CHANGELOG.md` entry; local commits do not require a version bump. Follow conventional commits for all PRs: `feat(ui): …`.
+- **Quality before commit**: `yarn format && yarn lint && yarn check-types && yarn coverage` — zero errors, zero warnings. For PR/release preparation only: bump `package.json` (semver) and add a `CHANGELOG.md` entry; local commits do not require a version bump. Follow conventional commits for all PRs: `feat(ui): …`.
 
 **Recurring props to plan for**: `className?`, `id?`, `respectReducedMotion?` (default `true`), and pre-localized content props (pass translated strings, not keys).
 
@@ -276,7 +277,7 @@ README.md               ← (optional) props, design, a11y, reduced-motion notes
 | Colors           | `DESIGN_TOKENS` (`design-system/tokens.ts`), with the WCAG ratio from `contrastRatio` (`design-system/lib/contrast.ts`) |
 | Typography       | The real `SectionHeading`, `Eyebrow` and text classes, with the browser's computed values                               |
 | Components       | The design-system primitives, imported (never copied as HTML)                                                           |
-| Layout, voice    | §2.3 and §8 of this file, with the live `CONTAINER` / `SECTION_Y` values                                                |
+| Layout, voice    | §2.3 and §8 of this file, with the live `CONTAINER` / `SECTION_Y` / `PAGE_TOP` values                                   |
 | Illustrations    | `<Starfield>` + royal glow, `<Sun>` + rose floor                                                                        |
 | Theme exceptions | The table in §3.4                                                                                                       |
 
@@ -336,13 +337,14 @@ Glyph ............. geometric SVG currentColor — NO emoji
 
 ## 8. Voice & copy
 
-The words carry as much of the brand as the tokens. Copy targets **people with a trade, not a CTO**: craftspeople (carpenter, hairdresser, caterer), associations (choir, sports club), independents who are starting out (therapist, photographer). Their question is not "which stack?" but "will people find me, and will someone answer when I call?". Every page answers it.
+The words carry as much of the brand as the tokens. Copy targets **people with a trade, not a CTO**: craftspeople (carpenter, hairdresser, caterer), small businesses (building firm, garage, small agency), independents and liberal professions (lawyer, architect, consultant), associations (choir, sports club). The list is open: name the audience once per page (hero, audience cards, local page, search texts) and say "vous" elsewhere, instead of reciting the same list everywhere. Their question is not "which stack?" but "will people find me, and will someone answer when I call?". Every page answers it.
 
 **Core promise — visibility.** Each page states, in plain words, that the studio makes the reader's business _seen, found and chosen_: a clear site, built to be found on Google, and one person who stays after launch. Prefer outcomes ("vos clients vous trouvent") over deliverables ("site responsive optimisé SEO").
 
 **Tone.**
 
 - Address the reader as "vous" (FR), "you" (EN), "Sie" (DE), "tu" (IT, ES). Short sentences, everyday words, real trades as examples.
+- The studio is the one speaking: "nous" for what the studio does, "il" when the copy presents Matthieu. Never "je".
 - Say what we do, what it costs, who answers. Prices are visible; give concrete delays where we can commit to them ("deux à six semaines"), otherwise keep it general ("réponse rapide").
 - Every page ends with a single action: talk to Matthieu (`Parler de mon projet`).
 - Avoid gendered adjectives aimed at the reader in French ("Prêt ?" → "Démarrons votre projet."); agree with the business instead ("Votre activité mérite d'être vue").

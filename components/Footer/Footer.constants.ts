@@ -2,7 +2,7 @@ import type { ComponentProps } from 'react';
 
 import type { Link } from '@/i18n/navigation';
 
-type FooterLink = {
+interface FooterLink {
   /** Key in the `footer` message namespace. */
   labelKey:
     | 'link_services'
@@ -14,7 +14,7 @@ type FooterLink = {
     | 'privacy'
     | 'terms';
   href: ComponentProps<typeof Link>['href'];
-};
+}
 
 export const STUDIO_LINKS: FooterLink[] = [
   { labelKey: 'link_services', href: '/services' },

@@ -5,7 +5,7 @@ import { getTranslations } from 'next-intl/server';
 
 import { SectionHeading } from '@/components/SectionHeading';
 import { cn } from '@/design-system/lib/utils';
-import { CONTAINER, ghostPill, primaryPill, SECTION_Y } from '@/design-system/pill';
+import { CONTAINER, ghostPill, PAGE_TOP, primaryPill, SECTION_Y } from '@/design-system/pill';
 import { Link } from '@/i18n/navigation';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -21,7 +21,7 @@ export default function NotFound() {
   return (
     <section
       aria-labelledby="not-found-heading"
-      className={cn('bg-bg text-fg', SECTION_Y)}
+      className={cn('bg-bg text-fg', SECTION_Y, PAGE_TOP)}
       style={{ minHeight: 'calc(100vh - var(--header-height))' }}>
       <div className={cn(CONTAINER, 'flex flex-col gap-8')}>
         <SectionHeading

@@ -4,6 +4,9 @@ import { getLocale, getMessages, getTranslations } from 'next-intl/server';
 
 import { FreeMockupPitch } from '@/components/FreeMockup';
 import { FreeMockupForm } from '@/components/FreeMockupForm';
+import BreadcrumbSeo from '@/components/JsonLd/BreadcrumbSeo';
+import { cn } from '@/design-system/lib/utils';
+import { CONTAINER, PAGE_TOP } from '@/design-system/pill';
 import { buildPageMetadata } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -24,9 +27,9 @@ export default async function FreeMockup() {
   const messages = await getMessages();
 
   return (
-    <div className="bg-bg text-fg relative isolate pt-10" style={{ minHeight: 'calc(100vh - var(--header-height))' }}>
+    <div className="bg-bg text-fg relative isolate" style={{ minHeight: 'calc(100vh - var(--header-height))' }}>
       <NextIntlClientProvider locale={locale} messages={messages}>
-        <div className="m-auto grid max-w-6xl gap-10 px-4 pb-20 sm:px-6 lg:grid-cols-2 lg:items-start lg:gap-14 lg:px-8">
+        <div className={cn(CONTAINER, PAGE_TOP, 'grid gap-10 pb-20 lg:grid-cols-2 lg:items-start lg:gap-14')}>
           <FreeMockupPitch />
           <section
             aria-labelledby="free-mockup-form-heading"
@@ -39,6 +42,7 @@ export default async function FreeMockup() {
           </section>
         </div>
       </NextIntlClientProvider>
+      <BreadcrumbSeo route="/free-mockup" />
     </div>
   );
 }

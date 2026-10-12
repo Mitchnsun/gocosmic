@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { SectionHeading } from '@/components/SectionHeading';
 import { cn } from '@/design-system/lib/utils';
-import { CONTAINER } from '@/design-system/pill';
+import { CONTAINER, PAGE_TOP, SECTION_Y } from '@/design-system/pill';
 import { renderWithLinks } from '@/lib/renderWithLinks';
 
 export interface LegalSection {
@@ -24,7 +24,7 @@ interface LegalDocumentProps {
 /** Layout shared by the legal notice, privacy policy and terms of sale: readable column, one card per section. */
 export function LegalDocument({ eyebrow, title, updated, intro, sections, children }: LegalDocumentProps) {
   return (
-    <div className="bg-bg text-fg pt-[clamp(3rem,6.5vw,5.5rem)] pb-[clamp(3.5rem,6.5vw,6rem)]">
+    <div className={cn('bg-bg text-fg', SECTION_Y, PAGE_TOP)}>
       <div className={cn(CONTAINER, 'flex max-w-4xl flex-col gap-10')}>
         <div className="flex flex-col gap-4">
           <SectionHeading

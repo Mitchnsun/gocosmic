@@ -1,1 +1,1 @@
-export { type OwnApp, OwnApps } from './OwnApps';
+export { OwnApps } from './OwnApps';

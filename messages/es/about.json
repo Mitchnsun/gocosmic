@@ -7,17 +7,17 @@
     "title": "Un estudio pequeño, <em>para que tus clientes te encuentren.</em>",
     "eyebrow": "[ Acerca de ]",
     "cta": {
-      "title": "Trabajemos juntos.",
-      "description": "Háblanos de tu negocio en unas pocas líneas. Matthieu te responde rápidamente.",
+      "title": "Escribe a Matthieu.",
+      "description": "Unas pocas líneas sobre tu negocio bastan para empezar.",
       "button": "Hablar de mi proyecto"
     },
-    "lead": "Cosmic Studio es Matthieu Compérat, desarrollador afincado en Chêne-Bougeries. Crea sitios web y aplicaciones para artesanos, asociaciones y autónomos, de Ginebra a Annecy.",
+    "lead": "Cosmic Studio es Matthieu Compérat, desarrollador afincado en Chêne-Bougeries. Crea sitios web y aplicaciones, de Ginebra a Annecy.",
     "path": {
       "eyebrow": "[ Trayectoria ]",
-      "title": "Quince años de desarrollo, <em>un solo interlocutor.</em>",
+      "title": "Quince años de oficio, <em>primero para grandes empresas.</em>",
       "paragraphs": [
         "Originario de Duingt, a orillas del lago de Annecy, Matthieu lleva unos quince años desarrollando sitios web y aplicaciones. Empezó trabajando para grandes empresas, donde aprendió a construir herramientas fiables y accesibles para todos.",
-        "Con Cosmic Studio pone esa experiencia al servicio de artesanos, asociaciones y autónomos. Hablas con la persona que construye tu sitio, desde la primera llamada hasta el seguimiento, mes a mes."
+        "Con Cosmic Studio construye con la misma exigencia el sitio de un taller, de un despacho o de una asociación. Prueba cada sitio en el móvil, unas comprobaciones automáticas se ejecutan con cada cambio y revisa todo lo que entrega. Hablas con la persona que construye tu sitio, desde la primera llamada hasta el seguimiento."
       ],
       "zones": {
         "ch": [
@@ -38,7 +38,7 @@
     },
     "why": {
       "eyebrow": "[ Por qué este enfoque ]",
-      "title": "Los artesanos y las asociaciones <em>merecen algo mejor que una plantilla.</em>",
+      "title": "Un sitio pequeño <em>se hace con el mismo cuidado que uno grande.</em>",
       "lead": "Las grandes agencias trabajan sobre todo para grandes empresas, y con las plataformas para crear webs tienes que arreglártelas solo con la herramienta. Cosmic Studio es para quienes están en medio.",
       "reasons": {
         "found": {
@@ -46,12 +46,12 @@
           "description": "Tus clientes te buscan en el móvil, a pocos kilómetros de ti. Un sitio rápido y bien construido aparece más arriba en Google."
         },
         "price": {
-          "title": "Un precio al ritmo de tu negocio",
-          "description": "Una suscripción desde {price} al mes sin IVA, que evoluciona contigo, en lugar de una gran inversión inicial."
+          "title": "Un precio a la vista",
+          "description": "La suscripción empieza en {price} al mes sin IVA, y ves lo que cuesta cada opción antes de escribirnos. No tienes que desembolsar una gran cantidad al principio."
         },
         "answer": {
           "title": "Alguien que responde",
-          "description": "Nada de centros de llamadas: quien te responde es la persona que construyó tu sitio, normalmente en el mismo día."
+          "description": "Quien te responde es la persona que construyó tu sitio, normalmente en el mismo día."
         },
         "ai": {
           "title": "La IA para ahorrar tiempo, siempre revisada",

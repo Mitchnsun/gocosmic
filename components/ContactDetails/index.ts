@@ -1,1 +1,1 @@
-export { type ContactDetail, ContactDetails } from './ContactDetails';
+export { ContactDetails } from './ContactDetails';

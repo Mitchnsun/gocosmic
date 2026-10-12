@@ -1,12 +1,12 @@
 import { BRAND_NAME } from '@/lib/config';
 import type { Region } from '@/lib/region';
 
-export type HeaderNavItem = {
+export interface HeaderNavItem {
   label: string;
   href: '/' | '/services' | '/projects' | '/contact';
   ariaLabel: string;
   isActive?: boolean;
-};
+}
 
 export interface HeaderProps {
   logo?: string;
