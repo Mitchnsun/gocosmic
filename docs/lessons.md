@@ -278,6 +278,22 @@ Grep `components/CosmicCursor/` for the native selector being replaced (`input[t
 
 **Correct pattern**: For a follow-up PR that only tidies up a change already released, ask the owner before bumping the version and adding a changelog entry, instead of applying the one-bump-per-PR rule automatically.
 
+### A new case study is a patch, not a minor version
+
+**Mistake**: Adding the Coach'n Pulse case study page was bumped as a minor version (2.4.1 → 2.5.0). The owner wanted a patch (2.4.2).
+
+**Correct pattern**: New content on the existing structure (another case study, more copy) gets a patch bump. Keep minor bumps for new features or sections of the site.
+
+---
+
+## Issues
+
+### Keep the `[CS-xx]` prefix for tickets attached to an epic
+
+**Mistake**: A standalone ticket (a new case study page) was titled `[CS-08] …` to continue the numbering of the latest case-study tickets.
+
+**Correct pattern**: Only tickets that belong to an epic get a `[XX-nn]` prefix. A standalone ticket gets a plain descriptive title.
+
 ---
 
 ## Legal and business facts

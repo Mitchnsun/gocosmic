@@ -164,12 +164,12 @@ Immersive sections: `<Starfield>` at layer `-z-20` + a radial accent gradient or
 - **Sober `CTAFinal`** (inner pages): stars in the dark theme only; in the light theme it is a flat `bg-bg` (a dark-on-cream starfield never rendered well).
 - **Theme exceptions** (rendered in section "Theme exceptions" of `/design-system`):
 
-  | Element                        | Stays                                       | Why                                           |
-  | ------------------------------ | ------------------------------------------- | --------------------------------------------- |
-  | Label and glow of orange fills | `text-void`, orange glow                    | White on orange only reaches 3.3:1            |
-  | Google booking frame           | White (`bg-white scheme-light`)             | Google's calendar has no dark mode            |
-  | Project covers                 | Their brand background (`data/projects.ts`) | Daily Fortune `#0d0420`, CPMB logo on `space` |
-  | Case study heroes with image   | Dark, through `data-theme="dark"`           | The dimmed photo needs the night gradient     |
+  | Element                        | Stays                                    | Why                                           |
+  | ------------------------------ | ---------------------------------------- | --------------------------------------------- |
+  | Label and glow of orange fills | `text-void`, orange glow                 | White on orange only reaches 3.3:1            |
+  | Google booking frame           | White (`bg-white scheme-light`)          | Google's calendar has no dark mode            |
+  | Project covers and logo frames | Their brand colours (`data/projects.ts`) | Daily Fortune `#0d0420`, CPMB logo on `space` |
+  | Case study heroes with image   | Dark, through `data-theme="dark"`        | The dimmed photo needs the night gradient     |
 
 - **Dark islands**: a section that cannot follow the theme (a canvas, a dark brand visual, a dimmed photo) sets `data-theme="dark"` and the tokens re-scope for the subtree. `light:` never applies inside a dark island.
 - **Pick the scene in CSS first**: the `light:` variant (`light:hidden`, `hidden light:block`) is right from the first paint, then `useResolvedTheme()` unmounts what the theme hides so canvases and animation loops stop.

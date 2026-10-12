@@ -84,6 +84,13 @@ describe('CaseStudy', () => {
     expect(getByAltText('White logo')).toHaveStyle({ backgroundColor: '#1E2952' });
   });
 
+  it('frames the logo with the project colour when given', () => {
+    const { getByAltText } = render(
+      <CaseStudy {...baseProps} logo={{ src: '/logo.png', alt: 'Framed logo', border: '#4cb8e8' }} />
+    );
+    expect(getByAltText('Framed logo')).toHaveStyle({ borderColor: '#4cb8e8' });
+  });
+
   it('links the call-to-action to the live project', () => {
     const { getByRole } = render(
       <CaseStudy

@@ -16,7 +16,7 @@ describe('buildCaseStudyMetadata', () => {
 
     expect(metadata.title).toBe('Daily Fortune · Mobile app | Cosmic Studio');
     expect(metadata.description).toBe(
-      'A short message every morning to start the day on the right foot. It is our first app, available on the App Store and Google Play.'
+      'A short message every morning to start the day on the right foot. It is our first app, available on the App Store.'
     );
     expect(metadata.alternates?.canonical).toBe('https://www.gocosmic.dev/en/projects/daily-fortune');
     expect(metadata.openGraph).toMatchObject({ type: 'article' });

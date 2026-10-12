@@ -40,7 +40,7 @@ export default function DailyFortune() {
           // The icon keeps its deep purple background in both themes.
           background: PROJECTS_BY_SLUG['daily-fortune'].cover.background,
         }}
-        meta={buildCaseStudyMeta('daily-fortune', tList)}
+        meta={buildCaseStudyMeta('daily-fortune', tList, locale)}
         sections={[
           {
             id: 'for-whom',

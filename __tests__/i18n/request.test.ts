@@ -15,6 +15,7 @@ const EXPECTED: Record<keyof typeof routing.pathnames, string[]> = {
   '/projects/mcomperat': ['projects'],
   '/projects/psc-supersprint': ['psc-supersprint', 'projects'],
   '/projects/choeurdespaysdumontblanc': ['projects'],
+  '/projects/coachnpulse': ['projects'],
   '/contact': ['contact'],
   '/privacy': ['legal'],
   '/legal-notice': ['legal'],

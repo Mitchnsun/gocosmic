@@ -122,8 +122,8 @@
       "lead": "Daran testen wir unsere Werkzeuge, bevor wir sie in Ihren Projekten einsetzen.",
       "daily_fortune": {
         "name": "Daily Fortune",
-        "badge": "iOS · Android",
-        "description": "Jeden Morgen eine kurze Nachricht für einen guten Start in den Tag. Es ist unsere erste App, erhältlich im App Store und bei Google Play.",
+        "badge": "iOS",
+        "description": "Jeden Morgen eine kurze Nachricht für einen guten Start in den Tag. Es ist unsere erste App, erhältlich im App Store.",
         "link": "App entdecken",
         "icon_alt": "App-Symbol von Daily Fortune"
       }

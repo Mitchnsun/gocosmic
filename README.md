@@ -128,11 +128,12 @@ Prices are shown in euros, or in Swiss francs on the Swiss version of the site, 
 
 #### Case Studies
 
-All four case studies share one template: a header with the year, client and project type, three numbered sections ("For whom", "What we did", "Result"), a link to the live project with a "Discuss a similar project" link to the contact page, and previous / next navigation between case studies.
+All five case studies share one template: a header with the dates (creation year, and the latest update for projects that keep being updated), client and project type, three numbered sections ("For whom", "What we did", "Result"), a link to the live project with a "Discuss a similar project" link to the contact page, and previous / next navigation between case studies.
 
 - **Chœur des Pays du Mont Blanc** (`/projects/choeurdespaysdumontblanc`): the choir's website, with upcoming concerts, repertoire and how to join
+- **Daily Fortune** (`/projects/daily-fortune`): the studio's own mobile app, published on the App Store
+- **Coach'n Pulse** (`/projects/coachnpulse`): the website of a triathlon and endurance sports coach in Grenoble, looked after since 2016
 - **PSC Supersprint** (`/projects/psc-supersprint`): live race results for a triathlon club, with its own translation namespace
-- **Daily Fortune** (`/projects/daily-fortune`): the studio's own mobile app, published on the App Store and Google Play
 - **mcomper.at** (`/projects/mcomperat`): a multilingual online résumé
 
 ### About Page (`/about`)
@@ -374,7 +375,7 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   │   ├── legal-notice/ # Legal notice (including AI usage statements)
 │   │   ├── local/    # Local SEO landing page
 │   │   ├── privacy/  # Privacy policy
-│   │   ├── projects/ # Filterable projects list + case studies (daily-fortune, mcomperat, psc-supersprint, choeurdespaysdumontblanc)
+│   │   ├── projects/ # Filterable projects list + case studies (choeurdespaysdumontblanc, daily-fortune, coachnpulse, psc-supersprint, mcomperat)
 │   │   ├── services/ # Services & pricing page (pricing, simulator, trades, FAQ)
 │   │   ├── terms/    # Terms of sale
 │   │   ├── not-found.tsx # Localized 404 page

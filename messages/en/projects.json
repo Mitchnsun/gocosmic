@@ -19,21 +19,30 @@
         "client": "Triathlon club",
         "description": "Live race results that spectators can check on their phones during the event.",
         "tags": ["Web app", "Live", "Sport"],
-        "cover_alt": "PSC Supersprint preview"
+        "cover_alt": "Paris Sport Club logo",
+        "illustration_alt": "PSC Supersprint illustration"
       },
       "dailyFortune": {
         "title": "Daily Fortune",
         "client": "Studio app",
-        "description": "A short message every morning to start the day on the right foot. It is our first app, available on the App Store and Google Play.",
-        "tags": ["Mobile app", "iOS · Android", "Studio"],
+        "description": "A short message every morning to start the day on the right foot. It is our first app, available on the App Store.",
+        "tags": ["Mobile app", "iOS", "Studio"],
         "cover_alt": "Daily Fortune app icon"
+      },
+      "coachNPulse": {
+        "title": "Coach'n Pulse",
+        "client": "Sports coach · Grenoble",
+        "description": "The website of a triathlon and endurance sports coach: programmes, background and prices. We have kept it running since 2016.",
+        "tags": ["Showcase site", "Sport", "Since 2016"],
+        "cover_alt": "Coach'n Pulse logo",
+        "illustration_alt": "Luc Nahon, coach at Coach'n Pulse"
       },
       "mcomperat": {
         "title": "mcomper.at",
         "client": "Personal project",
         "description": "An online résumé in French and English, quick to load. We use it to test the tools we then use for our clients.",
         "tags": ["Website", "Multilingual"],
-        "cover_alt": "mcomper.at preview"
+        "illustration_alt": "Matthieu Compérat"
       }
     },
     "cta": {
@@ -55,7 +64,9 @@
       "mobile": "Mobile app",
       "count": "{count, plural, =0 {No projects} one {# project} other {# projects}}"
     },
-    "view_project": "View project"
+    "view_project": "View project",
+    "since": "Since {year}",
+    "updated": "Updated: {date}"
   },
   "dailyFortune": {
     "title": "Daily Fortune",
@@ -79,14 +90,46 @@
         "daily_message": "A new message every day: a motivational quote, a positive affirmation or a fortune-cookie saying",
         "ai_messages": "Varied messages created with the help of AI",
         "clean_design": "A screen that is easy to read, with a few animations",
-        "stores": "Published on the App Store and Google Play, for iPhone and Android"
+        "stores": "Published on the App Store, for iPhone"
       }
     },
     "result": {
       "label": "Result",
       "title": "Our first app, live",
-      "description": "Daily Fortune is available on the App Store and Google Play, and its users get a new message every day. It shows that we can take an app from the first idea all the way to publication.",
+      "description": "Daily Fortune is available on the App Store, and its users get a new message every day. It shows that we can take an app from the first idea all the way to publication.",
       "maintained": "It is still kept up to date: version {version} came out on {date}."
+    }
+  },
+  "coachNPulse": {
+    "title": "Coach'n Pulse",
+    "subtitle": "The website of a triathlon and endurance sports coach in Grenoble, which we have kept running since 2016.",
+    "cta": {
+      "title": "Discover Coach'n Pulse",
+      "description": "Programmes, the coach's background and prices: it is all on the Coach'n Pulse website.",
+      "button": "Visit the website",
+      "ariaLabel": "Visit the Coach'n Pulse website (opens in a new tab)"
+    },
+    "for_whom": {
+      "label": "Who it's for",
+      "title": "An endurance sports coach in Grenoble",
+      "description": "Luc Nahon is a state-certified triathlon instructor, coach and mental trainer. He works with people getting back into sport as well as athletes preparing for an Ironman. He needed a website to present what he offers and make people want to get in touch."
+    },
+    "what_we_did": {
+      "label": "What we did",
+      "title": "A clear website for the offer and the coach",
+      "description": "We designed a website of a few pages that answers a future athlete's questions: what is on offer, who the coach is and how much it costs.",
+      "items": {
+        "programs": "Personalised programmes and assessments, by goal (health, weight loss, competition…) and by discipline",
+        "coach": "The coach's background, qualifications and experience",
+        "prices": "An easy-to-read price list",
+        "contact": "His contact details close at hand, on a computer or a phone"
+      }
+    },
+    "result": {
+      "label": "Result",
+      "title": "A website looked after for ten years",
+      "description": "Online since 2016, the website has been rebuilt and updated as web tools evolved. This long-term care is what we offer every one of our clients.",
+      "maintained": "Version {version} came out in {date}, with a new design."
     }
   },
   "mcomperat": {

@@ -9,24 +9,33 @@
     "items": {
       "dailyFortune": {
         "title": "Daily Fortune",
-        "description": "Un mensaje breve cada mañana para empezar bien el día. Es nuestra primera aplicación, disponible en App Store y Google Play.",
+        "description": "Un mensaje breve cada mañana para empezar bien el día. Es nuestra primera aplicación, disponible en App Store.",
         "client": "Aplicación del estudio",
-        "tags": ["App móvil", "iOS · Android", "Estudio"],
+        "tags": ["App móvil", "iOS", "Estudio"],
         "cover_alt": "Icono de la aplicación Daily Fortune"
+      },
+      "coachNPulse": {
+        "title": "Coach'n Pulse",
+        "client": "Coach deportivo · Grenoble",
+        "description": "El sitio de un coach de triatlón y deportes de resistencia: programas, trayectoria y tarifas. Lo mantenemos vivo desde 2016.",
+        "tags": ["Sitio de presentación", "Deporte", "Desde 2016"],
+        "cover_alt": "Logotipo de Coach'n Pulse",
+        "illustration_alt": "Luc Nahon, entrenador de Coach'n Pulse"
       },
       "mcomperat": {
         "title": "mcomper.at",
         "description": "Un currículum en línea, en francés y en inglés, que carga rápido. En él probamos las herramientas que luego usamos para nuestros clientes.",
         "client": "Proyecto personal",
         "tags": ["Sitio web", "Multilingüe"],
-        "cover_alt": "Vista previa del sitio mcomper.at"
+        "illustration_alt": "Matthieu Compérat"
       },
       "pscSupersprint": {
         "title": "PSC Supersprint",
         "description": "Los resultados de la carrera en directo, que el público consulta en el móvil durante la prueba.",
         "client": "Club de triatlón",
         "tags": ["App web", "En directo", "Deporte"],
-        "cover_alt": "Vista previa de PSC Supersprint"
+        "cover_alt": "Logotipo del Paris Sport Club",
+        "illustration_alt": "Ilustración del PSC Supersprint"
       },
       "choeurDesPaysduMontBlanc": {
         "title": "Chœur des Pays du Mont Blanc",
@@ -55,7 +64,9 @@
       "mobile": "App móvil",
       "count": "{count, plural, =0 {Ningún proyecto} one {# proyecto} other {# proyectos}}"
     },
-    "view_project": "Ver proyecto"
+    "view_project": "Ver proyecto",
+    "since": "Desde {year}",
+    "updated": "Actualizado: {date}"
   },
   "dailyFortune": {
     "title": "Daily Fortune",
@@ -79,14 +90,46 @@
         "daily_message": "Un mensaje nuevo cada día: una cita motivadora, una afirmación positiva o una frase de galleta de la fortuna",
         "ai_messages": "Mensajes variados, creados con ayuda de la IA",
         "clean_design": "Una pantalla fácil de leer, con algunas animaciones",
-        "stores": "Publicada en App Store y Google Play, para iPhone y Android"
+        "stores": "Publicada en App Store, para iPhone"
       }
     },
     "result": {
       "label": "Resultado",
       "title": "Nuestra primera aplicación publicada",
-      "description": "Daily Fortune está disponible en App Store y Google Play, y sus usuarios reciben un mensaje nuevo cada día. Muestra que sabemos llevar una aplicación desde la idea hasta su publicación.",
+      "description": "Daily Fortune está disponible en App Store, y sus usuarios reciben un mensaje nuevo cada día. Muestra que sabemos llevar una aplicación desde la idea hasta su publicación.",
       "maintained": "Sigue actualizándose: la versión {version} salió el {date}."
+    }
+  },
+  "coachNPulse": {
+    "title": "Coach'n Pulse",
+    "subtitle": "El sitio de un coach de triatlón y deportes de resistencia en Grenoble, que mantenemos vivo desde 2016.",
+    "cta": {
+      "title": "Descubre Coach'n Pulse",
+      "description": "Programas, trayectoria del coach y tarifas: todo está en el sitio de Coach'n Pulse.",
+      "button": "Visitar el sitio",
+      "ariaLabel": "Visitar el sitio de Coach'n Pulse (se abre en una nueva pestaña)"
+    },
+    "for_whom": {
+      "label": "Para quién",
+      "title": "Un coach de deportes de resistencia en Grenoble",
+      "description": "Luc Nahon es educador deportivo titulado en triatlón, entrenador y preparador mental. Acompaña tanto a personas que vuelven a hacer deporte como a atletas que preparan un Ironman. Necesitaba un sitio para presentar su oferta y animar a contactarle."
+    },
+    "what_we_did": {
+      "label": "Lo que hicimos",
+      "title": "Un sitio claro para presentar la oferta y al coach",
+      "description": "Diseñamos un sitio de pocas páginas que responde a las preguntas de un futuro deportista: qué se ofrece, quién es el coach y cuánto cuesta.",
+      "items": {
+        "programs": "Los programas y evaluaciones personalizados, según los objetivos (salud, pérdida de peso, competición…) y las disciplinas",
+        "coach": "La trayectoria, los títulos y la experiencia del coach",
+        "prices": "Una tabla de tarifas fácil de leer",
+        "contact": "Sus datos de contacto siempre a mano, en el ordenador o en el móvil"
+      }
+    },
+    "result": {
+      "label": "Resultado",
+      "title": "Un sitio cuidado desde hace diez años",
+      "description": "En línea desde 2016, el sitio se ha rehecho y actualizado a medida que evolucionaban las herramientas web. Este acompañamiento a largo plazo es lo que ofrecemos a cada uno de nuestros clientes.",
+      "maintained": "La {version} salió en {date}, con un nuevo diseño."
     }
   },
   "mcomperat": {

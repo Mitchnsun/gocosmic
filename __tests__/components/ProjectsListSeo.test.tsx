@@ -38,14 +38,20 @@ describe('ProjectsListSeo', () => {
           {
             '@type': 'ListItem',
             position: 3,
-            name: 'mcomper.at',
-            url: 'https://www.gocosmic.dev/en/projects/mcomperat',
+            name: "Coach'n Pulse",
+            url: 'https://www.gocosmic.dev/en/projects/coachnpulse',
           },
           {
             '@type': 'ListItem',
             position: 4,
             name: 'PSC Supersprint',
             url: 'https://www.gocosmic.dev/en/projects/psc-supersprint',
+          },
+          {
+            '@type': 'ListItem',
+            position: 5,
+            name: 'mcomper.at',
+            url: 'https://www.gocosmic.dev/en/projects/mcomperat',
           },
         ],
       },

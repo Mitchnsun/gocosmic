@@ -13,6 +13,8 @@ interface CaseStudyImage {
   height?: number;
   /** Fixed brand colour painted behind the image in both themes, e.g. `space` behind a white logo. */
   background?: string;
+  /** Fixed brand colour of the frame around the image, e.g. the project colour around its logo. */
+  border?: string;
 }
 
 /** One content section of a case study (overview, challenge, solution…). */

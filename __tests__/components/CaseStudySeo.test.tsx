@@ -33,7 +33,9 @@ describe('CaseStudySeo', () => {
             description:
               'An online résumé in French and English, quick to load. We use it to test the tools we then use for our clients.',
             genre: 'Website',
-            dateCreated: '2026',
+            dateCreated: '2014',
+            version: '7.0',
+            dateModified: '2026-05',
             url: 'https://www.gocosmic.dev/en/projects/mcomperat',
             inLanguage: 'en',
             creator: { '@id': 'https://www.gocosmic.dev/#company' },
@@ -64,6 +66,27 @@ describe('CaseStudySeo', () => {
         data: expect.objectContaining({
           '@graph': expect.arrayContaining([
             expect.objectContaining({ dateCreated: '2025', version: '1.4.0', dateModified: '2026-02-28' }),
+          ]),
+        }),
+      })
+    );
+  });
+
+  it("dates Coach'n Pulse to its current version and declares that release", () => {
+    render(<CaseStudySeo slug="coachnpulse" />);
+
+    expect(jsonLdScriptMock).toHaveBeenCalledWith(
+      expect.objectContaining({
+        scriptKey: 'case-study-json-ld-coachnpulse',
+        data: expect.objectContaining({
+          '@graph': expect.arrayContaining([
+            expect.objectContaining({
+              name: "Coach'n Pulse",
+              url: 'https://www.gocosmic.dev/en/projects/coachnpulse',
+              dateCreated: '2016',
+              version: '5.0.0',
+              dateModified: '2026-10',
+            }),
           ]),
         }),
       })

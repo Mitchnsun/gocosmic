@@ -38,20 +38,32 @@ export const buildCaseStudyNavigation = (
   };
 };
 
-/** Translator scoped to the `projectsList` namespace. */
-type ProjectsTranslator = (key: string) => string;
-
-/** Builds the mono HUD meta line (year, client, kind) of a case study page. */
-export const buildCaseStudyMeta = (slug: CaseStudySlug, tList: ProjectsTranslator): string[] => {
-  const project = PROJECTS_BY_SLUG[slug];
-  return [String(project.year), tList(`items.${project.i18nKey}.client`), tList(`kinds.${project.kind}`)];
-};
-
 /**
  * Long date of a release (`YYYY-MM-DD`) in the page locale, e.g. "28 février 2026"; read in UTC so it never shifts
- * a day. English uses the British order ("28 February 2026"), like the rest of the English pages.
+ * a day. English uses the British order ("28 February 2026"), like the rest of the English pages. A release known
+ * only by its month (`YYYY-MM`) is written without the day, e.g. "octobre 2026".
  */
 export const formatReleaseDate = (date: string, locale: string): string =>
-  new Intl.DateTimeFormat(locale === 'en' ? 'en-GB' : locale, { dateStyle: 'long', timeZone: 'UTC' }).format(
-    new Date(`${date}T00:00:00Z`)
-  );
+  new Intl.DateTimeFormat(locale === 'en' ? 'en-GB' : locale, {
+    ...(date.length === 7 ? { month: 'long', year: 'numeric' } : { dateStyle: 'long' }),
+    timeZone: 'UTC',
+  }).format(new Date(date));
+
+/** Translator scoped to the `projectsList` namespace. */
+type ProjectsTranslator = (key: string, values?: Record<string, string | number>) => string;
+
+/**
+ * Builds the mono HUD meta line of a case study page: its year, client and kind. A project that keeps being updated
+ * reads "since <creation year>" followed by the date of its latest update.
+ */
+export const buildCaseStudyMeta = (slug: CaseStudySlug, tList: ProjectsTranslator, locale: string): string[] => {
+  const project = PROJECTS_BY_SLUG[slug];
+  const dates =
+    'latestRelease' in project
+      ? [
+          tList('since', { year: project.year }),
+          tList('updated', { date: formatReleaseDate(project.latestRelease.date, locale) }),
+        ]
+      : [String(project.year)];
+  return [...dates, tList(`items.${project.i18nKey}.client`), tList(`kinds.${project.kind}`)];
+};

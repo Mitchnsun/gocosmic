@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.4.2] - 2026-10-12
+
+### Added
+
+- A new project page for Coach'n Pulse, the website of a triathlon and endurance sports coach in Grenoble that the studio has looked after since 2016, with its latest version and new design, and a link to the site
+- Coach'n Pulse, mcomper.at and PSC Supersprint now show a photo or a drawing on the projects list, with their logo in the corner when they have one; PSC Supersprint also shows its logo on its page, and Coach'n Pulse frames its logo in its own colour
+
+### Changed
+
+- mcomper.at now closes the projects list
+- Daily Fortune is presented as an iPhone app only for now, on the homepage and on its project page
+- Projects that keep being updated show the year of their latest update on the projects list, and both their creation year and the date of their latest update on their page
+
 ## [2.4.1] - 2026-10-12
 
 ### Added

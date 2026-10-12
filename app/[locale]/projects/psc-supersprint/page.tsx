@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 import { buildCaseStudyMeta, buildCaseStudyNavigation, CaseStudy, PROJECTS_BY_SLUG } from '@/components/CaseStudy';
 import { buildCaseStudyMetadata } from '@/components/CaseStudy/CaseStudy.metadata';
@@ -14,6 +14,7 @@ export default function PscSupersprint() {
   const t = useTranslations('pscSupersprint');
   const tCommon = useTranslations('case_study');
   const tList = useTranslations('projectsList');
+  const locale = useLocale();
 
   return (
     <>
@@ -22,7 +23,13 @@ export default function PscSupersprint() {
         title={t('title')}
         tagline={t('subtitle')}
         accent={PROJECTS_BY_SLUG['psc-supersprint'].accent}
-        meta={buildCaseStudyMeta('psc-supersprint', tList)}
+        logo={{
+          src: PROJECTS_BY_SLUG['psc-supersprint'].cover.src,
+          alt: t('title'),
+          // The club logo keeps its red background in both themes.
+          background: PROJECTS_BY_SLUG['psc-supersprint'].cover.background,
+        }}
+        meta={buildCaseStudyMeta('psc-supersprint', tList, locale)}
         sections={[
           {
             id: 'for-whom',

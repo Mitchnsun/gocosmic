@@ -71,7 +71,7 @@ export const CaseStudyHero = ({
               width={logo.width ?? 72}
               height={logo.height ?? 72}
               className="border-line bg-bg/60 h-16 w-16 rounded-2xl border object-contain p-2"
-              style={logo.background ? { backgroundColor: logo.background } : undefined}
+              style={{ backgroundColor: logo.background, borderColor: logo.border }}
             />
           )}
           <h1

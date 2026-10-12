@@ -58,7 +58,7 @@ describe('OwnApps', () => {
         lead="We test here."
         app={{
           name: 'Daily Fortune',
-          badge: 'iOS · Android',
+          badge: 'iOS',
           description: 'A short message',
           linkLabel: 'Discover the app',
           href: '/projects/daily-fortune',

@@ -19,8 +19,9 @@ describe('buildProjectCards', () => {
     expect(cards.map((card) => card.slug)).toEqual([
       'choeurdespaysdumontblanc',
       'daily-fortune',
-      'mcomperat',
+      'coachnpulse',
       'psc-supersprint',
+      'mcomperat',
     ]);
     expect(cards[0]).toMatchObject({
       kind: 'site',
@@ -30,11 +31,24 @@ describe('buildProjectCards', () => {
       year: 2026,
     });
     expect(cards[0]?.cover?.alt).toBe('Chœur des Pays du Mont Blanc logo');
-    expect(cards[2]?.cover).toBeUndefined();
+    expect(cards[2]?.cover?.alt).toBe("Coach'n Pulse logo");
+    expect(cards[2]?.illustration).toEqual({
+      src: '/projects/coachnpulse/coachnpulse-illustration.jpg',
+      alt: "Luc Nahon, coach at Coach'n Pulse",
+    });
+    // A project without a logo can still show its photo.
+    expect(cards[4]).toMatchObject({ cover: undefined, illustration: { alt: 'Matthieu Compérat' } });
+    // Projects that keep being updated are dated by their latest update, not their creation.
+    expect(cards.map((card) => card.year)).toEqual([2026, 2026, 2026, 2026, 2026]);
+    expect(cards[0]?.illustration).toBeUndefined();
+    expect(cards[3]).toMatchObject({
+      cover: { alt: 'Paris Sport Club logo' },
+      illustration: { alt: 'PSC Supersprint illustration' },
+    });
   });
 
   it('filters by kind and parses the query parameter defensively', () => {
-    expect(filterProjects(cards, 'all')).toHaveLength(4);
+    expect(filterProjects(cards, 'all')).toHaveLength(5);
     expect(filterProjects(cards, 'mobile').map((card) => card.slug)).toEqual(['daily-fortune']);
     expect(parseProjectFilter('webapp')).toBe('webapp');
     expect(parseProjectFilter('<script>')).toBe('all');
@@ -46,13 +60,29 @@ describe('ProjectGrid', () => {
   it('renders each card with its badge, client line, tags and a link named after the project', () => {
     const { getByRole, getAllByRole, getByText } = render(<ProjectGrid projects={cards} />);
 
-    expect(getAllByRole('article')).toHaveLength(4);
+    expect(getAllByRole('article')).toHaveLength(5);
     expect(getByRole('link', { name: 'PSC Supersprint' })).toHaveAttribute('href', '/projects/psc-supersprint');
     expect(getByText('Triathlon club')).toBeInTheDocument();
     expect(getByRole('img', { name: 'Daily Fortune app icon' })).toBeInTheDocument();
+    // A project with a photo shows it with its logo in the corner; the others keep their logo alone.
+    expect(getByRole('img', { name: "Luc Nahon, coach at Coach'n Pulse" })).toBeInTheDocument();
+    expect(getByRole('img', { name: "Coach'n Pulse logo" })).toHaveStyle({ background: '#000000' });
+    expect(getByRole('img', { name: 'Matthieu Compérat' })).toBeInTheDocument();
     // Without a screenshot, the cover falls back to the project name.
-    expect(getAllByRole('heading', { level: 3 })).toHaveLength(4);
+    expect(getAllByRole('heading', { level: 3 })).toHaveLength(5);
     expect(getAllByRole('listitem').some((item) => item.textContent === 'Multilingual')).toBe(true);
+  });
+});
+
+describe('ProjectCover', () => {
+  it('falls back to the project name when no visual exists yet', () => {
+    const [first] = cards;
+    const { queryByRole, getAllByText } = render(
+      <ProjectGrid projects={first ? [{ ...first, cover: undefined }] : []} />
+    );
+
+    expect(queryByRole('img')).not.toBeInTheDocument();
+    expect(getAllByText('Chœur des Pays du Mont Blanc')).toHaveLength(2);
   });
 });
 
@@ -66,7 +96,7 @@ describe('FilterableProjectGrid', () => {
 
     expect(getByRole('group', { name: 'Filter by project type' })).toBeInTheDocument();
     expect(getByRole('button', { name: 'All' })).toHaveAttribute('aria-pressed', 'true');
-    expect(getByText('4 projects')).toBeInTheDocument();
+    expect(getByText('5 projects')).toBeInTheDocument();
 
     act(() => {
       fireEvent.click(getByRole('button', { name: 'Mobile app' }));

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 import { buildCaseStudyMeta, buildCaseStudyNavigation, CaseStudy, PROJECTS_BY_SLUG } from '@/components/CaseStudy';
 import { buildCaseStudyMetadata } from '@/components/CaseStudy/CaseStudy.metadata';
@@ -14,6 +14,7 @@ export default function Mcomperat() {
   const t = useTranslations('mcomperat');
   const tCommon = useTranslations('case_study');
   const tList = useTranslations('projectsList');
+  const locale = useLocale();
 
   return (
     <>
@@ -22,7 +23,7 @@ export default function Mcomperat() {
         title={t('title')}
         tagline={t('subtitle')}
         accent={PROJECTS_BY_SLUG.mcomperat.accent}
-        meta={buildCaseStudyMeta('mcomperat', tList)}
+        meta={buildCaseStudyMeta('mcomperat', tList, locale)}
         sections={[
           {
             id: 'for-whom',

@@ -116,8 +116,8 @@
       "lead": "We use it to try out our tools before using them on your projects.",
       "daily_fortune": {
         "name": "Daily Fortune",
-        "badge": "iOS · Android",
-        "description": "A short message every morning to start the day on the right foot. It is our first app, available on the App Store and Google Play.",
+        "badge": "iOS",
+        "description": "A short message every morning to start the day on the right foot. It is our first app, available on the App Store.",
         "link": "Discover the app",
         "icon_alt": "Daily Fortune app icon"
       }

@@ -10,7 +10,7 @@ import { Link } from '@/i18n/navigation';
 
 interface OwnApp {
   name: string;
-  /** Mono chip, e.g. `iOS · Android`. */
+  /** Mono chip, e.g. `iOS`. */
   badge: string;
   description: string;
   linkLabel: string;

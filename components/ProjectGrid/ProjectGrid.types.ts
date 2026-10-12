@@ -22,10 +22,13 @@ export interface ProjectCardContent {
   kind: ProjectKind;
   kindLabel: string;
   title: string;
+  /** Year of the latest update, or of the first release when the project has none. */
   year: number;
   client: string;
   description: string;
   tags: string[];
   cover?: ProjectCover & { alt: string };
+  /** Photo filling the visual, the logo then sitting small in its top-right corner. */
+  illustration?: { src: string; alt: string };
   linkLabel: string;
 }

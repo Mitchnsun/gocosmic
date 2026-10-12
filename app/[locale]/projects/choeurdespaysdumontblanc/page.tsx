@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 import { buildCaseStudyMeta, buildCaseStudyNavigation, CaseStudy, PROJECTS_BY_SLUG } from '@/components/CaseStudy';
 import { buildCaseStudyMetadata } from '@/components/CaseStudy/CaseStudy.metadata';
@@ -14,6 +14,7 @@ export default function ChoeurDesPaysduMontBlanc() {
   const t = useTranslations('choeurDesPaysduMontBlanc');
   const tCommon = useTranslations('case_study');
   const tList = useTranslations('projectsList');
+  const locale = useLocale();
 
   return (
     <>
@@ -28,7 +29,7 @@ export default function ChoeurDesPaysduMontBlanc() {
           // The white logo keeps its space background in both themes.
           background: PROJECTS_BY_SLUG.choeurdespaysdumontblanc.cover.background,
         }}
-        meta={buildCaseStudyMeta('choeurdespaysdumontblanc', tList)}
+        meta={buildCaseStudyMeta('choeurdespaysdumontblanc', tList, locale)}
         sections={[
           {
             id: 'for-whom',
