@@ -22,15 +22,24 @@ vi.mock('@/i18n/navigation', () => ({
   Link: ({
     children,
     href,
+    onClick,
     ...props
   }: {
     children: React.ReactNode;
     href: string | { pathname: string; hash?: string };
+    onClick?: React.MouseEventHandler<HTMLAnchorElement>;
     [key: string]: unknown;
   }) => {
     const resolvedHref = typeof href === 'string' ? href : `${href.pathname}${href.hash ? `#${href.hash}` : ''}`;
     return (
-      <a href={resolvedHref} {...props}>
+      // Like the real Link, navigate client-side: jsdom does not implement page navigation.
+      <a
+        href={resolvedHref}
+        {...props}
+        onClick={(event) => {
+          onClick?.(event);
+          event.preventDefault();
+        }}>
         {children}
       </a>
     );
