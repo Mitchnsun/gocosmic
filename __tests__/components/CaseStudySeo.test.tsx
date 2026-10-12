@@ -33,7 +33,9 @@ describe('CaseStudySeo', () => {
             description:
               'An online résumé in French and English, quick to load. We use it to test the tools we then use for our clients.',
             genre: 'Website',
-            dateCreated: '2026',
+            dateCreated: '2014',
+            version: '7.0',
+            dateModified: '2026-05',
             url: 'https://www.gocosmic.dev/en/projects/mcomperat',
             inLanguage: 'en',
             creator: { '@id': 'https://www.gocosmic.dev/#company' },
@@ -81,9 +83,9 @@ describe('CaseStudySeo', () => {
             expect.objectContaining({
               name: "Coach'n Pulse",
               url: 'https://www.gocosmic.dev/en/projects/coachnpulse',
-              dateCreated: '2026',
-              version: '4.0.0',
-              dateModified: '2026-03-05',
+              dateCreated: '2016',
+              version: '5.0.0',
+              dateModified: '2026-10',
             }),
           ]),
         }),

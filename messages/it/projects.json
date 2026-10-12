@@ -9,9 +9,9 @@
     "items": {
       "dailyFortune": {
         "title": "Daily Fortune",
-        "description": "Un breve messaggio ogni mattina per iniziare bene la giornata. È la nostra prima app, disponibile sull'App Store e su Google Play.",
+        "description": "Un breve messaggio ogni mattina per iniziare bene la giornata. È la nostra prima app, disponibile sull'App Store.",
         "client": "App dello studio",
-        "tags": ["App mobile", "iOS · Android", "Studio"],
+        "tags": ["App mobile", "iOS", "Studio"],
         "cover_alt": "Icona dell'app Daily Fortune"
       },
       "coachNPulse": {
@@ -19,21 +19,23 @@
         "client": "Coach sportivo · Grenoble",
         "description": "Il sito di un coach di triathlon e sport di resistenza: programmi, percorso e tariffe. Lo seguiamo dal 2016.",
         "tags": ["Sito vetrina", "Sport", "Dal 2016"],
-        "cover_alt": "Logo di Coach'n Pulse"
+        "cover_alt": "Logo di Coach'n Pulse",
+        "illustration_alt": "Luc Nahon, coach di Coach'n Pulse"
       },
       "mcomperat": {
         "title": "mcomper.at",
         "description": "Un curriculum online, in francese e in inglese, veloce da caricare. Ci serve anche per provare gli strumenti che poi usiamo per i nostri clienti.",
         "client": "Progetto personale",
         "tags": ["Sito", "Multilingue"],
-        "cover_alt": "Anteprima del sito mcomper.at"
+        "illustration_alt": "Matthieu Compérat"
       },
       "pscSupersprint": {
         "title": "PSC Supersprint",
         "description": "I risultati della gara in diretta, che il pubblico può consultare sul telefono durante la competizione.",
         "client": "Club di triathlon",
         "tags": ["App web", "Diretta", "Sport"],
-        "cover_alt": "Anteprima di PSC Supersprint"
+        "cover_alt": "Logo del Paris Sport Club",
+        "illustration_alt": "Illustrazione del PSC Supersprint"
       },
       "choeurDesPaysduMontBlanc": {
         "title": "Chœur des Pays du Mont Blanc",
@@ -62,7 +64,9 @@
       "mobile": "App mobile",
       "count": "{count, plural, =0 {Nessun progetto} one {# progetto} other {# progetti}}"
     },
-    "view_project": "Vedi il progetto"
+    "view_project": "Vedi il progetto",
+    "since": "Dal {year}",
+    "updated": "Aggiornato: {date}"
   },
   "dailyFortune": {
     "title": "Daily Fortune",
@@ -86,13 +90,13 @@
         "daily_message": "Un nuovo messaggio ogni giorno: citazione motivante, affermazione positiva o frase da biscotto della fortuna",
         "ai_messages": "Messaggi sempre diversi, creati con l'aiuto dell'IA",
         "clean_design": "Una schermata facile da leggere, con qualche animazione",
-        "stores": "La pubblicazione sull'App Store e su Google Play, per iPhone e Android"
+        "stores": "La pubblicazione sull'App Store, per iPhone"
       }
     },
     "result": {
       "label": "Risultato",
       "title": "La nostra prima app online",
-      "description": "Daily Fortune è disponibile sull'App Store e su Google Play, e i suoi utenti ricevono un nuovo messaggio ogni giorno. Mostra che sappiamo portare un'app dall'idea fino alla pubblicazione.",
+      "description": "Daily Fortune è disponibile sull'App Store, e i suoi utenti ricevono un nuovo messaggio ogni giorno. Mostra che sappiamo portare un'app dall'idea fino alla pubblicazione.",
       "maintained": "Continua a essere aggiornata: la versione {version} è uscita il {date}."
     }
   },
@@ -125,7 +129,7 @@
       "label": "Risultato",
       "title": "Un sito seguito da dieci anni",
       "description": "Online dal 2016, il sito è stato rifatto e aggiornato man mano che gli strumenti del web evolvevano. È questo accompagnamento nel tempo che offriamo a ciascuno dei nostri clienti.",
-      "maintained": "La sua ultima versione, la {version}, è uscita il {date}."
+      "maintained": "La {version} è uscita a {date}, con un nuovo design."
     }
   },
   "mcomperat": {

@@ -40,7 +40,7 @@ export default function CaseStudySeo({ slug }: CaseStudySeoProps) {
             genre: t(`kinds.${project.kind}`),
             dateCreated: String(project.year),
             ...('latestRelease' in project && {
-              version: project.latestRelease.version,
+              version: 'version' in project.latestRelease ? project.latestRelease.version : undefined,
               dateModified: project.latestRelease.date,
             }),
             url,

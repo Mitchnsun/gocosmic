@@ -109,7 +109,7 @@ describe('DesignSystemShowcase', () => {
 
     expect(exceptions.getByRole('heading', { name: 'Orange button' })).toBeInTheDocument();
     expect(exceptions.getByText('calendar.google.com').parentElement).toHaveAttribute('data-theme', 'light');
-    expect(exceptions.getAllByRole('img')).toHaveLength(3);
+    expect(exceptions.getAllByRole('img')).toHaveLength(4);
     expect(exceptions.getByText('data-theme="dark"')).toHaveAttribute('data-theme', 'dark');
   });
 });

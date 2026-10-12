@@ -9,7 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Added
 
-- A new project page for Coach'n Pulse, the website of a triathlon and endurance sports coach in Grenoble that the studio has looked after since 2016, with its latest version and a link to the site
+- A new project page for Coach'n Pulse, the website of a triathlon and endurance sports coach in Grenoble that the studio has looked after since 2016, with its latest version and new design, and a link to the site
+- A project can now show a photo or a drawing on the projects list, with its logo in the corner, and its own colour around its logo on its page; Coach'n Pulse, mcomper.at and PSC Supersprint are the first to use it
+
+### Changed
+
+- mcomper.at now closes the projects list
+- Daily Fortune is presented as an iPhone app only for now, on the homepage and on its project page
+- Projects that keep being updated show the year of their latest update on the projects list, and both their creation year and the date of their latest update on their page
 
 ## [2.4.1] - 2026-10-12
 

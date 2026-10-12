@@ -21,7 +21,7 @@ export default function CoachNPulse() {
   const tCommon = useTranslations('case_study');
   const tList = useTranslations('projectsList');
   const locale = useLocale();
-  const { latestRelease, accent, cover } = PROJECTS_BY_SLUG.coachnpulse;
+  const { latestRelease, accent, cover, color } = PROJECTS_BY_SLUG.coachnpulse;
   const maintained = t('result.maintained', {
     version: latestRelease.version,
     date: formatReleaseDate(latestRelease.date, locale),
@@ -37,10 +37,11 @@ export default function CoachNPulse() {
         logo={{
           src: cover.src,
           alt: t('title'),
-          // The white logo keeps its black background in both themes.
+          // The logo keeps its black background and its brand-coloured frame in both themes.
           background: cover.background,
+          border: color,
         }}
-        meta={buildCaseStudyMeta('coachnpulse', tList)}
+        meta={buildCaseStudyMeta('coachnpulse', tList, locale)}
         sections={[
           {
             id: 'for-whom',

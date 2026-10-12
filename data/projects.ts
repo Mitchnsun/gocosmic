@@ -12,12 +12,16 @@ interface Project {
   kind: ProjectKind;
   /** Year the project was first released. */
   year: number;
-  /** Latest version shipped, for projects that keep being updated (date as `YYYY-MM-DD`). */
-  latestRelease?: { version: string; date: string };
+  /** Latest version shipped, its number when known, for projects that keep being updated (date as `YYYY-MM-DD`, or `YYYY-MM` when only the month is known). */
+  latestRelease?: { version?: string; date: string };
   /** Accent colour for the case study page and its badge. */
   accent: AccentToken;
   /** Omitted until a screenshot is provided: the card then shows a typographic cover. */
   cover?: ProjectCover;
+  /** Project colour (hex), framing the logo on the case study page. */
+  color?: string;
+  /** Photo or drawing of the project, 16/10, shown on the projects list card with the logo, if any, in its corner. */
+  illustration?: string;
 }
 
 /** Registered case studies, in display and navigation order. */
@@ -58,33 +62,45 @@ export const PROJECTS = [
     i18nKey: 'coachNPulse',
     href: '/projects/coachnpulse',
     kind: 'site',
-    year: 2026,
-    latestRelease: { version: '4.0.0', date: '2026-03-05' },
+    year: 2016,
+    latestRelease: { version: '5.0.0', date: '2026-10' },
     accent: 'aerospace',
     cover: {
-      src: '/projects/coachnpulse/coachnpulse-logo.webp',
-      width: 969,
-      height: 263,
+      src: '/projects/coachnpulse/coachnpulse-logo.png',
+      width: 320,
+      height: 306,
       fit: 'logo',
       background: '#000000',
     },
-  },
-  {
-    slug: 'mcomperat',
-    i18nKey: 'mcomperat',
-    href: '/projects/mcomperat',
-    kind: 'site',
-    year: 2026,
-    accent: 'aerospace',
-    cover: undefined,
+    color: '#4cb8e8',
+    illustration: '/projects/coachnpulse/coachnpulse-illustration.jpg',
   },
   {
     slug: 'psc-supersprint',
     i18nKey: 'pscSupersprint',
     href: '/projects/psc-supersprint',
     kind: 'webapp',
-    year: 2026,
+    year: 2020,
+    latestRelease: { date: '2026-04' },
     accent: 'jungle',
+    cover: {
+      src: '/projects/psc-supersprint/psc-supersprint-logo.png',
+      width: 242,
+      height: 238,
+      fit: 'logo',
+      background: '#fb2c36',
+    },
+    illustration: '/projects/psc-supersprint/psc-supersprint-illustration.png',
+  },
+  {
+    slug: 'mcomperat',
+    i18nKey: 'mcomperat',
+    href: '/projects/mcomperat',
+    kind: 'site',
+    year: 2014,
+    latestRelease: { version: '7.0', date: '2026-05' },
+    accent: 'aerospace',
     cover: undefined,
+    illustration: '/projects/mcomperat/mcomperat-illustration.jpg',
   },
 ] as const satisfies readonly Project[];

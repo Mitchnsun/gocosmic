@@ -11,17 +11,22 @@ interface ProjectsTranslator {
 
 /** Translated cards for every registered case study, in the order of `data/projects.ts`. */
 export function buildProjectCards(t: ProjectsTranslator): ProjectCardContent[] {
-  return PROJECTS.map(({ slug, href, kind, year, cover, i18nKey }) => ({
+  return PROJECTS.map(({ slug, href, kind, year, cover, i18nKey, ...project }) => ({
     slug,
     href,
     kind,
     kindLabel: t(`kinds.${kind}`),
     title: t(`items.${i18nKey}.title`),
-    year,
+    // A project that keeps being updated is dated by its latest update.
+    year: 'latestRelease' in project ? Number(project.latestRelease.date.slice(0, 4)) : year,
     client: t(`items.${i18nKey}.client`),
     description: t(`items.${i18nKey}.description`),
     tags: t.raw(`items.${i18nKey}.tags`) as string[],
     cover: cover && { ...cover, alt: t(`items.${i18nKey}.cover_alt`) },
+    illustration:
+      'illustration' in project
+        ? { src: project.illustration, alt: t(`items.${i18nKey}.illustration_alt`) }
+        : undefined,
     linkLabel: t('view_project'),
   }));
 }

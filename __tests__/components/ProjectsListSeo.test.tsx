@@ -44,14 +44,14 @@ describe('ProjectsListSeo', () => {
           {
             '@type': 'ListItem',
             position: 4,
-            name: 'mcomper.at',
-            url: 'https://www.gocosmic.dev/en/projects/mcomperat',
+            name: 'PSC Supersprint',
+            url: 'https://www.gocosmic.dev/en/projects/psc-supersprint',
           },
           {
             '@type': 'ListItem',
             position: 5,
-            name: 'PSC Supersprint',
-            url: 'https://www.gocosmic.dev/en/projects/psc-supersprint',
+            name: 'mcomper.at',
+            url: 'https://www.gocosmic.dev/en/projects/mcomperat',
           },
         ],
       },

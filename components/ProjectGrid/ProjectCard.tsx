@@ -11,7 +11,7 @@ export function ProjectCard({ project }: { project: ProjectCardContent }) {
   return (
     <article className="group border-line bg-surface hover:bg-line has-[a:focus-visible]:ring-aerospace-ink relative flex h-full flex-col overflow-hidden rounded-[20px] border transition-colors has-[a:focus-visible]:ring-2">
       <div className="relative">
-        <ProjectCover cover={project.cover} title={project.title} />
+        <ProjectCover cover={project.cover} illustration={project.illustration} title={project.title} />
         <Chip className="bg-bg/80 text-fg-2 absolute top-3 left-3 backdrop-blur-sm">{project.kindLabel}</Chip>
       </div>
       <div className="flex flex-1 flex-col gap-2.5 p-6">

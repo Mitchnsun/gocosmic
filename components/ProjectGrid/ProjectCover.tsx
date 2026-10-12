@@ -4,8 +4,39 @@ import { cn } from '@/design-system/lib/utils';
 
 import type { ProjectCardContent } from './ProjectGrid.types';
 
-/** 16/10 visual of a card: the project's logo or icon, or its name when no visual exists yet. */
-export function ProjectCover({ cover, title }: Pick<ProjectCardContent, 'cover' | 'title'>) {
+/**
+ * 16/10 visual of a card: the project's photo with its logo, if any, in the corner, its logo or icon alone, or its
+ * name when no visual exists yet.
+ */
+export function ProjectCover({
+  cover,
+  illustration,
+  title,
+}: Pick<ProjectCardContent, 'cover' | 'illustration' | 'title'>) {
+  if (illustration) {
+    return (
+      <div className="border-line relative aspect-[16/10] border-b">
+        <Image
+          src={illustration.src}
+          alt={illustration.alt}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+          className="object-cover"
+        />
+        {cover && (
+          <Image
+            src={cover.src}
+            alt={cover.alt}
+            width={cover.width}
+            height={cover.height}
+            className="border-line absolute top-3 right-3 size-10 rounded-xl border object-contain p-1"
+            style={{ background: cover.background }}
+          />
+        )}
+      </div>
+    );
+  }
+
   if (!cover) {
     return (
       <div aria-hidden="true" className="border-line bg-stripes grid aspect-[16/10] place-items-center border-b px-6">
