@@ -32,6 +32,14 @@ This file records lessons learned from past mistakes and corrections made during
 
 **Recurrence (2026-10-12)**: The llms.txt work was bumped to 2.5.0 against a `master` at 2.4.2, which was tagged. During the session, `master` merged 2.4.3 (not yet released) and the owner asked to fold the work into it. The version check made at the start of a task goes stale: fetch `master` again right before committing, and apply the rule above to whatever its latest entry is then.
 
+## Generated Files
+
+### A derived file needs an update rule for changes, not only for additions
+
+**Mistake**: The rules for `/llms.txt` and `/llms-full.txt` only covered adding a page or a simulator option, and the README claimed the files followed every change of copy on their own. A new section or message key on an existing page would have been silently left out.
+
+**Correct pattern**: When a file is derived from the pages (agent files, structured data, sitemap), document what it picks up on its own and what needs a manual edit, and make the rule apply to every change of a page, not only to new pages.
+
 ## CSS / TailwindCSS 4
 
 ### `--font-display` and `--font-body` must be declared in `@theme`

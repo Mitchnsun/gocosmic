@@ -181,7 +181,7 @@ The former `/journey` (3D experience), `/offers` and `/pricing` pages no longer 
 
 - **`/llms.txt`**: the site summarised for AI assistants and agents, in the [llmstxt.org](https://llmstxt.org) format: what the studio does, the regional and Swiss versions, the main pages, the case studies, the contact details and a note on how agents may quote the content
 - **`/llms-full.txt`**: the text of every page in one file, including what the HTML only shows on interaction (the info bubbles, the second plan, every slider step and its price) and the terms of sale
-- Both are in English and built at deployment from the same messages, project registry and price table as the pages (`lib/llms/`), so they follow every change of copy, project or price. The call booking is listed only when `NEXT_PUBLIC_GCAL_BOOKING_URL` is set
+- Both are in English and built at deployment from the same messages, project registry and price table as the pages (`lib/llms/`): an edited text, a new project or a new price shows up on its own, but a new page, section or option must be added to `lib/llms/` in the same change (see the [Files for AI agents](CLAUDE.md#files-for-ai-agents) rules in `CLAUDE.md`). The call booking is listed only when `NEXT_PUBLIC_GCAL_BOOKING_URL` is set
 
 ### Technical Features
 
