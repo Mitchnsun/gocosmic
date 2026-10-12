@@ -142,7 +142,8 @@ After making changes, validate the app manually:
    - `/projects/psc-supersprint` — PSC Supersprint showcase
    - `/projects/choeurdespaysdumontblanc` — Choeur des Pays du Mont Blanc showcase
    - `/offers`, `/pricing`, `/journey` (and their old localized slugs) — permanent redirect to `/services#pricing`, `/services#simulator` and `/services`
-5. `yarn test` — all tests must pass
+5. If page content changed: `yarn build && yarn start`, then check that `/llms.txt` and `/llms-full.txt` reflect it (see [Files for AI agents](CLAUDE.md#files-for-ai-agents))
+6. `yarn test` — all tests must pass
 
 ## Coverage System
 

@@ -3,21 +3,42 @@ import { useLocale, useTranslations } from 'next-intl';
 import { BASE_PRICE } from '@/components/PricingSimulator/constants';
 import { getCanonicalUrl } from '@/i18n/canonical';
 import { SITE_URL } from '@/lib/config';
-import type { Currency } from '@/lib/region';
+import { getPriceLineName, getPriceLines, getPriceLineTotal } from '@/lib/pricing/price-list';
+import { getCurrency, type Region } from '@/lib/region';
 
 import { JsonLd } from './JsonLd';
 import { getLocalizedLocalBusinessData } from './JsonLd.utils';
 
 interface ServiceSeoProps {
   description: string;
-  currency: Currency;
+  /** Region of the page: its currency, and the options it offers. */
+  region: Region;
 }
 
-/** The studio's offer as a service, with its starting monthly price in the page's currency. */
-export default function ServiceSeo({ description, currency }: ServiceSeoProps) {
+/** The studio's offer as a service: its starting monthly price, then every plan and option of the simulator. */
+export default function ServiceSeo({ description, region }: ServiceSeoProps) {
   const locale = useLocale();
   const t = useTranslations('footer');
+  const tBuilder = useTranslations('pricing.builder');
   const url = getCanonicalUrl(locale, '/services');
+  const priceCurrency = getCurrency(region).toUpperCase();
+
+  const monthlyOffer = (price: number, minimum = false) => ({
+    '@type': 'Offer',
+    price,
+    priceCurrency,
+    priceSpecification: {
+      '@type': 'UnitPriceSpecification',
+      price,
+      priceCurrency,
+      // A price that is a floor ("€40 or more").
+      ...(minimum && { minPrice: price }),
+      // UN/CEFACT code for a month: the price is a monthly subscription.
+      unitCode: 'MON',
+      // The page quotes the price excluding VAT.
+      valueAddedTaxIncluded: false,
+    },
+  });
 
   return (
     <JsonLd
@@ -31,19 +52,14 @@ export default function ServiceSeo({ description, currency }: ServiceSeoProps) {
         url,
         provider: { '@id': `${SITE_URL}/#company` },
         areaServed: getLocalizedLocalBusinessData(locale).areaServed,
-        offers: {
-          '@type': 'Offer',
-          price: BASE_PRICE,
-          priceCurrency: currency.toUpperCase(),
-          priceSpecification: {
-            '@type': 'UnitPriceSpecification',
-            price: BASE_PRICE,
-            priceCurrency: currency.toUpperCase(),
-            // UN/CEFACT code for a month: the price is a monthly subscription.
-            unitCode: 'MON',
-            // The page quotes the price excluding VAT.
-            valueAddedTaxIncluded: false,
-          },
+        offers: monthlyOffer(BASE_PRICE),
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: t('link_services'),
+          itemListElement: getPriceLines(region).map((line) => ({
+            ...monthlyOffer(getPriceLineTotal(line), line.orMore),
+            name: getPriceLineName(tBuilder, line),
+          })),
         },
       }}
     />

@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [2.4.3] - 2026-10-12
 
+### Added
+
+- AI assistants and search agents now find a summary of the site written for them: what the studio offers, its European and Swiss versions, its pages, its projects, how to get in touch, and how they may quote the site
+- A complete version for AI assistants gathers the text of every page in one place, including the details and price of every option and the terms of sale, which they could not read until now
+- Search engines now see the price of every plan and option of the subscription, not only the starting price
+
 ### Changed
 
 - Pages open faster: they are now prepared in advance and served straight from the hosting network, instead of being built again for each visit

@@ -7,19 +7,9 @@ import { Chip } from '@/design-system/chip';
 import { InfoPopover } from '@/design-system/info-popover';
 import type { Currency } from '@/lib/region';
 
-import { FORMULA_PRICES } from './constants';
+import { FORMULA_INCLUDES, FORMULA_PRICES, type IncludedItem } from './constants';
 import { usePriceFormat } from './PricingSimulator.hooks';
 import type { Formula } from './PricingSimulator.types';
-
-type IncludedItem = 'page' | 'hosting' | 'security' | 'legal' | 'email_button' | 'yearly_update' | 'editor' | 'news';
-
-const SHARED: readonly IncludedItem[] = ['page', 'hosting', 'security', 'legal', 'email_button', 'yearly_update'];
-
-/** What each formula includes; "You stay in control" adds its editing tool and news section. */
-const INCLUDED: Record<Formula, readonly IncludedItem[]> = {
-  managed: SHARED,
-  self_service: [...SHARED, 'editor', 'news'],
-};
 
 const WITH_INFO: ReadonlySet<IncludedItem> = new Set(['legal', 'editor', 'news']);
 
@@ -45,7 +35,7 @@ export function BaseCard({ formula, currency }: { formula: Formula; currency: Cu
       </div>
       <p className="text-fg-3 text-2xs mt-4 font-mono tracking-[0.2em] uppercase">{t('base.title')}</p>
       <ul className="mt-3 space-y-2">
-        {INCLUDED[formula].map((item) => {
+        {FORMULA_INCLUDES[formula].map((item) => {
           const label = t(`base.includes.${item}`);
           return (
             <li key={item} className="text-fg-2 flex items-center gap-3 text-sm">

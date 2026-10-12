@@ -9,6 +9,32 @@ export const FORMULAS: readonly Formula[] = ['managed', 'self_service'];
 /** Monthly price of each formula. "You stay in control" includes the editing tool and the news section. */
 export const FORMULA_PRICES: Record<Formula, number> = { managed: BASE_PRICE, self_service: 20 };
 
+/** What a formula includes, in display order; each key names a `pricing.builder.base.includes` message. */
+export type IncludedItem =
+  | 'page'
+  | 'hosting'
+  | 'security'
+  | 'legal'
+  | 'email_button'
+  | 'yearly_update'
+  | 'editor'
+  | 'news';
+
+const SHARED_INCLUDES: readonly IncludedItem[] = [
+  'page',
+  'hosting',
+  'security',
+  'legal',
+  'email_button',
+  'yearly_update',
+];
+
+/** What each formula includes; "You stay in control" adds its editing tool and news section. */
+export const FORMULA_INCLUDES: Record<Formula, readonly IncludedItem[]> = {
+  managed: SHARED_INCLUDES,
+  self_service: [...SHARED_INCLUDES, 'editor', 'news'],
+};
+
 /** Monthly surcharge per tickable add-on. The row order is the canonical order of the plan code: append, never reorder. */
 export const ADD_ON_PRICES = {
   domain: 5,
