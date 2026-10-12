@@ -274,6 +274,16 @@ Grep `components/CosmicCursor/` for the native selector being replaced (`input[t
 
 ---
 
+## Issues
+
+### Keep the `[CS-xx]` prefix for tickets attached to an epic
+
+**Mistake**: A standalone ticket (a new case study page) was titled `[CS-08] …` to continue the numbering of the latest case-study tickets.
+
+**Correct pattern**: Only tickets that belong to an epic get a `[XX-nn]` prefix. A standalone ticket gets a plain descriptive title.
+
+---
+
 ## Legal and business facts
 
 ### Ask what is changing before treating a legal page as the source of truth
