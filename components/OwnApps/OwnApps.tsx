@@ -8,7 +8,7 @@ import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, SECTION_Y } from '@/design-system/pill';
 import { Link } from '@/i18n/navigation';
 
-export interface OwnApp {
+interface OwnApp {
   name: string;
   /** Mono chip, e.g. `iOS · Android`. */
   badge: string;

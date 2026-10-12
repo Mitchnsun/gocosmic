@@ -33,7 +33,6 @@ export function setFormula(selection: PlanSelection, formula: Formula): PlanSele
 }
 
 export function toggleAddOn(selection: PlanSelection, key: AddOnKey): PlanSelection {
-  // eslint-disable-next-line security/detect-object-injection -- key is an AddOnKey
   const addOns = { ...selection.addOns, [key]: !selection.addOns[key] };
   if (key === 'email' && addOns.email) addOns.domain = true;
   if (key === 'domain' && !addOns.domain) addOns.email = false;
@@ -42,14 +41,12 @@ export function toggleAddOn(selection: PlanSelection, key: AddOnKey): PlanSelect
 }
 
 export function toggleTiered(selection: PlanSelection, key: TieredKey): PlanSelection {
-  // eslint-disable-next-line security/detect-object-injection -- key is a TieredKey
   const next = { ...selection, [key]: selection[key] === null ? 0 : null };
   if (key === 'analytics' && next.analytics === null) next.addOns = { ...next.addOns, detailed_analytics: false };
   return next;
 }
 
 export function setTier(selection: PlanSelection, key: TieredKey, value: number): PlanSelection {
-  // eslint-disable-next-line security/detect-object-injection -- key is a TieredKey
   return { ...selection, [key]: clampTier(value, TIERED_TABLES[key]) };
 }
 
@@ -79,7 +76,6 @@ export function setUpdates(selection: PlanSelection, value: number): PlanSelecti
 /** Lowest update tier the chosen article rhythm needs, since each published article counts as a change. */
 export function getUpdatesFloor(articles: ArticleTier | null): UpdateTier | null {
   if (articles === null) return null;
-  // eslint-disable-next-line security/detect-object-injection -- articles is an ArticleTier
   const { minUpdates } = ARTICLE_TIERS[articles];
   return clampTier(
     UPDATE_TIERS.findIndex((tier) => tier.key === minUpdates),

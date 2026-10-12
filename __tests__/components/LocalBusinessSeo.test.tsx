@@ -5,11 +5,11 @@ import LocalBusinessSeo from '@/components/JsonLd/LocalBusinessSeo';
 import { render } from '../test-utils';
 
 const jsonLdScriptMock = vi.fn((props: unknown) => (
-  <script data-testid="local-business-json-ld" data-props={JSON.stringify(props)} />
+  <div data-testid="local-business-json-ld" data-props={JSON.stringify(props)} />
 ));
 
-vi.mock('next-seo', () => ({
-  JsonLdScript: (props: unknown) => jsonLdScriptMock(props),
+vi.mock('@/components/JsonLd/JsonLd', () => ({
+  JsonLd: (props: unknown) => jsonLdScriptMock(props),
 }));
 
 describe('LocalBusinessSeo', () => {
@@ -30,7 +30,7 @@ describe('LocalBusinessSeo', () => {
         name: 'Cosmic Studio',
         alternateName: 'Go Cosmic',
         description:
-          'Web and mobile studio based in Chêne-Bougeries, near Geneva. Websites and apps for craftspeople, associations and independents in French-speaking Switzerland and Haute-Savoie, including Annecy.',
+          'Web and mobile studio based in Chêne-Bougeries, near Geneva. Websites and apps for craftspeople, small businesses, professional practices and associations in French-speaking Switzerland and Haute-Savoie, including Annecy.',
         url: 'https://www.gocosmic.dev',
         image: 'https://www.gocosmic.dev/og-default.jpg',
         email: 'contact@gocosmic.dev',
@@ -55,7 +55,7 @@ describe('LocalBusinessSeo', () => {
       expect.objectContaining({
         data: expect.objectContaining({
           description:
-            'Studio web et mobile installé à Chêne-Bougeries, près de Genève. Sites et applications pour les artisans, associations et indépendants de Suisse romande et de Haute-Savoie, notamment à Annecy.',
+            'Studio web et mobile installé à Chêne-Bougeries, près de Genève. Sites et applications pour les artisans, PME, professions libérales et associations de Suisse romande et de Haute-Savoie, notamment à Annecy.',
           areaServed: ['Genève', 'Annecy', 'Haute-Savoie', 'Suisse romande'],
         }),
       })

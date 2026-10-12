@@ -232,13 +232,13 @@
       },
       "guidance": {
         "title": "Acompañamiento",
-        "label": "Asesoría, UX/UI y diseño",
+        "label": "Asesoría y diseño",
         "price": "Tarifa por día",
-        "description": "Para ir más allá de la maqueta gratuita sin tener que empezar el desarrollo: arquitectura, decisiones técnicas, UX/UI y diseño, con un diseñador en el equipo.",
+        "description": "Para ir más allá de la maqueta gratuita sin tener que empezar el desarrollo: la organización del sitio, las decisiones técnicas, el recorrido de los visitantes y el diseño, con un/a diseñador/a colaborador/a.",
         "features": {
-          "architecture": "Arquitectura y decisiones técnicas",
-          "design": "UX/UI, recorridos de usuario y maquetas detalladas",
-          "designer": "Un diseñador que trabaja junto al desarrollador"
+          "architecture": "Organización del sitio y decisiones técnicas",
+          "design": "Recorrido de los visitantes y maquetas detalladas",
+          "designer": "Un/a diseñador/a colaborador/a, que trabaja junto al desarrollador"
         },
         "cta": "Hablemos"
       },
@@ -246,11 +246,11 @@
         "title": "Refuerzo",
         "label": "Sitio existente, equipo reforzado",
         "price": "Tarifa por día",
-        "description": "Para hacer evolucionar un sitio que ya tienes, ya sea con mejoras técnicas o con nuevas funcionalidades, con uno o varios desarrolladores según el alcance del proyecto.",
+        "description": "Para hacer evolucionar un sitio que ya tienes, ya sea con mejoras técnicas o con nuevas funcionalidades, con uno o varios desarrolladores/as colaboradores/as según el alcance del proyecto.",
         "features": {
           "technical": "Mejora técnica: rendimiento, seguridad, actualizaciones",
           "features": "Nuevas funcionalidades en un sitio existente",
-          "team": "Uno o varios desarrolladores según el alcance del proyecto"
+          "team": "Uno o varios desarrolladores/as colaboradores/as según el alcance del proyecto"
         },
         "cta": "Hablemos"
       },

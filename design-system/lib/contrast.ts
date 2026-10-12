@@ -43,7 +43,7 @@ export const contrastRatio = (foreground: Rgba | string, background: Rgba | stri
 };
 
 /** WCAG AA verdict: `aa` for body text (≥ 4.5), `large` for large text and UI parts (≥ 3), `fail` otherwise. */
-export type ContrastLevel = 'aa' | 'large' | 'fail';
+type ContrastLevel = 'aa' | 'large' | 'fail';
 
 export const contrastLevel = (ratio: number): ContrastLevel => {
   if (ratio >= 4.5) return 'aa';

@@ -76,7 +76,7 @@ export default async function LocaleLayout({
   return (
     // next-themes sets data-theme on <html> before hydration, hence suppressHydrationWarning.
     <html
-      lang={locale || 'en'}
+      lang={locale}
       className={`${spaceGrotesk.variable} ${inter.variable} ${spaceMono.variable}`}
       suppressHydrationWarning>
       <body className="bg-bg">

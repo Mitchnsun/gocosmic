@@ -4,9 +4,9 @@ import { createContext, Dispatch, SetStateAction, useContext, useEffect, useStat
 
 export const STORAGE_KEY = 'gocosmic.analytics-consent';
 
-export type ConsentChoice = 'accepted' | 'refused';
+type ConsentChoice = 'accepted' | 'refused';
 
-type CookieConsentContextType = {
+interface CookieConsentContextType {
   choice: ConsentChoice | null;
   isCustomizing: boolean;
   isDismissable: boolean;
@@ -16,7 +16,7 @@ type CookieConsentContextType = {
   saveChoice: (choice: ConsentChoice) => void;
   setIsCustomizing: Dispatch<SetStateAction<boolean>>;
   setAnalyticsEnabled: Dispatch<SetStateAction<boolean>>;
-};
+}
 
 const CookieConsentContext = createContext<CookieConsentContextType | null>(null);
 

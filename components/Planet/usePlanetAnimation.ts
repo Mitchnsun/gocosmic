@@ -15,7 +15,7 @@ const FALLBACK_X_AMPLITUDE = 8;
 const FALLBACK_Y_AMPLITUDE = 5;
 const FALLBACK_Y_FREQUENCY = 0.7;
 
-export interface UsePlanetAnimationOptions {
+interface UsePlanetAnimationOptions {
   /** Parallax source. */
   parallaxMode?: ParallaxMode;
   /** Maximum gyroscope tilt in pixels. */

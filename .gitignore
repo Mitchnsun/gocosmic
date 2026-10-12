@@ -40,9 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Cache
-.eslintcache
-
 # AI agent ephemeral planning files (lessons go to docs/lessons.md instead)
 /tasks
 .superpowers/*

@@ -20,7 +20,6 @@ const NEED_LABELS: Record<ContactNeed, string> = {
 /** Label of a validated need, or a dash when the visitor did not pick one. */
 const needLabel = (need: string) => {
   const trimmed = need.trim();
-  // eslint-disable-next-line security/detect-object-injection -- trimmed is the typed ContactNeed union
   return isContactNeed(trimmed) ? NEED_LABELS[trimmed] : '—';
 };
 

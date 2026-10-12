@@ -59,7 +59,6 @@ const tierSegment = (prefix: string, value: number | null) => `${prefix}${value 
  */
 export function encodePlanCode({ projectType, websiteType, selection, region }: DecodedPlan): string {
   const plan = normalizePlan(selection);
-  // eslint-disable-next-line security/detect-object-injection -- keys come from ADD_ON_KEYS
   const addOns = ADD_ON_KEYS.filter((key) => plan.addOns[key]);
 
   return [
@@ -124,7 +123,6 @@ export function decodePlanCode(raw: unknown): DecodedPlan | null {
   if (addOnSegment !== NONE) {
     for (const key of addOnSegment.split('.')) {
       if (!isOneOf(ADD_ON_KEYS, key)) return null;
-      // eslint-disable-next-line security/detect-object-injection -- key was validated against ADD_ON_KEYS
       addOns[key] = true;
     }
   }

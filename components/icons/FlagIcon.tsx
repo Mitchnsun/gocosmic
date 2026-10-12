@@ -5,10 +5,10 @@ import { cn } from '@/design-system/lib/utils';
 export type FlagCode = 'gb' | 'fr' | 'es' | 'de' | 'it' | 'ch' | 'eu';
 
 const stripes = (colors: string[]) =>
-  colors.map((fill, i) => <rect key={fill + i} x={i * 10} width="10" height="20" fill={fill} />);
+  colors.map((fill, i) => <rect key={`${fill}${i}`} x={i * 10} width="10" height="20" fill={fill} />);
 
 const rows = (bands: [fill: string, y: number, height: number][]) =>
-  bands.map(([fill, y, height]) => <rect key={fill + y} y={y} width="30" height={height} fill={fill} />);
+  bands.map(([fill, y, height]) => <rect key={`${fill}${y}`} y={y} width="30" height={height} fill={fill} />);
 
 const FLAGS: Record<FlagCode, React.ReactNode> = {
   fr: stripes(['#0055A4', '#FFFFFF', '#EF4135']),
@@ -62,7 +62,6 @@ export default function FlagIcon({
 }: Omit<SVGProps<SVGSVGElement>, 'children' | 'ref'> & { code: FlagCode }) {
   return (
     <svg className={cn('shrink-0 rounded-[2px]', className)} viewBox="0 0 30 20" aria-hidden="true" {...props}>
-      {/* eslint-disable-next-line security/detect-object-injection -- code is a typed union */}
       {FLAGS[code]}
     </svg>
   );

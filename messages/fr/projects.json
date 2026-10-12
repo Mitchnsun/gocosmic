@@ -2,10 +2,10 @@
   "projectsList": {
     "meta": {
       "title": "Réalisations · Sites et applications | Cosmic Studio",
-      "description": "Sites et applications réalisés par Cosmic Studio pour une chorale, un club de triathlon et des indépendants, à Genève et en Haute-Savoie."
+      "description": "Sites et applications réalisés par Cosmic Studio : le site d'une chorale, les résultats en direct d'un club de triathlon et les projets du studio."
     },
-    "title": "Des sites et des applications <em>utilisés au quotidien.</em>",
-    "subtitle": "Une sélection de projets réalisés pour nos clients et pour le studio. Chaque fiche explique pour qui nous avons travaillé, ce que nous avons fait et ce que cela a changé.",
+    "title": "Des sites et des applications <em>dont on se sert.</em>",
+    "subtitle": "Certains ont été faits pour des clients, d'autres pour le studio lui-même. Chaque fiche explique pour qui nous avons travaillé, ce que nous avons fait et ce que cela a changé.",
     "items": {
       "choeurDesPaysduMontBlanc": {
         "title": "Chœur des Pays du Mont Blanc",
@@ -37,8 +37,8 @@
       }
     },
     "cta": {
-      "title": "Votre projet pourrait être le prochain sur cette liste.",
-      "description": "Présentez-nous votre activité en quelques lignes. Nous vous répondons rapidement.",
+      "title": "Racontez-nous le vôtre.",
+      "description": "Décrivez votre activité en quelques lignes, et donnez l'adresse de votre site si vous en avez déjà un.",
       "button": "Parler de mon projet"
     },
     "eyebrow": "[ Réalisations · {count} ]",
@@ -69,23 +69,23 @@
     "for_whom": {
       "label": "Pour qui",
       "title": "Un petit coup de pouce chaque matin",
-      "description": "Daily Fortune n'est pas un projet client : c'est l'application du studio, conçue et publiée par nos soins. Elle s'adresse à toute personne qui cherche un petit élan le matin, une phrase pour garder le cap ou un message à partager."
+      "description": "Daily Fortune est l'application du studio, conçue et publiée par nos soins. Elle s'adresse à toute personne qui cherche un petit élan le matin, une phrase pour garder le cap ou un message à partager."
     },
     "what_we_did": {
       "label": "Ce qu'on a fait",
       "title": "Une application mobile, de l'idée à la publication",
-      "description": "Nous avons tout fait nous-mêmes, de la première idée jusqu'à la mise en ligne sur les boutiques d'applications.",
+      "description": "Nous avons tout fait nous-mêmes.",
       "items": {
         "daily_message": "Un nouveau message chaque jour : citation motivante, affirmation positive ou petite phrase de biscuit chinois",
-        "ai_messages": "Des messages variés, créés avec l'aide de l'IA, qui parlent du quotidien et des envies de chacun",
-        "clean_design": "Un écran épuré et réactif, avec des animations fluides",
+        "ai_messages": "Des messages variés, créés avec l'aide de l'IA",
+        "clean_design": "Un écran simple à lire, avec quelques animations",
         "stores": "Une publication sur l'App Store et Google Play, pour iPhone et Android"
       }
     },
     "result": {
       "label": "Résultat",
       "title": "Notre première application en ligne",
-      "description": "Daily Fortune est disponible sur l'App Store et Google Play, et ses utilisateurs reçoivent un nouveau message chaque jour. Pour vous, c'est la preuve que nous savons mener une application de l'idée jusqu'à sa publication.",
+      "description": "Daily Fortune est disponible sur l'App Store et Google Play, et ses utilisateurs reçoivent un nouveau message chaque jour. Elle montre que nous savons mener une application de l'idée jusqu'à sa publication.",
       "maintained": "Elle est toujours mise à jour : la version {version} est sortie le {date}."
     }
   },
@@ -100,18 +100,18 @@
     },
     "for_whom": {
       "label": "Pour qui",
-      "title": "Un CV en ligne, et notre terrain d'essai",
-      "description": "mcomper.at est le CV en ligne de Matthieu Compérat, votre interlocuteur chez Cosmic Studio : son parcours et ses compétences, sur une seule page. C'est aussi là que nous testons les outils que nous utilisons ensuite pour nos clients."
+      "title": "Un CV en ligne",
+      "description": "mcomper.at est le CV en ligne de Matthieu Compérat, votre interlocuteur chez Cosmic Studio. Son parcours et ses compétences tiennent sur une seule page."
     },
     "what_we_did": {
       "label": "Ce qu'on a fait",
       "title": "Un CV clair, rapide et en deux langues",
-      "description": "Nous avons conçu un site simple à lire et facile à faire évoluer, qui nous sert aussi à essayer nos méthodes de travail avant de les appliquer à vos projets.",
+      "description": "Nous avons conçu un site simple à lire et facile à faire évoluer.",
       "items": {
         "two_languages": "Un site disponible en français et en anglais, avec des textes propres à chaque langue",
         "found_on_google": "Des pages préparées pour être trouvées sur Google",
         "fast_on_phone": "Des pages rapides à charger et lisibles sur téléphone",
-        "accessible": "Un site accessible à tous, dans le respect des bonnes pratiques",
+        "accessible": "Un site accessible à tous",
         "ai_with_review": "L'IA comme assistant pour rédiger et traduire les textes, toujours relus par un humain"
       }
     },
@@ -123,7 +123,7 @@
   },
   "choeurDesPaysduMontBlanc": {
     "title": "Chœur des Pays du Mont Blanc",
-    "subtitle": "Le site d'un chœur amateur de Haute-Savoie : concerts, répertoire et répétitions, au même endroit.",
+    "subtitle": "Le site d'un chœur amateur de Haute-Savoie, avec ses concerts, son répertoire et ses répétitions.",
     "cta": {
       "title": "Découvrez le chœur",
       "description": "Prochains concerts, répertoire, répétitions : tout est sur le site du chœur.",
@@ -133,7 +133,7 @@
     "for_whom": {
       "label": "Pour qui",
       "title": "Un chœur amateur de Haute-Savoie",
-      "description": "Le Chœur des Pays du Mont Blanc est une association de chanteurs amateurs en Haute-Savoie. Il lui fallait un seul endroit pour informer ses membres, faire connaître ses concerts et accueillir de nouvelles voix."
+      "description": "Le Chœur des Pays du Mont Blanc est une association de chanteurs amateurs en Haute-Savoie. Il lui fallait un site qui serve à ses membres autant qu'à ceux qui ne le connaissent pas encore."
     },
     "what_we_did": {
       "label": "Ce qu'on a fait",
@@ -149,7 +149,7 @@
     "result": {
       "label": "Résultat",
       "title": "Un seul endroit pour suivre le chœur",
-      "description": "Le site est devenu le point de rendez-vous principal du chœur : les membres y trouvent horaires et nouvelles, le public découvre les prochains concerts, et celles et ceux qui veulent chanter savent comment le rejoindre."
+      "description": "Les membres y trouvent leurs horaires et les nouvelles, le public les prochains concerts, et ceux qui veulent chanter la marche à suivre pour rejoindre le chœur."
     }
   }
 }

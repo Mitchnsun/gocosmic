@@ -9,8 +9,8 @@ export const FORMULAS: readonly Formula[] = ['managed', 'self_service'];
 /** Monthly price of each formula. "You stay in control" includes the editing tool and the news section. */
 export const FORMULA_PRICES: Record<Formula, number> = { managed: BASE_PRICE, self_service: 20 };
 
-/** Monthly surcharge per tickable add-on. */
-export const ADD_ON_PRICES: Record<AddOnKey, number> = {
+/** Monthly surcharge per tickable add-on. The row order is the canonical order of the plan code: append, never reorder. */
+export const ADD_ON_PRICES = {
   domain: 5,
   swiss_hosting: 10,
   email: 15,
@@ -22,22 +22,10 @@ export const ADD_ON_PRICES: Record<AddOnKey, number> = {
   monitoring: 5,
   detailed_analytics: 5,
   redirects: 5,
-};
+} as const satisfies Record<string, number>;
 
 /** Canonical order of the add-ons, used by the plan code. */
-export const ADD_ON_KEYS: readonly AddOnKey[] = [
-  'domain',
-  'swiss_hosting',
-  'email',
-  'contact_form',
-  'booking',
-  'reviews',
-  'english',
-  'news',
-  'monitoring',
-  'detailed_analytics',
-  'redirects',
-];
+export const ADD_ON_KEYS: readonly AddOnKey[] = Object.keys(ADD_ON_PRICES) as AddOnKey[];
 
 /** "Number of pages" slider. */
 export const PAGE_TIERS = [
@@ -98,19 +86,7 @@ export const ONE_YEAR_OPTIONS: ReadonlySet<AddOnKey | TieredKey | 'mailboxes'> =
 
 export const INITIAL_SELECTION: PlanSelection = {
   formula: 'managed',
-  addOns: {
-    domain: false,
-    swiss_hosting: false,
-    email: false,
-    contact_form: false,
-    booking: false,
-    reviews: false,
-    english: false,
-    news: false,
-    monitoring: false,
-    detailed_analytics: false,
-    redirects: false,
-  },
+  addOns: Object.fromEntries(ADD_ON_KEYS.map((key) => [key, false])) as Record<AddOnKey, boolean>,
   pages: 0,
   updatesEnabled: false,
   updates: 0,

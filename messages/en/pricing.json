@@ -232,13 +232,13 @@
       },
       "guidance": {
         "title": "Guidance",
-        "label": "Advice, UX/UI and design",
+        "label": "Advice and design",
         "price": "Day rate",
-        "description": "To go further than the free mockup without necessarily starting development: architecture, technical choices, UX/UI and design, with a designer on board.",
+        "description": "To go further than the free mockup without necessarily starting development: how the site is organised, technical choices, the visitor journey and design, with a partner designer.",
         "features": {
-          "architecture": "Architecture and technical choices",
-          "design": "UX/UI, user journeys and detailed mockups",
-          "designer": "A designer working alongside the developer"
+          "architecture": "Site organisation and technical choices",
+          "design": "Visitor journeys and detailed mockups",
+          "designer": "A partner designer, working alongside the developer"
         },
         "cta": "Let's talk"
       },
@@ -246,11 +246,11 @@
         "title": "Reinforcement",
         "label": "Existing site, extra hands",
         "price": "Day rate",
-        "description": "To improve an existing site, whether through technical work or new features, with one or several developers depending on the scope.",
+        "description": "To improve an existing site, whether through technical work or new features, with one or several partner developers depending on the scope.",
         "features": {
           "technical": "Technical improvements: performance, security, updates",
           "features": "New features on an existing site",
-          "team": "One or several developers depending on the scope"
+          "team": "One or several partner developers depending on the scope"
         },
         "cta": "Let's talk"
       },

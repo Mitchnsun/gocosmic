@@ -12,7 +12,6 @@ interface StatusBarProps {
 /** HUD strip above the header: studio availability on the left, studio base on the right. */
 const StatusBar = ({ region = DEFAULT_REGION }: StatusBarProps) => {
   const t = useTranslations('status_bar');
-  // eslint-disable-next-line security/detect-object-injection -- region is the typed Region union
   const { city, altitude } = STUDIO_BASES[region];
 
   return (

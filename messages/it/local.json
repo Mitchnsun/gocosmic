@@ -1,15 +1,15 @@
 {
   "local": {
     "meta": {
-      "title": "Creazione siti internet · Ginevra, Annecy, Alta Savoia | Cosmic Studio",
-      "description": "Creazione di siti internet a Ginevra, Annecy e in Alta Savoia per artigiani, associazioni e liberi professionisti. Prezzi in chiaro e mockup gratuito, senza impegno."
+      "title": "Creazione siti internet a Ginevra e Annecy | Cosmic Studio",
+      "description": "Creazione di siti internet a Ginevra, Annecy e in Alta Savoia per artigiani, PMI, indipendenti e associazioni. Prezzi in chiaro, mockup gratuito senza impegno."
     },
     "intro": {
       "eyebrow": "[ Ginevra · Annecy · Alta Savoia ]",
-      "title": "Il tuo studio web, <em>tra Ginevra e Annecy.</em>",
+      "title": "Uno studio web <em>tra Ginevra e Annecy.</em>",
       "lead": {
-        "ch": "Cosmic Studio ha sede a Chêne-Bougeries, vicino a Ginevra. Creiamo siti e app per artigiani, associazioni e liberi professionisti di Ginevra, Annecy e dell'Alta Savoia, e veniamo a trovarti di persona.",
-        "fr": "Cosmic Studio lavora tra Annecy e Ginevra. Creiamo siti e app per artigiani, associazioni e liberi professionisti dell'Alta Savoia, e veniamo a trovarti di persona."
+        "ch": "Cosmic Studio ha sede a Chêne-Bougeries, vicino a Ginevra. Creiamo siti e app per artigiani, imprese, studi professionali e associazioni di Ginevra, Annecy e dell'Alta Savoia, e veniamo a trovarti di persona.",
+        "fr": "Cosmic Studio lavora tra Annecy e Ginevra. Creiamo siti e app per artigiani, imprese, studi professionali e associazioni dell'Alta Savoia, e veniamo a trovarti di persona."
       },
       "primary": "Parliamo del tuo progetto",
       "secondary": "Vedi servizi e prezzi"
@@ -20,7 +20,7 @@
       "items": {
         "geneva": {
           "title": "Ginevra",
-          "description": "Lo studio è a Chêne-Bougeries. Ci vediamo da te, nel tuo laboratorio o davanti a un caffè."
+          "description": "Lo studio è a Chêne-Bougeries. Ci vediamo nel tuo laboratorio, nei tuoi uffici o davanti a un caffè."
         },
         "romandy": {
           "title": "Svizzera romanda",

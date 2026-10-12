@@ -3,15 +3,12 @@ import pluginNext from '@next/eslint-plugin-next';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import importPlugin from 'eslint-plugin-import';
 import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
-import onlyWarn from 'eslint-plugin-only-warn';
 import prettierPlugin from 'eslint-plugin-prettier';
 import pluginReact from 'eslint-plugin-react';
 import pluginReactHooks from 'eslint-plugin-react-hooks';
 import securityPlugin from 'eslint-plugin-security';
 import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort';
-import unicornPlugin from 'eslint-plugin-unicorn';
 import unusedImportsPlugin from 'eslint-plugin-unused-imports';
-import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 /** Class names drawing on a default Tailwind palette, e.g. `text-slate-400` or `hover:bg-blue-500/50`. */
@@ -35,13 +32,17 @@ const THEME_NOMINAL =
 const config = [
   js.configs.recommended,
   eslintConfigPrettier,
-  ...tseslint.configs.recommended,
+  ...tseslint.configs.strictTypeChecked,
+  ...tseslint.configs.stylisticTypeChecked,
+  {
+    // tsconfig.check.json covers the tests too, unlike tsconfig.json.
+    languageOptions: { parserOptions: { project: './tsconfig.check.json', tsconfigRootDir: import.meta.dirname } },
+  },
   securityPlugin.configs.recommended,
   {
     plugins: {
       prettier: prettierPlugin,
       import: importPlugin,
-      unicorn: unicornPlugin,
       'unused-imports': unusedImportsPlugin,
       'simple-import-sort': simpleImportSortPlugin,
     },
@@ -53,8 +54,16 @@ const config = [
       'import/first': 'error',
       'import/newline-after-import': 'error',
       'import/no-duplicates': 'error',
-      'unicorn/prevent-abbreviations': 'off',
-      'unicorn/filename-case': 'off',
+      // Flags every typed-key lookup (`record[key]`) in a strict TypeScript codebase: noise, not signal.
+      'security/detect-object-injection': 'off',
+      // `() => setOpen(false)` is idiomatic in handlers.
+      '@typescript-eslint/no-confusing-void-expression': ['error', { ignoreArrowShorthand: true }],
+      '@typescript-eslint/restrict-template-expressions': ['error', { allowNumber: true }],
+      '@typescript-eslint/no-empty-function': ['error', { allow: ['arrowFunctions'] }],
+      // `||` on a string also falls back on the empty one, which env variables and form fields rely on.
+      '@typescript-eslint/prefer-nullish-coalescing': ['error', { ignorePrimitives: { string: true } }],
+      // Next.js expects `async redirects()` / `async headers()` even without an await.
+      '@typescript-eslint/require-await': 'off',
       'no-restricted-imports': [
         'error',
         {
@@ -93,15 +102,7 @@ const config = [
       'no-restricted-imports': 'off',
     },
   },
-  {
-    ...pluginReact.configs.flat.recommended,
-    languageOptions: {
-      ...pluginReact.configs.flat.recommended.languageOptions,
-      globals: {
-        ...globals.serviceworker,
-      },
-    },
-  },
+  pluginReact.configs.flat.recommended,
   pluginJsxA11y.flatConfigs.recommended,
   {
     plugins: {
@@ -124,34 +125,25 @@ const config = [
     },
   },
   {
-    plugins: {
-      onlyWarn,
-    },
-  },
-  {
     files: ['__tests__/**/*', '**/*.test.*', '**/*.spec.*'],
     rules: {
       '@next/next/no-html-link-for-pages': 'off',
+      // Mocks and DOM lookups in tests are loosely typed on purpose.
+      '@typescript-eslint/no-non-null-assertion': 'off',
+      '@typescript-eslint/no-unsafe-assignment': 'off',
+      '@typescript-eslint/no-unsafe-member-access': 'off',
+      '@typescript-eslint/no-unsafe-call': 'off',
+      '@typescript-eslint/no-unsafe-return': 'off',
+      '@typescript-eslint/unbound-method': 'off',
     },
   },
   {
-    files: ['next-env.d.ts'],
-    rules: {
-      '@typescript-eslint/triple-slash-reference': 'off',
-    },
+    // Plain JavaScript files sit outside the TypeScript project.
+    files: ['**/*.js', '**/*.mjs', '**/*.cjs'],
+    ...tseslint.configs.disableTypeChecked,
   },
   {
-    ignores: [
-      'dist/**',
-      '.next/**',
-      'node_modules/**',
-      'coverage/**',
-      '**/__snapshots__/**',
-      'messages/**',
-      'public/**',
-      'next-env.d.ts',
-      '.eslintcache',
-    ],
+    ignores: ['.next/**', 'coverage/**', 'messages/**', 'public/**', 'next-env.d.ts'],
   },
 ];
 

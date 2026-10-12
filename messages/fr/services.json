@@ -21,7 +21,7 @@
         "showcase": {
           "title": "Sites vitrine",
           "description": "Pour présenter votre activité, vos réalisations et vos horaires, et être trouvé sur Google par les gens près de chez vous.",
-          "tags": ["Artisans", "Associations", "Indépendants"]
+          "tags": ["Entreprises", "Indépendants", "Associations"]
         },
         "shops": {
           "title": "Boutiques & réservations",
@@ -63,12 +63,16 @@
         "content": {
           "question": "Faites-vous aussi les textes et les photos ?",
           "answer": "Nous vous aidons à rédiger et nous relisons tout, en pensant aux mots que vos clients tapent sur Google. Pour les photos et les vidéos, nous utilisons les vôtres, ou nous les faisons réaliser sur devis par un ou une professionnel·le de la région, avec qui nous gérons la relation."
+        },
+        "existing": {
+          "question": "J'ai déjà un site, pouvez-vous le reprendre ?",
+          "answer": "Oui. Nous commençons par un état des lieux gratuit de votre site actuel : ce qui fonctionne, ce qui fait fuir les visiteurs et comment il ressort sur Google. Ensuite, nous vous disons s'il vaut mieux le refaire ou le faire évoluer tel qu'il est."
         }
       }
     },
     "cta": {
       "title": "Parlons de votre site.",
-      "description": "Présentez-nous votre activité en quelques lignes. Nous vous répondons rapidement, puis nous préparons votre maquette gratuite si vous le souhaitez.",
+      "description": "Dites-nous ce qu'il vous faut. Nous préparons ensuite votre maquette gratuite, ou un état des lieux de votre site actuel.",
       "primary_button": "Parler de mon projet"
     }
   }

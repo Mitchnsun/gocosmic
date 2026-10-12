@@ -4,9 +4,9 @@ import { useTranslations } from 'next-intl';
 
 import { Field, FIELD_TEXTAREA } from '@/design-system/field';
 import { cn } from '@/design-system/lib/utils';
+import { WISHES_MAX_LENGTH } from '@/lib/validation/free-mockup.schema';
 
 import type { WishesTextareaProps } from './FreeMockupForm.types';
-import { getWishesCounter, WISHES_MAX_LENGTH } from './FreeMockupForm.utils';
 
 const FIELD_ID = 'free-mockup-wishes';
 const COUNTER_ID = 'free-mockup-wishes-counter';
@@ -15,7 +15,8 @@ const ERROR_ID = 'free-mockup-wishes-error';
 /** Free-text field where the visitor describes what they have in mind, with a live counter. */
 export function WishesTextarea({ value, onChange, error, onBlur }: WishesTextareaProps) {
   const t = useTranslations('freeMockup');
-  const { count, max, isAtLimit } = getWishesCounter(value);
+  // Measured in UTF-16 code units, like `maxLength` and the schema.
+  const isAtLimit = value.length >= WISHES_MAX_LENGTH;
 
   return (
     <Field id={FIELD_ID} label={t('form.wishes_label')} hint={t('form.optional')}>
@@ -43,7 +44,7 @@ export function WishesTextarea({ value, onChange, error, onBlur }: WishesTextare
         <span
           id={COUNTER_ID}
           className={cn('font-mono text-xs tabular-nums', isAtLimit ? 'text-aerospace-ink' : 'text-fg-3')}>
-          {t('form.wishes_counter', { count, max })}
+          {t('form.wishes_counter', { count: value.length, max: WISHES_MAX_LENGTH })}
         </span>
       </div>
     </Field>

@@ -7,17 +7,17 @@
     "title": "Ein kleines Studio, <em>damit Ihre Kundschaft Sie findet.</em>",
     "eyebrow": "[ Über uns ]",
     "cta": {
-      "title": "Arbeiten wir zusammen.",
-      "description": "Erzählen Sie uns in ein paar Zeilen, was Sie machen. Matthieu antwortet Ihnen schnell.",
+      "title": "Schreiben Sie Matthieu.",
+      "description": "Ein paar Zeilen dazu, was Sie machen, genügen für den Anfang.",
       "button": "Mein Projekt besprechen"
     },
-    "lead": "Cosmic Studio, das ist Matthieu Compérat, Entwickler in Chêne-Bougeries. Er erstellt Websites und Apps für Handwerksbetriebe, Vereine und Selbstständige, von Genf bis Annecy.",
+    "lead": "Cosmic Studio, das ist Matthieu Compérat, Entwickler in Chêne-Bougeries. Er erstellt Websites und Apps, von Genf bis Annecy.",
     "path": {
       "eyebrow": "[ Werdegang ]",
-      "title": "Fünfzehn Jahre als Entwickler, <em>ein einziger Ansprechpartner.</em>",
+      "title": "Fünfzehn Jahre im Beruf, <em>zuerst für große Unternehmen.</em>",
       "paragraphs": [
         "Matthieu stammt aus Duingt am Annecy-See und entwickelt seit rund fünfzehn Jahren Websites und Apps. Zuerst arbeitete er für große Unternehmen und lernte dort, zuverlässige Werkzeuge zu bauen, die für alle zugänglich sind.",
-        "Mit Cosmic Studio stellt er diese Erfahrung in den Dienst von Handwerksbetrieben, Vereinen und Selbstständigen. Sie sprechen mit der Person, die Ihre Website baut, vom ersten Anruf bis zur laufenden Betreuung, Monat für Monat."
+        "Mit Cosmic Studio baut er mit demselben Anspruch die Website einer Werkstatt, einer Praxis oder eines Vereins. Er probiert jede Website auf dem Handy aus, bei jeder Änderung laufen automatische Prüfungen, und er liest alles gegen, was er ausliefert. Sie sprechen mit der Person, die Ihre Website baut, vom ersten Anruf bis zur laufenden Betreuung."
       ],
       "zones": {
         "ch": [
@@ -38,20 +38,20 @@
     },
     "why": {
       "eyebrow": "[ Warum dieser Weg ]",
-      "title": "Handwerksbetriebe und Vereine <em>verdienen mehr als eine Vorlage von der Stange.</em>",
-      "lead": "Große Agenturen arbeiten vor allem für große Unternehmen, und Website-Baukästen lassen Sie mit dem Werkzeug allein. Cosmic Studio ist für alle da, die dazwischen stehen.",
+      "title": "Eine kleine Website <em>entsteht mit derselben Sorgfalt wie eine große.</em>",
+      "lead": "Große Agenturen arbeiten vor allem für große Unternehmen, und Website-Baukästen lassen Sie mit dem Werkzeug allein. Cosmic Studio ist für die da, die dazwischen stehen.",
       "reasons": {
         "found": {
           "title": "In der Nähe gefunden werden",
           "description": "Ihre Kundschaft sucht Sie auf dem Handy, nur ein paar Kilometer von Ihnen entfernt. Eine schnelle, gut gebaute Website steht bei Google weiter oben."
         },
         "price": {
-          "title": "Ein Preis, der mitwächst",
-          "description": "Ein Abonnement ab {price} im Monat zzgl. MwSt., das sich mit Ihnen weiterentwickelt, statt einer großen Investition am Anfang."
+          "title": "Ein offen genannter Preis",
+          "description": "Das Abonnement beginnt bei {price} im Monat zzgl. MwSt., und Sie sehen, was jede Option kostet, bevor Sie uns schreiben. Am Anfang müssen Sie keine große Summe aufbringen."
         },
         "answer": {
           "title": "Jemand, der antwortet",
-          "description": "Kein Callcenter: Es antwortet Ihnen die Person, die Ihre Website gebaut hat, meist noch am selben Tag."
+          "description": "Es antwortet Ihnen die Person, die Ihre Website gebaut hat, meist noch am selben Tag."
         },
         "ai": {
           "title": "KI für mehr Tempo, immer gegengelesen",

@@ -7,7 +7,7 @@ interface HomepageTranslator {
   rich: (key: string, values: Record<string, (chunks: ReactNode) => ReactNode>) => ReactNode;
 }
 
-/** "Still unsure? Start with a free mockup" line under a closing call to action. */
+/** "Ask for a free mockup" line under a closing call to action. */
 export const freeMockupNote = (t: HomepageTranslator) =>
   t.rich('cta.freeMockup', {
     link: (chunks) => (

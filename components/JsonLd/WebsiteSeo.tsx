@@ -1,8 +1,7 @@
-import { JsonLdScript } from 'next-seo';
-
-import { SITE_URL } from '@/i18n/canonical';
 import { LANGUAGES } from '@/i18n/locales';
-import { BRAND_NAME, LEGACY_BRAND_NAME } from '@/lib/config';
+import { BRAND_NAME, LEGACY_BRAND_NAME, SITE_URL } from '@/lib/config';
+
+import { JsonLd } from './JsonLd';
 
 /**
  * The site itself: its name (shown by search engines next to results), its languages and its publisher.
@@ -10,7 +9,7 @@ import { BRAND_NAME, LEGACY_BRAND_NAME } from '@/lib/config';
  */
 export default function WebsiteSeo() {
   return (
-    <JsonLdScript
+    <JsonLd
       scriptKey="website-json-ld"
       data={{
         '@context': 'https://schema.org',

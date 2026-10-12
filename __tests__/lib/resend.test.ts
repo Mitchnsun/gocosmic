@@ -1,38 +1,31 @@
 import { beforeEach, vi } from 'vitest';
 
-import {
-  DEFAULT_SENDER_EMAIL,
-  getResendClient,
-  getSenderEmail,
-  resetResendClient,
-  STUDIO_INBOX_EMAIL,
-} from '@/lib/resend';
+import { DEFAULT_SENDER_EMAIL, getSenderEmail, STUDIO_INBOX_EMAIL } from '@/lib/resend';
 
 const resendConstructor = vi.hoisted(() => vi.fn());
 
 vi.mock('resend', () => ({
-  Resend: class {
-    constructor(apiKey: string) {
-      resendConstructor(apiKey);
-    }
-  },
+  Resend: resendConstructor,
 }));
 
 describe('getResendClient', () => {
   beforeEach(() => {
     resendConstructor.mockClear();
-    resetResendClient();
+    // A fresh module per test, so the memoised client never leaks from one to the next.
+    vi.resetModules();
     vi.unstubAllEnvs();
   });
 
-  it('throws an explicit error when the API key is missing', () => {
+  it('throws an explicit error when the API key is missing', async () => {
     vi.stubEnv('RESEND_API_KEY', '');
+    const { getResendClient } = await import('@/lib/resend');
 
     expect(() => getResendClient()).toThrow(/RESEND_API_KEY is not set/);
   });
 
-  it('instantiates the client once with the configured key', () => {
+  it('instantiates the client once with the configured key', async () => {
     vi.stubEnv('RESEND_API_KEY', 'test-key');
+    const { getResendClient } = await import('@/lib/resend');
 
     const first = getResendClient();
     const second = getResendClient();

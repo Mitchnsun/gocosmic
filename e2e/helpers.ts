@@ -9,7 +9,7 @@ import fr from '../messages/fr/common.json' with { type: 'json' };
 import it from '../messages/it/common.json' with { type: 'json' };
 
 export const THEMES = ['dark', 'light'] as const;
-export type Theme = (typeof THEMES)[number];
+type Theme = (typeof THEMES)[number];
 
 /** Locale audited by default; set QA_LOCALE to audit another one. */
 export const LOCALE = (process.env.QA_LOCALE ?? 'fr') as (typeof routing.locales)[number];
@@ -24,9 +24,7 @@ export type RouteKey = keyof typeof routing.pathnames;
 
 /** Public URL of a route in the audited locale, from the translated pathnames, e.g. `/projects` → `/fr/projets`. */
 export function localizedUrl(routeKey: RouteKey): string {
-  // eslint-disable-next-line security/detect-object-injection -- routeKey is a typed route key
   const path = routing.pathnames[routeKey];
-  // eslint-disable-next-line security/detect-object-injection -- LOCALE is a typed locale
   const localized = typeof path === 'string' ? path : path[LOCALE];
   return `${getLocalePrefix(LOCALE)}${localized === '/' ? '' : localized}`;
 }

@@ -6,7 +6,7 @@ interface SunCssProperties extends CSSProperties {
   '--sun-intensity': number;
 }
 
-export interface SunProps {
+interface SunProps {
   /** Diameter, any CSS length. Defaults to the hero size: 56vw, capped at 700 px. */
   size?: string;
   /** Strength of the halo, from 0 to 1. Defaults to 1. */

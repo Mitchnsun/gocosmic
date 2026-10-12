@@ -5,7 +5,7 @@ import { accentClasses } from '@/design-system/accent';
 import { cn } from '@/design-system/lib/utils';
 
 /** Props for a card-shaped content section. */
-export interface ContentSectionProps {
+interface ContentSectionProps {
   /** Section id — also anchors the heading (`<id>-heading`). */
   id: string;
   /** Uppercase mono eyebrow announcing the section. */

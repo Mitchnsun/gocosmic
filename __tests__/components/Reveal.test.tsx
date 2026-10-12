@@ -5,7 +5,7 @@ import { Reveal } from '@/components/Reveal';
 
 import { render } from '../test-utils';
 
-type ObserverCallback = (entries: Array<{ isIntersecting: boolean }>) => void;
+type ObserverCallback = (entries: { isIntersecting: boolean }[]) => void;
 
 describe('Reveal', () => {
   afterEach(() => {

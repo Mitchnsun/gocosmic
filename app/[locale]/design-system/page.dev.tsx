@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { DesignSystemShowcase } from '@/components/DesignSystemShowcase';
 import { SectionHeading } from '@/components/SectionHeading';
 import { cn } from '@/design-system/lib/utils';
-import { CONTAINER, SECTION_Y } from '@/design-system/pill';
+import { CONTAINER, PAGE_TOP, SECTION_Y } from '@/design-system/pill';
 import { getAlternates } from '@/i18n/canonical';
 
 /** Internal page (`.dev.tsx`, served by `yarn dev` only), in English like the rest of the docs. */
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default function DesignSystemPage() {
   return (
-    <div className={cn('bg-bg text-fg', SECTION_Y)}>
+    <div className={cn('bg-bg text-fg', SECTION_Y, PAGE_TOP)}>
       <div className={cn(CONTAINER, 'flex flex-col gap-12')}>
         <SectionHeading
           level={1}

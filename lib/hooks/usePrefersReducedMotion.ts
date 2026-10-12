@@ -16,7 +16,4 @@ const getSnapshot = () => typeof window.matchMedia === 'function' && window.matc
 const getServerSnapshot = () => false;
 
 /** Whether the visitor asked for reduced motion, kept in sync with the media query. */
-export const usePrefersReducedMotion = (enabled: boolean) => {
-  const prefersReducedMotion = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
-  return enabled && prefersReducedMotion;
-};
+export const usePrefersReducedMotion = () => useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);

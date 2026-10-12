@@ -16,7 +16,7 @@ export interface ContactPayload {
 export type ContactField = Exclude<keyof ContactPayload, 'honeypot'>;
 
 /** Error codes returned by {@link validateContact}, mapped to translation keys. */
-export type ContactErrorCode =
+type ContactErrorCode =
   | 'name_length'
   | 'email_invalid'
   | 'need_invalid'
@@ -89,10 +89,6 @@ export const validateContact = (payload: ContactPayload): ContactErrors => {
   return errors;
 };
 
-/** True when the payload carries no validation error. */
-export const isContactPayloadValid = (payload: ContactPayload): boolean =>
-  Object.keys(validateContact(payload)).length === 0;
-
 /**
  * Coerces unknown input into a fully-populated string payload.
  *
@@ -102,7 +98,7 @@ export const isContactPayloadValid = (payload: ContactPayload): boolean =>
 export const toContactPayload = (input: unknown): ContactPayload => {
   const source = (typeof input === 'object' && input !== null ? input : {}) as Record<string, unknown>;
   const read = (key: string) => {
-    const value = source[String(key)];
+    const value = source[key];
     return typeof value === 'string' ? value.slice(0, 6000) : '';
   };
 

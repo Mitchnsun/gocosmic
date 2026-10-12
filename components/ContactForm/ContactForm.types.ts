@@ -1,4 +1,3 @@
-import type { ContactErrorCode, ContactField } from '@/lib/contact/validation';
 import type { Region } from '@/lib/region';
 
 /** Submission lifecycle of the contact form. */
@@ -8,7 +7,7 @@ export type ContactFormStatus = 'idle' | 'submitting' | 'success' | 'error';
 export type ContactFormErrorCode = 'rate_limited' | 'retry_later' | 'server' | 'network';
 
 /** Visual variant of the form wrapper. */
-export type ContactFormVariant = 'embedded' | 'page';
+type ContactFormVariant = 'embedded' | 'page';
 
 export interface ContactFormProps {
   /** Wrapper styling. `'page'` adds the card surface. Defaults to `'page'`. */
@@ -25,5 +24,3 @@ export interface ContactFormProps {
 
 /** Result returned by the `submitContactMessage` Server Action. */
 export type ContactActionResult = { status: 'success' } | { status: 'error' };
-
-export type { ContactErrorCode, ContactField };

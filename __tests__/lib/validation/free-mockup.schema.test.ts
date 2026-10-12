@@ -3,10 +3,9 @@ import {
   freeMockupSchema,
   type FreeMockupValues,
   getFieldErrors,
-  hasFieldErrors,
   normalizeFreeMockupValues,
   normalizeWebsiteUrl,
-  readFreeMockupField,
+  readField,
   readFreeMockupValues,
   WISHES_MAX_LENGTH,
 } from '@/lib/validation/free-mockup.schema';
@@ -148,16 +147,6 @@ describe('getFieldErrors', () => {
   });
 });
 
-describe('hasFieldErrors', () => {
-  it('is false on an empty error set', () => {
-    expect(hasFieldErrors({})).toBe(false);
-  });
-
-  it('is true as soon as one field fails', () => {
-    expect(hasFieldErrors({ email: 'required' })).toBe(true);
-  });
-});
-
 describe('readFreeMockupValues', () => {
   it('reads the four visible fields', () => {
     const formData = new FormData();
@@ -187,12 +176,12 @@ describe('readFreeMockupValues', () => {
   });
 });
 
-describe('readFreeMockupField', () => {
+describe('readField', () => {
   it('reads a single field by name', () => {
     const formData = new FormData();
     formData.set('locale', 'fr');
 
-    expect(readFreeMockupField(formData, 'locale')).toBe('fr');
-    expect(readFreeMockupField(formData, 'company')).toBe('');
+    expect(readField(formData, 'locale')).toBe('fr');
+    expect(readField(formData, 'company')).toBe('');
   });
 });

@@ -19,7 +19,7 @@ export const SWISS_LOCALES = [
   'de-CH',
   'it-CH',
 ] as const satisfies readonly `${Language}-CH`[];
-export type SwissLocale = (typeof SWISS_LOCALES)[number];
+type SwissLocale = (typeof SWISS_LOCALES)[number];
 
 export const LOCALES = [...LANGUAGES, ...SWISS_LOCALES] as const;
 export type Locale = (typeof LOCALES)[number];

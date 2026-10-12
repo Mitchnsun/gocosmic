@@ -1,8 +1,9 @@
 import { useLocale, useTranslations } from 'next-intl';
-import { JsonLdScript } from 'next-seo';
 
 import { PROJECTS } from '@/data/projects';
 import { getCanonicalUrl } from '@/i18n/canonical';
+
+import { JsonLd } from './JsonLd';
 
 /** The projects page as an ordered list of the case studies, in display order. */
 export default function ProjectsListSeo() {
@@ -10,7 +11,7 @@ export default function ProjectsListSeo() {
   const t = useTranslations('projectsList');
 
   return (
-    <JsonLdScript
+    <JsonLd
       scriptKey="projects-list-json-ld"
       data={{
         '@context': 'https://schema.org',

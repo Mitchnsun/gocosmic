@@ -68,7 +68,7 @@
         "back": "Invia un altro messaggio"
       }
     },
-    "lead": "Scrivici un messaggio o prenota una chiamata di 20 minuti. In entrambi i casi è Matthieu a risponderti rapidamente.",
+    "lead": "Scrivici un messaggio o prenota una chiamata di 20 minuti. In entrambi i casi parli con Matthieu.",
     "details": {
       "aria_label": "Recapiti",
       "email_label": "E-mail",
@@ -92,7 +92,7 @@
       "open": "Apri la pagina di prenotazione",
       "iframe_title": "Calendario delle prenotazioni di Matthieu (Google Calendar)",
       "note": "Prenoti direttamente nel calendario di Matthieu. Google Calendar ti invia la conferma e il link per la chiamata.",
-      "unavailable": "La prenotazione online non è ancora attiva. Scrivici un messaggio: ti proponiamo un orario in giornata."
+      "unavailable": "La prenotazione online non è ancora attiva. Scrivici un messaggio: ti proponiamo un orario, di solito in giornata."
     }
   }
 }

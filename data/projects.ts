@@ -3,7 +3,7 @@ import type { ProjectCover, ProjectKind } from '@/components/ProjectGrid/Project
 import type { AccentToken } from '@/design-system/accent';
 
 /** Every non-translatable fact about a case study; the copy lives in `messages/<locale>/*.json`. */
-export interface Project {
+interface Project {
   slug: string;
   /** Translation key inside the `projectsList.items` namespace. */
   i18nKey: string;

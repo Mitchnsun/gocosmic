@@ -1,9 +1,10 @@
 import { useLocale } from 'next-intl';
-import { JsonLdScript } from 'next-seo';
 
 import { getCanonicalUrl } from '@/i18n/canonical';
 import { getLanguage } from '@/i18n/locales';
 import { FOUNDER_NAME, SITE_URL, STUDIO_ADDRESS } from '@/lib/config';
+
+import { JsonLd } from './JsonLd';
 
 function getJobTitleByLocale(locale: string): string {
   switch (getLanguage(locale)) {
@@ -44,5 +45,5 @@ export default function PersonSeo() {
     },
   };
 
-  return <JsonLdScript data={personJsonLd} scriptKey="person-jsonld" />;
+  return <JsonLd data={personJsonLd} scriptKey="person-jsonld" />;
 }

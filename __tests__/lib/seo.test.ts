@@ -40,7 +40,7 @@ describe('buildPageMetadata', () => {
           url: '/og-default-fr.jpg',
           width: 1200,
           height: 630,
-          alt: 'Cosmic Studio · Votre activité mérite d’être vue.',
+          alt: "Cosmic Studio · Votre activité mérite d'être vue.",
         },
       ],
     });
@@ -48,7 +48,7 @@ describe('buildPageMetadata', () => {
       card: 'summary_large_image',
       title: 'Title',
       description: 'Description',
-      images: [{ url: '/twitter-card-fr.jpg', alt: 'Cosmic Studio · Votre activité mérite d’être vue.' }],
+      images: [{ url: '/twitter-card-fr.jpg', alt: "Cosmic Studio · Votre activité mérite d'être vue." }],
     });
   });
 
@@ -84,7 +84,7 @@ describe('buildPageMetadata', () => {
     expect(metadata.openGraph).toMatchObject({
       url: 'https://www.gocosmic.dev/fr-ch/a-propos',
       locale: 'fr_CH',
-      images: [{ url: '/og-default-fr.jpg', alt: 'Cosmic Studio · Votre activité mérite d’être vue.' }],
+      images: [{ url: '/og-default-fr.jpg', alt: "Cosmic Studio · Votre activité mérite d'être vue." }],
     });
     expect((metadata.openGraph as { alternateLocale: string[] }).alternateLocale).toContain('fr_FR');
   });

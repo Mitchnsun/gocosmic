@@ -122,9 +122,9 @@ describe('describeType', () => {
       fontSize: '56px',
       lineHeight: '56px',
       letterSpacing: '-1.68px',
-    } as CSSStyleDeclaration;
+    };
 
-    expect(describeType(style)).toBe('Space Grotesk 600 · 56px / 56px · -1.68px');
+    expect(describeType(style as CSSStyleDeclaration)).toBe('Space Grotesk 600 · 56px / 56px · -1.68px');
     expect(describeType({ ...style, fontFamily: '' } as CSSStyleDeclaration)).toMatch(/^inherit 600/);
   });
 });

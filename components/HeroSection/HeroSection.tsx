@@ -21,7 +21,7 @@ interface HeroLink {
 }
 
 /** Props for the editorial homepage hero. */
-export interface HeroSectionProps {
+interface HeroSectionProps {
   /** Mono eyebrow above the headline. */
   eyebrow: string;
   /** Headline copy before the emphasised final word. */
@@ -60,7 +60,7 @@ const HeroSection = ({
   className,
   id = 'hero',
 }: HeroSectionProps) => {
-  const prefersReducedMotion = usePrefersReducedMotion(true);
+  const prefersReducedMotion = usePrefersReducedMotion();
   const currentWord = useWordCycler(endWords, wordInterval, prefersReducedMotion || endWords.length <= 1);
 
   return (

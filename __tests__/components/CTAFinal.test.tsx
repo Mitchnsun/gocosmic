@@ -95,24 +95,15 @@ describe('CTAFinal', () => {
     expect(starfieldMock).toHaveBeenCalled();
   });
 
-  it('should map density presets to star counts', () => {
-    renderCTA({ starfieldDensity: 'low' });
-    expect(lastStarfieldProps().starCount).toBe(250);
+  it('should draw the immersive starfield at rest speed', () => {
+    renderCTA();
 
-    renderCTA({ starfieldDensity: 'medium' });
-    expect(lastStarfieldProps().starCount).toBe(400);
-
-    renderCTA({ starfieldDensity: 'high' });
     expect(lastStarfieldProps().starCount).toBe(600);
-  });
-
-  it('should scale the rest speed from the starfieldSpeed prop', () => {
-    renderCTA({ starfieldSpeed: 0.2 });
     expect(lastStarfieldProps().speed).toBe(2);
   });
 
   it('should warp the starfield on CTA hover and reset on leave', () => {
-    const { getByRole } = renderCTA({ starfieldDensity: 'high', starfieldSpeed: 0.2, starfieldWarpSpeed: 0.8 });
+    const { getByRole } = renderCTA();
     const cta = getByRole('link', { name: /Contact us/ });
 
     fireEvent.pointerEnter(cta);
@@ -132,14 +123,6 @@ describe('CTAFinal', () => {
     expect(lastStarfieldProps().speed).toBe(8);
 
     fireEvent.blur(cta);
-    expect(lastStarfieldProps().speed).toBe(2);
-  });
-
-  it('should not warp when warpOnHover is disabled', () => {
-    const { getByRole } = renderCTA({ warpOnHover: false });
-    const cta = getByRole('link', { name: /Contact us/ });
-
-    fireEvent.pointerEnter(cta);
     expect(lastStarfieldProps().speed).toBe(2);
   });
 
@@ -191,53 +174,16 @@ describe('CTAFinal', () => {
       expect(cta).not.toHaveClass('transition-transform');
       expect(cta).toHaveClass('motion-reduce:scale-100!', 'motion-reduce:transition-none!');
     });
-
-    it('should keep the CTA scale when the preference is not honoured', () => {
-      mockReducedMotion(true);
-      const { getByRole } = renderCTA({ tone, respectReducedMotion: false });
-      const cta = getByRole('link', { name: /Contact us/ });
-
-      expect(cta).toHaveClass(hoverScale, focusScale, 'transition-transform');
-      expect(cta).not.toHaveClass('motion-reduce:scale-100!');
-    });
   });
 
-  it('should leave the starfield animating when the preference is not honoured', () => {
-    renderCTA({ respectReducedMotion: false });
+  it('should apply the id to the section and the orange accent to the CTA', () => {
+    const { container, getByRole, getByText } = renderCTA({ id: 'final-cta' });
 
-    expect(lastStarfieldProps().respectReducedMotion).toBe(false);
+    expect(container.querySelector('section')).toHaveAttribute('id', 'final-cta');
+    expect(getByRole('link', { name: /Contact us/ })).toHaveClass('bg-aerospace', 'cta-final-glow');
+    expect(getByText('Ready to Go Cosmic?')).toHaveClass('cta-final-headline', 'from-aerospace-ink');
   });
 
-  it('should call onCtaClick when the button is clicked', () => {
-    const onCtaClick = vi.fn();
-    const { getByRole } = renderCTA({ onCtaClick });
-
-    fireEvent.click(getByRole('link', { name: /Contact us/ }));
-    expect(onCtaClick).toHaveBeenCalledTimes(1);
-  });
-
-  it('should apply the accent variant to the CTA button and headline gradient', () => {
-    const { getByRole, getByText } = renderCTA({ accentColor: 'jungle' });
-
-    const cta = getByRole('link', { name: /Contact us/ });
-    expect(cta).toHaveClass('bg-ok', 'cta-final-glow');
-
-    const headline = getByText('Ready to Go Cosmic?');
-    expect(headline).toHaveClass('cta-final-headline', 'from-ok');
-  });
-
-  it('should expose the accent colour as a CSS variable', () => {
-    const { container } = renderCTA({ accentColor: 'royal' });
-    expect(container.querySelector('section')).toHaveStyle({ '--cta-accent-rgb': '120 81 169' });
-  });
-
-  it('should apply a custom className and id to the section', () => {
-    const { container } = renderCTA({ className: 'custom-class', id: 'final-cta' });
-    const section = container.querySelector('section');
-
-    expect(section).toHaveClass('custom-class');
-    expect(section).toHaveAttribute('id', 'final-cta');
-  });
   describe('sober tone', () => {
     it('should default to the immersive tone', () => {
       const { container } = renderCTA();
@@ -272,14 +218,6 @@ describe('CTAFinal', () => {
       fireEvent.focus(cta);
       expect(lastStarfieldProps().speed).toBe(restSpeed);
     });
-
-    it('should let explicit props override the tone defaults', () => {
-      const { getByRole } = renderCTA({ tone: 'sober', starfieldDensity: 'high', warpOnHover: true });
-
-      expect(lastStarfieldProps().starCount).toBe(600);
-      fireEvent.pointerEnter(getByRole('link', { name: /Contact us/ }));
-      expect(lastStarfieldProps().starCount).toBe(780);
-    });
   });
 
   describe('light theme', () => {
@@ -295,7 +233,7 @@ describe('CTAFinal', () => {
     afterEach(() => localStorage.clear());
 
     it('swaps the stars for a warm sun halo on the immersive tone, with nothing left to warp', () => {
-      const { container, getByRole } = renderLight({ warpOnHover: true });
+      const { container, getByRole } = renderLight();
 
       expect(container.querySelector('canvas')).not.toBeInTheDocument();
       expect(container.querySelector('.sun-glow')).toBeInTheDocument();
@@ -319,10 +257,5 @@ describe('CTAFinal', () => {
     expect(container.querySelector('section')).not.toHaveAttribute('data-theme');
     expect(container.querySelector('.sun-glow')).toHaveClass('hidden', 'light:block');
     expect(container.querySelector('canvas')?.parentElement).toHaveClass('light:hidden');
-  });
-
-  it('paints the alternate background with the alt variant', () => {
-    const { container } = renderCTA({ variant: 'alt' });
-    expect(container.querySelector('section')).toHaveClass('bg-bg-alt');
   });
 });

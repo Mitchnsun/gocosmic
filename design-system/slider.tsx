@@ -8,14 +8,14 @@ import { cn } from './lib/utils';
 /** Shared transition for the fill and thumb so they glide together between steps. */
 const GLIDE = 'transition-transform duration-150 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none';
 
-export type SliderProps = React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> & {
+type SliderProps = React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> & {
   /** Forwarded to the (single) thumb — Radix reads slider text off the thumb, not the root. */
   'aria-labelledby'?: string;
   'aria-describedby'?: string;
   'aria-valuetext'?: string;
 };
 
-const Slider = React.forwardRef<React.ElementRef<typeof SliderPrimitive.Root>, SliderProps>(
+const Slider = React.forwardRef<React.ComponentRef<typeof SliderPrimitive.Root>, SliderProps>(
   (
     {
       className,

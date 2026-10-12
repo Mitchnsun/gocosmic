@@ -2,7 +2,7 @@
 export const SUBMISSIONS_STORAGE_KEY = 'gocosmic.contactSubmissions';
 /** Client-side budget, mirroring the Vercel Firewall rule documented in
  *  SECURITY.md: three POST requests per ten minutes and per IP address. */
-export const CLIENT_SUBMISSION_LIMIT = 3;
+const CLIENT_SUBMISSION_LIMIT = 3;
 /** Client-side window: ten minutes, the platform rule's own window. A stricter
  *  one would keep blocking a visitor the firewall has already let back in. */
 export const CLIENT_SUBMISSION_WINDOW_MS = 10 * 60 * 1000;

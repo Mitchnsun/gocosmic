@@ -1,8 +1,8 @@
 {
   "footer": {
     "brand_desc": {
-      "fr": "Studio di sviluppo web e mobile tra Ginevra e Annecy. Siti, app e assistenza continua per artigiani, associazioni e liberi professionisti.",
-      "ch": "Studio di sviluppo web e mobile a Ginevra. Siti, app e assistenza continua per artigiani, associazioni e liberi professionisti."
+      "fr": "Studio di sviluppo web e mobile tra Ginevra e Annecy. Siti, app e assistenza continua, con prezzi in chiaro.",
+      "ch": "Studio di sviluppo web e mobile a Ginevra. Siti, app e assistenza continua, con prezzi in chiaro."
     },
     "nav_title": "Studio",
     "link_services": "Servizi & prezzi",
@@ -11,9 +11,10 @@
     "link_contact": "Contatti",
     "copyright": "© {year} {brand}",
     "local_page": "Creazione siti internet · Ginevra, Annecy",
+    "free_mockup_page": "Mockup gratuito",
     "privacy": "Informativa privacy",
     "legal_notice": "Note legali",
-    "link_apps": "Le nostre app",
+    "link_apps": "La nostra app",
     "legal_title": "Informazioni legali",
     "status": "Tutti i sistemi nella norma",
     "terms": "Condizioni generali di vendita"

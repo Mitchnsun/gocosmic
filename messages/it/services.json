@@ -2,11 +2,11 @@
   "services": {
     "meta": {
       "title": "Servizi & prezzi · Ginevra & Annecy | Cosmic Studio",
-      "description": "Siti vetrina, negozi online, app e assistenza a prezzi chiari: abbonamento da {price} al mese IVA esclusa, o progetto su preventivo."
+      "description": "Siti vetrina, negozi online, app e assistenza con prezzi in chiaro: abbonamento da {price} al mese IVA esclusa, o progetto su preventivo."
     },
     "cta": {
       "title": "Parliamo del tuo sito.",
-      "description": "Presentaci la tua attività in poche righe. Ti rispondiamo rapidamente, poi prepariamo il tuo mockup gratuito, se ti va.",
+      "description": "Dicci di cosa hai bisogno. Poi prepariamo il tuo mockup gratuito, oppure un'analisi del tuo sito attuale.",
       "primary_button": "Parliamo del tuo progetto"
     },
     "intro": {
@@ -26,7 +26,7 @@
         "showcase": {
           "title": "Siti vetrina",
           "description": "Per presentare la tua attività, i tuoi lavori e i tuoi orari, e farti trovare su Google da chi abita vicino a te.",
-          "tags": ["Artigiani", "Associazioni", "Liberi professionisti"]
+          "tags": ["Imprese", "Indipendenti", "Associazioni"]
         },
         "shops": {
           "title": "Negozi online & prenotazioni",
@@ -68,6 +68,10 @@
         "content": {
           "question": "Vi occupate anche di testi e foto?",
           "answer": "Ti aiutiamo a scrivere e rileggiamo tutto, pensando alle parole che i tuoi clienti cercano su Google. Per le foto e i video usiamo i tuoi, oppure li facciamo realizzare su preventivo da un/una professionista della zona, con cui gestiamo noi i rapporti."
+        },
+        "existing": {
+          "question": "Ho già un sito, potete prenderlo in mano voi?",
+          "answer": "Sì. Cominciamo con un'analisi gratuita del tuo sito attuale: cosa funziona, cosa fa scappare i visitatori e come compare su Google. Poi ti diciamo se conviene rifarlo o farlo evolvere così com'è."
         }
       }
     }
