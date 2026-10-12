@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Added
 
 - A new project page for Coach'n Pulse, the website of a triathlon and endurance sports coach in Grenoble that the studio has looked after since 2016, with its latest version and new design, and a link to the site
-- A project can now show a photo or a drawing on the projects list, with its logo in the corner, and its own colour around its logo on its page; Coach'n Pulse, mcomper.at and PSC Supersprint are the first to use it
+- Coach'n Pulse, mcomper.at and PSC Supersprint now show a photo or a drawing on the projects list, with their logo in the corner when they have one; PSC Supersprint also shows its logo on its page, and Coach'n Pulse frames its logo in its own colour
 
 ### Changed
 
