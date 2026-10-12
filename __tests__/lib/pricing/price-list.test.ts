@@ -1,7 +1,17 @@
 import { ADD_ON_KEYS } from '@/components/PricingSimulator/constants';
-import { getOptionPrices, getPriceLineName, getPriceLines, OPTION_GROUPS } from '@/lib/pricing/price-list';
+import {
+  getOptionPrices,
+  getPriceLineName,
+  getPriceLines,
+  getPriceLineTotal,
+  OPTION_GROUPS,
+} from '@/lib/pricing/price-list';
 
 const names: Record<string, string> = {
+  'options.articles.label': 'AI-assisted articles',
+  'options.articles.tiers.weekly': '1 article a week',
+  'updates.label': 'Content changes included',
+  'updates.tiers.weekly': 'Once a week',
   'options.analytics.label': 'Visit statistics',
   'options.analytics.tiers.quarterly': 'Every three months',
   'options.domain.label': 'Managing your domain name',
@@ -39,6 +49,18 @@ describe('getOptionPrices', () => {
     ]);
     expect(getOptionPrices('updates')).toHaveLength(5);
     expect(getOptionPrices('updates')[0]).toMatchObject({ labelKey: 'updates.label', commitment: false });
+  });
+
+  it('ties each article rhythm to the content changes it forces, as the simulator does', () => {
+    const required = getOptionPrices('articles').map((line) => [line.requires?.tierKey, line.requires?.price]);
+
+    expect(required).toEqual([
+      ['updates.tiers.monthly', 20],
+      ['updates.tiers.weekly', 60],
+      ['updates.tiers.unlimited', 200],
+    ]);
+    expect(getOptionPrices('articles').map(getPriceLineTotal)).toEqual([25, 75, 250]);
+    expect(getOptionPrices('analytics')[0]).not.toHaveProperty('requires');
   });
 
   it('prices one extra mailbox', () => {
@@ -92,5 +114,13 @@ describe('getPriceLineName', () => {
 
   it('names a single-price option by its label', () => {
     expect(getPriceLineName(t, getOptionPrices('domain')[0]!)).toBe('Managing your domain name');
+  });
+
+  it('names an article rhythm with the content changes it requires', () => {
+    const [, weekly] = getOptionPrices('articles');
+
+    expect(getPriceLineName(t, weekly!)).toBe(
+      'AI-assisted articles · 1 article a week + Content changes included · Once a week'
+    );
   });
 });

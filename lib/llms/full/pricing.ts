@@ -1,6 +1,12 @@
 import { FORMULA_INCLUDES, FORMULA_PRICES, FORMULAS } from '@/components/PricingSimulator/constants';
 import type { Formula } from '@/components/PricingSimulator/PricingSimulator.types';
-import { getOptionPrices, OPTION_GROUPS, type PricedOption, type PriceLine } from '@/lib/pricing/price-list';
+import {
+  getOptionPrices,
+  getPriceLineTotal,
+  OPTION_GROUPS,
+  type PricedOption,
+  type PriceLine,
+} from '@/lib/pricing/price-list';
 
 import { EN } from '../llms.messages';
 import { inBothCurrencies, item, section, surchargeInBothCurrencies } from '../llms.utils';
@@ -16,10 +22,20 @@ const formulaName = (formula: Formula) => `“${t(`formulas.${formula}.label`)}�
 /** Explanation of an info bubble, when the item has one. */
 const infoOf = (key: string): string[] => (EN.pricing.has(`builder.${key}`) ? [t(key)] : []);
 
-/** "+€5 / +CHF 5 excl. VAT / month", or "+€40 / +CHF 40 or more…" for the last step of a slider. */
+/** Copy the simulator only shows with "You stay in control", e.g. "With “You stay in control”: …". */
+const withSelfService = (key: string) => `With ${formulaName('self_service')}: ${t(key)}`;
+
+/**
+ * "+€5 / +CHF 5 excl. VAT / month", "+€40 / +CHF 40 or more…" for the last step of a slider, or, for a step that
+ * forces the content changes up, both prices and their sum.
+ */
 const priceOf = (line: PriceLine) => {
   const amount = surchargeInBothCurrencies(line.price);
-  return `${line.orMore ? t('pages.or_more', { price: amount }) : amount} ${t('period')}`;
+  const price = `${line.orMore ? t('pages.or_more', { price: amount }) : amount} ${t('period')}`;
+  if (!line.requires) return price;
+
+  const { requires } = line;
+  return `${price}, plus the content changes it requires, “${t(requires.tierKey ?? requires.labelKey)}”: ${surchargeInBothCurrencies(requires.price)}, so ${surchargeInBothCurrencies(getPriceLineTotal(line))} ${t('period')} in all`;
 };
 
 /** What each plan costs and includes, with the explanations of its info bubbles. */
@@ -53,7 +69,10 @@ function describe(option: PricedOption): string {
       return t('pages.info');
     }
     case 'updates': {
-      return `${t('updates.off')}. ${t('updates.hint')}`;
+      return `${t('updates.off')}. ${t('updates.hint')} ${withSelfService('updates.hint_self_service')}`;
+    }
+    case 'articles': {
+      return `${t('options.articles.hint')} ${t('options.articles.info')} ${withSelfService('options.articles.info_tool')}`;
     }
     case 'email': {
       return `${t('options.email.hint', values)} ${t('options.email.note')}`;

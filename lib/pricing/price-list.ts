@@ -1,5 +1,6 @@
 import {
   ADD_ON_PRICES,
+  ARTICLE_TIERS,
   EXTRA_MAILBOX_PRICE,
   FORMULA_PRICES,
   FORMULAS,
@@ -42,6 +43,8 @@ export interface PriceLine {
   formula?: Formula;
   /** Only offered in this region. */
   region?: Region;
+  /** The content-change step this one forces the plan up to, at least: each published article counts as a change. */
+  requires?: PriceLine;
 }
 
 /** The prices of one option, as its row or slider in the simulator shows them. */
@@ -71,9 +74,21 @@ export function getOptionPrices(option: PricedOption): PriceLine[] {
     case 'mailboxes': {
       return [{ ...base, labelKey: 'options.mailboxes.label', price: EXTRA_MAILBOX_PRICE }];
     }
-    case 'analytics':
-    case 'seo':
     case 'articles': {
+      const updates = getOptionPrices('updates');
+      return ARTICLE_TIERS.map((tier) => {
+        const required = updates.find((line) => line.tierKey === `updates.tiers.${tier.minUpdates}`);
+        return {
+          ...base,
+          labelKey: 'options.articles.label',
+          tierKey: `options.articles.tiers.${tier.key}`,
+          price: tier.price,
+          ...(required && { requires: required }),
+        };
+      });
+    }
+    case 'analytics':
+    case 'seo': {
       return TIERED_TABLES[option].map((tier) => ({
         ...base,
         labelKey: `options.${option}.label`,
@@ -110,7 +125,14 @@ export function getPriceLines(region?: Region): PriceLine[] {
   return [...plans, ...options].filter((line) => !region || !line.region || line.region === region);
 }
 
-/** Name of a price line, e.g. "Visit statistics · Every three months". */
+/**
+ * Name of a price line, e.g. "Visit statistics · Every three months", followed by the step it requires, if any:
+ * "AI-assisted articles · 1 article a month + Content changes included · Once a month".
+ */
 export function getPriceLineName(t: (key: string) => string, line: PriceLine): string {
-  return line.tierKey ? `${t(line.labelKey)} · ${t(line.tierKey)}` : t(line.labelKey);
+  const name = line.tierKey ? `${t(line.labelKey)} · ${t(line.tierKey)}` : t(line.labelKey);
+  return line.requires ? `${name} + ${getPriceLineName(t, line.requires)}` : name;
 }
+
+/** What a line adds to the monthly price, with the step it requires: the simulator charges both. */
+export const getPriceLineTotal = (line: PriceLine): number => line.price + (line.requires?.price ?? 0);

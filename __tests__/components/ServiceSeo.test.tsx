@@ -85,6 +85,18 @@ describe('ServiceSeo', () => {
     );
   });
 
+  it('prices each article rhythm with the content changes it forces', () => {
+    render(<ServiceSeo description="Sites" region="fr" />);
+
+    expect(catalogOf().itemListElement).toContainEqual(
+      expect.objectContaining({
+        name: 'AI-assisted articles · 1 article a day + Content changes included · As often as needed',
+        price: 250,
+        priceSpecification: expect.objectContaining({ price: 250 }),
+      })
+    );
+  });
+
   it('marks the last page step as a minimum price', () => {
     render(<ServiceSeo description="Sites" region="fr" />);
 

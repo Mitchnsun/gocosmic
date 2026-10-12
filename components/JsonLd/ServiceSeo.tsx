@@ -3,7 +3,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { BASE_PRICE } from '@/components/PricingSimulator/constants';
 import { getCanonicalUrl } from '@/i18n/canonical';
 import { SITE_URL } from '@/lib/config';
-import { getPriceLineName, getPriceLines } from '@/lib/pricing/price-list';
+import { getPriceLineName, getPriceLines, getPriceLineTotal } from '@/lib/pricing/price-list';
 import { getCurrency, type Region } from '@/lib/region';
 
 import { JsonLd } from './JsonLd';
@@ -57,7 +57,7 @@ export default function ServiceSeo({ description, region }: ServiceSeoProps) {
           '@type': 'OfferCatalog',
           name: t('link_services'),
           itemListElement: getPriceLines(region).map((line) => ({
-            ...monthlyOffer(line.price, line.orMore),
+            ...monthlyOffer(getPriceLineTotal(line), line.orMore),
             name: getPriceLineName(tBuilder, line),
           })),
         },
