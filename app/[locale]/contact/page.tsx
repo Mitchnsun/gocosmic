@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
-import { getLocale, getMessages, getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { ReactNode } from 'react';
 
 import { toBookingEmbedUrl } from '@/components/BookingEmbed';
@@ -10,14 +10,15 @@ import BreadcrumbSeo from '@/components/JsonLd/BreadcrumbSeo';
 import { SectionHeading } from '@/components/SectionHeading';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, PAGE_TOP } from '@/design-system/pill';
+import { getClientMessages } from '@/i18n/client-messages';
 import { Link } from '@/i18n/navigation';
 import { CONTACT_EMAIL } from '@/lib/config';
-import { getRegion } from '@/lib/region.server';
+import { getRegion } from '@/lib/region';
 import { buildPageMetadata } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'meta' });
+  const t = await getTranslations({ locale, namespace: 'contact.meta' });
 
   return buildPageMetadata({
     locale,
@@ -29,12 +30,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const em = (chunks: ReactNode) => <em>{chunks}</em>;
 
-export default async function Contact() {
+export default async function Contact({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations('contact');
   const tStatus = await getTranslations('status_bar');
-  const locale = await getLocale();
-  const messages = await getMessages();
-  const region = await getRegion();
+  const messages = await getClientMessages(['contact']);
+  const region = getRegion(locale);
 
   return (
     <div className="bg-bg text-fg">

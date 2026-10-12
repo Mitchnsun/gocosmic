@@ -1,9 +1,9 @@
 {
-  "meta": {
-    "title": "Contact · Let's talk about your project | Cosmic Studio",
-    "description": "Tell Cosmic Studio about your project. One message is enough: the person who will build your site replies quickly."
-  },
   "contact": {
+    "meta": {
+      "title": "Contact · Let's talk about your project | Cosmic Studio",
+      "description": "Tell Cosmic Studio about your project. One message is enough: the person who will build your site replies quickly."
+    },
     "title": "Tell us <em>about your business.</em>",
     "privacyNotice": "Your details are only used to reply to you and to prepare a possible quote.",
     "privacyLink": "Privacy policy",

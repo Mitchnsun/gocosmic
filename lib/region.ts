@@ -1,3 +1,5 @@
+import { isSwissLocale } from '../i18n/locales';
+
 /**
  * Business regions the site adapts to.
  *
@@ -12,6 +14,16 @@ export type Region = 'fr' | 'ch';
 export type Currency = 'eur' | 'chf';
 
 export const DEFAULT_REGION: Region = 'fr';
+
+/**
+ * Region a page shows. The URL decides: a Swiss locale (`/fr-ch`…) shows the Swiss region, any other locale the
+ * default one. Search engines therefore index each version as visitors see it, and the footer switch always
+ * matches the page. The visitor's country only picks the version they land on when the URL has no locale (see
+ * `proxy.ts`).
+ */
+export function getRegion(locale: string): Region {
+  return isSwissLocale(locale) ? 'ch' : DEFAULT_REGION;
+}
 
 /** Region of a visitor's country, used to pick the version of the site they land on. */
 export function resolveRegion(countryCode?: string | null): Region {

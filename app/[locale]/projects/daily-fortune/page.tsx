@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
+import { use } from 'react';
 
 import {
   buildCaseStudyMeta,
@@ -16,11 +18,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return buildCaseStudyMetadata(locale, 'daily-fortune');
 }
 
-export default function DailyFortune() {
+export default function DailyFortune({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
   const t = useTranslations('dailyFortune');
   const tCommon = useTranslations('case_study');
   const tList = useTranslations('projectsList');
-  const locale = useLocale();
   const { latestRelease } = PROJECTS_BY_SLUG['daily-fortune'];
   const maintained = t('result.maintained', {
     version: latestRelease.version,

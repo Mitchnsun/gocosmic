@@ -1,6 +1,6 @@
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import type { Metadata } from 'next';
-import { getLocale, getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { ReactNode } from 'react';
 
 import { AudienceGrid } from '@/components/AudienceGrid';
@@ -23,8 +23,7 @@ import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, ghostPill, SECTION_Y } from '@/design-system/pill';
 import { Link } from '@/i18n/navigation';
 import { CODE_HANDOVER_MONTHS } from '@/lib/pricing/offers';
-import { getCurrency } from '@/lib/region';
-import { getRegion } from '@/lib/region.server';
+import { getCurrency, getRegion } from '@/lib/region';
 import { buildPageMetadata } from '@/lib/seo';
 
 const AUDIENCES = ['artisans', 'companies', 'independents', 'associations'] as const;
@@ -43,12 +42,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return buildPageMetadata({ locale, routeKey: '/', title: t('title'), description: t('description') });
 }
 
-export default async function Home() {
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations('homepage');
   const tPricing = await getTranslations('pricing.columns');
   const tProjects = await getTranslations('projectsList');
-  const locale = await getLocale();
-  const region = await getRegion();
+  const region = getRegion(locale);
   const startingPrice = formatAmount(BASE_PRICE, getCurrency(region), locale);
 
   const processSteps = homepageSteps.map((step) => ({

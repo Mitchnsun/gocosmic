@@ -1,6 +1,6 @@
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import type { Metadata } from 'next';
-import { getLocale, getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { ReactNode } from 'react';
 
 import { AudienceGrid } from '@/components/AudienceGrid';
@@ -15,8 +15,7 @@ import { SectionHeading } from '@/components/SectionHeading';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, ghostPill, PAGE_TOP, primaryPill, SECTION_Y } from '@/design-system/pill';
 import { Link } from '@/i18n/navigation';
-import { getCurrency } from '@/lib/region';
-import { getRegion } from '@/lib/region.server';
+import { getCurrency, getRegion } from '@/lib/region';
 import { buildPageMetadata } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -39,12 +38,13 @@ const PROJECT_COUNT = 3;
 const em = (chunks: ReactNode) => <em>{chunks}</em>;
 
 /** Local landing page for searches around Geneva and Annecy; the lead follows the visitor's region. */
-export default async function LocalPage() {
+export default async function LocalPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations('local');
   const tProjects = await getTranslations('projectsList');
   const tHome = await getTranslations('homepage');
-  const locale = await getLocale();
-  const region = await getRegion();
+  const region = getRegion(locale);
   const startingPrice = formatAmount(BASE_PRICE, getCurrency(region), locale);
   const projects = buildProjectCards(tProjects).slice(0, PROJECT_COUNT);
 

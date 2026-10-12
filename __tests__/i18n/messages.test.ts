@@ -42,6 +42,18 @@ describe('message files', () => {
     }
   });
 
+  // The server merges every file into one object, so a top-level key in two files would overwrite the other.
+  // Checking English is enough: the other languages have the same keys.
+  it('never repeats a top-level key across files', () => {
+    const owners = new Map<string, string>();
+    for (const file of NAMESPACES) {
+      for (const key of Object.keys(readMessages(REFERENCE, file) as object)) {
+        expect(owners.get(key), `${key} in ${file}`).toBeUndefined();
+        owners.set(key, file);
+      }
+    }
+  });
+
   describe.each(OTHER_LOCALES)('%s', (locale) => {
     it.each(NAMESPACES)('%s has the same keys and placeholders as English', (file) => {
       const reference = describeMessages(readMessages(REFERENCE, file));

@@ -28,12 +28,7 @@ function withNormalizedLanguages(request: NextRequest): NextRequest {
 }
 
 export default function proxy(request: NextRequest) {
-  const response = handleI18nRouting(withNormalizedLanguages(request));
-
-  // Add the pathname to the response headers for use in i18n/request.ts
-  response.headers.set('x-pathname', request.nextUrl.pathname);
-
-  return response;
+  return handleI18nRouting(withNormalizedLanguages(request));
 }
 
 export const config = {

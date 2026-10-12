@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Space_Grotesk, Space_Mono } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { CookieConsent, CookieConsentProvider } from '@/components/CookieConsent';
 import { CosmicCursorGate } from '@/components/CosmicCursor';
@@ -12,9 +12,10 @@ import LocalBusinessSeo from '@/components/JsonLd/LocalBusinessSeo';
 import WebsiteSeo from '@/components/JsonLd/WebsiteSeo';
 import { StatusBar } from '@/components/StatusBar';
 import { ThemeColorBoot, ThemeProvider } from '@/components/Theme';
+import { getClientMessages } from '@/i18n/client-messages';
 import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/config';
-import { getRegion } from '@/lib/region.server';
+import { getRegion } from '@/lib/region';
 import { buildPageMetadata } from '@/lib/seo';
 
 const spaceGrotesk = Space_Grotesk({
@@ -29,11 +30,17 @@ const inter = Inter({
   variable: '--font-body',
 });
 
+// Regular only: no text is set in bold monospace.
 const spaceMono = Space_Mono({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['400'],
   variable: '--font-mono',
 });
+
+/** Every locale is rendered at build time and served from the CDN cache. */
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -70,8 +77,11 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
+  setRequestLocale(locale);
 
-  const region = await getRegion();
+  const region = getRegion(locale);
+  // Only what the header, footer, theme switch and cookie banner read in the browser.
+  const messages = await getClientMessages(['navigation', 'theme', 'cookieConsent']);
 
   return (
     // next-themes sets data-theme on <html> before hydration, hence suppressHydrationWarning.
@@ -82,7 +92,7 @@ export default async function LocaleLayout({
       <body className="bg-bg">
         <ThemeColorBoot />
         <ThemeProvider>
-          <NextIntlClientProvider>
+          <NextIntlClientProvider messages={messages}>
             <CookieConsentProvider>
               <CosmicCursorGate />
               <StatusBar region={region} />

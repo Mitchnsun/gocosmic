@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.4.3] - 2026-10-12
+
+### Changed
+
+- Pages open faster: they are now prepared in advance and served straight from the hosting network, instead of being built again for each visit
+- The site icon is lighter, and a bold version of one font, which no text used, is no longer downloaded
+
 ## [2.4.2] - 2026-10-12
 
 ### Added

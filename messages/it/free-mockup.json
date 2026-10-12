@@ -1,9 +1,9 @@
 {
-  "meta": {
-    "title": "Mockup gratuito del tuo futuro sito | Cosmic Studio",
-    "description": "Richiedi il mockup gratuito del tuo futuro sito: scegli una palette di colori, descrivi la tua idea e ricevi una prima proposta via e-mail. Senza impegno."
-  },
   "freeMockup": {
+    "meta": {
+      "title": "Mockup gratuito del tuo futuro sito | Cosmic Studio",
+      "description": "Richiedi il mockup gratuito del tuo futuro sito: scegli una palette di colori, descrivi la tua idea e ricevi una prima proposta via e-mail. Senza impegno."
+    },
     "eyebrow": "[ Mockup gratuito ]",
     "title": "Vedi il tuo sito prima di decidere",
     "intro": "Dicci a che punto sei e che atmosfera immagini. Ti mandiamo un mockup del tuo futuro sito, gratis e senza impegno.",

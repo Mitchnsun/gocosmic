@@ -187,8 +187,8 @@ await import(`../messages/${locale}/${namespace}.json`);
 **This is safe because:**
 
 - `locale` is validated against a whitelist (`hasLocale(routing.locales, ...)`).
-- `namespace` values are hardcoded strings produced by `getNamespacesForPath()`,
-  not derived from user input.
+- `namespace` values come from the hardcoded `NAMESPACES` list, not from user
+  input.
 
 If this pattern is ever extended (e.g., to load user-supplied keys), add
 explicit allowlist validation before the import path is constructed.
@@ -233,5 +233,4 @@ either is ever changed.
 
 In Next.js 16, the middleware entry point is `proxy.ts` at the project root
 (the `middleware.ts` naming is deprecated). The file implements locale routing
-via `next-intl` and injects the `x-pathname` header consumed by
-`i18n/request.ts`. No action required — the current naming is correct.
+via `next-intl`. No action required — the current naming is correct.

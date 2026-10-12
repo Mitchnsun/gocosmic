@@ -1,9 +1,9 @@
 {
-  "meta": {
-    "title": "Contact · Parlons de votre projet | Cosmic Studio",
-    "description": "Parlez de votre projet à Cosmic Studio. Un message suffit : la personne qui construira votre site vous répond rapidement."
-  },
   "contact": {
+    "meta": {
+      "title": "Contact · Parlons de votre projet | Cosmic Studio",
+      "description": "Parlez de votre projet à Cosmic Studio. Un message suffit : la personne qui construira votre site vous répond rapidement."
+    },
     "title": "Parlez-nous <em>de votre activité.</em>",
     "privacyNotice": "Vos coordonnées servent uniquement à vous répondre et à préparer un éventuel devis.",
     "privacyLink": "Politique de confidentialité",
