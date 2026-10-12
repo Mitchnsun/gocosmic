@@ -64,15 +64,14 @@ messages/
 - **Improved scalability**: Adding new pages requires only creating/updating specific namespace files
 - **Clear separation**: Shared components (navigation, footer) have dedicated namespaces
 - **Easier collaboration**: Multiple developers can work on different namespaces without conflicts
-- **Optimized loading**: Only necessary namespaces are loaded per route for better performance
+- **Lean pages**: Each page sends the browser only the namespaces its interactive components read
 
-**Dynamic Loading:**
+**Loading:**
 
-The application uses intelligent on-demand loading:
+Pages are rendered at build time and served from the CDN cache:
 
-- **Shared namespaces** (`common`, `navigation`, `footer`) are loaded on every page
-- **Page-specific namespaces** are loaded only when needed based on the current route
-- This reduces bundle size and improves initial load times
+- The server loads every namespace, so a top-level key must not appear in two files
+- The browser only receives the namespaces a page declares through `getClientMessages` (`i18n/client-messages.ts`): `navigation`, `theme` and `cookieConsent` from the layout, plus those of the page's interactive components
 
 **Usage in components:**
 

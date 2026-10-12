@@ -1,9 +1,9 @@
 {
-  "meta": {
-    "title": "Maqueta gratuita de tu futuro sitio web | Cosmic Studio",
-    "description": "Pide la maqueta gratuita de tu futuro sitio web: elige una gama de colores, cuéntanos tu idea y recibe una primera propuesta por correo. Sin compromiso."
-  },
   "freeMockup": {
+    "meta": {
+      "title": "Maqueta gratuita de tu futuro sitio web | Cosmic Studio",
+      "description": "Pide la maqueta gratuita de tu futuro sitio web: elige una gama de colores, cuéntanos tu idea y recibe una primera propuesta por correo. Sin compromiso."
+    },
     "eyebrow": "[ Maqueta gratuita ]",
     "title": "Mira tu sitio antes de decidir",
     "intro": "Cuéntanos en qué punto estás y qué estilo te imaginas. Te enviamos una maqueta de tu futuro sitio, gratis y sin compromiso.",

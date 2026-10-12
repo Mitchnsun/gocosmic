@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
-import { getLocale, getMessages, getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { ReactNode } from 'react';
 
 import CTAFinal from '@/components/CTAFinal';
@@ -10,6 +10,7 @@ import { buildProjectCards, FilterableProjectGrid } from '@/components/ProjectGr
 import { SectionHeading } from '@/components/SectionHeading';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, PAGE_TOP, SECTION_Y } from '@/design-system/pill';
+import { getClientMessages } from '@/i18n/client-messages';
 import { buildPageMetadata } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -26,10 +27,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const em = (chunks: ReactNode) => <em>{chunks}</em>;
 
-export default async function Projects() {
+export default async function Projects({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations('projectsList');
-  const locale = await getLocale();
-  const messages = await getMessages();
+  const messages = await getClientMessages(['projectsList']);
   const projects = buildProjectCards(t);
 
   return (

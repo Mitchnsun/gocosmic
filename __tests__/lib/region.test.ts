@@ -1,6 +1,16 @@
 import { describe, expect, it } from 'vitest';
 
-import { DEFAULT_REGION, getCurrency, resolveRegion } from '@/lib/region';
+import { DEFAULT_REGION, getCurrency, getRegion, resolveRegion } from '@/lib/region';
+
+describe('getRegion', () => {
+  it.each(['fr-CH', 'de-CH', 'en-CH'])('returns the ch region on the Swiss locale %s', (locale) => {
+    expect(getRegion(locale)).toBe('ch');
+  });
+
+  it.each(['fr', 'de', 'en'])('returns the fr region on the language-only locale %s', (locale) => {
+    expect(getRegion(locale)).toBe('fr');
+  });
+});
 
 describe('resolveRegion', () => {
   it('resolves Swiss visitors to the ch region', () => {

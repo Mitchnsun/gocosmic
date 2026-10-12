@@ -1,45 +1,48 @@
+/* eslint-disable security/detect-non-literal-fs-filename -- reads the repository's own message files */
+import { readdirSync } from 'node:fs';
+import path from 'node:path';
+
 import { vi } from 'vitest';
 
-import { getNamespacesForPath } from '@/i18n/request';
-import { routing } from '@/i18n/routing';
+import requestConfig, { NAMESPACES } from '@/i18n/request';
 
-vi.mock('next/headers', () => ({ headers: vi.fn() }));
 vi.mock('next-intl/server', () => ({ getRequestConfig: (config: unknown) => config }));
 
-const EXPECTED: Record<keyof typeof routing.pathnames, string[]> = {
-  '/': ['home', 'pricing', 'projects'],
-  '/about': ['about'],
-  '/services': ['services', 'pricing'],
-  '/projects': ['projects'],
-  '/projects/daily-fortune': ['projects'],
-  '/projects/mcomperat': ['projects'],
-  '/projects/psc-supersprint': ['psc-supersprint', 'projects'],
-  '/projects/choeurdespaysdumontblanc': ['projects'],
-  '/projects/coachnpulse': ['projects'],
-  '/contact': ['contact'],
-  '/privacy': ['legal'],
-  '/legal-notice': ['legal'],
-  '/terms': ['legal'],
-  '/design-system': ['home'],
-  '/local': ['local', 'home', 'projects'],
-  '/free-mockup': ['free-mockup'],
-};
+interface Config {
+  locale: string;
+  messages: Record<string, Record<string, unknown>>;
+}
+const loadConfig = requestConfig as unknown as (params: {
+  requestLocale: Promise<string | undefined>;
+}) => Promise<Config>;
 
-const prefixOf = (locale: string) => `/${locale.toLowerCase()}`;
+describe('request config', () => {
+  it('lists every message file', () => {
+    const files = readdirSync(path.join(process.cwd(), 'messages', 'en')).map((file) => path.basename(file, '.json'));
 
-describe('getNamespacesForPath', () => {
-  it.each(Object.entries(EXPECTED))('maps %s to its namespaces in every locale', (route, namespaces) => {
-    const entry = routing.pathnames[route as keyof typeof routing.pathnames];
-
-    for (const locale of routing.locales) {
-      const slug = typeof entry === 'string' ? entry : entry[locale];
-      const path = slug === '/' ? prefixOf(locale) : `${prefixOf(locale)}${slug}`;
-
-      expect(getNamespacesForPath(path), path).toEqual(namespaces);
-    }
+    expect([...NAMESPACES].sort()).toEqual(files.sort());
   });
 
-  it('falls back to the homepage namespaces on an unknown route', () => {
-    expect(getNamespacesForPath('/fr/nowhere')).toEqual(['home']);
+  it('loads every namespace, whatever the page', async () => {
+    const { locale, messages } = await loadConfig({ requestLocale: Promise.resolve('fr-CH') });
+
+    expect(locale).toBe('fr-CH');
+    expect(Object.keys(messages)).toEqual(
+      expect.arrayContaining(['navigation', 'homepage', 'about', 'services', 'pricing', 'contact', 'legal'])
+    );
+    // Each page keeps its own title: the shared `meta` is the homepage's.
+    expect(messages.about?.meta).not.toEqual(messages.meta);
+  });
+
+  it('falls back to the default locale on an unknown one', async () => {
+    const { locale } = await loadConfig({ requestLocale: Promise.resolve('pt') });
+
+    expect(locale).toBe('en');
+  });
+
+  it('spells Swiss German without the sharp s', async () => {
+    const { messages } = await loadConfig({ requestLocale: Promise.resolve('de-CH') });
+
+    expect(JSON.stringify(messages)).not.toContain('ß');
   });
 });

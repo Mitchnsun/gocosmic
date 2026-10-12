@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getLocale, getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { ReactNode } from 'react';
 
 import CTAFinal from '@/components/CTAFinal';
@@ -12,13 +12,12 @@ import { SectionHeading } from '@/components/SectionHeading';
 import { StudioIntro } from '@/components/StudioIntro';
 import { WhyStudio } from '@/components/WhyStudio';
 import { CONTAINER, ghostPill, PAGE_TOP } from '@/design-system/pill';
-import { getCurrency } from '@/lib/region';
-import { getRegion } from '@/lib/region.server';
+import { getCurrency, getRegion } from '@/lib/region';
 import { buildPageMetadata } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'meta' });
+  const t = await getTranslations({ locale, namespace: 'about.meta' });
 
   return buildPageMetadata({
     locale,
@@ -32,10 +31,11 @@ const REASONS = ['found', 'price', 'answer', 'ai'] as const;
 
 const em = (chunks: ReactNode) => <em>{chunks}</em>;
 
-export default async function About() {
+export default async function About({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations('about');
-  const locale = await getLocale();
-  const region = await getRegion();
+  const region = getRegion(locale);
   const price = formatAmount(BASE_PRICE, getCurrency(region), locale);
 
   return (

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
-import { getLocale, getMessages, getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { ReactNode } from 'react';
 
 import CTAFinal from '@/components/CTAFinal';
@@ -17,9 +17,9 @@ import { SectionHeading } from '@/components/SectionHeading';
 import { ServicesGrid } from '@/components/ServicesGrid';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, PAGE_TOP, SECTION_Y } from '@/design-system/pill';
+import { getClientMessages } from '@/i18n/client-messages';
 import { CODE_HANDOVER_MONTHS } from '@/lib/pricing/offers';
-import { type Currency, getCurrency } from '@/lib/region';
-import { getRegion } from '@/lib/region.server';
+import { type Currency, getCurrency, getRegion } from '@/lib/region';
 import { buildPageMetadata } from '@/lib/seo';
 
 type ServicesTranslator = Awaited<ReturnType<typeof getTranslations<'services'>>>;
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     routeKey: '/services',
     title: t('meta.title'),
     // Swiss francs on the Swiss URLs.
-    description: describeServices(t, getCurrency(await getRegion()), locale),
+    description: describeServices(t, getCurrency(getRegion(locale)), locale),
   });
 }
 
@@ -47,12 +47,13 @@ const QUESTIONS = ['existing', 'ownership', 'edit', 'timing', 'stop', 'content']
 const em = (chunks: ReactNode) => <em>{chunks}</em>;
 
 /** Services & pricing: the former services, offers and pricing pages merged into one. */
-export default async function Services() {
+export default async function Services({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations('services');
   const tPricing = await getTranslations('pricing.columns');
-  const locale = await getLocale();
-  const messages = await getMessages();
-  const region = await getRegion();
+  const messages = await getClientMessages(['pricing']);
+  const region = getRegion(locale);
   const currency = getCurrency(region);
   const pricing = buildPricingColumns(tPricing, region, locale);
   const months = String(CODE_HANDOVER_MONTHS);

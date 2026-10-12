@@ -1,9 +1,9 @@
 {
-  "meta": {
-    "title": "À propos · Cosmic Studio, studio web à Genève & Annecy",
-    "description": "Cosmic Studio, studio web et mobile entre Genève et Annecy, tenu par Matthieu Compérat, qui suit votre projet du premier échange jusqu'après la mise en ligne."
-  },
   "about": {
+    "meta": {
+      "title": "À propos · Cosmic Studio, studio web à Genève & Annecy",
+      "description": "Cosmic Studio, studio web et mobile entre Genève et Annecy, tenu par Matthieu Compérat, qui suit votre projet du premier échange jusqu'après la mise en ligne."
+    },
     "eyebrow": "[ À propos ]",
     "title": "Un petit studio, <em>pour que vos clients vous trouvent.</em>",
     "lead": "Cosmic Studio, c'est Matthieu Compérat, développeur installé à Chêne-Bougeries. Il crée des sites et des applications, de Genève à Annecy.",

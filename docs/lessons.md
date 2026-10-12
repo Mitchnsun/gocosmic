@@ -42,23 +42,26 @@ Despite a PR review suggesting that hardcoding `--font-display` and `--font-body
 
 ## Internationalization (next-intl)
 
-### Client components and useTranslations — per-page NextIntlClientProvider pattern
+### Client components and useTranslations — each page declares the messages it sends to the browser
 
-**Mistake**: Using `useTranslations` directly in a `'use client'` component assumes the namespace was already loaded by the global `NextIntlClientProvider` in the layout. Because `i18n/request.ts` uses per-route lazy-loading, navigating to a page client-side (layout preserved, no re-render) leaves the provider with the initial page's namespaces only — causing `MISSING_MESSAGE` errors.
+**Mistake**: A `'use client'` component calling `useTranslations` relied on the layout's `NextIntlClientProvider` for a page namespace. After a client-side navigation, Next.js keeps the layout, so the provider still held the first page's messages and the component raised `MISSING_MESSAGE` (reported on 2026-09-07 for the homepage's `ServicesGrid`, only after navigating from another route; a hard reload masked it).
 
-**Root cause**: `i18n/request.ts` loads only the namespaces needed for the current route. On client-side navigation, Next.js re-renders page RSCs but preserves the layout, so `NextIntlClientProvider` retains the messages from the initial request.
+**Root cause**: The layout's provider is not re-rendered on client-side navigation, so it can only hold messages shared by every page.
 
-**Correct pattern**: Any page that contains a `'use client'` component calling `useTranslations` must wrap that component with its own `NextIntlClientProvider` seeded with `getMessages()` and `getLocale()`:
+**Correct pattern**: Pages are rendered at build time, so the server loads every namespace (`i18n/request.ts`) and each provider declares what reaches the browser through `getClientMessages` (`i18n/client-messages.ts`). The layout sends `navigation`, `theme` and `cookieConsent` (header, footer, theme switch, cookie banner). A page whose client component calls `useTranslations` wraps it in its own provider, with the top-level keys that component reads:
 
 ```tsx
 // app/[locale]/your-page/page.tsx
 import { NextIntlClientProvider } from 'next-intl';
-import { getLocale, getMessages } from 'next-intl/server';
-import { YourClientComponent } from '@/components/YourClientComponent';
+import { setRequestLocale } from 'next-intl/server';
 
-export default async function YourPage() {
-  const locale = await getLocale();
-  const messages = await getMessages();
+import { YourClientComponent } from '@/components/YourClientComponent';
+import { getClientMessages } from '@/i18n/client-messages';
+
+export default async function YourPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const messages = await getClientMessages(['yourNamespace']);
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
@@ -68,9 +71,14 @@ export default async function YourPage() {
 }
 ```
 
-The client component itself just calls `useTranslations('namespace')` normally — no props needed.
+A nested provider replaces its parent's messages, it does not add to them. A key left out shows as its raw path in the page, and `yarn build` logs `MISSING_MESSAGE` while prerendering.
 
-**Recurrence (2026-09-07)**: `app/[locale]/page.tsx` rendered `<ServicesGrid />` (a `'use client'` component using `useTranslations('homepage')`) without this wrapper, even though `journey/page.tsx`, `pricing/page.tsx` and `offers/page.tsx` already followed the pattern correctly. Reported by the user as a `MISSING_MESSAGE: homepage` console error that only appeared after client-side navigation (a hard reload masked it). Fixed by converting `Home` to an async server component and wrapping `<ServicesGrid />` in its own `NextIntlClientProvider`, per the pattern above. When adding a new `'use client'` component that calls `useTranslations` with a route-scoped namespace, always check it against this pattern before merging — it will not fail in a fresh dev server load, only on client-side navigation from another route.
+**Do NOT**:
+
+- Pass `getMessages()` to a provider: it sends every namespace to the browser.
+- Add a page namespace to the layout provider's list.
+- Call `headers()` or `cookies()` while rendering a page, or skip `setRequestLocale`: the route turns dynamic again (`ƒ` instead of `●` in the `yarn build` output).
+- Reuse a top-level key in two message files: the server merges them and the last one wins. `meta` once sat in four files; `__tests__/i18n/messages.test.ts` now rejects it.
 
 ## Animations / Reduced Motion
 
@@ -101,31 +109,6 @@ The `useEffect`-based listener is still useful for **reacting to mid-session cha
 
 - Use `const [reduceMotion, setReduceMotion] = useState(false)` as the only guard for CSS transition durations or initial animation visibility.
 - Replace `duration-300` with `duration-0` purely via JS state — the state won't be set until after the first render.
-
-**Do NOT**:
-
-- Pass translations as props to client components (verbose, fragile, misses the root cause)
-- Disable the per-route lazy-loading in `i18n/request.ts` (defeats the performance optimisation)
-- Rely on the global layout `NextIntlClientProvider` for page-specific namespaces
-
-**Test pattern**: In tests for async page components, mock `getLocale` and `getMessages` in the `next-intl/server` mock and `await` the page component:
-
-```ts
-vi.mock('next-intl/server', async () => {
-  const actual = await vi.importActual('next-intl/server');
-  const { default: messages } = await import('../../messages/en/your-namespace.json');
-  return {
-    ...actual,
-    getLocale: vi.fn().mockResolvedValue('en'),
-    getMessages: vi.fn().mockResolvedValue(messages),
-  };
-});
-
-it('renders correctly', async () => {
-  render(await YourPage());
-  // ...
-});
-```
 
 ## CSS / TailwindCSS 4 — Conditional Classes
 

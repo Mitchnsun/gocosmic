@@ -1,17 +1,18 @@
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
-import { getLocale, getMessages, getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { FreeMockupPitch } from '@/components/FreeMockup';
 import { FreeMockupForm } from '@/components/FreeMockupForm';
 import BreadcrumbSeo from '@/components/JsonLd/BreadcrumbSeo';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, PAGE_TOP } from '@/design-system/pill';
+import { getClientMessages } from '@/i18n/client-messages';
 import { buildPageMetadata } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'meta' });
+  const t = await getTranslations({ locale, namespace: 'freeMockup.meta' });
 
   return buildPageMetadata({
     locale,
@@ -21,10 +22,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   });
 }
 
-export default async function FreeMockup() {
+export default async function FreeMockup({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations('freeMockup');
-  const locale = await getLocale();
-  const messages = await getMessages();
+  const messages = await getClientMessages(['freeMockup']);
 
   return (
     <div className="bg-bg text-fg relative isolate" style={{ minHeight: 'calc(100vh - var(--header-height))' }}>

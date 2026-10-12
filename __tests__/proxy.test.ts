@@ -64,12 +64,12 @@ describe('proxy', () => {
     expect(mockHandleI18nRouting.mock.calls[1]?.[0]).toBe(bare);
   });
 
-  it('passes the requested path on to the request config', async () => {
+  it('answers with the i18n routing response, untouched', async () => {
     const { default: proxy } = await import('../proxy');
+    const routed = new Response(null);
+    mockHandleI18nRouting.mockReturnValueOnce(routed);
 
-    const response = proxy(new NextRequest('https://www.gocosmic.dev/fr-ch/a-propos'));
-
-    expect(response.headers.get('x-pathname')).toBe('/fr-ch/a-propos');
+    expect(proxy(new NextRequest('https://www.gocosmic.dev/fr-ch/a-propos'))).toBe(routed);
   });
 
   it('should have correct matcher configuration', async () => {

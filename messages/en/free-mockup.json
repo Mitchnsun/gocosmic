@@ -1,9 +1,9 @@
 {
-  "meta": {
-    "title": "A free mockup of your future website | Cosmic Studio",
-    "description": "Request a free mockup of your future website: pick a colour mood, describe what you have in mind and receive a first proposal by email. No commitment."
-  },
   "freeMockup": {
+    "meta": {
+      "title": "A free mockup of your future website | Cosmic Studio",
+      "description": "Request a free mockup of your future website: pick a colour mood, describe what you have in mind and receive a first proposal by email. No commitment."
+    },
     "eyebrow": "[ Free mockup ]",
     "title": "See your site before you decide",
     "intro": "Tell us where you stand and the mood you have in mind. We send you a mockup of your future website, free of charge and with no commitment.",

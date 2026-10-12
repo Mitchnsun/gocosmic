@@ -292,7 +292,7 @@ When adding new routes that require translations:
 
 1. Create or update the appropriate namespace file for all locales
 2. Update `i18n/routing.ts` to add translated pathnames
-3. Update `i18n/request.ts` in the `getNamespacesForPath` function to map the new route to its namespace
+3. Call `setRequestLocale(locale)` in the page, and wrap any client component that calls `useTranslations` in a `NextIntlClientProvider` fed by `getClientMessages([...])` (`i18n/client-messages.ts`)
 4. Update test utilities in `__tests__/test-utils.tsx` to import the new namespace
 
 #### Guidelines
@@ -301,7 +301,7 @@ When adding new routes that require translations:
 - **Maintain consistency**: Use the same structure across all locale files
 - **Avoid duplication**: Shared strings should go in `common.json`, `navigation.json`, or `footer.json`
 - **Test thoroughly**: Ensure all locales have complete translations (no missing keys)
-- **Update route mapping**: When adding new pages, update `getNamespacesForPath` in `i18n/request.ts` for optimal loading
+- **Register new files**: A new namespace file goes into `NAMESPACES` in `i18n/request.ts`; its top-level keys must not exist in another file
 
 ### Adding a New Project
 

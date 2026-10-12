@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
+import { use } from 'react';
 
 import {
   buildCaseStudyMeta,
@@ -16,11 +18,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return buildCaseStudyMetadata(locale, 'coachnpulse');
 }
 
-export default function CoachNPulse() {
+export default function CoachNPulse({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
   const t = useTranslations('coachNPulse');
   const tCommon = useTranslations('case_study');
   const tList = useTranslations('projectsList');
-  const locale = useLocale();
   const { latestRelease, accent, cover, color } = PROJECTS_BY_SLUG.coachnpulse;
   const maintained = t('result.maintained', {
     version: latestRelease.version,

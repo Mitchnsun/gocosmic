@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
+import { use } from 'react';
 
 import { buildCaseStudyMeta, buildCaseStudyNavigation, CaseStudy, PROJECTS_BY_SLUG } from '@/components/CaseStudy';
 import { buildCaseStudyMetadata } from '@/components/CaseStudy/CaseStudy.metadata';
@@ -10,11 +12,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return buildCaseStudyMetadata(locale, 'choeurdespaysdumontblanc');
 }
 
-export default function ChoeurDesPaysduMontBlanc() {
+export default function ChoeurDesPaysduMontBlanc({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
   const t = useTranslations('choeurDesPaysduMontBlanc');
   const tCommon = useTranslations('case_study');
   const tList = useTranslations('projectsList');
-  const locale = useLocale();
 
   return (
     <>

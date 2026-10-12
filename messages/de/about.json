@@ -1,9 +1,9 @@
 {
-  "meta": {
-    "title": "Über uns · Cosmic Studio, Webstudio in Genf & Annecy",
-    "description": "Cosmic Studio ist ein Web- und App-Studio zwischen Genf und Annecy. Matthieu Compérat führt es und begleitet Ihr Projekt vom ersten Gespräch an."
-  },
   "about": {
+    "meta": {
+      "title": "Über uns · Cosmic Studio, Webstudio in Genf & Annecy",
+      "description": "Cosmic Studio ist ein Web- und App-Studio zwischen Genf und Annecy. Matthieu Compérat führt es und begleitet Ihr Projekt vom ersten Gespräch an."
+    },
     "title": "Ein kleines Studio, <em>damit Ihre Kundschaft Sie findet.</em>",
     "eyebrow": "[ Über uns ]",
     "cta": {
