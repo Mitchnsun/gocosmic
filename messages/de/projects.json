@@ -14,6 +14,13 @@
         "tags": ["Smartphone-App", "iOS · Android", "Studio"],
         "cover_alt": "App-Symbol von Daily Fortune"
       },
+      "coachNPulse": {
+        "title": "Coach'n Pulse",
+        "client": "Sportcoach · Grenoble",
+        "description": "Die Website eines Coachs für Triathlon und Ausdauersport: Programme, Werdegang und Preise. Wir betreuen sie seit 2016.",
+        "tags": ["Präsentationswebsite", "Sport", "Seit 2016"],
+        "cover_alt": "Logo von Coach'n Pulse"
+      },
       "mcomperat": {
         "title": "mcomper.at",
         "description": "Ein Online-Lebenslauf auf Französisch und Englisch, der schnell lädt. Daran testen wir die Werkzeuge, die wir danach für unsere Kundschaft einsetzen.",
@@ -87,6 +94,38 @@
       "title": "Unsere erste App ist online",
       "description": "Daily Fortune ist im App Store und bei Google Play erhältlich, und wer die App nutzt, erhält jeden Tag eine neue Nachricht. Sie zeigt, dass wir eine App von der Idee bis zur Veröffentlichung umsetzen können.",
       "maintained": "Die App wird weiterhin aktualisiert: Version {version} erschien am {date}."
+    }
+  },
+  "coachNPulse": {
+    "title": "Coach'n Pulse",
+    "subtitle": "Die Website eines Coachs für Triathlon und Ausdauersport in Grenoble, die wir seit 2016 betreuen.",
+    "cta": {
+      "title": "Entdecken Sie Coach'n Pulse",
+      "description": "Programme, Werdegang des Coachs und Preise: Alles steht auf der Website von Coach'n Pulse.",
+      "button": "Website besuchen",
+      "ariaLabel": "Website von Coach'n Pulse besuchen (öffnet in einem neuen Tab)"
+    },
+    "for_whom": {
+      "label": "Für wen",
+      "title": "Ein Coach für Ausdauersport in Grenoble",
+      "description": "Luc Nahon ist staatlich geprüfter Triathlontrainer, Coach und Mentaltrainer. Er begleitet Menschen, die wieder mit dem Sport anfangen, ebenso wie Athletinnen und Athleten, die sich auf einen Ironman vorbereiten. Er brauchte eine Website, die sein Angebot vorstellt und Lust macht, ihn zu kontaktieren."
+    },
+    "what_we_did": {
+      "label": "Was wir gemacht haben",
+      "title": "Eine klare Website für Angebot und Coach",
+      "description": "Wir haben eine Website mit wenigen Seiten gestaltet, die die Fragen künftiger Sportlerinnen und Sportler beantwortet: was angeboten wird, wer der Coach ist und was es kostet.",
+      "items": {
+        "programs": "Die persönlichen Programme und Leistungschecks, nach Ziel (Gesundheit, Abnehmen, Wettkampf…) und Disziplin",
+        "coach": "Werdegang, Abschlüsse und Erfahrung des Coachs",
+        "prices": "Eine übersichtliche Preisliste",
+        "contact": "Seine Kontaktdaten immer griffbereit, am Computer wie auf dem Handy"
+      }
+    },
+    "result": {
+      "label": "Ergebnis",
+      "title": "Eine seit zehn Jahren betreute Website",
+      "description": "Seit 2016 online, wurde die Website immer wieder neu gebaut und aktualisiert, so wie sich die Werkzeuge des Webs weiterentwickelt haben. Diese langfristige Betreuung bieten wir jedem unserer Kunden.",
+      "maintained": "Die neueste Version, {version}, erschien am {date}."
     }
   },
   "mcomperat": {

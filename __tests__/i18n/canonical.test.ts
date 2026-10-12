@@ -102,6 +102,10 @@ describe('getCanonicalUrl', () => {
       expect(getCanonicalUrl('it', '/projects/psc-supersprint')).toBe(`${SITE_URL}/it/progetti/psc-supersprint`);
     });
 
+    it('resolves Italian coachnpulse pathname', () => {
+      expect(getCanonicalUrl('it', '/projects/coachnpulse')).toBe(`${SITE_URL}/it/progetti/coachnpulse`);
+    });
+
     it('resolves Spanish choeurdespaysdumontblanc pathname', () => {
       expect(getCanonicalUrl('es', '/projects/choeurdespaysdumontblanc')).toBe(
         `${SITE_URL}/es/proyectos/choeurdespaysdumontblanc`

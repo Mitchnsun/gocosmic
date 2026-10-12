@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.5.0] - 2026-10-12
+
+### Added
+
+- A new project page for Coach'n Pulse, the website of a triathlon and endurance sports coach in Grenoble that the studio has looked after since 2016, with its latest version and a link to the site
+
 ## [2.4.1] - 2026-10-12
 
 ### Added

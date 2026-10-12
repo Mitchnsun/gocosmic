@@ -80,6 +80,15 @@ export const routing = defineRouting({
       it: '/progetti/choeurdespaysdumontblanc',
     }),
 
+    // Projects - Coach'n Pulse
+    '/projects/coachnpulse': localized({
+      en: '/projects/coachnpulse',
+      fr: '/projets/coachnpulse',
+      es: '/proyectos/coachnpulse',
+      de: '/projekte/coachnpulse',
+      it: '/progetti/coachnpulse',
+    }),
+
     // Contact page
     '/contact': localized({
       en: '/contact',

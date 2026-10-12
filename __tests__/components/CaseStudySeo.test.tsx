@@ -69,4 +69,25 @@ describe('CaseStudySeo', () => {
       })
     );
   });
+
+  it("dates Coach'n Pulse to its current version and declares that release", () => {
+    render(<CaseStudySeo slug="coachnpulse" />);
+
+    expect(jsonLdScriptMock).toHaveBeenCalledWith(
+      expect.objectContaining({
+        scriptKey: 'case-study-json-ld-coachnpulse',
+        data: expect.objectContaining({
+          '@graph': expect.arrayContaining([
+            expect.objectContaining({
+              name: "Coach'n Pulse",
+              url: 'https://www.gocosmic.dev/en/projects/coachnpulse',
+              dateCreated: '2026',
+              version: '4.0.0',
+              dateModified: '2026-03-05',
+            }),
+          ]),
+        }),
+      })
+    );
+  });
 });

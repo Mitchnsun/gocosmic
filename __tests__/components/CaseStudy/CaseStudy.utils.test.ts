@@ -11,7 +11,7 @@ describe('buildCaseStudyNavigation', () => {
     expect(navigation.previousLabel).toBe('Previous project');
     expect(navigation.nextLabel).toBe('Next project');
     expect(navigation.ariaLabel).toBe('Case study navigation');
-    expect(navigation.previous).toEqual({ href: '/projects/daily-fortune', title: 'title:dailyFortune' });
+    expect(navigation.previous).toEqual({ href: '/projects/coachnpulse', title: 'title:coachNPulse' });
     expect(navigation.next).toEqual({
       href: '/projects/psc-supersprint',
       title: 'title:pscSupersprint',

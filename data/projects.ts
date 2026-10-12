@@ -54,6 +54,22 @@ export const PROJECTS = [
     },
   },
   {
+    slug: 'coachnpulse',
+    i18nKey: 'coachNPulse',
+    href: '/projects/coachnpulse',
+    kind: 'site',
+    year: 2026,
+    latestRelease: { version: '4.0.0', date: '2026-03-05' },
+    accent: 'aerospace',
+    cover: {
+      src: '/projects/coachnpulse/coachnpulse-logo.webp',
+      width: 969,
+      height: 263,
+      fit: 'logo',
+      background: '#000000',
+    },
+  },
+  {
     slug: 'mcomperat',
     i18nKey: 'mcomperat',
     href: '/projects/mcomperat',

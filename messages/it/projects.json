@@ -14,6 +14,13 @@
         "tags": ["App mobile", "iOS · Android", "Studio"],
         "cover_alt": "Icona dell'app Daily Fortune"
       },
+      "coachNPulse": {
+        "title": "Coach'n Pulse",
+        "client": "Coach sportivo · Grenoble",
+        "description": "Il sito di un coach di triathlon e sport di resistenza: programmi, percorso e tariffe. Lo seguiamo dal 2016.",
+        "tags": ["Sito vetrina", "Sport", "Dal 2016"],
+        "cover_alt": "Logo di Coach'n Pulse"
+      },
       "mcomperat": {
         "title": "mcomper.at",
         "description": "Un curriculum online, in francese e in inglese, veloce da caricare. Ci serve anche per provare gli strumenti che poi usiamo per i nostri clienti.",
@@ -87,6 +94,38 @@
       "title": "La nostra prima app online",
       "description": "Daily Fortune è disponibile sull'App Store e su Google Play, e i suoi utenti ricevono un nuovo messaggio ogni giorno. Mostra che sappiamo portare un'app dall'idea fino alla pubblicazione.",
       "maintained": "Continua a essere aggiornata: la versione {version} è uscita il {date}."
+    }
+  },
+  "coachNPulse": {
+    "title": "Coach'n Pulse",
+    "subtitle": "Il sito di un coach di triathlon e sport di resistenza a Grenoble, che seguiamo dal 2016.",
+    "cta": {
+      "title": "Scopri Coach'n Pulse",
+      "description": "Programmi, percorso del coach e tariffe: trovi tutto sul sito di Coach'n Pulse.",
+      "button": "Visita il sito",
+      "ariaLabel": "Visita il sito di Coach'n Pulse (si apre in una nuova scheda)"
+    },
+    "for_whom": {
+      "label": "Per chi",
+      "title": "Un coach di sport di resistenza a Grenoble",
+      "description": "Luc Nahon è educatore sportivo diplomato in triathlon, allenatore e preparatore mentale. Segue sia chi ricomincia a fare sport sia atleti che preparano un Ironman. Gli serviva un sito per presentare la sua offerta e invogliare a contattarlo."
+    },
+    "what_we_did": {
+      "label": "Cosa abbiamo fatto",
+      "title": "Un sito chiaro per presentare l'offerta e il coach",
+      "description": "Abbiamo progettato un sito di poche pagine che risponde alle domande di chi vuole iniziare: cosa viene proposto, chi è il coach e quanto costa.",
+      "items": {
+        "programs": "I programmi e le valutazioni personalizzati, in base agli obiettivi (salute, perdita di peso, competizione…) e alle discipline",
+        "coach": "Il percorso, i diplomi e l'esperienza del coach",
+        "prices": "Un listino prezzi facile da leggere",
+        "contact": "I suoi contatti sempre a portata di mano, sul computer come sul telefono"
+      }
+    },
+    "result": {
+      "label": "Risultato",
+      "title": "Un sito seguito da dieci anni",
+      "description": "Online dal 2016, il sito è stato rifatto e aggiornato man mano che gli strumenti del web evolvevano. È questo accompagnamento nel tempo che offriamo a ciascuno dei nostri clienti.",
+      "maintained": "La sua ultima versione, la {version}, è uscita il {date}."
     }
   },
   "mcomperat": {
