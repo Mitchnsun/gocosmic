@@ -6,13 +6,13 @@
   "about": {
     "eyebrow": "[ About ]",
     "title": "A small studio, <em>so your customers can find you.</em>",
-    "lead": "Cosmic Studio is Matthieu Compérat, a developer based in Chêne-Bougeries. He builds websites and apps for craftspeople, associations and independents, from Geneva to Annecy.",
+    "lead": "Cosmic Studio is Matthieu Compérat, a developer based in Chêne-Bougeries. He builds websites and apps, from Geneva to Annecy.",
     "path": {
       "eyebrow": "[ Background ]",
-      "title": "Fifteen years of development, <em>one point of contact.</em>",
+      "title": "Fifteen years in the trade, <em>first for large companies.</em>",
       "paragraphs": [
         "Matthieu comes from Duingt, on the shores of Lake Annecy, and has been building websites and apps for about fifteen years. He started out with large companies, where he learnt to build tools that are reliable and accessible to everyone.",
-        "With Cosmic Studio, he puts that experience to work for craftspeople, associations and independents. You talk to the person who builds your site, from the first call to the ongoing care, month after month."
+        "With Cosmic Studio, he builds the site of a workshop, a practice or an association to the same standard. He tries every site on a phone, automatic checks run on every change, and he reviews everything he delivers. You talk to the person who builds your site, from the first call to the ongoing care."
       ],
       "zones": {
         "ch": [
@@ -33,20 +33,20 @@
     },
     "why": {
       "eyebrow": "[ Why this choice ]",
-      "title": "Craftspeople and associations <em>deserve better than a template.</em>",
-      "lead": "Large agencies mostly work for large companies, and online site builders leave you to figure the tool out on your own. Cosmic Studio is for everyone in between.",
+      "title": "A small site <em>is built with the same care as a large one.</em>",
+      "lead": "Large agencies mostly work for large companies, and online site builders leave you to figure the tool out on your own. Cosmic Studio is for those in between.",
       "reasons": {
         "found": {
           "title": "Get found close to home",
           "description": "Your customers look for you on their phones, a few kilometres away. A fast, well-built site ranks better on Google."
         },
         "price": {
-          "title": "A price that follows your business",
-          "description": "A subscription from {price} a month excl. VAT that evolves with you, rather than a large upfront investment."
+          "title": "A price on display",
+          "description": "The subscription starts at {price} a month excl. VAT, and you can see what each option costs before you write to us. There is no large sum to pay upfront."
         },
         "answer": {
           "title": "Someone who answers",
-          "description": "No call centre: the person who built your site is the one who answers, usually the same day."
+          "description": "The person who built your site is the one who answers, usually the same day."
         },
         "ai": {
           "title": "AI to save time, always reviewed",
@@ -55,8 +55,8 @@
       }
     },
     "cta": {
-      "title": "Let's work together.",
-      "description": "Tell us about your business in a few lines. Matthieu replies quickly.",
+      "title": "Write to Matthieu.",
+      "description": "A few lines about your business are enough to get started.",
       "button": "Talk about my project"
     }
   }

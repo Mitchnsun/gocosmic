@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   });
 }
 
-const AUDIENCES = ['artisans', 'associations', 'independents'] as const;
+const AUDIENCES = ['artisans', 'companies', 'independents', 'associations'] as const;
 const ZONES = ['geneva', 'romandy', 'annecy', 'remote'] as const;
 /** Projects featured on this page; the full list lives on /projects. */
 const PROJECT_COUNT = 3;

@@ -21,7 +21,7 @@
         "showcase": {
           "title": "Showcase sites",
           "description": "To present your business, your work and your opening hours, and be found on Google by people nearby.",
-          "tags": ["Craftspeople", "Associations", "Independents"]
+          "tags": ["Businesses", "Independents", "Associations"]
         },
         "shops": {
           "title": "Shops & bookings",
@@ -63,12 +63,16 @@
         "content": {
           "question": "Do you also write the texts and take the photos?",
           "answer": "We help you write and we proofread everything, keeping in mind the words your customers type into Google. For photos and videos, we use yours, or have them made on a quote by a local professional, and we handle the relationship with them."
+        },
+        "existing": {
+          "question": "I already have a site. Can you take it over?",
+          "answer": "Yes. We start with a free review of your current site: what works, what drives visitors away and how it shows up on Google. Then we tell you whether it is better to rebuild it or to improve it as it is."
         }
       }
     },
     "cta": {
       "title": "Let's talk about your site.",
-      "description": "Tell us about your business in a few lines. We reply quickly, then prepare your free mockup if you would like one.",
+      "description": "Tell us what you need. We then prepare your free mockup, or a review of your current site.",
       "primary_button": "Talk about my project"
     }
   }

@@ -7,7 +7,7 @@
       },
       "title": "Votre activité mérite d'être",
       "endWords": ["vue.", "trouvée.", "choisie."],
-      "subtitle": "Cosmic Studio crée des sites et des applications pour les artisans, les associations et les indépendants. Nous faisons en sorte qu'on vous trouve sur Google, et nous restons joignables une fois le site en ligne.",
+      "subtitle": "Cosmic Studio crée des sites et des applications pour les petites entreprises, les indépendants et les associations. Nous faisons en sorte qu'on vous trouve sur Google, et nous restons joignables une fois le site en ligne.",
       "cta": "Go Cosmic",
       "secondary": "Voir les tarifs",
       "facts": {
@@ -41,15 +41,19 @@
       "items": {
         "artisans": {
           "title": "Artisans",
-          "description": "Menuisier·ère, plombier·ère, coiffeur·se, traiteur… Un site qui dit ce que vous faites, où vous travaillez et comment vous joindre, et qu'on trouve quand on cherche votre métier près de chez soi."
+          "description": "Menuisier·ère, plombier·ère, coiffeur·se, traiteur·se… Un site qui dit ce que vous faites, où vous travaillez et comment vous joindre, et qu'on trouve quand on cherche votre métier près de chez soi."
         },
         "associations": {
           "title": "Associations",
           "description": "Chorale, club sportif, collectif… Vos événements, les adhésions et les nouvelles de l'association au même endroit, pour faire connaître vos activités et accueillir de nouveaux membres."
         },
         "independents": {
-          "title": "Indépendants qui se lancent",
-          "description": "Thérapeute, consultant·e, photographe… Un site professionnel dès vos débuts, à un prix qui suit le développement de votre activité."
+          "title": "Indépendants et professions libérales",
+          "description": "Avocat·e, architecte, ostéopathe, consultant·e… On vous recommande, puis on regarde votre site avant de vous appeler. Il présente votre pratique et votre parcours, et dit comment prendre rendez-vous."
+        },
+        "companies": {
+          "title": "Petites entreprises",
+          "description": "Entreprise du bâtiment, bureau d'études, garage, agence de quelques personnes… Votre site montre ce que vous savez faire à un futur client comme à quelqu'un que vous aimeriez embaucher."
         }
       }
     },
@@ -63,7 +67,7 @@
           "description": "Vos textes, vos photos et votre nom de domaine vous appartiennent dès le premier jour. Le code vous est cédé après {months} mois d'abonnement, ou avant contre des frais de cession."
         },
         "fast": {
-          "title": "Rapide, et bien placé sur Google",
+          "title": "Rapide sur téléphone",
           "description": "Sans thème lourd ni extensions, vos pages s'affichent vite sur téléphone, et Google en tient compte dans ses résultats."
         },
         "person": {
@@ -71,14 +75,14 @@
           "description": "Vous parlez à Matthieu, qui connaît votre site puisqu'il l'a construit."
         },
         "grows": {
-          "title": "Un site qui suit votre activité",
-          "description": "Une page aujourd'hui, une boutique ou une application plus tard, sans tout reconstruire."
+          "title": "On ajoute sans tout refaire",
+          "description": "Vous commencez par une page. Le jour où il vous faut la prise de rendez-vous, une version anglaise ou une boutique, nous l'ajoutons au site existant."
         }
       }
     },
     "process": {
       "eyebrow": "[ Processus ]",
-      "title": "Quatre étapes, <em>sans surprise.</em>",
+      "title": "Quatre étapes, <em>et une date fixée au démarrage.</em>",
       "subtitle": "De la première discussion à la mise en ligne, vous savez où en est votre projet.",
       "discovery": {
         "label": "T-3 · Rencontre",
@@ -88,7 +92,7 @@
       "design": {
         "label": "T-2 · Maquette",
         "title": "Vous voyez avant de décider",
-        "description": "Nous préparons une maquette de votre page d'accueil, avec vos couleurs et vos textes. Elle est gratuite et ne vous engage à rien."
+        "description": "Nous préparons une maquette de votre page d'accueil. Si vous avez déjà un site, elle reprend ses couleurs et ses textes ; sinon, elle part de la palette et des indications que vous nous avez données. Elle est gratuite et ne vous engage à rien."
       },
       "build": {
         "label": "T-1 · Réalisation",
@@ -103,13 +107,13 @@
     },
     "projects": {
       "eyebrow": "[ Réalisations ]",
-      "title": "Nos dernières <em>réalisations.</em>",
+      "title": "Ce que nous avons <em>déjà mis en ligne.</em>",
       "all": "Tous les projets"
     },
     "apps": {
-      "eyebrow": "[ Nos apps ]",
-      "title": "Nous développons aussi <em>nos propres applications.</em>",
-      "lead": "Nous y testons les outils avant de les utiliser pour nos clients, et ce que nous apprenons profite ensuite à vos projets.",
+      "eyebrow": "[ Notre application ]",
+      "title": "Nous développons aussi <em>notre propre application.</em>",
+      "lead": "Nous y testons nos outils avant de les utiliser sur vos projets.",
       "daily_fortune": {
         "name": "Daily Fortune",
         "badge": "iOS · Android",
@@ -122,8 +126,8 @@
       "eyebrow": "[ Le studio ]",
       "title": "Derrière Cosmic Studio, <em>il y a Matthieu.</em>",
       "paragraphs": [
-        "Je m'appelle Matthieu Compérat. Originaire de Duingt, au bord du lac d'Annecy, je vis aujourd'hui à Chêne-Bougeries. Je développe des sites et des applications depuis une quinzaine d'années, d'abord pour de grandes entreprises. Avec Cosmic Studio, je travaille directement avec les artisans, les associations et les indépendants.",
-        "Quand vous appelez, c'est moi qui réponds, et vos messages ont une réponse dans la journée. Je connais en détail le site que je vous livre, ce qui rend chaque modification simple et rapide."
+        "Matthieu Compérat est originaire de Duingt, au bord du lac d'Annecy, et vit aujourd'hui à Chêne-Bougeries. Il développe des sites et des applications depuis une quinzaine d'années, d'abord pour de grandes entreprises. Avec Cosmic Studio, il fait ce métier pour des activités plus petites, et travaille directement avec la personne qui les tient.",
+        "Quand vous appelez, c'est lui qui répond, et vos messages ont en général une réponse dans la journée. Il connaît en détail le site qu'il vous livre, ce qui rend chaque modification simple et rapide."
       ],
       "zones": {
         "ch": [
@@ -143,7 +147,7 @@
     "cta": {
       "button": "Parler de mon projet",
       "description": "Présentez-nous votre activité en quelques lignes. Nous vous répondons rapidement pour en parler, avant de vous proposer quoi que ce soit.",
-      "freeMockup": "Vous hésitez encore ? Commencez par une <link>maquette gratuite</link>.",
+      "freeMockup": "Si vous préférez voir avant de parler, demandez une <link>maquette gratuite</link>.",
       "title": "Faisons rayonner votre activité."
     }
   }

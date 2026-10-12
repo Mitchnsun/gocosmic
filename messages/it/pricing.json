@@ -232,13 +232,13 @@
       },
       "guidance": {
         "title": "Accompagnamento",
-        "label": "Consulenza, UX/UI e design",
+        "label": "Consulenza e design",
         "price": "Tariffa a giornata",
-        "description": "Per andare oltre il mockup gratuito senza per forza avviare lo sviluppo: architettura, scelte tecniche, UX/UI e design, con un designer al nostro fianco.",
+        "description": "Per andare oltre il mockup gratuito senza per forza avviare lo sviluppo: l'organizzazione del sito, le scelte tecniche, il percorso dei visitatori e il design, con un/una designer partner.",
         "features": {
-          "architecture": "Architettura e scelte tecniche",
-          "design": "UX/UI, percorsi utente e mockup dettagliati",
-          "designer": "Un designer che lavora al fianco dello sviluppatore"
+          "architecture": "Organizzazione del sito e scelte tecniche",
+          "design": "Percorso dei visitatori e mockup dettagliati",
+          "designer": "Un/una designer partner, che lavora al fianco dello sviluppatore"
         },
         "cta": "Parliamone"
       },
@@ -246,11 +246,11 @@
         "title": "Rinforzo",
         "label": "Sito esistente, squadra rinforzata",
         "price": "Tariffa a giornata",
-        "description": "Per far evolvere un sito esistente, che si tratti di miglioramenti tecnici o di nuove funzionalità, con uno o più sviluppatori in base alla portata del progetto.",
+        "description": "Per far evolvere un sito esistente, che si tratti di miglioramenti tecnici o di nuove funzionalità, con uno/a o più sviluppatori/trici partner in base alla portata del progetto.",
         "features": {
           "technical": "Miglioramento tecnico: prestazioni, sicurezza, aggiornamenti",
           "features": "Nuove funzionalità su un sito esistente",
-          "team": "Uno o più sviluppatori in base alla portata del progetto"
+          "team": "Uno/a o più sviluppatori/trici partner in base alla portata del progetto"
         },
         "cta": "Parliamone"
       },

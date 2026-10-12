@@ -10,9 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Added
 
 - Search engines now receive the path to each main page (Home › Services, and so on) and the starting monthly price of the services, excluding VAT, in euros or Swiss francs depending on the version of the site
+- A new question in the services FAQ answers visitors who already have a website
 
 ### Changed
 
+- The texts of the site now speak to small businesses and liberal professions as well as craftspeople, independents and associations, with a fourth audience card on the homepage, in all five languages
+- The texts were reread to sound less repetitive from one page to the next, and a few statements were corrected: the studio no longer suggests a ranking on Google, and presents its single application as such
 - Internal cleanup of unused code and tools, with no visible change for visitors
 - The free mockup page now uses the same width and title style as the other pages, and the contact page ends with the same bottom spacing
 - Every page now starts closer to the header, with the same spacing everywhere, instead of leaving a large gap on wide screens

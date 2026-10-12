@@ -1,15 +1,15 @@
 {
   "local": {
     "meta": {
-      "title": "Création de sites internet · Genève, Annecy, Haute-Savoie | Cosmic Studio",
-      "description": "Création de sites internet à Genève, Annecy et en Haute-Savoie pour les artisans, associations et indépendants. Prix affichés et maquette gratuite, sans engagement."
+      "title": "Création de sites internet à Genève et Annecy | Cosmic Studio",
+      "description": "Création de sites internet à Genève, Annecy et Haute-Savoie pour artisans, PME, indépendants et associations. Prix affichés, maquette gratuite sans engagement."
     },
     "intro": {
       "eyebrow": "[ Genève · Annecy · Haute-Savoie ]",
-      "title": "Votre studio web, <em>entre Genève et Annecy.</em>",
+      "title": "Un studio web <em>entre Genève et Annecy.</em>",
       "lead": {
-        "ch": "Cosmic Studio est installé à Chêne-Bougeries, près de Genève. Nous créons les sites internet et les applications des artisans, associations et indépendants de Genève, d'Annecy et de Haute-Savoie, et nous venons vous rencontrer sur place.",
-        "fr": "Cosmic Studio travaille entre Annecy et Genève. Nous créons les sites internet et les applications des artisans, associations et indépendants de Haute-Savoie, et nous venons vous rencontrer sur place."
+        "ch": "Cosmic Studio est installé à Chêne-Bougeries, près de Genève. Nous créons les sites internet et les applications des artisans, des entreprises, des cabinets et des associations de Genève, d'Annecy et de Haute-Savoie, et nous venons vous rencontrer sur place.",
+        "fr": "Cosmic Studio travaille entre Annecy et Genève. Nous créons les sites internet et les applications des artisans, des entreprises, des cabinets et des associations de Haute-Savoie, et nous venons vous rencontrer sur place."
       },
       "primary": "Parler de mon projet",
       "secondary": "Voir les services et les tarifs"
@@ -20,7 +20,7 @@
       "items": {
         "geneva": {
           "title": "Genève",
-          "description": "Le studio est à Chêne-Bougeries. On se retrouve chez vous, à votre atelier ou autour d'un café."
+          "description": "Le studio est à Chêne-Bougeries. On se retrouve à votre atelier, dans vos bureaux ou autour d'un café."
         },
         "romandy": {
           "title": "Suisse romande",

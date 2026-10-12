@@ -8,8 +8,8 @@
     "meta_title": "Page introuvable | Cosmic Studio"
   },
   "meta": {
-    "title": "Création de sites internet pour artisans, associations et indépendants | Cosmic Studio",
-    "description": "Création de sites internet pour artisans, associations et indépendants à Genève, Annecy et en Haute-Savoie, visibles sur Google et suivis une fois en ligne."
+    "title": "Sites internet pour PME, artisans et associations | Cosmic Studio",
+    "description": "Sites internet et applications pour PME, artisans, professions libérales et associations à Genève, Annecy et en Haute-Savoie. Prix affichés, maquette gratuite."
   },
   "language": {
     "current": "Langue actuelle : {language}",
@@ -46,6 +46,6 @@
     "toggle_dark": "Passer au thème sombre"
   },
   "og": {
-    "image_alt": "Cosmic Studio · Votre activité mérite d’être vue."
+    "image_alt": "Cosmic Studio · Votre activité mérite d'être vue."
   }
 }

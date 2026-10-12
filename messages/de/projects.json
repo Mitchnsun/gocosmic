@@ -2,10 +2,10 @@
   "projectsList": {
     "meta": {
       "title": "Referenzen · Websites und Apps | Cosmic Studio",
-      "description": "Websites und Apps von Cosmic Studio für einen Chor, einen Triathlonverein und Selbstständige, in Genf und Hochsavoyen."
+      "description": "Websites und Apps von Cosmic Studio: die Website eines Chors, die Live-Ergebnisse eines Triathlonvereins und die eigenen Projekte des Studios."
     },
-    "title": "Websites und Apps, <em>die täglich genutzt werden.</em>",
-    "subtitle": "Eine Auswahl von Projekten für unsere Kundschaft und für das Studio. Jede Seite erklärt, für wen wir gearbeitet haben, was wir gemacht haben und was sich dadurch verändert hat.",
+    "title": "Websites und Apps, <em>die benutzt werden.</em>",
+    "subtitle": "Einige sind für Kundschaft entstanden, andere für das Studio selbst. Jede Seite erklärt, für wen wir gearbeitet haben, was wir gemacht haben und was sich dadurch verändert hat.",
     "items": {
       "dailyFortune": {
         "title": "Daily Fortune",
@@ -37,8 +37,8 @@
       }
     },
     "cta": {
-      "title": "Ihr Projekt könnte das nächste auf dieser Liste sein.",
-      "description": "Erzählen Sie uns in ein paar Zeilen, was Sie machen. Wir antworten schnell.",
+      "title": "Erzählen Sie uns von Ihrem Projekt.",
+      "description": "Beschreiben Sie in ein paar Zeilen, was Sie machen, und nennen Sie die Adresse Ihrer Website, falls Sie schon eine haben.",
       "button": "Mein Projekt besprechen"
     },
     "eyebrow": "[ Referenzen · {count} ]",
@@ -69,23 +69,23 @@
     "for_whom": {
       "label": "Für wen",
       "title": "Jeden Morgen ein kleiner Anstoß",
-      "description": "Daily Fortune ist kein Kundenprojekt. Wir haben die App für das Studio selbst gestaltet und veröffentlicht. Sie richtet sich an alle, die morgens ein wenig Schwung suchen, einen Satz, der sie auf Kurs hält, oder eine Nachricht zum Teilen."
+      "description": "Daily Fortune ist die App des Studios, von uns selbst gestaltet und veröffentlicht. Sie richtet sich an alle, die morgens ein wenig Schwung suchen, einen Satz, der sie auf Kurs hält, oder eine Nachricht zum Teilen."
     },
     "what_we_did": {
       "label": "Was wir gemacht haben",
       "title": "Eine Smartphone-App, von der Idee bis zur Veröffentlichung",
-      "description": "Wir haben alles selbst gemacht, von der ersten Idee bis zur Veröffentlichung in den App-Stores.",
+      "description": "Wir haben alles selbst gemacht.",
       "items": {
         "daily_message": "Jeden Tag eine neue Nachricht: ein motivierendes Zitat, eine positive Affirmation oder ein Spruch wie aus dem Glückskeks",
-        "ai_messages": "Abwechslungsreiche Nachrichten, mithilfe von KI erstellt, die vom Alltag und von den Wünschen der Menschen erzählen",
-        "clean_design": "Ein aufgeräumter Bildschirm, der schnell reagiert, mit flüssigen Animationen",
+        "ai_messages": "Abwechslungsreiche Nachrichten, mithilfe von KI erstellt",
+        "clean_design": "Ein gut lesbarer Bildschirm mit ein paar Animationen",
         "stores": "Veröffentlicht im App Store und bei Google Play, für iPhone und Android"
       }
     },
     "result": {
       "label": "Ergebnis",
       "title": "Unsere erste App ist online",
-      "description": "Daily Fortune ist im App Store und bei Google Play erhältlich, und wer die App nutzt, erhält jeden Tag eine neue Nachricht. Für Sie ist das der Beweis, dass wir eine App von der Idee bis zur Veröffentlichung umsetzen können.",
+      "description": "Daily Fortune ist im App Store und bei Google Play erhältlich, und wer die App nutzt, erhält jeden Tag eine neue Nachricht. Sie zeigt, dass wir eine App von der Idee bis zur Veröffentlichung umsetzen können.",
       "maintained": "Die App wird weiterhin aktualisiert: Version {version} erschien am {date}."
     }
   },
@@ -100,18 +100,18 @@
     },
     "for_whom": {
       "label": "Für wen",
-      "title": "Ein Online-Lebenslauf und unser Testfeld",
-      "description": "mcomper.at ist der Online-Lebenslauf von Matthieu Compérat, Ihrem Ansprechpartner bei Cosmic Studio: sein Werdegang und seine Kompetenzen auf einer einzigen Seite. Hier testen wir auch die Werkzeuge, die wir danach für unsere Kundschaft einsetzen."
+      "title": "Ein Online-Lebenslauf",
+      "description": "mcomper.at ist der Online-Lebenslauf von Matthieu Compérat, Ihrem Ansprechpartner bei Cosmic Studio. Sein Werdegang und seine Kompetenzen passen auf eine einzige Seite."
     },
     "what_we_did": {
       "label": "Was wir gemacht haben",
       "title": "Ein klarer, schneller Lebenslauf in zwei Sprachen",
-      "description": "Wir haben eine Website gestaltet, die leicht zu lesen und einfach zu erweitern ist. Dort erproben wir auch unsere Arbeitsweisen, bevor wir sie bei Ihren Projekten anwenden.",
+      "description": "Wir haben eine Website gestaltet, die leicht zu lesen und einfach zu erweitern ist.",
       "items": {
         "two_languages": "Eine Website auf Französisch und Englisch, mit eigenen Texten für jede Sprache",
         "found_on_google": "Seiten, die darauf ausgelegt sind, bei Google gefunden zu werden",
         "fast_on_phone": "Seiten, die schnell laden und auf dem Handy gut lesbar sind",
-        "accessible": "Eine für alle zugängliche Website, nach bewährten Regeln gebaut",
+        "accessible": "Eine für alle zugängliche Website",
         "ai_with_review": "KI als Hilfe beim Schreiben und Übersetzen, wobei jeder Text von einem Menschen gegengelesen wird"
       }
     },
@@ -123,7 +123,7 @@
   },
   "choeurDesPaysduMontBlanc": {
     "title": "Chœur des Pays du Mont Blanc",
-    "subtitle": "Die Website eines Amateurchors aus Hochsavoyen: Konzerte, Repertoire und Proben an einem Ort.",
+    "subtitle": "Die Website eines Amateurchors aus Hochsavoyen, mit seinen Konzerten, seinem Repertoire und seinen Proben.",
     "cta": {
       "title": "Entdecken Sie den Chor",
       "description": "Nächste Konzerte, Repertoire, Proben: Alles steht auf der Website des Chors.",
@@ -133,7 +133,7 @@
     "for_whom": {
       "label": "Für wen",
       "title": "Ein Amateurchor aus Hochsavoyen",
-      "description": "Der Chœur des Pays du Mont Blanc ist ein Verein von Amateursängerinnen und -sängern in Hochsavoyen. Er brauchte einen einzigen Ort, um seine Mitglieder zu informieren, seine Konzerte bekannt zu machen und neue Stimmen willkommen zu heißen."
+      "description": "Der Chœur des Pays du Mont Blanc ist ein Verein von Amateursängerinnen und -sängern in Hochsavoyen. Er brauchte eine Website, die seinen Mitgliedern ebenso nützt wie denen, die ihn noch nicht kennen."
     },
     "what_we_did": {
       "label": "Was wir gemacht haben",
@@ -149,7 +149,7 @@
     "result": {
       "label": "Ergebnis",
       "title": "Alles rund um den Chor an einem Ort",
-      "description": "Die Website ist zum wichtigsten Treffpunkt des Chors geworden: Die Mitglieder finden dort Probenzeiten und Neuigkeiten, das Publikum entdeckt die nächsten Konzerte, und wer mitsingen möchte, erfährt, wie man dem Chor beitritt."
+      "description": "Die Mitglieder finden dort ihre Probenzeiten und die Neuigkeiten, das Publikum die nächsten Konzerte, und wer mitsingen möchte, erfährt, wie man dem Chor beitritt."
     }
   }
 }

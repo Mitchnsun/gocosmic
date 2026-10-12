@@ -68,7 +68,7 @@
         "back": "Send another message"
       }
     },
-    "lead": "Write us a message or book a 20-minute call. Either way, Matthieu is the one who answers quickly.",
+    "lead": "Write us a message or book a 20-minute call. Either way, you will be dealing with Matthieu.",
     "details": {
       "aria_label": "Contact details",
       "email_label": "Email",
@@ -92,7 +92,7 @@
       "open": "Open the booking page",
       "iframe_title": "Matthieu's booking calendar (Google Calendar)",
       "note": "The slot is booked straight into Matthieu's calendar. Google Calendar sends you the confirmation and the call link.",
-      "unavailable": "Online booking is not open yet. Write us a message: we will suggest a slot the same day."
+      "unavailable": "Online booking is not open yet. Write us a message: we will suggest a slot, usually the same day."
     }
   }
 }

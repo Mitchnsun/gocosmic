@@ -1,6 +1,6 @@
 # Cosmic Studio Web - Main Application
 
-The main web application of Cosmic Studio (formerly Go Cosmic, still served from `gocosmic.dev`), serving as the public showcase and business platform of the studio. This platform is designed to **present Cosmic Studio's work, showcase its applications, introduce the team, and promote its web and mobile services** to craftspeople, associations and independents looking for a website with human support.
+The main web application of Cosmic Studio (formerly Go Cosmic, still served from `gocosmic.dev`), serving as the public showcase and business platform of the studio. This platform is designed to **present Cosmic Studio's work, showcase its applications, introduce the team, and promote its web and mobile services** to small businesses, craftspeople, independents and associations looking for a website with human support.
 
 ## Primary Objectives
 
@@ -97,7 +97,7 @@ export default function Header() {
 ### Homepage
 
 - **Hero**: visibility promise ("Your business deserves to be seen / found / chosen", the last word cycling), an animated ringed planet behind the text on phones and larger alongside it on desktop, four key facts (starting monthly price, fast reply, one point of contact, area served), the "Go Cosmic" call-to-action leading to the free mockup page and a secondary link to the pricing
-- **Audience**: who the studio works for (craftspeople, associations, independents starting out)
+- **Audience**: who the studio works for (craftspeople, small businesses, independents and liberal professions, associations)
 - **Why a studio**: four reasons to choose a studio rather than a site builder
 - **Process**: four-step timeline (meeting, mockup, build, launch)
 - **Pricing**: the same four pricing columns as the Services & pricing page
@@ -138,7 +138,7 @@ All four case studies share one template: a header with the year, client and pro
 ### About Page (`/about`)
 
 - **Background**: Matthieu Compérat's path, the areas served and a link to his LinkedIn profile
-- **Why craftspeople and associations**: four reasons the studio works for them (being found locally, a price that follows the business, someone who answers, AI used only where it helps)
+- **Why a small studio**: four reasons to work with it (being found locally, a visible price, someone who answers, AI used only where it helps)
 - **Closing call-to-action**: link to the contact page
 - **Structured data**: a JSON-LD `Person` entry for search engines
 
@@ -368,7 +368,7 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 ```
 ├── app/              # App Router (Next.js 16+)
 │   ├── [locale]/     # Internationalized routes
-│   │   ├── about/    # About page (background, why craftspeople and associations, LinkedIn)
+│   │   ├── about/    # About page (background, why a small studio, LinkedIn)
 │   │   ├── contact/  # Contact page (details, message form, call booking)
 │   │   ├── free-mockup/ # Free mockup request page
 │   │   ├── legal-notice/ # Legal notice (including AI usage statements)

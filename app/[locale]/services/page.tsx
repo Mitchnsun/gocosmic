@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 const TRADES = ['showcase', 'shops', 'apps', 'care'] as const;
-const QUESTIONS = ['ownership', 'edit', 'timing', 'stop', 'content'] as const;
+const QUESTIONS = ['existing', 'ownership', 'edit', 'timing', 'stop', 'content'] as const;
 
 const em = (chunks: ReactNode) => <em>{chunks}</em>;
 

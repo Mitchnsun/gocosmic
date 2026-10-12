@@ -232,13 +232,13 @@
       },
       "guidance": {
         "title": "Begleitung",
-        "label": "Beratung, UX/UI und Design",
+        "label": "Beratung und Design",
         "price": "Tagessatz",
-        "description": "Wenn Sie über das kostenlose Mockup hinausgehen möchten, ohne gleich die Entwicklung zu starten: Architektur, technische Entscheidungen, UX/UI und Design, mit einem Designer an unserer Seite.",
+        "description": "Wenn Sie über das kostenlose Mockup hinausgehen möchten, ohne gleich die Entwicklung zu starten: Aufbau der Website, technische Entscheidungen, Besucherführung und Design, mit eine:r Partner-Designer:in.",
         "features": {
-          "architecture": "Architektur und technische Entscheidungen",
-          "design": "UX/UI, Nutzerführung und detaillierte Mockups",
-          "designer": "Ein Designer, der Seite an Seite mit dem Entwickler arbeitet"
+          "architecture": "Aufbau der Website und technische Entscheidungen",
+          "design": "Besucherführung und detaillierte Mockups",
+          "designer": "Ein:e Partner-Designer:in, Seite an Seite mit dem Entwickler"
         },
         "cta": "Sprechen wir darüber"
       },
@@ -246,11 +246,11 @@
         "title": "Verstärkung",
         "label": "Bestehende Website, verstärktes Team",
         "price": "Tagessatz",
-        "description": "Um eine bestehende Website weiterzuentwickeln, sei es durch technische Verbesserungen oder neue Funktionen, mit einem oder mehreren Entwicklern je nach Umfang des Projekts.",
+        "description": "Um eine bestehende Website weiterzuentwickeln, sei es durch technische Verbesserungen oder neue Funktionen, mit eine:r oder mehreren Partner-Entwickler:innen je nach Umfang des Projekts.",
         "features": {
           "technical": "Technische Verbesserung: Leistung, Sicherheit, Updates",
           "features": "Neue Funktionen auf einer bestehenden Website",
-          "team": "Ein oder mehrere Entwickler je nach Umfang des Projekts"
+          "team": "Ein:e oder mehrere Partner-Entwickler:innen je nach Umfang des Projekts"
         },
         "cta": "Sprechen wir darüber"
       },

@@ -1,8 +1,8 @@
 {
   "footer": {
     "brand_desc": {
-      "fr": "Studio für Web- und App-Entwicklung zwischen Genf und Annecy. Websites, Apps und Betreuung für Handwerksbetriebe, Vereine und Selbstständige.",
-      "ch": "Studio für Web- und App-Entwicklung in Genf. Websites, Apps und Betreuung für Handwerksbetriebe, Vereine und Selbstständige."
+      "fr": "Studio für Web- und App-Entwicklung zwischen Genf und Annecy. Websites, Apps und Betreuung, zu offen genannten Preisen.",
+      "ch": "Studio für Web- und App-Entwicklung in Genf. Websites, Apps und Betreuung, zu offen genannten Preisen."
     },
     "nav_title": "Studio",
     "link_services": "Leistungen & Preise",
@@ -14,7 +14,7 @@
     "free_mockup_page": "Kostenloses Mockup",
     "privacy": "Datenschutzerklärung",
     "legal_notice": "Impressum",
-    "link_apps": "Unsere Apps",
+    "link_apps": "Unsere App",
     "legal_title": "Rechtliches",
     "status": "Alle Systeme laufen",
     "terms": "Allgemeine Geschäftsbedingungen"

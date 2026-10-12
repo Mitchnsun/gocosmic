@@ -27,7 +27,7 @@ import { getCurrency } from '@/lib/region';
 import { getRegion } from '@/lib/region.server';
 import { buildPageMetadata } from '@/lib/seo';
 
-const AUDIENCES = ['artisans', 'associations', 'independents'] as const;
+const AUDIENCES = ['artisans', 'companies', 'independents', 'associations'] as const;
 const REASONS = ['ownership', 'fast', 'person', 'grows'] as const;
 /** Projects featured on the homepage; the full list lives on /projects. */
 const HOME_PROJECT_COUNT = 3;

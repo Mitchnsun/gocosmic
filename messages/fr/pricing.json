@@ -232,13 +232,13 @@
       },
       "guidance": {
         "title": "Accompagnement",
-        "label": "Conseil, UX/UI et design",
+        "label": "Conseil et design",
         "price": "Tarif à la journée",
-        "description": "Pour aller plus loin que la maquette gratuite sans forcément lancer le développement : architecture, choix techniques, UX/UI et design, avec un designer à nos côtés.",
+        "description": "Pour aller plus loin que la maquette gratuite sans forcément lancer le développement : l'organisation du site, les choix techniques, le parcours des visiteurs et le design, avec un·e designer partenaire.",
         "features": {
-          "architecture": "Architecture et choix techniques",
-          "design": "UX/UI, parcours utilisateurs et maquettes détaillées",
-          "designer": "Un designer qui travaille aux côtés du développeur"
+          "architecture": "Organisation du site et choix techniques",
+          "design": "Parcours des visiteurs et maquettes détaillées",
+          "designer": "Un·e designer partenaire, qui travaille aux côtés du développeur"
         },
         "cta": "En parler"
       },
@@ -246,11 +246,11 @@
         "title": "Renforcement",
         "label": "Site existant, équipe renforcée",
         "price": "Tarif à la journée",
-        "description": "Pour faire évoluer un site existant, qu'il s'agisse d'améliorations techniques ou de nouvelles fonctionnalités, avec un ou plusieurs développeurs selon l'ampleur du projet.",
+        "description": "Pour faire évoluer un site existant, qu'il s'agisse d'améliorations techniques ou de nouvelles fonctionnalités, avec un ou plusieurs développeur·ses partenaires selon l'ampleur du projet.",
         "features": {
           "technical": "Amélioration technique : performance, sécurité, mises à jour",
           "features": "Nouvelles fonctionnalités sur un site existant",
-          "team": "Un ou plusieurs développeurs selon l'ampleur du projet"
+          "team": "Un ou plusieurs développeur·ses partenaires selon l'ampleur du projet"
         },
         "cta": "En parler"
       },

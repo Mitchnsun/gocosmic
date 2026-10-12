@@ -1,15 +1,15 @@
 {
   "local": {
     "meta": {
-      "title": "Creación de páginas web · Ginebra, Annecy, Alta Saboya | Cosmic Studio",
-      "description": "Creación de páginas web en Ginebra, Annecy y la Alta Saboya para artesanos, asociaciones y autónomos. Precios a la vista y maqueta gratuita, sin compromiso."
+      "title": "Creación de páginas web en Ginebra y Annecy | Cosmic Studio",
+      "description": "Creación de páginas web en Ginebra, Annecy y Alta Saboya para artesanos, pymes, autónomos y asociaciones. Precios a la vista, maqueta gratuita sin compromiso."
     },
     "intro": {
       "eyebrow": "[ Ginebra · Annecy · Alta Saboya ]",
-      "title": "Tu estudio web, <em>entre Ginebra y Annecy.</em>",
+      "title": "Un estudio web <em>entre Ginebra y Annecy.</em>",
       "lead": {
-        "ch": "Cosmic Studio está en Chêne-Bougeries, cerca de Ginebra. Creamos sitios web y aplicaciones para artesanos, asociaciones y autónomos de Ginebra, Annecy y la Alta Saboya, y nos acercamos a conocerte en persona.",
-        "fr": "Cosmic Studio trabaja entre Annecy y Ginebra. Creamos sitios web y aplicaciones para artesanos, asociaciones y autónomos de la Alta Saboya, y nos acercamos a conocerte en persona."
+        "ch": "Cosmic Studio está en Chêne-Bougeries, cerca de Ginebra. Creamos sitios web y aplicaciones para artesanos, empresas, despachos y asociaciones de Ginebra, Annecy y la Alta Saboya, y nos acercamos a conocerte en persona.",
+        "fr": "Cosmic Studio trabaja entre Annecy y Ginebra. Creamos sitios web y aplicaciones para artesanos, empresas, despachos y asociaciones de la Alta Saboya, y nos acercamos a conocerte en persona."
       },
       "primary": "Hablar de mi proyecto",
       "secondary": "Ver servicios y precios"
@@ -20,7 +20,7 @@
       "items": {
         "geneva": {
           "title": "Ginebra",
-          "description": "El estudio está en Chêne-Bougeries. Nos vemos en tu casa, en tu taller o tomando un café."
+          "description": "El estudio está en Chêne-Bougeries. Nos vemos en tu taller, en tu oficina o tomando un café."
         },
         "romandy": {
           "title": "Suiza romanda",

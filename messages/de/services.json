@@ -2,11 +2,11 @@
   "services": {
     "meta": {
       "title": "Leistungen & Preise · Genf & Annecy | Cosmic Studio",
-      "description": "Präsentationswebsites, Onlineshops, Apps und Betreuung mit transparenten Preisen: Abonnement ab {price} im Monat zzgl. MwSt. oder Projekt nach Angebot."
+      "description": "Präsentationswebsites, Onlineshops, Apps und Betreuung zu offen genannten Preisen: Abonnement ab {price} im Monat zzgl. MwSt. oder Projekt nach Angebot."
     },
     "cta": {
       "title": "Sprechen wir über Ihre Website.",
-      "description": "Erzählen Sie uns in ein paar Zeilen, was Sie machen. Wir antworten schnell und erstellen danach auf Wunsch Ihr kostenloses Mockup.",
+      "description": "Sagen Sie uns, was Sie brauchen. Danach erstellen wir Ihr kostenloses Mockup oder eine Bestandsaufnahme Ihrer aktuellen Website.",
       "primary_button": "Mein Projekt besprechen"
     },
     "intro": {
@@ -26,7 +26,7 @@
         "showcase": {
           "title": "Präsentationswebsites",
           "description": "Um Ihren Betrieb, Ihre Arbeiten und Ihre Öffnungszeiten vorzustellen und bei Google von Menschen in Ihrer Nähe gefunden zu werden.",
-          "tags": ["Handwerksbetriebe", "Vereine", "Selbstständige"]
+          "tags": ["Unternehmen", "Selbstständige", "Vereine"]
         },
         "shops": {
           "title": "Onlineshops & Buchungen",
@@ -68,6 +68,10 @@
         "content": {
           "question": "Kümmern Sie sich auch um Texte und Fotos?",
           "answer": "Wir helfen Ihnen beim Schreiben und lesen alles gegen, mit Blick auf die Wörter, die Ihre Kundschaft bei Google eingibt. Für Fotos und Videos verwenden wir Ihre eigenen oder lassen sie auf Angebot von einer Fachperson aus der Region anfertigen; die Zusammenarbeit mit ihr übernehmen wir."
+        },
+        "existing": {
+          "question": "Ich habe schon eine Website. Können Sie sie übernehmen?",
+          "answer": "Ja. Wir beginnen mit einer kostenlosen Bestandsaufnahme Ihrer aktuellen Website: was funktioniert, was Besucher:innen vertreibt und wie sie bei Google erscheint. Danach sagen wir Ihnen, ob es besser ist, sie neu zu bauen oder sie so weiterzuentwickeln, wie sie ist."
         }
       }
     }

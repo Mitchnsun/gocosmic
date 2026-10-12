@@ -6,7 +6,7 @@
     },
     "cta": {
       "title": "Hablemos de tu sitio.",
-      "description": "Háblanos de tu negocio en unas pocas líneas. Te respondemos rápidamente y después preparamos tu maqueta gratuita, si quieres.",
+      "description": "Dinos qué necesitas. Después preparamos tu maqueta gratuita, o una revisión de tu sitio actual.",
       "primary_button": "Hablar de mi proyecto"
     },
     "intro": {
@@ -26,7 +26,7 @@
         "showcase": {
           "title": "Sitios de presentación",
           "description": "Para presentar tu negocio, tus trabajos y tus horarios, y que la gente de tu zona te encuentre en Google.",
-          "tags": ["Artesanos", "Asociaciones", "Autónomos"]
+          "tags": ["Empresas", "Autónomos", "Asociaciones"]
         },
         "shops": {
           "title": "Tiendas y reservas",
@@ -68,6 +68,10 @@
         "content": {
           "question": "¿También os encargáis de los textos y las fotos?",
           "answer": "Te ayudamos a redactar y lo revisamos todo, pensando en las palabras que tus clientes escriben en Google. Para las fotos y los vídeos, usamos los tuyos, o los encargamos con presupuesto a un/a profesional de la zona, con quien gestionamos la relación."
+        },
+        "existing": {
+          "question": "Ya tengo un sitio, ¿podéis haceros cargo de él?",
+          "answer": "Sí. Empezamos con una revisión gratuita de tu sitio actual: qué funciona, qué ahuyenta a los visitantes y cómo aparece en Google. Después te decimos si conviene más rehacerlo o hacerlo evolucionar tal como está."
         }
       }
     }

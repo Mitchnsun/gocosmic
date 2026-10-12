@@ -9,7 +9,7 @@
 
 ## 1. Essence & principles
 
-Cosmic Studio (formerly Go Cosmic; "Go Cosmic" survives as the call-to-action signature) is a web/mobile studio for craftspeople, associations and independents. The visual universe is **spatial / mission-control**: deep near-black background, starfield, orange "ignition" accents, technical mono labels, and a touch of immersion (parallax, warp, reveals). Yet the overall feel stays **sober and premium** — never gimmicky.
+Cosmic Studio (formerly Go Cosmic; "Go Cosmic" survives as the call-to-action signature) is a web/mobile studio for small businesses, craftspeople, independents and associations. The visual universe is **spatial / mission-control**: deep near-black background, starfield, orange "ignition" accents, technical mono labels, and a touch of immersion (parallax, warp, reveals). Yet the overall feel stays **sober and premium** — never gimmicky.
 
 Four principles that resolve every design decision:
 
@@ -337,13 +337,14 @@ Glyph ............. geometric SVG currentColor — NO emoji
 
 ## 8. Voice & copy
 
-The words carry as much of the brand as the tokens. Copy targets **people with a trade, not a CTO**: craftspeople (carpenter, hairdresser, caterer), associations (choir, sports club), independents who are starting out (therapist, photographer). Their question is not "which stack?" but "will people find me, and will someone answer when I call?". Every page answers it.
+The words carry as much of the brand as the tokens. Copy targets **people with a trade, not a CTO**: craftspeople (carpenter, hairdresser, caterer), small businesses (building firm, garage, small agency), independents and liberal professions (lawyer, architect, consultant), associations (choir, sports club). The list is open: name the audience once per page (hero, audience cards, local page, search texts) and say "vous" elsewhere, instead of reciting the same list everywhere. Their question is not "which stack?" but "will people find me, and will someone answer when I call?". Every page answers it.
 
 **Core promise — visibility.** Each page states, in plain words, that the studio makes the reader's business _seen, found and chosen_: a clear site, built to be found on Google, and one person who stays after launch. Prefer outcomes ("vos clients vous trouvent") over deliverables ("site responsive optimisé SEO").
 
 **Tone.**
 
 - Address the reader as "vous" (FR), "you" (EN), "Sie" (DE), "tu" (IT, ES). Short sentences, everyday words, real trades as examples.
+- The studio is the one speaking: "nous" for what the studio does, "il" when the copy presents Matthieu. Never "je".
 - Say what we do, what it costs, who answers. Prices are visible; give concrete delays where we can commit to them ("deux à six semaines"), otherwise keep it general ("réponse rapide").
 - Every page ends with a single action: talk to Matthieu (`Parler de mon projet`).
 - Avoid gendered adjectives aimed at the reader in French ("Prêt ?" → "Démarrons votre projet."); agree with the business instead ("Votre activité mérite d'être vue").
