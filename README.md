@@ -177,6 +177,12 @@ Reference of the colour tokens (with their contrast ratios), typography, compone
 
 The former `/journey` (3D experience), `/offers` and `/pricing` pages no longer exist. They permanently redirect to Services & pricing in every locale, including their former localized slugs: offers to the pricing columns (`#pricing`), pricing to the simulator (`#simulator`) and the journey to the top of the page (see `lib/redirects.ts` and `next.config.ts`).
 
+### Files for AI Agents (`/llms.txt`, `/llms-full.txt`)
+
+- **`/llms.txt`**: the site summarised for AI assistants and agents, in the [llmstxt.org](https://llmstxt.org) format: what the studio does, the regional and Swiss versions, the main pages, the case studies, the contact details and a note on how agents may quote the content
+- **`/llms-full.txt`**: the text of every page in one file, including what the HTML only shows on interaction (the info bubbles, the second plan, every slider step and its price) and the terms of sale
+- Both are in English and built at deployment from the same messages, project registry and price table as the pages (`lib/llms/`), so they follow every change of copy, project or price. The call booking is listed only when `NEXT_PUBLIC_GCAL_BOOKING_URL` is set
+
 ### Technical Features
 
 - **Optimal Performance**: Server-side rendering and automatic optimizations
@@ -274,7 +280,9 @@ When adding new routes to the application, follow this procedure to maintain int
 
 4. **Update navigation**: If the route needs navigation links, add them to relevant navigation components
 
-5. **Test thoroughly**: Ensure the route works correctly in all locales and verify functionality
+5. **List it for AI agents**: add the page to `lib/llms/llms-index.ts` and, for its content, to `lib/llms/llms-full.ts`
+
+6. **Test thoroughly**: Ensure the route works correctly in all locales and verify functionality
 
 This approach ensures SEO-friendly URLs and consistent user experience across all supported languages.
 
@@ -380,6 +388,8 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   │   ├── not-found.tsx # Localized 404 page
 │   │   └── page.tsx  # Homepage
 │   ├── actions/      # Server actions (contact form, free mockup request)
+│   ├── llms.txt/     # `/llms.txt` for AI agents
+│   ├── llms-full.txt/ # `/llms-full.txt`, the text of every page for AI agents
 │   └── layout.tsx    # Root layout (viewport only; the i18n provider lives in `[locale]/layout.tsx`)
 ├── components/       # App-specific components
 │   ├── AudienceGrid/ # "Who it's for" cards
@@ -425,7 +435,8 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 ├── data/             # Static content (`projects.ts` — ordered case-study registry)
 ├── lib/              # Shared helpers
 │   ├── contact/      # Contact form email + validation helpers
-│   ├── pricing/      # Code handover delay (offers.ts) and the simulation passed to the free mockup form
+│   ├── llms/         # Builders of `/llms.txt` and `/llms-full.txt`
+│   ├── pricing/      # Code handover delay (offers.ts), the full price list (price-list.ts) and the simulation passed to the free mockup form
 │   ├── hooks/        # Shared hooks (e.g. `usePrefersReducedMotion`)
 │   ├── redirects.ts  # Permanent redirects from retired pages to Services & pricing
 │   ├── region.ts     # Region (France or Switzerland) and currency

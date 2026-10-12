@@ -14,6 +14,9 @@ export const FOUNDER_NAME = 'Matthieu Compérat';
 /** Public contact address, shown on the contact page and declared in structured data. */
 export const CONTACT_EMAIL = 'contact@gocosmic.dev';
 
+/** Support address for existing clients, shown on the contact page. */
+export const SUPPORT_EMAIL = 'support@gocosmic.dev';
+
 /** Registered office declared in structured data, at the town level, as on the legal notice. */
 export const STUDIO_ADDRESS = {
   addressLocality: 'Chêne-Bougeries',

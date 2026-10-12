@@ -30,6 +30,8 @@ This file records lessons learned from past mistakes and corrections made during
 
 **Recurrence (2026-10-09)**: The Next.js 16.4 upgrade, rebased onto a `master` that had just merged 2.4.0, was bumped to 2.4.1 on the grounds that a security upgrade is not a small fix. The owner had not created the 2.4.0 release yet and asked to reuse it. A version merged on `master` is not necessarily released: when `master`'s latest changelog entry is dated today, check whether it has been released (a `v2.4.0` tag or GitHub release) or ask. If it hasn't, fold the change into that entry and keep `master`'s version, whatever the size of the change.
 
+**Recurrence (2026-10-12)**: The llms.txt work was bumped to 2.5.0 against a `master` at 2.4.2, which was tagged. During the session, `master` merged 2.4.3 (not yet released) and the owner asked to fold the work into it. The version check made at the start of a task goes stale: fetch `master` again right before committing, and apply the rule above to whatever its latest entry is then.
+
 ## CSS / TailwindCSS 4
 
 ### `--font-display` and `--font-body` must be declared in `@theme`

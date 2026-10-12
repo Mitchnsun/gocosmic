@@ -12,7 +12,7 @@ import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, PAGE_TOP } from '@/design-system/pill';
 import { getClientMessages } from '@/i18n/client-messages';
 import { Link } from '@/i18n/navigation';
-import { CONTACT_EMAIL } from '@/lib/config';
+import { CONTACT_EMAIL, SUPPORT_EMAIL } from '@/lib/config';
 import { getRegion } from '@/lib/region';
 import { buildPageMetadata } from '@/lib/seo';
 
@@ -55,11 +55,7 @@ export default async function Contact({ params }: { params: Promise<{ locale: st
               ariaLabel={t('details.aria_label')}
               details={[
                 { label: t('details.email_label'), value: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}` },
-                {
-                  label: t('details.support_label'),
-                  value: 'support@gocosmic.dev',
-                  href: 'mailto:support@gocosmic.dev',
-                },
+                { label: t('details.support_label'), value: SUPPORT_EMAIL, href: `mailto:${SUPPORT_EMAIL}` },
                 { label: t('details.where_label'), value: t(`details.where.${region}`) },
               ]}
               status={tStatus('available')}
