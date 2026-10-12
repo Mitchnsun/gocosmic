@@ -29,7 +29,7 @@ interface ContactFormSuccessProps {
  */
 export const ContactFormSuccess = ({ title, description, backLabel, onBack, className }: ContactFormSuccessProps) => {
   const panelRef = useRef<HTMLDivElement>(null);
-  const prefersReducedMotion = usePrefersReducedMotion(true);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
     panelRef.current?.focus();

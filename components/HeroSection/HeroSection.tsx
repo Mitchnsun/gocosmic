@@ -60,7 +60,7 @@ const HeroSection = ({
   className,
   id = 'hero',
 }: HeroSectionProps) => {
-  const prefersReducedMotion = usePrefersReducedMotion(true);
+  const prefersReducedMotion = usePrefersReducedMotion();
   const currentWord = useWordCycler(endWords, wordInterval, prefersReducedMotion || endWords.length <= 1);
 
   return (

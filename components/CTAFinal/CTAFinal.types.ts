@@ -5,18 +5,8 @@ export type Tone = 'immersive' | 'sober';
 export interface TonePreset {
   /** Stars drawn at rest. */
   starCount: number;
-  /** Whether hovering or focusing the CTA warps the starfield. */
-  warp: boolean;
-  /** Whether the accent halo is rendered behind the content. */
-  halo: boolean;
-  /** Whether the headline uses the animated accent gradient. */
-  gradientHeadline: boolean;
-  /** Whether the CTA button pulses with a glow. */
-  glowButton: boolean;
   /** Button size passed to `buttonVariants()`. */
   buttonSize: 'default' | 'lg';
-  /** Whether the starfield brightens on section hover. */
-  starfieldHover: boolean;
   section: string;
   starfield: string;
   headline: string;

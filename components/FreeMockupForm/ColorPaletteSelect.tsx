@@ -5,10 +5,10 @@ import { useTranslations } from 'next-intl';
 
 import { cn } from '@/design-system/lib/utils';
 import type { ColorPaletteKey } from '@/lib/validation/free-mockup.schema';
-import { NO_PALETTE_PREFERENCE } from '@/lib/validation/free-mockup.schema';
+import { COLOR_PALETTE_CHOICES, NO_PALETTE_PREFERENCE } from '@/lib/validation/free-mockup.schema';
 
 import type { ColorPaletteSelectProps } from './FreeMockupForm.types';
-import { COLOR_PALETTE_CHOICES, PALETTE_SWATCHES } from './FreeMockupForm.utils';
+import { PALETTE_SWATCHES } from './FreeMockupForm.utils';
 
 const LEGEND_ID = 'free-mockup-palette-label';
 const ERROR_ID = 'free-mockup-palette-error';

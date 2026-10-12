@@ -48,11 +48,13 @@ interface CTAFinalProps {
  * @component
  */
 const CTAFinal = ({ headline, description, note, ctaText, ctaHref, tone = 'immersive', id }: CTAFinalProps) => {
-  const prefersReducedMotion = usePrefersReducedMotion(true);
+  const prefersReducedMotion = usePrefersReducedMotion();
   const preset = TONE_PRESETS[tone];
+  // Warp, halo, headline gradient and button glow all belong to the immersive tone.
+  const immersive = tone === 'immersive';
   const light = useResolvedTheme() === 'light';
   // The light theme has no stars, so there is nothing to warp.
-  const warpEnabled = preset.warp && !prefersReducedMotion && !light;
+  const warpEnabled = immersive && !prefersReducedMotion && !light;
   const { isWarping, startWarp, stopWarp } = useWarpEffect(warpEnabled);
 
   const currentSpeed = isWarping ? WARP_SPEED : REST_SPEED;
@@ -65,14 +67,14 @@ const CTAFinal = ({ headline, description, note, ctaText, ctaHref, tone = 'immer
       data-warping={isWarping ? 'true' : 'false'}
       data-tone={tone}
       className={cn('group text-fg bg-bg relative isolate overflow-hidden px-4 sm:px-6', preset.section)}>
-      <CTAFinalBackdrop preset={preset} starCount={currentStarCount} speed={currentSpeed} />
+      <CTAFinalBackdrop preset={preset} immersive={immersive} starCount={currentStarCount} speed={currentSpeed} />
 
       <div className="relative z-10 m-auto flex max-w-5xl flex-col items-center gap-6 text-center">
         <h2 className={cn('font-display leading-[1.05] font-bold tracking-[-0.04em] text-balance', preset.headline)}>
           <span
             className={cn({
               'cta-final-headline from-aerospace-ink via-fg to-aerospace-ink bg-linear-to-r bg-clip-text text-transparent':
-                preset.gradientHeadline,
+                immersive,
             })}>
             {headline}
           </span>
@@ -90,7 +92,7 @@ const CTAFinal = ({ headline, description, note, ctaText, ctaHref, tone = 'immer
             'focus-visible:ring-fg focus-visible:ring-offset-bg focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-100',
             preset.button,
             {
-              'cta-final-glow': preset.glowButton,
+              'cta-final-glow': immersive,
               'transition-transform duration-300 ease-out': !prefersReducedMotion,
             },
             // CSS fallback for the server-rendered markup, before the hook resolves the media query.

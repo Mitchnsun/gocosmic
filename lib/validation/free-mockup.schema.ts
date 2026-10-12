@@ -145,8 +145,3 @@ export function readFreeMockupValues(formData: FormData): FreeMockupValues {
     wishes: readField(formData, 'wishes'),
   };
 }
-
-/** True when at least one field carries an error. */
-export function hasFieldErrors(errors: FreeMockupFieldErrors): boolean {
-  return Object.keys(errors).length > 0;
-}

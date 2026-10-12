@@ -10,7 +10,6 @@ import {
   type FreeMockupFieldName,
   type FreeMockupValues,
   getFieldErrors,
-  hasFieldErrors,
   readField,
 } from '@/lib/validation/free-mockup.schema';
 
@@ -72,7 +71,7 @@ export function useFreeMockupForm() {
       // whole flight, and edits made while in flight predate the answer they
       // would otherwise retire.
       const clientErrors = getFieldErrors(values);
-      if (hasFieldErrors(clientErrors)) {
+      if (Object.keys(clientErrors).length > 0) {
         setHasEditedSinceSubmit(false);
         return { status: 'error', fieldErrors: clientErrors };
       }
@@ -146,7 +145,7 @@ export function useFreeMockupForm() {
 
     return {
       status: isStaleFailure ? ('idle' as const) : state.status,
-      hasInvalidFields: hasFieldErrors(state.fieldErrors ?? {}),
+      hasInvalidFields: Object.keys(state.fieldErrors ?? {}).length > 0,
       reason: isStaleFailure ? undefined : state.reason,
     };
   }, [hasEditedSinceSubmit, isPending, state.fieldErrors, state.reason, state.status]);

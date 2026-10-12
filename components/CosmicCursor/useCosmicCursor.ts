@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef } from 'react';
 
 import type { Theme } from '@/components/Theme';
+import { parseColor, type Rgba } from '@/design-system/lib/contrast';
 
 /** Matches when the primary pointer is not a precise one such as a mouse or trackpad. */
 export const COARSE_POINTER_QUERY = 'not all and (pointer: fine)';
@@ -26,7 +27,7 @@ interface CosmicCursorState {
   /** Trailing dot history */
   trail: TrailPoint[];
   /** Current accent color hex */
-  accentColor: string;
+  accentColor: Rgba;
   /** True when snapping toward a link or a button */
   isMagnetic: boolean;
   /** True when hovering a form control that shows its own native cursor (text caret, hand, grab…) — hide the canvas dot */
@@ -43,9 +44,9 @@ const MAGNETIC_RANGE = 80;
 const MAGNETIC_EASE = 0.15;
 
 const COLORS = {
-  aerospace: '#FF4F00',
-  space: '#1E2952',
-} as const;
+  aerospace: parseColor('#FF4F00'),
+  space: parseColor('#1E2952'),
+};
 
 /**
  * Apply magnetic snapping toward an element center.

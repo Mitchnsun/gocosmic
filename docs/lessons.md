@@ -242,6 +242,12 @@ Grep `components/CosmicCursor/` for the native selector being replaced (`input[t
 
 **Correct pattern**: When documenting naming or language rules, explicitly carve out root-level documentation entry points if they intentionally break the general convention. When listing scripts or dependency versions in README files, verify them against `package.json` (or reference the canonical source directly) before merging.
 
+### Replacing a document with a pointer: check every rule, one by one
+
+**Mistake**: `AGENTS.md` was cut down to a pointer to `CLAUDE.md` after checking only a few of its rules. Four of them existed nowhere else (API routes and CSP in the `SECURITY.md` reminder, preserving user changes, no version bump for local work) and were lost until a review caught it.
+
+**Correct pattern**: Before deleting a duplicated document, grep each of its rules in the documents meant to replace it, and move the ones that are missing. Likewise, moving server-only strings into the `common` messages ships them to the browser on every page: keep data read only by server components out of the client messages.
+
 ---
 
 ## CSS / Animation

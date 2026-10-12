@@ -1,5 +1,5 @@
 /** RGB channels (0–255) and alpha (0–1). */
-type Rgba = [number, number, number, number];
+export type Rgba = [number, number, number, number];
 
 /** Parses `#rrggbb` or `rgb(r g b / a)`, the two notations of the theme variables in `app/globals.css`. */
 export const parseColor = (value: string): Rgba => {

@@ -10,12 +10,7 @@ export const WARP_DENSITY_MULTIPLIER = 1.3;
 export const TONE_PRESETS: Record<Tone, TonePreset> = {
   immersive: {
     starCount: 600,
-    warp: true,
-    halo: true,
-    gradientHeadline: true,
-    glowButton: true,
     buttonSize: 'lg',
-    starfieldHover: true,
     section: 'py-12 sm:py-16 lg:py-24',
     starfield: 'opacity-80',
     headline: 'text-[clamp(2.25rem,8vw,6rem)]',
@@ -26,12 +21,7 @@ export const TONE_PRESETS: Record<Tone, TonePreset> = {
   },
   sober: {
     starCount: 250,
-    warp: false,
-    halo: false,
-    gradientHeadline: false,
-    glowButton: false,
     buttonSize: 'default',
-    starfieldHover: false,
     section: 'py-10 sm:py-12 lg:py-16',
     starfield: 'opacity-50',
     headline: 'text-fg text-[clamp(1.75rem,4vw,3rem)]',

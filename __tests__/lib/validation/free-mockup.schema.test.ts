@@ -3,7 +3,6 @@ import {
   freeMockupSchema,
   type FreeMockupValues,
   getFieldErrors,
-  hasFieldErrors,
   normalizeFreeMockupValues,
   normalizeWebsiteUrl,
   readField,
@@ -145,16 +144,6 @@ describe('getFieldErrors', () => {
 
   it('flags wishes above the cap', () => {
     expect(getFieldErrors(values({ wishes: 'a'.repeat(WISHES_MAX_LENGTH + 1) })).wishes).toBe('wishes_too_long');
-  });
-});
-
-describe('hasFieldErrors', () => {
-  it('is false on an empty error set', () => {
-    expect(hasFieldErrors({})).toBe(false);
-  });
-
-  it('is true as soon as one field fails', () => {
-    expect(hasFieldErrors({ email: 'required' })).toBe(true);
   });
 });
 

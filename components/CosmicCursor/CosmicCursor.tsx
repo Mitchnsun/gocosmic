@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import type { Theme } from '@/components/Theme';
+import { parseColor, type Rgba } from '@/design-system/lib/contrast';
 
 import { useCosmicCursor } from './useCosmicCursor';
 
@@ -11,19 +12,13 @@ const CORE_SIZE = 6;
 /** Trailing dot diameter in pixels. */
 const TRAIL_SIZE = 3;
 
-/** Parse a hex color into { r, g, b } */
-function hexToRgb(hex: string): { r: number; g: number; b: number } {
-  const n = parseInt(hex.replace('#', ''), 16);
-  return { r: (n >> 16) & 255, g: (n >> 8) & 255, b: n & 255 };
-}
-
 /**
  * Colour the trail fades from, towards the accent, per surface under the pointer: cosmic-latte over
  * dark surfaces (the dark theme and dark islands), void ink over the light theme.
  */
-const TRAIL_BASE_RGB: Record<Theme, { r: number; g: number; b: number }> = {
-  dark: hexToRgb('#FFF8E7'),
-  light: hexToRgb('#020617'),
+const TRAIL_BASE_RGB: Record<Theme, Rgba> = {
+  dark: parseColor('#FFF8E7'),
+  light: parseColor('#020617'),
 };
 
 /**
@@ -112,8 +107,9 @@ const CosmicCursor = () => {
       }
 
       const reduced = state.reducedMotion;
-      const accentRgb = hexToRgb(state.accentColor);
-      const baseRgb = TRAIL_BASE_RGB[state.surfaceTheme];
+      const [ar, ag, ab] = state.accentColor;
+      const accent = `${ar},${ag},${ab}`;
+      const [br, bg, bb] = TRAIL_BASE_RGB[state.surfaceTheme];
 
       // Smooth cursor position toward target
       const ease = state.isMagnetic ? 0.25 : 0.5;
@@ -130,9 +126,9 @@ const CosmicCursor = () => {
           const radius = TRAIL_SIZE * (0.4 + t * 0.6);
 
           // Color: interpolate the theme's trail base → accent
-          const r = Math.round(baseRgb.r + (accentRgb.r - baseRgb.r) * t);
-          const g = Math.round(baseRgb.g + (accentRgb.g - baseRgb.g) * t);
-          const b = Math.round(baseRgb.b + (accentRgb.b - baseRgb.b) * t);
+          const r = Math.round(br + (ar - br) * t);
+          const g = Math.round(bg + (ag - bg) * t);
+          const b = Math.round(bb + (ab - bb) * t);
 
           ctx.beginPath();
           ctx.arc(point.x, point.y, Math.max(0.5, radius), 0, Math.PI * 2);
@@ -145,8 +141,8 @@ const CosmicCursor = () => {
       if (!state.usesNativeCursor) {
         const glowSize = state.isMagnetic ? CORE_SIZE * 5 : CORE_SIZE * 3;
         const gradient = ctx.createRadialGradient(smoothX, smoothY, 0, smoothX, smoothY, glowSize);
-        gradient.addColorStop(0, `rgba(${accentRgb.r},${accentRgb.g},${accentRgb.b},0.5)`);
-        gradient.addColorStop(1, `rgba(${accentRgb.r},${accentRgb.g},${accentRgb.b},0)`);
+        gradient.addColorStop(0, `rgba(${accent},0.5)`);
+        gradient.addColorStop(1, `rgba(${accent},0)`);
 
         ctx.beginPath();
         ctx.arc(smoothX, smoothY, glowSize, 0, Math.PI * 2);
@@ -156,14 +152,14 @@ const CosmicCursor = () => {
         // Solid core
         ctx.beginPath();
         ctx.arc(smoothX, smoothY, CORE_SIZE / 2, 0, Math.PI * 2);
-        ctx.fillStyle = `rgb(${accentRgb.r},${accentRgb.g},${accentRgb.b})`;
+        ctx.fillStyle = `rgb(${accent})`;
         ctx.fill();
 
         // Magnetic ring
         if (state.isMagnetic && !reduced) {
           ctx.beginPath();
           ctx.arc(smoothX, smoothY, CORE_SIZE * 3, 0, Math.PI * 2);
-          ctx.strokeStyle = `rgba(${accentRgb.r},${accentRgb.g},${accentRgb.b},0.4)`;
+          ctx.strokeStyle = `rgba(${accent},0.4)`;
           ctx.lineWidth = 1;
           ctx.stroke();
         }
