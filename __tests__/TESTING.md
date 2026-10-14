@@ -122,7 +122,7 @@ Per-test mocking:
 import { vi } from 'vitest';
 
 vi.mock('next/font/google', () => ({
-  Inter: () => ({ className: 'mocked-inter-font' }),
+  DM_Sans: () => ({ className: 'mocked-dm-sans-font' }),
 }));
 ```
 
