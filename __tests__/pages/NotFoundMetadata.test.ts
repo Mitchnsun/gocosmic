@@ -6,7 +6,7 @@ import { generateMetadata as generateNotFoundMetadata } from '@/app/[locale]/not
 
 vi.mock('next/font/google', () => {
   const font = () => ({ variable: 'font' });
-  return { Inter: font, Space_Grotesk: font, Space_Mono: font };
+  return { Space_Grotesk: font, DM_Sans: font, Space_Mono: font };
 });
 
 vi.mock('next-intl/server', () => ({

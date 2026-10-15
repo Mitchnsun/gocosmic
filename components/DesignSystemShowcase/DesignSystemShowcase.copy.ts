@@ -80,7 +80,7 @@ export const TYPE_SPECS = {
   h1: 'Space Grotesk 600 · clamp(36px, 6vw, 80px) · lh 0.98 · ls −0.035em · <em> 300 fg-2',
   h2: 'Space Grotesk 600 · clamp(30px, 4.2vw, 56px) · lh 1 · ls −0.03em',
   h3: 'Space Grotesk 600 · 20px · ls −0.02em',
-  body: 'Inter 400 · 16–18px · lh 1.625 · never below 14px',
+  body: 'DM Sans 400 · 16–18px · lh 1.625 · never below 14px',
   eyebrow: 'Space Mono 400 · 11px · uppercase · ls 0.22em · orange dot',
 } as const;
 

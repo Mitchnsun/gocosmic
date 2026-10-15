@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Space_Grotesk, Space_Mono } from 'next/font/google';
+import { DM_Sans, Space_Grotesk, Space_Mono } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
@@ -24,9 +24,9 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-display',
 });
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-body',
 });
 
@@ -87,7 +87,7 @@ export default async function LocaleLayout({
     // next-themes sets data-theme on <html> before hydration, hence suppressHydrationWarning.
     <html
       lang={locale}
-      className={`${spaceGrotesk.variable} ${inter.variable} ${spaceMono.variable}`}
+      className={`${spaceGrotesk.variable} ${dmSans.variable} ${spaceMono.variable}`}
       suppressHydrationWarning>
       <body className="bg-bg">
         <ThemeColorBoot />

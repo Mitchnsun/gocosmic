@@ -75,7 +75,7 @@ The site has two themes — dark ("space", the default) and light ("star") — d
 | Font                                       | Variable                          | Usage                                                     |
 | ------------------------------------------ | --------------------------------- | --------------------------------------------------------- |
 | **Space Grotesk**                          | `--font-display`                  | Headings, names, navigation, buttons, key numbers         |
-| **Inter**                                  | `--font-body`                     | Body text, paragraphs                                     |
+| **DM Sans**                                | `--font-body`                     | Body text, paragraphs                                     |
 | **Mono** (`Space Mono` / `JetBrains Mono`) | `--font-mono` → class `font-mono` | Eyebrows, coordinates, statuses, metadata, technical tags |
 
 > All three families are loaded with `next/font` in `app/[locale]/layout.tsx` and declared in `@theme` (`--font-display`, `--font-body`, `--font-mono: 'Space Mono', ui-monospace, monospace`), so `font-mono` always renders Space Mono.
@@ -301,7 +301,7 @@ Availability ...... ok + pulsing signal dot
 Border ............ border-line (subtle) · border-line-2 (strong) · border-line-3 (form field)
 Heading ........... font-display, font-medium/bold, tracking-[-.03em], clamp()
 Eyebrow / meta .... font-mono, uppercase, tracking-widest, + aerospace dot
-Body .............. font-body (Inter), ≥14px
+Body .............. font-body (DM Sans), ≥14px
 Button ............ rounded-full, buttonVariants(), pill primary/ghost
 Card .............. bg-surface, border-line, rounded-2xl, hover lift
 Radii ............. pill rounded-full · card rounded-xl/2xl
