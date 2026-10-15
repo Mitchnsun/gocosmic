@@ -127,9 +127,9 @@ Prices are shown in euros, or in Swiss francs on the Swiss version of the site, 
 
 #### Case Studies
 
-All five case studies share one template: a header with the dates (creation year, and the latest update for projects that keep being updated), client and project type, three numbered sections ("For whom", "What we did", "Result"), a link to the live project with a "Discuss a similar project" link to the contact page, and previous / next navigation between case studies.
+All five case studies share one template: a header with the dates (creation year, and the latest update for projects that keep being updated), client and project type, three numbered sections ("For whom", "What we did", "Result"), a link to the live project (or to the mockup) with a "Discuss a similar project" link to the contact page, and previous / next navigation between case studies.
 
-- **Chœur des Pays du Mont Blanc** (`/projects/choeurdespaysdumontblanc`): the choir's website, with upcoming concerts, repertoire and how to join
+- **Chœur des Pays du Mont Blanc** (`/projects/choeurdespaysdumontblanc`): a website mockup proposed to the choir, with upcoming concerts, repertoire and how to join; it is not the choir's official site
 - **Daily Fortune** (`/projects/daily-fortune`): the studio's own mobile app, published on the App Store
 - **Coach'n Pulse** (`/projects/coachnpulse`): the website of a triathlon and endurance sports coach in Grenoble, looked after since 2016
 - **PSC Supersprint** (`/projects/psc-supersprint`): live race results for a triathlon club, with its own translation namespace

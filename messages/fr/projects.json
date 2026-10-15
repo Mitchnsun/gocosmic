@@ -2,7 +2,7 @@
   "projectsList": {
     "meta": {
       "title": "Réalisations · Sites et applications | Cosmic Studio",
-      "description": "Sites et applications réalisés par Cosmic Studio : le site d'une chorale, les résultats en direct d'un club de triathlon et les projets du studio."
+      "description": "Sites et applications réalisés par Cosmic Studio : la maquette du site d'une chorale, les résultats en direct d'un club de triathlon et les projets du studio."
     },
     "title": "Des sites et des applications <em>dont on se sert.</em>",
     "subtitle": "Certains ont été faits pour des clients, d'autres pour le studio lui-même. Chaque fiche explique pour qui nous avons travaillé, ce que nous avons fait et ce que cela a changé.",
@@ -10,8 +10,8 @@
       "choeurDesPaysduMontBlanc": {
         "title": "Chœur des Pays du Mont Blanc",
         "client": "Association · Haute-Savoie",
-        "description": "Le site de la chorale : concerts à venir, répertoire et informations pour rejoindre le chœur, lisible sur téléphone comme sur ordinateur.",
-        "tags": ["Site vitrine", "Agenda", "Association"],
+        "description": "Une maquette de site proposée à la chorale : concerts à venir, répertoire et informations pour rejoindre le chœur, lisible sur téléphone comme sur ordinateur.",
+        "tags": ["Maquette", "Site vitrine", "Association"],
         "cover_alt": "Logo du Chœur des Pays du Mont Blanc"
       },
       "pscSupersprint": {
@@ -166,22 +166,22 @@
   },
   "choeurDesPaysduMontBlanc": {
     "title": "Chœur des Pays du Mont Blanc",
-    "subtitle": "Le site d'un chœur amateur de Haute-Savoie, avec ses concerts, son répertoire et ses répétitions.",
+    "subtitle": "Une maquette de site proposée à un chœur amateur de Haute-Savoie, avec ses concerts, son répertoire et ses répétitions.",
     "cta": {
-      "title": "Découvrez le chœur",
-      "description": "Prochains concerts, répertoire, répétitions : tout est sur le site du chœur.",
-      "button": "Visiter le site",
-      "ariaLabel": "Visiter le site du Chœur des Pays du Mont Blanc (s'ouvre dans un nouvel onglet)"
+      "title": "Découvrez la maquette",
+      "description": "Prochains concerts, répertoire, répétitions : parcourez la maquette telle que nous l'avons proposée au chœur.",
+      "button": "Voir la maquette",
+      "ariaLabel": "Voir la maquette du site du Chœur des Pays du Mont Blanc (s'ouvre dans un nouvel onglet)"
     },
     "for_whom": {
       "label": "Pour qui",
       "title": "Un chœur amateur de Haute-Savoie",
-      "description": "Le Chœur des Pays du Mont Blanc est une association de chanteurs amateurs en Haute-Savoie. Il lui fallait un site qui serve à ses membres autant qu'à ceux qui ne le connaissent pas encore."
+      "description": "Le Chœur des Pays du Mont Blanc est une association de chanteurs amateurs en Haute-Savoie. Nous lui avons proposé un site qui servirait à ses membres autant qu'à ceux qui ne le connaissent pas encore."
     },
     "what_we_did": {
       "label": "Ce qu'on a fait",
-      "title": "Un site pour les choristes et pour le public",
-      "description": "Nous avons réuni sur un seul site tout ce que cherchent les choristes, les amateurs de musique et le grand public, lisible sur ordinateur comme sur téléphone.",
+      "title": "Une maquette pour les choristes et pour le public",
+      "description": "Nous avons réuni dans une seule maquette tout ce que cherchent les choristes, les amateurs de musique et le grand public, lisible sur ordinateur comme sur téléphone.",
       "items": {
         "concerts": "Un agenda des concerts, avec les dates, les lieux et le programme",
         "repertoire": "La présentation du répertoire, du baroque à la musique classique contemporaine",
@@ -191,8 +191,8 @@
     },
     "result": {
       "label": "Résultat",
-      "title": "Un seul endroit pour suivre le chœur",
-      "description": "Les membres y trouvent leurs horaires et les nouvelles, le public les prochains concerts, et ceux qui veulent chanter la marche à suivre pour rejoindre le chœur."
+      "title": "Une proposition faite au chœur",
+      "description": "La maquette montre à quoi pourrait ressembler le site du chœur. Elle a été proposée à l'association et n'est pas, à ce jour, son site officiel."
     }
   }
 }

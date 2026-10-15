@@ -2,7 +2,7 @@
   "projectsList": {
     "meta": {
       "title": "Realizzazioni · Siti e app | Cosmic Studio",
-      "description": "Siti e app realizzati da Cosmic Studio: il sito di un coro, i risultati in diretta di un club di triathlon e i progetti dello studio."
+      "description": "Siti e app realizzati da Cosmic Studio: il mockup del sito di un coro, i risultati in diretta di un club di triathlon e i progetti dello studio."
     },
     "title": "Siti e app <em>che la gente usa.</em>",
     "subtitle": "Alcuni sono stati fatti per dei clienti, altri per lo studio stesso. Ogni scheda racconta per chi abbiamo lavorato, cosa abbiamo fatto e cosa è cambiato.",
@@ -39,9 +39,9 @@
       },
       "choeurDesPaysduMontBlanc": {
         "title": "Chœur des Pays du Mont Blanc",
-        "description": "Il sito del coro: concerti in programma, repertorio e informazioni per entrare nel coro, leggibile sul telefono come sul computer.",
+        "description": "Il mockup di un sito proposto al coro: concerti in programma, repertorio e informazioni per entrare nel coro, leggibile sul telefono come sul computer.",
         "client": "Associazione · Alta Savoia",
-        "tags": ["Sito vetrina", "Calendario", "Associazione"],
+        "tags": ["Mockup", "Sito vetrina", "Associazione"],
         "cover_alt": "Logo del Chœur des Pays du Mont Blanc"
       }
     },
@@ -166,22 +166,22 @@
   },
   "choeurDesPaysduMontBlanc": {
     "title": "Chœur des Pays du Mont Blanc",
-    "subtitle": "Il sito di un coro amatoriale dell'Alta Savoia, con i suoi concerti, il suo repertorio e le sue prove.",
+    "subtitle": "Il mockup di un sito proposto a un coro amatoriale dell'Alta Savoia, con i suoi concerti, il suo repertorio e le sue prove.",
     "cta": {
-      "title": "Scopri il coro",
-      "description": "Prossimi concerti, repertorio, prove: trovi tutto sul sito del coro.",
-      "button": "Visita il sito",
-      "ariaLabel": "Visita il sito del Chœur des Pays du Mont Blanc (si apre in una nuova scheda)"
+      "title": "Scopri il mockup",
+      "description": "Prossimi concerti, repertorio, prove: sfoglia il mockup così come l'abbiamo proposto al coro.",
+      "button": "Vedi il mockup",
+      "ariaLabel": "Vedi il mockup del sito del Chœur des Pays du Mont Blanc (si apre in una nuova scheda)"
     },
     "for_whom": {
       "label": "Per chi",
       "title": "Un coro amatoriale dell'Alta Savoia",
-      "description": "Il Chœur des Pays du Mont Blanc è un'associazione di cantanti amatoriali in Alta Savoia. Gli serviva un sito utile ai soci quanto a chi ancora non lo conosce."
+      "description": "Il Chœur des Pays du Mont Blanc è un'associazione di cantanti amatoriali in Alta Savoia. Gli abbiamo proposto un sito che sarebbe utile ai soci quanto a chi ancora non lo conosce."
     },
     "what_we_did": {
       "label": "Cosa abbiamo fatto",
-      "title": "Un sito per i coristi e per il pubblico",
-      "description": "Abbiamo riunito in un solo sito tutto ciò che cercano i coristi, gli appassionati di musica e il grande pubblico, leggibile sul computer come sul telefono.",
+      "title": "Un mockup per i coristi e per il pubblico",
+      "description": "Abbiamo riunito in un solo mockup tutto ciò che cercano i coristi, gli appassionati di musica e il grande pubblico, leggibile sul computer come sul telefono.",
       "items": {
         "concerts": "Un calendario dei concerti, con date, luoghi e programma",
         "repertoire": "La presentazione del repertorio, dalla musica barocca a quella classica contemporanea",
@@ -191,8 +191,8 @@
     },
     "result": {
       "label": "Risultato",
-      "title": "Un unico posto per seguire il coro",
-      "description": "I soci ci trovano orari e notizie, il pubblico i prossimi concerti, e chi vuole cantare come fare per entrare nel coro."
+      "title": "Una proposta fatta al coro",
+      "description": "Il mockup mostra come potrebbe essere il sito del coro. È stato proposto all'associazione e, ad oggi, non è il suo sito ufficiale."
     }
   }
 }

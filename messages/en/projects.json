@@ -2,7 +2,7 @@
   "projectsList": {
     "meta": {
       "title": "Work · Websites and apps | Cosmic Studio",
-      "description": "Websites and apps built by Cosmic Studio: a choir's website, live results for a triathlon club and the studio's own projects."
+      "description": "Websites and apps built by Cosmic Studio: a website mockup for a choir, live results for a triathlon club and the studio's own projects."
     },
     "title": "Websites and apps <em>that get used.</em>",
     "subtitle": "Some were built for clients, others for the studio itself. Each page explains who we worked for, what we did and what changed.",
@@ -10,8 +10,8 @@
       "choeurDesPaysduMontBlanc": {
         "title": "Chœur des Pays du Mont Blanc",
         "client": "Association · Haute-Savoie",
-        "description": "The choir's website: upcoming concerts, repertoire and how to join, easy to read on a phone or a computer.",
-        "tags": ["Showcase site", "Calendar", "Association"],
+        "description": "A website mockup proposed to the choir: upcoming concerts, repertoire and how to join, easy to read on a phone or a computer.",
+        "tags": ["Mockup", "Showcase site", "Association"],
         "cover_alt": "Chœur des Pays du Mont Blanc logo"
       },
       "pscSupersprint": {
@@ -166,22 +166,22 @@
   },
   "choeurDesPaysduMontBlanc": {
     "title": "Chœur des Pays du Mont Blanc",
-    "subtitle": "The website of an amateur choir in Haute-Savoie, with its concerts, repertoire and rehearsals.",
+    "subtitle": "A website mockup proposed to an amateur choir in Haute-Savoie, with its concerts, repertoire and rehearsals.",
     "cta": {
-      "title": "Discover the choir",
-      "description": "Upcoming concerts, repertoire, rehearsals: it is all on the choir's website.",
-      "button": "Visit the website",
-      "ariaLabel": "Visit the Chœur des Pays du Mont Blanc website (opens in a new tab)"
+      "title": "Discover the mockup",
+      "description": "Upcoming concerts, repertoire, rehearsals: browse the mockup as we proposed it to the choir.",
+      "button": "View the mockup",
+      "ariaLabel": "View the Chœur des Pays du Mont Blanc website mockup (opens in a new tab)"
     },
     "for_whom": {
       "label": "Who it's for",
       "title": "An amateur choir in Haute-Savoie",
-      "description": "The Chœur des Pays du Mont Blanc is an association of amateur singers in Haute-Savoie. It needed a site that serves its members as much as people who do not know it yet."
+      "description": "The Chœur des Pays du Mont Blanc is an association of amateur singers in Haute-Savoie. We proposed a site that would serve its members as much as people who do not know it yet."
     },
     "what_we_did": {
       "label": "What we did",
-      "title": "A website for singers and the public",
-      "description": "We brought together everything singers, music lovers and the general public look for on a single site, easy to read on a computer or a phone.",
+      "title": "A mockup for singers and the public",
+      "description": "We brought together everything singers, music lovers and the general public look for in a single mockup, easy to read on a computer or a phone.",
       "items": {
         "concerts": "A concert calendar with dates, venues and programmes",
         "repertoire": "A look at the repertoire, from baroque to contemporary classical music",
@@ -191,8 +191,8 @@
     },
     "result": {
       "label": "Result",
-      "title": "One place to follow the choir",
-      "description": "Members find their rehearsal times and news there, the public finds upcoming concerts, and anyone who wants to sing finds out how to join the choir."
+      "title": "A proposal made to the choir",
+      "description": "The mockup shows what the choir's website could look like. It has been proposed to the association and is not, to date, its official website."
     }
   }
 }
