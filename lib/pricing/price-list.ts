@@ -26,7 +26,7 @@ export const OPTION_GROUPS = {
   care: ['updates', 'articles', 'monitoring'],
 } as const satisfies Record<string, readonly PricedOption[]>;
 
-/** One monthly price of the subscription, excl. VAT, charged as the same amount in euros and Swiss francs. */
+/** One monthly price of the subscription, net of VAT, charged as the same amount in euros and Swiss francs. */
 export interface PriceLine {
   /** The plan, or the option the price belongs to. */
   option: PricedOption | 'formula';

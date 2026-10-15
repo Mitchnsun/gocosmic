@@ -42,7 +42,7 @@
         },
         "price": {
           "title": "A price on display",
-          "description": "The subscription starts at {price} a month excl. VAT, and you can see what each option costs before you write to us. There is no large sum to pay upfront."
+          "description": "The subscription starts at {price} a month, and you can see what each option costs before you write to us. There is no large sum to pay upfront."
         },
         "answer": {
           "title": "Someone who answers",

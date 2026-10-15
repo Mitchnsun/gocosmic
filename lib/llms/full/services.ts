@@ -14,7 +14,7 @@ function buildColumns(): string {
   const price = { price: inBothCurrencies(BASE_PRICE) };
 
   const columns = COLUMNS.map((column) => {
-    // "From €10 / CHF 10 excl. VAT / month", "Day rate", or nothing for a quoted project.
+    // "From €10 / CHF 10 / month", "Day rate", or nothing for a quoted project.
     const amount = ['price', 'period']
       .filter((key) => EN.pricing.has(`columns.${column}.${key}`))
       .map((key) => t(`${column}.${key}`, price))

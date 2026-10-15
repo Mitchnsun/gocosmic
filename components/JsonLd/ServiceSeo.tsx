@@ -35,8 +35,6 @@ export default function ServiceSeo({ description, region }: ServiceSeoProps) {
       ...(minimum && { minPrice: price }),
       // UN/CEFACT code for a month: the price is a monthly subscription.
       unitCode: 'MON',
-      // The page quotes the price excluding VAT.
-      valueAddedTaxIncluded: false,
     },
   });
 

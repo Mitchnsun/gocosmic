@@ -2,7 +2,7 @@
   "services": {
     "meta": {
       "title": "Servicios y precios · Ginebra y Annecy | Cosmic Studio",
-      "description": "Webs de presentación, tiendas en línea, aplicaciones y seguimiento, con precios a la vista: suscripción desde {price} al mes sin IVA o proyecto con presupuesto."
+      "description": "Webs de presentación, tiendas en línea, aplicaciones y seguimiento, con precios a la vista: suscripción desde {price} al mes o proyecto con presupuesto."
     },
     "cta": {
       "title": "Hablemos de tu sitio.",
@@ -17,7 +17,7 @@
     "simulator": {
       "eyebrow": "[ Configura tu suscripción ]",
       "title": "Empieza por lo básico <em>y añade el resto más adelante.</em>",
-      "lead": "Dos planes: «Nos encargamos de todo», desde {price} al mes sin IVA, o «Tú tienes el control», desde {selfServicePrice} al mes sin IVA, si quieres publicar tú mismo/a tus noticias. Marca las opciones que te interesen para ver el precio mensual."
+      "lead": "Dos planes: «Nos encargamos de todo», desde {price} al mes, o «Tú tienes el control», desde {selfServicePrice} al mes, si quieres publicar tú mismo/a tus noticias. Marca las opciones que te interesen para ver el precio mensual."
     },
     "trades": {
       "eyebrow": "[ Lo que hacemos · 04 ]",

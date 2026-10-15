@@ -47,7 +47,7 @@
         },
         "price": {
           "title": "Ein offen genannter Preis",
-          "description": "Das Abonnement beginnt bei {price} im Monat zzgl. MwSt., und Sie sehen, was jede Option kostet, bevor Sie uns schreiben. Am Anfang müssen Sie keine große Summe aufbringen."
+          "description": "Das Abonnement beginnt bei {price} im Monat, und Sie sehen, was jede Option kostet, bevor Sie uns schreiben. Am Anfang müssen Sie keine große Summe aufbringen."
         },
         "answer": {
           "title": "Jemand, der antwortet",

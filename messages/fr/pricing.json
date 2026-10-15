@@ -36,7 +36,7 @@
       "cta": "Demander un devis"
     },
     "builder": {
-      "period": "HT / mois",
+      "period": "/ mois",
       "base": {
         "title": "Compris dans la formule",
         "includes": {
@@ -188,7 +188,7 @@
       },
       "total": {
         "label": "Votre estimation",
-        "note": "Prix indicatif hors taxes, confirmé après un premier échange. Vous pouvez ajouter des options à tout moment. Le nombre de pages, le nom de domaine, l'hébergement en Suisse et votre adresse e-mail restent dans votre abonnement une fois activés. Les options marquées « Engagement 1 an » se retirent à la fin de chaque période de 12 mois, les autres avec un mois de préavis (voir les conditions générales de vente).",
+        "note": "Prix indicatif, confirmé après un premier échange. Vous pouvez ajouter des options à tout moment. Le nombre de pages, le nom de domaine, l'hébergement en Suisse et votre adresse e-mail restent dans votre abonnement une fois activés. Les options marquées « Engagement 1 an » se retirent à la fin de chaque période de 12 mois, les autres avec un mois de préavis (voir les conditions générales de vente).",
         "cta": "Demander ma maquette gratuite",
         "question": "Une question avant ? <link>Écrivez-nous</link>.",
         "beyond": "Au-delà de ces volumes, nous en parlons ensemble pour vous faire une proposition."
@@ -221,7 +221,7 @@
         "title": "Abonnement",
         "label": "Site, hébergement et suivi",
         "price": "Dès {price}",
-        "period": "HT / mois",
+        "period": "/ mois",
         "description": "Votre site est en ligne et tenu à jour, sans que vous ayez à vous en occuper. Le prix dépend de vos besoins : nombre de pages, nom de domaine, adresse e-mail, modifications.",
         "features": {
           "included": "Hébergement, connexion sécurisée et référencement de base compris",

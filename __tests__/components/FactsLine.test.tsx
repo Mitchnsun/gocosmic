@@ -8,7 +8,7 @@ describe('FactsLine', () => {
     render(
       <FactsLine
         facts={[
-          { highlight: 'Dès 10 € HT', text: '/ mois' },
+          { highlight: 'Dès 10 €', text: '/ mois' },
           { highlight: 'Un seul', text: 'interlocuteur' },
         ]}
       />
@@ -16,7 +16,7 @@ describe('FactsLine', () => {
 
     const items = screen.getAllByRole('listitem');
     expect(items).toHaveLength(2);
-    expect(items[0]).toHaveTextContent('Dès 10 € HT / mois');
+    expect(items[0]).toHaveTextContent('Dès 10 € / mois');
     expect(screen.getByText('Un seul')).toBeInTheDocument();
   });
 });

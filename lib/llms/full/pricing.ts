@@ -26,7 +26,7 @@ const infoOf = (key: string): string[] => (EN.pricing.has(`builder.${key}`) ? [t
 const withSelfService = (key: string) => `With ${formulaName('self_service')}: ${t(key)}`;
 
 /**
- * "+€5 / +CHF 5 excl. VAT / month", "+€40 / +CHF 40 or more…" for the last step of a slider, or, for a step that
+ * "+€5 / +CHF 5 / month", "+€40 / +CHF 40 or more…" for the last step of a slider, or, for a step that
  * forces the content changes up, both prices and their sum.
  */
 const priceOf = (line: PriceLine) => {

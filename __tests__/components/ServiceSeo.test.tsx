@@ -38,7 +38,6 @@ describe('ServiceSeo', () => {
             price: 10,
             priceCurrency: 'EUR',
             unitCode: 'MON',
-            valueAddedTaxIncluded: false,
           },
         },
       }),
@@ -73,7 +72,6 @@ describe('ServiceSeo', () => {
         price: 10,
         priceCurrency: 'EUR',
         unitCode: 'MON',
-        valueAddedTaxIncluded: false,
       },
     });
     expect(catalog.itemListElement).toEqual(

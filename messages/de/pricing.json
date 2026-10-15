@@ -36,7 +36,7 @@
       "cta": "Angebot anfragen"
     },
     "builder": {
-      "period": "zzgl. MwSt. / Monat",
+      "period": "/ Monat",
       "base": {
         "title": "Im Paket enthalten",
         "includes": {
@@ -188,7 +188,7 @@
       },
       "total": {
         "label": "Ihre Kostenschätzung",
-        "note": "Richtpreis zzgl. MwSt., den wir nach einem ersten Gespräch bestätigen. Sie können jederzeit Optionen hinzufügen. Seitenzahl, Domainname, Hosting in der Schweiz und Ihre E-Mail-Adresse bleiben nach der Aktivierung Teil Ihres Abonnements. Optionen mit dem Hinweis „1 Jahr Laufzeit“ lassen sich zum Ende jedes Zeitraums von 12 Monaten kündigen, die übrigen mit einem Monat Frist (siehe Allgemeine Geschäftsbedingungen).",
+        "note": "Richtpreis, den wir nach einem ersten Gespräch bestätigen. Sie können jederzeit Optionen hinzufügen. Seitenzahl, Domainname, Hosting in der Schweiz und Ihre E-Mail-Adresse bleiben nach der Aktivierung Teil Ihres Abonnements. Optionen mit dem Hinweis „1 Jahr Laufzeit“ lassen sich zum Ende jedes Zeitraums von 12 Monaten kündigen, die übrigen mit einem Monat Frist (siehe Allgemeine Geschäftsbedingungen).",
         "beyond": "Bei größerem Umfang sprechen wir gemeinsam darüber und machen Ihnen einen Vorschlag.",
         "cta": "Mein kostenloses Mockup anfordern",
         "question": "Vorher noch eine Frage? <link>Schreiben Sie uns</link>."
@@ -221,7 +221,7 @@
         "title": "Abonnement",
         "label": "Website, Hosting und Betreuung",
         "price": "Ab {price}",
-        "period": "zzgl. MwSt. / Monat",
+        "period": "/ Monat",
         "description": "Ihre Website ist online und bleibt aktuell, ohne dass Sie sich darum kümmern müssen. Der Preis richtet sich nach Ihrem Bedarf: Anzahl der Seiten, Domainname, E-Mail-Adresse, Änderungen.",
         "features": {
           "included": "Hosting, sichere Verbindung und grundlegende Auffindbarkeit bei Google inklusive",
