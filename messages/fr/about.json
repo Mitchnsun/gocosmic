@@ -42,7 +42,7 @@
         },
         "price": {
           "title": "Un prix affiché",
-          "description": "L'abonnement commence à {price} HT par mois, et vous voyez ce que coûte chaque option avant de nous écrire. Vous n'avez pas de grosse somme à sortir au départ."
+          "description": "L'abonnement commence à {price} par mois, et vous voyez ce que coûte chaque option avant de nous écrire. Vous n'avez pas de grosse somme à sortir au départ."
         },
         "answer": {
           "title": "Quelqu'un qui répond",

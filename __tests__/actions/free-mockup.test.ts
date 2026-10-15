@@ -50,7 +50,7 @@ describe('submitFreeMockupRequest', () => {
 
     const payload = send.mock.calls[0]?.[0] as { text: string };
     expect(payload.text).toContain('Simulation — pages: 5 to 7 pages (+15 CHF)');
-    expect(payload.text).toContain('Simulation — monthly total: 30 CHF / month excl. VAT');
+    expect(payload.text).toContain('Simulation — monthly total: 30 CHF / month');
   });
 
   it('ignores an invalid pricing simulation and still sends the request', async () => {

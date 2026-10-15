@@ -43,7 +43,7 @@ describe('buildLlmsFull', () => {
   });
 
   it('prices the four ways to work with the studio', () => {
-    expect(text).toContain('- **Subscription · Site, hosting and care · From €10 / CHF 10 excl. VAT / month**: ');
+    expect(text).toContain('- **Subscription · Site, hosting and care · From €10 / CHF 10 / month**: ');
     expect(text).toContain('- **Guidance · Advice and design · Day rate**: ');
     expect(text).toContain('- **Custom · One-off project · quoted**: ');
     expect(text).toContain('  - The code and the data belong to you');
@@ -51,10 +51,10 @@ describe('buildLlmsFull', () => {
 
   it('spells out both plans, including the second one the page only shows on its tab', () => {
     expect(text).toContain(
-      '- **We take care of everything · €10 / CHF 10 excl. VAT / month**: You email us, we update your site. Included in the plan:'
+      '- **We take care of everything · €10 / CHF 10 / month**: You email us, we update your site. Included in the plan:'
     );
     expect(text).toContain(
-      '- **You stay in control · €20 / CHF 20 excl. VAT / month · 1-year commitment**: You publish your news'
+      '- **You stay in control · €20 / CHF 20 / month · 1-year commitment**: You publish your news'
     );
     expect(text).toContain(
       '  - An editing space for your news and opening hours: You publish news or change your opening hours whenever you like'
@@ -72,31 +72,27 @@ describe('buildLlmsFull', () => {
 
   it('gives every option its price, its notes and the text of its info bubble', () => {
     expect(text).toContain(
-      '- **A contact form · +€5 / +CHF 5 excl. VAT / month**: Visitors write to you from your site, and their messages land in your inbox. Without this option'
+      '- **A contact form · +€5 / +CHF 5 / month**: Visitors write to you from your site, and their messages land in your inbox. Without this option'
     );
     expect(text).toContain(
-      '- **A news section · +€5 / +CHF 5 excl. VAT / month · with “We take care of everything” only, as “You stay in control” includes it · 1-year commitment**: '
+      '- **A news section · +€5 / +CHF 5 / month · with “We take care of everything” only, as “You stay in control” includes it · 1-year commitment**: '
     );
+    expect(text).toContain('- **Website hosted in Switzerland · +€10 / +CHF 10 / month · Swiss versions only**: ');
     expect(text).toContain(
-      '- **Website hosted in Switzerland · +€10 / +CHF 10 excl. VAT / month · Swiss versions only**: '
+      '- **An email address in your own name · +€15 / +CHF 15 / month**: For example contact@my-business.com, instead of a free address. Your email address uses your domain name'
     );
-    expect(text).toContain(
-      '- **An email address in your own name · +€15 / +CHF 15 excl. VAT / month**: For example contact@my-business.com, instead of a free address. Your email address uses your domain name'
-    );
-    expect(text).toContain(
-      '- **Extra mailboxes · +€10 / +CHF 10 per mailbox excl. VAT / month · 1-year commitment**: '
-    );
+    expect(text).toContain('- **Extra mailboxes · +€10 / +CHF 10 per mailbox / month · 1-year commitment**: ');
     expect(text).toContain('invoices@my-business.com. When several of you work together');
   });
 
   it('lists every step of the sliders with its price', () => {
-    expect(text).toContain('  - 10 pages or more: +€40 / +CHF 40 or more excl. VAT / month');
+    expect(text).toContain('  - 10 pages or more: +€40 / +CHF 40 or more / month');
     expect(text).toContain('- **Content changes included**: Once a year (included). You email us your changes');
-    expect(text).toContain('  - As often as needed: +€200 / +CHF 200 excl. VAT / month');
+    expect(text).toContain('  - As often as needed: +€200 / +CHF 200 / month');
     expect(text).toContain(
-      '  - 1 article a day: +€50 / +CHF 50 excl. VAT / month, plus the content changes it requires, “As often as needed”: +€200 / +CHF 200, so +€250 / +CHF 250 excl. VAT / month in all'
+      '  - 1 article a day: +€50 / +CHF 50 / month, plus the content changes it requires, “As often as needed”: +€200 / +CHF 200, so +€250 / +CHF 250 / month in all'
     );
-    expect(text).toContain('“Once a month”: +€20 / +CHF 20, so +€25 / +CHF 25 excl. VAT / month in all');
+    expect(text).toContain('“Once a month”: +€20 / +CHF 20, so +€25 / +CHF 25 / month in all');
     expect(text).toContain('#### Get found and count your visits');
   });
 
@@ -118,7 +114,7 @@ describe('buildLlmsFull', () => {
   });
 
   it('includes the about, local and free mockup pages', () => {
-    expect(text).toContain('- **A price on display**: The subscription starts at €10 / CHF 10 a month excl. VAT');
+    expect(text).toContain('- **A price on display**: The subscription starts at €10 / CHF 10 a month');
     expect(text).toContain('- **French-speaking Switzerland**: Vaud, Valais, Neuchâtel, Fribourg');
     expect(text).toContain('- **Then you decide**: The mockup arrives by email within 48 hours');
   });

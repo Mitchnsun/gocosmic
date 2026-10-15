@@ -36,7 +36,7 @@
       "cta": "Pedir un presupuesto"
     },
     "builder": {
-      "period": "/ mes sin IVA",
+      "period": "/ mes",
       "base": {
         "title": "Incluido en el plan",
         "includes": {
@@ -188,7 +188,7 @@
       },
       "total": {
         "label": "Tu estimación",
-        "note": "Precio orientativo sin IVA, que confirmamos tras una primera conversación. Puedes añadir opciones en cualquier momento. El número de páginas, el nombre de dominio, el alojamiento en Suiza y tu dirección de correo se mantienen en tu suscripción una vez activados. Las opciones marcadas «Compromiso de 1 año» se dan de baja al final de cada periodo de 12 meses, las demás con un mes de preaviso (consulta las condiciones generales de venta).",
+        "note": "Precio orientativo, que confirmamos tras una primera conversación. Puedes añadir opciones en cualquier momento. El número de páginas, el nombre de dominio, el alojamiento en Suiza y tu dirección de correo se mantienen en tu suscripción una vez activados. Las opciones marcadas «Compromiso de 1 año» se dan de baja al final de cada periodo de 12 meses, las demás con un mes de preaviso (consulta las condiciones generales de venta).",
         "beyond": "Si necesitas más, lo hablamos y te hacemos una propuesta.",
         "cta": "Pedir mi maqueta gratuita",
         "question": "¿Alguna pregunta antes? <link>Escríbenos</link>."
@@ -221,7 +221,7 @@
         "title": "Suscripción",
         "label": "Sitio, alojamiento y seguimiento",
         "price": "Desde {price}",
-        "period": "/ mes sin IVA",
+        "period": "/ mes",
         "description": "Tu sitio está en línea y al día sin que tengas que ocuparte de nada. El precio depende de lo que necesites: número de páginas, nombre de dominio, dirección de correo, cambios.",
         "features": {
           "included": "Alojamiento, conexión segura y posicionamiento básico en Google incluidos",

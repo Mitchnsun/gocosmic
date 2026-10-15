@@ -36,7 +36,7 @@
       "cta": "Request a quote"
     },
     "builder": {
-      "period": "excl. VAT / month",
+      "period": "/ month",
       "base": {
         "title": "Included in the plan",
         "includes": {
@@ -188,7 +188,7 @@
       },
       "total": {
         "label": "Your estimate",
-        "note": "Indicative price excl. VAT, confirmed after a first conversation. You can add options at any time. The number of pages, the domain name, Swiss hosting and your email address stay part of your subscription once active. Options marked “1-year commitment” can be removed at the end of each 12-month period, the others with one month's notice (see the terms of sale).",
+        "note": "Indicative price, confirmed after a first conversation. You can add options at any time. The number of pages, the domain name, Swiss hosting and your email address stay part of your subscription once active. Options marked “1-year commitment” can be removed at the end of each 12-month period, the others with one month's notice (see the terms of sale).",
         "cta": "Request my free mockup",
         "question": "A question first? <link>Write to us</link>.",
         "beyond": "Beyond these volumes, we will talk it through and make you a proposal."
@@ -221,7 +221,7 @@
         "title": "Subscription",
         "label": "Site, hosting and care",
         "price": "From {price}",
-        "period": "excl. VAT / month",
+        "period": "/ month",
         "description": "Your site is online and kept up to date, without you having to deal with it. The price depends on your needs: number of pages, domain name, email address, changes.",
         "features": {
           "included": "Hosting, secure connection and basic Google visibility included",

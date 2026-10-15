@@ -16,12 +16,12 @@ describe('buildPlanEmailRows', () => {
     );
 
     expect(text).toContain('Simulation — project: A website');
-    expect(text).toContain('Simulation — formula: We take care of everything: 10€ / month excl. VAT');
+    expect(text).toContain('Simulation — formula: We take care of everything: 10€ / month');
     expect(text).toContain('Simulation — pages: 5 to 7 pages (+15€)');
     expect(text).toContain('Simulation — add-ons: Domain name management (+5€), Email address on the domain (+15€)');
     expect(text).toContain('Simulation — content updates: Once a month (+20€)');
     // 10 base + 15 pages + 5 domain + 15 email + 20 updates
-    expect(text).toContain('Simulation — monthly total: 65€ / month excl. VAT');
+    expect(text).toContain('Simulation — monthly total: 65€ / month');
   });
 
   it('describes the new options, the formula and the extra mailboxes', () => {
@@ -46,7 +46,7 @@ describe('buildPlanEmailRows', () => {
     expect(text).toContain('Simulation — content updates: Once a month (+20€)');
     expect(text).toContain('Simulation — AI-assisted articles: 1 article a month (+5€)');
     // 20 + 5 + 5 + 15 + 20 + 5 + 5 + 15 + 50 + 20 + 5
-    expect(text).toContain('Simulation — monthly total: 165€ / month excl. VAT');
+    expect(text).toContain('Simulation — monthly total: 165€ / month');
   });
 
   it('uses Swiss francs for the ch region and reports unused options', () => {
@@ -56,7 +56,7 @@ describe('buildPlanEmailRows', () => {
     expect(text).toContain('Simulation — add-ons: None');
     expect(text).toContain('Simulation — local search follow-up: Not included');
     expect(text).toContain('Simulation — content updates: Once a year (included)');
-    expect(text).toContain('Simulation — monthly total: 10 CHF / month excl. VAT');
+    expect(text).toContain('Simulation — monthly total: 10 CHF / month');
     expect(text).not.toContain('personal quote');
   });
 

@@ -18,7 +18,7 @@ import {
 import { getCurrency } from '@/lib/region';
 
 const LABEL_PREFIX = 'Simulation';
-const MONTHLY = '/ month excl. VAT';
+const MONTHLY = '/ month';
 
 const isAddOn = (id: PlanItem['id']): id is AddOnKey => id in ADD_ON_LABELS;
 

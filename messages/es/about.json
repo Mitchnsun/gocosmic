@@ -47,7 +47,7 @@
         },
         "price": {
           "title": "Un precio a la vista",
-          "description": "La suscripción empieza en {price} al mes sin IVA, y ves lo que cuesta cada opción antes de escribirnos. No tienes que desembolsar una gran cantidad al principio."
+          "description": "La suscripción empieza en {price} al mes, y ves lo que cuesta cada opción antes de escribirnos. No tienes que desembolsar una gran cantidad al principio."
         },
         "answer": {
           "title": "Alguien que responde",

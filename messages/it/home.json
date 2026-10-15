@@ -18,7 +18,7 @@
       "secondary": "Vedi i prezzi",
       "facts": {
         "price": {
-          "highlight": "Da {price} IVA esclusa",
+          "highlight": "Da {price}",
           "text": "/ mese"
         },
         "reply": {

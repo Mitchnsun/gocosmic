@@ -47,7 +47,7 @@
         },
         "price": {
           "title": "Un prezzo in chiaro",
-          "description": "L'abbonamento parte da {price} al mese IVA esclusa, e vedi quanto costa ogni opzione prima di scriverci. Non devi tirare fuori una grossa somma all'inizio."
+          "description": "L'abbonamento parte da {price} al mese, e vedi quanto costa ogni opzione prima di scriverci. Non devi tirare fuori una grossa somma all'inizio."
         },
         "answer": {
           "title": "Qualcuno che risponde",

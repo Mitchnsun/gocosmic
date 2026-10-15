@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - The legal notice and the terms of sale now give the studio's full address in Chêne-Bougeries and state that it is a sole proprietorship in Matthieu Compérat's name, not entered in the commercial register
 - The legal notice and the terms of sale now state that the studio is not subject to VAT, so the prices shown are net prices, with no VAT added
+- Prices no longer say "excl. VAT" anywhere on the site, in any language: the price shown is the price paid
+- Search engines no longer read the prices as excluding VAT, and the studio's copy of a pricing simulation drops the mention too
 - The summary of the site written for AI assistants now tells them the same thing: prices are net, as the studio is not subject to VAT
 - The Chœur des Pays du Mont Blanc project is now presented as what it is, a website mockup proposed to the choir, with a button to view the mockup
 

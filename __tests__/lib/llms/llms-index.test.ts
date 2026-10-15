@@ -35,7 +35,7 @@ describe('buildLlmsIndex', () => {
 
   it('describes each main page, quoting the starting price in both currencies', () => {
     expect(text).toContain(
-      '- [Services & pricing](https://www.gocosmic.dev/en/services): Showcase sites, online shops, apps and ongoing care, with prices on display: a subscription from €10 / CHF 10 a month excl. VAT, or a quoted project.'
+      '- [Services & pricing](https://www.gocosmic.dev/en/services): Showcase sites, online shops, apps and ongoing care, with prices on display: a subscription from €10 / CHF 10 a month, or a quoted project.'
     );
     expect(text).toContain('- [Free mockup](https://www.gocosmic.dev/en/free-mockup): Request a free mockup');
     expect(text).toContain(

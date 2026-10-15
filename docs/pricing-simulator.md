@@ -68,8 +68,9 @@ form sends the simulation along with the request. The plan code still carries `p
 
 ## Price table
 
-Source of truth: `constants.ts`. Amounts are monthly and shown **excl. VAT** everywhere they
-appear (`pricing.builder.period`, the legal notice and the terms of sale).
+Source of truth: `constants.ts`. Amounts are monthly and **net**: Cosmic Studio is not
+registered for VAT, so no VAT is mentioned next to them (`pricing.builder.period` reads
+"/ month"); the legal notice and the terms of sale state it.
 
 | Item                                  | Price                       | Commitment         |
 | ------------------------------------- | --------------------------- | ------------------ |
