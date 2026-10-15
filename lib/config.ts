@@ -17,7 +17,7 @@ export const CONTACT_EMAIL = 'contact@gocosmic.dev';
 /** Support address for existing clients, shown on the contact page. */
 export const SUPPORT_EMAIL = 'support@gocosmic.dev';
 
-/** Registered office declared in structured data, at the town level, as on the legal notice. */
+/** Business address declared in structured data, at the town level; the legal notice gives the street. */
 export const STUDIO_ADDRESS = {
   addressLocality: 'Chêne-Bougeries',
   postalCode: '1224',

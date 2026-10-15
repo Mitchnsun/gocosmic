@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.4.5] - 2026-10-15
+
+### Changed
+
+- The legal notice and the terms of sale now give the studio's full address in Chêne-Bougeries and state that it is a sole proprietorship in Matthieu Compérat's name, not entered in the commercial register
+- The legal notice and the terms of sale now state that the studio is not subject to VAT, so the prices shown are net prices, with no VAT added
+- The summary of the site written for AI assistants now tells them the same thing: prices are net, as the studio is not subject to VAT
+- The Chœur des Pays du Mont Blanc project is now presented as what it is, a website mockup proposed to the choir, with a button to view the mockup
+
 ## [2.4.4] - 2026-10-15
 
 ### Changed

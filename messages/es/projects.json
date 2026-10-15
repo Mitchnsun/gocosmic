@@ -2,7 +2,7 @@
   "projectsList": {
     "meta": {
       "title": "Proyectos · Sitios web y aplicaciones | Cosmic Studio",
-      "description": "Sitios web y aplicaciones creados por Cosmic Studio: el sitio de un coro, los resultados en directo de un club de triatlón y los proyectos del estudio."
+      "description": "Sitios web y aplicaciones creados por Cosmic Studio: la maqueta del sitio de un coro, los resultados en directo de un club de triatlón y los proyectos del estudio."
     },
     "title": "Sitios web y aplicaciones <em>que se usan.</em>",
     "subtitle": "Algunos se hicieron para clientes, otros para el propio estudio. Cada ficha explica para quién trabajamos, qué hicimos y qué cambió.",
@@ -39,9 +39,9 @@
       },
       "choeurDesPaysduMontBlanc": {
         "title": "Chœur des Pays du Mont Blanc",
-        "description": "El sitio del coro: próximos conciertos, repertorio e información para unirse, fácil de leer tanto en el móvil como en el ordenador.",
+        "description": "Una maqueta de sitio propuesta al coro: próximos conciertos, repertorio e información para unirse, fácil de leer tanto en el móvil como en el ordenador.",
         "client": "Asociación · Alta Saboya",
-        "tags": ["Sitio de presentación", "Agenda", "Asociación"],
+        "tags": ["Maqueta", "Sitio de presentación", "Asociación"],
         "cover_alt": "Logotipo del Chœur des Pays du Mont Blanc"
       }
     },
@@ -166,22 +166,22 @@
   },
   "choeurDesPaysduMontBlanc": {
     "title": "Chœur des Pays du Mont Blanc",
-    "subtitle": "El sitio de un coro amateur de Alta Saboya, con sus conciertos, su repertorio y sus ensayos.",
+    "subtitle": "Una maqueta de sitio propuesta a un coro amateur de Alta Saboya, con sus conciertos, su repertorio y sus ensayos.",
     "cta": {
-      "title": "Descubre el coro",
-      "description": "Próximos conciertos, repertorio, ensayos: todo está en el sitio del coro.",
-      "button": "Visitar el sitio",
-      "ariaLabel": "Visitar el sitio del Chœur des Pays du Mont Blanc (se abre en una nueva pestaña)"
+      "title": "Descubre la maqueta",
+      "description": "Próximos conciertos, repertorio, ensayos: recorre la maqueta tal como se la propusimos al coro.",
+      "button": "Ver la maqueta",
+      "ariaLabel": "Ver la maqueta del sitio del Chœur des Pays du Mont Blanc (se abre en una nueva pestaña)"
     },
     "for_whom": {
       "label": "Para quién",
       "title": "Un coro amateur de Alta Saboya",
-      "description": "El Chœur des Pays du Mont Blanc es una asociación de cantantes aficionados de Alta Saboya. Necesitaba un sitio que sirviera tanto a sus miembros como a quienes aún no lo conocen."
+      "description": "El Chœur des Pays du Mont Blanc es una asociación de cantantes aficionados de Alta Saboya. Le propusimos un sitio que sirviera tanto a sus miembros como a quienes aún no lo conocen."
     },
     "what_we_did": {
       "label": "Lo que hicimos",
-      "title": "Un sitio para los coristas y para el público",
-      "description": "Reunimos en un solo sitio todo lo que buscan los coristas, los aficionados a la música y el público en general, fácil de leer tanto en el ordenador como en el móvil.",
+      "title": "Una maqueta para los coristas y para el público",
+      "description": "Reunimos en una sola maqueta todo lo que buscan los coristas, los aficionados a la música y el público en general, fácil de leer tanto en el ordenador como en el móvil.",
       "items": {
         "concerts": "Una agenda de conciertos, con fechas, lugares y programa",
         "repertoire": "La presentación del repertorio, del barroco a la música clásica contemporánea",
@@ -191,8 +191,8 @@
     },
     "result": {
       "label": "Resultado",
-      "title": "Un único lugar para seguir al coro",
-      "description": "Los miembros encuentran en él sus horarios y las noticias, el público los próximos conciertos, y quien quiera cantar, los pasos para unirse al coro."
+      "title": "Una propuesta hecha al coro",
+      "description": "La maqueta muestra cómo podría ser el sitio del coro. Se le propuso a la asociación y, a día de hoy, no es su sitio oficial."
     }
   }
 }

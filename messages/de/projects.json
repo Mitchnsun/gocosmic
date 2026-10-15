@@ -2,7 +2,7 @@
   "projectsList": {
     "meta": {
       "title": "Referenzen · Websites und Apps | Cosmic Studio",
-      "description": "Websites und Apps von Cosmic Studio: die Website eines Chors, die Live-Ergebnisse eines Triathlonvereins und die eigenen Projekte des Studios."
+      "description": "Websites und Apps von Cosmic Studio: das Website-Mockup für einen Chor, die Live-Ergebnisse eines Triathlonvereins und die eigenen Projekte des Studios."
     },
     "title": "Websites und Apps, <em>die benutzt werden.</em>",
     "subtitle": "Einige sind für Kundschaft entstanden, andere für das Studio selbst. Jede Seite erklärt, für wen wir gearbeitet haben, was wir gemacht haben und was sich dadurch verändert hat.",
@@ -39,9 +39,9 @@
       },
       "choeurDesPaysduMontBlanc": {
         "title": "Chœur des Pays du Mont Blanc",
-        "description": "Die Website des Chors: kommende Konzerte, Repertoire und Informationen für alle, die mitsingen möchten, gut lesbar auf dem Handy wie am Computer.",
+        "description": "Das Website-Mockup, das wir dem Chor vorgeschlagen haben: kommende Konzerte, Repertoire und Informationen für alle, die mitsingen möchten, gut lesbar auf dem Handy wie am Computer.",
         "client": "Verein · Hochsavoyen",
-        "tags": ["Präsentationswebsite", "Kalender", "Verein"],
+        "tags": ["Mockup", "Präsentationswebsite", "Verein"],
         "cover_alt": "Logo des Chœur des Pays du Mont Blanc"
       }
     },
@@ -166,22 +166,22 @@
   },
   "choeurDesPaysduMontBlanc": {
     "title": "Chœur des Pays du Mont Blanc",
-    "subtitle": "Die Website eines Amateurchors aus Hochsavoyen, mit seinen Konzerten, seinem Repertoire und seinen Proben.",
+    "subtitle": "Das Website-Mockup, das wir einem Amateurchor aus Hochsavoyen vorgeschlagen haben, mit seinen Konzerten, seinem Repertoire und seinen Proben.",
     "cta": {
-      "title": "Entdecken Sie den Chor",
-      "description": "Nächste Konzerte, Repertoire, Proben: Alles steht auf der Website des Chors.",
-      "button": "Website besuchen",
-      "ariaLabel": "Website des Chœur des Pays du Mont Blanc besuchen (öffnet in einem neuen Tab)"
+      "title": "Entdecken Sie das Mockup",
+      "description": "Nächste Konzerte, Repertoire, Proben: Sehen Sie sich das Mockup so an, wie wir es dem Chor vorgeschlagen haben.",
+      "button": "Mockup ansehen",
+      "ariaLabel": "Website-Mockup für den Chœur des Pays du Mont Blanc ansehen (öffnet in einem neuen Tab)"
     },
     "for_whom": {
       "label": "Für wen",
       "title": "Ein Amateurchor aus Hochsavoyen",
-      "description": "Der Chœur des Pays du Mont Blanc ist ein Verein von Amateursängerinnen und -sängern in Hochsavoyen. Er brauchte eine Website, die seinen Mitgliedern ebenso nützt wie denen, die ihn noch nicht kennen."
+      "description": "Der Chœur des Pays du Mont Blanc ist ein Verein von Amateursängerinnen und -sängern in Hochsavoyen. Wir haben ihm eine Website vorgeschlagen, die seinen Mitgliedern ebenso nützen würde wie denen, die ihn noch nicht kennen."
     },
     "what_we_did": {
       "label": "Was wir gemacht haben",
-      "title": "Eine Website für Chormitglieder und Publikum",
-      "description": "Wir haben auf einer einzigen Website alles zusammengeführt, was Chormitglieder, Musikbegeisterte und die breite Öffentlichkeit suchen, gut lesbar am Computer wie auf dem Handy.",
+      "title": "Ein Mockup für Chormitglieder und Publikum",
+      "description": "Wir haben in einem einzigen Mockup alles zusammengeführt, was Chormitglieder, Musikbegeisterte und die breite Öffentlichkeit suchen, gut lesbar am Computer wie auf dem Handy.",
       "items": {
         "concerts": "Ein Konzertkalender mit Terminen, Orten und Programm",
         "repertoire": "Die Vorstellung des Repertoires, vom Barock bis zur zeitgenössischen klassischen Musik",
@@ -191,8 +191,8 @@
     },
     "result": {
       "label": "Ergebnis",
-      "title": "Alles rund um den Chor an einem Ort",
-      "description": "Die Mitglieder finden dort ihre Probenzeiten und die Neuigkeiten, das Publikum die nächsten Konzerte, und wer mitsingen möchte, erfährt, wie man dem Chor beitritt."
+      "title": "Ein Vorschlag an den Chor",
+      "description": "Das Mockup zeigt, wie die Website des Chors aussehen könnte. Es wurde dem Verein vorgeschlagen und ist bis heute nicht seine offizielle Website."
     }
   }
 }

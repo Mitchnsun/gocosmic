@@ -80,15 +80,15 @@
       },
       "eyebrow": "Informations légales",
       "title": "Mentions légales",
-      "updated": "Dernière mise à jour : 6 octobre 2026",
+      "updated": "Dernière mise à jour : 15 octobre 2026",
       "intro": "Ces mentions légales identifient l'éditeur du site www.gocosmic.dev et précisent les responsabilités liées à son utilisation.",
       "sections": [
         {
           "title": "Éditeur",
           "body": [
             "Site : www.gocosmic.dev.",
-            "Éditeur : Matthieu Compérat, raison individuelle en cours d'immatriculation, exerçant sous le nom commercial Cosmic Studio (anciennement Go Cosmic).",
-            "Adresse du siège : 1224 Chêne-Bougeries, Suisse.",
+            "Éditeur : raison individuelle Matthieu Compérat, non inscrite au registre du commerce, exerçant sous le nom commercial Cosmic Studio (anciennement Go Cosmic).",
+            "Adresse : chemin de la Montagne 100, 1224 Chêne-Bougeries, Suisse.",
             "Contact : support@gocosmic.dev."
           ]
         },
@@ -124,9 +124,7 @@
         },
         {
           "title": "Tarifs",
-          "body": [
-            "Les prix affichés sur le site sont hors taxes ; la TVA au taux en vigueur est ajoutée sur la facture."
-          ]
+          "body": ["Cosmic Studio n'est pas assujetti à la TVA : les prix affichés sont des prix nets, sans TVA."]
         },
         {
           "title": "Contact",
@@ -141,13 +139,13 @@
       },
       "eyebrow": "Conditions de vente",
       "title": "Conditions générales de vente",
-      "updated": "Dernière mise à jour : 9 octobre 2026",
+      "updated": "Dernière mise à jour : 15 octobre 2026",
       "intro": "Ces conditions générales de vente s'appliquent à l'abonnement et aux prestations proposées par Cosmic Studio sur www.gocosmic.dev.",
       "sections": [
         {
           "title": "Prestataire",
           "body": [
-            "Le prestataire est Cosmic Studio, représenté par Matthieu Compérat, raison individuelle en cours d'immatriculation, 1224 Chêne-Bougeries, Suisse. Contact : support@gocosmic.dev."
+            "Le prestataire est Cosmic Studio, nom commercial de la raison individuelle Matthieu Compérat, non inscrite au registre du commerce, chemin de la Montagne 100, 1224 Chêne-Bougeries, Suisse. Contact : support@gocosmic.dev."
           ]
         },
         {
@@ -168,7 +166,7 @@
           "body": [
             "Les prix de l'abonnement sont ceux affichés sur la page Services & tarifs au moment de la souscription, selon les options choisies. La facturation est mensuelle, trimestrielle ou annuelle, à votre choix.",
             "L'accompagnement, le renforcement d'équipe et les projets sur mesure sont facturés au tarif journalier ou sur devis, communiqué avant toute intervention.",
-            "Tous les prix affichés sont hors taxes ; la TVA au taux en vigueur est ajoutée sur la facture.",
+            "Cosmic Studio n'est pas assujetti à la TVA : les prix affichés sont des prix nets, sans TVA.",
             "Les prix en euros (EUR) s'appliquent aux entreprises qui ne sont pas domiciliées en Suisse. Pour les entreprises domiciliées en Suisse, les prix sont en francs suisses (CHF)."
           ]
         },

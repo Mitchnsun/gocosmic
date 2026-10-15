@@ -80,13 +80,13 @@
       },
       "eyebrow": "Información legal",
       "title": "Aviso legal",
-      "updated": "Última actualización: 6 de octubre de 2026",
+      "updated": "Última actualización: 15 de octubre de 2026",
       "intro": "Este aviso legal identifica al editor del sitio www.gocosmic.dev y precisa las responsabilidades vinculadas a su uso.",
       "sections": [
         {
           "title": "Editor",
           "body": [
-            "Sitio: www.gocosmic.dev. Editor: Matthieu Compérat, empresa individual (raison individuelle) en proceso de inscripción, con el nombre comercial Cosmic Studio (antes Go Cosmic). Domicilio social: 1224 Chêne-Bougeries, Suiza. Contacto: support@gocosmic.dev."
+            "Sitio: www.gocosmic.dev. Editor: empresa individual (raison individuelle) Matthieu Compérat, no inscrita en el registro mercantil, con el nombre comercial Cosmic Studio (antes Go Cosmic). Dirección: chemin de la Montagne 100, 1224 Chêne-Bougeries, Suiza. Contacto: support@gocosmic.dev."
           ]
         },
         {
@@ -121,9 +121,7 @@
         },
         {
           "title": "Precios",
-          "body": [
-            "Los precios mostrados en el sitio no incluyen el IVA; el IVA al tipo vigente se añade en la factura."
-          ]
+          "body": ["Cosmic Studio no está sujeto al IVA: los precios mostrados son precios netos, sin IVA."]
         },
         {
           "title": "Contacto",
@@ -138,13 +136,13 @@
       },
       "eyebrow": "Condiciones de venta",
       "title": "Condiciones generales de venta",
-      "updated": "Última actualización: 9 de octubre de 2026",
+      "updated": "Última actualización: 15 de octubre de 2026",
       "intro": "Estas condiciones generales de venta se aplican a la suscripción y a los servicios ofrecidos por Cosmic Studio en www.gocosmic.dev.",
       "sections": [
         {
           "title": "Prestador",
           "body": [
-            "El prestador es Cosmic Studio, representado por Matthieu Compérat, empresa individual (raison individuelle) en proceso de inscripción, 1224 Chêne-Bougeries, Suiza. Contacto: support@gocosmic.dev."
+            "El prestador es Cosmic Studio, nombre comercial de la empresa individual (raison individuelle) Matthieu Compérat, no inscrita en el registro mercantil, chemin de la Montagne 100, 1224 Chêne-Bougeries, Suiza. Contacto: support@gocosmic.dev."
           ]
         },
         {
@@ -165,7 +163,7 @@
           "body": [
             "Los precios de la suscripción son los que se muestran en la página Servicios y precios en el momento de suscribirte, según las opciones elegidas. La facturación es mensual, trimestral o anual, a tu elección.",
             "El acompañamiento, el refuerzo de equipo y los proyectos a medida se facturan por tarifa diaria o según presupuesto, que se comunica antes de cualquier intervención.",
-            "Todos los precios mostrados no incluyen el IVA; el IVA al tipo vigente se añade en la factura.",
+            "Cosmic Studio no está sujeto al IVA: los precios mostrados son precios netos, sin IVA.",
             "Los precios en euros (EUR) se aplican a las empresas que no están domiciliadas en Suiza. Para las empresas domiciliadas en Suiza, los precios son en francos suizos (CHF)."
           ]
         },
