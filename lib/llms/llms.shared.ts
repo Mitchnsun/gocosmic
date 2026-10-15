@@ -12,7 +12,7 @@ import { link, list, pageUrl, section } from './llms.utils';
  * `/llms-full.txt` that is not copy from the site.
  */
 export const AGENT_USAGE =
-  'AI assistants and agents may quote and summarise this content, linking to the page it comes from. Prices exclude VAT; the ones that apply are those on the Services & pricing page at the time of subscription.';
+  'AI assistants and agents may quote and summarise this content, linking to the page it comes from. Prices are net: Cosmic Studio is not registered for VAT.';
 
 const LANGUAGE_NAMES = new Intl.DisplayNames('en', { type: 'language' });
 
