@@ -47,7 +47,7 @@
       "items": {
         "ownership": {
           "question": "Do I own the site?",
-          "answer": "Your texts, images and domain name belong to you from day one. The site's code is transferred to you after {months} months of subscription, which is what lets us keep the starting price this low. You can also take it over earlier, for a transfer fee based on the remaining time. For a quoted project, the code is yours on delivery."
+          "answer": "Your texts, images and domain name belong to you from day one. The site's code is transferred to you after {months} months of subscription, which is what lets us keep the starting price this low. You can also take it over earlier, for a transfer fee based on the remaining time. For a site built on a quote, with development fees, the code belongs to you from delivery, once the invoice has been paid in full."
         },
         "edit": {
           "question": "Can I edit the site myself?",

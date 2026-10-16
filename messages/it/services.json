@@ -52,7 +52,7 @@
       "items": {
         "ownership": {
           "question": "Il sito è mio?",
-          "answer": "Testi, immagini e nome a dominio ti appartengono dal primo giorno. Il codice del sito ti viene ceduto dopo {months} mesi di abbonamento, ed è questo che ci permette di proporre un prezzo di partenza così basso. Puoi anche averlo prima, pagando un costo di cessione calcolato sul tempo che resta. Per un progetto su preventivo, il codice è tuo dalla consegna."
+          "answer": "Testi, immagini e nome a dominio ti appartengono dal primo giorno. Il codice del sito ti viene ceduto dopo {months} mesi di abbonamento, ed è questo che ci permette di proporre un prezzo di partenza così basso. Puoi anche averlo prima, pagando un costo di cessione calcolato sul tempo che resta. Per un sito realizzato su preventivo, con costi di sviluppo, il codice ti appartiene dalla consegna, una volta pagata interamente la fattura."
         },
         "edit": {
           "question": "Posso modificare il sito da solo?",

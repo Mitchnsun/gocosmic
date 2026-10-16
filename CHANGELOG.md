@@ -15,10 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Changed
 
-- The Services page is now simply called "Services": it presents the two plans with their starting price and leads to the Pricing page
+- The Services page is now simply called "Services": it presents the two plans with their starting price and leads to the Pricing page, and the local page offers one button to the services and one to the prices
 - The simulator first asks whether the visitor already has a domain name: without one, the studio registers it as part of the subscription; with one, the domain and email options give way to help on a quote
 - News published by the studio and AI-assisted articles now have their own rhythm and price and no longer count as changes to the pages, the site monitoring option is gone, less common options sit under "More options", every option is explained in plain words, and the summary says whether the plan commits for 12 months
-- The terms of sale are reviewed: yearly billing paid within 30 days or a monthly payment schedule, by bank transfer; the studio's VAT status and what happens if it changes; Swiss law for every client; and clauses on delays, liability and the ownership of a one-off project's code
+- The terms of sale are reviewed: yearly billing paid within 30 days or a monthly payment schedule, by bank transfer; the studio's VAT status and what happens if it changes; Swiss law for every client; and clauses on delays, liability and the ownership of a one-off project's code, which the services FAQ now states the same way
 
 ## [2.4.5] - 2026-10-15
 

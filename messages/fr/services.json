@@ -47,7 +47,7 @@
       "items": {
         "ownership": {
           "question": "Le site m'appartient-il ?",
-          "answer": "Vos textes, vos images et votre nom de domaine vous appartiennent dès le premier jour. Le code du site vous est cédé après {months} mois d'abonnement, ce qui nous permet de proposer un prix de départ aussi bas. Vous pouvez aussi le récupérer plus tôt, contre des frais de cession calculés sur la durée restante. Pour un projet sur devis, le code vous revient dès la livraison."
+          "answer": "Vos textes, vos images et votre nom de domaine vous appartiennent dès le premier jour. Le code du site vous est cédé après {months} mois d'abonnement, ce qui nous permet de proposer un prix de départ aussi bas. Vous pouvez aussi le récupérer plus tôt, contre des frais de cession calculés sur la durée restante. Pour un site fait sur devis, avec des frais de développement, le code vous appartient dès la livraison, une fois la facture entièrement payée."
         },
         "edit": {
           "question": "Puis-je modifier le site moi-même ?",
