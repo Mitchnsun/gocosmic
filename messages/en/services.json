@@ -1,18 +1,19 @@
 {
   "services": {
     "meta": {
-      "title": "Services & pricing · Geneva & Annecy | Cosmic Studio",
+      "title": "Services · Geneva & Annecy | Cosmic Studio",
       "description": "Showcase sites, online shops, apps and ongoing care, with prices on display: a subscription from {price} a month, or a quoted project."
     },
     "intro": {
-      "eyebrow": "[ Services & pricing ]",
+      "eyebrow": "[ Services ]",
       "title": "A site that runs, <em>and someone who looks after it.</em>",
       "lead": "Our prices are on display, so you know straight away whether it fits your budget, without asking for a quote. And it all starts with a free mockup, with no commitment."
     },
     "simulator": {
       "eyebrow": "[ Build your plan ]",
       "title": "Start simple, <em>add the rest later.</em>",
-      "lead": "Two plans: “We take care of everything”, from {price} a month, or “You stay in control”, from {selfServicePrice} a month, if you want to publish your news yourself. Tick the options you want to see the monthly price."
+      "lead": "Two plans: “We take care of everything”, from {price} a month, or “You stay in control”, from {selfServicePrice} a month, if you want to publish your news yourself. Add your options and see the monthly price on the Pricing page.",
+      "cta": "Build my plan"
     },
     "trades": {
       "eyebrow": "[ What we do · 04 ]",

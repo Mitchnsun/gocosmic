@@ -1,10 +1,9 @@
 import {
   ADD_ON_PRICES,
-  ARTICLE_TIERS,
+  COMMITTED_OPTIONS,
   EXTRA_MAILBOX_PRICE,
   FORMULA_PRICES,
   FORMULAS,
-  ONE_YEAR_OPTIONS,
   PAGE_TIERS,
   TIERED_TABLES,
   UPDATE_TIERS,
@@ -15,15 +14,26 @@ import type { Region } from '@/lib/region';
 /** Everything the simulator puts a price on, besides the plan itself. */
 export type PricedOption = 'pages' | 'updates' | 'mailboxes' | TieredKey | AddOnKey;
 
+/** Options folded under "More options" in the simulator, in display order; the others show at once. */
+export const ADVANCED_OPTIONS = [
+  'redirects',
+  'seo',
+  'analytics',
+  'detailed_analytics',
+  'articles',
+  'swiss_hosting',
+] as const satisfies readonly PricedOption[];
+
 /**
- * The simulator's option groups and their options, in display order; each group key names a
- * `pricing.builder.groups` message. Every add-on belongs to exactly one group.
+ * The simulator's option groups and their options, in display order, which the recap follows too;
+ * each group key names a `pricing.builder.groups` message. Every priced option belongs to exactly one
+ * group.
  */
 export const OPTION_GROUPS = {
   site: ['pages', 'contact_form', 'booking', 'reviews', 'english', 'news'],
-  address: ['domain', 'email', 'mailboxes', 'redirects', 'swiss_hosting'],
-  visibility: ['seo', 'analytics', 'detailed_analytics'],
-  care: ['updates', 'articles', 'monitoring'],
+  address: ['domain', 'email', 'mailboxes'],
+  care: ['updates'],
+  more: ADVANCED_OPTIONS,
 } as const satisfies Record<string, readonly PricedOption[]>;
 
 /** One monthly price of the subscription, net of VAT, charged as the same amount in euros and Swiss francs. */
@@ -37,19 +47,17 @@ export interface PriceLine {
   price: number;
   /** The last step of a slider: the price is a minimum. */
   orMore?: boolean;
-  /** Subscribed for 12-month periods. */
+  /** Turns the subscription into 12-month periods. */
   commitment: boolean;
   /** Only offered with this plan. */
   formula?: Formula;
   /** Only offered in this region. */
   region?: Region;
-  /** The content-change step this one forces the plan up to, at least: each published article counts as a change. */
-  requires?: PriceLine;
 }
 
 /** The prices of one option, as its row or slider in the simulator shows them. */
 export function getOptionPrices(option: PricedOption): PriceLine[] {
-  const base = { option, commitment: (ONE_YEAR_OPTIONS as ReadonlySet<string>).has(option) };
+  const base = { option, commitment: (COMMITTED_OPTIONS as ReadonlySet<string>).has(option) };
 
   switch (option) {
     case 'pages': {
@@ -74,26 +82,17 @@ export function getOptionPrices(option: PricedOption): PriceLine[] {
     case 'mailboxes': {
       return [{ ...base, labelKey: 'options.mailboxes.label', price: EXTRA_MAILBOX_PRICE }];
     }
-    case 'articles': {
-      const updates = getOptionPrices('updates');
-      return ARTICLE_TIERS.map((tier) => {
-        const required = updates.find((line) => line.tierKey === `updates.tiers.${tier.minUpdates}`);
-        return {
-          ...base,
-          labelKey: 'options.articles.label',
-          tierKey: `options.articles.tiers.${tier.key}`,
-          price: tier.price,
-          ...(required && { requires: required }),
-        };
-      });
-    }
+    case 'news':
     case 'analytics':
-    case 'seo': {
+    case 'seo':
+    case 'articles': {
       return TIERED_TABLES[option].map((tier) => ({
         ...base,
         labelKey: `options.${option}.label`,
         tierKey: `options.${option}.tiers.${tier.key}`,
         price: tier.price,
+        // "You stay in control" already includes a news section, which the client publishes in.
+        ...(option === 'news' && { formula: 'managed' as const }),
       }));
     }
     default: {
@@ -102,8 +101,7 @@ export function getOptionPrices(option: PricedOption): PriceLine[] {
           ...base,
           labelKey: `options.${option}.label`,
           price: ADD_ON_PRICES[option],
-          // "You stay in control" already includes a news section; Swiss hosting is offered on the Swiss version only.
-          ...(option === 'news' && { formula: 'managed' as const }),
+          // Swiss hosting is offered on the Swiss version only.
           ...(option === 'swiss_hosting' && { region: 'ch' as const }),
         },
       ];
@@ -125,14 +123,6 @@ export function getPriceLines(region?: Region): PriceLine[] {
   return [...plans, ...options].filter((line) => !region || !line.region || line.region === region);
 }
 
-/**
- * Name of a price line, e.g. "Visit statistics · Every three months", followed by the step it requires, if any:
- * "AI-assisted articles · 1 article a month + Content changes included · Once a month".
- */
-export function getPriceLineName(t: (key: string) => string, line: PriceLine): string {
-  const name = line.tierKey ? `${t(line.labelKey)} · ${t(line.tierKey)}` : t(line.labelKey);
-  return line.requires ? `${name} + ${getPriceLineName(t, line.requires)}` : name;
-}
-
-/** What a line adds to the monthly price, with the step it requires: the simulator charges both. */
-export const getPriceLineTotal = (line: PriceLine): number => line.price + (line.requires?.price ?? 0);
+/** Name of a price line, e.g. "Visit statistics · Every three months". */
+export const getPriceLineName = (t: (key: string) => string, line: PriceLine): string =>
+  line.tierKey ? `${t(line.labelKey)} · ${t(line.tierKey)}` : t(line.labelKey);

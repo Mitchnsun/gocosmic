@@ -14,6 +14,10 @@ const pages = () => [
     link(EN.footer('link_services'), pageUrl('/services')),
     EN.services('meta.description', { price: inBothCurrencies(BASE_PRICE) }),
   ],
+  [
+    link(EN.footer('link_pricing'), pageUrl('/pricing')),
+    EN.pricingPage('meta.description', { price: inBothCurrencies(BASE_PRICE) }),
+  ],
   [link(EN.footer('free_mockup_page'), pageUrl('/free-mockup')), EN.freeMockup('meta.description')],
   [link(EN.footer('link_projects'), pageUrl('/projects')), EN.projectsList('meta.description')],
   [link(EN.footer('link_about'), pageUrl('/about')), EN.about('meta.description')],

@@ -45,7 +45,7 @@ describe('submitFreeMockupRequest', () => {
   it('appends a valid pricing simulation to the email', async () => {
     await submitFreeMockupRequest(
       INITIAL,
-      buildFormData({ plan: encodePlanCode(makePlan({ addOns: { domain: true }, pages: 2 }, 'ch')) })
+      buildFormData({ plan: encodePlanCode(makePlan({ ownDomain: false, pages: 2 }, 'ch')) })
     );
 
     const payload = send.mock.calls[0]?.[0] as { text: string };

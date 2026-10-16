@@ -1,7 +1,9 @@
+import { ADVANCED_OPTIONS, OPTION_GROUPS } from '@/lib/pricing/price-list';
 import type { Currency } from '@/lib/region';
 
 import {
   ADD_ON_PRICES,
+  COMMITTED_OPTIONS,
   EXTRA_MAILBOX_PRICE,
   FORMULA_PRICES,
   MAX_EXTRA_MAILBOXES,
@@ -21,27 +23,8 @@ function getTieredLine(plan: PlanSelection, key: TieredKey): { price: number; ke
   return index === null ? null : (TIERED_TABLES[key][index] ?? null);
 }
 
-/** Order of the recap lines, following the groups of the builder. */
-const ITEM_ORDER: readonly PlanItem['id'][] = [
-  'formula',
-  'pages',
-  'contact_form',
-  'booking',
-  'reviews',
-  'english',
-  'news',
-  'domain',
-  'email',
-  'mailboxes',
-  'redirects',
-  'swiss_hosting',
-  'seo',
-  'analytics',
-  'detailed_analytics',
-  'updates',
-  'articles',
-  'monitoring',
-];
+/** Order of the recap lines: the formula, then the groups of the builder. */
+const ITEM_ORDER: readonly PlanItem['id'][] = ['formula', ...Object.values(OPTION_GROUPS).flat()];
 
 /**
  * Lines of a normalised plan (see `normalizePlan`), shared by the recap and the studio email: the
@@ -58,7 +41,7 @@ export function getPlanItems(plan: PlanSelection): PlanItem[] {
         items.push({ id, amount: UPDATE_TIERS[plan.updates].price, tier: UPDATE_TIERS[plan.updates].key });
     } else if (id === 'mailboxes') {
       if (plan.mailboxes > 0) items.push({ id, amount: plan.mailboxes * EXTRA_MAILBOX_PRICE, count: plan.mailboxes });
-    } else if (id === 'analytics' || id === 'seo' || id === 'articles') {
+    } else if (id === 'news' || id === 'analytics' || id === 'seo' || id === 'articles') {
       const line = getTieredLine(plan, id);
       if (line) items.push({ id, amount: line.price, tier: line.key });
     } else if (plan.addOns[id]) {
@@ -66,6 +49,24 @@ export function getPlanItems(plan: PlanSelection): PlanItem[] {
     }
   }
   return items;
+}
+
+/**
+ * Lines of a normalised plan that turn the subscription into 12-month periods, in recap order: the
+ * "You stay in control" formula, the domain name, the email address and the one-year options.
+ */
+export function getCommittedItems(plan: PlanSelection): PlanItem['id'][] {
+  return getPlanItems(plan)
+    .map((item) => item.id)
+    .filter((id) =>
+      id === 'formula' ? plan.formula === 'self_service' : (COMMITTED_OPTIONS as ReadonlySet<string>).has(id)
+    );
+}
+
+/** Number of options folded under "More options" that a normalised plan includes. */
+export function countAdvancedOptions(plan: PlanSelection): number {
+  const ids = new Set(getPlanItems(plan).map((item) => item.id));
+  return ADVANCED_OPTIONS.filter((id) => ids.has(id)).length;
 }
 
 /** Monthly total of a normalised plan: the sum of its lines. */

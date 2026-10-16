@@ -1,0 +1,13 @@
+{
+  "pricingPage": {
+    "meta": {
+      "title": "Precios · Ginebra y Annecy | Cosmic Studio",
+      "description": "Configura tu suscripción de sitio web y mira el precio mensual al instante: plan, número de páginas, dirección de correo, actualizaciones. Desde {price} al mes."
+    },
+    "intro": {
+      "eyebrow": "[ Precios ]",
+      "title": "Configura tu suscripción <em>y el precio aparece al instante.</em>",
+      "lead": "Elige quién actualiza tu sitio, añade lo que necesites y verás el precio mensual. ¿No te decides? Unas pocas preguntas bastan para una primera configuración, que luego ajustas."
+    }
+  }
+}

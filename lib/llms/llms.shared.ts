@@ -37,7 +37,7 @@ const versionLinks = (swiss: boolean) =>
 export function buildRegionsSection(): string {
   const terms = EN.legal.raw('terms.sections') as LegalSection[];
   // "Price and billing": which currency applies to which business.
-  const currencies = terms[3]?.body[3];
+  const currencies = terms[3]?.body[5];
 
   return section('Languages and regions', [
     list([

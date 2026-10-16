@@ -24,7 +24,8 @@ describe('buildLlmsFull', () => {
     expect(headings).toEqual([
       '## Languages and regions',
       '## [Home](https://www.gocosmic.dev/en)',
-      '## [Services & pricing](https://www.gocosmic.dev/en/services)',
+      '## [Services](https://www.gocosmic.dev/en/services)',
+      '## [Pricing](https://www.gocosmic.dev/en/pricing)',
       '## [Free mockup](https://www.gocosmic.dev/en/free-mockup)',
       '## [Projects](https://www.gocosmic.dev/en/projects)',
       '## [About](https://www.gocosmic.dev/en/about)',
@@ -75,32 +76,47 @@ describe('buildLlmsFull', () => {
       '- **A contact form · +€5 / +CHF 5 / month**: Visitors write to you from your site, and their messages land in your inbox. Without this option'
     );
     expect(text).toContain(
-      '- **A news section · +€5 / +CHF 5 / month · with “We take care of everything” only, as “You stay in control” includes it · 1-year commitment**: '
+      '- **News published for you · with “We take care of everything” only, as “You stay in control” includes it · 1-year commitment**: '
     );
     expect(text).toContain('- **Website hosted in Switzerland · +€10 / +CHF 10 / month · Swiss versions only**: ');
     expect(text).toContain(
-      '- **An email address in your own name · +€15 / +CHF 15 / month**: For example contact@my-business.com, instead of a free address. Your email address uses your domain name'
+      '- **Managing your domain name · +€5 / +CHF 5 / month · required with “No, register one for me” · 1-year commitment**: '
+    );
+    expect(text).toContain('“Yes, I already have one”: You keep your domain name and your current email addresses.');
+    expect(text).toContain(
+      '- **An email address in your own name · +€15 / +CHF 15 / month · 1-year commitment**: For example contact@my-business.com, instead of a free address. An address in your own name'
     );
     expect(text).toContain('- **Extra mailboxes · +€10 / +CHF 10 per mailbox / month · 1-year commitment**: ');
-    expect(text).toContain('invoices@my-business.com. When several of you work together');
+    expect(text).toContain('- **Forwarding addresses (up to 5) · +€5 / +CHF 5 / month · 1-year commitment**: ');
+    expect(text).not.toMatch(/monitoring/i);
   });
 
-  it('lists every step of the sliders with its price', () => {
+  it('lists every step of the sliders with its price, the articles apart from the content changes', () => {
     expect(text).toContain('  - 10 pages or more: +€40 / +CHF 40 or more / month');
-    expect(text).toContain('- **Content changes included**: Once a year (included). You email us your changes');
+    expect(text).toContain('- **Changes to your pages**: Once a year (included). You email us your changes');
+    expect(text).toContain('A change is one request: you can group several changes in it.');
     expect(text).toContain('  - As often as needed: +€200 / +CHF 200 / month');
-    expect(text).toContain(
-      '  - 1 article a day: +€50 / +CHF 50 / month, plus the content changes it requires, “As often as needed”: +€200 / +CHF 200, so +€250 / +CHF 250 / month in all'
-    );
-    expect(text).toContain('“Once a month”: +€20 / +CHF 20, so +€25 / +CHF 25 / month in all');
-    expect(text).toContain('#### Get found and count your visits');
+    expect(text).toContain('  - 1 news item a week: +€100 / +CHF 100 / month');
+    expect(text).toContain('  - 3 articles a week: +€250 / +CHF 250 / month');
+    expect(text).not.toContain('in all');
+    expect(text).toContain('#### More options');
   });
 
-  it('includes the free offers, the quoted services, the trades and the FAQ', () => {
+  it('describes the services page with its two plans, and the pricing page with its free offers and quoted services', () => {
+    expect(text).toContain(
+      'from €20 / CHF 20 a month, if you want to publish your news yourself. Add your options and see the monthly price on the Pricing page.'
+    );
     expect(text).toContain('### Before we talk budget (Free, no commitment)');
     expect(text).toContain('### For your communication (Outside the subscription · on a quote)');
     expect(text).toContain('- **Shops & bookings**: ');
     expect(text).toContain('#### What happens if I stop?\n\nJust let us know');
+
+    const services = text.indexOf('## [Services]');
+    const pricing = text.indexOf('## [Pricing]');
+    expect(text.indexOf('### Before we talk budget')).toBeGreaterThan(pricing);
+    expect(text.indexOf('### Choose your plan')).toBeGreaterThan(pricing);
+    expect(text.indexOf('### Four ways to work with us.')).toBeGreaterThan(services);
+    expect(text.indexOf('### Four ways to work with us.')).toBeLessThan(pricing);
   });
 
   it('tells each case study in full, with its latest release when the page mentions it', () => {

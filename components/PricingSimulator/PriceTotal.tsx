@@ -1,13 +1,13 @@
 'use client';
 
-import { useId } from 'react';
+import { type ReactNode, useId } from 'react';
 
 interface PriceTotalProps {
   label: string;
   /** Pre-formatted amount, e.g. `25€`. */
   amount: string;
   period: string;
-  note: string;
+  note: ReactNode;
 }
 
 /** Live readout of the composed monthly price. */

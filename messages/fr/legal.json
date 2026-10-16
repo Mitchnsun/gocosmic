@@ -80,7 +80,7 @@
       },
       "eyebrow": "Informations légales",
       "title": "Mentions légales",
-      "updated": "Dernière mise à jour : 15 octobre 2026",
+      "updated": "Dernière mise à jour : 16 octobre 2026",
       "intro": "Ces mentions légales identifient l'éditeur du site www.gocosmic.dev et précisent les responsabilités liées à son utilisation.",
       "sections": [
         {
@@ -124,7 +124,9 @@
         },
         {
           "title": "Tarifs",
-          "body": ["Cosmic Studio n'est pas assujetti à la TVA : les prix affichés sont des prix nets, sans TVA."]
+          "body": [
+            "Cosmic Studio n'est pas assujetti à la TVA : les prix affichés sur le site sont des prix nets. Le détail figure dans les conditions générales de vente."
+          ]
         },
         {
           "title": "Contact",
@@ -139,7 +141,7 @@
       },
       "eyebrow": "Conditions de vente",
       "title": "Conditions générales de vente",
-      "updated": "Dernière mise à jour : 15 octobre 2026",
+      "updated": "Dernière mise à jour : 16 octobre 2026",
       "intro": "Ces conditions générales de vente s'appliquent à l'abonnement et aux prestations proposées par Cosmic Studio sur www.gocosmic.dev.",
       "sections": [
         {
@@ -164,10 +166,14 @@
         {
           "title": "Prix et facturation",
           "body": [
-            "Les prix de l'abonnement sont ceux affichés sur la page Services & tarifs au moment de la souscription, selon les options choisies. La facturation est mensuelle, trimestrielle ou annuelle, à votre choix.",
+            "Les prix de l'abonnement sont ceux affichés sur la page Tarifs au moment de la souscription, selon les options choisies.",
+            "L'abonnement est facturé à l'année ou selon un échéancier mensuel. À l'année, la facture est payée par virement bancaire dans les 30 jours suivant sa réception. Avec l'échéancier, chaque mensualité est payée par virement bancaire à la date indiquée sur la facture.",
             "L'accompagnement, le renforcement d'équipe et les projets sur mesure sont facturés au tarif journalier ou sur devis, communiqué avant toute intervention.",
-            "Cosmic Studio n'est pas assujetti à la TVA : les prix affichés sont des prix nets, sans TVA.",
-            "Les prix en euros (EUR) s'appliquent aux entreprises qui ne sont pas domiciliées en Suisse. Pour les entreprises domiciliées en Suisse, les prix sont en francs suisses (CHF)."
+            "Cosmic Studio n'est pas assujetti à la TVA : la TVA n'est pas applicable (art. 10 LTVA) et les prix affichés sont des prix nets. Si Cosmic Studio devient assujetti, la TVA au taux en vigueur s'ajoutera aux prix ; vous en serez informé par écrit au moins 30 jours avant son application.",
+            "Un client établi en France et assujetti à la TVA la déclare sur nos prestations, puis la déduit : l'opération est neutre pour lui.",
+            "Les prix en euros (EUR) s'appliquent aux entreprises qui ne sont pas domiciliées en Suisse. Pour les entreprises domiciliées en Suisse, les prix sont en francs suisses (CHF).",
+            "Les frais bancaires des paiements internationaux, ainsi que les droits et taxes dus dans le pays du client, sont à sa charge.",
+            "Tout retard de paiement entraîne de plein droit un intérêt moratoire de 5 % par an."
           ]
         },
         {
@@ -183,8 +189,10 @@
           "body": [
             "Vous pouvez ajouter une option à tout moment ; elle s'applique à partir de la période de facturation suivante.",
             "Le nombre de pages, le nom de domaine, l'hébergement en Suisse et l'adresse e-mail principale ne peuvent pas être retirés une fois activés, car ils correspondent à un engagement pris pour vous (pages créées, domaine réservé, boîte e-mail ouverte). La fréquence des modifications de contenu peut être revue à la hausse ou à la baisse.",
-            "Les options marquées « Engagement 1 an » (rubrique d'actualités, site en anglais, référencement local suivi, statistiques de visites et mesure détaillée, articles rédigés avec l'aide de l'IA, boîtes e-mail et redirections en plus) sont souscrites par périodes de 12 mois et peuvent être retirées à la fin d'une période. Le rythme des articles peut être réduit avec un mois de préavis.",
-            "Les autres options (formulaire de contact, prise de rendez-vous en ligne, avis clients, surveillance du site) peuvent être retirées avec un mois de préavis.",
+            "Si vous n'avez pas de nom de domaine, sa gestion par Cosmic Studio fait partie de l'abonnement. Si vous en avez déjà un, les options nom de domaine et adresse e-mail ne sont pas proposées ; une aide pour votre nom de domaine et vos adresses e-mail peut faire l'objet d'un devis.",
+            "Une modification de contenu correspond à une demande, qui peut regrouper plusieurs changements. Les actualités et les articles ne comptent pas dans les modifications de contenu.",
+            "Les options marquées « Engagement 1 an » (actualités publiées pour vous, site en anglais, suivi de votre place sur Google, statistiques de visites et statistiques détaillées, articles rédigés avec l'aide de l'IA, boîtes e-mail en plus et adresses de renvoi) sont souscrites par périodes de 12 mois et peuvent être retirées à la fin d'une période. Le rythme des actualités et des articles peut être réduit avec un mois de préavis.",
+            "Les autres options (formulaire de contact, prise de rendez-vous en ligne, avis clients) peuvent être retirées avec un mois de préavis.",
             "Lorsqu'une option est retirée, le contenu qui lui est associé disparaît du site, par exemple la rubrique d'actualités et ses publications, ou la version anglaise.",
             "Par défaut, votre site est hébergé dans l'Union européenne. Si cette localisation ne vous convient pas, vous pouvez nous demander un hébergement dans un autre pays ; nous vous indiquons alors si c'est possible et à quel prix."
           ]
@@ -200,20 +208,22 @@
           "title": "Propriété",
           "body": [
             "Vos textes, vos images et votre nom de domaine vous appartiennent dès le premier jour. Le code du site vous est cédé gratuitement après 36 mois d'abonnement. Avant ce délai, il peut vous être cédé contre des frais de cession qui dépendent de la durée restante.",
-            "Pour un projet ponctuel, le code vous appartient dès la livraison."
+            "Pour un projet ponctuel, le code vous appartient dès la livraison, une fois la facture entièrement payée."
           ]
         },
         {
           "title": "Vos obligations",
           "body": [
             "Vous nous transmettez les textes, images et informations nécessaires à la réalisation ou à la mise à jour du site. Les délais annoncés courent à partir de leur réception.",
+            "Les délais annoncés sont indicatifs. Cosmic Studio n'est pas responsable d'un retard ou d'une inexécution causés par un cas de force majeure.",
             "Nous mettons en place vos mentions légales et votre politique de confidentialité à partir des informations que vous nous transmettez ; vous les relisez, vous les validez et vous en restez responsable."
           ]
         },
         {
           "title": "Responsabilité et disponibilité",
           "body": [
-            "Cosmic Studio met en œuvre des moyens raisonnables pour assurer la disponibilité du site, sans pouvoir garantir l'absence totale d'interruption. En cas d'indisponibilité prolongée imputable à Cosmic Studio, la période concernée peut être prolongée d'autant."
+            "Cosmic Studio met en œuvre des moyens raisonnables pour assurer la disponibilité du site, sans pouvoir garantir l'absence totale d'interruption. En cas d'indisponibilité prolongée imputable à Cosmic Studio, la période concernée peut être prolongée d'autant.",
+            "La responsabilité de Cosmic Studio est limitée au montant de la commande concernée, sauf faute intentionnelle ou grave."
           ]
         },
         {
@@ -223,8 +233,8 @@
         {
           "title": "Droit applicable et litiges",
           "body": [
-            "Les présentes conditions sont soumises au droit suisse pour les clients établis en Suisse, et au droit français pour les clients établis en France. En cas de litige, une solution amiable est recherchée avant toute action en justice ; à défaut, les tribunaux compétents sont ceux du domicile du client.",
-            "Dans les autres cas, le droit suisse s'applique et les tribunaux du canton de Genève sont compétents."
+            "Les présentes conditions sont soumises au droit suisse, quel que soit le pays du client.",
+            "En cas de litige, une solution amiable est recherchée avant toute action en justice. À défaut, les tribunaux du siège de Cosmic Studio, à Chêne-Bougeries (canton de Genève), sont seuls compétents, sous réserve des dispositions impératives qui protègent les consommateurs."
           ]
         }
       ]

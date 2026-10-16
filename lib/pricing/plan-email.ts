@@ -11,8 +11,9 @@ import type { DecodedPlan } from '@/lib/pricing/plan-code';
 import {
   ADD_ON_LABELS,
   FORMULA_LABELS,
+  getOwnDomainLabel,
+  getTierLabel,
   PROJECT_TYPE_LABELS,
-  TIER_LABELS,
   WEBSITE_TYPE_LABELS,
 } from '@/lib/pricing/plan-labels';
 import { getCurrency } from '@/lib/region';
@@ -46,9 +47,9 @@ export function buildPlanEmailRows(plan: DecodedPlan): [string, string][] {
   const selection = normalizePlan(plan.selection);
   const items = getPlanItems(selection);
   const find = (id: PlanItem['id']) => items.find((item) => item.id === id);
-  const tiered = (id: 'updates' | 'analytics' | 'seo' | 'articles', fallback: string) => {
+  const tiered = (id: 'updates' | 'news' | 'analytics' | 'seo' | 'articles', fallback: string) => {
     const item = find(id);
-    return item?.tier ? `${TIER_LABELS[id][item.tier]} (+${money(item.amount)})` : fallback;
+    return item?.tier ? `${getTierLabel(id, item.tier)} (+${money(item.amount)})` : fallback;
   };
 
   const pages = find('pages');
@@ -66,10 +67,12 @@ export function buildPlanEmailRows(plan: DecodedPlan): [string, string][] {
     [
       `${LABEL_PREFIX} — pages`,
       pages?.tier
-        ? `${TIER_LABELS.pages[pages.tier]} (+${money(pages.amount)}${pages.tier === 'ten_plus' ? ' or more' : ''})`
+        ? `${getTierLabel('pages', pages.tier)} (+${money(pages.amount)}${pages.tier === 'ten_plus' ? ' or more' : ''})`
         : '1 page (included)',
     ],
+    [`${LABEL_PREFIX} — existing domain name`, getOwnDomainLabel(selection.ownDomain)],
     [`${LABEL_PREFIX} — add-ons`, addOns.length > 0 ? addOns.join(', ') : 'None'],
+    [`${LABEL_PREFIX} — news published by the studio`, tiered('news', 'Not included')],
     [`${LABEL_PREFIX} — local search follow-up`, tiered('seo', 'Not included')],
     [`${LABEL_PREFIX} — visit statistics`, tiered('analytics', 'Not included')],
     [`${LABEL_PREFIX} — content updates`, tiered('updates', 'Once a year (included)')],

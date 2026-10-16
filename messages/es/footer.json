@@ -5,7 +5,8 @@
       "ch": "Estudio de desarrollo web y móvil en Ginebra. Páginas web, aplicaciones y seguimiento, con precios a la vista."
     },
     "nav_title": "Estudio",
-    "link_services": "Servicios y precios",
+    "link_services": "Servicios",
+    "link_pricing": "Precios",
     "link_projects": "Proyectos",
     "link_about": "Acerca de",
     "link_contact": "Contacto",

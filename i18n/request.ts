@@ -18,6 +18,7 @@ export const NAMESPACES = [
   'about',
   'services',
   'pricing',
+  'pricing-page',
   'projects',
   'psc-supersprint',
   'local',

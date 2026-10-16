@@ -12,7 +12,7 @@ describe('buildPricingColumns', () => {
     const [subscription, , , custom] = buildPricingColumns(fakeT, 'fr', 'fr');
 
     expect(subscription!.price).toMatch(/^subscription\.price\(10\s€\)$/);
-    expect(subscription!.cta.href).toEqual({ pathname: '/services', hash: 'simulator' });
+    expect(subscription!.cta.href).toBe('/pricing');
     expect(custom!.price).toBeUndefined();
     expect(custom!.cta.href).toBe('/contact');
   });

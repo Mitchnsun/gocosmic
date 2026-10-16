@@ -56,7 +56,7 @@ describe('buildFreeMockupEmail', () => {
 
 describe('buildFreeMockupEmail with a pricing simulation', () => {
   const input = { email: 'prospect@example.com', colorPalette: 'sober' as const, locale: 'fr' };
-  const plan = makePlan({ addOns: { domain: true }, pages: 1 });
+  const plan = makePlan({ ownDomain: false, pages: 1 });
 
   it('adds the simulation rows to the text and html bodies', () => {
     const { text, html } = buildFreeMockupEmail({ ...input, plan });

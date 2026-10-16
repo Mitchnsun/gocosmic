@@ -6,11 +6,13 @@
       "items": {
         "mockup": {
           "title": "A mockup of your future website",
-          "description": "See what your site could look like before deciding anything."
+          "description": "See what your site could look like before deciding anything.",
+          "cta": "Request my free mockup"
         },
         "audit": {
           "title": "A review of your current website",
-          "description": "What works, what drives visitors away, and how your site shows up on Google."
+          "description": "What works, what drives visitors away, and how your site shows up on Google.",
+          "cta": "Request a review"
         }
       },
       "note": "Both are free and commit you to nothing."
@@ -43,6 +45,7 @@
           "page": "A showcase page presenting your business",
           "hosting": "Online around the clock, publishing included",
           "security": "Secure connection (the padlock in the browser)",
+          "search_setup": "The settings to be found on Google",
           "legal": "Your legal notice and privacy policy",
           "email_button": "A “Write to us” button that opens your visitors' email app",
           "yearly_update": "One content change a year",
@@ -50,6 +53,7 @@
           "news": "A news section"
         },
         "info": {
+          "search_setup": "We prepare your site for Google and the other search engines: a title and a description for each page, information about your business in a format Google understands, the site map and the reading instructions for search engines. We register your site in Google Search Console, which shows how it is found. We also add a file that presents your business to artificial intelligence assistants.",
           "legal": "Every site must say who publishes it and what it does with its visitors' data. We set these pages up from the information you give us; you read them over and approve them, as you remain responsible for them.",
           "editor": "You publish news or change your opening hours whenever you like, without waiting for us. We set up an editing tool connected to your site and show you how to use it. The rest of your pages stays in our hands. If you already have an editing tool, we take it over when possible; taking it over and moving your content are quoted separately. This plan is subscribed for 12-month periods.",
           "news": "An up-to-date news section shows visitors that your business is alive: latest work, upcoming concerts, new season. You publish there yourself, from your editing space."
@@ -63,16 +67,18 @@
         },
         "domain": {
           "label": "Managing your domain name",
-          "hint": "For example {domain}: we register it and renew it for you."
+          "hint": "For example {domain}: we register it and renew it for you.",
+          "info": "The domain name is your site's address, like {domain}. We register it, renew it and pay its fees: you have nothing to keep track of. It belongs to you from day one. This option is subscribed for 12-month periods."
         },
         "swiss_hosting": {
           "label": "Website hosted in Switzerland",
-          "hint": "Your data stays on a server located in Switzerland."
+          "hint": "Your data stays on a server located in Switzerland.",
+          "info": "Your site and its data stay on a server located in Switzerland. Once active, Swiss hosting stays part of your subscription."
         },
         "email": {
           "label": "An email address in your own name",
           "hint": "For example contact@{domain}, instead of a free address.",
-          "note": "Your email address uses your domain name, so we add its management too."
+          "info": "An address in your own name, like contact@{domain}, shows your customers they are writing to your business. We open the mailbox and pay its fees. This option is subscribed for 12-month periods."
         },
         "mailboxes": {
           "label": "Extra mailboxes",
@@ -80,14 +86,13 @@
           "price": "{price} per mailbox",
           "count": "{count, plural, =0 {No extra mailbox} one {# extra mailbox} other {# extra mailboxes}}",
           "decrease": "One mailbox less",
-          "increase": "One more mailbox"
+          "increase": "One more mailbox",
+          "info": "When several of you work together, or for an association's board, everyone can have their own mailbox in your name, with its own password. These mailboxes are subscribed for 12-month periods; you can remove them at the end of a period."
         },
         "redirects": {
-          "label": "5 redirects",
-          "hint": "Up to 5 addresses forwarding to an existing mailbox, for example invoices@{domain}."
-        },
-        "email_extras": {
-          "info": "When several of you work together, or for an association's board, everyone can have their own mailbox in your name. A redirect has no mailbox of its own: messages land in a mailbox you already have. These addresses are subscribed for 12-month periods; you can remove them at the end of a period."
+          "label": "Forwarding addresses (up to 5)",
+          "hint": "Up to 5 addresses forwarding to an existing mailbox, for example invoices@{domain}.",
+          "info": "A forwarding address has no mailbox: messages sent to invoices@{domain} land in a mailbox you already have. These addresses are subscribed for 12-month periods; you can remove them at the end of a period."
         },
         "contact_form": {
           "label": "A contact form",
@@ -110,24 +115,30 @@
           "info": "An English version lets visitors who don't read your site's main language understand you and get in touch. We translate all your pages ourselves, add a language switcher, and translate your changes too without counting them twice. For another language, or a translation by a professional translator, we make you a separate quote. This option is subscribed for 12-month periods."
         },
         "news": {
-          "label": "A news section",
-          "hint": "A page that shows your business is alive: work, events, news.",
-          "info": "An up-to-date news section shows visitors that your business is alive: latest work, upcoming concerts, new season. We create the section, then publish what you email us; each post counts as a content change. This option is subscribed for 12-month periods."
+          "label": "News published for you",
+          "hint": "You email us your news, we publish it in a section of your site.",
+          "slider_label": "Rhythm",
+          "tiers": {
+            "quarterly": "1 news item a quarter",
+            "monthly": "1 news item a month",
+            "weekly": "1 news item a week"
+          },
+          "info": "An up-to-date news section shows visitors that your business is alive: latest work, upcoming concerts, new season. We create the section, then publish what you email us, at the chosen rhythm. These posts do not count towards your content changes. You can lower the rhythm with one month's notice; stopping altogether happens at the end of a 12-month period."
         },
         "seo": {
-          "label": "Local search follow-up",
+          "label": "Following your place on Google",
           "hint": "We follow how your site shows up on Google for your trade and your town, and we adjust it.",
           "slider_label": "Follow-up",
           "tiers": {
             "quarterly": "Every three months",
             "monthly": "Every month"
           },
-          "info": "Your plan includes basic search optimisation; this option keeps it alive over time. At the chosen rhythm, we check how your site shows up for searches like “your trade + your town”, adjust your pages and send you a written report. Your Google Maps listing and directories stay managed by you. We don't promise a specific position on Google. This option is subscribed for 12-month periods."
+          "info": "Your plan includes the settings to be found on Google; this option keeps them alive over time. At the chosen rhythm, we check how your site shows up for searches like “your trade + your town”, adjust your pages and send you a written report. Your Google Maps listing and directories stay managed by you. We don't promise a specific position on Google. This option is subscribed for 12-month periods."
         },
         "analytics": {
           "label": "Visit statistics",
           "hint": "You know how many people visit your site and which pages they read, with a written report.",
-          "slider_label": "Report",
+          "slider_label": "Written report",
           "tiers": {
             "yearly": "Once a year",
             "quarterly": "Every three months",
@@ -136,33 +147,35 @@
           "info": "The figures show whether your site is visited, and which pages interest your visitors. We count visits and the most viewed pages anonymously, with no banner for your visitors to accept, then send you a written report in plain words, at the rhythm you choose. This option is subscribed for 12-month periods."
         },
         "detailed_analytics": {
-          "label": "Detailed measurement",
+          "label": "Detailed statistics (with a cookie banner)",
           "hint": "A fuller measurement, with a banner asking for your visitors' consent.",
-          "info": "Detailed measurement also tells you where your visitors come from, which device they read you on, and how many tap “Call”, “Directions” or send your form. It sets cookies: the law then requires your visitors' consent, and we add a banner to ask for it. Visitors who decline are not counted in this measurement."
+          "info": "Detailed statistics also tell you where your visitors come from, which device they read you on, and how many tap “Call”, “Directions” or send your form. They set cookies: the law then requires your visitors' consent, and we add a banner to ask for it. Visitors who decline are not counted in these statistics.",
+          "recap_label": "Detailed statistics"
         },
         "articles": {
           "label": "AI-assisted articles",
-          "hint": "We write articles for your site, with the help of artificial intelligence.",
+          "hint": "We write articles for your site, with the help of artificial intelligence, and publish them in a section of their own.",
           "slider_label": "Rhythm",
           "tiers": {
+            "quarterly": "1 article a quarter",
             "monthly": "1 article a month",
             "weekly": "1 article a week",
-            "daily": "1 article a day"
+            "thrice_weekly": "3 articles a week"
           },
-          "info": "Writing articles regularly takes time. We write them for you with the help of artificial intelligence, from information about your business. You choose to read each article before it goes live, or to let us publish it directly. Each published article counts as a content change. You can lower the rhythm with one month's notice; stopping altogether happens at the end of a 12-month period.",
-          "info_tool": "Depending on your editing tool, we can use a specialised service that picks topics from what people search for on Google.",
-          "raised": "Each published article counts as a change: we have adjusted your content changes accordingly.",
-          "locked": "Each published article counts as a change: your content changes stay included as long as articles are planned."
-        },
-        "monitoring": {
-          "label": "Site monitoring",
-          "hint": "We are alerted automatically if your site stops responding.",
-          "info": "A tool regularly checks that your site responds, and alerts us as soon as it doesn't. So we can step in without waiting for you or your customers to report the outage. We do not commit to a time to get the site back online."
+          "info": "Writing articles regularly takes time. We write them for you with the help of artificial intelligence, from information about your business. Together, we choose where to publish them, in a blog or an articles section, depending on their topic. You choose to read each article before it goes live, or to let us publish it directly. Articles do not count towards your content changes. You can lower the rhythm with one month's notice; stopping altogether happens at the end of a 12-month period.",
+          "info_tool": "Depending on your editing tool, we can use a specialised service that picks topics from what people search for on Google."
         }
+      },
+      "domain_question": {
+        "legend": "Do you already have a domain name?",
+        "help": "It is your site's address, for example {domain}.",
+        "no": "No, register one for me",
+        "yes": "Yes, I already have one",
+        "own_note": "You keep your domain name and your current email addresses. If you would like help using them with your new site, we talk it through together and send you a quote."
       },
       "pages": {
         "label": "Number of pages",
-        "info": "The legal notice and the privacy policy are not counted in the number of pages.",
+        "info": "A page is, for example, “About”, “Services” or “Pricing”. The homepage is included. The legal notice and the privacy policy are not counted.",
         "or_more": "{price} or more",
         "tiers": {
           "one": "Homepage included",
@@ -173,10 +186,11 @@
         }
       },
       "updates": {
-        "label": "Content changes included",
-        "hint": "You email us your changes: texts, photos, opening hours. We put them online, with no extra charge for each request.",
+        "label": "Changes to your pages",
+        "hint": "You email us your changes: texts, photos, opening hours. We put them online, with no extra charge for each request. News and articles have their own option.",
         "off": "Once a year (included)",
-        "slider_label": "Changes per year",
+        "slider_label": "Rhythm of changes",
+        "disabled_hint": "Tick the box to choose a rhythm.",
         "tiers": {
           "few_per_year": "2 to 3 times a year",
           "monthly": "Once a month",
@@ -184,17 +198,40 @@
           "weekly": "Once a week",
           "unlimited": "As often as needed"
         },
-        "hint_self_service": "For everything you don't publish yourself: you email us your changes, and we put them online."
+        "hint_self_service": "For everything you don't publish yourself: you email us your changes, and we put them online.",
+        "info": "Once a year, we update your pages, included in your plan. If your information changes more often, choose a rhythm: you email us your changes, and we put them online. A change is one request: you can group several changes in it."
       },
       "total": {
         "label": "Your estimate",
-        "note": "Indicative price, confirmed after a first conversation. You can add options at any time. The number of pages, the domain name, Swiss hosting and your email address stay part of your subscription once active. Options marked “1-year commitment” can be removed at the end of each 12-month period, the others with one month's notice (see the terms of sale).",
+        "note": "Indicative price, confirmed after a first conversation. You can add options at any time. The number of pages, the domain name, Swiss hosting and your email address stay part of your subscription once active. Options marked “1-year commitment” can be removed at the end of each 12-month period, the others with one month's notice (see the <link>terms of sale</link>).",
         "cta": "Request my free mockup",
+        "mobile_cta": "My free mockup",
         "question": "A question first? <link>Write to us</link>.",
         "beyond": "Beyond these volumes, we will talk it through and make you a proposal."
       },
       "info_label": "More about: {option}",
       "commitment": "1-year commitment",
+      "commitment_line": {
+        "none": "No minimum term: cancel any month.",
+        "periods": "Subscription in 12-month periods, as it includes: {items}."
+      },
+      "commitment_items": {
+        "formula": "the “You stay in control” plan",
+        "domain": "domain name",
+        "email": "email address",
+        "mailboxes": "extra mailboxes",
+        "redirects": "forwarding addresses",
+        "news": "news published for you",
+        "english": "site in English",
+        "seo": "following your place on Google",
+        "analytics": "visit statistics",
+        "detailed_analytics": "detailed statistics",
+        "articles": "AI-assisted articles"
+      },
+      "cascades": {
+        "detailed_analytics": "Detailed statistics removed along with visit statistics.",
+        "email_extras": "Extra mailboxes and forwarding addresses removed along with the email address."
+      },
       "from": "from {price}",
       "formulas": {
         "label": "Choose your plan",
@@ -210,8 +247,15 @@
       "groups": {
         "site": "Your site",
         "address": "Your address on the web",
-        "visibility": "Get found and count your visits",
-        "care": "Updates and follow-up"
+        "care": "Updates and follow-up",
+        "more": "More options"
+      },
+      "more": {
+        "count": "{count} ticked",
+        "intro": {
+          "fr": "Options for specific needs: forwarding addresses, following your place on Google, statistics, articles.",
+          "ch": "Options for specific needs: forwarding addresses, following your place on Google, statistics, articles, hosting in Switzerland."
+        }
       }
     },
     "columns": {
@@ -224,7 +268,7 @@
         "period": "/ month",
         "description": "Your site is online and kept up to date, without you having to deal with it. The price depends on your needs: number of pages, domain name, email address, changes.",
         "features": {
-          "included": "Hosting, secure connection and basic Google visibility included",
+          "included": "Hosting, secure connection and the settings to be found on Google included",
           "options": "Options to add when you need them",
           "mockup": "A free mockup before you decide"
         },
@@ -263,6 +307,78 @@
           "ownership": "The code and the data belong to you"
         },
         "cta": "Ask for a quote"
+      }
+    },
+    "guide": {
+      "button": "Help me choose",
+      "intro": "Answer a few questions: we tick the options that suit you, and you can adjust everything afterwards.",
+      "submit": "See my plan",
+      "confirm": {
+        "text": "Your answers will replace the options you have already ticked.",
+        "replace": "Replace",
+        "cancel": "Cancel"
+      },
+      "situation": {
+        "legend": "Where are you at?",
+        "new": "I don't have a website yet",
+        "existing": "I already have a website",
+        "custom": "I want to sell online, a members' area or an app"
+      },
+      "existing": {
+        "legend": "What do you want to do with it?",
+        "redo": "Redo it",
+        "keep": "Keep it and get help"
+      },
+      "contact_outcome": {
+        "text": "Tell us what you need, and we will get back to you quickly.",
+        "cta": "Talk about my project"
+      },
+      "quote_outcome": {
+        "text": "Online shop, members' area, mobile app or internal tool: we define the project together, then send you a quote.",
+        "cta": "Request a quote"
+      },
+      "editor": {
+        "legend": "Who will make the changes on your site?",
+        "studio": "You: I send you my changes",
+        "self": "Me, for my news and opening hours"
+      },
+      "pages": {
+        "legend": "How many pages do you want?",
+        "help": "A page is, for example, “About”, “Services” or “Pricing”.",
+        "one": "A single page",
+        "two_four": "2 to 4 pages",
+        "five_seven": "5 to 7 pages",
+        "eight_nine": "8 to 9 pages",
+        "ten_plus": "10 pages or more",
+        "unsure": "I don't know yet"
+      },
+      "contact": {
+        "legend": "How do your customers reach you?",
+        "email": "By email or phone (the “Write to us” button is included)",
+        "form": "Through a form on my site",
+        "booking": "By booking an appointment online (a Google account is needed)"
+      },
+      "email": {
+        "legend": "Do you want an email address in your own name, like contact@{domain}?",
+        "yes": "Yes",
+        "team": "Yes, and other mailboxes for my team",
+        "no": "No"
+      },
+      "news": {
+        "legend": "Do you publish news: work, events, what's new?",
+        "none": "No",
+        "quarterly": "1 a quarter",
+        "monthly": "1 a month",
+        "weekly": "1 a week"
+      },
+      "updates": {
+        "legend": "How often does your information (texts, photos, opening hours) change?",
+        "yearly": "Once a year is enough (included)",
+        "few_per_year": "2 to 3 times a year",
+        "monthly": "Once a month",
+        "twice_monthly": "Twice a month",
+        "weekly": "Once a week",
+        "unlimited": "As often as needed"
       }
     }
   }

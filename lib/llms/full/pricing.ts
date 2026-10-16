@@ -1,12 +1,6 @@
 import { FORMULA_INCLUDES, FORMULA_PRICES, FORMULAS } from '@/components/PricingSimulator/constants';
 import type { Formula } from '@/components/PricingSimulator/PricingSimulator.types';
-import {
-  getOptionPrices,
-  getPriceLineTotal,
-  OPTION_GROUPS,
-  type PricedOption,
-  type PriceLine,
-} from '@/lib/pricing/price-list';
+import { getOptionPrices, OPTION_GROUPS, type PricedOption, type PriceLine } from '@/lib/pricing/price-list';
 
 import { EN } from '../llms.messages';
 import { inBothCurrencies, item, section, surchargeInBothCurrencies } from '../llms.utils';
@@ -20,22 +14,15 @@ const values = { domain: t('options.example_domain.fr') };
 const formulaName = (formula: Formula) => `“${t(`formulas.${formula}.label`)}”`;
 
 /** Explanation of an info bubble, when the item has one. */
-const infoOf = (key: string): string[] => (EN.pricing.has(`builder.${key}`) ? [t(key)] : []);
+const infoOf = (key: string): string[] => (EN.pricing.has(`builder.${key}`) ? [t(key, values)] : []);
 
 /** Copy the simulator only shows with "You stay in control", e.g. "With “You stay in control”: …". */
 const withSelfService = (key: string) => `With ${formulaName('self_service')}: ${t(key)}`;
 
-/**
- * "+€5 / +CHF 5 / month", "+€40 / +CHF 40 or more…" for the last step of a slider, or, for a step that
- * forces the content changes up, both prices and their sum.
- */
+/** "+€5 / +CHF 5 / month", or "+€40 / +CHF 40 or more / month" for the last step of a slider. */
 const priceOf = (line: PriceLine) => {
   const amount = surchargeInBothCurrencies(line.price);
-  const price = `${line.orMore ? t('pages.or_more', { price: amount }) : amount} ${t('period')}`;
-  if (!line.requires) return price;
-
-  const { requires } = line;
-  return `${price}, plus the content changes it requires, “${t(requires.tierKey ?? requires.labelKey)}”: ${surchargeInBothCurrencies(requires.price)}, so ${surchargeInBothCurrencies(getPriceLineTotal(line))} ${t('period')} in all`;
+  return `${line.orMore ? t('pages.or_more', { price: amount }) : amount} ${t('period')}`;
 };
 
 /** What each plan costs and includes, with the explanations of its info bubbles. */
@@ -59,6 +46,7 @@ function buildPlans(): string {
 const notesOf = (first: PriceLine): string[] => [
   ...(first.formula ? [`with ${formulaName(first.formula)} only, as ${formulaName('self_service')} includes it`] : []),
   ...(first.region === 'ch' ? ['Swiss versions only'] : []),
+  ...(first.option === 'domain' ? [`required with “${t('domain_question.no')}”`] : []),
   ...(first.commitment ? [t('commitment')] : []),
 ];
 
@@ -69,16 +57,15 @@ function describe(option: PricedOption): string {
       return t('pages.info');
     }
     case 'updates': {
-      return `${t('updates.off')}. ${t('updates.hint')} ${withSelfService('updates.hint_self_service')}`;
+      return `${t('updates.off')}. ${t('updates.hint')} ${t('updates.info')} ${withSelfService('updates.hint_self_service')}`;
     }
     case 'articles': {
       return `${t('options.articles.hint')} ${t('options.articles.info')} ${withSelfService('options.articles.info_tool')}`;
     }
-    case 'email': {
-      return `${t('options.email.hint', values)} ${t('options.email.note')}`;
-    }
-    case 'redirects': {
-      return `${t('options.redirects.hint', values)} ${t('options.email_extras.info')}`;
+    case 'domain': {
+      // The simulator first asks whether the visitor already has a domain name.
+      const question = `${t('domain_question.legend')} ${t('domain_question.help', values)}`;
+      return `${t('options.domain.hint', values)} ${t('options.domain.info', values)} ${question} “${t('domain_question.yes')}”: ${t('domain_question.own_note')}`;
     }
     default: {
       return [t(`options.${option}.hint`, values), ...infoOf(`options.${option}.info`)].join(' ');

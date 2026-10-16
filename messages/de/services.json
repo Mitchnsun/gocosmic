@@ -1,7 +1,7 @@
 {
   "services": {
     "meta": {
-      "title": "Leistungen & Preise · Genf & Annecy | Cosmic Studio",
+      "title": "Leistungen · Genf & Annecy | Cosmic Studio",
       "description": "Präsentationswebsites, Onlineshops, Apps und Betreuung zu offen genannten Preisen: Abonnement ab {price} im Monat oder Projekt nach Angebot."
     },
     "cta": {
@@ -10,14 +10,15 @@
       "primary_button": "Mein Projekt besprechen"
     },
     "intro": {
-      "eyebrow": "[ Leistungen & Preise ]",
+      "eyebrow": "[ Leistungen ]",
       "title": "Eine Website, die läuft, <em>und jemand, der sich darum kümmert.</em>",
       "lead": "Unsere Preise stehen direkt auf dieser Seite. So wissen Sie sofort, ob es in Ihr Budget passt, ohne ein Angebot anfragen zu müssen. Und alles beginnt mit einem kostenlosen, unverbindlichen Mockup."
     },
     "simulator": {
       "eyebrow": "[ Abonnement zusammenstellen ]",
       "title": "Fangen Sie klein an, <em>den Rest ergänzen Sie später.</em>",
-      "lead": "Zwei Pakete: „Wir kümmern uns um alles“ ab {price} im Monat oder „Sie behalten die Kontrolle“ ab {selfServicePrice} im Monat, wenn Sie Ihre Neuigkeiten selbst veröffentlichen möchten. Kreuzen Sie die Optionen an, die Sie interessieren, und Sie sehen den Monatspreis."
+      "lead": "Zwei Pakete: „Wir kümmern uns um alles“ ab {price} im Monat oder „Sie behalten die Kontrolle“ ab {selfServicePrice} im Monat, wenn Sie Ihre Neuigkeiten selbst veröffentlichen möchten. Ergänzen Sie Ihre Optionen und sehen Sie den Monatspreis auf der Seite Preise.",
+      "cta": "Mein Abonnement zusammenstellen"
     },
     "trades": {
       "eyebrow": "[ Unsere Fachgebiete · 04 ]",

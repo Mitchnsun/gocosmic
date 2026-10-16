@@ -1,0 +1,13 @@
+{
+  "pricingPage": {
+    "meta": {
+      "title": "Pricing · Geneva & Annecy | Cosmic Studio",
+      "description": "Build your website subscription and see the monthly price right away: plan, number of pages, email address, updates. From {price} a month."
+    },
+    "intro": {
+      "eyebrow": "[ Pricing ]",
+      "title": "Build your plan, <em>the price shows up right away.</em>",
+      "lead": "Choose who updates your site, add what you need, and you see the monthly price. Not sure? A few questions are enough for a first plan, which you then adjust."
+    }
+  }
+}

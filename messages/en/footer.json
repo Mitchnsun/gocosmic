@@ -5,7 +5,8 @@
       "ch": "Web and mobile development studio in Geneva. Websites, apps and ongoing care, with prices on display."
     },
     "nav_title": "Studio",
-    "link_services": "Services & pricing",
+    "link_services": "Services",
+    "link_pricing": "Pricing",
     "link_projects": "Projects",
     "link_about": "About",
     "link_contact": "Contact",

@@ -1,18 +1,19 @@
 {
   "services": {
     "meta": {
-      "title": "Services & tarifs · Genève & Annecy | Cosmic Studio",
+      "title": "Services · Genève & Annecy | Cosmic Studio",
       "description": "Sites vitrine, boutiques en ligne, applications et suivi, à prix affichés : un abonnement dès {price} par mois, ou un projet sur devis."
     },
     "intro": {
-      "eyebrow": "[ Services & tarifs ]",
+      "eyebrow": "[ Services ]",
       "title": "Un site qui tourne, <em>et quelqu'un qui s'en occupe.</em>",
       "lead": "Nos prix sont affichés : vous savez tout de suite si c'est dans votre budget, sans demander de devis. Et tout commence par une maquette gratuite, sans engagement."
     },
     "simulator": {
       "eyebrow": "[ Composez votre abonnement ]",
       "title": "Commencez simple, <em>ajoutez le reste plus tard.</em>",
-      "lead": "Deux formules : « On s'occupe de tout », dès {price} par mois, ou « Vous gardez la main », dès {selfServicePrice} par mois, si vous voulez publier vous-même vos actualités. Cochez les options qui vous intéressent pour voir le prix mensuel."
+      "lead": "Deux formules : « On s'occupe de tout », dès {price} par mois, ou « Vous gardez la main », dès {selfServicePrice} par mois, si vous voulez publier vous-même vos actualités. Ajoutez vos options et voyez le prix par mois sur la page Tarifs.",
+      "cta": "Composer mon abonnement"
     },
     "trades": {
       "eyebrow": "[ Nos métiers · 04 ]",

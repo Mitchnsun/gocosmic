@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 import type { ReactNode } from 'react';
 
-import { ONE_YEAR_OPTIONS } from './constants';
+import { COMMITTED_OPTIONS } from './constants';
 import { OptionToggle } from './OptionToggle';
 import type { AddOnKey } from './PricingSimulator.types';
 import { getAddOnPrice } from './PricingSimulator.utils';
@@ -13,11 +13,11 @@ interface AddOnOptionProps {
   checked: boolean;
   onToggle: (id: AddOnKey) => void;
   surcharge: (amount: number) => string;
-  /** Values of the hint, e.g. the example domain. */
+  /** Values of the hint and the info text, e.g. the example domain. */
   values?: Record<string, string>;
-  /** Key of the info text under `options`, when it is shared with another option. */
-  infoKey?: string;
   note?: string;
+  /** Locks the tick box, when the option follows another answer. */
+  disabled?: boolean;
   nested?: boolean;
   children?: ReactNode;
 }
@@ -29,8 +29,8 @@ export function AddOnOption({
   onToggle,
   surcharge,
   values,
-  infoKey = `${id}.info`,
   note,
+  disabled,
   nested,
   children,
 }: AddOnOptionProps) {
@@ -45,12 +45,13 @@ export function AddOnOption({
       checked={checked}
       onChange={() => onToggle(id)}
       info={
-        t.has(`options.${infoKey}`)
-          ? { label: t('info_label', { option: label }), text: t(`options.${infoKey}`) }
+        t.has(`options.${id}.info`)
+          ? { label: t('info_label', { option: label }), text: t(`options.${id}.info`, values) }
           : undefined
       }
-      commitment={ONE_YEAR_OPTIONS.has(id) ? t('commitment') : undefined}
+      commitment={COMMITTED_OPTIONS.has(id) ? t('commitment') : undefined}
       note={note}
+      disabled={disabled}
       nested={nested}>
       {children}
     </OptionToggle>

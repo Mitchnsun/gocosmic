@@ -13,6 +13,7 @@ import legal from '../messages/en/legal.json';
 import local from '../messages/en/local.json';
 import navigation from '../messages/en/navigation.json';
 import pricing from '../messages/en/pricing.json';
+import pricingPage from '../messages/en/pricing-page.json';
 import projects from '../messages/en/projects.json';
 import pscSupersprint from '../messages/en/psc-supersprint.json';
 import services from '../messages/en/services.json';
@@ -31,6 +32,7 @@ const messages = {
   ...pscSupersprint,
   ...contact,
   ...pricing,
+  ...pricingPage,
   ...freeMockup,
 };
 

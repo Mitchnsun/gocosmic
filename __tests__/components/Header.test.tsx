@@ -63,7 +63,7 @@ describe('Header Component', () => {
     const { getByRole, queryByRole } = render(<Header />);
     const nav = getByRole('navigation', { name: /main navigation/i });
 
-    expect(getByRole('link', { name: 'Services & pricing' })).toHaveAttribute('href', '/services');
+    expect(getByRole('link', { name: 'Our services' })).toHaveAttribute('href', '/services');
     expect(getByRole('link', { name: 'Our projects' })).toHaveAttribute('href', '/projects');
     expect(getByRole('link', { name: 'Contact Cosmic Studio' })).toHaveAttribute('href', '/contact');
     expect(nav).toHaveTextContent(/^ServicesProjectsContact/);
@@ -130,7 +130,7 @@ describe('Header Component', () => {
   it('marks a nav item active when pathname equals the href', () => {
     mockPathname = '/services';
     const { getByRole } = render(<Header />);
-    expect(getByRole('link', { name: 'Services & pricing' })).toHaveAttribute('aria-current', 'page');
+    expect(getByRole('link', { name: 'Our services' })).toHaveAttribute('aria-current', 'page');
     expect(getByRole('link', { name: 'Our projects' })).not.toHaveAttribute('aria-current');
   });
 
@@ -149,7 +149,7 @@ describe('Header Component', () => {
 
     const menu = getByRole('dialog', { name: /^menu$/i });
     expect(within(menu).getByRole('link', { name: 'Home' })).toHaveAttribute('href', '/');
-    expect(within(menu).getByRole('link', { name: 'Services & pricing' })).toHaveAttribute('href', '/services');
+    expect(within(menu).getByRole('link', { name: 'Our services' })).toHaveAttribute('href', '/services');
     expect(within(menu).getByRole('link', { name: 'Contact Cosmic Studio' })).toHaveAttribute('href', '/contact');
     expect(within(menu).getByRole('link', { name: 'Get my free mockup' })).toHaveAttribute('href', '/free-mockup');
   });

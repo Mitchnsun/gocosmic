@@ -1,13 +1,5 @@
-import { ARTICLE_TIERS, MAX_EXTRA_MAILBOXES, PAGE_TIERS, TIERED_TABLES, UPDATE_TIERS } from './constants';
-import type {
-  AddOnKey,
-  ArticleTier,
-  Formula,
-  PlanSelection,
-  TieredKey,
-  TierIndexOf,
-  UpdateTier,
-} from './PricingSimulator.types';
+import { MAX_EXTRA_MAILBOXES, PAGE_TIERS, TIERED_TABLES, UPDATE_TIERS } from './constants';
+import type { AddOnKey, Formula, PlanSelection, TieredKey, TierIndexOf } from './PricingSimulator.types';
 
 /** Clamps any number (slider value, decoded digit…) onto a position of a table of `length` tiers. */
 export function clampTier<T extends readonly unknown[]>(value: number, table: T): TierIndexOf<T> {
@@ -24,18 +16,21 @@ export function clampMailboxes(value: number): number {
 }
 
 /*
- * Visitor actions. They apply the cascades the visitor triggers directly: ticking the email
- * address ticks the domain it lives on, and unticking a parent unticks what hangs from it.
+ * Visitor actions. They apply the cascades the visitor triggers directly: unticking a parent unticks
+ * what hangs from it.
  */
 
 export function setFormula(selection: PlanSelection, formula: Formula): PlanSelection {
   return { ...selection, formula };
 }
 
+/** Answers "Do you already have a domain name?"; the domain itself follows in `normalizePlan`. */
+export function setOwnDomain(selection: PlanSelection, ownDomain: boolean): PlanSelection {
+  return { ...selection, ownDomain };
+}
+
 export function toggleAddOn(selection: PlanSelection, key: AddOnKey): PlanSelection {
   const addOns = { ...selection.addOns, [key]: !selection.addOns[key] };
-  if (key === 'email' && addOns.email) addOns.domain = true;
-  if (key === 'domain' && !addOns.domain) addOns.email = false;
   if (!addOns.email) addOns.redirects = false;
   return { ...selection, addOns, mailboxes: addOns.email ? selection.mailboxes : 0 };
 }
@@ -62,56 +57,44 @@ export function toggleUpdates(selection: PlanSelection): PlanSelection {
   return { ...selection, updatesEnabled: !selection.updatesEnabled };
 }
 
-/**
- * Moving the slider means the visitor wants the package, even when articles had switched it on.
- * A position below what the articles need is ignored, so it cannot linger once they are removed.
- */
 export function setUpdates(selection: PlanSelection, value: number): PlanSelection {
-  const updates = clampTier(value, UPDATE_TIERS);
-  const floor = getUpdatesFloor(selection.articles);
-  if (floor !== null && updates < floor) return selection;
-  return { ...selection, updatesEnabled: true, updates };
+  return { ...selection, updates: clampTier(value, UPDATE_TIERS) };
 }
 
-/** Lowest update tier the chosen article rhythm needs, since each published article counts as a change. */
-export function getUpdatesFloor(articles: ArticleTier | null): UpdateTier | null {
-  if (articles === null) return null;
-  const { minUpdates } = ARTICLE_TIERS[articles];
-  return clampTier(
-    UPDATE_TIERS.findIndex((tier) => tier.key === minUpdates),
-    UPDATE_TIERS
-  );
+/** An option that unticking another one removes along with it, announced to the visitor. */
+export type Cascade = 'detailed_analytics' | 'email_extras';
+
+/**
+ * What unticking `key` would remove along with it, from the visitor's current choices: the detailed
+ * statistics with the visit statistics, the extra mailboxes and redirects with the email address.
+ */
+export function getCascade(choices: PlanSelection, key: 'email' | 'analytics'): Cascade | null {
+  const plan = normalizePlan(choices);
+  if (key === 'analytics')
+    return plan.analytics !== null && plan.addOns.detailed_analytics ? 'detailed_analytics' : null;
+  return plan.addOns.email && (plan.mailboxes > 0 || plan.addOns.redirects) ? 'email_extras' : null;
 }
 
 /**
  * Applies the rules that depend on context. The visitor's own choices are kept apart (in the hook)
- * and normalised on every render, so they come back when the context changes: the news section
- * returns when switching back to "We take care of everything", and the update slider falls back to
- * the visitor's own choice once articles are removed. Idempotent.
+ * and normalised on every render, so they come back when the context changes: the news return when
+ * switching back to "We take care of everything", the email address when answering again that there
+ * is no domain name yet. Idempotent.
  */
 export function normalizePlan(choices: PlanSelection): PlanSelection {
   const addOns = { ...choices.addOns };
+  // Without a domain name of their own, the studio manages one for the client; with one, the
+  // domain and email options are not offered.
+  addOns.domain = choices.ownDomain === false;
   if (!addOns.domain) addOns.email = false;
   if (!addOns.email) addOns.redirects = false;
   if (choices.analytics === null) addOns.detailed_analytics = false;
-  // The news section comes with "You stay in control": it is never charged on top.
-  if (choices.formula === 'self_service') addOns.news = false;
-
-  const floor = getUpdatesFloor(choices.articles);
-  const ownUpdates = choices.updatesEnabled ? choices.updates : null;
-  const updates = floor === null ? choices.updates : (Math.max(ownUpdates ?? 0, floor) as UpdateTier);
 
   return {
     ...choices,
     addOns,
+    // "You stay in control" includes a news section the client publishes in: never charged on top.
+    news: choices.formula === 'self_service' ? null : choices.news,
     mailboxes: addOns.email ? clampMailboxes(choices.mailboxes) : 0,
-    updatesEnabled: choices.updatesEnabled || floor !== null,
-    updates,
   };
-}
-
-/** True when articles pushed the update package above what the visitor had chosen. */
-export function isUpdatesRaised(choices: PlanSelection): boolean {
-  const floor = getUpdatesFloor(choices.articles);
-  return floor !== null && (!choices.updatesEnabled || choices.updates < floor);
 }

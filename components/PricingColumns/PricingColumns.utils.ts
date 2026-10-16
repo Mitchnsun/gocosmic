@@ -24,7 +24,7 @@ export function buildPricingColumns(t: ColumnsTranslator, region: Region, locale
         t('subscription.features.options'),
         t('subscription.features.mockup'),
       ],
-      cta: { text: t('subscription.cta'), href: { pathname: '/services', hash: 'simulator' } },
+      cta: { text: t('subscription.cta'), href: '/pricing' },
     },
     {
       title: t('guidance.title'),

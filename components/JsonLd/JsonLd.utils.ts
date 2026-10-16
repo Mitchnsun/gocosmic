@@ -47,3 +47,18 @@ export function getLocalizedLocalBusinessData(locale: string) {
 /** Steps of a breadcrumb trail as schema.org list items, numbered from 1. */
 export const toItemList = (trail: { name: string; item: string }[]) =>
   trail.map((step, index) => ({ '@type': 'ListItem', position: index + 1, ...step }));
+
+/** A monthly subscription price as a schema.org offer; `minimum` marks a floor ("€40 or more"). */
+export const monthlyOffer = (price: number, priceCurrency: string, minimum = false) => ({
+  '@type': 'Offer',
+  price,
+  priceCurrency,
+  priceSpecification: {
+    '@type': 'UnitPriceSpecification',
+    price,
+    priceCurrency,
+    ...(minimum && { minPrice: price }),
+    // UN/CEFACT code for a month: the price is a monthly subscription.
+    unitCode: 'MON',
+  },
+});

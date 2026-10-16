@@ -5,7 +5,8 @@
       "ch": "Studio de développement web et mobile à Genève. Sites, applications et suivi, à prix affichés."
     },
     "nav_title": "Studio",
-    "link_services": "Services & tarifs",
+    "link_services": "Services",
+    "link_pricing": "Tarifs",
     "link_projects": "Projets",
     "link_about": "À propos",
     "link_contact": "Contact",

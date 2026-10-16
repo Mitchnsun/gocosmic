@@ -9,13 +9,14 @@ type Redirect = Awaited<ReturnType<NonNullable<NextConfig['redirects']>>>[number
 interface RetiredPage {
   /** Former slug per language. */
   slugs: Record<Language, string>;
-  /** Section of the Services & pricing page that now holds the content, if any. */
+  /** Section of the Services page that now holds the content, if any. */
   hash?: string;
 }
 
 /**
  * Pages merged away by the Cosmic Studio rebrand, with their former localized
- * slugs. Their content now lives on the Services & pricing page.
+ * slugs. Their content now lives on the Services page. The former pricing page
+ * came back as a page of its own, under the same slugs (see `getEnglishSlugRedirects`).
  */
 const RETIRED_PAGES: RetiredPage[] = [
   // Offers → the pricing columns
@@ -27,17 +28,6 @@ const RETIRED_PAGES: RetiredPage[] = [
       es: '/nuestras-ofertas',
       de: '/unsere-angebote',
       it: '/le-nostre-offerte',
-    },
-  },
-  // Pricing → the subscription simulator
-  {
-    hash: '#simulator',
-    slugs: {
-      en: '/pricing',
-      fr: '/tarifs',
-      es: '/precios',
-      de: '/preise',
-      it: '/prezzi',
     },
   },
   // 3D journey → the page itself
@@ -53,7 +43,7 @@ const RETIRED_PAGES: RetiredPage[] = [
 ];
 
 /**
- * Permanent redirects from the retired pages to Services & pricing, in every
+ * Permanent redirects from the retired pages to Services, in every
  * language. The English slug is also caught under each language prefix and
  * without any prefix, since older links used both forms. The Swiss URLs came
  * after these pages were retired, so they have nothing to redirect.
@@ -71,6 +61,27 @@ export function getLegacyRedirects(): Redirect[] {
 
     return [{ source: english, destination: `/services${hash}`, permanent: true }, ...localized];
   });
+}
+
+/** Pages whose English slug older links also used under the other language prefixes, e.g. `/fr/pricing`. */
+const ENGLISH_SLUG_PAGES = ['/pricing'] as const;
+
+/**
+ * Permanent redirects from a page's English slug under another prefix to its slug in that language
+ * (`/fr/pricing` → `/fr/tarifs`), Swiss prefixes included. Without them, the i18n middleware would
+ * only answer with a temporary redirect.
+ */
+export function getEnglishSlugRedirects(): Redirect[] {
+  return ENGLISH_SLUG_PAGES.flatMap((page) =>
+    LOCALES.flatMap((locale) => {
+      const english = routing.pathnames[page].en;
+      const slug = routing.pathnames[page][locale];
+      const prefix = getLocalePrefix(locale);
+      return slug === english
+        ? []
+        : [{ source: `${prefix}${english}`, destination: `${prefix}${slug}`, permanent: true }];
+    })
+  );
 }
 
 /** Slugs of the local page before it was retargeted at "website creation" and put Geneva first. */

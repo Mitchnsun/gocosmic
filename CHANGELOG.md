@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.5.0] - 2026-10-16
+
+### Added
+
+- A new Pricing page, linked from the footer, the homepage and the subscription column, where visitors find the two free offers, each with its own button, then build their subscription and see the monthly price
+- A "Help me choose" guide above the simulator: a few questions tick the options that fit, or point to a conversation or a quote when the need goes beyond the subscription
+- On phones, a bar at the bottom of the screen keeps the estimated price and the free mockup button in view while scrolling through the options
+
+### Changed
+
+- The Services page is now simply called "Services": it presents the two plans with their starting price and leads to the Pricing page
+- The simulator first asks whether the visitor already has a domain name: without one, the studio registers it as part of the subscription; with one, the domain and email options give way to help on a quote
+- News published by the studio and AI-assisted articles now have their own rhythm and price and no longer count as changes to the pages, the site monitoring option is gone, less common options sit under "More options", every option is explained in plain words, and the summary says whether the plan commits for 12 months
+- The terms of sale are reviewed: yearly billing paid within 30 days or a monthly payment schedule, by bank transfer; the studio's VAT status and what happens if it changes; Swiss law for every client; and clauses on delays, liability and the ownership of a one-off project's code
+
 ## [2.4.5] - 2026-10-15
 
 ### Changed

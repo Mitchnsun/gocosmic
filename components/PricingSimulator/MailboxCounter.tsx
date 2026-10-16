@@ -4,10 +4,10 @@ import { MinusIcon, PlusIcon } from '@heroicons/react/24/outline';
 import { useTranslations } from 'next-intl';
 import { useId } from 'react';
 
-import { Chip } from '@/design-system/chip';
 import { InfoPopover } from '@/design-system/info-popover';
 import { cn } from '@/design-system/lib/utils';
 
+import { CommitmentBadge } from './CommitmentBadge';
 import { EXTRA_MAILBOX_PRICE, MAX_EXTRA_MAILBOXES } from './constants';
 
 const STEP_BUTTON = cn(
@@ -52,10 +52,10 @@ export function MailboxCounter({ value, onChange, surcharge, domain }: MailboxCo
           <p id={`${id}-hint`} className="text-fg-2 mt-1 text-sm">
             {t('options.mailboxes.hint', { domain })}
           </p>
-          <Chip className="mt-2">{t('commitment')}</Chip>
+          <CommitmentBadge label={t('commitment')} className="mt-2" />
         </div>
         <InfoPopover label={t('info_label', { option: label })} title={label} className="-mt-2.5 -mr-2.5">
-          <p>{t('options.email_extras.info')}</p>
+          <p>{t('options.mailboxes.info')}</p>
         </InfoPopover>
       </div>
       <div

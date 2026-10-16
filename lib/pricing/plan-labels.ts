@@ -1,8 +1,16 @@
 import type {
+  ARTICLE_TIERS,
+  NEWS_TIERS,
+  PAGE_TIERS,
+  REPORT_TIERS,
+  SEO_TIERS,
+  UPDATE_TIERS,
+} from '@/components/PricingSimulator/constants';
+import type {
   AddOnKey,
   Formula,
   ProjectType,
-  TieredKey,
+  TierKeyOf,
   WebsiteType,
 } from '@/components/PricingSimulator/PricingSimulator.types';
 
@@ -38,14 +46,19 @@ export const ADD_ON_LABELS: Record<AddOnKey, string> = {
   booking: 'Online booking',
   reviews: 'Customer reviews',
   english: 'English version',
-  news: 'News section',
-  monitoring: 'Site monitoring',
-  detailed_analytics: 'Detailed measurement (consent banner)',
-  redirects: '5 email redirects',
+  detailed_analytics: 'Detailed statistics (consent banner)',
+  redirects: 'Forwarding addresses (up to 5)',
 };
 
-/** Tier labels by slider, keyed by tier key. */
-export const TIER_LABELS: Record<'pages' | 'updates' | TieredKey, Record<string, string>> = {
+/** Tier labels by slider, keyed by tier key: a tier added to a table without its label fails to compile. */
+export const TIER_LABELS: {
+  pages: Record<TierKeyOf<typeof PAGE_TIERS>, string>;
+  updates: Record<TierKeyOf<typeof UPDATE_TIERS>, string>;
+  news: Record<TierKeyOf<typeof NEWS_TIERS>, string>;
+  analytics: Record<TierKeyOf<typeof REPORT_TIERS>, string>;
+  seo: Record<TierKeyOf<typeof SEO_TIERS>, string>;
+  articles: Record<TierKeyOf<typeof ARTICLE_TIERS>, string>;
+} = {
   pages: {
     one: '1 page (included)',
     two_four: '2 to 4 pages',
@@ -60,7 +73,25 @@ export const TIER_LABELS: Record<'pages' | 'updates' | TieredKey, Record<string,
     weekly: 'Once a week',
     unlimited: 'As often as needed',
   },
+  news: { quarterly: '1 news item a quarter', monthly: '1 news item a month', weekly: '1 news item a week' },
   analytics: { yearly: 'Yearly report', quarterly: 'Quarterly report', monthly: 'Monthly report' },
   seo: { quarterly: 'Every three months', monthly: 'Every month' },
-  articles: { monthly: '1 article a month', weekly: '1 article a week', daily: '1 article a day' },
+  articles: {
+    quarterly: '1 article a quarter',
+    monthly: '1 article a month',
+    weekly: '1 article a week',
+    thrice_weekly: '3 articles a week',
+  },
 };
+
+/** Label of a slider step of the studio email, e.g. `Quarterly report`. */
+export const getTierLabel = (slider: keyof typeof TIER_LABELS, tier: string): string | undefined =>
+  (TIER_LABELS[slider] as Record<string, string>)[tier];
+
+/** Answer to "Do you already have a domain name?". */
+export function getOwnDomainLabel(ownDomain: boolean | null): string {
+  if (ownDomain === null) return 'Not answered';
+  return ownDomain
+    ? 'The client already has one: help with it is quoted on request'
+    : 'None yet: managed by the studio (in the add-ons)';
+}

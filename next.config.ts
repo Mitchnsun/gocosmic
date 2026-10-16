@@ -1,7 +1,7 @@
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 
-import { getLegacyRedirects, getLocalPageRedirects } from './lib/redirects';
+import { getEnglishSlugRedirects, getLegacyRedirects, getLocalPageRedirects } from './lib/redirects';
 
 // Build the CSP as an array so each directive stays readable.
 // unsafe-inline is required by Next.js App Router (inline hydration scripts + Tailwind styles).
@@ -48,7 +48,7 @@ const nextConfig: NextConfig = {
     BUILD_DATE: new Date().toISOString(),
   },
   async redirects() {
-    return [...getLegacyRedirects(), ...getLocalPageRedirects()];
+    return [...getLegacyRedirects(), ...getEnglishSlugRedirects(), ...getLocalPageRedirects()];
   },
   async headers() {
     return [{ source: '/(.*)', headers: securityHeaders }];

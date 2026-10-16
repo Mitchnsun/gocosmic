@@ -1,5 +1,6 @@
-import { Chip } from '@/design-system/chip';
 import { cn } from '@/design-system/lib/utils';
+
+import { CommitmentBadge } from './CommitmentBadge';
 
 interface OptionTextProps {
   /** Prefix of the ids the checkbox points at (`-label`, `-price`, `-hint`, `-commitment`). */
@@ -41,7 +42,7 @@ export function OptionText({ id, label, price, hint, commitment, checked, nested
       )}
       {commitment && (
         <span id={`${id}-commitment`} className="mt-2 block">
-          <Chip>{commitment}</Chip>
+          <CommitmentBadge label={commitment} />
         </span>
       )}
     </span>

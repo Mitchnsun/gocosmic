@@ -40,10 +40,21 @@ describe('getCanonicalUrl', () => {
     });
   });
 
-  describe('services & pricing page (localized pathnames)', () => {
+  describe('services page (localized pathnames)', () => {
     it('resolves the Spanish and German localized pathnames', () => {
       expect(getCanonicalUrl('es', '/services')).toBe(`${SITE_URL}/es/servicios`);
       expect(getCanonicalUrl('de', '/services')).toBe(`${SITE_URL}/de/dienstleistungen`);
+    });
+  });
+
+  describe('pricing page (localized pathnames)', () => {
+    it('resolves the slug of each language, Swiss versions included', () => {
+      expect(getCanonicalUrl('en', '/pricing')).toBe(`${SITE_URL}/en/pricing`);
+      expect(getCanonicalUrl('fr', '/pricing')).toBe(`${SITE_URL}/fr/tarifs`);
+      expect(getCanonicalUrl('fr-CH', '/pricing')).toBe(`${SITE_URL}/fr-ch/tarifs`);
+      expect(getCanonicalUrl('es', '/pricing')).toBe(`${SITE_URL}/es/precios`);
+      expect(getCanonicalUrl('de', '/pricing')).toBe(`${SITE_URL}/de/preise`);
+      expect(getCanonicalUrl('it', '/pricing')).toBe(`${SITE_URL}/it/prezzi`);
     });
   });
 

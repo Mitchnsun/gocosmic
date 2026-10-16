@@ -2,9 +2,16 @@
 
 import { useTranslations } from 'next-intl';
 
-const OFFERS = ['mockup', 'audit'] as const;
+import { ghostPill } from '@/design-system/pill';
+import { Link } from '@/i18n/navigation';
 
-/** Announces the two no-commitment freebies used in outreach, on the page itself. */
+/** The two freebies, each with the page where it is requested. */
+const OFFERS = [
+  { key: 'mockup', href: '/free-mockup' },
+  { key: 'audit', href: '/contact' },
+] as const;
+
+/** Announces the two no-commitment freebies used in outreach, each with a button to request it. */
 export function FreeOffers() {
   const t = useTranslations('pricing');
 
@@ -21,10 +28,15 @@ export function FreeOffers() {
         {t('free_offers.title')}
       </h2>
       <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-        {OFFERS.map((offer) => (
-          <li key={offer} className="border-line rounded-xl border p-4">
-            <p className="font-display text-fg text-base font-medium">{t(`free_offers.items.${offer}.title`)}</p>
-            <p className="text-fg-2 mt-1 text-sm">{t(`free_offers.items.${offer}.description`)}</p>
+        {OFFERS.map(({ key, href }) => (
+          <li key={key} className="border-line flex flex-col items-start gap-4 rounded-xl border p-4">
+            <div>
+              <p className="font-display text-fg text-base font-medium">{t(`free_offers.items.${key}.title`)}</p>
+              <p className="text-fg-2 mt-1 text-sm">{t(`free_offers.items.${key}.description`)}</p>
+            </div>
+            <Link href={href} className={ghostPill('mt-auto')}>
+              {t(`free_offers.items.${key}.cta`)}
+            </Link>
           </li>
         ))}
       </ul>

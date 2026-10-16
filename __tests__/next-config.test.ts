@@ -56,7 +56,7 @@ describe('next config frame policy', () => {
 });
 
 describe('next config legacy redirects', () => {
-  it('sends the retired offers, pricing and journey pages to the matching Services section, in every locale', async () => {
+  it('sends the retired offers and journey pages to the matching Services section, in every locale', async () => {
     vi.resetModules();
     const { default: nextConfig } = (await import('../next.config')) as {
       default: { redirects: () => Promise<{ source: string; destination: string; permanent: boolean }[]> };
@@ -69,14 +69,31 @@ describe('next config legacy redirects', () => {
       destination: '/fr/services#pricing',
       permanent: true,
     });
-    expect(find('/de/preise')?.destination).toBe('/de/dienstleistungen#simulator');
     expect(find('/it/viaggio')?.destination).toBe('/it/servizi');
-    expect(find('/es/pricing')?.destination).toBe('/es/servicios#simulator');
     expect(find('/offers')?.destination).toBe('/services#pricing');
     expect(find('/journey')?.destination).toBe('/services');
     expect(redirects.every((redirect) => redirect.permanent)).toBe(true);
-    // 3 retired pages × (1 unprefixed + 1 for en + 2 per other locale), then the local page under each of the 10 prefixes.
-    expect(redirects).toHaveLength(3 * (1 + 1 + 2 * 4) + 10);
+    // 2 retired pages × (1 unprefixed + 1 for en + 2 per other locale), the pricing page's English slug under the
+    // 8 prefixes of the other languages, then the local page under each of the 10 prefixes.
+    expect(redirects).toHaveLength(2 * (1 + 1 + 2 * 4) + 8 + 10);
+  });
+
+  it('no longer redirects the pricing slugs, which lead to the pricing page again', async () => {
+    vi.resetModules();
+    const { default: nextConfig } = (await import('../next.config')) as {
+      default: { redirects: () => Promise<{ source: string; destination: string; permanent: boolean }[]> };
+    };
+    const redirects = await nextConfig.redirects();
+    const find = (source: string) => redirects.find((redirect) => redirect.source === source);
+
+    expect(find('/pricing')).toBeUndefined();
+    expect(find('/de/preise')).toBeUndefined();
+    expect(find('/fr-ch/tarifs')).toBeUndefined();
+    // The English slug under another prefix reaches that language's slug.
+    expect(find('/fr/pricing')).toEqual({ source: '/fr/pricing', destination: '/fr/tarifs', permanent: true });
+    expect(find('/de-ch/pricing')?.destination).toBe('/de-ch/preise');
+    expect(find('/en/pricing')).toBeUndefined();
+    expect(find('/en-ch/pricing')).toBeUndefined();
   });
 
   it('sends the former local page slugs to the current ones, Swiss prefixes included', async () => {

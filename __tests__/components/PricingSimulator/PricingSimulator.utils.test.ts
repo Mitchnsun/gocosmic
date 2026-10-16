@@ -3,12 +3,15 @@ import { describe, expect, it } from 'vitest';
 import { BASE_PRICE, FORMULA_PRICES } from '@/components/PricingSimulator/constants';
 import { normalizePlan } from '@/components/PricingSimulator/PricingSimulator.rules';
 import {
+  countAdvancedOptions,
   formatAmount,
   getAddOnPrice,
+  getCommittedItems,
   getMonthlyTotal,
   getPlanItems,
   needsCustomQuote,
 } from '@/components/PricingSimulator/PricingSimulator.utils';
+import { ADVANCED_OPTIONS, OPTION_GROUPS } from '@/lib/pricing/price-list';
 
 import { makeSelection as plan } from '../../lib/pricing/plan-fixtures';
 
@@ -36,12 +39,16 @@ describe('getPlanItems', () => {
     const items = getPlanItems(
       normalizePlan(
         plan({
+          ownDomain: false,
           pages: 2,
-          addOns: { monitoring: true, contact_form: true, domain: true, email: true, detailed_analytics: true },
+          addOns: { contact_form: true, email: true, detailed_analytics: true, redirects: true },
           mailboxes: 2,
+          news: 0,
           analytics: 1,
           seo: 0,
           articles: 1,
+          updatesEnabled: true,
+          updates: 3,
         })
       )
     );
@@ -50,16 +57,71 @@ describe('getPlanItems', () => {
       { id: 'formula', amount: 10 },
       { id: 'pages', amount: 15, tier: 'five_seven' },
       { id: 'contact_form', amount: 5 },
+      { id: 'news', amount: 10, tier: 'quarterly' },
       { id: 'domain', amount: 5 },
       { id: 'email', amount: 15 },
       { id: 'mailboxes', amount: 20, count: 2 },
+      { id: 'updates', amount: 60, tier: 'weekly' },
+      { id: 'redirects', amount: 5 },
       { id: 'seo', amount: 5, tier: 'quarterly' },
       { id: 'analytics', amount: 15, tier: 'quarterly' },
       { id: 'detailed_analytics', amount: 5 },
-      { id: 'updates', amount: 60, tier: 'weekly' },
-      { id: 'articles', amount: 15, tier: 'weekly' },
-      { id: 'monitoring', amount: 5 },
+      { id: 'articles', amount: 25, tier: 'monthly' },
     ]);
+  });
+
+  it('bills every option of the builder groups, so none can show ticked without being charged', () => {
+    const everything = normalizePlan(
+      plan({
+        ownDomain: false,
+        pages: 1,
+        addOns: Object.fromEntries(Object.keys(plan().addOns).map((key) => [key, true])),
+        mailboxes: 1,
+        news: 0,
+        analytics: 0,
+        seo: 0,
+        articles: 0,
+        updatesEnabled: true,
+      })
+    );
+
+    expect(getPlanItems(everything).map((item) => item.id)).toEqual([
+      'formula',
+      ...Object.values(OPTION_GROUPS).flat(),
+    ]);
+  });
+});
+
+describe('getCommittedItems', () => {
+  it('is empty for a plan that can be cancelled any month', () => {
+    expect(
+      getCommittedItems(normalizePlan(plan({ pages: 2, addOns: { contact_form: true }, updatesEnabled: true })))
+    ).toEqual([]);
+  });
+
+  it('lists what turns the plan into 12-month periods, in recap order', () => {
+    const items = getCommittedItems(
+      normalizePlan(plan({ formula: 'self_service', ownDomain: false, addOns: { email: true }, articles: 0 }))
+    );
+
+    expect(items).toEqual(['formula', 'domain', 'email', 'articles']);
+  });
+});
+
+describe('countAdvancedOptions', () => {
+  it('counts the ticked options folded under "More options"', () => {
+    expect(ADVANCED_OPTIONS).toEqual([
+      'redirects',
+      'seo',
+      'analytics',
+      'detailed_analytics',
+      'articles',
+      'swiss_hosting',
+    ]);
+    expect(countAdvancedOptions(plan({ addOns: { contact_form: true }, news: 0 }))).toBe(0);
+    expect(
+      countAdvancedOptions(normalizePlan(plan({ analytics: 0, addOns: { detailed_analytics: true }, seo: 1 })))
+    ).toBe(3);
   });
 });
 
@@ -83,13 +145,22 @@ describe('getMonthlyTotal', () => {
   });
 
   it('matches the examples of the offer', () => {
-    // We take care of everything + contact form + one article a week, which lifts updates to weekly.
-    expect(getMonthlyTotal(normalizePlan(plan({ addOns: { contact_form: true }, articles: 1 })))).toBe(90);
-    // You stay in control + contact form + booking + email (with its domain).
+    // A client without a domain name pays at least the domain on top of the entry plan.
+    expect(getMonthlyTotal(normalizePlan(plan({ ownDomain: false })))).toBe(15);
+    // We take care of everything + contact form + one article a month, which no longer raises the content changes.
+    expect(getMonthlyTotal(normalizePlan(plan({ addOns: { contact_form: true }, articles: 1 })))).toBe(40);
+    // We take care of everything + news once a month + three articles a week.
+    expect(getMonthlyTotal(normalizePlan(plan({ news: 1, articles: 3 })))).toBe(285);
+    // You stay in control + contact form + booking + email (with its domain); news are never charged on top.
     expect(
       getMonthlyTotal(
         normalizePlan(
-          plan({ formula: 'self_service', addOns: { contact_form: true, booking: true, domain: true, email: true } })
+          plan({
+            formula: 'self_service',
+            ownDomain: false,
+            news: 2,
+            addOns: { contact_form: true, booking: true, email: true },
+          })
         )
       )
     ).toBe(50);

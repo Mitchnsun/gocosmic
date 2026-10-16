@@ -35,12 +35,28 @@ describe('BreadcrumbSeo', () => {
           {
             '@type': 'ListItem',
             position: 2,
-            name: 'Services & pricing',
+            name: 'Services',
             item: 'https://www.gocosmic.dev/en/services',
           },
         ],
       },
     });
+  });
+
+  it('names the pricing page', () => {
+    vi.mocked(useLocale).mockReturnValue('fr');
+    render(<BreadcrumbSeo route="/pricing" />);
+
+    expect(jsonLdScriptMock).toHaveBeenCalledWith(
+      expect.objectContaining({
+        data: expect.objectContaining({
+          itemListElement: [
+            expect.objectContaining({ position: 1 }),
+            expect.objectContaining({ position: 2, name: 'Pricing', item: 'https://www.gocosmic.dev/fr/tarifs' }),
+          ],
+        }),
+      })
+    );
   });
 
   it('names the free mockup page', () => {
