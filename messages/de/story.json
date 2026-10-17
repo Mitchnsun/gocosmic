@@ -6,7 +6,7 @@
     },
     "eyebrow": "[ Geschichte ]",
     "title": "Von Duingt nach Chêne-Bougeries, <em>die Geschichte des Studios.</em>",
-    "lead": "Der Werdegang von Matthieu Compérat und die Etappen von Cosmic Studio, vom ersten Unternehmen 2016 bis zur Niederlassung in Chêne-Bougeries.",
+    "lead": "Matthieu Compérat ist seit 2012 Entwickler und hat 2016 sein erstes Unternehmen gegründet.",
     "steps": {
       "origins": {
         "date": "Herkunft",
@@ -16,17 +16,17 @@
       "developer": {
         "date": "2012",
         "title": "Anfänge als Entwickler",
-        "description": "Matthieu beginnt als Entwickler. Er erstellt Websites und Apps, zuerst für große Unternehmen."
+        "description": "Er erstellt Websites und Apps, zuerst für große Unternehmen."
       },
       "eirl": {
         "date": "17. Oktober 2016",
         "title": "Gründung der EIRL",
-        "description": "Matthieu gründet sein Einzelunternehmen mit beschränkter Haftung (EIRL, entreprise individuelle à responsabilité limitée), eingetragen in Paris, unter dem Handelsnamen Matthieu Compérat."
+        "description": "Sein Einzelunternehmen mit beschränkter Haftung (EIRL, entreprise individuelle à responsabilité limitée) wird unter dem Handelsnamen Matthieu Compérat in Paris eingetragen."
       },
       "duingt": {
         "date": "2023",
         "title": "Rückkehr nach Duingt",
-        "description": "Matthieu kehrt nach Duingt zurück und verlegt seine EIRL dorthin."
+        "description": "Er verlegt seine EIRL dorthin."
       },
       "goCosmic": {
         "date": "2025",
@@ -48,7 +48,7 @@
       "fer": {
         "date": "Laufend",
         "title": "Anschluss an die FER Genève",
-        "description": "Der Anschluss von Matthieus Schweizer Einzelunternehmen an die FER Genève ist im Gange."
+        "description": "Matthieus Schweizer Einzelunternehmen wird derzeit an die FER Genève angeschlossen."
       }
     }
   }

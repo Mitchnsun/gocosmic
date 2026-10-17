@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - A new Pricing page, linked from the footer, the homepage, the subscription column, the local page and the Services page (now simply called "Services", with the two plans and their starting price), where visitors find the two free offers, each with its own button, then build their subscription and see the monthly price
 - A "Help me choose" guide above the simulator, open from the start on a first question with three large choices, then one question at a time: a few questions tick the options that fit, or point to a conversation or a quote when the need goes beyond the subscription
 - On phones, a bar at the bottom of the screen keeps the estimated price and the free mockup button in view while scrolling through the options
-- A new Story page, linked from the About page, tells Matthieu Compérat's path and the studio's milestones on a timeline, from his start as a developer in 2012 and his first business in 2016 to the move to Chêne-Bougeries; search engines also get the studio's founding date
+- A new Story page, linked from the About page, follows Matthieu Compérat on a timeline from his start as a developer in 2012 to the studio's move to Chêne-Bougeries, and search engines now get the studio's founding date
 
 ### Changed
 

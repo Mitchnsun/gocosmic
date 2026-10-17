@@ -6,7 +6,7 @@
     },
     "eyebrow": "[ Storia ]",
     "title": "Da Duingt a Chêne-Bougeries, <em>la storia dello studio.</em>",
-    "lead": "Il percorso di Matthieu Compérat e le tappe di Cosmic Studio, dalla sua prima impresa nel 2016 fino all'insediamento a Chêne-Bougeries.",
+    "lead": "Matthieu Compérat è sviluppatore dal 2012 e ha creato la sua prima impresa nel 2016.",
     "steps": {
       "origins": {
         "date": "Origini",
@@ -16,17 +16,17 @@
       "developer": {
         "date": "2012",
         "title": "Inizi da sviluppatore",
-        "description": "Matthieu inizia come sviluppatore. Crea siti e app, prima per grandi aziende."
+        "description": "Crea siti e app, prima per grandi aziende."
       },
       "eirl": {
         "date": "17 ottobre 2016",
         "title": "Nascita dell'EIRL",
-        "description": "Matthieu crea la sua impresa individuale a responsabilità limitata (EIRL, entreprise individuelle à responsabilité limitée), iscritta a Parigi, con il nome commerciale Matthieu Compérat."
+        "description": "La sua impresa individuale a responsabilità limitata (EIRL, entreprise individuelle à responsabilité limitée) viene iscritta a Parigi con il nome commerciale Matthieu Compérat."
       },
       "duingt": {
         "date": "2023",
         "title": "Ritorno a Duingt",
-        "description": "Matthieu torna a Duingt e vi trasferisce la sua EIRL."
+        "description": "Vi trasferisce la sua EIRL."
       },
       "goCosmic": {
         "date": "2025",
