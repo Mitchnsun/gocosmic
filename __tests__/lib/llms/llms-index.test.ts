@@ -54,6 +54,9 @@ describe('buildLlmsIndex', () => {
       '## Pages in French only\n\n- [Création de site vitrine](https://www.gocosmic.dev/fr/creation-site-vitrine): Faites créer votre site vitrine'
     );
     expect(text).toMatch(/Dès 10\s€ par mois, avec une maquette gratuite\./);
+    expect(text).toContain(
+      "- [Création d'application](https://www.gocosmic.dev/fr/creation-application): Faites créer votre application"
+    );
     expect(text).not.toContain('/en/creation-site-vitrine');
   });
 

@@ -160,6 +160,15 @@ describe('sitemap', () => {
     );
   });
 
+  it('lists the app development page in French only', () => {
+    const urls = sitemap().map((entry) => entry.url);
+
+    expect(urls.filter((url) => url.endsWith('/creation-application'))).toEqual([
+      'https://www.gocosmic.dev/fr/creation-application',
+      'https://www.gocosmic.dev/fr-ch/creation-application',
+    ]);
+  });
+
   it('lists the showcase website page in French only', () => {
     const urls = sitemap().map((entry) => entry.url);
     const page = sitemap().find((entry) => entry.url === 'https://www.gocosmic.dev/fr-ch/creation-site-vitrine');

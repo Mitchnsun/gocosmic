@@ -1,4 +1,4 @@
-import { buildShowcaseWebsiteSection } from './full/french-pages';
+import { buildAppDevelopmentSection, buildShowcaseWebsiteSection } from './full/french-pages';
 import { buildHomeSection } from './full/home';
 import { buildPricingPageSection } from './full/pricing-page';
 import { buildProjectsSection } from './full/projects';
@@ -26,6 +26,7 @@ export function buildLlmsFull(bookingUrl: string | null): string {
     buildStorySection(),
     buildLocalSection(),
     buildShowcaseWebsiteSection(),
+    buildAppDevelopmentSection(),
     buildContactSection(bookingUrl),
     buildTermsSection(),
   ]);

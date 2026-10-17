@@ -35,6 +35,7 @@ describe('buildLlmsFull', () => {
       '## [Story](https://www.gocosmic.dev/en/story)',
       '## [Website design · Geneva, Annecy](https://www.gocosmic.dev/en/website-design-geneva-annecy)',
       '## [Création de site vitrine](https://www.gocosmic.dev/fr/creation-site-vitrine)',
+      "## [Création d'application](https://www.gocosmic.dev/fr/creation-application)",
       '## Contact',
       '## [Terms of sale](https://www.gocosmic.dev/en/terms)',
     ]);
@@ -168,7 +169,7 @@ describe('buildLlmsFull', () => {
   });
 
   it('tells the showcase website page in French, with what is included, its options, delays and examples', () => {
-    const page = text.slice(text.indexOf('## [Création de site vitrine]'), text.indexOf('## Contact'));
+    const page = text.slice(text.indexOf('## [Création de site vitrine]'), text.indexOf("## [Création d'application]"));
 
     expect(page).toMatch(/dès 10\s€ par mois, ou « Vous gardez la main », dès 20\s€ par mois/);
     expect(page).toContain('#### Compris dans les deux formules\n\n- Une page vitrine qui présente votre activité');
@@ -177,6 +178,16 @@ describe('buildLlmsFull', () => {
     expect(page).toContain('- **Délais**: Comptez deux à trois semaines pour une page vitrine');
     expect(page).toContain('- **Propriété**: Vos textes, vos images et votre nom de domaine');
     expect(page).toContain('- [mcomper.at](https://www.gocosmic.dev/fr/projets/mcomperat): Un CV en ligne');
+  });
+
+  it('tells the app development page in French, with how a quoted project runs and the studio apps', () => {
+    const page = text.slice(text.indexOf("## [Création d'application]"), text.indexOf('## Contact'));
+
+    expect(page).toContain('### Un projet sur devis, payé étape par étape.');
+    expect(page).toContain('- Un paiement en plusieurs fois, à chaque étape du projet');
+    expect(page).toContain("- L'organisation de l'application et les choix techniques");
+    expect(page).toContain('- [Daily Fortune](https://www.gocosmic.dev/fr/projets/daily-fortune): ');
+    expect(page).not.toMatch(/€|CHF/);
   });
 
   it('quotes the terms of sale word for word, and no other legal page', () => {

@@ -175,6 +175,9 @@ export const routing = defineRouting({
 
     // Showcase website service page, in French only (see `ROUTE_LANGUAGES`)
     '/showcase-website': '/creation-site-vitrine',
+
+    // App development service page, in French only (see `ROUTE_LANGUAGES`)
+    '/app-development': '/creation-application',
   },
 });
 
@@ -187,4 +190,5 @@ export type RouteKey = keyof typeof routing.pathnames;
  */
 export const ROUTE_LANGUAGES: Partial<Record<RouteKey, readonly Language[]>> = {
   '/showcase-website': ['fr'],
+  '/app-development': ['fr'],
 };

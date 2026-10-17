@@ -1,6 +1,6 @@
 import { PROJECTS_BY_SLUG } from '@/components/CaseStudy';
 import { BASE_PRICE, FORMULA_INCLUDES, FORMULA_PRICES } from '@/components/PricingSimulator/constants';
-import { SHOWCASE_WEBSITE } from '@/data/content-pages';
+import { APP_DEVELOPMENT, SHOWCASE_WEBSITE } from '@/data/content-pages';
 import { CODE_HANDOVER_MONTHS } from '@/lib/pricing/offers';
 
 import { FR } from '../llms.messages';
@@ -50,5 +50,18 @@ export function buildShowcaseWebsiteSection(): string {
       3
     ),
     section(t('projects.title'), [t('projects.lead'), projectLinks(SHOWCASE_WEBSITE.projects)], 3),
+  ]);
+}
+
+/** The app development page: what the studio builds, how a quoted project runs, the day-rate guidance, its apps. */
+export function buildAppDevelopmentSection(): string {
+  const t = FR.appDevelopment;
+
+  return section(link(FR.contentPages('links.app_development.label'), frenchPageUrl('/app-development')), [
+    t('intro.lead'),
+    section(t('builds.title'), [t('builds.lead'), list(valuesOf(t.raw('builds.points')))], 3),
+    section(t('how.title'), [t('how.lead'), list(valuesOf(t.raw('how.points')))], 3),
+    section(t('guidance.title'), [t('guidance.lead'), list(valuesOf(t.raw('guidance.points')))], 3),
+    section(t('projects.title'), [t('projects.lead'), projectLinks(APP_DEVELOPMENT.projects)], 3),
   ]);
 }

@@ -37,6 +37,7 @@ const pages = () => [
 /** The pages published in French only, in French, with the description they give search engines. */
 const frenchPages = () => [
   `${link(FR.contentPages('links.showcase_website.label'), frenchPageUrl('/showcase-website'))}: ${FR.showcaseWebsite('meta.description', { price: inEurosInFrench(BASE_PRICE) })}`,
+  `${link(FR.contentPages('links.app_development.label'), frenchPageUrl('/app-development'))}: ${FR.appDevelopment('meta.description')}`,
 ];
 
 /** Each case study: its client, kind and dates, then the description of its card. */

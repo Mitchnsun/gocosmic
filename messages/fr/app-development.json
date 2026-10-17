@@ -1,0 +1,53 @@
+{
+  "appDevelopment": {
+    "meta": {
+      "title": "Création d'application mobile et web | Cosmic Studio",
+      "description": "Faites créer votre application, sur téléphone ou sur le web : un outil pour votre équipe, une application pour vos clients ou vos membres. Projet sur devis."
+    },
+    "intro": {
+      "eyebrow": "[ Application ]",
+      "title": "Création d'application, <em>sur téléphone ou sur le web.</em>",
+      "lead": "Un outil pour votre équipe, une application pour vos clients ou vos membres, un assistant qui répond aux questions fréquentes. Nous la concevons et la développons avec vous, puis nous la mettons en ligne."
+    },
+    "builds": {
+      "eyebrow": "Ce que nous construisons",
+      "title": "Une application pour votre équipe, vos clients ou vos membres.",
+      "lead": "Sur le web, elle s'ouvre dans le navigateur, sans rien à installer. Sur téléphone, elle se télécharge depuis l'App Store pour iPhone ou depuis Google Play pour Android.",
+      "points": {
+        "team": "Un outil pour votre équipe, comme l'espace où les organisateurs du PSC Supersprint saisissent les résultats de la course",
+        "members": "Une application pour vos clients ou vos membres, comme ces résultats que les athlètes et les spectateurs suivent en direct sur leur téléphone",
+        "assistant": "Un assistant qui répond aux questions fréquentes de vos clients"
+      }
+    },
+    "how": {
+      "eyebrow": "Comment nous travaillons",
+      "title": "Un projet sur devis, payé étape par étape.",
+      "lead": "Nous définissons le projet ensemble, puis nous vous remettons un devis. Chaque application est différente : son prix se fixe une fois que nous savons ce qu'elle doit faire.",
+      "points": {
+        "payment": "Un paiement en plusieurs fois, à chaque étape du projet",
+        "ownership": "Le code et les données vous appartiennent à la livraison, une fois la facture entièrement réglée",
+        "subscription": "Après la livraison, vous pouvez passer à l'abonnement pour l'hébergement et le suivi"
+      }
+    },
+    "guidance": {
+      "eyebrow": "Accompagnement",
+      "title": "Poser les bases avant de développer.",
+      "lead": "Si vous voulez d'abord organiser le projet et voir à quoi ressemblera l'application, nous vous accompagnons au tarif journalier, sans forcément lancer le développement.",
+      "points": {
+        "architecture": "L'organisation de l'application et les choix techniques",
+        "design": "Le parcours de ses utilisateurs et des maquettes détaillées",
+        "designer": "Un·e designer partenaire, qui travaille aux côtés du développeur"
+      }
+    },
+    "projects": {
+      "eyebrow": "[ Réalisations ]",
+      "title": "Deux applications <em>déjà en ligne.</em>",
+      "lead": "Daily Fortune, l'application du studio, publiée sur l'App Store, et PSC Supersprint, une application web qui affiche les résultats d'un triathlon pendant la course."
+    },
+    "cta": {
+      "title": "Parlons de votre application.",
+      "description": "Dites-nous ce qu'elle doit faire et pour qui. Nous en parlons ensemble, puis nous vous remettons un devis.",
+      "button": "Demander un devis"
+    }
+  }
+}

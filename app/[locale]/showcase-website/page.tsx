@@ -4,7 +4,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { ReactNode } from 'react';
 
 import { AccentList } from '@/components/AccentList';
-import { ContentPage, ContentPageProjects, TermList } from '@/components/ContentPage';
+import { ContentPage, ContentPageProjects, formatCounter, TermList } from '@/components/ContentPage';
 import { ContentSection } from '@/components/ContentSection';
 import ServiceSeo from '@/components/JsonLd/ServiceSeo';
 import { BASE_PRICE, FORMULA_INCLUDES, FORMULA_PRICES } from '@/components/PricingSimulator/constants';
@@ -21,7 +21,7 @@ const ROUTE = '/showcase-website';
 const SECTION_COUNT = 4;
 
 const em = (chunks: ReactNode) => <em>{chunks}</em>;
-const counter = (position: number) => `0${position} / 0${SECTION_COUNT}`;
+const counter = (position: number) => formatCounter(position, SECTION_COUNT);
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;

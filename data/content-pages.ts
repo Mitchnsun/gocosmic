@@ -8,3 +8,9 @@ export const SHOWCASE_WEBSITE = {
   /** Case studies backing the page. */
   projects: ['choeurdespaysdumontblanc', 'mcomperat'],
 } as const satisfies { options: readonly (AddOnKey | TieredKey)[]; projects: readonly CaseStudySlug[] };
+
+/** What the app development page quotes from the rest of the site. */
+export const APP_DEVELOPMENT = {
+  /** Case studies backing the page, also suggested as related pages. */
+  projects: ['daily-fortune', 'psc-supersprint'],
+} as const satisfies { projects: readonly CaseStudySlug[] };

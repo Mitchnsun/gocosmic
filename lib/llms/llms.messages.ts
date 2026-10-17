@@ -15,6 +15,7 @@ import projects from '@/messages/en/projects.json';
 import pscSupersprint from '@/messages/en/psc-supersprint.json';
 import services from '@/messages/en/services.json';
 import story from '@/messages/en/story.json';
+import frAppDevelopment from '@/messages/fr/app-development.json';
 import frContentPages from '@/messages/fr/content-pages.json';
 import frPricing from '@/messages/fr/pricing.json';
 import frProjects from '@/messages/fr/projects.json';
@@ -75,6 +76,7 @@ export const EN = {
 
 /** French copy of the pages published in French only, and of the shared messages they quote. */
 export const FR = {
+  appDevelopment: translator(frAppDevelopment, 'appDevelopment', 'fr'),
   contentPages: translator(frContentPages, 'contentPages', 'fr'),
   pricing: translator(frPricing, 'pricing', 'fr'),
   projectsList: translator(frProjects, 'projectsList', 'fr'),

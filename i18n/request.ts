@@ -35,6 +35,7 @@ export const NAMESPACES = [
 export const PARTIAL_NAMESPACES: Record<string, readonly Language[]> = {
   'content-pages': ['fr'],
   'showcase-website': ['fr'],
+  'app-development': ['fr'],
 };
 
 /**

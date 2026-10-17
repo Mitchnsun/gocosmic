@@ -1,3 +1,4 @@
+import appDevelopment from '../messages/fr/app-development.json';
 import common from '../messages/fr/common.json';
 import contentPages from '../messages/fr/content-pages.json';
 import footer from '../messages/fr/footer.json';
@@ -20,4 +21,5 @@ export const FRENCH_MESSAGES: Record<string, unknown> = {
   ...services,
   ...contentPages,
   ...showcaseWebsite,
+  ...appDevelopment,
 };

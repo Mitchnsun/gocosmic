@@ -8,6 +8,9 @@
       "showcase_website": {
         "label": "Création de site vitrine"
       },
+      "app_development": {
+        "label": "Création d'application"
+      },
       "pricing": {
         "label": "Tarifs",
         "description": "Calculez le prix de votre abonnement, option par option."
