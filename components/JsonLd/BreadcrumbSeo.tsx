@@ -11,6 +11,7 @@ const LABELS = {
   '/pricing': 'link_pricing',
   '/projects': 'link_projects',
   '/about': 'link_about',
+  '/story': 'story_page',
   '/contact': 'link_contact',
   '/local': 'local_page',
   '/free-mockup': 'free_mockup_page',

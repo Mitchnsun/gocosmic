@@ -1,3 +1,4 @@
+import { STORY_MILESTONES } from '@/data/story';
 import { AGENT_USAGE } from '@/lib/llms/llms.shared';
 import { buildLlmsFull } from '@/lib/llms/llms-full';
 
@@ -31,6 +32,7 @@ describe('buildLlmsFull', () => {
       '## [Free mockup](https://www.gocosmic.dev/en/free-mockup)',
       '## [Projects](https://www.gocosmic.dev/en/projects)',
       '## [About](https://www.gocosmic.dev/en/about)',
+      '## [Story](https://www.gocosmic.dev/en/story)',
       '## [Website design · Geneva, Annecy](https://www.gocosmic.dev/en/website-design-geneva-annecy)',
       '## Contact',
       '## [Terms of sale](https://www.gocosmic.dev/en/terms)',
@@ -143,6 +145,19 @@ describe('buildLlmsFull', () => {
     expect(text).toContain('- **A price on display**: The subscription starts at €10 / CHF 10 a month');
     expect(text).toContain('- **French-speaking Switzerland**: Vaud, Valais, Neuchâtel, Fribourg');
     expect(text).toContain('- **Then you decide**: The mockup arrives by email within 48 hours');
+  });
+
+  it('tells the story page milestone by milestone, each led by its date', () => {
+    const story = text.slice(text.indexOf('## [Story]'), text.indexOf('## [Website design'));
+
+    expect(story).toContain('Cosmic Studio, from his first business in 2016 to settling in Chêne-Bougeries.');
+    expect(story).toContain('- **Origins · Duingt**: Matthieu comes from Duingt, on the shores of Lake Annecy.');
+    expect(story).toContain('- **17 October 2016 · The EIRL is founded**: Matthieu sets up');
+    expect(story).toContain('- **2025 · The Go Cosmic brand is created**\n');
+    expect(story).toContain(
+      "- **In progress · Affiliation with FER Genève**: Matthieu's Swiss sole proprietorship is being affiliated with FER Genève."
+    );
+    expect(story.match(/^- \*\*/gm)).toHaveLength(STORY_MILESTONES.length);
   });
 
   it('quotes the terms of sale word for word, and no other legal page', () => {

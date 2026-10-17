@@ -12,12 +12,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - A new Pricing page, linked from the footer, the homepage, the subscription column, the local page and the Services page (now simply called "Services", with the two plans and their starting price), where visitors find the two free offers, each with its own button, then build their subscription and see the monthly price
 - A "Help me choose" guide above the simulator, open from the start on a first question with three large choices, then one question at a time: a few questions tick the options that fit, or point to a conversation or a quote when the need goes beyond the subscription
 - On phones, a bar at the bottom of the screen keeps the estimated price and the free mockup button in view while scrolling through the options
+- A new Story page, linked from the About page, tells Matthieu Compérat's path and the studio's milestones on a timeline, from his start as a developer in 2012 and his first business in 2016 to the move to Chêne-Bougeries; search engines also get the studio's founding date
 
 ### Changed
 
 - The simulator first asks whether the visitor already has a domain name, gives news and AI-assisted articles their own rhythm and price apart from changes to the pages, folds less common options under "More options", introduced by a sentence that says what they are for, marks each step of its sliders, explains every option in plain words and says whether the plan commits for 12 months; the site monitoring option is gone, and changes to the pages twice a month, once a week or as often as needed now cost 50, 75 and 250 a month
 - The terms of sale are reviewed: yearly billing paid within 30 days or a monthly payment schedule, by bank transfer; the studio's VAT status and what happens if it changes; Swiss law for every client; which options run for a year (the domain name and the email address included) and which stay once added; and clauses on delays, liability and the ownership of a one-off project's code, which the services FAQ now states the same way
 - The projects now open with Coach'n Pulse and end with the choir's mockup, and the PSC Supersprint case study describes its live results on web and mobile, for athletes and spectators
+- The legal notice and the terms of sale now state that the studio's Swiss sole proprietorship is being affiliated with FER Genève
 
 ## [2.4.5] - 2026-10-15
 

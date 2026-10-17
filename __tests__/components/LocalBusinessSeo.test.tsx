@@ -34,6 +34,7 @@ describe('LocalBusinessSeo', () => {
         url: 'https://www.gocosmic.dev',
         image: 'https://www.gocosmic.dev/og-default.jpg',
         email: 'contact@gocosmic.dev',
+        foundingDate: '2016-10-17',
         founder: { '@type': 'Person', '@id': 'https://www.gocosmic.dev/#person', name: 'Matthieu Compérat' },
         address: {
           '@type': 'PostalAddress',

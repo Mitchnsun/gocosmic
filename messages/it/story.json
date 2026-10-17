@@ -1,0 +1,55 @@
+{
+  "story": {
+    "meta": {
+      "title": "Storia · Cosmic Studio, da Duingt a Chêne-Bougeries",
+      "description": "Il percorso di Matthieu Compérat e le tappe di Cosmic Studio, dai suoi inizi come sviluppatore nel 2012 fino all'insediamento a Chêne-Bougeries."
+    },
+    "eyebrow": "[ Storia ]",
+    "title": "Da Duingt a Chêne-Bougeries, <em>la storia dello studio.</em>",
+    "lead": "Il percorso di Matthieu Compérat e le tappe di Cosmic Studio, dalla sua prima impresa nel 2016 fino all'insediamento a Chêne-Bougeries.",
+    "steps": {
+      "origins": {
+        "date": "Origini",
+        "title": "Duingt",
+        "description": "Matthieu è originario di Duingt, sulle rive del lago di Annecy."
+      },
+      "developer": {
+        "date": "2012",
+        "title": "Inizi da sviluppatore",
+        "description": "Matthieu inizia come sviluppatore. Crea siti e app, prima per grandi aziende."
+      },
+      "eirl": {
+        "date": "17 ottobre 2016",
+        "title": "Nascita dell'EIRL",
+        "description": "Matthieu crea la sua impresa individuale a responsabilità limitata (EIRL, entreprise individuelle à responsabilité limitée), iscritta a Parigi, con il nome commerciale Matthieu Compérat."
+      },
+      "duingt": {
+        "date": "2023",
+        "title": "Ritorno a Duingt",
+        "description": "Matthieu torna a Duingt e vi trasferisce la sua EIRL."
+      },
+      "goCosmic": {
+        "date": "2025",
+        "title": "Nascita del marchio Go Cosmic"
+      },
+      "dailyFortune": {
+        "date": "Ottobre 2025",
+        "title": "Uscita di Daily Fortune",
+        "description": "La prima app dello studio."
+      },
+      "cosmicStudio": {
+        "date": "2026",
+        "title": "Go Cosmic diventa Cosmic Studio"
+      },
+      "cheneBougeries": {
+        "date": "Ottobre 2026",
+        "title": "Insediamento a Chêne-Bougeries"
+      },
+      "fer": {
+        "date": "In corso",
+        "title": "Affiliazione alla FER Genève",
+        "description": "La ditta individuale svizzera di Matthieu è in corso di affiliazione alla FER Genève."
+      }
+    }
+  }
+}

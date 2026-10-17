@@ -35,6 +35,15 @@ export const routing = defineRouting({
       it: '/chi-siamo',
     }),
 
+    // Story page: the founder's path and the studio's milestones, linked from the about page
+    '/story': localized({
+      en: '/story',
+      fr: '/histoire',
+      es: '/historia',
+      de: '/geschichte',
+      it: '/storia',
+    }),
+
     // Services page
     '/services': localized({
       en: '/services',

@@ -1,0 +1,55 @@
+{
+  "story": {
+    "meta": {
+      "title": "Story · Cosmic Studio, from Duingt to Chêne-Bougeries",
+      "description": "Matthieu Compérat's path and the milestones of Cosmic Studio, from his start as a developer in 2012 to settling in Chêne-Bougeries."
+    },
+    "eyebrow": "[ Story ]",
+    "title": "From Duingt to Chêne-Bougeries, <em>the studio's story.</em>",
+    "lead": "Matthieu Compérat's path and the milestones of Cosmic Studio, from his first business in 2016 to settling in Chêne-Bougeries.",
+    "steps": {
+      "origins": {
+        "date": "Origins",
+        "title": "Duingt",
+        "description": "Matthieu comes from Duingt, on the shores of Lake Annecy."
+      },
+      "developer": {
+        "date": "2012",
+        "title": "Starting out as a developer",
+        "description": "Matthieu starts out as a developer. He builds websites and apps, first for large companies."
+      },
+      "eirl": {
+        "date": "17 October 2016",
+        "title": "The EIRL is founded",
+        "description": "Matthieu sets up his sole proprietorship with limited liability (EIRL, entreprise individuelle à responsabilité limitée), registered in Paris under the trading name Matthieu Compérat."
+      },
+      "duingt": {
+        "date": "2023",
+        "title": "Back to Duingt",
+        "description": "Matthieu returns to Duingt and moves his EIRL there."
+      },
+      "goCosmic": {
+        "date": "2025",
+        "title": "The Go Cosmic brand is created"
+      },
+      "dailyFortune": {
+        "date": "October 2025",
+        "title": "Daily Fortune is released",
+        "description": "The studio's first app."
+      },
+      "cosmicStudio": {
+        "date": "2026",
+        "title": "Go Cosmic becomes Cosmic Studio"
+      },
+      "cheneBougeries": {
+        "date": "October 2026",
+        "title": "Settling in Chêne-Bougeries"
+      },
+      "fer": {
+        "date": "In progress",
+        "title": "Affiliation with FER Genève",
+        "description": "Matthieu's Swiss sole proprietorship is being affiliated with FER Genève."
+      }
+    }
+  }
+}

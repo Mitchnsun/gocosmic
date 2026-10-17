@@ -14,6 +14,7 @@ import pricingPage from '@/messages/en/pricing-page.json';
 import projects from '@/messages/en/projects.json';
 import pscSupersprint from '@/messages/en/psc-supersprint.json';
 import services from '@/messages/en/services.json';
+import story from '@/messages/en/story.json';
 
 /** A plain-text translator: rich-text tags (`<em>`, `<link>`) are dropped, their content kept. */
 export interface Translator {
@@ -64,4 +65,5 @@ export const EN = {
   projects: translator({ ...projects, ...pscSupersprint }),
   projectsList: translator(projects, 'projectsList'),
   services: translator(services, 'services'),
+  story: translator(story, 'story'),
 };

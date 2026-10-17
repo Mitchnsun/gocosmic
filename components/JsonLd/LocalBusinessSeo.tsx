@@ -1,4 +1,12 @@
-import { BRAND_NAME, CONTACT_EMAIL, FOUNDER_NAME, LEGACY_BRAND_NAME, SITE_URL, STUDIO_ADDRESS } from '@/lib/config';
+import {
+  BRAND_NAME,
+  CONTACT_EMAIL,
+  FOUNDER_NAME,
+  FOUNDING_DATE,
+  LEGACY_BRAND_NAME,
+  SITE_URL,
+  STUDIO_ADDRESS,
+} from '@/lib/config';
 
 import { JsonLd } from './JsonLd';
 import { getLocalizedLocalBusinessData } from './JsonLd.utils';
@@ -23,6 +31,7 @@ export default function LocalBusinessSeo({ locale }: LocalBusinessSeoProps) {
         url: SITE_URL,
         image: `${SITE_URL}/og-default.jpg`,
         email: CONTACT_EMAIL,
+        foundingDate: FOUNDING_DATE,
         founder: { '@type': 'Person', '@id': `${SITE_URL}/#person`, name: FOUNDER_NAME },
         address: { '@type': 'PostalAddress', ...STUDIO_ADDRESS },
         areaServed,

@@ -80,14 +80,14 @@
       },
       "eyebrow": "Informations légales",
       "title": "Mentions légales",
-      "updated": "Dernière mise à jour : 16 octobre 2026",
+      "updated": "Dernière mise à jour : 17 octobre 2026",
       "intro": "Ces mentions légales identifient l'éditeur du site www.gocosmic.dev et précisent les responsabilités liées à son utilisation.",
       "sections": [
         {
           "title": "Éditeur",
           "body": [
             "Site : www.gocosmic.dev.",
-            "Éditeur : raison individuelle Matthieu Compérat, non inscrite au registre du commerce, exerçant sous le nom commercial Cosmic Studio (anciennement Go Cosmic).",
+            "Éditeur : raison individuelle Matthieu Compérat, non inscrite au registre du commerce, en cours d'affiliation à la FER Genève, exerçant sous le nom commercial Cosmic Studio (anciennement Go Cosmic).",
             "Adresse : chemin de la Montagne 100, 1224 Chêne-Bougeries, Suisse.",
             "Contact : support@gocosmic.dev."
           ]
@@ -147,7 +147,7 @@
         {
           "title": "Prestataire",
           "body": [
-            "Le prestataire est Cosmic Studio, nom commercial de la raison individuelle Matthieu Compérat, non inscrite au registre du commerce, chemin de la Montagne 100, 1224 Chêne-Bougeries, Suisse. Contact : support@gocosmic.dev."
+            "Le prestataire est Cosmic Studio, nom commercial de la raison individuelle Matthieu Compérat, non inscrite au registre du commerce, en cours d'affiliation à la FER Genève, chemin de la Montagne 100, 1224 Chêne-Bougeries, Suisse. Contact : support@gocosmic.dev."
           ]
         },
         {

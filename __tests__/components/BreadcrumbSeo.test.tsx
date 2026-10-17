@@ -75,6 +75,22 @@ describe('BreadcrumbSeo', () => {
   });
 
   it.each([
+    ['en', 'Story', 'https://www.gocosmic.dev/en/story'],
+    ['de', 'Story', 'https://www.gocosmic.dev/de/geschichte'],
+  ])('names the story page, at its %s URL', (locale, name, item) => {
+    vi.mocked(useLocale).mockReturnValue(locale);
+    render(<BreadcrumbSeo route="/story" />);
+
+    expect(jsonLdScriptMock).toHaveBeenCalledWith(
+      expect.objectContaining({
+        data: expect.objectContaining({
+          itemListElement: [expect.anything(), expect.objectContaining({ position: 2, name, item })],
+        }),
+      })
+    );
+  });
+
+  it.each([
     ['fr', 'https://www.gocosmic.dev/fr', 'https://www.gocosmic.dev/fr/a-propos'],
     ['fr-CH', 'https://www.gocosmic.dev/fr-ch', 'https://www.gocosmic.dev/fr-ch/a-propos'],
   ])('uses the %s URLs', (locale, home, about) => {
