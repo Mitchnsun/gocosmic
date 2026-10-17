@@ -6,7 +6,7 @@ describe('QuotedServices', () => {
   it('lists the three services quoted outside the subscription', () => {
     render(<QuotedServices />);
 
-    const section = screen.getByRole('region', { name: 'For your communication' });
+    const section = screen.getByRole('region', { name: 'To promote your business' });
     expect(section).toBeInTheDocument();
     expect(screen.getByText(/outside the subscription/i)).toBeInTheDocument();
     expect(screen.getAllByRole('listitem')).toHaveLength(3);

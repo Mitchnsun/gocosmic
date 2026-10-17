@@ -7,7 +7,7 @@ describe('FreeMockupPitch', () => {
     const { getByRole, getByText } = render(<FreeMockupPitch />);
 
     expect(getByRole('heading', { level: 1, name: 'See your site before you decide' })).toBeInTheDocument();
-    expect(getByText(/Tell us where you stand/)).toBeInTheDocument();
+    expect(getByText(/Leave your email address/)).toBeInTheDocument();
   });
 
   it('lists the three steps in order', () => {
@@ -31,5 +31,14 @@ describe('FreeMockupPitch', () => {
 
     expect(getByText(/only used to prepare and send your mockup/)).toBeInTheDocument();
     expect(getByRole('link', { name: 'Privacy policy' })).toHaveAttribute('href', '/privacy');
+  });
+
+  it('links to the choir case study as an example mockup', () => {
+    const { getByRole } = render(<FreeMockupPitch />);
+
+    expect(getByRole('link', { name: 'See an example mockup' })).toHaveAttribute(
+      'href',
+      '/projects/choeurdespaysdumontblanc'
+    );
   });
 });

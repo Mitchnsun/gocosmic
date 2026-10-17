@@ -28,7 +28,7 @@ export type ContactErrors = Partial<Record<ContactField, ContactErrorCode>>;
 
 /** Fields in the order they appear in the form, so the first invalid one can
  *  be focused after a failed submission. */
-export const CONTACT_FIELD_ORDER: ContactField[] = ['name', 'email', 'phone', 'company', 'need', 'message'];
+export const CONTACT_FIELD_ORDER: ContactField[] = ['name', 'email', 'message', 'phone', 'company', 'need'];
 
 /** Needs the visitor can pick, shown as chips above the message. */
 export const CONTACT_NEEDS = ['showcase', 'redesign', 'shop', 'app', 'unsure'] as const;

@@ -11,13 +11,13 @@
       "description": "Ein paar Zeilen dazu, was Sie machen, genügen für den Anfang.",
       "button": "Mein Projekt besprechen"
     },
-    "lead": "Cosmic Studio, das ist Matthieu Compérat, Entwickler in Chêne-Bougeries. Er erstellt Websites und Apps, von Genf bis Annecy.",
+    "lead": "Cosmic Studio, das ist Matthieu Compérat, Entwickler in Chêne-Bougeries. Er erstellt Websites und Apps, zwischen Genf und Annecy.",
     "path": {
       "eyebrow": "[ Werdegang ]",
       "title": "Fünfzehn Jahre im Beruf, <em>zuerst für große Unternehmen.</em>",
       "paragraphs": [
-        "Matthieu stammt aus Duingt am Annecy-See und entwickelt seit rund fünfzehn Jahren Websites und Apps. Zuerst arbeitete er für große Unternehmen und lernte dort, zuverlässige Werkzeuge zu bauen, die für alle zugänglich sind.",
-        "Mit Cosmic Studio baut er mit demselben Anspruch die Website einer Werkstatt, einer Praxis oder eines Vereins. Er probiert jede Website auf dem Handy aus, bei jeder Änderung laufen automatische Prüfungen, und er liest alles gegen, was er ausliefert. Sie sprechen mit der Person, die Ihre Website baut, vom ersten Anruf bis zur laufenden Betreuung."
+        "Matthieu stammt aus Duingt am Annecy-See und entwickelt seit rund fünfzehn Jahren Websites und Apps. Zuerst arbeitete er für große Unternehmen und lernte dort, zuverlässige Werkzeuge zu bauen, die jeder nutzen kann.",
+        "Mit Cosmic Studio setzt er denselben Anspruch bei der Website einer Werkstatt, einer Praxis oder eines Vereins um. Er testet jede Website auf dem Handy, bei jeder Änderung laufen automatische Prüfungen, und er sieht alles, was er ausliefert, noch einmal durch. Sie haben es direkt mit der Person zu tun, die Ihre Website baut, vom ersten Anruf bis zur Betreuung danach."
       ],
       "zones": {
         "ch": [
@@ -33,6 +33,7 @@
           "Anderswo · aus der Ferne"
         ]
       },
+      "story_link": "Die Geschichte des Studios lesen",
       "linkedin": "LinkedIn-Profil ansehen",
       "linkedin_aria": "LinkedIn-Profil von Matthieu Compérat (öffnet in einem neuen Tab)"
     },

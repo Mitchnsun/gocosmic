@@ -12,7 +12,7 @@
         "audit": {
           "title": "Una revisión de tu sitio actual",
           "description": "Lo que funciona, lo que ahuyenta a los visitantes y cómo aparece tu sitio en Google.",
-          "cta": "Pedir una revisión"
+          "cta": "Pedir mi revisión gratuita"
         }
       },
       "note": "Ambas son gratuitas y no te comprometen a nada."
@@ -23,7 +23,7 @@
       "items": {
         "logo": {
           "title": "Un logotipo",
-          "description": "Un logotipo a tu imagen, para tu sitio y todos tus soportes."
+          "description": "Un logotipo que te represente, para tu sitio y todos tus soportes."
         },
         "print": {
           "title": "Carteles y folletos",
@@ -54,9 +54,9 @@
         },
         "info": {
           "search_setup": "Preparamos tu sitio para Google y los demás buscadores: un título y una descripción para cada página, la información sobre tu negocio en un formato que Google entiende, el mapa del sitio y las instrucciones de lectura para los buscadores. Damos de alta tu sitio en Google Search Console, que muestra cómo lo encuentran. También añadimos un archivo que presenta tu negocio a los asistentes de inteligencia artificial.",
-          "legal": "Todo sitio debe indicar quién lo edita y qué hace con los datos de sus visitantes. Preparamos estas páginas con la información que nos das; tú las revisas y las validas, porque sigues siendo responsable de ellas.",
-          "editor": "Publicas una noticia o cambias tus horarios cuando quieras, sin esperarnos. Instalamos una herramienta de edición conectada a tu sitio y te enseñamos a usarla. El resto de tus páginas queda en nuestras manos. Si ya tienes una herramienta de edición, la retomamos cuando es posible; esa recuperación y el traslado de tus contenidos se presupuestan aparte. Este plan se contrata por periodos de 12 meses.",
-          "news": "Una sección al día muestra a tus visitantes que tu negocio está vivo: últimas obras, próximos conciertos, nueva temporada. Publicas tú mismo/a desde tu espacio de edición."
+          "legal": "Todo sitio debe indicar quién es su titular y qué hace con los datos de sus visitantes. Preparamos estas páginas con la información que nos das; tú las revisas y las validas, porque sigues siendo responsable de ellas.",
+          "editor": "Publicas una noticia o cambias tus horarios cuando quieras, sin esperarnos. Instalamos una herramienta de edición conectada a tu sitio y te enseñamos a usarla. El resto de tus páginas queda en nuestras manos. Si ya tienes una herramienta de edición, la conservamos cuando es posible; ese trabajo y el traslado de tus contenidos se presupuestan aparte. Este plan se contrata por periodos de 12 meses.",
+          "news": "Una sección al día muestra a tus visitantes que tu negocio sigue activo: últimas obras, próximos conciertos, nueva temporada. Publicas tú mismo/a desde tu espacio de edición."
         }
       },
       "options": {
@@ -87,7 +87,7 @@
           "count": "{count, plural, =0 {Ningún buzón adicional} one {# buzón adicional} other {# buzones adicionales}}",
           "decrease": "Un buzón menos",
           "increase": "Un buzón más",
-          "info": "Si trabajan varias personas, o para la junta de una asociación, cada persona puede tener su propio buzón con tu nombre y su propia contraseña. Estos buzones se contratan por periodos de 12 meses; puedes darlos de baja al final de un periodo."
+          "info": "En un equipo de varias personas, o en la junta de una asociación, cada uno puede tener su propio buzón con tu nombre y su propia contraseña. Estos buzones se contratan por periodos de 12 meses; puedes darlos de baja al final de un periodo."
         },
         "redirects": {
           "label": "Direcciones de reenvío (hasta 5)",
@@ -101,18 +101,18 @@
         },
         "booking": {
           "label": "Reserva de citas en línea",
-          "hint": "Tus clientes reservan una cita en tu agenda de Google, directamente desde tu sitio.",
-          "info": "Tus clientes ven tus huecos libres y reservan a cualquier hora, sin llamarte; no necesitan cuenta de Google. Creas tu página de reservas en Google Calendar siguiendo nuestras indicaciones y luego la añadimos a tu sitio. Google envía la confirmación y los recordatorios. Necesitas una cuenta de Google, y algunas funciones de Google requieren una suscripción de pago a Google, que no está incluida."
+          "hint": "Tus clientes reservan una cita en tu Google Calendar, directamente desde tu sitio.",
+          "info": "Tus clientes ven tus huecos libres y reservan a cualquier hora, sin llamarte; no necesitan cuenta de Google. Creas tu página de reservas en Google Calendar siguiendo nuestras indicaciones y luego la añadimos a tu sitio. Google envía la confirmación y los recordatorios. Necesitas una cuenta de Google; algunas funciones requieren una suscripción de pago a Google, que no está incluida."
         },
         "reviews": {
           "label": "Las opiniones de tus clientes en tu sitio",
-          "hint": "Una selección de opiniones de tus clientes, con su fecha, actualizada con regularidad.",
-          "info": "Las opiniones de otros clientes tranquilizan a quien duda en contactarte. Periódicamente seleccionamos las mejores opiniones, de tu ficha de Google o de testimonios que hayas recibido, y las copiamos en tu sitio con su fecha. En Francia, la ley exige indicar si las opiniones se verifican y por qué algunas no se publican: añadimos esa mención."
+          "hint": "Las opiniones de tus clientes, con su fecha, actualizadas con regularidad.",
+          "info": "Las opiniones de otros clientes tranquilizan a un visitante que duda en contactarte. Mostramos en tu sitio las opiniones de tu ficha de Google y los testimonios que hayas recibido, con su fecha, y las actualizamos con regularidad. En Francia, la ley exige indicar si las opiniones se verifican y por qué algunas no se publican: añadimos esa mención."
         },
         "english": {
           "label": "Tu sitio en inglés",
           "hint": "Una versión completa en inglés de tu sitio, al día con su versión principal.",
-          "info": "Una versión en inglés permite que los visitantes que no leen el idioma principal de tu sitio te entiendan y te contacten. Traducimos nosotros todas tus páginas, añadimos un selector de idioma y traducimos también tus cambios sin contarlos dos veces. Para otro idioma, o una traducción a cargo de un traductor/a profesional, te hacemos un presupuesto aparte. Esta opción se contrata por periodos de 12 meses."
+          "info": "Una versión en inglés permite que los visitantes que no leen el idioma principal de tu sitio te entiendan y te contacten. Traducimos nosotros todas tus páginas, añadimos un selector de idioma y traducimos también tus cambios sin contarlos dos veces. Para otro idioma, o una traducción a cargo de un/a traductor/a profesional, te hacemos un presupuesto aparte. Esta opción se contrata por periodos de 12 meses."
         },
         "news": {
           "label": "Noticias que publicamos por ti",
@@ -123,7 +123,7 @@
             "monthly": "1 noticia al mes",
             "weekly": "1 noticia por semana"
           },
-          "info": "Una sección al día muestra a tus visitantes que tu negocio está vivo: últimas obras, próximos conciertos, nueva temporada. Creamos la sección y luego publicamos lo que nos envías por correo, al ritmo elegido. Estas publicaciones no se cuentan entre tus cambios de contenido. Puedes reducir el ritmo con un mes de preaviso; la baja completa se hace al final de un periodo de 12 meses."
+          "info": "Una sección al día muestra a tus visitantes que tu negocio sigue activo: últimas obras, próximos conciertos, nueva temporada. Creamos la sección y luego publicamos lo que nos envías por correo, al ritmo elegido. Estas publicaciones no se cuentan entre tus cambios de contenido. Puedes reducir el ritmo con un mes de preaviso; la baja completa se hace al final de un periodo de 12 meses."
         },
         "seo": {
           "label": "Seguimiento de tu posición en Google",
@@ -133,7 +133,7 @@
             "quarterly": "Cada tres meses",
             "monthly": "Cada mes"
           },
-          "info": "Tu plan incluye los ajustes para que te encuentren en Google; esta opción los mantiene vivos en el tiempo. Al ritmo elegido, revisamos cómo aparece tu sitio en búsquedas como «tu oficio + tu ciudad», ajustamos tus páginas y te enviamos un informe escrito. Tu ficha de Google Maps y los directorios siguen a tu cargo. No prometemos ninguna posición concreta en Google. Esta opción se contrata por periodos de 12 meses."
+          "info": "Tu plan incluye los ajustes para que te encuentren en Google; esta opción los mantiene al día con el tiempo. Al ritmo elegido, revisamos cómo aparece tu sitio en búsquedas como «tu oficio + tu ciudad», ajustamos tus páginas y te enviamos un informe escrito. Tu ficha de Google Maps y los directorios siguen a tu cargo. No prometemos ninguna posición concreta en Google. Esta opción se contrata por periodos de 12 meses."
         },
         "analytics": {
           "label": "Estadísticas de visitas",
@@ -162,7 +162,7 @@
             "weekly": "1 artículo por semana",
             "thrice_weekly": "3 artículos por semana"
           },
-          "info": "Escribir artículos con regularidad lleva tiempo. Los redactamos por ti con ayuda de la inteligencia artificial, a partir de la información sobre tu negocio. Juntos elegimos dónde publicarlos, en un blog o en una sección de artículos, según su tema. Eliges revisar cada artículo antes de publicarlo o dejar que lo publiquemos directamente. Los artículos no se cuentan entre tus cambios de contenido. Puedes reducir el ritmo con un mes de preaviso; la baja completa se hace al final de un periodo de 12 meses.",
+          "info": "Escribir artículos con regularidad lleva tiempo. Los redactamos por ti con ayuda de la inteligencia artificial, a partir de la información sobre tu negocio. Juntos elegimos dónde publicarlos, en un blog o en una sección de artículos, según su tema. Tú eliges si revisas cada artículo antes de publicarlo o si lo publicamos directamente. Los artículos no se cuentan entre tus cambios de contenido. Puedes reducir el ritmo con un mes de preaviso; la baja completa se hace al final de un periodo de 12 meses.",
           "info_tool": "Según tu herramienta de edición, podemos usar un servicio especializado que elige los temas a partir de lo que la gente busca en Google."
         }
       },
@@ -171,7 +171,7 @@
         "help": "Es la dirección de tu sitio, por ejemplo {domain}.",
         "no": "No, registradlo por mí",
         "yes": "Sí, ya tengo uno",
-        "own_note": "Conservas tu nombre de dominio y tus direcciones de correo actuales. Si quieres ayuda para usarlos con tu nuevo sitio, lo hablamos juntos y te hacemos un presupuesto."
+        "own_note": "Conservas tu nombre de dominio y tus direcciones de correo actuales. Si quieres ayuda para usarlos con tu nuevo sitio, lo hablamos y te hacemos un presupuesto."
       },
       "pages": {
         "label": "Número de páginas",
@@ -187,7 +187,7 @@
       },
       "updates": {
         "label": "Cambios en tus páginas",
-        "hint": "Nos envías tus cambios por correo: textos, fotos, horarios. Los publicamos sin coste adicional por cada petición. Las noticias y los artículos tienen su propia opción.",
+        "hint": "Nos envías tus cambios por correo: textos, fotos, horarios. Los publicamos sin cobrarte nada extra por cada petición. Las noticias y los artículos tienen su propia opción.",
         "off": "1 vez al año (incluido)",
         "slider_label": "Ritmo de los cambios",
         "disabled_hint": "Marca la casilla para elegir un ritmo.",
@@ -212,7 +212,7 @@
       "info_label": "Más información: {option}",
       "commitment": "Compromiso de 1 año",
       "commitment_line": {
-        "none": "Sin permanencia: se puede cancelar cada mes.",
+        "none": "Sin permanencia: cancelable mes a mes.",
         "periods": "Suscripción por periodos de 12 meses, porque incluye: {items}."
       },
       "commitment_items": {
@@ -263,13 +263,13 @@
         "label": "Sitio, alojamiento y seguimiento",
         "price": "Desde {price}",
         "period": "/ mes",
-        "description": "Tu sitio está en línea y al día sin que tengas que ocuparte de nada. El precio depende de lo que necesites: número de páginas, nombre de dominio, dirección de correo, cambios.",
+        "description": "Tu sitio está en línea y al día, sin que tengas que ocuparte de nada y sin desembolsar una gran suma al principio. El precio depende de lo que necesites: número de páginas, nombre de dominio, dirección de correo, cambios.",
         "features": {
           "included": "Incluidos: alojamiento, conexión segura y ajustes para que te encuentren en Google",
-          "options": "Opciones que puedes añadir cuando las necesites",
+          "options": "Opciones que puedes añadir cuando las necesites, sin rehacerlo todo",
           "mockup": "Una maqueta gratuita antes de decidirte"
         },
-        "cta": "Configurar mi suscripción"
+        "cta": "Calcular mi precio"
       },
       "guidance": {
         "title": "Acompañamiento",
@@ -287,7 +287,7 @@
         "title": "Refuerzo",
         "label": "Sitio existente, equipo reforzado",
         "price": "Tarifa por día",
-        "description": "Para hacer evolucionar un sitio que ya tienes, ya sea con mejoras técnicas o con nuevas funcionalidades, con uno o varios desarrolladores/as colaboradores/as según el alcance del proyecto.",
+        "description": "Para mejorar un sitio que ya tienes, a nivel técnico o con nuevas funcionalidades, con uno o varios desarrolladores/as colaboradores/as según el alcance del proyecto.",
         "features": {
           "technical": "Mejora técnica: rendimiento, seguridad, actualizaciones",
           "features": "Nuevas funcionalidades en un sitio existente",
@@ -322,7 +322,7 @@
         "legend": "¿En qué punto estás?",
         "new": "Todavía no tengo sitio web",
         "existing": "Ya tengo un sitio web",
-        "custom": "Quiero vender en línea, un área de socios o una aplicación"
+        "custom": "Quiero una tienda en línea, un área de socios o una aplicación"
       },
       "existing": {
         "legend": "¿Qué quieres hacer con él?",

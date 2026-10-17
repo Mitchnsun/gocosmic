@@ -1,0 +1,55 @@
+{
+  "story": {
+    "meta": {
+      "title": "Histoire · Cosmic Studio, de Duingt à Chêne-Bougeries",
+      "description": "Le parcours de Matthieu Compérat et les étapes de Cosmic Studio, de ses débuts de développeur en 2012 à son installation à Chêne-Bougeries."
+    },
+    "eyebrow": "[ Histoire ]",
+    "title": "De Duingt à Chêne-Bougeries, <em>l'histoire du studio.</em>",
+    "lead": "Matthieu Compérat est développeur depuis 2012 et a créé sa première entreprise en 2016.",
+    "steps": {
+      "origins": {
+        "date": "Origines",
+        "title": "Duingt",
+        "description": "Matthieu est originaire de Duingt, au bord du lac d'Annecy."
+      },
+      "developer": {
+        "date": "2012",
+        "title": "Débuts de développeur",
+        "description": "Il crée des sites et des applications, d'abord pour de grandes entreprises."
+      },
+      "eirl": {
+        "date": "17 octobre 2016",
+        "title": "Création de l'EIRL",
+        "description": "Son entreprise individuelle à responsabilité limitée est immatriculée à Paris, sous le nom commercial Matthieu Compérat."
+      },
+      "duingt": {
+        "date": "2023",
+        "title": "Retour à Duingt",
+        "description": "Il y transfère son EIRL."
+      },
+      "goCosmic": {
+        "date": "2025",
+        "title": "Création de la marque Go Cosmic"
+      },
+      "dailyFortune": {
+        "date": "Octobre 2025",
+        "title": "Sortie de Daily Fortune",
+        "description": "La première application du studio."
+      },
+      "cosmicStudio": {
+        "date": "2026",
+        "title": "Go Cosmic devient Cosmic Studio"
+      },
+      "cheneBougeries": {
+        "date": "Octobre 2026",
+        "title": "Installation à Chêne-Bougeries"
+      },
+      "fer": {
+        "date": "En cours",
+        "title": "Affiliation à la FER Genève",
+        "description": "La raison individuelle suisse de Matthieu est en cours d'affiliation à la FER Genève."
+      }
+    }
+  }
+}

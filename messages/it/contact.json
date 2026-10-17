@@ -22,7 +22,7 @@
         },
         "email": {
           "label": "Indirizzo e-mail",
-          "placeholder": "giulia@esempio.fr",
+          "placeholder": "giulia@esempio.it",
           "placeholderSwiss": "giulia@esempio.ch"
         },
         "message": {
@@ -63,7 +63,7 @@
         "need_invalid": "Scegli un'opzione dall'elenco."
       },
       "success": {
-        "title": "Grazie. Matthieu ti risponde rapidamente.",
+        "title": "Grazie. Matthieu ti risponderà a breve.",
         "description": "Il tuo messaggio è arrivato. Matthieu ti scriverà per chiarire alcuni punti, poi ti proporrà un mockup gratuito, se ti interessa.",
         "back": "Invia un altro messaggio"
       }

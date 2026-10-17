@@ -6,13 +6,13 @@
     },
     "eyebrow": "[ À propos ]",
     "title": "Un petit studio, <em>pour que vos clients vous trouvent.</em>",
-    "lead": "Cosmic Studio, c'est Matthieu Compérat, développeur installé à Chêne-Bougeries. Il crée des sites et des applications, de Genève à Annecy.",
+    "lead": "Cosmic Studio, c'est Matthieu Compérat, développeur installé à Chêne-Bougeries. Il crée des sites et des applications, entre Genève et Annecy.",
     "path": {
       "eyebrow": "[ Parcours ]",
       "title": "Quinze ans de métier, <em>d'abord pour de grandes entreprises.</em>",
       "paragraphs": [
-        "Originaire de Duingt, au bord du lac d'Annecy, Matthieu développe des sites et des applications depuis une quinzaine d'années. Il a d'abord travaillé pour de grandes entreprises, où il a appris à construire des outils fiables et accessibles à tous.",
-        "Avec Cosmic Studio, il construit avec la même exigence le site d'un atelier, d'un cabinet ou d'une association. Il essaie chaque site sur téléphone, des vérifications automatiques tournent à chaque modification, et il relit tout ce qu'il livre. Vous parlez à la personne qui construit votre site, du premier appel jusqu'au suivi."
+        "Originaire de Duingt, au bord du lac d'Annecy, Matthieu développe des sites et des applications depuis une quinzaine d'années. Il a d'abord travaillé pour de grandes entreprises, où il a appris à fabriquer des outils fiables, que tout le monde peut utiliser.",
+        "Avec Cosmic Studio, il apporte la même exigence au site d'un atelier, d'un cabinet ou d'une association. Il teste chaque site sur téléphone, des vérifications automatiques se lancent à chaque modification et il relit tout ce qu'il livre. Vous avez affaire à la personne qui construit votre site, du premier appel au suivi."
       ],
       "zones": {
         "ch": [
@@ -28,6 +28,7 @@
           "Ailleurs · à distance"
         ]
       },
+      "story_link": "Lire l'histoire du studio",
       "linkedin": "Voir le profil LinkedIn",
       "linkedin_aria": "Profil LinkedIn de Matthieu Compérat (s'ouvre dans un nouvel onglet)"
     },

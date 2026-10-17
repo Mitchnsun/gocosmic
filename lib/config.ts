@@ -11,6 +11,9 @@ export const LEGACY_BRAND_NAME = 'Go Cosmic';
 /** Founder of the studio, declared as a person in structured data. */
 export const FOUNDER_NAME = 'Matthieu Compérat';
 
+/** Creation date of the studio's first business, the EIRL of 17 October 2016, told on the story page. */
+export const FOUNDING_DATE = '2016-10-17';
+
 /** Public contact address, shown on the contact page and declared in structured data. */
 export const CONTACT_EMAIL = 'contact@gocosmic.dev';
 

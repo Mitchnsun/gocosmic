@@ -51,14 +51,14 @@
         }
       },
       "errors": {
-        "name_length": "Merci d’indiquer un nom de 2 à 100 caractères.",
-        "email_invalid": "Merci d’indiquer une adresse e-mail valide.",
+        "name_length": "Merci d'indiquer un nom de 2 à 100 caractères.",
+        "email_invalid": "Merci d'indiquer une adresse e-mail valide.",
         "message_length": "Le message doit contenir entre 10 et 5000 caractères.",
-        "phone_invalid": "Merci d’indiquer un numéro de téléphone valide.",
+        "phone_invalid": "Merci d'indiquer un numéro de téléphone valide.",
         "company_length": "La description de votre activité est trop longue.",
         "rate_limited": "Vous avez déjà envoyé plusieurs messages. Réessayez plus tard ou écrivez-nous par e-mail.",
         "retry_later": "Votre message n'a pas pu être envoyé pour le moment. Réessayez plus tard ou écrivez-nous par e-mail.",
-        "server": "Le message n’a pas pu être envoyé. Réessayez ou écrivez-nous par e-mail.",
+        "server": "Le message n'a pas pu être envoyé. Réessayez ou écrivez-nous par e-mail.",
         "network": "Connexion perdue. Vérifiez votre réseau et réessayez.",
         "need_invalid": "Merci de choisir une option dans la liste."
       },
@@ -68,7 +68,7 @@
         "back": "Envoyer un autre message"
       }
     },
-    "lead": "Écrivez-nous un message ou réservez un appel de 20 minutes. Dans les deux cas, vous avez affaire à Matthieu.",
+    "lead": "Écrivez-nous un message ou réservez un appel de 20 minutes. Dans les deux cas, c'est Matthieu qui vous répond.",
     "details": {
       "aria_label": "Coordonnées",
       "email_label": "E-mail",
@@ -86,12 +86,12 @@
     },
     "booking": {
       "title": "Choisissez un créneau de 20 minutes",
-      "via": "via Google Calendar",
-      "consent": "L'agenda de réservation est fourni par Google Calendar, qui dépose ses propres cookies. Il ne se charge que si vous le demandez.",
+      "via": "via Google Agenda",
+      "consent": "L'agenda de réservation est fourni par Google Agenda, qui dépose ses propres cookies. Il ne se charge que si vous le demandez.",
       "load": "Afficher l'agenda",
       "open": "Ouvrir la page de réservation",
-      "iframe_title": "Agenda de réservation de Matthieu (Google Calendar)",
-      "note": "Le créneau se réserve directement dans l'agenda de Matthieu. La confirmation et le lien d'appel vous sont envoyés par Google Calendar.",
+      "iframe_title": "Agenda de réservation de Matthieu (Google Agenda)",
+      "note": "Le créneau se réserve directement dans l'agenda de Matthieu. La confirmation et le lien d'appel vous sont envoyés par Google Agenda.",
       "unavailable": "La réservation en ligne n'est pas encore ouverte. Écrivez-nous un message : nous vous proposons un créneau, en général dans la journée."
     }
   }

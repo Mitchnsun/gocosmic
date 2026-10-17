@@ -1,0 +1,55 @@
+{
+  "story": {
+    "meta": {
+      "title": "Geschichte · Cosmic Studio, von Duingt nach Chêne-Bougeries",
+      "description": "Der Werdegang von Matthieu Compérat und die Etappen von Cosmic Studio, von seinen Anfängen als Entwickler 2012 bis zur Niederlassung in Chêne-Bougeries."
+    },
+    "eyebrow": "[ Geschichte ]",
+    "title": "Von Duingt nach Chêne-Bougeries, <em>die Geschichte des Studios.</em>",
+    "lead": "Matthieu Compérat ist seit 2012 Entwickler und hat 2016 sein erstes Unternehmen gegründet.",
+    "steps": {
+      "origins": {
+        "date": "Herkunft",
+        "title": "Duingt",
+        "description": "Matthieu stammt aus Duingt am Annecy-See."
+      },
+      "developer": {
+        "date": "2012",
+        "title": "Anfänge als Entwickler",
+        "description": "Er erstellt Websites und Apps, zuerst für große Unternehmen."
+      },
+      "eirl": {
+        "date": "17. Oktober 2016",
+        "title": "Gründung der EIRL",
+        "description": "Sein Einzelunternehmen mit beschränkter Haftung (EIRL, entreprise individuelle à responsabilité limitée) wird unter dem Handelsnamen Matthieu Compérat in Paris eingetragen."
+      },
+      "duingt": {
+        "date": "2023",
+        "title": "Rückkehr nach Duingt",
+        "description": "Er verlegt seine EIRL dorthin."
+      },
+      "goCosmic": {
+        "date": "2025",
+        "title": "Gründung der Marke Go Cosmic"
+      },
+      "dailyFortune": {
+        "date": "Oktober 2025",
+        "title": "Veröffentlichung von Daily Fortune",
+        "description": "Die erste App des Studios."
+      },
+      "cosmicStudio": {
+        "date": "2026",
+        "title": "Aus Go Cosmic wird Cosmic Studio"
+      },
+      "cheneBougeries": {
+        "date": "Oktober 2026",
+        "title": "Niederlassung in Chêne-Bougeries"
+      },
+      "fer": {
+        "date": "Laufend",
+        "title": "Anschluss an die FER Genève",
+        "description": "Matthieus Schweizer Einzelunternehmen wird derzeit an die FER Genève angeschlossen."
+      }
+    }
+  }
+}

@@ -12,12 +12,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - A new Pricing page, linked from the footer, the homepage, the subscription column, the local page and the Services page (now simply called "Services", with the two plans and their starting price), where visitors find the two free offers, each with its own button, then build their subscription and see the monthly price
 - A "Help me choose" guide above the simulator, open from the start on a first question with three large choices, then one question at a time: a few questions tick the options that fit, or point to a conversation or a quote when the need goes beyond the subscription
 - On phones, a bar at the bottom of the screen keeps the estimated price and the free mockup button in view while scrolling through the options
+- A new Story page, linked from the About page, follows Matthieu Compérat on a timeline from his start as a developer in 2012 to the studio's move to Chêne-Bougeries, and search engines now get the studio's founding date
 
 ### Changed
 
 - The simulator first asks whether the visitor already has a domain name, gives news and AI-assisted articles their own rhythm and price apart from changes to the pages, folds less common options under "More options", introduced by a sentence that says what they are for, marks each step of its sliders, explains every option in plain words and says whether the plan commits for 12 months; the site monitoring option is gone, and changes to the pages twice a month, once a week or as often as needed now cost 50, 75 and 250 a month
 - The terms of sale are reviewed: yearly billing paid within 30 days or a monthly payment schedule, by bank transfer; the studio's VAT status and what happens if it changes; Swiss law for every client; which options run for a year (the domain name and the email address included) and which stay once added; and clauses on delays, liability and the ownership of a one-off project's code, which the services FAQ now states the same way
 - The projects now open with Coach'n Pulse and end with the choir's mockup, and the PSC Supersprint case study describes its live results on web and mobile, for athletes and spectators
+- The legal notice and the terms of sale now state that the studio's Swiss sole proprietorship is being affiliated with FER Genève
+- The homepage, Services, Pricing, free mockup and contact pages read more naturally in all five languages: the homepage opens on what the visitor gets, puts "someone who answers you" first among the reasons to choose the studio, and points to Coach'n Pulse, looked after since 2016, as an example of the care after launch
+- The subscription is presented as needing no large sum up front, its button now offers to calculate your price, and the reviews option says plainly that your Google reviews and testimonials are shown with their date
+- The free mockup form shows Swiss example addresses on the Swiss version of the site, and the contact form's example address matches the language of the page
+- The homepage shows two ways to start, the subscription and a custom project, with a link to all four on the Services page, and its hero now mentions the free mockup; the Services page presents what the studio does before its prices and ends with the free mockup offer
+- The contact form asks for the message right after the name and email, before the optional fields, and the free mockup page links to an example mockup
+- The privacy policy names Google's calendar by its French and German names, and the German terms of sale use the same words as the pricing page for the 12-month term
 
 ## [2.4.5] - 2026-10-15
 

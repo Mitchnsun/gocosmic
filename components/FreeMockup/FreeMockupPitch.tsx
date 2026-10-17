@@ -1,6 +1,8 @@
+import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import { useTranslations } from 'next-intl';
 
 import { SectionHeading } from '@/components/SectionHeading';
+import { ghostPill } from '@/design-system/pill';
 import { Link } from '@/i18n/navigation';
 
 /** The three moments of a free mockup, announced next to the form. */
@@ -23,6 +25,12 @@ export function FreeMockupPitch() {
         titleClassName="text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.02]"
         lead={t('intro')}
       />
+
+      {/* The choir's case study shows a mockup like the one offered here. */}
+      <Link href="/projects/choeurdespaysdumontblanc" className={ghostPill('h-11 self-start text-[15px]')}>
+        {t('example_link')}
+        <ArrowRightIcon className="size-4" aria-hidden="true" />
+      </Link>
 
       <section aria-labelledby="free-mockup-steps-heading" className="border-line rounded-2xl border p-6">
         <h2 id="free-mockup-steps-heading" className="font-display text-fg text-base font-semibold">

@@ -11,7 +11,10 @@ import { formatAmount } from '@/components/PricingSimulator/PricingSimulator.uti
 import { SectionHeading } from '@/components/SectionHeading';
 import { StudioIntro } from '@/components/StudioIntro';
 import { WhyStudio } from '@/components/WhyStudio';
+import { buttonVariants } from '@/design-system/button.variants';
+import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, ghostPill, PAGE_TOP } from '@/design-system/pill';
+import { Link } from '@/i18n/navigation';
 import { getCurrency, getRegion } from '@/lib/region';
 import { buildPageMetadata } from '@/lib/seo';
 
@@ -61,15 +64,21 @@ export default async function About({ params }: { params: Promise<{ locale: stri
           title={t.rich('path.title', { em })}
           paragraphs={t.raw('path.paragraphs') as string[]}
           zones={t.raw(`path.zones.${region}`) as string[]}>
-          <a
-            href="https://www.linkedin.com/in/matthieucomperat/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={t('path.linkedin_aria')}
-            className={ghostPill('mt-2 h-11 w-fit text-[15px]')}>
-            {t('path.linkedin')}
-            <LinkedInIcon className="h-4 w-4" />
-          </a>
+          <div className="mt-2 flex flex-wrap items-center gap-x-8 gap-y-3">
+            <Link href="/story" className={cn(buttonVariants({ variant: 'link', size: 'inline' }), 'min-h-11')}>
+              {t('path.story_link')}
+              <span aria-hidden="true">→</span>
+            </Link>
+            <a
+              href="https://www.linkedin.com/in/matthieucomperat/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t('path.linkedin_aria')}
+              className={ghostPill('h-11 w-fit text-[15px]')}>
+              {t('path.linkedin')}
+              <LinkedInIcon className="h-4 w-4" />
+            </a>
+          </div>
         </StudioIntro>
 
         <WhyStudio

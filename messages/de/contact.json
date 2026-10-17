@@ -22,7 +22,7 @@
         },
         "email": {
           "label": "E-Mail-Adresse",
-          "placeholder": "anna@beispiel.fr",
+          "placeholder": "anna@beispiel.de",
           "placeholderSwiss": "anna@beispiel.ch"
         },
         "message": {
@@ -68,7 +68,7 @@
         "back": "Weitere Nachricht senden"
       }
     },
-    "lead": "Schreiben Sie uns eine Nachricht oder buchen Sie ein 20-minütiges Gespräch. In beiden Fällen haben Sie es mit Matthieu zu tun.",
+    "lead": "Schreiben Sie uns eine Nachricht oder buchen Sie ein 20-minütiges Gespräch. In beiden Fällen sprechen Sie direkt mit Matthieu.",
     "details": {
       "aria_label": "Kontaktdaten",
       "email_label": "E-Mail",
@@ -86,12 +86,12 @@
     },
     "booking": {
       "title": "Wählen Sie einen Termin für ein 20-minütiges Gespräch",
-      "via": "über Google Calendar",
-      "consent": "Der Buchungskalender stammt von Google Calendar; Google setzt dabei eigene Cookies. Er wird nur geladen, wenn Sie es wünschen.",
+      "via": "über Google Kalender",
+      "consent": "Der Buchungskalender stammt von Google Kalender; Google setzt dabei eigene Cookies. Er wird nur geladen, wenn Sie es wünschen.",
       "load": "Kalender anzeigen",
       "open": "Buchungsseite öffnen",
-      "iframe_title": "Buchungskalender von Matthieu (Google Calendar)",
-      "note": "Der Termin wird direkt in Matthieus Kalender gebucht. Die Bestätigung und den Link zum Gespräch erhalten Sie von Google Calendar.",
+      "iframe_title": "Buchungskalender von Matthieu (Google Kalender)",
+      "note": "Der Termin wird direkt in Matthieus Kalender gebucht. Die Bestätigung und den Link zum Gespräch erhalten Sie von Google Kalender.",
       "unavailable": "Die Online-Buchung ist noch nicht freigeschaltet. Schreiben Sie uns eine Nachricht: Wir schlagen Ihnen einen Termin vor, meist noch am selben Tag."
     }
   }

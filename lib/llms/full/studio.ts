@@ -1,9 +1,10 @@
 import { BASE_PRICE } from '@/components/PricingSimulator/constants';
+import { STORY_MILESTONES } from '@/data/story';
 
 import { EN } from '../llms.messages';
 import { inBothCurrencies, item, keysOf, link, pageUrl, section, valuesOf } from '../llms.utils';
 
-/** The free mockup: what to send and what comes back. */
+/** The free mockup: what to send and what comes back, with the case study it points to as an example. */
 export function buildFreeMockupSection(): string {
   const t = EN.freeMockup;
   const steps = keysOf(t.raw('steps.items')).map((key) =>
@@ -12,6 +13,7 @@ export function buildFreeMockupSection(): string {
 
   return section(link(EN.footer('free_mockup_page'), pageUrl('/free-mockup')), [
     t('intro'),
+    link(t('example_link'), pageUrl('/projects/choeurdespaysdumontblanc')),
     section(t('steps.title'), [steps.join('\n')], 3),
   ]);
 }
@@ -29,6 +31,19 @@ export function buildAboutSection(): string {
     section(t('path.title'), valuesOf(t.raw('path.paragraphs')), 3),
     section(t('why.title'), [t('why.lead'), reasons.join('\n')], 3),
   ]);
+}
+
+/** Story: the founder's path and the studio's milestones, in order, each led by its date. */
+export function buildStorySection(): string {
+  const t = EN.story;
+  const steps = STORY_MILESTONES.map(({ id }) =>
+    item(
+      `${t(`steps.${id}.date`)} · ${t(`steps.${id}.title`)}`,
+      t.has(`steps.${id}.description`) ? t(`steps.${id}.description`) : undefined
+    )
+  );
+
+  return section(link(EN.footer('story_page'), pageUrl('/story')), [t('lead'), steps.join('\n')]);
 }
 
 /** The local page: where the studio meets its clients in person. */

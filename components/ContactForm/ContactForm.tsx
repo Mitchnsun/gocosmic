@@ -107,6 +107,19 @@ export const ContactForm = ({
           />
         </div>
 
+        <FormField
+          name="message"
+          multiline
+          label={t('fields.message.label')}
+          placeholder={t('fields.message.placeholder')}
+          value={values.message}
+          onChange={handleChange}
+          error={errors.message ? t(`errors.${errors.message}`) : undefined}
+          maxLength={CONTACT_LIMITS.message.max}
+          disabled={isSending}
+          required
+        />
+
         <div className="grid gap-6 md:grid-cols-2">
           <FormField
             name="phone"
@@ -143,19 +156,6 @@ export const ContactForm = ({
           onChange={handleChange}
           error={errors.need ? t(`errors.${errors.need}`) : undefined}
           disabled={isSending}
-        />
-
-        <FormField
-          name="message"
-          multiline
-          label={t('fields.message.label')}
-          placeholder={t('fields.message.placeholder')}
-          value={values.message}
-          onChange={handleChange}
-          error={errors.message ? t(`errors.${errors.message}`) : undefined}
-          maxLength={CONTACT_LIMITS.message.max}
-          disabled={isSending}
-          required
         />
 
         {/* Anti-spam honeypot — hidden from humans and assistive technology. */}

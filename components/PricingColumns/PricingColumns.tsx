@@ -1,8 +1,10 @@
+import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import type { ReactNode } from 'react';
 
 import { SectionHeading } from '@/components/SectionHeading';
 import { cn } from '@/design-system/lib/utils';
-import { CONTAINER, SECTION_Y } from '@/design-system/pill';
+import { CONTAINER, ghostPill, SECTION_Y } from '@/design-system/pill';
+import { Link } from '@/i18n/navigation';
 
 import { PricingColumn } from './PricingColumn';
 import type { PricingColumnContent } from './PricingColumns.types';
@@ -11,12 +13,14 @@ interface PricingColumnsProps {
   eyebrow: string;
   title: ReactNode;
   columns: PricingColumnContent[];
+  /** Link under the cards, e.g. to the page that shows every column. */
+  more?: PricingColumnContent['cta'];
   id?: string;
   className?: string;
 }
 
 /** The ways to work together: subscription highlighted, then guidance, reinforcement and a custom quote. */
-export function PricingColumns({ eyebrow, title, columns, id = 'pricing', className }: PricingColumnsProps) {
+export function PricingColumns({ eyebrow, title, columns, more, id = 'pricing', className }: PricingColumnsProps) {
   const titleId = `${id}-heading`;
 
   return (
@@ -28,6 +32,12 @@ export function PricingColumns({ eyebrow, title, columns, id = 'pricing', classN
             <PricingColumn key={column.title} column={column} highlighted={index === 0} />
           ))}
         </div>
+        {more && (
+          <Link href={more.href} className={ghostPill('h-11 self-start text-[15px]')}>
+            {more.text}
+            <ArrowRightIcon className="size-4" aria-hidden="true" />
+          </Link>
+        )}
       </div>
     </section>
   );

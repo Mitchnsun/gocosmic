@@ -21,6 +21,7 @@ const pages = () => [
   [link(EN.footer('free_mockup_page'), pageUrl('/free-mockup')), EN.freeMockup('meta.description')],
   [link(EN.footer('link_projects'), pageUrl('/projects')), EN.projectsList('meta.description')],
   [link(EN.footer('link_about'), pageUrl('/about')), EN.about('meta.description')],
+  [link(EN.footer('story_page'), pageUrl('/story')), EN.story('meta.description')],
   [link(EN.footer('local_page'), pageUrl('/local')), EN.local('meta.description')],
 ];
 

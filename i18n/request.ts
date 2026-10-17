@@ -16,6 +16,7 @@ export const NAMESPACES = [
   'footer',
   'home',
   'about',
+  'story',
   'services',
   'pricing',
   'pricing-page',

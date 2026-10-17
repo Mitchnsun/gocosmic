@@ -27,7 +27,7 @@ describe('PricingSimulator', () => {
     expect(within(plans).getByRole('radio', { name: /you stay in control · from €20 \/ month/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 3, name: 'We take care of everything' })).toBeInTheDocument();
     expect(screen.getByText('Your legal notice and privacy policy')).toBeInTheDocument();
-    expect(screen.getByText('The settings to be found on Google')).toBeInTheDocument();
+    expect(screen.getByText('The settings that help you get found on Google')).toBeInTheDocument();
     expect(total()).toHaveTextContent('€10');
     expect(within(recap()).getAllByRole('listitem')).toHaveLength(1);
     expect(within(recap()).getByText('No minimum term: cancel any month.')).toBeInTheDocument();
@@ -131,7 +131,7 @@ describe('PricingSimulator', () => {
     withoutDomain();
     tick(/email address in your own name/i);
 
-    const less = screen.getByRole('button', { name: 'One mailbox less' });
+    const less = screen.getByRole('button', { name: 'One fewer mailbox' });
     expect(less).toHaveAttribute('aria-disabled', 'true');
     fireEvent.click(less);
     expect(total()).toHaveTextContent('€30');
@@ -159,15 +159,15 @@ describe('PricingSimulator', () => {
     render(<PricingSimulator region="fr" />);
 
     expect(screen.getByText('Once a year (included)')).toBeInTheDocument();
-    expect(screen.getByRole('slider', { name: /rhythm of changes/i })).toHaveAttribute('data-disabled');
-    expect(screen.getByRole('slider', { name: /rhythm of changes/i })).toHaveAccessibleDescription(
-      'Tick the box to choose a rhythm.'
+    expect(screen.getByRole('slider', { name: 'How often' })).toHaveAttribute('data-disabled');
+    expect(screen.getByRole('slider', { name: 'How often' })).toHaveAccessibleDescription(
+      'Tick the box to choose how often.'
     );
 
     tick(/changes to your pages/i);
 
-    expect(screen.getByRole('slider', { name: /rhythm of changes/i })).not.toHaveAttribute('data-disabled');
-    expect(screen.queryByText('Tick the box to choose a rhythm.')).not.toBeInTheDocument();
+    expect(screen.getByRole('slider', { name: 'How often' })).not.toHaveAttribute('data-disabled');
+    expect(screen.queryByText('Tick the box to choose how often.')).not.toBeInTheDocument();
     expect(total()).toHaveTextContent('€15');
     expect(within(recap()).getByText('Changes to your pages')).toBeInTheDocument();
     // Changes can be stopped with a month's notice.
@@ -178,7 +178,7 @@ describe('PricingSimulator', () => {
     render(<PricingSimulator region="fr" />);
     tick(/changes to your pages/i);
 
-    const slider = screen.getByRole('slider', { name: /rhythm of changes/i });
+    const slider = screen.getByRole('slider', { name: 'How often' });
     fireEvent.keyDown(slider, { key: 'ArrowRight' });
     fireEvent.keyDown(slider, { key: 'ArrowRight' });
     fireEvent.keyDown(slider, { key: 'ArrowRight' });
@@ -198,7 +198,7 @@ describe('PricingSimulator', () => {
     openMoreOptions();
 
     expect(toggle).toHaveAttribute('aria-expanded', 'true');
-    tick(/following your place on google/i);
+    tick(/tracking your position on google/i);
     tick(/ai-assisted articles/i);
 
     expect(toggle).toHaveTextContent('2 ticked');

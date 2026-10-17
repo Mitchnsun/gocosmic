@@ -1,3 +1,4 @@
+import { useLocale } from 'next-intl';
 import { beforeEach, vi } from 'vitest';
 
 import { FreeMockupForm } from '@/components/FreeMockupForm';
@@ -12,6 +13,11 @@ const PLAN_CODE = encodePlanCode(makePlan());
 const submitFreeMockupRequest = vi.hoisted(() => vi.fn());
 
 vi.mock('@/app/actions/free-mockup', () => ({ submitFreeMockupRequest }));
+
+vi.mock('next-intl', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('next-intl')>();
+  return { ...actual, useLocale: vi.fn(() => 'en') };
+});
 
 /** Fills the two required fields with a valid answer. */
 const fillRequiredFields = (
@@ -408,5 +414,13 @@ describe('FreeMockupForm', () => {
 
     inFlight.settle({ status: 'success' });
     await waitFor(() => expect(getByText('Request received')).toBeInTheDocument());
+  });
+  it('shows Swiss example addresses on the Swiss version', () => {
+    vi.mocked(useLocale).mockReturnValue('en-CH');
+    const { getByLabelText } = render(<FreeMockupForm />);
+
+    expect(getByLabelText('Your email address')).toHaveAttribute('placeholder', 'you@example.ch');
+    expect(getByLabelText(/Your current website/)).toHaveAttribute('placeholder', 'your-website.ch');
+    vi.mocked(useLocale).mockReturnValue('en');
   });
 });

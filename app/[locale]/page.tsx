@@ -27,7 +27,7 @@ import { getCurrency, getRegion } from '@/lib/region';
 import { buildPageMetadata } from '@/lib/seo';
 
 const AUDIENCES = ['artisans', 'companies', 'independents', 'associations'] as const;
-const REASONS = ['ownership', 'fast', 'person', 'grows'] as const;
+const REASONS = ['person', 'fast', 'grows', 'ownership'] as const;
 /** Projects featured on the homepage; the full list lives on /projects. */
 const HOME_PROJECT_COUNT = 3;
 
@@ -57,7 +57,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     title: t(`process.${step.id}.title`),
     description: t(`process.${step.id}.description`),
   }));
-  const pricing = buildPricingColumns(tPricing, region, locale);
+  // The homepage keeps the subscription and the custom quote; /services shows all four ways.
+  const [subscription, , , custom] = buildPricingColumns(tPricing, region, locale);
   const projects = buildProjectCards(tProjects).slice(0, HOME_PROJECT_COUNT);
 
   return (
@@ -107,8 +108,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <PricingColumns
         className="border-line border-t"
         eyebrow={tPricing('eyebrow')}
-        title={tPricing('title')}
-        columns={pricing}
+        title={t('pricing.title')}
+        columns={[subscription, custom]}
+        more={{ text: t('pricing.all'), href: { pathname: '/services', hash: 'pricing' } }}
       />
 
       <section id="projects" aria-labelledby="projects-heading" className={cn('border-line border-t', SECTION_Y)}>

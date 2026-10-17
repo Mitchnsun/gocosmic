@@ -12,7 +12,7 @@
         "audit": {
           "title": "Un'analisi del tuo sito attuale",
           "description": "Cosa funziona, cosa fa scappare i visitatori e come appare il tuo sito su Google.",
-          "cta": "Richiedi un'analisi"
+          "cta": "Richiedi la mia analisi gratuita"
         }
       },
       "note": "Entrambe sono gratuite e non ti impegnano a nulla."
@@ -23,7 +23,7 @@
       "items": {
         "logo": {
           "title": "Un logo",
-          "description": "Un logo che ti somiglia, per il tuo sito e tutti i tuoi supporti."
+          "description": "Un logo che ti rappresenti, per il tuo sito e tutti i tuoi supporti."
         },
         "print": {
           "title": "Manifesti e volantini",
@@ -34,7 +34,7 @@
           "description": "I tuoi lavori, i tuoi locali e il tuo team in immagini, per il sito e i social."
         }
       },
-      "note": "Li realizziamo con partner della zona (grafico/a, fotografo/a, videomaker) e ci occupiamo noi dei rapporti con loro. Ogni servizio è oggetto di un preventivo.",
+      "note": "Li realizziamo con partner della zona (grafico/a, fotografo/a, videomaker) e ci occupiamo noi dei rapporti con loro. Per ogni servizio facciamo un preventivo.",
       "cta": "Richiedi un preventivo"
     },
     "builder": {
@@ -55,8 +55,8 @@
         "info": {
           "search_setup": "Prepariamo il tuo sito per Google e gli altri motori di ricerca: un titolo e una descrizione per ogni pagina, le informazioni sulla tua attività in un formato che Google capisce, la mappa del sito e le istruzioni di lettura per i motori di ricerca. Registriamo il tuo sito nella Search Console di Google, che mostra come viene trovato. Aggiungiamo anche un file che presenta la tua attività agli assistenti di intelligenza artificiale.",
           "legal": "Ogni sito deve indicare chi lo pubblica e cosa fa dei dati dei visitatori. Prepariamo queste pagine con le informazioni che ci dai; tu le rileggi e le approvi, perché ne resti responsabile.",
-          "editor": "Pubblichi una notizia o cambi i tuoi orari quando vuoi, senza aspettarci. Installiamo uno strumento di modifica collegato al tuo sito e ti mostriamo come usarlo. Il resto delle pagine resta nelle nostre mani. Se hai già uno strumento di modifica, lo riprendiamo quando possibile; questa ripresa e il trasferimento dei contenuti sono oggetto di un preventivo a parte. Questa formula si sottoscrive per periodi di 12 mesi.",
-          "news": "Una sezione aggiornata mostra ai visitatori che la tua attività è viva: ultimi lavori, prossimi concerti, nuova stagione. Pubblichi tu, dal tuo spazio di modifica."
+          "editor": "Pubblichi una notizia o cambi i tuoi orari quando vuoi, senza aspettarci. Installiamo uno strumento di modifica collegato al tuo sito e ti mostriamo come usarlo. Il resto delle pagine resta nelle nostre mani. Se hai già uno strumento di modifica, lo teniamo quando è possibile; questo lavoro e il trasferimento dei contenuti hanno un preventivo a parte. Questa formula si sottoscrive per periodi di 12 mesi.",
+          "news": "Una sezione aggiornata mostra ai visitatori che la tua attività è attiva e presente: ultimi lavori, prossimi concerti, nuova stagione. Pubblichi tu, dal tuo spazio di modifica."
         }
       },
       "options": {
@@ -87,7 +87,7 @@
           "count": "{count, plural, =0 {Nessuna casella in più} one {# casella in più} other {# caselle in più}}",
           "decrease": "Una casella in meno",
           "increase": "Una casella in più",
-          "info": "Se lavorate in più persone, o per il consiglio di un'associazione, ognuno può avere la sua casella a tuo nome, con la sua password. Queste caselle si sottoscrivono per periodi di 12 mesi; puoi rimuoverle alla fine di un periodo."
+          "info": "Se lavori con altre persone, o per il direttivo di un'associazione, ognuno può avere la sua casella a tuo nome, con la sua password. Queste caselle si sottoscrivono per periodi di 12 mesi; puoi rimuoverle alla fine di un periodo."
         },
         "redirects": {
           "label": "Indirizzi di inoltro (fino a 5)",
@@ -101,13 +101,13 @@
         },
         "booking": {
           "label": "La prenotazione online",
-          "hint": "I tuoi clienti prenotano un appuntamento nel tuo calendario Google, direttamente dal tuo sito.",
+          "hint": "I tuoi clienti prenotano un appuntamento nel tuo Google Calendar, direttamente dal tuo sito.",
           "info": "I tuoi clienti vedono gli orari liberi e prenotano a qualsiasi ora, senza chiamarti; non serve loro un account Google. Crei la tua pagina di prenotazione in Google Calendar seguendo le nostre indicazioni, poi la aggiungiamo al tuo sito. Google invia la conferma e i promemoria. Ti serve un account Google, e alcune funzioni di Google richiedono un abbonamento Google a pagamento, che non è compreso."
         },
         "reviews": {
           "label": "Le recensioni dei tuoi clienti sul tuo sito",
-          "hint": "Una selezione di recensioni dei tuoi clienti, con la loro data, aggiornata regolarmente.",
-          "info": "Le recensioni di altri clienti rassicurano chi esita a contattarti. Periodicamente selezioniamo le recensioni migliori, dalla tua scheda Google o dalle testimonianze che hai ricevuto, e le riportiamo sul tuo sito con la loro data. In Francia la legge chiede di indicare se le recensioni sono verificate e perché alcune non vengono pubblicate: aggiungiamo questa nota."
+          "hint": "Le recensioni dei tuoi clienti, con la loro data, aggiornate regolarmente.",
+          "info": "Le recensioni di altri clienti rassicurano un visitatore che esita a contattarti. Mostriamo sul tuo sito le recensioni della tua scheda Google e le testimonianze che hai ricevuto, con la loro data, e le aggiorniamo regolarmente. In Francia la legge chiede di indicare se le recensioni sono verificate e perché alcune non vengono pubblicate: aggiungiamo questa nota."
         },
         "english": {
           "label": "Il tuo sito in inglese",
@@ -123,7 +123,7 @@
             "monthly": "1 notizia al mese",
             "weekly": "1 notizia a settimana"
           },
-          "info": "Una sezione aggiornata mostra ai visitatori che la tua attività è viva: ultimi lavori, prossimi concerti, nuova stagione. Creiamo la sezione, poi pubblichiamo quello che ci mandi per e-mail, al ritmo scelto. Queste pubblicazioni non rientrano nelle tue modifiche ai contenuti. Puoi ridurre il ritmo con un mese di preavviso; l'interruzione completa avviene alla fine di un periodo di 12 mesi."
+          "info": "Una sezione aggiornata mostra ai visitatori che la tua attività è attiva e presente: ultimi lavori, prossimi concerti, nuova stagione. Creiamo la sezione, poi pubblichiamo quello che ci mandi per e-mail, al ritmo scelto. Queste pubblicazioni non rientrano nelle tue modifiche ai contenuti. Puoi ridurre il ritmo con un mese di preavviso; l'interruzione completa avviene alla fine di un periodo di 12 mesi."
         },
         "seo": {
           "label": "Monitoraggio della tua posizione su Google",
@@ -133,7 +133,7 @@
             "quarterly": "Ogni tre mesi",
             "monthly": "Ogni mese"
           },
-          "info": "La tua formula comprende le impostazioni per farti trovare su Google; questa opzione le mantiene vive nel tempo. Al ritmo scelto controlliamo come appare il tuo sito nelle ricerche come «il tuo mestiere + la tua città», aggiorniamo le pagine e ti mandiamo un resoconto scritto. La tua scheda Google Maps e gli elenchi restano gestiti da te. Non promettiamo una posizione precisa su Google. Questa opzione si sottoscrive per periodi di 12 mesi."
+          "info": "La tua formula comprende le impostazioni per farti trovare su Google; questa opzione le tiene aggiornate nel tempo. Al ritmo scelto controlliamo come appare il tuo sito nelle ricerche come «il tuo mestiere + la tua città», aggiorniamo le pagine e ti mandiamo un resoconto scritto. La tua scheda Google Maps e gli elenchi restano gestiti da te. Non promettiamo una posizione precisa su Google. Questa opzione si sottoscrive per periodi di 12 mesi."
         },
         "analytics": {
           "label": "Statistiche delle visite",
@@ -263,13 +263,13 @@
         "label": "Sito, hosting e assistenza",
         "price": "Da {price}",
         "period": "/ mese",
-        "description": "Il tuo sito è online e sempre aggiornato, senza che tu debba occupartene. Il prezzo dipende dalle tue esigenze: numero di pagine, nome a dominio, indirizzo e-mail, modifiche.",
+        "description": "Il tuo sito è online e sempre aggiornato, senza che tu debba occupartene e senza una grossa spesa iniziale. Il prezzo dipende dalle tue esigenze: numero di pagine, nome a dominio, indirizzo e-mail, modifiche.",
         "features": {
           "included": "Hosting, connessione sicura e impostazioni per farti trovare su Google compresi",
-          "options": "Opzioni da aggiungere quando ti servono",
+          "options": "Opzioni da aggiungere quando ti servono, senza rifare tutto",
           "mockup": "Un mockup gratuito prima di decidere"
         },
-        "cta": "Componi il mio abbonamento"
+        "cta": "Calcola il mio prezzo"
       },
       "guidance": {
         "title": "Accompagnamento",
@@ -322,7 +322,7 @@
         "legend": "A che punto sei?",
         "new": "Non ho ancora un sito",
         "existing": "Ho già un sito",
-        "custom": "Voglio vendere online, un'area soci o un'app"
+        "custom": "Voglio un negozio online, un'area soci o un'app"
       },
       "existing": {
         "legend": "Cosa vuoi farne?",

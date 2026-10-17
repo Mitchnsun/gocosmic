@@ -30,7 +30,7 @@ describe('PricingGuide', () => {
   it('shows its first question alone above a simulator that shows its prices at once', () => {
     render(<PricingSimulator region="fr" />);
 
-    expect(question('Where are you at?')).toBeInTheDocument();
+    expect(question('Where do you stand?')).toBeInTheDocument();
     expect(screen.getByText(/answer a few questions/i)).toBeInTheDocument();
     expect(within(guide()).queryByRole('button')).not.toBeInTheDocument();
     // A single question so far: no progress line, and the page keeps its focus.
@@ -41,17 +41,17 @@ describe('PricingGuide', () => {
 
   it('moves on when the current answer is picked again with the pointer', () => {
     render(<PricingSimulator region="fr" />);
-    pick('Where are you at?', "I don't have a website yet");
+    pick('Where do you stand?', "I don't have a website yet");
     fireEvent.click(within(guide()).getByRole('button', { name: 'Back' }));
 
-    pick('Where are you at?', "I don't have a website yet");
+    pick('Where do you stand?', "I don't have a website yet");
 
     expect(question('Who will make the changes on your site?')).toBeInTheDocument();
   });
 
   it('stays on the contact question when a channel is ticked with the pointer, several being allowed', () => {
     render(<PricingSimulator region="fr" />);
-    pick('Where are you at?', "I don't have a website yet");
+    pick('Where do you stand?', "I don't have a website yet");
     pick('Who will make the changes on your site?', 'You: I send you my changes');
     pick('Do you already have a domain name?', 'Yes, I already have one');
     pick('How many pages do you want?', 'A single page');
@@ -68,20 +68,20 @@ describe('PricingGuide', () => {
 
   it('does not move on when the keyboard took over after a pointer press', () => {
     render(<PricingSimulator region="fr" />);
-    const radio = within(question('Where are you at?')).getByRole('radio', { name: "I don't have a website yet" });
+    const radio = within(question('Where do you stand?')).getByRole('radio', { name: "I don't have a website yet" });
 
     fireEvent.pointerDown(radio);
     fireEvent.keyDown(radio, { key: 'ArrowDown' });
     fireEvent.click(radio);
 
-    expect(question('Where are you at?')).toBeInTheDocument();
+    expect(question('Where do you stand?')).toBeInTheDocument();
   });
 
   it('moves on when an answer is picked with the pointer, not with the keyboard, and goes back', () => {
     render(<PricingSimulator region="fr" />);
-    answer('Where are you at?', "I don't have a website yet");
+    answer('Where do you stand?', "I don't have a website yet");
 
-    expect(question('Where are you at?')).toBeInTheDocument();
+    expect(question('Where do you stand?')).toBeInTheDocument();
     expect(within(guide()).getByText('Question 1 of 7')).toBeInTheDocument();
 
     next();
@@ -101,7 +101,7 @@ describe('PricingGuide', () => {
 
   it('does not move on for a click that has no pointer press, even after a pointer press on a button', () => {
     render(<PricingSimulator region="fr" />);
-    pick('Where are you at?', "I don't have a website yet");
+    pick('Where do you stand?', "I don't have a website yet");
     fireEvent.pointerDown(within(guide()).getByRole('button', { name: 'Back' }));
     answer('Who will make the changes on your site?', 'You: I send you my changes');
 
@@ -111,14 +111,14 @@ describe('PricingGuide', () => {
   it('applies nothing when the form is submitted before the last question', () => {
     render(<PricingSimulator region="fr" />);
     fireEvent.click(screen.getByRole('checkbox', { name: /your site in english/i }));
-    pick('Where are you at?', "I don't have a website yet");
+    pick('Where do you stand?', "I don't have a website yet");
     fireEvent.submit(guide());
 
     expect(screen.queryByRole('button', { name: 'Replace' })).not.toBeInTheDocument();
     expect(screen.getByRole('checkbox', { name: /your site in english/i })).toBeChecked();
 
     fireEvent.click(within(guide()).getByRole('button', { name: 'Back' }));
-    pick('Where are you at?', /sell online/i);
+    pick('Where do you stand?', /online shop/i);
     fireEvent.submit(guide());
     expect(screen.getByRole('checkbox', { name: /your site in english/i })).toBeChecked();
   });
@@ -127,7 +127,7 @@ describe('PricingGuide', () => {
     render(<PricingSimulator region="fr" />);
     const liveRegions = [...guide().querySelectorAll('[aria-live="polite"]')];
 
-    pick('Where are you at?', /sell online/i);
+    pick('Where do you stand?', /online shop/i);
 
     const ending = screen.getByText(/we define the project together, then send you a quote/i);
     expect(liveRegions).toContain(ending.closest('[aria-live="polite"]'));
@@ -138,19 +138,19 @@ describe('PricingGuide', () => {
 
   it('sends a site to keep to the contact page, and a site to redo on to the questions', () => {
     render(<PricingSimulator region="fr" />);
-    pick('Where are you at?', 'I already have a website');
+    pick('Where do you stand?', 'I already have a website');
 
     answer('What do you want to do with it?', 'Keep it and get help');
     expect(screen.getByRole('link', { name: 'Talk about my project' })).toHaveAttribute('href', '/contact');
 
-    pick('What do you want to do with it?', 'Redo it');
+    pick('What do you want to do with it?', 'Rebuild it');
     expect(screen.queryByRole('link', { name: 'Talk about my project' })).not.toBeInTheDocument();
     expect(question('Who will make the changes on your site?')).toBeInTheDocument();
   });
 
   it('ticks the matching options and lands in the simulator', () => {
     render(<PricingSimulator region="fr" />);
-    pick('Where are you at?', "I don't have a website yet");
+    pick('Where do you stand?', "I don't have a website yet");
     pick('Who will make the changes on your site?', 'Me, for my news and opening hours');
     pick('Do you already have a domain name?', 'No, register one for me');
     pick('How many pages do you want?', '5 to 7 pages');
@@ -185,7 +185,7 @@ describe('PricingGuide', () => {
   it('asks before replacing options ticked by hand', () => {
     render(<PricingSimulator region="fr" />);
     fireEvent.click(screen.getByRole('checkbox', { name: /your site in english/i }));
-    pick('Where are you at?', "I don't have a website yet");
+    pick('Where do you stand?', "I don't have a website yet");
     next();
     next();
     pick('How many pages do you want?', '2 to 4 pages');
@@ -214,7 +214,7 @@ describe('PricingGuide', () => {
 
   it('applies the answers at once when nothing is ticked yet', () => {
     render(<PricingSimulator region="fr" />);
-    pick('Where are you at?', "I don't have a website yet");
+    pick('Where do you stand?', "I don't have a website yet");
     for (let step = 0; step < 5; step++) next();
 
     fireEvent.click(screen.getByRole('button', { name: 'See my plan' }));

@@ -1,0 +1,55 @@
+{
+  "story": {
+    "meta": {
+      "title": "Historia · Cosmic Studio, de Duingt a Chêne-Bougeries",
+      "description": "La trayectoria de Matthieu Compérat y las etapas de Cosmic Studio, desde sus comienzos como desarrollador en 2012 hasta su llegada a Chêne-Bougeries."
+    },
+    "eyebrow": "[ Historia ]",
+    "title": "De Duingt a Chêne-Bougeries, <em>la historia del estudio.</em>",
+    "lead": "Matthieu Compérat es desarrollador desde 2012 y creó su primera empresa en 2016.",
+    "steps": {
+      "origins": {
+        "date": "Orígenes",
+        "title": "Duingt",
+        "description": "Matthieu es originario de Duingt, a orillas del lago de Annecy."
+      },
+      "developer": {
+        "date": "2012",
+        "title": "Comienzos como desarrollador",
+        "description": "Crea sitios web y aplicaciones, primero para grandes empresas."
+      },
+      "eirl": {
+        "date": "17 de octubre de 2016",
+        "title": "Creación de la EIRL",
+        "description": "Su empresa individual de responsabilidad limitada (EIRL, entreprise individuelle à responsabilité limitée) se registra en París con el nombre comercial Matthieu Compérat."
+      },
+      "duingt": {
+        "date": "2023",
+        "title": "Regreso a Duingt",
+        "description": "Traslada allí su EIRL."
+      },
+      "goCosmic": {
+        "date": "2025",
+        "title": "Creación de la marca Go Cosmic"
+      },
+      "dailyFortune": {
+        "date": "Octubre de 2025",
+        "title": "Lanzamiento de Daily Fortune",
+        "description": "La primera aplicación del estudio."
+      },
+      "cosmicStudio": {
+        "date": "2026",
+        "title": "Go Cosmic se convierte en Cosmic Studio"
+      },
+      "cheneBougeries": {
+        "date": "Octubre de 2026",
+        "title": "Llegada a Chêne-Bougeries"
+      },
+      "fer": {
+        "date": "En curso",
+        "title": "Afiliación a la FER Genève",
+        "description": "La empresa individual suiza de Matthieu está en proceso de afiliación a la FER Genève."
+      }
+    }
+  }
+}

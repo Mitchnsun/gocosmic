@@ -25,7 +25,7 @@ function buildColumns(): string {
   return section(t('title'), [columns.join('\n')], 3);
 }
 
-/** Services: the offer, the two plans of the subscription, the trades and the questions asked before signing. */
+/** Services: the trades, the offer, the two plans of the subscription and the questions asked before signing. */
 export function buildServicesSection(): string {
   const t = EN.services;
   const months = String(CODE_HANDOVER_MONTHS);
@@ -39,8 +39,6 @@ export function buildServicesSection(): string {
 
   return section(link(EN.footer('link_services'), pageUrl('/services')), [
     t('intro.lead'),
-    buildColumns(),
-    section(t('simulator.title'), [t('simulator.lead', plans)], 3),
     section(
       t('trades.title'),
       [
@@ -50,6 +48,8 @@ export function buildServicesSection(): string {
       ],
       3
     ),
+    buildColumns(),
+    section(t('simulator.title'), [t('simulator.lead', plans)], 3),
     section(t('faq.title'), faq, 3),
   ]);
 }

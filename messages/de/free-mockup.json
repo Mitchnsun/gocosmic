@@ -6,7 +6,7 @@
     },
     "eyebrow": "[ Kostenloses Mockup ]",
     "title": "Sehen Sie Ihre Website, bevor Sie sich entscheiden",
-    "intro": "Sagen Sie uns, wo Sie stehen und welche Stimmung Ihnen vorschwebt. Wir schicken Ihnen ein Mockup Ihrer künftigen Website, kostenlos und unverbindlich.",
+    "intro": "Hinterlassen Sie Ihre E-Mail-Adresse und, wenn Sie möchten, die Stimmung, die Ihnen vorschwebt. Sie erhalten ein Mockup Ihrer Startseite, kostenlos und unverbindlich.",
     "steps": {
       "title": "So läuft es ab",
       "items": {
@@ -20,20 +20,23 @@
         },
         "deliver": {
           "title": "Dann entscheiden Sie",
-          "description": "Sie erhalten das Mockup innerhalb von 48 Stunden per E-Mail, an Werktagen. Wenn es Ihnen nicht zusagt, belassen wir es dabei, ohne Kosten für Sie."
+          "description": "Sie erhalten das Mockup innerhalb von 48 Stunden (an Werktagen) per E-Mail. Wenn es Ihnen nicht zusagt, belassen wir es dabei, ohne Kosten für Sie."
         }
       }
     },
+    "example_link": "Ein Beispiel-Mockup ansehen",
     "privacy_notice": "Ihre E-Mail-Adresse und Ihre Nachricht dienen ausschließlich dazu, Ihr Mockup zu erstellen und Ihnen zuzusenden.",
     "privacy_link": "Datenschutzerklärung",
     "form": {
       "heading": "Fordern Sie Ihr Mockup an",
-      "lead": "Nur Ihre E-Mail-Adresse ist Pflicht.",
+      "lead": "Nur Ihre E-Mail-Adresse ist Pflicht. Alles andere hilft uns, ins Schwarze zu treffen.",
       "email_label": "Ihre E-Mail-Adresse",
       "email_placeholder": "name@beispiel.de",
+      "email_placeholder_swiss": "name@beispiel.ch",
       "palette_label": "Farbstimmung",
       "website_label": "Ihre aktuelle Website",
       "website_placeholder": "ihre-website.de",
+      "website_placeholder_swiss": "ihre-website.ch",
       "wishes_label": "Was Ihnen vorschwebt",
       "wishes_placeholder": "Welche Seiten Sie brauchen, was Ihnen gefällt, was Sie lieber vermeiden möchten …",
       "wishes_counter": "{count}/{max}",

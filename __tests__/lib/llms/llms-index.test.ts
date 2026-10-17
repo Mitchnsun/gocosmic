@@ -44,6 +44,9 @@ describe('buildLlmsIndex', () => {
     expect(text).toContain(
       '- [Website design · Geneva, Annecy](https://www.gocosmic.dev/en/website-design-geneva-annecy): '
     );
+    expect(text).toContain(
+      "- [Story](https://www.gocosmic.dev/en/story): Matthieu Compérat's path and the milestones of Cosmic Studio"
+    );
   });
 
   it('lists every case study with its client, kind and dates', () => {

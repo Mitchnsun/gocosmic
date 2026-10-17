@@ -26,10 +26,10 @@ describe('ContactForm', () => {
     vi.restoreAllMocks();
   });
 
-  it('shows French placeholders by default', () => {
+  it('shows the default region placeholders', () => {
     const { getByLabelText } = render(<ContactForm />);
 
-    expect(getByLabelText(/^Email/)).toHaveAttribute('placeholder', 'camille@example.fr');
+    expect(getByLabelText(/^Email/)).toHaveAttribute('placeholder', 'camille@example.com');
     expect(getByLabelText(/^Phone/)).toHaveAttribute('placeholder', '+33 6 12 34 56 78');
     expect(getByLabelText(/^Your business/)).toHaveAttribute(
       'placeholder',

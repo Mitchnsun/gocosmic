@@ -6,7 +6,7 @@
     },
     "eyebrow": "[ Maqueta gratuita ]",
     "title": "Mira tu sitio antes de decidir",
-    "intro": "Cuéntanos en qué punto estás y qué estilo te imaginas. Te enviamos una maqueta de tu futuro sitio, gratis y sin compromiso.",
+    "intro": "Déjanos tu dirección de correo y, si quieres, el ambiente que imaginas. Recibes una maqueta de tu página de inicio, gratis y sin compromiso.",
     "steps": {
       "title": "Cómo funciona",
       "items": {
@@ -24,16 +24,19 @@
         }
       }
     },
+    "example_link": "Ver un ejemplo de maqueta",
     "privacy_notice": "Tu dirección de correo y tu mensaje solo se usan para preparar la maqueta y enviártela.",
     "privacy_link": "Política de privacidad",
     "form": {
       "heading": "Solicita tu maqueta",
-      "lead": "Solo es obligatoria tu dirección de correo.",
+      "lead": "Solo es obligatoria tu dirección de correo. El resto nos ayuda a acertar.",
       "email_label": "Tu dirección de correo",
       "email_placeholder": "tu@ejemplo.es",
+      "email_placeholder_swiss": "tu@ejemplo.ch",
       "palette_label": "Gama de colores",
       "website_label": "Tu sitio actual",
       "website_placeholder": "tu-sitio.es",
+      "website_placeholder_swiss": "tu-sitio.ch",
       "wishes_label": "Lo que tienes en mente",
       "wishes_placeholder": "Las páginas que necesitas, lo que te gusta, lo que prefieres evitar…",
       "wishes_counter": "{count}/{max}",

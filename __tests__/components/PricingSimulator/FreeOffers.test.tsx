@@ -9,7 +9,7 @@ describe('FreeOffers', () => {
     expect(screen.getByText(/free, no commitment/i)).toBeInTheDocument();
     expect(screen.getByText(/a mockup of your future website/i)).toBeInTheDocument();
     expect(screen.getByText(/a review of your current website/i)).toBeInTheDocument();
-    expect(screen.getByText(/commit you to nothing/i)).toBeInTheDocument();
+    expect(screen.getByText(/with no obligation/i)).toBeInTheDocument();
   });
 
   it('is a labelled section holding a list of offers', () => {
@@ -24,6 +24,6 @@ describe('FreeOffers', () => {
     render(<FreeOffers />);
 
     expect(screen.getByRole('link', { name: 'Request my free mockup' })).toHaveAttribute('href', '/free-mockup');
-    expect(screen.getByRole('link', { name: 'Request a review' })).toHaveAttribute('href', '/contact');
+    expect(screen.getByRole('link', { name: 'Request my free review' })).toHaveAttribute('href', '/contact');
   });
 });

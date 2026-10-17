@@ -9,7 +9,7 @@
     "hero": {
       "cta": "Go Cosmic",
       "endWords": ["vista.", "trovata.", "scelta."],
-      "subtitle": "Cosmic Studio crea siti e app per piccole imprese, indipendenti e associazioni. Facciamo in modo che ti trovino su Google, e restiamo raggiungibili anche dopo la messa online.",
+      "subtitle": "Un sito che si trova su Google, e qualcuno che ti risponde anche dopo la messa online. Cosmic Studio crea siti e app per artigiani, piccole imprese, indipendenti e associazioni.",
       "title": "La tua attività merita di essere",
       "eyebrow": {
         "ch": "Studio web & mobile · Ginevra",
@@ -25,9 +25,9 @@
           "highlight": "Risposta",
           "text": "rapida"
         },
-        "contact": {
-          "highlight": "Un unico",
-          "text": "referente"
+        "mockup": {
+          "highlight": "Mockup",
+          "text": "gratuito"
         },
         "area": {
           "ch": {
@@ -53,7 +53,7 @@
       "design": {
         "label": "T-2 · Mockup",
         "title": "Prima vedi, poi decidi",
-        "description": "Prepariamo un mockup della tua home page. Se hai già un sito, ne riprende i colori e i testi; altrimenti parte dalla palette e dalle indicazioni che ci hai dato. È gratuito e non ti impegna a nulla."
+        "description": "Prepariamo un mockup della tua home page. Se hai già un sito, usiamo i suoi colori e i suoi testi; altrimenti partiamo dalla palette e dalle indicazioni che ci hai dato. È gratuito, non ti impegna a nulla e puoi chiederlo senza appuntamento."
       },
       "build": {
         "label": "T-1 · Realizzazione",
@@ -63,8 +63,12 @@
       "launch": {
         "label": "T-0 · Messa online",
         "title": "Restiamo con te dopo il lancio",
-        "description": "Mettiamo il sito online e ti mostriamo come funziona. Poi ci occupiamo noi dell'hosting e delle copie di sicurezza, con una modifica compresa ogni anno, e altre se ti servono."
+        "description": "Mettiamo il sito online e ti mostriamo come funziona. Poi ci occupiamo noi dell'hosting e dei backup, con una modifica all'anno compresa, e altre in opzione se ti servono. Il sito di Coach'n Pulse, per esempio, lo seguiamo dal 2016."
       }
+    },
+    "pricing": {
+      "title": "Un abbonamento o un progetto su misura.",
+      "all": "Vedi i quattro modi di lavorare con noi"
     },
     "projects": {
       "eyebrow": "[ Realizzazioni ]",
@@ -85,11 +89,11 @@
         },
         "independents": {
           "title": "Indipendenti e liberi professionisti",
-          "description": "Avvocato/a, architetto/a, osteopata, consulente… Qualcuno fa il tuo nome, e prima di chiamarti la gente guarda il tuo sito. Il sito presenta la tua attività e il tuo percorso, e spiega come prendere appuntamento."
+          "description": "Avvocato/a, architetto/a, osteopata, consulente… Qualcuno ti consiglia, e prima di chiamarti la gente guarda il tuo sito. Lì trova la tua attività, il tuo percorso e come prendere appuntamento."
         },
         "companies": {
           "title": "Piccole imprese",
-          "description": "Impresa edile, studio tecnico, officina, agenzia di poche persone… Il tuo sito mostra quello che sai fare a un futuro cliente come a qualcuno che vorresti assumere."
+          "description": "Impresa edile, studio tecnico, officina, agenzia di poche persone… Il tuo sito mostra quello che sai fare sia a un futuro cliente sia a qualcuno che vorresti assumere."
         }
       }
     },
@@ -98,28 +102,28 @@
       "title": "Wix e WordPress sono comodi <em>all'inizio.</em>",
       "lead": "Poi serve un'estensione a pagamento, un aggiornamento manda in tilt una pagina, l'abbonamento rincara. Il codice lo scriviamo noi: il tuo sito resta veloce e può crescere senza ripartire da zero.",
       "reasons": {
-        "ownership": {
-          "title": "Il sito è tuo",
-          "description": "Testi, foto e nome a dominio ti appartengono dal primo giorno. Il codice passa a te dopo {months} mesi di abbonamento, oppure prima, pagando un costo di cessione."
+        "person": {
+          "title": "Qualcuno che ti risponde",
+          "description": "Parli con Matthieu, che conosce il tuo sito perché l'ha costruito lui."
         },
         "fast": {
           "title": "Veloce sul telefono",
           "description": "Senza temi pesanti né estensioni, le tue pagine si aprono in fretta sul telefono, e Google ne tiene conto nei risultati."
         },
-        "person": {
-          "title": "Qualcuno che ti risponde",
-          "description": "Parli con Matthieu, che conosce il tuo sito perché l'ha costruito lui."
-        },
         "grows": {
-          "title": "Si aggiunge senza rifare tutto",
+          "title": "Si amplia senza rifare tutto",
           "description": "Cominci con una pagina. Il giorno in cui ti servono la prenotazione degli appuntamenti, una versione inglese o un negozio online, li aggiungiamo al sito che hai già."
+        },
+        "ownership": {
+          "title": "Il sito è tuo",
+          "description": "Testi, foto e nome a dominio ti appartengono dal primo giorno. Il codice passa a te dopo {months} mesi di abbonamento: è questo che permette un prezzo di partenza così basso. Prima, ti viene ceduto pagando un costo di cessione."
         }
       }
     },
     "apps": {
       "eyebrow": "[ La nostra app ]",
       "title": "Sviluppiamo anche <em>la nostra app.</em>",
-      "lead": "Ci serve per provare i nostri strumenti prima di usarli sui tuoi progetti.",
+      "lead": "Qui proviamo i nostri strumenti prima di usarli sul tuo sito.",
       "daily_fortune": {
         "name": "Daily Fortune",
         "badge": "iOS",
@@ -133,7 +137,7 @@
       "title": "Dietro Cosmic Studio <em>c'è Matthieu.</em>",
       "paragraphs": [
         "Matthieu Compérat è originario di Duingt, sulle rive del lago di Annecy, e oggi vive a Chêne-Bougeries. Sviluppa siti e app da una quindicina d'anni, all'inizio per grandi aziende. Con Cosmic Studio fa questo mestiere per attività più piccole, e lavora direttamente con chi le manda avanti.",
-        "Quando chiami, è lui a rispondere, e i tuoi messaggi ricevono di solito una risposta in giornata. Conosce a fondo il sito che ti consegna, per questo ogni modifica è semplice e veloce."
+        "Quando chiami, è lui a rispondere, e di solito risponde ai tuoi messaggi in giornata. Conosce a fondo il sito che ti consegna, per questo ogni modifica è semplice e veloce."
       ],
       "zones": {
         "ch": [

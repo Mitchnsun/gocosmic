@@ -9,7 +9,7 @@ describe('ColorPaletteSelect', () => {
     const { getAllByRole, getByText } = render(<ColorPaletteSelect value="" onChange={vi.fn()} />);
 
     expect(getAllByRole('radio')).toHaveLength(7);
-    expect(getByText('Sober & minimalist')).toBeInTheDocument();
+    expect(getByText('Clean & minimalist')).toBeInTheDocument();
     expect(getByText('Lake & mountains')).toBeInTheDocument();
     expect(getByText('Alpine sunset')).toBeInTheDocument();
     expect(getByText('Deep forest')).toBeInTheDocument();
@@ -72,7 +72,7 @@ describe('ColorPaletteSelect', () => {
     const onBlur = vi.fn();
     const { getByRole } = render(<ColorPaletteSelect value="" onChange={vi.fn()} onBlur={onBlur} />);
 
-    fireEvent.blur(getByRole('radio', { name: 'Sober & minimalist' }));
+    fireEvent.blur(getByRole('radio', { name: 'Clean & minimalist' }));
 
     expect(onBlur).toHaveBeenCalled();
   });

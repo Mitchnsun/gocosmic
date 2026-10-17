@@ -44,6 +44,7 @@ messages/
   │   ├── footer.json        # Footer content
   │   ├── home.json          # Homepage content
   │   ├── about.json         # About page content
+  │   ├── story.json         # Story page content
   │   ├── services.json      # Services page content
   │   ├── pricing.json       # Pricing columns, subscription simulator and guided mode
   │   ├── pricing-page.json  # Pricing page metadata and introduction
@@ -147,10 +148,14 @@ All five case studies share one template: a header with the dates (creation year
 
 ### About Page (`/about`)
 
-- **Background**: Matthieu Compérat's path, the areas served and a link to his LinkedIn profile
+- **Background**: Matthieu Compérat's path, the areas served, a link to the story page and to his LinkedIn profile
 - **Why a small studio**: four reasons to work with it (being found locally, a visible price, someone who answers, AI used only where it helps)
 - **Closing call-to-action**: link to the contact page
 - **Structured data**: a JSON-LD `Person` entry for search engines
+
+### Story Page (`/story`)
+
+Matthieu Compérat's path and the studio's milestones as a vertical timeline, from his start as a developer in 2012 and the creation of his first business on 17 October 2016 to the move to Chêne-Bougeries and the Swiss sole proprietorship's affiliation with FER Genève, in progress. Each step shows its date in a mono label; the step in progress carries the orange accent. Linked from the about page's background section, it ends with the same call to write to Matthieu. The steps and their dates live in `data/story.ts`, their copy in `messages/<locale>/story.json`. Search engines get its breadcrumb trail, and the studio's structured data declares the same founding date.
 
 ### Contact Page (`/contact`)
 
@@ -388,6 +393,7 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 ├── app/              # App Router (Next.js 16+)
 │   ├── [locale]/     # Internationalized routes
 │   │   ├── about/    # About page (background, why a small studio, LinkedIn)
+│   │   ├── story/    # Story page (the founder's path and the studio's milestones)
 │   │   ├── contact/  # Contact page (details, message form, call booking)
 │   │   ├── free-mockup/ # Free mockup request page
 │   │   ├── legal-notice/ # Legal notice (including AI usage statements)
@@ -427,6 +433,7 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   ├── ProjectGrid/  # Project cards and type filters
 │   ├── Reveal/       # Fade-in on scroll
 │   ├── SectionHeading/ # Eyebrow, title and lead opening each section
+│   ├── StoryTimeline/ # Vertical timeline of the story page
 │   ├── StudioIntro/  # Who is behind the studio
 │   ├── Sun/          # The light theme's sun (pure CSS disc and halo)
 │   ├── Theme/        # Theme provider (next-themes), toggle and theme hooks
@@ -446,7 +453,7 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   ├── info-popover.tsx # "i" button opening a bubble of context on click or tap (Radix Popover)
 │   ├── accent.ts     # `accentClasses(token)` — utilities and RGB channels of an accent token
 │   └── lib/utils.ts  # `cn` helper (clsx + tailwind-merge)
-├── data/             # Static content (`projects.ts` — ordered case-study registry)
+├── data/             # Static content (`projects.ts` — ordered case-study registry, `story.ts` — milestones of the story page)
 ├── lib/              # Shared helpers
 │   ├── contact/      # Contact form email + validation helpers
 │   ├── llms/         # Builders of `/llms.txt` and `/llms-full.txt`
@@ -463,6 +470,7 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   │   ├── footer.json        # Footer content
 │   │   ├── home.json          # Homepage content
 │   │   ├── about.json         # About page content
+│   │   ├── story.json         # Story page content
 │   │   ├── services.json      # Services page content
 │   │   ├── pricing.json       # Pricing columns, simulator and guided mode
 │   │   ├── pricing-page.json  # Pricing page metadata and introduction

@@ -50,7 +50,7 @@ export function ColorPaletteSelect({ value, onChange, error, onBlur }: ColorPale
       aria-invalid={error ? true : undefined}
       aria-describedby={error ? ERROR_ID : undefined}
       className="flex flex-col gap-3">
-      <legend id={LEGEND_ID} className="font-display text-fg flex items-baseline gap-2 text-sm font-medium">
+      <legend id={LEGEND_ID} className="font-display text-fg mb-2 flex items-baseline gap-2 text-sm font-medium">
         {t('form.palette_label')}
         <span className="text-fg-3 text-2xs font-mono tracking-widest uppercase">{t('form.optional')}</span>
       </legend>

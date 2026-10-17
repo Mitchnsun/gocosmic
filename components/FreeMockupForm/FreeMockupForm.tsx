@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { buttonVariants } from '@/design-system/button.variants';
 import { Field, FIELD_INPUT } from '@/design-system/field';
 import { cn } from '@/design-system/lib/utils';
+import { isSwissLocale } from '@/i18n/locales';
 
 import { ColorPaletteSelect } from './ColorPaletteSelect';
 import { useFreeMockupForm } from './FreeMockupForm.hooks';
@@ -26,6 +27,8 @@ const WEBSITE_ID = 'free-mockup-website';
 export function FreeMockupForm() {
   const t = useTranslations('freeMockup');
   const locale = useLocale();
+  // The Swiss version shows Swiss example addresses.
+  const placeholderSuffix = isSwissLocale(locale) ? '_placeholder_swiss' : '_placeholder';
   const { values, errors, feedback, planCode, formRef, setValue, markTouched, formAction, isPending } =
     useFreeMockupForm();
 
@@ -52,7 +55,7 @@ export function FreeMockupForm() {
               value={values.email}
               onChange={(event) => setValue('email', event.target.value)}
               onBlur={() => markTouched('email')}
-              placeholder={t('form.email_placeholder')}
+              placeholder={t(`form.email${placeholderSuffix}`)}
               aria-invalid={errors.email ? true : undefined}
               aria-describedby={errors.email ? `${EMAIL_ID}-error` : undefined}
               className={FIELD_INPUT}
@@ -80,7 +83,7 @@ export function FreeMockupForm() {
               value={values.websiteUrl}
               onChange={(event) => setValue('websiteUrl', event.target.value)}
               onBlur={() => markTouched('websiteUrl')}
-              placeholder={t('form.website_placeholder')}
+              placeholder={t(`form.website${placeholderSuffix}`)}
               aria-invalid={errors.websiteUrl ? true : undefined}
               aria-describedby={errors.websiteUrl ? `${WEBSITE_ID}-error` : undefined}
               className={FIELD_INPUT}

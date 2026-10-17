@@ -12,7 +12,7 @@
         "audit": {
           "title": "Un état des lieux de votre site actuel",
           "description": "Ce qui fonctionne, ce qui fait fuir les visiteurs, et comment votre site ressort sur Google.",
-          "cta": "Demander un état des lieux"
+          "cta": "Demander mon état des lieux gratuit"
         }
       },
       "note": "Ces deux prestations sont gratuites et ne vous engagent à rien."
@@ -55,7 +55,7 @@
         "info": {
           "search_setup": "Nous préparons votre site pour Google et les autres moteurs de recherche : un titre et une description pour chaque page, les informations sur votre activité dans un format que Google comprend, le plan du site et les consignes de lecture pour les moteurs. Nous inscrivons votre site dans la Search Console de Google, qui montre comment il est trouvé. Nous ajoutons aussi un fichier qui présente votre activité aux assistants d'intelligence artificielle.",
           "legal": "Tout site doit indiquer qui l'édite et ce qu'il fait des données de ses visiteurs. Nous mettons ces pages en place à partir des informations que vous nous donnez ; vous les relisez et les validez, car vous en restez responsable.",
-          "editor": "Vous publiez une actualité ou changez vos horaires quand vous le voulez, sans nous attendre. Nous mettons en place un outil d'édition relié à votre site, et nous vous montrons comment l'utiliser. Le reste de vos pages reste entre nos mains. Si vous avez déjà un outil d'édition, nous le reprenons quand c'est possible ; cette reprise et le transfert de vos contenus font l'objet d'une proposition à part, sur devis. Cette formule est souscrite par périodes de 12 mois.",
+          "editor": "Vous publiez une actualité ou changez vos horaires quand vous le voulez, sans nous attendre. Nous mettons en place un outil d'édition relié à votre site, et nous vous montrons comment l'utiliser. Nous continuons de gérer le reste de vos pages. Si vous avez déjà un outil d'édition, nous le reprenons quand c'est possible ; cette reprise et le transfert de vos contenus font l'objet d'une proposition à part, sur devis. Cette formule est souscrite par périodes de 12 mois.",
           "news": "Une rubrique à jour montre à vos visiteurs que votre activité vit : derniers chantiers, prochains concerts, nouvelle saison. Vous y publiez vous-même, depuis votre espace d'édition."
         }
       },
@@ -101,13 +101,13 @@
         },
         "booking": {
           "label": "La prise de rendez-vous en ligne",
-          "hint": "Vos clients réservent un créneau dans votre agenda Google, directement depuis votre site.",
-          "info": "Vos clients voient vos créneaux libres et réservent à toute heure, sans vous appeler ; ils n'ont pas besoin de compte Google. Vous créez votre page de réservation dans Google Agenda en suivant nos indications, puis nous l'ajoutons à votre site. Google envoie la confirmation et les rappels. Il vous faut un compte Google, et certaines fonctions de Google demandent un abonnement Google payant, qui n'est pas compris."
+          "hint": "Vos clients réservent un créneau dans votre Google Agenda, directement depuis votre site.",
+          "info": "Vos clients voient vos créneaux libres et réservent à toute heure, sans vous appeler ; ils n'ont pas besoin de compte Google. Vous créez votre page de réservation dans Google Agenda en suivant nos indications, puis nous l'ajoutons à votre site. Google envoie la confirmation et les rappels. Il vous faut un compte Google ; certaines fonctions demandent un abonnement Google payant, non compris dans l'offre."
         },
         "reviews": {
           "label": "Les avis de vos clients sur votre site",
-          "hint": "Une sélection d'avis de vos clients, avec leur date, mise à jour régulièrement.",
-          "info": "Les avis d'autres clients rassurent un visiteur qui hésite à vous contacter. Régulièrement, nous sélectionnons les meilleurs avis, ceux de votre fiche Google ou des témoignages que vous avez reçus, et nous les recopions sur votre site avec leur date. En France, la loi demande d'indiquer si les avis sont contrôlés et pourquoi certains ne sont pas publiés : nous ajoutons cette mention."
+          "hint": "Les avis de vos clients, avec leur date, mis à jour régulièrement.",
+          "info": "Les avis d'autres clients rassurent un visiteur qui hésite à vous contacter. Nous affichons sur votre site les avis de votre fiche Google et les témoignages que vous avez reçus, avec leur date, et nous les mettons à jour régulièrement. En France, la loi demande d'indiquer si les avis sont contrôlés et pourquoi certains ne sont pas publiés : nous ajoutons cette mention."
         },
         "english": {
           "label": "Votre site en anglais",
@@ -133,7 +133,7 @@
             "quarterly": "Tous les trois mois",
             "monthly": "Chaque mois"
           },
-          "info": "Votre formule comprend les réglages pour être trouvé sur Google ; cette option les fait vivre dans la durée. Au rythme choisi, nous regardons comment votre site ressort sur des recherches comme « votre métier + votre ville », nous ajustons vos pages et nous vous envoyons un bilan écrit. Votre fiche Google Maps et les annuaires restent gérés par vous. Nous ne promettons pas de place précise sur Google. Cette option est souscrite par périodes de 12 mois."
+          "info": "Votre formule comprend les réglages pour être trouvé sur Google ; cette option les fait vivre dans la durée. Au rythme choisi, nous regardons comment votre site ressort sur des recherches comme « votre métier + votre ville », nous ajustons vos pages et nous vous envoyons un bilan écrit. Vous continuez de gérer vous-même votre fiche Google Maps et les annuaires. Nous ne promettons pas de place précise sur Google. Cette option est souscrite par périodes de 12 mois."
         },
         "analytics": {
           "label": "Statistiques de visites",
@@ -162,7 +162,7 @@
             "weekly": "1 article par semaine",
             "thrice_weekly": "3 articles par semaine"
           },
-          "info": "Écrire des articles régulièrement prend du temps. Nous les rédigeons pour vous avec l'aide de l'intelligence artificielle, à partir des informations sur votre activité. Ensemble, nous choisissons où les publier, dans un blog ou une rubrique d'articles, selon leur sujet. Vous choisissez de relire chaque article avant sa publication, ou de nous laisser le publier directement. Les articles ne comptent pas dans vos modifications de contenu. Vous pouvez réduire le rythme avec un mois de préavis ; l'arrêt complet se fait à la fin d'une période de 12 mois.",
+          "info": "Écrire des articles régulièrement prend du temps. Nous les rédigeons pour vous avec l'aide de l'intelligence artificielle, à partir des informations sur votre activité. Ensemble, nous choisissons où les publier, dans un blog ou une rubrique d'articles, selon leur sujet. À vous de choisir : relire chaque article avant sa publication, ou nous laisser le publier directement. Les articles ne comptent pas dans vos modifications de contenu. Vous pouvez réduire le rythme avec un mois de préavis ; l'arrêt complet se fait à la fin d'une période de 12 mois.",
           "info_tool": "Selon votre outil d'édition, nous pouvons utiliser un service spécialisé qui choisit les sujets d'après les recherches faites sur Google."
         }
       },
@@ -199,7 +199,7 @@
           "unlimited": "Autant que nécessaire"
         },
         "hint_self_service": "Pour tout ce que vous ne publiez pas vous-même : vous nous envoyez vos changements par e-mail, et nous les mettons en ligne.",
-        "info": "Une fois par an, nous mettons à jour vos pages, compris dans votre formule. Si vos informations changent plus souvent, choisissez un rythme : vous nous envoyez vos changements par e-mail, et nous les mettons en ligne. Une modification, c'est une demande : vous pouvez y regrouper plusieurs changements."
+        "info": "Une mise à jour de vos pages par an est comprise dans votre formule. Si vos informations changent plus souvent, choisissez un rythme : vous nous envoyez vos changements par e-mail, et nous les mettons en ligne. Une modification, c'est une demande : vous pouvez y regrouper plusieurs changements."
       },
       "total": {
         "label": "Votre estimation",
@@ -263,13 +263,13 @@
         "label": "Site, hébergement et suivi",
         "price": "Dès {price}",
         "period": "/ mois",
-        "description": "Votre site est en ligne et tenu à jour, sans que vous ayez à vous en occuper. Le prix dépend de vos besoins : nombre de pages, nom de domaine, adresse e-mail, modifications.",
+        "description": "Votre site est en ligne et tenu à jour, sans que vous ayez à vous en occuper, et sans grosse somme à sortir au départ. Le prix dépend de vos besoins : nombre de pages, nom de domaine, adresse e-mail, modifications.",
         "features": {
-          "included": "Hébergement, connexion sécurisée et réglages pour être trouvé sur Google compris",
-          "options": "Des options à ajouter quand vous en avez besoin",
+          "included": "Compris : hébergement, connexion sécurisée et réglages pour être trouvé sur Google",
+          "options": "Des options à ajouter quand vous en avez besoin, sans tout refaire",
           "mockup": "Une maquette offerte avant de vous décider"
         },
-        "cta": "Composer mon abonnement"
+        "cta": "Calculer mon prix"
       },
       "guidance": {
         "title": "Accompagnement",
@@ -322,7 +322,7 @@
         "legend": "Où en êtes-vous ?",
         "new": "Je n'ai pas encore de site",
         "existing": "J'ai déjà un site",
-        "custom": "Je veux vendre en ligne, un espace adhérents ou une application"
+        "custom": "Je veux une boutique en ligne, un espace adhérents ou une application"
       },
       "existing": {
         "legend": "Que voulez-vous en faire ?",
@@ -361,7 +361,7 @@
         "no": "Non"
       },
       "news": {
-        "legend": "Publiez-vous des nouvelles : chantiers, événements, nouveautés ?",
+        "legend": "Publiez-vous des actualités : chantiers, événements, nouveautés ?",
         "none": "Non",
         "quarterly": "1 par trimestre",
         "monthly": "1 par mois",
