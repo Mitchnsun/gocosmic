@@ -183,7 +183,7 @@ describe('PricingSimulator', () => {
     fireEvent.keyDown(slider, { key: 'ArrowRight' });
     fireEvent.keyDown(slider, { key: 'ArrowRight' });
 
-    expect(total()).toHaveTextContent('€70');
+    expect(total()).toHaveTextContent('€85');
   });
 
   it('folds the options for precise needs under "More options", counting the ticked ones', () => {

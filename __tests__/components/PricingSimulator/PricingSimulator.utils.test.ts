@@ -61,7 +61,7 @@ describe('getPlanItems', () => {
       { id: 'domain', amount: 5 },
       { id: 'email', amount: 15 },
       { id: 'mailboxes', amount: 20, count: 2 },
-      { id: 'updates', amount: 60, tier: 'weekly' },
+      { id: 'updates', amount: 75, tier: 'weekly' },
       { id: 'redirects', amount: 5 },
       { id: 'seo', amount: 5, tier: 'quarterly' },
       { id: 'analytics', amount: 15, tier: 'quarterly' },
@@ -125,7 +125,7 @@ describe('getMonthlyTotal', () => {
 
   it('ignores the update slider until the package is enabled', () => {
     expect(getMonthlyTotal(plan({ updates: 4 }))).toBe(10);
-    expect(getMonthlyTotal(plan({ updates: 4, updatesEnabled: true }))).toBe(210);
+    expect(getMonthlyTotal(plan({ updates: 4, updatesEnabled: true }))).toBe(260);
   });
 
   it('sums add-ons, pages and updates together', () => {

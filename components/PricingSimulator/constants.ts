@@ -70,9 +70,9 @@ export const PAGE_TIERS = [
 export const UPDATE_TIERS = [
   { key: 'few_per_year', price: 5 },
   { key: 'monthly', price: 20 },
-  { key: 'twice_monthly', price: 30 },
-  { key: 'weekly', price: 60 },
-  { key: 'unlimited', price: 200 },
+  { key: 'twice_monthly', price: 50 },
+  { key: 'weekly', price: 75 },
+  { key: 'unlimited', price: 250 },
 ] as const;
 
 /** Visit statistics, by how often the written report is sent. */

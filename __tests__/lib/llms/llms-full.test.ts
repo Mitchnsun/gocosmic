@@ -105,7 +105,7 @@ describe('buildLlmsFull', () => {
     expect(text).toContain('- **Changes to your pages**: You email us your changes');
     expect(text).toContain('Once a year, we update your pages, included in your plan.');
     expect(text).toContain('A change is one request: you can group several changes in it.');
-    expect(text).toContain('  - As often as needed: +€200 / +CHF 200 / month');
+    expect(text).toContain('  - As often as needed: +€250 / +CHF 250 / month');
     expect(text).toContain('  - 1 news item a week: +€100 / +CHF 100 / month');
     expect(text).toContain('  - 3 articles a week: +€250 / +CHF 250 / month');
     expect(options).not.toContain('in all');

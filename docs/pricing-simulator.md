@@ -82,7 +82,7 @@ registered for VAT, so no VAT is mentioned next to them (`pricing.builder.period
 | Following your place on Google         | +5 / +15                    | 1 year                 |
 | Visit statistics (3 report rhythms)    | +5 / +15 / +50              | 1 year                 |
 | Detailed statistics (consent banner)   | +5                          | 1 year                 |
-| Changes to the pages (5 positions)     | +5 / +20 / +30 / +60 / +200 | adjustable             |
+| Changes to the pages (5 positions)     | +5 / +20 / +50 / +75 / +250 | adjustable             |
 | AI-assisted articles (4 rhythms)       | +10 / +25 / +100 / +250     | 1 year, rhythm lowered |
 
 "1 year" options (`ONE_YEAR_OPTIONS` in `constants.ts`, the domain name and the email address
