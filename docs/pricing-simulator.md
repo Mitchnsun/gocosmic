@@ -120,9 +120,10 @@ Other rules:
   note saying that anything beyond it is quoted personally. The pages slider's top position also
   reads "+40 € or more" (`pricing.builder.pages.or_more`).
 - **"More options"** (`ADVANCED_OPTIONS`, next to `OPTION_GROUPS` in `lib/pricing/price-list.ts`)
-  folds the options for precise needs. The button counts the ticked ones, and the recap keeps
-  listing them while the section is closed. Forwarding addresses only show once the email address
-  is ticked.
+  folds the options for precise needs. The sentence under its button, shown even when closed, gives
+  examples rather than a list, as some options only show in one region or with another one. The
+  button counts the ticked ones, and the recap keeps listing them while the section is closed.
+  Forwarding addresses only show once the email address is ticked.
 
 Both currencies quote the same number — only the symbol changes (`formatAmount`), matching how
 the rest of the site handles `eur` / `chf` (see `lib/region.ts`). Pages pass their locale so prices
@@ -215,7 +216,7 @@ the browser.
 | `builder.formulas.*`        | `FormulaPicker`, `BaseCard` heading, recap                                                                     |
 | `builder.base.*`            | `BaseCard`: what each formula includes and its info bubbles                                                    |
 | `builder.groups.*`          | Option group titles; `more` names the "More options" button                                                    |
-| `builder.more.*`            | "More options": ticked count and intro (one per region)                                                        |
+| `builder.more.*`            | "More options": ticked count and intro, shown even when closed                                                 |
 | `builder.domain_question.*` | The domain question, in the simulator and the guided mode                                                      |
 | `builder.options.<key>.*`   | `label`, `hint`, `info` of each add-on; `slider_label` and `tiers` of tiered options; mailbox counter wording  |
 | `builder.pages.tiers.*`     | Pages slider, keyed by `PAGE_TIERS[].key`                                                                      |

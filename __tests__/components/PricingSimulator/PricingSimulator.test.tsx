@@ -191,12 +191,13 @@ describe('PricingSimulator', () => {
     const toggle = screen.getByRole('button', { name: /more options/i });
 
     expect(toggle).toHaveAttribute('aria-expanded', 'false');
+    // What they are for shows even when closed, and the button reads it.
+    expect(toggle).toHaveAccessibleDescription(/options to go further, for example showing up better on google/i);
     expect(screen.queryByRole('checkbox', { name: /visit statistics/i })).not.toBeInTheDocument();
 
     openMoreOptions();
 
     expect(toggle).toHaveAttribute('aria-expanded', 'true');
-    expect(screen.getByText(/options for specific needs/i)).not.toHaveTextContent(/switzerland/i);
     tick(/following your place on google/i);
     tick(/ai-assisted articles/i);
 
@@ -300,7 +301,6 @@ describe('PricingSimulator', () => {
 
     render(<PricingSimulator region="ch" />);
     openMoreOptions();
-    expect(screen.getByText(/options for specific needs/i)).toHaveTextContent(/hosting in switzerland/i);
     expect(screen.getByRole('checkbox', { name: /hosted in switzerland/i })).toBeInTheDocument();
   });
 

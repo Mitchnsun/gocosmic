@@ -252,10 +252,7 @@
       },
       "more": {
         "count": "{count, plural, one {# selezionata} other {# selezionate}}",
-        "intro": {
-          "fr": "Opzioni per esigenze specifiche: indirizzi di inoltro, monitoraggio su Google, statistiche, articoli.",
-          "ch": "Opzioni per esigenze specifiche: indirizzi di inoltro, monitoraggio su Google, statistiche, articoli, hosting in Svizzera."
-        }
+        "intro": "Opzioni per andare oltre, ad esempio apparire meglio su Google, seguire le tue visite o pubblicare articoli."
       }
     },
     "columns": {

@@ -252,10 +252,7 @@
       },
       "more": {
         "count": "{count} angekreuzt",
-        "intro": {
-          "fr": "Optionen für bestimmte Bedürfnisse: Weiterleitungsadressen, Betreuung Ihrer Position bei Google, Statistiken, Artikel.",
-          "ch": "Optionen für bestimmte Bedürfnisse: Weiterleitungsadressen, Betreuung Ihrer Position bei Google, Statistiken, Artikel, Hosting in der Schweiz."
-        }
+        "intro": "Optionen, um weiterzugehen: zum Beispiel bei Google besser erscheinen, Ihre Besuche verfolgen oder Artikel veröffentlichen."
       }
     },
     "columns": {

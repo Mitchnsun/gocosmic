@@ -21,12 +21,13 @@ interface MoreOptionsProps extends OptionGroupProps {
 
 /**
  * "More options": the options for precise needs, folded so the visitor first sees the common ones
- * (`ADVANCED_OPTIONS`). The button says how many of them are ticked, and the recap keeps listing them
- * when it is closed.
+ * (`ADVANCED_OPTIONS`). The sentence under the button, shown even when closed, says what they are for;
+ * the button says how many of them are ticked, and the recap keeps listing them when it is closed.
  */
 export function MoreOptions({ plan, actions, surcharge, domain, region, cascade }: MoreOptionsProps) {
   const t = useTranslations('pricing.builder');
   const panelId = useId();
+  const introId = useId();
   const ticked = countAdvancedOptions(plan);
   const [open, setOpen] = useState(false);
   const tiered = { onToggle: actions.toggleTiered, onTierChange: actions.setTier, surcharge };
@@ -38,6 +39,7 @@ export function MoreOptions({ plan, actions, surcharge, domain, region, cascade 
           type="button"
           aria-expanded={open}
           aria-controls={panelId}
+          aria-describedby={introId}
           onClick={() => setOpen(!open)}
           className="font-display text-fg focus-visible:ring-aerospace-ink flex min-h-11 w-full cursor-pointer items-center justify-between gap-4 rounded-lg text-left text-base font-semibold focus-visible:ring-2 focus-visible:outline-none">
           <span className="flex flex-wrap items-baseline gap-x-3">
@@ -54,8 +56,10 @@ export function MoreOptions({ plan, actions, surcharge, domain, region, cascade 
           />
         </button>
       </h4>
+      <p id={introId} className="text-fg-2 text-sm">
+        {t('more.intro')}
+      </p>
       <div id={panelId} hidden={!open} className="mt-3 space-y-3">
-        <p className="text-fg-2 text-sm">{t(`more.intro.${region}`)}</p>
         {plan.addOns.email && (
           <AddOnOption
             id="redirects"

@@ -252,10 +252,7 @@
       },
       "more": {
         "count": "{count, plural, one {# marcada} other {# marcadas}}",
-        "intro": {
-          "fr": "Opciones para necesidades concretas: direcciones de reenvío, seguimiento en Google, estadísticas, artículos.",
-          "ch": "Opciones para necesidades concretas: direcciones de reenvío, seguimiento en Google, estadísticas, artículos, alojamiento en Suiza."
-        }
+        "intro": "Opciones para ir más allá, por ejemplo aparecer mejor en Google, seguir tus visitas o publicar artículos."
       }
     },
     "columns": {

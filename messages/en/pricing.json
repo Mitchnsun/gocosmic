@@ -252,10 +252,7 @@
       },
       "more": {
         "count": "{count} ticked",
-        "intro": {
-          "fr": "Options for specific needs: forwarding addresses, following your place on Google, statistics, articles.",
-          "ch": "Options for specific needs: forwarding addresses, following your place on Google, statistics, articles, hosting in Switzerland."
-        }
+        "intro": "Options to go further, for example showing up better on Google, keeping track of your visits or publishing articles."
       }
     },
     "columns": {

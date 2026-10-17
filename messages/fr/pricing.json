@@ -252,10 +252,7 @@
       },
       "more": {
         "count": "{count, plural, one {# cochée} other {# cochées}}",
-        "intro": {
-          "fr": "Des options pour des besoins précis : adresses de renvoi, suivi sur Google, statistiques, articles.",
-          "ch": "Des options pour des besoins précis : adresses de renvoi, suivi sur Google, statistiques, articles, hébergement en Suisse."
-        }
+        "intro": "Des options pour aller plus loin, par exemple mieux ressortir sur Google, suivre vos visites ou publier des articles."
       }
     },
     "columns": {
