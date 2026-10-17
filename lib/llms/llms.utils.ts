@@ -7,6 +7,12 @@ type RouteKey = keyof typeof routing.pathnames;
 /** URL of a page in the version both files link to: English, with prices in euros. */
 export const pageUrl = (route: RouteKey) => getCanonicalUrl(routing.defaultLocale, route);
 
+/** URL of a page published in French only, in its version with prices in euros. */
+export const frenchPageUrl = (route: RouteKey) => getCanonicalUrl('fr', route);
+
+/** An amount in euros as the French pages show it, e.g. "10 €". */
+export const inEurosInFrench = (amount: number) => formatAmount(amount, 'eur', 'fr');
+
 export const link = (label: string, url: string) => `[${label}](${url})`;
 
 /** A list item with a bold lead, e.g. "**Craftspeople**: Carpenter, plumber…", and optional nested items. */

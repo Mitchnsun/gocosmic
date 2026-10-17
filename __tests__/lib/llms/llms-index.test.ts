@@ -49,6 +49,14 @@ describe('buildLlmsIndex', () => {
     );
   });
 
+  it('lists the pages published in French only, in French, at their French URL', () => {
+    expect(text).toContain(
+      '## Pages in French only\n\n- [Création de site vitrine](https://www.gocosmic.dev/fr/creation-site-vitrine): Faites créer votre site vitrine'
+    );
+    expect(text).toMatch(/Dès 10\s€ par mois, avec une maquette gratuite\./);
+    expect(text).not.toContain('/en/creation-site-vitrine');
+  });
+
   it('lists every case study with its client, kind and dates', () => {
     for (const project of PROJECTS) {
       expect(text).toContain(`](${getCanonicalUrl('en', project.href)}): `);

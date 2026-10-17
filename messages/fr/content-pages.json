@@ -3,6 +3,19 @@
     "related": {
       "eyebrow": "[ Pages liées ]",
       "title": "Pour aller plus loin."
+    },
+    "links": {
+      "showcase_website": {
+        "label": "Création de site vitrine"
+      },
+      "pricing": {
+        "label": "Tarifs",
+        "description": "Calculez le prix de votre abonnement, option par option."
+      },
+      "projects": {
+        "label": "Projets",
+        "description": "Les sites et les applications que nous avons déjà mis en ligne."
+      }
     }
   }
 }

@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - Pages written in French only are offered to search engines in French only, and choosing another language on one of them opens the home page in that language instead of a missing page
 - These pages show a breadcrumb trail under the header, such as Home › Services, which search engines can also read
+- A new page in French on having a showcase website made: what it shows, what both plans include and from what price, the useful options, the delays, who owns what, and two examples, ending with the free mockup offer
 
 ### Changed
 

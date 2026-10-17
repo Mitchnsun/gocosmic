@@ -110,7 +110,7 @@ export default async function Services({ params }: { params: Promise<{ locale: s
       <Faq eyebrow={t('faq.eyebrow')} title={t.rich('faq.title', { em })} items={faqItems} />
       <FaqSeo items={faqItems} />
       <BreadcrumbSeo route="/services" />
-      <ServiceSeo description={describeServices(t, currency, locale)} region={region} />
+      <ServiceSeo description={describeServices(t, currency, locale)} offer={{ price: BASE_PRICE, region }} />
 
       <CTAFinal
         id="services-cta"

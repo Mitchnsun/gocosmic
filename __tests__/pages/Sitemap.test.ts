@@ -159,4 +159,19 @@ describe('sitemap', () => {
       false
     );
   });
+
+  it('lists the showcase website page in French only', () => {
+    const urls = sitemap().map((entry) => entry.url);
+    const page = sitemap().find((entry) => entry.url === 'https://www.gocosmic.dev/fr-ch/creation-site-vitrine');
+
+    expect(urls.filter((url) => url.endsWith('/creation-site-vitrine'))).toEqual([
+      'https://www.gocosmic.dev/fr/creation-site-vitrine',
+      'https://www.gocosmic.dev/fr-ch/creation-site-vitrine',
+    ]);
+    expect(page?.alternates?.languages).toEqual({
+      fr: 'https://www.gocosmic.dev/fr/creation-site-vitrine',
+      'fr-CH': 'https://www.gocosmic.dev/fr-ch/creation-site-vitrine',
+      'x-default': 'https://www.gocosmic.dev/fr/creation-site-vitrine',
+    });
+  });
 });

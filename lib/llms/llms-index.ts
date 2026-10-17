@@ -3,9 +3,18 @@ import { BASE_PRICE } from '@/components/PricingSimulator/constants';
 import { PROJECTS } from '@/data/projects';
 import { SITE_URL } from '@/lib/config';
 
-import { EN } from './llms.messages';
+import { EN, FR } from './llms.messages';
 import { buildContactSection, buildHeader, buildRegionsSection } from './llms.shared';
-import { inBothCurrencies, link, list, pageUrl, section, toTextFile } from './llms.utils';
+import {
+  frenchPageUrl,
+  inBothCurrencies,
+  inEurosInFrench,
+  link,
+  list,
+  pageUrl,
+  section,
+  toTextFile,
+} from './llms.utils';
 
 /** The site's main pages, with the label of their footer link and the description they give search engines. */
 const pages = () => [
@@ -25,6 +34,11 @@ const pages = () => [
   [link(EN.footer('local_page'), pageUrl('/local')), EN.local('meta.description')],
 ];
 
+/** The pages published in French only, in French, with the description they give search engines. */
+const frenchPages = () => [
+  `${link(FR.contentPages('links.showcase_website.label'), frenchPageUrl('/showcase-website'))}: ${FR.showcaseWebsite('meta.description', { price: inEurosInFrench(BASE_PRICE) })}`,
+];
+
 /** Each case study: its client, kind and dates, then the description of its card. */
 const caseStudies = () =>
   PROJECTS.map((project) => {
@@ -42,6 +56,7 @@ export function buildLlmsIndex(bookingUrl: string | null): string {
     ...buildHeader(),
     buildRegionsSection(),
     section('Pages', [list(pages().map(([page, description]) => `${page}: ${description}`))]),
+    section('Pages in French only', [list(frenchPages())]),
     section('Case studies', [list(caseStudies())]),
     buildContactSection(bookingUrl),
     section('Optional', [

@@ -172,6 +172,9 @@ export const routing = defineRouting({
       de: '/kostenloses-mockup',
       it: '/mockup-gratuito',
     }),
+
+    // Showcase website service page, in French only (see `ROUTE_LANGUAGES`)
+    '/showcase-website': '/creation-site-vitrine',
   },
 });
 
@@ -182,4 +185,6 @@ export type RouteKey = keyof typeof routing.pathnames;
  * every language. Elsewhere, such a route answers with a 404 and stays out of the sitemap, the hreflang links and
  * the language switchers (see `i18n/route-locales.ts`). Its slug is the same in every locale.
  */
-export const ROUTE_LANGUAGES: Partial<Record<RouteKey, readonly Language[]>> = {};
+export const ROUTE_LANGUAGES: Partial<Record<RouteKey, readonly Language[]>> = {
+  '/showcase-website': ['fr'],
+};

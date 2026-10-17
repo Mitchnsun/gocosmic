@@ -16,7 +16,7 @@ describe('ServiceSeo', () => {
   });
 
   it('declares the service with its starting monthly price, and leaves the price list to the pricing page', () => {
-    render(<ServiceSeo description="Sites and apps" region="fr" />);
+    render(<ServiceSeo description="Sites and apps" offer={{ price: 10, region: 'fr' }} />);
 
     expect(jsonLdScriptMock).toHaveBeenCalledWith({
       scriptKey: 'service-json-ld',
@@ -45,7 +45,7 @@ describe('ServiceSeo', () => {
   });
 
   it('quotes Swiss francs on the Swiss pages', () => {
-    render(<ServiceSeo description="Sites" region="ch" />);
+    render(<ServiceSeo description="Sites" offer={{ price: 10, region: 'ch' }} />);
 
     expect(jsonLdScriptMock).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -54,5 +54,18 @@ describe('ServiceSeo', () => {
         }),
       })
     );
+  });
+
+  it('declares one of the services on its own page, without a price when it is quoted on request', () => {
+    render(<ServiceSeo route="/projects" name="Apps" description="Apps for your members" />);
+
+    const [[{ data }]] = jsonLdScriptMock.mock.calls as [[{ data: Record<string, unknown> }]];
+    expect(data).toMatchObject({
+      '@id': 'https://www.gocosmic.dev/en/projects#service',
+      name: 'Apps',
+      url: 'https://www.gocosmic.dev/en/projects',
+      provider: { '@id': 'https://www.gocosmic.dev/#company' },
+    });
+    expect(data.offers).toBeUndefined();
   });
 });
