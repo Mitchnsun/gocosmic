@@ -8,8 +8,14 @@ import { cn } from './lib/utils';
 /** Shared transition for the fill and thumb so they glide together between steps. */
 const GLIDE = 'transition-transform duration-150 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none';
 
-/** Visible size of the thumb, in px; Radix keeps it inside the track, which shifts the step marks too. */
+/** Visible size of the thumb, in px; Radix keeps it inside the root, so the track is inset to match the end dots. */
 const THUMB_SIZE = 16;
+
+/** Size of a step dot, in px (`size-2`). */
+const DOT_SIZE = 8;
+
+/** Track inset on each side, so its ends line up with the outer edge of the first and last dots. */
+const TRACK_INSET = (THUMB_SIZE - DOT_SIZE) / 2;
 
 type SliderProps = React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> & {
   /** Forwarded to the (single) thumb — Radix reads slider text off the thumb, not the root. */
@@ -19,8 +25,8 @@ type SliderProps = React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> &
 };
 
 /**
- * One dot per step, placed where the thumb's centre lands: Radix keeps the thumb inside the track, so
- * a step at `p` sits `(0.5 - p) × thumb` px off its percentage.
+ * One dot per step, placed where the thumb's centre lands: the track is inset by `TRACK_INSET` on each
+ * side, so a step at `p` sits `(0.5 - p) × dot` px off its percentage.
  */
 function StepMarks({ min, max, step }: { min: number; max: number; step: number }) {
   const count = Math.floor((max - min) / step) + 1;
@@ -33,7 +39,7 @@ function StepMarks({ min, max, step }: { min: number; max: number; step: number 
         key={index}
         aria-hidden="true"
         className="bg-fg-3 absolute top-1/2 size-2 -translate-x-1/2 -translate-y-1/2 rounded-full"
-        style={{ left: `calc(${ratio * 100}% + ${(0.5 - ratio) * THUMB_SIZE}px)` }}
+        style={{ left: `calc(${ratio * 100}% + ${(0.5 - ratio) * DOT_SIZE}px)` }}
       />
     );
   });
@@ -66,7 +72,7 @@ const Slider = React.forwardRef<React.ComponentRef<typeof SliderPrimitive.Root>,
         className
       )}
       {...props}>
-      <SliderPrimitive.Track className="bg-line relative h-1.5 w-full grow rounded-full">
+      <SliderPrimitive.Track className="bg-line relative h-1.5 grow rounded-full" style={{ marginInline: TRACK_INSET }}>
         <SliderPrimitive.Range className={cn('bg-aerospace absolute h-full rounded-full', GLIDE)} />
         <StepMarks min={min} max={max} step={step} />
       </SliderPrimitive.Track>

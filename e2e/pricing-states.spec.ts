@@ -24,7 +24,7 @@ const tick = (page: Page, label: string) => page.getByRole('checkbox', { name: l
 
 /**
  * The axe audit of `a11y.spec.ts` only sees the pricing page as it loads (see `docs/lessons.md`). This one
- * reaches the states revealed on interaction, in both themes: the guided mode open with its answers, the
+ * reaches the states revealed on interaction, in both themes: the guided mode with its answers, the
  * replace warning, ticked rows and their sub-options, "More options" open, an info bubble open, and the
  * bar of small screens.
  */
@@ -38,14 +38,16 @@ for (const theme of THEMES) {
 
     test('the guided mode, answered, then its replace warning, has no WCAG A/AA violation', async ({ page }) => {
       await tick(page, b.options.english.label);
-      await page.getByRole('button', { name: g.button }).click();
-      await page.getByRole('radio', { name: g.situation.new }).check();
-      await page.getByRole('radio', { name: g.editor.studio }).check();
-      await page.getByRole('radio', { name: b.domain_question.no }).first().check();
-      await page.getByRole('radio', { name: g.pages.two_four }).check();
-      await page.getByRole('checkbox', { name: g.contact.form }).check();
-      await page.getByRole('radio', { name: g.email.team }).check();
-      await page.getByRole('radio', { name: g.news.monthly }).check();
+      // One question at a time: a radio picked with the pointer moves on, so it is clicked, not checked.
+      const guide = page.getByRole('form', { name: g.title });
+      await guide.getByRole('radio', { name: g.situation.new }).click();
+      await guide.getByRole('radio', { name: g.editor.studio }).click();
+      await guide.getByRole('radio', { name: b.domain_question.no }).click();
+      await guide.getByRole('radio', { name: g.pages.two_four }).click();
+      await guide.getByRole('checkbox', { name: g.contact.form }).check();
+      await guide.getByRole('button', { name: g.next }).click();
+      await guide.getByRole('radio', { name: g.email.team }).click();
+      await guide.getByRole('radio', { name: g.news.monthly }).click();
       expect(await violationsOf(page)).toEqual([]);
 
       await page.getByRole('button', { name: g.submit }).click();

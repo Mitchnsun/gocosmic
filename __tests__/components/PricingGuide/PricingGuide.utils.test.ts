@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import type { GuideAnswers } from '@/components/PricingGuide/PricingGuide.types';
-import { answersToChoices, getOutcome, INITIAL_ANSWERS } from '@/components/PricingGuide/PricingGuide.utils';
+import { answersToChoices, getOutcome, getSteps, INITIAL_ANSWERS } from '@/components/PricingGuide/PricingGuide.utils';
 import { INITIAL_SELECTION } from '@/components/PricingSimulator/constants';
 
 const answers = (overrides: Partial<GuideAnswers> = {}): GuideAnswers => ({
@@ -26,6 +26,21 @@ describe('getOutcome', () => {
     expect(getOutcome(answers({ situation: 'custom', existingPlan: 'redo' }))).toBe('quote');
     // An answer to the follow-up question no longer counts once the first answer changes.
     expect(getOutcome(answers({ situation: 'new', existingPlan: 'keep' }))).toBe('compose');
+  });
+});
+
+describe('getSteps', () => {
+  it('asks only the opening questions until they lead to a plan', () => {
+    expect(getSteps(INITIAL_ANSWERS)).toEqual(['situation']);
+    expect(getSteps(answers({ situation: 'existing' }))).toEqual(['situation', 'existing']);
+    expect(getSteps(answers({ situation: 'custom' }))).toEqual(['situation']);
+  });
+
+  it('asks about the email address only without a domain, and about news only when the studio publishes', () => {
+    expect(getSteps(answers())).toEqual(['situation', 'editor', 'domain', 'pages', 'contact', 'news', 'updates']);
+    expect(getSteps(answers({ situation: 'existing', existingPlan: 'redo', ownDomain: 'no', editor: 'self' }))).toEqual(
+      ['situation', 'existing', 'editor', 'domain', 'pages', 'contact', 'email', 'updates']
+    );
   });
 });
 

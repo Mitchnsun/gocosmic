@@ -310,9 +310,12 @@
       }
     },
     "guide": {
-      "button": "Ayúdame a elegir",
+      "title": "Ayúdame a elegir",
       "intro": "Responde a unas pocas preguntas: marcamos las opciones que encajan contigo y después podrás ajustarlo todo.",
       "submit": "Ver mi configuración",
+      "back": "Atrás",
+      "next": "Siguiente",
+      "progress": "Pregunta {current} de {total}",
       "confirm": {
         "text": "Tus respuestas van a reemplazar las opciones que ya has marcado.",
         "replace": "Reemplazar",

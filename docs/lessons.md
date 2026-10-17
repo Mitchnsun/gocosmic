@@ -307,6 +307,12 @@ Grep `components/CosmicCursor/` for the native selector being replaced (`input[t
 
 **Correct pattern**: In tests, import message files statically (see `__tests__/messages-by-locale.ts`), never through `import(`…${locale}…`)`. After `yarn coverage`, check its exit code (`echo $?`) as well as the thresholds.
 
+### Run `yarn qa` after changing how a form is answered
+
+**Mistake**: The pricing guide moved to one question at a time, with the card answers' radios hidden. Unit tests passed, but `yarn qa` (not in CI) broke twice: Playwright could not click a 1 px `sr-only` radio covered by its icon, and `.check()` timed out on a radio that moves the guide on, since the question unmounts before Playwright sees it checked.
+
+**Correct pattern**: Hide a card's control by stretching it invisibly over the card (`absolute inset-0 opacity-0`), never with `sr-only`. In Playwright, `.click()` a radio that changes the step, keep `.check()` for those that stay. Run `yarn qa` whenever a form's interactions change.
+
 ---
 
 ## Performance

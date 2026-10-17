@@ -310,9 +310,12 @@
       }
     },
     "guide": {
-      "button": "Helfen Sie mir bei der Auswahl",
+      "title": "Helfen Sie mir bei der Auswahl",
       "intro": "Beantworten Sie ein paar Fragen: Wir kreuzen die Optionen an, die zu Ihnen passen, und Sie können danach alles anpassen.",
       "submit": "Meine Zusammenstellung ansehen",
+      "back": "Zurück",
+      "next": "Weiter",
+      "progress": "Frage {current} von {total}",
       "confirm": {
         "text": "Ihre Antworten ersetzen die Optionen, die Sie bereits angekreuzt haben.",
         "replace": "Ersetzen",

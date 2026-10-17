@@ -310,9 +310,12 @@
       }
     },
     "guide": {
-      "button": "Help me choose",
+      "title": "Help me choose",
       "intro": "Answer a few questions: we tick the options that suit you, and you can adjust everything afterwards.",
       "submit": "See my plan",
+      "back": "Back",
+      "next": "Next",
+      "progress": "Question {current} of {total}",
       "confirm": {
         "text": "Your answers will replace the options you have already ticked.",
         "replace": "Replace",

@@ -310,9 +310,12 @@
       }
     },
     "guide": {
-      "button": "Aiutami a scegliere",
+      "title": "Aiutami a scegliere",
       "intro": "Rispondi a qualche domanda: selezioniamo le opzioni adatte a te, e dopo potrai modificare tutto.",
       "submit": "Vedi la mia composizione",
+      "back": "Indietro",
+      "next": "Avanti",
+      "progress": "Domanda {current} di {total}",
       "confirm": {
         "text": "Le tue risposte sostituiranno le opzioni che hai già selezionato.",
         "replace": "Sostituisci",

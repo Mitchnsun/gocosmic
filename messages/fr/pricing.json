@@ -310,9 +310,12 @@
       }
     },
     "guide": {
-      "button": "Aidez-moi à choisir",
+      "title": "Aidez-moi à choisir",
       "intro": "Répondez à quelques questions : nous cochons les options qui vous correspondent, et vous pourrez tout ajuster ensuite.",
       "submit": "Voir ma composition",
+      "back": "Retour",
+      "next": "Suivant",
+      "progress": "Question {current} sur {total}",
       "confirm": {
         "text": "Vos réponses vont remplacer les options que vous avez déjà cochées.",
         "replace": "Remplacer",

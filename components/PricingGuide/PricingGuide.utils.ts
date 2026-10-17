@@ -2,7 +2,7 @@ import { INITIAL_SELECTION, NEWS_TIERS, PAGE_TIERS, UPDATE_TIERS } from '@/compo
 import { clampTier, normalizePlan } from '@/components/PricingSimulator/PricingSimulator.rules';
 import type { PlanSelection } from '@/components/PricingSimulator/PricingSimulator.types';
 
-import type { GuideAnswers, GuideOutcome } from './PricingGuide.types';
+import type { GuideAnswers, GuideOutcome, GuideStep } from './PricingGuide.types';
 
 export const INITIAL_ANSWERS: GuideAnswers = {
   situation: null,
@@ -26,6 +26,25 @@ export function getOutcome({ situation, existingPlan }: GuideAnswers): GuideOutc
   if (situation === 'new') return 'compose';
   if (situation !== 'existing' || existingPlan === null) return null;
   return existingPlan === 'redo' ? 'compose' : 'contact';
+}
+
+/**
+ * The questions to ask, in order, given the answers so far: the email question only without a domain
+ * name of one's own, the news question only when the studio makes the changes.
+ */
+export function getSteps(answers: GuideAnswers): GuideStep[] {
+  const opening: GuideStep[] = answers.situation === 'existing' ? ['situation', 'existing'] : ['situation'];
+  if (getOutcome(answers) !== 'compose') return opening;
+  return [
+    ...opening,
+    'editor',
+    'domain',
+    'pages',
+    'contact',
+    ...(answers.ownDomain === 'no' ? (['email'] as const) : []),
+    ...(answers.editor === 'self' ? [] : (['news'] as const)),
+    'updates',
+  ];
 }
 
 /** Position of a key in a tier table, or `null` when it is not one of its steps. */

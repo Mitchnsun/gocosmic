@@ -42,3 +42,15 @@ export interface GuideAnswers {
 
 /** Where the answers lead: a composition, or a conversation with the studio. */
 export type GuideOutcome = 'compose' | 'contact' | 'quote' | null;
+
+/** One question of the guide, shown alone. */
+export type GuideStep =
+  | 'situation'
+  | 'existing'
+  | 'editor'
+  | 'domain'
+  | 'pages'
+  | 'contact'
+  | 'email'
+  | 'news'
+  | 'updates';
