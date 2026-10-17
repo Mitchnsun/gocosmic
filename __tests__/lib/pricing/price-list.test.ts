@@ -1,17 +1,13 @@
 import { ADD_ON_KEYS } from '@/components/PricingSimulator/constants';
 import {
+  ADVANCED_OPTIONS,
   getOptionPrices,
   getPriceLineName,
   getPriceLines,
-  getPriceLineTotal,
   OPTION_GROUPS,
 } from '@/lib/pricing/price-list';
 
 const names: Record<string, string> = {
-  'options.articles.label': 'AI-assisted articles',
-  'options.articles.tiers.weekly': '1 article a week',
-  'updates.label': 'Content changes included',
-  'updates.tiers.weekly': 'Once a week',
   'options.analytics.label': 'Visit statistics',
   'options.analytics.tiers.quarterly': 'Every three months',
   'options.domain.label': 'Managing your domain name',
@@ -23,7 +19,13 @@ describe('OPTION_GROUPS', () => {
     const grouped = Object.values(OPTION_GROUPS).flat();
 
     expect(new Set(grouped).size).toBe(grouped.length);
-    expect(grouped).toEqual(expect.arrayContaining([...ADD_ON_KEYS]));
+    expect(grouped).toEqual(expect.arrayContaining([...ADD_ON_KEYS, 'pages', 'updates', 'mailboxes', 'news']));
+  });
+
+  it('folds the options for precise needs under "More options", last', () => {
+    expect(OPTION_GROUPS.more).toBe(ADVANCED_OPTIONS);
+    expect(Object.keys(OPTION_GROUPS).at(-1)).toBe('more');
+    expect(ADVANCED_OPTIONS).not.toContain('email');
   });
 });
 
@@ -51,16 +53,18 @@ describe('getOptionPrices', () => {
     expect(getOptionPrices('updates')[0]).toMatchObject({ labelKey: 'updates.label', commitment: false });
   });
 
-  it('ties each article rhythm to the content changes it forces, as the simulator does', () => {
-    const required = getOptionPrices('articles').map((line) => [line.requires?.tierKey, line.requires?.price]);
-
-    expect(required).toEqual([
-      ['updates.tiers.monthly', 20],
-      ['updates.tiers.weekly', 60],
-      ['updates.tiers.unlimited', 200],
+  it('prices each news and article rhythm on its own, apart from the content changes', () => {
+    expect(getOptionPrices('news').map((line) => [line.tierKey, line.price])).toEqual([
+      ['options.news.tiers.quarterly', 10],
+      ['options.news.tiers.monthly', 25],
+      ['options.news.tiers.weekly', 100],
     ]);
-    expect(getOptionPrices('articles').map(getPriceLineTotal)).toEqual([25, 75, 250]);
-    expect(getOptionPrices('analytics')[0]).not.toHaveProperty('requires');
+    expect(getOptionPrices('articles').map((line) => [line.tierKey, line.price])).toEqual([
+      ['options.articles.tiers.quarterly', 10],
+      ['options.articles.tiers.monthly', 25],
+      ['options.articles.tiers.weekly', 100],
+      ['options.articles.tiers.thrice_weekly', 250],
+    ]);
   });
 
   it('prices one extra mailbox', () => {
@@ -69,15 +73,20 @@ describe('getOptionPrices', () => {
     ]);
   });
 
-  it('flags the news section as a managed-plan option and Swiss hosting as Swiss only', () => {
-    expect(getOptionPrices('news')[0]).toMatchObject({ price: 5, formula: 'managed', commitment: true });
-    expect(getOptionPrices('swiss_hosting')[0]).toMatchObject({ price: 10, region: 'ch' });
+  it('flags news as a managed-plan option and Swiss hosting as Swiss only', () => {
+    expect(getOptionPrices('news')[0]).toMatchObject({ price: 10, formula: 'managed', commitment: true });
+    expect(getOptionPrices('swiss_hosting')[0]).toMatchObject({ price: 10, region: 'ch', commitment: false });
+  });
+
+  it('flags the domain name and the email address as 12-month commitments', () => {
     expect(getOptionPrices('domain')[0]).toEqual({
       option: 'domain',
       labelKey: 'options.domain.label',
       price: 5,
-      commitment: false,
+      commitment: true,
     });
+    expect(getOptionPrices('email')[0]).toMatchObject({ price: 15, commitment: true });
+    expect(getOptionPrices('contact_form')[0]).toMatchObject({ commitment: false });
   });
 });
 
@@ -114,13 +123,5 @@ describe('getPriceLineName', () => {
 
   it('names a single-price option by its label', () => {
     expect(getPriceLineName(t, getOptionPrices('domain')[0]!)).toBe('Managing your domain name');
-  });
-
-  it('names an article rhythm with the content changes it requires', () => {
-    const [, weekly] = getOptionPrices('articles');
-
-    expect(getPriceLineName(t, weekly!)).toBe(
-      'AI-assisted articles · 1 article a week + Content changes included · Once a week'
-    );
   });
 });

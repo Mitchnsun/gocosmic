@@ -44,6 +44,7 @@ export default async function LocalPage({ params }: { params: Promise<{ locale: 
   const t = await getTranslations('local');
   const tProjects = await getTranslations('projectsList');
   const tHome = await getTranslations('homepage');
+  const tFooter = await getTranslations('footer');
   const region = getRegion(locale);
   const startingPrice = formatAmount(BASE_PRICE, getCurrency(region), locale);
   const projects = buildProjectCards(tProjects).slice(0, PROJECT_COUNT);
@@ -65,7 +66,10 @@ export default async function LocalPage({ params }: { params: Promise<{ locale: 
               <ArrowRightIcon className="size-4" aria-hidden="true" />
             </Link>
             <Link href="/services" className={ghostPill()}>
-              {t('intro.secondary')}
+              {tFooter('link_services')}
+            </Link>
+            <Link href="/pricing" className={ghostPill()}>
+              {tFooter('link_pricing')}
             </Link>
           </div>
           <FactsLine facts={buildHeroFacts(tHome, region, startingPrice)} />

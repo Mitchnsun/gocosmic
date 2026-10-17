@@ -8,6 +8,7 @@ import { toItemList } from './JsonLd.utils';
 /** Footer link label of each page that declares a trail; case studies carry theirs in `CaseStudySeo`. */
 const LABELS = {
   '/services': 'link_services',
+  '/pricing': 'link_pricing',
   '/projects': 'link_projects',
   '/about': 'link_about',
   '/contact': 'link_contact',

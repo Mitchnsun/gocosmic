@@ -1,9 +1,8 @@
-import { BASE_PRICE } from '@/components/PricingSimulator/constants';
+import { BASE_PRICE, FORMULA_PRICES } from '@/components/PricingSimulator/constants';
 import { CODE_HANDOVER_MONTHS } from '@/lib/pricing/offers';
 
 import { EN } from '../llms.messages';
 import { inBothCurrencies, item, keysOf, link, pageUrl, section, valuesOf } from '../llms.utils';
-import { buildPricingSections } from './pricing';
 
 const COLUMNS = ['subscription', 'guidance', 'reinforcement', 'custom'] as const;
 const TRADES = ['showcase', 'shops', 'apps', 'care'] as const;
@@ -26,30 +25,22 @@ function buildColumns(): string {
   return section(t('title'), [columns.join('\n')], 3);
 }
 
-/** A card of the services page: its title, then one item per entry. */
-function buildCard(namespace: 'free_offers' | 'quoted_services'): string {
-  const t = (key: string) => EN.pricing(`${namespace}.${key}`);
-  const entries = keysOf(EN.pricing.raw(`${namespace}.items`)).map((key) =>
-    item(t(`items.${key}.title`), t(`items.${key}.description`))
-  );
-
-  return section(`${t('title')} (${t('eyebrow')})`, [entries.join('\n'), t('note')], 3);
-}
-
-/** Services & pricing: the offer, the full price list, the free offers and the questions asked before signing. */
+/** Services: the offer, the two plans of the subscription, the trades and the questions asked before signing. */
 export function buildServicesSection(): string {
   const t = EN.services;
   const months = String(CODE_HANDOVER_MONTHS);
   const faq = keysOf(t.raw('faq.items')).map((key) =>
     section(t(`faq.items.${key}.question`), [t(`faq.items.${key}.answer`, { months })], 4)
   );
+  const plans = {
+    price: inBothCurrencies(BASE_PRICE),
+    selfServicePrice: inBothCurrencies(FORMULA_PRICES.self_service),
+  };
 
   return section(link(EN.footer('link_services'), pageUrl('/services')), [
     t('intro.lead'),
     buildColumns(),
-    ...buildPricingSections(),
-    buildCard('free_offers'),
-    buildCard('quoted_services'),
+    section(t('simulator.title'), [t('simulator.lead', plans)], 3),
     section(
       t('trades.title'),
       [

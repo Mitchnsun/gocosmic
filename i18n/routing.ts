@@ -44,6 +44,15 @@ export const routing = defineRouting({
       it: '/servizi',
     }),
 
+    // Pricing page: the subscription simulator
+    '/pricing': localized({
+      en: '/pricing',
+      fr: '/tarifs',
+      es: '/precios',
+      de: '/preise',
+      it: '/prezzi',
+    }),
+
     // Projects - Daily Fortune
     '/projects/daily-fortune': localized({
       en: '/projects/daily-fortune',

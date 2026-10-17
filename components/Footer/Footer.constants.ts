@@ -6,6 +6,7 @@ interface FooterLink {
   /** Key in the `footer` message namespace. */
   labelKey:
     | 'link_services'
+    | 'link_pricing'
     | 'link_projects'
     | 'link_apps'
     | 'link_about'
@@ -18,6 +19,7 @@ interface FooterLink {
 
 export const STUDIO_LINKS: FooterLink[] = [
   { labelKey: 'link_services', href: '/services' },
+  { labelKey: 'link_pricing', href: '/pricing' },
   { labelKey: 'link_projects', href: '/projects' },
   { labelKey: 'link_apps', href: { pathname: '/', hash: 'apps' } },
   { labelKey: 'link_about', href: '/about' },

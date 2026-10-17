@@ -5,7 +5,8 @@
       "ch": "Studio di sviluppo web e mobile a Ginevra. Siti, app e assistenza continua, con prezzi in chiaro."
     },
     "nav_title": "Studio",
-    "link_services": "Servizi & prezzi",
+    "link_services": "Servizi",
+    "link_pricing": "Tariffe",
     "link_projects": "Progetti",
     "link_about": "Chi siamo",
     "link_contact": "Contatti",

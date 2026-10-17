@@ -1,7 +1,7 @@
 {
   "services": {
     "meta": {
-      "title": "Servizi & prezzi · Ginevra & Annecy | Cosmic Studio",
+      "title": "Servizi · Ginevra & Annecy | Cosmic Studio",
       "description": "Siti vetrina, negozi online, app e assistenza con prezzi in chiaro: abbonamento da {price} al mese, o progetto su preventivo."
     },
     "cta": {
@@ -10,14 +10,14 @@
       "primary_button": "Parliamo del tuo progetto"
     },
     "intro": {
-      "eyebrow": "[ Servizi & prezzi ]",
+      "eyebrow": "[ Servizi ]",
       "title": "Un sito che funziona, <em>e qualcuno che se ne occupa.</em>",
       "lead": "I nostri prezzi sono in chiaro: sai subito se rientra nel tuo budget, senza chiedere un preventivo. E tutto parte da un mockup gratuito, senza impegno."
     },
     "simulator": {
       "eyebrow": "[ Componi il tuo abbonamento ]",
       "title": "Parti semplice, <em>il resto lo aggiungi dopo.</em>",
-      "lead": "Due formule: «Ci pensiamo noi», da {price} al mese, oppure «Hai tu il controllo», da {selfServicePrice} al mese, se vuoi pubblicare da te le tue notizie. Seleziona le opzioni che ti interessano per vedere il prezzo mensile."
+      "lead": "Due formule: «Ci pensiamo noi», da {price} al mese, oppure «Hai tu il controllo», da {selfServicePrice} al mese, se vuoi pubblicare da te le tue notizie. Aggiungi le tue opzioni e vedi il prezzo mensile nella pagina Tariffe."
     },
     "trades": {
       "eyebrow": "[ I nostri mestieri · 04 ]",
@@ -51,7 +51,7 @@
       "items": {
         "ownership": {
           "question": "Il sito è mio?",
-          "answer": "Testi, immagini e nome a dominio ti appartengono dal primo giorno. Il codice del sito ti viene ceduto dopo {months} mesi di abbonamento, ed è questo che ci permette di proporre un prezzo di partenza così basso. Puoi anche averlo prima, pagando un costo di cessione calcolato sul tempo che resta. Per un progetto su preventivo, il codice è tuo dalla consegna."
+          "answer": "Testi, immagini e nome a dominio ti appartengono dal primo giorno. Il codice del sito ti viene ceduto dopo {months} mesi di abbonamento, ed è questo che ci permette di proporre un prezzo di partenza così basso. Puoi anche averlo prima, pagando un costo di cessione calcolato sul tempo che resta. Per un sito realizzato su preventivo, con costi di sviluppo, il codice ti appartiene dalla consegna, una volta pagata interamente la fattura."
         },
         "edit": {
           "question": "Posso modificare il sito da solo?",

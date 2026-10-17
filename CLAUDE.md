@@ -18,7 +18,8 @@ yarn check-types      # TypeScript type check via tsconfig.check.json (~9s)
 yarn test             # Run all Vitest tests (~9s, ~1010 tests / 116 files)
 yarn test:watch       # Vitest in watch mode
 yarn coverage         # Generate coverage report (must stay ≥90% on all metrics)
-yarn qa               # Local Playwright QA: axe audit of every route in both themes (not in CI)
+yarn qa               # Local Playwright QA: axe audit of every route and the pricing page's states, both themes (CI runs it without the review screenshots)
+yarn qa --ui          # Same, in Playwright's interactive UI (step-by-step timeline, DOM snapshots)
 ```
 
 **Before committing**, always run: `yarn format && yarn lint && yarn check-types && yarn coverage`
@@ -50,11 +51,11 @@ This is a single Next.js 16 app (App Router) with full internationalization via 
 - `app/[locale]/` — All routes are under the dynamic `[locale]` segment. Pages export metadata and use server components by default.
   A `page.dev.tsx` (e.g. `design-system/`) is an internal route served by `yarn dev` only: `pageExtensions` in `next.config.ts` drops it from production builds.
 - `components/` — App-specific components, one folder per component (`Header`, `Footer`, `LanguageSwitcher`, `JsonLd`, `Planet`, `PricingColumns`, `PricingSimulator`, `CaseStudy`, `ContactForm`, `ProjectGrid`, icons, and more).
-- `design-system/` — Reusable UI primitives: `button.variants.ts` using CVA, plus `eyebrow.tsx`, `chip.tsx`, `field.tsx`, `hairline-grid.tsx`, `pill.ts`, `slider.tsx`, `tabs.tsx`, `info-popover.tsx`, `accent.ts`. Sliders, tabs and info bubbles wrap the matching Radix primitives. `design-system/lib/utils.ts` exports `cn` (clsx + tailwind-merge) — **always use `cn` for conditional Tailwind classes**, never string interpolation. Prefer the object form (`cn({ 'class': condition })`) over `condition && 'class'`.
+- `design-system/` — Reusable UI primitives: `button.variants.ts` using CVA, plus `eyebrow.tsx`, `chip.tsx`, `field.tsx`, `choice-group.tsx`, `hairline-grid.tsx`, `pill.ts`, `slider.tsx`, `tabs.tsx`, `info-popover.tsx`, `accent.ts`. Sliders, tabs and info bubbles wrap the matching Radix primitives. `design-system/lib/utils.ts` exports `cn` (clsx + tailwind-merge) — **always use `cn` for conditional Tailwind classes**, never string interpolation. Prefer the object form (`cn({ 'class': condition })`) over `condition && 'class'`.
 - `lib/` — Standalone helpers shared across the app (`config.ts`, `seo.ts`, `renderWithLinks.tsx`, plus `contact/`, `pricing/`, `validation/`, `hooks/`, `llms/` subfolders). Distinct from `design-system/lib/`.
 - `app/llms.txt/`, `app/llms-full.txt/` — files for AI agents, built by `lib/llms/`: **every change to a page's content must be reflected there**, see [Files for AI agents](#files-for-ai-agents).
 - `data/` — Static content sources (`projects.ts` exports `PROJECTS`, the ordered case-study registry backing the projects pages). **Project dates**: for a project that keeps being updated (`latestRelease`), the `/projects` card shows the year of its latest update, and the case study page shows both "since <creation year>" and "updated <latest update>"; a project without `latestRelease` shows its creation year on both.
-- `messages/<locale>/` — Translation files split by namespace: `common`, `navigation`, `footer`, `home`, `about`, `services`, `pricing`, `projects`, `contact`, `free-mockup`, `local`, `legal`, `psc-supersprint`.
+- `messages/<locale>/` — Translation files split by namespace: `common`, `navigation`, `footer`, `home`, `about`, `services`, `pricing`, `pricing-page`, `projects`, `contact`, `free-mockup`, `local`, `legal`, `psc-supersprint`.
 - `i18n/routing.ts` — Defines supported locales and all translated pathnames. `i18n/locales.ts` lists them: the five languages (`en`, `fr`, `es`, `de`, `it`) plus a Swiss variant of each (`fr-CH`…, served under `/fr-ch`…), which shares its language's messages and slugs and always shows the Swiss region, while language-only locales always show the default one (see `getRegion` in `lib/region.ts`). The visitor's country only picks the version they land on, in `proxy.ts`.
 - `i18n/request.ts` — Server-side i18n setup (namespace loading per route).
 - `__tests__/` — Mirrors source structure (`components/`, `pages/`). `test-utils.tsx` provides a custom `render` that wraps with `NextIntlClientProvider`.

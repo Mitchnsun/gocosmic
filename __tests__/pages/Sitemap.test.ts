@@ -126,10 +126,25 @@ describe('sitemap', () => {
     expect(sitemap().some((entry) => entry.url === 'https://www.gocosmic.dev/it-ch')).toBe(true);
   });
 
-  it('no longer lists the retired offers, pricing and journey pages', () => {
+  it('no longer lists the retired offers and journey pages', () => {
     const urls = sitemap().map((entry) => entry.url);
 
-    expect(urls.some((url) => /\/(offers|pricing|journey|tarifs|nos-offres|voyage)$/.test(url))).toBe(false);
+    expect(urls.some((url) => /\/(offers|journey|nos-offres|voyage)$/.test(url))).toBe(false);
+  });
+
+  it('lists the pricing page in every version, under its localized slug', () => {
+    const urls = sitemap().map((entry) => entry.url);
+
+    expect(urls).toEqual(
+      expect.arrayContaining([
+        'https://www.gocosmic.dev/en/pricing',
+        'https://www.gocosmic.dev/fr/tarifs',
+        'https://www.gocosmic.dev/fr-ch/tarifs',
+        'https://www.gocosmic.dev/es/precios',
+        'https://www.gocosmic.dev/de/preise',
+        'https://www.gocosmic.dev/it-ch/prezzi',
+      ])
+    );
   });
 
   it('leaves the internal design system page out', () => {

@@ -68,7 +68,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         endWords={t.raw('hero.endWords') as string[]}
         subtitle={t('hero.subtitle')}
         cta={{ text: t('hero.cta'), href: '/free-mockup' }}
-        secondaryCta={{ text: t('hero.secondary'), href: { pathname: '/services', hash: 'pricing' } }}
+        secondaryCta={{ text: t('hero.secondary'), href: '/pricing' }}
         facts={buildHeroFacts(t, region, startingPrice)}
       />
 

@@ -1,4 +1,5 @@
 import { buildHomeSection } from './full/home';
+import { buildPricingPageSection } from './full/pricing-page';
 import { buildProjectsSection } from './full/projects';
 import { buildServicesSection } from './full/services';
 import { buildAboutSection, buildFreeMockupSection, buildLocalSection } from './full/studio';
@@ -16,6 +17,7 @@ export function buildLlmsFull(bookingUrl: string | null): string {
     buildRegionsSection(),
     buildHomeSection(),
     buildServicesSection(),
+    buildPricingPageSection(),
     buildFreeMockupSection(),
     buildProjectsSection(),
     buildAboutSection(),

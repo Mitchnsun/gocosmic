@@ -44,8 +44,9 @@ messages/
   │   ├── footer.json        # Footer content
   │   ├── home.json          # Homepage content
   │   ├── about.json         # About page content
-  │   ├── services.json      # Services & pricing page content
-  │   ├── pricing.json       # Pricing columns and subscription simulator
+  │   ├── services.json      # Services page content
+  │   ├── pricing.json       # Pricing columns, subscription simulator and guided mode
+  │   ├── pricing-page.json  # Pricing page metadata and introduction
   │   ├── projects.json      # Projects list and case studies
   │   ├── contact.json       # Contact page content
   │   ├── free-mockup.json   # Free mockup page content
@@ -95,28 +96,37 @@ export default function Header() {
 
 ### Homepage
 
-- **Hero**: visibility promise ("Your business deserves to be seen / found / chosen", the last word cycling), an animated ringed planet behind the text on phones and larger alongside it on desktop, four key facts (starting monthly price, fast reply, one point of contact, area served), the "Go Cosmic" call-to-action leading to the free mockup page and a secondary link to the pricing
+- **Hero**: visibility promise ("Your business deserves to be seen / found / chosen", the last word cycling), an animated ringed planet behind the text on phones and larger alongside it on desktop, four key facts (starting monthly price, fast reply, one point of contact, area served), the "Go Cosmic" call-to-action leading to the free mockup page and a secondary link to the Pricing page
 - **Audience**: who the studio works for (craftspeople, small businesses, independents and liberal professions, associations)
 - **Why a studio**: four reasons to choose a studio rather than a site builder
 - **Process**: four-step timeline (meeting, mockup, build, launch)
-- **Pricing**: the same four pricing columns as the Services & pricing page
+- **Pricing**: the same four pricing columns as the Services page, the subscription leading to the Pricing page
 - **Projects**: the first three project cards and a link to the full list
 - **Own apps**: the studio's own mobile app, Daily Fortune
 - **Studio**: who is behind the studio and the areas served
 - **Closing call-to-action**: link to the contact page and to the free mockup, over a star field that accelerates on hover
 
-### Services & Pricing Page (`/services`)
+### Services Page (`/services`)
 
-Replaces the former services, offers and pricing pages.
+Replaces the former services and offers pages.
 
 - **Introduction**: what the studio offers, a site that runs and someone who looks after it
 - **Pricing columns**: four ways to work together — a monthly subscription (site, hosting and care), day-rate guidance (architecture, UX/UI and design), day-rate reinforcement (technical work on an existing site) and a custom one-off project quoted on request
-- **Subscription simulator**: two plans as tabs — "We take care of everything" (the studio makes every change sent by email) and "You stay in control" (an editing tool and a news section to publish news and opening hours yourself) — each with what it includes, then options grouped by purpose (pages, contact form, booking, reviews, English version, news, domain, email with extra mailboxes and redirects, Swiss hosting, local search follow-up, visit statistics, content changes, AI-assisted articles, monitoring), each with an info bubble and a one-year commitment badge where it applies; a sticky recap shows the live monthly total, and its "Request my free mockup" button carries the simulation over to the free mockup form, while blocks below present the two free offers (a mockup and a review of the current website) and the services quoted outside the subscription with local partners (logo, posters and flyers, photos and videos)
+- **Two plans** (`#simulator`, so older links still land there): "We take care of everything" and "You stay in control" with their starting price, and a button to the Pricing page
 - **Trades**: four cards (showcase sites, shops and bookings, apps, visibility and care)
-- **FAQ**: accordion answering five common questions (ownership, editing the site, time to go live, stopping the subscription, texts and photos)
+- **FAQ**: accordion answering six common questions (an existing site, ownership, editing the site, time to go live, stopping the subscription, texts and photos)
 - **Closing call-to-action**: link to the contact page
 
-Prices are shown in euros, or in Swiss francs on the Swiss version of the site, with no VAT added, as the studio is not registered for VAT. The homepage, the about page and the page description shown in search results follow the same rule.
+### Pricing Page (`/pricing`)
+
+The former pricing page, back as a page of its own under its former slugs (`/fr/tarifs`, `/es/precios`, `/de/preise`, `/it/prezzi`); linked from the footer, the subscription column and the homepage hero, while the header keeps its three entries.
+
+- **Introduction**: build your subscription, the price shows up right away
+- **Before we talk budget**: the two free offers (a mockup and a review of the current website), each with its button
+- **Subscription simulator** (see [`docs/pricing-simulator.md`](docs/pricing-simulator.md)): a "Help me choose" guided mode that asks one question at a time and ticks the matching options, or leads to the contact page for a need outside the subscription; the two plans as radio cards with their starting price; what each plan includes; the common options (pages, contact form, booking, reviews, English version, news published by the studio, the domain question with the domain and the email address, changes to the pages), then "More options" (forwarding addresses, following your place on Google, visit statistics and detailed statistics, AI-assisted articles, Swiss hosting on the Swiss version), each with an info bubble and a one-year commitment badge where it applies; a sticky recap with the live monthly total and whether the plan commits for 12 months, a bar at the bottom of small screens, and a "Request my free mockup" button that carries the simulation over to the free mockup form
+- **Quoted services**: the services quoted outside the subscription with local partners (logo, posters and flyers, photos and videos)
+
+Prices are shown in euros, or in Swiss francs on the Swiss version of the site, with no VAT added, as the studio is not registered for VAT. The homepage, the about page and the page descriptions shown in search results follow the same rule.
 
 ### Projects Page (`/projects`)
 
@@ -129,11 +139,11 @@ Prices are shown in euros, or in Swiss francs on the Swiss version of the site, 
 
 All five case studies share one template: a header with the dates (creation year, and the latest update for projects that keep being updated), client and project type, three numbered sections ("For whom", "What we did", "Result"), a link to the live project (or to the mockup) with a "Discuss a similar project" link to the contact page, and previous / next navigation between case studies.
 
-- **Chœur des Pays du Mont Blanc** (`/projects/choeurdespaysdumontblanc`): a website mockup proposed to the choir, with upcoming concerts, repertoire and how to join; it is not the choir's official site
-- **Daily Fortune** (`/projects/daily-fortune`): the studio's own mobile app, published on the App Store
 - **Coach'n Pulse** (`/projects/coachnpulse`): the website of a triathlon and endurance sports coach in Grenoble, looked after since 2016
-- **PSC Supersprint** (`/projects/psc-supersprint`): live race results for a triathlon club, with its own translation namespace
+- **Daily Fortune** (`/projects/daily-fortune`): the studio's own mobile app, published on the App Store
+- **PSC Supersprint** (`/projects/psc-supersprint`): live race results for a triathlon club, on the web and on mobile, with its own translation namespace
 - **mcomper.at** (`/projects/mcomperat`): a multilingual online résumé
+- **Chœur des Pays du Mont Blanc** (`/projects/choeurdespaysdumontblanc`): a website mockup proposed to the choir, with upcoming concerts, repertoire and how to join; it is not the choir's official site
 
 ### About Page (`/about`)
 
@@ -151,7 +161,7 @@ All five case studies share one template: a header with the dates (creation year
 
 ### Free Mockup Page (`/free-mockup`)
 
-Lead-capture page where a prospect asks for a free mockup of their future website: email, colour direction (closed list of six), current website URL and a free-text field capped at 500 characters. Submissions go through a server action that validates them with `zod` and emails them via Resend — there is no database. A hidden honeypot field silently drops bot submissions. When the visitor comes from the pricing simulator, their simulation is attached to the request. Entry points: the header button, the homepage hero, and the simulator on the Services & pricing page.
+Lead-capture page where a prospect asks for a free mockup of their future website: email, colour direction (closed list of six), current website URL and a free-text field capped at 500 characters. Submissions go through a server action that validates them with `zod` and emails them via Resend — there is no database. A hidden honeypot field silently drops bot submissions. When the visitor comes from the pricing simulator, their simulation is attached to the request. Entry points: the header button, the homepage hero, and the simulator on the Pricing page.
 
 ### Local SEO Page (`/local`)
 
@@ -175,7 +185,7 @@ Reference of the colour tokens (with their contrast ratios), typography, compone
 
 ### Retired Pages
 
-The former `/journey` (3D experience), `/offers` and `/pricing` pages no longer exist. They permanently redirect to Services & pricing in every locale, including their former localized slugs: offers to the pricing columns (`#pricing`), pricing to the simulator (`#simulator`) and the journey to the top of the page (see `lib/redirects.ts` and `next.config.ts`).
+The former `/journey` (3D experience) and `/offers` pages no longer exist. They permanently redirect to Services in every locale, including their former localized slugs: offers to the pricing columns (`#pricing`) and the journey to the top of the page. The pricing page is back under its former slugs; the i18n middleware sends its English slug under another language (`/fr/pricing`) to that language's slug (see `lib/redirects.ts` and `next.config.ts`).
 
 ### Files for AI Agents (`/llms.txt`, `/llms-full.txt`)
 
@@ -254,6 +264,7 @@ yarn test           # Run unit tests
 yarn test:watch     # Run tests in watch mode
 yarn coverage       # Generate test coverage report
 yarn qa             # Local QA: accessibility audit of every page in both themes (Playwright)
+yarn qa --ui        # Same, in Playwright's interactive UI to watch each test run
 ```
 
 ### Adding New Routes
@@ -381,9 +392,10 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   │   ├── free-mockup/ # Free mockup request page
 │   │   ├── legal-notice/ # Legal notice (including AI usage statements)
 │   │   ├── local/    # Local SEO landing page
+│   │   ├── pricing/  # Pricing page (free offers, simulator and guided mode, quoted services)
 │   │   ├── privacy/  # Privacy policy
-│   │   ├── projects/ # Filterable projects list + case studies (choeurdespaysdumontblanc, daily-fortune, coachnpulse, psc-supersprint, mcomperat)
-│   │   ├── services/ # Services & pricing page (pricing, simulator, trades, FAQ)
+│   │   ├── projects/ # Filterable projects list + case studies (coachnpulse, daily-fortune, psc-supersprint, mcomperat, choeurdespaysdumontblanc)
+│   │   ├── services/ # Services page (pricing columns, two plans, trades, FAQ)
 │   │   ├── terms/    # Terms of sale
 │   │   ├── not-found.tsx # Localized 404 page
 │   │   └── page.tsx  # Homepage
@@ -410,6 +422,7 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   ├── OwnApps/      # The studio's own apps
 │   ├── Planet/       # Animated ringed planet behind the homepage hero
 │   ├── PricingColumns/ # The four ways to work together (subscription, guidance, reinforcement, custom)
+│   ├── PricingGuide/ # "Help me choose": guided mode of the simulator
 │   ├── PricingSimulator/ # Subscription simulator with sticky recap
 │   ├── ProjectGrid/  # Project cards and type filters
 │   ├── Reveal/       # Fade-in on scroll
@@ -427,8 +440,9 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   ├── chip.tsx      # Bordered mono tag
 │   ├── hairline-grid.tsx # Card grid with 1 px separators
 │   ├── field.tsx     # Form field frame and control styles
-│   ├── slider.tsx    # Slider used by the pricing simulator
-│   ├── tabs.tsx      # Pill tabs (Radix Tabs), e.g. the two plans of the simulator
+│   ├── choice-group.tsx # A question with its answers as radio buttons, check boxes or cards
+│   ├── slider.tsx    # Slider used by the pricing simulator, with a mark per step
+│   ├── tabs.tsx      # Pill tabs (Radix Tabs)
 │   ├── info-popover.tsx # "i" button opening a bubble of context on click or tap (Radix Popover)
 │   ├── accent.ts     # `accentClasses(token)` — utilities and RGB channels of an accent token
 │   └── lib/utils.ts  # `cn` helper (clsx + tailwind-merge)
@@ -438,7 +452,7 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   ├── llms/         # Builders of `/llms.txt` and `/llms-full.txt`
 │   ├── pricing/      # Code handover delay (offers.ts), the full price list (price-list.ts) and the simulation passed to the free mockup form
 │   ├── hooks/        # Shared hooks (e.g. `usePrefersReducedMotion`)
-│   ├── redirects.ts  # Permanent redirects from retired pages to Services & pricing
+│   ├── redirects.ts  # Permanent redirects from retired pages to Services
 │   ├── region.ts     # Region (France or Switzerland) and currency
 │   ├── resend.ts     # Resend email client
 │   └── validation/   # Form validation schemas
@@ -449,8 +463,9 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   │   ├── footer.json        # Footer content
 │   │   ├── home.json          # Homepage content
 │   │   ├── about.json         # About page content
-│   │   ├── services.json      # Services & pricing page content
-│   │   ├── pricing.json       # Pricing columns and simulator
+│   │   ├── services.json      # Services page content
+│   │   ├── pricing.json       # Pricing columns, simulator and guided mode
+│   │   ├── pricing-page.json  # Pricing page metadata and introduction
 │   │   ├── projects.json      # Projects list and case studies
 │   │   ├── contact.json       # Contact page content
 │   │   ├── free-mockup.json   # Free mockup page content

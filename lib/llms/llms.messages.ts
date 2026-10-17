@@ -10,6 +10,7 @@ import legal from '@/messages/en/legal.json';
 import local from '@/messages/en/local.json';
 import navigation from '@/messages/en/navigation.json';
 import pricing from '@/messages/en/pricing.json';
+import pricingPage from '@/messages/en/pricing-page.json';
 import projects from '@/messages/en/projects.json';
 import pscSupersprint from '@/messages/en/psc-supersprint.json';
 import services from '@/messages/en/services.json';
@@ -58,6 +59,7 @@ export const EN = {
   local: translator(local, 'local'),
   navigation: translator(navigation, 'navigation'),
   pricing: translator(pricing, 'pricing'),
+  pricingPage: translator(pricingPage, 'pricingPage'),
   /** Case study pages, keyed by each project's `i18nKey`. */
   projects: translator({ ...projects, ...pscSupersprint }),
   projectsList: translator(projects, 'projectsList'),

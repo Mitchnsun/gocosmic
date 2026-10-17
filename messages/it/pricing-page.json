@@ -1,0 +1,16 @@
+{
+  "pricingPage": {
+    "meta": {
+      "title": "Tariffe · Ginevra & Annecy | Cosmic Studio",
+      "description": "Componi il tuo abbonamento per il sito internet e vedi subito il prezzo mensile: formula, numero di pagine, indirizzo e-mail, aggiornamenti. Da {price} al mese."
+    },
+    "intro": {
+      "eyebrow": "[ Tariffe ]",
+      "title": "Componi il tuo abbonamento, <em>il prezzo appare subito.</em>",
+      "lead": "Scegli chi aggiorna il tuo sito, aggiungi quello che ti serve e vedi il prezzo mensile. Hai qualche dubbio? Bastano poche domande per una prima composizione, che poi modifichi."
+    },
+    "simulator": {
+      "title": "Componi il tuo abbonamento"
+    }
+  }
+}

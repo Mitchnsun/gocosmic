@@ -2,15 +2,23 @@
 
 import { useTranslations } from 'next-intl';
 
+import { OPTION_GROUPS } from '@/lib/pricing/price-list';
+
 import { AddOnOption } from './AddOnOption';
-import { PAGE_TIERS } from './constants';
+import { ADD_ON_PRICES, PAGE_TIERS } from './constants';
 import { OptionGroup } from './OptionGroup';
 import type { AddOnKey, OptionGroupProps } from './PricingSimulator.types';
+import { TieredOption } from './TieredOption';
 import { TierSlider } from './TierSlider';
 
-const SITE_ADD_ONS: readonly AddOnKey[] = ['contact_form', 'booking', 'reviews', 'english'];
+/** The add-ons of the group, in the order of `OPTION_GROUPS`, which the recap follows too. */
+type SiteAddOn = Extract<(typeof OPTION_GROUPS.site)[number], AddOnKey>;
+const SITE_ADD_ONS = OPTION_GROUPS.site.filter((id): id is SiteAddOn => id in ADD_ON_PRICES);
 
-/** "Your site": number of pages, then what the site does. The news section is an option only when the studio publishes. */
+/**
+ * "Your site": number of pages, then what the site does. News published by the studio are an option
+ * only with "We take care of everything": "You stay in control" includes a news section.
+ */
 export function SiteOptions({ plan, actions, surcharge }: OptionGroupProps) {
   const t = useTranslations('pricing.builder');
   const pageTiers = PAGE_TIERS.map((tier, index) => ({
@@ -18,7 +26,6 @@ export function SiteOptions({ plan, actions, surcharge }: OptionGroupProps) {
     price:
       index === PAGE_TIERS.length - 1 ? t('pages.or_more', { price: surcharge(tier.price) }) : surcharge(tier.price),
   }));
-  const addOns: readonly AddOnKey[] = plan.formula === 'managed' ? [...SITE_ADD_ONS, 'news'] : SITE_ADD_ONS;
 
   return (
     <OptionGroup title={t('groups.site')}>
@@ -31,9 +38,18 @@ export function SiteOptions({ plan, actions, surcharge }: OptionGroupProps) {
           info={{ label: t('info_label', { option: t('pages.label') }), text: t('pages.info') }}
         />
       </div>
-      {addOns.map((id) => (
+      {SITE_ADD_ONS.map((id) => (
         <AddOnOption key={id} id={id} checked={plan.addOns[id]} onToggle={actions.toggleAddOn} surcharge={surcharge} />
       ))}
+      {plan.formula === 'managed' && (
+        <TieredOption
+          id="news"
+          value={plan.news}
+          onToggle={actions.toggleTiered}
+          onTierChange={actions.setTier}
+          surcharge={surcharge}
+        />
+      )}
     </OptionGroup>
   );
 }

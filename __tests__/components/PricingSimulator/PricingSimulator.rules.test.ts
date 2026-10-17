@@ -4,11 +4,11 @@ import { PAGE_TIERS, UPDATE_TIERS } from '@/components/PricingSimulator/constant
 import {
   clampMailboxes,
   clampTier,
-  getUpdatesFloor,
-  isUpdatesRaised,
+  getCascade,
   normalizePlan,
   setFormula,
   setMailboxes,
+  setOwnDomain,
   setPages,
   setTier,
   setUpdates,
@@ -18,6 +18,10 @@ import {
 } from '@/components/PricingSimulator/PricingSimulator.rules';
 
 import { makeSelection as plan } from '../../lib/pricing/plan-fixtures';
+
+/** A plan without a domain name of its own: the studio manages one, and the email address can be ticked. */
+const withEmail = (overrides: Parameters<typeof plan>[0] = {}) =>
+  plan({ ownDomain: false, ...overrides, addOns: { domain: true, email: true, ...overrides.addOns } });
 
 describe('clamping', () => {
   it('keeps valid positions and clamps the rest onto the table', () => {
@@ -42,28 +46,19 @@ describe('visitor actions', () => {
     expect(setFormula(plan(), 'self_service').formula).toBe('self_service');
   });
 
-  it('ticks the domain along with the email address', () => {
-    const next = toggleAddOn(plan(), 'email');
-    expect(next.addOns).toMatchObject({ email: true, domain: true });
-  });
-
-  it('unticks the email address and its extras along with the domain', () => {
-    const withEmail = plan({ addOns: { domain: true, email: true, redirects: true }, mailboxes: 3 });
-
-    const next = toggleAddOn(withEmail, 'domain');
-
-    expect(next.addOns).toMatchObject({ domain: false, email: false, redirects: false });
-    expect(next.mailboxes).toBe(0);
+  it('records the answer about an existing domain name', () => {
+    expect(setOwnDomain(plan(), true).ownDomain).toBe(true);
+    expect(setOwnDomain(plan(), false).ownDomain).toBe(false);
   });
 
   it('resets the extras when the email address is unticked', () => {
-    const next = toggleAddOn(plan({ addOns: { domain: true, email: true, redirects: true }, mailboxes: 2 }), 'email');
+    const next = toggleAddOn(withEmail({ addOns: { redirects: true }, mailboxes: 2 }), 'email');
 
     expect(next.addOns).toMatchObject({ domain: true, email: false, redirects: false });
     expect(next.mailboxes).toBe(0);
   });
 
-  it('toggles a slider option on at its first tier, and the detailed measurement off with statistics', () => {
+  it('toggles a slider option on at its first tier, and the detailed statistics off with statistics', () => {
     const on = toggleTiered(plan(), 'analytics');
     expect(on.analytics).toBe(0);
 
@@ -71,54 +66,76 @@ describe('visitor actions', () => {
     expect(off.analytics).toBeNull();
     expect(off.addOns.detailed_analytics).toBe(false);
 
-    expect(toggleTiered(toggleTiered(plan(), 'seo'), 'seo').seo).toBeNull();
+    expect(toggleTiered(toggleTiered(plan(), 'news'), 'news').news).toBeNull();
   });
 
   it('clamps tiers, pages and updates onto their table', () => {
     expect(setTier(plan(), 'seo', 7).seo).toBe(1);
-    expect(setTier(plan(), 'articles', 2).articles).toBe(2);
+    expect(setTier(plan(), 'articles', 3).articles).toBe(3);
+    expect(setTier(plan(), 'news', 9).news).toBe(2);
     expect(setPages(plan(), 3).pages).toBe(3);
-    expect(setUpdates(plan(), 9)).toMatchObject({ updatesEnabled: true, updates: UPDATE_TIERS.length - 1 });
+    expect(setUpdates(plan(), 9).updates).toBe(UPDATE_TIERS.length - 1);
     expect(toggleUpdates(plan()).updatesEnabled).toBe(true);
-  });
-
-  it('ignores an update position below what the articles need', () => {
-    const withArticles = plan({ articles: 1 });
-
-    expect(setUpdates(withArticles, 0)).toBe(withArticles);
-    expect(setUpdates(withArticles, 4)).toMatchObject({ updatesEnabled: true, updates: 4 });
   });
 
   it('only counts extra mailboxes with an email address', () => {
     expect(setMailboxes(plan(), 3).mailboxes).toBe(0);
-    expect(setMailboxes(plan({ addOns: { domain: true, email: true } }), 3).mailboxes).toBe(3);
-    expect(setMailboxes(plan({ addOns: { domain: true, email: true } }), 9).mailboxes).toBe(5);
+    expect(setMailboxes(withEmail(), 3).mailboxes).toBe(3);
+    expect(setMailboxes(withEmail(), 9).mailboxes).toBe(5);
   });
 });
 
-describe('getUpdatesFloor', () => {
-  it('maps each article rhythm onto the update tier it needs', () => {
-    expect(getUpdatesFloor(null)).toBeNull();
-    expect(UPDATE_TIERS[getUpdatesFloor(0) ?? 0].key).toBe('monthly');
-    expect(UPDATE_TIERS[getUpdatesFloor(1) ?? 0].key).toBe('weekly');
-    expect(UPDATE_TIERS[getUpdatesFloor(2) ?? 0].key).toBe('unlimited');
+describe('getCascade', () => {
+  it('names the detailed statistics when unticking statistics would remove them', () => {
+    expect(getCascade(plan({ analytics: 1, addOns: { detailed_analytics: true } }), 'analytics')).toBe(
+      'detailed_analytics'
+    );
+    expect(getCascade(plan({ analytics: 1 }), 'analytics')).toBeNull();
+    expect(getCascade(plan(), 'analytics')).toBeNull();
+  });
+
+  it('names the email extras when unticking the email address would remove them', () => {
+    expect(getCascade(withEmail({ mailboxes: 1 }), 'email')).toBe('email_extras');
+    expect(getCascade(withEmail({ addOns: { redirects: true } }), 'email')).toBe('email_extras');
+    expect(getCascade(withEmail(), 'email')).toBeNull();
+    // Ticking it back removes nothing.
+    expect(getCascade(plan({ ownDomain: false, mailboxes: 2 }), 'email')).toBeNull();
   });
 });
 
 describe('normalizePlan', () => {
   it('leaves a consistent plan untouched and is idempotent', () => {
-    const consistent = plan({ addOns: { domain: true, email: true }, pages: 2 });
+    const consistent = withEmail({ pages: 2, news: 1 });
     expect(normalizePlan(consistent)).toEqual(consistent);
 
-    const messy = plan({ formula: 'self_service', addOns: { news: true, email: true }, articles: 2, mailboxes: 4 });
+    const messy = plan({ formula: 'self_service', addOns: { email: true }, news: 2, articles: 3, mailboxes: 4 });
     expect(normalizePlan(normalizePlan(messy))).toEqual(normalizePlan(messy));
   });
 
-  it('never charges the news section in "You stay in control", but keeps the choice for later', () => {
-    const choices = plan({ formula: 'self_service', addOns: { news: true } });
+  it('makes the domain part of the plan without a domain name of its own, and leaves it out otherwise', () => {
+    expect(normalizePlan(plan({ ownDomain: false })).addOns.domain).toBe(true);
+    expect(normalizePlan(plan({ ownDomain: null, addOns: { domain: true } })).addOns.domain).toBe(false);
 
-    expect(normalizePlan(choices).addOns.news).toBe(false);
-    expect(normalizePlan(setFormula(choices, 'managed')).addOns.news).toBe(true);
+    const own = normalizePlan(withEmail({ ownDomain: true, addOns: { redirects: true }, mailboxes: 2 }));
+    expect(own.addOns).toMatchObject({ domain: false, email: false, redirects: false });
+    expect(own.mailboxes).toBe(0);
+  });
+
+  it('brings the email address back when answering again that there is no domain yet', () => {
+    const choices = withEmail({ mailboxes: 2 });
+
+    expect(normalizePlan(setOwnDomain(choices, true)).addOns.email).toBe(false);
+    expect(normalizePlan(setOwnDomain(setOwnDomain(choices, true), false))).toMatchObject({
+      addOns: { email: true },
+      mailboxes: 2,
+    });
+  });
+
+  it('never charges news in "You stay in control", but keeps the choice for later', () => {
+    const choices = plan({ formula: 'self_service', news: 1 });
+
+    expect(normalizePlan(choices).news).toBeNull();
+    expect(normalizePlan(setFormula(choices, 'managed')).news).toBe(1);
   });
 
   it('drops options whose parent is missing', () => {
@@ -130,32 +147,7 @@ describe('normalizePlan', () => {
     expect(next.mailboxes).toBe(0);
   });
 
-  it('raises the update package to the rhythm of the articles', () => {
-    const next = normalizePlan(plan({ articles: 1 }));
-
-    expect(next.updatesEnabled).toBe(true);
-    expect(UPDATE_TIERS[next.updates].key).toBe('weekly');
-  });
-
-  it("keeps the visitor's own update choice when it is already higher", () => {
-    const next = normalizePlan(plan({ articles: 0, updatesEnabled: true, updates: 3 }));
-
-    expect(next.updates).toBe(3);
-  });
-
-  it('falls back to the visitor choice once the articles are removed', () => {
-    const choices = plan({ articles: 2, updatesEnabled: false, updates: 1 });
-
-    expect(normalizePlan(choices).updates).toBe(UPDATE_TIERS.length - 1);
-    expect(normalizePlan({ ...choices, articles: null })).toMatchObject({ updatesEnabled: false, updates: 1 });
-  });
-});
-
-describe('isUpdatesRaised', () => {
-  it('is true only when the articles lift the update package', () => {
-    expect(isUpdatesRaised(plan())).toBe(false);
-    expect(isUpdatesRaised(plan({ articles: 0 }))).toBe(true);
-    expect(isUpdatesRaised(plan({ articles: 0, updatesEnabled: true, updates: 0 }))).toBe(true);
-    expect(isUpdatesRaised(plan({ articles: 0, updatesEnabled: true, updates: 2 }))).toBe(false);
+  it('keeps the content changes apart from the articles', () => {
+    expect(normalizePlan(plan({ articles: 3 }))).toMatchObject({ articles: 3, updatesEnabled: false });
   });
 });

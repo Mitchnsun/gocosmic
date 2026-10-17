@@ -228,8 +228,9 @@ messages/
   │   ├── footer.json      # Footer content
   │   ├── home.json        # Homepage content
   │   ├── about.json       # About page content
-  │   ├── services.json    # Services & pricing page content
-  │   ├── pricing.json     # Pricing columns and subscription simulator
+  │   ├── services.json    # Services page content
+  │   ├── pricing.json     # Pricing columns, subscription simulator and guided mode
+  │   ├── pricing-page.json # Pricing page metadata and introduction
   │   ├── projects.json    # Project pages content
   │   ├── contact.json     # Contact page content
   │   ├── free-mockup.json # Free mockup page content

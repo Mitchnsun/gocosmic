@@ -1,5 +1,5 @@
+import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import type { Metadata } from 'next';
-import { NextIntlClientProvider } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { ReactNode } from 'react';
 
@@ -10,14 +10,13 @@ import FaqSeo from '@/components/JsonLd/FaqSeo';
 import ServiceSeo from '@/components/JsonLd/ServiceSeo';
 import { PricingColumns } from '@/components/PricingColumns';
 import { buildPricingColumns } from '@/components/PricingColumns/PricingColumns.utils';
-import { FreeOffers, PricingSimulator, QuotedServices } from '@/components/PricingSimulator';
 import { BASE_PRICE, FORMULA_PRICES } from '@/components/PricingSimulator/constants';
 import { formatAmount } from '@/components/PricingSimulator/PricingSimulator.utils';
 import { SectionHeading } from '@/components/SectionHeading';
 import { ServicesGrid } from '@/components/ServicesGrid';
 import { cn } from '@/design-system/lib/utils';
-import { CONTAINER, PAGE_TOP, SECTION_Y } from '@/design-system/pill';
-import { getClientMessages } from '@/i18n/client-messages';
+import { CONTAINER, PAGE_TOP, primaryPill, SECTION_Y } from '@/design-system/pill';
+import { Link } from '@/i18n/navigation';
 import { CODE_HANDOVER_MONTHS } from '@/lib/pricing/offers';
 import { type Currency, getCurrency, getRegion } from '@/lib/region';
 import { buildPageMetadata } from '@/lib/seo';
@@ -46,13 +45,12 @@ const QUESTIONS = ['existing', 'ownership', 'edit', 'timing', 'stop', 'content']
 
 const em = (chunks: ReactNode) => <em>{chunks}</em>;
 
-/** Services & pricing: the former services, offers and pricing pages merged into one. */
+/** Services: the four ways to work with the studio, the two formulas of the subscription, the trades and the FAQ. */
 export default async function Services({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations('services');
   const tPricing = await getTranslations('pricing.columns');
-  const messages = await getClientMessages(['pricing']);
   const region = getRegion(locale);
   const currency = getCurrency(region);
   const pricing = buildPricingColumns(tPricing, region, locale);
@@ -78,8 +76,9 @@ export default async function Services({ params }: { params: Promise<{ locale: s
 
       <PricingColumns eyebrow={tPricing('eyebrow')} title={tPricing('title')} columns={pricing} />
 
+      {/* The two formulas, leading to the pricing page; `#simulator` keeps older links working. */}
       <section id="simulator" aria-labelledby="simulator-heading" className={cn('bg-bg-alt scroll-mt-20', SECTION_Y)}>
-        <div className={cn(CONTAINER, 'flex flex-col gap-10')}>
+        <div className={cn(CONTAINER, 'flex flex-col items-start gap-8')}>
           <SectionHeading
             eyebrow={t('simulator.eyebrow')}
             title={t.rich('simulator.title', { em })}
@@ -89,11 +88,10 @@ export default async function Services({ params }: { params: Promise<{ locale: s
               selfServicePrice: formatAmount(FORMULA_PRICES.self_service, currency, locale),
             })}
           />
-          <NextIntlClientProvider locale={locale} messages={messages}>
-            <PricingSimulator region={region} />
-            <FreeOffers />
-            <QuotedServices />
-          </NextIntlClientProvider>
+          <Link href="/pricing" className={primaryPill()}>
+            {tPricing('subscription.cta')}
+            <ArrowRightIcon className="size-4" aria-hidden="true" />
+          </Link>
         </div>
       </section>
 

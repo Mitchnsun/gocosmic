@@ -32,7 +32,8 @@ describe('Footer Component', () => {
     const { getByRole } = renderFooter();
     const nav = getByRole('navigation', { name: 'Studio' });
 
-    expect(within(nav).getByRole('link', { name: 'Services & pricing' })).toHaveAttribute('href', '/services');
+    expect(within(nav).getByRole('link', { name: 'Services' })).toHaveAttribute('href', '/services');
+    expect(within(nav).getByRole('link', { name: 'Pricing' })).toHaveAttribute('href', '/pricing');
     expect(within(nav).getByRole('link', { name: 'Projects' })).toHaveAttribute('href', '/projects');
     expect(within(nav).getByRole('link', { name: 'Our app' })).toHaveAttribute('href', '/#apps');
     expect(within(nav).getByRole('link', { name: 'About' })).toHaveAttribute('href', '/about');

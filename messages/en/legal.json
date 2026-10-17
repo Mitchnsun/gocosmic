@@ -80,7 +80,7 @@
       },
       "eyebrow": "Legal information",
       "title": "Legal notice",
-      "updated": "Last updated: 15 October 2026",
+      "updated": "Last updated: 16 October 2026",
       "intro": "This legal notice identifies the publisher of www.gocosmic.dev and sets out the responsibilities linked to using it.",
       "sections": [
         {
@@ -121,7 +121,9 @@
         },
         {
           "title": "Pricing",
-          "body": ["Cosmic Studio is not registered for VAT: the prices shown are net prices, with no VAT added."]
+          "body": [
+            "Cosmic Studio is not registered for VAT: the prices shown on the site are net prices. The details are in the terms of sale."
+          ]
         },
         {
           "title": "Contact",
@@ -136,7 +138,7 @@
       },
       "eyebrow": "Terms of sale",
       "title": "Terms of sale",
-      "updated": "Last updated: 15 October 2026",
+      "updated": "Last updated: 17 October 2026",
       "intro": "These terms of sale apply to the subscription and services offered by Cosmic Studio on www.gocosmic.dev.",
       "sections": [
         {
@@ -161,10 +163,14 @@
         {
           "title": "Price and billing",
           "body": [
-            "Subscription prices are those shown on the Services & pricing page at the time of subscription, based on the options chosen. Billing is monthly, quarterly or annual, whichever you prefer.",
+            "Subscription prices are those shown on the Pricing page at the time of subscription, based on the options chosen.",
+            "The subscription is billed yearly or on a monthly payment schedule. Yearly, the invoice is paid by bank transfer within 30 days of receipt. On the schedule, each monthly instalment is paid by bank transfer on the date shown on the invoice.",
             "Guidance, team reinforcement and custom projects are billed at the day rate or on a quote, provided before any work starts.",
-            "Cosmic Studio is not registered for VAT: the prices shown are net prices, with no VAT added.",
-            "Prices in euros (EUR) apply to businesses not domiciled in Switzerland. For businesses domiciled in Switzerland, prices are in Swiss francs (CHF)."
+            "Cosmic Studio is not registered for VAT: VAT does not apply (article 10 of the Swiss VAT Act) and the prices shown are net prices. If Cosmic Studio becomes registered, VAT at the applicable rate will be added to the prices; you will be informed in writing at least 30 days before it applies.",
+            "A client based in France and registered for VAT declares the VAT on our services, then deducts it: the operation is neutral for them.",
+            "Prices in euros (EUR) apply to businesses not domiciled in Switzerland. For businesses domiciled in Switzerland, prices are in Swiss francs (CHF).",
+            "Bank charges for international payments, as well as duties and taxes due in the client's country, are borne by the client.",
+            "Any late payment automatically incurs default interest of 5% per year."
           ]
         },
         {
@@ -179,9 +185,11 @@
           "title": "Options",
           "body": [
             "You can add an option at any time; it takes effect from the next billing period.",
-            "The number of pages, the domain name, Swiss hosting and the main email address cannot be removed once active, because each one is a commitment made on your behalf (pages built, domain registered, mailbox opened). The frequency of content changes can be adjusted up or down.",
-            "Options marked “1-year commitment” (news section, English version, local search follow-up, visit statistics and detailed measurement, AI-assisted articles, extra mailboxes and redirects) are subscribed for 12-month periods and can be removed at the end of a period. The rhythm of the articles can be lowered with one month's notice.",
-            "The other options (contact form, online booking, customer reviews, site monitoring) can be removed with one month's notice.",
+            "The number of pages and Swiss hosting cannot be removed once active, because each one is a commitment made on your behalf (pages built). The frequency of content changes can be adjusted up or down.",
+            "If you do not have a domain name, its management by Cosmic Studio is part of the subscription. If you already have one, the domain name and email address options are not offered; help with your domain name and email addresses can be quoted.",
+            "A content change is one request, which can group several changes. News and articles do not count towards content changes.",
+            "Options marked “1-year commitment” (domain name, email address, news published for you, site in English, following your place on Google, visit statistics and detailed statistics, AI-assisted articles, extra mailboxes and forwarding addresses) are subscribed for 12-month periods and can be removed at the end of a period. The rhythm of the news and of the articles can be lowered with one month's notice.",
+            "The other options (contact form, online booking, customer reviews) can be removed with one month's notice.",
             "When an option is removed, the content that goes with it disappears from the site, for example the news section and its posts, or the English version.",
             "By default, your website is hosted in the European Union. If this location does not suit you, you can ask us for hosting in another country; we will then tell you whether it is possible and at what price."
           ]
@@ -197,20 +205,22 @@
           "title": "Ownership",
           "body": [
             "Your texts, images and domain name belong to you from day one. The site's code is transferred to you free of charge after 36 months of subscription. Before then, it can be transferred for a fee that depends on the remaining time.",
-            "For a one-off project, the code belongs to you from delivery."
+            "For a one-off project, the code belongs to you from delivery, once the invoice has been paid in full."
           ]
         },
         {
           "title": "Your commitments",
           "body": [
             "You provide the texts, images and information needed to build or update the site. Announced timelines start once we have received them.",
+            "Announced timelines are indicative. Cosmic Studio is not liable for a delay or a failure to perform caused by force majeure.",
             "We set up your legal notice and privacy policy from the information you provide; you read them over, approve them and remain responsible for them."
           ]
         },
         {
           "title": "Liability and availability",
           "body": [
-            "Cosmic Studio takes reasonable steps to keep the site available, without being able to guarantee that it will never be interrupted. If a prolonged outage is caused by Cosmic Studio, the period concerned may be extended by the same length of time."
+            "Cosmic Studio takes reasonable steps to keep the site available, without being able to guarantee that it will never be interrupted. If a prolonged outage is caused by Cosmic Studio, the period concerned may be extended by the same length of time.",
+            "Cosmic Studio's liability is limited to the amount of the order concerned, except in cases of intent or gross negligence."
           ]
         },
         {
@@ -220,8 +230,8 @@
         {
           "title": "Governing law and disputes",
           "body": [
-            "These terms are governed by Swiss law for clients based in Switzerland, and by French law for clients based in France. In the event of a dispute, an amicable solution is sought before any legal action; failing that, the competent courts are those of the client's place of residence.",
-            "In all other cases, Swiss law applies and the courts of the canton of Geneva have jurisdiction."
+            "These terms are governed by Swiss law, whatever the client's country.",
+            "In the event of a dispute, an amicable solution is sought before any legal action. Failing that, the courts of Cosmic Studio's seat, in Chêne-Bougeries (canton of Geneva), have exclusive jurisdiction, subject to the mandatory provisions that protect consumers."
           ]
         }
       ]

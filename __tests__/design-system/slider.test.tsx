@@ -55,4 +55,18 @@ describe('<Slider />', () => {
 
     expect(container.querySelector('.custom-class')).toBeInTheDocument();
   });
+
+  it('marks each step on the track, where the thumb lands, but not a continuous range', () => {
+    const marks = (props: { max: number; step: number }) =>
+      render(<Slider value={[0]} min={0} {...props} onValueChange={() => {}} />).container.querySelectorAll(
+        'span[aria-hidden="true"]'
+      );
+
+    const steps = marks({ max: 4, step: 1 });
+    expect(steps).toHaveLength(5);
+    // The track is inset to match the end dots: the first dot sits half a dot in, the last one half a dot back.
+    expect((steps[0] as HTMLElement).style.left).toBe('calc(0% + 4px)');
+    expect((steps[4] as HTMLElement).style.left).toBe('calc(100% - 4px)');
+    expect(marks({ max: 100, step: 1 })).toHaveLength(0);
+  });
 });

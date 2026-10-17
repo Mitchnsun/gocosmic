@@ -3,43 +3,46 @@
 import { useTranslations } from 'next-intl';
 import { useId } from 'react';
 
-import type { Currency, Region } from '@/lib/region';
+import type { Region } from '@/lib/region';
 
 import { AddressOptions } from './AddressOptions';
 import { BaseCard } from './BaseCard';
 import { CareOptions } from './CareOptions';
-import { type SimulatorActions, usePriceFormat } from './PricingSimulator.hooks';
+import { MoreOptions } from './MoreOptions';
+import type { PriceFormat, SimulatorActions } from './PricingSimulator.hooks';
+import type { Cascade } from './PricingSimulator.rules';
 import type { PlanSelection } from './PricingSimulator.types';
 import { SiteOptions } from './SiteOptions';
-import { VisibilityOptions } from './VisibilityOptions';
 
 interface PlanBuilderProps {
-  currency: Currency;
+  format: PriceFormat;
   region: Region;
   plan: PlanSelection;
-  updatesRaised: boolean;
+  cascade: Cascade | null;
   actions: SimulatorActions;
 }
 
-/** Composable plan: the formula and what it includes, then the options grouped by purpose. The total lives in `PlanSummary`. */
-export function PlanBuilder({ currency, region, plan, updatesRaised, actions }: PlanBuilderProps) {
+/**
+ * Composable plan: what the formula includes, then the common options grouped by purpose, and the
+ * others folded under "More options". The total lives in `PlanSummary`.
+ */
+export function PlanBuilder({ format, region, plan, cascade, actions }: PlanBuilderProps) {
   const t = useTranslations('pricing.builder');
-  const { surcharge } = usePriceFormat(currency);
   const headingId = useId();
-  const group = { plan, actions, surcharge };
+  const group = { plan, actions, surcharge: format.surcharge };
   const domain = t(`options.example_domain.${region}`);
 
   return (
     <div className="space-y-6">
-      <BaseCard formula={plan.formula} currency={currency} />
+      <BaseCard formula={plan.formula} price={format.price} />
       <section aria-labelledby={headingId} className="space-y-6">
-        <h3 id={headingId} className="text-fg-2 text-2xs font-mono tracking-[0.24em] uppercase">
+        <h3 id={headingId} className="font-display text-fg text-xl font-semibold">
           {t('options.title')}
         </h3>
         <SiteOptions {...group} />
-        <AddressOptions {...group} domain={domain} region={region} />
-        <VisibilityOptions {...group} />
-        <CareOptions {...group} updatesRaised={updatesRaised} />
+        <AddressOptions {...group} domain={domain} cascade={cascade} />
+        <CareOptions {...group} />
+        <MoreOptions {...group} domain={domain} region={region} cascade={cascade} />
       </section>
     </div>
   );

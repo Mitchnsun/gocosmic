@@ -1,21 +1,18 @@
 'use client';
 
-import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import { useTranslations } from 'next-intl';
 
-import { primaryPill } from '@/design-system/pill';
 import { Link } from '@/i18n/navigation';
-import { encodePlanCode } from '@/lib/pricing/plan-code';
-import { storePlanCode } from '@/lib/pricing/plan-storage';
-import type { Currency, Region } from '@/lib/region';
+import type { Region } from '@/lib/region';
 
+import { MockupLink } from './MockupLink';
 import { PriceTotal } from './PriceTotal';
-import { usePriceFormat } from './PricingSimulator.hooks';
+import type { PriceFormat } from './PricingSimulator.hooks';
 import type { PlanItem, PlanSelection } from './PricingSimulator.types';
-import { getPlanItems } from './PricingSimulator.utils';
+import { getCommittedItems, getPlanItems, isTiered } from './PricingSimulator.utils';
 
 interface PlanSummaryProps {
-  currency: Currency;
+  format: PriceFormat;
   region: Region;
   /** Normalised plan. */
   plan: PlanSelection;
@@ -23,26 +20,29 @@ interface PlanSummaryProps {
   showQuoteHint: boolean;
 }
 
+const linkClass = 'text-fg-2 hover:text-fg underline underline-offset-4';
+
 /**
- * Sticky recap of the composed plan: itemised lines, live total, and the free
- * mockup request carrying the simulation along.
+ * Sticky recap of the composed plan: itemised lines, live total, whether it commits for 12 months,
+ * and the free mockup request carrying the simulation along.
  */
-export function PlanSummary({ currency, region, plan, total, showQuoteHint }: PlanSummaryProps) {
+export function PlanSummary({ format, region, plan, total, showQuoteHint }: PlanSummaryProps) {
   const t = useTranslations('pricing');
-  const { price, surcharge } = usePriceFormat(currency);
+  const { price, surcharge } = format;
+  const committed = getCommittedItems(plan);
 
   const label = (item: PlanItem) => {
     if (item.id === 'formula') return t(`builder.formulas.${plan.formula}.label`);
     if (item.id === 'pages') return t(`builder.pages.tiers.${item.tier}`);
     if (item.id === 'updates') return t('builder.updates.label');
     if (item.id === 'mailboxes') return t('builder.options.mailboxes.count', { count: item.count ?? 0 });
+    if (item.id === 'detailed_analytics') return t('builder.options.detailed_analytics.recap_label');
     return t(`builder.options.${item.id}.label`);
   };
   /** Rhythm of a slider line, e.g. "Every month". */
   const detail = (item: PlanItem) => {
     if (item.id === 'updates') return t(`builder.updates.tiers.${item.tier}`);
-    if (item.id === 'analytics' || item.id === 'seo' || item.id === 'articles')
-      return t(`builder.options.${item.id}.tiers.${item.tier}`);
+    if (isTiered(item.id)) return t(`builder.options.${item.id}.tiers.${item.tier}`);
     return undefined;
   };
   const amount = (item: PlanItem) => {
@@ -58,7 +58,13 @@ export function PlanSummary({ currency, region, plan, total, showQuoteHint }: Pl
         label={t('builder.total.label')}
         amount={price(total)}
         period={t('builder.period')}
-        note={t('builder.total.note')}
+        note={t.rich('builder.total.note', {
+          link: (chunks) => (
+            <Link href="/terms" className={linkClass}>
+              {chunks}
+            </Link>
+          ),
+        })}
       />
       <ul className="border-line text-fg-2 flex flex-col gap-2 border-t pt-4 text-sm">
         {getPlanItems(plan).map((item) => (
@@ -71,24 +77,25 @@ export function PlanSummary({ currency, region, plan, total, showQuoteHint }: Pl
           </li>
         ))}
       </ul>
+      <p className="border-line text-fg-2 border-t pt-4 text-sm">
+        {committed.length > 0
+          ? t('builder.commitment_line.periods', {
+              items: committed.map((id) => t(`builder.commitment_items.${id}`)).join(', '),
+            })
+          : t('builder.commitment_line.none')}
+      </p>
       {showQuoteHint && (
         <p className="border-aerospace/30 bg-aerospace/[0.04] text-fg-2 rounded-xl border px-4 py-3 text-sm">
           {t('builder.total.beyond')}
         </p>
       )}
-      <Link
-        href="/free-mockup"
-        onClick={() =>
-          storePlanCode(encodePlanCode({ projectType: 'website', websiteType: 'showcase', selection: plan, region }))
-        }
-        className={primaryPill('w-full')}>
+      <MockupLink plan={plan} region={region} className="w-full">
         {t('builder.total.cta')}
-        <ArrowRightIcon className="size-4" aria-hidden="true" />
-      </Link>
+      </MockupLink>
       <p className="text-fg-3 text-center text-sm">
         {t.rich('builder.total.question', {
           link: (chunks) => (
-            <Link href="/contact" className="text-fg-2 hover:text-fg underline underline-offset-4">
+            <Link href="/contact" className={linkClass}>
               {chunks}
             </Link>
           ),

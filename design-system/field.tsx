@@ -13,6 +13,18 @@ const FIELD_CONTROL =
 export const CHECKBOX_CONTROL =
   'check-mark border-fg-3 bg-field checked:border-aerospace checked:bg-aerospace focus-visible:ring-aerospace-ink h-5 w-5 shrink-0 cursor-pointer appearance-none rounded border transition-colors focus-visible:ring-2 focus-visible:outline-none';
 
+/** Native radio button matching {@link CHECKBOX_CONTROL}: a 20 px circle whose thick orange border leaves a dot when picked. */
+export const RADIO_CONTROL =
+  'border-fg-3 bg-field checked:border-aerospace focus-visible:ring-aerospace-ink h-5 w-5 shrink-0 cursor-pointer appearance-none rounded-full border transition-colors checked:border-[6px] focus-visible:ring-2 focus-visible:outline-none';
+
+/**
+ * Surface of an answer the visitor picks, the whole surface being the control's label (a formula, a
+ * guide answer): its border reaches 3:1, and it turns orange with a light tint once the control inside is
+ * checked; the tint keeps orange text on it at 4.5:1.
+ */
+export const PICKABLE_SURFACE =
+  'border-line-2 hover:border-fg-3 has-checked:border-aerospace has-checked:bg-aerospace/[0.06] light:has-checked:bg-aerospace/[0.03] cursor-pointer rounded-2xl border transition-colors';
+
 /** Single-line control height; textareas grow with their rows instead. */
 export const FIELD_INPUT = cn(FIELD_CONTROL, 'h-12');
 export const FIELD_TEXTAREA = cn(FIELD_CONTROL, 'py-3');

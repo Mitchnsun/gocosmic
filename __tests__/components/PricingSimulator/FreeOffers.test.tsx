@@ -19,4 +19,11 @@ describe('FreeOffers', () => {
     expect(section).toBeInTheDocument();
     expect(screen.getAllByRole('listitem')).toHaveLength(2);
   });
+
+  it('offers a button to request each one', () => {
+    render(<FreeOffers />);
+
+    expect(screen.getByRole('link', { name: 'Request my free mockup' })).toHaveAttribute('href', '/free-mockup');
+    expect(screen.getByRole('link', { name: 'Request a review' })).toHaveAttribute('href', '/contact');
+  });
 });

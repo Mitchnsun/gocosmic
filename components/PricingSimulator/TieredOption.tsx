@@ -17,12 +17,23 @@ interface TieredOptionProps {
   surcharge: (amount: number) => string;
   /** Sentence appended to the info bubble. */
   extraInfo?: string;
+  /** Live sentence under the row, e.g. what unticking it removed. */
+  note?: string;
   /** Sub-options shown under the slider once ticked. */
   children?: ReactNode;
 }
 
-/** Tick box revealing a slider of tiers (statistics report, local search rhythm, articles). */
-export function TieredOption({ id, value, onToggle, onTierChange, surcharge, extraInfo, children }: TieredOptionProps) {
+/** Tick box revealing a slider of tiers (news, statistics report, local search rhythm, articles). */
+export function TieredOption({
+  id,
+  value,
+  onToggle,
+  onTierChange,
+  surcharge,
+  extraInfo,
+  note,
+  children,
+}: TieredOptionProps) {
   const t = useTranslations('pricing.builder');
   const table = TIERED_TABLES[id];
   const tiers = table.map((tier) => ({ label: t(`options.${id}.tiers.${tier.key}`), price: surcharge(tier.price) }));
@@ -40,11 +51,13 @@ export function TieredOption({ id, value, onToggle, onTierChange, surcharge, ext
         label: t('info_label', { option: label }),
         text: [t(`options.${id}.info`), extraInfo].filter(Boolean).join(' '),
       }}
-      commitment={ONE_YEAR_OPTIONS.has(id) ? t('commitment') : undefined}>
+      commitment={ONE_YEAR_OPTIONS.has(id) ? t('commitment') : undefined}
+      note={note}>
       {value !== null && (
         <div className="border-line space-y-4 border-t px-4 py-4">
           <TierSlider
             label={t(`options.${id}.slider_label`)}
+            context={label}
             tiers={tiers}
             value={value}
             onChange={(next) => onTierChange(id, next)}

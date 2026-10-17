@@ -50,14 +50,21 @@ describe('TierSlider', () => {
     expect(screen.getByRole('group', { name: 'Number of pages' })).toHaveAttribute('aria-disabled', 'true');
   });
 
-  it('adapts its range to the number of tiers and can point at a note', () => {
-    render(
-      <TierSlider label="Report" tiers={tiers.slice(0, 3)} value={1} onChange={() => {}} describedBy="report-note" />
-    );
+  it('adapts its range to the number of tiers', () => {
+    render(<TierSlider label="Report" tiers={tiers.slice(0, 3)} value={1} onChange={() => {}} />);
 
-    const slider = screen.getByRole('slider', { name: 'Report' });
-    expect(slider).toHaveAttribute('aria-valuemax', '2');
-    expect(slider).toHaveAttribute('aria-describedby', 'report-note');
+    expect(screen.getByRole('slider', { name: 'Report' })).toHaveAttribute('aria-valuemax', '2');
+  });
+
+  it('says how to enable it while it is disabled, and only then', () => {
+    const { rerender } = render(
+      <TierSlider label="Rhythm" tiers={tiers} value={0} onChange={() => {}} disabled disabledHint="Tick the box." />
+    );
+    expect(screen.getByRole('slider', { name: 'Rhythm' })).toHaveAccessibleDescription('Tick the box.');
+
+    rerender(<TierSlider label="Rhythm" tiers={tiers} value={0} onChange={() => {}} disabledHint="Tick the box." />);
+    expect(screen.queryByText('Tick the box.')).not.toBeInTheDocument();
+    expect(screen.getByRole('slider', { name: 'Rhythm' })).not.toHaveAttribute('aria-describedby');
   });
 
   it('reflects the selected tier as the current slider value', () => {

@@ -1,95 +1,134 @@
 import { PricingSimulator } from '@/components/PricingSimulator/PricingSimulator';
 import { decodePlanCode } from '@/lib/pricing/plan-code';
 import { PLAN_STORAGE_KEY } from '@/lib/pricing/plan-storage';
+import { OPTION_GROUPS } from '@/lib/pricing/price-list';
+import en from '@/messages/en/pricing.json';
 
 import { fireEvent, render, screen, within } from '../../test-utils';
 
 const total = () => screen.getByRole('status', { name: /your estimate/i });
 const recap = () => screen.getByRole('complementary', { name: /your estimate/i });
 const tick = (name: RegExp | string) => fireEvent.click(screen.getByRole('checkbox', { name }));
-/** Radix tabs switch on mouse down, not on click. */
-const openTab = (name: string) => fireEvent.mouseDown(screen.getByRole('tab', { name }));
+const pick = (name: RegExp | string) => fireEvent.click(screen.getByRole('radio', { name }));
+const openMoreOptions = () => fireEvent.click(screen.getByRole('button', { name: /more options/i }));
+/** Answers "No" to the domain question: the studio manages one, and the email address can be ticked. */
+const withoutDomain = () => pick('No, register one for me');
 
 describe('PricingSimulator', () => {
   beforeEach(() => {
     window.sessionStorage.clear();
   });
 
-  it('opens on "We take care of everything" at the advertised base price', () => {
+  it('opens on "We take care of everything" at the advertised base price, with no commitment', () => {
     render(<PricingSimulator region="fr" />);
 
-    expect(screen.getByRole('tablist', { name: 'Choose your plan' })).toBeInTheDocument();
-    expect(screen.getByRole('tab', { name: 'We take care of everything' })).toHaveAttribute('aria-selected', 'true');
+    const plans = screen.getByRole('group', { name: 'Choose your plan' });
+    expect(within(plans).getByRole('radio', { name: /we take care of everything · from €10 \/ month/i })).toBeChecked();
+    expect(within(plans).getByRole('radio', { name: /you stay in control · from €20 \/ month/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 3, name: 'We take care of everything' })).toBeInTheDocument();
     expect(screen.getByText('Your legal notice and privacy policy')).toBeInTheDocument();
+    expect(screen.getByText('The settings to be found on Google')).toBeInTheDocument();
     expect(total()).toHaveTextContent('€10');
     expect(within(recap()).getAllByRole('listitem')).toHaveLength(1);
+    expect(within(recap()).getByText('No minimum term: cancel any month.')).toBeInTheDocument();
   });
 
   it('switches to "You stay in control", with its editing tool and news section included', () => {
     render(<PricingSimulator region="fr" />);
-    tick(/a news section/i);
-    expect(total()).toHaveTextContent('€15');
+    tick(/news published for you/i);
+    expect(total()).toHaveTextContent('€20');
 
-    openTab('You stay in control');
+    pick(/you stay in control/i);
 
     expect(total()).toHaveTextContent('€20');
     expect(screen.getByText('An editing space for your news and opening hours')).toBeInTheDocument();
-    expect(screen.queryByRole('checkbox', { name: /a news section/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole('checkbox', { name: /news published for you/i })).not.toBeInTheDocument();
     expect(within(recap()).getByText('You stay in control')).toBeInTheDocument();
+    expect(
+      within(recap()).getByText(/12-month periods, as it includes: the “You stay in control” plan\./)
+    ).toBeInTheDocument();
 
-    openTab('We take care of everything');
+    pick(/we take care of everything/i);
     // The visitor's own choice comes back with the formula that charges it.
-    expect(screen.getByRole('checkbox', { name: /a news section/i })).toBeChecked();
-    expect(total()).toHaveTextContent('€15');
+    expect(screen.getByRole('checkbox', { name: /news published for you/i })).toBeChecked();
+    expect(total()).toHaveTextContent('€20');
   });
 
-  it('adds a ticked add-on to the total and to the itemised recap', () => {
+  it('prices the news by rhythm and lists it in the recap', () => {
     render(<PricingSimulator region="fr" />);
+    tick(/news published for you/i);
 
-    tick(/managing your domain name/i);
+    fireEvent.keyDown(screen.getByRole('slider', { name: 'News published for you · Rhythm' }), { key: 'End' });
 
+    expect(total()).toHaveTextContent('€110');
+    expect(within(recap()).getByText('News published for you')).toBeInTheDocument();
+    expect(within(recap()).getByText(/1 news item a week/)).toBeInTheDocument();
+    expect(within(recap()).getByText(/as it includes: news published for you\./)).toBeInTheDocument();
+  });
+
+  it('asks about an existing domain name before offering the domain and the email address', () => {
+    render(<PricingSimulator region="fr" />);
+    const question = screen.getByRole('group', { name: 'Do you already have a domain name?' });
+
+    expect(question).toHaveAccessibleDescription(/for example my-business\.com/);
+    expect(screen.queryByRole('checkbox', { name: /managing your domain name/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole('checkbox', { name: /email address in your own name/i })).not.toBeInTheDocument();
+
+    withoutDomain();
+
+    const domain = screen.getByRole('checkbox', { name: /managing your domain name/i });
+    expect(domain).toBeChecked();
+    expect(domain).toBeDisabled();
+    expect(domain).toHaveAccessibleDescription(/1-year commitment/);
     expect(total()).toHaveTextContent('€15');
-    const lines = within(recap()).getAllByRole('listitem');
-    expect(lines).toHaveLength(2);
-    expect(lines[1]).toHaveTextContent('+€5');
+    expect(within(recap()).getByText(/as it includes: domain name\./)).toBeInTheDocument();
+
+    pick('Yes, I already have one');
+
+    expect(screen.queryByRole('checkbox', { name: /managing your domain name/i })).not.toBeInTheDocument();
+    expect(screen.getByText(/you keep your domain name and your current email addresses/i)).toBeInTheDocument();
+    expect(total()).toHaveTextContent('€10');
   });
 
   it('shows a .com domain example for non-Swiss visitors and .ch for Swiss ones', () => {
     const { unmount } = render(<PricingSimulator region="fr" />);
-    expect(screen.getAllByText(/my-business\.com/)).toHaveLength(2);
+    expect(screen.getByText(/for example my-business\.com/)).toBeInTheDocument();
     unmount();
 
     render(<PricingSimulator region="ch" />);
-    expect(screen.getAllByText(/my-business\.ch/)).toHaveLength(2);
+    expect(screen.getByText(/for example my-business\.ch/)).toBeInTheDocument();
   });
 
-  it('ticks the domain with the email address, then offers extra mailboxes and redirects', () => {
+  it('offers extra mailboxes with the email address, and announces what unticking it removes', () => {
     render(<PricingSimulator region="fr" />);
+    withoutDomain();
+
+    tick(/email address in your own name/i);
+    expect(total()).toHaveTextContent('€30');
+    expect(within(recap()).getByText(/as it includes: domain name, email address\./)).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: 'One more mailbox' }));
+    fireEvent.click(screen.getByRole('button', { name: 'One more mailbox' }));
+    expect(screen.getByText('2 extra mailboxes', { selector: '[aria-live]' })).toBeInTheDocument();
+    expect(total()).toHaveTextContent('€50');
+    expect(within(recap()).getByText('2 extra mailboxes')).toBeInTheDocument();
 
     tick(/email address in your own name/i);
 
-    expect(screen.getByRole('checkbox', { name: /managing your domain name/i })).toBeChecked();
-    expect(screen.getByText(/uses your domain name/i)).toBeInTheDocument();
-    expect(total()).toHaveTextContent('€30');
-
-    fireEvent.click(screen.getByRole('button', { name: 'One more mailbox' }));
-    fireEvent.click(screen.getByRole('button', { name: 'One more mailbox' }));
-    tick('5 redirects');
-
-    expect(screen.getByText('2 extra mailboxes', { selector: '[aria-live]' })).toBeInTheDocument();
-    expect(total()).toHaveTextContent('€55');
-    expect(within(recap()).getByText('2 extra mailboxes')).toBeInTheDocument();
-
-    tick(/managing your domain name/i);
-
-    expect(screen.getByRole('checkbox', { name: /email address in your own name/i })).not.toBeChecked();
     expect(screen.queryByRole('button', { name: 'One more mailbox' })).not.toBeInTheDocument();
-    expect(total()).toHaveTextContent('€10');
+    expect(
+      screen.getByText('Extra mailboxes and forwarding addresses removed along with the email address.')
+    ).toBeInTheDocument();
+    expect(total()).toHaveTextContent('€15');
+
+    // The announcement only lasts until the next action.
+    tick(/a contact form/i);
+    expect(screen.queryByText(/removed along with the email address/)).not.toBeInTheDocument();
   });
 
   it('stops the mailbox counter at its bounds and invites a conversation at the top', () => {
     render(<PricingSimulator region="fr" />);
+    withoutDomain();
     tick(/email address in your own name/i);
 
     const less = screen.getByRole('button', { name: 'One mailbox less' });
@@ -116,107 +155,128 @@ describe('PricingSimulator', () => {
     expect(within(recap()).getByText('5 to 7 pages')).toBeInTheDocument();
   });
 
-  it('includes one change a year and leaves the update slider out until its option is ticked', () => {
+  it('includes one change a year and says how to enable the rhythm slider', () => {
     render(<PricingSimulator region="fr" />);
 
     expect(screen.getByText('Once a year (included)')).toBeInTheDocument();
-    expect(screen.getByRole('slider', { name: /changes per year/i })).toHaveAttribute('data-disabled');
+    expect(screen.getByRole('slider', { name: /rhythm of changes/i })).toHaveAttribute('data-disabled');
+    expect(screen.getByRole('slider', { name: /rhythm of changes/i })).toHaveAccessibleDescription(
+      'Tick the box to choose a rhythm.'
+    );
 
-    tick(/content changes included/i);
+    tick(/changes to your pages/i);
 
-    expect(screen.getByRole('slider', { name: /changes per year/i })).not.toHaveAttribute('data-disabled');
+    expect(screen.getByRole('slider', { name: /rhythm of changes/i })).not.toHaveAttribute('data-disabled');
+    expect(screen.queryByText('Tick the box to choose a rhythm.')).not.toBeInTheDocument();
     expect(total()).toHaveTextContent('€15');
-    expect(within(recap()).getByText('Content changes included')).toBeInTheDocument();
+    expect(within(recap()).getByText('Changes to your pages')).toBeInTheDocument();
+    // Changes can be stopped with a month's notice.
+    expect(within(recap()).getByText('No minimum term: cancel any month.')).toBeInTheDocument();
   });
 
   it('prices the chosen update frequency', () => {
     render(<PricingSimulator region="fr" />);
-    tick(/content changes included/i);
+    tick(/changes to your pages/i);
 
-    const slider = screen.getByRole('slider', { name: /changes per year/i });
+    const slider = screen.getByRole('slider', { name: /rhythm of changes/i });
     fireEvent.keyDown(slider, { key: 'ArrowRight' });
     fireEvent.keyDown(slider, { key: 'ArrowRight' });
     fireEvent.keyDown(slider, { key: 'ArrowRight' });
 
-    expect(total()).toHaveTextContent('€70');
+    expect(total()).toHaveTextContent('€85');
   });
 
-  it('lifts and locks the update package to the rhythm of the AI-assisted articles', () => {
+  it('folds the options for precise needs under "More options", counting the ticked ones', () => {
     render(<PricingSimulator region="fr" />);
+    const toggle = screen.getByRole('button', { name: /more options/i });
 
+    expect(toggle).toHaveAttribute('aria-expanded', 'false');
+    // What they are for shows even when closed, and the button reads it.
+    expect(toggle).toHaveAccessibleDescription(/options to go further, for example showing up better on google/i);
+    expect(screen.queryByRole('checkbox', { name: /visit statistics/i })).not.toBeInTheDocument();
+
+    openMoreOptions();
+
+    expect(toggle).toHaveAttribute('aria-expanded', 'true');
+    tick(/following your place on google/i);
     tick(/ai-assisted articles/i);
 
-    const updates = screen.getByRole('checkbox', { name: /content changes included/i });
-    expect(updates).toBeChecked();
-    expect(updates).toBeDisabled();
-    expect(screen.getByText(/we have adjusted your content changes/i)).toBeInTheDocument();
-    // 10 base + 5 articles + 20 monthly updates
-    expect(total()).toHaveTextContent('€35');
+    expect(toggle).toHaveTextContent('2 ticked');
+    expect(total()).toHaveTextContent('€25');
 
-    fireEvent.keyDown(screen.getByRole('slider', { name: 'Rhythm' }), { key: 'ArrowRight' });
-    // One a week: 15 articles + 60 weekly updates.
-    expect(total()).toHaveTextContent('€85');
+    // Closed again, the options stay in the recap.
+    fireEvent.click(toggle);
+    expect(screen.queryByRole('checkbox', { name: /ai-assisted articles/i })).not.toBeInTheDocument();
+    expect(within(recap()).getByText('AI-assisted articles')).toBeInTheDocument();
+  });
 
-    // Pushing the update slider below the article rhythm changes nothing, even once articles are gone.
-    fireEvent.keyDown(screen.getByRole('slider', { name: /changes per year/i }), { key: 'Home' });
-    expect(total()).toHaveTextContent('€85');
+  it('prices statistics by report rhythm, and announces the detailed statistics removed with them', () => {
+    render(<PricingSimulator region="fr" />);
+    openMoreOptions();
+    expect(screen.getByRole('checkbox', { name: /visit statistics/i })).toHaveAccessibleDescription(/from \+€5/);
 
-    tick(/ai-assisted articles/i);
-    expect(screen.getByRole('checkbox', { name: /content changes included/i })).not.toBeChecked();
+    tick(/visit statistics/i);
+    fireEvent.keyDown(screen.getByRole('slider', { name: 'Visit statistics · Written report' }), { key: 'End' });
+    tick(/detailed statistics/i);
+
+    expect(total()).toHaveTextContent('€65');
+    expect(within(recap()).getByText('Detailed statistics')).toBeInTheDocument();
+    expect(within(recap()).getByText(/Every month/)).toBeInTheDocument();
+
+    tick(/visit statistics/i);
+    expect(screen.queryByRole('checkbox', { name: /detailed statistics/i })).not.toBeInTheDocument();
+    expect(screen.getByText('Detailed statistics removed along with visit statistics.')).toBeInTheDocument();
     expect(total()).toHaveTextContent('€10');
   });
 
-  it('explains the locked update package even when its rhythm was already high enough', () => {
+  it('offers forwarding addresses only with an email address', () => {
     render(<PricingSimulator region="fr" />);
-    tick(/content changes included/i);
-    fireEvent.keyDown(screen.getByRole('slider', { name: /changes per year/i }), { key: 'End' });
+    openMoreOptions();
+    expect(screen.queryByRole('checkbox', { name: /forwarding addresses/i })).not.toBeInTheDocument();
+
+    withoutDomain();
+    tick(/email address in your own name/i);
+    tick(/forwarding addresses/i);
+
+    expect(total()).toHaveTextContent('€35');
+  });
+
+  it('keeps the articles apart from the content changes', () => {
+    render(<PricingSimulator region="fr" />);
+    openMoreOptions();
 
     tick(/ai-assisted articles/i);
+    fireEvent.keyDown(screen.getByRole('slider', { name: 'AI-assisted articles · Rhythm' }), { key: 'End' });
 
-    const updates = screen.getByRole('checkbox', { name: /content changes included/i });
-    expect(updates).toBeDisabled();
-    expect(updates).toHaveAccessibleDescription(/stay included as long as articles are planned/i);
-    expect(screen.queryByText(/we have adjusted/i)).not.toBeInTheDocument();
+    const updates = screen.getByRole('checkbox', { name: /changes to your pages/i });
+    expect(updates).not.toBeChecked();
+    expect(updates).toBeEnabled();
+    // 10 base + 250 for three articles a week, nothing else.
+    expect(total()).toHaveTextContent('€260');
   });
 
   it('mentions the topic-picking service only for articles in "You stay in control"', () => {
     render(<PricingSimulator region="fr" />);
+    openMoreOptions();
     fireEvent.click(screen.getByRole('button', { name: 'More about: AI-assisted articles' }));
     expect(screen.getByRole('dialog')).not.toHaveTextContent(/specialised service/i);
     fireEvent.keyDown(screen.getByRole('dialog'), { key: 'Escape' });
 
-    openTab('You stay in control');
+    pick(/you stay in control/i);
     fireEvent.click(screen.getByRole('button', { name: 'More about: AI-assisted articles' }));
 
     expect(screen.getByRole('dialog')).toHaveTextContent(/specialised service/i);
   });
 
-  it('prices statistics by report rhythm, with an optional detailed measurement', () => {
-    render(<PricingSimulator region="fr" />);
-    expect(screen.getByRole('checkbox', { name: /visit statistics/i })).toHaveAccessibleDescription(/from \+€5/);
-
-    tick(/visit statistics/i);
-    fireEvent.keyDown(screen.getByRole('slider', { name: 'Report' }), { key: 'End' });
-    tick(/detailed measurement/i);
-
-    expect(total()).toHaveTextContent('€65');
-    expect(within(recap()).getByText(/Every month/)).toBeInTheDocument();
-
-    tick(/visit statistics/i);
-    expect(screen.queryByRole('checkbox', { name: /detailed measurement/i })).not.toBeInTheDocument();
-    expect(total()).toHaveTextContent('€10');
-  });
-
   it('flags one-year commitments and explains options without ticking them', () => {
     render(<PricingSimulator region="fr" />);
 
-    expect(screen.getByRole('checkbox', { name: /local search follow-up/i })).toHaveAccessibleDescription(
+    expect(screen.getByRole('checkbox', { name: /your site in english/i })).toHaveAccessibleDescription(
       /1-year commitment/
     );
     expect(screen.getByRole('checkbox', { name: /a contact form/i })).not.toHaveAccessibleDescription(
       /1-year commitment/
     );
-    expect(screen.getAllByText('1-year commitment').length).toBeGreaterThan(0);
 
     fireEvent.click(screen.getByRole('button', { name: 'More about: A contact form' }));
 
@@ -235,10 +295,12 @@ describe('PricingSimulator', () => {
 
   it('offers Swiss hosting to Swiss visitors only', () => {
     const { unmount } = render(<PricingSimulator region="fr" />);
+    openMoreOptions();
     expect(screen.queryByRole('checkbox', { name: /hosted in switzerland/i })).not.toBeInTheDocument();
     unmount();
 
     render(<PricingSimulator region="ch" />);
+    openMoreOptions();
     expect(screen.getByRole('checkbox', { name: /hosted in switzerland/i })).toBeInTheDocument();
   });
 
@@ -251,9 +313,9 @@ describe('PricingSimulator', () => {
 
   it('carries the composed plan to the free mockup request', () => {
     render(<PricingSimulator region="ch" />);
-    tick(/a news section/i);
-    openTab('You stay in control');
-    tick(/managing your domain name/i);
+    tick(/news published for you/i);
+    pick(/you stay in control/i);
+    withoutDomain();
 
     const cta = screen.getByRole('link', { name: 'Request my free mockup' });
     expect(cta).toHaveAttribute('href', '/free-mockup');
@@ -261,15 +323,42 @@ describe('PricingSimulator', () => {
 
     const plan = decodePlanCode(window.sessionStorage.getItem(PLAN_STORAGE_KEY));
     expect(plan).toMatchObject({ projectType: 'website', websiteType: 'showcase', region: 'ch' });
-    expect(plan?.selection.formula).toBe('self_service');
-    expect(plan?.selection.addOns.domain).toBe(true);
+    expect(plan?.selection).toMatchObject({ formula: 'self_service', ownDomain: false, addOns: { domain: true } });
     // Included in "You stay in control", so never charged on top.
-    expect(plan?.selection.addOns.news).toBe(false);
+    expect(plan?.selection.news).toBeNull();
   });
 
-  it('offers a contact link for questions', () => {
+  it('keeps the total and the free mockup request at hand on small screens', () => {
+    render(<PricingSimulator region="fr" />);
+    tick(/a contact form/i);
+
+    expect(screen.getByText(/^Your estimate ·/)).toHaveTextContent('Your estimate · €15 / month');
+
+    fireEvent.click(screen.getByRole('link', { name: 'My free mockup' }));
+    expect(decodePlanCode(window.sessionStorage.getItem(PLAN_STORAGE_KEY))?.selection.addOns.contact_form).toBe(true);
+  });
+
+  it('shows the options in the order of the price list, which the recap and llms-full.txt follow', () => {
+    render(<PricingSimulator region="ch" />);
+    withoutDomain();
+    tick(/an email address in your own name/i);
+    openMoreOptions();
+    tick(/^visit statistics/i);
+
+    const { options, pages, updates } = en.pricing.builder;
+    const labels = { ...options, pages, updates };
+    const ids = Object.values(OPTION_GROUPS).flat();
+    // The first match is the option's row: the recap comes after the options.
+    const rows = new Map(ids.map((id) => [id, screen.getAllByText(labels[id].label)[0]!]));
+    const precedes = (a: (typeof ids)[number], b: (typeof ids)[number]) =>
+      rows.get(a)!.compareDocumentPosition(rows.get(b)!) & Node.DOCUMENT_POSITION_FOLLOWING;
+    expect([...ids].sort((a, b) => (precedes(a, b) ? -1 : 1))).toEqual(ids);
+  });
+
+  it('links the recap note to the terms of sale, and offers a contact link for questions', () => {
     render(<PricingSimulator region="fr" />);
 
+    expect(within(recap()).getByRole('link', { name: 'terms of sale' })).toHaveAttribute('href', '/terms');
     expect(screen.getByRole('link', { name: 'Write to us' })).toHaveAttribute('href', '/contact');
   });
 });

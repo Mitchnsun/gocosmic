@@ -1,3 +1,4 @@
+import { ADVANCED_OPTIONS, OPTION_GROUPS } from '@/lib/pricing/price-list';
 import type { Currency } from '@/lib/region';
 
 import {
@@ -5,6 +6,8 @@ import {
   EXTRA_MAILBOX_PRICE,
   FORMULA_PRICES,
   MAX_EXTRA_MAILBOXES,
+  ONE_YEAR_FORMULAS,
+  ONE_YEAR_OPTIONS,
   PAGE_TIERS,
   TIERED_TABLES,
   UPDATE_TIERS,
@@ -15,33 +18,17 @@ export function getAddOnPrice(key: AddOnKey): number {
   return ADD_ON_PRICES[key];
 }
 
+/** True for an option made of a tick box and a slider. */
+export const isTiered = (id: PlanItem['id']): id is TieredKey => id in TIERED_TABLES;
+
 /** Price and tier key of a tick box + slider option, or `null` while it is unticked. */
 function getTieredLine(plan: PlanSelection, key: TieredKey): { price: number; key: string } | null {
   const index = plan[key];
   return index === null ? null : (TIERED_TABLES[key][index] ?? null);
 }
 
-/** Order of the recap lines, following the groups of the builder. */
-const ITEM_ORDER: readonly PlanItem['id'][] = [
-  'formula',
-  'pages',
-  'contact_form',
-  'booking',
-  'reviews',
-  'english',
-  'news',
-  'domain',
-  'email',
-  'mailboxes',
-  'redirects',
-  'swiss_hosting',
-  'seo',
-  'analytics',
-  'detailed_analytics',
-  'updates',
-  'articles',
-  'monitoring',
-];
+/** Order of the recap lines: the formula, then the groups of the builder. */
+const ITEM_ORDER: readonly PlanItem['id'][] = ['formula', ...Object.values(OPTION_GROUPS).flat()];
 
 /**
  * Lines of a normalised plan (see `normalizePlan`), shared by the recap and the studio email: the
@@ -58,7 +45,7 @@ export function getPlanItems(plan: PlanSelection): PlanItem[] {
         items.push({ id, amount: UPDATE_TIERS[plan.updates].price, tier: UPDATE_TIERS[plan.updates].key });
     } else if (id === 'mailboxes') {
       if (plan.mailboxes > 0) items.push({ id, amount: plan.mailboxes * EXTRA_MAILBOX_PRICE, count: plan.mailboxes });
-    } else if (id === 'analytics' || id === 'seo' || id === 'articles') {
+    } else if (isTiered(id)) {
       const line = getTieredLine(plan, id);
       if (line) items.push({ id, amount: line.price, tier: line.key });
     } else if (plan.addOns[id]) {
@@ -66,6 +53,22 @@ export function getPlanItems(plan: PlanSelection): PlanItem[] {
     }
   }
   return items;
+}
+
+/**
+ * Ids of the lines of a normalised plan that turn the subscription into 12-month periods, in recap order: the
+ * "You stay in control" formula, the domain name, the email address and the one-year options.
+ */
+export function getCommittedItems(plan: PlanSelection): PlanItem['id'][] {
+  return getPlanItems(plan)
+    .map((item) => item.id)
+    .filter((id) => (id === 'formula' ? ONE_YEAR_FORMULAS.has(plan.formula) : ONE_YEAR_OPTIONS.has(id)));
+}
+
+/** Number of options folded under "More options" that a normalised plan includes. */
+export function countAdvancedOptions(plan: PlanSelection): number {
+  const ids = new Set(getPlanItems(plan).map((item) => item.id));
+  return ADVANCED_OPTIONS.filter((id) => ids.has(id)).length;
 }
 
 /** Monthly total of a normalised plan: the sum of its lines. */

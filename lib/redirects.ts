@@ -9,13 +9,15 @@ type Redirect = Awaited<ReturnType<NonNullable<NextConfig['redirects']>>>[number
 interface RetiredPage {
   /** Former slug per language. */
   slugs: Record<Language, string>;
-  /** Section of the Services & pricing page that now holds the content, if any. */
+  /** Section of the Services page that now holds the content, if any. */
   hash?: string;
 }
 
 /**
  * Pages merged away by the Cosmic Studio rebrand, with their former localized
- * slugs. Their content now lives on the Services & pricing page.
+ * slugs. Their content now lives on the Services page. The former pricing page
+ * came back as a page of its own, under the same slugs; its English slug under another prefix
+ * (`/fr/pricing`) is redirected by the i18n middleware.
  */
 const RETIRED_PAGES: RetiredPage[] = [
   // Offers → the pricing columns
@@ -27,17 +29,6 @@ const RETIRED_PAGES: RetiredPage[] = [
       es: '/nuestras-ofertas',
       de: '/unsere-angebote',
       it: '/le-nostre-offerte',
-    },
-  },
-  // Pricing → the subscription simulator
-  {
-    hash: '#simulator',
-    slugs: {
-      en: '/pricing',
-      fr: '/tarifs',
-      es: '/precios',
-      de: '/preise',
-      it: '/prezzi',
     },
   },
   // 3D journey → the page itself
@@ -53,7 +44,7 @@ const RETIRED_PAGES: RetiredPage[] = [
 ];
 
 /**
- * Permanent redirects from the retired pages to Services & pricing, in every
+ * Permanent redirects from the retired pages to Services, in every
  * language. The English slug is also caught under each language prefix and
  * without any prefix, since older links used both forms. The Swiss URLs came
  * after these pages were retired, so they have nothing to redirect.

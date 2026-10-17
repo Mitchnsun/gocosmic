@@ -22,8 +22,6 @@ interface OptionToggleProps {
   commitment?: string;
   /** Live sentence under the row, e.g. why another option changed this one. */
   note?: string;
-  /** Id of the note, when another control (a slider) is described by it too. */
-  noteId?: string;
   /** Locks the tick box, when another option requires it. */
   disabled?: boolean;
   /** Smaller row, nested under a parent option. */
@@ -46,14 +44,13 @@ export function OptionToggle({
   info,
   commitment,
   note,
-  noteId,
   disabled = false,
   nested = false,
   children,
 }: OptionToggleProps) {
   const id = useId();
-  const ownNoteId = noteId ?? `${id}-note`;
-  const describedBy = [hint && `${id}-hint`, `${id}-price`, commitment && `${id}-commitment`, note && ownNoteId]
+  const noteId = `${id}-note`;
+  const describedBy = [hint && `${id}-hint`, `${id}-price`, commitment && `${id}-commitment`, note && noteId]
     .filter(Boolean)
     .join(' ');
 
@@ -100,7 +97,7 @@ export function OptionToggle({
         )}
       </div>
       {/* Always displayed, even empty, so screen readers announce the sentence when it appears. */}
-      <p id={ownNoteId} aria-live="polite" className={cn('text-fg-2 text-sm', { 'px-4 pb-4': note })}>
+      <p id={noteId} aria-live="polite" className={cn('text-fg-2 text-sm', { 'px-4 pb-4': note })}>
         {note}
       </p>
       {children}
