@@ -7,7 +7,7 @@
       },
       "title": "Votre activité mérite d'être",
       "endWords": ["vue.", "trouvée.", "choisie."],
-      "subtitle": "Cosmic Studio crée des sites et des applications pour les petites entreprises, les indépendants et les associations. Nous faisons en sorte qu'on vous trouve sur Google, et nous restons joignables une fois le site en ligne.",
+      "subtitle": "Un site qu'on trouve sur Google, et quelqu'un qui vous répond une fois qu'il est en ligne. Cosmic Studio crée des sites et des applications pour les artisans, les petites entreprises, les indépendants et les associations.",
       "cta": "Go Cosmic",
       "secondary": "Voir les tarifs",
       "facts": {
@@ -19,9 +19,9 @@
           "highlight": "Réponse",
           "text": "rapide"
         },
-        "contact": {
-          "highlight": "Un seul",
-          "text": "interlocuteur"
+        "mockup": {
+          "highlight": "Maquette",
+          "text": "gratuite"
         },
         "area": {
           "ch": {
@@ -41,7 +41,7 @@
       "items": {
         "artisans": {
           "title": "Artisans",
-          "description": "Menuisier·ère, plombier·ère, coiffeur·se, traiteur·se… Un site qui dit ce que vous faites, où vous travaillez et comment vous joindre, et qu'on trouve quand on cherche votre métier près de chez soi."
+          "description": "Menuisier·ère, plombier·ère, coiffeur·se, traiteur·se… Un site qui dit ce que vous faites, où vous travaillez et comment vous joindre, et qui ressort quand quelqu'un cherche votre métier près de chez lui."
         },
         "associations": {
           "title": "Associations",
@@ -62,21 +62,21 @@
       "title": "Wix et WordPress, c'est pratique <em>au début.</em>",
       "lead": "Ensuite, il faut une extension payante, une mise à jour casse une page, l'abonnement augmente. Nous écrivons le code nous-mêmes : votre site reste rapide et peut évoluer sans repartir de zéro.",
       "reasons": {
-        "ownership": {
-          "title": "Vous êtes propriétaire",
-          "description": "Vos textes, vos photos et votre nom de domaine vous appartiennent dès le premier jour. Le code vous est cédé après {months} mois d'abonnement, ou avant contre des frais de cession."
+        "person": {
+          "title": "Quelqu'un qui vous répond",
+          "description": "Vous parlez à Matthieu, qui connaît votre site puisqu'il l'a construit."
         },
         "fast": {
           "title": "Rapide sur téléphone",
           "description": "Sans thème lourd ni extensions, vos pages s'affichent vite sur téléphone, et Google en tient compte dans ses résultats."
         },
-        "person": {
-          "title": "Quelqu'un qui vous répond",
-          "description": "Vous parlez à Matthieu, qui connaît votre site puisqu'il l'a construit."
-        },
         "grows": {
           "title": "On ajoute sans tout refaire",
           "description": "Vous commencez par une page. Le jour où il vous faut la prise de rendez-vous, une version anglaise ou une boutique, nous l'ajoutons au site existant."
+        },
+        "ownership": {
+          "title": "Vous êtes propriétaire",
+          "description": "Vos textes, vos photos et votre nom de domaine vous appartiennent dès le premier jour. Le code vous est cédé après {months} mois d'abonnement : c'est ce qui permet un prix de départ aussi bas. Avant, il vous est cédé contre des frais de cession."
         }
       }
     },
@@ -92,7 +92,7 @@
       "design": {
         "label": "T-2 · Maquette",
         "title": "Vous voyez avant de décider",
-        "description": "Nous préparons une maquette de votre page d'accueil. Si vous avez déjà un site, elle reprend ses couleurs et ses textes ; sinon, elle part de la palette et des indications que vous nous avez données. Elle est gratuite et ne vous engage à rien."
+        "description": "Nous préparons une maquette de votre page d'accueil. Si vous avez déjà un site, elle reprend ses couleurs et ses textes ; sinon, elle part de la palette et des indications que vous nous avez données. Elle est gratuite, ne vous engage à rien, et vous pouvez la demander sans rendez-vous."
       },
       "build": {
         "label": "T-1 · Réalisation",
@@ -102,8 +102,12 @@
       "launch": {
         "label": "T-0 · Mise en ligne",
         "title": "Nous restons après le lancement",
-        "description": "Nous mettons le site en ligne et vous montrons comment il fonctionne. Ensuite, nous nous occupons de l'hébergement et des sauvegardes, avec une modification comprise chaque année, et plus si vous en avez besoin."
+        "description": "Nous mettons le site en ligne et vous montrons comment il fonctionne. Ensuite, nous nous occupons de l'hébergement et des sauvegardes, avec une modification par an comprise, et davantage en option si besoin. Le site de Coach'n Pulse, par exemple, est suivi depuis 2016."
       }
+    },
+    "pricing": {
+      "title": "Un abonnement, ou un projet sur mesure.",
+      "all": "Voir les quatre façons de travailler avec nous"
     },
     "projects": {
       "eyebrow": "[ Réalisations ]",
@@ -113,7 +117,7 @@
     "apps": {
       "eyebrow": "[ Notre application ]",
       "title": "Nous développons aussi <em>notre propre application.</em>",
-      "lead": "Nous y testons nos outils avant de les utiliser sur vos projets.",
+      "lead": "Nous y testons nos outils avant de les utiliser sur votre site.",
       "daily_fortune": {
         "name": "Daily Fortune",
         "badge": "iOS",

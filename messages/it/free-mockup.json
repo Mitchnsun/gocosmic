@@ -6,7 +6,7 @@
     },
     "eyebrow": "[ Mockup gratuito ]",
     "title": "Vedi il tuo sito prima di decidere",
-    "intro": "Dicci a che punto sei e che atmosfera immagini. Ti mandiamo un mockup del tuo futuro sito, gratis e senza impegno.",
+    "intro": "Lasciaci il tuo indirizzo e-mail e, se vuoi, l'atmosfera che immagini. Ricevi un mockup della tua home page, gratis e senza impegno.",
     "steps": {
       "title": "Come funziona",
       "items": {
@@ -24,16 +24,19 @@
         }
       }
     },
+    "example_link": "Vedi un esempio di mockup",
     "privacy_notice": "Il tuo indirizzo e-mail e il tuo messaggio servono solo a preparare il mockup e a inviartelo.",
     "privacy_link": "Informativa privacy",
     "form": {
       "heading": "Richiedi il tuo mockup",
-      "lead": "Solo l'indirizzo e-mail è obbligatorio.",
+      "lead": "Solo l'indirizzo e-mail è obbligatorio. Il resto ci aiuta a fare centro.",
       "email_label": "Il tuo indirizzo e-mail",
       "email_placeholder": "tu@esempio.it",
+      "email_placeholder_swiss": "tu@esempio.ch",
       "palette_label": "Palette di colori",
       "website_label": "Il tuo sito attuale",
       "website_placeholder": "il-tuo-sito.it",
+      "website_placeholder_swiss": "il-tuo-sito.ch",
       "wishes_label": "Che cosa hai in mente",
       "wishes_placeholder": "Le pagine di cui hai bisogno, ciò che ti piace, ciò che preferisci evitare…",
       "wishes_counter": "{count}/{max}",

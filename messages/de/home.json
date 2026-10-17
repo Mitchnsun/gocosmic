@@ -2,14 +2,14 @@
   "homepage": {
     "cta": {
       "button": "Mein Projekt besprechen",
-      "description": "Erzählen Sie uns in ein paar Zeilen, was Sie machen. Wir melden uns schnell, um darüber zu sprechen, bevor wir Ihnen irgendetwas vorschlagen.",
-      "freeMockup": "Wenn Sie lieber erst etwas sehen möchten, bevor wir sprechen, fragen Sie ein <link>kostenloses Mockup</link> an.",
+      "description": "Erzählen Sie uns in ein paar Zeilen, was Sie machen. Wir melden uns schnell und sprechen mit Ihnen darüber, bevor wir Ihnen etwas vorschlagen.",
+      "freeMockup": "Sie möchten lieber zuerst etwas sehen, bevor wir sprechen? Fragen Sie ein <link>kostenloses Mockup</link> an.",
       "title": "Bringen wir Ihren Betrieb zum Strahlen."
     },
     "hero": {
       "cta": "Go Cosmic",
       "endWords": ["gesehen zu werden.", "gefunden zu werden.", "ausgewählt zu werden."],
-      "subtitle": "Cosmic Studio erstellt Websites und Apps für kleine Unternehmen, Selbstständige und Vereine. Wir sorgen dafür, dass man Sie bei Google findet, und bleiben erreichbar, wenn Ihre Website online ist.",
+      "subtitle": "Eine Website, die man bei Google findet, und jemand, der Ihnen auch nach dem Start antwortet. Cosmic Studio erstellt Websites und Apps für Handwerksbetriebe, kleine Unternehmen, Selbstständige und Vereine.",
       "title": "Ihr Betrieb verdient es,",
       "eyebrow": {
         "ch": "Web- & App-Studio · Genf",
@@ -25,9 +25,9 @@
           "highlight": "Schnelle",
           "text": "Antwort"
         },
-        "contact": {
-          "highlight": "Ein einziger",
-          "text": "Ansprechpartner"
+        "mockup": {
+          "highlight": "Kostenloses",
+          "text": "Mockup"
         },
         "area": {
           "ch": {
@@ -53,7 +53,7 @@
       "design": {
         "label": "T-2 · Mockup",
         "title": "Erst sehen, dann entscheiden",
-        "description": "Wir erstellen ein Mockup Ihrer Startseite. Wenn Sie schon eine Website haben, übernimmt es deren Farben und Texte; sonst gehen wir von der Farbpalette und den Angaben aus, die Sie uns gegeben haben. Es ist kostenlos und verpflichtet Sie zu nichts."
+        "description": "Wir erstellen ein Mockup Ihrer Startseite. Wenn Sie schon eine Website haben, übernimmt es deren Farben und Texte; sonst gehen wir von der Farbpalette und den Angaben aus, die Sie uns gegeben haben. Es ist kostenlos, verpflichtet Sie zu nichts, und Sie können es ohne Termin anfordern."
       },
       "build": {
         "label": "T-1 · Umsetzung",
@@ -63,8 +63,12 @@
       "launch": {
         "label": "T-0 · Start",
         "title": "Wir bleiben auch nach dem Start da",
-        "description": "Wir schalten die Website online und zeigen Ihnen, wie sie funktioniert. Danach kümmern wir uns um Hosting und Datensicherungen, mit einer Änderung pro Jahr inklusive und mehr, wenn Sie sie brauchen."
+        "description": "Wir schalten die Website online und zeigen Ihnen, wie sie funktioniert. Danach kümmern wir uns um Hosting und Datensicherungen. Eine Änderung pro Jahr ist inklusive, weitere gibt es bei Bedarf als Option. Die Website von Coach'n Pulse zum Beispiel betreuen wir seit 2016."
       }
+    },
+    "pricing": {
+      "title": "Ein Abonnement oder ein individuelles Projekt.",
+      "all": "Alle vier Wege der Zusammenarbeit ansehen"
     },
     "projects": {
       "eyebrow": "[ Referenzen ]",
@@ -89,7 +93,7 @@
         },
         "companies": {
           "title": "Kleine Unternehmen",
-          "description": "Bauunternehmen, Ingenieurbüro, Autowerkstatt, Agentur mit ein paar Leuten … Ihre Website zeigt künftiger Kundschaft, was Sie können, und ebenso den Leuten, die Sie gern einstellen würden."
+          "description": "Bauunternehmen, Ingenieurbüro, Autowerkstatt, Agentur mit ein paar Leuten … Ihre Website zeigt, was Sie können: künftiger Kundschaft ebenso wie den Leuten, die Sie gern einstellen würden."
         }
       }
     },
@@ -98,28 +102,28 @@
       "title": "Wix und WordPress sind praktisch, <em>zumindest am Anfang.</em>",
       "lead": "Dann braucht man eine kostenpflichtige Erweiterung, ein Update legt eine Seite lahm, das Abo wird teurer. Wir schreiben den Code selbst. So bleibt Ihre Website schnell und kann wachsen, ohne dass Sie bei null anfangen müssen.",
       "reasons": {
-        "ownership": {
-          "title": "Ihre Website gehört Ihnen",
-          "description": "Ihre Texte, Ihre Fotos und Ihr Domainname gehören Ihnen vom ersten Tag an. Der Code geht nach {months} Monaten Abonnement an Sie über, auf Wunsch auch früher gegen eine Übertragungsgebühr."
-        },
-        "fast": {
-          "title": "Schnell auf dem Handy",
-          "description": "Ohne überladene Vorlage und ohne Erweiterungen laden Ihre Seiten auf dem Handy schnell, und das berücksichtigt Google in seinen Ergebnissen."
-        },
         "person": {
           "title": "Jemand, der Ihnen antwortet",
           "description": "Sie sprechen mit Matthieu, der Ihre Website kennt, weil er sie gebaut hat."
         },
+        "fast": {
+          "title": "Schnell auf dem Handy",
+          "description": "Ohne überladene Vorlage und ohne Erweiterungen laden Ihre Seiten auf dem Handy schnell, und Google berücksichtigt das in seinen Ergebnissen."
+        },
         "grows": {
           "title": "Erweitern, ohne neu zu bauen",
           "description": "Sie beginnen mit einer Seite. Wenn Sie eines Tages eine Terminbuchung, eine englische Version oder einen Onlineshop brauchen, ergänzen wir das auf der bestehenden Website."
+        },
+        "ownership": {
+          "title": "Ihre Website gehört Ihnen",
+          "description": "Ihre Texte, Ihre Fotos und Ihr Domainname gehören Ihnen vom ersten Tag an. Der Code geht nach {months} Monaten Abonnement an Sie über: Dadurch ist ein so niedriger Einstiegspreis möglich. Davor erhalten Sie ihn gegen eine Übertragungsgebühr."
         }
       }
     },
     "apps": {
       "eyebrow": "[ Unsere App ]",
       "title": "Wir entwickeln auch <em>eine eigene App.</em>",
-      "lead": "Daran testen wir unsere Werkzeuge, bevor wir sie in Ihren Projekten einsetzen.",
+      "lead": "Daran testen wir unsere Werkzeuge, bevor wir sie auf Ihrer Website einsetzen.",
       "daily_fortune": {
         "name": "Daily Fortune",
         "badge": "iOS",
@@ -132,7 +136,7 @@
       "eyebrow": "[ Das Studio ]",
       "title": "Hinter Cosmic Studio <em>steht Matthieu.</em>",
       "paragraphs": [
-        "Matthieu Compérat stammt aus Duingt am Annecy-See und lebt heute in Chêne-Bougeries. Seit rund fünfzehn Jahren entwickelt er Websites und Apps, zuerst für große Unternehmen. Mit Cosmic Studio macht er diese Arbeit für kleinere Betriebe und arbeitet direkt mit der Person zusammen, die sie führt.",
+        "Matthieu Compérat stammt aus Duingt am Annecy-See und lebt heute in Chêne-Bougeries. Seit rund fünfzehn Jahren entwickelt er Websites und Apps, zuerst für große Unternehmen. Mit Cosmic Studio arbeitet er heute für kleinere Betriebe, direkt mit der Person, die sie führt.",
         "Wenn Sie anrufen, nimmt er selbst ab, und auf Ihre Nachrichten bekommen Sie meist noch am selben Tag eine Antwort. Er kennt die Website, die er Ihnen übergibt, bis ins Detail. Das macht jede Änderung einfach und schnell."
       ],
       "zones": {

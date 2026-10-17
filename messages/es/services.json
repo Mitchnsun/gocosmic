@@ -17,7 +17,7 @@
     "simulator": {
       "eyebrow": "[ Configura tu suscripción ]",
       "title": "Empieza por lo básico <em>y añade el resto más adelante.</em>",
-      "lead": "Dos planes: «Nos encargamos de todo», desde {price} al mes, o «Tú tienes el control», desde {selfServicePrice} al mes, si quieres publicar tú mismo/a tus noticias. Añade tus opciones y mira el precio mensual en la página Precios."
+      "lead": "Dos planes: «Nos encargamos de todo», desde {price} al mes, o «Tú tienes el control», desde {selfServicePrice} al mes, si quieres publicar tú mismo/a tus noticias. Añade tus opciones en la página Precios: el precio al mes aparece al momento."
     },
     "trades": {
       "eyebrow": "[ Lo que hacemos · 04 ]",
@@ -51,7 +51,7 @@
       "items": {
         "ownership": {
           "question": "¿El sitio es mío?",
-          "answer": "Tus textos, tus imágenes y tu nombre de dominio te pertenecen desde el primer día. El código del sitio se te cede tras {months} meses de suscripción, y eso es lo que nos permite ofrecer un precio de partida tan bajo. También puedes quedártelo antes, a cambio de unos gastos de cesión calculados según el tiempo que quede. En un sitio hecho según presupuesto, con gastos de desarrollo, el código te pertenece desde la entrega, una vez pagada la factura en su totalidad."
+          "answer": "Tus textos, tus imágenes y tu nombre de dominio te pertenecen desde el primer día. El código del sitio se te cede tras {months} meses de suscripción, y eso es lo que nos permite ofrecer un precio de partida tan bajo. También puedes quedártelo antes, a cambio de unos gastos de cesión calculados según el tiempo que quede. En un sitio hecho por presupuesto, con gastos de desarrollo, el código te pertenece desde la entrega, una vez pagada la factura completa."
         },
         "edit": {
           "question": "¿Puedo modificar el sitio por mi cuenta?",
@@ -71,7 +71,7 @@
         },
         "existing": {
           "question": "Ya tengo un sitio, ¿podéis haceros cargo de él?",
-          "answer": "Sí. Empezamos con una revisión gratuita de tu sitio actual: qué funciona, qué ahuyenta a los visitantes y cómo aparece en Google. Después te decimos si conviene más rehacerlo o hacerlo evolucionar tal como está."
+          "answer": "Sí. Empezamos con una revisión gratuita de tu sitio actual: qué funciona, qué ahuyenta a los visitantes y cómo aparece en Google. Después te decimos si conviene más rehacerlo o mejorarlo a partir de lo que ya hay."
         }
       }
     }

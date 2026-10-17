@@ -7,7 +7,7 @@
       },
       "title": "Your business deserves to be",
       "endWords": ["seen.", "found.", "chosen."],
-      "subtitle": "Cosmic Studio builds websites and apps for small businesses, independents and associations. We make sure people find you on Google, and we are still there once your site is live.",
+      "subtitle": "A site people find on Google, and someone who answers you once it is live. Cosmic Studio builds websites and apps for craftspeople, small businesses, independents and associations.",
       "cta": "Go Cosmic",
       "secondary": "See pricing",
       "facts": {
@@ -19,9 +19,9 @@
           "highlight": "Fast",
           "text": "reply"
         },
-        "contact": {
-          "highlight": "One",
-          "text": "point of contact"
+        "mockup": {
+          "highlight": "Free",
+          "text": "mockup"
         },
         "area": {
           "ch": {
@@ -45,7 +45,7 @@
         },
         "associations": {
           "title": "Associations",
-          "description": "Choir, sports club, collective… Your events, memberships and news in one place, to make your activities known and welcome new members."
+          "description": "Choir, sports club, collective… Your events, memberships and news in one place, to spread the word about your activities and welcome new members."
         },
         "independents": {
           "title": "Independents and professional practices",
@@ -53,7 +53,7 @@
         },
         "companies": {
           "title": "Small businesses",
-          "description": "Building firm, engineering consultancy, garage, an agency of a few people… Your site shows what you can do, to a future client as much as to someone you would like to hire."
+          "description": "Building firm, engineering consultancy, garage, an agency of a few people… Your site shows what you can do, both to future clients and to people you would like to hire."
         }
       }
     },
@@ -62,21 +62,21 @@
       "title": "Wix and WordPress are handy <em>at first.</em>",
       "lead": "Then you need a paid plugin, an update breaks a page, the subscription goes up. We write the code ourselves, so your site stays fast and can grow without starting over.",
       "reasons": {
-        "ownership": {
-          "title": "You own it",
-          "description": "Your texts, your photos and your domain name belong to you from day one. The code is transferred to you after {months} months of subscription, or earlier for a transfer fee."
+        "person": {
+          "title": "Someone who answers",
+          "description": "You talk to Matthieu, who knows your site because he built it."
         },
         "fast": {
           "title": "Fast on a phone",
           "description": "Without a heavy theme or plugins, your pages load quickly on a phone, and Google takes that into account in its results."
         },
-        "person": {
-          "title": "Someone who answers",
-          "description": "You talk to Matthieu, who knows your site because he built it."
-        },
         "grows": {
-          "title": "We add on, without starting over",
+          "title": "Add more without starting over",
           "description": "You start with one page. The day you need appointment booking, an English version or a shop, we add it to the existing site."
+        },
+        "ownership": {
+          "title": "You own it",
+          "description": "Your texts, your photos and your domain name belong to you from day one. The code is transferred to you after {months} months of subscription: that is what makes such a low starting price possible. Before then, it is transferred to you for a transfer fee."
         }
       }
     },
@@ -92,7 +92,7 @@
       "design": {
         "label": "T-2 · Mockup",
         "title": "You see it before you decide",
-        "description": "We prepare a mockup of your home page. If you already have a site, it reuses its colours and texts; otherwise, it starts from the palette and the pointers you gave us. It is free and commits you to nothing."
+        "description": "We prepare a mockup of your home page. If you already have a site, it reuses its colours and texts; otherwise, it starts from the palette and the guidance you gave us. It is free, you are under no obligation, and you can ask for it without booking a meeting."
       },
       "build": {
         "label": "T-1 · Build",
@@ -102,8 +102,12 @@
       "launch": {
         "label": "T-0 · Launch",
         "title": "We stay after launch",
-        "description": "We put the site online and show you how it works. After that, we take care of hosting and backups, with one change included every year, and more if you need it."
+        "description": "We put the site online and show you how it works. After that, we take care of hosting and backups, with one change a year included, and more as an option if you need it. Coach'n Pulse's site, for example, has been looked after since 2016."
       }
+    },
+    "pricing": {
+      "title": "A subscription, or a custom project.",
+      "all": "See the four ways to work with us"
     },
     "projects": {
       "eyebrow": "[ Work ]",
@@ -113,7 +117,7 @@
     "apps": {
       "eyebrow": "[ Our app ]",
       "title": "We also build <em>our own app.</em>",
-      "lead": "We use it to try out our tools before using them on your projects.",
+      "lead": "We use it to try out our tools before using them on your site.",
       "daily_fortune": {
         "name": "Daily Fortune",
         "badge": "iOS",
@@ -147,7 +151,7 @@
     "cta": {
       "button": "Talk about my project",
       "description": "Tell us about your business in a few lines. We reply quickly to talk it through, before suggesting anything.",
-      "freeMockup": "If you would rather see before you talk, ask for a <link>free mockup</link>.",
+      "freeMockup": "If you would rather see something before we talk, ask for a <link>free mockup</link>.",
       "title": "Let's make your business shine."
     }
   }

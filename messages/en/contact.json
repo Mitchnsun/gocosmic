@@ -22,7 +22,7 @@
         },
         "email": {
           "label": "Email address",
-          "placeholder": "camille@example.fr",
+          "placeholder": "camille@example.com",
           "placeholderSwiss": "camille@example.ch"
         },
         "message": {

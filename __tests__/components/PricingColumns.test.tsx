@@ -11,23 +11,23 @@ describe('buildPricingColumns', () => {
   it('prices the subscription from the base price, in euros, the French way', () => {
     const [subscription, , , custom] = buildPricingColumns(fakeT, 'fr', 'fr');
 
-    expect(subscription!.price).toMatch(/^subscription\.price\(10\s€\)$/);
-    expect(subscription!.cta.href).toBe('/pricing');
-    expect(custom!.price).toBeUndefined();
-    expect(custom!.cta.href).toBe('/contact');
+    expect(subscription.price).toMatch(/^subscription\.price\(10\s€\)$/);
+    expect(subscription.cta.href).toBe('/pricing');
+    expect(custom.price).toBeUndefined();
+    expect(custom.cta.href).toBe('/contact');
   });
 
   it('switches to Swiss francs for Swiss visitors', () => {
     const [subscription] = buildPricingColumns(fakeT, 'ch', 'en');
 
-    expect(subscription!.price).toMatch(/^subscription\.price\(CHF\s10\)$/);
+    expect(subscription.price).toMatch(/^subscription\.price\(CHF\s10\)$/);
   });
 
   it('builds the guidance and reinforcement columns without prices from amounts', () => {
     const [, guidance, reinforcement] = buildPricingColumns(fakeT, 'fr', 'fr');
 
-    expect(guidance!.price).toBe('guidance.price');
-    expect(reinforcement!.price).toBe('reinforcement.price');
+    expect(guidance.price).toBe('guidance.price');
+    expect(reinforcement.price).toBe('reinforcement.price');
   });
 });
 
@@ -64,5 +64,18 @@ describe('PricingColumns', () => {
     expect(getByRole('heading', { name: 'Custom' })).toBeInTheDocument();
     expect(queryByText('Custom price')).not.toBeInTheDocument();
     expect(getByRole('link', { name: 'Subscription cta' })).toHaveClass('bg-aerospace');
+  });
+
+  it('links under the cards to the page that shows every column', () => {
+    const { getByRole } = render(
+      <PricingColumns
+        eyebrow="[ Pricing ]"
+        title="Two ways"
+        columns={[column('Subscription'), column('Custom')]}
+        more={{ text: 'See all four', href: { pathname: '/services', hash: 'pricing' } }}
+      />
+    );
+
+    expect(getByRole('link', { name: 'See all four' })).toHaveAttribute('href', '/services#pricing');
   });
 });

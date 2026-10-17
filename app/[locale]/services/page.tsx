@@ -5,6 +5,7 @@ import type { ReactNode } from 'react';
 
 import CTAFinal from '@/components/CTAFinal';
 import { Faq } from '@/components/Faq';
+import { freeMockupNote } from '@/components/FreeMockup';
 import BreadcrumbSeo from '@/components/JsonLd/BreadcrumbSeo';
 import FaqSeo from '@/components/JsonLd/FaqSeo';
 import ServiceSeo from '@/components/JsonLd/ServiceSeo';
@@ -45,12 +46,13 @@ const QUESTIONS = ['existing', 'ownership', 'edit', 'timing', 'stop', 'content']
 
 const em = (chunks: ReactNode) => <em>{chunks}</em>;
 
-/** Services: the four ways to work with the studio, the two formulas of the subscription, the trades and the FAQ. */
+/** Services: the trades, the four ways to work with the studio, the two formulas of the subscription and the FAQ. */
 export default async function Services({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations('services');
   const tPricing = await getTranslations('pricing.columns');
+  const tHome = await getTranslations('homepage');
   const region = getRegion(locale);
   const currency = getCurrency(region);
   const pricing = buildPricingColumns(tPricing, region, locale);
@@ -74,6 +76,16 @@ export default async function Services({ params }: { params: Promise<{ locale: s
         </div>
       </section>
 
+      <ServicesGrid
+        eyebrow={t('trades.eyebrow')}
+        title={t.rich('trades.title', { em })}
+        services={TRADES.map((trade) => ({
+          title: t(`trades.items.${trade}.title`),
+          description: t(`trades.items.${trade}.description`),
+          tags: t.raw(`trades.items.${trade}.tags`) as string[],
+        }))}
+      />
+
       <PricingColumns eyebrow={tPricing('eyebrow')} title={tPricing('title')} columns={pricing} />
 
       {/* The two formulas, leading to the pricing page; `#simulator` keeps older links working. */}
@@ -95,16 +107,6 @@ export default async function Services({ params }: { params: Promise<{ locale: s
         </div>
       </section>
 
-      <ServicesGrid
-        eyebrow={t('trades.eyebrow')}
-        title={t.rich('trades.title', { em })}
-        services={TRADES.map((trade) => ({
-          title: t(`trades.items.${trade}.title`),
-          description: t(`trades.items.${trade}.description`),
-          tags: t.raw(`trades.items.${trade}.tags`) as string[],
-        }))}
-      />
-
       <Faq eyebrow={t('faq.eyebrow')} title={t.rich('faq.title', { em })} items={faqItems} />
       <FaqSeo items={faqItems} />
       <BreadcrumbSeo route="/services" />
@@ -116,6 +118,7 @@ export default async function Services({ params }: { params: Promise<{ locale: s
         description={t('cta.description')}
         ctaText={t('cta.primary_button')}
         ctaHref="/contact"
+        note={freeMockupNote(tHome)}
         tone="sober"
       />
     </div>

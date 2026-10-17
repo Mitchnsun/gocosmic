@@ -6,7 +6,7 @@
     },
     "eyebrow": "[ Maquette gratuite ]",
     "title": "Voyez votre site avant de décider",
-    "intro": "Dites-nous où vous en êtes et l'ambiance que vous imaginez. Nous vous envoyons une maquette de votre futur site, gratuitement et sans engagement.",
+    "intro": "Laissez votre adresse e-mail, et si vous le voulez l'ambiance que vous imaginez. Vous recevez une maquette de votre page d'accueil, gratuitement et sans engagement.",
     "steps": {
       "title": "Comment ça se passe",
       "items": {
@@ -24,16 +24,19 @@
         }
       }
     },
+    "example_link": "Voir un exemple de maquette",
     "privacy_notice": "Votre adresse e-mail et votre message servent uniquement à préparer et à vous envoyer votre maquette.",
     "privacy_link": "Politique de confidentialité",
     "form": {
       "heading": "Demandez votre maquette",
-      "lead": "Seule votre adresse e-mail est obligatoire.",
+      "lead": "Seule votre adresse e-mail est obligatoire. Le reste nous aide à viser juste.",
       "email_label": "Votre adresse e-mail",
       "email_placeholder": "vous@exemple.fr",
+      "email_placeholder_swiss": "vous@exemple.ch",
       "palette_label": "Ambiance de couleurs",
       "website_label": "Votre site actuel",
       "website_placeholder": "votre-site.fr",
+      "website_placeholder_swiss": "votre-site.ch",
       "wishes_label": "Ce que vous avez en tête",
       "wishes_placeholder": "Les pages dont vous avez besoin, ce qui vous plaît, ce que vous préférez éviter…",
       "wishes_counter": "{count}/{max}",

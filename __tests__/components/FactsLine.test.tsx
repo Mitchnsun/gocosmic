@@ -28,7 +28,7 @@ describe('buildHeroFacts', () => {
     expect(buildHeroFacts(t, 'ch', '10 CHF')).toEqual([
       { highlight: 'hero.facts.price.highlight|10 CHF', text: 'hero.facts.price.text|' },
       { highlight: 'hero.facts.reply.highlight|10 CHF', text: 'hero.facts.reply.text|' },
-      { highlight: 'hero.facts.contact.highlight|10 CHF', text: 'hero.facts.contact.text|' },
+      { highlight: 'hero.facts.mockup.highlight|10 CHF', text: 'hero.facts.mockup.text|' },
       { highlight: 'hero.facts.area.ch.highlight|10 CHF', text: 'hero.facts.area.ch.text|' },
     ]);
   });

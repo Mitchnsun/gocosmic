@@ -7,8 +7,11 @@ import type { PricingColumnContent } from './PricingColumns.types';
 /** Translator scoped to the `pricing.columns` messages. */
 type ColumnsTranslator = (key: string, values?: Record<string, string>) => string;
 
+/** Subscription, guidance, reinforcement and custom, in that order. */
+type FourColumns = [PricingColumnContent, PricingColumnContent, PricingColumnContent, PricingColumnContent];
+
 /** Builds the four pricing columns from the `pricing.columns` messages and the typed price table. */
-export function buildPricingColumns(t: ColumnsTranslator, region: Region, locale: string): PricingColumnContent[] {
+export function buildPricingColumns(t: ColumnsTranslator, region: Region, locale: string): FourColumns {
   const currency = getCurrency(region);
   const price = (amount: number) => formatAmount(amount, currency, locale);
 

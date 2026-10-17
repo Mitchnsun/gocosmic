@@ -9,7 +9,7 @@
     "hero": {
       "cta": "Go Cosmic",
       "endWords": ["visto.", "encontrado.", "elegido."],
-      "subtitle": "Cosmic Studio crea sitios web y aplicaciones para pequeñas empresas, autónomos y asociaciones. Nos encargamos de que te encuentren en Google y seguimos localizables una vez publicada la web.",
+      "subtitle": "Un sitio que se encuentra en Google, y alguien que te responde una vez que está en línea. Cosmic Studio crea sitios web y aplicaciones para artesanos, pequeñas empresas, autónomos y asociaciones.",
       "title": "Tu negocio merece ser",
       "eyebrow": {
         "ch": "Estudio web y móvil · Ginebra",
@@ -25,9 +25,9 @@
           "highlight": "Respuesta",
           "text": "rápida"
         },
-        "contact": {
-          "highlight": "Un solo",
-          "text": "interlocutor"
+        "mockup": {
+          "highlight": "Maqueta",
+          "text": "gratuita"
         },
         "area": {
           "ch": {
@@ -53,7 +53,7 @@
       "design": {
         "label": "T-2 · Maqueta",
         "title": "Lo ves antes de decidir",
-        "description": "Preparamos una maqueta de tu página de inicio. Si ya tienes un sitio, retoma sus colores y sus textos; si no, parte de la paleta y de las indicaciones que nos hayas dado. Es gratuita y no te compromete a nada."
+        "description": "Preparamos una maqueta de tu página de inicio. Si ya tienes un sitio, la maqueta usa sus colores y sus textos; si no, parte de la paleta y de las indicaciones que nos hayas dado. Es gratuita, no te compromete a nada y puedes pedirla sin cita previa."
       },
       "build": {
         "label": "T-1 · Construcción",
@@ -63,8 +63,12 @@
       "launch": {
         "label": "T-0 · Publicación",
         "title": "Seguimos contigo después del lanzamiento",
-        "description": "Publicamos el sitio y te enseñamos cómo funciona. Después, nos ocupamos del alojamiento y las copias de seguridad, con un cambio incluido cada año, y más si lo necesitas."
+        "description": "Publicamos el sitio y te enseñamos cómo funciona. Después, nos ocupamos del alojamiento y las copias de seguridad, con un cambio incluido cada año, y más como opción si lo necesitas. El sitio de Coach'n Pulse, por ejemplo, lo seguimos desde 2016."
       }
+    },
+    "pricing": {
+      "title": "Una suscripción o un proyecto a medida.",
+      "all": "Ver las cuatro formas de trabajar con nosotros"
     },
     "projects": {
       "eyebrow": "[ Trabajos ]",
@@ -98,32 +102,32 @@
       "title": "Wix y WordPress son prácticos <em>al principio.</em>",
       "lead": "Luego necesitas un complemento de pago, una actualización estropea una página, la suscripción sube de precio. Escribimos el código nosotros mismos, así que tu sitio sigue siendo rápido y puede crecer sin empezar de cero.",
       "reasons": {
-        "ownership": {
-          "title": "El sitio es tuyo",
-          "description": "Tus textos, tus fotos y tu nombre de dominio te pertenecen desde el primer día. El código pasa a ser tuyo tras {months} meses de suscripción, o antes a cambio de unos gastos de cesión."
+        "person": {
+          "title": "Alguien que te responde",
+          "description": "Hablas con Matthieu, que conoce tu sitio porque lo construyó él."
         },
         "fast": {
           "title": "Rápido en el móvil",
           "description": "Sin temas pesados ni complementos, tus páginas cargan rápido en el móvil, y Google lo tiene en cuenta en sus resultados."
         },
-        "person": {
-          "title": "Alguien que te responde",
-          "description": "Hablas con Matthieu, que conoce tu sitio porque lo construyó él."
-        },
         "grows": {
           "title": "Añadimos sin rehacerlo todo",
           "description": "Empiezas con una página. El día que necesites la reserva de citas, una versión en inglés o una tienda, la añadimos al sitio que ya tienes."
+        },
+        "ownership": {
+          "title": "El sitio es tuyo",
+          "description": "Tus textos, tus fotos y tu nombre de dominio te pertenecen desde el primer día. El código se te cede tras {months} meses de suscripción: eso es lo que permite un precio de partida tan bajo. Antes, se te cede a cambio de unos gastos de cesión."
         }
       }
     },
     "apps": {
       "eyebrow": "[ Nuestra aplicación ]",
       "title": "También desarrollamos <em>nuestra propia aplicación.</em>",
-      "lead": "En ella probamos nuestras herramientas antes de usarlas en tus proyectos.",
+      "lead": "En ella probamos nuestras herramientas antes de usarlas en tu sitio.",
       "daily_fortune": {
         "name": "Daily Fortune",
         "badge": "iOS",
-        "description": "Un mensaje breve cada mañana para empezar bien el día. Es nuestra primera aplicación, disponible en App Store.",
+        "description": "Un mensaje breve cada mañana para empezar bien el día. Es nuestra primera aplicación, disponible en la App Store.",
         "link": "Descubrir la app",
         "icon_alt": "Icono de la aplicación Daily Fortune"
       }
@@ -132,7 +136,7 @@
       "eyebrow": "[ El estudio ]",
       "title": "Detrás de Cosmic Studio <em>está Matthieu.</em>",
       "paragraphs": [
-        "Matthieu Compérat es de Duingt, a orillas del lago de Annecy, y ahora vive en Chêne-Bougeries. Lleva unos quince años desarrollando sitios web y aplicaciones, primero para grandes empresas. Con Cosmic Studio hace este oficio para negocios más pequeños, y trabaja directamente con la persona que los lleva.",
+        "Matthieu Compérat es de Duingt, a orillas del lago de Annecy, y ahora vive en Chêne-Bougeries. Lleva unos quince años desarrollando sitios web y aplicaciones, primero para grandes empresas. Con Cosmic Studio hace el mismo trabajo para negocios más pequeños, y trabaja directamente con la persona que los lleva.",
         "Cuando llamas, es él quien contesta, y tus mensajes reciben respuesta normalmente en el mismo día. Conoce al detalle el sitio que te entrega, así que cada cambio es rápido y sencillo."
       ],
       "zones": {

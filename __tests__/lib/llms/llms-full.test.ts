@@ -10,7 +10,7 @@ describe('buildLlmsFull', () => {
   // Prices are formatted by `Intl`, with a non-breaking space after the currency code ("CHF 10").
   const text = buildLlmsFull(null).replaceAll('\u00a0', ' ');
   /** The simulator's options and their prices. */
-  const options = text.slice(text.indexOf('### Add what you need'), text.indexOf('### For your communication'));
+  const options = text.slice(text.indexOf('### Add what you need'), text.indexOf('### To promote your business'));
 
   it('shares the opening, the regions and the contact details of llms.txt', () => {
     expect(text).toMatch(/^# Cosmic Studio\n\n> /);
@@ -105,8 +105,8 @@ describe('buildLlmsFull', () => {
   it('lists every step of the sliders with its price, the articles apart from the content changes', () => {
     expect(text).toContain('  - 10 pages or more: +€40 / +CHF 40 or more / month');
     expect(text).toContain('- **Changes to your pages**: You email us your changes');
-    expect(text).toContain('Once a year, we update your pages, included in your plan.');
-    expect(text).toContain('A change is one request: you can group several changes in it.');
+    expect(text).toContain('Your plan includes one update of your pages a year.');
+    expect(text).toContain('A change is one request, and you can group several changes in it.');
     expect(text).toContain('  - As often as needed: +€250 / +CHF 250 / month');
     expect(text).toContain('  - 1 news item a week: +€100 / +CHF 100 / month');
     expect(text).toContain('  - 3 articles a week: +€250 / +CHF 250 / month');
@@ -116,10 +116,10 @@ describe('buildLlmsFull', () => {
 
   it('describes the services page with its two plans, and the pricing page with its free offers and quoted services', () => {
     expect(text).toContain(
-      'from €20 / CHF 20 a month, if you want to publish your news yourself. Add your options and see the monthly price on the Pricing page.'
+      'from €20 / CHF 20 a month, if you want to publish your news yourself. Add your options on the Pricing page: the monthly price shows up right away.'
     );
     expect(text).toContain('### Before we talk budget (Free, no commitment)');
-    expect(text).toContain('### For your communication (Outside the subscription · on a quote)');
+    expect(text).toContain('### To promote your business (Outside the subscription · on a quote)');
     expect(text).toContain('- **Shops & bookings**: ');
     expect(text).toContain('#### What happens if I stop?\n\nJust let us know');
 

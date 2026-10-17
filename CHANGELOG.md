@@ -20,6 +20,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - The terms of sale are reviewed: yearly billing paid within 30 days or a monthly payment schedule, by bank transfer; the studio's VAT status and what happens if it changes; Swiss law for every client; which options run for a year (the domain name and the email address included) and which stay once added; and clauses on delays, liability and the ownership of a one-off project's code, which the services FAQ now states the same way
 - The projects now open with Coach'n Pulse and end with the choir's mockup, and the PSC Supersprint case study describes its live results on web and mobile, for athletes and spectators
 - The legal notice and the terms of sale now state that the studio's Swiss sole proprietorship is being affiliated with FER Genève
+- The homepage, Services, Pricing, free mockup and contact pages read more naturally in all five languages: the homepage opens on what the visitor gets, puts "someone who answers you" first among the reasons to choose the studio, and points to Coach'n Pulse, looked after since 2016, as an example of the care after launch
+- The subscription is presented as needing no large sum up front, its button now offers to calculate your price, and the reviews option says plainly that your Google reviews and testimonials are shown with their date
+- The free mockup form shows Swiss example addresses on the Swiss version of the site, and the contact form's example address matches the language of the page
+- The homepage shows two ways to start, the subscription and a custom project, with a link to all four on the Services page, and its hero now mentions the free mockup; the Services page presents what the studio does before its prices and ends with the free mockup offer
+- The contact form asks for the message right after the name and email, before the optional fields, and the free mockup page links to an example mockup
+- The privacy policy names Google's calendar by its French and German names, and the German terms of sale use the same words as the pricing page for the 12-month term
 
 ## [2.4.5] - 2026-10-15
 

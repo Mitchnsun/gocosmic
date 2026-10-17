@@ -12,12 +12,12 @@
     "intro": {
       "eyebrow": "[ Servizi ]",
       "title": "Un sito che funziona, <em>e qualcuno che se ne occupa.</em>",
-      "lead": "I nostri prezzi sono in chiaro: sai subito se rientra nel tuo budget, senza chiedere un preventivo. E tutto parte da un mockup gratuito, senza impegno."
+      "lead": "I nostri prezzi sono in chiaro: sai subito se il costo rientra nel tuo budget, senza chiedere un preventivo. E tutto parte da un mockup gratuito, senza impegno."
     },
     "simulator": {
       "eyebrow": "[ Componi il tuo abbonamento ]",
       "title": "Parti semplice, <em>il resto lo aggiungi dopo.</em>",
-      "lead": "Due formule: «Ci pensiamo noi», da {price} al mese, oppure «Hai tu il controllo», da {selfServicePrice} al mese, se vuoi pubblicare da te le tue notizie. Aggiungi le tue opzioni e vedi il prezzo mensile nella pagina Tariffe."
+      "lead": "Due formule: «Ci pensiamo noi», da {price} al mese, oppure «Hai tu il controllo», da {selfServicePrice} al mese, se vuoi pubblicare da te le tue notizie. Aggiungi le tue opzioni nella pagina Tariffe: il prezzo mensile appare subito."
     },
     "trades": {
       "eyebrow": "[ I nostri mestieri · 04 ]",
@@ -40,7 +40,7 @@
         },
         "care": {
           "title": "Visibilità & assistenza",
-          "description": "Posizionamento su Google, hosting, copie di sicurezza, aggiornamenti e modifiche, con una sola persona da contattare, che conosce il tuo sito.",
+          "description": "Posizionamento su Google, hosting, backup, aggiornamenti e modifiche, con una sola persona da contattare, che conosce il tuo sito.",
           "tags": ["Google", "Assistenza", "Formazione"]
         }
       }
@@ -63,7 +63,7 @@
         },
         "stop": {
           "question": "Cosa succede se smetto?",
-          "answer": "Basta avvisarci: il sito resta online fino alla fine del periodo già pagato, e porti con te i tuoi contenuti e il tuo nome a dominio. Il codice ti viene ceduto gratuitamente dopo {months} mesi di abbonamento; prima di allora, puoi averlo a un costo che ti comunichiamo fin dall'inizio. Se il tuo abbonamento comprende un nome a dominio, un indirizzo e-mail, la formula «Hai tu il controllo» o un'opzione con «Impegno di 1 anno», dura 12 mesi alla volta, e il periodo in corso va fino alla sua scadenza."
+          "answer": "Basta avvisarci: il sito resta online fino alla fine del periodo già pagato, e porti con te i tuoi contenuti e il tuo nome a dominio. Il codice ti viene ceduto gratuitamente dopo {months} mesi di abbonamento; prima di allora, puoi averlo a un costo che ti comunichiamo fin dall'inizio. Se il tuo abbonamento comprende un nome a dominio, un indirizzo e-mail, la formula «Hai tu il controllo» o un'opzione con «Impegno di 1 anno», si rinnova per periodi di 12 mesi, e il periodo in corso arriva fino alla scadenza."
         },
         "content": {
           "question": "Vi occupate anche di testi e foto?",
@@ -71,7 +71,7 @@
         },
         "existing": {
           "question": "Ho già un sito, potete prenderlo in mano voi?",
-          "answer": "Sì. Cominciamo con un'analisi gratuita del tuo sito attuale: cosa funziona, cosa fa scappare i visitatori e come compare su Google. Poi ti diciamo se conviene rifarlo o farlo evolvere così com'è."
+          "answer": "Sì. Cominciamo con un'analisi gratuita del tuo sito attuale: cosa funziona, cosa fa scappare i visitatori e come compare su Google. Poi ti diciamo se conviene rifarlo o migliorare quello che c'è."
         }
       }
     }

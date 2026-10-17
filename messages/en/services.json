@@ -7,16 +7,16 @@
     "intro": {
       "eyebrow": "[ Services ]",
       "title": "A site that runs, <em>and someone who looks after it.</em>",
-      "lead": "Our prices are on display, so you know straight away whether it fits your budget, without asking for a quote. And it all starts with a free mockup, with no commitment."
+      "lead": "Our prices are on display, so you know straight away whether it fits your budget, without asking for a quote. And it all starts with a free, no-commitment mockup."
     },
     "simulator": {
       "eyebrow": "[ Build your plan ]",
       "title": "Start simple, <em>add the rest later.</em>",
-      "lead": "Two plans: “We take care of everything”, from {price} a month, or “You stay in control”, from {selfServicePrice} a month, if you want to publish your news yourself. Add your options and see the monthly price on the Pricing page."
+      "lead": "Two plans: “We take care of everything”, from {price} a month, or “You stay in control”, from {selfServicePrice} a month, if you want to publish your news yourself. Add your options on the Pricing page: the monthly price shows up right away."
     },
     "trades": {
       "eyebrow": "[ What we do · 04 ]",
-      "title": "Four trades, <em>one point of contact.</em>",
+      "title": "Four services, <em>one point of contact.</em>",
       "items": {
         "showcase": {
           "title": "Showcase sites",
@@ -46,7 +46,7 @@
       "items": {
         "ownership": {
           "question": "Do I own the site?",
-          "answer": "Your texts, images and domain name belong to you from day one. The site's code is transferred to you after {months} months of subscription, which is what lets us keep the starting price this low. You can also take it over earlier, for a transfer fee based on the remaining time. For a site built on a quote, with development fees, the code belongs to you from delivery, once the invoice has been paid in full."
+          "answer": "Your texts, images and domain name belong to you from day one. The site's code is transferred to you after {months} months of subscription, which is what lets us keep the starting price this low. You can also take it over earlier, for a transfer fee based on the remaining time. For a quoted project with development fees, the code belongs to you from delivery, once the invoice has been paid in full."
         },
         "edit": {
           "question": "Can I edit the site myself?",
@@ -58,11 +58,11 @@
         },
         "stop": {
           "question": "What happens if I stop?",
-          "answer": "Just let us know: the site stays online until the end of the period already paid, and you leave with your content and your domain name. The code is transferred to you free of charge after {months} months of subscription; before that, it is transferred for a fee we tell you about from the start. If your subscription includes a domain name, an email address, the “You stay in control” plan or an option marked “1-year commitment”, it runs in 12-month periods, and the current period runs to its end."
+          "answer": "Just let us know: the site stays online until the end of the period already paid, and you leave with your content and your domain name. The code is transferred to you free of charge after {months} months of subscription; before that, it is transferred for a fee we tell you about from the start. If your subscription includes a domain name, an email address, the “You stay in control” plan or an option marked “1-year commitment”, it runs in 12-month periods, and the current period continues until it ends."
         },
         "content": {
           "question": "Do you also write the texts and take the photos?",
-          "answer": "We help you write and we proofread everything, keeping in mind the words your customers type into Google. For photos and videos, we use yours, or have them made on a quote by a local professional, and we handle the relationship with them."
+          "answer": "We help you write and we proofread everything, keeping in mind the words your customers type into Google. For photos and videos, we use yours, or have a local professional take them on a quote, and we handle the relationship with them."
         },
         "existing": {
           "question": "I already have a site. Can you take it over?",

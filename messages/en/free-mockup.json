@@ -6,7 +6,7 @@
     },
     "eyebrow": "[ Free mockup ]",
     "title": "See your site before you decide",
-    "intro": "Tell us where you stand and the mood you have in mind. We send you a mockup of your future website, free of charge and with no commitment.",
+    "intro": "Leave your email address and, if you like, the mood you have in mind. You receive a mockup of your home page, free of charge and with no commitment.",
     "steps": {
       "title": "How it works",
       "items": {
@@ -20,20 +20,23 @@
         },
         "deliver": {
           "title": "Then you decide",
-          "description": "The mockup arrives by email within 48 hours, on working days. If it is not for you, that is the end of it, at no cost."
+          "description": "The mockup arrives by email within 48 hours, on working days. If it is not for you, we leave it there and you owe nothing."
         }
       }
     },
+    "example_link": "See an example mockup",
     "privacy_notice": "Your email address and your message are only used to prepare and send your mockup.",
     "privacy_link": "Privacy policy",
     "form": {
       "heading": "Request your mockup",
-      "lead": "Only your email address is required.",
+      "lead": "Only your email address is required. The rest helps us get it right.",
       "email_label": "Your email address",
       "email_placeholder": "you@example.com",
+      "email_placeholder_swiss": "you@example.ch",
       "palette_label": "Colour mood",
       "website_label": "Your current website",
       "website_placeholder": "your-website.com",
+      "website_placeholder_swiss": "your-website.ch",
       "wishes_label": "What you have in mind",
       "wishes_placeholder": "The pages you need, what you like, what you would rather avoid…",
       "wishes_counter": "{count}/{max}",
@@ -50,7 +53,7 @@
     },
     "palette": {
       "options": {
-        "sober": "Sober & minimalist",
+        "sober": "Clean & minimalist",
         "lakeMountains": "Lake & mountains",
         "alpineSunset": "Alpine sunset",
         "deepForest": "Deep forest",
