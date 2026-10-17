@@ -2,14 +2,18 @@
 
 import { useTranslations } from 'next-intl';
 
+import { OPTION_GROUPS } from '@/lib/pricing/price-list';
+
 import { AddOnOption } from './AddOnOption';
-import { PAGE_TIERS } from './constants';
+import { ADD_ON_PRICES, PAGE_TIERS } from './constants';
 import { OptionGroup } from './OptionGroup';
 import type { AddOnKey, OptionGroupProps } from './PricingSimulator.types';
 import { TieredOption } from './TieredOption';
 import { TierSlider } from './TierSlider';
 
-const SITE_ADD_ONS: readonly AddOnKey[] = ['contact_form', 'booking', 'reviews', 'english'];
+/** The add-ons of the group, in the order of `OPTION_GROUPS`, which the recap follows too. */
+type SiteAddOn = Extract<(typeof OPTION_GROUPS.site)[number], AddOnKey>;
+const SITE_ADD_ONS = OPTION_GROUPS.site.filter((id): id is SiteAddOn => id in ADD_ON_PRICES);
 
 /**
  * "Your site": number of pages, then what the site does. News published by the studio are an option

@@ -22,16 +22,19 @@ interface PricingSimulatorProps {
  * projects are quoted personally, outside the simulator.
  */
 export function PricingSimulator({ region }: PricingSimulatorProps) {
-  const currency = getCurrency(region);
-  const { price } = usePriceFormat(currency);
+  const format = usePriceFormat(getCurrency(region));
   const { plan, total, showQuoteHint, cascade, actions } = usePricingSimulator();
   const composerRef = useRef<HTMLDivElement>(null);
 
-  // The visitor lands in the simulator, its options ticked and its total in view.
+  // The visitor lands in the simulator, its options ticked, on the chosen formula, which names itself.
   const applyGuide = (choices: PlanSelection) => {
     actions.replaceChoices(choices);
-    composerRef.current?.scrollIntoView({ block: 'start' });
-    composerRef.current?.focus({ preventScroll: true });
+    const composer = composerRef.current;
+    composer?.scrollIntoView({ block: 'start' });
+    // Picked by value: the new formula is only checked once the state is rendered.
+    composer
+      ?.querySelector<HTMLInputElement>(`input[type="radio"][value="${choices.formula}"]`)
+      ?.focus({ preventScroll: true });
   };
 
   return (
@@ -39,14 +42,13 @@ export function PricingSimulator({ region }: PricingSimulatorProps) {
       <PricingGuide plan={plan} region={region} onApply={applyGuide} />
       <div
         ref={composerRef}
-        tabIndex={-1}
-        className="grid scroll-mt-24 items-start gap-8 focus:outline-none lg:grid-cols-[minmax(0,1fr)_minmax(0,380px)]">
+        className="grid scroll-mt-24 items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,380px)]">
         <div className="flex flex-col gap-6">
-          <FormulaPicker formula={plan.formula} onFormulaChange={actions.setFormula} price={price} />
-          <PlanBuilder currency={currency} region={region} plan={plan} cascade={cascade} actions={actions} />
-          <MobileTotalBar plan={plan} region={region} total={price(total)} />
+          <FormulaPicker formula={plan.formula} onFormulaChange={actions.setFormula} price={format.price} />
+          <PlanBuilder format={format} region={region} plan={plan} cascade={cascade} actions={actions} />
+          <MobileTotalBar plan={plan} region={region} total={format.price(total)} />
         </div>
-        <PlanSummary currency={currency} region={region} plan={plan} total={total} showQuoteHint={showQuoteHint} />
+        <PlanSummary format={format} region={region} plan={plan} total={total} showQuoteHint={showQuoteHint} />
       </div>
     </div>
   );

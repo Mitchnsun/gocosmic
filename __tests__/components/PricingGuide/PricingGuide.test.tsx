@@ -23,6 +23,9 @@ describe('PricingGuide', () => {
   beforeAll(() => {
     Element.prototype.scrollIntoView = scrollIntoView;
   });
+  beforeEach(() => {
+    scrollIntoView.mockClear();
+  });
 
   it('shows its first question alone above a simulator that shows its prices at once', () => {
     render(<PricingSimulator region="fr" />);
@@ -30,7 +33,48 @@ describe('PricingGuide', () => {
     expect(question('Where are you at?')).toBeInTheDocument();
     expect(screen.getByText(/answer a few questions/i)).toBeInTheDocument();
     expect(within(guide()).queryByRole('button')).not.toBeInTheDocument();
+    // A single question so far: no progress line, and the page keeps its focus.
+    expect(within(guide()).queryByText(/^Question \d/)).not.toBeInTheDocument();
+    expect(document.body).toHaveFocus();
     expect(total()).toHaveTextContent('€10');
+  });
+
+  it('moves on when the current answer is picked again with the pointer', () => {
+    render(<PricingSimulator region="fr" />);
+    pick('Where are you at?', "I don't have a website yet");
+    fireEvent.click(within(guide()).getByRole('button', { name: 'Back' }));
+
+    pick('Where are you at?', "I don't have a website yet");
+
+    expect(question('Who will make the changes on your site?')).toBeInTheDocument();
+  });
+
+  it('stays on the contact question when a channel is ticked with the pointer, several being allowed', () => {
+    render(<PricingSimulator region="fr" />);
+    pick('Where are you at?', "I don't have a website yet");
+    pick('Who will make the changes on your site?', 'You: I send you my changes');
+    pick('Do you already have a domain name?', 'Yes, I already have one');
+    pick('How many pages do you want?', 'A single page');
+
+    const form = within(question('How do your customers reach you?')).getByRole('checkbox', {
+      name: 'Through a form on my site',
+    });
+    fireEvent.pointerDown(form);
+    fireEvent.click(form);
+
+    expect(form).toBeChecked();
+    expect(question('How do your customers reach you?')).toBeInTheDocument();
+  });
+
+  it('does not move on when the keyboard took over after a pointer press', () => {
+    render(<PricingSimulator region="fr" />);
+    const radio = within(question('Where are you at?')).getByRole('radio', { name: "I don't have a website yet" });
+
+    fireEvent.pointerDown(radio);
+    fireEvent.keyDown(radio, { key: 'ArrowDown' });
+    fireEvent.click(radio);
+
+    expect(question('Where are you at?')).toBeInTheDocument();
   });
 
   it('moves on when an answer is picked with the pointer, not with the keyboard, and goes back', () => {
@@ -70,7 +114,7 @@ describe('PricingGuide', () => {
     pick('Where are you at?', "I don't have a website yet");
     fireEvent.submit(guide());
 
-    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Replace' })).not.toBeInTheDocument();
     expect(screen.getByRole('checkbox', { name: /your site in english/i })).toBeChecked();
 
     fireEvent.click(within(guide()).getByRole('button', { name: 'Back' }));
@@ -79,12 +123,15 @@ describe('PricingGuide', () => {
     expect(screen.getByRole('checkbox', { name: /your site in english/i })).toBeChecked();
   });
 
-  it('sends a project outside the subscription to a quote', () => {
+  it('sends a project outside the subscription to a quote, announced in a live region already on the page', () => {
     render(<PricingSimulator region="fr" />);
+    const liveRegions = [...guide().querySelectorAll('[aria-live="polite"]')];
 
     pick('Where are you at?', /sell online/i);
 
-    expect(screen.getByText(/we define the project together, then send you a quote/i)).toBeInTheDocument();
+    const ending = screen.getByText(/we define the project together, then send you a quote/i);
+    expect(liveRegions).toContain(ending.closest('[aria-live="polite"]'));
+    expect(within(guide()).queryByText(/^Question \d/)).not.toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Request a quote' })).toHaveAttribute('href', '/contact');
     expect(screen.queryByRole('button', { name: 'See my plan' })).not.toBeInTheDocument();
   });
@@ -121,7 +168,9 @@ describe('PricingGuide', () => {
     fireEvent.click(screen.getByRole('button', { name: 'See my plan' }));
 
     expect(scrollIntoView).toHaveBeenCalledWith({ block: 'start' });
+    // Focus lands on the chosen formula, which names itself.
     expect(screen.getByRole('radio', { name: /you stay in control/i })).toBeChecked();
+    expect(screen.getByRole('radio', { name: /you stay in control/i })).toHaveFocus();
     expect(screen.getByRole('checkbox', { name: /a contact form/i })).toBeChecked();
     expect(screen.getByRole('checkbox', { name: /online booking/i })).not.toBeChecked();
     expect(screen.getByRole('checkbox', { name: /email address in your own name/i })).toBeChecked();
@@ -145,12 +194,15 @@ describe('PricingGuide', () => {
 
     fireEvent.click(screen.getByRole('button', { name: 'See my plan' }));
 
-    const warning = screen.getByRole('alert');
-    expect(warning).toHaveTextContent('Your answers will replace the options you have already ticked.');
-    expect(within(warning).getByRole('button', { name: 'Replace' })).toHaveFocus();
+    // Focus moves to "Replace", which the warning describes, so it is read once.
+    const replace = screen.getByRole('button', { name: 'Replace' });
+    expect(replace).toHaveFocus();
+    expect(replace).toHaveAccessibleDescription('Your answers will replace the options you have already ticked.');
 
-    fireEvent.click(within(warning).getByRole('button', { name: 'Cancel' }));
-    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Cancel' }));
+    expect(screen.queryByRole('button', { name: 'Replace' })).not.toBeInTheDocument();
+    // Focus comes back where the visitor was, not to the top of the page.
+    expect(screen.getByRole('button', { name: 'See my plan' })).toHaveFocus();
     expect(screen.getByRole('checkbox', { name: /your site in english/i })).toBeChecked();
 
     fireEvent.click(screen.getByRole('button', { name: 'See my plan' }));
@@ -167,7 +219,8 @@ describe('PricingGuide', () => {
 
     fireEvent.click(screen.getByRole('button', { name: 'See my plan' }));
 
-    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Replace' })).not.toBeInTheDocument();
+    expect(scrollIntoView).toHaveBeenCalledTimes(1);
     expect(total()).toHaveTextContent('€10');
   });
 });

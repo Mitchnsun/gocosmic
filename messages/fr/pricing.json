@@ -203,7 +203,7 @@
       },
       "total": {
         "label": "Votre estimation",
-        "note": "Prix indicatif, confirmé après un premier échange. Vous pouvez ajouter des options à tout moment. Le nombre de pages, le nom de domaine, l'hébergement en Suisse et votre adresse e-mail restent dans votre abonnement une fois activés. Les options marquées « Engagement 1 an » se retirent à la fin de chaque période de 12 mois, les autres avec un mois de préavis (voir les <link>conditions générales de vente</link>).",
+        "note": "Prix indicatif, confirmé après un premier échange. Vous pouvez ajouter des options à tout moment. Le nombre de pages et l'hébergement en Suisse restent dans votre abonnement une fois activés. Les options marquées « Engagement 1 an » se retirent à la fin de chaque période de 12 mois, les autres avec un mois de préavis (voir les <link>conditions générales de vente</link>).",
         "cta": "Demander ma maquette gratuite",
         "mobile_cta": "Ma maquette gratuite",
         "question": "Une question avant ? <link>Écrivez-nous</link>.",
@@ -349,10 +349,6 @@
         "legend": "Combien de pages voulez-vous ?",
         "help": "Une page, c'est par exemple « Présentation », « Services » ou « Tarifs ».",
         "one": "Une seule page",
-        "two_four": "2 à 4 pages",
-        "five_seven": "5 à 7 pages",
-        "eight_nine": "8 à 9 pages",
-        "ten_plus": "10 pages ou plus",
         "unsure": "Je ne sais pas encore"
       },
       "contact": {
@@ -376,12 +372,7 @@
       },
       "updates": {
         "legend": "À quelle fréquence vos informations (textes, photos, horaires) changent-elles ?",
-        "yearly": "Une fois par an suffit (compris)",
-        "few_per_year": "2 à 3 fois par an",
-        "monthly": "1 fois par mois",
-        "twice_monthly": "2 fois par mois",
-        "weekly": "1 fois par semaine",
-        "unlimited": "Autant que nécessaire"
+        "yearly": "Une fois par an suffit (compris)"
       }
     }
   }

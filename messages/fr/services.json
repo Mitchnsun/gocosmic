@@ -12,8 +12,7 @@
     "simulator": {
       "eyebrow": "[ Composez votre abonnement ]",
       "title": "Commencez simple, <em>ajoutez le reste plus tard.</em>",
-      "lead": "Deux formules : « On s'occupe de tout », dès {price} par mois, ou « Vous gardez la main », dès {selfServicePrice} par mois, si vous voulez publier vous-même vos actualités. Ajoutez vos options et voyez le prix par mois sur la page Tarifs.",
-      "cta": "Composer mon abonnement"
+      "lead": "Deux formules : « On s'occupe de tout », dès {price} par mois, ou « Vous gardez la main », dès {selfServicePrice} par mois, si vous voulez publier vous-même vos actualités. Ajoutez vos options et voyez le prix par mois sur la page Tarifs."
     },
     "trades": {
       "eyebrow": "[ Nos métiers · 04 ]",

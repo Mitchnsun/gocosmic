@@ -89,7 +89,7 @@ export default async function Services({ params }: { params: Promise<{ locale: s
             })}
           />
           <Link href="/pricing" className={primaryPill()}>
-            {t('simulator.cta')}
+            {tPricing('subscription.cta')}
             <ArrowRightIcon className="size-4" aria-hidden="true" />
           </Link>
         </div>

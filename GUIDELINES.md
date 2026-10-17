@@ -142,7 +142,7 @@ After making changes, validate the app manually:
    - `/projects/mcomperat` — mcomperat showcase
    - `/projects/psc-supersprint` — PSC Supersprint showcase
    - `/projects/choeurdespaysdumontblanc` — Choeur des Pays du Mont Blanc showcase
-   - `/offers`, `/journey` (and their old localized slugs) — permanent redirect to `/services#pricing` and `/services`; `/fr/pricing` (the English slug under another language) — permanent redirect to `/fr/tarifs`
+   - `/offers`, `/journey` (and their old localized slugs) — permanent redirect to `/services#pricing` and `/services`; `/fr/pricing` (the English slug under another language) — redirect to `/fr/tarifs`
 5. If page content changed: `yarn build && yarn start`, then check that `/llms.txt` and `/llms-full.txt` reflect it (see [Files for AI agents](CLAUDE.md#files-for-ai-agents))
 6. `yarn test` — all tests must pass
 

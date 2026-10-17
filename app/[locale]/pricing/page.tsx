@@ -55,7 +55,13 @@ export default async function Pricing({ params }: { params: Promise<{ locale: st
       <div className={cn(CONTAINER, SECTION_Y, 'flex flex-col gap-10')}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <FreeOffers />
-          <PricingSimulator region={region} />
+          {/* Its own heading, so the simulator is not read as part of the free offers above it. */}
+          <section aria-labelledby="simulator-heading">
+            <h2 id="simulator-heading" className="sr-only">
+              {t('simulator.title')}
+            </h2>
+            <PricingSimulator region={region} />
+          </section>
           <QuotedServices />
         </NextIntlClientProvider>
       </div>

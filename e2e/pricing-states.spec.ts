@@ -24,9 +24,9 @@ const tick = (page: Page, label: string) => page.getByRole('checkbox', { name: l
 
 /**
  * The axe audit of `a11y.spec.ts` only sees the pricing page as it loads (see `docs/lessons.md`). This one
- * reaches the states revealed on interaction, in both themes: the guided mode with its answers, the
- * replace warning, ticked rows and their sub-options, "More options" open, an info bubble open, and the
- * bar of small screens.
+ * reaches the states revealed on interaction, in both themes: the guided mode on its last question with
+ * an answer picked, its replace warning and its ending for a quote, ticked rows and their sub-options,
+ * "More options" open, an info bubble open, and the bar of small screens.
  */
 for (const theme of THEMES) {
   test.describe(`pricing page states, ${theme} theme`, () => {
@@ -43,15 +43,25 @@ for (const theme of THEMES) {
       await guide.getByRole('radio', { name: g.situation.new }).click();
       await guide.getByRole('radio', { name: g.editor.studio }).click();
       await guide.getByRole('radio', { name: b.domain_question.no }).click();
-      await guide.getByRole('radio', { name: g.pages.two_four }).click();
+      await guide.getByRole('radio', { name: b.pages.tiers.two_four }).click();
       await guide.getByRole('checkbox', { name: g.contact.form }).check();
       await guide.getByRole('button', { name: g.next }).click();
       await guide.getByRole('radio', { name: g.email.team }).click();
       await guide.getByRole('radio', { name: g.news.monthly }).click();
+      // The last question: its answer stays on screen, next to "Back" and the submit button.
+      await guide.getByRole('radio', { name: b.updates.tiers.monthly }).click();
+      await expect(guide.getByRole('radio', { name: b.updates.tiers.monthly })).toBeChecked();
       expect(await violationsOf(page)).toEqual([]);
 
       await page.getByRole('button', { name: g.submit }).click();
-      await expect(page.getByRole('alert').filter({ hasText: g.confirm.text })).toBeVisible();
+      await expect(guide.getByRole('button', { name: g.confirm.replace })).toBeFocused();
+      expect(await violationsOf(page)).toEqual([]);
+    });
+
+    test('the guided mode, ending on a quote, has no WCAG A/AA violation', async ({ page }) => {
+      const guide = page.getByRole('form', { name: g.title });
+      await guide.getByRole('radio', { name: g.situation.custom }).click();
+      await expect(guide.getByRole('link', { name: g.quote_outcome.cta })).toBeVisible();
       expect(await violationsOf(page)).toEqual([]);
     });
 

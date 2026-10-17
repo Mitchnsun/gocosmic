@@ -8,6 +8,9 @@
       "eyebrow": "[ Precios ]",
       "title": "Configura tu suscripción <em>y el precio aparece al instante.</em>",
       "lead": "Elige quién actualiza tu sitio, añade lo que necesites y verás el precio mensual. ¿No te decides? Unas pocas preguntas bastan para una primera configuración, que luego ajustas."
+    },
+    "simulator": {
+      "title": "Configura tu suscripción"
     }
   }
 }

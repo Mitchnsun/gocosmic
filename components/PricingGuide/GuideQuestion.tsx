@@ -3,8 +3,8 @@
 import { GlobeAltIcon, ShoppingBagIcon, SparklesIcon } from '@heroicons/react/24/outline';
 import { useTranslations } from 'next-intl';
 
-import { ChoiceGroup } from '@/components/PricingSimulator/ChoiceGroup';
 import { NEWS_TIERS, PAGE_TIERS, UPDATE_TIERS } from '@/components/PricingSimulator/constants';
+import { ChoiceGroup } from '@/design-system/choice-group';
 
 import type { ContactChannel, GuideAnswers, GuideStep, Situation } from './PricingGuide.types';
 
@@ -33,13 +33,16 @@ export function GuideQuestion({ step, answers, onAnswer, domain }: GuideQuestion
     key: K,
     prefix: string,
     values: readonly Answer<K>[],
-    extra: { legend?: string; help?: string } = {}
+    extra: { legend?: string; help?: string; label?: (value: Answer<K>) => string } = {}
   ) => (
     <ChoiceGroup<Answer<K>>
       legend={extra.legend ?? t(`${prefix}.legend`)}
       help={extra.help}
       type="radio"
-      choices={values.map((value) => ({ value, label: t(`${prefix}.${value as string}`) }))}
+      choices={values.map((value) => ({
+        value,
+        label: extra.label?.(value) ?? t(`${prefix}.${value as string}`),
+      }))}
       selected={values.filter((value) => value === answers[key])}
       onChange={(value) => onAnswer({ [key]: value })}
     />
@@ -68,6 +71,9 @@ export function GuideQuestion({ step, answers, onAnswer, domain }: GuideQuestion
     case 'pages':
       return radio('pages', 'guide.pages', [...PAGE_TIERS.map((tier) => tier.key), 'unsure'] as const, {
         help: t('guide.pages.help'),
+        // The answers past the first one are the steps of the pages slider.
+        label: (value) =>
+          value === 'one' || value === 'unsure' ? t(`guide.pages.${value}`) : t(`builder.pages.tiers.${value}`),
       });
     case 'email':
       return radio('email', 'guide.email', ['yes', 'team', 'no'] as const, {
@@ -76,7 +82,10 @@ export function GuideQuestion({ step, answers, onAnswer, domain }: GuideQuestion
     case 'news':
       return radio('news', 'guide.news', ['none', ...NEWS_TIERS.map((tier) => tier.key)] as const);
     case 'updates':
-      return radio('updates', 'guide.updates', ['yearly', ...UPDATE_TIERS.map((tier) => tier.key)] as const);
+      return radio('updates', 'guide.updates', ['yearly', ...UPDATE_TIERS.map((tier) => tier.key)] as const, {
+        // The answers past the first one are the steps of the changes slider.
+        label: (value) => (value === 'yearly' ? t('guide.updates.yearly') : t(`builder.updates.tiers.${value}`)),
+      });
     case 'contact':
       return (
         <ChoiceGroup<ContactChannel>

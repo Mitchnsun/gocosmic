@@ -9,20 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Added
 
-- A new Pricing page, linked from the footer, the homepage and the subscription column, where visitors find the two free offers, each with its own button, then build their subscription and see the monthly price
+- A new Pricing page, linked from the footer, the homepage, the subscription column, the local page and the Services page (now simply called "Services", with the two plans and their starting price), where visitors find the two free offers, each with its own button, then build their subscription and see the monthly price
 - A "Help me choose" guide above the simulator, open from the start on a first question with three large choices, then one question at a time: a few questions tick the options that fit, or point to a conversation or a quote when the need goes beyond the subscription
 - On phones, a bar at the bottom of the screen keeps the estimated price and the free mockup button in view while scrolling through the options
 
 ### Changed
 
-- The Services page is now simply called "Services": it presents the two plans with their starting price and leads to the Pricing page, and the local page offers one button to the services and one to the prices
-- The simulator first asks whether the visitor already has a domain name: without one, the studio registers it as part of the subscription; with one, the domain and email options give way to help on a quote
-- News published by the studio and AI-assisted articles now have their own rhythm and price and no longer count as changes to the pages, the site monitoring option is gone, less common options sit under "More options", every option is explained in plain words, and the summary says whether the plan commits for 12 months
-- The terms of sale are reviewed: yearly billing paid within 30 days or a monthly payment schedule, by bank transfer; the studio's VAT status and what happens if it changes; Swiss law for every client; and clauses on delays, liability and the ownership of a one-off project's code, which the services FAQ now states the same way
-
-### Fixed
-
-- On the simulator sliders, the dots marking the first and last steps now sit flush with the ends of the bar
+- The simulator first asks whether the visitor already has a domain name, gives news and AI-assisted articles their own rhythm and price apart from changes to the pages, folds less common options under "More options", marks each step of its sliders, explains every option in plain words and says whether the plan commits for 12 months; the site monitoring option is gone
+- The terms of sale are reviewed: yearly billing paid within 30 days or a monthly payment schedule, by bank transfer; the studio's VAT status and what happens if it changes; Swiss law for every client; which options run for a year (the domain name and the email address included) and which stay once added; and clauses on delays, liability and the ownership of a one-off project's code, which the services FAQ now states the same way
+- The projects now open with Coach'n Pulse and end with the choir's mockup, and the PSC Supersprint case study describes its live results on web and mobile, for athletes and spectators
 
 ## [2.4.5] - 2026-10-15
 

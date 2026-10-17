@@ -203,7 +203,7 @@
       },
       "total": {
         "label": "Your estimate",
-        "note": "Indicative price, confirmed after a first conversation. You can add options at any time. The number of pages, the domain name, Swiss hosting and your email address stay part of your subscription once active. Options marked “1-year commitment” can be removed at the end of each 12-month period, the others with one month's notice (see the <link>terms of sale</link>).",
+        "note": "Indicative price, confirmed after a first conversation. You can add options at any time. The number of pages and Swiss hosting stay part of your subscription once active. Options marked “1-year commitment” can be removed at the end of each 12-month period, the others with one month's notice (see the <link>terms of sale</link>).",
         "cta": "Request my free mockup",
         "mobile_cta": "My free mockup",
         "question": "A question first? <link>Write to us</link>.",
@@ -349,10 +349,6 @@
         "legend": "How many pages do you want?",
         "help": "A page is, for example, “About”, “Services” or “Pricing”.",
         "one": "A single page",
-        "two_four": "2 to 4 pages",
-        "five_seven": "5 to 7 pages",
-        "eight_nine": "8 to 9 pages",
-        "ten_plus": "10 pages or more",
         "unsure": "I don't know yet"
       },
       "contact": {
@@ -376,12 +372,7 @@
       },
       "updates": {
         "legend": "How often does your information (texts, photos, opening hours) change?",
-        "yearly": "Once a year is enough (included)",
-        "few_per_year": "2 to 3 times a year",
-        "monthly": "Once a month",
-        "twice_monthly": "Twice a month",
-        "weekly": "Once a week",
-        "unlimited": "As often as needed"
+        "yearly": "Once a year is enough (included)"
       }
     }
   }

@@ -8,6 +8,9 @@
       "eyebrow": "[ Preise ]",
       "title": "Stellen Sie Ihr Abonnement zusammen, <em>der Preis erscheint sofort.</em>",
       "lead": "Wählen Sie, wer Ihre Website aktualisiert, ergänzen Sie, was Sie brauchen, und Sie sehen den Monatspreis. Sie sind unsicher? Ein paar Fragen genügen für eine erste Zusammenstellung, die Sie danach anpassen."
+    },
+    "simulator": {
+      "title": "Stellen Sie Ihr Abonnement zusammen"
     }
   }
 }

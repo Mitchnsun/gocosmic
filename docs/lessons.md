@@ -297,6 +297,18 @@ Grep `components/CosmicCursor/` for the native selector being replaced (`input[t
 
 **Correct pattern**: When legal pages and other declarations disagree, ask which one reflects the current situation, or whether it is changing (new registration, move), before offering to align on the existing text. Legal pages can be the outdated side.
 
+### A commitment badge, the terms and the recap must say the same thing
+
+**Mistake**: The domain name and the email address wore the "1-year commitment" badge, while the terms of sale said they could never be removed. A review proposed dropping the badge; in fact the terms were wrong: both are one-year options, removable at the end of a period, and only the number of pages and Swiss hosting stay once enabled.
+
+**Correct pattern**: For each option, the badge (`ONE_YEAR_OPTIONS`), the terms' "Options" and "Duration and commitment" sections and the recap note must agree. When they disagree, ask the owner which rule is true before changing any of them.
+
+### A data change in the owner's commit is a decision, not a regression
+
+**Mistake**: The owner reordered the case studies in `data/projects.ts`, and four tests still expected the old order. The review listed the new order as a defect to revert.
+
+**Correct pattern**: When the owner's own commit changes content and breaks tests, update the tests (and the README, the changelog) to the new content; ask only if the intent is unclear.
+
 ---
 
 ## Testing

@@ -17,8 +17,7 @@
     "simulator": {
       "eyebrow": "[ Configura tu suscripción ]",
       "title": "Empieza por lo básico <em>y añade el resto más adelante.</em>",
-      "lead": "Dos planes: «Nos encargamos de todo», desde {price} al mes, o «Tú tienes el control», desde {selfServicePrice} al mes, si quieres publicar tú mismo/a tus noticias. Añade tus opciones y mira el precio mensual en la página Precios.",
-      "cta": "Configurar mi suscripción"
+      "lead": "Dos planes: «Nos encargamos de todo», desde {price} al mes, o «Tú tienes el control», desde {selfServicePrice} al mes, si quieres publicar tú mismo/a tus noticias. Añade tus opciones y mira el precio mensual en la página Precios."
     },
     "trades": {
       "eyebrow": "[ Lo que hacemos · 04 ]",

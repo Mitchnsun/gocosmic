@@ -1,4 +1,4 @@
-import type { AddOnKey, Formula, PlanSelection, TieredKey } from './PricingSimulator.types';
+import type { AddOnKey, Formula, PlanItem, PlanSelection } from './PricingSimulator.types';
 
 /** Monthly price of the entry plan: one page, hosting and security included. Quoted as "from" across the site. */
 export const BASE_PRICE = 10;
@@ -115,11 +115,17 @@ export const TIERED_TABLES = {
 export const EXTRA_MAILBOX_PRICE = 10;
 export const MAX_EXTRA_MAILBOXES = 5;
 
+/** Formulas subscribed for 12-month periods: the editing tool of "You stay in control" is set up for a year. */
+export const ONE_YEAR_FORMULAS: ReadonlySet<Formula> = new Set(['self_service']);
+
 /**
- * Options subscribed for 12-month periods that can be removed at the end of a period: the options
- * marked "1-year commitment" in the terms of sale.
+ * Options marked "1-year commitment" (terms of sale, "Options"): subscribed for 12-month periods and
+ * removable at the end of one. Any of them, like a one-year formula, turns the whole subscription into
+ * 12-month periods.
  */
-export const ONE_YEAR_OPTIONS: ReadonlySet<AddOnKey | TieredKey | 'mailboxes'> = new Set([
+export const ONE_YEAR_OPTIONS: ReadonlySet<PlanItem['id']> = new Set([
+  'domain',
+  'email',
   'news',
   'english',
   'redirects',
@@ -128,17 +134,6 @@ export const ONE_YEAR_OPTIONS: ReadonlySet<AddOnKey | TieredKey | 'mailboxes'> =
   'detailed_analytics',
   'seo',
   'articles',
-]);
-
-/**
- * Options that turn the whole subscription into 12-month periods (terms of sale, "Duration and
- * commitment"), flagged with the "1-year commitment" badge: the one-year options, plus the domain
- * name and the email address, which stay in the subscription once activated.
- */
-export const COMMITTED_OPTIONS: ReadonlySet<AddOnKey | TieredKey | 'mailboxes'> = new Set([
-  ...ONE_YEAR_OPTIONS,
-  'domain',
-  'email',
 ]);
 
 export const INITIAL_SELECTION: PlanSelection = {

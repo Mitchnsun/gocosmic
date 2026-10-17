@@ -42,7 +42,7 @@ describe('buildPlanEmailRows', () => {
     expect(text).toContain(
       'Simulation — add-ons: Contact form (+5€), Domain name management (+5€), Email address on the domain (+15€), 2 extra mailbox(es) (+20€), Forwarding addresses (up to 5) (+5€), Detailed statistics (consent banner) (+5€)'
     );
-    expect(text).toContain('Simulation — local search follow-up: Every month (+15€)');
+    expect(text).toContain('Simulation — Google ranking follow-up: Every month (+15€)');
     expect(text).toContain('Simulation — visit statistics: Monthly report (+50€)');
     // Articles no longer count as content changes.
     expect(text).toContain('Simulation — content updates: Once a year (included)');
@@ -67,7 +67,7 @@ describe('buildPlanEmailRows', () => {
     expect(text).toContain('Simulation — pages: 1 page (included)');
     expect(text).toContain('Simulation — existing domain name: Not answered');
     expect(text).toContain('Simulation — add-ons: None');
-    expect(text).toContain('Simulation — local search follow-up: Not included');
+    expect(text).toContain('Simulation — Google ranking follow-up: Not included');
     expect(text).toContain('Simulation — content updates: Once a year (included)');
     expect(text).toContain('Simulation — monthly total: 10 CHF / month');
     expect(text).not.toContain('personal quote');

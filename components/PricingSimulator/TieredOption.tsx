@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 import type { ReactNode } from 'react';
 
-import { COMMITTED_OPTIONS, TIERED_TABLES } from './constants';
+import { ONE_YEAR_OPTIONS, TIERED_TABLES } from './constants';
 import { OptionToggle } from './OptionToggle';
 import type { TieredKey } from './PricingSimulator.types';
 import { TierSlider } from './TierSlider';
@@ -51,12 +51,13 @@ export function TieredOption({
         label: t('info_label', { option: label }),
         text: [t(`options.${id}.info`), extraInfo].filter(Boolean).join(' '),
       }}
-      commitment={COMMITTED_OPTIONS.has(id) ? t('commitment') : undefined}
+      commitment={ONE_YEAR_OPTIONS.has(id) ? t('commitment') : undefined}
       note={note}>
       {value !== null && (
         <div className="border-line space-y-4 border-t px-4 py-4">
           <TierSlider
             label={t(`options.${id}.slider_label`)}
+            context={label}
             tiers={tiers}
             value={value}
             onChange={(next) => onTierChange(id, next)}

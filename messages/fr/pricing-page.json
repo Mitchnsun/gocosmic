@@ -8,6 +8,9 @@
       "eyebrow": "[ Tarifs ]",
       "title": "Composez votre abonnement, <em>le prix s'affiche tout de suite.</em>",
       "lead": "Choisissez qui met votre site à jour, ajoutez ce dont vous avez besoin, et vous voyez le prix par mois. Vous hésitez ? Quelques questions suffisent pour une première composition, que vous ajustez ensuite."
+    },
+    "simulator": {
+      "title": "Composez votre abonnement"
     }
   }
 }

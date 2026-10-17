@@ -1,6 +1,8 @@
 import { PricingSimulator } from '@/components/PricingSimulator/PricingSimulator';
 import { decodePlanCode } from '@/lib/pricing/plan-code';
 import { PLAN_STORAGE_KEY } from '@/lib/pricing/plan-storage';
+import { OPTION_GROUPS } from '@/lib/pricing/price-list';
+import en from '@/messages/en/pricing.json';
 
 import { fireEvent, render, screen, within } from '../../test-utils';
 
@@ -56,7 +58,7 @@ describe('PricingSimulator', () => {
     render(<PricingSimulator region="fr" />);
     tick(/news published for you/i);
 
-    fireEvent.keyDown(screen.getByRole('slider', { name: 'Rhythm' }), { key: 'End' });
+    fireEvent.keyDown(screen.getByRole('slider', { name: 'News published for you · Rhythm' }), { key: 'End' });
 
     expect(total()).toHaveTextContent('€110');
     expect(within(recap()).getByText('News published for you')).toBeInTheDocument();
@@ -213,7 +215,7 @@ describe('PricingSimulator', () => {
     expect(screen.getByRole('checkbox', { name: /visit statistics/i })).toHaveAccessibleDescription(/from \+€5/);
 
     tick(/visit statistics/i);
-    fireEvent.keyDown(screen.getByRole('slider', { name: 'Written report' }), { key: 'End' });
+    fireEvent.keyDown(screen.getByRole('slider', { name: 'Visit statistics · Written report' }), { key: 'End' });
     tick(/detailed statistics/i);
 
     expect(total()).toHaveTextContent('€65');
@@ -243,7 +245,7 @@ describe('PricingSimulator', () => {
     openMoreOptions();
 
     tick(/ai-assisted articles/i);
-    fireEvent.keyDown(screen.getByRole('slider', { name: 'Rhythm' }), { key: 'End' });
+    fireEvent.keyDown(screen.getByRole('slider', { name: 'AI-assisted articles · Rhythm' }), { key: 'End' });
 
     const updates = screen.getByRole('checkbox', { name: /changes to your pages/i });
     expect(updates).not.toBeChecked();
@@ -330,11 +332,27 @@ describe('PricingSimulator', () => {
     render(<PricingSimulator region="fr" />);
     tick(/a contact form/i);
 
-    const bar = screen.getByRole('link', { name: 'My free mockup' }).parentElement!;
-    expect(bar).toHaveTextContent('Your estimate · €15 / month');
+    expect(screen.getByText(/^Your estimate ·/)).toHaveTextContent('Your estimate · €15 / month');
 
     fireEvent.click(screen.getByRole('link', { name: 'My free mockup' }));
     expect(decodePlanCode(window.sessionStorage.getItem(PLAN_STORAGE_KEY))?.selection.addOns.contact_form).toBe(true);
+  });
+
+  it('shows the options in the order of the price list, which the recap and llms-full.txt follow', () => {
+    render(<PricingSimulator region="ch" />);
+    withoutDomain();
+    tick(/an email address in your own name/i);
+    openMoreOptions();
+    tick(/^visit statistics/i);
+
+    const { options, pages, updates } = en.pricing.builder;
+    const labels = { ...options, pages, updates };
+    const ids = Object.values(OPTION_GROUPS).flat();
+    // The first match is the option's row: the recap comes after the options.
+    const rows = new Map(ids.map((id) => [id, screen.getAllByText(labels[id].label)[0]!]));
+    const precedes = (a: (typeof ids)[number], b: (typeof ids)[number]) =>
+      rows.get(a)!.compareDocumentPosition(rows.get(b)!) & Node.DOCUMENT_POSITION_FOLLOWING;
+    expect([...ids].sort((a, b) => (precedes(a, b) ? -1 : 1))).toEqual(ids);
   });
 
   it('links the recap note to the terms of sale, and offers a contact link for questions', () => {

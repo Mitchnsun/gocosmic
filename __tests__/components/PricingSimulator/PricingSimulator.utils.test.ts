@@ -11,7 +11,7 @@ import {
   getPlanItems,
   needsCustomQuote,
 } from '@/components/PricingSimulator/PricingSimulator.utils';
-import { ADVANCED_OPTIONS, OPTION_GROUPS } from '@/lib/pricing/price-list';
+import { OPTION_GROUPS } from '@/lib/pricing/price-list';
 
 import { makeSelection as plan } from '../../lib/pricing/plan-fixtures';
 
@@ -110,14 +110,6 @@ describe('getCommittedItems', () => {
 
 describe('countAdvancedOptions', () => {
   it('counts the ticked options folded under "More options"', () => {
-    expect(ADVANCED_OPTIONS).toEqual([
-      'redirects',
-      'seo',
-      'analytics',
-      'detailed_analytics',
-      'articles',
-      'swiss_hosting',
-    ]);
     expect(countAdvancedOptions(plan({ addOns: { contact_form: true }, news: 0 }))).toBe(0);
     expect(
       countAdvancedOptions(normalizePlan(plan({ analytics: 0, addOns: { detailed_analytics: true }, seo: 1 })))
@@ -138,7 +130,7 @@ describe('getMonthlyTotal', () => {
 
   it('sums add-ons, pages and updates together', () => {
     const total = getMonthlyTotal(
-      plan({ addOns: { domain: true, email: true }, pages: 2, updatesEnabled: true, updates: 1 })
+      plan({ ownDomain: false, addOns: { domain: true, email: true }, pages: 2, updatesEnabled: true, updates: 1 })
     );
     // 10 base + 5 domain + 15 email + 15 pages + 20 updates
     expect(total).toBe(65);
@@ -167,7 +159,7 @@ describe('getMonthlyTotal', () => {
   });
 
   it('charges each extra mailbox', () => {
-    expect(getMonthlyTotal(plan({ addOns: { domain: true, email: true }, mailboxes: 3 }))).toBe(60);
+    expect(getMonthlyTotal(plan({ ownDomain: false, addOns: { domain: true, email: true }, mailboxes: 3 }))).toBe(60);
   });
 });
 

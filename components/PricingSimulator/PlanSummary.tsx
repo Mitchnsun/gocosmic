@@ -3,16 +3,16 @@
 import { useTranslations } from 'next-intl';
 
 import { Link } from '@/i18n/navigation';
-import type { Currency, Region } from '@/lib/region';
+import type { Region } from '@/lib/region';
 
 import { MockupLink } from './MockupLink';
 import { PriceTotal } from './PriceTotal';
-import { usePriceFormat } from './PricingSimulator.hooks';
+import type { PriceFormat } from './PricingSimulator.hooks';
 import type { PlanItem, PlanSelection } from './PricingSimulator.types';
-import { getCommittedItems, getPlanItems } from './PricingSimulator.utils';
+import { getCommittedItems, getPlanItems, isTiered } from './PricingSimulator.utils';
 
 interface PlanSummaryProps {
-  currency: Currency;
+  format: PriceFormat;
   region: Region;
   /** Normalised plan. */
   plan: PlanSelection;
@@ -20,17 +20,15 @@ interface PlanSummaryProps {
   showQuoteHint: boolean;
 }
 
-const TIERED: ReadonlySet<PlanItem['id']> = new Set(['news', 'analytics', 'seo', 'articles']);
-
 const linkClass = 'text-fg-2 hover:text-fg underline underline-offset-4';
 
 /**
  * Sticky recap of the composed plan: itemised lines, live total, whether it commits for 12 months,
  * and the free mockup request carrying the simulation along.
  */
-export function PlanSummary({ currency, region, plan, total, showQuoteHint }: PlanSummaryProps) {
+export function PlanSummary({ format, region, plan, total, showQuoteHint }: PlanSummaryProps) {
   const t = useTranslations('pricing');
-  const { price, surcharge } = usePriceFormat(currency);
+  const { price, surcharge } = format;
   const committed = getCommittedItems(plan);
 
   const label = (item: PlanItem) => {
@@ -44,7 +42,7 @@ export function PlanSummary({ currency, region, plan, total, showQuoteHint }: Pl
   /** Rhythm of a slider line, e.g. "Every month". */
   const detail = (item: PlanItem) => {
     if (item.id === 'updates') return t(`builder.updates.tiers.${item.tier}`);
-    if (TIERED.has(item.id)) return t(`builder.options.${item.id}.tiers.${item.tier}`);
+    if (isTiered(item.id)) return t(`builder.options.${item.id}.tiers.${item.tier}`);
     return undefined;
   };
   const amount = (item: PlanItem) => {

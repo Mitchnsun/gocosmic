@@ -1,6 +1,6 @@
 import { FORMULA_PRICES } from '@/components/PricingSimulator/constants';
 import { normalizePlan } from '@/components/PricingSimulator/PricingSimulator.rules';
-import type { AddOnKey, PlanItem } from '@/components/PricingSimulator/PricingSimulator.types';
+import type { AddOnKey, PlanItem, TieredKey } from '@/components/PricingSimulator/PricingSimulator.types';
 import {
   formatAmount,
   getMonthlyTotal,
@@ -47,7 +47,7 @@ export function buildPlanEmailRows(plan: DecodedPlan): [string, string][] {
   const selection = normalizePlan(plan.selection);
   const items = getPlanItems(selection);
   const find = (id: PlanItem['id']) => items.find((item) => item.id === id);
-  const tiered = (id: 'updates' | 'news' | 'analytics' | 'seo' | 'articles', fallback: string) => {
+  const tiered = (id: 'updates' | TieredKey, fallback: string) => {
     const item = find(id);
     return item?.tier ? `${getTierLabel(id, item.tier)} (+${money(item.amount)})` : fallback;
   };
@@ -73,7 +73,7 @@ export function buildPlanEmailRows(plan: DecodedPlan): [string, string][] {
     [`${LABEL_PREFIX} — existing domain name`, getOwnDomainLabel(selection.ownDomain)],
     [`${LABEL_PREFIX} — add-ons`, addOns.length > 0 ? addOns.join(', ') : 'None'],
     [`${LABEL_PREFIX} — news published by the studio`, tiered('news', 'Not included')],
-    [`${LABEL_PREFIX} — local search follow-up`, tiered('seo', 'Not included')],
+    [`${LABEL_PREFIX} — Google ranking follow-up`, tiered('seo', 'Not included')],
     [`${LABEL_PREFIX} — visit statistics`, tiered('analytics', 'Not included')],
     [`${LABEL_PREFIX} — content updates`, tiered('updates', 'Once a year (included)')],
     [`${LABEL_PREFIX} — AI-assisted articles`, tiered('articles', 'Not included')],

@@ -17,8 +17,7 @@
     "simulator": {
       "eyebrow": "[ Componi il tuo abbonamento ]",
       "title": "Parti semplice, <em>il resto lo aggiungi dopo.</em>",
-      "lead": "Due formule: «Ci pensiamo noi», da {price} al mese, oppure «Hai tu il controllo», da {selfServicePrice} al mese, se vuoi pubblicare da te le tue notizie. Aggiungi le tue opzioni e vedi il prezzo mensile nella pagina Tariffe.",
-      "cta": "Componi il mio abbonamento"
+      "lead": "Due formule: «Ci pensiamo noi», da {price} al mese, oppure «Hai tu il controllo», da {selfServicePrice} al mese, se vuoi pubblicare da te le tue notizie. Aggiungi le tue opzioni e vedi il prezzo mensile nella pagina Tariffe."
     },
     "trades": {
       "eyebrow": "[ I nostri mestieri · 04 ]",

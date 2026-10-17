@@ -50,11 +50,10 @@ describe('TierSlider', () => {
     expect(screen.getByRole('group', { name: 'Number of pages' })).toHaveAttribute('aria-disabled', 'true');
   });
 
-  it('adapts its range to the number of tiers, with one mark per step', () => {
-    const { container } = render(<TierSlider label="Report" tiers={tiers.slice(0, 3)} value={1} onChange={() => {}} />);
+  it('adapts its range to the number of tiers', () => {
+    render(<TierSlider label="Report" tiers={tiers.slice(0, 3)} value={1} onChange={() => {}} />);
 
     expect(screen.getByRole('slider', { name: 'Report' })).toHaveAttribute('aria-valuemax', '2');
-    expect(container.querySelectorAll('[aria-hidden="true"].rounded-full')).toHaveLength(3);
   });
 
   it('says how to enable it while it is disabled, and only then', () => {

@@ -8,6 +8,9 @@
       "eyebrow": "[ Pricing ]",
       "title": "Build your plan, <em>the price shows up right away.</em>",
       "lead": "Choose who updates your site, add what you need, and you see the monthly price. Not sure? A few questions are enough for a first plan, which you then adjust."
+    },
+    "simulator": {
+      "title": "Build your plan"
     }
   }
 }

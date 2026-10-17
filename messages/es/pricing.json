@@ -203,7 +203,7 @@
       },
       "total": {
         "label": "Tu estimación",
-        "note": "Precio orientativo, que confirmamos tras una primera conversación. Puedes añadir opciones en cualquier momento. El número de páginas, el nombre de dominio, el alojamiento en Suiza y tu dirección de correo se mantienen en tu suscripción una vez activados. Las opciones marcadas «Compromiso de 1 año» se dan de baja al final de cada periodo de 12 meses, las demás con un mes de preaviso (consulta las <link>condiciones generales de venta</link>).",
+        "note": "Precio orientativo, que confirmamos tras una primera conversación. Puedes añadir opciones en cualquier momento. El número de páginas y el alojamiento en Suiza se mantienen en tu suscripción una vez activados. Las opciones marcadas «Compromiso de 1 año» se dan de baja al final de cada periodo de 12 meses, las demás con un mes de preaviso (consulta las <link>condiciones generales de venta</link>).",
         "beyond": "Si necesitas más, lo hablamos y te hacemos una propuesta.",
         "cta": "Pedir mi maqueta gratuita",
         "mobile_cta": "Mi maqueta gratuita",
@@ -349,10 +349,6 @@
         "legend": "¿Cuántas páginas quieres?",
         "help": "Una página es, por ejemplo, «Presentación», «Servicios» o «Precios».",
         "one": "Una sola página",
-        "two_four": "2 a 4 páginas",
-        "five_seven": "5 a 7 páginas",
-        "eight_nine": "8 o 9 páginas",
-        "ten_plus": "10 páginas o más",
         "unsure": "Todavía no lo sé"
       },
       "contact": {
@@ -376,12 +372,7 @@
       },
       "updates": {
         "legend": "¿Con qué frecuencia cambia tu información (textos, fotos, horarios)?",
-        "yearly": "Una vez al año basta (incluido)",
-        "few_per_year": "2 o 3 veces al año",
-        "monthly": "1 vez al mes",
-        "twice_monthly": "2 veces al mes",
-        "weekly": "1 vez por semana",
-        "unlimited": "Tantas veces como haga falta"
+        "yearly": "Una vez al año basta (incluido)"
       }
     }
   }

@@ -73,9 +73,8 @@ describe('next config legacy redirects', () => {
     expect(find('/offers')?.destination).toBe('/services#pricing');
     expect(find('/journey')?.destination).toBe('/services');
     expect(redirects.every((redirect) => redirect.permanent)).toBe(true);
-    // 2 retired pages × (1 unprefixed + 1 for en + 2 per other locale), the pricing page's English slug under the
-    // 8 prefixes of the other languages, then the local page under each of the 10 prefixes.
-    expect(redirects).toHaveLength(2 * (1 + 1 + 2 * 4) + 8 + 10);
+    // 2 retired pages × (1 unprefixed + 1 for en + 2 per other locale), then the local page under each of the 10 prefixes.
+    expect(redirects).toHaveLength(2 * (1 + 1 + 2 * 4) + 10);
   });
 
   it('no longer redirects the pricing slugs, which lead to the pricing page again', async () => {
@@ -86,14 +85,10 @@ describe('next config legacy redirects', () => {
     const redirects = await nextConfig.redirects();
     const find = (source: string) => redirects.find((redirect) => redirect.source === source);
 
-    expect(find('/pricing')).toBeUndefined();
-    expect(find('/de/preise')).toBeUndefined();
-    expect(find('/fr-ch/tarifs')).toBeUndefined();
-    // The English slug under another prefix reaches that language's slug.
-    expect(find('/fr/pricing')).toEqual({ source: '/fr/pricing', destination: '/fr/tarifs', permanent: true });
-    expect(find('/de-ch/pricing')?.destination).toBe('/de-ch/preise');
-    expect(find('/en/pricing')).toBeUndefined();
-    expect(find('/en-ch/pricing')).toBeUndefined();
+    // The i18n middleware sends the English slug under another prefix (`/fr/pricing`) to that language's slug.
+    for (const source of ['/pricing', '/fr/pricing', '/de/preise', '/fr-ch/tarifs']) {
+      expect(find(source)).toBeUndefined();
+    }
   });
 
   it('sends the former local page slugs to the current ones, Swiss prefixes included', async () => {

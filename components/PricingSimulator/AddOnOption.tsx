@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 import type { ReactNode } from 'react';
 
-import { COMMITTED_OPTIONS } from './constants';
+import { ONE_YEAR_OPTIONS } from './constants';
 import { OptionToggle } from './OptionToggle';
 import type { AddOnKey } from './PricingSimulator.types';
 import { getAddOnPrice } from './PricingSimulator.utils';
@@ -49,7 +49,7 @@ export function AddOnOption({
           ? { label: t('info_label', { option: label }), text: t(`options.${id}.info`, values) }
           : undefined
       }
-      commitment={COMMITTED_OPTIONS.has(id) ? t('commitment') : undefined}
+      commitment={ONE_YEAR_OPTIONS.has(id) ? t('commitment') : undefined}
       note={note}
       disabled={disabled}
       nested={nested}>

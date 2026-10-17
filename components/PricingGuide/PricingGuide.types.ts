@@ -1,5 +1,7 @@
 import type { NEWS_TIERS, PAGE_TIERS, UPDATE_TIERS } from '@/components/PricingSimulator/constants';
-import type { TierKeyOf } from '@/components/PricingSimulator/PricingSimulator.types';
+import type { DomainAnswer, TierKeyOf } from '@/components/PricingSimulator/PricingSimulator.types';
+
+export type { DomainAnswer };
 
 /** "Where are you?": no site yet, a site already, or a project outside the subscription. */
 export type Situation = 'new' | 'existing' | 'custom';
@@ -9,8 +11,6 @@ export type ExistingPlan = 'redo' | 'keep';
 
 /** "Who will make the changes on your site?": the studio, or the client for news and opening hours. */
 export type Editor = 'studio' | 'self';
-
-export type DomainAnswer = 'no' | 'yes';
 
 /** "How many pages do you want?": a step of the pages slider, or not known yet. */
 export type PagesAnswer = TierKeyOf<typeof PAGE_TIERS> | 'unsure';

@@ -16,7 +16,8 @@ interface RetiredPage {
 /**
  * Pages merged away by the Cosmic Studio rebrand, with their former localized
  * slugs. Their content now lives on the Services page. The former pricing page
- * came back as a page of its own, under the same slugs (see `getEnglishSlugRedirects`).
+ * came back as a page of its own, under the same slugs; its English slug under another prefix
+ * (`/fr/pricing`) is redirected by the i18n middleware.
  */
 const RETIRED_PAGES: RetiredPage[] = [
   // Offers → the pricing columns
@@ -61,27 +62,6 @@ export function getLegacyRedirects(): Redirect[] {
 
     return [{ source: english, destination: `/services${hash}`, permanent: true }, ...localized];
   });
-}
-
-/** Pages whose English slug older links also used under the other language prefixes, e.g. `/fr/pricing`. */
-const ENGLISH_SLUG_PAGES = ['/pricing'] as const;
-
-/**
- * Permanent redirects from a page's English slug under another prefix to its slug in that language
- * (`/fr/pricing` → `/fr/tarifs`), Swiss prefixes included. Without them, the i18n middleware would
- * only answer with a temporary redirect.
- */
-export function getEnglishSlugRedirects(): Redirect[] {
-  return ENGLISH_SLUG_PAGES.flatMap((page) =>
-    LOCALES.flatMap((locale) => {
-      const english = routing.pathnames[page].en;
-      const slug = routing.pathnames[page][locale];
-      const prefix = getLocalePrefix(locale);
-      return slug === english
-        ? []
-        : [{ source: `${prefix}${english}`, destination: `${prefix}${slug}`, permanent: true }];
-    })
-  );
 }
 
 /** Slugs of the local page before it was retargeted at "website creation" and put Geneva first. */

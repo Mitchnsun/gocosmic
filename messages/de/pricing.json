@@ -87,12 +87,12 @@
           "count": "{count, plural, =0 {Kein zusätzliches Postfach} one {# zusätzliches Postfach} other {# zusätzliche Postfächer}}",
           "decrease": "Ein Postfach weniger",
           "increase": "Ein Postfach mehr",
-          "info": "Wenn Sie zu mehreren arbeiten oder für den Vorstand eines Vereins, kann jede Person ein eigenes Postfach auf Ihren Namen haben, mit eigenem Passwort. Diese Postfächer laufen in Zeiträumen von 12 Monaten; Sie können sie am Ende eines Zeitraums kündigen."
+          "info": "Wenn Sie zu mehreren arbeiten oder für den Vorstand eines Vereins, kann jede Person ein eigenes Postfach auf Ihren Namen haben, mit eigenem Passwort. Diese Postfächer laufen in Zeiträumen von 12 Monaten; Sie können sie am Ende eines Zeitraums entfernen."
         },
         "redirects": {
           "label": "Weiterleitungsadressen (bis zu 5)",
           "hint": "Bis zu 5 Adressen, die an ein bestehendes Postfach weiterleiten, zum Beispiel rechnungen@{domain}.",
-          "info": "Eine Weiterleitungsadresse hat kein Postfach: Nachrichten an rechnungen@{domain} landen in einem Postfach, das Sie schon haben. Diese Adressen laufen in Zeiträumen von 12 Monaten; Sie können sie am Ende eines Zeitraums kündigen."
+          "info": "Eine Weiterleitungsadresse hat kein Postfach: Nachrichten an rechnungen@{domain} landen in einem Postfach, das Sie schon haben. Diese Adressen laufen in Zeiträumen von 12 Monaten; Sie können sie am Ende eines Zeitraums entfernen."
         },
         "contact_form": {
           "label": "Ein Kontaktformular",
@@ -203,7 +203,7 @@
       },
       "total": {
         "label": "Ihre Kostenschätzung",
-        "note": "Richtpreis, den wir nach einem ersten Gespräch bestätigen. Sie können jederzeit Optionen hinzufügen. Seitenzahl, Domainname, Hosting in der Schweiz und Ihre E-Mail-Adresse bleiben nach der Aktivierung Teil Ihres Abonnements. Optionen mit dem Hinweis „1 Jahr Laufzeit“ lassen sich zum Ende jedes Zeitraums von 12 Monaten kündigen, die übrigen mit einem Monat Frist (siehe <link>Allgemeine Geschäftsbedingungen</link>).",
+        "note": "Richtpreis, den wir nach einem ersten Gespräch bestätigen. Sie können jederzeit Optionen hinzufügen. Seitenzahl und Hosting in der Schweiz bleiben nach der Aktivierung Teil Ihres Abonnements. Optionen mit dem Hinweis „1 Jahr Laufzeit“ lassen sich zum Ende jedes Zeitraums von 12 Monaten entfernen, die übrigen mit einem Monat Frist (siehe <link>Allgemeine Geschäftsbedingungen</link>).",
         "beyond": "Bei größerem Umfang sprechen wir gemeinsam darüber und machen Ihnen einen Vorschlag.",
         "cta": "Mein kostenloses Mockup anfordern",
         "mobile_cta": "Mein kostenloses Mockup",
@@ -349,10 +349,6 @@
         "legend": "Wie viele Seiten möchten Sie?",
         "help": "Eine Seite ist zum Beispiel „Über uns“, „Leistungen“ oder „Preise“.",
         "one": "Eine einzige Seite",
-        "two_four": "2 bis 4 Seiten",
-        "five_seven": "5 bis 7 Seiten",
-        "eight_nine": "8 bis 9 Seiten",
-        "ten_plus": "10 Seiten oder mehr",
         "unsure": "Ich weiß es noch nicht"
       },
       "contact": {
@@ -376,12 +372,7 @@
       },
       "updates": {
         "legend": "Wie oft ändern sich Ihre Informationen (Texte, Fotos, Öffnungszeiten)?",
-        "yearly": "Einmal im Jahr reicht (inklusive)",
-        "few_per_year": "Zwei- bis dreimal im Jahr",
-        "monthly": "Einmal im Monat",
-        "twice_monthly": "Zweimal im Monat",
-        "weekly": "Einmal pro Woche",
-        "unlimited": "So oft wie nötig"
+        "yearly": "Einmal im Jahr reicht (inklusive)"
       }
     }
   }

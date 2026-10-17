@@ -66,6 +66,9 @@ export function usePricingSimulator() {
 
 export type SimulatorActions = ReturnType<typeof usePricingSimulator>['actions'];
 
+/** The formatters of `usePriceFormat`, formatted once by the simulator and passed down. */
+export type PriceFormat = ReturnType<typeof usePriceFormat>;
+
 /** Price formatters following the page's locale: `price(10)` → `10 €`, `surcharge(5)` → `+5 €`. */
 export function usePriceFormat(currency: Currency) {
   const locale = useLocale();

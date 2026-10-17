@@ -82,8 +82,6 @@ const Slider = React.forwardRef<React.ComponentRef<typeof SliderPrimitive.Root>,
         aria-valuetext={ariaValueText}
         className={cn(
           'bg-fg ring-aerospace relative block size-4 rounded-full ring-2',
-          // A 44 px hit area around the 16 px thumb.
-          "before:absolute before:-inset-3.5 before:rounded-full before:content-['']",
           'shadow-[0_0_0_4px_rgba(255,79,0,0.2)]',
           'hover:scale-110 active:scale-95',
           'focus-visible:ring-offset-bg focus-visible:ring-offset-2 focus-visible:outline-none',

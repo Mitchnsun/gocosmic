@@ -8,7 +8,7 @@ import { InfoPopover } from '@/design-system/info-popover';
 import { cn } from '@/design-system/lib/utils';
 
 import { CommitmentBadge } from './CommitmentBadge';
-import { EXTRA_MAILBOX_PRICE, MAX_EXTRA_MAILBOXES } from './constants';
+import { EXTRA_MAILBOX_PRICE, MAX_EXTRA_MAILBOXES, ONE_YEAR_OPTIONS } from './constants';
 
 const STEP_BUTTON = cn(
   'border-line-2 text-fg hover:border-fg-3 inline-flex size-11 cursor-pointer items-center justify-center rounded-full border transition-colors',
@@ -52,7 +52,7 @@ export function MailboxCounter({ value, onChange, surcharge, domain }: MailboxCo
           <p id={`${id}-hint`} className="text-fg-2 mt-1 text-sm">
             {t('options.mailboxes.hint', { domain })}
           </p>
-          <CommitmentBadge label={t('commitment')} className="mt-2" />
+          {ONE_YEAR_OPTIONS.has('mailboxes') && <CommitmentBadge label={t('commitment')} className="mt-2" />}
         </div>
         <InfoPopover label={t('info_label', { option: label })} title={label} className="-mt-2.5 -mr-2.5">
           <p>{t('options.mailboxes.info')}</p>

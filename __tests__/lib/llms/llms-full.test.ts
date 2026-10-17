@@ -8,6 +8,8 @@ const BOOKING_URL = 'https://calendar.google.com/calendar/appointments/schedules
 describe('buildLlmsFull', () => {
   // Prices are formatted by `Intl`, with a non-breaking space after the currency code ("CHF 10").
   const text = buildLlmsFull(null).replaceAll('\u00a0', ' ');
+  /** The simulator's options and their prices. */
+  const options = text.slice(text.indexOf('### Add what you need'), text.indexOf('### For your communication'));
 
   it('shares the opening, the regions and the contact details of llms.txt', () => {
     expect(text).toMatch(/^# Cosmic Studio\n\n> /);
@@ -84,21 +86,29 @@ describe('buildLlmsFull', () => {
     );
     expect(text).toContain('“Yes, I already have one”: You keep your domain name and your current email addresses.');
     expect(text).toContain(
-      '- **An email address in your own name · +€15 / +CHF 15 / month · 1-year commitment**: For example contact@my-business.com, instead of a free address. An address in your own name'
+      '- **An email address in your own name · +€15 / +CHF 15 / month · requires “Managing your domain name” · 1-year commitment**: For example contact@my-business.com, instead of a free address. An address in your own name'
     );
-    expect(text).toContain('- **Extra mailboxes · +€10 / +CHF 10 per mailbox / month · 1-year commitment**: ');
-    expect(text).toContain('- **Forwarding addresses (up to 5) · +€5 / +CHF 5 / month · 1-year commitment**: ');
-    expect(text).not.toMatch(/monitoring/i);
+    expect(text).toContain(
+      '- **Extra mailboxes · +€10 / +CHF 10 per mailbox / month · requires “An email address in your own name” · 1-year commitment**: '
+    );
+    expect(text).toContain(
+      '- **Forwarding addresses (up to 5) · +€5 / +CHF 5 / month · requires “An email address in your own name” · 1-year commitment**: '
+    );
+    expect(text).toContain(
+      '- **Detailed statistics (with a cookie banner) · +€5 / +CHF 5 / month · requires “Visit statistics” ·'
+    );
+    expect(options).not.toMatch(/monitoring/i);
   });
 
   it('lists every step of the sliders with its price, the articles apart from the content changes', () => {
     expect(text).toContain('  - 10 pages or more: +€40 / +CHF 40 or more / month');
-    expect(text).toContain('- **Changes to your pages**: Once a year (included). You email us your changes');
+    expect(text).toContain('- **Changes to your pages**: You email us your changes');
+    expect(text).toContain('Once a year, we update your pages, included in your plan.');
     expect(text).toContain('A change is one request: you can group several changes in it.');
     expect(text).toContain('  - As often as needed: +€200 / +CHF 200 / month');
     expect(text).toContain('  - 1 news item a week: +€100 / +CHF 100 / month');
     expect(text).toContain('  - 3 articles a week: +€250 / +CHF 250 / month');
-    expect(text).not.toContain('in all');
+    expect(options).not.toContain('in all');
     expect(text).toContain('#### More options');
   });
 

@@ -1,15 +1,14 @@
 'use client';
 
+import { CheckCircleIcon } from '@heroicons/react/24/solid';
 import { type ComponentType, type SVGProps, useId } from 'react';
 
-import { CHECKBOX_CONTROL, RADIO_CONTROL } from '@/design-system/field';
-import { cn } from '@/design-system/lib/utils';
+import { CHECKBOX_CONTROL, PICKABLE_SURFACE, RADIO_CONTROL } from './field';
+import { cn } from './lib/utils';
 
 export interface Choice<V extends string> {
   value: V;
   label: string;
-  /** Short line under the label, e.g. what the answer implies. */
-  hint?: string;
   /** Pictogram before the label, shown in the `cards` layout. */
   icon?: ComponentType<SVGProps<SVGSVGElement>>;
 }
@@ -23,14 +22,16 @@ interface ChoiceGroupProps<V extends string> {
   choices: readonly Choice<V>[];
   /** Ticked values. */
   selected: readonly V[];
+  /** Called with the answer picked, even when a radio answer is picked again. */
   onChange: (value: V) => void;
   /** Answers as large cards side by side, the control invisible over the whole card, for a question that opens a path. */
   cards?: boolean;
 }
 
 /**
- * A question and its answers as native radio buttons or check boxes inside 44 px pills: a real
- * `fieldset` / `legend`, so the keyboard and screen readers get the group for free.
+ * A question and its answers as native radio buttons or check boxes: a real `fieldset` / `legend`, so the
+ * keyboard and screen readers get the group for free. One answer reads as a row of 44 px surfaces, several
+ * as a plain list of check boxes; cards mark the picked one with a check, not only with colour.
  */
 export function ChoiceGroup<V extends string>({
   legend,
@@ -42,7 +43,6 @@ export function ChoiceGroup<V extends string>({
   cards = false,
 }: ChoiceGroupProps<V>) {
   const id = useId();
-  // Several answers read as a plain list of check boxes, one under the other; one answer as pills.
   const checkbox = type === 'checkbox';
 
   return (
@@ -63,12 +63,13 @@ export function ChoiceGroup<V extends string>({
           <label
             key={choice.value}
             className={cn(
-              'text-fg-2 has-checked:text-fg flex min-h-11 cursor-pointer items-center gap-3 text-sm transition-colors',
+              'text-fg-2 has-checked:text-fg flex min-h-11 cursor-pointer items-center gap-3 text-sm',
+              { [PICKABLE_SURFACE]: !checkbox, 'px-4 py-2': !checkbox },
               {
-                'border-line-2 hover:border-fg-3 has-checked:border-aerospace has-checked:bg-aerospace/6 light:has-checked:bg-aerospace/3 rounded-2xl border px-4 py-2':
-                  !checkbox,
-              },
-              { 'has-focus-visible:ring-aerospace-ink relative p-4 has-focus-visible:ring-2': cards }
+                // An outline, unlike a ring, stays visible in forced-colours mode.
+                'group has-focus-visible:outline-aerospace-ink relative p-4 has-focus-visible:outline-2 has-focus-visible:outline-offset-2':
+                  cards,
+              }
             )}>
             <input
               type={type}
@@ -76,20 +77,20 @@ export function ChoiceGroup<V extends string>({
               value={choice.value}
               checked={selected.includes(choice.value)}
               onChange={() => onChange(choice.value)}
-              aria-describedby={choice.hint ? `${id}-${choice.value}-hint` : undefined}
+              // A radio already checked fires no change: report the click anyway.
+              onClick={() => type === 'radio' && selected.includes(choice.value) && onChange(choice.value)}
               className={cn(type === 'radio' ? RADIO_CONTROL : CHECKBOX_CONTROL, {
                 'absolute inset-0 h-full w-full rounded-2xl opacity-0': cards,
               })}
             />
             {choice.icon && cards && <choice.icon aria-hidden="true" className="size-6 shrink-0" />}
-            <span className="flex flex-col">
-              <span className="font-display">{choice.label}</span>
-              {choice.hint && (
-                <span id={`${id}-${choice.value}-hint`} className="text-fg-2 text-xs">
-                  {choice.hint}
-                </span>
-              )}
-            </span>
+            <span className="font-display">{choice.label}</span>
+            {cards && (
+              <CheckCircleIcon
+                aria-hidden="true"
+                className="text-aerospace-ink ml-auto hidden size-5 shrink-0 group-has-checked:block"
+              />
+            )}
           </label>
         ))}
       </div>

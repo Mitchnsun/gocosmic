@@ -8,6 +8,8 @@ import { Slider } from '@/design-system/slider';
 
 interface TierSliderProps {
   label: string;
+  /** Name of the option the slider belongs to, read before the label only, so two "Rhythm" sliders differ. */
+  context?: string;
   /** One entry per slider position, in order. */
   tiers: { label: string; price: string }[];
   /** Current position, already clamped onto `tiers`. */
@@ -25,7 +27,16 @@ interface TierSliderProps {
  * the Radix `Slider` primitive, which gives pointer-accurate dragging, click-to-seek and full keyboard
  * support for free; `aria-valuetext` reads out the tier wording rather than the raw index.
  */
-export function TierSlider({ label, tiers, value, onChange, disabled = false, disabledHint, info }: TierSliderProps) {
+export function TierSlider({
+  label,
+  context,
+  tiers,
+  value,
+  onChange,
+  disabled = false,
+  disabledHint,
+  info,
+}: TierSliderProps) {
   const id = useId();
   const hintId = `${id}-hint`;
   // `value` is already clamped onto a valid position.
@@ -43,6 +54,7 @@ export function TierSlider({ label, tiers, value, onChange, disabled = false, di
         <div className="flex items-baseline justify-between gap-4">
           <span className="flex items-center gap-1">
             <span id={id} className="text-fg-2 text-2xs font-mono tracking-[0.2em] uppercase">
+              {context && <span className="sr-only">{context} · </span>}
               {label}
             </span>
             {info && (

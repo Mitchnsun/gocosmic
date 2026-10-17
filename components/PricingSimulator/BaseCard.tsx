@@ -4,19 +4,16 @@ import { useTranslations } from 'next-intl';
 import { useId } from 'react';
 
 import { InfoPopover } from '@/design-system/info-popover';
-import type { Currency } from '@/lib/region';
 
 import { CommitmentBadge } from './CommitmentBadge';
-import { FORMULA_INCLUDES, FORMULA_PRICES, type IncludedItem } from './constants';
-import { usePriceFormat } from './PricingSimulator.hooks';
+import { FORMULA_INCLUDES, FORMULA_PRICES, type IncludedItem, ONE_YEAR_FORMULAS } from './constants';
 import type { Formula } from './PricingSimulator.types';
 
 const WITH_INFO: ReadonlySet<IncludedItem> = new Set(['search_setup', 'legal', 'editor', 'news']);
 
 /** Price of the chosen formula and the list of what it includes. */
-export function BaseCard({ formula, currency }: { formula: Formula; currency: Currency }) {
+export function BaseCard({ formula, price }: { formula: Formula; price: (amount: number) => string }) {
   const t = useTranslations('pricing.builder');
-  const { price } = usePriceFormat(currency);
   const headingId = useId();
 
   return (
@@ -30,7 +27,7 @@ export function BaseCard({ formula, currency }: { formula: Formula; currency: Cu
             {price(FORMULA_PRICES[formula])}
             <span className="text-fg-2 ml-1 text-sm">{t('period')}</span>
           </p>
-          {formula === 'self_service' && <CommitmentBadge label={t('commitment')} />}
+          {ONE_YEAR_FORMULAS.has(formula) && <CommitmentBadge label={t('commitment')} />}
         </div>
       </div>
       <p className="text-fg-3 text-2xs mt-4 font-mono tracking-[0.2em] uppercase">{t('base.title')}</p>

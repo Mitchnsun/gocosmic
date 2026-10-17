@@ -64,7 +64,7 @@ describe('<Slider />', () => {
 
     const steps = marks({ max: 4, step: 1 });
     expect(steps).toHaveLength(5);
-    // The thumb stays inside the track: the first mark sits half a thumb in, the last one half a thumb back.
+    // The track is inset to match the end dots: the first dot sits half a dot in, the last one half a dot back.
     expect((steps[0] as HTMLElement).style.left).toBe('calc(0% + 4px)');
     expect((steps[4] as HTMLElement).style.left).toBe('calc(100% - 4px)');
     expect(marks({ max: 100, step: 1 })).toHaveLength(0);

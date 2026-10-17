@@ -2,14 +2,13 @@
 
 import { useTranslations } from 'next-intl';
 
+import { ChoiceGroup } from '@/design-system/choice-group';
+
 import { AddOnOption } from './AddOnOption';
-import { ChoiceGroup } from './ChoiceGroup';
 import { MailboxCounter } from './MailboxCounter';
 import { OptionGroup } from './OptionGroup';
 import type { Cascade } from './PricingSimulator.rules';
-import type { OptionGroupProps } from './PricingSimulator.types';
-
-type DomainAnswer = 'no' | 'yes';
+import type { DomainAnswer, OptionGroupProps } from './PricingSimulator.types';
 
 /**
  * "Your address on the web": whether the visitor already has a domain name, then, without one, the

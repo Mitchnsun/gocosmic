@@ -1,9 +1,10 @@
 import {
   ADD_ON_PRICES,
-  COMMITTED_OPTIONS,
   EXTRA_MAILBOX_PRICE,
   FORMULA_PRICES,
   FORMULAS,
+  ONE_YEAR_FORMULAS,
+  ONE_YEAR_OPTIONS,
   PAGE_TIERS,
   TIERED_TABLES,
   UPDATE_TIERS,
@@ -57,7 +58,7 @@ export interface PriceLine {
 
 /** The prices of one option, as its row or slider in the simulator shows them. */
 export function getOptionPrices(option: PricedOption): PriceLine[] {
-  const base = { option, commitment: (COMMITTED_OPTIONS as ReadonlySet<string>).has(option) };
+  const base = { option, commitment: ONE_YEAR_OPTIONS.has(option) };
 
   switch (option) {
     case 'pages': {
@@ -115,8 +116,7 @@ export function getPriceLines(region?: Region): PriceLine[] {
     option: 'formula',
     labelKey: `formulas.${formula}.label`,
     price: FORMULA_PRICES[formula],
-    // The editing tool of "You stay in control" is set up for 12-month periods.
-    commitment: formula === 'self_service',
+    commitment: ONE_YEAR_FORMULAS.has(formula),
   }));
   const options = Object.values(OPTION_GROUPS).flatMap((group) => group.flatMap(getOptionPrices));
 

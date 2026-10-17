@@ -22,16 +22,17 @@ const WEBSITE_TYPES: readonly WebsiteType[] = ['showcase', 'self_managed', 'acco
 const REGIONS: readonly Region[] = ['fr', 'ch'];
 
 /**
- * First segment of the code. Bump it whenever the segments or the add-on list change: a code of an
- * older version, still kept by a visitor who was simulating during the deployment, is then rejected
- * as a whole instead of being misread.
+ * First segment of the code. Bump it whenever the segments or the add-on list change, or a tier table
+ * gains, loses or reorders a step (a tier is stored by its position): a code of an older version, still
+ * kept by a visitor who was simulating during the deployment, is then rejected as a whole instead of
+ * being misread.
  */
 export const PLAN_CODE_VERSION = 'v2';
 
 /** Placeholder for a segment that has no value (no website type, unticked option…). */
 const NONE = '-';
 
-/** Longest valid code is about 140 characters (every add-on ticked). */
+/** Longest valid code is about 155 characters (every add-on ticked). */
 const MAX_LENGTH = 200;
 
 /** Number of `~`-separated segments of a code. */
@@ -173,7 +174,7 @@ export function decodePlanCode(raw: unknown): DecodedPlan | null {
     websiteType,
     selection: {
       formula,
-      ownDomain: ownDomain === null || ownDomain === undefined ? null : ownDomain === 1,
+      ownDomain: ownDomain == null ? null : ownDomain === 1,
       addOns,
       pages: (pageTier ?? 0) as TierIndexOf<typeof PAGE_TIERS>,
       updatesEnabled: updateTier !== null,

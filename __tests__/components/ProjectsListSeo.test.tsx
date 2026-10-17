@@ -26,8 +26,8 @@ describe('ProjectsListSeo', () => {
           {
             '@type': 'ListItem',
             position: 1,
-            name: 'Chœur des Pays du Mont Blanc',
-            url: 'https://www.gocosmic.dev/en/projects/choeurdespaysdumontblanc',
+            name: "Coach'n Pulse",
+            url: 'https://www.gocosmic.dev/en/projects/coachnpulse',
           },
           {
             '@type': 'ListItem',
@@ -38,20 +38,20 @@ describe('ProjectsListSeo', () => {
           {
             '@type': 'ListItem',
             position: 3,
-            name: "Coach'n Pulse",
-            url: 'https://www.gocosmic.dev/en/projects/coachnpulse',
-          },
-          {
-            '@type': 'ListItem',
-            position: 4,
             name: 'PSC Supersprint',
             url: 'https://www.gocosmic.dev/en/projects/psc-supersprint',
           },
           {
             '@type': 'ListItem',
-            position: 5,
+            position: 4,
             name: 'mcomper.at',
             url: 'https://www.gocosmic.dev/en/projects/mcomperat',
+          },
+          {
+            '@type': 'ListItem',
+            position: 5,
+            name: 'Chœur des Pays du Mont Blanc',
+            url: 'https://www.gocosmic.dev/en/projects/choeurdespaysdumontblanc',
           },
         ],
       },

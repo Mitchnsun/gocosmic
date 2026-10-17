@@ -1,4 +1,4 @@
-import { FORMULA_INCLUDES, FORMULA_PRICES, FORMULAS } from '@/components/PricingSimulator/constants';
+import { FORMULA_INCLUDES, FORMULA_PRICES, FORMULAS, ONE_YEAR_FORMULAS } from '@/components/PricingSimulator/constants';
 import type { Formula } from '@/components/PricingSimulator/PricingSimulator.types';
 import { getOptionPrices, OPTION_GROUPS, type PricedOption, type PriceLine } from '@/lib/pricing/price-list';
 
@@ -31,7 +31,7 @@ function buildPlans(): string {
     const lead = [
       t(`formulas.${formula}.label`),
       `${inBothCurrencies(FORMULA_PRICES[formula])} ${t('period')}`,
-      ...(formula === 'self_service' ? [t('commitment')] : []),
+      ...(ONE_YEAR_FORMULAS.has(formula) ? [t('commitment')] : []),
     ].join(' · ');
     const includes = FORMULA_INCLUDES[formula].map((included) =>
       [t(`base.includes.${included}`), ...infoOf(`base.info.${included}`)].join(': ')
@@ -42,13 +42,27 @@ function buildPlans(): string {
   return section(t('formulas.label'), [plans.join('\n')], 3);
 }
 
+/** Options the simulator only offers along with another one, whose price comes on top. */
+const REQUIRES: Partial<Record<PricedOption, PricedOption>> = {
+  email: 'domain',
+  mailboxes: 'email',
+  redirects: 'email',
+  detailed_analytics: 'analytics',
+};
+
 /** Restrictions and notes that the simulator shows around an option. */
-const notesOf = (first: PriceLine): string[] => [
-  ...(first.formula ? [`with ${formulaName(first.formula)} only, as ${formulaName('self_service')} includes it`] : []),
-  ...(first.region === 'ch' ? ['Swiss versions only'] : []),
-  ...(first.option === 'domain' ? [`required with “${t('domain_question.no')}”`] : []),
-  ...(first.commitment ? [t('commitment')] : []),
-];
+const notesOf = (first: PriceLine): string[] => {
+  const required = REQUIRES[first.option as PricedOption];
+  return [
+    ...(first.formula
+      ? [`with ${formulaName(first.formula)} only, as ${formulaName('self_service')} includes it`]
+      : []),
+    ...(first.region === 'ch' ? ['Swiss versions only'] : []),
+    ...(first.option === 'domain' ? [`required with “${t('domain_question.no')}”`] : []),
+    ...(required ? [`requires “${t(getOptionPrices(required)[0]?.labelKey ?? '')}”`] : []),
+    ...(first.commitment ? [t('commitment')] : []),
+  ];
+};
 
 /** Copy of an option: its hint, then the explanation of its info bubble. */
 function describe(option: PricedOption): string {
@@ -57,15 +71,14 @@ function describe(option: PricedOption): string {
       return t('pages.info');
     }
     case 'updates': {
-      return `${t('updates.off')}. ${t('updates.hint')} ${t('updates.info')} ${withSelfService('updates.hint_self_service')}`;
+      return `${t('updates.hint')} ${t('updates.info')} ${withSelfService('updates.hint_self_service')}`;
     }
     case 'articles': {
       return `${t('options.articles.hint')} ${t('options.articles.info')} ${withSelfService('options.articles.info_tool')}`;
     }
     case 'domain': {
       // The simulator first asks whether the visitor already has a domain name.
-      const question = `${t('domain_question.legend')} ${t('domain_question.help', values)}`;
-      return `${t('options.domain.hint', values)} ${t('options.domain.info', values)} ${question} “${t('domain_question.yes')}”: ${t('domain_question.own_note')}`;
+      return `${t('options.domain.hint', values)} ${t('options.domain.info', values)} ${t('domain_question.legend')} “${t('domain_question.yes')}”: ${t('domain_question.own_note')}`;
     }
     default: {
       return [t(`options.${option}.hint`, values), ...infoOf(`options.${option}.info`)].join(' ');

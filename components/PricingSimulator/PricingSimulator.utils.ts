@@ -3,10 +3,11 @@ import type { Currency } from '@/lib/region';
 
 import {
   ADD_ON_PRICES,
-  COMMITTED_OPTIONS,
   EXTRA_MAILBOX_PRICE,
   FORMULA_PRICES,
   MAX_EXTRA_MAILBOXES,
+  ONE_YEAR_FORMULAS,
+  ONE_YEAR_OPTIONS,
   PAGE_TIERS,
   TIERED_TABLES,
   UPDATE_TIERS,
@@ -16,6 +17,9 @@ import type { AddOnKey, PlanItem, PlanSelection, TieredKey } from './PricingSimu
 export function getAddOnPrice(key: AddOnKey): number {
   return ADD_ON_PRICES[key];
 }
+
+/** True for an option made of a tick box and a slider. */
+export const isTiered = (id: PlanItem['id']): id is TieredKey => id in TIERED_TABLES;
 
 /** Price and tier key of a tick box + slider option, or `null` while it is unticked. */
 function getTieredLine(plan: PlanSelection, key: TieredKey): { price: number; key: string } | null {
@@ -41,7 +45,7 @@ export function getPlanItems(plan: PlanSelection): PlanItem[] {
         items.push({ id, amount: UPDATE_TIERS[plan.updates].price, tier: UPDATE_TIERS[plan.updates].key });
     } else if (id === 'mailboxes') {
       if (plan.mailboxes > 0) items.push({ id, amount: plan.mailboxes * EXTRA_MAILBOX_PRICE, count: plan.mailboxes });
-    } else if (id === 'news' || id === 'analytics' || id === 'seo' || id === 'articles') {
+    } else if (isTiered(id)) {
       const line = getTieredLine(plan, id);
       if (line) items.push({ id, amount: line.price, tier: line.key });
     } else if (plan.addOns[id]) {
@@ -52,15 +56,13 @@ export function getPlanItems(plan: PlanSelection): PlanItem[] {
 }
 
 /**
- * Lines of a normalised plan that turn the subscription into 12-month periods, in recap order: the
+ * Ids of the lines of a normalised plan that turn the subscription into 12-month periods, in recap order: the
  * "You stay in control" formula, the domain name, the email address and the one-year options.
  */
 export function getCommittedItems(plan: PlanSelection): PlanItem['id'][] {
   return getPlanItems(plan)
     .map((item) => item.id)
-    .filter((id) =>
-      id === 'formula' ? plan.formula === 'self_service' : (COMMITTED_OPTIONS as ReadonlySet<string>).has(id)
-    );
+    .filter((id) => (id === 'formula' ? ONE_YEAR_FORMULAS.has(plan.formula) : ONE_YEAR_OPTIONS.has(id)));
 }
 
 /** Number of options folded under "More options" that a normalised plan includes. */

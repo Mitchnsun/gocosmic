@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { useId } from 'react';
 
-import { RADIO_CONTROL } from '@/design-system/field';
+import { PICKABLE_SURFACE, RADIO_CONTROL } from '@/design-system/field';
 import { cn } from '@/design-system/lib/utils';
 
 import { FORMULA_PRICES, FORMULAS } from './constants';
@@ -32,8 +32,8 @@ export function FormulaPicker({ formula, onFormulaChange, price }: FormulaPicker
           <label
             key={key}
             className={cn(
-              'border-line bg-surface hover:border-line-2 grid cursor-pointer grid-cols-[auto_minmax(0,1fr)] items-start gap-x-4 gap-y-1 rounded-2xl border p-4 transition-colors',
-              'has-checked:border-aerospace has-checked:bg-aerospace/[0.06] light:has-checked:bg-aerospace/[0.03]'
+              PICKABLE_SURFACE,
+              'bg-surface grid grid-cols-[auto_minmax(0,1fr)] items-start gap-x-4 gap-y-1 p-4'
             )}>
             <input
               type="radio"

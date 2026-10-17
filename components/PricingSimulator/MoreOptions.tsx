@@ -21,20 +21,14 @@ interface MoreOptionsProps extends OptionGroupProps {
 
 /**
  * "More options": the options for precise needs, folded so the visitor first sees the common ones
- * (`ADVANCED_OPTIONS`). The button says how many of them are ticked, the section opens by itself as
- * soon as one is, and the recap keeps listing them when it is closed.
+ * (`ADVANCED_OPTIONS`). The button says how many of them are ticked, and the recap keeps listing them
+ * when it is closed.
  */
 export function MoreOptions({ plan, actions, surcharge, domain, region, cascade }: MoreOptionsProps) {
   const t = useTranslations('pricing.builder');
   const panelId = useId();
   const ticked = countAdvancedOptions(plan);
-  const [open, setOpen] = useState(ticked > 0);
-  // Opens by itself when an option inside gets ticked from elsewhere (the guided mode).
-  const [wasTicked, setWasTicked] = useState(ticked > 0);
-  if (wasTicked !== ticked > 0) {
-    setWasTicked(ticked > 0);
-    if (ticked > 0) setOpen(true);
-  }
+  const [open, setOpen] = useState(false);
   const tiered = { onToggle: actions.toggleTiered, onTierChange: actions.setTier, surcharge };
 
   return (

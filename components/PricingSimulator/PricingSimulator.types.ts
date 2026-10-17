@@ -5,6 +5,7 @@ import type {
   PAGE_TIERS,
   REPORT_TIERS,
   SEO_TIERS,
+  TIERED_TABLES,
   UPDATE_TIERS,
 } from './constants';
 import type { SimulatorActions } from './PricingSimulator.hooks';
@@ -34,14 +35,17 @@ export type TierIndexOf<T extends readonly unknown[]> = Exclude<Partial<T>['leng
 export type TierKeyOf<T extends readonly { key: string }[]> = T[number]['key'];
 
 type PageTier = TierIndexOf<typeof PAGE_TIERS>;
-export type UpdateTier = TierIndexOf<typeof UPDATE_TIERS>;
+type UpdateTier = TierIndexOf<typeof UPDATE_TIERS>;
 type NewsTier = TierIndexOf<typeof NEWS_TIERS>;
 type ReportTier = TierIndexOf<typeof REPORT_TIERS>;
 type SeoTier = TierIndexOf<typeof SEO_TIERS>;
 type ArticleTier = TierIndexOf<typeof ARTICLE_TIERS>;
 
+/** Answer to "Do you already have a domain name?", in the simulator and the guided mode. */
+export type DomainAnswer = 'no' | 'yes';
+
 /** Options made of a tick box and a slider: `null` while unticked. */
-export type TieredKey = 'news' | 'analytics' | 'seo' | 'articles';
+export type TieredKey = keyof typeof TIERED_TABLES;
 
 export interface PlanSelection {
   formula: Formula;
