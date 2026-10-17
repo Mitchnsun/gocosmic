@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [2.5.1] - 2026-10-19
 
+### Added
+
+- Pages written in French only are offered to search engines in French only, and choosing another language on one of them opens the home page in that language instead of a missing page
+- These pages show a breadcrumb trail under the header, such as Home › Services, which search engines can also read
+
 ### Changed
 
 - The terms of sale now spell out how to stop a 12-month subscription or option from renewing: an email that reaches the studio at least two months before the end of the period, confirmed in writing, with an example of the deadline and a reminder email sent two months before it

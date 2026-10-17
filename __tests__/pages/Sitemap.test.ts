@@ -1,6 +1,11 @@
 import sitemap, { UNLISTED_ROUTES } from '@/app/sitemap';
 import { getLocalePrefix } from '@/i18n/locales';
-import { routing } from '@/i18n/routing';
+import { getRouteLocales } from '@/i18n/route-locales';
+import { type RouteKey, routing } from '@/i18n/routing';
+
+const LISTED_ROUTES = (Object.keys(routing.pathnames) as RouteKey[]).filter(
+  (routeKey) => !UNLISTED_ROUTES.includes(routeKey)
+);
 
 describe('sitemap', () => {
   it('should return an array of sitemap entries', () => {
@@ -10,21 +15,19 @@ describe('sitemap', () => {
     expect(result.length).toBeGreaterThan(0);
   });
 
-  it('should generate entries for all locales and routes', () => {
+  it('should generate an entry for each route in every locale it exists in', () => {
     const result = sitemap();
-    const { locales, pathnames } = routing;
-    const routeCount = Object.keys(pathnames).length - UNLISTED_ROUTES.length;
+    const entryCount = LISTED_ROUTES.reduce((count, routeKey) => count + getRouteLocales(routeKey).length, 0);
 
-    expect(result).toHaveLength(locales.length * routeCount);
+    expect(result).toHaveLength(entryCount);
   });
 
-  it('should include all locales for each route', () => {
+  it('should include all locales of each route', () => {
     const result = sitemap();
-    const { locales, pathnames } = routing;
 
-    for (const [routeKey, localePaths] of Object.entries(pathnames)) {
-      if ((UNLISTED_ROUTES as readonly string[]).includes(routeKey)) continue;
-      for (const locale of locales) {
+    for (const routeKey of LISTED_ROUTES) {
+      const localePaths = routing.pathnames[routeKey];
+      for (const locale of getRouteLocales(routeKey)) {
         let localizedPath: string;
 
         if (typeof localePaths === 'string') {

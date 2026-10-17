@@ -1,6 +1,7 @@
 import type { BrowserContext } from '@playwright/test';
 
 import { getLanguage, getLocalePrefix } from '../i18n/locales';
+import { hasRoute } from '../i18n/route-locales';
 import { routing } from '../i18n/routing';
 import de from '../messages/de/common.json' with { type: 'json' };
 import en from '../messages/en/common.json' with { type: 'json' };
@@ -35,7 +36,7 @@ const DEV_ONLY_ROUTES: readonly RouteKey[] = ['/design-system'];
 /** Every public route of the site in the audited locale, plus a missing page. */
 export const ROUTES: string[] = [
   ...(Object.keys(routing.pathnames) as RouteKey[])
-    .filter((route) => !DEV_ONLY_ROUTES.includes(route))
+    .filter((route) => !DEV_ONLY_ROUTES.includes(route) && hasRoute(LOCALE, route))
     .map(localizedUrl),
   `/${LOCALE}/cette-page-n-existe-pas`,
 ];

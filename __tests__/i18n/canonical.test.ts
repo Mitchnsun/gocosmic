@@ -1,7 +1,13 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 
 import { getAlternates, getCanonicalUrl, getLanguageAlternates } from '@/i18n/canonical';
 import { SITE_URL } from '@/lib/config';
+
+// The story page stands in for a page published in French only.
+vi.mock('@/i18n/routing', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('@/i18n/routing')>()),
+  ROUTE_LANGUAGES: { '/story': ['fr'] },
+}));
 
 describe('getCanonicalUrl', () => {
   describe('home page (static pathname "/")', () => {
@@ -154,5 +160,15 @@ describe('getAlternates', () => {
 
   it('gives the home page no trailing slash, since /en/ redirects to /en', () => {
     expect(getLanguageAlternates('/')).toMatchObject({ de: `${SITE_URL}/de`, 'x-default': `${SITE_URL}/en` });
+  });
+});
+
+describe('getLanguageAlternates for a page published in French only', () => {
+  it('links the French and Swiss French versions only, with x-default on French', () => {
+    expect(getLanguageAlternates('/story')).toEqual({
+      fr: `${SITE_URL}/fr/histoire`,
+      'fr-CH': `${SITE_URL}/fr-ch/histoire`,
+      'x-default': `${SITE_URL}/fr/histoire`,
+    });
   });
 });

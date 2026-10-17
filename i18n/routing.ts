@@ -174,3 +174,12 @@ export const routing = defineRouting({
     }),
   },
 });
+
+export type RouteKey = keyof typeof routing.pathnames;
+
+/**
+ * Languages of the routes published in some languages only (`fr` covers `fr-CH` too); any other route exists in
+ * every language. Elsewhere, such a route answers with a 404 and stays out of the sitemap, the hreflang links and
+ * the language switchers (see `i18n/route-locales.ts`). Its slug is the same in every locale.
+ */
+export const ROUTE_LANGUAGES: Partial<Record<RouteKey, readonly Language[]>> = {};

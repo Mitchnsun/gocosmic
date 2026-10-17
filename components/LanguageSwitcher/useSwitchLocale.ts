@@ -4,6 +4,7 @@ import { useLocale } from 'next-intl';
 import { type MouseEvent, useEffect } from 'react';
 
 import { usePathname, useRouter } from '@/i18n/navigation';
+import { hasRoute } from '@/i18n/route-locales';
 
 /** Query parameters of the current page, read when the visitor picks a language (e.g. `?type=mobile`). */
 function readCurrentQuery(): Record<string, string> | undefined {
@@ -43,6 +44,7 @@ function restorePendingHash(locale: string, pathname: string) {
  * visitor had chosen on it: query parameters, such as the projects filter, and the
  * section anchor, such as `#simulator`. The query and the anchor are read at click
  * time, since filters and in-page links update the URL without a navigation.
+ * A page that does not exist in the locale picked opens its home page instead.
  * The next-intl router performs the switch, which also keeps the locale cookie
  * in sync.
  */
@@ -59,6 +61,11 @@ export function useSwitchLocale() {
   return (locale: string) => {
     // Picking the locale already shown changes nothing: stay put, keeping the query and the anchor.
     if (locale === currentLocale) return;
+    if (!hasRoute(locale, pathname)) {
+      pendingHash = null;
+      router.push('/', { locale });
+      return;
+    }
     const query = readCurrentQuery();
     const href = query ? { pathname, query } : pathname;
     const { hash } = window.location;

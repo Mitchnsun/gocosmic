@@ -6,8 +6,12 @@ import { LANG_DRAWER_LANGUAGES } from '@/components/Header/MobileLangDrawer';
 import { useLocaleLinkClick } from '@/components/LanguageSwitcher/useSwitchLocale';
 import { getLanguage, localeWithLanguage } from '@/i18n/locales';
 import { Link, usePathname } from '@/i18n/navigation';
+import { hasRoute } from '@/i18n/route-locales';
 
-/** Language pill: the current language is highlighted, the others link to the same page in that language. */
+/**
+ * Language pill: the current language is highlighted, the others link to the same page in that language, or to
+ * its home page when the page does not exist in it.
+ */
 const FooterLanguages = () => {
   const t = useTranslations('navigation');
   const locale = useLocale();
@@ -38,7 +42,7 @@ const FooterLanguages = () => {
                 </span>
               ) : (
                 <Link
-                  href={pathname}
+                  href={hasRoute(target, pathname) ? pathname : '/'}
                   locale={target}
                   onClick={(event) => handleClick(event, target)}
                   hrefLang={target}

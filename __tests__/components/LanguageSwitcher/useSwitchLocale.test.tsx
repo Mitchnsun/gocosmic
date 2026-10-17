@@ -10,6 +10,11 @@ vi.mock('@/i18n/navigation', () => ({
   usePathname: () => mockPathname,
 }));
 vi.mock('next-intl', () => ({ useLocale: () => mockLocale }));
+// The story page stands in for a page published in French only.
+vi.mock('@/i18n/routing', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('@/i18n/routing')>()),
+  ROUTE_LANGUAGES: { '/story': ['fr'] },
+}));
 
 describe('useSwitchLocale', () => {
   beforeEach(() => {
@@ -36,6 +41,23 @@ describe('useSwitchLocale', () => {
 
     expect(mockPush).toHaveBeenCalledTimes(1);
     expect(mockPush).toHaveBeenCalledWith('/services', { locale: 'fr' });
+  });
+
+  it('opens the home page of a language the page does not exist in, without its anchor', () => {
+    mockPathname = '/story';
+    mockLocale = 'fr';
+    window.history.replaceState(null, '', '/fr/histoire?ref=footer#debut');
+    const { result } = renderHook(() => useSwitchLocale());
+
+    act(() => result.current('en'));
+    act(() => result.current('fr-CH'));
+
+    expect(mockPush).toHaveBeenNthCalledWith(1, '/', { locale: 'en' });
+    expect(mockPush).toHaveBeenNthCalledWith(
+      2,
+      { pathname: '/story', query: { ref: 'footer' } },
+      { locale: 'fr-CH', scroll: false }
+    );
   });
 
   it('keeps the query, such as the projects filter', () => {
