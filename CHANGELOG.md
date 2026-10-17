@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Changed
 
-- The simulator first asks whether the visitor already has a domain name, gives news and AI-assisted articles their own rhythm and price apart from changes to the pages, folds less common options under "More options", introduced by a sentence that says what they are for, marks each step of its sliders, explains every option in plain words and says whether the plan commits for 12 months; the site monitoring option is gone
+- The simulator first asks whether the visitor already has a domain name, gives news and AI-assisted articles their own rhythm and price apart from changes to the pages, folds less common options under "More options", introduced by a sentence that says what they are for, marks each step of its sliders, explains every option in plain words and says whether the plan commits for 12 months; the site monitoring option is gone, and changes to the pages twice a month, once a week or as often as needed now cost 50, 75 and 250 a month
 - The terms of sale are reviewed: yearly billing paid within 30 days or a monthly payment schedule, by bank transfer; the studio's VAT status and what happens if it changes; Swiss law for every client; which options run for a year (the domain name and the email address included) and which stay once added; and clauses on delays, liability and the ownership of a one-off project's code, which the services FAQ now states the same way
 - The projects now open with Coach'n Pulse and end with the choir's mockup, and the PSC Supersprint case study describes its live results on web and mobile, for athletes and spectators
 
