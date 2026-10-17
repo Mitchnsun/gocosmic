@@ -123,7 +123,7 @@ The former pricing page, back as a page of its own under its former slugs (`/fr/
 
 - **Introduction**: build your subscription, the price shows up right away
 - **Before we talk budget**: the two free offers (a mockup and a review of the current website), each with its button
-- **Subscription simulator** (see [`docs/pricing-simulator.md`](docs/pricing-simulator.md)): a "Help me choose" guided mode that ticks the options from a few answers, or leads to the contact page for a need outside the subscription; the two plans as radio cards with their starting price; what each plan includes; the common options (pages, contact form, booking, reviews, English version, news published by the studio, the domain question with the domain and the email address, changes to the pages), then "More options" (forwarding addresses, following your place on Google, visit statistics and detailed statistics, AI-assisted articles, Swiss hosting on the Swiss version), each with an info bubble and a one-year commitment badge where it applies; a sticky recap with the live monthly total and whether the plan commits for 12 months, a bar at the bottom of small screens, and a "Request my free mockup" button that carries the simulation over to the free mockup form
+- **Subscription simulator** (see [`docs/pricing-simulator.md`](docs/pricing-simulator.md)): a "Help me choose" guided mode that asks one question at a time and ticks the matching options, or leads to the contact page for a need outside the subscription; the two plans as radio cards with their starting price; what each plan includes; the common options (pages, contact form, booking, reviews, English version, news published by the studio, the domain question with the domain and the email address, changes to the pages), then "More options" (forwarding addresses, following your place on Google, visit statistics and detailed statistics, AI-assisted articles, Swiss hosting on the Swiss version), each with an info bubble and a one-year commitment badge where it applies; a sticky recap with the live monthly total and whether the plan commits for 12 months, a bar at the bottom of small screens, and a "Request my free mockup" button that carries the simulation over to the free mockup form
 - **Quoted services**: the services quoted outside the subscription with local partners (logo, posters and flyers, photos and videos)
 
 Prices are shown in euros, or in Swiss francs on the Swiss version of the site, with no VAT added, as the studio is not registered for VAT. The homepage, the about page and the page descriptions shown in search results follow the same rule.
@@ -139,11 +139,11 @@ Prices are shown in euros, or in Swiss francs on the Swiss version of the site, 
 
 All five case studies share one template: a header with the dates (creation year, and the latest update for projects that keep being updated), client and project type, three numbered sections ("For whom", "What we did", "Result"), a link to the live project (or to the mockup) with a "Discuss a similar project" link to the contact page, and previous / next navigation between case studies.
 
-- **Chœur des Pays du Mont Blanc** (`/projects/choeurdespaysdumontblanc`): a website mockup proposed to the choir, with upcoming concerts, repertoire and how to join; it is not the choir's official site
-- **Daily Fortune** (`/projects/daily-fortune`): the studio's own mobile app, published on the App Store
 - **Coach'n Pulse** (`/projects/coachnpulse`): the website of a triathlon and endurance sports coach in Grenoble, looked after since 2016
-- **PSC Supersprint** (`/projects/psc-supersprint`): live race results for a triathlon club, with its own translation namespace
+- **Daily Fortune** (`/projects/daily-fortune`): the studio's own mobile app, published on the App Store
+- **PSC Supersprint** (`/projects/psc-supersprint`): live race results for a triathlon club, on the web and on mobile, with its own translation namespace
 - **mcomper.at** (`/projects/mcomperat`): a multilingual online résumé
+- **Chœur des Pays du Mont Blanc** (`/projects/choeurdespaysdumontblanc`): a website mockup proposed to the choir, with upcoming concerts, repertoire and how to join; it is not the choir's official site
 
 ### About Page (`/about`)
 
@@ -185,7 +185,7 @@ Reference of the colour tokens (with their contrast ratios), typography, compone
 
 ### Retired Pages
 
-The former `/journey` (3D experience) and `/offers` pages no longer exist. They permanently redirect to Services in every locale, including their former localized slugs: offers to the pricing columns (`#pricing`) and the journey to the top of the page. The pricing page is back under its former slugs; its English slug under another language (`/fr/pricing`) permanently redirects to that language's slug (see `lib/redirects.ts` and `next.config.ts`).
+The former `/journey` (3D experience) and `/offers` pages no longer exist. They permanently redirect to Services in every locale, including their former localized slugs: offers to the pricing columns (`#pricing`) and the journey to the top of the page. The pricing page is back under its former slugs; the i18n middleware sends its English slug under another language (`/fr/pricing`) to that language's slug (see `lib/redirects.ts` and `next.config.ts`).
 
 ### Files for AI Agents (`/llms.txt`, `/llms-full.txt`)
 
@@ -393,7 +393,7 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   │   ├── local/    # Local SEO landing page
 │   │   ├── pricing/  # Pricing page (free offers, simulator and guided mode, quoted services)
 │   │   ├── privacy/  # Privacy policy
-│   │   ├── projects/ # Filterable projects list + case studies (choeurdespaysdumontblanc, daily-fortune, coachnpulse, psc-supersprint, mcomperat)
+│   │   ├── projects/ # Filterable projects list + case studies (coachnpulse, daily-fortune, psc-supersprint, mcomperat, choeurdespaysdumontblanc)
 │   │   ├── services/ # Services page (pricing columns, two plans, trades, FAQ)
 │   │   ├── terms/    # Terms of sale
 │   │   ├── not-found.tsx # Localized 404 page
@@ -439,6 +439,7 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   ├── chip.tsx      # Bordered mono tag
 │   ├── hairline-grid.tsx # Card grid with 1 px separators
 │   ├── field.tsx     # Form field frame and control styles
+│   ├── choice-group.tsx # A question with its answers as radio buttons, check boxes or cards
 │   ├── slider.tsx    # Slider used by the pricing simulator, with a mark per step
 │   ├── tabs.tsx      # Pill tabs (Radix Tabs)
 │   ├── info-popover.tsx # "i" button opening a bubble of context on click or tap (Radix Popover)
@@ -450,7 +451,7 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   ├── llms/         # Builders of `/llms.txt` and `/llms-full.txt`
 │   ├── pricing/      # Code handover delay (offers.ts), the full price list (price-list.ts) and the simulation passed to the free mockup form
 │   ├── hooks/        # Shared hooks (e.g. `usePrefersReducedMotion`)
-│   ├── redirects.ts  # Permanent redirects from retired pages to Services, and from English slugs
+│   ├── redirects.ts  # Permanent redirects from retired pages to Services
 │   ├── region.ts     # Region (France or Switzerland) and currency
 │   ├── resend.ts     # Resend email client
 │   └── validation/   # Form validation schemas

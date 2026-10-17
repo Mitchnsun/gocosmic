@@ -34,49 +34,18 @@ one changes the price, it does not navigate.
 
 ## Architecture
 
-```
-components/PricingSimulator/
-  PricingSimulator.tsx        — guided mode above; formulas + builder on the left, recap on the right
-  PricingSimulator.hooks.ts   — usePricingSimulator (raw choices → normalised plan, total, hints, the last
-                                cascade, actions); usePriceFormat (price / surcharge formatters for the locale)
-  PricingSimulator.rules.ts   — pure rules: visitor actions (cascades), getCascade, normalizePlan (context rules)
-  PricingSimulator.utils.ts   — getPlanItems (recap and email lines), getCommittedItems, countAdvancedOptions,
-                                total, quote hint, formatAmount
-  PricingSimulator.types.ts   — shared types (also used by lib/pricing)
-  constants.ts                — the price table: formulas, add-ons, tier tables, commitments
-  FormulaPicker.tsx           — the two formulas as radio cards, with their starting price
-  PlanBuilder.tsx             — BaseCard, the common option groups, then "More options"
-  BaseCard.tsx                — formula price and what it includes, with info bubbles
-  OptionGroup.tsx             — titled group
-  SiteOptions.tsx             — pages slider, contact form, booking, reviews, English, news (managed only)
-  AddressOptions.tsx          — "Do you already have a domain name?", then the locked domain and the email
-                                address (+ MailboxCounter), or a note offering help on a quote
-  CareOptions.tsx             — changes to the pages (one a year included, then a rhythm slider)
-  MoreOptions.tsx             — "More options": forwarding addresses, Google follow-up, statistics (+ detailed),
-                                articles, Swiss hosting; counts the ticked ones and opens by itself
-  ChoiceGroup.tsx             — a question with native radio buttons or check boxes as pills (fieldset/legend)
-  AddOnOption.tsx             — a tickable add-on with its copy, price, info bubble and commitment
-  TieredOption.tsx            — tick-box revealing a slider of tiers
-  OptionToggle.tsx            — one row: label + price, hint, commitment badge, live note, info button
-  CommitmentBadge.tsx         — the "1-year commitment" badge
-  MailboxCounter.tsx          — − / + counter of extra mailboxes
-  TierSlider.tsx              — slider over the tiers it is given (design-system/slider, Radix), with a hint
-                                while it is disabled
-  PlanSummary.tsx             — sticky recap: itemised lines, total, commitment line, free mockup CTA
-  MobileTotalBar.tsx          — below `lg`, the total and the free mockup CTA, sticky at the bottom of the options
-  MockupLink.tsx              — the free mockup link, storing the plan code on click
-  PriceTotal.tsx              — live monthly total (an <output> announced politely)
-  FreeOffers.tsx              — the two no-commitment freebies, each with its button (rendered by the page)
-  QuotedServices.tsx          — services quoted outside the subscription, made with partners (rendered by the page)
+`components/PricingSimulator/` holds the composer, `components/PricingGuide/` the guided mode; each
+file opens with a JSDoc saying what it does, so the code is the map. The entry points:
 
-components/PricingGuide/
-  PricingGuide.tsx            — "Help me choose": the toggle and the one-page form; replace warning
-  PricingGuide.utils.ts       — getOutcome (compose, contact or quote) and answersToChoices (pure)
-  PricingGuide.types.ts       — the answers, kept apart from the simulator
-  GuideQuestions.tsx          — the questions that compose a plan
-  GuideOutcome.tsx            — the sentence and contact link for a need outside the simulator
-  ReplaceConfirm.tsx          — "Your answers will replace…", Replace / Cancel
-```
+- `PricingSimulator.tsx` — the guided mode above, the formulas and option groups on the left, the
+  recap on the right; it formats the prices once for the visitor's region.
+- `PricingSimulator.hooks.ts` — `usePricingSimulator` (raw choices → normalised plan, total, hints,
+  the last cascade, actions) and `usePriceFormat`.
+- `PricingSimulator.rules.ts` — pure rules: visitor actions (cascades), `getCascade`, `normalizePlan`.
+- `PricingSimulator.utils.ts` — `getPlanItems` (recap and email lines), `getCommittedItems`, totals.
+- `constants.ts` — the price table: formulas, add-ons, tier tables, one-year sets.
+- `lib/pricing/` — what the rest of the site shares: the option list and price lines
+  (`price-list.ts`), the plan code, the studio email and its labels.
 
 The hook keeps the visitor's **raw choices** and derives `plan = normalizePlan(choices)`. Total,
 recap, plan code and studio email all read the normalised plan, so a choice that the context
@@ -105,8 +74,8 @@ registered for VAT, so no VAT is mentioned next to them (`pricing.builder.period
 | Customer reviews (updated monthly)     | +5                          | one month's notice     |
 | English version                        | +5                          | 1 year                 |
 | News published for you (`managed`)     | +10 / +25 / +100            | 1 year, rhythm lowered |
-| Domain name (required without one)     | +5                          | 12 months, permanent   |
-| Email address on the domain            | +15                         | 12 months, permanent   |
+| Domain name (required without one)     | +5                          | 1 year                 |
+| Email address on the domain            | +15                         | 1 year                 |
 | Extra mailboxes (0 to 5)               | +10 each                    | 1 year                 |
 | Forwarding addresses (up to 5)         | +5                          | 1 year                 |
 | Hosting on a Swiss server (Swiss only) | +10                         | permanent              |
@@ -116,11 +85,12 @@ registered for VAT, so no VAT is mentioned next to them (`pricing.builder.period
 | Changes to the pages (5 positions)     | +5 / +20 / +30 / +60 / +200 | adjustable             |
 | AI-assisted articles (4 rhythms)       | +10 / +25 / +100 / +250     | 1 year, rhythm lowered |
 
-"1 year" options (`ONE_YEAR_OPTIONS`) run in 12-month periods and can be removed at the end of a
-period. `COMMITTED_OPTIONS` adds the domain name and the email address: together with "You stay in
-control", they turn the whole subscription into 12-month periods, wear the "1-year commitment"
-badge and are named in the recap's commitment line. The terms of sale
-(`legal.terms.sections[3..5]`) spell out every rule.
+"1 year" options (`ONE_YEAR_OPTIONS` in `constants.ts`, the domain name and the email address
+included) run in 12-month periods and can be removed at the end of a period. Together with "You stay
+in control" (`ONE_YEAR_FORMULAS`), they turn the whole subscription into 12-month periods, wear the
+"1-year commitment" badge and are named in the recap's commitment line. The number of pages and
+Swiss hosting stay in the subscription once enabled; the other options stop with one month's notice.
+The terms of sale (`legal.terms.sections[3..5]`) spell out every rule.
 
 ### Rules the tables alone do not carry
 
@@ -150,9 +120,9 @@ Other rules:
   note saying that anything beyond it is quoted personally. The pages slider's top position also
   reads "+40 € or more" (`pricing.builder.pages.or_more`).
 - **"More options"** (`ADVANCED_OPTIONS`, next to `OPTION_GROUPS` in `lib/pricing/price-list.ts`)
-  folds the options for precise needs. The button counts the ticked ones, the section opens by
-  itself when one is ticked from elsewhere, and the recap keeps listing them. Forwarding addresses
-  only show once the email address is ticked.
+  folds the options for precise needs. The button counts the ticked ones, and the recap keeps
+  listing them while the section is closed. Forwarding addresses only show once the email address
+  is ticked.
 
 Both currencies quote the same number — only the symbol changes (`formatAmount`), matching how
 the rest of the site handles `eur` / `chf` (see `lib/region.ts`). Pages pass their locale so prices
@@ -170,8 +140,8 @@ ticked bills each of its options. The group components must show the options of 
 
 ## Guided mode
 
-A button above the simulator ("Help me choose") opens a short form on one page; the simulator stays
-visible, with its prices. The first question decides where it goes:
+"Help me choose" sits above the simulator and asks **one question at a time**; the simulator stays
+visible below, with its prices. The first question decides where it goes:
 
 - no site yet, or a site to redo → the questions below, then "See my plan";
 - a site to keep, with help → a sentence and a link to the contact page;
@@ -187,9 +157,26 @@ visible, with its prices. The first question decides where it goes:
 | Do you publish news?                      | News rhythm (`managed` only)                                       |
 | How often does your information change?   | Changes slider ("Once a year is enough" → the yearly one included) |
 
+`getSteps(answers)` (`PricingGuide.utils.ts`) lists the questions to ask given the answers so far:
+the email question only without a domain name, the news question only when the studio makes the
+changes. "Question n of N", "Back" and "Next" follow that list.
+
+- **Pointer or keyboard**: an answer clicked or tapped moves on to the next question; with the
+  keyboard, the arrows only change the answer and "Next" moves on. The contact question (several
+  answers) never moves on by itself. Focus follows the question shown.
+- **Enter** only submits on the last question; on the others it does nothing.
+- **Endings**: the contact and quote endings appear in a live region, announced when they show.
+- **Replace warning**: when options are already ticked, "See my plan" first asks before replacing
+  them; focus goes to "Replace", and back to "See my plan" on "Cancel".
+
 `answersToChoices()` turns the answers into a normalised `PlanSelection`, which the hook's
-`replaceChoices` action puts in place. When options are already ticked, a warning asks before
-replacing them. The visitor then lands in the simulator, its options ticked, everything adjustable.
+`replaceChoices` action puts in place. The visitor then lands in the simulator, its options ticked,
+focus on the chosen formula, everything adjustable.
+
+The state lives in `usePricingGuide` (`PricingGuide.hooks.ts`); `PricingGuide.tsx` only lays it out,
+and `GuideQuestion.tsx` renders the current question with `ChoiceGroup` (`design-system/choice-group.tsx`).
+The answers that are steps of a slider (pages, changes) reuse the simulator's wording
+(`builder.pages.tiers.*`, `builder.updates.tiers.*`).
 
 ---
 
@@ -207,9 +194,10 @@ unticked tier or an empty list. `encodePlanCode` normalises the plan first and k
 for the Swiss version only; `decodePlanCode` only accepts canonical codes of the current version
 (`encode(decode(x)) === x`): a code of another version, or one that breaks a rule (email without
 domain, news charged in `self_service`, a domain alongside one of the client's own…), is rejected and
-the request is sent without the simulation. **Bump `PLAN_CODE_VERSION` whenever the segments or the
-add-on list change.** Prices are never encoded: the studio email (`lib/pricing/plan-email.ts`, labels
-in `plan-labels.ts`, typed by tier key) recomputes them from the table.
+the request is sent without the simulation. **Bump `PLAN_CODE_VERSION` whenever the segments, the
+add-on list or a tier table changes** (a tier is stored by its position). Prices are never encoded:
+the studio email (`lib/pricing/plan-email.ts`, labels in `plan-labels.ts`, typed by tier key)
+recomputes them from the table.
 
 ---
 
@@ -220,27 +208,27 @@ Keys live under `pricing.*` in `messages/<locale>/pricing.json` (5 locales, kept
 `pricingPage.*` in `pricing-page.json`, kept apart because the whole `pricing` namespace is sent to
 the browser.
 
-| Key                         | Used by                                                                                                       |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `free_offers.*`             | `FreeOffers`, above the simulator                                                                             |
-| `quoted_services.*`         | `QuotedServices`, under the simulator                                                                         |
-| `builder.formulas.*`        | `FormulaPicker`, `BaseCard` heading, recap                                                                    |
-| `builder.base.*`            | `BaseCard`: what each formula includes and its info bubbles                                                   |
-| `builder.groups.*`          | Option group titles; `more` names the "More options" button                                                   |
-| `builder.more.*`            | "More options": ticked count and intro (one per region)                                                       |
-| `builder.domain_question.*` | The domain question, in the simulator and the guided mode                                                     |
-| `builder.options.<key>.*`   | `label`, `hint`, `info` of each add-on; `slider_label` and `tiers` of tiered options; mailbox counter wording |
-| `builder.pages.tiers.*`     | Pages slider, keyed by `PAGE_TIERS[].key`                                                                     |
-| `builder.updates.*`         | Changes tick-box (one hint per formula), its info, its disabled hint and its slider (`UPDATE_TIERS[].key`)    |
-| `builder.commitment`        | "1-year commitment" badge                                                                                     |
-| `builder.commitment_line.*` | Recap: no commitment, or 12-month periods with `{items}`, named by `builder.commitment_items.*`               |
-| `builder.cascades.*`        | What unticking an option removed along with it                                                                |
-| `builder.total.*`           | `PlanSummary`: total, note (`<link>` to the terms), CTA, mobile CTA, "beyond this" note                       |
-| `guide.*`                   | `PricingGuide`: button, intro, questions and answers, outcomes, replace warning                               |
-| `columns.*`                 | `PricingColumns` — the four columns (subscription, guidance, reinforcement, custom), homepage and Services    |
+| Key                         | Used by                                                                                                        |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `free_offers.*`             | `FreeOffers`, above the simulator                                                                              |
+| `quoted_services.*`         | `QuotedServices`, under the simulator                                                                          |
+| `builder.formulas.*`        | `FormulaPicker`, `BaseCard` heading, recap                                                                     |
+| `builder.base.*`            | `BaseCard`: what each formula includes and its info bubbles                                                    |
+| `builder.groups.*`          | Option group titles; `more` names the "More options" button                                                    |
+| `builder.more.*`            | "More options": ticked count and intro (one per region)                                                        |
+| `builder.domain_question.*` | The domain question, in the simulator and the guided mode                                                      |
+| `builder.options.<key>.*`   | `label`, `hint`, `info` of each add-on; `slider_label` and `tiers` of tiered options; mailbox counter wording  |
+| `builder.pages.tiers.*`     | Pages slider, keyed by `PAGE_TIERS[].key`                                                                      |
+| `builder.updates.*`         | Changes tick-box (one hint per formula), its info, its disabled hint and its slider (`UPDATE_TIERS[].key`)     |
+| `builder.commitment`        | "1-year commitment" badge                                                                                      |
+| `builder.commitment_line.*` | Recap: no commitment, or 12-month periods with `{items}`, named by `builder.commitment_items.*`                |
+| `builder.cascades.*`        | What unticking an option removed along with it                                                                 |
+| `builder.total.*`           | `PlanSummary`: total, note (`<link>` to the terms), CTA, mobile CTA, "beyond this" note                        |
+| `guide.*`                   | `PricingGuide`: title, intro, progress, back / next / submit, questions and answers, outcomes, replace warning |
+| `columns.*`                 | `PricingColumns` — the four columns (subscription, guidance, reinforcement, custom), homepage and Services     |
 
 The two-formula section of the Services page lives in `services.simulator.*` (its lead quotes both
-formula prices).
+formula prices); its button reads `pricing.columns.subscription.cta`.
 
 Wording targets a non-technical reader: no "SSL", no "CMS", no "forfait" — the padlock, an
 editing space, and plain monthly prices instead.
@@ -251,9 +239,10 @@ editing space, and plain monthly prices instead.
 
 1. Edit the number in `constants.ts` — nothing else hardcodes a subscription amount.
    The code handover delay lives in `lib/pricing/offers.ts`.
-2. If a tier's wording changes, update its key in all 5 locale files and in `TIER_LABELS`.
-3. `__tests__/components/PricingSimulator/PricingSimulator.utils.test.ts` asserts the composed
-   totals; update the expected sums there.
+2. If a tier's wording changes, update its key in all 5 locale files and in `TIER_LABELS`. If a tier
+   table gains, loses or reorders a step, bump `PLAN_CODE_VERSION`.
+3. Search `__tests__` for the old amount: the simulator, price list, plan email and `/llms-full.txt`
+   tests assert prices and composed totals.
 
 ## Adding a new add-on
 
