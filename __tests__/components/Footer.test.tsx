@@ -1,8 +1,11 @@
 import { within } from '@testing-library/react';
+import { NextIntlClientProvider } from 'next-intl';
+import type { ReactNode } from 'react';
 
 import { CookieConsentProvider } from '@/components/CookieConsent';
 import { Footer } from '@/components/Footer';
 
+import { FRENCH_MESSAGES } from '../french-messages';
 import { render } from '../test-utils';
 
 const renderFooter = (region: 'fr' | 'ch' = 'fr') =>
@@ -75,5 +78,30 @@ describe('Footer Component', () => {
     expect(getByText(`© ${year} Cosmic Studio`)).toBeInTheDocument();
     expect(getByText('All systems nominal')).toBeInTheDocument();
     expect(queryByText(/Go Cosmic/)).not.toBeInTheDocument();
+  });
+
+  it('adds the pages published in French only, in their own column, on the French version', () => {
+    const french = ({ children }: { children: ReactNode }) => (
+      <NextIntlClientProvider locale="fr-CH" messages={FRENCH_MESSAGES}>
+        <CookieConsentProvider>{children}</CookieConsentProvider>
+      </NextIntlClientProvider>
+    );
+    const { getByRole, container } = render(<Footer region="ch" />, { wrapper: french });
+    const column = getByRole('navigation', { name: 'Solutions & guides' });
+
+    expect(
+      within(column)
+        .getAllByRole('link')
+        .map((link) => link.getAttribute('href'))
+    ).toEqual(['/showcase-website', '/app-development']);
+    expect(within(column).getByRole('link', { name: 'Création de site vitrine' })).toBeInTheDocument();
+    expect(container.querySelector('.lg\\:grid-cols-\\[2fr_1fr_1fr_1fr\\]')).not.toBeNull();
+  });
+
+  it('leaves that column out of the other languages', () => {
+    const { queryByRole, container } = renderFooter();
+
+    expect(queryByRole('navigation', { name: /Solutions/ })).not.toBeInTheDocument();
+    expect(container.querySelector('.lg\\:grid-cols-\\[2fr_1fr_1fr\\]')).not.toBeNull();
   });
 });

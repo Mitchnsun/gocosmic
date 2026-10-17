@@ -24,4 +24,25 @@ describe('ServicesGrid', () => {
     expect(getByText('Craftspeople')).toBeInTheDocument();
     expect(container.querySelector('svg')).toBeNull();
   });
+
+  it('links a trade to its own page when it has one', () => {
+    const { getAllByRole, getByRole } = render(
+      <ServicesGrid
+        eyebrow="[ What we do ]"
+        title="Trades"
+        services={[
+          {
+            title: 'Showcase sites',
+            description: 'Get found',
+            tags: [],
+            link: { label: 'Showcase website design', href: '/pricing' },
+          },
+          { title: 'Shops', description: 'Sell online', tags: [] },
+        ]}
+      />
+    );
+
+    expect(getByRole('link', { name: 'Showcase website design' })).toHaveAttribute('href', '/pricing');
+    expect(getAllByRole('link')).toHaveLength(1);
+  });
 });

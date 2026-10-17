@@ -7,6 +7,7 @@ import {
   buildCaseStudyMeta,
   buildCaseStudyNavigation,
   CaseStudy,
+  CaseStudySeeAlso,
   formatReleaseDate,
   PROJECTS_BY_SLUG,
 } from '@/components/CaseStudy';
@@ -83,8 +84,9 @@ export default function DailyFortune({ params }: { params: Promise<{ locale: str
           'daily-fortune',
           { previous: tCommon('previous'), next: tCommon('next'), ariaLabel: tCommon('nav_label') },
           (titleKey) => tList(`items.${titleKey}.title`)
-        )}
-      />
+        )}>
+        <CaseStudySeeAlso slug="daily-fortune" />
+      </CaseStudy>
       <CaseStudySeo slug="daily-fortune" />
     </>
   );

@@ -2,15 +2,20 @@ import type { ReactNode } from 'react';
 
 import { Reveal } from '@/components/Reveal';
 import { SectionHeading } from '@/components/SectionHeading';
+import { buttonVariants } from '@/design-system/button.variants';
 import { Chip } from '@/design-system/chip';
 import { HairlineGrid } from '@/design-system/hairline-grid';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, SECTION_Y } from '@/design-system/pill';
+import { Link } from '@/i18n/navigation';
+import type { RouteKey } from '@/i18n/routing';
 
 interface ServiceItem {
   title: string;
   description: string;
   tags: string[];
+  /** The page that tells more about this trade, if it has one in the current language. */
+  link?: { label: string; href: RouteKey };
 }
 
 interface ServicesGridProps {
@@ -20,7 +25,7 @@ interface ServicesGridProps {
   id?: string;
 }
 
-/** What the studio does: numbered cards separated by hairlines, each with mono tags. */
+/** What the studio does: numbered cards separated by hairlines, each with mono tags and, if any, a link to its page. */
 export function ServicesGrid({ eyebrow, title, services, id = 'trades' }: ServicesGridProps) {
   const titleId = `${id}-heading`;
 
@@ -37,6 +42,14 @@ export function ServicesGrid({ eyebrow, title, services, id = 'trades' }: Servic
                 </span>
                 <h3 className="font-display text-xl font-semibold tracking-[-0.02em]">{service.title}</h3>
                 <p className="text-fg-2 text-[15px] leading-relaxed">{service.description}</p>
+                {service.link && (
+                  <Link
+                    href={service.link.href}
+                    className={cn(buttonVariants({ variant: 'link', size: 'inline' }), 'min-h-11 w-fit')}>
+                    {service.link.label}
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                )}
                 <ul className="mt-auto flex flex-wrap gap-1.5 pt-2">
                   {service.tags.map((tag) => (
                     <li key={tag}>

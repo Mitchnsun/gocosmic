@@ -15,9 +15,11 @@ import { BASE_PRICE, FORMULA_PRICES } from '@/components/PricingSimulator/consta
 import { formatAmount } from '@/components/PricingSimulator/PricingSimulator.utils';
 import { SectionHeading } from '@/components/SectionHeading';
 import { ServicesGrid } from '@/components/ServicesGrid';
+import { CONTENT_PAGE_LABELS, TRADE_PAGES } from '@/data/content-pages';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, PAGE_TOP, primaryPill, SECTION_Y } from '@/design-system/pill';
 import { Link } from '@/i18n/navigation';
+import { hasRoute } from '@/i18n/route-locales';
 import { CODE_HANDOVER_MONTHS } from '@/lib/pricing/offers';
 import { type Currency, getCurrency, getRegion } from '@/lib/region';
 import { buildPageMetadata } from '@/lib/seo';
@@ -53,6 +55,7 @@ export default async function Services({ params }: { params: Promise<{ locale: s
   const t = await getTranslations('services');
   const tPricing = await getTranslations('pricing.columns');
   const tHome = await getTranslations('homepage');
+  const tLinks = await getTranslations('contentPages');
   const region = getRegion(locale);
   const currency = getCurrency(region);
   const pricing = buildPricingColumns(tPricing, region, locale);
@@ -79,11 +82,19 @@ export default async function Services({ params }: { params: Promise<{ locale: s
       <ServicesGrid
         eyebrow={t('trades.eyebrow')}
         title={t.rich('trades.title', { em })}
-        services={TRADES.map((trade) => ({
-          title: t(`trades.items.${trade}.title`),
-          description: t(`trades.items.${trade}.description`),
-          tags: t.raw(`trades.items.${trade}.tags`) as string[],
-        }))}
+        services={TRADES.map((trade) => {
+          // A trade links to its own page in the languages that page is published in.
+          const page = TRADE_PAGES[trade];
+          return {
+            title: t(`trades.items.${trade}.title`),
+            description: t(`trades.items.${trade}.description`),
+            tags: t.raw(`trades.items.${trade}.tags`) as string[],
+            link:
+              page && hasRoute(locale, page)
+                ? { label: tLinks(`links.${CONTENT_PAGE_LABELS[page]}.label`), href: page }
+                : undefined,
+          };
+        })}
       />
 
       <PricingColumns eyebrow={tPricing('eyebrow')} title={tPricing('title')} columns={pricing} />

@@ -3,7 +3,13 @@ import { useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { use } from 'react';
 
-import { buildCaseStudyMeta, buildCaseStudyNavigation, CaseStudy, PROJECTS_BY_SLUG } from '@/components/CaseStudy';
+import {
+  buildCaseStudyMeta,
+  buildCaseStudyNavigation,
+  CaseStudy,
+  CaseStudySeeAlso,
+  PROJECTS_BY_SLUG,
+} from '@/components/CaseStudy';
 import { buildCaseStudyMetadata } from '@/components/CaseStudy/CaseStudy.metadata';
 import CaseStudySeo from '@/components/JsonLd/CaseStudySeo';
 
@@ -72,8 +78,9 @@ export default function ChoeurDesPaysduMontBlanc({ params }: { params: Promise<{
           'choeurdespaysdumontblanc',
           { previous: tCommon('previous'), next: tCommon('next'), ariaLabel: tCommon('nav_label') },
           (titleKey) => tList(`items.${titleKey}.title`)
-        )}
-      />
+        )}>
+        <CaseStudySeeAlso slug="choeurdespaysdumontblanc" />
+      </CaseStudy>
       <CaseStudySeo slug="choeurdespaysdumontblanc" />
     </>
   );
