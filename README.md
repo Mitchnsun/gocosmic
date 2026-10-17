@@ -264,6 +264,7 @@ yarn test           # Run unit tests
 yarn test:watch     # Run tests in watch mode
 yarn coverage       # Generate test coverage report
 yarn qa             # Local QA: accessibility audit of every page in both themes (Playwright)
+yarn qa --ui        # Same, in Playwright's interactive UI to watch each test run
 ```
 
 ### Adding New Routes

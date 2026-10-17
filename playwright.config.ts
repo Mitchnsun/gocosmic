@@ -4,10 +4,13 @@ const PORT = 3100;
 
 /**
  * Local QA of the production build (EPIC #113): axe accessibility audit of every route in both
- * themes, the no-flash check and review screenshots. Not part of CI: run `yarn qa` before a release.
+ * themes, the no-flash check and review screenshots. Also run by the CI, without the screenshots.
  */
 export default defineConfig({
   testDir: './e2e',
+  // The review screenshots check nothing: the CI skips them.
+  testIgnore: process.env.CI ? 'screens.spec.ts' : undefined,
+  forbidOnly: !!process.env.CI,
   fullyParallel: true,
   reporter: [['list']],
   use: {

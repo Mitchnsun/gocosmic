@@ -18,7 +18,8 @@ yarn check-types      # TypeScript type check via tsconfig.check.json (~9s)
 yarn test             # Run all Vitest tests (~9s, ~1010 tests / 116 files)
 yarn test:watch       # Vitest in watch mode
 yarn coverage         # Generate coverage report (must stay ≥90% on all metrics)
-yarn qa               # Local Playwright QA: axe audit of every route and the pricing page's states, both themes (not in CI)
+yarn qa               # Local Playwright QA: axe audit of every route and the pricing page's states, both themes (CI runs it without the review screenshots)
+yarn qa --ui          # Same, in Playwright's interactive UI (step-by-step timeline, DOM snapshots)
 ```
 
 **Before committing**, always run: `yarn format && yarn lint && yarn check-types && yarn coverage`
