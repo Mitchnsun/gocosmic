@@ -4,7 +4,7 @@ import { STORY_MILESTONES } from '@/data/story';
 import { EN } from '../llms.messages';
 import { inBothCurrencies, item, keysOf, link, pageUrl, section, valuesOf } from '../llms.utils';
 
-/** The free mockup: what to send and what comes back. */
+/** The free mockup: what to send and what comes back, with the case study it points to as an example. */
 export function buildFreeMockupSection(): string {
   const t = EN.freeMockup;
   const steps = keysOf(t.raw('steps.items')).map((key) =>
@@ -13,6 +13,7 @@ export function buildFreeMockupSection(): string {
 
   return section(link(EN.footer('free_mockup_page'), pageUrl('/free-mockup')), [
     t('intro'),
+    link(t('example_link'), pageUrl('/projects/choeurdespaysdumontblanc')),
     section(t('steps.title'), [steps.join('\n')], 3),
   ]);
 }

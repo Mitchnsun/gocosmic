@@ -5,7 +5,7 @@ import { item, keysOf, link, pageUrl, section, valuesOf } from '../llms.utils';
 
 const PROCESS_STEPS = ['discovery', 'design', 'build', 'launch'] as const;
 
-/** The homepage: who the studio works for, why a studio, its process and the person behind it. */
+/** The homepage: who the studio works for, why a studio, its process, its two ways to start and the person behind it. */
 export function buildHomeSection(): string {
   const t = EN.home;
   const months = String(CODE_HANDOVER_MONTHS);
@@ -41,6 +41,8 @@ export function buildHomeSection(): string {
       ],
       3
     ),
+    // The two columns it shows are detailed with the other two in the services section.
+    section(t('pricing.title'), [link(t('pricing.all'), `${pageUrl('/services')}#pricing`)], 3),
     section(t('studio.title'), valuesOf(t.raw('studio.paragraphs')), 3),
   ]);
 }

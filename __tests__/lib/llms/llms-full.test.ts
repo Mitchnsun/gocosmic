@@ -44,6 +44,9 @@ describe('buildLlmsFull', () => {
     expect(text).toContain('- **Craftspeople**: Carpenter, plumber');
     expect(text).toContain('The code is transferred to you after 36 months of subscription');
     expect(text).toContain('- **T-3 · Meeting · We get to know each other**: ');
+    expect(text).toContain(
+      '### A subscription, or a custom project.\n\n[See the four ways to work with us](https://www.gocosmic.dev/en/services#pricing)'
+    );
     expect(text).toContain('Matthieu Compérat comes from Duingt');
   });
 
@@ -145,6 +148,7 @@ describe('buildLlmsFull', () => {
     expect(text).toContain('- **A price on display**: The subscription starts at €10 / CHF 10 a month');
     expect(text).toContain('- **French-speaking Switzerland**: Vaud, Valais, Neuchâtel, Fribourg');
     expect(text).toContain('- **Then you decide**: The mockup arrives by email within 48 hours');
+    expect(text).toContain('[See an example mockup](https://www.gocosmic.dev/en/projects/choeurdespaysdumontblanc)');
   });
 
   it('tells the story page milestone by milestone, each led by its date', () => {
