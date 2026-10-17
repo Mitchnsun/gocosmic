@@ -5167,6 +5167,7 @@ __metadata:
     next: "npm:16.4.0"
     next-intl: "npm:^4.12.0"
     next-themes: "npm:^0.4.6"
+    playwright-core: "npm:1.56.1"
     prettier: "npm:^3.8.3"
     prettier-plugin-tailwindcss: "npm:^0.8.0"
     react: "npm:^19.3.0"
