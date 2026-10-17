@@ -27,6 +27,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - The contact form asks for the message right after the name and email, before the optional fields, and the free mockup page links to an example mockup
 - The privacy policy names Google's calendar by its French and German names, and the German terms of sale use the same words as the pricing page for the 12-month term
 
+### Fixed
+
+- The terms of sale no longer call timelines indicative: like the Services page, they commit to the launch date set at the start, which moves back only if your content arrives late or in a case of force majeure
+
 ## [2.4.5] - 2026-10-15
 
 ### Changed
