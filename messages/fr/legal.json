@@ -204,14 +204,15 @@
           "title": "Résiliation",
           "body": [
             "Vous pouvez résilier à tout moment, par e-mail à support@gocosmic.dev ; nous vous confirmons sa réception par écrit. Le site reste en ligne jusqu'à la fin de la période payée : la fin du mois pour un abonnement sans engagement ; s'il comprend un élément souscrit par périodes de 12 mois, la fin de la période en cours si votre e-mail nous parvient au plus tard deux mois avant, sinon la fin de la période suivante.",
-            "Vous repartez avec vos contenus et votre nom de domaine."
+            "Vous repartez avec vos contenus et votre nom de domaine. Quitter l'abonnement n'entraîne aucune pénalité de départ : en plus de la période en cours, les seuls frais possibles sont les frais de cession, si vous demandez le code avant 36 mois d'abonnement (voir « Propriété »)."
           ]
         },
         {
           "title": "Propriété",
           "body": [
             "Vos textes, vos images et votre nom de domaine vous appartiennent dès le premier jour. Le code du site vous est cédé gratuitement après 36 mois d'abonnement. Avant ce délai, il peut vous être cédé contre des frais de cession qui dépendent de la durée restante.",
-            "Pour un projet ponctuel, le code vous appartient dès la livraison, une fois la facture entièrement payée."
+            "Une fois le code cédé, nous vous remettons sur demande un dépôt Git qui le contient, que votre abonnement continue ou non. Tant que l'abonnement continue, nous hébergeons et gérons le site ; si vous le quittez, son hébergement et sa gestion sont à votre charge.",
+            "Pour un projet ponctuel, le code vous appartient dès la livraison, une fois la facture entièrement payée. Nous vous le livrons dans un dépôt Git, et son hébergement est à votre charge, sauf si vous passez ensuite à l'abonnement pour le suivi."
           ]
         },
         {

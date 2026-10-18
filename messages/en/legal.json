@@ -201,14 +201,15 @@
           "title": "Cancellation",
           "body": [
             "You can cancel at any time by emailing support@gocosmic.dev; we confirm in writing that we have received your email. The site stays online until the end of the paid period: the end of the month for a subscription with no minimum term; if it includes something subscribed for 12-month periods, the end of the current period if your email reaches us no later than two months before it ends, otherwise the end of the following period.",
-            "You leave with your content and your domain name."
+            "You leave with your content and your domain name. Leaving the subscription comes with no exit penalty: apart from the current period, the only possible cost is the transfer fee, if you ask for the code before 36 months of subscription (see “Ownership”)."
           ]
         },
         {
           "title": "Ownership",
           "body": [
             "Your texts, images and domain name belong to you from day one. The site's code is transferred to you free of charge after 36 months of subscription. Before then, it can be transferred for a fee that depends on the remaining time.",
-            "For a one-off project, the code belongs to you from delivery, once the invoice has been paid in full."
+            "Once the code is transferred, we give you a Git repository containing it on request, whether or not your subscription continues. As long as the subscription continues, we host and manage the site; if you leave, hosting and managing it are your responsibility.",
+            "For a one-off project, the code belongs to you from delivery, once the invoice has been paid in full. We deliver it in a Git repository, and hosting it is your responsibility, unless you then switch to a subscription for ongoing care."
           ]
         },
         {

@@ -51,7 +51,7 @@
       "items": {
         "ownership": {
           "question": "¿El sitio es mío?",
-          "answer": "Tus textos, tus imágenes y tu nombre de dominio te pertenecen desde el primer día. El código del sitio se te cede tras {months} meses de suscripción, y eso es lo que nos permite ofrecer un precio de partida tan bajo. También puedes quedártelo antes, a cambio de unos gastos de cesión calculados según el tiempo que quede. En un sitio hecho por presupuesto, con gastos de desarrollo, el código te pertenece desde la entrega, una vez pagada la factura completa."
+          "answer": "Tus textos, tus imágenes y tu nombre de dominio te pertenecen desde el primer día. El código del sitio se te cede tras {months} meses de suscripción, y eso es lo que nos permite ofrecer un precio de partida tan bajo. También puedes quedártelo antes, a cambio de unos gastos de cesión calculados según el tiempo que quede. En un sitio hecho por presupuesto, con gastos de desarrollo, el código te pertenece desde la entrega, una vez pagada la factura completa. En ambos casos, te entregamos el código en un repositorio Git, el formato habitual para traspasar el código de un sitio. Si no tienes o ya no tienes suscripción con nosotros, su alojamiento corre después de tu cuenta."
         },
         "edit": {
           "question": "¿Puedo modificar el sitio por mi cuenta?",
@@ -63,7 +63,7 @@
         },
         "stop": {
           "question": "¿Qué pasa si lo dejo?",
-          "answer": "Basta con enviarnos un correo: el sitio sigue en línea hasta el final del periodo ya pagado, y te llevas tus contenidos y tu nombre de dominio. El código se te cede gratis después de {months} meses de suscripción; antes de ese plazo, la cesión tiene un coste que te indicamos desde el principio. Si tu suscripción incluye un nombre de dominio, una dirección de correo, el plan «Tú tienes el control» o una opción marcada «Compromiso de 1 año», se contrata por periodos de 12 meses: avísanos como muy tarde dos meses antes del final del periodo en curso; si no, se renueva por 12 meses. Te recordamos esa fecha límite por correo dos meses antes."
+          "answer": "Basta con enviarnos un correo, y irte no conlleva ninguna penalización: el sitio sigue en línea hasta el final del periodo ya pagado, y te llevas tus contenidos y tu nombre de dominio. El código se te cede gratis después de {months} meses de suscripción; antes de ese plazo, la cesión tiene un coste que te indicamos desde el principio. Te lo entregamos en un repositorio Git, y después el alojamiento del sitio corre de tu cuenta. Si tu suscripción incluye un nombre de dominio, una dirección de correo, el plan «Tú tienes el control» o una opción marcada «Compromiso de 1 año», se contrata por periodos de 12 meses: avísanos como muy tarde dos meses antes del final del periodo en curso; si no, se renueva por 12 meses. Te recordamos esa fecha límite por correo dos meses antes."
         },
         "content": {
           "question": "¿También os encargáis de los textos y las fotos?",

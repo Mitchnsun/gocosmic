@@ -201,14 +201,15 @@
           "title": "Disdetta",
           "body": [
             "Puoi disdire l'abbonamento in qualsiasi momento, con un'e-mail a support@gocosmic.dev; te ne confermiamo la ricezione per iscritto. Il sito resta online fino alla fine del periodo già pagato: la fine del mese per un abbonamento senza vincolo di durata; se comprende qualcosa sottoscritto per periodi di 12 mesi, la fine del periodo in corso se la tua e-mail ci arriva al più tardi due mesi prima, altrimenti la fine del periodo successivo.",
-            "Porti con te i tuoi contenuti e il tuo nome a dominio."
+            "Porti con te i tuoi contenuti e il tuo nome a dominio. Lasciare l'abbonamento non comporta alcuna penale: oltre al periodo in corso, l'unico costo possibile è il costo di cessione, se chiedi il codice prima di 36 mesi di abbonamento (vedi «Proprietà»)."
           ]
         },
         {
           "title": "Proprietà",
           "body": [
             "I tuoi testi, le tue immagini e il tuo nome a dominio ti appartengono dal primo giorno. Il codice del sito ti viene ceduto gratuitamente dopo 36 mesi di abbonamento. Prima di questo termine, può esserti ceduto a fronte di un costo di cessione che dipende dalla durata residua.",
-            "Per un progetto una tantum, il codice ti appartiene dalla consegna, una volta pagata interamente la fattura."
+            "Una volta ceduto il codice, ti consegniamo su richiesta un repository Git che lo contiene, che il tuo abbonamento continui o no. Finché l'abbonamento continua, ospitiamo e gestiamo il sito; se lo lasci, l'hosting e la gestione sono a tuo carico.",
+            "Per un progetto una tantum, il codice ti appartiene dalla consegna, una volta pagata interamente la fattura. Te lo consegniamo in un repository Git, e l'hosting è a tuo carico, a meno che tu non passi poi all'abbonamento per l'assistenza."
           ]
         },
         {

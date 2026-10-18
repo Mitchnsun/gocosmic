@@ -203,14 +203,15 @@
           "title": "Kündigung",
           "body": [
             "Sie können jederzeit per E-Mail an support@gocosmic.dev kündigen; wir bestätigen Ihnen den Eingang schriftlich. Die Website bleibt bis zum Ende des bezahlten Zeitraums online: bis zum Monatsende bei einem Abonnement ohne Mindestlaufzeit; enthält es etwas, das eine Laufzeit von jeweils 12 Monaten hat, bis zum Ende des laufenden Zeitraums, wenn Ihre E-Mail spätestens zwei Monate vor dessen Ende bei uns eingeht, sonst bis zum Ende des folgenden Zeitraums.",
-            "Sie behalten Ihre Inhalte und Ihren Domainnamen."
+            "Sie behalten Ihre Inhalte und Ihren Domainnamen. Wenn Sie das Abonnement beenden, fällt keine Vertragsstrafe an: Neben dem laufenden Zeitraum kann nur die Übertragungsgebühr anfallen, wenn Sie den Code vor 36 Monaten Abonnement anfordern (siehe „Eigentum“)."
           ]
         },
         {
           "title": "Eigentum",
           "body": [
             "Ihre Texte, Bilder und Ihr Domainname gehören Ihnen vom ersten Tag an. Der Code der Website wird Ihnen nach 36 Monaten Abonnement kostenlos übertragen. Vor Ablauf dieser Frist ist die Übertragung gegen eine Übertragungsgebühr möglich, die sich nach der verbleibenden Dauer richtet.",
-            "Bei einem Einzelprojekt gehört Ihnen der Code ab der Übergabe, sobald die Rechnung vollständig bezahlt ist."
+            "Sobald der Code übertragen ist, erhalten Sie auf Anfrage ein Git-Repository mit dem Code, ob Ihr Abonnement weiterläuft oder nicht. Solange das Abonnement läuft, hosten und betreuen wir die Website; wenn Sie es beenden, liegen Hosting und Betreuung bei Ihnen.",
+            "Bei einem Einzelprojekt gehört Ihnen der Code ab der Übergabe, sobald die Rechnung vollständig bezahlt ist. Wir übergeben ihn in einem Git-Repository, und das Hosting liegt bei Ihnen, es sei denn, Sie wechseln danach für die Betreuung in ein Abonnement."
           ]
         },
         {

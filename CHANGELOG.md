@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - The terms of sale now spell out how to stop a 12-month subscription or option from renewing: an email that reaches the studio at least two months before the end of the period, confirmed in writing, with an example of the deadline and a reminder email sent two months before it
 - The first 12-month period starts when the site goes live, or when the first 12-month item is added, and anything added later renews on that same date; the Services FAQ and the pricing simulator now give the same two-month deadline
+- The terms of sale and the Services FAQ now state plainly that leaving the subscription comes with no exit penalty: the only possible fee is the one for taking over the site's code before 36 months
+- Once the code is yours, from a subscription or a one-off project, the studio hands it over in a Git repository, the usual format for passing on a site's code; if you leave, hosting the site is then up to you
 
 ### Fixed
 
