@@ -309,6 +309,8 @@ Grep `components/CosmicCursor/` for the native selector being replaced (`input[t
 
 **Correct pattern**: When copy promises something (a date, a result, availability), check the matching clause of the terms of sale in all five languages in the same change. When they disagree, ask the owner which one is true: softening the copy is not the default.
 
+**Follow-up**: The rewritten clause dropped the old sentence saying the studio is not liable for a delay or a failure to perform caused by force majeure, and the owner asked to keep it. When rewriting a clause of the terms, carry over every protection of the old wording unless the owner asks to remove it.
+
 ### A data change in the owner's commit is a decision, not a regression
 
 **Mistake**: The owner reordered the case studies in `data/projects.ts`, and four tests still expected the old order. The review listed the new order as a defect to revert.
