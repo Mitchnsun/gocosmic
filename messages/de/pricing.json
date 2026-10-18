@@ -87,12 +87,12 @@
           "count": "{count, plural, =0 {Kein zusätzliches Postfach} one {# zusätzliches Postfach} other {# zusätzliche Postfächer}}",
           "decrease": "Ein Postfach weniger",
           "increase": "Ein Postfach mehr",
-          "info": "Wenn Sie zu mehreren arbeiten oder für den Vorstand eines Vereins, kann jede Person ein eigenes Postfach auf Ihren Namen haben, mit eigenem Passwort. Diese Postfächer haben eine Laufzeit von jeweils 12 Monaten; Sie können sie zum Ende einer Laufzeit entfernen."
+          "info": "Wenn Sie zu mehreren arbeiten oder für den Vorstand eines Vereins, kann jede Person ein eigenes Postfach auf Ihren Namen haben, mit eigenem Passwort. Diese Postfächer haben eine Laufzeit von jeweils 12 Monaten; Sie können sie zum Ende einer Laufzeit entfernen, wenn Sie uns mindestens zwei Monate vorher Bescheid geben."
         },
         "redirects": {
           "label": "Weiterleitungsadressen (bis zu 5)",
           "hint": "Bis zu 5 Adressen, die an ein bestehendes Postfach weiterleiten, zum Beispiel rechnungen@{domain}.",
-          "info": "Eine Weiterleitungsadresse hat kein eigenes Postfach: Nachrichten an rechnungen@{domain} landen in einem Postfach, das Sie schon haben. Diese Adressen haben eine Laufzeit von jeweils 12 Monaten; Sie können sie zum Ende einer Laufzeit entfernen."
+          "info": "Eine Weiterleitungsadresse hat kein eigenes Postfach: Nachrichten an rechnungen@{domain} landen in einem Postfach, das Sie schon haben. Diese Adressen haben eine Laufzeit von jeweils 12 Monaten; Sie können sie zum Ende einer Laufzeit entfernen, wenn Sie uns mindestens zwei Monate vorher Bescheid geben."
         },
         "contact_form": {
           "label": "Ein Kontaktformular",
@@ -123,7 +123,7 @@
             "monthly": "1 Neuigkeit pro Monat",
             "weekly": "1 Neuigkeit pro Woche"
           },
-          "info": "Ein aktueller Bereich für Neuigkeiten zeigt Ihren Besucher:innen, dass Ihr Betrieb aktiv ist: neueste Arbeiten, kommende Konzerte, neue Saison. Wir richten den Bereich ein und veröffentlichen dann im gewählten Rhythmus, was Sie uns per E-Mail schicken. Diese Veröffentlichungen zählen nicht zu Ihren Inhaltsänderungen. Sie können den Rhythmus mit einer Frist von einem Monat verringern; ganz beenden lässt sich die Option zum Ende einer 12-monatigen Laufzeit."
+          "info": "Ein aktueller Bereich für Neuigkeiten zeigt Ihren Besucher:innen, dass Ihr Betrieb aktiv ist: neueste Arbeiten, kommende Konzerte, neue Saison. Wir richten den Bereich ein und veröffentlichen dann im gewählten Rhythmus, was Sie uns per E-Mail schicken. Diese Veröffentlichungen zählen nicht zu Ihren Inhaltsänderungen. Sie können den Rhythmus mit einer Frist von einem Monat verringern; ganz beenden lässt sich die Option zum Ende einer 12-monatigen Laufzeit, wenn Sie uns mindestens zwei Monate vorher Bescheid geben."
         },
         "seo": {
           "label": "Betreuung Ihrer Position bei Google",
@@ -162,7 +162,7 @@
             "weekly": "1 Artikel pro Woche",
             "thrice_weekly": "3 Artikel pro Woche"
           },
-          "info": "Regelmäßig Artikel zu schreiben, kostet Zeit. Wir schreiben sie für Sie mit Unterstützung künstlicher Intelligenz, anhand der Informationen über Ihren Betrieb. Gemeinsam wählen wir je nach Thema aus, wo sie erscheinen: in einem Blog oder in einem Bereich für Artikel. Sie entscheiden, ob Sie jeden Artikel vor der Veröffentlichung lesen oder ob wir ihn direkt veröffentlichen. Artikel zählen nicht zu Ihren Inhaltsänderungen. Sie können den Rhythmus mit einer Frist von einem Monat verringern; ganz beenden lässt sich die Option zum Ende einer 12-monatigen Laufzeit.",
+          "info": "Regelmäßig Artikel zu schreiben, kostet Zeit. Wir schreiben sie für Sie mit Unterstützung künstlicher Intelligenz, anhand der Informationen über Ihren Betrieb. Gemeinsam wählen wir je nach Thema aus, wo sie erscheinen: in einem Blog oder in einem Bereich für Artikel. Sie entscheiden, ob Sie jeden Artikel vor der Veröffentlichung lesen oder ob wir ihn direkt veröffentlichen. Artikel zählen nicht zu Ihren Inhaltsänderungen. Sie können den Rhythmus mit einer Frist von einem Monat verringern; ganz beenden lässt sich die Option zum Ende einer 12-monatigen Laufzeit, wenn Sie uns mindestens zwei Monate vorher Bescheid geben.",
           "info_tool": "Je nach Ihrem Bearbeitungswerkzeug können wir einen spezialisierten Dienst nutzen, der die Themen nach den Suchanfragen bei Google auswählt."
         }
       },
@@ -203,7 +203,7 @@
       },
       "total": {
         "label": "Ihre Kostenschätzung",
-        "note": "Richtpreis, den wir nach einem ersten Gespräch bestätigen. Sie können jederzeit Optionen hinzufügen. Seitenzahl und Hosting in der Schweiz bleiben nach der Aktivierung Teil Ihres Abonnements. Optionen mit dem Hinweis „1 Jahr Laufzeit“ lassen sich zum Ende jeder 12-monatigen Laufzeit entfernen, die übrigen mit einer Frist von einem Monat (siehe <link>Allgemeine Geschäftsbedingungen</link>).",
+        "note": "Richtpreis, den wir nach einem ersten Gespräch bestätigen. Sie können jederzeit Optionen hinzufügen. Seitenzahl und Hosting in der Schweiz bleiben nach der Aktivierung Teil Ihres Abonnements. Optionen mit dem Hinweis „1 Jahr Laufzeit“ lassen sich zum Ende jeder 12-monatigen Laufzeit entfernen, wenn Sie uns mindestens zwei Monate vorher Bescheid geben, die übrigen mit einer Frist von einem Monat (siehe <link>Allgemeine Geschäftsbedingungen</link>).",
         "beyond": "Bei größerem Umfang sprechen wir gemeinsam darüber und machen Ihnen einen Vorschlag.",
         "cta": "Mein kostenloses Mockup anfordern",
         "mobile_cta": "Mein kostenloses Mockup",
@@ -213,7 +213,7 @@
       "commitment": "1 Jahr Laufzeit",
       "commitment_line": {
         "none": "Ohne Mindestlaufzeit: monatlich kündbar.",
-        "periods": "Laufzeit jeweils 12 Monate, da Ihr Abonnement Folgendes enthält: {items}."
+        "periods": "Laufzeit jeweils 12 Monate, da Ihr Abonnement Folgendes enthält: {items}. Es verlängert sich jedes Jahr, sofern Sie uns nicht mindestens zwei Monate vor Ablauf Bescheid geben."
       },
       "commitment_items": {
         "formula": "das Paket „Sie behalten die Kontrolle“",

@@ -178,7 +178,10 @@
           "body": [
             "L'abbonamento non prevede un periodo minimo ed è disdicibile ogni mese, a condizione che non includa nulla di sottoscritto per periodi di 12 mesi: la formula «Hai tu il controllo», la gestione di un nome a dominio, un indirizzo e-mail o un'opzione indicata con «Impegno di 1 anno» nel simulatore.",
             "Non appena uno di questi elementi è attivo, l'abbonamento è sottoscritto per periodi di 12 mesi, rinnovati tacitamente, per coprire la registrazione del nome a dominio e dell'indirizzo e-mail, e la messa in opera dello strumento di modifica e delle opzioni interessate.",
-            "Puoi passare alla formula «Hai tu il controllo» in qualsiasi momento. Il ritorno alla formula «Ci pensiamo noi» decorre dalla fine del periodo di 12 mesi in corso, perché lo strumento di modifica non può essere rimosso prima."
+            "Il primo periodo di 12 mesi inizia con la messa online del sito se l'abbonamento comprende già uno di questi elementi, altrimenti il giorno in cui viene attivato il primo di essi. Un elemento aggiunto in seguito si inserisce nel periodo in corso e si rinnova con esso: il tuo abbonamento ha una sola scadenza all'anno.",
+            "Per non rinnovare l'abbonamento, o per rimuovere uno di questi elementi alla fine del periodo, scrivici un'e-mail a support@gocosmic.dev, che deve arrivarci al più tardi due mesi prima della fine del periodo in corso; te ne confermiamo la ricezione per iscritto. Ad esempio, per un periodo che termina il 31 marzo, la data limite è il 31 gennaio. Dopo questa data, l'abbonamento e i suoi elementi si rinnovano per 12 mesi.",
+            "Due mesi prima di questa data limite, ti inviamo un'e-mail che te la ricorda, con i passi da seguire.",
+            "Puoi passare alla formula «Hai tu il controllo» in qualsiasi momento. Il ritorno alla formula «Ci pensiamo noi» va chiesto entro lo stesso termine e decorre dalla fine del periodo di 12 mesi in corso, perché lo strumento di modifica non può essere rimosso prima."
           ]
         },
         {
@@ -188,7 +191,7 @@
             "Il numero di pagine e l'hosting in Svizzera non possono essere rimossi una volta attivati, perché corrispondono a un impegno assunto per tuo conto (pagine create). La frequenza delle modifiche ai contenuti può essere rivista al rialzo o al ribasso.",
             "Se non hai un nome a dominio, la sua gestione da parte di Cosmic Studio fa parte dell'abbonamento. Se ne hai già uno, le opzioni nome a dominio e indirizzo e-mail non sono proposte; un aiuto per il tuo nome a dominio e i tuoi indirizzi e-mail può essere oggetto di un preventivo.",
             "Una modifica ai contenuti corrisponde a una richiesta, che può raggruppare più cambiamenti. Le notizie e gli articoli non rientrano nelle modifiche ai contenuti.",
-            "Le opzioni con «Impegno di 1 anno» (nome a dominio, indirizzo e-mail, notizie pubblicate per te, sito in inglese, monitoraggio della tua posizione su Google, statistiche delle visite e statistiche dettagliate, articoli scritti con l'aiuto dell'IA, caselle e-mail in più e indirizzi di inoltro) si sottoscrivono per periodi di 12 mesi e possono essere rimosse alla fine di un periodo. Il ritmo delle notizie e degli articoli può essere ridotto con un mese di preavviso.",
+            "Le opzioni con «Impegno di 1 anno» (nome a dominio, indirizzo e-mail, notizie pubblicate per te, sito in inglese, monitoraggio della tua posizione su Google, statistiche delle visite e statistiche dettagliate, articoli scritti con l'aiuto dell'IA, caselle e-mail in più e indirizzi di inoltro) si sottoscrivono per periodi di 12 mesi e possono essere rimosse alla fine di un periodo, se ce lo chiedi al più tardi due mesi prima della sua fine (vedi «Durata e impegno»). Il ritmo delle notizie e degli articoli può essere ridotto con un mese di preavviso.",
             "Le altre opzioni (modulo di contatto, prenotazione online, recensioni dei clienti) possono essere rimosse con un mese di preavviso.",
             "Quando un'opzione viene rimossa, i contenuti collegati scompaiono dal sito, per esempio la sezione notizie e le sue pubblicazioni, o la versione inglese.",
             "Per impostazione predefinita, il tuo sito è ospitato nell'Unione europea. Se questa ubicazione non fa al caso tuo, puoi chiederci un hosting in un altro paese; ti indicheremo allora se è possibile e a quale prezzo."
@@ -197,7 +200,7 @@
         {
           "title": "Disdetta",
           "body": [
-            "Puoi disdire l'abbonamento in qualsiasi momento per iscritto. Il sito resta online fino alla fine del periodo in corso già pagato (fine del mese per un abbonamento senza vincolo di durata, fine del periodo di 12 mesi in corso se comprende qualcosa sottoscritto per periodi di 12 mesi).",
+            "Puoi disdire l'abbonamento in qualsiasi momento, con un'e-mail a support@gocosmic.dev; te ne confermiamo la ricezione per iscritto. Il sito resta online fino alla fine del periodo già pagato: la fine del mese per un abbonamento senza vincolo di durata; se comprende qualcosa sottoscritto per periodi di 12 mesi, la fine del periodo in corso se la tua e-mail ci arriva al più tardi due mesi prima, altrimenti la fine del periodo successivo.",
             "Porti con te i tuoi contenuti e il tuo nome a dominio."
           ]
         },

@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.5.1] - 2026-10-18
+
+### Changed
+
+- The terms of sale now spell out how to stop a 12-month subscription or option from renewing: an email that reaches the studio at least two months before the end of the period, confirmed in writing, with an example of the deadline and a reminder email sent two months before it
+- The first 12-month period starts when the site goes live, or when the first 12-month item is added, and anything added later renews on that same date; the Services FAQ and the pricing simulator now give the same two-month deadline
+
+### Fixed
+
+- The terms of sale no longer call timelines indicative: like the Services page, they commit to the launch date set at the start, which moves back only if your content arrives late or in a case of force majeure
+
 ## [2.5.0] - 2026-10-17
 
 ### Added
@@ -26,10 +37,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - The homepage shows two ways to start, the subscription and a custom project, with a link to all four on the Services page, and its hero now mentions the free mockup; the Services page presents what the studio does before its prices and ends with the free mockup offer
 - The contact form asks for the message right after the name and email, before the optional fields, and the free mockup page links to an example mockup
 - The privacy policy names Google's calendar by its French and German names, and the German terms of sale use the same words as the pricing page for the 12-month term
-
-### Fixed
-
-- The terms of sale no longer call timelines indicative: like the Services page, they commit to the launch date set at the start, which moves back only if your content arrives late or in a case of force majeure
 
 ## [2.4.5] - 2026-10-15
 

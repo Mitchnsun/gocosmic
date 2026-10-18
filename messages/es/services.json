@@ -63,7 +63,7 @@
         },
         "stop": {
           "question": "¿Qué pasa si lo dejo?",
-          "answer": "Basta con avisarnos: el sitio sigue en línea hasta el final del periodo ya pagado, y te llevas tus contenidos y tu nombre de dominio. El código se te cede gratis después de {months} meses de suscripción; antes de ese plazo, la cesión tiene un coste que te indicamos desde el principio. Si tu suscripción incluye un nombre de dominio, una dirección de correo, el plan «Tú tienes el control» o una opción marcada «Compromiso de 1 año», se contrata por periodos de 12 meses, y el periodo en curso se mantiene hasta su vencimiento."
+          "answer": "Basta con enviarnos un correo: el sitio sigue en línea hasta el final del periodo ya pagado, y te llevas tus contenidos y tu nombre de dominio. El código se te cede gratis después de {months} meses de suscripción; antes de ese plazo, la cesión tiene un coste que te indicamos desde el principio. Si tu suscripción incluye un nombre de dominio, una dirección de correo, el plan «Tú tienes el control» o una opción marcada «Compromiso de 1 año», se contrata por periodos de 12 meses: avísanos como muy tarde dos meses antes del final del periodo en curso; si no, se renueva por 12 meses. Te recordamos esa fecha límite por correo dos meses antes."
         },
         "content": {
           "question": "¿También os encargáis de los textos y las fotos?",

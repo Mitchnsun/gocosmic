@@ -58,7 +58,7 @@
         },
         "stop": {
           "question": "What happens if I stop?",
-          "answer": "Just let us know: the site stays online until the end of the period already paid, and you leave with your content and your domain name. The code is transferred to you free of charge after {months} months of subscription; before that, it is transferred for a fee we tell you about from the start. If your subscription includes a domain name, an email address, the “You stay in control” plan or an option marked “1-year commitment”, it runs in 12-month periods, and the current period continues until it ends."
+          "answer": "Just send us an email: the site stays online until the end of the period already paid, and you leave with your content and your domain name. The code is transferred to you free of charge after {months} months of subscription; before that, it is transferred for a fee we tell you about from the start. If your subscription includes a domain name, an email address, the “You stay in control” plan or an option marked “1-year commitment”, it runs in 12-month periods: let us know no later than two months before the end of the current period, otherwise it renews for 12 months. We remind you of that deadline by email two months beforehand."
         },
         "content": {
           "question": "Do you also write the texts and take the photos?",

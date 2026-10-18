@@ -180,7 +180,10 @@
           "body": [
             "Das Abonnement hat keine Mindestlaufzeit und kann jeden Monat gekündigt werden, solange es nichts enthält, was eine Laufzeit von jeweils 12 Monaten hat: das Paket „Sie behalten die Kontrolle“, die Verwaltung eines Domainnamens, eine E-Mail-Adresse oder eine im Simulator mit „1 Jahr Laufzeit“ gekennzeichnete Option.",
             "Sobald eines dieser Elemente aktiv ist, wird das Abonnement für Zeiträume von 12 Monaten abgeschlossen, die sich stillschweigend verlängern, um die Reservierung des Domainnamens und der E-Mail-Adresse sowie die Einrichtung des Bearbeitungswerkzeugs und der betreffenden Optionen abzudecken.",
-            "Sie können jederzeit zum Paket „Sie behalten die Kontrolle“ wechseln. Die Rückkehr zum Paket „Wir kümmern uns um alles“ wird zum Ende des laufenden 12-Monats-Zeitraums wirksam, da das Bearbeitungswerkzeug nicht vorher entfernt werden kann."
+            "Der erste 12-Monats-Zeitraum beginnt mit dem Start der Website, wenn das Abonnement bereits eines dieser Elemente enthält, andernfalls an dem Tag, an dem das erste davon aktiviert wird. Ein später hinzugefügtes Element schließt sich dem laufenden Zeitraum an und verlängert sich mit ihm: Ihr Abonnement hat nur einen Ablauftermin pro Jahr.",
+            "Damit sich das Abonnement nicht verlängert, oder um eines dieser Elemente zum Ende des Zeitraums zu entfernen, schreiben Sie uns eine E-Mail an support@gocosmic.dev, die spätestens zwei Monate vor dem Ende des laufenden Zeitraums bei uns eingehen muss; wir bestätigen Ihnen den Eingang schriftlich. Endet ein Zeitraum zum Beispiel am 31. März, ist der letzte Termin der 31. Januar. Danach verlängern sich das Abonnement und seine Elemente um 12 Monate.",
+            "Zwei Monate vor diesem Termin erinnern wir Sie per E-Mail daran und sagen Ihnen, wie Sie vorgehen.",
+            "Sie können jederzeit zum Paket „Sie behalten die Kontrolle“ wechseln. Die Rückkehr zum Paket „Wir kümmern uns um alles“ ist innerhalb derselben Frist zu beantragen und wird zum Ende des laufenden 12-Monats-Zeitraums wirksam, da das Bearbeitungswerkzeug nicht vorher entfernt werden kann."
           ]
         },
         {
@@ -190,7 +193,7 @@
             "Die Anzahl der Seiten und das Hosting in der Schweiz können nach der Aktivierung nicht mehr entfernt werden, da sie jeweils einer für Sie eingegangenen Verpflichtung entsprechen (erstellte Seiten). Die Häufigkeit der Inhaltsänderungen kann nach oben oder unten angepasst werden.",
             "Wenn Sie keinen Domainnamen haben, gehört seine Verwaltung durch Cosmic Studio zum Abonnement. Wenn Sie bereits einen haben, werden die Optionen Domainname und E-Mail-Adresse nicht angeboten; für Hilfe bei Ihrem Domainnamen und Ihren E-Mail-Adressen kann ein Angebot erstellt werden.",
             "Eine Inhaltsänderung entspricht einer Anfrage, die mehrere Änderungen umfassen kann. Neuigkeiten und Artikel zählen nicht zu den Inhaltsänderungen.",
-            "Optionen mit dem Hinweis „1 Jahr Laufzeit“ (Domainname, E-Mail-Adresse, für Sie veröffentlichte Neuigkeiten, Website auf Englisch, Betreuung Ihrer Position bei Google, Besuchsstatistiken und ausführliche Statistiken, mit KI-Unterstützung geschriebene Artikel, zusätzliche Postfächer und Weiterleitungsadressen) werden für Zeiträume von 12 Monaten abgeschlossen und können zum Ende eines Zeitraums entfernt werden. Der Rhythmus der Neuigkeiten und der Artikel kann mit einem Monat Frist verringert werden.",
+            "Optionen mit dem Hinweis „1 Jahr Laufzeit“ (Domainname, E-Mail-Adresse, für Sie veröffentlichte Neuigkeiten, Website auf Englisch, Betreuung Ihrer Position bei Google, Besuchsstatistiken und ausführliche Statistiken, mit KI-Unterstützung geschriebene Artikel, zusätzliche Postfächer und Weiterleitungsadressen) werden für Zeiträume von 12 Monaten abgeschlossen und können zum Ende eines Zeitraums entfernt werden, wenn Sie es uns spätestens zwei Monate vor dessen Ende mitteilen (siehe „Laufzeit und Bindung“). Der Rhythmus der Neuigkeiten und der Artikel kann mit einem Monat Frist verringert werden.",
             "Die übrigen Optionen (Kontaktformular, Online-Terminbuchung, Kundenbewertungen) können mit einem Monat Frist entfernt werden.",
             "Wird eine Option entfernt, verschwinden die zugehörigen Inhalte von der Website, zum Beispiel der Bereich für Neuigkeiten mit seinen Beiträgen oder die englische Version.",
             "Standardmäßig wird Ihre Website in der Europäischen Union gehostet. Wenn Ihnen dieser Standort nicht passt, können Sie bei uns ein Hosting in einem anderen Land anfragen; wir teilen Ihnen dann mit, ob das möglich ist und zu welchem Preis."
@@ -199,7 +202,7 @@
         {
           "title": "Kündigung",
           "body": [
-            "Sie können jederzeit schriftlich kündigen. Die Website bleibt bis zum Ende des laufenden bezahlten Zeitraums online (Ende des Monats bei einem Abonnement ohne Mindestlaufzeit, Ende der laufenden 12-monatigen Laufzeit, wenn etwas enthalten ist, das eine Laufzeit von jeweils 12 Monaten hat).",
+            "Sie können jederzeit per E-Mail an support@gocosmic.dev kündigen; wir bestätigen Ihnen den Eingang schriftlich. Die Website bleibt bis zum Ende des bezahlten Zeitraums online: bis zum Monatsende bei einem Abonnement ohne Mindestlaufzeit; enthält es etwas, das eine Laufzeit von jeweils 12 Monaten hat, bis zum Ende des laufenden Zeitraums, wenn Ihre E-Mail spätestens zwei Monate vor dessen Ende bei uns eingeht, sonst bis zum Ende des folgenden Zeitraums.",
             "Sie behalten Ihre Inhalte und Ihren Domainnamen."
           ]
         },

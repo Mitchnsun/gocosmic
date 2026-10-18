@@ -181,7 +181,10 @@
           "body": [
             "L'abonnement est sans engagement de durée et résiliable chaque mois, tant qu'il ne comprend aucun élément souscrit par périodes de 12 mois : la formule « Vous gardez la main », la gestion d'un nom de domaine, une adresse e-mail ou une option marquée « Engagement 1 an » dans le simulateur.",
             "Dès que l'un de ces éléments est activé, l'abonnement est souscrit par périodes de 12 mois, renouvelées tacitement, afin de couvrir la réservation du nom de domaine et de l'adresse e-mail, et la mise en place de l'outil d'édition et des options concernées.",
-            "Vous pouvez passer à la formule « Vous gardez la main » à tout moment. Le retour à la formule « On s'occupe de tout » prend effet à la fin de la période de 12 mois en cours, car l'outil d'édition ne peut pas être retiré avant."
+            "La première période de 12 mois commence à la mise en ligne du site si l'abonnement comprend déjà l'un de ces éléments, sinon le jour où le premier d'entre eux est activé. Un élément ajouté ensuite rejoint la période en cours et se renouvelle avec elle : votre abonnement n'a qu'une échéance par an.",
+            "Pour ne pas renouveler l'abonnement, ou pour retirer l'un de ces éléments à la fin de la période, envoyez-nous un e-mail à support@gocosmic.dev, qui doit nous parvenir au plus tard deux mois avant la fin de la période en cours ; nous vous confirmons sa réception par écrit. Par exemple, pour une période qui se termine le 31 mars, la date limite est le 31 janvier. Après cette date, l'abonnement et ses éléments sont renouvelés pour 12 mois.",
+            "Deux mois avant cette date limite, nous vous envoyons un e-mail qui vous la rappelle, avec la marche à suivre.",
+            "Vous pouvez passer à la formule « Vous gardez la main » à tout moment. Le retour à la formule « On s'occupe de tout » se demande dans le même délai et prend effet à la fin de la période de 12 mois en cours, car l'outil d'édition ne peut pas être retiré avant."
           ]
         },
         {
@@ -191,7 +194,7 @@
             "Le nombre de pages et l'hébergement en Suisse ne peuvent pas être retirés une fois activés, car ils correspondent à un engagement pris pour vous (pages créées). La fréquence des modifications de contenu peut être revue à la hausse ou à la baisse.",
             "Si vous n'avez pas de nom de domaine, sa gestion par Cosmic Studio fait partie de l'abonnement. Si vous en avez déjà un, les options nom de domaine et adresse e-mail ne sont pas proposées ; une aide pour votre nom de domaine et vos adresses e-mail peut faire l'objet d'un devis.",
             "Une modification de contenu correspond à une demande, qui peut regrouper plusieurs changements. Les actualités et les articles ne comptent pas dans les modifications de contenu.",
-            "Les options marquées « Engagement 1 an » (nom de domaine, adresse e-mail, actualités publiées pour vous, site en anglais, suivi de votre place sur Google, statistiques de visites et statistiques détaillées, articles rédigés avec l'aide de l'IA, boîtes e-mail en plus et adresses de renvoi) sont souscrites par périodes de 12 mois et peuvent être retirées à la fin d'une période. Le rythme des actualités et des articles peut être réduit avec un mois de préavis.",
+            "Les options marquées « Engagement 1 an » (nom de domaine, adresse e-mail, actualités publiées pour vous, site en anglais, suivi de votre place sur Google, statistiques de visites et statistiques détaillées, articles rédigés avec l'aide de l'IA, boîtes e-mail en plus et adresses de renvoi) sont souscrites par périodes de 12 mois et peuvent être retirées à la fin d'une période, si vous nous le demandez au plus tard deux mois avant sa fin (voir « Durée et engagement »). Le rythme des actualités et des articles peut être réduit avec un mois de préavis.",
             "Les autres options (formulaire de contact, prise de rendez-vous en ligne, avis clients) peuvent être retirées avec un mois de préavis.",
             "Lorsqu'une option est retirée, le contenu qui lui est associé disparaît du site, par exemple la rubrique d'actualités et ses publications, ou la version anglaise.",
             "Par défaut, votre site est hébergé dans l'Union européenne. Si cette localisation ne vous convient pas, vous pouvez nous demander un hébergement dans un autre pays ; nous vous indiquons alors si c'est possible et à quel prix."
@@ -200,7 +203,7 @@
         {
           "title": "Résiliation",
           "body": [
-            "Vous pouvez résilier à tout moment par écrit. Le site reste en ligne jusqu'à la fin de la période payée en cours (fin du mois pour un abonnement sans engagement, fin de la période de 12 mois en cours s'il comprend un élément souscrit par périodes de 12 mois).",
+            "Vous pouvez résilier à tout moment, par e-mail à support@gocosmic.dev ; nous vous confirmons sa réception par écrit. Le site reste en ligne jusqu'à la fin de la période payée : la fin du mois pour un abonnement sans engagement ; s'il comprend un élément souscrit par périodes de 12 mois, la fin de la période en cours si votre e-mail nous parvient au plus tard deux mois avant, sinon la fin de la période suivante.",
             "Vous repartez avec vos contenus et votre nom de domaine."
           ]
         },

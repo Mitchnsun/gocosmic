@@ -87,12 +87,12 @@
           "count": "{count, plural, =0 {Ningún buzón adicional} one {# buzón adicional} other {# buzones adicionales}}",
           "decrease": "Un buzón menos",
           "increase": "Un buzón más",
-          "info": "En un equipo de varias personas, o en la junta de una asociación, cada uno puede tener su propio buzón con tu nombre y su propia contraseña. Estos buzones se contratan por periodos de 12 meses; puedes darlos de baja al final de un periodo."
+          "info": "En un equipo de varias personas, o en la junta de una asociación, cada uno puede tener su propio buzón con tu nombre y su propia contraseña. Estos buzones se contratan por periodos de 12 meses; puedes darlos de baja al final de un periodo, avisándonos con al menos dos meses de antelación."
         },
         "redirects": {
           "label": "Direcciones de reenvío (hasta 5)",
           "hint": "Hasta 5 direcciones que reenvían a un buzón existente, por ejemplo facturas@{domain}.",
-          "info": "Una dirección de reenvío no tiene buzón: los mensajes enviados a facturas@{domain} llegan a un buzón que ya tienes. Estas direcciones se contratan por periodos de 12 meses; puedes darlas de baja al final de un periodo."
+          "info": "Una dirección de reenvío no tiene buzón: los mensajes enviados a facturas@{domain} llegan a un buzón que ya tienes. Estas direcciones se contratan por periodos de 12 meses; puedes darlas de baja al final de un periodo, avisándonos con al menos dos meses de antelación."
         },
         "contact_form": {
           "label": "Un formulario de contacto",
@@ -123,7 +123,7 @@
             "monthly": "1 noticia al mes",
             "weekly": "1 noticia por semana"
           },
-          "info": "Una sección al día muestra a tus visitantes que tu negocio sigue activo: últimas obras, próximos conciertos, nueva temporada. Creamos la sección y luego publicamos lo que nos envías por correo, al ritmo elegido. Estas publicaciones no se cuentan entre tus cambios de contenido. Puedes reducir el ritmo con un mes de preaviso; la baja completa se hace al final de un periodo de 12 meses."
+          "info": "Una sección al día muestra a tus visitantes que tu negocio sigue activo: últimas obras, próximos conciertos, nueva temporada. Creamos la sección y luego publicamos lo que nos envías por correo, al ritmo elegido. Estas publicaciones no se cuentan entre tus cambios de contenido. Puedes reducir el ritmo con un mes de preaviso; la baja completa se hace al final de un periodo de 12 meses, avisándonos con al menos dos meses de antelación."
         },
         "seo": {
           "label": "Seguimiento de tu posición en Google",
@@ -162,7 +162,7 @@
             "weekly": "1 artículo por semana",
             "thrice_weekly": "3 artículos por semana"
           },
-          "info": "Escribir artículos con regularidad lleva tiempo. Los redactamos por ti con ayuda de la inteligencia artificial, a partir de la información sobre tu negocio. Juntos elegimos dónde publicarlos, en un blog o en una sección de artículos, según su tema. Tú eliges si revisas cada artículo antes de publicarlo o si lo publicamos directamente. Los artículos no se cuentan entre tus cambios de contenido. Puedes reducir el ritmo con un mes de preaviso; la baja completa se hace al final de un periodo de 12 meses.",
+          "info": "Escribir artículos con regularidad lleva tiempo. Los redactamos por ti con ayuda de la inteligencia artificial, a partir de la información sobre tu negocio. Juntos elegimos dónde publicarlos, en un blog o en una sección de artículos, según su tema. Tú eliges si revisas cada artículo antes de publicarlo o si lo publicamos directamente. Los artículos no se cuentan entre tus cambios de contenido. Puedes reducir el ritmo con un mes de preaviso; la baja completa se hace al final de un periodo de 12 meses, avisándonos con al menos dos meses de antelación.",
           "info_tool": "Según tu herramienta de edición, podemos usar un servicio especializado que elige los temas a partir de lo que la gente busca en Google."
         }
       },
@@ -203,7 +203,7 @@
       },
       "total": {
         "label": "Tu estimación",
-        "note": "Precio orientativo, que confirmamos tras una primera conversación. Puedes añadir opciones en cualquier momento. El número de páginas y el alojamiento en Suiza se mantienen en tu suscripción una vez activados. Las opciones marcadas «Compromiso de 1 año» se dan de baja al final de cada periodo de 12 meses, las demás con un mes de preaviso (consulta las <link>condiciones generales de venta</link>).",
+        "note": "Precio orientativo, que confirmamos tras una primera conversación. Puedes añadir opciones en cualquier momento. El número de páginas y el alojamiento en Suiza se mantienen en tu suscripción una vez activados. Las opciones marcadas «Compromiso de 1 año» se dan de baja al final de cada periodo de 12 meses, avisándonos con al menos dos meses de antelación, las demás con un mes de preaviso (consulta las <link>condiciones generales de venta</link>).",
         "beyond": "Si necesitas más, lo hablamos y te hacemos una propuesta.",
         "cta": "Pedir mi maqueta gratuita",
         "mobile_cta": "Mi maqueta gratuita",
@@ -213,7 +213,7 @@
       "commitment": "Compromiso de 1 año",
       "commitment_line": {
         "none": "Sin permanencia: cancelable mes a mes.",
-        "periods": "Suscripción por periodos de 12 meses, porque incluye: {items}."
+        "periods": "Suscripción por periodos de 12 meses, porque incluye: {items}. Se renueva cada año, salvo que nos avises con al menos dos meses de antelación."
       },
       "commitment_items": {
         "formula": "el plan «Tú tienes el control»",

@@ -178,7 +178,10 @@
           "body": [
             "La suscripción es sin permanencia y puede cancelarse cada mes, siempre que no incluya ningún elemento contratado por periodos de 12 meses: el plan «Tú tienes el control», la gestión de un nombre de dominio, una dirección de correo o una opción marcada «Compromiso de 1 año» en el simulador.",
             "En cuanto se activa uno de estos elementos, la suscripción se contrata por periodos de 12 meses, renovados tácitamente, para cubrir el registro del nombre de dominio y de la dirección de correo, y la puesta en marcha de la herramienta de edición y de las opciones correspondientes.",
-            "Puedes pasar al plan «Tú tienes el control» en cualquier momento. La vuelta al plan «Nos encargamos de todo» se aplica al final del periodo de 12 meses en curso, ya que la herramienta de edición no puede retirarse antes."
+            "El primer periodo de 12 meses empieza con la publicación del sitio si la suscripción ya incluye alguno de estos elementos; si no, el día en que se activa el primero de ellos. Un elemento añadido después se suma al periodo en curso y se renueva con él: tu suscripción tiene un solo vencimiento al año.",
+            "Para que la suscripción no se renueve, o para retirar uno de estos elementos al final del periodo, envíanos un correo a support@gocosmic.dev, que debe llegarnos como muy tarde dos meses antes del final del periodo en curso; te confirmamos su recepción por escrito. Por ejemplo, para un periodo que termina el 31 de marzo, la fecha límite es el 31 de enero. Pasada esa fecha, la suscripción y sus elementos se renuevan por 12 meses.",
+            "Dos meses antes de esa fecha límite, te enviamos un correo que te la recuerda, con los pasos que debes seguir.",
+            "Puedes pasar al plan «Tú tienes el control» en cualquier momento. La vuelta al plan «Nos encargamos de todo» se solicita en el mismo plazo y se aplica al final del periodo de 12 meses en curso, ya que la herramienta de edición no puede retirarse antes."
           ]
         },
         {
@@ -188,7 +191,7 @@
             "El número de páginas y el alojamiento en Suiza no se pueden retirar una vez activados, ya que corresponden a un compromiso asumido en tu nombre (páginas creadas). La frecuencia de los cambios de contenido puede revisarse al alza o a la baja.",
             "Si no tienes nombre de dominio, su gestión por parte de Cosmic Studio forma parte de la suscripción. Si ya tienes uno, no se ofrecen las opciones de nombre de dominio y dirección de correo; la ayuda con tu nombre de dominio y tus direcciones de correo puede presupuestarse.",
             "Un cambio de contenido corresponde a una petición, que puede agrupar varias modificaciones. Las noticias y los artículos no se cuentan entre los cambios de contenido.",
-            "Las opciones marcadas «Compromiso de 1 año» (nombre de dominio, dirección de correo, noticias que publicamos por ti, sitio en inglés, seguimiento de tu posición en Google, estadísticas de visitas y estadísticas detalladas, artículos redactados con ayuda de la IA, buzones de correo adicionales y direcciones de reenvío) se contratan por periodos de 12 meses y pueden retirarse al final de un periodo. El ritmo de las noticias y de los artículos puede reducirse con un mes de preaviso.",
+            "Las opciones marcadas «Compromiso de 1 año» (nombre de dominio, dirección de correo, noticias que publicamos por ti, sitio en inglés, seguimiento de tu posición en Google, estadísticas de visitas y estadísticas detalladas, artículos redactados con ayuda de la IA, buzones de correo adicionales y direcciones de reenvío) se contratan por periodos de 12 meses y pueden retirarse al final de un periodo, si nos lo pides como muy tarde dos meses antes de que termine (consulta «Duración y permanencia»). El ritmo de las noticias y de los artículos puede reducirse con un mes de preaviso.",
             "Las demás opciones (formulario de contacto, reserva de citas en línea, opiniones de clientes) pueden retirarse con un mes de preaviso.",
             "Cuando se retira una opción, el contenido asociado desaparece del sitio, por ejemplo la sección de noticias y sus publicaciones, o la versión en inglés.",
             "De forma predeterminada, tu sitio web se aloja en la Unión Europea. Si esta ubicación no te conviene, puedes solicitarnos un alojamiento en otro país; te indicaremos entonces si es posible y a qué precio."
@@ -197,7 +200,7 @@
         {
           "title": "Cancelación",
           "body": [
-            "Puedes cancelar la suscripción en cualquier momento por escrito. El sitio sigue en línea hasta el final del periodo pagado en curso (fin del mes para una suscripción sin permanencia, fin del periodo de 12 meses en curso si incluye algún elemento contratado por periodos de 12 meses).",
+            "Puedes cancelar la suscripción en cualquier momento, por correo a support@gocosmic.dev; te confirmamos su recepción por escrito. El sitio sigue en línea hasta el final del periodo pagado: el fin del mes para una suscripción sin permanencia; si incluye algún elemento contratado por periodos de 12 meses, el final del periodo en curso si tu correo nos llega como muy tarde dos meses antes, y si no, el final del periodo siguiente.",
             "Te llevas tus contenidos y tu nombre de dominio."
           ]
         },

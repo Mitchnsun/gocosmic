@@ -63,7 +63,7 @@
         },
         "stop": {
           "question": "Was passiert, wenn ich kündige?",
-          "answer": "Sagen Sie uns einfach Bescheid: Die Website bleibt bis zum Ende des bereits bezahlten Zeitraums online, und Sie nehmen Ihre Inhalte und Ihren Domainnamen mit. Der Code wird Ihnen nach {months} Monaten Abonnement kostenlos übertragen; davor gegen eine Gebühr, die wir Ihnen von Anfang an nennen. Enthält Ihr Abonnement einen Domainnamen, eine E-Mail-Adresse, das Paket „Sie behalten die Kontrolle“ oder eine Option mit „1 Jahr Laufzeit“, hat es eine Laufzeit von jeweils 12 Monaten, und die laufende Periode wird bis zu ihrem Ende fortgeführt."
+          "answer": "Schreiben Sie uns einfach eine E-Mail: Die Website bleibt bis zum Ende des bereits bezahlten Zeitraums online, und Sie nehmen Ihre Inhalte und Ihren Domainnamen mit. Der Code wird Ihnen nach {months} Monaten Abonnement kostenlos übertragen; davor gegen eine Gebühr, die wir Ihnen von Anfang an nennen. Enthält Ihr Abonnement einen Domainnamen, eine E-Mail-Adresse, das Paket „Sie behalten die Kontrolle“ oder eine Option mit „1 Jahr Laufzeit“, hat es eine Laufzeit von jeweils 12 Monaten: Sagen Sie uns spätestens zwei Monate vor dem Ende des laufenden Zeitraums Bescheid, sonst verlängert es sich um 12 Monate. Wir erinnern Sie zwei Monate vor diesem Termin per E-Mail daran."
         },
         "content": {
           "question": "Kümmern Sie sich auch um Texte und Fotos?",

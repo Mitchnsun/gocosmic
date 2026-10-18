@@ -63,7 +63,7 @@
         },
         "stop": {
           "question": "Cosa succede se smetto?",
-          "answer": "Basta avvisarci: il sito resta online fino alla fine del periodo già pagato, e porti con te i tuoi contenuti e il tuo nome a dominio. Il codice ti viene ceduto gratuitamente dopo {months} mesi di abbonamento; prima di allora, puoi averlo a un costo che ti comunichiamo fin dall'inizio. Se il tuo abbonamento comprende un nome a dominio, un indirizzo e-mail, la formula «Hai tu il controllo» o un'opzione con «Impegno di 1 anno», si rinnova per periodi di 12 mesi, e il periodo in corso arriva fino alla scadenza."
+          "answer": "Basta scriverci un'e-mail: il sito resta online fino alla fine del periodo già pagato, e porti con te i tuoi contenuti e il tuo nome a dominio. Il codice ti viene ceduto gratuitamente dopo {months} mesi di abbonamento; prima di allora, puoi averlo a un costo che ti comunichiamo fin dall'inizio. Se il tuo abbonamento comprende un nome a dominio, un indirizzo e-mail, la formula «Hai tu il controllo» o un'opzione con «Impegno di 1 anno», si rinnova per periodi di 12 mesi: avvisaci al più tardi due mesi prima della fine del periodo in corso, altrimenti riparte per 12 mesi. Ti ricordiamo questa data limite per e-mail due mesi prima."
         },
         "content": {
           "question": "Vi occupate anche di testi e foto?",
