@@ -212,7 +212,7 @@
       "info_label": "En savoir plus : {option}",
       "commitment": "Engagement 1 an",
       "commitment_line": {
-        "none": "Sans engagement de durée : résiliable avec un mois de préavis.",
+        "none": "Sans engagement de durée : résiliable à tout moment, avec effet à la fin du mois suivant.",
         "periods": "Abonnement par périodes de 12 mois, car il comprend : {items}. Il se renouvelle chaque année, sauf si vous nous prévenez au plus tard deux mois avant la fin de la période."
       },
       "commitment_items": {

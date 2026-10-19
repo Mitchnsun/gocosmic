@@ -212,7 +212,7 @@
       "info_label": "Per saperne di più: {option}",
       "commitment": "Impegno di 1 anno",
       "commitment_line": {
-        "none": "Senza vincolo di durata: disdicibile con un mese di preavviso.",
+        "none": "Senza vincolo di durata: disdicibile in qualsiasi momento, con effetto alla fine del mese successivo.",
         "periods": "Abbonamento per periodi di 12 mesi, perché comprende: {items}. Si rinnova ogni anno, a meno che tu non ci avvisi al più tardi due mesi prima della fine del periodo."
       },
       "commitment_items": {

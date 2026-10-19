@@ -212,7 +212,7 @@
       "info_label": "More about: {option}",
       "commitment": "1-year commitment",
       "commitment_line": {
-        "none": "No minimum term: cancel with one month's notice.",
+        "none": "No minimum term: cancel at any time, effective at the end of the following month.",
         "periods": "Subscription in 12-month periods, as it includes: {items}. It renews every year unless you tell us no later than two months before the end of the period."
       },
       "commitment_items": {

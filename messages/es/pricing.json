@@ -212,7 +212,7 @@
       "info_label": "Más información: {option}",
       "commitment": "Compromiso de 1 año",
       "commitment_line": {
-        "none": "Sin permanencia: cancelable con un mes de preaviso.",
+        "none": "Sin permanencia: cancelable en cualquier momento, con efecto al final del mes siguiente.",
         "periods": "Suscripción por periodos de 12 meses, porque incluye: {items}. Se renueva cada año, salvo que nos avises a más tardar dos meses antes del final del periodo."
       },
       "commitment_items": {

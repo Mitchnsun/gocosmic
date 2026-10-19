@@ -212,7 +212,7 @@
       "info_label": "Mehr dazu: {option}",
       "commitment": "1 Jahr Laufzeit",
       "commitment_line": {
-        "none": "Ohne Mindestlaufzeit: mit einer Frist von einem Monat kündbar.",
+        "none": "Ohne Mindestlaufzeit: jederzeit zum Ende des Folgemonats kündbar.",
         "periods": "Laufzeit jeweils 12 Monate, da Ihr Abonnement Folgendes enthält: {items}. Es verlängert sich jedes Jahr, sofern Sie uns nicht spätestens zwei Monate vor Ablauf Bescheid geben."
       },
       "commitment_items": {
