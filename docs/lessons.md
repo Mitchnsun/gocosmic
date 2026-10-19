@@ -303,6 +303,14 @@ Grep `components/CosmicCursor/` for the native selector being replaced (`input[t
 
 **Correct pattern**: For each option, the badge (`ONE_YEAR_OPTIONS`), the terms' "Options" and "Duration and commitment" sections and the recap note must agree. When they disagree, ask the owner which rule is true before changing any of them.
 
+### A promise in the page copy and the terms must agree
+
+**Mistake**: The Services FAQ said "we set a launch date at the start and we stick to it", while the terms of sale called announced timelines indicative. The owner spotted it; the copy was the true side, and the terms now commit to the date.
+
+**Correct pattern**: When copy promises something (a date, a result, availability), check the matching clause of the terms of sale in all five languages in the same change. When they disagree, ask the owner which one is true: softening the copy is not the default.
+
+**Follow-up**: The rewritten clause dropped the old sentence saying the studio is not liable for a delay or a failure to perform caused by force majeure, and the owner asked to keep it. When rewriting a clause of the terms, carry over every protection of the old wording unless the owner asks to remove it.
+
 ### A data change in the owner's commit is a decision, not a regression
 
 **Mistake**: The owner reordered the case studies in `data/projects.ts`, and four tests still expected the old order. The review listed the new order as a defect to revert.

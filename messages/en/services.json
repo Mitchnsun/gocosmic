@@ -7,7 +7,7 @@
     "intro": {
       "eyebrow": "[ Services ]",
       "title": "A site that runs, <em>and someone who looks after it.</em>",
-      "lead": "Our prices are on display, so you know straight away whether it fits your budget, without asking for a quote. And it all starts with a free, no-commitment mockup."
+      "lead": "Our prices are on display, so you know straight away whether it fits your budget, without asking for a quote. This price is indicative: we confirm it with you once we have all the information about your website project. And it all starts with a free, no-commitment mockup."
     },
     "simulator": {
       "eyebrow": "[ Build your plan ]",
@@ -46,7 +46,7 @@
       "items": {
         "ownership": {
           "question": "Do I own the site?",
-          "answer": "Your texts, images and domain name belong to you from day one. The site's code is transferred to you after {months} months of subscription, which is what lets us keep the starting price this low. You can also take it over earlier, for a transfer fee based on the remaining time. For a quoted project with development fees, the code belongs to you from delivery, once the invoice has been paid in full."
+          "answer": "Your texts, images and domain name belong to you from day one. The site's code is transferred to you after {months} months of subscription, which is what lets us keep the starting price this low. You can also take it over earlier, for a transfer fee based on the number of months left until {months} months. For a quoted project with development fees, the code belongs to you once the site has been delivered and all its invoices paid in full. Either way, we give you the code in a Git repository, the usual format for handing over a website's code. If you have no subscription with us, or no longer have one, hosting it is then up to you."
         },
         "edit": {
           "question": "Can I edit the site myself?",
@@ -54,11 +54,11 @@
         },
         "timing": {
           "question": "How long until I am online?",
-          "answer": "Allow two to three weeks for a showcase page, from the moment we have your texts and photos, and four to six weeks for a five-page site. We set a launch date at the start and we stick to it."
+          "answer": "Allow two to three weeks for a showcase page, from the moment we have your texts and photos, and four to six weeks for a five-page site. We set a launch date at the start and we stick to it: if we are late although you sent us everything on time, the first month of your subscription is free."
         },
         "stop": {
           "question": "What happens if I stop?",
-          "answer": "Just let us know: the site stays online until the end of the period already paid, and you leave with your content and your domain name. The code is transferred to you free of charge after {months} months of subscription; before that, it is transferred for a fee we tell you about from the start. If your subscription includes a domain name, an email address, the “You stay in control” plan or an option marked “1-year commitment”, it runs in 12-month periods, and the current period continues until it ends."
+          "answer": "Just send us an email, and leaving comes with no penalty: with no minimum term, the site stays online until the end of the month after your email, and you leave with your content and your domain name. The code is transferred to you free of charge after {months} months of subscription; before that, for a transfer fee we tell you about when you subscribe. We give it to you in a Git repository, and hosting the site is then up to you. If your subscription includes a domain name, an email address, the “You stay in control” plan or an option marked “1-year commitment”, it runs in 12-month periods: let us know no later than two months before the end of the current period, otherwise it renews for 12 months. Two months before that deadline, we remind you of it by email; if we did not send it, you can leave after the renewal, at the end of the month after your email."
         },
         "content": {
           "question": "Do you also write the texts and take the photos?",

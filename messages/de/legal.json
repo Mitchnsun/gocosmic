@@ -86,7 +86,7 @@
         {
           "title": "Anbieter",
           "body": [
-            "Website: www.gocosmic.dev. Anbieter: Einzelunternehmen (raison individuelle) Matthieu Compérat, nicht im Handelsregister eingetragen, Anschluss an die FER Genève im Gange, tätig unter dem Handelsnamen Cosmic Studio (vormals Go Cosmic). Adresse: chemin de la Montagne 100, 1224 Chêne-Bougeries, Schweiz. Kontakt: support@gocosmic.dev."
+            "Website: www.gocosmic.dev. Anbieter: Einzelunternehmen (raison individuelle) Matthieu Compérat, nicht im Handelsregister eingetragen, Anschluss an die FER Genève in Bearbeitung, tätig unter dem Handelsnamen Cosmic Studio (vormals Go Cosmic). Adresse: chemin de la Montagne 100, 1224 Chêne-Bougeries, Schweiz. Kontakt: support@gocosmic.dev."
           ]
         },
         {
@@ -140,13 +140,13 @@
       },
       "eyebrow": "Geschäftsbedingungen",
       "title": "Allgemeine Geschäftsbedingungen",
-      "updated": "Zuletzt aktualisiert: 17. Oktober 2026",
+      "updated": "Zuletzt aktualisiert: 19. Oktober 2026",
       "intro": "Diese Allgemeinen Geschäftsbedingungen gelten für das Abonnement und die Leistungen, die Cosmic Studio auf www.gocosmic.dev anbietet.",
       "sections": [
         {
           "title": "Anbieter",
           "body": [
-            "Anbieter ist Cosmic Studio, Handelsname des Einzelunternehmens (raison individuelle) Matthieu Compérat, nicht im Handelsregister eingetragen, Anschluss an die FER Genève im Gange, chemin de la Montagne 100, 1224 Chêne-Bougeries, Schweiz. Kontakt: support@gocosmic.dev."
+            "Anbieter ist Cosmic Studio, Handelsname des Einzelunternehmens (raison individuelle) Matthieu Compérat, chemin de la Montagne 100, 1224 Chêne-Bougeries, Schweiz. Dieses Einzelunternehmen ist nicht im Handelsregister eingetragen, und sein Anschluss an die FER Genève ist in Bearbeitung. Kontakt: support@gocosmic.dev."
           ]
         },
         {
@@ -158,40 +158,46 @@
         {
           "title": "Abschluss des Abonnements",
           "body": [
-            "Das Abonnement wird nach einem ersten Gespräch schriftlich bestätigt, sobald Ihr Bedarf (Seiten, Optionen, Änderungen) gemeinsam festgelegt wurde. Es tritt mit der Veröffentlichung der Website in Kraft.",
-            "Es gibt zwei Pakete: „Wir kümmern uns um alles“, bei dem wir die Änderungen umsetzen, die Sie uns per E-Mail schicken, und „Sie behalten die Kontrolle“, das ein Bearbeitungswerkzeug enthält, mit dem Sie Ihre Neuigkeiten und Öffnungszeiten selbst veröffentlichen, sowie einen Bereich für Neuigkeiten."
+            "Das Abonnement wird durch ein Angebot bestätigt, das nach einem ersten Gespräch erstellt wird, sobald Ihr Bedarf (Seiten, Optionen, Änderungen) gemeinsam festgelegt wurde, und das Sie schriftlich annehmen. Es tritt mit dem Start der Website in Kraft.",
+            "Treten Sie nach Annahme des Angebots vor dem Start der Website zurück, bleiben die im Angebot vorgesehenen Kosten geschuldet. Enthält das Abonnement ein Element mit einer Laufzeit von jeweils 12 Monaten, schulden Sie zusätzlich 12 Monate Abonnement, mit Ausnahme der Optionen ohne Mindestlaufzeit, die für einen Monat geschuldet sind.",
+            "Es gibt zwei Pakete: „Wir kümmern uns um alles“, bei dem wir die Änderungen, die Sie uns per E-Mail schicken, im Rhythmus Ihres Abonnements umsetzen, und „Sie behalten die Kontrolle“, das zusätzlich ein Bearbeitungswerkzeug, mit dem Sie Ihre Neuigkeiten und Öffnungszeiten selbst veröffentlichen, sowie einen Bereich für Neuigkeiten enthält."
           ]
         },
         {
-          "title": "Preis und Abrechnung",
+          "title": "Preise und Abrechnung",
           "body": [
-            "Es gelten die Abonnementpreise, die zum Zeitpunkt des Abschlusses auf der Seite Preise angezeigt werden, je nach gewählten Optionen.",
-            "Das Abonnement wird jährlich oder nach einem monatlichen Zahlungsplan abgerechnet. Bei jährlicher Abrechnung wird die Rechnung innerhalb von 30 Tagen nach Erhalt per Banküberweisung bezahlt. Beim Zahlungsplan wird jede Monatsrate zu dem auf der Rechnung angegebenen Datum per Banküberweisung bezahlt.",
-            "Begleitung, Teamverstärkung und individuelle Projekte werden nach Tagessatz oder nach Angebot abgerechnet; beides wird Ihnen vor jedem Einsatz mitgeteilt.",
+            "Die auf der Seite Preise und im Simulator angezeigten Preise sind Richtpreise: Verbindlich wird der Preis des Abonnements, je nach gewählten Optionen, mit dem Angebot, das Sie annehmen. Ändert sich der Grundpreis oder der Preis einer Option, kann der neue Preis bei der Verlängerung des Abonnements gelten; wir legen ihn Ihnen dann in einem neuen Angebot zur Annahme vor. Nehmen Sie es nicht an, können Sie das Abonnement zum Ende des laufenden Zeitraums beenden, auch nach Ablauf der zweimonatigen Frist.",
+            "Das Abonnement wird jährlich oder nach einem monatlichen Zahlungsplan abgerechnet. Bei jährlicher Abrechnung ist die Rechnung innerhalb von 30 Tagen nach Erhalt per Banküberweisung zu bezahlen. Beim Zahlungsplan ist jede Monatsrate zu dem auf der Rechnung angegebenen Datum per Banküberweisung zu bezahlen.",
+            "Begleitung, Teamverstärkung und individuelle Projekte werden nach Tagessatz oder nach Angebot abgerechnet; den Tagessatz oder das Angebot erhalten Sie vor jedem Einsatz.",
             "Cosmic Studio ist nicht mehrwertsteuerpflichtig: Es fällt keine MwSt. an (Art. 10 MWSTG), und die angezeigten Preise sind Nettopreise. Wird Cosmic Studio mehrwertsteuerpflichtig, kommt die MwSt. zum geltenden Satz zu den Preisen hinzu; Sie werden darüber mindestens 30 Tage vor ihrer Anwendung schriftlich informiert.",
-            "Mehrwertsteuerpflichtige Kund:innen mit Sitz in Frankreich deklarieren die MwSt. auf unsere Leistungen und ziehen sie anschließend wieder ab: Für sie ist der Vorgang neutral.",
-            "Die Preise in Euro (EUR) gelten für Unternehmen, die nicht in der Schweiz ansässig sind. Für Unternehmen mit Sitz in der Schweiz gelten die Preise in Schweizer Franken (CHF).",
-            "Bankgebühren für internationale Zahlungen sowie die im Land der Kundschaft geschuldeten Abgaben und Steuern trägt die Kundschaft.",
+            "Mehrwertsteuerpflichtige Kund:innen mit Sitz in Frankreich deklarieren die MwSt. auf unsere Leistungen selbst (Reverse-Charge-Verfahren); können sie sie abziehen, ist der Vorgang für sie neutral.",
+            "Die Preise in Euro (EUR) gelten für Kund:innen, die nicht in der Schweiz ansässig sind, ob Unternehmen, Selbstständige oder Vereine. Für Kund:innen mit Sitz in der Schweiz gelten die Preise in Schweizer Franken (CHF).",
+            "Bankgebühren für internationale Zahlungen sowie die in Ihrem Land geschuldeten Abgaben und Steuern tragen Sie selbst.",
             "Bei Zahlungsverzug fällt automatisch ein Verzugszins von 5 % pro Jahr an."
           ]
         },
         {
           "title": "Laufzeit und Bindung",
           "body": [
-            "Das Abonnement hat keine Mindestlaufzeit und kann jeden Monat gekündigt werden, solange es nichts enthält, was eine Laufzeit von jeweils 12 Monaten hat: das Paket „Sie behalten die Kontrolle“, die Verwaltung eines Domainnamens, eine E-Mail-Adresse oder eine im Simulator mit „1 Jahr Laufzeit“ gekennzeichnete Option.",
+            "Das Abonnement hat keine Mindestlaufzeit und ist jederzeit mit einer Frist von einem Monat kündbar, solange es kein Element mit einer Laufzeit von jeweils 12 Monaten enthält: das Paket „Sie behalten die Kontrolle“, die Verwaltung eines Domainnamens, eine E-Mail-Adresse oder eine im Simulator mit „1 Jahr Laufzeit“ gekennzeichnete Option. In diesen Bedingungen bedeutet „eine Frist von einem Monat“, dass die beantragte Kündigung oder Änderung zum Ende des Monats wirksam wird, der auf den Monat folgt, in dem Ihre E-Mail bei uns eingeht.",
             "Sobald eines dieser Elemente aktiv ist, wird das Abonnement für Zeiträume von 12 Monaten abgeschlossen, die sich stillschweigend verlängern, um die Reservierung des Domainnamens und der E-Mail-Adresse sowie die Einrichtung des Bearbeitungswerkzeugs und der betreffenden Optionen abzudecken.",
-            "Sie können jederzeit zum Paket „Sie behalten die Kontrolle“ wechseln. Die Rückkehr zum Paket „Wir kümmern uns um alles“ wird zum Ende des laufenden 12-Monats-Zeitraums wirksam, da das Bearbeitungswerkzeug nicht vorher entfernt werden kann."
+            "Der erste 12-Monats-Zeitraum beginnt mit dem Start der Website, wenn das Abonnement bereits eines dieser Elemente enthält, andernfalls an dem Tag, an dem das erste davon aktiviert wird. Fügen Sie während eines laufenden Zeitraums eines dieser Elemente hinzu, beginnt für das gesamte Abonnement an dem Tag, an dem es aktiviert wird, ein neuer 12-Monats-Zeitraum: So hat Ihr Abonnement nur ein Verlängerungsdatum pro Jahr.",
+            "Wenn Sie das Abonnement nicht verlängern oder eines dieser Elemente zum Ende des Zeitraums entfernen möchten, schreiben Sie uns eine E-Mail an support@gocosmic.dev: Die E-Mail muss spätestens zwei Monate vor dem Ende des laufenden Zeitraums bei uns eingehen, und wir bestätigen Ihnen den Eingang schriftlich. Endet ein Zeitraum zum Beispiel am 31. März, läuft die Frist am 31. Januar ab. Geht Ihre E-Mail nach Ablauf der Frist bei uns ein, verlängern sich das Abonnement und diese Elemente um 12 Monate.",
+            "Zwei Monate vor Ablauf dieser Frist erinnern wir Sie per E-Mail daran und erklären Ihnen, wie Sie vorgehen. Die Frist gilt, sobald wir diese Erinnerung verschickt haben, auch wenn sie Sie nicht erreicht hat. Haben wir sie nicht verschickt, können Sie nach der Verlängerung jederzeit mit einer Frist von einem Monat kündigen: Wir erstatten Ihnen dann die über diese Frist hinaus bereits bezahlten Monate, abzüglich der Gebühren, die wir bereits bezahlt haben, um den Domainnamen und die E-Mail-Adresse für den neuen Zeitraum zu verlängern.",
+            "Sie können jederzeit zum Paket „Sie behalten die Kontrolle“ wechseln. Die Rückkehr zum Paket „Wir kümmern uns um alles“ ist spätestens zwei Monate vor dem Ende des laufenden 12-Monats-Zeitraums zu beantragen und wird zum Ende dieses Zeitraums wirksam, da das Bearbeitungswerkzeug nicht vorher entfernt werden kann."
           ]
         },
         {
           "title": "Optionen",
           "body": [
-            "Sie können jederzeit eine Option hinzufügen; sie gilt ab dem nächsten Abrechnungszeitraum.",
-            "Die Anzahl der Seiten und das Hosting in der Schweiz können nach der Aktivierung nicht mehr entfernt werden, da sie jeweils einer für Sie eingegangenen Verpflichtung entsprechen (erstellte Seiten). Die Häufigkeit der Inhaltsänderungen kann nach oben oder unten angepasst werden.",
-            "Wenn Sie keinen Domainnamen haben, gehört seine Verwaltung durch Cosmic Studio zum Abonnement. Wenn Sie bereits einen haben, werden die Optionen Domainname und E-Mail-Adresse nicht angeboten; für Hilfe bei Ihrem Domainnamen und Ihren E-Mail-Adressen kann ein Angebot erstellt werden.",
-            "Eine Inhaltsänderung entspricht einer Anfrage, die mehrere Änderungen umfassen kann. Neuigkeiten und Artikel zählen nicht zu den Inhaltsänderungen.",
-            "Optionen mit dem Hinweis „1 Jahr Laufzeit“ (Domainname, E-Mail-Adresse, für Sie veröffentlichte Neuigkeiten, Website auf Englisch, Betreuung Ihrer Position bei Google, Besuchsstatistiken und ausführliche Statistiken, mit KI-Unterstützung geschriebene Artikel, zusätzliche Postfächer und Weiterleitungsadressen) werden für Zeiträume von 12 Monaten abgeschlossen und können zum Ende eines Zeitraums entfernt werden. Der Rhythmus der Neuigkeiten und der Artikel kann mit einem Monat Frist verringert werden.",
-            "Die übrigen Optionen (Kontaktformular, Online-Terminbuchung, Kundenbewertungen) können mit einem Monat Frist entfernt werden.",
+            "Sie können jederzeit eine Option hinzufügen: Wir richten sie so bald wie möglich ein, und sie wird ab dem Folgemonat berechnet.",
+            "Das Hosting in der Schweiz kann nach der Aktivierung nicht mehr entfernt werden, da es einer für Sie eingegangenen Verpflichtung entspricht. Die Anzahl der Seiten kann verringert werden, sofern die überzähligen Seiten von der Website entfernt werden.",
+            "Jede Reduzierung einer Option erfordert eine Frist von einem Monat: weniger Seiten, ein geringerer Rhythmus (Inhaltsänderungen, Neuigkeiten, Artikel) oder das Entfernen einer Option ohne Mindestlaufzeit. Das Entfernen einer Option mit einer Laufzeit von jeweils 12 Monaten folgt den Regeln unter „Laufzeit und Bindung“. Wird eine Option zu häufig geändert, können wir sie nach vorheriger Ankündigung auf eine Laufzeit von 12 Monaten umstellen.",
+            "Wenn Sie keinen Domainnamen haben, gehört die Verwaltung eines Domainnamens durch Cosmic Studio zum Abonnement und wird als Option berechnet. Sie können diese Option bei laufendem Abonnement nur entfernen, wenn Sie die Verlängerung des Domainnamens selbst übernehmen; das Hosting der Website bleibt im Abonnement enthalten (bei Vercel oder, wenn Sie das Hosting in der Schweiz gewählt haben, bei Infomaniak). Wenn Sie bereits einen Domainnamen haben, werden die Optionen Domainname und E-Mail-Adresse nicht angeboten; für Hilfe bei Ihrem Domainnamen und Ihren E-Mail-Adressen kann ein Angebot erstellt werden.",
+            "Die Option E-Mail-Adresse richtet neue Postfächer ein, zum Beispiel mit Ihrem Domainnamen: Den Inhalt Ihrer bestehenden Postfächer übernehmen wir nicht.",
+            "Eine Inhaltsänderung entspricht einer Anfrage, die mehrere Änderungen umfassen kann. Eine vollständige Neugestaltung der Website ist keine Inhaltsänderung. Erscheint uns eine Anfrage im Verhältnis zu Ihrem Abonnement zu umfangreich, können wir sie ablehnen und Ihnen eine andere Lösung vorschlagen: ein Angebot oder das Hinzufügen oder Ändern einer Option. Neuigkeiten und Artikel zählen nicht zu den Inhaltsänderungen.",
+            "Optionen mit dem Hinweis „1 Jahr Laufzeit“ (Domainname, E-Mail-Adresse, für Sie veröffentlichte Neuigkeiten, Website auf Englisch, Betreuung Ihrer Position bei Google, Besuchsstatistiken und ausführliche Statistiken, mit KI-Unterstützung geschriebene Artikel, zusätzliche Postfächer und Weiterleitungsadressen) werden für Zeiträume von 12 Monaten abgeschlossen und können zum Ende eines Zeitraums entfernt werden, wenn Sie es uns spätestens zwei Monate vor dessen Ende mitteilen (siehe „Laufzeit und Bindung“). Der Rhythmus der Neuigkeiten und der Artikel kann mit einer Frist von einem Monat verringert werden.",
+            "Die übrigen Optionen (Kontaktformular, Online-Terminbuchung, Kundenbewertungen) können mit einer Frist von einem Monat entfernt werden.",
             "Wird eine Option entfernt, verschwinden die zugehörigen Inhalte von der Website, zum Beispiel der Bereich für Neuigkeiten mit seinen Beiträgen oder die englische Version.",
             "Standardmäßig wird Ihre Website in der Europäischen Union gehostet. Wenn Ihnen dieser Standort nicht passt, können Sie bei uns ein Hosting in einem anderen Land anfragen; wir teilen Ihnen dann mit, ob das möglich ist und zu welchem Preis."
           ]
@@ -199,30 +205,31 @@
         {
           "title": "Kündigung",
           "body": [
-            "Sie können jederzeit schriftlich kündigen. Die Website bleibt bis zum Ende des laufenden bezahlten Zeitraums online (Ende des Monats bei einem Abonnement ohne Mindestlaufzeit, Ende der laufenden 12-monatigen Laufzeit, wenn etwas enthalten ist, das eine Laufzeit von jeweils 12 Monaten hat).",
-            "Sie behalten Ihre Inhalte und Ihren Domainnamen."
+            "Sie können jederzeit kündigen, indem Sie uns an support@gocosmic.dev schreiben; wir bestätigen Ihnen den Eingang Ihrer E-Mail schriftlich. Die Website bleibt bis zum Ende Ihres Abonnements online: bei einem Abonnement ohne Mindestlaufzeit bis zum Ende des Monats, der auf den Eingang Ihrer E-Mail folgt, wobei wir Ihnen bei jährlicher Abrechnung die darüber hinaus bereits bezahlten Monate erstatten; bei einem Abonnement, das ein Element mit einer Laufzeit von jeweils 12 Monaten enthält, bis zum Ende des laufenden Zeitraums, wenn Ihre E-Mail spätestens zwei Monate vor dessen Ende bei uns eingeht, sonst bis zum Ende des folgenden Zeitraums, es sei denn, wir haben Ihnen die Erinnerung nicht verschickt (siehe „Laufzeit und Bindung“).",
+            "Sie behalten Ihre Inhalte, also alles, was Sie uns für die Erstellung der Website geliefert haben (Texte, Fotos, Artikel …), und Ihren Domainnamen. Wenn Sie das Abonnement beenden, fallen keine Kündigungsgebühren oder Vertragsstrafen an: Sie bezahlen den laufenden Zeitraum und, wenn Ihre E-Mail nach Ablauf der Frist bei uns eingeht, den folgenden 12-Monats-Zeitraum; haben wir Ihnen die Erinnerung nicht verschickt, bezahlen Sie nur die Kündigungsfrist von einem Monat und die bereits bezahlten Gebühren für die Verlängerung des Domainnamens und der E-Mail-Adresse (siehe „Laufzeit und Bindung“). Darüber hinaus kann nur die Übertragungsgebühr anfallen, wenn Sie den Code vor Ablauf von 36 Monaten Abonnement anfordern (siehe „Eigentum“)."
           ]
         },
         {
           "title": "Eigentum",
           "body": [
-            "Ihre Texte, Bilder und Ihr Domainname gehören Ihnen vom ersten Tag an. Der Code der Website wird Ihnen nach 36 Monaten Abonnement kostenlos übertragen. Vor Ablauf dieser Frist ist die Übertragung gegen eine Übertragungsgebühr möglich, die sich nach der verbleibenden Dauer richtet.",
-            "Bei einem Einzelprojekt gehört Ihnen der Code ab der Übergabe, sobald die Rechnung vollständig bezahlt ist."
+            "Ihre Texte, Bilder und Ihr Domainname gehören Ihnen vom ersten Tag an. Der Code der Website wird Ihnen nach 36 Monaten Abonnement kostenlos übertragen. Vor Ablauf dieser Frist ist die Übertragung gegen eine Übertragungsgebühr möglich, die sich nach der Zahl der bis zu den 36 Monaten verbleibenden Monate richtet; ihr Betrag steht im Angebot für das Abonnement.",
+            "Sobald der Code übertragen ist, erhalten Sie auf Anfrage ein Git-Repository mit dem Code, ob Ihr Abonnement weiterläuft oder nicht. Solange das Abonnement läuft, hosten und betreuen wir die Website; wenn Sie es beenden, liegen Hosting und Betreuung bei Ihnen.",
+            "Bei einem Einzelprojekt gehört Ihnen der Code, sobald das Projekt übergeben und alle Rechnungen vollständig bezahlt sind. Wir übergeben ihn in einem Git-Repository, und das Hosting liegt bei Ihnen, es sei denn, Sie wechseln danach für die Betreuung in ein Abonnement."
           ]
         },
         {
           "title": "Ihre Pflichten",
           "body": [
             "Sie stellen uns die Texte, Bilder und Informationen zur Verfügung, die für die Erstellung oder Aktualisierung der Website nötig sind. Die genannten Fristen beginnen mit deren Eingang.",
-            "Die genannten Fristen sind Richtwerte. Cosmic Studio haftet nicht für eine Verzögerung oder Nichterfüllung, die durch höhere Gewalt verursacht wird.",
-            "Wir erstellen Ihr Impressum und Ihre Datenschutzerklärung anhand der Informationen, die Sie uns geben; Sie lesen sie, geben sie frei und bleiben dafür verantwortlich."
+            "Wir verpflichten uns, den zu Beginn festgelegten Starttermin einzuhalten. Er verschiebt sich um die Dauer der Verzögerung, wenn Ihre Inhalte verspätet bei uns eingehen oder höhere Gewalt eintritt. Sind wir im Verzug, obwohl Sie uns alle Inhalte und Informationen rechtzeitig übermittelt haben, ist der erste Monat des Abonnements kostenlos. Cosmic Studio haftet nicht für eine Verzögerung oder Nichterfüllung, die durch höhere Gewalt verursacht wird.",
+            "Wir erstellen Ihr Impressum und Ihre Datenschutzerklärung anhand der Informationen, die Sie uns übermitteln; Sie prüfen sie, geben sie frei und bleiben dafür verantwortlich."
           ]
         },
         {
           "title": "Haftung und Verfügbarkeit",
           "body": [
             "Cosmic Studio trifft angemessene Maßnahmen, um die Verfügbarkeit der Website sicherzustellen, kann jedoch nicht garantieren, dass es nie zu Unterbrechungen kommt. Bei einem längeren Ausfall, den Cosmic Studio zu vertreten hat, kann der betroffene Zeitraum um dieselbe Dauer verlängert werden.",
-            "Die Haftung von Cosmic Studio ist auf den Betrag des betreffenden Auftrags begrenzt, außer bei Vorsatz oder grober Fahrlässigkeit."
+            "Die Haftung von Cosmic Studio ist auf den Preis des laufenden Abonnementzeitraums (ein Monat bzw. 12 Monate bei einem Abonnement mit einer Laufzeit von jeweils 12 Monaten) oder bei einem Einzelprojekt auf den Preis des Angebots begrenzt, außer bei Vorsatz oder grober Fahrlässigkeit."
           ]
         },
         {
@@ -232,8 +239,8 @@
         {
           "title": "Anwendbares Recht und Streitigkeiten",
           "body": [
-            "Diese Bedingungen unterliegen schweizerischem Recht, unabhängig vom Land der Kundschaft.",
-            "Im Streitfall wird vor jedem Gerichtsverfahren eine gütliche Einigung angestrebt. Andernfalls sind ausschließlich die Gerichte am Sitz von Cosmic Studio in Chêne-Bougeries (Kanton Genf) zuständig, vorbehaltlich der zwingenden Bestimmungen zum Verbraucherschutz."
+            "Diese Bedingungen unterliegen schweizerischem Recht, unabhängig davon, in welchem Land Sie ansässig sind.",
+            "Im Streitfall wird vor jedem Gerichtsverfahren eine gütliche Einigung angestrebt. Kommt keine Einigung zustande, sind ausschließlich die Gerichte am Sitz von Cosmic Studio in Chêne-Bougeries (Kanton Genf) zuständig, vorbehaltlich der zwingenden Bestimmungen zum Verbraucherschutz."
           ]
         }
       ]

@@ -87,12 +87,12 @@
           "count": "{count, plural, =0 {Aucune boîte en plus} one {# boîte en plus} other {# boîtes en plus}}",
           "decrease": "Une boîte de moins",
           "increase": "Une boîte de plus",
-          "info": "Quand vous travaillez à plusieurs, ou pour le bureau d'une association, chacun peut avoir sa propre boîte à votre nom, avec son mot de passe. Ces boîtes sont souscrites par périodes de 12 mois ; vous pouvez les retirer à la fin d'une période."
+          "info": "Quand vous travaillez à plusieurs, ou pour le bureau d'une association, chacun peut avoir sa propre boîte à votre nom, avec son mot de passe. Ces boîtes sont souscrites par périodes de 12 mois ; vous pouvez les retirer à la fin d'une période, en nous prévenant au plus tard deux mois avant."
         },
         "redirects": {
           "label": "Adresses de renvoi (jusqu'à 5)",
           "hint": "Jusqu'à 5 adresses qui renvoient vers une boîte existante, par exemple factures@{domain}.",
-          "info": "Une adresse de renvoi n'a pas de boîte : les messages envoyés à factures@{domain} arrivent dans une boîte que vous avez déjà. Ces adresses sont souscrites par périodes de 12 mois ; vous pouvez les retirer à la fin d'une période."
+          "info": "Une adresse de renvoi n'a pas de boîte : les messages envoyés à factures@{domain} arrivent dans une boîte que vous avez déjà. Ces adresses sont souscrites par périodes de 12 mois ; vous pouvez les retirer à la fin d'une période, en nous prévenant au plus tard deux mois avant."
         },
         "contact_form": {
           "label": "Un formulaire de contact",
@@ -123,7 +123,7 @@
             "monthly": "1 actualité par mois",
             "weekly": "1 actualité par semaine"
           },
-          "info": "Une rubrique à jour montre à vos visiteurs que votre activité vit : derniers chantiers, prochains concerts, nouvelle saison. Nous créons la rubrique, puis nous publions ce que vous nous envoyez par e-mail, au rythme choisi. Ces publications ne comptent pas dans vos modifications de contenu. Vous pouvez réduire le rythme avec un mois de préavis ; l'arrêt complet se fait à la fin d'une période de 12 mois."
+          "info": "Une rubrique à jour montre à vos visiteurs que votre activité vit : derniers chantiers, prochains concerts, nouvelle saison. Nous créons la rubrique, puis nous publions ce que vous nous envoyez par e-mail, au rythme choisi. Ces publications ne comptent pas dans vos modifications de contenu. Vous pouvez réduire le rythme avec un mois de préavis ; l'arrêt complet se fait à la fin d'une période de 12 mois, si vous nous prévenez au plus tard deux mois avant."
         },
         "seo": {
           "label": "Suivi de votre place sur Google",
@@ -149,7 +149,7 @@
         "detailed_analytics": {
           "label": "Statistiques détaillées (avec bandeau de cookies)",
           "hint": "Une mesure plus complète, avec un bandeau qui demande l'accord de vos visiteurs.",
-          "info": "Les statistiques détaillées vous disent aussi d'où viennent vos visiteurs, sur quel appareil ils vous lisent, et combien cliquent sur « Appeler », « Itinéraire » ou envoient votre formulaire. Elles déposent des cookies : la loi demande alors l'accord de vos visiteurs, et nous ajoutons un bandeau pour le recueillir. Les visiteurs qui refusent ne sont pas comptés dans ces statistiques.",
+          "info": "Les statistiques détaillées vous disent aussi d'où viennent vos visiteurs, sur quel appareil ils vous lisent, et combien cliquent sur « Appeler », « Itinéraire » ou envoient votre formulaire. Elles déposent des cookies : la loi demande alors l'accord de vos visiteurs, et nous ajoutons un bandeau pour le recueillir. Les visiteurs qui refusent ne sont pas comptés dans ces statistiques. Cette option est souscrite par périodes de 12 mois.",
           "recap_label": "Statistiques détaillées"
         },
         "articles": {
@@ -162,7 +162,7 @@
             "weekly": "1 article par semaine",
             "thrice_weekly": "3 articles par semaine"
           },
-          "info": "Écrire des articles régulièrement prend du temps. Nous les rédigeons pour vous avec l'aide de l'intelligence artificielle, à partir des informations sur votre activité. Ensemble, nous choisissons où les publier, dans un blog ou une rubrique d'articles, selon leur sujet. À vous de choisir : relire chaque article avant sa publication, ou nous laisser le publier directement. Les articles ne comptent pas dans vos modifications de contenu. Vous pouvez réduire le rythme avec un mois de préavis ; l'arrêt complet se fait à la fin d'une période de 12 mois.",
+          "info": "Écrire des articles régulièrement prend du temps. Nous les rédigeons pour vous avec l'aide de l'intelligence artificielle, à partir des informations sur votre activité. Ensemble, nous choisissons où les publier, dans un blog ou une rubrique d'articles, selon leur sujet. À vous de choisir : relire chaque article avant sa publication, ou nous laisser le publier directement. Les articles ne comptent pas dans vos modifications de contenu. Vous pouvez réduire le rythme avec un mois de préavis ; l'arrêt complet se fait à la fin d'une période de 12 mois, si vous nous prévenez au plus tard deux mois avant.",
           "info_tool": "Selon votre outil d'édition, nous pouvons utiliser un service spécialisé qui choisit les sujets d'après les recherches faites sur Google."
         }
       },
@@ -203,7 +203,7 @@
       },
       "total": {
         "label": "Votre estimation",
-        "note": "Prix indicatif, confirmé après un premier échange. Vous pouvez ajouter des options à tout moment. Le nombre de pages et l'hébergement en Suisse restent dans votre abonnement une fois activés. Les options marquées « Engagement 1 an » se retirent à la fin de chaque période de 12 mois, les autres avec un mois de préavis (voir les <link>conditions générales de vente</link>).",
+        "note": "Prix indicatif : le prix définitif figure dans le devis que nous vous envoyons après un premier échange. Vous pouvez ajouter des options à tout moment. L'hébergement en Suisse reste dans votre abonnement une fois activé ; le nombre de pages peut être réduit si vous supprimez les pages en trop. Les options marquées « Engagement 1 an » peuvent être retirées à la fin de chaque période de 12 mois, si vous nous prévenez au plus tard deux mois avant ; les autres, avec un mois de préavis (voir les <link>conditions générales de vente</link>).",
         "cta": "Demander ma maquette gratuite",
         "mobile_cta": "Ma maquette gratuite",
         "question": "Une question avant ? <link>Écrivez-nous</link>.",
@@ -212,11 +212,11 @@
       "info_label": "En savoir plus : {option}",
       "commitment": "Engagement 1 an",
       "commitment_line": {
-        "none": "Sans engagement de durée : résiliable chaque mois.",
-        "periods": "Abonnement par périodes de 12 mois, car il comprend : {items}."
+        "none": "Sans engagement de durée : résiliable à tout moment, avec effet à la fin du mois suivant.",
+        "periods": "Abonnement par périodes de 12 mois, car il comprend : {items}. Il se renouvelle chaque année, sauf si vous nous prévenez au plus tard deux mois avant la fin de la période."
       },
       "commitment_items": {
-        "formula": "la formule « Vous gardez la main »",
+        "formula": "formule « Vous gardez la main »",
         "domain": "nom de domaine",
         "email": "adresse e-mail",
         "mailboxes": "boîtes e-mail en plus",

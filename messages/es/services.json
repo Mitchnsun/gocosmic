@@ -12,7 +12,7 @@
     "intro": {
       "eyebrow": "[ Servicios ]",
       "title": "Un sitio que funciona, <em>y alguien que se ocupa de él.</em>",
-      "lead": "Nuestros precios están a la vista, así que sabes enseguida si te lo puedes permitir, sin tener que pedir presupuesto. Y todo empieza con una maqueta gratuita, sin compromiso."
+      "lead": "Nuestros precios están a la vista, así que sabes enseguida si te lo puedes permitir, sin tener que pedir presupuesto. Es un precio orientativo: lo confirmamos contigo cuando tenemos toda la información sobre tu proyecto de sitio web. Y todo empieza con una maqueta gratuita, sin compromiso."
     },
     "simulator": {
       "eyebrow": "[ Configura tu suscripción ]",
@@ -51,7 +51,7 @@
       "items": {
         "ownership": {
           "question": "¿El sitio es mío?",
-          "answer": "Tus textos, tus imágenes y tu nombre de dominio te pertenecen desde el primer día. El código del sitio se te cede tras {months} meses de suscripción, y eso es lo que nos permite ofrecer un precio de partida tan bajo. También puedes quedártelo antes, a cambio de unos gastos de cesión calculados según el tiempo que quede. En un sitio hecho por presupuesto, con gastos de desarrollo, el código te pertenece desde la entrega, una vez pagada la factura completa."
+          "answer": "Tus textos, tus imágenes y tu nombre de dominio te pertenecen desde el primer día. El código del sitio se te cede tras {months} meses de suscripción, y eso es lo que nos permite ofrecer un precio de partida tan bajo. También puedes quedártelo antes, a cambio de unos gastos de cesión calculados según los meses que falten para cumplir {months} meses. En un sitio hecho según presupuesto, con gastos de desarrollo, el código te pertenece una vez entregado el sitio y pagadas todas sus facturas. En ambos casos, te entregamos el código en un repositorio Git, el formato habitual para traspasar el código de un sitio. Si no tienes suscripción con nosotros, o ya no la tienes, el alojamiento del sitio corre después a tu cargo."
         },
         "edit": {
           "question": "¿Puedo modificar el sitio por mi cuenta?",
@@ -59,11 +59,11 @@
         },
         "timing": {
           "question": "¿Cuánto se tarda en publicar el sitio?",
-          "answer": "Calcula entre dos y tres semanas para una página de presentación, desde el momento en que tenemos tus textos y tus fotos, y entre cuatro y seis semanas para un sitio de cinco páginas. Fijamos una fecha de publicación al empezar y la respetamos."
+          "answer": "Calcula entre dos y tres semanas para una página de presentación, desde el momento en que tenemos tus textos y tus fotos, y entre cuatro y seis semanas para un sitio de cinco páginas. Fijamos una fecha de publicación al empezar y la respetamos: si nos retrasamos aunque nos hayas enviado todo a tiempo, el primer mes de suscripción es gratis."
         },
         "stop": {
           "question": "¿Qué pasa si lo dejo?",
-          "answer": "Basta con avisarnos: el sitio sigue en línea hasta el final del periodo ya pagado, y te llevas tus contenidos y tu nombre de dominio. El código se te cede gratis después de {months} meses de suscripción; antes de ese plazo, la cesión tiene un coste que te indicamos desde el principio. Si tu suscripción incluye un nombre de dominio, una dirección de correo, el plan «Tú tienes el control» o una opción marcada «Compromiso de 1 año», se contrata por periodos de 12 meses, y el periodo en curso se mantiene hasta su vencimiento."
+          "answer": "Basta con enviarnos un correo, y irte no conlleva ninguna penalización: sin permanencia, el sitio sigue en línea hasta el final del mes siguiente a tu correo, y te llevas tus contenidos y tu nombre de dominio. El código se te cede gratis después de {months} meses de suscripción; antes de ese plazo, la cesión tiene un coste que te indicamos al contratar. Te lo entregamos en un repositorio Git, y después el alojamiento del sitio corre a tu cargo. Si tu suscripción incluye un nombre de dominio, una dirección de correo, el plan «Tú tienes el control» o una opción marcada con «Compromiso de 1 año», se contrata por periodos de 12 meses: avísanos a más tardar dos meses antes del final del periodo en curso; si no, se renueva por 12 meses. Dos meses antes de esa fecha límite, te la recordamos por correo; si no te lo hemos enviado, puedes irte después de la renovación, al final del mes siguiente a tu correo."
         },
         "content": {
           "question": "¿También os encargáis de los textos y las fotos?",

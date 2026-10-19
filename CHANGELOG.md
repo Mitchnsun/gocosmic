@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.5.1] - 2026-10-19
+
+### Changed
+
+- The terms of sale now spell out how to stop a 12-month subscription or option from renewing: an email that reaches the studio at least two months before the end of the period, confirmed in writing, with an example of the deadline and a reminder email sent two months before it
+- The first 12-month period starts when the site goes live, or when the first 12-month item is added, and adding another one starts a new 12-month period; the Services FAQ and the pricing simulator now give the same two-month deadline
+- A subscription with no minimum term now ends at the end of the month after you ask, which is what one month's notice means throughout the terms; when billed yearly, the months already paid beyond that are refunded; a new option is set up as soon as possible and billed from the following month
+- If the studio did not send the reminder before a 12-month renewal, you can still leave after it with one month's notice, and the months already paid are refunded, except what the studio already paid to renew your domain name and email address
+- The terms of sale and the Services FAQ now state plainly that leaving the subscription comes with no exit penalty: beyond the current period, and the next one if you stop after the deadline, the only possible fee is the one for taking over the site's code before 36 months, which depends on the months left and is given when you subscribe
+- Once the code is yours, from a subscription or a one-off project, the studio hands it over in a Git repository, the usual format for passing on a site's code; if you leave, hosting the site is then up to you
+- The terms of sale read more clearly in all five languages, and the English, Spanish, German and Italian versions now say exactly what the French says
+- The terms of sale now treat the prices on the site as indicative, as the simulator already did: the final price is set in a quote you approve, and any later price change at renewal also comes as a quote to approve; if you turn it down, you can stop at the end of the period, even after the deadline. The Services page says the same: its prices are indicative, confirmed once the studio has all the details of your project
+- The terms of sale now say what happens if you withdraw before launch, what counts as a content change, that pages can be reduced and any option lowered with one month's notice, and that the domain name option can be dropped only if you renew the domain yourself
+- If the studio misses the launch date although you sent everything on time, your first month is free; the studio's liability is capped at the price of the current subscription period
+
+### Fixed
+
+- The terms of sale no longer call timelines indicative: like the Services page, they commit to the launch date set at the start, which moves back only if your content arrives late or in a case of force majeure
+
 ## [2.5.0] - 2026-10-17
 
 ### Added

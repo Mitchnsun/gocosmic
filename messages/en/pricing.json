@@ -87,12 +87,12 @@
           "count": "{count, plural, =0 {No extra mailbox} one {# extra mailbox} other {# extra mailboxes}}",
           "decrease": "One fewer mailbox",
           "increase": "One more mailbox",
-          "info": "When several of you work together, or for an association's board, everyone can have their own mailbox in your name, with its own password. These mailboxes run in 12-month periods; you can remove them at the end of a period."
+          "info": "When several of you work together, or for an association's board, everyone can have their own mailbox in your name, with its own password. These mailboxes run in 12-month periods; you can remove them at the end of a period if you tell us no later than two months before it ends."
         },
         "redirects": {
           "label": "Forwarding addresses (up to 5)",
           "hint": "Up to 5 addresses forwarding to an existing mailbox, for example invoices@{domain}.",
-          "info": "A forwarding address has no mailbox: messages sent to invoices@{domain} land in a mailbox you already have. These addresses run in 12-month periods; you can remove them at the end of a period."
+          "info": "A forwarding address has no mailbox: messages sent to invoices@{domain} land in a mailbox you already have. These addresses run in 12-month periods; you can remove them at the end of a period if you tell us no later than two months before it ends."
         },
         "contact_form": {
           "label": "A contact form",
@@ -123,7 +123,7 @@
             "monthly": "1 news item a month",
             "weekly": "1 news item a week"
           },
-          "info": "An up-to-date news section shows visitors that your business is active: latest work, upcoming concerts, new season. We create the section, then publish what you email us, at the frequency you chose. These posts do not count towards your content changes. You can reduce the frequency with one month's notice, or stop altogether at the end of a 12-month period."
+          "info": "An up-to-date news section shows visitors that your business is active: latest work, upcoming concerts, new season. We create the section, then publish what you email us, at the frequency you chose. These posts do not count towards your content changes. You can reduce the frequency with one month's notice, or stop altogether at the end of a 12-month period if you tell us no later than two months before it ends."
         },
         "seo": {
           "label": "Tracking your position on Google",
@@ -149,7 +149,7 @@
         "detailed_analytics": {
           "label": "Detailed statistics (with a cookie banner)",
           "hint": "A fuller measurement, with a banner asking for your visitors' consent.",
-          "info": "Detailed statistics also tell you where your visitors come from, which device they read you on, and how many tap “Call”, “Directions” or send your form. They set cookies: the law then requires your visitors' consent, and we add a banner to ask for it. Visitors who decline are not counted in these statistics.",
+          "info": "Detailed statistics also tell you where your visitors come from, which device they read you on, and how many tap “Call”, “Directions” or send your form. They set cookies: the law then requires your visitors' consent, and we add a banner to ask for it. Visitors who decline are not counted in these statistics. This option runs in 12-month periods.",
           "recap_label": "Detailed statistics"
         },
         "articles": {
@@ -162,7 +162,7 @@
             "weekly": "1 article a week",
             "thrice_weekly": "3 articles a week"
           },
-          "info": "Writing articles regularly takes time. We write them for you with the help of artificial intelligence, from information about your business. Together, we choose where to publish them, in a blog or an articles section, depending on their topic. You can read each article before it goes live, or let us publish it directly. Articles do not count towards your content changes. You can reduce the frequency with one month's notice, or stop altogether at the end of a 12-month period.",
+          "info": "Writing articles regularly takes time. We write them for you with the help of artificial intelligence, from information about your business. Together, we choose where to publish them, in a blog or an articles section, depending on their topic. You can read each article before it goes live, or let us publish it directly. Articles do not count towards your content changes. You can reduce the frequency with one month's notice, or stop altogether at the end of a 12-month period if you tell us no later than two months before it ends.",
           "info_tool": "Depending on your editing tool, we can use a specialised service that picks topics from what people search for on Google."
         }
       },
@@ -203,7 +203,7 @@
       },
       "total": {
         "label": "Your estimate",
-        "note": "Indicative price, confirmed after a first conversation. You can add options at any time. The number of pages and Swiss hosting stay part of your subscription once active. Options marked “1-year commitment” can be removed at the end of each 12-month period, the others with one month's notice (see the <link>terms of sale</link>).",
+        "note": "Indicative price: the final price is in the quote we send you after a first conversation. You can add options at any time. Swiss hosting stays part of your subscription once active; the number of pages can be reduced if you remove the extra pages. Options marked “1-year commitment” can be removed at the end of each 12-month period, if you tell us no later than two months before it ends; the others, with one month's notice (see the <link>terms of sale</link>).",
         "cta": "Request my free mockup",
         "mobile_cta": "My free mockup",
         "question": "A question first? <link>Write to us</link>.",
@@ -212,8 +212,8 @@
       "info_label": "More about: {option}",
       "commitment": "1-year commitment",
       "commitment_line": {
-        "none": "No minimum term: cancel any month.",
-        "periods": "Subscription in 12-month periods, as it includes: {items}."
+        "none": "No minimum term: cancel at any time, effective at the end of the following month.",
+        "periods": "Subscription in 12-month periods, as it includes: {items}. It renews every year unless you tell us no later than two months before the end of the period."
       },
       "commitment_items": {
         "formula": "the “You stay in control” plan",

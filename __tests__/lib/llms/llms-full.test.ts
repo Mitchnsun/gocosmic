@@ -124,7 +124,7 @@ describe('buildLlmsFull', () => {
     expect(text).toContain('### Before we talk budget (Free, no commitment)');
     expect(text).toContain('### To promote your business (Outside the subscription · on a quote)');
     expect(text).toContain('- **Shops & bookings**: ');
-    expect(text).toContain('#### What happens if I stop?\n\nJust let us know');
+    expect(text).toContain('#### What happens if I stop?\n\nJust send us an email');
 
     const services = text.indexOf('## [Services]');
     const pricing = text.indexOf('## [Pricing]');

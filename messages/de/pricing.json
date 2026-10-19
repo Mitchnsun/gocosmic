@@ -54,7 +54,7 @@
         },
         "info": {
           "search_setup": "Wir bereiten Ihre Website für Google und die anderen Suchmaschinen vor: einen Titel und eine Beschreibung für jede Seite, die Informationen über Ihren Betrieb in einem Format, das Google versteht, die Sitemap und die Anweisungen für Suchmaschinen. Wir melden Ihre Website bei der Search Console von Google an, die zeigt, wie Ihre Website gefunden wird. Außerdem fügen wir eine Datei hinzu, die KI-Assistenten Ihren Betrieb vorstellt.",
-          "legal": "Jede Website muss angeben, wer sie herausgibt und was mit den Daten ihrer Besucher:innen geschieht. Wir erstellen diese Seiten anhand Ihrer Angaben; Sie lesen sie und geben sie frei, denn Sie bleiben dafür verantwortlich.",
+          "legal": "Jede Website muss angeben, wer sie herausgibt und was mit den Daten ihrer Besucher:innen geschieht. Wir erstellen diese Seiten anhand Ihrer Angaben; Sie prüfen sie und geben sie frei, denn Sie bleiben dafür verantwortlich.",
           "editor": "Sie veröffentlichen Neuigkeiten oder ändern Ihre Öffnungszeiten, wann Sie wollen, ohne auf uns zu warten. Wir richten ein Bearbeitungswerkzeug ein, das mit Ihrer Website verbunden ist, und zeigen Ihnen, wie es funktioniert. Der Rest Ihrer Seiten bleibt in unseren Händen. Haben Sie bereits ein Bearbeitungswerkzeug, übernehmen wir es, wenn möglich; für diese Übernahme und den Umzug Ihrer Inhalte erstellen wir ein separates Angebot. Dieses Paket hat eine Laufzeit von jeweils 12 Monaten.",
           "news": "Ein aktueller Bereich für Neuigkeiten zeigt Ihren Besucher:innen, dass Ihr Betrieb aktiv ist: neueste Arbeiten, kommende Konzerte, neue Saison. Sie veröffentlichen dort selbst, in Ihrem Bearbeitungsbereich."
         }
@@ -87,12 +87,12 @@
           "count": "{count, plural, =0 {Kein zusätzliches Postfach} one {# zusätzliches Postfach} other {# zusätzliche Postfächer}}",
           "decrease": "Ein Postfach weniger",
           "increase": "Ein Postfach mehr",
-          "info": "Wenn Sie zu mehreren arbeiten oder für den Vorstand eines Vereins, kann jede Person ein eigenes Postfach auf Ihren Namen haben, mit eigenem Passwort. Diese Postfächer haben eine Laufzeit von jeweils 12 Monaten; Sie können sie zum Ende einer Laufzeit entfernen."
+          "info": "Wenn Sie zu mehreren arbeiten oder für den Vorstand eines Vereins, kann jede Person ein eigenes Postfach auf Ihren Namen haben, mit eigenem Passwort. Diese Postfächer haben eine Laufzeit von jeweils 12 Monaten; Sie können sie zum Ende eines 12-Monats-Zeitraums entfernen, wenn Sie uns spätestens zwei Monate vorher Bescheid geben."
         },
         "redirects": {
           "label": "Weiterleitungsadressen (bis zu 5)",
           "hint": "Bis zu 5 Adressen, die an ein bestehendes Postfach weiterleiten, zum Beispiel rechnungen@{domain}.",
-          "info": "Eine Weiterleitungsadresse hat kein eigenes Postfach: Nachrichten an rechnungen@{domain} landen in einem Postfach, das Sie schon haben. Diese Adressen haben eine Laufzeit von jeweils 12 Monaten; Sie können sie zum Ende einer Laufzeit entfernen."
+          "info": "Eine Weiterleitungsadresse hat kein eigenes Postfach: Nachrichten an rechnungen@{domain} landen in einem Postfach, das Sie schon haben. Diese Adressen haben eine Laufzeit von jeweils 12 Monaten; Sie können sie zum Ende eines 12-Monats-Zeitraums entfernen, wenn Sie uns spätestens zwei Monate vorher Bescheid geben."
         },
         "contact_form": {
           "label": "Ein Kontaktformular",
@@ -123,7 +123,7 @@
             "monthly": "1 Neuigkeit pro Monat",
             "weekly": "1 Neuigkeit pro Woche"
           },
-          "info": "Ein aktueller Bereich für Neuigkeiten zeigt Ihren Besucher:innen, dass Ihr Betrieb aktiv ist: neueste Arbeiten, kommende Konzerte, neue Saison. Wir richten den Bereich ein und veröffentlichen dann im gewählten Rhythmus, was Sie uns per E-Mail schicken. Diese Veröffentlichungen zählen nicht zu Ihren Inhaltsänderungen. Sie können den Rhythmus mit einer Frist von einem Monat verringern; ganz beenden lässt sich die Option zum Ende einer 12-monatigen Laufzeit."
+          "info": "Ein aktueller Bereich für Neuigkeiten zeigt Ihren Besucher:innen, dass Ihr Betrieb aktiv ist: neueste Arbeiten, kommende Konzerte, neue Saison. Wir richten den Bereich ein und veröffentlichen dann im gewählten Rhythmus, was Sie uns per E-Mail schicken. Diese Veröffentlichungen zählen nicht zu Ihren Inhaltsänderungen. Sie können den Rhythmus mit einer Frist von einem Monat verringern; ganz beenden lässt sich die Option zum Ende eines 12-Monats-Zeitraums, wenn Sie uns spätestens zwei Monate vorher Bescheid geben."
         },
         "seo": {
           "label": "Betreuung Ihrer Position bei Google",
@@ -133,7 +133,7 @@
             "quarterly": "Alle drei Monate",
             "monthly": "Jeden Monat"
           },
-          "info": "Ihr Paket enthält die Einstellungen, damit Sie bei Google gefunden werden; mit dieser Option pflegen wir sie dauerhaft. Im gewählten Rhythmus prüfen wir, wie Ihre Website bei Suchen wie „Ihr Beruf + Ihr Ort“ erscheint, passen Ihre Seiten an und schicken Ihnen einen schriftlichen Bericht. Ihren Google-Maps-Eintrag und die Verzeichnisse verwalten Sie selbst. Wir versprechen keine bestimmte Position bei Google. Diese Option läuft in Zeiträumen von 12 Monaten."
+          "info": "Ihr Paket enthält die Einstellungen, damit Sie bei Google gefunden werden; mit dieser Option pflegen wir sie dauerhaft. Im gewählten Rhythmus prüfen wir, wie Ihre Website bei Suchen wie „Ihr Beruf + Ihr Ort“ erscheint, passen Ihre Seiten an und schicken Ihnen einen schriftlichen Bericht. Ihren Google-Maps-Eintrag und die Verzeichnisse verwalten Sie selbst. Wir versprechen keine bestimmte Position bei Google. Diese Option hat eine Laufzeit von jeweils 12 Monaten."
         },
         "analytics": {
           "label": "Besuchsstatistiken",
@@ -144,12 +144,12 @@
             "quarterly": "Alle drei Monate",
             "monthly": "Jeden Monat"
           },
-          "info": "Die Zahlen zeigen Ihnen, ob Ihre Website besucht wird und welche Seiten Ihre Besucher:innen interessieren. Wir zählen die Besuche und die meistgesehenen Seiten anonym, ohne Banner, das Ihre Besucher:innen bestätigen müssen, und schicken Ihnen im gewählten Rhythmus einen schriftlichen Bericht in einfachen Worten. Diese Option läuft in Zeiträumen von 12 Monaten."
+          "info": "Die Zahlen zeigen Ihnen, ob Ihre Website besucht wird und welche Seiten Ihre Besucher:innen interessieren. Wir zählen die Besuche und die meistgesehenen Seiten anonym, ohne Banner, das Ihre Besucher:innen bestätigen müssen, und schicken Ihnen im gewählten Rhythmus einen schriftlichen Bericht in einfachen Worten. Diese Option hat eine Laufzeit von jeweils 12 Monaten."
         },
         "detailed_analytics": {
           "label": "Ausführliche Statistiken (mit Cookie-Banner)",
           "hint": "Eine umfassendere Messung, mit einem Banner, das um die Einwilligung Ihrer Besucher:innen bittet.",
-          "info": "Die ausführlichen Statistiken zeigen Ihnen auch, woher Ihre Besucher:innen kommen, welches Gerät sie nutzen und wie viele auf „Anrufen“ oder „Route“ tippen oder Ihr Formular senden. Diese Statistiken setzen Cookies. Dafür verlangt das Gesetz die Einwilligung Ihrer Besucher:innen, und wir fügen ein Banner hinzu, das sie einholt. Wer ablehnt, wird in diesen Statistiken nicht gezählt.",
+          "info": "Die ausführlichen Statistiken zeigen Ihnen auch, woher Ihre Besucher:innen kommen, welches Gerät sie nutzen und wie viele auf „Anrufen“ oder „Route“ tippen oder Ihr Formular senden. Diese Statistiken setzen Cookies. Dafür verlangt das Gesetz die Einwilligung Ihrer Besucher:innen, und wir fügen ein Banner hinzu, das sie einholt. Wer ablehnt, wird in diesen Statistiken nicht gezählt. Diese Option hat eine Laufzeit von jeweils 12 Monaten.",
           "recap_label": "Ausführliche Statistiken"
         },
         "articles": {
@@ -162,7 +162,7 @@
             "weekly": "1 Artikel pro Woche",
             "thrice_weekly": "3 Artikel pro Woche"
           },
-          "info": "Regelmäßig Artikel zu schreiben, kostet Zeit. Wir schreiben sie für Sie mit Unterstützung künstlicher Intelligenz, anhand der Informationen über Ihren Betrieb. Gemeinsam wählen wir je nach Thema aus, wo sie erscheinen: in einem Blog oder in einem Bereich für Artikel. Sie entscheiden, ob Sie jeden Artikel vor der Veröffentlichung lesen oder ob wir ihn direkt veröffentlichen. Artikel zählen nicht zu Ihren Inhaltsänderungen. Sie können den Rhythmus mit einer Frist von einem Monat verringern; ganz beenden lässt sich die Option zum Ende einer 12-monatigen Laufzeit.",
+          "info": "Regelmäßig Artikel zu schreiben, kostet Zeit. Wir schreiben sie für Sie mit Unterstützung künstlicher Intelligenz, anhand der Informationen über Ihren Betrieb. Gemeinsam wählen wir je nach Thema aus, wo sie erscheinen: in einem Blog oder in einem Bereich für Artikel. Sie entscheiden, ob Sie jeden Artikel vor der Veröffentlichung lesen oder ob wir ihn direkt veröffentlichen. Artikel zählen nicht zu Ihren Inhaltsänderungen. Sie können den Rhythmus mit einer Frist von einem Monat verringern; ganz beenden lässt sich die Option zum Ende eines 12-Monats-Zeitraums, wenn Sie uns spätestens zwei Monate vorher Bescheid geben.",
           "info_tool": "Je nach Ihrem Bearbeitungswerkzeug können wir einen spezialisierten Dienst nutzen, der die Themen nach den Suchanfragen bei Google auswählt."
         }
       },
@@ -203,7 +203,7 @@
       },
       "total": {
         "label": "Ihre Kostenschätzung",
-        "note": "Richtpreis, den wir nach einem ersten Gespräch bestätigen. Sie können jederzeit Optionen hinzufügen. Seitenzahl und Hosting in der Schweiz bleiben nach der Aktivierung Teil Ihres Abonnements. Optionen mit dem Hinweis „1 Jahr Laufzeit“ lassen sich zum Ende jeder 12-monatigen Laufzeit entfernen, die übrigen mit einer Frist von einem Monat (siehe <link>Allgemeine Geschäftsbedingungen</link>).",
+        "note": "Richtpreis: Den verbindlichen Preis finden Sie im Angebot, das wir Ihnen nach einem ersten Gespräch schicken. Sie können jederzeit Optionen hinzufügen. Das Hosting in der Schweiz bleibt nach der Aktivierung Teil Ihres Abonnements; die Seitenzahl kann verringert werden, wenn Sie die überzähligen Seiten entfernen. Optionen mit dem Hinweis „1 Jahr Laufzeit“ können zum Ende jedes 12-Monats-Zeitraums entfernt werden, wenn Sie uns spätestens zwei Monate vorher Bescheid geben; die übrigen mit einer Frist von einem Monat (siehe <link>Allgemeine Geschäftsbedingungen</link>).",
         "beyond": "Bei größerem Umfang sprechen wir gemeinsam darüber und machen Ihnen einen Vorschlag.",
         "cta": "Mein kostenloses Mockup anfordern",
         "mobile_cta": "Mein kostenloses Mockup",
@@ -212,8 +212,8 @@
       "info_label": "Mehr dazu: {option}",
       "commitment": "1 Jahr Laufzeit",
       "commitment_line": {
-        "none": "Ohne Mindestlaufzeit: monatlich kündbar.",
-        "periods": "Laufzeit jeweils 12 Monate, da Ihr Abonnement Folgendes enthält: {items}."
+        "none": "Ohne Mindestlaufzeit: jederzeit zum Ende des Folgemonats kündbar.",
+        "periods": "Laufzeit jeweils 12 Monate, da Ihr Abonnement Folgendes enthält: {items}. Es verlängert sich jedes Jahr, sofern Sie uns nicht spätestens zwei Monate vor Ablauf Bescheid geben."
       },
       "commitment_items": {
         "formula": "das Paket „Sie behalten die Kontrolle“",

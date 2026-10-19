@@ -7,7 +7,7 @@
     "intro": {
       "eyebrow": "[ Services ]",
       "title": "Un site qui tourne, <em>et quelqu'un qui s'en occupe.</em>",
-      "lead": "Nos prix sont affichés : vous savez tout de suite si c'est dans votre budget, sans demander de devis. Et tout commence par une maquette gratuite, sans engagement."
+      "lead": "Nos prix sont affichés : vous savez tout de suite si c'est dans votre budget, sans demander de devis. Ce prix est indicatif : nous le confirmons avec vous une fois que nous avons toutes les informations sur votre projet de site. Et tout commence par une maquette gratuite, sans engagement."
     },
     "simulator": {
       "eyebrow": "[ Composez votre abonnement ]",
@@ -46,7 +46,7 @@
       "items": {
         "ownership": {
           "question": "Le site m'appartient-il ?",
-          "answer": "Vos textes, vos images et votre nom de domaine vous appartiennent dès le premier jour. Le code du site vous est cédé après {months} mois d'abonnement, ce qui nous permet de proposer un prix de départ aussi bas. Vous pouvez aussi le récupérer plus tôt, contre des frais de cession calculés sur la durée restante. Pour un site réalisé sur devis, avec des frais de développement, le code vous appartient à la livraison, une fois la facture entièrement réglée."
+          "answer": "Vos textes, vos images et votre nom de domaine vous appartiennent dès le premier jour. Le code du site vous est cédé après {months} mois d'abonnement, ce qui nous permet de proposer un prix de départ aussi bas. Vous pouvez aussi le récupérer plus tôt, contre des frais de cession calculés sur le nombre de mois restant jusqu'aux {months} mois. Pour un site réalisé sur devis, avec des frais de développement, le code vous appartient une fois le site livré et toutes ses factures réglées. Dans les deux cas, nous vous remettons le code dans un dépôt Git, le format habituel pour transmettre le code d'un site. Si vous n'avez pas ou plus d'abonnement chez nous, son hébergement est ensuite à votre charge."
         },
         "edit": {
           "question": "Puis-je modifier le site moi-même ?",
@@ -54,11 +54,11 @@
         },
         "timing": {
           "question": "Combien de temps pour être en ligne ?",
-          "answer": "Comptez deux à trois semaines pour une page vitrine, à partir du moment où nous avons vos textes et vos photos, et quatre à six semaines pour un site de cinq pages. Nous fixons une date de mise en ligne au démarrage et nous la respectons."
+          "answer": "Comptez deux à trois semaines pour une page vitrine, à partir du moment où nous avons vos textes et vos photos, et quatre à six semaines pour un site de cinq pages. Nous fixons une date de mise en ligne au démarrage et nous la respectons : si nous sommes en retard alors que vous nous avez tout transmis à temps, le premier mois d'abonnement vous est offert."
         },
         "stop": {
           "question": "Que se passe-t-il si j'arrête ?",
-          "answer": "Il suffit de nous prévenir : le site reste en ligne jusqu'à la fin de la période déjà payée, et vous repartez avec vos contenus et votre nom de domaine. Le code vous est cédé gratuitement après {months} mois d'abonnement, ou avant ce délai contre des frais que nous vous indiquons dès le départ. Si votre abonnement comprend un nom de domaine, une adresse e-mail, la formule « Vous gardez la main » ou une option marquée « Engagement 1 an », il court par périodes de 12 mois, et la période en cours va jusqu'à son terme."
+          "answer": "Il suffit de nous envoyer un e-mail, et partir n'entraîne aucune pénalité : sans engagement, le site reste en ligne jusqu'à la fin du mois qui suit votre e-mail, et vous repartez avec vos contenus et votre nom de domaine. Le code vous est cédé gratuitement après {months} mois d'abonnement, ou avant ce délai contre des frais de cession que nous vous indiquons dès la souscription ; nous vous le remettons dans un dépôt Git, et l'hébergement du site est ensuite à votre charge. Si votre abonnement comprend un nom de domaine, une adresse e-mail, la formule « Vous gardez la main » ou une option marquée « Engagement 1 an », il court par périodes de 12 mois : prévenez-nous au plus tard deux mois avant la fin de la période en cours, sinon il repart pour 12 mois. Deux mois avant cette date limite, nous vous la rappelons par e-mail ; si nous ne l'avons pas envoyé, vous pouvez partir après le renouvellement, à la fin du mois qui suit votre e-mail."
         },
         "content": {
           "question": "Faites-vous aussi les textes et les photos ?",
