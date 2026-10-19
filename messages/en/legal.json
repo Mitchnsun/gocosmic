@@ -156,19 +156,20 @@
         {
           "title": "Subscribing",
           "body": [
-            "The subscription is confirmed in writing after a first conversation, once we have defined your needs together (pages, options, changes). It takes effect when the site goes live.",
-            "Two plans are offered: “We take care of everything”, where we make the changes you email us, and “You stay in control”, which includes an editing tool to publish your news and opening hours yourself, along with a news section."
+            "The subscription is confirmed by a quote, drawn up after a first conversation once we have defined your needs together (pages, options, changes), which you approve in writing. It takes effect when the site goes live.",
+            "If you withdraw before the site goes live after approving the quote, the fees set out in the quote remain due. If the subscription includes an item subscribed for 12-month periods, you also owe 12 months of subscription, except for options with no commitment, which are due for one month.",
+            "Two plans are offered: “We take care of everything”, where we make the changes you email us, at the frequency set in your subscription, and “You stay in control”, which also includes an editing tool to publish your news and opening hours yourself, along with a news section."
           ]
         },
         {
           "title": "Price and billing",
           "body": [
-            "Subscription prices are those shown on the Pricing page at the time of subscription, based on the options chosen.",
+            "The prices shown on the Pricing page and in the pricing simulator are indicative: the subscription price, based on the options chosen, becomes final in the quote you approve. If the base price or the price of an option changes, the new price may apply when the subscription renews; we then propose it to you in a new quote, for your approval.",
             "The subscription is billed yearly or on a monthly payment schedule. With yearly billing, the invoice is payable by bank transfer within 30 days of receipt. With the monthly schedule, each instalment is payable by bank transfer on the date shown on the invoice.",
             "Guidance, team reinforcement and custom projects are billed at the day rate or on the basis of a quote; either is given to you before any work starts.",
             "Cosmic Studio is not registered for VAT: VAT does not apply (article 10 of the Swiss VAT Act) and the prices shown are net prices. If Cosmic Studio becomes registered, VAT at the applicable rate will be added to the prices; we will inform you in writing at least 30 days before it applies.",
-            "A client based in France and registered for VAT declares the VAT on our services, then deducts it: the operation is neutral for them.",
-            "Prices in euros (EUR) apply to businesses not domiciled in Switzerland. For businesses domiciled in Switzerland, prices are in Swiss francs (CHF).",
+            "A client based in France and registered for VAT declares the VAT on our services themselves (reverse charge); if they can deduct it, it costs them nothing overall.",
+            "Prices in euros (EUR) apply to clients not based in Switzerland, whether businesses, independents or associations. For clients based in Switzerland, prices are in Swiss francs (CHF).",
             "Bank charges for international payments, as well as duties and taxes due in the client's country, are borne by the client.",
             "Any late payment automatically incurs default interest of 5% per year."
           ]
@@ -180,7 +181,7 @@
             "As soon as one of these items is active, the subscription runs in 12-month periods, renewed automatically, to cover the registration of the domain name and the email address, and the setup of the editing tool and of the options concerned.",
             "The first 12-month period starts when the site goes live if the subscription already includes one of these items, otherwise on the day the first of them is activated. If you add one of these items during a current period, a new 12-month period starts for the whole subscription on the day it is activated, so your subscription still has a single renewal date each year.",
             "To stop the subscription from renewing, or to remove one of these items at the end of the period, email us at support@gocosmic.dev: your email must reach us no later than two months before the end of the current period, and we confirm in writing that we have received it. For example, for a period ending on 31 March, the deadline is 31 January. If your email reaches us after that date, the subscription and these items renew for a further 12 months.",
-            "Two months before that deadline, we send you an email reminding you of it, with the steps to follow.",
+            "Two months before that deadline, we send you an email reminding you of it, with the steps to follow. The deadline applies once we have sent this reminder, even if it did not reach you. If we did not send it, you can cancel at any time after the renewal, with one month's notice.",
             "You can switch to the “You stay in control” plan at any time. Switching back to “We take care of everything” must be requested no later than two months before the end of the current 12-month period and takes effect at the end of that period, as the editing tool cannot be removed before then."
           ]
         },
@@ -188,9 +189,11 @@
           "title": "Options",
           "body": [
             "You can add an option at any time: we set it up as soon as possible, and it is billed from the following month.",
-            "The number of pages and Swiss hosting cannot be removed once active, because they reflect a commitment we made for you (pages built). The frequency of content changes can be adjusted up or down.",
-            "If you do not have a domain name, its management by Cosmic Studio is part of the subscription. If you already have one, the domain name and email address options are not offered; we can send you a quote for help with your domain name and email addresses.",
-            "A content change is one request, which can group several changes. News and articles do not count towards content changes.",
+            "Swiss hosting cannot be removed once active, because it reflects a commitment we made for you. The number of pages can be reduced, provided the extra pages are removed from the site.",
+            "Any reduction of an option requires one month's notice: fewer pages, a lower frequency (content changes, news, articles) or the removal of an option with no commitment. Removing an option subscribed for 12-month periods follows the rules in “Duration and commitment”. If an option is changed too often, we may switch it to a 12-month commitment.",
+            "If you do not have a domain name, its management by Cosmic Studio is part of the subscription and is billed as an option. You can remove this option while keeping your subscription only if you take over the renewal of the domain name yourself; hosting the site on Vercel remains included in the subscription. If you already have a domain name, the domain name and email address options are not offered; we can send you a quote for help with your domain name and email addresses.",
+            "The email address option opens new mailboxes, for example on your domain name: we do not transfer the content of your existing mailboxes.",
+            "A content change is one request, which can group several changes. A complete redesign of the site is not a content change. If a request seems too large compared with what your subscription provides, we may decline it and offer you another solution: a quote, or adding or changing an option. News and articles do not count towards content changes.",
             "Options marked “1-year commitment” (domain name, email address, news published for you, site in English, tracking your position on Google, visit statistics and detailed statistics, AI-assisted articles, extra mailboxes and forwarding addresses) are subscribed for 12-month periods and can be removed at the end of a period, if you ask us no later than two months before it ends (see “Duration and commitment”). The frequency of news posts and articles can be reduced with one month's notice.",
             "The other options (contact form, online booking, customer reviews) can be removed with one month's notice.",
             "When an option is removed, the content that goes with it disappears from the site, for example the news section and its posts, or the English version.",
@@ -201,22 +204,22 @@
           "title": "Cancellation",
           "body": [
             "You can cancel at any time by emailing support@gocosmic.dev; we confirm in writing that we have received your email. The site stays online until the end of your subscription: for a subscription with no minimum term, the end of the month after the one in which your email reaches us, or, if it is billed yearly, the end of the paid year, with no refund for the remaining months; for a subscription that includes an item subscribed for 12-month periods, the end of the current period if your email reaches us no later than two months before it ends, otherwise the end of the following period.",
-            "You leave with your content and your domain name. Leaving the subscription comes with no exit penalty: you pay for the current period and, if your email reaches us after the deadline, for the following 12-month period. The only other possible cost is the transfer fee, if you ask for the code before reaching 36 months of subscription (see “Ownership”)."
+            "You leave with your content, meaning everything you provided for building the site (texts, photos, articles…), and with your domain name. Leaving the subscription comes with no exit penalty: you pay for the current period and, if your email reaches us after the deadline, for the following 12-month period. The only other possible cost is the transfer fee, if you ask for the code before reaching 36 months of subscription (see “Ownership”)."
           ]
         },
         {
           "title": "Ownership",
           "body": [
-            "Your texts, images and domain name belong to you from day one. The site's code is transferred to you free of charge after 36 months of subscription. Before then, it can be transferred to you for a transfer fee, which depends on the number of months left until 36 months; its amount is stated in the written confirmation of your subscription.",
+            "Your texts, images and domain name belong to you from day one. The site's code is transferred to you free of charge after 36 months of subscription. Before then, it can be transferred to you for a transfer fee, which depends on the number of months left until 36 months; its amount is stated in the subscription quote.",
             "Once the code is transferred, we give you, on request, a Git repository containing it, whether or not your subscription continues. As long as the subscription continues, we host and manage the site; if you leave, hosting and managing it are your responsibility.",
-            "For a one-off project, the code belongs to you from delivery, once the invoice has been paid in full. We deliver it in a Git repository, and hosting it is your responsibility, unless you then switch to a subscription for ongoing care."
+            "For a one-off project, the code belongs to you once the project has been delivered and all its invoices paid in full. We deliver it in a Git repository, and hosting it is your responsibility, unless you then switch to a subscription for ongoing care."
           ]
         },
         {
           "title": "Your obligations",
           "body": [
             "You provide the texts, images and information needed to build or update the site. The timelines we announce start once we have received them.",
-            "We commit to the launch date set at the start. It is postponed by the length of the delay if your content reaches us late, or in the event of force majeure. Cosmic Studio is not liable for a delay or a failure to perform caused by force majeure.",
+            "We commit to the launch date set at the start. It is postponed by the length of the delay if your content reaches us late, or in the event of force majeure. If we are late although you sent us all your content and information on time, the first month of the subscription is free. Cosmic Studio is not liable for a delay or a failure to perform caused by force majeure.",
             "We set up your legal notice and privacy policy from the information you provide; you read them over, approve them and remain responsible for them."
           ]
         },
@@ -224,7 +227,7 @@
           "title": "Liability and availability",
           "body": [
             "Cosmic Studio takes reasonable steps to keep the site available, but cannot guarantee that it will never be interrupted. If a prolonged outage is attributable to Cosmic Studio, the period concerned may be extended by the same length of time.",
-            "Cosmic Studio's liability is limited to the amount of the order concerned, except in cases of intent or gross negligence."
+            "Cosmic Studio's liability is limited to the price of the current subscription period (one month, or 12 months for a subscription in 12-month periods), or to the price of the quote for a one-off project, except in cases of intent or gross negligence."
           ]
         },
         {

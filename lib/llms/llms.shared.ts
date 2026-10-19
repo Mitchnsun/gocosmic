@@ -36,7 +36,7 @@ const versionLinks = (swiss: boolean) =>
 /** The two versions of every page, which agents cannot tell apart from the URLs alone. */
 export function buildRegionsSection(): string {
   const terms = EN.legal.raw('terms.sections') as LegalSection[];
-  // "Price and billing": which currency applies to which business.
+  // "Price and billing": which currency applies to which client.
   const currencies = terms[3]?.body[5];
 
   return section('Languages and regions', [

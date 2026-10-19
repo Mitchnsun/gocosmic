@@ -28,7 +28,7 @@ describe('buildLlmsIndex', () => {
     );
     expect(text).toContain('[Italian](https://www.gocosmic.dev/it-ch)');
     expect(text).toContain(
-      'For businesses domiciled in Switzerland, prices are in Swiss francs (CHF). The amounts are the same in both currencies.'
+      'For clients based in Switzerland, prices are in Swiss francs (CHF). The amounts are the same in both currencies.'
     );
     expect(text).toContain('[sitemap](https://www.gocosmic.dev/sitemap.xml)');
   });

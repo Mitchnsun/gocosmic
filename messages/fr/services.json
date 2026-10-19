@@ -46,7 +46,7 @@
       "items": {
         "ownership": {
           "question": "Le site m'appartient-il ?",
-          "answer": "Vos textes, vos images et votre nom de domaine vous appartiennent dès le premier jour. Le code du site vous est cédé après {months} mois d'abonnement, ce qui nous permet de proposer un prix de départ aussi bas. Vous pouvez aussi le récupérer plus tôt, contre des frais de cession calculés sur le nombre de mois restant jusqu'aux {months} mois. Pour un site réalisé sur devis, avec des frais de développement, le code vous appartient à la livraison, une fois la facture entièrement réglée. Dans les deux cas, nous vous remettons le code dans un dépôt Git, le format habituel pour transmettre le code d'un site. Si vous n'avez pas ou plus d'abonnement chez nous, son hébergement est ensuite à votre charge."
+          "answer": "Vos textes, vos images et votre nom de domaine vous appartiennent dès le premier jour. Le code du site vous est cédé après {months} mois d'abonnement, ce qui nous permet de proposer un prix de départ aussi bas. Vous pouvez aussi le récupérer plus tôt, contre des frais de cession calculés sur le nombre de mois restant jusqu'aux {months} mois. Pour un site réalisé sur devis, avec des frais de développement, le code vous appartient une fois le site livré et toutes ses factures réglées. Dans les deux cas, nous vous remettons le code dans un dépôt Git, le format habituel pour transmettre le code d'un site. Si vous n'avez pas ou plus d'abonnement chez nous, son hébergement est ensuite à votre charge."
         },
         "edit": {
           "question": "Puis-je modifier le site moi-même ?",
@@ -54,7 +54,7 @@
         },
         "timing": {
           "question": "Combien de temps pour être en ligne ?",
-          "answer": "Comptez deux à trois semaines pour une page vitrine, à partir du moment où nous avons vos textes et vos photos, et quatre à six semaines pour un site de cinq pages. Nous fixons une date de mise en ligne au démarrage et nous la respectons."
+          "answer": "Comptez deux à trois semaines pour une page vitrine, à partir du moment où nous avons vos textes et vos photos, et quatre à six semaines pour un site de cinq pages. Nous fixons une date de mise en ligne au démarrage et nous la respectons : si nous sommes en retard alors que vous nous avez tout transmis à temps, le premier mois d'abonnement vous est offert."
         },
         "stop": {
           "question": "Que se passe-t-il si j'arrête ?",

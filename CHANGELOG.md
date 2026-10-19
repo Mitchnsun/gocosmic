@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - The terms of sale and the Services FAQ now state plainly that leaving the subscription comes with no exit penalty: beyond the current period, and the next one if you stop after the deadline, the only possible fee is the one for taking over the site's code before 36 months, which depends on the months left and is given when you subscribe
 - Once the code is yours, from a subscription or a one-off project, the studio hands it over in a Git repository, the usual format for passing on a site's code; if you leave, hosting the site is then up to you
 - The terms of sale read more clearly in all five languages, and the English, Spanish, German and Italian versions now say exactly what the French says
+- The terms of sale now treat the prices on the site as indicative, as the simulator already did: the final price is set in a quote you approve, and any later price change at renewal also comes as a quote to approve
+- The terms of sale now say what happens if you withdraw before launch, what counts as a content change, that pages can be reduced and any option lowered with one month's notice, and that the domain name option can be dropped only if you renew the domain yourself
+- If the studio misses the launch date although you sent everything on time, your first month is free; the studio's liability is capped at the price of the current subscription period
 
 ### Fixed
 

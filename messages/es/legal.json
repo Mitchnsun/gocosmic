@@ -156,19 +156,20 @@
         {
           "title": "Suscripción",
           "body": [
-            "La suscripción se confirma por escrito tras una primera conversación, una vez que hayamos definido juntos tus necesidades (páginas, opciones, cambios). Entra en vigor cuando el sitio se publica.",
-            "Se ofrecen dos planes: «Nos encargamos de todo», en el que hacemos los cambios que nos envías por correo, y «Tú tienes el control», que incluye una herramienta de edición para publicar tú mismo/a tus noticias y tus horarios, además de una sección de noticias."
+            "La suscripción se confirma mediante un presupuesto, elaborado tras una primera conversación una vez que hayamos definido juntos tus necesidades (páginas, opciones, cambios), y que validas por escrito. Entra en vigor cuando el sitio se publica.",
+            "Si renuncias antes de la publicación después de haber validado el presupuesto, debes los gastos previstos en ese presupuesto. Si la suscripción incluye algún elemento contratado por periodos de 12 meses, debes además 12 meses de suscripción, salvo las opciones sin permanencia, de las que se debe un mes.",
+            "Se ofrecen dos planes: «Nos encargamos de todo», en el que hacemos los cambios que nos envías por correo, al ritmo previsto en tu suscripción, y «Tú tienes el control», que incluye también una herramienta de edición para publicar tú mismo/a tus noticias y tus horarios, así como una sección de noticias."
           ]
         },
         {
           "title": "Precios y facturación",
           "body": [
-            "Los precios de la suscripción son los que se muestran en la página Precios en el momento de suscribirte, según las opciones elegidas.",
+            "Los precios que se muestran en la página Precios y en el simulador de precios son orientativos: el precio de la suscripción, según las opciones elegidas, pasa a ser definitivo en el presupuesto que validas. Si el precio base o el de una opción cambia, el nuevo precio puede aplicarse en la renovación de la suscripción; en ese caso, te lo proponemos en un nuevo presupuesto, que debes validar.",
             "La suscripción se factura anualmente o según un calendario de pagos mensuales. Con la facturación anual, la factura se paga por transferencia bancaria en los 30 días siguientes a su recepción. Con el calendario de pagos, cada mensualidad se paga por transferencia bancaria en la fecha indicada en la factura.",
             "El acompañamiento, el refuerzo de equipo y los proyectos a medida se facturan según una tarifa por día o según presupuesto; en ambos casos, te comunicamos el precio antes de empezar cualquier trabajo.",
             "Cosmic Studio no está sujeto al IVA: el IVA no es aplicable (art. 10 de la ley suiza del IVA) y los precios mostrados son precios netos. Si Cosmic Studio pasa a estar sujeto al IVA, este se añadirá a los precios al tipo vigente; se te informará por escrito al menos 30 días antes de su aplicación.",
-            "Un cliente establecido en Francia y sujeto al IVA declara el IVA de nuestros servicios y después lo deduce: la operación es neutra para él.",
-            "Los precios en euros (EUR) se aplican a las empresas que no están domiciliadas en Suiza. Para las empresas domiciliadas en Suiza, los precios se expresan en francos suizos (CHF).",
+            "Un cliente establecido en Francia y sujeto al IVA declara él mismo el IVA de nuestros servicios (inversión del sujeto pasivo); si puede deducirlo, la operación es neutra para él.",
+            "Los precios en euros (EUR) se aplican a los clientes que no están establecidos en Suiza, ya sean empresas, autónomos o asociaciones. Para los clientes establecidos en Suiza, los precios se expresan en francos suizos (CHF).",
             "Los gastos bancarios de los pagos internacionales, así como los derechos e impuestos debidos en el país del cliente, corren a su cargo.",
             "Todo retraso en el pago genera de pleno derecho un interés de demora del 5 % anual."
           ]
@@ -180,7 +181,7 @@
             "En cuanto se activa uno de estos elementos, la suscripción se contrata por periodos de 12 meses, renovados tácitamente, para cubrir el registro del nombre de dominio y de la dirección de correo, y la puesta en marcha de la herramienta de edición y de las opciones correspondientes.",
             "El primer periodo de 12 meses empieza con la publicación del sitio si la suscripción ya incluye alguno de estos elementos; si no, el día en que se activa el primero de ellos. Si añades uno de estos elementos durante un periodo en curso, empieza un nuevo periodo de 12 meses para toda la suscripción el día en que se activa: así, tu suscripción tiene una sola fecha de renovación al año.",
             "Para que la suscripción no se renueve, o para retirar uno de estos elementos al final del periodo, envíanos un correo a support@gocosmic.dev: debe llegarnos a más tardar dos meses antes del final del periodo en curso, y te confirmamos su recepción por escrito. Por ejemplo, para un periodo que termina el 31 de marzo, la fecha límite es el 31 de enero. Si tu correo nos llega después de esa fecha, la suscripción y estos elementos se renuevan por 12 meses.",
-            "Dos meses antes de esa fecha límite, te enviamos un correo que te la recuerda, con los pasos que debes seguir.",
+            "Dos meses antes de esa fecha límite, te enviamos un correo que te la recuerda, con los pasos que debes seguir. La fecha límite se aplica desde el momento en que hemos enviado este recordatorio, aunque no te haya llegado. Si no lo hemos enviado, puedes cancelar en cualquier momento después de la renovación, con un mes de preaviso.",
             "Puedes pasar al plan «Tú tienes el control» en cualquier momento. La vuelta al plan «Nos encargamos de todo» se solicita a más tardar dos meses antes del final del periodo de 12 meses en curso y se aplica al final de ese periodo, ya que la herramienta de edición no puede retirarse antes."
           ]
         },
@@ -188,9 +189,11 @@
           "title": "Opciones",
           "body": [
             "Puedes añadir una opción en cualquier momento: la ponemos en marcha lo antes posible y se factura a partir del mes siguiente.",
-            "El número de páginas y el alojamiento en Suiza no se pueden retirar una vez activados, ya que corresponden a un compromiso que asumimos para ti (páginas creadas). La frecuencia de los cambios de contenido puede revisarse al alza o a la baja.",
-            "Si no tienes nombre de dominio, su gestión por parte de Cosmic Studio forma parte de la suscripción. Si ya tienes uno, no se ofrecen las opciones de nombre de dominio y dirección de correo; la ayuda con tu nombre de dominio y tus direcciones de correo puede presupuestarse.",
-            "Un cambio de contenido corresponde a una petición, que puede agrupar varias modificaciones. Las noticias y los artículos no se cuentan entre los cambios de contenido.",
+            "El alojamiento en Suiza no se puede retirar una vez activado, ya que corresponde a un compromiso que asumimos para ti. El número de páginas puede reducirse, siempre que se eliminen del sitio las páginas sobrantes.",
+            "Cualquier reducción de una opción requiere un mes de preaviso: menos páginas, un ritmo menor (cambios de contenido, noticias, artículos) o la baja de una opción sin permanencia. La baja de una opción contratada por periodos de 12 meses sigue las reglas de «Duración y permanencia». Si una opción se modifica con demasiada frecuencia, podemos pasarla a un compromiso de 12 meses.",
+            "Si no tienes nombre de dominio, su gestión por parte de Cosmic Studio forma parte de la suscripción y se factura como una opción. Solo puedes retirar esta opción sin dejar la suscripción si te encargas tú mismo/a de renovar el nombre de dominio; el alojamiento del sitio en Vercel sigue incluido en la suscripción. Si ya tienes un nombre de dominio, no se ofrecen las opciones de nombre de dominio y dirección de correo; la ayuda con tu nombre de dominio y tus direcciones de correo puede presupuestarse.",
+            "La opción de dirección de correo abre buzones nuevos, por ejemplo con tu nombre de dominio: no traspasamos el contenido de tus buzones existentes.",
+            "Un cambio de contenido corresponde a una petición, que puede agrupar varias modificaciones. Un rediseño completo del sitio no es un cambio de contenido. Si una petición nos parece demasiado grande en relación con lo que prevé tu suscripción, podemos rechazarla y proponerte otra solución: un presupuesto, o añadir o modificar una opción. Las noticias y los artículos no se cuentan entre los cambios de contenido.",
             "Las opciones marcadas con «Compromiso de 1 año» (nombre de dominio, dirección de correo, noticias que publicamos por ti, sitio en inglés, seguimiento de tu posición en Google, estadísticas de visitas y estadísticas detalladas, artículos redactados con ayuda de la IA, buzones de correo adicionales y direcciones de reenvío) se contratan por periodos de 12 meses y pueden retirarse al final de un periodo, si nos lo pides a más tardar dos meses antes de que termine (consulta «Duración y permanencia»). El ritmo de las noticias y de los artículos puede reducirse con un mes de preaviso.",
             "Las demás opciones (formulario de contacto, reserva de citas en línea, opiniones de clientes) pueden retirarse con un mes de preaviso.",
             "Cuando se retira una opción, el contenido asociado desaparece del sitio, por ejemplo la sección de noticias y sus publicaciones, o la versión en inglés.",
@@ -201,22 +204,22 @@
           "title": "Cancelación",
           "body": [
             "Puedes cancelar la suscripción en cualquier momento escribiéndonos a support@gocosmic.dev; te confirmamos por escrito la recepción de tu correo. El sitio sigue en línea hasta el final de tu suscripción: para una suscripción sin permanencia, el final del mes siguiente a aquel en que recibimos tu correo o, si se factura anualmente, el final del año pagado, sin reembolso de los meses restantes; para una suscripción que incluye algún elemento contratado por periodos de 12 meses, el final del periodo en curso si tu correo nos llega a más tardar dos meses antes de que termine, y si no, el final del periodo siguiente.",
-            "Te llevas tus contenidos y tu nombre de dominio. Dejar la suscripción no conlleva ninguna penalización: pagas el periodo en curso y, si tu correo nos llega después de la fecha límite, el siguiente periodo de 12 meses. Los únicos gastos adicionales posibles son los de cesión, si pides el código antes de cumplir 36 meses de suscripción (consulta «Propiedad»)."
+            "Te llevas tus contenidos, es decir, todo lo que nos has proporcionado para crear el sitio (textos, fotos, artículos…), y tu nombre de dominio. Dejar la suscripción no conlleva ninguna penalización: pagas el periodo en curso y, si tu correo nos llega después de la fecha límite, el siguiente periodo de 12 meses. Los únicos gastos adicionales posibles son los de cesión, si pides el código antes de cumplir 36 meses de suscripción (consulta «Propiedad»)."
           ]
         },
         {
           "title": "Propiedad",
           "body": [
-            "Tus textos, tus imágenes y tu nombre de dominio te pertenecen desde el primer día. El código del sitio se te cede gratuitamente tras 36 meses de suscripción. Antes de ese plazo, se te puede ceder a cambio de unos gastos de cesión, que dependen de los meses que falten para cumplir los 36 meses; su importe figura en la confirmación por escrito de la suscripción.",
+            "Tus textos, tus imágenes y tu nombre de dominio te pertenecen desde el primer día. El código del sitio se te cede gratuitamente tras 36 meses de suscripción. Antes de ese plazo, se te puede ceder a cambio de unos gastos de cesión, que dependen de los meses que falten para cumplir los 36 meses; su importe figura en el presupuesto de la suscripción.",
             "Una vez cedido el código, te entregamos, si lo pides, un repositorio Git que lo contiene, tanto si tu suscripción continúa como si no. Mientras la suscripción continúe, alojamos y gestionamos el sitio; si la dejas, su alojamiento y su gestión corren a tu cargo.",
-            "En un proyecto puntual, el código te pertenece desde la entrega, una vez pagada la factura en su totalidad. Te lo entregamos en un repositorio Git, y su alojamiento corre a tu cargo, salvo que después te pases a la suscripción para el seguimiento."
+            "En un proyecto puntual, el código te pertenece una vez entregado el proyecto y pagadas en su totalidad todas sus facturas. Te lo entregamos en un repositorio Git, y su alojamiento corre a tu cargo, salvo que después te pases a la suscripción para el seguimiento."
           ]
         },
         {
           "title": "Tus obligaciones",
           "body": [
             "Nos envías los textos, imágenes e información necesarios para crear o actualizar el sitio. Los plazos anunciados empiezan a contar desde su recepción.",
-            "Nos comprometemos a respetar la fecha de publicación fijada al empezar. Si tus contenidos nos llegan tarde, o en caso de fuerza mayor, esa fecha se aplaza por el mismo tiempo que dure el retraso. Cosmic Studio no es responsable de un retraso o de un incumplimiento causados por un caso de fuerza mayor.",
+            "Nos comprometemos a respetar la fecha de publicación fijada al empezar. Si tus contenidos nos llegan tarde, o en caso de fuerza mayor, esa fecha se aplaza por el mismo tiempo que dure el retraso. Si nos retrasamos aunque nos hayas enviado a tiempo todos tus contenidos e información, el primer mes de suscripción es gratis. Cosmic Studio no es responsable de un retraso o de un incumplimiento causados por un caso de fuerza mayor.",
             "Preparamos tu aviso legal y tu política de privacidad con la información que nos envías; tú los revisas, los validas y sigues siendo responsable de ellos."
           ]
         },
@@ -224,7 +227,7 @@
           "title": "Responsabilidad y disponibilidad",
           "body": [
             "Cosmic Studio pone los medios razonables para asegurar la disponibilidad del sitio, sin poder garantizar la ausencia total de interrupciones. En caso de indisponibilidad prolongada imputable a Cosmic Studio, el periodo afectado podrá prorrogarse por el mismo tiempo.",
-            "La responsabilidad de Cosmic Studio se limita al importe del pedido correspondiente, salvo en caso de falta intencionada o negligencia grave."
+            "La responsabilidad de Cosmic Studio se limita al precio del periodo de suscripción en curso (un mes, o 12 meses para una suscripción por periodos de 12 meses), o al precio del presupuesto en un proyecto puntual, salvo en caso de falta intencionada o negligencia grave."
           ]
         },
         {

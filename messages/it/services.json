@@ -51,7 +51,7 @@
       "items": {
         "ownership": {
           "question": "Il sito è mio?",
-          "answer": "Testi, immagini e nome a dominio ti appartengono dal primo giorno. Il codice del sito ti viene ceduto dopo {months} mesi di abbonamento, ed è questo che ci permette di proporre un prezzo di partenza così basso. Puoi anche averlo prima, pagando un costo di cessione calcolato sui mesi che mancano ai {months} mesi. Per un sito realizzato su preventivo, con costi di sviluppo, il codice ti appartiene dalla consegna, una volta pagata interamente la fattura. In entrambi i casi, ti consegniamo il codice in un repository Git, il formato abituale per trasmettere il codice di un sito. Se non hai o non hai più un abbonamento con noi, l'hosting è poi a tuo carico."
+          "answer": "Testi, immagini e nome a dominio ti appartengono dal primo giorno. Il codice del sito ti viene ceduto dopo {months} mesi di abbonamento, ed è questo che ci permette di proporre un prezzo di partenza così basso. Puoi anche averlo prima, pagando un costo di cessione calcolato sui mesi che mancano ai {months} mesi. Per un sito realizzato su preventivo, con costi di sviluppo, il codice ti appartiene una volta consegnato il sito e pagate tutte le sue fatture. In entrambi i casi, ti consegniamo il codice in un repository Git, il formato abituale per trasmettere il codice di un sito. Se non hai o non hai più un abbonamento con noi, l'hosting è poi a tuo carico."
         },
         "edit": {
           "question": "Posso modificare il sito da solo?",
@@ -59,7 +59,7 @@
         },
         "timing": {
           "question": "Quanto tempo serve per andare online?",
-          "answer": "Per una pagina vetrina servono due o tre settimane da quando riceviamo i tuoi testi e le tue foto; per un sito di cinque pagine, da quattro a sei settimane. Fissiamo la data di messa online all'inizio e la rispettiamo."
+          "answer": "Per una pagina vetrina servono due o tre settimane da quando riceviamo i tuoi testi e le tue foto; per un sito di cinque pagine, da quattro a sei settimane. Fissiamo la data di messa online all'inizio e la rispettiamo: se siamo in ritardo pur avendo ricevuto tutto in tempo, il primo mese di abbonamento è gratuito."
         },
         "stop": {
           "question": "Cosa succede se smetto?",

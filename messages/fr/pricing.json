@@ -203,7 +203,7 @@
       },
       "total": {
         "label": "Votre estimation",
-        "note": "Prix indicatif, confirmé après un premier échange. Vous pouvez ajouter des options à tout moment. Le nombre de pages et l'hébergement en Suisse restent dans votre abonnement une fois activés. Les options marquées « Engagement 1 an » peuvent être retirées à la fin de chaque période de 12 mois, si vous nous prévenez au plus tard deux mois avant ; les autres, avec un mois de préavis (voir les <link>conditions générales de vente</link>).",
+        "note": "Prix indicatif : le prix définitif figure dans le devis que nous vous envoyons après un premier échange. Vous pouvez ajouter des options à tout moment. L'hébergement en Suisse reste dans votre abonnement une fois activé ; le nombre de pages peut être réduit si vous supprimez les pages en trop. Les options marquées « Engagement 1 an » peuvent être retirées à la fin de chaque période de 12 mois, si vous nous prévenez au plus tard deux mois avant ; les autres, avec un mois de préavis (voir les <link>conditions générales de vente</link>).",
         "cta": "Demander ma maquette gratuite",
         "mobile_cta": "Ma maquette gratuite",
         "question": "Une question avant ? <link>Écrivez-nous</link>.",

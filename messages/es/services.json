@@ -51,7 +51,7 @@
       "items": {
         "ownership": {
           "question": "¿El sitio es mío?",
-          "answer": "Tus textos, tus imágenes y tu nombre de dominio te pertenecen desde el primer día. El código del sitio se te cede tras {months} meses de suscripción, y eso es lo que nos permite ofrecer un precio de partida tan bajo. También puedes quedártelo antes, a cambio de unos gastos de cesión calculados según los meses que falten para cumplir {months} meses. En un sitio hecho según presupuesto, con gastos de desarrollo, el código te pertenece desde la entrega, una vez pagada la factura en su totalidad. En ambos casos, te entregamos el código en un repositorio Git, el formato habitual para traspasar el código de un sitio. Si no tienes suscripción con nosotros, o ya no la tienes, el alojamiento del sitio corre después a tu cargo."
+          "answer": "Tus textos, tus imágenes y tu nombre de dominio te pertenecen desde el primer día. El código del sitio se te cede tras {months} meses de suscripción, y eso es lo que nos permite ofrecer un precio de partida tan bajo. También puedes quedártelo antes, a cambio de unos gastos de cesión calculados según los meses que falten para cumplir {months} meses. En un sitio hecho según presupuesto, con gastos de desarrollo, el código te pertenece una vez entregado el sitio y pagadas todas sus facturas. En ambos casos, te entregamos el código en un repositorio Git, el formato habitual para traspasar el código de un sitio. Si no tienes suscripción con nosotros, o ya no la tienes, el alojamiento del sitio corre después a tu cargo."
         },
         "edit": {
           "question": "¿Puedo modificar el sitio por mi cuenta?",
@@ -59,7 +59,7 @@
         },
         "timing": {
           "question": "¿Cuánto se tarda en publicar el sitio?",
-          "answer": "Calcula entre dos y tres semanas para una página de presentación, desde el momento en que tenemos tus textos y tus fotos, y entre cuatro y seis semanas para un sitio de cinco páginas. Fijamos una fecha de publicación al empezar y la respetamos."
+          "answer": "Calcula entre dos y tres semanas para una página de presentación, desde el momento en que tenemos tus textos y tus fotos, y entre cuatro y seis semanas para un sitio de cinco páginas. Fijamos una fecha de publicación al empezar y la respetamos: si nos retrasamos aunque nos hayas enviado todo a tiempo, el primer mes de suscripción es gratis."
         },
         "stop": {
           "question": "¿Qué pasa si lo dejo?",

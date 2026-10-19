@@ -159,19 +159,20 @@
         {
           "title": "Souscription",
           "body": [
-            "L'abonnement est confirmé par écrit après un premier échange, une fois vos besoins (pages, options, modifications) définis ensemble. Il prend effet à la mise en ligne du site.",
-            "Deux formules sont proposées : « On s'occupe de tout », où nous faisons les modifications que vous nous envoyez par e-mail, et « Vous gardez la main », qui comprend un outil d'édition pour publier vous-même vos actualités et vos horaires, ainsi qu'une rubrique d'actualités."
+            "L'abonnement est confirmé par un devis, établi après un premier échange une fois vos besoins (pages, options, modifications) définis ensemble, et que vous validez par écrit. Il prend effet à la mise en ligne du site.",
+            "Si vous renoncez avant la mise en ligne alors que vous avez validé le devis, les frais prévus dans ce devis restent dus. Si l'abonnement comprend un élément souscrit par périodes de 12 mois, vous devez aussi 12 mois d'abonnement, à l'exception des options sans engagement, dues pour un mois.",
+            "Deux formules sont proposées : « On s'occupe de tout », où nous faisons les modifications que vous nous envoyez par e-mail, au rythme prévu dans votre abonnement, et « Vous gardez la main », qui comprend en plus un outil d'édition pour publier vous-même vos actualités et vos horaires, ainsi qu'une rubrique d'actualités."
           ]
         },
         {
           "title": "Prix et facturation",
           "body": [
-            "Les prix de l'abonnement sont ceux affichés sur la page Tarifs au moment de la souscription, selon les options choisies.",
+            "Les prix affichés sur la page Tarifs et dans le simulateur sont indicatifs : le prix de l'abonnement, selon les options choisies, devient définitif dans le devis que vous validez. Si le prix de base ou celui d'une option change, le nouveau prix peut s'appliquer au renouvellement de l'abonnement ; il vous est alors proposé dans un nouveau devis, à valider.",
             "L'abonnement est facturé à l'année ou selon un échéancier mensuel. À l'année, la facture est payée par virement bancaire dans les 30 jours suivant sa réception. Avec l'échéancier, chaque mensualité est payée par virement bancaire à la date indiquée sur la facture.",
             "L'accompagnement, le renforcement d'équipe et les projets sur mesure sont facturés au tarif journalier ou sur devis, communiqué avant toute intervention.",
             "Cosmic Studio n'est pas assujetti à la TVA : la TVA n'est pas applicable (art. 10 LTVA) et les prix affichés sont des prix nets. Si Cosmic Studio devient assujetti, la TVA au taux en vigueur s'ajoutera aux prix ; vous en serez informé par écrit au moins 30 jours avant son application.",
-            "Un client établi en France et assujetti à la TVA la déclare sur nos prestations, puis la déduit : l'opération est neutre pour lui.",
-            "Les prix en euros (EUR) s'appliquent aux entreprises qui ne sont pas domiciliées en Suisse. Pour les entreprises domiciliées en Suisse, les prix sont en francs suisses (CHF).",
+            "Un client établi en France et assujetti à la TVA la déclare lui-même sur nos prestations (autoliquidation) ; s'il peut la déduire, l'opération est neutre pour lui.",
+            "Les prix en euros (EUR) s'appliquent aux clients qui ne sont pas établis en Suisse, qu'il s'agisse d'entreprises, d'indépendants ou d'associations. Pour les clients établis en Suisse, les prix sont en francs suisses (CHF).",
             "Les frais bancaires des paiements internationaux, ainsi que les droits et taxes dus dans le pays du client, sont à sa charge.",
             "Tout retard de paiement entraîne de plein droit un intérêt moratoire de 5 % par an."
           ]
@@ -183,7 +184,7 @@
             "Dès que l'un de ces éléments est activé, l'abonnement est souscrit par périodes de 12 mois, renouvelées tacitement, afin de couvrir la réservation du nom de domaine et de l'adresse e-mail, et la mise en place de l'outil d'édition et des options concernées.",
             "La première période de 12 mois commence à la mise en ligne du site si l'abonnement comprend déjà l'un de ces éléments, sinon le jour où le premier d'entre eux est activé. Si vous ajoutez l'un de ces éléments pendant une période en cours, une nouvelle période de 12 mois commence, pour tout l'abonnement, le jour où il est activé : votre abonnement n'a ainsi qu'une date de renouvellement par an.",
             "Pour ne pas renouveler l'abonnement, ou pour retirer l'un de ces éléments à la fin de la période, envoyez-nous un e-mail à support@gocosmic.dev : il doit nous parvenir au plus tard deux mois avant la fin de la période en cours, et nous vous en confirmons la réception par écrit. Par exemple, pour une période qui se termine le 31 mars, la date limite est le 31 janvier. Si votre e-mail nous parvient après cette date, l'abonnement et ces éléments sont renouvelés pour 12 mois.",
-            "Deux mois avant cette date limite, nous vous envoyons un e-mail qui vous la rappelle, avec la marche à suivre.",
+            "Deux mois avant cette date limite, nous vous envoyons un e-mail qui vous la rappelle, avec la marche à suivre. La date limite s'applique dès lors que nous avons envoyé ce rappel, même s'il ne vous est pas parvenu. Si nous ne l'avons pas envoyé, vous pouvez résilier à tout moment après le renouvellement, avec un mois de préavis.",
             "Vous pouvez passer à la formule « Vous gardez la main » à tout moment. Le retour à la formule « On s'occupe de tout » se demande au plus tard deux mois avant la fin de la période de 12 mois en cours et prend effet à la fin de cette période, car l'outil d'édition ne peut pas être retiré avant."
           ]
         },
@@ -191,9 +192,11 @@
           "title": "Options",
           "body": [
             "Vous pouvez ajouter une option à tout moment : nous la mettons en place dès que possible, et elle est facturée à partir du mois suivant.",
-            "Le nombre de pages et l'hébergement en Suisse ne peuvent pas être retirés une fois activés, car ils correspondent à un engagement pris pour vous (pages créées). La fréquence des modifications de contenu peut être revue à la hausse ou à la baisse.",
-            "Si vous n'avez pas de nom de domaine, sa gestion par Cosmic Studio fait partie de l'abonnement. Si vous en avez déjà un, les options nom de domaine et adresse e-mail ne sont pas proposées ; une aide pour votre nom de domaine et vos adresses e-mail peut faire l'objet d'un devis.",
-            "Une modification de contenu correspond à une demande, qui peut regrouper plusieurs changements. Les actualités et les articles ne comptent pas dans les modifications de contenu.",
+            "L'hébergement en Suisse ne peut pas être retiré une fois activé, car il correspond à un engagement pris pour vous. Le nombre de pages peut être réduit, à condition de supprimer du site les pages en trop.",
+            "Toute réduction d'une option demande un mois de préavis : moins de pages, un rythme moins élevé (modifications de contenu, actualités, articles) ou le retrait d'une option sans engagement. Le retrait d'une option souscrite par périodes de 12 mois suit les règles de « Durée et engagement ». Si une option est modifiée trop souvent, nous pouvons la faire passer à un engagement de 12 mois.",
+            "Si vous n'avez pas de nom de domaine, sa gestion par Cosmic Studio fait partie de l'abonnement et est facturée comme une option. Vous ne pouvez retirer cette option tout en restant abonné que si vous prenez en charge vous-même le renouvellement du nom de domaine ; l'hébergement du site, sur Vercel, reste compris dans l'abonnement. Si vous avez déjà un nom de domaine, les options nom de domaine et adresse e-mail ne sont pas proposées ; une aide pour votre nom de domaine et vos adresses e-mail peut faire l'objet d'un devis.",
+            "L'option adresse e-mail ouvre de nouvelles boîtes, par exemple à votre nom de domaine : nous ne reprenons pas le contenu de vos boîtes e-mail existantes.",
+            "Une modification de contenu correspond à une demande, qui peut regrouper plusieurs changements. Une refonte complète du site n'en fait pas partie. Si une demande nous paraît trop importante par rapport à ce que prévoit votre abonnement, nous pouvons la refuser et vous proposer une autre solution : un devis, ou l'ajout ou la modification d'une option. Les actualités et les articles ne comptent pas dans les modifications de contenu.",
             "Les options marquées « Engagement 1 an » (nom de domaine, adresse e-mail, actualités publiées pour vous, site en anglais, suivi de votre place sur Google, statistiques de visites et statistiques détaillées, articles rédigés avec l'aide de l'IA, boîtes e-mail en plus et adresses de renvoi) sont souscrites par périodes de 12 mois et peuvent être retirées à la fin d'une période, si vous nous le demandez au plus tard deux mois avant sa fin (voir « Durée et engagement »). Le rythme des actualités et des articles peut être réduit avec un mois de préavis.",
             "Les autres options (formulaire de contact, prise de rendez-vous en ligne, avis clients) peuvent être retirées avec un mois de préavis.",
             "Lorsqu'une option est retirée, le contenu qui lui est associé disparaît du site, par exemple la rubrique d'actualités et ses publications, ou la version anglaise.",
@@ -204,22 +207,22 @@
           "title": "Résiliation",
           "body": [
             "Vous pouvez résilier à tout moment en nous écrivant à support@gocosmic.dev ; nous vous confirmons la réception de votre e-mail par écrit. Le site reste en ligne jusqu'à la fin de votre abonnement : pour un abonnement sans engagement, la fin du mois qui suit la réception de votre e-mail, ou, s'il est facturé à l'année, la fin de l'année payée, sans remboursement des mois restants ; pour un abonnement qui comprend un élément souscrit par périodes de 12 mois, la fin de la période en cours si votre e-mail nous parvient au plus tard deux mois avant cette fin, sinon la fin de la période suivante.",
-            "Vous repartez avec vos contenus et votre nom de domaine. Quitter l'abonnement n'entraîne aucune pénalité de départ : vous réglez la période en cours et, si votre e-mail nous parvient après la date limite, la période suivante de 12 mois. Les seuls autres frais possibles sont les frais de cession, si vous demandez le code avant 36 mois d'abonnement (voir « Propriété »)."
+            "Vous repartez avec vos contenus, c'est-à-dire tout ce que vous nous avez fourni pour créer le site (textes, photos, articles…), et avec votre nom de domaine. Quitter l'abonnement n'entraîne aucune pénalité de départ : vous réglez la période en cours et, si votre e-mail nous parvient après la date limite, la période suivante de 12 mois. Les seuls autres frais possibles sont les frais de cession, si vous demandez le code avant 36 mois d'abonnement (voir « Propriété »)."
           ]
         },
         {
           "title": "Propriété",
           "body": [
-            "Vos textes, vos images et votre nom de domaine vous appartiennent dès le premier jour. Le code du site vous est cédé gratuitement après 36 mois d'abonnement. Avant ce délai, il peut vous être cédé contre des frais de cession, qui dépendent du nombre de mois restant jusqu'aux 36 mois ; leur montant figure dans la confirmation écrite de l'abonnement.",
+            "Vos textes, vos images et votre nom de domaine vous appartiennent dès le premier jour. Le code du site vous est cédé gratuitement après 36 mois d'abonnement. Avant ce délai, il peut vous être cédé contre des frais de cession, qui dépendent du nombre de mois restant jusqu'aux 36 mois ; leur montant figure dans le devis de l'abonnement.",
             "Une fois le code cédé, nous vous remettons sur demande un dépôt Git qui le contient, que votre abonnement continue ou non. Tant que l'abonnement continue, nous hébergeons et gérons le site ; si vous le quittez, son hébergement et sa gestion sont à votre charge.",
-            "Pour un projet ponctuel, le code vous appartient dès la livraison, une fois la facture entièrement payée. Nous vous le livrons dans un dépôt Git, et son hébergement est à votre charge, sauf si vous passez ensuite à l'abonnement pour le suivi."
+            "Pour un projet ponctuel, le code vous appartient une fois le projet livré et toutes ses factures entièrement payées. Nous vous le livrons dans un dépôt Git, et son hébergement est à votre charge, sauf si vous passez ensuite à l'abonnement pour le suivi."
           ]
         },
         {
           "title": "Vos obligations",
           "body": [
             "Vous nous transmettez les textes, images et informations nécessaires à la réalisation ou à la mise à jour du site. Les délais annoncés courent à partir de leur réception.",
-            "Nous nous engageons sur la date de mise en ligne fixée au démarrage. Elle est reportée d'autant si vos contenus nous parviennent en retard ou en cas de force majeure. Cosmic Studio n'est pas responsable d'un retard ou d'une inexécution causés par un cas de force majeure.",
+            "Nous nous engageons sur la date de mise en ligne fixée au démarrage. Elle est reportée d'autant si vos contenus nous parviennent en retard ou en cas de force majeure. Si nous sommes en retard alors que vous nous avez transmis à temps tous vos contenus et informations, le premier mois de l'abonnement vous est offert. Cosmic Studio n'est pas responsable d'un retard ou d'une inexécution causés par un cas de force majeure.",
             "Nous mettons en place vos mentions légales et votre politique de confidentialité à partir des informations que vous nous transmettez ; vous les relisez, vous les validez et vous en restez responsable."
           ]
         },
@@ -227,7 +230,7 @@
           "title": "Responsabilité et disponibilité",
           "body": [
             "Cosmic Studio met en œuvre des moyens raisonnables pour assurer la disponibilité du site, sans pouvoir garantir l'absence totale d'interruption. En cas d'indisponibilité prolongée imputable à Cosmic Studio, la période concernée peut être prolongée d'autant.",
-            "La responsabilité de Cosmic Studio est limitée au montant de la commande concernée, sauf faute intentionnelle ou grave."
+            "La responsabilité de Cosmic Studio est limitée au prix de la période d'abonnement en cours (un mois, ou 12 mois pour un abonnement souscrit par périodes de 12 mois), ou au prix du devis pour un projet ponctuel, sauf faute intentionnelle ou grave."
           ]
         },
         {
