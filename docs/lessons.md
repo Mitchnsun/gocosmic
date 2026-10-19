@@ -32,6 +32,8 @@ This file records lessons learned from past mistakes and corrections made during
 
 **Recurrence (2026-10-12)**: The llms.txt work was bumped to 2.5.0 against a `master` at 2.4.2, which was tagged. During the session, `master` merged 2.4.3 (not yet released) and the owner asked to fold the work into it. The version check made at the start of a task goes stale: fetch `master` again right before committing, and apply the rule above to whatever its latest entry is then.
 
+**Recurrence (2026-10-19)**: The French service pages (epic #142), bumped to 2.6.0, were rebased onto a `master` that had merged 2.5.1, a patch on the terms of sale, not yet released. Following the rule above, the work was folded into 2.5.1; the owner asked to keep 2.6.0 instead. Folding is not automatic: when the branch already carries its own bump and `master` has merged an unreleased version, ask the owner whether to fold or keep the branch's version, and say which one the work would otherwise get. A separate version stays above `master`'s entry in `CHANGELOG.md`.
+
 ## Generated Files
 
 ### A derived file needs an update rule for changes, not only for additions
