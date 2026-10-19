@@ -73,6 +73,7 @@ describe('showcase website page', () => {
     expect(getByText('La prise de rendez-vous en ligne')).toBeInTheDocument();
     expect(getByText('Votre site en anglais')).toBeInTheDocument();
     expect(getByRole('link', { name: 'Calculer mon prix' })).toHaveAttribute('href', '/pricing');
+    expect(getByText(/^Ces prix sont indicatifs : le prix définitif figure dans le devis/)).toBeInTheDocument();
   });
 
   it('gives the delays and who owns what', async () => {

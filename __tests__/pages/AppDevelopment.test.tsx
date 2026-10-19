@@ -62,7 +62,7 @@ describe('app development page', () => {
       getByRole('list', { name: 'Une application pour votre équipe, vos clients ou vos membres.' })
     ).toBeInTheDocument();
     expect(getByText('Un paiement en plusieurs fois, à chaque étape du projet')).toBeInTheDocument();
-    expect(getByText(/^Le code et les données vous appartiennent à la livraison/)).toBeInTheDocument();
+    expect(getByText(/^Le code et les données vous appartiennent une fois l'application livrée/)).toBeInTheDocument();
     expect(getByText('Un·e designer partenaire, qui travaille aux côtés du développeur')).toBeInTheDocument();
     expect(queryByText(/€|CHF/)).not.toBeInTheDocument();
   });
