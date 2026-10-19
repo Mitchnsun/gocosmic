@@ -51,7 +51,7 @@
       "items": {
         "ownership": {
           "question": "Il sito è mio?",
-          "answer": "Testi, immagini e nome a dominio ti appartengono dal primo giorno. Il codice del sito ti viene ceduto dopo {months} mesi di abbonamento, ed è questo che ci permette di proporre un prezzo di partenza così basso. Puoi anche averlo prima, pagando un costo di cessione calcolato sul tempo che resta. Per un sito realizzato su preventivo, con costi di sviluppo, il codice ti appartiene dalla consegna, una volta pagata interamente la fattura. In entrambi i casi, ti consegniamo il codice in un repository Git, il formato abituale per trasmettere il codice di un sito. Se non hai o non hai più un abbonamento con noi, l'hosting è poi a tuo carico."
+          "answer": "Testi, immagini e nome a dominio ti appartengono dal primo giorno. Il codice del sito ti viene ceduto dopo {months} mesi di abbonamento, ed è questo che ci permette di proporre un prezzo di partenza così basso. Puoi anche averlo prima, pagando un costo di cessione calcolato sui mesi che mancano ai {months} mesi. Per un sito realizzato su preventivo, con costi di sviluppo, il codice ti appartiene dalla consegna, una volta pagata interamente la fattura. In entrambi i casi, ti consegniamo il codice in un repository Git, il formato abituale per trasmettere il codice di un sito. Se non hai o non hai più un abbonamento con noi, l'hosting è poi a tuo carico."
         },
         "edit": {
           "question": "Posso modificare il sito da solo?",
@@ -63,7 +63,7 @@
         },
         "stop": {
           "question": "Cosa succede se smetto?",
-          "answer": "Basta scriverci un'e-mail, e andartene non comporta alcuna penale: il sito resta online fino alla fine del periodo già pagato, e porti con te i tuoi contenuti e il tuo nome a dominio. Il codice ti viene ceduto gratuitamente dopo {months} mesi di abbonamento; prima di allora, puoi averlo a un costo di cessione che ti comunichiamo fin dall'inizio. Te lo consegniamo in un repository Git, e poi l'hosting del sito è a tuo carico. Se il tuo abbonamento comprende un nome a dominio, un indirizzo e-mail, la formula «Hai tu il controllo» o un'opzione con «Impegno di 1 anno», si rinnova per periodi di 12 mesi: avvisaci al più tardi due mesi prima della fine del periodo in corso, altrimenti riparte per 12 mesi. Ti ricordiamo questa data limite per e-mail due mesi prima."
+          "answer": "Basta scriverci un'e-mail, e andartene non comporta alcuna penale: senza vincolo di durata, il sito resta online fino alla fine del mese successivo alla tua e-mail, e porti con te i tuoi contenuti e il tuo nome a dominio. Il codice ti viene ceduto gratuitamente dopo {months} mesi di abbonamento; prima di allora, puoi averlo a un costo di cessione che ti comunichiamo al momento della sottoscrizione. Te lo consegniamo in un repository Git, e poi l'hosting del sito è a tuo carico. Se il tuo abbonamento comprende un nome a dominio, un indirizzo e-mail, la formula «Hai tu il controllo» o un'opzione con «Impegno di 1 anno», si rinnova per periodi di 12 mesi: avvisaci al più tardi due mesi prima della fine del periodo in corso, altrimenti riparte per 12 mesi. Due mesi prima di questa data limite, te la ricordiamo per e-mail."
         },
         "content": {
           "question": "Vi occupate anche di testi e foto?",

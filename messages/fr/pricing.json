@@ -149,7 +149,7 @@
         "detailed_analytics": {
           "label": "Statistiques détaillées (avec bandeau de cookies)",
           "hint": "Une mesure plus complète, avec un bandeau qui demande l'accord de vos visiteurs.",
-          "info": "Les statistiques détaillées vous disent aussi d'où viennent vos visiteurs, sur quel appareil ils vous lisent, et combien cliquent sur « Appeler », « Itinéraire » ou envoient votre formulaire. Elles déposent des cookies : la loi demande alors l'accord de vos visiteurs, et nous ajoutons un bandeau pour le recueillir. Les visiteurs qui refusent ne sont pas comptés dans ces statistiques.",
+          "info": "Les statistiques détaillées vous disent aussi d'où viennent vos visiteurs, sur quel appareil ils vous lisent, et combien cliquent sur « Appeler », « Itinéraire » ou envoient votre formulaire. Elles déposent des cookies : la loi demande alors l'accord de vos visiteurs, et nous ajoutons un bandeau pour le recueillir. Les visiteurs qui refusent ne sont pas comptés dans ces statistiques. Cette option est souscrite par périodes de 12 mois.",
           "recap_label": "Statistiques détaillées"
         },
         "articles": {
@@ -203,7 +203,7 @@
       },
       "total": {
         "label": "Votre estimation",
-        "note": "Prix indicatif, confirmé après un premier échange. Vous pouvez ajouter des options à tout moment. Le nombre de pages et l'hébergement en Suisse restent dans votre abonnement une fois activés. Les options marquées « Engagement 1 an » se retirent à la fin de chaque période de 12 mois, en nous prévenant au plus tard deux mois avant, les autres avec un mois de préavis (voir les <link>conditions générales de vente</link>).",
+        "note": "Prix indicatif, confirmé après un premier échange. Vous pouvez ajouter des options à tout moment. Le nombre de pages et l'hébergement en Suisse restent dans votre abonnement une fois activés. Les options marquées « Engagement 1 an » peuvent être retirées à la fin de chaque période de 12 mois, si vous nous prévenez au plus tard deux mois avant ; les autres, avec un mois de préavis (voir les <link>conditions générales de vente</link>).",
         "cta": "Demander ma maquette gratuite",
         "mobile_cta": "Ma maquette gratuite",
         "question": "Une question avant ? <link>Écrivez-nous</link>.",
@@ -212,11 +212,11 @@
       "info_label": "En savoir plus : {option}",
       "commitment": "Engagement 1 an",
       "commitment_line": {
-        "none": "Sans engagement de durée : résiliable chaque mois.",
-        "periods": "Abonnement par périodes de 12 mois, car il comprend : {items}. Il se renouvelle chaque année, sauf si vous nous prévenez au plus tard deux mois avant l'échéance."
+        "none": "Sans engagement de durée : résiliable avec un mois de préavis.",
+        "periods": "Abonnement par périodes de 12 mois, car il comprend : {items}. Il se renouvelle chaque année, sauf si vous nous prévenez au plus tard deux mois avant la fin de la période."
       },
       "commitment_items": {
-        "formula": "la formule « Vous gardez la main »",
+        "formula": "formule « Vous gardez la main »",
         "domain": "nom de domaine",
         "email": "adresse e-mail",
         "mailboxes": "boîtes e-mail en plus",

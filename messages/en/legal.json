@@ -138,25 +138,25 @@
       },
       "eyebrow": "Terms of sale",
       "title": "Terms of sale",
-      "updated": "Last updated: 18 October 2026",
+      "updated": "Last updated: 19 October 2026",
       "intro": "These terms of sale apply to the subscription and services offered by Cosmic Studio on www.gocosmic.dev.",
       "sections": [
         {
           "title": "Provider",
           "body": [
-            "The provider is Cosmic Studio, the trading name of the sole proprietorship (raison individuelle) Matthieu Compérat, not entered in the commercial register, currently being affiliated with FER Genève, chemin de la Montagne 100, 1224 Chêne-Bougeries, Switzerland. Contact: support@gocosmic.dev."
+            "The provider is Cosmic Studio, the trading name of the sole proprietorship (raison individuelle) Matthieu Compérat, chemin de la Montagne 100, 1224 Chêne-Bougeries, Switzerland. This sole proprietorship is not entered in the commercial register, and its affiliation with FER Genève is in progress. Contact: support@gocosmic.dev."
           ]
         },
         {
           "title": "Free mockup",
           "body": [
-            "The mockup and the review of your current website are free and commit you to nothing. They are prepared from the information you send us."
+            "The mockup and the review of your current website are free and place you under no obligation. They are prepared from the information you send us."
           ]
         },
         {
           "title": "Subscribing",
           "body": [
-            "The subscription is confirmed in writing after a first conversation, once your needs (pages, options, changes) have been defined together. It takes effect when the site goes live.",
+            "The subscription is confirmed in writing after a first conversation, once we have defined your needs together (pages, options, changes). It takes effect when the site goes live.",
             "Two plans are offered: “We take care of everything”, where we make the changes you email us, and “You stay in control”, which includes an editing tool to publish your news and opening hours yourself, along with a news section."
           ]
         },
@@ -164,9 +164,9 @@
           "title": "Price and billing",
           "body": [
             "Subscription prices are those shown on the Pricing page at the time of subscription, based on the options chosen.",
-            "The subscription is billed yearly or on a monthly payment schedule. Yearly, the invoice is paid by bank transfer within 30 days of receipt. On the schedule, each monthly instalment is paid by bank transfer on the date shown on the invoice.",
-            "Guidance, team reinforcement and custom projects are billed at the day rate or on a quote, provided before any work starts.",
-            "Cosmic Studio is not registered for VAT: VAT does not apply (article 10 of the Swiss VAT Act) and the prices shown are net prices. If Cosmic Studio becomes registered, VAT at the applicable rate will be added to the prices; you will be informed in writing at least 30 days before it applies.",
+            "The subscription is billed yearly or on a monthly payment schedule. With yearly billing, the invoice is payable by bank transfer within 30 days of receipt. With the monthly schedule, each instalment is payable by bank transfer on the date shown on the invoice.",
+            "Guidance, team reinforcement and custom projects are billed at the day rate or on the basis of a quote; either is given to you before any work starts.",
+            "Cosmic Studio is not registered for VAT: VAT does not apply (article 10 of the Swiss VAT Act) and the prices shown are net prices. If Cosmic Studio becomes registered, VAT at the applicable rate will be added to the prices; we will inform you in writing at least 30 days before it applies.",
             "A client based in France and registered for VAT declares the VAT on our services, then deducts it: the operation is neutral for them.",
             "Prices in euros (EUR) apply to businesses not domiciled in Switzerland. For businesses domiciled in Switzerland, prices are in Swiss francs (CHF).",
             "Bank charges for international payments, as well as duties and taxes due in the client's country, are borne by the client.",
@@ -176,22 +176,22 @@
         {
           "title": "Duration and commitment",
           "body": [
-            "The subscription has no minimum term and can be cancelled every month, as long as it includes nothing subscribed for 12-month periods: the “You stay in control” plan, domain name management, an email address or an option marked “1-year commitment” in the simulator.",
-            "As soon as one of these is active, the subscription runs in 12-month periods, renewed automatically, to cover the registration of the domain name and the email address, and the setup of the editing tool and of the options concerned.",
-            "The first 12-month period starts when the site goes live if the subscription already includes one of these, otherwise on the day the first of them is activated. Anything added later joins the current period and renews with it: your subscription has a single renewal date each year.",
-            "To stop the subscription from renewing, or to remove one of these at the end of the period, email us at support@gocosmic.dev; your email must reach us no later than two months before the end of the current period, and we confirm in writing that we have received it. For example, for a period ending on 31 March, the deadline is 31 January. After that date, the subscription and everything it includes renew for 12 months.",
+            "The subscription has no minimum term and can be cancelled at any time with one month's notice, as long as it includes no item subscribed for 12-month periods: the “You stay in control” plan, domain name management, an email address or an option marked “1-year commitment” in the pricing simulator.",
+            "As soon as one of these items is active, the subscription runs in 12-month periods, renewed automatically, to cover the registration of the domain name and the email address, and the setup of the editing tool and of the options concerned.",
+            "The first 12-month period starts when the site goes live if the subscription already includes one of these items, otherwise on the day the first of them is activated. If you add one of these items during a current period, a new 12-month period starts for the whole subscription on the day it is activated, so your subscription still has a single renewal date each year.",
+            "To stop the subscription from renewing, or to remove one of these items at the end of the period, email us at support@gocosmic.dev: your email must reach us no later than two months before the end of the current period, and we confirm in writing that we have received it. For example, for a period ending on 31 March, the deadline is 31 January. If your email reaches us after that date, the subscription and these items renew for a further 12 months.",
             "Two months before that deadline, we send you an email reminding you of it, with the steps to follow.",
-            "You can switch to the “You stay in control” plan at any time. Switching back to “We take care of everything” must be requested by the same deadline and takes effect at the end of the current 12-month period, as the editing tool cannot be removed before then."
+            "You can switch to the “You stay in control” plan at any time. Switching back to “We take care of everything” must be requested no later than two months before the end of the current 12-month period and takes effect at the end of that period, as the editing tool cannot be removed before then."
           ]
         },
         {
           "title": "Options",
           "body": [
-            "You can add an option at any time; it takes effect from the next billing period.",
-            "The number of pages and Swiss hosting cannot be removed once active, because each one is a commitment made on your behalf (pages built). The frequency of content changes can be adjusted up or down.",
-            "If you do not have a domain name, its management by Cosmic Studio is part of the subscription. If you already have one, the domain name and email address options are not offered; help with your domain name and email addresses can be quoted.",
+            "You can add an option at any time: we set it up as soon as possible, and it is billed from the following month.",
+            "The number of pages and Swiss hosting cannot be removed once active, because they reflect a commitment we made for you (pages built). The frequency of content changes can be adjusted up or down.",
+            "If you do not have a domain name, its management by Cosmic Studio is part of the subscription. If you already have one, the domain name and email address options are not offered; we can send you a quote for help with your domain name and email addresses.",
             "A content change is one request, which can group several changes. News and articles do not count towards content changes.",
-            "Options marked “1-year commitment” (domain name, email address, news published for you, site in English, tracking your position on Google, visit statistics and detailed statistics, AI-assisted articles, extra mailboxes and forwarding addresses) are subscribed for 12-month periods and can be removed at the end of a period, if you ask us no later than two months before it ends (see “Duration and commitment”). The rhythm of the news and of the articles can be lowered with one month's notice.",
+            "Options marked “1-year commitment” (domain name, email address, news published for you, site in English, tracking your position on Google, visit statistics and detailed statistics, AI-assisted articles, extra mailboxes and forwarding addresses) are subscribed for 12-month periods and can be removed at the end of a period, if you ask us no later than two months before it ends (see “Duration and commitment”). The frequency of news posts and articles can be reduced with one month's notice.",
             "The other options (contact form, online booking, customer reviews) can be removed with one month's notice.",
             "When an option is removed, the content that goes with it disappears from the site, for example the news section and its posts, or the English version.",
             "By default, your website is hosted in the European Union. If this location does not suit you, you can ask us for hosting in another country; we will then tell you whether it is possible and at what price."
@@ -200,30 +200,30 @@
         {
           "title": "Cancellation",
           "body": [
-            "You can cancel at any time by emailing support@gocosmic.dev; we confirm in writing that we have received your email. The site stays online until the end of the paid period: the end of the month for a subscription with no minimum term; if it includes something subscribed for 12-month periods, the end of the current period if your email reaches us no later than two months before it ends, otherwise the end of the following period.",
-            "You leave with your content and your domain name. Leaving the subscription comes with no exit penalty: you pay for the current period and, if your email reaches us after the deadline, for the following 12-month period. The only other possible cost is the transfer fee, if you ask for the code before 36 months of subscription (see “Ownership”)."
+            "You can cancel at any time by emailing support@gocosmic.dev; we confirm in writing that we have received your email. The site stays online until the end of your subscription: for a subscription with no minimum term, the end of the month after the one in which your email reaches us, or, if it is billed yearly, the end of the paid year, with no refund for the remaining months; for a subscription that includes an item subscribed for 12-month periods, the end of the current period if your email reaches us no later than two months before it ends, otherwise the end of the following period.",
+            "You leave with your content and your domain name. Leaving the subscription comes with no exit penalty: you pay for the current period and, if your email reaches us after the deadline, for the following 12-month period. The only other possible cost is the transfer fee, if you ask for the code before reaching 36 months of subscription (see “Ownership”)."
           ]
         },
         {
           "title": "Ownership",
           "body": [
-            "Your texts, images and domain name belong to you from day one. The site's code is transferred to you free of charge after 36 months of subscription. Before then, it can be transferred for a fee that depends on the remaining time.",
-            "Once the code is transferred, we give you a Git repository containing it on request, whether or not your subscription continues. As long as the subscription continues, we host and manage the site; if you leave, hosting and managing it are your responsibility.",
+            "Your texts, images and domain name belong to you from day one. The site's code is transferred to you free of charge after 36 months of subscription. Before then, it can be transferred to you for a transfer fee, which depends on the number of months left until 36 months; its amount is stated in the written confirmation of your subscription.",
+            "Once the code is transferred, we give you, on request, a Git repository containing it, whether or not your subscription continues. As long as the subscription continues, we host and manage the site; if you leave, hosting and managing it are your responsibility.",
             "For a one-off project, the code belongs to you from delivery, once the invoice has been paid in full. We deliver it in a Git repository, and hosting it is your responsibility, unless you then switch to a subscription for ongoing care."
           ]
         },
         {
-          "title": "Your commitments",
+          "title": "Your obligations",
           "body": [
-            "You provide the texts, images and information needed to build or update the site. Announced timelines start once we have received them.",
-            "We commit to the launch date set at the start. It moves back by the length of the delay if your content reaches us late, or in the event of force majeure. Cosmic Studio is not liable for a delay or a failure to perform caused by force majeure.",
+            "You provide the texts, images and information needed to build or update the site. The timelines we announce start once we have received them.",
+            "We commit to the launch date set at the start. It is postponed by the length of the delay if your content reaches us late, or in the event of force majeure. Cosmic Studio is not liable for a delay or a failure to perform caused by force majeure.",
             "We set up your legal notice and privacy policy from the information you provide; you read them over, approve them and remain responsible for them."
           ]
         },
         {
           "title": "Liability and availability",
           "body": [
-            "Cosmic Studio takes reasonable steps to keep the site available, without being able to guarantee that it will never be interrupted. If a prolonged outage is caused by Cosmic Studio, the period concerned may be extended by the same length of time.",
+            "Cosmic Studio takes reasonable steps to keep the site available, but cannot guarantee that it will never be interrupted. If a prolonged outage is attributable to Cosmic Studio, the period concerned may be extended by the same length of time.",
             "Cosmic Studio's liability is limited to the amount of the order concerned, except in cases of intent or gross negligence."
           ]
         },
@@ -235,7 +235,7 @@
           "title": "Governing law and disputes",
           "body": [
             "These terms are governed by Swiss law, whatever the client's country.",
-            "In the event of a dispute, an amicable solution is sought before any legal action. Failing that, the courts of Cosmic Studio's seat, in Chêne-Bougeries (canton of Geneva), have exclusive jurisdiction, subject to the mandatory provisions that protect consumers."
+            "In the event of a dispute, the parties first seek an amicable solution, before any legal action. Failing that, the courts of Cosmic Studio's seat, in Chêne-Bougeries (canton of Geneva), have exclusive jurisdiction, subject to the mandatory provisions that protect consumers."
           ]
         }
       ]

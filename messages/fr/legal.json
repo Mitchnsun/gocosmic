@@ -141,13 +141,13 @@
       },
       "eyebrow": "Conditions de vente",
       "title": "Conditions générales de vente",
-      "updated": "Dernière mise à jour : 18 octobre 2026",
+      "updated": "Dernière mise à jour : 19 octobre 2026",
       "intro": "Ces conditions générales de vente s'appliquent à l'abonnement et aux prestations proposées par Cosmic Studio sur www.gocosmic.dev.",
       "sections": [
         {
           "title": "Prestataire",
           "body": [
-            "Le prestataire est Cosmic Studio, nom commercial de la raison individuelle Matthieu Compérat, non inscrite au registre du commerce, en cours d'affiliation à la FER Genève, chemin de la Montagne 100, 1224 Chêne-Bougeries, Suisse. Contact : support@gocosmic.dev."
+            "Le prestataire est Cosmic Studio, nom commercial de la raison individuelle Matthieu Compérat, chemin de la Montagne 100, 1224 Chêne-Bougeries, Suisse. Cette raison individuelle n'est pas inscrite au registre du commerce et est en cours d'affiliation à la FER Genève. Contact : support@gocosmic.dev."
           ]
         },
         {
@@ -179,18 +179,18 @@
         {
           "title": "Durée et engagement",
           "body": [
-            "L'abonnement est sans engagement de durée et résiliable chaque mois, tant qu'il ne comprend aucun élément souscrit par périodes de 12 mois : la formule « Vous gardez la main », la gestion d'un nom de domaine, une adresse e-mail ou une option marquée « Engagement 1 an » dans le simulateur.",
+            "L'abonnement est sans engagement de durée et résiliable à tout moment avec un mois de préavis, tant qu'il ne comprend aucun élément souscrit par périodes de 12 mois : la formule « Vous gardez la main », la gestion d'un nom de domaine, une adresse e-mail ou une option marquée « Engagement 1 an » dans le simulateur.",
             "Dès que l'un de ces éléments est activé, l'abonnement est souscrit par périodes de 12 mois, renouvelées tacitement, afin de couvrir la réservation du nom de domaine et de l'adresse e-mail, et la mise en place de l'outil d'édition et des options concernées.",
-            "La première période de 12 mois commence à la mise en ligne du site si l'abonnement comprend déjà l'un de ces éléments, sinon le jour où le premier d'entre eux est activé. Un élément ajouté ensuite rejoint la période en cours et se renouvelle avec elle : votre abonnement n'a qu'une échéance par an.",
-            "Pour ne pas renouveler l'abonnement, ou pour retirer l'un de ces éléments à la fin de la période, envoyez-nous un e-mail à support@gocosmic.dev, qui doit nous parvenir au plus tard deux mois avant la fin de la période en cours ; nous vous confirmons sa réception par écrit. Par exemple, pour une période qui se termine le 31 mars, la date limite est le 31 janvier. Après cette date, l'abonnement et ses éléments sont renouvelés pour 12 mois.",
+            "La première période de 12 mois commence à la mise en ligne du site si l'abonnement comprend déjà l'un de ces éléments, sinon le jour où le premier d'entre eux est activé. Si vous ajoutez l'un de ces éléments pendant une période en cours, une nouvelle période de 12 mois commence, pour tout l'abonnement, le jour où il est activé : votre abonnement n'a ainsi qu'une date de renouvellement par an.",
+            "Pour ne pas renouveler l'abonnement, ou pour retirer l'un de ces éléments à la fin de la période, envoyez-nous un e-mail à support@gocosmic.dev : il doit nous parvenir au plus tard deux mois avant la fin de la période en cours, et nous vous en confirmons la réception par écrit. Par exemple, pour une période qui se termine le 31 mars, la date limite est le 31 janvier. Si votre e-mail nous parvient après cette date, l'abonnement et ces éléments sont renouvelés pour 12 mois.",
             "Deux mois avant cette date limite, nous vous envoyons un e-mail qui vous la rappelle, avec la marche à suivre.",
-            "Vous pouvez passer à la formule « Vous gardez la main » à tout moment. Le retour à la formule « On s'occupe de tout » se demande dans le même délai et prend effet à la fin de la période de 12 mois en cours, car l'outil d'édition ne peut pas être retiré avant."
+            "Vous pouvez passer à la formule « Vous gardez la main » à tout moment. Le retour à la formule « On s'occupe de tout » se demande au plus tard deux mois avant la fin de la période de 12 mois en cours et prend effet à la fin de cette période, car l'outil d'édition ne peut pas être retiré avant."
           ]
         },
         {
           "title": "Options",
           "body": [
-            "Vous pouvez ajouter une option à tout moment ; elle s'applique à partir de la période de facturation suivante.",
+            "Vous pouvez ajouter une option à tout moment : nous la mettons en place dès que possible, et elle est facturée à partir du mois suivant.",
             "Le nombre de pages et l'hébergement en Suisse ne peuvent pas être retirés une fois activés, car ils correspondent à un engagement pris pour vous (pages créées). La fréquence des modifications de contenu peut être revue à la hausse ou à la baisse.",
             "Si vous n'avez pas de nom de domaine, sa gestion par Cosmic Studio fait partie de l'abonnement. Si vous en avez déjà un, les options nom de domaine et adresse e-mail ne sont pas proposées ; une aide pour votre nom de domaine et vos adresses e-mail peut faire l'objet d'un devis.",
             "Une modification de contenu correspond à une demande, qui peut regrouper plusieurs changements. Les actualités et les articles ne comptent pas dans les modifications de contenu.",
@@ -203,14 +203,14 @@
         {
           "title": "Résiliation",
           "body": [
-            "Vous pouvez résilier à tout moment, par e-mail à support@gocosmic.dev ; nous vous confirmons sa réception par écrit. Le site reste en ligne jusqu'à la fin de la période payée : la fin du mois pour un abonnement sans engagement ; s'il comprend un élément souscrit par périodes de 12 mois, la fin de la période en cours si votre e-mail nous parvient au plus tard deux mois avant, sinon la fin de la période suivante.",
+            "Vous pouvez résilier à tout moment en nous écrivant à support@gocosmic.dev ; nous vous confirmons la réception de votre e-mail par écrit. Le site reste en ligne jusqu'à la fin de votre abonnement : pour un abonnement sans engagement, la fin du mois qui suit la réception de votre e-mail, ou, s'il est facturé à l'année, la fin de l'année payée, sans remboursement des mois restants ; pour un abonnement qui comprend un élément souscrit par périodes de 12 mois, la fin de la période en cours si votre e-mail nous parvient au plus tard deux mois avant cette fin, sinon la fin de la période suivante.",
             "Vous repartez avec vos contenus et votre nom de domaine. Quitter l'abonnement n'entraîne aucune pénalité de départ : vous réglez la période en cours et, si votre e-mail nous parvient après la date limite, la période suivante de 12 mois. Les seuls autres frais possibles sont les frais de cession, si vous demandez le code avant 36 mois d'abonnement (voir « Propriété »)."
           ]
         },
         {
           "title": "Propriété",
           "body": [
-            "Vos textes, vos images et votre nom de domaine vous appartiennent dès le premier jour. Le code du site vous est cédé gratuitement après 36 mois d'abonnement. Avant ce délai, il peut vous être cédé contre des frais de cession qui dépendent de la durée restante.",
+            "Vos textes, vos images et votre nom de domaine vous appartiennent dès le premier jour. Le code du site vous est cédé gratuitement après 36 mois d'abonnement. Avant ce délai, il peut vous être cédé contre des frais de cession, qui dépendent du nombre de mois restant jusqu'aux 36 mois ; leur montant figure dans la confirmation écrite de l'abonnement.",
             "Une fois le code cédé, nous vous remettons sur demande un dépôt Git qui le contient, que votre abonnement continue ou non. Tant que l'abonnement continue, nous hébergeons et gérons le site ; si vous le quittez, son hébergement et sa gestion sont à votre charge.",
             "Pour un projet ponctuel, le code vous appartient dès la livraison, une fois la facture entièrement payée. Nous vous le livrons dans un dépôt Git, et son hébergement est à votre charge, sauf si vous passez ensuite à l'abonnement pour le suivi."
           ]

@@ -138,13 +138,13 @@
       },
       "eyebrow": "Condizioni di vendita",
       "title": "Condizioni generali di vendita",
-      "updated": "Ultimo aggiornamento: 18 ottobre 2026",
+      "updated": "Ultimo aggiornamento: 19 ottobre 2026",
       "intro": "Le presenti condizioni generali di vendita si applicano all'abbonamento e ai servizi offerti da Cosmic Studio su www.gocosmic.dev.",
       "sections": [
         {
           "title": "Fornitore",
           "body": [
-            "Il fornitore è Cosmic Studio, nome commerciale della ditta individuale (raison individuelle) Matthieu Compérat, non iscritta al registro di commercio, in corso di affiliazione alla FER Genève, chemin de la Montagne 100, 1224 Chêne-Bougeries, Svizzera. Contatto: support@gocosmic.dev."
+            "Il fornitore è Cosmic Studio, nome commerciale della ditta individuale (raison individuelle) Matthieu Compérat, chemin de la Montagne 100, 1224 Chêne-Bougeries, Svizzera. Questa ditta individuale non è iscritta al registro di commercio ed è in corso di affiliazione alla FER Genève. Contatto: support@gocosmic.dev."
           ]
         },
         {
@@ -156,40 +156,40 @@
         {
           "title": "Sottoscrizione",
           "body": [
-            "L'abbonamento viene confermato per iscritto dopo un primo colloquio, una volta definite insieme le tue esigenze (pagine, opzioni, modifiche). Decorre dalla messa online del sito.",
+            "L'abbonamento viene confermato per iscritto dopo una prima conversazione, una volta definite insieme le tue esigenze (pagine, opzioni, modifiche). Decorre dalla messa online del sito.",
             "Sono proposte due formule: «Ci pensiamo noi», in cui facciamo le modifiche che ci mandi per e-mail, e «Hai tu il controllo», che comprende uno strumento di modifica per pubblicare da te notizie e orari, oltre a una sezione notizie."
           ]
         },
         {
-          "title": "Prezzo e fatturazione",
+          "title": "Prezzi e fatturazione",
           "body": [
             "I prezzi dell'abbonamento sono quelli indicati nella pagina Tariffe al momento della sottoscrizione, in base alle opzioni scelte.",
-            "L'abbonamento è fatturato su base annua o secondo un piano di pagamento mensile. Su base annua, la fattura è pagata con bonifico bancario entro 30 giorni dal ricevimento. Con il piano di pagamento, ogni rata mensile è pagata con bonifico bancario alla data indicata sulla fattura.",
-            "L'accompagnamento, il rinforzo del team e i progetti su misura sono fatturati alla tariffa a giornata o su preventivo, comunicato prima di qualsiasi intervento.",
-            "Cosmic Studio non è assoggettato all'IVA: l'IVA non è applicabile (art. 10 LIVA) e i prezzi indicati sono prezzi netti. Se Cosmic Studio diventa assoggettato, ai prezzi si aggiungerà l'IVA all'aliquota in vigore; ti informeremo per iscritto almeno 30 giorni prima della sua applicazione.",
+            "L'abbonamento è fatturato su base annua o secondo un piano di pagamento mensile. Con la fatturazione annuale, la fattura va pagata con bonifico bancario entro 30 giorni dal ricevimento. Con il piano di pagamento, ogni rata mensile va pagata con bonifico bancario alla data indicata sulla fattura.",
+            "L'accompagnamento, il rinforzo del team e i progetti su misura sono fatturati alla tariffa a giornata o su preventivo; la tariffa o il preventivo ti vengono comunicati prima di qualsiasi intervento.",
+            "Cosmic Studio non è assoggettato all'IVA: l'IVA non è applicabile (art. 10 LIVA) e i prezzi indicati sono prezzi netti. Se Cosmic Studio dovesse diventare assoggettato, ai prezzi si aggiungerà l'IVA all'aliquota in vigore; ti informeremo per iscritto almeno 30 giorni prima della sua applicazione.",
             "Un cliente stabilito in Francia e assoggettato all'IVA la dichiara sui nostri servizi, poi la detrae: l'operazione è neutra per lui.",
             "I prezzi in euro (EUR) si applicano alle aziende non domiciliate in Svizzera. Per le aziende domiciliate in Svizzera, i prezzi sono in franchi svizzeri (CHF).",
             "Le spese bancarie dei pagamenti internazionali, così come i dazi e le imposte dovuti nel paese del cliente, sono a suo carico.",
-            "Ogni ritardo nel pagamento comporta di pieno diritto un interesse di mora del 5% all'anno."
+            "Ogni ritardo nel pagamento comporta automaticamente interessi di mora del 5% annuo."
           ]
         },
         {
           "title": "Durata e impegno",
           "body": [
-            "L'abbonamento non prevede un periodo minimo ed è disdicibile ogni mese, a condizione che non includa nulla di sottoscritto per periodi di 12 mesi: la formula «Hai tu il controllo», la gestione di un nome a dominio, un indirizzo e-mail o un'opzione indicata con «Impegno di 1 anno» nel simulatore.",
-            "Non appena uno di questi elementi è attivo, l'abbonamento è sottoscritto per periodi di 12 mesi, rinnovati tacitamente, per coprire la registrazione del nome a dominio e dell'indirizzo e-mail, e la messa in opera dello strumento di modifica e delle opzioni interessate.",
-            "Il primo periodo di 12 mesi inizia con la messa online del sito se l'abbonamento comprende già uno di questi elementi, altrimenti il giorno in cui viene attivato il primo di essi. Un elemento aggiunto in seguito si inserisce nel periodo in corso e si rinnova con esso: il tuo abbonamento ha una sola scadenza all'anno.",
-            "Per non rinnovare l'abbonamento, o per rimuovere uno di questi elementi alla fine del periodo, scrivici un'e-mail a support@gocosmic.dev, che deve arrivarci al più tardi due mesi prima della fine del periodo in corso; te ne confermiamo la ricezione per iscritto. Ad esempio, per un periodo che termina il 31 marzo, la data limite è il 31 gennaio. Dopo questa data, l'abbonamento e i suoi elementi si rinnovano per 12 mesi.",
-            "Due mesi prima di questa data limite, ti inviamo un'e-mail che te la ricorda, con i passi da seguire.",
-            "Puoi passare alla formula «Hai tu il controllo» in qualsiasi momento. Il ritorno alla formula «Ci pensiamo noi» va chiesto entro lo stesso termine e decorre dalla fine del periodo di 12 mesi in corso, perché lo strumento di modifica non può essere rimosso prima."
+            "L'abbonamento è senza vincolo di durata e disdicibile in qualsiasi momento con un mese di preavviso, purché non comprenda alcun elemento sottoscritto per periodi di 12 mesi: la formula «Hai tu il controllo», la gestione di un nome a dominio, un indirizzo e-mail o un'opzione con «Impegno di 1 anno» nel simulatore.",
+            "Non appena uno di questi elementi è attivo, l'abbonamento è sottoscritto per periodi di 12 mesi, rinnovati tacitamente, per coprire la registrazione del nome a dominio e dell'indirizzo e-mail, e la configurazione dello strumento di modifica e delle opzioni interessate.",
+            "Il primo periodo di 12 mesi inizia con la messa online del sito se l'abbonamento comprende già uno di questi elementi, altrimenti il giorno in cui viene attivato il primo di essi. Se aggiungi uno di questi elementi durante un periodo in corso, il giorno in cui viene attivato inizia un nuovo periodo di 12 mesi per tutto l'abbonamento: così il tuo abbonamento ha una sola data di rinnovo all'anno.",
+            "Per non rinnovare l'abbonamento, o per rimuovere uno di questi elementi alla fine del periodo, scrivici un'e-mail a support@gocosmic.dev: deve arrivarci al più tardi due mesi prima della fine del periodo in corso, e te ne confermiamo la ricezione per iscritto. Ad esempio, per un periodo che termina il 31 marzo, la data limite è il 31 gennaio. Se la tua e-mail ci arriva dopo questa data, l'abbonamento e questi elementi si rinnovano per 12 mesi.",
+            "Due mesi prima di questa data limite, ti inviamo un'e-mail che te la ricorda, con la procedura da seguire.",
+            "Puoi passare alla formula «Hai tu il controllo» in qualsiasi momento. Il ritorno alla formula «Ci pensiamo noi» va chiesto al più tardi due mesi prima della fine del periodo di 12 mesi in corso e ha effetto alla fine di questo periodo, perché lo strumento di modifica non può essere rimosso prima."
           ]
         },
         {
           "title": "Opzioni",
           "body": [
-            "Puoi aggiungere un'opzione in qualsiasi momento; si applica a partire dal periodo di fatturazione successivo.",
-            "Il numero di pagine e l'hosting in Svizzera non possono essere rimossi una volta attivati, perché corrispondono a un impegno assunto per tuo conto (pagine create). La frequenza delle modifiche ai contenuti può essere rivista al rialzo o al ribasso.",
-            "Se non hai un nome a dominio, la sua gestione da parte di Cosmic Studio fa parte dell'abbonamento. Se ne hai già uno, le opzioni nome a dominio e indirizzo e-mail non sono proposte; un aiuto per il tuo nome a dominio e i tuoi indirizzi e-mail può essere oggetto di un preventivo.",
+            "Puoi aggiungere un'opzione in qualsiasi momento: la attiviamo il prima possibile e viene fatturata a partire dal mese successivo.",
+            "Il numero di pagine e l'hosting in Svizzera non possono essere rimossi una volta attivati, perché corrispondono a un impegno preso per te (pagine create). La frequenza delle modifiche ai contenuti può essere rivista al rialzo o al ribasso.",
+            "Se non hai un nome a dominio, la sua gestione da parte di Cosmic Studio fa parte dell'abbonamento. Se ne hai già uno, le opzioni nome a dominio e indirizzo e-mail non sono proposte; per un aiuto con il tuo nome a dominio e i tuoi indirizzi e-mail, possiamo farti un preventivo.",
             "Una modifica ai contenuti corrisponde a una richiesta, che può raggruppare più cambiamenti. Le notizie e gli articoli non rientrano nelle modifiche ai contenuti.",
             "Le opzioni con «Impegno di 1 anno» (nome a dominio, indirizzo e-mail, notizie pubblicate per te, sito in inglese, monitoraggio della tua posizione su Google, statistiche delle visite e statistiche dettagliate, articoli scritti con l'aiuto dell'IA, caselle e-mail in più e indirizzi di inoltro) si sottoscrivono per periodi di 12 mesi e possono essere rimosse alla fine di un periodo, se ce lo chiedi al più tardi due mesi prima della sua fine (vedi «Durata e impegno»). Il ritmo delle notizie e degli articoli può essere ridotto con un mese di preavviso.",
             "Le altre opzioni (modulo di contatto, prenotazione online, recensioni dei clienti) possono essere rimosse con un mese di preavviso.",
@@ -200,15 +200,15 @@
         {
           "title": "Disdetta",
           "body": [
-            "Puoi disdire l'abbonamento in qualsiasi momento, con un'e-mail a support@gocosmic.dev; te ne confermiamo la ricezione per iscritto. Il sito resta online fino alla fine del periodo già pagato: la fine del mese per un abbonamento senza vincolo di durata; se comprende qualcosa sottoscritto per periodi di 12 mesi, la fine del periodo in corso se la tua e-mail ci arriva al più tardi due mesi prima, altrimenti la fine del periodo successivo.",
-            "Porti con te i tuoi contenuti e il tuo nome a dominio. Lasciare l'abbonamento non comporta alcuna penale: paghi il periodo in corso e, se la tua e-mail ci arriva dopo la data limite, il periodo successivo di 12 mesi. L'unico altro costo possibile è il costo di cessione, se chiedi il codice prima di 36 mesi di abbonamento (vedi «Proprietà»)."
+            "Puoi disdire l'abbonamento in qualsiasi momento scrivendoci a support@gocosmic.dev; ti confermiamo per iscritto la ricezione della tua e-mail. Il sito resta online fino alla fine del tuo abbonamento: per un abbonamento senza vincolo di durata, la fine del mese successivo a quello in cui ci arriva la tua e-mail oppure, se è fatturato annualmente, la fine dell'anno pagato, senza rimborso dei mesi restanti; per un abbonamento che comprende un elemento sottoscritto per periodi di 12 mesi, la fine del periodo in corso se la tua e-mail ci arriva al più tardi due mesi prima di questa data, altrimenti la fine del periodo successivo.",
+            "Porti con te i tuoi contenuti e il tuo nome a dominio. Lasciare l'abbonamento non comporta alcuna penale: paghi il periodo in corso e, se la tua e-mail ci arriva dopo la data limite, il periodo successivo di 12 mesi. L'unico altro costo possibile è il costo di cessione, se chiedi il codice prima dei 36 mesi di abbonamento (vedi «Proprietà»)."
           ]
         },
         {
           "title": "Proprietà",
           "body": [
-            "I tuoi testi, le tue immagini e il tuo nome a dominio ti appartengono dal primo giorno. Il codice del sito ti viene ceduto gratuitamente dopo 36 mesi di abbonamento. Prima di questo termine, può esserti ceduto a fronte di un costo di cessione che dipende dalla durata residua.",
-            "Una volta ceduto il codice, ti consegniamo su richiesta un repository Git che lo contiene, che il tuo abbonamento continui o no. Finché l'abbonamento continua, ospitiamo e gestiamo il sito; se lo lasci, l'hosting e la gestione sono a tuo carico.",
+            "I tuoi testi, le tue immagini e il tuo nome a dominio ti appartengono dal primo giorno. Il codice del sito ti viene ceduto gratuitamente dopo 36 mesi di abbonamento. Prima di questo termine, può esserti ceduto a fronte di un costo di cessione, che dipende dai mesi che mancano ai 36 mesi; il suo importo è indicato nella conferma scritta dell'abbonamento.",
+            "Una volta ceduto il codice, ti consegniamo su richiesta un repository Git che lo contiene, sia che il tuo abbonamento continui sia che termini. Finché l'abbonamento continua, ospitiamo e gestiamo il sito; se lasci l'abbonamento, l'hosting e la gestione del sito sono a tuo carico.",
             "Per un progetto una tantum, il codice ti appartiene dalla consegna, una volta pagata interamente la fattura. Te lo consegniamo in un repository Git, e l'hosting è a tuo carico, a meno che tu non passi poi all'abbonamento per l'assistenza."
           ]
         },
@@ -216,14 +216,14 @@
           "title": "I tuoi obblighi",
           "body": [
             "Ci fornisci i testi, le immagini e le informazioni necessari alla realizzazione o all'aggiornamento del sito. I tempi indicati decorrono da quando li riceviamo.",
-            "Ci impegniamo a rispettare la data di messa online fissata all'inizio. Slitta per la durata del ritardo se i tuoi contenuti ci arrivano tardi o in caso di forza maggiore. Cosmic Studio non è responsabile di un ritardo o di una mancata esecuzione causati da un caso di forza maggiore.",
+            "Ci impegniamo a rispettare la data di messa online fissata all'inizio. La data viene posticipata di un tempo equivalente se i tuoi contenuti ci arrivano in ritardo o in caso di forza maggiore. Cosmic Studio non è responsabile di un ritardo o di una mancata esecuzione causati da un caso di forza maggiore.",
             "Prepariamo le tue note legali e la tua informativa sulla privacy con le informazioni che ci fornisci; tu le rileggi, le approvi e ne resti responsabile."
           ]
         },
         {
           "title": "Responsabilità e disponibilità",
           "body": [
-            "Cosmic Studio adotta misure ragionevoli per assicurare la disponibilità del sito, senza poter garantire l'assenza totale di interruzioni. In caso di indisponibilità prolungata imputabile a Cosmic Studio, il periodo interessato può essere prolungato per una durata equivalente.",
+            "Cosmic Studio adotta misure ragionevoli per assicurare la disponibilità del sito, senza poter garantire l'assenza totale di interruzioni. In caso di indisponibilità prolungata imputabile a Cosmic Studio, il periodo interessato può essere prolungato di una durata equivalente.",
             "La responsabilità di Cosmic Studio è limitata all'importo dell'ordine in questione, salvo dolo o colpa grave."
           ]
         },
@@ -235,7 +235,7 @@
           "title": "Legge applicabile e controversie",
           "body": [
             "Le presenti condizioni sono regolate dal diritto svizzero, qualunque sia il paese del cliente.",
-            "In caso di controversia, si cerca una soluzione amichevole prima di qualsiasi azione legale. In mancanza, sono competenti in via esclusiva i tribunali della sede di Cosmic Studio, a Chêne-Bougeries (Cantone di Ginevra), fatte salve le disposizioni imperative che tutelano i consumatori."
+            "In caso di controversia, si cerca una soluzione bonaria prima di qualsiasi azione legale. In mancanza di accordo, sono competenti in via esclusiva i tribunali della sede di Cosmic Studio, a Chêne-Bougeries (Cantone di Ginevra), fatte salve le disposizioni imperative che tutelano i consumatori."
           ]
         }
       ]

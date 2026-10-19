@@ -30,7 +30,7 @@ describe('PricingSimulator', () => {
     expect(screen.getByText('The settings that help you get found on Google')).toBeInTheDocument();
     expect(total()).toHaveTextContent('€10');
     expect(within(recap()).getAllByRole('listitem')).toHaveLength(1);
-    expect(within(recap()).getByText('No minimum term: cancel any month.')).toBeInTheDocument();
+    expect(within(recap()).getByText("No minimum term: cancel with one month's notice.")).toBeInTheDocument();
   });
 
   it('switches to "You stay in control", with its editing tool and news section included', () => {
@@ -171,7 +171,7 @@ describe('PricingSimulator', () => {
     expect(total()).toHaveTextContent('€15');
     expect(within(recap()).getByText('Changes to your pages')).toBeInTheDocument();
     // Changes can be stopped with a month's notice.
-    expect(within(recap()).getByText('No minimum term: cancel any month.')).toBeInTheDocument();
+    expect(within(recap()).getByText("No minimum term: cancel with one month's notice.")).toBeInTheDocument();
   });
 
   it('prices the chosen update frequency', () => {

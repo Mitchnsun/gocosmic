@@ -5,14 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [2.5.1] - 2026-10-18
+## [2.5.1] - 2026-10-19
 
 ### Changed
 
 - The terms of sale now spell out how to stop a 12-month subscription or option from renewing: an email that reaches the studio at least two months before the end of the period, confirmed in writing, with an example of the deadline and a reminder email sent two months before it
-- The first 12-month period starts when the site goes live, or when the first 12-month item is added, and anything added later renews on that same date; the Services FAQ and the pricing simulator now give the same two-month deadline
-- The terms of sale and the Services FAQ now state plainly that leaving the subscription comes with no exit penalty: beyond the current period, and the next one if you stop after the deadline, the only possible fee is the one for taking over the site's code before 36 months
+- The first 12-month period starts when the site goes live, or when the first 12-month item is added, and adding another one starts a new 12-month period; the Services FAQ and the pricing simulator now give the same two-month deadline
+- A subscription with no minimum term now ends one month after you ask, or at the end of the paid year when billed yearly, with no refund; a new option is set up as soon as possible and billed from the following month
+- The terms of sale and the Services FAQ now state plainly that leaving the subscription comes with no exit penalty: beyond the current period, and the next one if you stop after the deadline, the only possible fee is the one for taking over the site's code before 36 months, which depends on the months left and is given when you subscribe
 - Once the code is yours, from a subscription or a one-off project, the studio hands it over in a Git repository, the usual format for passing on a site's code; if you leave, hosting the site is then up to you
+- The terms of sale read more clearly in all five languages, and the English, Spanish, German and Italian versions now say exactly what the French says
 
 ### Fixed
 

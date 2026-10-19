@@ -87,12 +87,12 @@
           "count": "{count, plural, =0 {Nessuna casella in più} one {# casella in più} other {# caselle in più}}",
           "decrease": "Una casella in meno",
           "increase": "Una casella in più",
-          "info": "Se lavori con altre persone, o per il direttivo di un'associazione, ognuno può avere la sua casella a tuo nome, con la sua password. Queste caselle si sottoscrivono per periodi di 12 mesi; puoi rimuoverle alla fine di un periodo, avvisandoci almeno due mesi prima."
+          "info": "Se lavori con altre persone, o per il direttivo di un'associazione, ognuno può avere la sua casella a tuo nome, con la sua password. Queste caselle si sottoscrivono per periodi di 12 mesi; puoi rimuoverle alla fine di un periodo, avvisandoci al più tardi due mesi prima."
         },
         "redirects": {
           "label": "Indirizzi di inoltro (fino a 5)",
           "hint": "Fino a 5 indirizzi che inoltrano a una casella esistente, per esempio fatture@{domain}.",
-          "info": "Un indirizzo di inoltro non ha una casella: i messaggi inviati a fatture@{domain} arrivano in una casella che hai già. Questi indirizzi si sottoscrivono per periodi di 12 mesi; puoi rimuoverli alla fine di un periodo, avvisandoci almeno due mesi prima."
+          "info": "Un indirizzo di inoltro non ha una casella: i messaggi inviati a fatture@{domain} arrivano in una casella che hai già. Questi indirizzi si sottoscrivono per periodi di 12 mesi; puoi rimuoverli alla fine di un periodo, avvisandoci al più tardi due mesi prima."
         },
         "contact_form": {
           "label": "Un modulo di contatto",
@@ -123,7 +123,7 @@
             "monthly": "1 notizia al mese",
             "weekly": "1 notizia a settimana"
           },
-          "info": "Una sezione aggiornata mostra ai visitatori che la tua attività è attiva e presente: ultimi lavori, prossimi concerti, nuova stagione. Creiamo la sezione, poi pubblichiamo quello che ci mandi per e-mail, al ritmo scelto. Queste pubblicazioni non rientrano nelle tue modifiche ai contenuti. Puoi ridurre il ritmo con un mese di preavviso; l'interruzione completa avviene alla fine di un periodo di 12 mesi, avvisandoci almeno due mesi prima."
+          "info": "Una sezione aggiornata mostra ai visitatori che la tua attività è attiva e presente: ultimi lavori, prossimi concerti, nuova stagione. Creiamo la sezione, poi pubblichiamo quello che ci mandi per e-mail, al ritmo scelto. Queste pubblicazioni non rientrano nelle tue modifiche ai contenuti. Puoi ridurre il ritmo con un mese di preavviso; l'interruzione completa avviene alla fine di un periodo di 12 mesi, avvisandoci al più tardi due mesi prima."
         },
         "seo": {
           "label": "Monitoraggio della tua posizione su Google",
@@ -149,7 +149,7 @@
         "detailed_analytics": {
           "label": "Statistiche dettagliate (con banner dei cookie)",
           "hint": "Una misurazione più completa, con un banner che chiede il consenso dei visitatori.",
-          "info": "Le statistiche dettagliate ti dicono anche da dove arrivano i visitatori, su quale dispositivo ti leggono e quanti toccano «Chiama», «Indicazioni» o inviano il tuo modulo. Usano i cookie: la legge chiede quindi il consenso dei visitatori, e aggiungiamo un banner per raccoglierlo. Chi rifiuta non viene contato in queste statistiche.",
+          "info": "Le statistiche dettagliate ti dicono anche da dove arrivano i visitatori, su quale dispositivo ti leggono e quanti toccano «Chiama», «Indicazioni» o inviano il tuo modulo. Usano i cookie: la legge chiede quindi il consenso dei visitatori, e aggiungiamo un banner per raccoglierlo. Chi rifiuta non viene contato in queste statistiche. Questa opzione si sottoscrive per periodi di 12 mesi.",
           "recap_label": "Statistiche dettagliate"
         },
         "articles": {
@@ -162,7 +162,7 @@
             "weekly": "1 articolo a settimana",
             "thrice_weekly": "3 articoli a settimana"
           },
-          "info": "Scrivere articoli con regolarità richiede tempo. Li scriviamo per te con l'aiuto dell'intelligenza artificiale, a partire dalle informazioni sulla tua attività. Insieme scegliamo dove pubblicarli, in un blog o in una sezione articoli, in base al loro argomento. Scegli se rileggere ogni articolo prima della pubblicazione o lasciarcelo pubblicare direttamente. Gli articoli non rientrano nelle tue modifiche ai contenuti. Puoi ridurre il ritmo con un mese di preavviso; l'interruzione completa avviene alla fine di un periodo di 12 mesi, avvisandoci almeno due mesi prima.",
+          "info": "Scrivere articoli con regolarità richiede tempo. Li scriviamo per te con l'aiuto dell'intelligenza artificiale, a partire dalle informazioni sulla tua attività. Insieme scegliamo dove pubblicarli, in un blog o in una sezione articoli, in base al loro argomento. Scegli se rileggere ogni articolo prima della pubblicazione o lasciarcelo pubblicare direttamente. Gli articoli non rientrano nelle tue modifiche ai contenuti. Puoi ridurre il ritmo con un mese di preavviso; l'interruzione completa avviene alla fine di un periodo di 12 mesi, avvisandoci al più tardi due mesi prima.",
           "info_tool": "A seconda del tuo strumento di modifica, possiamo usare un servizio specializzato che sceglie gli argomenti in base alle ricerche fatte su Google."
         }
       },
@@ -203,7 +203,7 @@
       },
       "total": {
         "label": "La tua stima",
-        "note": "Prezzo indicativo, confermato dopo una prima conversazione. Puoi aggiungere opzioni in qualsiasi momento. Il numero di pagine e l'hosting in Svizzera restano nel tuo abbonamento una volta attivati. Le opzioni con «Impegno di 1 anno» si rimuovono alla fine di ogni periodo di 12 mesi, avvisandoci almeno due mesi prima, le altre con un mese di preavviso (vedi le <link>condizioni generali di vendita</link>).",
+        "note": "Prezzo indicativo, confermato dopo una prima conversazione. Puoi aggiungere opzioni in qualsiasi momento. Il numero di pagine e l'hosting in Svizzera restano nel tuo abbonamento una volta attivati. Le opzioni con «Impegno di 1 anno» possono essere rimosse alla fine di ogni periodo di 12 mesi, se ci avvisi al più tardi due mesi prima; le altre, con un mese di preavviso (vedi le <link>condizioni generali di vendita</link>).",
         "beyond": "Oltre questi volumi, ne parliamo insieme per farti una proposta.",
         "cta": "Richiedi il mio mockup gratuito",
         "mobile_cta": "Il mio mockup gratuito",
@@ -212,8 +212,8 @@
       "info_label": "Per saperne di più: {option}",
       "commitment": "Impegno di 1 anno",
       "commitment_line": {
-        "none": "Senza vincolo di durata: disdicibile ogni mese.",
-        "periods": "Abbonamento per periodi di 12 mesi, perché comprende: {items}. Si rinnova ogni anno, a meno che tu non ci avvisi almeno due mesi prima della scadenza."
+        "none": "Senza vincolo di durata: disdicibile con un mese di preavviso.",
+        "periods": "Abbonamento per periodi di 12 mesi, perché comprende: {items}. Si rinnova ogni anno, a meno che tu non ci avvisi al più tardi due mesi prima della fine del periodo."
       },
       "commitment_items": {
         "formula": "la formula «Hai tu il controllo»",
