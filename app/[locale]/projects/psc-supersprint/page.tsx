@@ -3,7 +3,13 @@ import { useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { use } from 'react';
 
-import { buildCaseStudyMeta, buildCaseStudyNavigation, CaseStudy, PROJECTS_BY_SLUG } from '@/components/CaseStudy';
+import {
+  buildCaseStudyMeta,
+  buildCaseStudyNavigation,
+  CaseStudy,
+  CaseStudySeeAlso,
+  PROJECTS_BY_SLUG,
+} from '@/components/CaseStudy';
 import { buildCaseStudyMetadata } from '@/components/CaseStudy/CaseStudy.metadata';
 import CaseStudySeo from '@/components/JsonLd/CaseStudySeo';
 
@@ -73,8 +79,9 @@ export default function PscSupersprint({ params }: { params: Promise<{ locale: s
           'psc-supersprint',
           { previous: tCommon('previous'), next: tCommon('next'), ariaLabel: tCommon('nav_label') },
           (titleKey) => tList(`items.${titleKey}.title`)
-        )}
-      />
+        )}>
+        <CaseStudySeeAlso slug="psc-supersprint" />
+      </CaseStudy>
       <CaseStudySeo slug="psc-supersprint" />
     </>
   );

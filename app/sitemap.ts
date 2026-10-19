@@ -1,6 +1,7 @@
 import { type MetadataRoute } from 'next';
 
 import { getCanonicalUrl, getLanguageAlternates } from '@/i18n/canonical';
+import { getRouteLocales } from '@/i18n/route-locales';
 import { routing } from '@/i18n/routing';
 
 type RouteKey = keyof typeof routing.pathnames;
@@ -14,7 +15,7 @@ function getLastModified(): Date {
   return buildDate && !Number.isNaN(buildDate.getTime()) ? buildDate : new Date();
 }
 
-/** One entry per route and locale, each listing its translations as hreflang alternates. */
+/** One entry per route and locale it exists in, each listing its translations as hreflang alternates. */
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = getLastModified();
 
@@ -25,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return listed.flatMap((routeKey) => {
     const languages = getLanguageAlternates(routeKey);
 
-    return routing.locales.map((locale) => ({
+    return getRouteLocales(routeKey).map((locale) => ({
       url: getCanonicalUrl(locale, routeKey),
       lastModified,
       alternates: { languages },

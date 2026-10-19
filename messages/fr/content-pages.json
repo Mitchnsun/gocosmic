@@ -1,0 +1,30 @@
+{
+  "contentPages": {
+    "related": {
+      "eyebrow": "[ Pages liées ]",
+      "title": "Pour aller plus loin."
+    },
+    "footer_title": "Solutions & guides",
+    "see_also": "Voir aussi",
+    "links": {
+      "showcase_website": {
+        "label": "Création de site vitrine"
+      },
+      "app_development": {
+        "label": "Création d'application"
+      },
+      "pricing": {
+        "label": "Tarifs",
+        "description": "Calculez le prix de votre abonnement, option par option."
+      },
+      "projects": {
+        "label": "Projets",
+        "description": "Les sites et les applications que nous avons déjà mis en ligne."
+      },
+      "services": {
+        "label": "Services",
+        "description": "Tout ce que nous proposons, du site vitrine à l'application, et les réponses aux questions fréquentes."
+      }
+    }
+  }
+}

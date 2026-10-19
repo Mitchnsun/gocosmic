@@ -28,6 +28,7 @@ The Cosmic Studio website serves as the primary business interface with the foll
 - **Clean URLs**: Locale-prefixed routing (`/en/`, `/fr/`, `/es/`, `/de/`, `/it/`)
 - **Swiss versions**: every page also exists for Switzerland in each language (`/fr-ch/`, `/de-ch/`, `/it-ch/`, `/en-ch/`, `/es-ch/`), always with the Geneva base and prices in Swiss francs, in Swiss spelling for German (`ss` for `ß`), and linked to the other versions through `hreflang` so that search engines show it to people searching from Switzerland (see `i18n/locales.ts`). The URL decides the version: language-only pages always show the Annecy base and euros, and a footer switch moves between the two versions in the same language
 - **Translated Pathnames**: Route paths are localized for better SEO and UX (e.g., `/en/about` → `/fr/a-propos`, `/en/projects` → `/de/projekte`)
+- **Pages in some languages only**: a page written for French searches is published in French only (`ROUTE_LANGUAGES` in `i18n/routing.ts`, Swiss version included). Elsewhere it answers 404 and stays out of the sitemap and the `hreflang` links; the language switchers open the home page of a language it does not exist in, and links to it only show in French
 - **Browser Detection**: Automatic locale detection based on user preferences; visitors located in Switzerland (detected from the Vercel country header) and browsers set to a Swiss locale (e.g. `fr-CH`) land on the Swiss version
 - **Language Switcher**: Intuitive dropdown component with flag icons and current language indication
 - **Namespace Organization**: Translation files are organized by namespace for better maintainability and scalability
@@ -157,6 +158,13 @@ All five case studies share one template: a header with the dates (creation year
 
 Matthieu Compérat's path and the studio's milestones as a vertical timeline, from his start as a developer in 2012 and the creation of his first business on 17 October 2016 to the move to Chêne-Bougeries and the Swiss sole proprietorship's affiliation with FER Genève, in progress. Each step shows its date in a mono label; the step in progress carries the orange accent. Linked from the about page's background section, it ends with the same call to write to Matthieu. The steps and their dates live in `data/story.ts`, their copy in `messages/<locale>/story.json`. Search engines get its breadcrumb trail, and the studio's structured data declares the same founding date.
 
+### Service Pages, in French only
+
+Pages written for people looking for a studio to build their site or app (epic [#142](https://github.com/Mitchnsun/gocosmic/issues/142)), published in French first: they share the `ContentPage` template, with a breadcrumb trail (Home › Services › page, also declared to search engines), an eyebrow, a title and a standfirst, numbered sections, the case studies that back them, two related pages chosen per page (the pricing page only where a price is shown) and a closing call to action. They quote the rest of the site (plans, options, FAQ, case studies) rather than restating it, and declare their `Service` to search engines. The footer's "Solutions & guides" column, the trade cards of the Services page and the "See also" block of the case studies link to them on the French version only.
+
+- **Showcase website** (`/fr/creation-site-vitrine`): what such a site shows, what both plans include and their starting price (with a link to the simulator), the useful options, the delays, who owns what, the choir mockup and mcomper.at as examples, and the free mockup offer
+- **App development** (`/fr/creation-application`): what the studio builds, on the web or on a phone, how a quoted project is paid and who owns the code, the day-rate guidance, Daily Fortune and PSC Supersprint as examples, and a quote request
+
 ### Contact Page (`/contact`)
 
 - **Contact details**: general and support email addresses, the area served and the studio's current availability
@@ -196,7 +204,7 @@ The former `/journey` (3D experience) and `/offers` pages no longer exist. They 
 
 - **`/llms.txt`**: the site summarised for AI assistants and agents, in the [llmstxt.org](https://llmstxt.org) format: what the studio does, the regional and Swiss versions, the main pages, the case studies, the contact details and a note on how agents may quote the content
 - **`/llms-full.txt`**: the text of every page in one file, including what the HTML only shows on interaction (the info bubbles, the second plan, every slider step and its price) and the terms of sale
-- Both are in English and built at deployment from the same messages, project registry and price table as the pages (`lib/llms/`): an edited text, a new project or a new price shows up on its own, but a new page, section or option must be added to `lib/llms/` in the same change (see the [Files for AI agents](CLAUDE.md#files-for-ai-agents) rules in `CLAUDE.md`). The call booking is listed only when `NEXT_PUBLIC_GCAL_BOOKING_URL` is set
+- Both are in English, except the pages published in French only, given in French at their French URL, and built at deployment from the same messages, project registry and price table as the pages (`lib/llms/`): an edited text, a new project or a new price shows up on its own, but a new page, section or option must be added to `lib/llms/` in the same change (see the [Files for AI agents](CLAUDE.md#files-for-ai-agents) rules in `CLAUDE.md`). The call booking is listed only when `NEXT_PUBLIC_GCAL_BOOKING_URL` is set
 
 ### Technical Features
 
@@ -292,7 +300,7 @@ When adding new routes to the application, follow this procedure to maintain int
    }
    ```
 
-3. **Add translations**: Include any new translation keys in all locale message files (`messages/`)
+3. **Add translations**: Include any new translation keys in all locale message files (`messages/`). A page published in some languages only is declared in `ROUTE_LANGUAGES`, under a single slug, and its messages go in a file of those languages only, listed in `PARTIAL_NAMESPACES` (see `CLAUDE.md`)
 
 4. **Update navigation**: If the route needs navigation links, add them to relevant navigation components
 

@@ -1,0 +1,54 @@
+{
+  "showcaseWebsite": {
+    "meta": {
+      "title": "Création de site vitrine, prix affichés | Cosmic Studio",
+      "description": "Faites créer votre site vitrine : activité, réalisations, horaires et coordonnées, préparés pour Google. Dès {price} par mois, avec une maquette gratuite."
+    },
+    "intro": {
+      "eyebrow": "[ Site vitrine ]",
+      "title": "Création de site vitrine, <em>pour qu'on vous trouve près de chez vous.</em>",
+      "lead": "Un site vitrine présente votre activité, vos réalisations et vos horaires, et dit comment vous joindre. Nous le construisons, le mettons en ligne et nous en occupons ensuite, avec une seule personne à contacter, qui connaît votre site."
+    },
+    "shows": {
+      "eyebrow": "Ce qu'il présente",
+      "title": "Ce que vos clients cherchent avant de vous appeler.",
+      "lead": "Votre site vitrine réunit ces informations sur une page claire, lisible sur téléphone et préparée pour Google, pour qu'il ressorte quand quelqu'un cherche votre métier près de chez lui. Vous pouvez commencer par une page, et en ajouter d'autres le jour où il vous en faut.",
+      "points": {
+        "activity": "Votre activité et ce que vous proposez",
+        "work": "Vos réalisations, en photos",
+        "hours": "Vos horaires et l'endroit où vous trouver",
+        "contact": "Vos coordonnées, avec un bouton pour vous écrire"
+      }
+    },
+    "price": {
+      "eyebrow": "Prix",
+      "title": "Un abonnement mensuel, à prix affiché.",
+      "lead": "Deux formules : « On s'occupe de tout », dès {price} par mois, ou « Vous gardez la main », dès {selfServicePrice} par mois, si vous voulez publier vous-même vos actualités et vos horaires. Le prix dépend ensuite du nombre de pages et des options que vous ajoutez.",
+      "included": "Compris dans les deux formules",
+      "note": "Ces prix sont indicatifs : le prix définitif figure dans le devis que nous vous envoyons après un premier échange. Ils sont nets, car Cosmic Studio n'est pas assujetti à la TVA.",
+      "action": "Calculer mon prix"
+    },
+    "options": {
+      "eyebrow": "Options",
+      "title": "Les options utiles à un site vitrine.",
+      "lead": "Vous les ajoutez quand vous en avez besoin, sans refaire le site."
+    },
+    "timing": {
+      "eyebrow": "Délais et propriété",
+      "title": "Quand votre site est en ligne, et ce qui vous appartient.",
+      "delay": "Délais",
+      "ownership": "Propriété",
+      "ownership_text": "Vos textes, vos images et votre nom de domaine vous appartiennent dès le premier jour. Le code du site vous est cédé après {months} mois d'abonnement."
+    },
+    "projects": {
+      "eyebrow": "[ Réalisations ]",
+      "title": "Ce que nous avons <em>déjà conçu.</em>",
+      "lead": "La maquette proposée au Chœur des Pays du Mont Blanc, avec son agenda des concerts, et mcomper.at, un CV en ligne en français et en anglais."
+    },
+    "cta": {
+      "title": "Voyez votre site avant de décider.",
+      "description": "Nous préparons une maquette de votre page d'accueil, à partir de vos couleurs et de vos indications. Elle est gratuite et ne vous engage à rien.",
+      "button": "Demander ma maquette gratuite"
+    }
+  }
+}

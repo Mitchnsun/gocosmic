@@ -1,7 +1,7 @@
 import { hasLocale } from 'next-intl';
 import { getRequestConfig } from 'next-intl/server';
 
-import { getLanguage } from './locales';
+import { getLanguage, type Language } from './locales';
 import { routing } from './routing';
 import { toSwissSpelling } from './swiss-spelling';
 
@@ -29,15 +29,28 @@ export const NAMESPACES = [
 ] as const;
 
 /**
+ * Message files that exist in some languages only: those of the pages published in these languages
+ * (`ROUTE_LANGUAGES`), and the labels that link to them. The other languages never load them.
+ */
+export const PARTIAL_NAMESPACES: Record<string, readonly Language[]> = {
+  'content-pages': ['fr'],
+  'showcase-website': ['fr'],
+  'app-development': ['fr'],
+};
+
+/**
  * Load translation messages organized by namespace.
  * A Swiss locale reads its language's files, in Swiss spelling for German.
  */
 async function loadMessages(locale: string) {
   const language = getLanguage(locale);
   const messages: Record<string, unknown> = {};
+  const partial = Object.entries(PARTIAL_NAMESPACES)
+    .filter(([, languages]) => languages.includes(language))
+    .map(([namespace]) => namespace);
 
   // Load each namespace dynamically
-  for (const namespace of NAMESPACES) {
+  for (const namespace of [...NAMESPACES, ...partial]) {
     try {
       const namespaceMessages = (await import(`../messages/${language}/${namespace}.json`)) as {
         default: Record<string, unknown>;

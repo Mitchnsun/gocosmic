@@ -1,3 +1,4 @@
+import { buildAppDevelopmentSection, buildShowcaseWebsiteSection } from './full/french-pages';
 import { buildHomeSection } from './full/home';
 import { buildPricingPageSection } from './full/pricing-page';
 import { buildProjectsSection } from './full/projects';
@@ -9,7 +10,8 @@ import { toTextFile } from './llms.utils';
 
 /**
  * `/llms-full.txt`: the text of every page in one file, including what the HTML only reveals on interaction
- * (info bubbles, the second plan, every slider step), and the terms of sale.
+ * (info bubbles, the second plan, every slider step), the pages published in French only, in French, and the
+ * terms of sale.
  */
 export function buildLlmsFull(bookingUrl: string | null): string {
   return toTextFile([
@@ -23,6 +25,8 @@ export function buildLlmsFull(bookingUrl: string | null): string {
     buildAboutSection(),
     buildStorySection(),
     buildLocalSection(),
+    buildShowcaseWebsiteSection(),
+    buildAppDevelopmentSection(),
     buildContactSection(bookingUrl),
     buildTermsSection(),
   ]);

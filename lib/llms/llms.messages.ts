@@ -15,6 +15,12 @@ import projects from '@/messages/en/projects.json';
 import pscSupersprint from '@/messages/en/psc-supersprint.json';
 import services from '@/messages/en/services.json';
 import story from '@/messages/en/story.json';
+import frAppDevelopment from '@/messages/fr/app-development.json';
+import frContentPages from '@/messages/fr/content-pages.json';
+import frPricing from '@/messages/fr/pricing.json';
+import frProjects from '@/messages/fr/projects.json';
+import frServices from '@/messages/fr/services.json';
+import frShowcaseWebsite from '@/messages/fr/showcase-website.json';
 
 /** A plain-text translator: rich-text tags (`<em>`, `<link>`) are dropped, their content kept. */
 export interface Translator {
@@ -32,10 +38,10 @@ interface UntypedTranslator {
   has: (key: string) => boolean;
 }
 
-function translator(messages: Record<string, unknown>, namespace?: string): Translator {
+function translator(messages: Record<string, unknown>, namespace?: string, locale = 'en'): Translator {
   // The message files hold arrays too (tags, paragraphs), which `AbstractIntlMessages` does not describe.
   const t = createTranslator({
-    locale: 'en',
+    locale,
     messages: messages as AbstractIntlMessages,
     namespace,
   }) as unknown as UntypedTranslator;
@@ -66,4 +72,14 @@ export const EN = {
   projectsList: translator(projects, 'projectsList'),
   services: translator(services, 'services'),
   story: translator(story, 'story'),
+};
+
+/** French copy of the pages published in French only, and of the shared messages they quote. */
+export const FR = {
+  appDevelopment: translator(frAppDevelopment, 'appDevelopment', 'fr'),
+  contentPages: translator(frContentPages, 'contentPages', 'fr'),
+  pricing: translator(frPricing, 'pricing', 'fr'),
+  projectsList: translator(frProjects, 'projectsList', 'fr'),
+  services: translator(frServices, 'services', 'fr'),
+  showcaseWebsite: translator(frShowcaseWebsite, 'showcaseWebsite', 'fr'),
 };

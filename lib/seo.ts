@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { hasLocale } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
 import { getAlternates } from '@/i18n/canonical';
 import { getLanguage, type Locale } from '@/i18n/locales';
-import { routing } from '@/i18n/routing';
+import { getRouteLocales, hasRoute } from '@/i18n/route-locales';
+import { type RouteKey, routing } from '@/i18n/routing';
 import { BRAND_NAME } from '@/lib/config';
-
-type RouteKey = keyof typeof routing.pathnames;
 
 /** Open Graph locale of each site locale (`language_TERRITORY`). */
 export const OG_LOCALES: Record<Locale, string> = {
@@ -37,9 +37,17 @@ interface PageMetadataInput {
 }
 
 /**
+ * Answers with a 404 when a page is not published in this locale (`ROUTE_LANGUAGES`). A page restricted to some
+ * languages calls it before rendering; its metadata gets it from `buildPageMetadata`.
+ */
+export function assertRouteLocale(locale: string, routeKey: RouteKey): void {
+  if (!hasRoute(locale, routeKey)) notFound();
+}
+
+/**
  * Full metadata of a page: title, description, canonical and hreflang links, and the Open Graph and
  * Twitter blocks. A page's `openGraph` replaces the layout's instead of merging with it, so every
- * page builds the whole block here.
+ * page builds the whole block here. A locale the page does not exist in answers with a 404.
  */
 export async function buildPageMetadata({
   locale,
@@ -50,6 +58,7 @@ export async function buildPageMetadata({
   robots,
 }: PageMetadataInput): Promise<Metadata> {
   const safeLocale: Locale = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
+  assertRouteLocale(safeLocale, routeKey);
   const t = await getTranslations({ locale: safeLocale, namespace: 'og' });
   const alternates = getAlternates(safeLocale, routeKey);
   // A Swiss locale shares its language's social images.
@@ -68,7 +77,9 @@ export async function buildPageMetadata({
       type,
       siteName: BRAND_NAME,
       locale: OG_LOCALES[safeLocale],
-      alternateLocale: routing.locales.filter((other) => other !== safeLocale).map((other) => OG_LOCALES[other]),
+      alternateLocale: getRouteLocales(routeKey)
+        .filter((other) => other !== safeLocale)
+        .map((other) => OG_LOCALES[other]),
       images: [{ url: `/og-default-${language}.jpg`, ...OG_IMAGE_SIZE, alt }],
     },
     twitter: {

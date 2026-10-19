@@ -1,8 +1,10 @@
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 import { CookieManageButton } from '@/components/CookieConsent';
+import { FOOTER_SOLUTIONS } from '@/data/content-pages';
 import { cn } from '@/design-system/lib/utils';
 import { Link } from '@/i18n/navigation';
+import { hasRoute } from '@/i18n/route-locales';
 import { BRAND_NAME } from '@/lib/config';
 import type { Region } from '@/lib/region';
 
@@ -10,6 +12,7 @@ import { FOOTER_LINK_CLASS, LEGAL_LINKS, STUDIO_LINKS } from './Footer.constants
 import FooterColumnHeading from './FooterColumnHeading';
 import FooterLanguages from './FooterLanguages';
 import FooterRegion from './FooterRegion';
+import FooterSolutions from './FooterSolutions';
 
 interface FooterProps {
   /** Drives which base the studio baseline claims. */
@@ -18,11 +21,17 @@ interface FooterProps {
 
 const Footer = ({ region }: FooterProps) => {
   const t = useTranslations('footer');
+  const locale = useLocale();
   const year = new Date().getFullYear();
+  const solutions = FOOTER_SOLUTIONS.filter((route) => hasRoute(locale, route));
 
   return (
     <footer className="border-line bg-bg text-fg w-full border-t">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 pt-12 pb-8 sm:grid-cols-2 sm:px-6 lg:grid-cols-[2fr_1fr_1fr] lg:px-8 lg:pt-20">
+      <div
+        className={cn('mx-auto grid max-w-7xl gap-10 px-4 pt-12 pb-8 sm:grid-cols-2 sm:px-6 lg:px-8 lg:pt-20', {
+          'lg:grid-cols-[2fr_1fr_1fr]': solutions.length === 0,
+          'lg:grid-cols-[2fr_1fr_1fr_1fr]': solutions.length > 0,
+        })}>
         {/* Brand */}
         <div className="flex flex-col gap-3.5 sm:col-span-2 lg:col-span-1">
           <p className="font-display text-xl font-bold tracking-[-0.02em]">
@@ -55,6 +64,9 @@ const Footer = ({ region }: FooterProps) => {
             ))}
           </ul>
         </nav>
+
+        {/* Solutions & guides: pages published in some languages only */}
+        {solutions.length > 0 && <FooterSolutions routes={solutions} />}
 
         {/* Legal */}
         <div className="flex flex-col gap-3">

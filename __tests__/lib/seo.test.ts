@@ -1,8 +1,21 @@
+import { notFound } from 'next/navigation';
 import { createTranslator } from 'next-intl';
 import { describe, expect, it, vi } from 'vitest';
 
 import { routing } from '@/i18n/routing';
-import { buildPageMetadata, OG_LOCALES } from '@/lib/seo';
+import { assertRouteLocale, buildPageMetadata, OG_LOCALES } from '@/lib/seo';
+
+vi.mock('next/navigation', () => ({
+  notFound: vi.fn(() => {
+    throw new Error('NEXT_NOT_FOUND');
+  }),
+}));
+
+// The story page stands in for a page published in French only.
+vi.mock('@/i18n/routing', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('@/i18n/routing')>()),
+  ROUTE_LANGUAGES: { '/story': ['fr'] },
+}));
 
 vi.mock('next-intl/server', () => ({
   getTranslations: async ({ locale, namespace }: { locale: string; namespace: string }) => {
@@ -91,5 +104,30 @@ describe('buildPageMetadata', () => {
 
   it('maps every site locale to an Open Graph locale', () => {
     expect(Object.keys(OG_LOCALES)).toEqual([...routing.locales]);
+  });
+});
+
+describe('a page published in French only', () => {
+  it('lists only its French versions as hreflang and Open Graph alternates', async () => {
+    const metadata = await buildPageMetadata({ locale: 'fr', routeKey: '/story', title: 'T', description: 'D' });
+
+    expect(metadata.alternates).toEqual({
+      canonical: 'https://www.gocosmic.dev/fr/histoire',
+      languages: {
+        fr: 'https://www.gocosmic.dev/fr/histoire',
+        'fr-CH': 'https://www.gocosmic.dev/fr-ch/histoire',
+        'x-default': 'https://www.gocosmic.dev/fr/histoire',
+      },
+    });
+    expect(metadata.openGraph).toMatchObject({ locale: 'fr_FR', alternateLocale: ['fr_CH'] });
+  });
+
+  it('answers with a 404 in another language, for the page and its metadata', async () => {
+    expect(() => assertRouteLocale('fr-CH', '/story')).not.toThrow();
+    expect(() => assertRouteLocale('de', '/story')).toThrow('NEXT_NOT_FOUND');
+    await expect(buildPageMetadata({ locale: 'en', routeKey: '/story', title: 'T', description: 'D' })).rejects.toThrow(
+      'NEXT_NOT_FOUND'
+    );
+    expect(notFound).toHaveBeenCalledTimes(2);
   });
 });

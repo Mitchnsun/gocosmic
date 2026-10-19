@@ -8,9 +8,10 @@ import navigation from '../../messages/en/navigation.json';
 import { render } from '../test-utils';
 
 const mockPush = vi.fn();
+let mockPathname = '/projects';
 vi.mock('@/i18n/navigation', () => ({
   useRouter: () => ({ push: mockPush }),
-  usePathname: () => '/projects',
+  usePathname: () => mockPathname,
   Link: ({
     children,
     href,
@@ -30,6 +31,12 @@ vi.mock('@/i18n/navigation', () => ({
   ),
 }));
 
+// The story page stands in for a page published in French only.
+vi.mock('@/i18n/routing', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('@/i18n/routing')>()),
+  ROUTE_LANGUAGES: { '/story': ['fr'] },
+}));
+
 const french = () => {
   const { getByRole } = render(<FooterLanguages />);
   return within(getByRole('navigation', { name: 'Switch language' })).getByRole('link', { name: 'Français (FR)' });
@@ -47,6 +54,7 @@ describe('FooterLanguages', () => {
   afterEach(() => {
     window.removeEventListener('click', blockNavigation);
     window.history.replaceState(null, '', '/');
+    mockPathname = '/projects';
   });
 
   it('keeps the projects filter when switching language', () => {
@@ -101,5 +109,19 @@ describe('FooterLanguages', () => {
     fireEvent.click(french(), { ctrlKey: true });
 
     expect(mockPush).not.toHaveBeenCalled();
+  });
+
+  it('links a page published in French only to the home page of the other languages', () => {
+    mockPathname = '/story';
+    const french = ({ children }: { children: ReactNode }) => (
+      <NextIntlClientProvider locale="fr" messages={navigation}>
+        {children}
+      </NextIntlClientProvider>
+    );
+    const { getByRole } = render(<FooterLanguages />, { wrapper: french });
+    const nav = within(getByRole('navigation', { name: 'Switch language' }));
+
+    expect(nav.getByRole('link', { name: 'English (EN)' })).toHaveAttribute('href', '/en/');
+    expect(nav.getByRole('link', { name: 'Italiano (IT)' })).toHaveAttribute('href', '/it/');
   });
 });
