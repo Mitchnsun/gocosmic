@@ -3,7 +3,6 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { ReactNode } from 'react';
 
 import { AccentList } from '@/components/AccentList';
-import { PROJECTS_BY_SLUG } from '@/components/CaseStudy';
 import { ContentPage, ContentPageProjects, formatCounter } from '@/components/ContentPage';
 import { ContentSection } from '@/components/ContentSection';
 import ServiceSeo from '@/components/JsonLd/ServiceSeo';
@@ -48,18 +47,7 @@ export default async function AppDevelopment({ params }: { params: Promise<{ loc
         eyebrow={t('intro.eyebrow')}
         title={t.rich('intro.title', { em })}
         lead={t('intro.lead')}
-        related={{
-          eyebrow: tLinks('related.eyebrow'),
-          title: tLinks('related.title'),
-          pages: APP_DEVELOPMENT.projects.map((slug) => {
-            const { href, i18nKey } = PROJECTS_BY_SLUG[slug];
-            return {
-              title: tProjects(`items.${i18nKey}.title`),
-              description: tProjects(`items.${i18nKey}.description`),
-              href,
-            };
-          }),
-        }}
+        related={['projects', 'services']}
         cta={{
           headline: t('cta.title'),
           description: t('cta.description'),

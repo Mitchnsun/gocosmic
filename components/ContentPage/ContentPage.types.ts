@@ -5,22 +5,13 @@ import type { Link } from '@/i18n/navigation';
 
 type LocalizedHref = ComponentProps<typeof Link>['href'];
 
-/** A page suggested at the bottom of a content page. */
-export interface RelatedPage {
-  title: string;
-  /** One sentence saying what the visitor finds there. */
-  description: string;
-  href: LocalizedHref;
-}
+/** A page suggested at the bottom of a content page, keyed as in `contentPages.links`. */
+export type RelatedPage = 'pricing' | 'projects' | 'services';
 
-export interface RelatedPagesProps {
-  eyebrow: string;
-  title: string;
-  /** Two or three pages, all published in the page's language. */
-  pages: RelatedPage[];
-}
-
-/** Props of the service and guide page template; every string comes in already localized. */
+/**
+ * Props of the service and guide page template; every string comes in already localized. The template also reads
+ * the `contentPages` messages, published in French only: add that file's language before publishing a page in it.
+ */
 export interface ContentPageProps {
   /** The pages between the home page and this one, then this page, e.g. Services › Showcase website. */
   breadcrumb: BreadcrumbItem[];
@@ -31,7 +22,8 @@ export interface ContentPageProps {
   lead: string;
   /** The page's sections. */
   children: ReactNode;
-  related: RelatedPagesProps;
+  /** The two pages suggested before the call to action, all published in the page's language. */
+  related: readonly [RelatedPage, RelatedPage];
   /** Closing call to action. */
   cta: {
     headline: string;

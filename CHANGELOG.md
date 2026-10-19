@@ -12,10 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Pages written in French only are offered to search engines in French only, and choosing another language on one of them opens the home page in that language instead of a missing page
 - These pages show a breadcrumb trail under the header, such as Home › Services, which search engines can also read
 - A new page in French on having a showcase website made: what it shows, what both plans include and from what price, the useful options, the delays, who owns what, and two examples, ending with the free mockup offer
-- A new page in French on having an app made, for a phone or the web: what the studio builds, how a quoted project is paid and who owns the code, the day-rate guidance, and the studio's two apps as examples, ending with a quote request
+- A new page in French on having an app made, for a phone or the web: what the studio builds, how a quoted project is paid and who owns the code, the day-rate guidance, and the studio's two apps as examples, then links to the projects and services pages, ending with a quote request
 - On the French version, the footer gains a "Solutions & guides" column with these two pages, the Services page links its showcase website and app cards to them, and the case studies point to the page they illustrate under "See also"
-
-## [2.5.1] - 2026-10-19
 
 ### Changed
 

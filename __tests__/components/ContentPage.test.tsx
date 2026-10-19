@@ -1,9 +1,12 @@
+import { NextIntlClientProvider } from 'next-intl';
+import type { ReactNode } from 'react';
 import { vi } from 'vitest';
 
 import type { BreadcrumbItem } from '@/components/Breadcrumb';
-import { ContentPage, ContentPageProjects, type RelatedPage } from '@/components/ContentPage';
+import { ContentPage, ContentPageProjects } from '@/components/ContentPage';
 import { buildProjectCards } from '@/components/ProjectGrid';
 
+import { FRENCH_MESSAGES } from '../french-messages';
 import { render, within } from '../test-utils';
 
 const ctaMock = vi.fn((props: { headline: string; ctaText: string; ctaHref: string; tone?: string }) => (
@@ -17,10 +20,6 @@ const BREADCRUMB: BreadcrumbItem[] = [
   { label: 'Services', href: '/services' },
   { label: 'Showcase website', href: '/pricing' },
 ];
-const RELATED_PAGES: RelatedPage[] = [
-  { title: 'Pricing', description: 'Calculate your price.', href: '/pricing' },
-  { title: 'Projects', description: 'What we put online.', href: '/projects' },
-];
 
 const PAGE = {
   breadcrumb: BREADCRUMB,
@@ -31,9 +30,16 @@ const PAGE = {
     </>
   ),
   lead: 'What it shows, what it costs.',
-  related: { eyebrow: '[ Related pages ]', title: 'Read on.', pages: RELATED_PAGES },
+  related: ['pricing', 'projects'] as const,
   cta: { headline: 'Get your mockup.', description: 'Free.', button: 'Ask for it', href: '/free-mockup' as const },
 };
+
+// The related pages read the messages of the pages published in French only.
+const wrapper = ({ children }: { children: ReactNode }) => (
+  <NextIntlClientProvider locale="fr" messages={FRENCH_MESSAGES}>
+    {children}
+  </NextIntlClientProvider>
+);
 
 const renderPage = () =>
   render(
@@ -41,7 +47,8 @@ const renderPage = () =>
       <section aria-labelledby="included">
         <h2 id="included">Included</h2>
       </section>
-    </ContentPage>
+    </ContentPage>,
+    { wrapper }
   );
 
 describe('ContentPage', () => {
@@ -52,38 +59,40 @@ describe('ContentPage', () => {
   it('opens with the breadcrumb, then the eyebrow, the title and the standfirst', () => {
     const { getByRole, getByText } = renderPage();
 
-    expect(getByRole('navigation', { name: 'Breadcrumb' })).toBeInTheDocument();
+    expect(getByRole('navigation', { name: "Fil d'Ariane" })).toBeInTheDocument();
     expect(getByText('Showcase website', { selector: '[aria-current="page"]' })).toBeInTheDocument();
     expect(getByRole('heading', { level: 1 })).toHaveTextContent('A showcase website, found near you.');
     expect(getByText('[ Showcase website ]')).toBeInTheDocument();
     expect(getByText('What it shows, what it costs.')).toBeInTheDocument();
   });
 
-  it('renders its sections, then links two related pages with a sentence each', () => {
+  it('renders its sections, then links the two related pages with a sentence each', () => {
     const { getByRole } = renderPage();
-    const related = getByRole('region', { name: 'Read on.' });
+    const related = getByRole('region', { name: 'Pour aller plus loin.' });
 
     expect(getByRole('heading', { level: 2, name: 'Included' })).toBeInTheDocument();
-    expect(within(related).getByRole('link', { name: /Pricing.*Calculate your price\./ })).toHaveAttribute(
+    expect(within(related).getByRole('link', { name: /^Tarifs.*option par option\.$/ })).toHaveAttribute(
       'href',
       '/pricing'
     );
-    expect(within(related).getAllByRole('link')).toHaveLength(2);
-    expect(within(related).getByRole('list')).toHaveClass('md:grid-cols-2');
+    expect(
+      within(related)
+        .getAllByRole('link')
+        .map((link) => link.getAttribute('href'))
+    ).toEqual(['/pricing', '/projects']);
   });
 
-  it('lays three related pages out on three columns', () => {
-    const pages: RelatedPage[] = [
-      ...RELATED_PAGES,
-      { title: 'Contact', description: 'Write to us.', href: '/contact' },
-    ];
+  it('links the services page when the page relates to it', () => {
     const { getByRole } = render(
-      <ContentPage {...PAGE} related={{ ...PAGE.related, pages }}>
+      <ContentPage {...PAGE} related={['projects', 'services']}>
         <p>Body</p>
-      </ContentPage>
+      </ContentPage>,
+      { wrapper }
     );
 
-    expect(within(getByRole('region', { name: 'Read on.' })).getByRole('list')).toHaveClass('md:grid-cols-3');
+    expect(
+      within(getByRole('region', { name: 'Pour aller plus loin.' })).getByRole('link', { name: /^Services/ })
+    ).toHaveAttribute('href', '/services');
   });
 
   it('closes with a sober call to action', () => {

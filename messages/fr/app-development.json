@@ -7,7 +7,7 @@
     "intro": {
       "eyebrow": "[ Application ]",
       "title": "Création d'application, <em>sur téléphone ou sur le web.</em>",
-      "lead": "Un outil pour votre équipe, une application pour vos clients ou vos membres, un assistant qui répond aux questions fréquentes. Nous la concevons et la développons avec vous, puis nous la mettons en ligne."
+      "lead": "Un outil pour votre équipe, une application pour vos clients ou vos membres, ou un assistant qui répond aux questions fréquentes : nous concevons et développons votre application avec vous, puis nous la mettons en ligne."
     },
     "builds": {
       "eyebrow": "Ce que nous construisons",
@@ -22,7 +22,7 @@
     "how": {
       "eyebrow": "Comment nous travaillons",
       "title": "Un projet sur devis, payé étape par étape.",
-      "lead": "Nous définissons le projet ensemble, puis nous vous remettons un devis. Chaque application est différente : son prix se fixe une fois que nous savons ce qu'elle doit faire.",
+      "lead": "Nous définissons ensemble ce que l'application doit faire, puis nous vous remettons un devis, dont le prix dépend de ce périmètre.",
       "points": {
         "payment": "Un paiement en plusieurs fois, à chaque étape du projet",
         "ownership": "Le code et les données vous appartiennent une fois l'application livrée et toutes ses factures réglées",

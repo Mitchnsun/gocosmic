@@ -20,6 +20,10 @@
       "projects": {
         "label": "Projets",
         "description": "Les sites et les applications que nous avons déjà mis en ligne."
+      },
+      "services": {
+        "label": "Services",
+        "description": "Tout ce que nous proposons, du site vitrine à l'application, et les réponses aux questions fréquentes."
       }
     }
   }

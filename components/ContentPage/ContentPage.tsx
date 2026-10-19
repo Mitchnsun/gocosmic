@@ -12,8 +12,8 @@ const HEADING_ID = 'content-page-heading';
 const BLOCK_END = 'pb-[clamp(3rem,6vw,4.5rem)]';
 
 /**
- * Template of a service or guide page: breadcrumb, eyebrow, title and standfirst, the page's sections, two or
- * three related pages, then a closing call to action.
+ * Template of a service or guide page: breadcrumb, eyebrow, title and standfirst, the page's sections, two
+ * related pages, then a closing call to action.
  */
 export function ContentPage({ breadcrumb, eyebrow, title, lead, children, related, cta }: ContentPageProps) {
   return (
@@ -26,7 +26,7 @@ export function ContentPage({ breadcrumb, eyebrow, title, lead, children, relate
 
       <div className={cn(CONTAINER, 'flex flex-col gap-10', BLOCK_END)}>{children}</div>
 
-      <RelatedPages {...related} />
+      <RelatedPages pages={related} />
 
       <CTAFinal
         id="content-page-cta"

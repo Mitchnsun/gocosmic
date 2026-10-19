@@ -67,24 +67,20 @@ describe('app development page', () => {
     expect(queryByText(/€|CHF/)).not.toBeInTheDocument();
   });
 
-  it('shows Daily Fortune and PSC Supersprint, links to their case studies and ends on a quote request', async () => {
+  it('shows Daily Fortune and PSC Supersprint, links the projects and services pages and ends on a quote request', async () => {
     const { getByRole } = await renderPage();
     const projects = getByRole('region', { name: 'Deux applications déjà en ligne.' });
-    const related = getByRole('region', { name: 'Pour aller plus loin.' });
 
     expect(
       within(projects)
         .getAllByRole('heading', { level: 3 })
         .map((heading) => heading.textContent)
     ).toEqual(['Daily Fortune', 'PSC Supersprint']);
-    expect(within(related).getByRole('link', { name: /^Daily Fortune/ })).toHaveAttribute(
-      'href',
-      '/projects/daily-fortune'
-    );
-    expect(within(related).getByRole('link', { name: /^PSC Supersprint/ })).toHaveAttribute(
-      'href',
-      '/projects/psc-supersprint'
-    );
+    expect(
+      within(getByRole('region', { name: 'Pour aller plus loin.' }))
+        .getAllByRole('link')
+        .map((link) => link.getAttribute('href'))
+    ).toEqual(['/projects', '/services']);
     expect(within(getByRole('region', { name: 'Parlons de votre application.' })).getByRole('link')).toHaveAttribute(
       'href',
       '/contact'

@@ -61,22 +61,7 @@ export default async function ShowcaseWebsite({ params }: { params: Promise<{ lo
         eyebrow={t('intro.eyebrow')}
         title={t.rich('intro.title', { em })}
         lead={t('intro.lead')}
-        related={{
-          eyebrow: tLinks('related.eyebrow'),
-          title: tLinks('related.title'),
-          pages: [
-            {
-              title: tLinks('links.pricing.label'),
-              description: tLinks('links.pricing.description'),
-              href: '/pricing',
-            },
-            {
-              title: tLinks('links.projects.label'),
-              description: tLinks('links.projects.description'),
-              href: '/projects',
-            },
-          ],
-        }}
+        related={['pricing', 'projects']}
         cta={{
           headline: t('cta.title'),
           description: t('cta.description'),

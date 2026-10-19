@@ -83,18 +83,20 @@ describe('showcase website page', () => {
     expect(getByText(/Le code du site vous est cédé après 36 mois d'abonnement\.$/)).toBeInTheDocument();
   });
 
-  it('backs the page with the choir mockup and mcomper.at, then links related pages and the free mockup', async () => {
+  it('backs the page with the choir mockup and mcomper.at, then links the pricing and projects pages and the free mockup', async () => {
     const { getByRole } = await renderPage('fr');
     const projects = getByRole('region', { name: 'Ce que nous avons déjà conçu.' });
-    const related = getByRole('region', { name: 'Pour aller plus loin.' });
 
     expect(
       within(projects)
         .getAllByRole('heading', { level: 3 })
         .map((heading) => heading.textContent)
     ).toEqual(['Chœur des Pays du Mont Blanc', 'mcomper.at']);
-    expect(within(related).getByRole('link', { name: /^Tarifs/ })).toHaveAttribute('href', '/pricing');
-    expect(within(related).getByRole('link', { name: /^Projets/ })).toHaveAttribute('href', '/projects');
+    expect(
+      within(getByRole('region', { name: 'Pour aller plus loin.' }))
+        .getAllByRole('link')
+        .map((link) => link.getAttribute('href'))
+    ).toEqual(['/pricing', '/projects']);
     expect(
       within(getByRole('region', { name: 'Voyez votre site avant de décider.' })).getByRole('link')
     ).toHaveAttribute('href', '/free-mockup');

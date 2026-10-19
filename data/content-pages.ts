@@ -12,7 +12,7 @@ export const SHOWCASE_WEBSITE = {
 
 /** What the app development page quotes from the rest of the site. */
 export const APP_DEVELOPMENT = {
-  /** Case studies backing the page, also suggested as related pages. */
+  /** Case studies backing the page. */
   projects: ['daily-fortune', 'psc-supersprint'],
 } as const satisfies { projects: readonly CaseStudySlug[] };
 
