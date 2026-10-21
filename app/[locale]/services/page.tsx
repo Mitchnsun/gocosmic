@@ -58,7 +58,7 @@ export default async function Services({ params }: { params: Promise<{ locale: s
   const tLinks = await getTranslations('contentPages');
   const region = getRegion(locale);
   const currency = getCurrency(region);
-  const [subscription, guidance, reinforcement, custom] = buildPricingColumns(tPricing, region, locale);
+  const { subscription, guidance, reinforcement, custom } = buildPricingColumns(tPricing, region, locale);
   // The "Reinforcement" column links to the redesign page in the languages it is published in.
   const pricing = [
     subscription,

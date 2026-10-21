@@ -123,7 +123,7 @@ describe('website redesign page', () => {
     expect(within(cta).getByRole('link', { name: 'maquette gratuite' })).toHaveAttribute('href', '/free-mockup');
   });
 
-  it('declares the service, without a price', async () => {
+  it('declares the service with its starting price', async () => {
     const { container } = await renderPage('fr');
     const service = JSON.parse(container.querySelector('#service-json-ld')?.textContent ?? '{}') as Record<
       string,
@@ -133,8 +133,8 @@ describe('website redesign page', () => {
     expect(service).toMatchObject({
       '@id': 'https://www.gocosmic.dev/fr/refonte-site-internet#service',
       name: 'Refonte de site internet',
+      offers: { price: 10, priceCurrency: 'EUR' },
     });
-    expect(service.offers).toBeUndefined();
   });
 
   it('answers with a 404 in the other languages, for the page and its metadata', async () => {

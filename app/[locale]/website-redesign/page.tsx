@@ -8,11 +8,13 @@ import { ContentPage, ContentPageProjects, formatCounter, SourceList, TermList }
 import { ContentSection } from '@/components/ContentSection';
 import { freeMockupNote } from '@/components/FreeMockup';
 import ServiceSeo from '@/components/JsonLd/ServiceSeo';
+import { BASE_PRICE } from '@/components/PricingSimulator/constants';
 import { formatStartingPrice } from '@/components/PricingSimulator/PricingSimulator.utils';
 import { buildProjectCards } from '@/components/ProjectGrid';
 import { WEBSITE_REDESIGN } from '@/data/content-pages';
 import { ghostPill } from '@/design-system/pill';
 import { Link } from '@/i18n/navigation';
+import { getRegion } from '@/lib/region';
 import { assertRouteLocale, buildPageMetadata } from '@/lib/seo';
 
 const ROUTE = '/website-redesign';
@@ -139,7 +141,12 @@ export default async function WebsiteRedesign({ params }: { params: Promise<{ lo
           sources={WEBSITE_REDESIGN.sources.items.map(({ key, href }) => ({ label: t(`sources.${key}`), href }))}
         />
       </ContentPage>
-      <ServiceSeo route={ROUTE} name={tLinks('links.website_redesign.label')} description={t('meta.description')} />
+      <ServiceSeo
+        route={ROUTE}
+        name={tLinks('links.website_redesign.label')}
+        description={t('meta.description')}
+        offer={{ price: BASE_PRICE, region: getRegion(locale) }}
+      />
     </>
   );
 }

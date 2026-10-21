@@ -21,7 +21,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Fixed
 
 - The "Custom" column now says, in all five languages, that the code and the data are yours once the project is delivered and all its invoices are paid, as the FAQ already did
-- Search engines now read the price of the showcase website and services pages as a starting price
+- Search engines now read the price of the showcase website and services pages as a starting price, and the redesign and audience pages now give them the same starting price
+- Text links followed by an arrow, such as those of the homepage audience cards, now show a clear outline when reached with the keyboard
+- Screen readers no longer read the title of a section a second time before its list on the new French pages
 
 ## [2.6.0] - 2026-10-19
 

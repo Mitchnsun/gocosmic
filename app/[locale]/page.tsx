@@ -61,7 +61,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     description: t(`process.${step.id}.description`),
   }));
   // The homepage keeps the subscription and the custom quote; /services shows all four ways.
-  const [subscription, , , custom] = buildPricingColumns(tPricing, region, locale);
+  const { subscription, custom } = buildPricingColumns(tPricing, region, locale);
   const projects = buildProjectCards(tProjects).slice(0, HOME_PROJECT_COUNT);
 
   return (

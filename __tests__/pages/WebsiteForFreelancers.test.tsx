@@ -95,10 +95,18 @@ describe('page for freelancers', () => {
     await expect(generateMetadata(params('es-CH'))).rejects.toThrow('NEXT_NOT_FOUND');
   });
 
-  it('declares no service of its own: it is about an audience, not a service', async () => {
+  it('declares the service with its starting price', async () => {
     const { container } = await renderPage('fr');
+    const service = JSON.parse(container.querySelector('#service-json-ld')?.textContent ?? '{}') as Record<
+      string,
+      unknown
+    >;
 
-    expect(container.querySelector('#service-json-ld')).toBeNull();
+    expect(service).toMatchObject({
+      '@id': 'https://www.gocosmic.dev/fr/site-internet-independant#service',
+      name: 'Site pour indépendants',
+      offers: { price: 10, priceCurrency: 'EUR' },
+    });
   });
 
   it.each(['fr', 'fr-CH'])('fits its title and description in search results, in %s', async (locale) => {

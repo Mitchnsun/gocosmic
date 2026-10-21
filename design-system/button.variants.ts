@@ -16,7 +16,7 @@ export const buttonVariants = cva(
         /** Secondary action: outlined, no fill. */
         ghost: 'border border-line-2 bg-transparent text-fg hover:border-fg hover:bg-line',
         /** Text action inside content, followed by an arrow. Pair with the `inline` size. */
-        link: 'text-aerospace-ink rounded-none underline-offset-4 hover:underline',
+        link: 'text-aerospace-ink rounded-none underline-offset-4 hover:underline focus-visible:ring-aerospace-ink focus-visible:ring-offset-bg focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none',
         /* Plain accent fills, picked by the closing call-to-action's `accentColor`. */
         aerospace: 'bg-aerospace text-void hover:bg-aerospace/90',
         // Light label on royal in both themes: dark ink would drop to 3.4:1.
