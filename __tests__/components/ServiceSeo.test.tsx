@@ -37,6 +37,7 @@ describe('ServiceSeo', () => {
             '@type': 'UnitPriceSpecification',
             price: 10,
             priceCurrency: 'EUR',
+            minPrice: 10,
             unitCode: 'MON',
           },
         },

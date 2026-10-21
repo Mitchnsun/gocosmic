@@ -22,7 +22,7 @@
     },
     "price": {
       "eyebrow": "Prix",
-      "title": "Un abonnement mensuel, à prix affiché.",
+      "title": "Un abonnement, à prix affiché par mois.",
       "lead": "Deux formules : « On s'occupe de tout », dès {price} par mois, ou « Vous gardez la main », dès {selfServicePrice} par mois, si vous voulez publier vous-même vos actualités et vos horaires. Le prix dépend ensuite du nombre de pages et des options que vous ajoutez.",
       "included": "Compris dans les deux formules",
       "note": "Ces prix sont indicatifs : le prix définitif figure dans le devis que nous vous envoyons après un premier échange. Ils sont nets, car Cosmic Studio n'est pas assujetti à la TVA.",
