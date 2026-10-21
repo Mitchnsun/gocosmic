@@ -13,6 +13,18 @@
       "app_development": {
         "label": "Création d'application"
       },
+      "website_redesign": {
+        "label": "Refonte de site internet"
+      },
+      "website_for_associations": {
+        "label": "Site pour associations et clubs"
+      },
+      "website_for_tradespeople": {
+        "label": "Site pour artisans"
+      },
+      "website_for_freelancers": {
+        "label": "Site pour indépendants"
+      },
       "pricing": {
         "label": "Tarifs",
         "description": "Calculez le prix de votre abonnement, option par option."
@@ -25,6 +37,15 @@
         "label": "Services",
         "description": "Tout ce que nous proposons, du site vitrine à l'application, et les réponses aux questions fréquentes."
       }
+    },
+    "example": {
+      "label": "Exemple de composition",
+      "total": "Total",
+      "note": "Exemple calculé avec les prix actuels du simulateur. Ces prix sont nets et indicatifs : le prix définitif figure dans le devis que nous vous envoyons après un premier échange."
+    },
+    "sources": {
+      "title": "Sources",
+      "consulted": "Consultées le {date}."
     }
   }
 }

@@ -1,4 +1,13 @@
-import { buildAppDevelopmentSection, buildShowcaseWebsiteSection } from './full/french-pages';
+import {
+  buildWebsiteForAssociationsSection,
+  buildWebsiteForFreelancersSection,
+  buildWebsiteForTradespeopleSection,
+} from './full/french-audiences';
+import {
+  buildAppDevelopmentSection,
+  buildShowcaseWebsiteSection,
+  buildWebsiteRedesignSection,
+} from './full/french-pages';
 import { buildHomeSection } from './full/home';
 import { buildPricingPageSection } from './full/pricing-page';
 import { buildProjectsSection } from './full/projects';
@@ -27,6 +36,10 @@ export function buildLlmsFull(bookingUrl: string | null): string {
     buildLocalSection(),
     buildShowcaseWebsiteSection(),
     buildAppDevelopmentSection(),
+    buildWebsiteRedesignSection(),
+    buildWebsiteForAssociationsSection(),
+    buildWebsiteForTradespeopleSection(),
+    buildWebsiteForFreelancersSection(),
     buildContactSection(bookingUrl),
     buildTermsSection(),
   ]);

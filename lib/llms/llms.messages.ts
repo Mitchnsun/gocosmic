@@ -17,10 +17,16 @@ import services from '@/messages/en/services.json';
 import story from '@/messages/en/story.json';
 import frAppDevelopment from '@/messages/fr/app-development.json';
 import frContentPages from '@/messages/fr/content-pages.json';
+import frFreeMockup from '@/messages/fr/free-mockup.json';
+import frHome from '@/messages/fr/home.json';
 import frPricing from '@/messages/fr/pricing.json';
 import frProjects from '@/messages/fr/projects.json';
 import frServices from '@/messages/fr/services.json';
 import frShowcaseWebsite from '@/messages/fr/showcase-website.json';
+import frWebsiteForAssociations from '@/messages/fr/website-for-associations.json';
+import frWebsiteForFreelancers from '@/messages/fr/website-for-freelancers.json';
+import frWebsiteForTradespeople from '@/messages/fr/website-for-tradespeople.json';
+import frWebsiteRedesign from '@/messages/fr/website-redesign.json';
 
 /** A plain-text translator: rich-text tags (`<em>`, `<link>`) are dropped, their content kept. */
 export interface Translator {
@@ -78,8 +84,14 @@ export const EN = {
 export const FR = {
   appDevelopment: translator(frAppDevelopment, 'appDevelopment', 'fr'),
   contentPages: translator(frContentPages, 'contentPages', 'fr'),
+  freeMockup: translator(frFreeMockup, 'freeMockup', 'fr'),
+  home: translator(frHome, 'homepage', 'fr'),
   pricing: translator(frPricing, 'pricing', 'fr'),
   projectsList: translator(frProjects, 'projectsList', 'fr'),
   services: translator(frServices, 'services', 'fr'),
   showcaseWebsite: translator(frShowcaseWebsite, 'showcaseWebsite', 'fr'),
+  websiteForAssociations: translator(frWebsiteForAssociations, 'websiteForAssociations', 'fr'),
+  websiteForFreelancers: translator(frWebsiteForFreelancers, 'websiteForFreelancers', 'fr'),
+  websiteForTradespeople: translator(frWebsiteForTradespeople, 'websiteForTradespeople', 'fr'),
+  websiteRedesign: translator(frWebsiteRedesign, 'websiteRedesign', 'fr'),
 };

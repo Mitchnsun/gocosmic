@@ -38,6 +38,10 @@ const pages = () => [
 const frenchPages = () => [
   `${link(FR.contentPages('links.showcase_website.label'), frenchPageUrl('/showcase-website'))}: ${FR.showcaseWebsite('meta.description', { price: inEurosInFrench(BASE_PRICE) })}`,
   `${link(FR.contentPages('links.app_development.label'), frenchPageUrl('/app-development'))}: ${FR.appDevelopment('meta.description')}`,
+  `${link(FR.contentPages('links.website_redesign.label'), frenchPageUrl('/website-redesign'))}: ${FR.websiteRedesign('meta.description')}`,
+  `${link(FR.contentPages('links.website_for_associations.label'), frenchPageUrl('/website-for-associations'))}: ${FR.websiteForAssociations('meta.description', { price: inEurosInFrench(BASE_PRICE) })}`,
+  `${link(FR.contentPages('links.website_for_tradespeople.label'), frenchPageUrl('/website-for-tradespeople'))}: ${FR.websiteForTradespeople('meta.description', { price: inEurosInFrench(BASE_PRICE) })}`,
+  `${link(FR.contentPages('links.website_for_freelancers.label'), frenchPageUrl('/website-for-freelancers'))}: ${FR.websiteForFreelancers('meta.description', { price: inEurosInFrench(BASE_PRICE) })}`,
 ];
 
 /** Each case study: its client, kind and dates, then the description of its card. */

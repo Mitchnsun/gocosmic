@@ -14,21 +14,27 @@ const french = ({ children }: { children: ReactNode }) => (
 
 describe('CaseStudySeeAlso', () => {
   it.each([
-    ['choeurdespaysdumontblanc', 'Création de site vitrine', '/showcase-website'],
-    ['mcomperat', 'Création de site vitrine', '/showcase-website'],
-    ['psc-supersprint', "Création d'application", '/app-development'],
-    ['daily-fortune', "Création d'application", '/app-development'],
-  ] as const)('links %s to the page it illustrates, on the French version', (slug, name, href) => {
+    ['choeurdespaysdumontblanc', ['/website-for-associations', '/showcase-website']],
+    ['mcomperat', ['/website-for-freelancers', '/showcase-website']],
+    ['psc-supersprint', ['/website-for-associations', '/app-development']],
+    ['daily-fortune', ['/app-development']],
+    ['coachnpulse', ['/website-redesign']],
+  ] as const)('links %s to the pages it illustrates, on the French version', (slug, hrefs) => {
     const { getByRole } = render(<CaseStudySeeAlso slug={slug} />, { wrapper: french });
     const section = getByRole('region', { name: 'Voir aussi' });
 
-    expect(within(section).getByRole('link', { name })).toHaveAttribute('href', href);
+    expect(
+      within(section)
+        .getAllByRole('link')
+        .map((link) => link.getAttribute('href'))
+    ).toEqual(hrefs);
   });
 
-  it('shows nothing for a case study that illustrates no page', () => {
-    const { container } = render(<CaseStudySeeAlso slug="coachnpulse" />, { wrapper: french });
+  it('names each page by its label, e.g. the choir mockup leads to the page for associations', () => {
+    const { getByRole } = render(<CaseStudySeeAlso slug="choeurdespaysdumontblanc" />, { wrapper: french });
 
-    expect(container).toBeEmptyDOMElement();
+    expect(getByRole('link', { name: 'Site pour associations et clubs' })).toBeInTheDocument();
+    expect(getByRole('link', { name: 'Création de site vitrine' })).toBeInTheDocument();
   });
 
   it('shows nothing in a language those pages are not published in', () => {

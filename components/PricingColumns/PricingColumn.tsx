@@ -1,5 +1,6 @@
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 
+import { buttonVariants } from '@/design-system/button.variants';
 import { cn } from '@/design-system/lib/utils';
 import { ghostPill, primaryPill } from '@/design-system/pill';
 import { Link } from '@/i18n/navigation';
@@ -54,6 +55,14 @@ export function PricingColumn({ column, highlighted = false }: PricingColumnProp
           </li>
         ))}
       </ul>
+      {column.link && (
+        <Link
+          href={column.link.href}
+          className={cn(buttonVariants({ variant: 'link', size: 'inline' }), 'relative min-h-11 w-fit')}>
+          {column.link.label}
+          <span aria-hidden="true">→</span>
+        </Link>
+      )}
       <Link href={column.cta.href} className={cn(highlighted ? primaryPill() : ghostPill(), 'relative mt-auto w-fit')}>
         {column.cta.text}
         {highlighted && <ArrowRightIcon className="size-4" aria-hidden="true" />}

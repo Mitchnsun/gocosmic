@@ -66,6 +66,22 @@ describe('PricingColumns', () => {
     expect(getByRole('link', { name: 'Subscription cta' })).toHaveClass('bg-aerospace');
   });
 
+  it('links a column to the page that tells more about it, when it has one', () => {
+    const { getByRole, getAllByRole } = render(
+      <PricingColumns
+        eyebrow="[ Pricing ]"
+        title="Two ways"
+        columns={[
+          column('Subscription'),
+          { ...column('Reinforcement'), link: { label: 'Redesign', href: '/services' } },
+        ]}
+      />
+    );
+
+    expect(getByRole('link', { name: /Redesign/ })).toHaveAttribute('href', '/services');
+    expect(getAllByRole('link')).toHaveLength(3);
+  });
+
   it('links under the cards to the page that shows every column', () => {
     const { getByRole } = render(
       <PricingColumns

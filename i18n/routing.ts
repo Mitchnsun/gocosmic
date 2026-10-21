@@ -178,6 +178,18 @@ export const routing = defineRouting({
 
     // App development service page, in French only (see `ROUTE_LANGUAGES`)
     '/app-development': '/creation-application',
+
+    // Website redesign service page, in French only (see `ROUTE_LANGUAGES`)
+    '/website-redesign': '/refonte-site-internet',
+
+    // Website for associations and clubs, in French only (see `ROUTE_LANGUAGES`)
+    '/website-for-associations': '/site-internet-association',
+
+    // Website for tradespeople, in French only (see `ROUTE_LANGUAGES`)
+    '/website-for-tradespeople': '/site-internet-artisan',
+
+    // Website for freelancers and liberal professions, in French only (see `ROUTE_LANGUAGES`)
+    '/website-for-freelancers': '/site-internet-independant',
   },
 });
 
@@ -191,4 +203,8 @@ export type RouteKey = keyof typeof routing.pathnames;
 export const ROUTE_LANGUAGES: Partial<Record<RouteKey, readonly Language[]>> = {
   '/showcase-website': ['fr'],
   '/app-development': ['fr'],
+  '/website-redesign': ['fr'],
+  '/website-for-associations': ['fr'],
+  '/website-for-tradespeople': ['fr'],
+  '/website-for-freelancers': ['fr'],
 };

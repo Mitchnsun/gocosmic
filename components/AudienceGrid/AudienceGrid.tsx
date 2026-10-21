@@ -2,13 +2,18 @@ import type { ReactNode } from 'react';
 
 import { Reveal } from '@/components/Reveal';
 import { SectionHeading } from '@/components/SectionHeading';
+import { buttonVariants } from '@/design-system/button.variants';
 import { HairlineGrid } from '@/design-system/hairline-grid';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, SECTION_Y } from '@/design-system/pill';
+import { Link } from '@/i18n/navigation';
+import type { RouteKey } from '@/i18n/routing';
 
 interface AudienceItem {
   title: string;
   description: string;
+  /** The page written for this audience, if it has one in the current language. */
+  link?: { label: string; href: RouteKey };
 }
 
 interface AudienceGridProps {
@@ -18,7 +23,7 @@ interface AudienceGridProps {
   id?: string;
 }
 
-/** Numbered cards separated by hairlines: who the studio is for, or where it works. */
+/** Numbered cards separated by hairlines: who the studio is for, or where it works, each linking to its page if any. */
 export function AudienceGrid({ eyebrow, title, items, id = 'audience' }: AudienceGridProps) {
   const titleId = `${id}-heading`;
 
@@ -36,6 +41,14 @@ export function AudienceGrid({ eyebrow, title, items, id = 'audience' }: Audienc
                 </span>
                 <h3 className="font-display text-[22px] font-semibold tracking-[-0.02em]">{item.title}</h3>
                 <p className="text-fg-2 leading-relaxed">{item.description}</p>
+                {item.link && (
+                  <Link
+                    href={item.link.href}
+                    className={cn(buttonVariants({ variant: 'link', size: 'inline' }), 'mt-auto min-h-11 w-fit')}>
+                    {item.link.label}
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                )}
               </Reveal>
             </li>
           ))}

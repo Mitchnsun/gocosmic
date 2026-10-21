@@ -93,7 +93,14 @@ describe('Footer Component', () => {
       within(column)
         .getAllByRole('link')
         .map((link) => link.getAttribute('href'))
-    ).toEqual(['/showcase-website', '/app-development']);
+    ).toEqual([
+      '/showcase-website',
+      '/app-development',
+      '/website-redesign',
+      '/website-for-associations',
+      '/website-for-tradespeople',
+      '/website-for-freelancers',
+    ]);
     expect(within(column).getByRole('link', { name: 'Création de site vitrine' })).toBeInTheDocument();
     expect(container.querySelector('.lg\\:grid-cols-\\[2fr_1fr_1fr_1fr\\]')).not.toBeNull();
   });

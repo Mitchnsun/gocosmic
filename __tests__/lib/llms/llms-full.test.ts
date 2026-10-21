@@ -36,6 +36,10 @@ describe('buildLlmsFull', () => {
       '## [Website design · Geneva, Annecy](https://www.gocosmic.dev/en/website-design-geneva-annecy)',
       '## [Création de site vitrine](https://www.gocosmic.dev/fr/creation-site-vitrine)',
       "## [Création d'application](https://www.gocosmic.dev/fr/creation-application)",
+      '## [Refonte de site internet](https://www.gocosmic.dev/fr/refonte-site-internet)',
+      '## [Site pour associations et clubs](https://www.gocosmic.dev/fr/site-internet-association)',
+      '## [Site pour artisans](https://www.gocosmic.dev/fr/site-internet-artisan)',
+      '## [Site pour indépendants](https://www.gocosmic.dev/fr/site-internet-independant)',
       '## Contact',
       '## [Terms of sale](https://www.gocosmic.dev/en/terms)',
     ]);
@@ -183,13 +187,75 @@ describe('buildLlmsFull', () => {
   });
 
   it('tells the app development page in French, with how a quoted project runs and the studio apps', () => {
-    const page = text.slice(text.indexOf("## [Création d'application]"), text.indexOf('## Contact'));
+    const page = text.slice(text.indexOf("## [Création d'application]"), text.indexOf('## [Refonte de site internet]'));
 
     expect(page).toContain('### Un projet sur devis, payé étape par étape.');
     expect(page).toContain('- Un paiement en plusieurs fois, à chaque étape du projet');
     expect(page).toContain("- L'organisation de l'application et les choix techniques");
     expect(page).toContain('- [Daily Fortune](https://www.gocosmic.dev/fr/projets/daily-fortune): ');
     expect(page).not.toMatch(/€|CHF/);
+  });
+
+  it('tells the website redesign page in French, with its two paths, the facts on leaving Wix or WordPress and their sources', () => {
+    const page = text.slice(text.indexOf('## [Refonte de site internet]'), text.indexOf('## [Site pour associations'));
+
+    expect(page).toMatch(/- \*\*Le refaire en abonnement\*\*: Un nouveau site dès 10\s€ par mois/);
+    expect(page).toContain(
+      '[Voir les quatre façons de travailler avec nous](https://www.gocosmic.dev/fr/services#pricing)'
+    );
+    expect(page).toContain('- **Un site Wix**: Il ne peut pas être hébergé ailleurs');
+    expect(page).toContain('### Un site suivi depuis 2016, et refait en chemin.');
+    expect(page).toContain('Sa version 5.0.0, sortie en octobre 2026, lui a donné un nouveau design.');
+    expect(page).toContain(
+      '- [Aide Wix : héberger un site Wix ailleurs (en anglais)](https://support.wix.com/en/article/exporting-or-embedding-your-wix-site-elsewhere)'
+    );
+    expect(page).toContain('Consultées le 21 octobre 2026.');
+  });
+
+  it('prices the example of each audience page line by line, with its total and commitment', () => {
+    const associations = text.slice(
+      text.indexOf('## [Site pour associations'),
+      text.indexOf('## [Site pour artisans]')
+    );
+    const tradespeople = text.slice(
+      text.indexOf('## [Site pour artisans]'),
+      text.indexOf('## [Site pour indépendants]')
+    );
+    const freelancers = text.slice(text.indexOf('## [Site pour indépendants]'), text.indexOf('## Contact'));
+
+    expect(associations).toMatch(
+      /- Vous gardez la main: 20\s€\n- 2 à 4 pages: \+5\s€\n- Gestion de votre nom de domaine: \+5\s€/
+    );
+    expect(associations).toMatch(/- \*\*Total\*\*: 30\s€ \/ mois/);
+    expect(associations).toContain('car il comprend : formule « Vous gardez la main », nom de domaine.');
+    expect(tradespeople).toMatch(/- \*\*Total\*\*: 30\s€ \/ mois/);
+    expect(freelancers).toMatch(/- \*\*Total\*\*: 25\s€ \/ mois/);
+  });
+
+  it('tells each audience page in French, with what is its own', () => {
+    const associations = text.slice(
+      text.indexOf('## [Site pour associations'),
+      text.indexOf('## [Site pour artisans]')
+    );
+    const tradespeople = text.slice(
+      text.indexOf('## [Site pour artisans]'),
+      text.indexOf('## [Site pour indépendants]')
+    );
+    const freelancers = text.slice(text.indexOf('## [Site pour indépendants]'), text.indexOf('## Contact'));
+
+    expect(associations).toContain('- **Les adhésions en ligne**: Pour un espace adhérents');
+    expect(associations).toContain("- **Et si l'association arrête ?**: Il suffit de nous envoyer un e-mail");
+    expect(associations).toContain("Aujourd'hui, c'est Matthieu qui met à jour tous les sites du studio");
+    expect(associations).toContain('- [PSC Supersprint](https://www.gocosmic.dev/fr/projets/psc-supersprint): ');
+    expect(tradespeople).toContain('Menuisier·ère, plombier·ère, électricien·ne, coiffeur·se, traiteur·se…');
+    expect(tradespeople).toContain('- **Votre fiche Google Maps**: Vous continuez de gérer vous-même');
+    expect(tradespeople).toContain(
+      '- **Vous décidez ensuite**: Vous recevez la maquette par e-mail dans les 48 heures'
+    );
+    expect(tradespeople).not.toContain('/fr/projets/');
+    expect(freelancers).toContain('Si votre profession encadre sa communication, dites-le nous');
+    expect(freelancers).toContain('- **Une adresse e-mail à votre nom**: Par exemple contact@mon-entreprise.fr');
+    expect(freelancers).toContain('- [mcomper.at](https://www.gocosmic.dev/fr/projets/mcomperat): ');
   });
 
   it('quotes the terms of sale word for word, and no other legal page', () => {
