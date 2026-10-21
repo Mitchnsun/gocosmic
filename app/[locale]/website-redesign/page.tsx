@@ -8,13 +8,11 @@ import { ContentPage, ContentPageProjects, formatCounter, SourceList, TermList }
 import { ContentSection } from '@/components/ContentSection';
 import { freeMockupNote } from '@/components/FreeMockup';
 import ServiceSeo from '@/components/JsonLd/ServiceSeo';
-import { BASE_PRICE } from '@/components/PricingSimulator/constants';
-import { formatAmount } from '@/components/PricingSimulator/PricingSimulator.utils';
+import { formatStartingPrice } from '@/components/PricingSimulator/PricingSimulator.utils';
 import { buildProjectCards } from '@/components/ProjectGrid';
 import { WEBSITE_REDESIGN } from '@/data/content-pages';
 import { ghostPill } from '@/design-system/pill';
 import { Link } from '@/i18n/navigation';
-import { getCurrency, getRegion } from '@/lib/region';
 import { assertRouteLocale, buildPageMetadata } from '@/lib/seo';
 
 const ROUTE = '/website-redesign';
@@ -40,7 +38,7 @@ export default async function WebsiteRedesign({ params }: { params: Promise<{ lo
   const tLinks = await getTranslations('contentPages');
   const tNav = await getTranslations('navigation');
   const tHome = await getTranslations('homepage');
-  const price = formatAmount(BASE_PRICE, getCurrency(getRegion(locale)), locale);
+  const price = formatStartingPrice(locale);
   const cards = buildProjectCards(await getTranslations('projectsList'));
   const projects = WEBSITE_REDESIGN.projects.flatMap((slug) => cards.filter((card) => card.slug === slug));
   const { year, latestRelease } = PROJECTS_BY_SLUG.coachnpulse;

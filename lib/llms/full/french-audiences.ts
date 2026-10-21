@@ -1,9 +1,18 @@
 import { BASE_PRICE } from '@/components/PricingSimulator/constants';
+import type { AddOnKey } from '@/components/PricingSimulator/PricingSimulator.types';
 import { WEBSITE_FOR_ASSOCIATIONS, WEBSITE_FOR_FREELANCERS, WEBSITE_FOR_TRADESPEOPLE } from '@/data/content-pages';
 
 import { FR } from '../llms.messages';
 import { frenchPageUrl, inEurosInFrench, item, keysOf, link, list, section, valuesOf } from '../llms.utils';
 import { examplePlanText, projectLinks } from './french-pages.shared';
+
+/** The simulator options a page recommends, each with its hint. */
+function optionItems(options: readonly AddOnKey[]): string[] {
+  const domain = FR.pricing('builder.options.example_domain.fr');
+  return options.map((option) =>
+    item(FR.pricing(`builder.options.${option}.label`), FR.pricing(`builder.options.${option}.hint`, { domain }))
+  );
+}
 
 /** The page for associations and clubs: what the site gathers, the features, an example, the questions, the cases. */
 export function buildWebsiteForAssociationsSection(): string {
@@ -43,10 +52,7 @@ export function buildWebsiteForAssociationsSection(): string {
 /** The page for tradespeople: what the site says, being found on Google, the options, an example, the free mockup. */
 export function buildWebsiteForTradespeopleSection(): string {
   const t = FR.websiteForTradespeople;
-  const domain = FR.pricing('builder.options.example_domain.fr');
-  const options = WEBSITE_FOR_TRADESPEOPLE.options.map((option) =>
-    item(FR.pricing(`builder.options.${option}.label`), FR.pricing(`builder.options.${option}.hint`, { domain }))
-  );
+  const options = optionItems(WEBSITE_FOR_TRADESPEOPLE.options);
 
   return section(
     link(FR.contentPages('links.website_for_tradespeople.label'), frenchPageUrl('/website-for-tradespeople')),
@@ -92,10 +98,7 @@ export function buildWebsiteForTradespeopleSection(): string {
 /** The page for freelancers and liberal professions: what the site shows, starting small, the options, the case. */
 export function buildWebsiteForFreelancersSection(): string {
   const t = FR.websiteForFreelancers;
-  const domain = FR.pricing('builder.options.example_domain.fr');
-  const options = WEBSITE_FOR_FREELANCERS.options.map((option) =>
-    item(FR.pricing(`builder.options.${option}.label`), FR.pricing(`builder.options.${option}.hint`, { domain }))
-  );
+  const options = optionItems(WEBSITE_FOR_FREELANCERS.options);
 
   return section(
     link(FR.contentPages('links.website_for_freelancers.label'), frenchPageUrl('/website-for-freelancers')),

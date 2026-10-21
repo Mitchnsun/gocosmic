@@ -3,12 +3,11 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { ReactNode } from 'react';
 
 import { AccentList } from '@/components/AccentList';
-import { ContentPage, formatCounter, PlanExample, TermList } from '@/components/ContentPage';
+import { buildOptionTerms, ContentPage, formatCounter, PlanExample, TermList } from '@/components/ContentPage';
 import { ContentSection } from '@/components/ContentSection';
-import { BASE_PRICE } from '@/components/PricingSimulator/constants';
-import { formatAmount } from '@/components/PricingSimulator/PricingSimulator.utils';
+import { formatStartingPrice } from '@/components/PricingSimulator/PricingSimulator.utils';
 import { WEBSITE_FOR_TRADESPEOPLE } from '@/data/content-pages';
-import { getCurrency, getRegion } from '@/lib/region';
+import { getRegion } from '@/lib/region';
 import { assertRouteLocale, buildPageMetadata } from '@/lib/seo';
 
 const ROUTE = '/website-for-tradespeople';
@@ -26,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     locale,
     routeKey: ROUTE,
     title: t('title'),
-    description: t('description', { price: formatAmount(BASE_PRICE, getCurrency(getRegion(locale)), locale) }),
+    description: t('description', { price: formatStartingPrice(locale) }),
   });
 }
 
@@ -42,7 +41,6 @@ export default async function WebsiteForTradespeople({ params }: { params: Promi
   const tNav = await getTranslations('navigation');
   const tPricing = await getTranslations('pricing.builder');
   const tMockup = await getTranslations('freeMockup.steps');
-  const domain = tPricing(`options.example_domain.${getRegion(locale)}`);
 
   return (
     <ContentPage
@@ -96,10 +94,7 @@ export default async function WebsiteForTradespeople({ params }: { params: Promi
         lead={t('features.lead')}>
         <TermList
           items={[
-            ...WEBSITE_FOR_TRADESPEOPLE.options.map((option) => ({
-              term: tPricing(`options.${option}.label`),
-              description: tPricing(`options.${option}.hint`, { domain }),
-            })),
+            ...buildOptionTerms(tPricing, WEBSITE_FOR_TRADESPEOPLE.options, getRegion(locale)),
             { term: tPricing('pages.label'), description: tPricing('pages.info') },
           ]}
         />

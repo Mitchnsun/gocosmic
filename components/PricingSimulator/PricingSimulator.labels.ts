@@ -1,8 +1,8 @@
 import type { PlanItem, PlanSelection } from './PricingSimulator.types';
 import { getCommittedItems, isTiered } from './PricingSimulator.utils';
 
-/** Translator scoped to the `pricing` messages. */
-type PricingTranslator = (key: string, values?: Record<string, string | number>) => string;
+/** Translator of the pricing messages, scoped to `pricing` unless said otherwise. */
+export type PricingTranslator = (key: string, values?: Record<string, string | number>) => string;
 
 /** Name of a recap line, e.g. "On s'occupe de tout" or "2 à 4 pages". */
 export function getPlanItemLabel(t: PricingTranslator, plan: PlanSelection, item: PlanItem): string {

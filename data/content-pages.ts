@@ -11,12 +11,6 @@ export interface ExamplePlan {
   addOns: readonly AddOnKey[];
 }
 
-/** A source quoted by a page, with the key of its label in the page's `sources` messages. */
-export interface Source {
-  key: string;
-  href: string;
-}
-
 /** What the showcase website page quotes from the rest of the site, read by the page and the files for AI agents. */
 export const SHOWCASE_WEBSITE = {
   /** Options of the simulator worth adding to a showcase website, in display order. */
@@ -50,7 +44,10 @@ export const WEBSITE_REDESIGN = {
       },
     ],
   },
-} as const satisfies { projects: readonly CaseStudySlug[]; sources: { consulted: string; items: readonly Source[] } };
+} as const satisfies {
+  projects: readonly CaseStudySlug[];
+  sources: { consulted: string; items: readonly { key: string; href: string }[] };
+};
 
 /** What the page for associations and clubs quotes. */
 export const WEBSITE_FOR_ASSOCIATIONS = {

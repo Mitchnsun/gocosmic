@@ -5,11 +5,9 @@ import type { ReactNode } from 'react';
 import { AccentList } from '@/components/AccentList';
 import { ContentPage, ContentPageProjects, formatCounter, PlanExample, TermList } from '@/components/ContentPage';
 import { ContentSection } from '@/components/ContentSection';
-import { BASE_PRICE } from '@/components/PricingSimulator/constants';
-import { formatAmount } from '@/components/PricingSimulator/PricingSimulator.utils';
+import { formatStartingPrice } from '@/components/PricingSimulator/PricingSimulator.utils';
 import { buildProjectCards } from '@/components/ProjectGrid';
 import { WEBSITE_FOR_ASSOCIATIONS } from '@/data/content-pages';
-import { getCurrency, getRegion } from '@/lib/region';
 import { assertRouteLocale, buildPageMetadata } from '@/lib/seo';
 
 const ROUTE = '/website-for-associations';
@@ -18,7 +16,6 @@ const SECTION_COUNT = 4;
 const em = (chunks: ReactNode) => <em>{chunks}</em>;
 const counter = (position: number) => formatCounter(position, SECTION_COUNT);
 const keys = (raw: unknown) => Object.keys(raw as Record<string, unknown>);
-const startingPrice = (locale: string) => formatAmount(BASE_PRICE, getCurrency(getRegion(locale)), locale);
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -29,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     locale,
     routeKey: ROUTE,
     title: t('title'),
-    description: t('description', { price: startingPrice(locale) }),
+    description: t('description', { price: formatStartingPrice(locale) }),
   });
 }
 
@@ -100,7 +97,7 @@ export default async function WebsiteForAssociations({ params }: { params: Promi
         <TermList
           items={keys(t.raw('questions.items')).map((question) => ({
             term: t(`questions.items.${question}.question`),
-            description: t(`questions.items.${question}.answer`, { price: startingPrice(locale) }),
+            description: t(`questions.items.${question}.answer`, { price: formatStartingPrice(locale) }),
           }))}
         />
       </ContentSection>

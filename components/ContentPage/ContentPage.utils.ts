@@ -1,7 +1,9 @@
 import { INITIAL_SELECTION, PAGE_TIERS } from '@/components/PricingSimulator/constants';
+import type { PricingTranslator } from '@/components/PricingSimulator/PricingSimulator.labels';
 import { normalizePlan } from '@/components/PricingSimulator/PricingSimulator.rules';
-import type { PlanSelection } from '@/components/PricingSimulator/PricingSimulator.types';
+import type { AddOnKey, PlanSelection } from '@/components/PricingSimulator/PricingSimulator.types';
 import type { ExamplePlan } from '@/data/content-pages';
+import type { Region } from '@/lib/region';
 
 /** HUD counter of a numbered section, e.g. `02 / 04`. */
 export const formatCounter = (position: number, total: number) =>
@@ -19,4 +21,13 @@ export function buildExamplePlan({ formula, addOns }: ExamplePlan): PlanSelectio
     pages: EXAMPLE_PAGES,
     addOns: { ...INITIAL_SELECTION.addOns, ...Object.fromEntries(addOns.map((key) => [key, true])) },
   });
+}
+
+/** The simulator options a page recommends, as `TermList` items; `t` is scoped to `pricing.builder`. */
+export function buildOptionTerms(t: PricingTranslator, options: readonly AddOnKey[], region: Region) {
+  const domain = t(`options.example_domain.${region}`);
+  return options.map((option) => ({
+    term: t(`options.${option}.label`),
+    description: t(`options.${option}.hint`, { domain }),
+  }));
 }

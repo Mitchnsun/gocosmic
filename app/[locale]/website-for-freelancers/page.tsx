@@ -3,13 +3,19 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { ReactNode } from 'react';
 
 import { AccentList } from '@/components/AccentList';
-import { ContentPage, ContentPageProjects, formatCounter, PlanExample, TermList } from '@/components/ContentPage';
+import {
+  buildOptionTerms,
+  ContentPage,
+  ContentPageProjects,
+  formatCounter,
+  PlanExample,
+  TermList,
+} from '@/components/ContentPage';
 import { ContentSection } from '@/components/ContentSection';
-import { BASE_PRICE } from '@/components/PricingSimulator/constants';
-import { formatAmount } from '@/components/PricingSimulator/PricingSimulator.utils';
+import { formatStartingPrice } from '@/components/PricingSimulator/PricingSimulator.utils';
 import { buildProjectCards } from '@/components/ProjectGrid';
 import { WEBSITE_FOR_FREELANCERS } from '@/data/content-pages';
-import { getCurrency, getRegion } from '@/lib/region';
+import { getRegion } from '@/lib/region';
 import { assertRouteLocale, buildPageMetadata } from '@/lib/seo';
 
 const ROUTE = '/website-for-freelancers';
@@ -18,7 +24,6 @@ const SECTION_COUNT = 4;
 const em = (chunks: ReactNode) => <em>{chunks}</em>;
 const counter = (position: number) => formatCounter(position, SECTION_COUNT);
 const values = (raw: unknown) => Object.values(raw as Record<string, string>);
-const startingPrice = (locale: string) => formatAmount(BASE_PRICE, getCurrency(getRegion(locale)), locale);
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -29,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     locale,
     routeKey: ROUTE,
     title: t('title'),
-    description: t('description', { price: startingPrice(locale) }),
+    description: t('description', { price: formatStartingPrice(locale) }),
   });
 }
 
@@ -41,7 +46,6 @@ export default async function WebsiteForFreelancers({ params }: { params: Promis
   const t = await getTranslations('websiteForFreelancers');
   const tNav = await getTranslations('navigation');
   const tPricing = await getTranslations('pricing.builder');
-  const domain = tPricing(`options.example_domain.${getRegion(locale)}`);
   const cards = buildProjectCards(await getTranslations('projectsList'));
   const projects = WEBSITE_FOR_FREELANCERS.projects.flatMap((slug) => cards.filter((card) => card.slug === slug));
 
@@ -78,7 +82,7 @@ export default async function WebsiteForFreelancers({ params }: { params: Promis
         eyebrow={t('grow.eyebrow')}
         index={counter(2)}
         title={t('grow.title')}
-        lead={t('grow.lead', { price: startingPrice(locale) })}>
+        lead={t('grow.lead', { price: formatStartingPrice(locale) })}>
         <AccentList items={values(t.raw('grow.points'))} accent="jungle" ariaLabel={t('grow.title')} />
       </ContentSection>
 
@@ -88,12 +92,7 @@ export default async function WebsiteForFreelancers({ params }: { params: Promis
         index={counter(3)}
         title={t('features.title')}
         lead={t('features.lead')}>
-        <TermList
-          items={WEBSITE_FOR_FREELANCERS.options.map((option) => ({
-            term: tPricing(`options.${option}.label`),
-            description: tPricing(`options.${option}.hint`, { domain }),
-          }))}
-        />
+        <TermList items={buildOptionTerms(tPricing, WEBSITE_FOR_FREELANCERS.options, getRegion(locale))} />
       </ContentSection>
 
       <ContentSection
