@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Changed
 
 - On the French showcase website page, the price heading now reads "a subscription, priced per month", since some items run for 12 months and the subscription can be billed yearly
-- The French app development page now says that Daily Fortune offers a new message created with the help of AI every day
+- The French app development page now says that Daily Fortune offers a message created with the help of AI every day
 
 ### Fixed
 

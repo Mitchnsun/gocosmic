@@ -68,6 +68,7 @@ describe('showcase website page', () => {
   it('lists what is included and the useful options, and leads to the simulator for the price', async () => {
     const { getByRole, getByText } = await renderPage('fr');
 
+    expect(getByRole('heading', { level: 2, name: 'Un abonnement, à prix affiché par mois.' })).toBeInTheDocument();
     expect(getByRole('heading', { level: 3, name: 'Compris dans les deux formules' })).toBeInTheDocument();
     expect(getByText('Une modification de vos contenus par an')).toBeInTheDocument();
     expect(getByText('La prise de rendez-vous en ligne')).toBeInTheDocument();
