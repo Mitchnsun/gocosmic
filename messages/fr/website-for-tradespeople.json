@@ -1,0 +1,53 @@
+{
+  "websiteForTradespeople": {
+    "meta": {
+      "title": "Site internet pour artisans, prix affichés | Cosmic Studio",
+      "description": "Menuisier·ère, plombier·ère, électricien·ne… Un site qui dit ce que vous faites, où vous travaillez et comment vous joindre. Dès {price} par mois."
+    },
+    "breadcrumb": "Artisans",
+    "intro": {
+      "eyebrow": "[ Artisans ]",
+      "title": "Un site d'artisan, <em>trouvé quand on cherche votre métier.</em>",
+      "lead": "Menuisier·ère, plombier·ère, électricien·ne, coiffeur·se, traiteur·se… Votre site dit ce que vous faites, où vous travaillez et comment vous joindre, pour qu'il ressorte quand quelqu'un cherche votre métier près de chez lui."
+    },
+    "says": {
+      "eyebrow": "Ce qu'il dit",
+      "title": "Les réponses qu'on cherche avant de vous appeler.",
+      "lead": "Une page claire, lisible sur téléphone, que vous complétez le jour où il vous faut d'autres pages.",
+      "points": {
+        "trade": "Votre métier et ce que vous proposez",
+        "work": "Vos réalisations, en photos",
+        "area": "Votre zone d'intervention",
+        "contact": "Comment vous joindre, avec un bouton pour vous écrire"
+      }
+    },
+    "google": {
+      "eyebrow": "Être trouvé",
+      "title": "Quand on cherche votre métier près de chez soi.",
+      "lead": "Votre site est préparé pour Google : un titre et une description pour chaque page, et les informations sur votre activité dans un format que Google comprend. Nous l'inscrivons aussi dans la Search Console de Google, qui montre comment il est trouvé.",
+      "follow_up_text": "En option, nous regardons comment votre site ressort sur des recherches comme « votre métier + votre ville », nous ajustons vos pages et nous vous envoyons un bilan écrit. Nous ne promettons pas de place précise sur Google.",
+      "listing": "Votre fiche Google Maps",
+      "listing_text": "Vous continuez de gérer vous-même votre fiche Google Maps et les annuaires."
+    },
+    "features": {
+      "eyebrow": "Au catalogue",
+      "title": "Les options utiles à un site d'artisan.",
+      "lead": "Elles s'ajoutent au site au moment où vous en avez besoin."
+    },
+    "example": {
+      "eyebrow": "Exemple",
+      "title": "Un site d'artisan, aux prix d'aujourd'hui.",
+      "lead": "Quelques pages, un nom de domaine à votre nom, un formulaire de contact et les avis de vos clients, avec la formule « On s'occupe de tout » : vous nous envoyez vos changements par e-mail, et nous les mettons en ligne (une modification par an comprise, davantage avec l'option « Modifications de vos pages »)."
+    },
+    "mockup": {
+      "eyebrow": "Maquette gratuite",
+      "title": "Voyez votre site avant de nous confier quoi que ce soit.",
+      "lead": "Pour vous faire une idée, demandez la maquette de votre propre site. Elle est gratuite et ne vous engage à rien."
+    },
+    "cta": {
+      "title": "Demandez la maquette de votre site.",
+      "description": "Laissez votre adresse e-mail et, si vous en avez un, l'adresse de votre site actuel : vous recevez la maquette de votre page d'accueil par e-mail.",
+      "button": "Demander ma maquette gratuite"
+    }
+  }
+}

@@ -6,13 +6,12 @@ import type { ReactNode } from 'react';
 import BreadcrumbSeo from '@/components/JsonLd/BreadcrumbSeo';
 import PriceCatalogSeo from '@/components/JsonLd/PriceCatalogSeo';
 import { FreeOffers, PricingSimulator, QuotedServices } from '@/components/PricingSimulator';
-import { BASE_PRICE } from '@/components/PricingSimulator/constants';
-import { formatAmount } from '@/components/PricingSimulator/PricingSimulator.utils';
+import { formatStartingPrice } from '@/components/PricingSimulator/PricingSimulator.utils';
 import { SectionHeading } from '@/components/SectionHeading';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, PAGE_TOP, SECTION_Y } from '@/design-system/pill';
 import { getClientMessages } from '@/i18n/client-messages';
-import { getCurrency, getRegion } from '@/lib/region';
+import { getRegion } from '@/lib/region';
 import { buildPageMetadata } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -24,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     routeKey: '/pricing',
     title: t('title'),
     // Swiss francs on the Swiss URLs.
-    description: t('description', { price: formatAmount(BASE_PRICE, getCurrency(getRegion(locale)), locale) }),
+    description: t('description', { price: formatStartingPrice(locale) }),
   });
 }
 

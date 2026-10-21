@@ -7,16 +7,16 @@ import type { PricingColumnContent } from './PricingColumns.types';
 /** Translator scoped to the `pricing.columns` messages. */
 type ColumnsTranslator = (key: string, values?: Record<string, string>) => string;
 
-/** Subscription, guidance, reinforcement and custom, in that order. */
-type FourColumns = [PricingColumnContent, PricingColumnContent, PricingColumnContent, PricingColumnContent];
+/** The four ways of working, by name. */
+type Columns = Record<'subscription' | 'guidance' | 'reinforcement' | 'custom', PricingColumnContent>;
 
 /** Builds the four pricing columns from the `pricing.columns` messages and the typed price table. */
-export function buildPricingColumns(t: ColumnsTranslator, region: Region, locale: string): FourColumns {
+export function buildPricingColumns(t: ColumnsTranslator, region: Region, locale: string): Columns {
   const currency = getCurrency(region);
   const price = (amount: number) => formatAmount(amount, currency, locale);
 
-  return [
-    {
+  return {
+    subscription: {
       title: t('subscription.title'),
       label: t('subscription.label'),
       price: t('subscription.price', { price: price(BASE_PRICE) }),
@@ -29,7 +29,7 @@ export function buildPricingColumns(t: ColumnsTranslator, region: Region, locale
       ],
       cta: { text: t('subscription.cta'), href: '/pricing' },
     },
-    {
+    guidance: {
       title: t('guidance.title'),
       label: t('guidance.label'),
       price: t('guidance.price'),
@@ -37,7 +37,7 @@ export function buildPricingColumns(t: ColumnsTranslator, region: Region, locale
       features: [t('guidance.features.architecture'), t('guidance.features.design'), t('guidance.features.designer')],
       cta: { text: t('guidance.cta'), href: '/contact' },
     },
-    {
+    reinforcement: {
       title: t('reinforcement.title'),
       label: t('reinforcement.label'),
       price: t('reinforcement.price'),
@@ -49,12 +49,12 @@ export function buildPricingColumns(t: ColumnsTranslator, region: Region, locale
       ],
       cta: { text: t('reinforcement.cta'), href: '/contact' },
     },
-    {
+    custom: {
       title: t('custom.title'),
       label: t('custom.label'),
       description: t('custom.description'),
       features: [t('custom.features.payment'), t('custom.features.ownership')],
       cta: { text: t('custom.cta'), href: '/contact' },
     },
-  ];
+  };
 }

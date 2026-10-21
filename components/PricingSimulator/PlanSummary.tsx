@@ -8,8 +8,9 @@ import type { Region } from '@/lib/region';
 import { MockupLink } from './MockupLink';
 import { PriceTotal } from './PriceTotal';
 import type { PriceFormat } from './PricingSimulator.hooks';
+import { getCommitmentLine, getPlanItemDetail, getPlanItemLabel } from './PricingSimulator.labels';
 import type { PlanItem, PlanSelection } from './PricingSimulator.types';
-import { getCommittedItems, getPlanItems, isTiered } from './PricingSimulator.utils';
+import { getPlanItems } from './PricingSimulator.utils';
 
 interface PlanSummaryProps {
   format: PriceFormat;
@@ -29,22 +30,6 @@ const linkClass = 'text-fg-2 hover:text-fg underline underline-offset-4';
 export function PlanSummary({ format, region, plan, total, showQuoteHint }: PlanSummaryProps) {
   const t = useTranslations('pricing');
   const { price, surcharge } = format;
-  const committed = getCommittedItems(plan);
-
-  const label = (item: PlanItem) => {
-    if (item.id === 'formula') return t(`builder.formulas.${plan.formula}.label`);
-    if (item.id === 'pages') return t(`builder.pages.tiers.${item.tier}`);
-    if (item.id === 'updates') return t('builder.updates.label');
-    if (item.id === 'mailboxes') return t('builder.options.mailboxes.count', { count: item.count ?? 0 });
-    if (item.id === 'detailed_analytics') return t('builder.options.detailed_analytics.recap_label');
-    return t(`builder.options.${item.id}.label`);
-  };
-  /** Rhythm of a slider line, e.g. "Every month". */
-  const detail = (item: PlanItem) => {
-    if (item.id === 'updates') return t(`builder.updates.tiers.${item.tier}`);
-    if (isTiered(item.id)) return t(`builder.options.${item.id}.tiers.${item.tier}`);
-    return undefined;
-  };
   const amount = (item: PlanItem) => {
     if (item.id === 'formula') return price(item.amount);
     return item.tier === 'ten_plus'
@@ -67,23 +52,20 @@ export function PlanSummary({ format, region, plan, total, showQuoteHint }: Plan
         })}
       />
       <ul className="border-line text-fg-2 flex flex-col gap-2 border-t pt-4 text-sm">
-        {getPlanItems(plan).map((item) => (
-          <li key={item.id} className="flex justify-between gap-4">
-            <span>
-              <span>{label(item)}</span>
-              {detail(item) && <span className="text-fg-3"> · {detail(item)}</span>}
-            </span>
-            <span className="text-fg shrink-0 font-mono tabular-nums">{amount(item)}</span>
-          </li>
-        ))}
+        {getPlanItems(plan).map((item) => {
+          const detail = getPlanItemDetail(t, item);
+          return (
+            <li key={item.id} className="flex justify-between gap-4">
+              <span>
+                <span>{getPlanItemLabel(t, plan, item)}</span>
+                {detail && <span className="text-fg-3"> · {detail}</span>}
+              </span>
+              <span className="text-fg shrink-0 font-mono tabular-nums">{amount(item)}</span>
+            </li>
+          );
+        })}
       </ul>
-      <p className="border-line text-fg-2 border-t pt-4 text-sm">
-        {committed.length > 0
-          ? t('builder.commitment_line.periods', {
-              items: committed.map((id) => t(`builder.commitment_items.${id}`)).join(', '),
-            })
-          : t('builder.commitment_line.none')}
-      </p>
+      <p className="border-line text-fg-2 border-t pt-4 text-sm">{getCommitmentLine(t, plan)}</p>
       {showQuoteHint && (
         <p className="border-aerospace/30 bg-aerospace/[0.04] text-fg-2 rounded-xl border px-4 py-3 text-sm">
           {t('builder.total.beyond')}

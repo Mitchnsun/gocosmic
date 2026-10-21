@@ -9,7 +9,7 @@ const fakeT = (key: string, values?: Record<string, string>) =>
 
 describe('buildPricingColumns', () => {
   it('prices the subscription from the base price, in euros, the French way', () => {
-    const [subscription, , , custom] = buildPricingColumns(fakeT, 'fr', 'fr');
+    const { subscription, custom } = buildPricingColumns(fakeT, 'fr', 'fr');
 
     expect(subscription.price).toMatch(/^subscription\.price\(10\s€\)$/);
     expect(subscription.cta.href).toBe('/pricing');
@@ -18,13 +18,13 @@ describe('buildPricingColumns', () => {
   });
 
   it('switches to Swiss francs for Swiss visitors', () => {
-    const [subscription] = buildPricingColumns(fakeT, 'ch', 'en');
+    const { subscription } = buildPricingColumns(fakeT, 'ch', 'en');
 
     expect(subscription.price).toMatch(/^subscription\.price\(CHF\s10\)$/);
   });
 
   it('builds the guidance and reinforcement columns without prices from amounts', () => {
-    const [, guidance, reinforcement] = buildPricingColumns(fakeT, 'fr', 'fr');
+    const { guidance, reinforcement } = buildPricingColumns(fakeT, 'fr', 'fr');
 
     expect(guidance.price).toBe('guidance.price');
     expect(reinforcement.price).toBe('reinforcement.price');
@@ -64,6 +64,22 @@ describe('PricingColumns', () => {
     expect(getByRole('heading', { name: 'Custom' })).toBeInTheDocument();
     expect(queryByText('Custom price')).not.toBeInTheDocument();
     expect(getByRole('link', { name: 'Subscription cta' })).toHaveClass('bg-aerospace');
+  });
+
+  it('links a column to the page that tells more about it, when it has one', () => {
+    const { getByRole, getAllByRole } = render(
+      <PricingColumns
+        eyebrow="[ Pricing ]"
+        title="Two ways"
+        columns={[
+          column('Subscription'),
+          { ...column('Reinforcement'), link: { label: 'Redesign', href: '/services' } },
+        ]}
+      />
+    );
+
+    expect(getByRole('link', { name: /Redesign/ })).toHaveAttribute('href', '/services');
+    expect(getAllByRole('link')).toHaveLength(3);
   });
 
   it('links under the cards to the page that shows every column', () => {

@@ -1,0 +1,56 @@
+{
+  "websiteForFreelancers": {
+    "meta": {
+      "title": "Site internet pour indépendants | Cosmic Studio",
+      "description": "Thérapeute, consultant·e, photographe, architecte : un site professionnel dès vos débuts, qui suit le développement de votre activité. Dès {price} par mois."
+    },
+    "breadcrumb": "Indépendants",
+    "intro": {
+      "eyebrow": "[ Indépendants ]",
+      "title": "Un site professionnel dès vos débuts, <em>qui grandit avec votre activité.</em>",
+      "lead": "Thérapeute, consultant·e, photographe, architecte… On vous recommande, puis on regarde votre site avant de vous appeler. Il présente votre pratique et votre parcours, et dit comment prendre rendez-vous."
+    },
+    "shows": {
+      "eyebrow": "Ce qu'il présente",
+      "title": "L'essentiel de votre pratique, sur une page claire.",
+      "lead": "Lisible sur téléphone comme sur ordinateur, et préparée pour Google.",
+      "points": {
+        "practice": "Votre pratique et ce que vous proposez",
+        "background": "Votre parcours",
+        "booking": "Comment prendre rendez-vous",
+        "contact": "Vos coordonnées"
+      },
+      "ethics": "Si votre profession encadre sa communication, dites-le-nous : vous relisez et validez les textes, car vous en restez responsable."
+    },
+    "grow": {
+      "eyebrow": "Commencer simple",
+      "title": "Une page pour démarrer, d'autres quand votre activité grandit.",
+      "lead": "Vous commencez avec la page vitrine comprise, dès {price} par mois, puis vous ajoutez des pages ou des options au fil de votre activité, sans refaire le site.",
+      "points": {
+        "start": "Une page vitrine, l'hébergement, la connexion sécurisée et les réglages pour être trouvé sur Google, compris dès le départ",
+        "add": "Des pages ou des options à ajouter quand vous en avez besoin",
+        "remove": "Les options sans engagement d'un an se retirent avec un mois de préavis"
+      }
+    },
+    "features": {
+      "eyebrow": "Au catalogue",
+      "title": "Les options utiles quand on travaille à son compte.",
+      "lead": "Vous ajoutez celles qui servent votre pratique."
+    },
+    "example": {
+      "eyebrow": "Exemple",
+      "title": "Pour démarrer, aux prix d'aujourd'hui.",
+      "lead": "Quelques pages, un nom de domaine à votre nom et la prise de rendez-vous en ligne, avec la formule « On s'occupe de tout ». Une modification de vos pages par an est comprise ; si vos informations changent plus souvent, l'option « Modifications de vos pages » prend le relais."
+    },
+    "projects": {
+      "eyebrow": "[ Réalisation ]",
+      "title": "Un CV en ligne, <em>en deux langues.</em>",
+      "lead": "mcomper.at est un projet personnel : le CV en ligne de Matthieu, en français et en anglais, rapide à charger. Nous y testons les outils que nous utilisons ensuite pour nos clients."
+    },
+    "cta": {
+      "title": "Voyez votre site avant de vous lancer.",
+      "description": "Décrivez votre pratique en quelques lignes : nous préparons une maquette de votre page d'accueil. Elle est gratuite et ne vous engage à rien.",
+      "button": "Demander ma maquette gratuite"
+    }
+  }
+}

@@ -19,9 +19,11 @@ import { buildProjectCards, ProjectGrid } from '@/components/ProjectGrid';
 import { SectionHeading } from '@/components/SectionHeading';
 import { StudioIntro } from '@/components/StudioIntro';
 import { WhyStudio } from '@/components/WhyStudio';
+import { AUDIENCE_PAGES, CONTENT_PAGE_LABELS } from '@/data/content-pages';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, ghostPill, SECTION_Y } from '@/design-system/pill';
 import { Link } from '@/i18n/navigation';
+import { hasRoute } from '@/i18n/route-locales';
 import { CODE_HANDOVER_MONTHS } from '@/lib/pricing/offers';
 import { getCurrency, getRegion } from '@/lib/region';
 import { buildPageMetadata } from '@/lib/seo';
@@ -48,6 +50,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const t = await getTranslations('homepage');
   const tPricing = await getTranslations('pricing.columns');
   const tProjects = await getTranslations('projectsList');
+  const tLinks = await getTranslations('contentPages');
   const region = getRegion(locale);
   const startingPrice = formatAmount(BASE_PRICE, getCurrency(region), locale);
 
@@ -58,7 +61,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     description: t(`process.${step.id}.description`),
   }));
   // The homepage keeps the subscription and the custom quote; /services shows all four ways.
-  const [subscription, , , custom] = buildPricingColumns(tPricing, region, locale);
+  const { subscription, custom } = buildPricingColumns(tPricing, region, locale);
   const projects = buildProjectCards(tProjects).slice(0, HOME_PROJECT_COUNT);
 
   return (
@@ -76,10 +79,18 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <AudienceGrid
         eyebrow={t('audience.eyebrow')}
         title={t.rich('audience.title', { em })}
-        items={AUDIENCES.map((audience) => ({
-          title: t(`audience.items.${audience}.title`),
-          description: t(`audience.items.${audience}.description`),
-        }))}
+        items={AUDIENCES.map((audience) => {
+          // An audience links to its own page in the languages that page is published in.
+          const page = AUDIENCE_PAGES[audience];
+          return {
+            title: t(`audience.items.${audience}.title`),
+            description: t(`audience.items.${audience}.description`),
+            link:
+              page && hasRoute(locale, page)
+                ? { label: tLinks(`links.${CONTENT_PAGE_LABELS[page]}.label`), href: page }
+                : undefined,
+          };
+        })}
       />
 
       <WhyStudio

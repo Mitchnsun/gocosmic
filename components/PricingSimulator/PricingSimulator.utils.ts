@@ -1,8 +1,9 @@
 import { ADVANCED_OPTIONS, OPTION_GROUPS } from '@/lib/pricing/price-list';
-import type { Currency } from '@/lib/region';
+import { type Currency, getCurrency, getRegion } from '@/lib/region';
 
 import {
   ADD_ON_PRICES,
+  BASE_PRICE,
   EXTRA_MAILBOX_PRICE,
   FORMULA_PRICES,
   MAX_EXTRA_MAILBOXES,
@@ -103,3 +104,6 @@ export function formatAmount(amount: number, currency: Currency, locale?: string
   }
   return currency === 'chf' ? `${amount} CHF` : `${amount}€`;
 }
+
+/** The subscription's starting price, in the currency of the locale's region. */
+export const formatStartingPrice = (locale: string) => formatAmount(BASE_PRICE, getCurrency(getRegion(locale)), locale);

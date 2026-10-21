@@ -15,7 +15,7 @@ import { BASE_PRICE, FORMULA_PRICES } from '@/components/PricingSimulator/consta
 import { formatAmount } from '@/components/PricingSimulator/PricingSimulator.utils';
 import { SectionHeading } from '@/components/SectionHeading';
 import { ServicesGrid } from '@/components/ServicesGrid';
-import { CONTENT_PAGE_LABELS, TRADE_PAGES } from '@/data/content-pages';
+import { CONTENT_PAGE_LABELS, REINFORCEMENT_PAGE, TRADE_PAGES } from '@/data/content-pages';
 import { cn } from '@/design-system/lib/utils';
 import { CONTAINER, PAGE_TOP, primaryPill, SECTION_Y } from '@/design-system/pill';
 import { Link } from '@/i18n/navigation';
@@ -58,7 +58,19 @@ export default async function Services({ params }: { params: Promise<{ locale: s
   const tLinks = await getTranslations('contentPages');
   const region = getRegion(locale);
   const currency = getCurrency(region);
-  const pricing = buildPricingColumns(tPricing, region, locale);
+  const { subscription, guidance, reinforcement, custom } = buildPricingColumns(tPricing, region, locale);
+  // The "Reinforcement" column links to the redesign page in the languages it is published in.
+  const pricing = [
+    subscription,
+    guidance,
+    hasRoute(locale, REINFORCEMENT_PAGE)
+      ? {
+          ...reinforcement,
+          link: { label: tLinks(`links.${CONTENT_PAGE_LABELS[REINFORCEMENT_PAGE]}.label`), href: REINFORCEMENT_PAGE },
+        }
+      : reinforcement,
+    custom,
+  ];
   const months = String(CODE_HANDOVER_MONTHS);
   const faqItems = QUESTIONS.map((question) => ({
     question: t(`faq.items.${question}.question`),

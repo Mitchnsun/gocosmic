@@ -57,6 +57,14 @@ describe('buildLlmsIndex', () => {
     expect(text).toContain(
       "- [Création d'application](https://www.gocosmic.dev/fr/creation-application): Faites créer votre application"
     );
+    expect(text).toContain(
+      '- [Refonte de site internet](https://www.gocosmic.dev/fr/refonte-site-internet): Votre site est lent'
+    );
+    expect(text).toContain(
+      '- [Site pour associations et clubs](https://www.gocosmic.dev/fr/site-internet-association): '
+    );
+    expect(text).toContain('- [Site pour artisans](https://www.gocosmic.dev/fr/site-internet-artisan): ');
+    expect(text).toContain('- [Site pour indépendants](https://www.gocosmic.dev/fr/site-internet-independant): ');
     expect(text).not.toContain('/en/creation-site-vitrine');
   });
 

@@ -1,20 +1,11 @@
-import { PROJECTS_BY_SLUG } from '@/components/CaseStudy';
+import { formatReleaseDate, PROJECTS_BY_SLUG } from '@/components/CaseStudy';
 import { BASE_PRICE, FORMULA_INCLUDES, FORMULA_PRICES } from '@/components/PricingSimulator/constants';
-import { APP_DEVELOPMENT, SHOWCASE_WEBSITE } from '@/data/content-pages';
+import { APP_DEVELOPMENT, SHOWCASE_WEBSITE, WEBSITE_REDESIGN } from '@/data/content-pages';
 import { CODE_HANDOVER_MONTHS } from '@/lib/pricing/offers';
 
 import { FR } from '../llms.messages';
 import { frenchPageUrl, inEurosInFrench, item, link, list, section, valuesOf } from '../llms.utils';
-
-/** The case studies backing a French page, each with the description of its card. */
-const projectLinks = (slugs: readonly (keyof typeof PROJECTS_BY_SLUG)[]) =>
-  list(
-    slugs.map((slug) => {
-      const { href, i18nKey } = PROJECTS_BY_SLUG[slug];
-      const title = FR.projectsList(`items.${i18nKey}.title`);
-      return `${link(title, frenchPageUrl(href))}: ${FR.projectsList(`items.${i18nKey}.description`)}`;
-    })
-  );
+import { projectLinks } from './french-pages.shared';
 
 /** The showcase website page: what such a site shows, what is included, the options, delays and examples. */
 export function buildShowcaseWebsiteSection(): string {
@@ -63,5 +54,67 @@ export function buildAppDevelopmentSection(): string {
     section(t('how.title'), [t('how.lead'), list(valuesOf(t.raw('how.points')))], 3),
     section(t('guidance.title'), [t('guidance.lead'), list(valuesOf(t.raw('guidance.points')))], 3),
     section(t('projects.title'), [t('projects.lead'), projectLinks(APP_DEVELOPMENT.projects)], 3),
+  ]);
+}
+
+/** The website redesign page: the free review, the two paths, leaving Wix or WordPress, redirects, and its sources. */
+export function buildWebsiteRedesignSection(): string {
+  const t = FR.websiteRedesign;
+  const { year, latestRelease } = PROJECTS_BY_SLUG.coachnpulse;
+  const { consulted, items } = WEBSITE_REDESIGN.sources;
+
+  return section(link(FR.contentPages('links.website_redesign.label'), frenchPageUrl('/website-redesign')), [
+    t('intro.lead'),
+    section(
+      t('start.title'),
+      [
+        t('start.lead'),
+        [item(t('start.audit'), t('start.audit_text')), item(t('start.mockup'), t('start.mockup_text'))].join('\n'),
+      ],
+      3
+    ),
+    section(
+      t('paths.title'),
+      [
+        t('paths.lead'),
+        [
+          item(t('paths.keep'), t('paths.keep_text')),
+          item(t('paths.rebuild'), t('paths.rebuild_text', { price: inEurosInFrench(BASE_PRICE) })),
+          item(t('paths.custom'), t('paths.custom_text')),
+        ].join('\n'),
+        link(FR.home('pricing.all'), `${frenchPageUrl('/services')}#pricing`),
+      ],
+      3
+    ),
+    section(
+      t('leave.title'),
+      [
+        t('leave.lead'),
+        [
+          item(t('leave.wix_site'), t('leave.wix_site_text')),
+          item(t('leave.wix_domain'), t('leave.wix_domain_text')),
+          item(t('leave.wordpress'), t('leave.wordpress_text')),
+        ].join('\n'),
+        t('leave.domain_note'),
+      ],
+      3
+    ),
+    section(t('redirects.title'), [t('redirects.lead'), t('redirects.volume')], 3),
+    section(
+      t('projects.title', { year: String(year) }),
+      [
+        t('projects.lead', { version: latestRelease.version, date: formatReleaseDate(latestRelease.date, 'fr') }),
+        projectLinks(WEBSITE_REDESIGN.projects),
+      ],
+      3
+    ),
+    section(
+      FR.contentPages('sources.title'),
+      [
+        list(items.map(({ key, href }) => link(t(`sources.${key}`), href))),
+        FR.contentPages('sources.consulted', { date: formatReleaseDate(consulted, 'fr') }),
+      ],
+      3
+    ),
   ]);
 }

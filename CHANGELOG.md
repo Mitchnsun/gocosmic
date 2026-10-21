@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [2.6.1] - 2026-10-21
 
+### Added
+
+- A new page in French on redesigning an existing website: a free review first, then keeping or rebuilding it, and what leaving Wix or WordPress involves, with dated sources
+- Three new pages in French for associations and clubs, for tradespeople and for freelancers and liberal professions, each with what such a site needs, the useful options and an example of a subscription priced at the current prices; the page for tradespeople shows the free mockup until a first project can be shown
+- On the French version, the homepage audience cards, the "Reinforcement" column of the Services page, the case studies and the footer's "Solutions & guides" column now link to these pages
+
 ### Changed
 
 - On the French showcase website page, the price heading now reads "a subscription, priced per month", since some items run for 12 months and the subscription can be billed yearly
@@ -15,7 +21,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Fixed
 
 - The "Custom" column now says, in all five languages, that the code and the data are yours once the project is delivered and all its invoices are paid, as the FAQ already did
-- Search engines now read the price of the showcase website and services pages as a starting price
+- Search engines now read the price of the showcase website and services pages as a starting price, and the redesign and audience pages now give them the same starting price
+- Text links followed by an arrow, such as those of the homepage audience cards, now show a clear outline when reached with the keyboard
+- Screen readers no longer read the title of a section a second time before its list on the new French pages
 
 ## [2.6.0] - 2026-10-19
 

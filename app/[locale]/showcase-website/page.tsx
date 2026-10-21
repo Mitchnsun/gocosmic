@@ -8,7 +8,7 @@ import { ContentPage, ContentPageProjects, formatCounter, TermList } from '@/com
 import { ContentSection } from '@/components/ContentSection';
 import ServiceSeo from '@/components/JsonLd/ServiceSeo';
 import { BASE_PRICE, FORMULA_INCLUDES, FORMULA_PRICES } from '@/components/PricingSimulator/constants';
-import { formatAmount } from '@/components/PricingSimulator/PricingSimulator.utils';
+import { formatAmount, formatStartingPrice } from '@/components/PricingSimulator/PricingSimulator.utils';
 import { buildProjectCards } from '@/components/ProjectGrid';
 import { SHOWCASE_WEBSITE } from '@/data/content-pages';
 import { ghostPill } from '@/design-system/pill';
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     locale,
     routeKey: ROUTE,
     title: t('title'),
-    description: t('description', { price: formatAmount(BASE_PRICE, getCurrency(getRegion(locale)), locale) }),
+    description: t('description', { price: formatStartingPrice(locale) }),
   });
 }
 

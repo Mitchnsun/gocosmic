@@ -1,0 +1,89 @@
+{
+  "websiteForAssociations": {
+    "meta": {
+      "title": "Site internet pour association ou club | Cosmic Studio",
+      "description": "Un site pour votre association, chorale ou club sportif : vos événements, les adhésions et vos nouvelles au même endroit. Dès {price} par mois."
+    },
+    "breadcrumb": "Associations et clubs",
+    "intro": {
+      "eyebrow": "[ Associations ]",
+      "title": "Un site pour votre association ou votre club, <em>pour faire connaître vos activités.</em>",
+      "lead": "Chorale, club sportif, collectif… Vos événements, les adhésions et les nouvelles de l'association au même endroit, pour accueillir de nouveaux membres. Le site reste à jour quand le bureau change."
+    },
+    "needs": {
+      "eyebrow": "Ce qu'il réunit",
+      "title": "Ce que cherchent vos membres, et ceux qui pourraient le devenir.",
+      "lead": "Un site d'association sert à deux publics : les membres, qui veulent les dates et les nouvelles, et ceux qui découvrent l'association et se demandent comment la rejoindre.",
+      "points": {
+        "events": "Vos prochains événements, avec leur date, leur lieu et leur programme",
+        "join": "Les horaires des répétitions ou des entraînements, et comment vous rejoindre",
+        "news": "Les nouvelles de l'association",
+        "membership": "Les informations pour adhérer"
+      }
+    },
+    "features": {
+      "eyebrow": "Au catalogue",
+      "title": "Ce que nous pouvons y ajouter.",
+      "lead": "Ces fonctions existent déjà : nous les ajoutons au site quand l'association en a besoin. Les adhésions en ligne se font sur devis.",
+      "items": {
+        "self_service": {
+          "term": "« Vous gardez la main »",
+          "description": "L'association publie elle-même ses actualités et ses horaires, depuis un espace d'édition simple ; nous nous occupons du reste."
+        },
+        "news": {
+          "term": "Des actualités publiées pour vous",
+          "description": "Avec la formule « On s'occupe de tout », vous nous envoyez vos nouvelles par e-mail, et nous les publions dans une rubrique du site, au rythme choisi."
+        },
+        "email": {
+          "term": "Des adresses e-mail au nom de l'association",
+          "description": "Une adresse e-mail au nom de l'association, et une boîte pour chaque membre du bureau qui en a besoin, avec son propre mot de passe."
+        },
+        "booking": {
+          "term": "La prise de rendez-vous en ligne",
+          "description": "Vos visiteurs réservent un créneau dans votre Google Agenda, directement depuis le site."
+        },
+        "membership": {
+          "term": "Les adhésions en ligne",
+          "description": "Pour un espace adhérents ou la gestion des adhésions en ligne : nous définissons le projet ensemble, puis nous vous remettons un devis."
+        }
+      }
+    },
+    "example": {
+      "eyebrow": "Exemple",
+      "title": "Le site d'une association, aux prix d'aujourd'hui.",
+      "lead": "Quelques pages, un nom de domaine au nom de l'association, et la formule « Vous gardez la main » pour publier vous-même vos actualités."
+    },
+    "questions": {
+      "eyebrow": "Questions",
+      "title": "Les questions d'un bureau d'association.",
+      "items": {
+        "budget": {
+          "question": "Notre budget est serré : est-ce pour nous ?",
+          "answer": "Les prix sont affichés, et un site d'une page commence à {price} par mois, sans grosse somme à sortir au départ. La maquette est gratuite : vous voyez le site avant de décider."
+        },
+        "volunteers": {
+          "question": "Les bénévoles changent d'une année à l'autre : qui suit le site ?",
+          "answer": "Le nom de domaine et les contenus appartiennent à l'association dès le premier jour. Aujourd'hui, c'est Matthieu qui met à jour tous les sites du studio : il connaît le vôtre, quel que soit le membre du bureau qui lui écrit. Avec « Vous gardez la main », l'espace d'édition est simple, et nous vous montrons comment l'utiliser."
+        },
+        "time": {
+          "question": "Personne n'a le temps de s'en occuper : comment faire ?",
+          "answer": "Avec la formule « On s'occupe de tout », vous nous envoyez vos changements par e-mail, et nous les mettons en ligne (une modification par an comprise, davantage avec l'option « Modifications de vos pages »). Avec l'option « Des actualités publiées pour vous », nous publions aussi vos nouvelles."
+        },
+        "stop": {
+          "question": "Et si l'association arrête ?",
+          "answer": "Il suffit de nous envoyer un e-mail, et partir n'entraîne aucune pénalité. Sans engagement, le site reste en ligne jusqu'à la fin du mois qui suit votre e-mail. Si l'abonnement comprend « Vous gardez la main », un nom de domaine, une adresse e-mail ou une option marquée « Engagement 1 an », il court par périodes de 12 mois : prévenez-nous au plus tard deux mois avant la fin de la période en cours, sinon il repart pour 12 mois. Dans tous les cas, vous repartez avec vos contenus et votre nom de domaine."
+        }
+      }
+    },
+    "projects": {
+      "eyebrow": "[ Réalisations ]",
+      "title": "Ce que nous avons conçu <em>pour un chœur et pour un club.</em>",
+      "lead": "La maquette proposée au Chœur des Pays du Mont Blanc, avec son agenda des concerts, et les résultats en direct du triathlon du PSC, que ses organisateurs saisissent depuis leur propre espace."
+    },
+    "cta": {
+      "title": "Voyez le site de votre association avant de décider.",
+      "description": "Envoyez-nous les couleurs de l'association et ce que son site doit montrer : nous préparons une maquette de sa page d'accueil. Elle est gratuite et n'engage pas l'association.",
+      "button": "Demander ma maquette gratuite"
+    }
+  }
+}

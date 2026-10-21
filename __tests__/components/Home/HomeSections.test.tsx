@@ -25,6 +25,26 @@ describe('AudienceGrid', () => {
     ]);
     expect(getByText('/02')).toHaveAttribute('aria-hidden', 'true');
   });
+
+  it('links a card to the page written for its audience, when it has one', () => {
+    const { getByRole, getAllByRole } = render(
+      <AudienceGrid
+        eyebrow="[ Who ]"
+        title="Who it is for"
+        items={[
+          {
+            title: 'Craftspeople',
+            description: 'Carpenters',
+            link: { label: 'Sites for craftspeople', href: '/pricing' },
+          },
+          { title: 'Small businesses', description: 'Garages' },
+        ]}
+      />
+    );
+
+    expect(getAllByRole('link')).toHaveLength(1);
+    expect(getByRole('link', { name: /Sites for craftspeople/ })).toHaveAttribute('href', '/pricing');
+  });
 });
 
 describe('WhyStudio', () => {
