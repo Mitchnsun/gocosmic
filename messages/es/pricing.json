@@ -301,7 +301,7 @@
         "description": "Tienda en línea, área de socios, aplicación móvil o herramienta interna: definimos el proyecto juntos y luego te enviamos un presupuesto. Tras la entrega, puedes pasarte a la suscripción para el seguimiento.",
         "features": {
           "payment": "Pago en varios plazos, uno por etapa",
-          "ownership": "El código y los datos son tuyos"
+          "ownership": "El código y los datos son tuyos una vez entregado el proyecto y pagadas todas sus facturas"
         },
         "cta": "Pedir un presupuesto"
       }

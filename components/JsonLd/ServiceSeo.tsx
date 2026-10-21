@@ -39,7 +39,8 @@ export default function ServiceSeo({ description, offer, route = '/services', na
         url,
         provider: { '@id': `${SITE_URL}/#company` },
         areaServed: getLocalizedLocalBusinessData(locale).areaServed,
-        offers: offer && monthlyOffer(offer.price, getCurrency(offer.region).toUpperCase()),
+        // A starting price: the offer declares it as a floor.
+        offers: offer && monthlyOffer(offer.price, getCurrency(offer.region).toUpperCase(), true),
       }}
     />
   );

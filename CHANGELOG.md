@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.6.1] - 2026-10-21
+
+### Changed
+
+- On the French showcase website page, the price heading now reads "a subscription, priced per month", since some items run for 12 months and the subscription can be billed yearly
+- The French app development page now says that Daily Fortune offers a message created with the help of AI every day
+
+### Fixed
+
+- The "Custom" column now says, in all five languages, that the code and the data are yours once the project is delivered and all its invoices are paid, as the FAQ already did
+- Search engines now read the price of the showcase website and services pages as a starting price
+
 ## [2.6.0] - 2026-10-19
 
 ### Added

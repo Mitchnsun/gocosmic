@@ -56,7 +56,9 @@ describe('buildLlmsFull', () => {
     expect(text).toContain('- **Subscription · Site, hosting and care · From €10 / CHF 10 / month**: ');
     expect(text).toContain('- **Guidance · Advice and design · Day rate**: ');
     expect(text).toContain('- **Custom · One-off project · quoted**: ');
-    expect(text).toContain('  - The code and the data belong to you');
+    expect(text).toContain(
+      '  - The code and the data belong to you once the project has been delivered and all its invoices paid in full'
+    );
   });
 
   it('spells out both plans, including the second one the page only shows on its tab', () => {
