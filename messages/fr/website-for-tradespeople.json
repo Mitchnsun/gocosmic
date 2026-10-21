@@ -7,12 +7,12 @@
     "breadcrumb": "Artisans",
     "intro": {
       "eyebrow": "[ Artisans ]",
-      "title": "Un site d'artisan, <em>trouvé par ceux qui cherchent votre métier.</em>",
-      "lead": "Menuisier·ère, plombier·ère, électricien·ne, coiffeur·se, traiteur·se… Votre site dit ce que vous faites, où vous travaillez et comment vous joindre, et il ressort quand quelqu'un cherche votre métier près de chez lui."
+      "title": "Un site d'artisan, <em>trouvé quand on cherche votre métier.</em>",
+      "lead": "Menuisier·ère, plombier·ère, électricien·ne, coiffeur·se, traiteur·se… Votre site dit ce que vous faites, où vous travaillez et comment vous joindre, pour qu'il ressorte quand quelqu'un cherche votre métier près de chez lui."
     },
     "says": {
       "eyebrow": "Ce qu'il dit",
-      "title": "Les réponses qu'on cherche avant d'appeler un artisan.",
+      "title": "Les réponses qu'on cherche avant de vous appeler.",
       "lead": "Une page claire, lisible sur téléphone, que vous complétez le jour où il vous faut d'autres pages.",
       "points": {
         "trade": "Votre métier et ce que vous proposez",
@@ -37,7 +37,7 @@
     "example": {
       "eyebrow": "Exemple",
       "title": "Un site d'artisan, aux prix d'aujourd'hui.",
-      "lead": "Quelques pages, un nom de domaine à votre nom, un formulaire de contact et les avis de vos clients, avec la formule « On s'occupe de tout » : vous nous envoyez vos changements, nous les mettons en ligne."
+      "lead": "Quelques pages, un nom de domaine à votre nom, un formulaire de contact et les avis de vos clients, avec la formule « On s'occupe de tout » : vous nous envoyez vos changements par e-mail, et nous les mettons en ligne (une modification par an comprise, davantage avec l'option « Modifications de vos pages »)."
     },
     "mockup": {
       "eyebrow": "Maquette gratuite",

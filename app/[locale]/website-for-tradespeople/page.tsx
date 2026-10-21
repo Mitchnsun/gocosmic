@@ -42,6 +42,7 @@ export default async function WebsiteForTradespeople({ params }: { params: Promi
   const tNav = await getTranslations('navigation');
   const tPricing = await getTranslations('pricing.builder');
   const tMockup = await getTranslations('freeMockup.steps');
+  const domain = tPricing(`options.example_domain.${getRegion(locale)}`);
 
   return (
     <ContentPage
@@ -97,7 +98,7 @@ export default async function WebsiteForTradespeople({ params }: { params: Promi
           items={[
             ...WEBSITE_FOR_TRADESPEOPLE.options.map((option) => ({
               term: tPricing(`options.${option}.label`),
-              description: tPricing(`options.${option}.hint`),
+              description: tPricing(`options.${option}.hint`, { domain }),
             })),
             { term: tPricing('pages.label'), description: tPricing('pages.info') },
           ]}

@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Added
 
-- A new page in French on having a website redesigned: a free review of the current site first, then keeping it or rebuilding it, what leaving Wix or WordPress means and how to keep visitors arriving by the old addresses, with dated sources, and Coach'n Pulse as an example
+- A new page in French on redesigning an existing website: a free review first, then keeping or rebuilding it, and what leaving Wix or WordPress involves, with dated sources
 - Three new pages in French for associations and clubs, for tradespeople and for freelancers and liberal professions, each with what such a site needs, the useful options and an example of a subscription priced at the current prices; the page for tradespeople shows the free mockup until a first project can be shown
 - On the French version, the homepage audience cards, the "Reinforcement" column of the Services page, the case studies and the footer's "Solutions & guides" column now link to these pages
 

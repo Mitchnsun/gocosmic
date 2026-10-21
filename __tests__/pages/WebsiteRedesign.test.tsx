@@ -86,7 +86,9 @@ describe('website redesign page', () => {
     const { getByRole, getByText } = await renderPage('fr');
     const sources = getByRole('region', { name: 'Sources' });
 
-    expect(getByText(/^Il ne peut pas être hébergé ailleurs/)).toBeInTheDocument();
+    expect(
+      getByText(/^Selon l'aide de Wix, un site Wix doit être hébergé et fonctionner sur ses serveurs/)
+    ).toBeInTheDocument();
     expect(getByText(/^WordPress exporte vos articles/)).toBeInTheDocument();
     expect(getByText(/il peut faire l'objet d'un devis\.$/)).toBeInTheDocument();
     expect(
@@ -104,7 +106,7 @@ describe('website redesign page', () => {
 
   it("backs the page with Coach'n Pulse, then links the pricing and services pages and the free review", async () => {
     const { getByRole } = await renderPage('fr');
-    const projects = getByRole('region', { name: 'Un site suivi depuis 2016, et refait en chemin.' });
+    const projects = getByRole('region', { name: 'Un site suivi depuis 2016, et refait au fil des années.' });
 
     expect(within(projects).getByText(/Sa version 5\.0\.0, sortie en octobre 2026/)).toBeInTheDocument();
     expect(within(projects).getByRole('heading', { level: 3 })).toHaveTextContent("Coach'n Pulse");

@@ -203,8 +203,10 @@ describe('buildLlmsFull', () => {
     expect(page).toContain(
       '[Voir les quatre façons de travailler avec nous](https://www.gocosmic.dev/fr/services#pricing)'
     );
-    expect(page).toContain('- **Un site Wix**: Il ne peut pas être hébergé ailleurs');
-    expect(page).toContain('### Un site suivi depuis 2016, et refait en chemin.');
+    expect(page).toContain(
+      "- **Un site Wix**: Selon l'aide de Wix, un site Wix doit être hébergé et fonctionner sur ses serveurs"
+    );
+    expect(page).toContain('### Un site suivi depuis 2016, et refait au fil des années.');
     expect(page).toContain('Sa version 5.0.0, sortie en octobre 2026, lui a donné un nouveau design.');
     expect(page).toContain(
       '- [Aide Wix : héberger un site Wix ailleurs (en anglais)](https://support.wix.com/en/article/exporting-or-embedding-your-wix-site-elsewhere)'
@@ -253,7 +255,7 @@ describe('buildLlmsFull', () => {
       '- **Vous décidez ensuite**: Vous recevez la maquette par e-mail dans les 48 heures'
     );
     expect(tradespeople).not.toContain('/fr/projets/');
-    expect(freelancers).toContain('Si votre profession encadre sa communication, dites-le nous');
+    expect(freelancers).toContain('Si votre profession encadre sa communication, dites-le-nous');
     expect(freelancers).toContain('- **Une adresse e-mail à votre nom**: Par exemple contact@mon-entreprise.fr');
     expect(freelancers).toContain('- [mcomper.at](https://www.gocosmic.dev/fr/projets/mcomperat): ');
   });

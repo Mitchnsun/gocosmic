@@ -56,7 +56,7 @@ describe('page for freelancers', () => {
   it('flags the professions that regulate their communication, and starts from the included page', async () => {
     const { getByText } = await renderPage('fr');
 
-    expect(getByText(/^Si votre profession encadre sa communication, dites-le nous/)).toBeInTheDocument();
+    expect(getByText(/^Si votre profession encadre sa communication, dites-le-nous/)).toBeInTheDocument();
     expect(getByText(/^Vous commencez avec la page vitrine comprise, dès 10\s€ par mois/)).toBeInTheDocument();
     expect(getByText("Les options sans engagement d'un an se retirent avec un mois de préavis")).toBeInTheDocument();
   });
@@ -86,13 +86,19 @@ describe('page for freelancers', () => {
         .map((link) => link.getAttribute('href'))
     ).toEqual(['/projects', '/pricing']);
     expect(
-      within(getByRole('region', { name: 'Voyez votre site avant de décider.' })).getByRole('link')
+      within(getByRole('region', { name: 'Voyez votre site avant de vous lancer.' })).getByRole('link')
     ).toHaveAttribute('href', '/free-mockup');
   });
 
   it('answers with a 404 in the other languages', async () => {
     await expect(WebsiteForFreelancers(params('it'))).rejects.toThrow('NEXT_NOT_FOUND');
     await expect(generateMetadata(params('es-CH'))).rejects.toThrow('NEXT_NOT_FOUND');
+  });
+
+  it('declares no service of its own: it is about an audience, not a service', async () => {
+    const { container } = await renderPage('fr');
+
+    expect(container.querySelector('#service-json-ld')).toBeNull();
   });
 
   it.each(['fr', 'fr-CH'])('fits its title and description in search results, in %s', async (locale) => {

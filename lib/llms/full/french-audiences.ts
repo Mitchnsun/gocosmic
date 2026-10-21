@@ -43,8 +43,9 @@ export function buildWebsiteForAssociationsSection(): string {
 /** The page for tradespeople: what the site says, being found on Google, the options, an example, the free mockup. */
 export function buildWebsiteForTradespeopleSection(): string {
   const t = FR.websiteForTradespeople;
+  const domain = FR.pricing('builder.options.example_domain.fr');
   const options = WEBSITE_FOR_TRADESPEOPLE.options.map((option) =>
-    item(FR.pricing(`builder.options.${option}.label`), FR.pricing(`builder.options.${option}.hint`))
+    item(FR.pricing(`builder.options.${option}.label`), FR.pricing(`builder.options.${option}.hint`, { domain }))
   );
 
   return section(

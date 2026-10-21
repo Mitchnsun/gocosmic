@@ -90,7 +90,7 @@ describe('page for associations and clubs', () => {
 
   it('backs the page with the choir and the club, then links the projects and pricing pages and the free mockup', async () => {
     const { getByRole } = await renderPage('fr');
-    const projects = getByRole('region', { name: 'Ce que nous avons proposé à un chœur et à un club.' });
+    const projects = getByRole('region', { name: 'Ce que nous avons conçu pour un chœur et pour un club.' });
 
     expect(
       within(projects)
@@ -110,6 +110,12 @@ describe('page for associations and clubs', () => {
   it('answers with a 404 in the other languages, for the page and its metadata', async () => {
     await expect(WebsiteForAssociations(params('de'))).rejects.toThrow('NEXT_NOT_FOUND');
     await expect(generateMetadata(params('en-CH'))).rejects.toThrow('NEXT_NOT_FOUND');
+  });
+
+  it('declares no service of its own: it is about an audience, not a service', async () => {
+    const { container } = await renderPage('fr');
+
+    expect(container.querySelector('#service-json-ld')).toBeNull();
   });
 
   it.each(['fr', 'fr-CH'])('fits its title and description in search results, in %s', async (locale) => {

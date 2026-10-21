@@ -12,12 +12,12 @@
     },
     "start": {
       "eyebrow": "Point de départ",
-      "title": "Avant de décider, deux regards gratuits sur votre site.",
+      "title": "Avant de décider, un état des lieux et une maquette.",
       "lead": "Ils sont gratuits et ne vous engagent à rien.",
       "audit": "L'état des lieux",
       "audit_text": "Ce qui fonctionne, ce qui fait fuir les visiteurs, et comment votre site ressort sur Google. Ensuite, nous vous disons s'il vaut mieux le faire évoluer ou le refaire.",
       "mockup": "La maquette",
-      "mockup_text": "Une maquette de votre future page d'accueil, qui reprend les couleurs et les textes de votre site actuel."
+      "mockup_text": "Une maquette de votre future page d'accueil : si vous avez déjà un site, elle reprend ses couleurs et ses textes."
     },
     "paths": {
       "eyebrow": "Deux chemins",
@@ -26,7 +26,7 @@
       "keep": "Le faire évoluer tel qu'il est",
       "keep_text": "Au tarif journalier : amélioration technique (performance, sécurité, mises à jour) ou nouvelles fonctionnalités, avec un ou plusieurs développeur·ses partenaires selon l'ampleur du projet.",
       "rebuild": "Le refaire en abonnement",
-      "rebuild_text": "Un nouveau site dès {price} par mois, avec l'hébergement, la connexion sécurisée et les réglages pour être trouvé sur Google. Si vous voulez garder votre outil d'édition, nous le reprenons quand c'est possible ; cette reprise et le transfert de vos contenus font l'objet d'une proposition à part, sur devis.",
+      "rebuild_text": "Un nouveau site dès {price} par mois, avec l'hébergement, la connexion sécurisée et les réglages pour être trouvé sur Google. Si vous voulez continuer à publier vous-même, la formule « Vous gardez la main » reprend votre outil d'édition quand c'est possible ; cette reprise et le transfert de vos contenus font l'objet d'une proposition à part, sur devis.",
       "custom": "Le refaire sur devis",
       "custom_text": "Pour une boutique en ligne, un espace adhérents ou un outil sur mesure : nous définissons le projet ensemble, puis nous vous remettons un devis."
     },
@@ -35,12 +35,12 @@
       "title": "Ce qui part avec vous, et ce qui reste.",
       "lead": "Ce que disent l'aide de Wix et la documentation de WordPress, citées en bas de page.",
       "wix_site": "Un site Wix",
-      "wix_site_text": "Il ne peut pas être hébergé ailleurs : selon l'aide de Wix, un site Wix doit être hébergé et fonctionner sur les serveurs de Wix. Le nouveau site est donc reconstruit, en reprenant vos textes et vos images.",
+      "wix_site_text": "Selon l'aide de Wix, un site Wix doit être hébergé et fonctionner sur ses serveurs : il ne peut pas être déplacé chez un autre hébergeur. Le nouveau site est donc reconstruit, à partir des textes et des images que vous nous transmettez.",
       "wix_domain": "Un nom de domaine acheté chez Wix",
       "wix_domain_text": "Il peut être transféré ailleurs, au plus tôt 60 jours après son achat : vous le déverrouillez, et Wix envoie un code de transfert à l'adresse e-mail du titulaire. Le site Wix en est alors déconnecté, et les réglages de votre messagerie sont à refaire pour que vos e-mails continuent d'arriver.",
       "wordpress": "Un site WordPress",
-      "wordpress_text": "WordPress exporte vos articles, vos pages, vos commentaires, vos catégories et vos étiquettes dans un fichier XML, prévu pour être importé dans un autre site WordPress.",
-      "domain_note": "Vous pouvez aussi garder votre nom de domaine et vos adresses e-mail là où ils sont. Si vous voulez de l'aide pour les utiliser avec votre nouveau site, nous en parlons ensemble et nous vous faisons un devis."
+      "wordpress_text": "WordPress exporte vos articles, vos pages, vos commentaires, vos catégories et vos étiquettes dans un fichier d'export, prévu pour être importé dans un autre site WordPress.",
+      "domain_note": "Si vous avez déjà un nom de domaine, vous gardez aussi vos adresses e-mail actuelles. Si vous voulez de l'aide pour les utiliser avec votre nouveau site, nous en parlons ensemble et nous vous faisons un devis."
     },
     "redirects": {
       "eyebrow": "Votre place sur Google",
@@ -50,7 +50,7 @@
     },
     "projects": {
       "eyebrow": "[ Réalisation ]",
-      "title": "Un site suivi depuis {year}, <em>et refait en chemin.</em>",
+      "title": "Un site suivi depuis {year}, <em>et refait au fil des années.</em>",
       "lead": "Le site de Coach'n Pulse a été refait et remis à jour à mesure que les outils du web évoluaient. Sa version {version}, sortie en {date}, lui a donné un nouveau design."
     },
     "sources": {

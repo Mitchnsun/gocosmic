@@ -12,15 +12,15 @@
     },
     "shows": {
       "eyebrow": "Ce qu'il présente",
-      "title": "Ce qu'on regarde avant de vous appeler.",
-      "lead": "Quand on vous recommande, on vient y chercher l'essentiel, sur téléphone comme sur ordinateur.",
+      "title": "L'essentiel de votre pratique, sur une page claire.",
+      "lead": "Lisible sur téléphone comme sur ordinateur, et préparée pour Google.",
       "points": {
         "practice": "Votre pratique et ce que vous proposez",
         "background": "Votre parcours",
         "booking": "Comment prendre rendez-vous",
         "contact": "Vos coordonnées"
       },
-      "ethics": "Si votre profession encadre sa communication, dites-le nous : vous relisez et validez les textes, car vous en restez responsable."
+      "ethics": "Si votre profession encadre sa communication, dites-le-nous : vous relisez et validez les textes, car vous en restez responsable."
     },
     "grow": {
       "eyebrow": "Commencer simple",
@@ -40,7 +40,7 @@
     "example": {
       "eyebrow": "Exemple",
       "title": "Pour démarrer, aux prix d'aujourd'hui.",
-      "lead": "Quelques pages, un nom de domaine à votre nom et la prise de rendez-vous en ligne, avec la formule « On s'occupe de tout » : vous nous envoyez vos changements, nous les mettons en ligne."
+      "lead": "Pour démarrer : quelques pages, un nom de domaine à votre nom et la prise de rendez-vous en ligne, avec la formule « On s'occupe de tout ». Une modification de vos pages par an est comprise ; si vos informations changent plus souvent, l'option « Modifications de vos pages » prend le relais."
     },
     "projects": {
       "eyebrow": "[ Réalisation ]",
@@ -48,8 +48,8 @@
       "lead": "mcomper.at est un projet personnel : le CV en ligne de Matthieu, en français et en anglais, rapide à charger. Nous y testons les outils que nous utilisons ensuite pour nos clients."
     },
     "cta": {
-      "title": "Voyez votre site avant de décider.",
-      "description": "Nous préparons une maquette de votre page d'accueil, à partir de vos couleurs et de vos indications. Elle est gratuite et ne vous engage à rien.",
+      "title": "Voyez votre site avant de vous lancer.",
+      "description": "Décrivez votre pratique en quelques lignes : nous préparons une maquette de votre page d'accueil. Elle est gratuite et ne vous engage à rien.",
       "button": "Demander ma maquette gratuite"
     }
   }

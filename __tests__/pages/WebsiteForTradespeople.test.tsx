@@ -97,6 +97,12 @@ describe('page for tradespeople', () => {
     await expect(generateMetadata(params('de-CH'))).rejects.toThrow('NEXT_NOT_FOUND');
   });
 
+  it('declares no service of its own: it is about an audience, not a service', async () => {
+    const { container } = await renderPage('fr');
+
+    expect(container.querySelector('#service-json-ld')).toBeNull();
+  });
+
   it.each(['fr', 'fr-CH'])('fits its title and description in search results, in %s', async (locale) => {
     const { title, description } = await generateMetadata(params(locale));
 
