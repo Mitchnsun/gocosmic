@@ -5,15 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [2.7.0] - 2026-10-21
+## [2.6.1] - 2026-10-21
 
 ### Added
 
 - A new page in French on redesigning an existing website: a free review first, then keeping or rebuilding it, and what leaving Wix or WordPress involves, with dated sources
 - Three new pages in French for associations and clubs, for tradespeople and for freelancers and liberal professions, each with what such a site needs, the useful options and an example of a subscription priced at the current prices; the page for tradespeople shows the free mockup until a first project can be shown
 - On the French version, the homepage audience cards, the "Reinforcement" column of the Services page, the case studies and the footer's "Solutions & guides" column now link to these pages
-
-## [2.6.1] - 2026-10-21
 
 ### Changed
 
