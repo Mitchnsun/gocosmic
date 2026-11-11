@@ -8,6 +8,8 @@ import freeMockup from '@/messages/en/free-mockup.json';
 import home from '@/messages/en/home.json';
 import legal from '@/messages/en/legal.json';
 import local from '@/messages/en/local.json';
+import moiPresident from '@/messages/en/moi-president.json';
+import moiPresidentLegal from '@/messages/en/moi-president-legal.json';
 import navigation from '@/messages/en/navigation.json';
 import pricing from '@/messages/en/pricing.json';
 import pricingPage from '@/messages/en/pricing-page.json';
@@ -70,6 +72,8 @@ export const EN = {
   home: translator(home, 'homepage'),
   legal: translator(legal, 'legal'),
   local: translator(local, 'local'),
+  moiPresident: translator(moiPresident, 'moiPresident'),
+  moiPresidentLegal: translator(moiPresidentLegal, 'moiPresidentLegal'),
   navigation: translator(navigation, 'navigation'),
   pricing: translator(pricing, 'pricing'),
   pricingPage: translator(pricingPage, 'pricingPage'),

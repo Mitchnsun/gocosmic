@@ -124,4 +124,19 @@ describe('FooterLanguages', () => {
     expect(nav.getByRole('link', { name: 'English (EN)' })).toHaveAttribute('href', '/en/');
     expect(nav.getByRole('link', { name: 'Italiano (IT)' })).toHaveAttribute('href', '/it/');
   });
+
+  it('offers only English from the French version of a page whose other languages fall back to English', () => {
+    mockPathname = '/apps/moi-president/legal-notice';
+    const french = ({ children }: { children: ReactNode }) => (
+      <NextIntlClientProvider locale="fr" messages={navigation}>
+        {children}
+      </NextIntlClientProvider>
+    );
+    const { getByRole } = render(<FooterLanguages />, { wrapper: french });
+    const nav = within(getByRole('navigation', { name: 'Switch language' }));
+
+    expect(nav.getAllByRole('link').map((link) => link.getAttribute('href'))).toEqual([
+      '/en/apps/moi-president/legal-notice',
+    ]);
+  });
 });

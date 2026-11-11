@@ -1,5 +1,5 @@
 import { getLocalizedLocalBusinessData } from '@/components/JsonLd/JsonLd.utils';
-import type { LegalSection } from '@/components/LegalDocument';
+import type { PlainLegalSection } from '@/components/LegalDocument';
 import { getCanonicalUrl } from '@/i18n/canonical';
 import { LANGUAGES } from '@/i18n/locales';
 import { BRAND_NAME, CONTACT_EMAIL, LEGACY_BRAND_NAME, SITE_URL, STUDIO_BASES, SUPPORT_EMAIL } from '@/lib/config';
@@ -35,7 +35,7 @@ const versionLinks = (swiss: boolean) =>
 
 /** The two versions of every page, which agents cannot tell apart from the URLs alone. */
 export function buildRegionsSection(): string {
-  const terms = EN.legal.raw('terms.sections') as LegalSection[];
+  const terms = EN.legal.raw('terms.sections') as PlainLegalSection[];
   // "Price and billing": which currency applies to which client.
   const currencies = terms[3]?.body[5];
 

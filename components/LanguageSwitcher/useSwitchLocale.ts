@@ -3,8 +3,9 @@
 import { useLocale } from 'next-intl';
 import { type MouseEvent, useEffect } from 'react';
 
+import type { Language } from '@/i18n/locales';
 import { usePathname, useRouter } from '@/i18n/navigation';
-import { hasRoute } from '@/i18n/route-locales';
+import { getSwitcherLanguages, hasRoute } from '@/i18n/route-locales';
 
 /** Query parameters of the current page, read when the visitor picks a language (e.g. `?type=mobile`). */
 function readCurrentQuery(): Record<string, string> | undefined {
@@ -67,7 +68,8 @@ export function useSwitchLocale() {
       return;
     }
     const query = readCurrentQuery();
-    const href = query ? { pathname, query } : pathname;
+    // Past 25 routes, TypeScript no longer checks a `{ pathname, query }` object against each route key's own type.
+    const href = query ? ({ pathname, query } as Parameters<typeof router.push>[0]) : pathname;
     const { hash } = window.location;
     pendingHash = hash ? { hash, locale, pathname } : null;
 
@@ -89,4 +91,9 @@ export function useLocaleLinkClick() {
     event.preventDefault();
     switchLocale(locale);
   };
+}
+
+/** The languages the switchers offer on the current page: all of them, or a fallback page's own (`getSwitcherLanguages`). */
+export function useSwitcherLanguages(): readonly Language[] {
+  return getSwitcherLanguages(usePathname());
 }

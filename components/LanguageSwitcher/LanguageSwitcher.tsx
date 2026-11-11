@@ -9,9 +9,9 @@ import { MOBILE_MENU_DURATION_MS, MOBILE_MENU_STAGGER_MS } from '@/components/He
 import { LANG_DRAWER_LANGUAGES } from '@/components/Header/MobileLangDrawer';
 import FlagIcon from '@/components/icons/FlagIcon';
 import { cn } from '@/design-system/lib/utils';
-import { getLanguage, localeWithLanguage } from '@/i18n/locales';
+import { getLanguage, type Language, localeWithLanguage } from '@/i18n/locales';
 
-import { useSwitchLocale } from './useSwitchLocale';
+import { useSwitcherLanguages, useSwitchLocale } from './useSwitchLocale';
 
 interface LanguageSwitcherProps {
   onOpen?: () => void;
@@ -25,6 +25,7 @@ const LanguageSwitcher = ({ onOpen }: LanguageSwitcherProps = {}) => {
   const locale = useLocale();
   const language = getLanguage(locale);
   const switchLocale = useSwitchLocale();
+  const languages = useSwitcherLanguages();
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -92,28 +93,30 @@ const LanguageSwitcher = ({ onOpen }: LanguageSwitcherProps = {}) => {
                 </div>
                 {/* Language list */}
                 <ul role="menu" aria-orientation="vertical" className="divide-line divide-y">
-                  {Object.entries(LANG_DRAWER_LANGUAGES).map(([code, { name, flag }], index) => (
-                    <m.li
-                      key={code}
-                      initial={{ opacity: 0, y: 16 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * (MOBILE_MENU_STAGGER_MS / 1000) }}>
-                      <button
-                        onClick={() => handleLanguageChange(code)}
-                        disabled={isPending}
-                        role="menuitem"
-                        className={cn(
-                          'group hover:bg-line flex w-full items-center justify-between px-6 py-4 transition-colors',
-                          language === code ? 'text-aerospace-ink' : 'text-fg'
-                        )}>
-                        <span className="font-display flex items-center gap-3 text-lg leading-none font-medium">
-                          <FlagIcon code={flag} className="h-4 w-6" />
-                          {name}
-                        </span>
-                        {language === code && <CheckIcon className="h-4 w-4 shrink-0" aria-hidden="true" />}
-                      </button>
-                    </m.li>
-                  ))}
+                  {Object.entries(LANG_DRAWER_LANGUAGES)
+                    .filter(([code]) => languages.includes(code as Language))
+                    .map(([code, { name, flag }], index) => (
+                      <m.li
+                        key={code}
+                        initial={{ opacity: 0, y: 16 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * (MOBILE_MENU_STAGGER_MS / 1000) }}>
+                        <button
+                          onClick={() => handleLanguageChange(code)}
+                          disabled={isPending}
+                          role="menuitem"
+                          className={cn(
+                            'group hover:bg-line flex w-full items-center justify-between px-6 py-4 transition-colors',
+                            language === code ? 'text-aerospace-ink' : 'text-fg'
+                          )}>
+                          <span className="font-display flex items-center gap-3 text-lg leading-none font-medium">
+                            <FlagIcon code={flag} className="h-4 w-6" />
+                            {name}
+                          </span>
+                          {language === code && <CheckIcon className="h-4 w-4 shrink-0" aria-hidden="true" />}
+                        </button>
+                      </m.li>
+                    ))}
                 </ul>
               </m.div>
             </>

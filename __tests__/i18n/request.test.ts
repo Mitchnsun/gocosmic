@@ -30,8 +30,12 @@ const loadConfig = requestConfig as unknown as (params: {
 }) => Promise<Config>;
 
 describe('request config', () => {
-  it('lists every message file', () => {
-    expect([...NAMESPACES].sort()).toEqual(filesOf('en').sort());
+  it('lists every message file shared by all languages', () => {
+    expect([...NAMESPACES].sort()).toEqual(
+      filesOf('en')
+        .filter((file) => !partialFilesOf('en').includes(file))
+        .sort()
+    );
   });
 
   it.each(LANGUAGES)('finds in %s the shared files, plus those of its own pages', (language) => {
@@ -49,7 +53,11 @@ describe('request config', () => {
   // The server merges every file into one object, so a top-level key in two files would overwrite the other.
   it.each(LANGUAGES)('never repeats in %s a top-level key of a shared file', async (language) => {
     const { messages } = await loadConfig({ requestLocale: Promise.resolve(language) });
-    const sharedKeys = new Set(Object.keys((await loadConfig({ requestLocale: Promise.resolve('en') })).messages));
+    const sharedKeys = new Set(
+      NAMESPACES.flatMap((namespace) =>
+        Object.keys(JSON.parse(readFileSync(path.join(MESSAGES_DIR, 'en', `${namespace}.json`), 'utf8')) as object)
+      )
+    );
 
     for (const namespace of partialFilesOf(language)) {
       const file = JSON.parse(readFileSync(path.join(MESSAGES_DIR, language, `${namespace}.json`), 'utf8')) as object;

@@ -190,6 +190,33 @@ export const routing = defineRouting({
 
     // Website for freelancers and liberal professions, in French only (see `ROUTE_LANGUAGES`)
     '/website-for-freelancers': '/site-internet-independant',
+
+    // Moi Président, the studio's mobile game: its presentation and support page, the App Store's support URL
+    '/apps/moi-president': localized({
+      en: '/apps/moi-president',
+      fr: '/applications/moi-president',
+      es: '/aplicaciones/moi-president',
+      de: '/apps/moi-president',
+      it: '/applicazioni/moi-president',
+    }),
+
+    // Moi Président's privacy policy, the privacy URL of both stores, in French and English (see `ROUTE_FALLBACK_LANGUAGES`)
+    '/apps/moi-president/privacy': localized({
+      en: '/apps/moi-president/privacy',
+      fr: '/applications/moi-president/confidentialite',
+      es: '/aplicaciones/moi-president/privacidad',
+      de: '/apps/moi-president/datenschutz',
+      it: '/applicazioni/moi-president/privacy',
+    }),
+
+    // Moi Président's legal notice, with the notice of its simulation, in French and English (see `ROUTE_FALLBACK_LANGUAGES`)
+    '/apps/moi-president/legal-notice': localized({
+      en: '/apps/moi-president/legal-notice',
+      fr: '/applications/moi-president/mentions-legales',
+      es: '/aplicaciones/moi-president/aviso-legal',
+      de: '/apps/moi-president/impressum',
+      it: '/applicazioni/moi-president/note-legali',
+    }),
   },
 });
 
@@ -207,4 +234,16 @@ export const ROUTE_LANGUAGES: Partial<Record<RouteKey, readonly Language[]>> = {
   '/website-for-associations': ['fr'],
   '/website-for-tradespeople': ['fr'],
   '/website-for-freelancers': ['fr'],
+};
+
+/**
+ * Languages of the routes published in some languages only whose other languages redirect to the English page
+ * instead of answering with a 404: Moi Président's legal pages, whose URLs go to the app stores (gocosmic#176).
+ * `fr` covers `fr-CH` too, and a Swiss locale redirects to `en-CH`, so the region stays (`getFallbackRedirects`,
+ * a temporary 307). Each keeps a slug in every language, and stays out of the sitemap, the hreflang links and
+ * the language switchers of the other languages, like `ROUTE_LANGUAGES`. English must be among them.
+ */
+export const ROUTE_FALLBACK_LANGUAGES: Partial<Record<RouteKey, readonly Language[]>> = {
+  '/apps/moi-president/privacy': ['fr', 'en'],
+  '/apps/moi-president/legal-notice': ['fr', 'en'],
 };

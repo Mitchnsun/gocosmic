@@ -72,9 +72,39 @@ describe('next config legacy redirects', () => {
     expect(find('/it/viaggio')?.destination).toBe('/it/servizi');
     expect(find('/offers')?.destination).toBe('/services#pricing');
     expect(find('/journey')?.destination).toBe('/services');
-    expect(redirects.every((redirect) => redirect.permanent)).toBe(true);
     // 2 retired pages × (1 unprefixed + 1 for en + 2 per other locale), then the local page under each of the 10 prefixes.
-    expect(redirects).toHaveLength(2 * (1 + 1 + 2 * 4) + 10);
+    expect(redirects.filter((redirect) => redirect.permanent)).toHaveLength(2 * (1 + 1 + 2 * 4) + 10);
+  });
+
+  it("sends the other languages of Moi Président's legal pages to English for now, in the same region", async () => {
+    vi.resetModules();
+    const { default: nextConfig } = (await import('../next.config')) as {
+      default: { redirects: () => Promise<{ source: string; destination: string; permanent: boolean }[]> };
+    };
+    const redirects = await nextConfig.redirects();
+    const find = (source: string) => redirects.find((redirect) => redirect.source === source);
+
+    expect(find('/de/apps/moi-president/impressum')).toEqual({
+      source: '/de/apps/moi-president/impressum',
+      destination: '/en/apps/moi-president/legal-notice',
+      permanent: false,
+    });
+    expect(find('/es/aplicaciones/moi-president/privacidad')?.destination).toBe('/en/apps/moi-president/privacy');
+    expect(find('/it-ch/applicazioni/moi-president/note-legali')?.destination).toBe(
+      '/en-ch/apps/moi-president/legal-notice'
+    );
+    // French and English are published, Swiss versions included, and the presentation page exists in every language.
+    for (const source of [
+      '/fr/applications/moi-president/mentions-legales',
+      '/fr-ch/applications/moi-president/confidentialite',
+      '/en/apps/moi-president/privacy',
+      '/en-ch/apps/moi-president/legal-notice',
+      '/de/apps/moi-president',
+    ]) {
+      expect(find(source)).toBeUndefined();
+    }
+    // 2 pages × 6 locales: es, de, it and their Swiss versions; all of them temporary.
+    expect(redirects.filter((redirect) => !redirect.permanent)).toHaveLength(2 * 6);
   });
 
   it('no longer redirects the pricing slugs, which lead to the pricing page again', async () => {

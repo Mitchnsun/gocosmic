@@ -183,4 +183,17 @@ describe('sitemap', () => {
       'x-default': 'https://www.gocosmic.dev/fr/creation-site-vitrine',
     });
   });
+
+  it("lists Moi Président's presentation page in every version and keeps its legal pages out", () => {
+    const urls = sitemap().map((entry) => entry.url);
+
+    expect(urls).toEqual(
+      expect.arrayContaining([
+        'https://www.gocosmic.dev/fr/applications/moi-president',
+        'https://www.gocosmic.dev/en/apps/moi-president',
+        'https://www.gocosmic.dev/it-ch/applicazioni/moi-president',
+      ])
+    );
+    expect(urls.some((url) => /moi-president\/./.test(url))).toBe(false);
+  });
 });

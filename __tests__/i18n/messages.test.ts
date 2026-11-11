@@ -2,9 +2,12 @@
 import { readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 
 import { LANGUAGES } from '@/i18n/locales';
+import { PARTIAL_NAMESPACES } from '@/i18n/request';
+
+vi.mock('next-intl/server', () => ({ getRequestConfig: (config: unknown) => config }));
 
 /**
  * Every language must offer the same message keys, with the same `{placeholders}`, as the English
@@ -16,6 +19,9 @@ const MESSAGES_DIR = path.join(process.cwd(), 'messages');
 const REFERENCE = 'en';
 const OTHER_LOCALES = LANGUAGES.filter((language) => language !== REFERENCE);
 const NAMESPACES = readdirSync(path.join(MESSAGES_DIR, REFERENCE)).filter((file) => file.endsWith('.json'));
+
+/** Languages a file exists in: every one, unless it belongs to pages published in some languages only. */
+const languagesOf = (file: string): readonly string[] => PARTIAL_NAMESPACES[path.basename(file, '.json')] ?? LANGUAGES;
 
 /** ICU argument names: `{price}`, `{count, plural, …}`. Plural branches (`{# box}`) are skipped. */
 const PLACEHOLDER = /\{(\w+)\s*[,}]/g;
@@ -36,8 +42,8 @@ function describeMessages(value: unknown, prefix = '', out = new Map<string, str
 }
 
 describe('message files', () => {
-  it.each(NAMESPACES)('%s exists in every locale', (file) => {
-    for (const locale of OTHER_LOCALES) {
+  it.each(NAMESPACES)('%s exists in every locale it is published in', (file) => {
+    for (const locale of OTHER_LOCALES.filter((language) => languagesOf(file).includes(language))) {
       expect(readdirSync(path.join(MESSAGES_DIR, locale)), locale).toContain(file);
     }
   });
@@ -55,14 +61,17 @@ describe('message files', () => {
   });
 
   describe.each(OTHER_LOCALES)('%s', (locale) => {
-    it.each(NAMESPACES)('%s has the same keys and placeholders as English', (file) => {
-      const reference = describeMessages(readMessages(REFERENCE, file));
-      const translated = describeMessages(readMessages(locale, file));
+    it.each(NAMESPACES.filter((file) => languagesOf(file).includes(locale)))(
+      '%s has the same keys and placeholders as English',
+      (file) => {
+        const reference = describeMessages(readMessages(REFERENCE, file));
+        const translated = describeMessages(readMessages(locale, file));
 
-      expect([...translated.keys()].sort()).toEqual([...reference.keys()].sort());
-      for (const [key, placeholders] of reference) {
-        expect(translated.get(key), `${file} › ${key}`).toBe(placeholders);
+        expect([...translated.keys()].sort()).toEqual([...reference.keys()].sort());
+        for (const [key, placeholders] of reference) {
+          expect(translated.get(key), `${file} › ${key}`).toBe(placeholders);
+        }
       }
-    });
+    );
   });
 });

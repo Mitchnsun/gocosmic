@@ -9,6 +9,7 @@ import { fireEvent, render, waitFor } from '../test-utils';
 
 // Mock the i18n navigation functions
 const mockPush = vi.fn();
+let mockPathname = '/en';
 vi.mock('@/i18n/navigation', () => ({
   useRouter: () => ({
     push: mockPush,
@@ -18,7 +19,7 @@ vi.mock('@/i18n/navigation', () => ({
     forward: vi.fn(),
     refresh: vi.fn(),
   }),
-  usePathname: () => '/en',
+  usePathname: () => mockPathname,
   Link: ({ children, href, ...props }: { children: React.ReactNode; href: string; [key: string]: unknown }) => (
     <a href={href} {...props}>
       {children}
@@ -31,6 +32,16 @@ vi.mock('@/i18n/navigation', () => ({
 describe('LanguageSwitcher Component', () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    mockPathname = '/en';
+  });
+
+  it('offers only French and English on a page whose other languages fall back to English', () => {
+    mockPathname = '/apps/moi-president/legal-notice';
+    const { getByRole, getAllByRole } = render(<LanguageSwitcher />);
+
+    fireEvent.click(getByRole('button', { name: /switch language/i }));
+
+    expect(getAllByRole('menuitem').map((item) => item.textContent)).toEqual(['English', 'Français']);
   });
 
   it('should render the language switcher button', () => {

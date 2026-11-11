@@ -3,8 +3,8 @@
 import { useLocale, useTranslations } from 'next-intl';
 
 import { LANG_DRAWER_LANGUAGES } from '@/components/Header/MobileLangDrawer';
-import { useLocaleLinkClick } from '@/components/LanguageSwitcher/useSwitchLocale';
-import { getLanguage, localeWithLanguage } from '@/i18n/locales';
+import { useLocaleLinkClick, useSwitcherLanguages } from '@/components/LanguageSwitcher/useSwitchLocale';
+import { getLanguage, type Language, localeWithLanguage } from '@/i18n/locales';
 import { Link, usePathname } from '@/i18n/navigation';
 import { hasRoute } from '@/i18n/route-locales';
 
@@ -18,10 +18,11 @@ const FooterLanguages = () => {
   const language = getLanguage(locale);
   const pathname = usePathname();
   const handleClick = useLocaleLinkClick();
+  const offered = useSwitcherLanguages();
   // Current language first, as in "FR · EN DE IT ES".
-  const languages = Object.entries(LANG_DRAWER_LANGUAGES).sort(
-    ([a], [b]) => Number(b === language) - Number(a === language)
-  );
+  const languages = Object.entries(LANG_DRAWER_LANGUAGES)
+    .filter(([code]) => offered.includes(code as Language))
+    .sort(([a], [b]) => Number(b === language) - Number(a === language));
 
   return (
     <nav aria-label={t('switch_locale')} className="text-3xs font-mono tracking-[0.16em] uppercase">

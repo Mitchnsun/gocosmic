@@ -1,0 +1,258 @@
+{
+  "moiPresidentLegal": {
+    "eyebrow": "Moi Président",
+    "updated": "Dernière mise à jour : 11 novembre 2026",
+    "links": {
+      "commission": "commission-des-sondages.fr",
+      "cnil": "cnil.fr",
+      "pfpdt": "Le PFPDT (edoeb.admin.ch)",
+      "email": "Écrire à support@gocosmic.dev"
+    },
+    "legalNotice": {
+      "meta": {
+        "title": "Mentions légales de Moi Président | Cosmic Studio",
+        "description": "Éditeur, nature du jeu, chiffres fictifs et notice de la simulation, conditions d'utilisation et contact de Moi Président, le jeu mobile de Cosmic Studio."
+      },
+      "title": "Mentions légales",
+      "intro": "Qui édite Moi Président, ce que le jeu est et n'est pas, et ce qu'il fait de vos données.",
+      "sections": {
+        "game": {
+          "title": "Le jeu",
+          "paragraphs": [
+            {
+              "lead": "Jeu de simulation satirique.",
+              "text": "Moi Président est une œuvre de fiction humoristique et parodique, librement inspirée de l'actualité politique. Les adversaires, les partis, les événements, les dialogues et les slogans sont des créations de l'éditeur ; les noms des adversaires et des partis sont volontairement détournés. Le jeu ne rapporte aucun fait, aucun propos ni aucune position réels d'une personne existante, et n'exprime pas l'opinion de l'éditeur sur une personne, un parti ou un vote."
+            },
+            {
+              "text": "Le jeu ne donne aucune consigne de vote. Il n'est affilié à aucune organisation gouvernementale, à aucun parti politique ni à aucune association militante. Il n'a de lien avec aucun candidat, mouvement, média ou institut de sondage, et n'est ni approuvé ni financé par l'un d'eux."
+            },
+            {
+              "lead": "Un modèle simplifié, avec ses partis pris.",
+              "text": "Le jeu réduit la vie politique à neuf familles, cinq axes et quelques segments de l'électorat. Les positions des adversaires sont des estimations de l'équipe du jeu. Les effets des actions, des événements et des mesures sont des règles de jeu, pas des prévisions : ils reflètent des choix de conception, que d'autres auraient faits autrement. Le jeu n'est pas une source d'information électorale : ne fondez pas un vote sur ses chiffres."
+            },
+            {
+              "lead": "Des sujets parfois sensibles.",
+              "text": "La revue de presse du jeu aborde parfois des drames : catastrophes, émeutes, violences, attentats. Ils sont rares et tous fictifs, inspirés de débats réels sans en reprendre les noms ni les lieux : aucune victime n'est nommée ni décrite, aucune image n'est montrée, et rien ne récompense le fait d'en tirer parti."
+            }
+          ]
+        },
+        "figures": {
+          "title": "Les chiffres",
+          "paragraphs": [
+            {
+              "lead": "Des chiffres fictifs, issus d'une simulation.",
+              "text": "Les scores, classements, « sondages », tendances et résultats affichés dans le jeu sont produits par une simulation. Elle part de sondages réels (voir « Notice de la simulation ») et les transforme à chaque partie : ses chiffres ne mesurent l'opinion de personne et ne prédisent ni les intentions de vote ni le résultat de l'élection réelle. La loi n° 77-808 du 19 juillet 1977 assimile à un sondage une simulation de vote réalisée à partir de sondages{filed, select, yes { : la notice de celle-ci est consultable auprès de la Commission des sondages} other {}}."
+            },
+            {
+              "lead": "Le dé, marque des chiffres du jeu.",
+              "text": "L'icône d'un dé, un carré à points, accompagne les données, chiffres et valeurs simulés par le jeu, même sans la mention « fictif » : ils ne doivent pas être pris pour la réalité."
+            },
+            {
+              "text": "Les captures d'écran du jeu ne doivent pas être présentées comme de vrais sondages ou de vrais résultats."
+            }
+          ]
+        },
+        "notice": {
+          "title": "Notice de la simulation",
+          "paragraphs": [
+            {
+              "lead": "Simulation · données fictives.",
+              "text": "Dans l'espace de jeu de la campagne, l'application fournit des données fictives : toute donnée qui ne cite pas sa source est une donnée du jeu, et elle est fictive."
+            },
+            {
+              "text": "Simulation réalisée par Matthieu Compérat (Cosmic Studio), pour son propre compte, à partir de 23 sondages d'intentions de vote au premier tour de l'élection présidentielle de 2027, réalisés par Ifop, Elabe, Harris Interactive, Cluster17, YouGov, OpinionWay et Odoxa, et publiés en septembre et en octobre 2026. Le jeu les transforme à chaque partie : ses chiffres sont fictifs."
+            },
+            {
+              "text": "Tout sondage est affecté de marges d'erreur. Les marges affichées dans le jeu sont une règle du jeu."
+            }
+          ],
+          "filed": "Toute personne peut consulter la notice de cette simulation auprès de la Commission des sondages.",
+          "filed_link": "La notice de cette simulation",
+          "frozen": "Données figées dans la version {version} du jeu.",
+          "release": "Version {version}, publiée le {date}",
+          "polls": "Sondages d'origine",
+          "poll": {
+            "institute": "Institut",
+            "sponsors": "Commanditaire",
+            "fieldwork": "Dates du terrain",
+            "sample": "Personnes interrogées",
+            "question": "Question posée",
+            "margin": "Marges d'erreur",
+            "notice": "Notice du sondage"
+          },
+          "fieldwork": "du {from} au {to}"
+        },
+        "sources": {
+          "title": "Les sources et leurs dates",
+          "paragraphs": [
+            {
+              "lead": "Des chiffres datés.",
+              "text": "Les intentions de vote de départ viennent de sondages publiés en septembre et en octobre 2026, puis la simulation les transforme. Elles ne sont pas mises à jour pendant la partie et ont pu beaucoup changer depuis. Pour des chiffres à jour, consultez les notices publiées par la Commission des sondages : chacune indique l'institut qui a réalisé le sondage."
+            }
+          ]
+        },
+        "publisher": {
+          "title": "Éditeur",
+          "paragraphs": [
+            {
+              "lead": "Éditeur :",
+              "text": "Matthieu Compérat, raison individuelle exerçant sous le nom commercial Cosmic Studio, établie à Chêne-Bougeries (Suisse) ; e-mail : support@gocosmic.dev."
+            },
+            {
+              "lead": "Directeur de la publication :",
+              "text": "Matthieu Compérat."
+            },
+            {
+              "lead": "Hébergeur des pages web :",
+              "text": "Vercel Inc., San Francisco, Californie, États-Unis."
+            },
+            {
+              "lead": "Hébergeur du kit de campagne :",
+              "text": "GitHub, Inc., San Francisco, Californie, États-Unis."
+            },
+            {
+              "lead": "Distribution :",
+              "text": "App Store (Apple) et Google Play (Google). L'application fonctionne sans connexion et n'est hébergée sur aucun serveur de l'éditeur."
+            }
+          ]
+        },
+        "liability": {
+          "title": "Responsabilité",
+          "paragraphs": [
+            {
+              "text": "Le jeu est fourni à titre de divertissement. Dans la mesure permise par la loi, et sans préjudice des droits que la loi reconnaît aux consommateurs, l'éditeur ne garantit pas que le jeu soit exempt d'erreurs ou disponible sans interruption, et n'est pas responsable des dommages indirects liés à son utilisation. Rien dans ces conditions n'exclut ni ne limite la responsabilité de l'éditeur en cas de dommage corporel, de faute lourde ou de dol, ni aucun droit que la loi ne permet pas d'écarter."
+            }
+          ]
+        },
+        "terms": {
+          "title": "Conditions d'utilisation",
+          "paragraphs": [
+            {
+              "lead": "1. Licence.",
+              "text": "L'éditeur vous concède une licence personnelle, non exclusive et non transférable d'utilisation du jeu, sur vos appareils, pour un usage non commercial."
+            },
+            {
+              "lead": "2. Interdits.",
+              "text": "Ne pas copier, décompiler ou redistribuer le jeu ; ne pas utiliser le jeu, ses captures ou votre affiche pour tromper sur la réalité (faux sondage, fausse déclaration d'un candidat) ; ne pas présenter le jeu comme un service officiel ou comme de la propagande électorale."
+            },
+            {
+              "lead": "3. Votre affiche.",
+              "text": "Vous choisissez votre nom, votre photo et votre slogan. Utilisez une photo de vous, ou d'une personne qui y a consenti ; n'utilisez pas l'image d'un tiers ni celle d'une personnalité politique sans autorisation. Vous êtes responsable de ce que vous partagez avec le menu de partage de votre appareil. L'éditeur ne reçoit pas votre photo."
+            },
+            {
+              "lead": "4. Propriété intellectuelle.",
+              "text": "Le jeu, ses textes, ses illustrations et son logo sont protégés. Les éléments de tiers sont utilisés selon les licences indiquées dans « Crédits et licences »."
+            },
+            {
+              "lead": "5. Responsabilité.",
+              "text": "Voir « Responsabilité »."
+            },
+            {
+              "lead": "6. Modifications.",
+              "text": "Ces conditions peuvent évoluer avec les mises à jour du jeu."
+            },
+            {
+              "lead": "7. Contrat de licence d'Apple.",
+              "text": "Le contrat de licence standard d'Apple s'applique en complément, sauf stipulation contraire de ces conditions."
+            }
+          ]
+        },
+        "credits": {
+          "title": "Crédits et licences",
+          "paragraphs": [
+            {
+              "lead": "Polices :",
+              "text": "Anton (© 2020 The Anton Project Authors), Bodoni Moda (© 2020 The Bodoni Moda Project Authors) et Instrument Sans (© 2022 The Instrument Sans Project Authors), sous licence SIL Open Font License 1.1."
+            },
+            {
+              "lead": "Icônes :",
+              "text": "Lucide (© 2026 Lucide Icons and Contributors), licence ISC, dont certaines icônes dérivées de Feather (© 2013-present Cole Bemis), licence MIT."
+            },
+            {
+              "lead": "Bibliothèques :",
+              "text": "React, React Native (© Meta Platforms, Inc. et ses affiliés), Expo et les autres bibliothèques du jeu, sous licence MIT ou d'autres licences libres. La liste complète, avec le texte de chaque licence, est dans la page « Licences » de l'application."
+            }
+          ]
+        },
+        "contact": {
+          "title": "Contact",
+          "paragraphs": [
+            {
+              "text": "support@gocosmic.dev. Toute personne nommée ou désignée dans le jeu peut demander une rectification, le retrait d'un contenu ou l'insertion d'une réponse à cette adresse."
+            }
+          ]
+        }
+      },
+      "privacyPrefix": "Ce que le jeu fait de vos données est décrit dans la",
+      "privacyLink": "politique de confidentialité de Moi Président"
+    },
+    "privacy": {
+      "meta": {
+        "title": "Confidentialité de Moi Président | Cosmic Studio",
+        "description": "Moi Président n'envoie aucune donnée personnelle à l'éditeur : ce que le jeu enregistre sur votre appareil, ses permissions, le kit de campagne et vos recours."
+      },
+      "title": "Politique de confidentialité",
+      "intro": "Cette politique explique ce que le jeu Moi Président fait de vos données personnelles.",
+      "sections": {
+        "data": {
+          "title": "Ce que Moi Président fait de vos données",
+          "paragraphs": [
+            {
+              "text": "Aucune donnée personnelle vous concernant n'est envoyée à l'éditeur : le jeu n'a ni compte, ni publicité, ni outil de mesure d'audience. Votre nom, votre photo, votre slogan, votre affiche, votre parti, votre campagne et vos préférences (langue, thème) sont enregistrés uniquement sur votre appareil."
+            }
+          ]
+        },
+        "permissions": {
+          "title": "Permissions",
+          "paragraphs": [
+            {
+              "text": "Appareil photo : seulement pour prendre la photo de votre affiche, à votre demande. Vous pouvez refuser cet accès ou le retirer dans les réglages de votre appareil. Pour choisir une photo, le jeu ouvre le sélecteur de votre appareil : il ne reçoit que la photo choisie, sans accès à vos autres photos."
+            }
+          ]
+        },
+        "sharing": {
+          "title": "Partage",
+          "paragraphs": [
+            {
+              "text": "Si vous partagez votre affiche, le fichier est transmis à l'application que vous choisissez dans le menu de partage de votre appareil ; l'éditeur n'en reçoit pas de copie."
+            }
+          ]
+        },
+        "deletion": {
+          "title": "Suppression",
+          "paragraphs": [
+            {
+              "text": "Vous supprimez votre affiche dans l'application ; désinstaller l'application efface toutes les données."
+            }
+          ]
+        },
+        "kit": {
+          "title": "Kit de campagne",
+          "paragraphs": [
+            {
+              "text": "Le kit est facultatif. Le jeu ne se connecte que pour lui : une fois, au début de votre première nouvelle campagne, pour vous le proposer ; quand vous ouvrez sa page, le téléchargez ou le mettez à jour ; et, une fois le kit installé, au plus une fois par semaine à l'ouverture du jeu, pour savoir si une nouvelle édition existe. Ses fichiers viennent de GitHub, qui reçoit alors l'adresse IP de votre appareil, comme tout serveur. Le jeu n'envoie ni compte, ni identifiant, ni cookie."
+            }
+          ]
+        },
+        "changes": {
+          "title": "Évolutions",
+          "paragraphs": [
+            {
+              "text": "Si une fonction future transmettait des données, cette politique serait mise à jour et portée à votre connaissance avant sa mise en service."
+            }
+          ]
+        },
+        "contact": {
+          "title": "Contact et recours",
+          "paragraphs": [
+            {
+              "text": "support@gocosmic.dev. Vous pouvez saisir le Préposé fédéral à la protection des données et à la transparence (PFPDT, Suisse), ou l'autorité de protection des données de votre pays de résidence (en France, la CNIL)."
+            }
+          ]
+        }
+      },
+      "legalNoticePrefix": "Pour l'éditeur du jeu et la notice de sa simulation, consultez les",
+      "legalNoticeLink": "mentions légales de Moi Président"
+    }
+  }
+}

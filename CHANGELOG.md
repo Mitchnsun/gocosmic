@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.7.0] - 2026-11-12
+
+### Added
+
+- A page for Moi Président, the studio's satirical election game, in all five languages: what the game is, the stores it is coming to and how to reach its support
+- The game's privacy policy and legal notice, in French and English, with the notice of its simulation; visitors in Spanish, German or Italian are taken to the English version
+- A space at the top of the game's page and legal notice to publish, the same day, a correction ordered by the French polling commission
+
+### Changed
+
+- On the game's legal pages, the language menus offer French and English only
+
 ## [2.6.2] - 2026-11-12
 
 ### Fixed

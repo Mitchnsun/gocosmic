@@ -1,0 +1,30 @@
+{
+  "moiPresident": {
+    "meta": {
+      "title": "Moi Président, ein satirisches Simulationsspiel | Cosmic Studio",
+      "description": "Moi Président, das Handyspiel von Cosmic Studio: eine satirische Simulation eines Präsidentschaftswahlkampfs, mit fiktiven Figuren und Zahlen. Support und rechtliche Hinweise."
+    },
+    "eyebrow": "Handyspiel · iOS und Android",
+    "title": "Moi Président",
+    "icon_alt": "Symbol von Moi Président",
+    "lead": "Satirisches Simulationsspiel. Die Figuren und die Parteien sind fiktiv und parodistisch; die Werte stammen aus einer Simulation: Es sind fiktive Zahlen. Das Spiel ist keiner staatlichen Organisation, keiner Partei und keiner aktivistischen Vereinigung angeschlossen und steht in keiner Verbindung zu einer Kandidatur oder einem Meinungsforschungsinstitut. Keine Wahlempfehlung.",
+    "categories": [
+      "Spiele",
+      "Rollenspiel",
+      "Strategie"
+    ],
+    "stores_soon": "Bald im App Store und bei Google Play",
+    "support": {
+      "eyebrow": "Support",
+      "title": "Eine Frage zum Spiel?",
+      "lead": "Bei einer Frage, einem Problem oder einer Anmerkung zum Spiel schreiben Sie uns.",
+      "email": "An support@gocosmic.dev schreiben",
+      "privacy": "Datenschutzerklärung (auf Englisch)",
+      "legal_notice": "Impressum (auf Englisch)"
+    },
+    "correction": {
+      "title": "Richtigstellung",
+      "date": "Veröffentlicht am {date}"
+    }
+  }
+}

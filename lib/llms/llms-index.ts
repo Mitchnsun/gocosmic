@@ -32,6 +32,7 @@ const pages = () => [
   [link(EN.footer('link_about'), pageUrl('/about')), EN.about('meta.description')],
   [link(EN.footer('story_page'), pageUrl('/story')), EN.story('meta.description')],
   [link(EN.footer('local_page'), pageUrl('/local')), EN.local('meta.description')],
+  [link(EN.moiPresident('title'), pageUrl('/apps/moi-president')), EN.moiPresident('meta.description')],
 ];
 
 /** The pages published in French only, in French, with the description they give search engines. */

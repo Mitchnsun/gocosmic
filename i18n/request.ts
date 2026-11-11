@@ -26,6 +26,7 @@ export const NAMESPACES = [
   'contact',
   'free-mockup',
   'legal',
+  'moi-president',
 ] as const;
 
 /**
@@ -40,6 +41,8 @@ export const PARTIAL_NAMESPACES: Record<string, readonly Language[]> = {
   'website-for-associations': ['fr'],
   'website-for-tradespeople': ['fr'],
   'website-for-freelancers': ['fr'],
+  // Moi Président's legal pages, whose other languages redirect to English (`ROUTE_FALLBACK_LANGUAGES`)
+  'moi-president-legal': ['fr', 'en'],
 };
 
 /**

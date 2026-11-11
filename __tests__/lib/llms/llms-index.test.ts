@@ -49,6 +49,13 @@ describe('buildLlmsIndex', () => {
     );
   });
 
+  it("describes the studio's game, and leaves its legal pages out like the site's own", () => {
+    expect(text).toContain(
+      "- [Moi Président](https://www.gocosmic.dev/en/apps/moi-president): Moi Président, Cosmic Studio's mobile game: a satirical simulation of a presidential campaign, with fictional characters and figures. Support and legal information."
+    );
+    expect(text).not.toContain('moi-president/');
+  });
+
   it('lists the pages published in French only, in French, at their French URL', () => {
     expect(text).toContain(
       '## Pages in French only\n\n- [Création de site vitrine](https://www.gocosmic.dev/fr/creation-site-vitrine): Faites créer votre site vitrine'

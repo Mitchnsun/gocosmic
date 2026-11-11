@@ -1,0 +1,30 @@
+{
+  "moiPresident": {
+    "meta": {
+      "title": "Moi Président, jeu de simulation satirique | Cosmic Studio",
+      "description": "Moi Président, le jeu mobile de Cosmic Studio : une simulation satirique de campagne présidentielle, aux personnages et aux chiffres fictifs. Support et informations légales."
+    },
+    "eyebrow": "Jeu mobile · iOS et Android",
+    "title": "Moi Président",
+    "icon_alt": "Icône de Moi Président",
+    "lead": "Jeu de simulation satirique. Les personnages et les partis sont fictifs et parodiques ; les scores viennent d'une simulation : ce sont des chiffres fictifs. Le jeu n'est affilié à aucune organisation gouvernementale, à aucun parti ni à aucune association militante, et n'a de lien avec aucun candidat ni institut de sondage. Aucune consigne de vote.",
+    "categories": [
+      "Jeux",
+      "Jeu de rôle",
+      "Stratégie"
+    ],
+    "stores_soon": "Bientôt sur l'App Store et Google Play",
+    "support": {
+      "eyebrow": "Support",
+      "title": "Une question sur le jeu ?",
+      "lead": "Pour une question, un problème ou une remarque sur le jeu, écrivez-nous.",
+      "email": "Écrire à support@gocosmic.dev",
+      "privacy": "Politique de confidentialité",
+      "legal_notice": "Mentions légales"
+    },
+    "correction": {
+      "title": "Mise au point",
+      "date": "Publiée le {date}"
+    }
+  }
+}
