@@ -37,7 +37,8 @@ export function LegalDocument({ eyebrow, title, updated, intro, sections, banner
             titleClassName="text-[clamp(2.25rem,5vw,3.75rem)] leading-[1.02]"
           />
           <p className="text-fg-3 text-2xs font-mono tracking-[0.16em] uppercase">{updated}</p>
-          <p className="text-fg-2 max-w-[64ch] text-lg leading-relaxed text-pretty">{intro}</p>
+          {/* A line break in the intro starts a new line, e.g. after the publisher of a licence. */}
+          <p className="text-fg-2 max-w-[64ch] text-lg leading-relaxed text-pretty whitespace-pre-line">{intro}</p>
         </div>
 
         {banner}

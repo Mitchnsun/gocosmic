@@ -7,7 +7,11 @@ const SECTIONS: LegalSection[] = [
   {
     id: 'contact',
     title: 'Contact',
-    body: [{ lead: 'Contact and recourse.', text: 'Write to us.' }, { text: 'No lead here.' }],
+    body: [
+      { lead: 'Contact and recourse.', text: 'Write to us.' },
+      { text: 'No lead here.' },
+      { items: ['First item', 'Second item, see https://example.org/terms'] },
+    ],
     links: [
       { label: 'Write to support@gocosmic.dev', href: 'mailto:support@gocosmic.dev' },
       { label: 'cnil.fr', href: 'https://www.cnil.fr' },
@@ -67,5 +71,31 @@ describe('LegalDocument', () => {
 
     expect(order('Correction banner', 'Publisher')).toBeTruthy();
     expect(order('Further content', 'Closing note')).toBeTruthy();
+  });
+
+  it('shows a bulleted list as a list, its addresses linked', () => {
+    const { getByText } = renderDocument();
+    const list = getByText('First item').closest('ul')!;
+
+    expect(
+      within(list)
+        .getAllByRole('listitem')
+        .map((item) => item.textContent)
+    ).toEqual(['First item', 'Second item, see https://example.org/terms']);
+    expect(within(list).getByRole('link', { name: 'https://example.org/terms' })).toHaveAttribute('target', '_blank');
+  });
+
+  it('starts a new line where the intro has one', () => {
+    const { getByText } = render(
+      <LegalDocument
+        eyebrow="E"
+        title="T"
+        updated="U"
+        intro={'Publisher: Cosmic Studio\nWhat follows.'}
+        sections={[]}
+      />
+    );
+
+    expect(getByText(/^Publisher: Cosmic Studio/)).toHaveClass('whitespace-pre-line');
   });
 });

@@ -31,7 +31,7 @@ const page = (locale: string) =>
     namespace: 'moiPresident',
   }) as unknown as Translator;
 const textOf = (paragraph: LegalParagraph | undefined) =>
-  typeof paragraph === 'string' ? paragraph : (paragraph?.text ?? '');
+  typeof paragraph === 'string' ? paragraph : paragraph && 'text' in paragraph ? paragraph.text : '';
 
 describe('legal notice sections', () => {
   it("follows the app's order, without its costings and with the personal data on a page of their own", () => {

@@ -253,6 +253,48 @@
       },
       "legalNoticePrefix": "Pour l'éditeur du jeu et la notice de sa simulation, consultez les",
       "legalNoticeLink": "mentions légales de Moi Président"
+    },
+    "kitLicences": {
+      "meta": {
+        "title": "Licences du kit de campagne de Moi Président | Cosmic Studio",
+        "description": "Les licences des deux parties du kit de campagne de Moi Président, les données des Dossiers et les illustrations, et de leurs prompts."
+      },
+      "title": "Kit de campagne de Moi Président : licences",
+      "updated": "Dernière mise à jour : 11 novembre 2026",
+      "intro": "Éditeur : Matthieu Compérat, sous le nom commercial Cosmic Studio\nLe dépôt du kit (github.com/Mitchnsun/kit-de-campagne) et ses Releases portent les deux parties du kit et les prompts de ses illustrations, sous des régimes différents. Le manifeste de chaque édition (manifest.json) reprend les crédits et la licence de chaque partie ; pour une édition, son manifeste fait foi.",
+      "sections": [
+        {
+          "title": "1. Données des Dossiers (partie « briefings »)",
+          "body": [
+            "Chaque chiffre garde la licence de sa source. Le fichier de chaque indicateur nomme le producteur, la publication, la licence et la date de chaque source.",
+            {
+              "items": [
+                "La plupart des sources publiques françaises (Insee, ministères, IGN pour le fond de carte ADMIN EXPRESS COG CARTO) sont sous Licence Ouverte 2.0 (Etalab). Toute réutilisation mentionne la source et la date de sa dernière mise à jour.",
+                "Les données d'Eurostat sont réutilisables, y compris à des fins commerciales, à condition de citer la source (« Source : Eurostat ») et de signaler les modifications. Les données qu'Eurostat attribue à une autre source ne sont pas réutilisables à des fins commerciales. https://ec.europa.eu/eurostat/help/copyright-notice",
+                "Les jeux de données du HCR (UNHCR, Refugee Data Finder) sont sous licence Creative Commons Attribution 4.0 International (CC BY 4.0), avec les conditions d'utilisation des jeux de données du HCR : toute réutilisation crédite « UNHCR Refugee Population Statistics Database », signale les modifications et renvoie vers ces conditions ; elle ne laisse pas entendre que le HCR participe au jeu, le soutient ou l'approuve, et ne reprend ni son nom ni son emblème comme marque. https://creativecommons.org/licenses/by/4.0/ https://www.unhcr.org/what-we-do/reports-and-publications/data-and-statistics/terms-use-datasets",
+                "Les chiffres d'autres producteurs (CITEPA, instituts de sondage…) sont cités avec leur source ; aucun fichier de ces producteurs n'est redistribué."
+              ]
+            },
+            "La sélection, la mise en forme et les points « À savoir » rédigés par l'éditeur sont publiés sous Licence Ouverte 2.0 : https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+            "Mention demandée, en plus de la source de chaque chiffre : « Moi Président, Kit de campagne, édition de <mois> <année> ».",
+            "Les données sont des extraits datés, fournis sans garantie d'exactitude ni de mise à jour. Leurs producteurs n'ont ni préparé ni approuvé ce kit."
+          ]
+        },
+        {
+          "title": "2. Illustrations (partie « illustrations »)",
+          "body": [
+            "Les illustrations sont générées par IA ; le manifeste de chaque édition nomme l'outil utilisé. Cette partie couvre aussi les images du dossier illustrations/. Elles sont publiées pour être affichées dans le jeu Moi Président. Le dépôt du kit (github.com/Mitchnsun/kit-de-campagne) n'accorde aucune licence de réutilisation sur elles.",
+            "Les scènes et les personnages sont fictifs. Toute ressemblance avec une personne réelle serait involontaire."
+          ]
+        },
+        {
+          "title": "3. Prompts (dossier prompts/)",
+          "body": [
+            "Les textes du dossier prompts/, le gabarit de prompt et les fiches de génération des images, sont rédigés par l'éditeur et publiés sous Licence Ouverte 2.0 : https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+            "Mention demandée : « Moi Président, Kit de campagne »."
+          ]
+        }
+      ]
     }
   }
 }

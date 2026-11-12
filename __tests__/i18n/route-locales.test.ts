@@ -25,7 +25,11 @@ describe('route languages', () => {
   });
 
   it("keeps Moi Président's legal pages to French and English, whose other languages fall back to English", () => {
-    for (const route of ['/apps/moi-president/privacy', '/apps/moi-president/legal-notice']) {
+    for (const route of [
+      '/apps/moi-president/privacy',
+      '/apps/moi-president/legal-notice',
+      '/apps/moi-president/kit-licences',
+    ]) {
       expect(getRouteLocales(route as RouteKey)).toEqual(['en', 'fr', 'en-CH', 'fr-CH']);
       expect(hasRoute('it-CH', route)).toBe(false);
       expect(redirectsToEnglish(route)).toBe(true);

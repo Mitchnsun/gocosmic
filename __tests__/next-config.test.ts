@@ -103,8 +103,9 @@ describe('next config legacy redirects', () => {
     ]) {
       expect(find(source)).toBeUndefined();
     }
-    // 2 pages × 6 locales: es, de, it and their Swiss versions; all of them temporary.
-    expect(redirects.filter((redirect) => !redirect.permanent)).toHaveLength(2 * 6);
+    expect(find('/de-ch/apps/moi-president/kit-licences')?.destination).toBe('/en-ch/apps/moi-president/kit-licences');
+    // 3 pages × 6 locales: es, de, it and their Swiss versions; all of them temporary.
+    expect(redirects.filter((redirect) => !redirect.permanent)).toHaveLength(3 * 6);
   });
 
   it('no longer redirects the pricing slugs, which lead to the pricing page again', async () => {

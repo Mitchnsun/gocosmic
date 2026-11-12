@@ -217,6 +217,16 @@ export const routing = defineRouting({
       de: '/apps/moi-president/impressum',
       it: '/applicazioni/moi-president/note-legali',
     }),
+
+    // The licences of Moi Président's campaign kit, which the app opens from the kit page, in French and English
+    // (see `ROUTE_FALLBACK_LANGUAGES`); the other languages keep the English last segment, since they redirect
+    '/apps/moi-president/kit-licences': localized({
+      en: '/apps/moi-president/kit-licences',
+      fr: '/applications/moi-president/licences-du-kit',
+      es: '/aplicaciones/moi-president/kit-licences',
+      de: '/apps/moi-president/kit-licences',
+      it: '/applicazioni/moi-president/kit-licences',
+    }),
   },
 });
 
@@ -238,7 +248,7 @@ export const ROUTE_LANGUAGES: Partial<Record<RouteKey, readonly Language[]>> = {
 
 /**
  * Languages of the routes published in some languages only whose other languages redirect to the English page
- * instead of answering with a 404: Moi Président's legal pages, whose URLs go to the app stores (gocosmic#176).
+ * instead of answering with a 404: Moi Président's legal pages, whose URLs go to the app stores and the app (gocosmic#176).
  * `fr` covers `fr-CH` too, and a Swiss locale redirects to `en-CH`, so the region stays (`getFallbackRedirects`,
  * a temporary 307). Each keeps a slug in every language, and stays out of the sitemap, the hreflang links and
  * the language switchers of the other languages, like `ROUTE_LANGUAGES`. English must be among them.
@@ -246,4 +256,5 @@ export const ROUTE_LANGUAGES: Partial<Record<RouteKey, readonly Language[]>> = {
 export const ROUTE_FALLBACK_LANGUAGES: Partial<Record<RouteKey, readonly Language[]>> = {
   '/apps/moi-president/privacy': ['fr', 'en'],
   '/apps/moi-president/legal-notice': ['fr', 'en'],
+  '/apps/moi-president/kit-licences': ['fr', 'en'],
 };

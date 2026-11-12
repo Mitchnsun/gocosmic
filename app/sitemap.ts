@@ -14,6 +14,7 @@ export const UNLISTED_ROUTES: readonly RouteKey[] = [
   '/terms',
   '/apps/moi-president/privacy',
   '/apps/moi-president/legal-notice',
+  '/apps/moi-president/kit-licences',
 ];
 
 /** Date of the deployment, set in `next.config.ts`; falls back to now outside a Next build (tests). */

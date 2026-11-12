@@ -253,6 +253,48 @@
       },
       "legalNoticePrefix": "For the publisher of the game and the notice of its simulation, see the",
       "legalNoticeLink": "Moi Président legal notice"
+    },
+    "kitLicences": {
+      "meta": {
+        "title": "Moi Président campaign kit licences | Cosmic Studio",
+        "description": "The licences of the two parts of the Moi Président campaign kit, the briefing data and the illustrations, and of their prompts."
+      },
+      "title": "Moi Président campaign kit: licences",
+      "updated": "Last updated: 11 November 2026",
+      "intro": "Publisher: Matthieu Compérat, trading as Cosmic Studio\nThe kit repository (github.com/Mitchnsun/kit-de-campagne) and its Releases carry the two parts of the kit and the prompts of its illustrations, under different terms. The manifest of each edition (manifest.json) repeats the credits and the licence of each part; for an edition, its manifest prevails.",
+      "sections": [
+        {
+          "title": "1. Briefing data (part \"briefings\")",
+          "body": [
+            "Each figure keeps the licence of its source. The file of each indicator names the producer, the publication, the licence and the date of each source.",
+            {
+              "items": [
+                "Most French public sources (Insee, ministries, IGN for the ADMIN EXPRESS COG CARTO map) are under the Open Licence 2.0 (Etalab). Any reuse mentions the source and the date of its last update.",
+                "Eurostat data may be reused, commercially too, provided the source is acknowledged (\"Source: Eurostat\") and any changes are indicated. Data that Eurostat attributes to another source may not be reused commercially. https://ec.europa.eu/eurostat/help/copyright-notice",
+                "UNHCR datasets (Refugee Data Finder) are under the Creative Commons Attribution 4.0 International licence (CC BY 4.0), with UNHCR's terms of use for datasets: any reuse credits \"UNHCR Refugee Population Statistics Database\", indicates any changes and links to these terms; it does not suggest that UNHCR takes part in, supports or endorses the game, and uses neither its name nor its emblem as a mark. https://creativecommons.org/licenses/by/4.0/ https://www.unhcr.org/what-we-do/reports-and-publications/data-and-statistics/terms-use-datasets",
+                "Figures from other producers (CITEPA, polling institutes…) are quoted with their source; no file from these producers is redistributed."
+              ]
+            },
+            "The selection, the layout and the \"Good to know\" notes written by the publisher are released under the Open Licence 2.0: https://www.etalab.gouv.fr/wp-content/uploads/2018/11/open-licence.pdf",
+            "Requested attribution, in addition to the source of each figure: \"Moi Président, campaign kit, <month> <year> edition\".",
+            "The data are dated extracts, provided with no warranty of accuracy or of being up to date. Their producers neither prepared nor endorsed this kit."
+          ]
+        },
+        {
+          "title": "2. Illustrations (part \"illustrations\")",
+          "body": [
+            "The illustrations are AI-generated; the manifest of each edition names the tool used. This part also covers the images of the illustrations/ folder. They are published to be shown in the game Moi Président. The kit repository (github.com/Mitchnsun/kit-de-campagne) grants no licence to reuse them.",
+            "The scenes and characters are fictional. Any resemblance to a real person is unintended."
+          ]
+        },
+        {
+          "title": "3. Prompts (folder prompts/)",
+          "body": [
+            "The texts of the prompts/ folder, the prompt template and the generation sheets of the images, are written by the publisher and released under the Open Licence 2.0: https://www.etalab.gouv.fr/wp-content/uploads/2018/11/open-licence.pdf",
+            "Requested attribution: \"Moi Président, campaign kit\"."
+          ]
+        }
+      ]
     }
   }
 }

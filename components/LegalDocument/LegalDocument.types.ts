@@ -1,7 +1,10 @@
 import type { ReactNode } from 'react';
 
-/** A paragraph: plain text, or text opened by a few words in bold (`lead`), as the app legal notices write them. */
-export type LegalParagraph = string | { lead?: string; text: string };
+/**
+ * A paragraph: plain text, text opened by a few words in bold (`lead`), as the app legal notices write them, or a
+ * bulleted list (`items`), as a licence file writes one.
+ */
+export type LegalParagraph = string | { lead?: string; text: string } | { items: readonly string[] };
 
 /** A link under a section's paragraphs; a site opens in a new tab, an email address in the mail app. */
 export interface LegalLink {

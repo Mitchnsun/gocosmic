@@ -1,6 +1,9 @@
 import { createTranslator } from 'next-intl';
 import { vi } from 'vitest';
 
+import MoiPresidentKitLicencesPage, {
+  generateMetadata as kitLicencesMetadata,
+} from '@/app/[locale]/apps/moi-president/kit-licences/page';
 import MoiPresidentLegalNoticePage, {
   generateMetadata as legalNoticeMetadata,
 } from '@/app/[locale]/apps/moi-president/legal-notice/page';
@@ -168,6 +171,40 @@ describe('Moi Président legal notice', () => {
   });
 });
 
+describe('Moi Président campaign kit licences', () => {
+  it("shows the kit repository's licence, its repository named, with its lists and links", async () => {
+    const { getByRole, getAllByRole, getByText } = render(await MoiPresidentKitLicencesPage(params('fr')));
+
+    expect(
+      getByRole('heading', { level: 1, name: /^Kit de campagne de Moi Président\s:\slicences$/ })
+    ).toBeInTheDocument();
+    expect(getByText(/^Éditeur : Matthieu Compérat, sous le nom commercial Cosmic Studio/)).toHaveTextContent(
+      'Le dépôt du kit (github.com/Mitchnsun/kit-de-campagne) et ses Releases portent'
+    );
+    // The French text keeps non-breaking spaces around its guillemets and before its colons.
+    expect(getAllByRole('heading', { level: 2 }).map((heading) => heading.textContent.replace(/\s/g, ' '))).toEqual([
+      '1. Données des Dossiers (partie « briefings »)',
+      '2. Illustrations (partie « illustrations »)',
+      '3. Prompts (dossier prompts/)',
+    ]);
+    expect(getAllByRole('listitem')).toHaveLength(4);
+    expect(getByText(/édition de <mois> <année>/)).toBeInTheDocument();
+    expect(getAllByRole('link', { name: 'https://www.data.gouv.fr/pages/legal/licences/etalab-2.0' })).toHaveLength(2);
+  });
+
+  it('is in English too, and stays out of search results', async () => {
+    const { getByRole, getByText } = render(await MoiPresidentKitLicencesPage(params('en-CH')));
+    const metadata = await kitLicencesMetadata(params('en'));
+
+    expect(getByRole('heading', { level: 1, name: 'Moi Président campaign kit: licences' })).toBeInTheDocument();
+    expect(
+      getByText(/The kit repository \(github\.com\/Mitchnsun\/kit-de-campagne\) grants no licence/)
+    ).toBeInTheDocument();
+    expect(metadata.robots).toEqual({ index: false, follow: true });
+    expect(metadata.alternates?.canonical).toBe('https://www.gocosmic.dev/en/apps/moi-president/kit-licences');
+  });
+});
+
 describe("Moi Président's legal pages in another language", () => {
   beforeEach(() => {
     vi.mocked(redirect).mockImplementation(() => {
@@ -178,8 +215,10 @@ describe("Moi Président's legal pages in another language", () => {
   it('redirect the page and its metadata to the English version, in the same region', async () => {
     await expect(MoiPresidentLegalNoticePage(params('de'))).rejects.toThrow('NEXT_REDIRECT');
     await expect(privacyMetadata(params('es-CH'))).rejects.toThrow('NEXT_REDIRECT');
+    await expect(MoiPresidentKitLicencesPage(params('it'))).rejects.toThrow('NEXT_REDIRECT');
 
     expect(redirect).toHaveBeenNthCalledWith(1, { href: '/apps/moi-president/legal-notice', locale: 'en' });
     expect(redirect).toHaveBeenNthCalledWith(2, { href: '/apps/moi-president/privacy', locale: 'en-CH' });
+    expect(redirect).toHaveBeenNthCalledWith(3, { href: '/apps/moi-president/kit-licences', locale: 'en' });
   });
 });

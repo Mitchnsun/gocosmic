@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Added
 
 - A page for Moi Président, the studio's satirical election game, in all five languages: what the game is, the stores it is coming to and how to reach its support
-- The game's privacy policy and legal notice, in French and English, with the notice of its simulation; visitors in Spanish, German or Italian are taken to the English version
+- The game's privacy policy, legal notice and campaign kit licences, in French and English, with the notice of its simulation; visitors in Spanish, German or Italian are taken to the English version
 - A space at the top of the game's page and legal notice to publish, the same day, a correction ordered by the French polling commission
 
 ### Changed
