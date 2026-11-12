@@ -1,8 +1,18 @@
 import type { NextConfig } from 'next';
 
 // Relative imports: `next.config.ts` loads this module before path aliases exist.
-import { getLanguage, getLocalePrefix, type Language, LANGUAGES, LOCALES } from '../i18n/locales';
-import { routing } from '../i18n/routing';
+import {
+  DEFAULT_LANGUAGE,
+  getLanguage,
+  getLocalePrefix,
+  type Language,
+  LANGUAGES,
+  type Locale,
+  LOCALES,
+  localeWithLanguage,
+} from '../i18n/locales';
+import { hasRoute } from '../i18n/route-locales';
+import { ROUTE_FALLBACK_LANGUAGES, type RouteKey, routing } from '../i18n/routing';
 
 type Redirect = Awaited<ReturnType<NonNullable<NextConfig['redirects']>>>[number];
 
@@ -83,4 +93,26 @@ export function getLocalPageRedirects(): Redirect[] {
       permanent: true,
     };
   });
+}
+
+/** URL path of a route in a locale, without the domain: `/fr-ch/applications/moi-president/confidentialite`. */
+function localizedPath(routeKey: RouteKey, locale: Locale): string {
+  const pathnames = routing.pathnames[routeKey];
+  return `${getLocalePrefix(locale)}${typeof pathnames === 'string' ? pathnames : pathnames[locale]}`;
+}
+
+/**
+ * Temporary redirects (307) of the pages published in some languages only whose other languages fall back to
+ * English (`ROUTE_FALLBACK_LANGUAGES`): from each locale the page is not published in to the English page in the
+ * same region, e.g. `/de/apps/moi-president/impressum` → `/en/apps/moi-president/legal-notice` and
+ * `/it-ch/…` → `/en-ch/…`. Temporary, so that a translation can come later without a redirect cached in the way.
+ */
+export function getFallbackRedirects(): Redirect[] {
+  return (Object.keys(ROUTE_FALLBACK_LANGUAGES) as RouteKey[]).flatMap((routeKey) =>
+    LOCALES.filter((locale) => !hasRoute(locale, routeKey)).map((locale) => ({
+      source: localizedPath(routeKey, locale),
+      destination: localizedPath(routeKey, localeWithLanguage(locale, DEFAULT_LANGUAGE)),
+      permanent: false,
+    }))
+  );
 }

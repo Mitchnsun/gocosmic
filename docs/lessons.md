@@ -92,6 +92,14 @@ A nested provider replaces its parent's messages, it does not add to them. A key
 - Call `headers()` or `cookies()` while rendering a page, or skip `setRequestLocale`: the route turns dynamic again (`ƒ` instead of `●` in the `yarn build` output).
 - Reuse a top-level key in two message files: the server merges them and the last one wins. `meta` once sat in four files; `__tests__/i18n/messages.test.ts` now rejects it.
 
+### Past 25 routes, TypeScript stops checking an href object against each route
+
+**Mistake**: Adding Moi Président's three routes took `routing.pathnames` to 27 keys, and `yarn check-types` failed in `useSwitchLocale.ts` on code that had not changed: `{ pathname, query }`, with `pathname` the union of every route key, was no longer assignable to next-intl's typed href.
+
+**Root cause**: TypeScript only checks an object whose property is a union against a union of object types by splitting it into one object per member, and it stops doing so past 25 members.
+
+**Correct pattern**: When the route count crosses 25, a `{ pathname, query }` built from `usePathname()` needs a cast to the router's own parameter type (`Parameters<typeof router.push>[0]`), with a comment saying why. A string href (`router.push(pathname)`) is unaffected.
+
 ## Animations / Reduced Motion
 
 ### Prefer Tailwind `motion-reduce:` variants over `useEffect` + JS state for reduced-motion guards

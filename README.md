@@ -29,6 +29,7 @@ The Cosmic Studio website serves as the primary business interface with the foll
 - **Swiss versions**: every page also exists for Switzerland in each language (`/fr-ch/`, `/de-ch/`, `/it-ch/`, `/en-ch/`, `/es-ch/`), always with the Geneva base and prices in Swiss francs, in Swiss spelling for German (`ss` for `ß`), and linked to the other versions through `hreflang` so that search engines show it to people searching from Switzerland (see `i18n/locales.ts`). The URL decides the version: language-only pages always show the Annecy base and euros, and a footer switch moves between the two versions in the same language
 - **Translated Pathnames**: Route paths are localized for better SEO and UX (e.g., `/en/about` → `/fr/a-propos`, `/en/projects` → `/de/projekte`)
 - **Pages in some languages only**: a page written for French searches is published in French only (`ROUTE_LANGUAGES` in `i18n/routing.ts`, Swiss version included). Elsewhere it answers 404 and stays out of the sitemap and the `hreflang` links; the language switchers open the home page of a language it does not exist in, and links to it only show in French
+- **Pages in French and English, the others redirected**: Moi Président's legal pages are published in French and English only (`ROUTE_FALLBACK_LANGUAGES` in `i18n/routing.ts`). They keep a slug in every language, and Spanish, German and Italian redirect to the English page for now (a temporary 307, Swiss versions to `/en-ch/`); they stay out of those languages' `hreflang` links, and the language switchers offer French and English only
 - **Browser Detection**: Automatic locale detection based on user preferences; visitors located in Switzerland (detected from the Vercel country header) and browsers set to a Swiss locale (e.g. `fr-CH`) land on the Swiss version
 - **Language Switcher**: Intuitive dropdown component with flag icons and current language indication
 - **Namespace Organization**: Translation files are organized by namespace for better maintainability and scalability
@@ -184,13 +185,24 @@ Lead-capture page where a prospect asks for a free mockup of their future websit
 
 Locale-specific landing page targeting local searches for website creation (e.g., `/en/website-design-geneva-annecy`, `/fr/creation-site-internet-geneve-annecy`; the former slugs redirect permanently). It opens with a lead that follows the region (Geneva base on the Swiss version, Annecy otherwise) and the facts line of the homepage, then lists the four areas served and the audiences, shows three recent projects and ends with a call to talk about a project, with the free mockup note.
 
+### Moi Président Pages
+
+The pages of the studio's mobile game, a satirical simulation of a French presidential campaign ([#176](https://github.com/Mitchnsun/gocosmic/issues/176)). The app and its store listings link to them; nothing on the site does yet.
+
+- **Presentation and support** (`/apps/moi-president`, `/fr/applications/moi-president`), in every language: the app icon, what the game is (the opening of its store listing), its genres, its stores to come, and the support address with links to the two legal pages. It is the App Store's support URL, and listed in the sitemap
+- **Privacy policy** (`/apps/moi-president/privacy`, `/fr/applications/moi-president/confidentialite`): the "personal data" of the app's legal notice, one card per paragraph; the privacy URL of both stores
+- **Legal notice** (`/apps/moi-president/legal-notice`, `/fr/applications/moi-president/mentions-legales`): the app's legal notice (the game, its fictional figures, the notice of its simulation under law no. 77-808, its sources, the publisher, liability, terms of use, credits and contact), with a section per published version listing the polls it starts from
+- **Campaign kit licences** (`/apps/moi-president/kit-licences`, `/fr/applications/moi-president/licences-du-kit`): the licences of the kit's briefing data, illustrations and prompts, the `LICENSE` of the kit repository (`Mitchnsun/kit-de-campagne`) word for word, « ce dépôt » named; the manifests of the kit's editions link to it
+
+The legal pages are in French and English only, noindex and out of the sitemap like the site's own. Their texts are the app's (`locales/{fr,en}/legal.ts` in `Mitchnsun/moi-president`) and the kit's `LICENSE`, in `messages/{fr,en}/moi-president-legal.json`; the published versions, their polls and a correction ordered by the Commission des sondages (shown at the top of the presentation page and the legal notice) live in `data/moi-president.ts`.
+
 ### Legal Pages
 
 - **Privacy policy** (`/privacy`): how personal data is handled, visitors' rights and cookies
 - **Legal notice** (`/legal-notice`): publisher, hosting, intellectual property, and the statements on the use of artificial intelligence
 - **Terms of sale** (`/terms`): the subscription's duration, options and cancellation terms, linked from the footer
 
-All three share the `LegalDocument` layout: an introduction, then one card per section.
+All three share the `LegalDocument` layout, with the legal pages of Moi Président: an introduction, then one card per section.
 
 ### Not Found Page
 
@@ -304,7 +316,7 @@ When adding new routes to the application, follow this procedure to maintain int
    }
    ```
 
-3. **Add translations**: Include any new translation keys in all locale message files (`messages/`). A page published in some languages only is declared in `ROUTE_LANGUAGES`, under a single slug, and its messages go in a file of those languages only, listed in `PARTIAL_NAMESPACES` (see `CLAUDE.md`)
+3. **Add translations**: Include any new translation keys in all locale message files (`messages/`). A page published in some languages only is declared in `ROUTE_LANGUAGES`, under a single slug (or in `ROUTE_FALLBACK_LANGUAGES`, with a slug per language, when its other languages redirect to English), and its messages go in a file of those languages only, listed in `PARTIAL_NAMESPACES` (see `CLAUDE.md`)
 
 4. **Update navigation**: If the route needs navigation links, add them to relevant navigation components
 
@@ -465,13 +477,13 @@ For detailed testing guidelines, see [`__tests__/TESTING.md`](./__tests__/TESTIN
 │   ├── info-popover.tsx # "i" button opening a bubble of context on click or tap (Radix Popover)
 │   ├── accent.ts     # `accentClasses(token)` — utilities and RGB channels of an accent token
 │   └── lib/utils.ts  # `cn` helper (clsx + tailwind-merge)
-├── data/             # Static content (`projects.ts` — ordered case-study registry, `story.ts` — milestones of the story page)
+├── data/             # Static content (`projects.ts` — ordered case-study registry, `story.ts` — milestones of the story page, `moi-president.ts` — the game's published versions and their polls)
 ├── lib/              # Shared helpers
 │   ├── contact/      # Contact form email + validation helpers
 │   ├── llms/         # Builders of `/llms.txt` and `/llms-full.txt`
 │   ├── pricing/      # Code handover delay (offers.ts), the full price list (price-list.ts) and the simulation passed to the free mockup form
 │   ├── hooks/        # Shared hooks (e.g. `usePrefersReducedMotion`)
-│   ├── redirects.ts  # Permanent redirects from retired pages to Services
+│   ├── redirects.ts  # Permanent redirects from retired pages, temporary ones from untranslated pages to English
 │   ├── region.ts     # Region (France or Switzerland) and currency
 │   ├── resend.ts     # Resend email client
 │   └── validation/   # Form validation schemas

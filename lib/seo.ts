@@ -4,8 +4,9 @@ import { hasLocale } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
 import { getAlternates } from '@/i18n/canonical';
-import { getLanguage, type Locale } from '@/i18n/locales';
-import { getRouteLocales, hasRoute } from '@/i18n/route-locales';
+import { DEFAULT_LANGUAGE, getLanguage, type Locale, localeWithLanguage } from '@/i18n/locales';
+import { redirect } from '@/i18n/navigation';
+import { getRouteLocales, hasRoute, redirectsToEnglish } from '@/i18n/route-locales';
 import { type RouteKey, routing } from '@/i18n/routing';
 import { BRAND_NAME } from '@/lib/config';
 
@@ -37,11 +38,15 @@ interface PageMetadataInput {
 }
 
 /**
- * Answers with a 404 when a page is not published in this locale (`ROUTE_LANGUAGES`). A page restricted to some
- * languages calls it before rendering; its metadata gets it from `buildPageMetadata`.
+ * Answers with a 404 when a page is not published in this locale (`ROUTE_LANGUAGES`), or redirects to its English
+ * version in the same region when its other languages fall back to English (`ROUTE_FALLBACK_LANGUAGES`; the
+ * redirects of `next.config.ts` usually answer first). A page restricted to some languages calls it before
+ * rendering; its metadata gets it from `buildPageMetadata`.
  */
 export function assertRouteLocale(locale: string, routeKey: RouteKey): void {
-  if (!hasRoute(locale, routeKey)) notFound();
+  if (hasRoute(locale, routeKey)) return;
+  if (redirectsToEnglish(routeKey)) redirect({ href: routeKey, locale: localeWithLanguage(locale, DEFAULT_LANGUAGE) });
+  notFound();
 }
 
 /**

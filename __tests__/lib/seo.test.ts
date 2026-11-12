@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { createTranslator } from 'next-intl';
 import { describe, expect, it, vi } from 'vitest';
 
+import { redirect } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
 import { assertRouteLocale, buildPageMetadata, OG_LOCALES } from '@/lib/seo';
 
@@ -129,5 +130,49 @@ describe('a page published in French only', () => {
       'NEXT_NOT_FOUND'
     );
     expect(notFound).toHaveBeenCalledTimes(2);
+  });
+});
+
+describe('a page whose other languages fall back to English', () => {
+  beforeEach(() => {
+    vi.mocked(redirect).mockImplementation(() => {
+      throw new Error('NEXT_REDIRECT');
+    });
+  });
+
+  afterEach(() => {
+    vi.mocked(redirect).mockReset();
+  });
+
+  it('renders in French and English, Swiss versions included', () => {
+    for (const locale of ['fr', 'fr-CH', 'en', 'en-CH']) {
+      expect(() => assertRouteLocale(locale, '/apps/moi-president/legal-notice')).not.toThrow();
+    }
+    expect(redirect).not.toHaveBeenCalled();
+  });
+
+  it('redirects another language to the English page, in the same region, instead of a 404', () => {
+    expect(() => assertRouteLocale('de', '/apps/moi-president/privacy')).toThrow('NEXT_REDIRECT');
+    expect(() => assertRouteLocale('it-CH', '/apps/moi-president/legal-notice')).toThrow('NEXT_REDIRECT');
+
+    expect(redirect).toHaveBeenNthCalledWith(1, { href: '/apps/moi-president/privacy', locale: 'en' });
+    expect(redirect).toHaveBeenNthCalledWith(2, { href: '/apps/moi-president/legal-notice', locale: 'en-CH' });
+  });
+
+  it('declares French and English only as hreflang alternates, English as the default', async () => {
+    const metadata = await buildPageMetadata({
+      locale: 'fr',
+      routeKey: '/apps/moi-president/legal-notice',
+      title: 'T',
+      description: 'D',
+    });
+
+    expect(metadata.alternates?.languages).toEqual({
+      en: 'https://www.gocosmic.dev/en/apps/moi-president/legal-notice',
+      fr: 'https://www.gocosmic.dev/fr/applications/moi-president/mentions-legales',
+      'en-CH': 'https://www.gocosmic.dev/en-ch/apps/moi-president/legal-notice',
+      'fr-CH': 'https://www.gocosmic.dev/fr-ch/applications/moi-president/mentions-legales',
+      'x-default': 'https://www.gocosmic.dev/en/apps/moi-president/legal-notice',
+    });
   });
 });

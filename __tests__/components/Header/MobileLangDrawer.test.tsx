@@ -7,11 +7,27 @@ import MobileLangDrawer from '@/components/Header/MobileLangDrawer';
 import navigation from '../../../messages/en/navigation.json';
 import { render, screen } from '../../test-utils';
 
+let mockPathname = '/en';
+vi.mock('@/i18n/navigation', () => ({
+  useRouter: () => ({ push: vi.fn() }),
+  usePathname: () => mockPathname,
+}));
+
 describe('MobileLangDrawer', () => {
   const onClose = vi.fn();
 
   beforeEach(() => {
     onClose.mockClear();
+    mockPathname = '/en';
+  });
+
+  it('offers only French and English on a page whose other languages fall back to English', () => {
+    mockPathname = '/apps/moi-president/privacy';
+    render(<MobileLangDrawer onClose={onClose} />);
+
+    expect(screen.getByRole('button', { name: /english/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /français/i })).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /deutsch/i })).not.toBeInTheDocument();
   });
 
   it('renders as a dialog', () => {

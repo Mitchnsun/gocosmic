@@ -1,8 +1,10 @@
 import { STORY_MILESTONES } from '@/data/story';
+import { buildMoiPresidentSection } from '@/lib/llms/full/moi-president';
 import { AGENT_USAGE } from '@/lib/llms/llms.shared';
 import { buildLlmsFull } from '@/lib/llms/llms-full';
 
 import legal from '../../../messages/en/legal.json';
+import { CORRECTION, RELEASES } from '../../moi-president-fixtures';
 
 const BOOKING_URL = 'https://calendar.google.com/calendar/appointments/schedules/abc?gv=true';
 
@@ -34,6 +36,7 @@ describe('buildLlmsFull', () => {
       '## [About](https://www.gocosmic.dev/en/about)',
       '## [Story](https://www.gocosmic.dev/en/story)',
       '## [Website design · Geneva, Annecy](https://www.gocosmic.dev/en/website-design-geneva-annecy)',
+      '## [Moi Président](https://www.gocosmic.dev/en/apps/moi-president)',
       '## [Création de site vitrine](https://www.gocosmic.dev/fr/creation-site-vitrine)',
       "## [Création d'application](https://www.gocosmic.dev/fr/creation-application)",
       '## [Refonte de site internet](https://www.gocosmic.dev/fr/refonte-site-internet)',
@@ -270,5 +273,35 @@ describe('buildLlmsFull', () => {
 
   it('leaves no markup or placeholder of the messages', () => {
     expect(text).not.toMatch(/<\/?(em|link)>|\{\w+\}/);
+  });
+
+  it("presents the studio's game and its support, with no version before the first store release", () => {
+    const game = text.slice(text.indexOf('## [Moi Président]'), text.indexOf('## [Création de site vitrine]'));
+
+    expect(game).toContain(
+      'Mobile game · iOS and Android. A satirical simulation game. The characters and the parties are fictional and parodic;'
+    );
+    expect(game).toContain('Games · Role-playing · Strategy. Coming soon to the App Store and Google Play.');
+    expect(game).toContain(
+      'For a question, a problem or a remark about the game, write to us. [Write to support@gocosmic.dev](mailto:support@gocosmic.dev)'
+    );
+    expect(game).not.toContain('### ');
+  });
+
+  it('gives each published version of the game the mentions of the polls it starts from, and a correction first', () => {
+    const game = buildMoiPresidentSection(RELEASES, CORRECTION);
+
+    expect(game).toMatch(
+      /^## \[Moi Président\]\(.+\)\n\n### Correction\n\nPublished on 12 April 2027\n\nText of the correction\./
+    );
+    expect(game).toContain(
+      '### Version 1.1.0, published on 2 March 2027\n\nData frozen in version 1.1.0 of the game.\n\n[The notice of this simulation](https://www.commission-des-sondages.fr/notices/example-1.1.0.pdf)\n\n#### Source polls\n\n- **Institut A, Journal B, Radio C**: Fieldwork: from 12 January 2027 to 14 January 2027.'
+    );
+    expect(game).toContain(
+      "Margins of error: Entre 1,4 et 3,1 points [The poll's notice](https://www.commission-des-sondages.fr/notices/example-poll.pdf)"
+    );
+    expect(game).toContain(
+      '### Version 1.0.0, published on 10 February 2027\n\nData frozen in version 1.0.0 of the game.'
+    );
   });
 });
