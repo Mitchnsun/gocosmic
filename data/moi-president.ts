@@ -73,17 +73,28 @@ export function getFiledNoticeUrl(releases: readonly AppRelease[] = MOI_PRESIDEN
   return releases[0]?.noticeUrl;
 }
 
+/** A version of the game's terms of use and the day it applies from. */
+export interface TermsVersion {
+  version: number;
+  effective: string;
+}
+
 /**
- * The versions of the game's terms of use, the one in force first, each with the day it applies from, as the app's
- * `TERMS_VERSION` (Mitchnsun/moi-president#512). A new version goes first; the text of the one it replaces moves to
- * a page of its own, frozen, so that every version stays readable (art. 10 of the terms).
+ * The versions of the game's terms of use, the one in force first, as the app's `TERMS_VERSION`
+ * (Mitchnsun/moi-president#512). Never empty. The previous versions stay readable on the site (art. 9 of the
+ * terms): when version 2 comes, the text of version 1 is to be kept on a frozen page of its own, which does not
+ * exist yet since there is no previous version.
  */
-export const MOI_PRESIDENT_TERMS_VERSIONS: readonly { version: number; effective: string }[] = [
+export const MOI_PRESIDENT_TERMS_VERSIONS: readonly [TermsVersion, ...TermsVersion[]] = [
   { version: 1, effective: '2026-11-25' },
 ];
 
-/** The day each of the game's other legal documents last changed, as the app's `LEGAL_NOTICE_UPDATED` and `PRIVACY_UPDATED`. */
+/**
+ * The day each of the game's other legal pages last changed: the legal notice and the privacy policy as the app's
+ * `LEGAL_NOTICE_UPDATED` and `PRIVACY_UPDATED`; « À propos du jeu », whose texts are those of the former legal notice.
+ */
 export const MOI_PRESIDENT_LEGAL_DATES = {
   legalNotice: '2026-11-25',
   privacy: '2026-11-25',
+  about: '2026-11-11',
 } as const;

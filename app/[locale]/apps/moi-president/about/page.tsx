@@ -8,10 +8,11 @@ import {
   buildLegalPointer,
   buildReleaseNotices,
   CorrectionNotice,
+  formatDocumentDate,
   LegalPagePointer,
   ReleaseNotice,
 } from '@/components/MoiPresident';
-import { MOI_PRESIDENT_CORRECTION } from '@/data/moi-president';
+import { MOI_PRESIDENT_CORRECTION, MOI_PRESIDENT_LEGAL_DATES } from '@/data/moi-president';
 import { assertRouteLocale, buildPageMetadata } from '@/lib/seo';
 
 const ROUTE = '/apps/moi-president/about';
@@ -51,7 +52,7 @@ export default async function MoiPresidentAboutPage({ params }: { params: Promis
     <LegalDocument
       eyebrow={t('eyebrow')}
       title={t('about.title')}
-      updated={t('about.updated')}
+      updated={formatDocumentDate(t, 'about', MOI_PRESIDENT_LEGAL_DATES.about, locale)}
       intro={t('about.intro')}
       sections={sections}
       banner={correction && <CorrectionNotice {...correction} />}>

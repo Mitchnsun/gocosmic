@@ -382,7 +382,7 @@
         "description": "Ce que le jeu Moi Président est et n'est pas, ses chiffres fictifs, la notice de sa simulation, ses sources et ses crédits."
       },
       "title": "À propos du jeu",
-      "updated": "Dernière mise à jour : 11 novembre 2026",
+      "version": "Mise à jour le {date}",
       "intro": "Ce que le jeu est et n'est pas, d'où viennent ses chiffres, et les crédits de ses polices et bibliothèques.",
       "sections": {
         "game": {

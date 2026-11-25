@@ -1,6 +1,6 @@
 export { CorrectionNotice } from './CorrectionNotice';
 export { buildCorrection } from './CorrectionNotice.utils';
-export { buildLegalPointer, formatDocumentDate } from './LegalPage.utils';
+export { buildLegalPointer, buildTermsVersions, formatDocumentDate } from './LegalPage.utils';
 export { LegalPagePointer } from './LegalPagePointer';
 export {
   ABOUT_SECTIONS,

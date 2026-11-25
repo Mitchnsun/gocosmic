@@ -10,6 +10,7 @@ import {
   buildPrivacySections,
   buildReleaseNotices,
   buildTermsSections,
+  buildTermsVersions,
   formatDocumentDate,
   LEGAL_NOTICE_SECTIONS,
   PRIVACY_SECTIONS,
@@ -154,6 +155,19 @@ describe('legal pointer and dates', () => {
         { label: 'À propos du jeu', href: '/apps/moi-president/about' },
       ],
     });
+  });
+
+  it('lists every version of the terms, the one in force first and said so', () => {
+    const { current, section } = buildTermsVersions(legal('en'), 'en', [
+      { version: 2, effective: '2027-03-01' },
+      { version: 1, effective: '2026-11-25' },
+    ]);
+
+    expect(current).toEqual({ version: 2, date: '1 March 2027' });
+    expect(section.body).toEqual([
+      'Version 2, in force since 1 March 2027 (version in force)',
+      'Version 1, in force since 25 November 2026',
+    ]);
   });
 
   it('dates a document as the app does', () => {

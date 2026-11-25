@@ -382,7 +382,7 @@
         "description": "What the game Moi Président is and is not, its fictional figures, the notice of its simulation, its sources and its credits."
       },
       "title": "About the game",
-      "updated": "Last updated: 11 November 2026",
+      "version": "Updated on {date}",
       "intro": "What the game is and is not, where its figures come from, and the credits of its fonts and libraries.",
       "sections": {
         "game": {
