@@ -42,18 +42,14 @@ export default async function MoiPresidentPage({ params }: { params: Promise<{ l
         title={t('support.title')}
         lead={t('support.lead')}
         email={{ label: t('support.email'), href: MOI_PRESIDENT_LINKS.email }}
-        legalLinks={[
-          {
-            label: t('support.privacy'),
-            href: '/apps/moi-president/privacy',
-            locale: legalLocale('/apps/moi-president/privacy'),
-          },
-          {
-            label: t('support.legal_notice'),
-            href: '/apps/moi-president/legal-notice',
-            locale: legalLocale('/apps/moi-president/legal-notice'),
-          },
-        ]}
+        legalLinks={(
+          [
+            ['legal_notice', '/apps/moi-president/legal-notice'],
+            ['terms', '/apps/moi-president/terms'],
+            ['privacy', '/apps/moi-president/privacy'],
+            ['about', '/apps/moi-president/about'],
+          ] as const
+        ).map(([key, href]) => ({ label: t(`support.${key}`), href, locale: legalLocale(href) }))}
         locale={locale}
       />
     </>

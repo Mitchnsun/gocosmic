@@ -1,20 +1,389 @@
 {
   "moiPresidentLegal": {
     "eyebrow": "Moi Président",
-    "updated": "Last updated: 11 November 2026",
     "links": {
       "commission": "commission-des-sondages.fr",
       "cnil": "cnil.fr",
       "pfpdt": "The FDPIC (edoeb.admin.ch)",
-      "email": "Write to support@gocosmic.dev"
+      "email": "Write to support@gocosmic.dev",
+      "appleEula": "Apple’s standard licence agreement",
+      "githubPrivacy": "GitHub’s privacy statement"
     },
+    "documents": "The other documents of Moi Président:",
     "legalNotice": {
       "meta": {
         "title": "Moi Président legal notice | Cosmic Studio",
-        "description": "Publisher, what the game is, its fictional figures and the notice of its simulation, terms of use and contact of Moi Président, Cosmic Studio's mobile game."
+        "description": "Publisher, publication director, hosts, distribution and right of reply of the game Moi Président."
       },
       "title": "Legal notice",
-      "intro": "Who publishes Moi Président, what the game is and is not, and what it does with your data.",
+      "version": "Updated on {date}",
+      "sections": {
+        "publisher": {
+          "title": "Publisher",
+          "paragraphs": [
+            {
+              "text": "Matthieu Compérat, a sole proprietorship trading as Cosmic Studio, based in Chêne-Bougeries (Switzerland); email: support@gocosmic.dev."
+            }
+          ]
+        },
+        "director": {
+          "title": "Publication director",
+          "paragraphs": [
+            {
+              "text": "Matthieu Compérat."
+            }
+          ]
+        },
+        "hosts": {
+          "title": "Hosts",
+          "paragraphs": [
+            {
+              "lead": "The web pages:",
+              "text": "Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, United States. No public telephone number; contact: privacy@vercel.com."
+            },
+            {
+              "lead": "The campaign kit:",
+              "text": "GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States. No public telephone number; contact: privacy@github.com."
+            }
+          ]
+        },
+        "distribution": {
+          "title": "Distribution",
+          "paragraphs": [
+            {
+              "text": "App Store (Apple) and Google Play (Google)."
+            }
+          ]
+        },
+        "reply": {
+          "title": "Right of reply and reports",
+          "paragraphs": [
+            {
+              "lead": "The right of reply.",
+              "text": "Anyone named or referred to in the game has a right of reply. They exercise it within three months of the content being made available to the public, by writing to support@gocosmic.dev. The reply is inserted within three days of its receipt."
+            },
+            {
+              "lead": "Reports.",
+              "text": "To report a content, or to ask for it to be corrected or removed, write to the same address."
+            }
+          ]
+        }
+      }
+    },
+    "terms": {
+      "meta": {
+        "title": "Moi Président terms of use | Cosmic Studio",
+        "description": "The terms of use of the game Moi Président: licence, rules of use, liability, changes, governing law."
+      },
+      "title": "Terms of use",
+      "version": "Version {version}, in force since {date}",
+      "sections": {
+        "preamble": {
+          "title": "Preamble",
+          "paragraphs": [
+            {
+              "text": "These terms of use (“the terms”) govern the use of the game Moi Président (“the game”). They are published as version {version}, in force since {date}."
+            },
+            {
+              "lead": "The publisher.",
+              "text": "The game is published by Matthieu Compérat, a sole proprietorship trading as Cosmic Studio, based in Chêne-Bougeries (Switzerland) (“the publisher”); email: support@gocosmic.dev."
+            },
+            {
+              "lead": "The parties.",
+              "text": "These terms are a contract between the publisher and you, the person who uses the game. Apple and Google, who distribute the game in their app stores, are not parties to it."
+            },
+            {
+              "lead": "Acceptance.",
+              "text": "To use the game, you accept these terms at the first launch, by ticking the box provided for that purpose. Until you have accepted them, the game cannot be used."
+            },
+            {
+              "lead": "Language.",
+              "text": "These terms are written in French and translated into English. Where the two versions differ, the French version prevails."
+            }
+          ]
+        },
+        "object": {
+          "title": "Purpose and nature of the game",
+          "paragraphs": [
+            {
+              "text": "Moi Président is a satirical simulation game: a humorous and parodic work of fiction, loosely inspired by political news. The opponents, the parties, the events and the dialogues are fictional, and the names of the opponents and the parties are deliberately twisted."
+            },
+            {
+              "text": "The game’s polls, scores and results come from a simulation. They have no predictive value and measure nobody’s opinion. The game gives no voting instruction."
+            },
+            {
+              "text": "The game is not affiliated with any governmental organisation, political party or activist association, and is neither endorsed nor funded by any of them."
+            }
+          ]
+        },
+        "access": {
+          "title": "Access and age",
+          "paragraphs": [
+            {
+              "text": "The game is free and is used without an account."
+            },
+            {
+              "text": "Its minimum age is that of the app stores’ ratings: PEGI 7 on Google Play and 13+ on the App Store. These ratings may vary from country to country."
+            }
+          ]
+        },
+        "licence": {
+          "title": "Licence of use",
+          "paragraphs": [
+            {
+              "text": "The publisher grants you a personal, non-exclusive and non-transferable licence to use the game, on your devices, for non-commercial use. This licence does not allow you to copy, decompile or redistribute the game."
+            }
+          ]
+        },
+        "usage": {
+          "title": "Rules of use",
+          "paragraphs": [
+            {
+              "text": "Do not use the game or its screenshots to mislead about reality: do not present them as a real poll, a real result or a real statement by a candidate. Do not present the game as an official service or as electoral propaganda."
+            },
+            {
+              "text": "Using the game against these rules ends your right to use it. It carries no financial penalty."
+            }
+          ]
+        },
+        "property": {
+          "title": "Intellectual property and third-party elements",
+          "paragraphs": [
+            {
+              "text": "The game, its texts, its illustrations and its logo are protected. Third-party fonts, icons and libraries are used under their licences, listed in “Credits and licences”."
+            },
+            {
+              "lead": "People parodied.",
+              "text": "Anyone named, referred to or parodied in the game may ask for a content to be corrected or removed by writing to support@gocosmic.dev. The publisher examines each request and, if it grants it, publishes the correction in an update of the game."
+            }
+          ]
+        },
+        "thirdParties": {
+          "title": "Third-party services and links",
+          "paragraphs": [
+            {
+              "lead": "The campaign kit.",
+              "text": "The campaign kit is optional. It is downloaded only at your request, from GitHub, a service of GitHub, Inc."
+            },
+            {
+              "lead": "Links to sources.",
+              "text": "The game’s links to its sources open third-party sites in your browser. These sites have their own terms and their own privacy policy."
+            }
+          ]
+        },
+        "data": {
+          "title": "Personal data",
+          "paragraphs": [
+            {
+              "text": "The privacy policy describes what the game does with your data: it stays on your device. Your acceptance of these terms is stored on your device only."
+            }
+          ]
+        },
+        "liability": {
+          "title": "Availability and liability",
+          "paragraphs": [
+            {
+              "text": "The game is provided free of charge, for entertainment. The publisher strives to correct it, without being able to guarantee that it is free of errors, that it works without interruption or that it remains available in the app stores."
+            },
+            {
+              "text": "The publisher is not liable for the consequences of using the game against article 4, nor for the content of the third-party sites the game links to."
+            },
+            {
+              "text": "Nothing in these terms excludes or limits the publisher’s liability for personal injury, gross negligence or fraud, nor any right that the law grants consumers and that a contract cannot set aside."
+            }
+          ]
+        },
+        "changes": {
+          "title": "Changes to the terms",
+          "paragraphs": [
+            {
+              "lead": "Reasons.",
+              "text": "The publisher may change these terms for one of these reasons only: a change in the law or in case law, the decision of an authority, a change in the app stores’ rules, or a new feature of the game."
+            },
+            {
+              "lead": "Notice.",
+              "text": "A new version is shown to you in the game before it applies, with a summary of its changes."
+            },
+            {
+              "lead": "A new acceptance.",
+              "text": "A significant change applies only once you have accepted it, in the same way as at the first launch. Continuing to play does not count as acceptance. Until then, your campaign stays on your device, but the game can no longer be used. A minor correction, which changes neither your rights nor your obligations, does not require a new acceptance."
+            },
+            {
+              "lead": "Previous versions.",
+              "text": "The previous versions of these terms can still be read on the publisher’s site."
+            }
+          ]
+        },
+        "term": {
+          "title": "Duration and end",
+          "paragraphs": [
+            {
+              "text": "These terms apply as long as the game is installed on your device. You may end them at any time by uninstalling the game, which erases all its data from your device."
+            }
+          ]
+        },
+        "law": {
+          "title": "Governing law and jurisdiction",
+          "paragraphs": [
+            {
+              "lead": "Governing law.",
+              "text": "These terms are governed by Swiss law. If you accept them as a consumer living in another country, this choice does not deprive you of the protection of the mandatory provisions of the law of your country of residence: in France, for example, those of the Code de la consommation."
+            },
+            {
+              "lead": "Jurisdiction.",
+              "text": "The courts of Geneva (Switzerland) have jurisdiction. If you act as a consumer, you may also bring a case before the courts of your place of residence, and the publisher may bring a case against you only before them."
+            },
+            {
+              "lead": "Mediation.",
+              "text": "No consumer mediator has been appointed to date. These terms do not deprive you of any right to go to court."
+            }
+          ]
+        },
+        "severability": {
+          "title": "Severability and language",
+          "paragraphs": [
+            {
+              "text": "If a clause of these terms is held void or unenforceable, the others remain in force. Where the French and the English versions differ, the French version prevails."
+            }
+          ]
+        },
+        "stores": {
+          "title": "The stores’ licence agreement",
+          "paragraphs": [
+            {
+              "lead": "The App Store.",
+              "text": "If you obtained the game from the App Store, Apple’s standard licence agreement for apps (Licensed Application End User License Agreement) applies in addition to these terms. Where the two conflict, the provision more favourable to you prevails."
+            },
+            {
+              "lead": "Google Play.",
+              "text": "If you obtained the game from Google Play, these terms apply alone."
+            }
+          ]
+        }
+      },
+      "versions": {
+        "title": "Versions of these terms",
+        "item": "Version {version}, in force since {date}",
+        "current": "version in force"
+      }
+    },
+    "privacy": {
+      "meta": {
+        "title": "Moi Président privacy | Cosmic Studio",
+        "description": "Moi Président sends no data to the publisher: everything stays on your device, and deleting the app erases it all."
+      },
+      "title": "Privacy policy",
+      "version": "Updated on {date}",
+      "sections": {
+        "summary": {
+          "title": "In short",
+          "paragraphs": [
+            {
+              "text": "The publisher stores no data about you. Everything the game keeps stays on your device, and deleting the app erases it all."
+            }
+          ]
+        },
+        "who": {
+          "title": "Who publishes the game",
+          "paragraphs": [
+            {
+              "text": "The game Moi Président is published by Matthieu Compérat, a sole proprietorship trading as Cosmic Studio, based in Chêne-Bougeries (Switzerland); email: support@gocosmic.dev."
+            }
+          ]
+        },
+        "nothingSent": {
+          "title": "Nothing is sent to the publisher",
+          "paragraphs": [
+            {
+              "text": "The game works offline, and no server of the publisher hosts it. It has no account, no advertising, no audience measurement and no crash reporting. It sends the publisher no data about you."
+            }
+          ]
+        },
+        "onDevice": {
+          "title": "What stays on your device",
+          "paragraphs": [
+            {
+              "text": "The game stores on your device, and nowhere else: the name you choose, your campaign in progress, the history of your past campaigns, your progress and your decorations, your favourites in the Dossiers, your settings (language, theme, title of the game, the team’s note) and the screens already seen. The campaign kit, if you install it, is stored there too."
+            }
+          ]
+        },
+        "backups": {
+          "title": "System backups",
+          "paragraphs": [
+            {
+              "text": "The game asks the system to leave its data out of backups (iCloud, Google account) and out of transfers from one device to another. Your game therefore does not follow you to a new phone."
+            }
+          ]
+        },
+        "erase": {
+          "title": "To erase everything",
+          "paragraphs": [
+            {
+              "text": "Delete the app: all the game’s data are erased with it."
+            }
+          ]
+        },
+        "kit": {
+          "title": "The campaign kit",
+          "paragraphs": [
+            {
+              "text": "The campaign kit is optional: its illustrations and the figures of the Dossiers. The game goes online for it only, and only when you ask: when you agree to download it, open its page, download it or update it."
+            },
+            {
+              "text": "Its files come from GitHub, a service of GitHub, Inc. (United States). Like any server, GitHub then receives your device’s IP address. The game sends no account, identifier or cookie. GitHub publishes no retention period for these data: its privacy statement describes what it does with them."
+            }
+          ]
+        },
+        "links": {
+          "title": "Links",
+          "paragraphs": [
+            {
+              "text": "The links to sources and the other links to a site open that site in your browser. The site then receives what any site you visit receives, and its own privacy policy applies. The support address opens in your mail app."
+            }
+          ]
+        },
+        "permissions": {
+          "title": "Permissions",
+          "paragraphs": [
+            {
+              "text": "The game asks you for no permission: not the camera, your photos, your location, your contacts or notifications."
+            }
+          ]
+        },
+        "website": {
+          "title": "The web page of this policy",
+          "paragraphs": [
+            {
+              "text": "This policy is also published on gocosmic.dev, the publisher’s site, separate from the game and hosted by Vercel Inc. (United States). Like any host, Vercel processes technical data of the visits, including the IP address, for its hosting logs. The site’s privacy policy describes these logs and its audience measurement, loaded only with your consent."
+            }
+          ]
+        },
+        "changes": {
+          "title": "Changes",
+          "paragraphs": [
+            {
+              "text": "If a future feature were to transmit data, this policy would be updated and brought to your attention before it goes live."
+            }
+          ]
+        },
+        "contact": {
+          "title": "Contact and remedies",
+          "paragraphs": [
+            {
+              "text": "For any question, write to support@gocosmic.dev. You may also refer the matter to the Federal Data Protection and Information Commissioner (FDPIC, Switzerland), or to the data protection authority of your country of residence (in France, the CNIL)."
+            }
+          ]
+        }
+      }
+    },
+    "about": {
+      "meta": {
+        "title": "About the game Moi Président | Cosmic Studio",
+        "description": "What the game Moi Président is and is not, its fictional figures, the notice of its simulation, its sources and its credits."
+      },
+      "title": "About the game",
+      "updated": "Last updated: 11 November 2026",
+      "intro": "What the game is and is not, where its figures come from, and the credits of its fonts and libraries.",
       "sections": {
         "game": {
           "title": "The game",
@@ -91,72 +460,6 @@
             }
           ]
         },
-        "publisher": {
-          "title": "Publisher",
-          "paragraphs": [
-            {
-              "lead": "Publisher:",
-              "text": "Matthieu Compérat, sole proprietorship trading as Cosmic Studio, based in Chêne-Bougeries (Switzerland); email: support@gocosmic.dev."
-            },
-            {
-              "lead": "Publication director:",
-              "text": "Matthieu Compérat."
-            },
-            {
-              "lead": "Host of the web pages:",
-              "text": "Vercel Inc., San Francisco, California, USA."
-            },
-            {
-              "lead": "Host of the campaign kit:",
-              "text": "GitHub, Inc., San Francisco, California, USA."
-            },
-            {
-              "lead": "Distribution:",
-              "text": "App Store (Apple) and Google Play (Google). The app works offline and is not hosted on any of the publisher's servers."
-            }
-          ]
-        },
-        "liability": {
-          "title": "Liability",
-          "paragraphs": [
-            {
-              "text": "The game is provided for entertainment. To the extent permitted by law, and without prejudice to the rights the law grants consumers, the publisher does not guarantee that the game is free of errors or available without interruption, and is not liable for indirect damage linked to its use. Nothing in these terms excludes or limits the publisher's liability for personal injury, gross negligence or fraud, nor any right that the law does not allow to be set aside."
-            }
-          ]
-        },
-        "terms": {
-          "title": "Terms of use",
-          "paragraphs": [
-            {
-              "lead": "1. Licence.",
-              "text": "The publisher grants you a personal, non-exclusive and non-transferable licence to use the game, on your devices, for non-commercial use."
-            },
-            {
-              "lead": "2. Prohibited uses.",
-              "text": "Do not copy, decompile or redistribute the game; do not use the game, its screenshots or your poster to mislead about reality (a fake poll, a fake statement by a candidate); do not present the game as an official service or as electoral propaganda."
-            },
-            {
-              "lead": "3. Your poster.",
-              "text": "You choose your name, your photo and your slogan. Use a photo of yourself, or of someone who has consented; do not use the image of a third party or of a political figure without permission. You are responsible for what you share with your device's share menu. The publisher does not receive your photo."
-            },
-            {
-              "lead": "4. Intellectual property.",
-              "text": "The game, its texts, its illustrations and its logo are protected. Third-party elements are used under the licences listed in \"Credits and licences\"."
-            },
-            {
-              "lead": "5. Liability.",
-              "text": "See \"Liability\"."
-            },
-            {
-              "lead": "6. Changes.",
-              "text": "These terms may change with the updates of the game."
-            },
-            {
-              "lead": "7. Apple's licence agreement.",
-              "text": "Apple's standard licence agreement applies in addition, unless these terms provide otherwise."
-            }
-          ]
-        },
         "credits": {
           "title": "Credits and licences",
           "paragraphs": [
@@ -173,86 +476,8 @@
               "text": "React, React Native (© Meta Platforms, Inc. and affiliates), Expo and the other libraries of the game, under the MIT licence or other open-source licences. The full list, with the text of each licence, is on the \"Licences\" page of the app."
             }
           ]
-        },
-        "contact": {
-          "title": "Contact",
-          "paragraphs": [
-            {
-              "text": "support@gocosmic.dev. Anyone named or referred to in the game can ask at this address for a correction, the removal of a content or the insertion of a reply."
-            }
-          ]
         }
-      },
-      "privacyPrefix": "What the game does with your data is described in the",
-      "privacyLink": "Moi Président privacy policy"
-    },
-    "privacy": {
-      "meta": {
-        "title": "Moi Président privacy policy | Cosmic Studio",
-        "description": "Moi Président sends no personal data to the publisher: what the game stores on your device, its permissions, the campaign kit and your recourse."
-      },
-      "title": "Privacy policy",
-      "intro": "This policy explains what the game Moi Président does with your personal data.",
-      "sections": {
-        "data": {
-          "title": "What Moi Président does with your data",
-          "paragraphs": [
-            {
-              "text": "No personal data about you is sent to the publisher: the game has no account, no advertising and no audience measurement. Your candidate name, your photo, your slogan, your poster, your party, your campaign and your preferences (language, theme) are stored only on your device."
-            }
-          ]
-        },
-        "permissions": {
-          "title": "Permissions",
-          "paragraphs": [
-            {
-              "text": "Camera: only to take the photo of your poster, when you ask. You can refuse this access or withdraw it in your device's settings. To choose a photo, the game opens your device's picker: it receives the photo you choose only, with no access to your other photos."
-            }
-          ]
-        },
-        "sharing": {
-          "title": "Sharing",
-          "paragraphs": [
-            {
-              "text": "If you share your poster, the file goes to the app you choose in your device's share menu; the publisher receives no copy."
-            }
-          ]
-        },
-        "deletion": {
-          "title": "Deletion",
-          "paragraphs": [
-            {
-              "text": "You delete your poster in the app; uninstalling the app erases all the data."
-            }
-          ]
-        },
-        "kit": {
-          "title": "Campaign kit",
-          "paragraphs": [
-            {
-              "text": "The kit is optional. The game only connects for it: once, at the start of your first new campaign, to offer it to you; when you open its page, download it or update it; and, once the kit is installed, at most once a week when the game opens, to find out whether a new edition exists. Its files come from GitHub, which then receives the IP address of your device, like any server. The game sends no account, no identifier and no cookie."
-            }
-          ]
-        },
-        "changes": {
-          "title": "Changes",
-          "paragraphs": [
-            {
-              "text": "If a future feature were to transmit data, this policy would be updated before it goes live, and you would be informed."
-            }
-          ]
-        },
-        "contact": {
-          "title": "Contact and recourse",
-          "paragraphs": [
-            {
-              "text": "support@gocosmic.dev. You can refer a matter to the Federal Data Protection and Information Commissioner (FDPIC, Switzerland), or to the data protection authority of your country of residence (in France, the CNIL)."
-            }
-          ]
-        }
-      },
-      "legalNoticePrefix": "For the publisher of the game and the notice of its simulation, see the",
-      "legalNoticeLink": "Moi Président legal notice"
+      }
     },
     "kitLicences": {
       "meta": {

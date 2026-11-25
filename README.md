@@ -189,12 +189,17 @@ Locale-specific landing page targeting local searches for website creation (e.g.
 
 The pages of the studio's mobile game, a satirical simulation of a French presidential campaign ([#176](https://github.com/Mitchnsun/gocosmic/issues/176)). The app and its store listings link to them; nothing on the site does yet.
 
-- **Presentation and support** (`/apps/moi-president`, `/fr/applications/moi-president`), in every language: the app icon, what the game is (the opening of its store listing), its genres, its stores to come, and the support address with links to the two legal pages. It is the App Store's support URL, and listed in the sitemap
-- **Privacy policy** (`/apps/moi-president/privacy`, `/fr/applications/moi-president/confidentialite`): the "personal data" of the app's legal notice, one card per paragraph; the privacy URL of both stores
-- **Legal notice** (`/apps/moi-president/legal-notice`, `/fr/applications/moi-president/mentions-legales`): the app's legal notice (the game, its fictional figures, the notice of its simulation under law no. 77-808, its sources, the publisher, liability, terms of use, credits and contact), with a section per published version listing the polls it starts from
+- **Presentation and support** (`/apps/moi-president`, `/fr/applications/moi-president`), in every language: the app icon, what the game is (the opening of its store listing), its genres, its stores to come, and the support address with links to its legal pages. It is the App Store's support URL, and listed in the sitemap
+- **Legal notice** (`/apps/moi-president/legal-notice`, `/fr/applications/moi-president/mentions-legales`): the app's legal notice (Mitchnsun/moi-president#514), art. 1-1 of the LCEN: the publisher, the publication director, the hosts, the distribution and the right of reply
+- **Terms of use** (`/apps/moi-president/terms`, `/fr/applications/moi-president/conditions-utilisation`): the app's terms (Mitchnsun/moi-president#512), a preamble and thirteen numbered articles, the version in force and its date (`MOI_PRESIDENT_TERMS_VERSIONS`, as the app's `TERMS_VERSION`), then the list of every version; a version replaced keeps its text on a frozen page of its own
+- **Privacy policy** (`/apps/moi-president/privacy`, `/fr/applications/moi-president/confidentialite`): the app's privacy policy (Mitchnsun/moi-president#513), one card per section; the privacy URL of both stores
+- **About the game** (`/apps/moi-president/about`, `/fr/applications/moi-president/a-propos`): the sections that left the app's legal notice for « À propos du jeu » (the game, its fictional figures, the notice of its simulation under law no. 77-808, its sources, the credits), with a section per published version listing the polls it starts from
+
+Each of these four pages ends with links to the three others, in the app's order.
+
 - **Campaign kit licences** (`/apps/moi-president/kit-licences`, `/fr/applications/moi-president/licences-du-kit`): the licences of the kit's briefing data, illustrations and prompts, the `LICENSE` of the kit repository (`Mitchnsun/kit-de-campagne`) word for word, « ce dépôt » named; the manifests of the kit's editions link to it
 
-The legal pages are in French and English only, noindex and out of the sitemap like the site's own. Their texts are the app's (`locales/{fr,en}/legal.ts` in `Mitchnsun/moi-president`) and the kit's `LICENSE`, in `messages/{fr,en}/moi-president-legal.json`; the published versions, their polls and a correction ordered by the Commission des sondages (shown at the top of the presentation page and the legal notice) live in `data/moi-president.ts`.
+The legal pages are in French and English only, noindex and out of the sitemap like the site's own. Their texts are the app's (`locales/{fr,en}/legal.ts` in `Mitchnsun/moi-president`) and the kit's `LICENSE`, in `messages/{fr,en}/moi-president-legal.json`; the published versions, their polls and a correction ordered by the Commission des sondages (shown at the top of the presentation page and of « About the game ») live in `data/moi-president.ts`.
 
 ### Legal Pages
 

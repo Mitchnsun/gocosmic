@@ -34,5 +34,15 @@ export interface ReleaseNoticeProps {
   noticeLink?: ExternalLink;
 }
 
-/** The game's two legal pages, published in French and English (`ROUTE_FALLBACK_LANGUAGES`). */
-export type MoiPresidentLegalRoute = '/apps/moi-president/privacy' | '/apps/moi-president/legal-notice';
+/**
+ * The game's legal pages, published in French and English (`ROUTE_FALLBACK_LANGUAGES`): its three documents
+ * (Mitchnsun/moi-president#511) and « À propos du jeu », the sections that left its legal notice.
+ */
+export type MoiPresidentLegalRoute =
+  | '/apps/moi-president/legal-notice'
+  | '/apps/moi-president/terms'
+  | '/apps/moi-president/privacy'
+  | '/apps/moi-president/about';
+
+/** A legal page of the game, as its messages name it (`moiPresidentLegal.<page>`). */
+export type MoiPresidentLegalPage = 'legalNotice' | 'terms' | 'privacy' | 'about';

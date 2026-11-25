@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.8.0] - 2026-11-25
+
+### Added
+
+- The terms of use of Moi Président, in French and English, with the version in force and the list of every version
+- A page "About the game" for Moi Président, with what the game is, its fictional figures, the notice of its simulation, its sources and its credits
+
+### Changed
+
+- Moi Président's legal notice now holds only who publishes the game, who hosts it and how to ask for a reply, and its privacy policy says that nothing leaves the phone
+- Each of the game's legal pages links to the others, and its support section links to all four
+
 ## [2.7.0] - 2026-11-12
 
 ### Added

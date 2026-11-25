@@ -14,6 +14,8 @@ export const UNLISTED_ROUTES: readonly RouteKey[] = [
   '/terms',
   '/apps/moi-president/privacy',
   '/apps/moi-president/legal-notice',
+  '/apps/moi-president/terms',
+  '/apps/moi-president/about',
   '/apps/moi-president/kit-licences',
 ];
 

@@ -12,7 +12,8 @@ interface LegalDocumentProps {
   title: string;
   /** "Last updated" line under the title. */
   updated: string;
-  intro: string;
+  /** Lead under the date line; a document of the game's has none, as in the app. */
+  intro?: string;
   sections: readonly LegalSection[];
   /** Block between the intro and the sections, e.g. a correction to publish at the top of the page. */
   banner?: ReactNode;
@@ -38,7 +39,9 @@ export function LegalDocument({ eyebrow, title, updated, intro, sections, banner
           />
           <p className="text-fg-3 text-2xs font-mono tracking-[0.16em] uppercase">{updated}</p>
           {/* A line break in the intro starts a new line, e.g. after the publisher of a licence. */}
-          <p className="text-fg-2 max-w-[64ch] text-lg leading-relaxed text-pretty whitespace-pre-line">{intro}</p>
+          {intro && (
+            <p className="text-fg-2 max-w-[64ch] text-lg leading-relaxed text-pretty whitespace-pre-line">{intro}</p>
+          )}
         </div>
 
         {banner}
