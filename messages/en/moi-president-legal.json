@@ -231,7 +231,7 @@
             },
             {
               "lead": "Jurisdiction.",
-              "text": "The courts of Geneva (Switzerland) have jurisdiction. If you act as a consumer, you may also bring a case before the courts of your place of residence."
+              "text": "If you act as a consumer, you may bring a case before the courts of Geneva (Switzerland) or those of your place of residence, and the publisher may bring a case against you only before the latter. In other cases, the courts of Geneva have jurisdiction."
             },
             {
               "lead": "Mediation.",
@@ -307,7 +307,11 @@
           "title": "If you write to support",
           "paragraphs": [
             {
-              "text": "If you write to support@gocosmic.dev, the publisher receives your email address and your message. It processes them to answer you and follow up your request, with its email provider. The exchanges are kept for as long as needed to handle your request and follow it up, then archived or deleted according to legal, accounting or litigation obligations."
+              "text": "If you write to support@gocosmic.dev, the publisher receives your email address and your message. It processes them to answer you and follow up your request, on the basis of its legitimate interest in answering the people who write to it. The exchanges are kept for as long as needed to handle your request and follow it up, then archived or deleted according to legal, accounting or litigation obligations."
+            },
+            {
+              "lead": "Where these emails go.",
+              "text": "They are received by Gandi SAS (France), then forwarded to a Google Gmail account; Google may process them in the United States and in the other countries where it has facilities. Google LLC is certified under the EU-U.S. and Swiss-U.S. Data Privacy Frameworks, which the European Union and Switzerland recognise as providing adequate protection for certified companies."
             }
           ]
         },
@@ -382,11 +386,7 @@
           "title": "Your rights",
           "paragraphs": [
             {
-              "text": "The publisher holds nothing about you but the emails you sent it. You may ask for access to these data, their correction or their erasure by writing to support@gocosmic.dev. Everything else is on your device: you keep it or erase it yourself."
-            },
-            {
-              "lead": "Outside Switzerland.",
-              "text": "GitHub, Vercel and the publisher’s email provider may process the data they receive outside Switzerland and the European Economic Area, in particular in the United States."
+              "text": "The publisher holds nothing about you but the emails you sent it. You may ask for access to these data, their correction, their erasure or the restriction of their processing, object to it or ask for their portability, where these rights apply, by writing to support@gocosmic.dev. Everything else is on your device: you keep it or erase it yourself."
             }
           ]
         },

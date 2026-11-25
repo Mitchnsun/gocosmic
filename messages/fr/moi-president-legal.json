@@ -231,7 +231,7 @@
             },
             {
               "lead": "La juridiction.",
-              "text": "Les tribunaux de Genève (Suisse) sont compétents. Si vous agissez en tant que consommatrice ou consommateur, vous pouvez aussi saisir les tribunaux de votre domicile."
+              "text": "Si vous agissez en tant que consommatrice ou consommateur, vous pouvez saisir les tribunaux de Genève (Suisse) ou ceux de votre domicile, et l'éditeur ne peut agir contre vous que devant ces derniers. Dans les autres cas, les tribunaux de Genève sont compétents."
             },
             {
               "lead": "La médiation.",
@@ -307,7 +307,11 @@
           "title": "Si vous écrivez au support",
           "paragraphs": [
             {
-              "text": "Si vous écrivez à support@gocosmic.dev, l'éditeur reçoit votre adresse e-mail et votre message. Il les traite pour vous répondre et assurer le suivi de votre demande, avec son fournisseur de messagerie. Les échanges sont conservés le temps nécessaire au traitement de votre demande et à son suivi, puis archivés ou supprimés selon les obligations légales, comptables ou contentieuses."
+              "text": "Si vous écrivez à support@gocosmic.dev, l'éditeur reçoit votre adresse e-mail et votre message. Il les traite pour vous répondre et assurer le suivi de votre demande, sur la base de son intérêt légitime à répondre aux personnes qui lui écrivent. Les échanges sont conservés le temps nécessaire au traitement de votre demande et à son suivi, puis archivés ou supprimés selon les obligations légales, comptables ou contentieuses."
+            },
+            {
+              "lead": "Où vont ces e-mails.",
+              "text": "Ils sont reçus par Gandi SAS (France), puis transférés vers un compte Gmail de Google, qui peut les traiter aux États-Unis et dans les autres pays où Google dispose d'installations. Google LLC est certifiée au Data Privacy Framework UE–États-Unis et Suisse–États-Unis, que l'Union européenne et la Suisse reconnaissent comme garantissant un niveau de protection adéquat pour les entreprises certifiées."
             }
           ]
         },
@@ -382,11 +386,7 @@
           "title": "Vos droits",
           "paragraphs": [
             {
-              "text": "L'éditeur ne détient sur vous que les e-mails que vous lui avez envoyés. Vous pouvez demander l'accès à ces données, leur rectification ou leur effacement en écrivant à support@gocosmic.dev. Tout le reste est sur votre appareil : vous le gardez ou l'effacez vous-même."
-            },
-            {
-              "lead": "Hors de Suisse.",
-              "text": "GitHub, Vercel et le fournisseur de messagerie de l'éditeur peuvent traiter les données qu'ils reçoivent hors de Suisse et de l'Espace économique européen, notamment aux États-Unis."
+              "text": "L'éditeur ne détient sur vous que les e-mails que vous lui avez envoyés. Vous pouvez demander l'accès à ces données, leur rectification, leur effacement, la limitation de leur traitement, vous y opposer ou demander leur portabilité, lorsque ces droits s'appliquent, en écrivant à support@gocosmic.dev. Tout le reste est sur votre appareil : vous le gardez ou l'effacez vous-même."
             }
           ]
         },
