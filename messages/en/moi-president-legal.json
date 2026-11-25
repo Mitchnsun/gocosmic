@@ -22,7 +22,7 @@
           "title": "Publisher",
           "paragraphs": [
             {
-              "text": "Matthieu Compérat, a sole proprietorship trading as Cosmic Studio, based in Chêne-Bougeries (Switzerland); email: support@gocosmic.dev."
+              "text": "Matthieu Compérat, a sole trader (sole proprietorship) trading as Cosmic Studio, based in Chêne-Bougeries (Switzerland); email: support@gocosmic.dev."
             }
           ]
         },
@@ -86,7 +86,7 @@
             },
             {
               "lead": "The publisher.",
-              "text": "The game is published by Matthieu Compérat, a sole proprietorship trading as Cosmic Studio, based in Chêne-Bougeries (Switzerland) (“the publisher”); email: support@gocosmic.dev."
+              "text": "The game is published by Matthieu Compérat, a sole trader (sole proprietorship) trading as Cosmic Studio, based in Chêne-Bougeries (Switzerland) (“the publisher”); email: support@gocosmic.dev."
             },
             {
               "lead": "The parties.",
@@ -131,7 +131,7 @@
           "title": "Licence of use",
           "paragraphs": [
             {
-              "text": "The publisher grants you a personal, non-exclusive and non-transferable licence to use the game, on your devices, for non-commercial use. This licence does not allow you to copy, decompile or redistribute the game."
+              "text": "The publisher grants you a personal, non-exclusive and non-transferable licence to use the game, on your devices, for non-commercial use. This licence does not allow you to copy, decompile or redistribute the game, subject to the rights the law grants you and to the licences of the third-party components and of the campaign kit."
             }
           ]
         },
@@ -189,7 +189,7 @@
               "text": "The publisher is not liable for the consequences of using the game against article 4, nor for the content of the third-party sites the game links to."
             },
             {
-              "text": "Nothing in these terms excludes or limits the publisher’s liability for personal injury, gross negligence or fraud, nor any right that the law grants consumers and that a contract cannot set aside."
+              "text": "Nothing in these terms excludes or limits the publisher’s liability for personal injury, gross negligence or fraud, or for a breach of an essential obligation, nor any right that the law grants consumers and that a contract cannot set aside."
             }
           ]
         },
@@ -279,7 +279,7 @@
           "title": "In short",
           "paragraphs": [
             {
-              "text": "The publisher stores no data about you. Everything the game keeps stays on your device, and deleting the app erases it all."
+              "text": "The game sends no data to the publisher. Everything it keeps stays on your device, and deleting the app erases it all. The publisher only receives what you write to it."
             }
           ]
         },
@@ -287,7 +287,7 @@
           "title": "Who publishes the game",
           "paragraphs": [
             {
-              "text": "The game Moi Président is published by Matthieu Compérat, a sole proprietorship trading as Cosmic Studio, based in Chêne-Bougeries (Switzerland); email: support@gocosmic.dev."
+              "text": "The game Moi Président is published by Matthieu Compérat, a sole trader (sole proprietorship) trading as Cosmic Studio, based in Chêne-Bougeries (Switzerland); email: support@gocosmic.dev."
             }
           ]
         },
@@ -296,6 +296,18 @@
           "paragraphs": [
             {
               "text": "The game works offline, and no server of the publisher hosts it. It has no account, no advertising, no audience measurement and no crash reporting. It sends the publisher no data about you."
+            },
+            {
+              "lead": "The stores.",
+              "text": "As for any app, Apple and Google may pass on to the publisher overall statistics and crash reports, depending on the settings of your device and your account."
+            }
+          ]
+        },
+        "support": {
+          "title": "If you write to support",
+          "paragraphs": [
+            {
+              "text": "If you write to support@gocosmic.dev, the publisher receives your email address and your message. It processes them to answer you and follow up your request, with its email provider. The exchanges are kept for as long as needed to handle your request and follow it up, then archived or deleted according to legal, accounting or litigation obligations."
             }
           ]
         },
@@ -366,6 +378,18 @@
             }
           ]
         },
+        "rights": {
+          "title": "Your rights",
+          "paragraphs": [
+            {
+              "text": "The publisher holds nothing about you but the emails you sent it. You may ask for access to these data, their correction or their erasure by writing to support@gocosmic.dev. Everything else is on your device: you keep it or erase it yourself."
+            },
+            {
+              "lead": "Outside Switzerland.",
+              "text": "GitHub, Vercel and the publisher’s email provider may process the data they receive outside Switzerland and the European Economic Area, in particular in the United States."
+            }
+          ]
+        },
         "contact": {
           "title": "Contact and remedies",
           "paragraphs": [
@@ -390,18 +414,18 @@
           "paragraphs": [
             {
               "lead": "A satirical simulation game.",
-              "text": "Moi Président is a humorous and parodic work of fiction, loosely inspired by political news. The opponents, the parties, the events, the dialogues and the slogans are the publisher's creations; the names of the opponents and the parties are deliberately twisted. The game reports no real fact, statement or position of any existing person, and expresses no opinion of the publisher on a person, a party or a vote."
+              "text": "Moi Président is a humorous and parodic work of fiction, loosely inspired by political news. The opponents, the parties, the events, the dialogues and the slogans are the publisher’s creations; the names of the opponents and the parties are deliberately twisted. The game reports no real fact, statement or position of any existing person, and expresses no opinion of the publisher on a person, a party or a vote."
             },
             {
               "text": "The game gives no voting instruction. It is not affiliated with any governmental organisation, political party or activist association. It has no link with any candidate, movement, media outlet or polling institute, and is neither endorsed nor funded by any of them."
             },
             {
               "lead": "A simplified model, with its own biases.",
-              "text": "The game reduces political life to nine families, five axes and a few categories of voters. The opponents' positions are estimates by the game's team. The effects of actions, events and measures are game rules, not forecasts: they reflect design choices that others would have made differently. The game is not a source of electoral information: do not base a vote on its figures."
+              "text": "The game reduces political life to nine families, five axes and a few categories of voters. The opponents’ positions are estimates by the game’s team. The effects of actions, events and measures are game rules, not forecasts: they reflect design choices that others would have made differently. The game is not a source of electoral information: do not base a vote on its figures."
             },
             {
               "lead": "Sometimes sensitive subjects.",
-              "text": "The game's press review sometimes covers tragedies: disasters, riots, violence, attacks. They are rare and all fictional, inspired by real debates without their names or places: no victim is named or described, no image is shown, and nothing rewards taking advantage of them."
+              "text": "The game’s press review sometimes covers tragedies: disasters, riots, violence, attacks. They are rare and all fictional, inspired by real debates without their names or places: no victim is named or described, and nothing rewards taking advantage of them. The game shows no image of a real tragedy: the illustrations of the campaign kit depict fictional events and avoid violent or offensive images."
             }
           ]
         },
@@ -410,11 +434,11 @@
           "paragraphs": [
             {
               "lead": "Fictional figures, from a simulation.",
-              "text": "The scores, rankings, \"polls\", trends and results shown in the game come from a simulation. It starts from real polls (see \"Notice of the simulation\") and transforms them in every game: its figures measure nobody's opinion and predict neither the voting intentions nor the result of the real election. French law no. 77-808 of 19 July 1977 treats a vote simulation made from polls as a poll{filed, select, yes {: its notice can be consulted at the Commission des sondages} other {}}."
+              "text": "The scores, rankings, “polls”, trends and results shown in the game come from a simulation. It starts from real polls (see “Notice of the simulation”) and transforms them in every game: its figures measure nobody’s opinion and predict neither the voting intentions nor the result of the real election. French law no. 77-808 of 19 July 1977 treats a vote simulation made from polls as a poll: its notice can be consulted at the Commission des sondages."
             },
             {
-              "lead": "The die, the mark of the game's figures.",
-              "text": "The icon of a die, a square with dots, goes with the data, figures and values the game simulates, even without the word \"fictional\": they must not be taken for reality."
+              "lead": "The die, the mark of the game’s figures.",
+              "text": "The icon of a die, a square with dots, goes with the data, figures and values the game simulates, even without the word “fictional”: they must not be taken for reality."
             },
             {
               "text": "Screenshots of the game must not be presented as real polls or real results."
@@ -426,16 +450,18 @@
           "paragraphs": [
             {
               "lead": "Simulation · fictional data.",
-              "text": "In the campaign's game space, the app provides fictional data: any figure that cites no source is a game figure, and it is fictional."
+              "text": "In the campaign’s game space, the app provides fictional data: any figure that cites no source is a game figure, and it is fictional."
             },
             {
-              "text": "Simulation made by Matthieu Compérat (Cosmic Studio), on his own account, from 23 polls of first-round voting intentions for the 2027 presidential election, carried out by Ifop, Elabe, Harris Interactive, Cluster17, YouGov, OpinionWay and Odoxa, and published in September and October 2026. The game transforms them in every game: its figures are fictional."
+              "text": "Simulation made and commissioned by Matthieu Compérat (Cosmic Studio), from 5 polls of first-round voting intentions for the 2027 presidential election, carried out by OpinionWay, Elabe, Ifop-Fiducial and YouGov, whose fieldwork ended between 10 and 22 November 2026. The page “The polls of the simulation” lists them, with their sponsors, dates and samples. The game transforms them in every game, and its figures are fictional."
             },
             {
               "text": "Every poll has margins of error. The margins shown in the game are a game rule."
+            },
+            {
+              "text": "Anyone can consult the notice of this simulation at the Commission des sondages. Data frozen in version 0.2.5 of the game."
             }
           ],
-          "filed": "Anyone can consult the notice of this simulation at the Commission des sondages.",
           "filed_link": "The notice of this simulation",
           "frozen": "Data frozen in version {version} of the game.",
           "release": "Version {version}, published on {date}",
@@ -456,7 +482,7 @@
           "paragraphs": [
             {
               "lead": "Dated figures.",
-              "text": "The starting voting intentions come from polls published in September and October 2026, then the simulation transforms them. They are not updated during the game and may have changed a lot since. For up-to-date figures, see the notices published by the Commission des sondages: each one names the institute that carried out the poll."
+              "text": "The starting voting intentions come from polls published in November 2026, then the simulation transforms them. They are not updated during the game and may have changed a lot since. For up-to-date figures, see the notices published by the Commission des sondages: each one names the institute that carried out the poll."
             }
           ]
         },
@@ -473,7 +499,7 @@
             },
             {
               "lead": "Libraries:",
-              "text": "React, React Native (© Meta Platforms, Inc. and affiliates), Expo and the other libraries of the game, under the MIT licence or other open-source licences. The full list, with the text of each licence, is on the \"Licences\" page of the app."
+              "text": "React, React Native (© Meta Platforms, Inc. and affiliates), Expo and the other libraries of the game, under the MIT licence or other open-source licences. The full list is in “Licences”, with the text of each licence when the library ships it."
             }
           ]
         }

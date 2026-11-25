@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - Moi Président's legal notice now holds only who publishes the game, who hosts it and how to ask for a reply, and its privacy policy says that nothing leaves the phone
 - Each of the game's legal pages links to the others, and its support section links to all four
+- The game's "About the game" page now follows the app word for word, with the current notice of its simulation, and its privacy policy says what reaches the studio when you write to support and which rights you have
 
 ## [2.7.0] - 2026-11-12
 

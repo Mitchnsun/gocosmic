@@ -119,8 +119,9 @@ describe('Moi Président privacy policy', () => {
     expect(getByRole('heading', { level: 1, name: 'Privacy policy' })).toBeInTheDocument();
     expect(getByText('Updated on 25 November 2026')).toBeInTheDocument();
     const headings = getAllByRole('heading', { level: 2 }).map((heading) => heading.textContent);
-    expect(headings).toHaveLength(12);
+    expect(headings).toHaveLength(14);
     expect(headings[0]).toBe('In short');
+    expect(headings).toContain('Your rights');
     expect(getByRole('link', { name: 'Legal notice' })).toHaveAttribute('href', '/apps/moi-president/legal-notice');
     expect(getByRole('link', { name: 'Terms of use' })).toHaveAttribute('href', '/apps/moi-president/terms');
   });

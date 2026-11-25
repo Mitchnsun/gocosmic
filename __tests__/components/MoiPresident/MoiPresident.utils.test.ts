@@ -58,30 +58,22 @@ describe('about sections', () => {
     });
   });
 
-  it('says nothing about consulting the notice at the Commission des sondages before it is filed', () => {
-    const sections = buildAboutSections(legal('fr'), []);
-    const byId = (id: string) => sections.find((section) => section.id === id);
+  it("copies the app's notice of the simulation, with the figures the app shows", () => {
+    const notice = buildAboutSections(legal('fr'), []).find(({ id }) => id === 'notice');
 
-    expect(textOf(byId('figures')?.body[0])).toMatch(/simulation de vote réalisée à partir de sondages\.$/);
-    expect(byId('notice')?.body).toHaveLength(3);
-    expect(JSON.stringify(sections)).not.toContain('consultable');
-    expect(JSON.stringify(sections)).not.toContain('Toute personne peut consulter');
-    expect(byId('notice')?.links).toEqual([
+    expect(notice?.body).toHaveLength(4);
+    expect(textOf(notice?.body[1])).toMatch(/à partir de 5 sondages d'intentions de vote/);
+    expect(textOf(notice?.body[3])).toMatch(/^Toute personne peut consulter la notice de cette simulation/);
+    expect(notice?.links).toEqual([
       { label: 'commission-des-sondages.fr', href: 'https://www.commission-des-sondages.fr' },
     ]);
   });
 
-  it('links the filed notice of the latest version, and says it can be consulted, once it is filed', () => {
-    const sections = buildAboutSections(legal('en'), RELEASES);
-    const byId = (id: string) => sections.find((section) => section.id === id);
+  it('links the filed notice of the latest version, once it is filed', () => {
+    const notice = buildAboutSections(legal('en'), RELEASES).find(({ id }) => id === 'notice');
 
-    expect(textOf(byId('figures')?.body[0])).toMatch(
-      /treats a vote simulation made from polls as a poll: its notice can be consulted at the Commission des sondages\.$/
-    );
-    expect(byId('notice')?.body.at(-1)).toBe(
-      'Anyone can consult the notice of this simulation at the Commission des sondages.'
-    );
-    expect(byId('notice')?.links?.map(({ href }) => href)).toEqual([
+    expect(notice?.body).toHaveLength(4);
+    expect(notice?.links?.map(({ href }) => href)).toEqual([
       RELEASES[0]?.noticeUrl,
       'https://www.commission-des-sondages.fr',
     ]);
@@ -90,7 +82,7 @@ describe('about sections', () => {
   it("points to the app's own page for the full list of licences", () => {
     const credits = buildAboutSections(legal('fr'), []).find(({ id }) => id === 'credits');
 
-    expect(textOf(credits?.body.at(-1))).toMatch(/est dans la page «\u00a0Licences\u00a0» de l'application\.$/);
+    expect(textOf(credits?.body.at(-1))).toMatch(/La liste complète est dans «\u00a0Licences\u00a0»/);
   });
 });
 

@@ -22,7 +22,7 @@
           "title": "Éditeur",
           "paragraphs": [
             {
-              "text": "Matthieu Compérat, raison individuelle exerçant sous le nom commercial Cosmic Studio, établie à Chêne-Bougeries (Suisse) ; e-mail : support@gocosmic.dev."
+              "text": "Matthieu Compérat, entrepreneur individuel (entreprise individuelle) exerçant sous le nom commercial Cosmic Studio, à Chêne-Bougeries (Suisse) ; e-mail : support@gocosmic.dev."
             }
           ]
         },
@@ -86,7 +86,7 @@
             },
             {
               "lead": "L'éditeur.",
-              "text": "Le jeu est édité par Matthieu Compérat, raison individuelle exerçant sous le nom commercial Cosmic Studio, établie à Chêne-Bougeries (Suisse) (« l'éditeur ») ; e-mail : support@gocosmic.dev."
+              "text": "Le jeu est édité par Matthieu Compérat, entrepreneur individuel (entreprise individuelle) exerçant sous le nom commercial Cosmic Studio, à Chêne-Bougeries (Suisse) (« l'éditeur ») ; e-mail : support@gocosmic.dev."
             },
             {
               "lead": "Les parties.",
@@ -131,7 +131,7 @@
           "title": "Licence d'utilisation",
           "paragraphs": [
             {
-              "text": "L'éditeur vous concède une licence personnelle, non exclusive et non transférable d'utilisation du jeu, sur vos appareils, pour un usage non commercial. Cette licence ne vous permet pas de copier, de décompiler ni de redistribuer le jeu."
+              "text": "L'éditeur vous concède une licence personnelle, non exclusive et non transférable d'utilisation du jeu, sur vos appareils, pour un usage non commercial. Cette licence ne vous permet pas de copier, de décompiler ni de redistribuer le jeu, sous réserve des droits que la loi vous reconnaît et des licences des composants de tiers et du kit de campagne."
             }
           ]
         },
@@ -189,7 +189,7 @@
               "text": "L'éditeur ne répond pas des conséquences d'un usage du jeu contraire à l'article 4, ni du contenu des sites de tiers vers lesquels le jeu renvoie."
             },
             {
-              "text": "Rien dans ces conditions n'exclut ni ne limite la responsabilité de l'éditeur en cas de dommage corporel, de faute lourde ou de dol, ni aucun droit que la loi reconnaît aux consommatrices et aux consommateurs et qu'un contrat ne peut écarter."
+              "text": "Rien dans ces conditions n'exclut ni ne limite la responsabilité de l'éditeur en cas de dommage corporel, de faute lourde ou de dol, ou de manquement à une obligation essentielle, ni aucun droit que la loi reconnaît aux consommatrices et aux consommateurs et qu'un contrat ne peut écarter."
             }
           ]
         },
@@ -279,7 +279,7 @@
           "title": "L'essentiel",
           "paragraphs": [
             {
-              "text": "L'éditeur n'enregistre aucune donnée vous concernant. Tout ce que le jeu garde reste sur votre appareil, et supprimer l'application efface tout."
+              "text": "Le jeu n'envoie aucune donnée à l'éditeur. Tout ce qu'il garde reste sur votre appareil, et supprimer l'application efface tout. L'éditeur ne reçoit que ce que vous lui écrivez."
             }
           ]
         },
@@ -287,7 +287,7 @@
           "title": "Qui édite le jeu",
           "paragraphs": [
             {
-              "text": "Le jeu Moi Président est édité par Matthieu Compérat, raison individuelle exerçant sous le nom commercial Cosmic Studio, établie à Chêne-Bougeries (Suisse) ; e-mail : support@gocosmic.dev."
+              "text": "Le jeu Moi Président est édité par Matthieu Compérat, entrepreneur individuel (entreprise individuelle) exerçant sous le nom commercial Cosmic Studio, à Chêne-Bougeries (Suisse) ; e-mail : support@gocosmic.dev."
             }
           ]
         },
@@ -296,6 +296,18 @@
           "paragraphs": [
             {
               "text": "Le jeu fonctionne sans connexion, et aucun serveur de l'éditeur ne l'héberge. Il n'a ni compte, ni publicité, ni outil de mesure d'audience, ni suivi des plantages. Il n'envoie à l'éditeur aucune donnée vous concernant."
+            },
+            {
+              "lead": "Les magasins.",
+              "text": "Comme pour toute application, Apple et Google peuvent transmettre à l'éditeur des statistiques globales et des rapports de plantage, selon les réglages de votre appareil et de votre compte."
+            }
+          ]
+        },
+        "support": {
+          "title": "Si vous écrivez au support",
+          "paragraphs": [
+            {
+              "text": "Si vous écrivez à support@gocosmic.dev, l'éditeur reçoit votre adresse e-mail et votre message. Il les traite pour vous répondre et assurer le suivi de votre demande, avec son fournisseur de messagerie. Les échanges sont conservés le temps nécessaire au traitement de votre demande et à son suivi, puis archivés ou supprimés selon les obligations légales, comptables ou contentieuses."
             }
           ]
         },
@@ -366,6 +378,18 @@
             }
           ]
         },
+        "rights": {
+          "title": "Vos droits",
+          "paragraphs": [
+            {
+              "text": "L'éditeur ne détient sur vous que les e-mails que vous lui avez envoyés. Vous pouvez demander l'accès à ces données, leur rectification ou leur effacement en écrivant à support@gocosmic.dev. Tout le reste est sur votre appareil : vous le gardez ou l'effacez vous-même."
+            },
+            {
+              "lead": "Hors de Suisse.",
+              "text": "GitHub, Vercel et le fournisseur de messagerie de l'éditeur peuvent traiter les données qu'ils reçoivent hors de Suisse et de l'Espace économique européen, notamment aux États-Unis."
+            }
+          ]
+        },
         "contact": {
           "title": "Contact et recours",
           "paragraphs": [
@@ -390,18 +414,18 @@
           "paragraphs": [
             {
               "lead": "Jeu de simulation satirique.",
-              "text": "Moi Président est une œuvre de fiction humoristique et parodique, librement inspirée de l'actualité politique. Les adversaires, les partis, les événements, les dialogues et les slogans sont des créations de l'éditeur ; les noms des adversaires et des partis sont volontairement détournés. Le jeu ne rapporte aucun fait, aucun propos ni aucune position réels d'une personne existante, et n'exprime pas l'opinion de l'éditeur sur une personne, un parti ou un vote."
+              "text": "Moi Président est une œuvre de fiction humoristique et parodique, librement inspirée de l'actualité politique. Les adversaires, les partis, les événements, les dialogues et les slogans ont été créés par l'éditeur, et les noms des adversaires et des partis sont volontairement détournés. Le jeu ne rapporte aucun fait, aucun propos ni aucune position réels d'une personne existante. Il n'exprime pas l'opinion de l'éditeur sur une personne, un parti ou un vote."
             },
             {
-              "text": "Le jeu ne donne aucune consigne de vote. Il n'est affilié à aucune organisation gouvernementale, à aucun parti politique ni à aucune association militante. Il n'a de lien avec aucun candidat, mouvement, média ou institut de sondage, et n'est ni approuvé ni financé par l'un d'eux."
+              "text": "Le jeu ne donne aucune consigne de vote. Il n'est affilié à aucune organisation gouvernementale, à aucun parti politique ni à aucune association militante. Il n'a de lien avec aucune candidate, aucun candidat, mouvement, média ou institut de sondage, et n'est ni approuvé ni financé par l'un d'eux."
             },
             {
               "lead": "Un modèle simplifié, avec ses partis pris.",
-              "text": "Le jeu réduit la vie politique à neuf familles, cinq axes et quelques segments de l'électorat. Les positions des adversaires sont des estimations de l'équipe du jeu. Les effets des actions, des événements et des mesures sont des règles de jeu, pas des prévisions : ils reflètent des choix de conception, que d'autres auraient faits autrement. Le jeu n'est pas une source d'information électorale : ne fondez pas un vote sur ses chiffres."
+              "text": "Le jeu réduit la vie politique à neuf familles, cinq axes et quelques segments de l'électorat. Les positions des adversaires sont des estimations de l'équipe du jeu. Les effets des actions, des événements et des mesures sont des règles de jeu. Ils ne prévoient rien et reflètent des choix de conception, que d'autres auraient faits autrement. Le jeu n'est pas une source d'information électorale. Ne fondez pas un vote sur ses chiffres."
             },
             {
               "lead": "Des sujets parfois sensibles.",
-              "text": "La revue de presse du jeu aborde parfois des drames : catastrophes, émeutes, violences, attentats. Ils sont rares et tous fictifs, inspirés de débats réels sans en reprendre les noms ni les lieux : aucune victime n'est nommée ni décrite, aucune image n'est montrée, et rien ne récompense le fait d'en tirer parti."
+              "text": "La revue de presse du jeu aborde parfois des drames (catastrophes, émeutes, violences, attentats). Ils sont rares, tous fictifs, et s'inspirent de débats réels sans en reprendre les noms ni les lieux. Aucune victime n'est nommée ni décrite, et rien dans le jeu ne récompense le fait d'en tirer parti. Le jeu ne montre aucune image d'un drame réel : les illustrations du kit de campagne représentent des événements fictifs et évitent les images violentes ou offensantes."
             }
           ]
         },
@@ -410,11 +434,11 @@
           "paragraphs": [
             {
               "lead": "Des chiffres fictifs, issus d'une simulation.",
-              "text": "Les scores, classements, « sondages », tendances et résultats affichés dans le jeu sont produits par une simulation. Elle part de sondages réels (voir « Notice de la simulation ») et les transforme à chaque partie : ses chiffres ne mesurent l'opinion de personne et ne prédisent ni les intentions de vote ni le résultat de l'élection réelle. La loi n° 77-808 du 19 juillet 1977 assimile à un sondage une simulation de vote réalisée à partir de sondages{filed, select, yes { : la notice de celle-ci est consultable auprès de la Commission des sondages} other {}}."
+              "text": "Les scores, classements, « sondages », tendances et résultats affichés dans le jeu sont produits par une simulation. Elle part de sondages réels (voir « Notice de la simulation ») et les transforme à chaque partie. Ses chiffres ne mesurent l'opinion de personne et ne prédisent ni les intentions de vote ni le résultat de l'élection réelle. La loi n° 77-808 du 19 juillet 1977 assimile à un sondage une simulation de vote réalisée à partir de sondages. La notice de la simulation du jeu est consultable auprès de la Commission des sondages."
             },
             {
               "lead": "Le dé, marque des chiffres du jeu.",
-              "text": "L'icône d'un dé, un carré à points, accompagne les données, chiffres et valeurs simulés par le jeu, même sans la mention « fictif » : ils ne doivent pas être pris pour la réalité."
+              "text": "L'icône d'un dé, un carré à points, accompagne les données, chiffres et valeurs simulés par le jeu, même là où la mention « fictif » n'apparaît pas. Rien de ce qu'elle accompagne ne doit être pris pour la réalité."
             },
             {
               "text": "Les captures d'écran du jeu ne doivent pas être présentées comme de vrais sondages ou de vrais résultats."
@@ -426,16 +450,18 @@
           "paragraphs": [
             {
               "lead": "Simulation · données fictives.",
-              "text": "Dans l'espace de jeu de la campagne, l'application fournit des données fictives : toute donnée qui ne cite pas sa source est une donnée du jeu, et elle est fictive."
+              "text": "Dans l'espace de jeu de la campagne, l'application fournit des données fictives. Toute donnée qui ne cite pas sa source vient du jeu et est fictive."
             },
             {
-              "text": "Simulation réalisée par Matthieu Compérat (Cosmic Studio), pour son propre compte, à partir de 23 sondages d'intentions de vote au premier tour de l'élection présidentielle de 2027, réalisés par Ifop, Elabe, Harris Interactive, Cluster17, YouGov, OpinionWay et Odoxa, et publiés en septembre et en octobre 2026. Le jeu les transforme à chaque partie : ses chiffres sont fictifs."
+              "text": "Simulation réalisée par Matthieu Compérat (Cosmic Studio), pour son propre compte, à partir de 5 sondages d'intentions de vote au premier tour de l'élection présidentielle de 2027, réalisés par OpinionWay, Elabe, Ifop-Fiducial et YouGov, dont le terrain s'est achevé entre le 10 et le 22 novembre 2026. La page « Les sondages de la simulation » les liste, avec leurs commanditaires, leurs dates et leurs échantillons. Le jeu les transforme à chaque partie, et ses chiffres sont fictifs."
             },
             {
               "text": "Tout sondage est affecté de marges d'erreur. Les marges affichées dans le jeu sont une règle du jeu."
+            },
+            {
+              "text": "Toute personne peut consulter la notice de cette simulation auprès de la Commission des sondages. Les données sont figées dans la version 0.2.5 du jeu."
             }
           ],
-          "filed": "Toute personne peut consulter la notice de cette simulation auprès de la Commission des sondages.",
           "filed_link": "La notice de cette simulation",
           "frozen": "Données figées dans la version {version} du jeu.",
           "release": "Version {version}, publiée le {date}",
@@ -456,7 +482,7 @@
           "paragraphs": [
             {
               "lead": "Des chiffres datés.",
-              "text": "Les intentions de vote de départ viennent de sondages publiés en septembre et en octobre 2026, puis la simulation les transforme. Elles ne sont pas mises à jour pendant la partie et ont pu beaucoup changer depuis. Pour des chiffres à jour, consultez les notices publiées par la Commission des sondages : chacune indique l'institut qui a réalisé le sondage."
+              "text": "Les intentions de vote de départ viennent de sondages publiés en novembre 2026, que la simulation transforme ensuite. Elles ne sont pas mises à jour pendant la partie et ont pu beaucoup changer depuis. Pour des chiffres à jour, consultez les notices publiées par la Commission des sondages ; chacune indique l'institut qui a réalisé le sondage."
             }
           ]
         },
@@ -473,7 +499,7 @@
             },
             {
               "lead": "Bibliothèques :",
-              "text": "React, React Native (© Meta Platforms, Inc. et ses affiliés), Expo et les autres bibliothèques du jeu, sous licence MIT ou d'autres licences libres. La liste complète, avec le texte de chaque licence, est dans la page « Licences » de l'application."
+              "text": "React, React Native (© Meta Platforms, Inc. et ses affiliés), Expo et les autres bibliothèques du jeu, sous licence MIT ou d'autres licences libres. La liste complète est dans « Licences », avec le texte de chaque licence quand la bibliothèque le fournit."
             }
           ]
         }

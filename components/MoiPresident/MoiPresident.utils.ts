@@ -44,6 +44,7 @@ export const PRIVACY_SECTIONS = [
   'summary',
   'who',
   'nothingSent',
+  'support',
   'onDevice',
   'backups',
   'erase',
@@ -52,6 +53,7 @@ export const PRIVACY_SECTIONS = [
   'permissions',
   'website',
   'changes',
+  'rights',
   'contact',
 ] as const;
 
@@ -73,7 +75,12 @@ export const LEGAL_PAGES: readonly { page: MoiPresidentLegalPage; route: MoiPres
 const SECTION_LINKS: Record<MoiPresidentLegalPage, Partial<Record<string, readonly MoiPresidentLinkId[]>>> = {
   legalNotice: { reply: ['email'] },
   terms: { property: ['email'], stores: ['appleEula'] },
-  privacy: { kit: ['githubPrivacy'], contact: ['email', 'pfpdt', 'cnil'] },
+  privacy: {
+    support: ['email'],
+    kit: ['githubPrivacy'],
+    rights: ['email'],
+    contact: ['email', 'pfpdt', 'cnil'],
+  },
   about: { notice: ['commission'], sources: ['commission'] },
 };
 
@@ -104,23 +111,21 @@ function buildSections(
 }
 
 /**
- * « À propos du jeu ». The sentences saying the notice of the simulation can be consulted at the Commission des
- * sondages only show once the notice of the latest version is filed (owner, 11/11/2026); the notice section then
- * links to it.
+ * « À propos du jeu », the app's sections word for word (the app prevails, PO, 25/11/2026). Once the notice of the
+ * latest version is filed with the Commission des sondages, the notice section also links to it.
  */
 export function buildAboutSections(
   t: Translator,
   releases: readonly AppRelease[] = MOI_PRESIDENT_RELEASES
 ): LegalSection[] {
   const filedNoticeUrl = getFiledNoticeUrl(releases);
-  const sections = buildSections(t, 'about', ABOUT_SECTIONS, { filed: filedNoticeUrl ? 'yes' : 'no' });
+  const sections = buildSections(t, 'about', ABOUT_SECTIONS);
   if (!filedNoticeUrl) return sections;
 
   return sections.map((section) =>
     section.id === 'notice'
       ? {
           ...section,
-          body: [...section.body, t('about.sections.notice.filed')],
           links: [{ label: t('about.sections.notice.filed_link'), href: filedNoticeUrl }, ...(section.links ?? [])],
         }
       : section

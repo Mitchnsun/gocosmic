@@ -91,10 +91,10 @@ export const MOI_PRESIDENT_TERMS_VERSIONS: readonly [TermsVersion, ...TermsVersi
 
 /**
  * The day each of the game's other legal pages last changed: the legal notice and the privacy policy as the app's
- * `LEGAL_NOTICE_UPDATED` and `PRIVACY_UPDATED`; « À propos du jeu », whose texts are those of the former legal notice.
+ * `LEGAL_NOTICE_UPDATED` and `PRIVACY_UPDATED`; « À propos du jeu », the app's sections copied on that day.
  */
 export const MOI_PRESIDENT_LEGAL_DATES = {
   legalNotice: '2026-11-25',
   privacy: '2026-11-25',
-  about: '2026-11-11',
+  about: '2026-11-25',
 } as const;
