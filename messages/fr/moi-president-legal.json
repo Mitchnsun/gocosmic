@@ -231,7 +231,7 @@
             },
             {
               "lead": "La juridiction.",
-              "text": "Les tribunaux de Genève (Suisse) sont compétents. Si vous agissez en tant que consommatrice ou consommateur, vous pouvez aussi saisir les tribunaux de votre domicile, et l'éditeur ne peut agir contre vous que devant eux."
+              "text": "Les tribunaux de Genève (Suisse) sont compétents. Si vous agissez en tant que consommatrice ou consommateur, vous pouvez aussi saisir les tribunaux de votre domicile."
             },
             {
               "lead": "La médiation.",
@@ -311,7 +311,7 @@
           "title": "Les sauvegardes du système",
           "paragraphs": [
             {
-              "text": "Le jeu demande au système d'exclure ses données des sauvegardes (iCloud, compte Google) et des transferts d'un appareil à l'autre. Votre partie ne suit donc pas un changement de téléphone."
+              "text": "Le jeu demande au système d'exclure ses données des sauvegardes (iCloud, compte Google) et des transferts d'un appareil à l'autre. Votre partie n'est donc pas prévue pour suivre un changement de téléphone."
             }
           ]
         },
@@ -327,7 +327,7 @@
           "title": "Le kit de campagne",
           "paragraphs": [
             {
-              "text": "Le kit de campagne est facultatif : ses illustrations et les chiffres des Dossiers. Le jeu ne se connecte que pour lui, et seulement quand vous le demandez : quand vous acceptez de le télécharger, ouvrez sa page, le téléchargez ou le mettez à jour."
+              "text": "Le kit de campagne est facultatif : ses illustrations et les chiffres des Dossiers. Le jeu ne se connecte que pour lui, et seulement quand vous le demandez : quand vous acceptez de le télécharger, quand vous le téléchargez ou le mettez à jour depuis sa page ou les Dossiers, et quand vous y recherchez une mise à jour."
             },
             {
               "text": "Ses fichiers viennent de GitHub, un service de GitHub, Inc. (États-Unis). Comme tout serveur, GitHub reçoit alors l'adresse IP de votre appareil. Le jeu n'envoie ni compte, ni identifiant, ni cookie. GitHub ne publie pas de durée de conservation de ces données : sa déclaration de confidentialité décrit ce qu'il en fait."

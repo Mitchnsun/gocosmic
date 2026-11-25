@@ -231,7 +231,7 @@
             },
             {
               "lead": "Jurisdiction.",
-              "text": "The courts of Geneva (Switzerland) have jurisdiction. If you act as a consumer, you may also bring a case before the courts of your place of residence, and the publisher may bring a case against you only before them."
+              "text": "The courts of Geneva (Switzerland) have jurisdiction. If you act as a consumer, you may also bring a case before the courts of your place of residence."
             },
             {
               "lead": "Mediation.",
@@ -311,7 +311,7 @@
           "title": "System backups",
           "paragraphs": [
             {
-              "text": "The game asks the system to leave its data out of backups (iCloud, Google account) and out of transfers from one device to another. Your game therefore does not follow you to a new phone."
+              "text": "The game asks the system to leave its data out of backups (iCloud, Google account) and out of transfers from one device to another. Your game is therefore not meant to follow you to a new phone."
             }
           ]
         },
@@ -327,7 +327,7 @@
           "title": "The campaign kit",
           "paragraphs": [
             {
-              "text": "The campaign kit is optional: its illustrations and the figures of the Dossiers. The game goes online for it only, and only when you ask: when you agree to download it, open its page, download it or update it."
+              "text": "The campaign kit is optional: its illustrations and the figures of the Dossiers. The game goes online for it only, and only when you ask: when you agree to download it, when you download or update it from its page or the Dossiers, and when you look for an update there."
             },
             {
               "text": "Its files come from GitHub, a service of GitHub, Inc. (United States). Like any server, GitHub then receives your device’s IP address. The game sends no account, identifier or cookie. GitHub publishes no retention period for these data: its privacy statement describes what it does with them."
