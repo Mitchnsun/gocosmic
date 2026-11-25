@@ -10,7 +10,7 @@ export function buildReleaseNotices(
   locale: string,
   releases: readonly AppRelease[] = MOI_PRESIDENT_RELEASES
 ): ReleaseNoticeProps[] {
-  const key = 'legalNotice.sections.notice';
+  const key = 'about.sections.notice';
 
   return releases.map(({ version, publishedOn, polls, noticeUrl }) => ({
     id: `version-${version}`,

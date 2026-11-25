@@ -20,7 +20,9 @@
       "lead": "For a question, a problem or a remark about the game, write to us.",
       "email": "Write to support@gocosmic.dev",
       "privacy": "Privacy policy",
-      "legal_notice": "Legal notice"
+      "legal_notice": "Legal notice",
+      "terms": "Terms of use",
+      "about": "About the game"
     },
     "correction": {
       "title": "Correction",

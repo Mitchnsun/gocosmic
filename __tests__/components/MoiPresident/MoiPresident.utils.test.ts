@@ -2,12 +2,19 @@ import { createTranslator } from 'next-intl';
 
 import type { LegalParagraph } from '@/components/LegalDocument';
 import {
+  ABOUT_SECTIONS,
+  buildAboutSections,
   buildCorrection,
   buildLegalNoticeSections,
+  buildLegalPointer,
   buildPrivacySections,
   buildReleaseNotices,
+  buildTermsSections,
+  buildTermsVersions,
+  formatDocumentDate,
   LEGAL_NOTICE_SECTIONS,
   PRIVACY_SECTIONS,
+  TERMS_SECTIONS,
 } from '@/components/MoiPresident';
 import type { Translator } from '@/components/MoiPresident/MoiPresident.utils';
 
@@ -33,21 +40,17 @@ const page = (locale: string) =>
 const textOf = (paragraph: LegalParagraph | undefined) =>
   typeof paragraph === 'string' ? paragraph : paragraph && 'text' in paragraph ? paragraph.text : '';
 
-describe('legal notice sections', () => {
-  it("follows the app's order, without its costings and with the personal data on a page of their own", () => {
-    const sections = buildLegalNoticeSections(legal('fr'), []);
+describe('about sections', () => {
+  it("follows the app's « À propos du jeu », without its costings", () => {
+    const sections = buildAboutSections(legal('fr'), []);
 
-    expect(sections.map(({ id }) => id)).toEqual([...LEGAL_NOTICE_SECTIONS]);
+    expect(sections.map(({ id }) => id)).toEqual([...ABOUT_SECTIONS]);
     expect(sections.map(({ title }) => title)).toEqual([
       'Le jeu',
       'Les chiffres',
       'Notice de la simulation',
       'Les sources et leurs dates',
-      'Éditeur',
-      'Responsabilité',
-      "Conditions d'utilisation",
       'Crédits et licences',
-      'Contact',
     ]);
     expect(sections[0]?.body[0]).toEqual({
       lead: 'Jeu de simulation satirique.',
@@ -55,61 +58,112 @@ describe('legal notice sections', () => {
     });
   });
 
-  it('says nothing about consulting the notice at the Commission des sondages before it is filed', () => {
-    const sections = buildLegalNoticeSections(legal('fr'), []);
-    const byId = (id: string) => sections.find((section) => section.id === id);
+  it("copies the app's notice of the simulation, with the figures the app shows", () => {
+    const notice = buildAboutSections(legal('fr'), []).find(({ id }) => id === 'notice');
 
-    expect(textOf(byId('figures')?.body[0])).toMatch(/simulation de vote réalisée à partir de sondages\.$/);
-    expect(byId('notice')?.body).toHaveLength(3);
-    expect(JSON.stringify(sections)).not.toContain('consultable');
-    expect(JSON.stringify(sections)).not.toContain('Toute personne peut consulter');
-    expect(byId('notice')?.links).toEqual([
+    expect(notice?.body).toHaveLength(4);
+    expect(textOf(notice?.body[1])).toMatch(/à partir de 5 sondages d'intentions de vote/);
+    expect(textOf(notice?.body[3])).toMatch(/^Toute personne peut consulter la notice de cette simulation/);
+    expect(notice?.links).toEqual([
       { label: 'commission-des-sondages.fr', href: 'https://www.commission-des-sondages.fr' },
     ]);
   });
 
-  it('links the filed notice of the latest version, and says it can be consulted, once it is filed', () => {
-    const sections = buildLegalNoticeSections(legal('en'), RELEASES);
-    const byId = (id: string) => sections.find((section) => section.id === id);
+  it('links the filed notice of the latest version, once it is filed', () => {
+    const notice = buildAboutSections(legal('en'), RELEASES).find(({ id }) => id === 'notice');
 
-    expect(textOf(byId('figures')?.body[0])).toMatch(
-      /treats a vote simulation made from polls as a poll: its notice can be consulted at the Commission des sondages\.$/
-    );
-    expect(byId('notice')?.body.at(-1)).toBe(
-      'Anyone can consult the notice of this simulation at the Commission des sondages.'
-    );
-    expect(byId('notice')?.links?.map(({ href }) => href)).toEqual([
+    expect(notice?.body).toHaveLength(4);
+    expect(notice?.links?.map(({ href }) => href)).toEqual([
       RELEASES[0]?.noticeUrl,
       'https://www.commission-des-sondages.fr',
     ]);
   });
 
   it("points to the app's own page for the full list of licences", () => {
-    const credits = buildLegalNoticeSections(legal('fr'), []).find(({ id }) => id === 'credits');
+    const credits = buildAboutSections(legal('fr'), []).find(({ id }) => id === 'credits');
 
-    expect(textOf(credits?.body.at(-1))).toMatch(/est dans la page «\u00a0Licences\u00a0» de l'application\.$/);
+    expect(textOf(credits?.body.at(-1))).toMatch(/La liste complète est dans «\u00a0Licences\u00a0»/);
+  });
+});
+
+describe('legal notice sections', () => {
+  it('holds art. 1-1 of the LCEN, as the app does: publisher, director, hosts, distribution, right of reply', () => {
+    const sections = buildLegalNoticeSections(legal('fr'));
+
+    expect(sections.map(({ id }) => id)).toEqual([...LEGAL_NOTICE_SECTIONS]);
+    expect(sections.map(({ title }) => title)).toEqual([
+      'Éditeur',
+      'Direction de la publication',
+      'Hébergeurs',
+      'Distribution',
+      'Droit de réponse et signalement',
+    ]);
+    expect(textOf(sections[2]?.body[0])).toMatch(/^Vercel Inc\., 440 N Barranca Avenue #4133, Covina/);
+    expect(sections.at(-1)?.links).toEqual([
+      { label: 'Écrire à support@gocosmic.dev', href: 'mailto:support@gocosmic.dev' },
+    ]);
+  });
+});
+
+describe('terms sections', () => {
+  it('numbers the thirteen articles after the preamble, which states the version in force', () => {
+    const sections = buildTermsSections(legal('fr'), { version: 1, date: '25 novembre 2026' });
+
+    expect(sections.map(({ id }) => id)).toEqual([...TERMS_SECTIONS]);
+    expect(sections[0]?.title).toBe('Préambule');
+    expect(sections[1]?.title).toBe('1. Objet et nature du jeu');
+    expect(sections.at(-1)?.title).toBe('13. Contrat de licence des magasins');
+    expect(textOf(sections[0]?.body[0])).toMatch(/version 1, en vigueur depuis le 25 novembre 2026\.$/);
+    expect(sections.at(-1)?.links?.map(({ href }) => href)).toEqual([
+      'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/',
+    ]);
   });
 });
 
 describe('privacy sections', () => {
-  it("turns each paragraph of the app's personal data into a section, its lead as title", () => {
+  it("follows the app's policy, with GitHub's statement and the authorities", () => {
     const sections = buildPrivacySections(legal('en'));
 
     expect(sections.map(({ id }) => id)).toEqual([...PRIVACY_SECTIONS]);
-    expect(sections.map(({ title }) => title)).toEqual([
-      'What Moi Président does with your data',
-      'Permissions',
-      'Sharing',
-      'Deletion',
-      'Campaign kit',
-      'Changes',
-      'Contact and recourse',
+    expect(sections[0]?.title).toBe('In short');
+    expect(sections.find(({ id }) => id === 'kit')?.links?.map(({ href }) => href)).toEqual([
+      'https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement',
     ]);
     expect(sections.at(-1)?.links?.map(({ href }) => href)).toEqual([
       'mailto:support@gocosmic.dev',
       'https://www.edoeb.admin.ch',
       'https://www.cnil.fr',
     ]);
+  });
+});
+
+describe('legal pointer and dates', () => {
+  it("points to the game's other legal pages, in the app's order", () => {
+    expect(buildLegalPointer(legal('fr'), 'privacy')).toEqual({
+      prefix: 'Les autres documents de Moi Président\u00a0:',
+      links: [
+        { label: 'Mentions légales', href: '/apps/moi-president/legal-notice' },
+        { label: "Conditions générales d'utilisation", href: '/apps/moi-president/terms' },
+        { label: 'À propos du jeu', href: '/apps/moi-president/about' },
+      ],
+    });
+  });
+
+  it('lists every version of the terms, the one in force first and said so', () => {
+    const { current, section } = buildTermsVersions(legal('en'), 'en', [
+      { version: 2, effective: '2027-03-01' },
+      { version: 1, effective: '2026-11-25' },
+    ]);
+
+    expect(current).toEqual({ version: 2, date: '1 March 2027' });
+    expect(section.body).toEqual([
+      'Version 2, in force since 1 March 2027 (version in force)',
+      'Version 1, in force since 25 November 2026',
+    ]);
+  });
+
+  it('dates a document as the app does', () => {
+    expect(formatDocumentDate(legal('en'), 'privacy', '2026-11-25', 'en')).toBe('Updated on 25 November 2026');
   });
 });
 

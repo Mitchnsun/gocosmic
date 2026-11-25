@@ -1,13 +1,28 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
-import { buildCorrection, CorrectionNotice, MoiPresidentHero, MoiPresidentSupport } from '@/components/MoiPresident';
+import {
+  buildCorrection,
+  CorrectionNotice,
+  LEGAL_PAGES,
+  MoiPresidentHero,
+  MoiPresidentSupport,
+} from '@/components/MoiPresident';
+import type { MoiPresidentLegalPage } from '@/components/MoiPresident/MoiPresident.types';
 import { MOI_PRESIDENT_CORRECTION, MOI_PRESIDENT_LINKS } from '@/data/moi-president';
 import { DEFAULT_LANGUAGE, type Locale, localeWithLanguage } from '@/i18n/locales';
 import { hasRoute } from '@/i18n/route-locales';
 import { buildPageMetadata } from '@/lib/seo';
 
 const ROUTE = '/apps/moi-president';
+
+/** The support section's label of each legal page (`moiPresident.support`), in every language. */
+const SUPPORT_LABELS: Record<MoiPresidentLegalPage, string> = {
+  legalNotice: 'legal_notice',
+  terms: 'terms',
+  privacy: 'privacy',
+  about: 'about',
+};
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -42,18 +57,11 @@ export default async function MoiPresidentPage({ params }: { params: Promise<{ l
         title={t('support.title')}
         lead={t('support.lead')}
         email={{ label: t('support.email'), href: MOI_PRESIDENT_LINKS.email }}
-        legalLinks={[
-          {
-            label: t('support.privacy'),
-            href: '/apps/moi-president/privacy',
-            locale: legalLocale('/apps/moi-president/privacy'),
-          },
-          {
-            label: t('support.legal_notice'),
-            href: '/apps/moi-president/legal-notice',
-            locale: legalLocale('/apps/moi-president/legal-notice'),
-          },
-        ]}
+        legalLinks={LEGAL_PAGES.map(({ page, route }) => ({
+          label: t(`support.${SUPPORT_LABELS[page]}`),
+          href: route,
+          locale: legalLocale(route),
+        }))}
         locale={locale}
       />
     </>

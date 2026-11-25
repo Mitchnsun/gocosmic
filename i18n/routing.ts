@@ -209,13 +209,33 @@ export const routing = defineRouting({
       it: '/applicazioni/moi-president/privacy',
     }),
 
-    // Moi Président's legal notice, with the notice of its simulation, in French and English (see `ROUTE_FALLBACK_LANGUAGES`)
+    // Moi Président's legal notice, in French and English (see `ROUTE_FALLBACK_LANGUAGES`)
     '/apps/moi-president/legal-notice': localized({
       en: '/apps/moi-president/legal-notice',
       fr: '/applications/moi-president/mentions-legales',
       es: '/aplicaciones/moi-president/aviso-legal',
       de: '/apps/moi-president/impressum',
       it: '/applicazioni/moi-president/note-legali',
+    }),
+
+    // Moi Président's terms of use, in French and English (see `ROUTE_FALLBACK_LANGUAGES`); the other languages keep
+    // the English last segment, since they redirect
+    '/apps/moi-president/terms': localized({
+      en: '/apps/moi-president/terms',
+      fr: '/applications/moi-president/conditions-utilisation',
+      es: '/aplicaciones/moi-president/terms',
+      de: '/apps/moi-president/terms',
+      it: '/applicazioni/moi-president/terms',
+    }),
+
+    // « À propos du jeu », the sections that left Moi Président's legal notice, with the notice of its simulation, in
+    // French and English (see `ROUTE_FALLBACK_LANGUAGES`); the other languages keep the English last segment
+    '/apps/moi-president/about': localized({
+      en: '/apps/moi-president/about',
+      fr: '/applications/moi-president/a-propos',
+      es: '/aplicaciones/moi-president/about',
+      de: '/apps/moi-president/about',
+      it: '/applicazioni/moi-president/about',
     }),
 
     // The licences of Moi Président's campaign kit, which the app opens from the kit page, in French and English
@@ -256,5 +276,7 @@ export const ROUTE_LANGUAGES: Partial<Record<RouteKey, readonly Language[]>> = {
 export const ROUTE_FALLBACK_LANGUAGES: Partial<Record<RouteKey, readonly Language[]>> = {
   '/apps/moi-president/privacy': ['fr', 'en'],
   '/apps/moi-president/legal-notice': ['fr', 'en'],
+  '/apps/moi-president/terms': ['fr', 'en'],
+  '/apps/moi-president/about': ['fr', 'en'],
   '/apps/moi-president/kit-licences': ['fr', 'en'],
 };

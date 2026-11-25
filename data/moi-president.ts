@@ -62,6 +62,8 @@ export const MOI_PRESIDENT_LINKS = {
   cnil: 'https://www.cnil.fr',
   pfpdt: 'https://www.edoeb.admin.ch',
   email: 'mailto:support@gocosmic.dev',
+  appleEula: 'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/',
+  githubPrivacy: 'https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement',
 } as const;
 
 export type MoiPresidentLinkId = keyof typeof MOI_PRESIDENT_LINKS;
@@ -70,3 +72,29 @@ export type MoiPresidentLinkId = keyof typeof MOI_PRESIDENT_LINKS;
 export function getFiledNoticeUrl(releases: readonly AppRelease[] = MOI_PRESIDENT_RELEASES): string | undefined {
   return releases[0]?.noticeUrl;
 }
+
+/** A version of the game's terms of use and the day it applies from. */
+export interface TermsVersion {
+  version: number;
+  effective: string;
+}
+
+/**
+ * The versions of the game's terms of use, the one in force first, as the app's `TERMS_VERSION`
+ * (Mitchnsun/moi-president#512). Never empty. The previous versions stay readable on the site (art. 9 of the
+ * terms): when version 2 comes, the text of version 1 is to be kept on a frozen page of its own, which does not
+ * exist yet since there is no previous version.
+ */
+export const MOI_PRESIDENT_TERMS_VERSIONS: readonly [TermsVersion, ...TermsVersion[]] = [
+  { version: 1, effective: '2026-11-25' },
+];
+
+/**
+ * The day each of the game's other legal pages last changed: the legal notice and the privacy policy as the app's
+ * `LEGAL_NOTICE_UPDATED` and `PRIVACY_UPDATED`; « À propos du jeu », the app's sections copied on that day.
+ */
+export const MOI_PRESIDENT_LEGAL_DATES = {
+  legalNotice: '2026-11-25',
+  privacy: '2026-11-25',
+  about: '2026-11-25',
+} as const;

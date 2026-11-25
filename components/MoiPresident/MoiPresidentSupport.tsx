@@ -26,7 +26,7 @@ interface MoiPresidentSupportProps {
   locale: string;
 }
 
-/** The support of the game, the App Store's support URL: write to the studio, or read the two legal pages. */
+/** The support of the game, the App Store's support URL: write to the studio, or read its legal pages. */
 export function MoiPresidentSupport({ eyebrow, title, lead, email, legalLinks, locale }: MoiPresidentSupportProps) {
   return (
     <section aria-labelledby="moi-president-support" className={cn('bg-bg-alt', SECTION_Y)}>

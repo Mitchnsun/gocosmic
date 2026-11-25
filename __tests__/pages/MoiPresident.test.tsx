@@ -1,6 +1,7 @@
 import { createTranslator } from 'next-intl';
 import { vi } from 'vitest';
 
+import MoiPresidentAboutPage, { generateMetadata as aboutMetadata } from '@/app/[locale]/apps/moi-president/about/page';
 import MoiPresidentKitLicencesPage, {
   generateMetadata as kitLicencesMetadata,
 } from '@/app/[locale]/apps/moi-president/kit-licences/page';
@@ -11,6 +12,7 @@ import MoiPresidentPage, { generateMetadata as presentationMetadata } from '@/ap
 import MoiPresidentPrivacyPage, {
   generateMetadata as privacyMetadata,
 } from '@/app/[locale]/apps/moi-president/privacy/page';
+import MoiPresidentTermsPage, { generateMetadata as termsMetadata } from '@/app/[locale]/apps/moi-president/terms/page';
 import type { AppRelease, Correction } from '@/data/moi-president';
 import { redirect } from '@/i18n/navigation';
 
@@ -72,6 +74,14 @@ describe('Moi Président presentation page', () => {
       '/apps/moi-president/legal-notice'
     );
     expect(within(support).getByRole('link', { name: 'Politique de confidentialité' })).not.toHaveAttribute('hreflang');
+    expect(within(support).getByRole('link', { name: "Conditions générales d'utilisation" })).toHaveAttribute(
+      'href',
+      '/apps/moi-president/terms'
+    );
+    expect(within(support).getByRole('link', { name: 'À propos du jeu' })).toHaveAttribute(
+      'href',
+      '/apps/moi-president/about'
+    );
     expect(queryByRole('region', { name: 'Mise au point' })).not.toBeInTheDocument();
   });
 
@@ -103,23 +113,17 @@ describe('Moi Président presentation page', () => {
 });
 
 describe('Moi Président privacy policy', () => {
-  it("shows each paragraph of the app's personal data as a section, then points to the legal notice", async () => {
-    const { getByRole, getAllByRole } = render(await MoiPresidentPrivacyPage(params('en')));
+  it("shows the app's policy, its date, then points to the other legal pages", async () => {
+    const { getByRole, getAllByRole, getByText } = render(await MoiPresidentPrivacyPage(params('en')));
 
     expect(getByRole('heading', { level: 1, name: 'Privacy policy' })).toBeInTheDocument();
-    expect(getAllByRole('heading', { level: 2 }).map((heading) => heading.textContent)).toEqual([
-      'What Moi Président does with your data',
-      'Permissions',
-      'Sharing',
-      'Deletion',
-      'Campaign kit',
-      'Changes',
-      'Contact and recourse',
-    ]);
-    expect(getByRole('link', { name: 'Moi Président legal notice' })).toHaveAttribute(
-      'href',
-      '/apps/moi-president/legal-notice'
-    );
+    expect(getByText('Updated on 25 November 2026')).toBeInTheDocument();
+    const headings = getAllByRole('heading', { level: 2 }).map((heading) => heading.textContent);
+    expect(headings).toHaveLength(14);
+    expect(headings[0]).toBe('In short');
+    expect(headings).toContain('Your rights');
+    expect(getByRole('link', { name: 'Legal notice' })).toHaveAttribute('href', '/apps/moi-president/legal-notice');
+    expect(getByRole('link', { name: 'Terms of use' })).toHaveAttribute('href', '/apps/moi-president/terms');
   });
 
   it('stays out of search results', async () => {
@@ -133,22 +137,73 @@ describe('Moi Président privacy policy', () => {
 });
 
 describe('Moi Président legal notice', () => {
-  it("shows the app's sections, then points to the privacy policy", async () => {
+  it('shows art. 1-1 of the LCEN, then points to the other legal pages', async () => {
     const { getByRole, getAllByRole, queryByRole } = render(await MoiPresidentLegalNoticePage(params('fr')));
 
     expect(getByRole('heading', { level: 1, name: 'Mentions légales' })).toBeInTheDocument();
-    expect(getAllByRole('heading', { level: 2 })).toHaveLength(9);
-    expect(queryByRole('heading', { level: 3 })).not.toBeInTheDocument();
-    expect(getByRole('link', { name: 'politique de confidentialité de Moi Président' })).toHaveAttribute(
+    expect(getAllByRole('heading', { level: 2 })).toHaveLength(5);
+    expect(queryByRole('heading', { level: 2, name: 'Notice de la simulation' })).not.toBeInTheDocument();
+    expect(getByRole('link', { name: 'Politique de confidentialité' })).toHaveAttribute(
       'href',
       '/apps/moi-president/privacy'
     );
+    expect(getByRole('link', { name: 'À propos du jeu' })).toHaveAttribute('href', '/apps/moi-president/about');
+  });
+
+  it('stays out of search results', async () => {
+    const metadata = await legalNoticeMetadata(params('en'));
+
+    expect(metadata.title).toBe('Moi Président legal notice | Cosmic Studio');
+    expect(metadata.robots).toEqual({ index: false, follow: true });
+  });
+});
+
+describe('Moi Président terms of use', () => {
+  it('shows the preamble and the thirteen articles of the version in force, then the list of versions', async () => {
+    const { getByRole, getAllByRole, getByText } = render(await MoiPresidentTermsPage(params('fr')));
+
+    expect(getByRole('heading', { level: 1, name: "Conditions générales d'utilisation" })).toBeInTheDocument();
+    expect(getByText('Version 1, en vigueur depuis le 25 novembre 2026')).toBeInTheDocument();
+    const headings = getAllByRole('heading', { level: 2 }).map((heading) => heading.textContent);
+    expect(headings).toHaveLength(15);
+    expect(headings.slice(0, 2)).toEqual(['Préambule', '1. Objet et nature du jeu']);
+    expect(headings.at(-1)).toBe('Versions de ces conditions');
+    expect(getByText('Version 1, en vigueur depuis le 25 novembre 2026 (version en vigueur)')).toBeInTheDocument();
+    expect(getByRole('link', { name: "Le contrat de licence standard d'Apple" })).toHaveAttribute(
+      'href',
+      'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/'
+    );
+  });
+
+  it('stays out of search results, with its own French slug', async () => {
+    const metadata = await termsMetadata(params('fr'));
+
+    expect(metadata.robots).toEqual({ index: false, follow: true });
+    expect(metadata.alternates?.canonical).toBe(
+      'https://www.gocosmic.dev/fr/applications/moi-president/conditions-utilisation'
+    );
+  });
+});
+
+describe('Moi Président, about the game', () => {
+  it("shows the game's sections out of the legal notice", async () => {
+    const { getByRole, getAllByRole } = render(await MoiPresidentAboutPage(params('fr')));
+
+    expect(getByRole('heading', { level: 1, name: 'À propos du jeu' })).toBeInTheDocument();
+    expect(getAllByRole('heading', { level: 2 }).map((heading) => heading.textContent)).toEqual([
+      'Le jeu',
+      'Les chiffres',
+      'Notice de la simulation',
+      'Les sources et leurs dates',
+      'Crédits et licences',
+    ]);
+    expect(getByRole('link', { name: 'Mentions légales' })).toHaveAttribute('href', '/apps/moi-president/legal-notice');
   });
 
   it('adds a section per published version to the notice of the simulation, and a correction on top', async () => {
     state.releases = RELEASES;
     state.correction = CORRECTION;
-    const { getByRole, container } = render(await MoiPresidentLegalNoticePage(params('en')));
+    const { getByRole, container } = render(await MoiPresidentAboutPage(params('en')));
     const notice = container.querySelector<HTMLElement>('section#notice')!;
 
     expect(getByRole('region', { name: 'Correction' })).toHaveTextContent('Text of the correction.');
@@ -163,11 +218,11 @@ describe('Moi Président legal notice', () => {
     );
   });
 
-  it('stays out of search results', async () => {
-    const metadata = await legalNoticeMetadata(params('en'));
+  it('stays out of search results, with its own French slug', async () => {
+    const metadata = await aboutMetadata(params('fr'));
 
-    expect(metadata.title).toBe('Moi Président legal notice | Cosmic Studio');
     expect(metadata.robots).toEqual({ index: false, follow: true });
+    expect(metadata.alternates?.canonical).toBe('https://www.gocosmic.dev/fr/applications/moi-president/a-propos');
   });
 });
 

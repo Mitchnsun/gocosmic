@@ -10,7 +10,7 @@ import {
 import { EN } from '../llms.messages';
 import { item, link, pageUrl, section } from '../llms.utils';
 
-const NOTICE = 'legalNotice.sections.notice';
+const NOTICE = 'about.sections.notice';
 
 /** A published version of the game: its frozen data and, for each poll it starts from, the mentions of its notice. */
 function releaseSection({ version, publishedOn, polls, noticeUrl }: AppRelease): string {
