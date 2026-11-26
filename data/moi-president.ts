@@ -95,6 +95,6 @@ export const MOI_PRESIDENT_TERMS_VERSIONS: readonly [TermsVersion, ...TermsVersi
  */
 export const MOI_PRESIDENT_LEGAL_DATES = {
   legalNotice: '2026-11-25',
-  privacy: '2026-11-25',
+  privacy: '2026-11-26',
   about: '2026-11-25',
 } as const;
