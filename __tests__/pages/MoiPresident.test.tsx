@@ -117,7 +117,7 @@ describe('Moi Président privacy policy', () => {
     const { getByRole, getAllByRole, getByText } = render(await MoiPresidentPrivacyPage(params('en')));
 
     expect(getByRole('heading', { level: 1, name: 'Privacy policy' })).toBeInTheDocument();
-    expect(getByText('Updated on 25 November 2026')).toBeInTheDocument();
+    expect(getByText('Updated on 26 November 2026')).toBeInTheDocument();
     const headings = getAllByRole('heading', { level: 2 }).map((heading) => heading.textContent);
     expect(headings).toHaveLength(14);
     expect(headings[0]).toBe('In short');
